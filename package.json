@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node scripts/check.mjs"
+    "test": "node scripts/check.mjs && node --test tests/",
+    "ingest:civic": "node scripts/ingest-civic.mjs"
   },
   "dependencies": {
     "@ai-sdk/xai": "^2.0.100",

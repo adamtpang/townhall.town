@@ -11,8 +11,13 @@ export default function Home() {
         <span className="text-sm text-black/50">Nov 3, 2026</span>
       </header>
       <main className="mx-auto max-w-site px-6">
-        <section className="pb-16 pt-24 sm:pt-40">
-          <h1 className="max-w-5xl font-serif text-[clamp(3.5rem,10vw,9rem)] leading-[0.9] tracking-[-0.02em] text-black">Your ballot, explained.</h1>
+        <section className="pb-10 pt-12 sm:pt-40">
+          <p className="mb-6 text-sm font-[530] text-black/60">Nov 3, 2026 · Austin · San Francisco · New York</p>
+          <h1 className="font-serif text-[clamp(48px,7vw,120px)] leading-[0.98] tracking-[-0.02em] text-black [text-wrap:balance]">
+            <span className="block">Don&rsquo;t know who to vote for?</span>
+            <span className="block">Towny tells you who, when and where.</span>
+          </h1>
+          <p className="mt-6 max-w-[40ch] text-xl font-[450] text-black/60">Your ballot, explained in 2 minutes. Sourced and nonpartisan.</p>
         </section>
         <BallotAgent />
       </main>

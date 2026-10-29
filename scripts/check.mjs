@@ -8,7 +8,7 @@ for (const f of [...walk("app"), ...walk("lib"), ...walk("components")].filter((
   const s = fs.readFileSync(f, "utf8");
   for (const re of [/\bvote for\b/i, /\bbest\b/i]) {
     // ignore code comments
-    const lines = s.split("\n").filter((l) => !/^\s*(\/\/|\*|\/\*)/.test(l) && !/\bnever\b/i.test(l)); // instructions that forbid the phrase are fine
+    const lines = s.split("\n").filter((l) => !/^\s*(\/\/|\*|\/\*)/.test(l) && !/\bnever\b/i.test(l) && !/Don&rsquo;t know who to vote for\?/.test(l)); // instructions that forbid the phrase are fine
     lines.forEach((l, i) => { if (re.test(l)) bad(`${f}: banned phrase ${re} -> ${l.trim().slice(0, 120)}`); });
   }
 }

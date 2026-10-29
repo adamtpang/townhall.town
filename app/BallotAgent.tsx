@@ -329,7 +329,7 @@ export default function BallotAgent() {
           e.preventDefault();
           run(zip);
         }}
-        className="flex max-w-2xl items-end gap-4"
+        className="flex max-w-2xl items-stretch gap-0"
       >
         <Input
           inputMode="numeric"
@@ -338,13 +338,13 @@ export default function BallotAgent() {
           placeholder="Enter your ZIP"
           value={zip}
           onChange={(e) => setZip(e.target.value)}
-          className="h-16 text-3xl sm:text-4xl"
+          className="h-16 rounded-none border border-black bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3760f2]"
         />
-        <Button type="submit" size="lg" disabled={busy}>{busy ? "Reading…" : "Go"}</Button>
+        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? "Reading…" : "Go"}</Button>
       </form>
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2">
         {DEMO.map((d) => (
-          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)}>
+          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black">
             {d.label}
           </Button>
         ))}
