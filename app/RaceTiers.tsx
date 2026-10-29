@@ -30,9 +30,11 @@ export function tierFor(r: RaceLite, mk: Mk) {
   const comp = lead ? 1 + (1 - Math.abs(lead.prob - 0.5) * 2) : 1;
   const score = imp.v * comp;
   const tier = score >= 4.5 ? "S" : score >= 3 ? "A" : score >= 2 ? "B" : "C";
-  const why = `${imp.why[0].toUpperCase()}${imp.why.slice(1)}; ${lead ? `market leader at ${Math.round(lead.prob * 100)}%, ${comp >= 1.6 ? "close" : comp >= 1.3 ? "leaning" : "lopsided"}` : "no market, so no competitiveness boost"}.`;
+  const why = `${imp.why[0].toUpperCase()}${imp.why.slice(1)}${lead ? `; market leader at ${Math.round(lead.prob * 100)}%, ${comp >= 1.6 ? "close" : comp >= 1.3 ? "leaning" : "lopsided"}` : ". No market odds yet"}.`;
   return { tier, score, why };
 }
+
+const lead = (mk: Mk) => !!mk?.avg?.length;
 
 export default function RaceTiers({ races, market }: { races: RaceLite[]; market: (id: string) => Mk }) {
   const [failed, setFailed] = useState<Record<string, boolean>>({});
@@ -59,10 +61,10 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>
                     {r.candidates?.length ? (
-                      <div className="my-3 flex gap-3 overflow-x-auto pb-1">
+                      <div className="-mx-6 my-3 flex snap-x snap-mandatory flex-nowrap gap-3 overflow-x-auto scroll-px-6 px-6 pb-1 sm:mx-0 sm:px-0" data-photo-row>
                         {/* One failed or missing photo switches the whole race to initials, so tiles stay consistent. */}
                         {r.candidates.map((c) => (
-                          <div key={c.name} className="w-28 shrink-0 md:w-40">
+                          <div key={c.name} className="w-28 flex-none snap-start md:w-40">
                             <Portrait name={c.name} photo={c.photo} credit={false} boxClassName="h-[140px] md:h-52" forceInitials={failed[r.id] || r.candidates!.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
                             <p className="mt-1 text-sm font-medium leading-tight text-black/80">{c.name}</p>
                           </div>
@@ -72,7 +74,7 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                     <p className="text-sm text-black/60">
                       {why}{" "}
                       {r.source && <a href={r.source} target="_blank" rel="noreferrer">race source</a>}
-                      {mk?.quotes?.[0]?.url && <> · <a href={mk.quotes[0].url} target="_blank" rel="noreferrer">market</a></>}
+                      {lead(mk) && mk?.quotes?.[0]?.url && <> · <a href={mk.quotes[0].url} target="_blank" rel="noreferrer">market</a></>}
                     </p>
                   </li>
                 ))}
