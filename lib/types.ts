@@ -13,10 +13,14 @@ export type Politician = {
   photo?: { url: string; credit: string; license?: string; page?: string } | null;
   finance?: Source | null;         // FEC (federal) or TEC (Texas state) link
   positions?: { issue: string; text: string; source: Source }[]; // stated positions only
+  causes?: Cause[];                // issues the candidate talks about most, from their own campaign themes
   // Plug-in fields (optional):
   accountability?: AccountabilityRecord[]; // from lib/accountability.ts
   money?: Money;                   // from lib/money.ts (FEC, federal only)
 };
+
+// A cause pill: keyword match in the candidate's verbatim campaign themes, with the sentence that matched.
+export type Cause = { id: string; label: string; mentions: number; quote: string; match?: string; source: Source };
 
 export type AccountabilityRecord = {
   promise: string;
