@@ -310,6 +310,10 @@ export default function BallotAgent() {
 
       {b && (
         <div id="ballot" className="mt-16">
+          <div className="mb-10 border-t border-black/15 pt-4 text-sm text-black/70">
+            {b.splitWarning && b.districts.length > 1 && <p><strong className="text-black">Your ZIP spans more than one U.S. House district</strong>, so both are shown. <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"}>Check which district is yours</a>.</p>}
+            <p className="mt-1">State legislative, judicial, county and city races are not shown yet. Check your full ballot at <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"}>{b.state === "TX" ? "VoteTexas.gov" : "sos.ca.gov"}</a>.</p>
+          </div>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
           <section className="border-t border-black py-16" id="plan">
@@ -600,7 +604,7 @@ function GamePlan({ state }: { state: "TX" | "CA" }) {
         <CardHeader><span className="eyebrow">Where</span><CardTitle>Vote centers and drop boxes</CardTitle></CardHeader>
         <CardContent className="space-y-2 text-sm text-slate-700">
           <p><Src href="https://caearlyvoting.sos.ca.gov/">caearlyvoting.sos.ca.gov</Src></p>
-          <p><Src href="https://www.sos.ca.gov/elections/polling-place">Polling place lookup (sos.ca.gov)</Src></p>
+          <p><Src href="https://www.sos.ca.gov/elections">Polling place lookup (sos.ca.gov)</Src></p>
         </CardContent>
       </Card>
       <Card>

@@ -84,3 +84,13 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 
 ## Disclaimer
 Independent and nonpartisan; not a government website. Always confirm your ballot with official sources: [VoteTexas.gov](https://www.votetexas.gov/), [California Secretary of State](https://www.sos.ca.gov/elections), [CA early voting](https://caearlyvoting.sos.ca.gov/).
+
+## Race tiers (S/A/B/C)
+
+"What matters on your ballot" ranks races, never candidates. Score = office impact × competitiveness.
+
+- Office impact: 3 = President, U.S. Senate, Governor; 2 = ballot measure, U.S. House, other statewide executive office; 1.5 = state legislature; 1 = judicial and local.
+- Competitiveness: 1 + (1 − |p_leader − 0.5| × 2), where p_leader is the leading prediction-market probability for the race; 1 when no market exists.
+- Tiers: S ≥ 4.5, A ≥ 3, B ≥ 2, otherwise C. Each race shows a one-line reason plus its race source and market link.
+
+Candidate overlap ("Who lines up with you") uses only your slider answers (−10..+10, stored in localStorage) and verbatim sourced stances in data/stances.json. Overlap = (cosine + 1) / 2 on shared issues; hidden below 2 sourced stances ("Not enough record"). It is issue overlap, not a recommendation.
