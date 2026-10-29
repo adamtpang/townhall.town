@@ -16,6 +16,10 @@ npm run build
 Try the demo ZIPs: 78701 (Austin), 94103 (San Francisco), and 10001 (New York); 78130 (New Braunfels) and 90012 (Los Angeles) also work.
 API: `GET /api/agent?zip=78701` streams NDJSON (`status`, `step`, `result`). `GET /api/locate?lat=..&lon=..` maps coordinates to a ZIP via the Census geocoder.
 
+## Open source: contribute
+
+MIT licensed. See [LICENSE](LICENSE). How to run the app, how to add a city, and the sourcing rules are in [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Stack
 Next.js 15 (App Router), React 19, TypeScript, Tailwind, Radix/shadcn-style components, Public Sans. Vercel AI SDK v5 tool loop over the Vercel AI Gateway (OIDC on Vercel). Deployed on Vercel.
 
