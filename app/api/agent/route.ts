@@ -35,7 +35,7 @@ function summarize(name: string, r: any): string {
     case "getDistricts":
       return r.found ? `${r.place}: ${r.districts.map((d: any) => d.label).join(", ")}` : r.message;
     case "getRaces":
-      return `${r.races.length} races, ${r.measures.length} statewide measures on Nov 3, 2026`;
+      return `${r.races.length} races, ${r.measures.length} ballot measures on Nov 3, 2026`;
     case "getCandidates":
       return `${r.races.reduce((n: number, x: any) => n + x.candidates.length, 0)} candidates across ${r.races.length} races`;
     case "getMarketOdds": {
