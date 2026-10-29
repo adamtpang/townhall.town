@@ -358,7 +358,7 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-32">
           <p className="text-sm text-black/60">
-            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
+            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check your exact district by address</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
