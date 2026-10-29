@@ -1,8 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Public_Sans } from "next/font/google";
+import { Public_Sans, Instrument_Serif } from "next/font/google";
 
+// Public Sans (USWDS) stays the UI face; Instrument Serif (PR #2) is available as font-serif for display accents.
 const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-public-sans", display: "swap" });
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-serif", display: "swap" });
 
 export const metadata: Metadata = {
   title: "townhall.town: your ballot, explained in 60 seconds",
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={publicSans.variable}>
+    <html lang="en" className={`${publicSans.variable} ${serif.variable}`}>
       <body className="font-sans">{children}</body>
     </html>
   );

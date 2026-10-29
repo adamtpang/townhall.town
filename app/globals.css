@@ -1,6 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body { @apply bg-white text-slate-900 antialiased; }
-a { @apply text-navy-700 underline decoration-slate-300 underline-offset-2 hover:decoration-navy-700; }
-.eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-slate-500; }
+
+/* Design tokens modeled on the National Design Studio (ndstudio.gov), from PR #2, layered on top of
+   the existing official navy/white UI. Tokens are opt-in (bg-card, text-muted-foreground, nds-*);
+   the base body/link styles below stay as before so the working UI is unchanged. */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0.4%;           /* #010101 ink */
+    --surface: 0 0% 94.9%;             /* #f2f2f2 */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0.4%;
+    --muted: 0 0% 90.2%;
+    --muted-foreground: 0 0% 42%;      /* #6b6b6b */
+    --border: 0 0% 85.5%;
+    --input: 0 0% 85.5%;
+    --ring: 216 57% 21%;               /* navy focus ring */
+    --primary: 216 57% 21%;            /* #162e51 navy */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 100% 6.1%;        /* #000c1f navy */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 227 88% 58%;             /* #3760f2 link blue */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 355 100% 37.5%;     /* #bf000f */
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.375rem;
+  }
+  body { @apply bg-white text-slate-900 antialiased; }
+  a { @apply text-navy-700 underline decoration-slate-300 underline-offset-2 hover:decoration-navy-700; }
+  h1, h2, h3 { letter-spacing: -0.02em; }
+  :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2; }
+}
+
+@layer components {
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-slate-500; }
+  .nds-grid { @apply grid grid-cols-2 gap-x-4 px-6 md:grid-cols-12 md:gap-x-5 md:px-5 lg:px-10 mx-auto max-w-grid; }
+  .nds-caption-upper { @apply text-nds-micro uppercase tracking-wide text-muted-foreground; }
+  .nds-hairline { @apply border-t border-foreground/10; }
+  .nds-link-arrow::after { content: " \2197"; }
+}

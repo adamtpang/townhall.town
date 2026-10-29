@@ -7,6 +7,7 @@ import type { Jurisdiction, Race, Politician } from "./types";
 import { fetchPolymarket, fetchKalshi } from "./marketsCore.mjs";
 import { withAccountability } from "./accountability";
 import { getTurnout } from "./turnout";
+import { withLicensedPhoto } from "./photos";
 
 /** Jurisdiction plus app-only extras (measures, verify links, context). Extra fields only; contract fields unchanged. */
 export type Ballot = Jurisdiction & {
@@ -24,7 +25,7 @@ export const DEMO_ZIPS = Object.keys(B);
 /** Attach the accountability and turnout plug-ins (optional contract fields). */
 function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
-  return { ...b, turnout, races: b.races.map((r) => ({ ...r, candidates: r.candidates.map((c) => withAccountability(c)) })) };
+  return { ...b, turnout, races: b.races.map((r) => ({ ...r, candidates: r.candidates.map((c) => withAccountability(withLicensedPhoto(c))) })) };
 }
 
 export function ballotFor(zip: string): Ballot | null {

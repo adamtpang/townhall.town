@@ -118,7 +118,7 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
           <Src href={c.ballotpedia}>Ballotpedia</Src>
           <Src href={c.finance?.url}>{c.finance?.label?.startsWith("FEC") ? "FEC" : c.finance?.label?.includes("Ethics") ? "TEC" : "Finance"}</Src>
         </div>
-        {c.photo && <p className="text-[11px] text-slate-400">{c.photo.credit}</p>}
+        {c.photo && <p className="text-[11px] text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
         {c.accountability?.length ? (
           <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-sm">
             <p className="eyebrow mb-2">Said vs. did</p>
@@ -345,7 +345,7 @@ export default function BallotAgent() {
           </Section>
 
           {/* 3. Candidates */}
-          <Section n={3} title="Who's running" sub="Photos, official sites and social links come from Ballotpedia. Missing items say “unsure”.">
+          <Section n={3} title="Who's running" sub="Official sites and social links come from Ballotpedia. Photos are licensed Wikimedia Commons portraits where available, otherwise Ballotpedia, each credited. Missing items say “unsure”.">
             <Accordion type="multiple" defaultValue={races.slice(0, 2).map((r) => r.id)}>
               {races.map((r) => {
                 const mk = marketFor(markets, r.id);

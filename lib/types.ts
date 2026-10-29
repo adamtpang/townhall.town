@@ -10,7 +10,7 @@ export type Politician = {
   ballotpedia?: string | null;
   officialSite?: string | null;
   x?: string | null;               // X profile URL
-  photo?: { url: string; credit: string; license?: string } | null;
+  photo?: { url: string; credit: string; license?: string; page?: string } | null;
   finance?: Source | null;         // FEC (federal) or TEC (Texas state) link
   positions?: { issue: string; text: string; source: Source }[]; // stated positions only
   // Plug-in fields (optional):
