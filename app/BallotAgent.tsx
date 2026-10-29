@@ -270,7 +270,7 @@ export default function BallotAgent() {
           <p className="text-sm text-black/50">
             {b.place} · {elapsed ? `${elapsed.toFixed(1)}s` : ""} · {result?.mode === "live" ? "Live agent" : "Fallback mode (no model)"}
             {b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}
-            {" "}· Local races not shown yet.
+            {" "}· Local races not shown yet.{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />

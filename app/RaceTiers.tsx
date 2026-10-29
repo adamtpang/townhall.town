@@ -44,10 +44,14 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
         {tiers.map((t) => {
           const list = rows.filter((x) => x.tier === t);
           if (!list.length) return null;
+          const top = t === tiers.find((tt) => rows.some((x) => x.tier === tt));
           return (
-            <div key={t} className="grid grid-cols-[4rem_1fr] gap-6 border-t border-black/15 py-6 md:grid-cols-[6rem_1fr]">
-              <p className="font-serif text-7xl leading-none">{t}</p>
-              <ul className="space-y-4">
+            <details key={t} open={top} className="group border-t border-black/15 py-6" data-tier={t}>
+              <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
+                <span className="w-16 font-serif text-7xl leading-none md:w-24">{t}</span>
+                <span className="text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}<span className="ml-2 inline-block group-open:rotate-180">↓</span></span>
+              </summary>
+              <ul className="mt-4 space-y-4 pl-[5.5rem] md:pl-[7.5rem]">
                 {list.map(({ r, why, mk }) => (
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>
@@ -59,7 +63,7 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                   </li>
                 ))}
               </ul>
-            </div>
+            </details>
           );
         })}
       </div>
