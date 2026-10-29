@@ -8,8 +8,6 @@ import { ISSUES, overlap, stancesFor, type Answers } from "../lib/issues";
 type Cand = { name: string; party?: string | null; photo?: Photo; causes?: { id: string; label: string; quote: string; source: { label: string; url: string } }[] };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
 const KEY = "townhall.issueAnswers.v2";
-// Candidate tier within a race, from overlap % only (needs 2+ sourced stances on issues you answered).
-const tierOf = (pct: number) => (pct >= 85 ? "S" : pct >= 70 ? "A" : pct >= 50 ? "B" : "C");
 
 export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"; races: RaceLite[] }) {
   const issues = ISSUES.filter((i) => !i.caOnly || state === "CA");
@@ -94,10 +92,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
                         ) : (
                           <>
                             {compare && o.n >= 2 && o.pct !== null ? (
-                              <>
-                                <p className="mt-1 text-slate-800"><span className="mr-3 inline-block min-w-[2rem] font-serif text-5xl leading-none">{tierOf(o.pct)}</span>Lines up on {agree} of {o.n} compared issues</p>
-                                <p className="text-xs text-slate-500">Tier based on your answers and sourced records.</p>
-                              </>
+                              <p className="mt-1 text-slate-800">Lines up on {agree} of {o.n} compared issues</p>
                             ) : (
                               <p className="mt-1 text-xs text-slate-500">{o.n} sourced position{o.n === 1 ? "" : "s"} on your issues. Not tiered.</p>
                             )}
