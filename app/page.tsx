@@ -17,7 +17,10 @@ export default function Home() {
         <BallotAgent />
       </main>
       <footer className="mx-auto mt-40 max-w-site border-t border-black/15 px-6 py-10 text-sm text-black/50">
-        Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.
+        <p>Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.</p>
+        <a href="https://github.com/adamtpang/townhall.town" target="_blank" rel="noreferrer" className="mt-2 inline-flex min-h-11 items-center text-sm text-black/50 no-underline transition-colors hover:text-[#3760f2]">
+          Open source. Add your city on GitHub
+        </a>
       </footer>
     </>
   );
