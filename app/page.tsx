@@ -1,24 +1,26 @@
 import BallotAgent from "./BallotAgent";
+import { SectionBlock } from "../components/Prose";
+import { SiteFooter, SiteHeader } from "../components/SiteChrome";
+import { HOME_SECTIONS } from "../lib/content";
+import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 
 export default function Home() {
   return (
     <>
-      <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8">
-        <span className="flex items-center gap-3 text-base font-medium tracking-tight">
-          <span aria-hidden className="inline-block h-3 w-3 bg-[#3760f2]" />
-          townhall.town
-        </span>
-        <span className="text-sm text-black/50">Nov 3, 2026</span>
-      </header>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
+      <SiteHeader />
       <main className="mx-auto max-w-site px-6">
         <section className="pb-16 pt-24 sm:pt-40">
           <h1 className="max-w-5xl font-serif text-[clamp(3.5rem,10vw,9rem)] leading-[0.9] tracking-[-0.02em] text-black">Your ballot, explained.</h1>
         </section>
         <BallotAgent />
+        <div className="mt-32">
+          {HOME_SECTIONS.map((s) => (
+            <SectionBlock key={s.heading} s={s} />
+          ))}
+        </div>
       </main>
-      <footer className="mx-auto mt-40 max-w-site border-t border-black/15 px-6 py-10 text-sm text-black/50">
-        Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.
-      </footer>
+      <SiteFooter />
     </>
   );
 }
