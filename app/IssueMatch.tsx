@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Slider } from "../components/ui/slider";
+import { Checkbox } from "../components/ui/checkbox";
 import { ISSUES, overlap, stancesFor, type Answers } from "../lib/issues";
 
 type Cand = { name: string; party?: string | null };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
-const KEY = "townhall.issueAnswers.v1";
+const KEY = "townhall.issueAnswers.v2";
 // Candidate tier within a race, from overlap % only (needs 2+ sourced stances on issues you answered).
 const tierOf = (pct: number) => (pct >= 85 ? "S" : pct >= 70 ? "A" : pct >= 50 ? "B" : "C");
 
@@ -32,7 +33,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
             <p className="mt-2 text-sm text-black/50">Your answers stay on this device. No sign-in, nothing sent to a server.</p>
       <a href="#overlap" className="mt-4 inline-block text-sm">See your issue overlap ↓</a>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 gap-0">
         {issues.map((i) => {
           const v = answers[i.id];
           const skipped = typeof v !== "number";
@@ -41,15 +42,15 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
               <div className="flex items-center justify-between gap-2">
                 <p className="font-semibold text-navy">{i.label}</p>
                 <label className="flex items-center gap-1.5 text-sm text-slate-600">
-                  <input type="checkbox" checked={skipped} onChange={(e) => set(i.id, e.target.checked ? null : 0)} /> Skip
+                  <Checkbox checked={skipped} onCheckedChange={(c) => set(i.id, c === true ? null : 0)} aria-label={`Skip ${i.label}`} /> Skip
                 </label>
               </div>
-              <Slider className={`mt-4 ${skipped ? "opacity-40" : ""}`} min={-10} max={10} step={1} value={[skipped ? 0 : (v as number)]}
+              <Slider className={`mt-4 ${skipped ? "opacity-40" : ""}`} min={-5} max={5} step={1} value={[skipped ? 0 : (v as number)]}
                 onValueChange={([x]) => set(i.id, x)} aria-label={i.label} />
               <div className="mt-2 flex justify-between gap-4 text-xs text-slate-500">
-                <span className="max-w-[45%]"><b className="block text-black">-10</b>{i.low}</span>
+                <span className="max-w-[45%]"><b className="block text-black">-5</b>{i.low}</span>
                 <span className="text-base font-medium text-black">{skipped ? "Skipped" : (v as number) > 0 ? `+${v}` : v}</span>
-                <span className="max-w-[45%] text-right"><b className="block text-black">+10</b>{i.high}</span>
+                <span className="max-w-[45%] text-right"><b className="block text-black">+5</b>{i.high}</span>
               </div>
             </div>
           );

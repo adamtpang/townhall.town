@@ -118,9 +118,9 @@ Independent and nonpartisan; not a government website. Always confirm your ballo
 - Competitiveness: 1 + (1 − |p_leader − 0.5| × 2), where p_leader is the leading prediction-market probability for the race; 1 when no market exists.
 - Tiers: S ≥ 4.5, A ≥ 3, B ≥ 2, otherwise C. Each race shows a one-line reason plus its race source and market link.
 
-Candidate overlap ("Who lines up with you") uses only your slider answers (−10..+10, stored in localStorage) and verbatim sourced stances in data/stances.json. Overlap = (cosine + 1) / 2 on shared issues; hidden below 2 sourced stances ("Not enough record"). It is issue overlap, not a recommendation.
+Candidate overlap ("Who lines up with you") uses only your slider answers (−5..+5, stored in localStorage) and verbatim sourced stances in data/stances.json. Overlap = (cosine + 1) / 2 on shared issues; hidden below 2 sourced stances ("Not enough record"). It is issue overlap, not a recommendation.
 
 ### Questionnaire and candidate tiers
-- 10 issues (CA adds Prop 40), each a -10..+10 slider with neutral policy-direction labels at both ends; every issue can be skipped.
+- 10 issues (CA adds Prop 40), each a -5..+5 integer slider, one per row with neutral policy-direction labels at both ends; every issue can be skipped.
 - Candidate tier within a race, "based on your answers and sourced records": S ≥ 85% overlap, A ≥ 70%, B ≥ 50%, otherwise C. Requires at least 2 sourced stances on your issues, else "Not enough record to tier". No answers, no tiers. Ballot order is kept; nothing is labeled "best".
-- **Answers stay on your device** (localStorage key `townhall.issueAnswers.v1`). No sign-in, nothing is sent to a server.
+- **Answers stay on your device** (localStorage key `townhall.issueAnswers.v2`). No sign-in, nothing is sent to a server.

@@ -2,7 +2,7 @@ import stancesData from "../data/stances.json";
 
 export type Issue = { id: string; label: string; low: string; high: string; caOnly?: boolean };
 
-/** Each issue is a policy direction from -10 (left end) to +10 (right end). Neither end is a party. */
+/** Each issue is a policy direction from -5 (left end) to +5 (right end), integer steps. Neither end is a party. */
 export const ISSUES: Issue[] = [
   { id: "housing", label: "Housing costs", low: "Government should stay out of housing costs", high: "Government should act to lower housing costs" },
   { id: "healthcare", label: "Healthcare access", low: "Smaller government role in healthcare", high: "Government should expand healthcare access" },
