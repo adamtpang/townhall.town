@@ -9,7 +9,9 @@ for (const f of [...walk("app"), ...walk("lib"), ...walk("components")].filter((
   for (const re of [/\bvote for\b/i, /\bbest\b/i]) {
     // ignore code comments
     const lines = s.split("\n").filter((l) => !/^\s*(\/\/|\*|\/\*)/.test(l) && !/\bnever\b/i.test(l) && !/Don&rsquo;t know who to vote for\?/.test(l)); // instructions that forbid the phrase are fine
-    lines.forEach((l, i) => { if (re.test(l)) bad(`${f}: banned phrase ${re} -> ${l.trim().slice(0, 120)}`); });
+    // Only user-visible text: string literals and JSX text, not identifiers.
+    const visible = (l) => [...l.matchAll(/(["'`])((?:\\.|(?!\1).)*)\1/g)].map((m) => m[2]).concat([...l.matchAll(/>([^<>{}]+)</g)].map((m) => m[1])).join(" ");
+    lines.forEach((l) => { if (re.test(visible(l))) bad(`${f}: banned phrase ${re} -> ${l.trim().slice(0, 120)}`); });
   }
 }
 const ms = JSON.parse(fs.readFileSync("data/measures.json", "utf8")).measures;

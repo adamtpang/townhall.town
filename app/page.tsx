@@ -1,15 +1,14 @@
 import BallotAgent from "./BallotAgent";
+import { SectionBlock } from "../components/Prose";
+import { SiteFooter, SiteHeader } from "../components/SiteChrome";
+import { HOME_SECTIONS } from "../lib/content";
+import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 
 export default function Home() {
   return (
     <>
-      <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8">
-        <span className="flex items-center gap-3 text-base font-medium tracking-tight">
-          <span aria-hidden className="inline-block h-3 w-3 bg-[#3760f2]" />
-          townhall.town
-        </span>
-        <span className="text-sm text-black/50">Nov 3, 2026</span>
-      </header>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
+      <SiteHeader />
       <main className="mx-auto max-w-site px-6">
         <section className="pb-10 pt-12 sm:pt-40">
           <p className="mb-6 text-sm font-[530] text-black/60">Nov 3, 2026 · Austin · San Francisco · New York</p>
@@ -20,13 +19,13 @@ export default function Home() {
           <p className="mt-6 max-w-[40ch] text-xl font-[450] text-black/60">Your ballot, explained in 2 minutes. Sourced and nonpartisan.</p>
         </section>
         <BallotAgent />
+        <div className="mt-32">
+          {HOME_SECTIONS.map((s) => (
+            <SectionBlock key={s.heading} s={s} />
+          ))}
+        </div>
       </main>
-      <footer className="mx-auto mt-40 max-w-site border-t border-black/15 px-6 py-10 text-sm text-black/50">
-        <p>Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.</p>
-        <a href="https://github.com/adamtpang/townhall.town" target="_blank" rel="noreferrer" className="mt-2 inline-flex min-h-11 items-center text-sm text-black/50 no-underline transition-colors hover:text-[#3760f2]">
-          Open source. Add your city on GitHub
-        </a>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
