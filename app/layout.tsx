@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${publicSans.variable} ${serif.variable} ${grotesk.variable}`}>
-      <body className="bg-[#f2f2f2] font-sans text-[#010101] antialiased">{children}</body>
+      <body className="font-sans text-[#010101] antialiased">{children}</body>
     </html>
   );
 }

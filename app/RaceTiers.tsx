@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Portrait, type Photo } from "../components/Portrait";
 type Avg = { name: string; prob: number }[];
 type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
@@ -34,6 +35,7 @@ export function tierFor(r: RaceLite, mk: Mk) {
 }
 
 export default function RaceTiers({ races, market }: { races: RaceLite[]; market: (id: string) => Mk }) {
+  const [failed, setFailed] = useState<Record<string, boolean>>({});
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
   const tiers = ["S", "A", "B", "C"] as const;
   return (
@@ -58,10 +60,11 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                     <p className="text-lg font-medium">{r.title}</p>
                     {r.candidates?.length ? (
                       <div className="my-3 flex gap-3 overflow-x-auto pb-1">
+                        {/* One failed or missing photo switches the whole race to initials, so tiles stay consistent. */}
                         {r.candidates.map((c) => (
-                          <div key={c.name} className="w-24 shrink-0 sm:w-28">
-                            <Portrait name={c.name} photo={c.photo} credit={false} />
-                            <p className="mt-1 text-xs leading-tight text-black/80">{c.name}</p>
+                          <div key={c.name} className="w-28 shrink-0 md:w-40">
+                            <Portrait name={c.name} photo={c.photo} credit={false} boxClassName="h-[140px] md:h-52" forceInitials={failed[r.id] || r.candidates!.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
+                            <p className="mt-1 text-sm font-medium leading-tight text-black/80">{c.name}</p>
                           </div>
                         ))}
                       </div>

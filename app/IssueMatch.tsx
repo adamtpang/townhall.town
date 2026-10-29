@@ -15,6 +15,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
   const issues = ISSUES.filter((i) => !i.caOnly || state === "CA");
   const ids = issues.map((i) => i.id);
   const [answers, setAnswers] = useState<Answers>({});
+  const [failed, setFailed] = useState<Record<string, boolean>>({});
   useEffect(() => {
     try { const raw = localStorage.getItem(KEY); if (raw) setAnswers(JSON.parse(raw) || {}); } catch { /* ignore */ }
   }, []);
@@ -79,7 +80,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
                     const agree = o.shared.filter((id) => { const a = answers[id] as number; const v = st[id].value; return a * v > 0 || Math.abs(a - v) <= 1; }).length;
                     return (
                       <li key={c.name} className="text-sm" data-overlap={c.name}>
-                        <Portrait name={c.name} photo={c.photo} />
+                        <Portrait name={c.name} photo={c.photo} forceInitials={failed[r.id] || r.candidates.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
                         <p className="mt-3 text-base font-medium text-black">{c.name}{c.party ? <span className="font-normal text-slate-500"> · {c.party}</span> : null}</p>
                         {c.causes?.length ? (
                           <p className="mt-1 text-xs text-black/60">Talks about{" "}
