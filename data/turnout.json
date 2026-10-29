@@ -1,0 +1,58 @@
+{
+  "asOf": "2026-10-29",
+  "method": "turnoutPct = ballotsCast / registered. Eligible population is Census ACS 2024 1-year citizen voting-age population (B29001) for every county. Eligible non-voters = eligible population minus ballots cast in the latest general.",
+  "counties": [
+    {
+      "zip": "78130",
+      "county": "Comal County",
+      "state": "TX",
+      "elections": [
+        { "election": "2024 General", "date": "2024-11-05", "registered": 143783, "ballotsCast": 104044, "turnoutPct": 72.36,
+          "sources": ["https://herald-zeitung.com/news/voter-participation-jumped-16-6-within-comal-county-for-2024-general-election/article_23264e30-a696-11ef-aa8c-7b541a89fbe5.html", "https://www.sos.state.tx.us/elections/historical/nov2024.shtml"] },
+        { "election": "2022 General", "date": "2022-11-08", "registered": 130109, "ballotsCast": 74763, "turnoutPct": 57.46,
+          "sources": ["https://www.sos.texas.gov/elections/historical/comal.shtml"] }
+      ],
+      "eligiblePopulation": { "value": 153612, "year": "ACS 2024", "source": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US48091" },
+      "registered2026": { "value": 151987, "asOf": "Oct 2026", "source": "https://www.sos.state.tx.us/elections/historical/nov2026.shtml" }
+    },
+    {
+      "zip": "78701",
+      "county": "Travis County",
+      "state": "TX",
+      "elections": [
+        { "election": "2024 General", "date": "2024-11-05", "registered": 925858, "ballotsCast": 587090, "turnoutPct": 63.41,
+          "sources": ["https://lagovistatexas.gov/DocumentCenter/View/6656/24-11-18-01-Canvassing-General-Election-PDF", "https://www.sos.state.tx.us/elections/historical/nov2024.shtml"] },
+        { "election": "2022 General", "date": "2022-11-08", "registered": 886480, "ballotsCast": 460899, "turnoutPct": 51.99,
+          "sources": ["https://www.sos.texas.gov/elections/historical/travis.shtml"] }
+      ],
+      "eligiblePopulation": { "value": 946382, "year": "ACS 2024", "source": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US48453" },
+      "registered2026": { "value": 945505, "asOf": "Oct 2026", "source": "https://www.sos.state.tx.us/elections/historical/nov2026.shtml" }
+    },
+    {
+      "zip": "94103",
+      "county": "San Francisco County",
+      "state": "CA",
+      "elections": [
+        { "election": "2024 General", "date": "2024-11-05", "registered": 520203, "ballotsCast": 412231, "turnoutPct": 79.24,
+          "sources": ["https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/03-voter-participation-stats-by-county.pdf"] },
+        { "election": "2022 General", "date": "2022-11-08", "registered": 498197, "ballotsCast": 310071, "turnoutPct": 62.24,
+          "sources": ["https://elections.cdn.sos.ca.gov/sov/2022-general/sov/03-voter-participation-stats-by-county.pdf"] }
+      ],
+      "eligiblePopulation": { "value": 616994, "year": "ACS 2024", "source": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US06075" },
+      "registered2026": { "value": 534048, "asOf": "Sep 4, 2026", "source": "https://elections.cdn.sos.ca.gov/ror/60day-gen-2026/county.pdf" }
+    },
+    {
+      "zip": "90012",
+      "county": "Los Angeles County",
+      "state": "CA",
+      "elections": [
+        { "election": "2024 General", "date": "2024-11-05", "registered": 5745214, "ballotsCast": 3793106, "turnoutPct": 66.02,
+          "sources": ["https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/03-voter-participation-stats-by-county.pdf"] },
+        { "election": "2022 General", "date": "2022-11-08", "registered": 5601835, "ballotsCast": 2456701, "turnoutPct": 43.86,
+          "sources": ["https://elections.cdn.sos.ca.gov/sov/2022-general/sov/03-voter-participation-stats-by-county.pdf"] }
+      ],
+      "eligiblePopulation": { "value": 6402460, "year": "ACS 2024", "source": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US06037" },
+      "registered2026": { "value": 5894510, "asOf": "Sep 4, 2026", "source": "https://elections.cdn.sos.ca.gov/ror/60day-gen-2026/county.pdf" }
+    }
+  ]
+}
