@@ -3,6 +3,7 @@ import { createXai } from "@ai-sdk/xai";
 import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../../../lib/tools";
 import { civicTools } from "../../../lib/civicTools";
+import { dataTools } from "../../../lib/dataTools";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -43,7 +44,7 @@ function summarize(name: string, r: any): string {
       return `${v.filter((x) => x.quotes.length).length} of ${v.length} contests have a market (${v.filter((x) => x.status === "live").length} live)`;
     }
     case "getLocalProblems":
-      return r.problems.map((p: any) => `${p.label}: ${p.value}${p.unit}`).join(" · ");
+      return r.problems.map((p: any) => `${p.label}: ${String(p.value).endsWith(p.unit) ? p.value : `${p.value}${p.unit}`}`).join(" · ");
   }
   return "done";
 }
@@ -108,9 +109,11 @@ async function run(zip: string, emit: Emit) {
       const res = await generateText({
         model: lm,
         maxRetries: 0,
+        // Gateway-side fallbacks (ids checked against the AI Gateway model list; xai/grok-3-mini is not listed).
+        providerOptions: { gateway: { models: ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"] } },
         system: SYSTEM,
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
-        tools: { ...makeTools(zip, emit, results), ...civicTools },
+        tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools },
         stopWhen: stepCountIs(3),
         abortSignal: AbortSignal.timeout(25000),
       });
@@ -157,7 +160,7 @@ async function handle(zip: string) {
       try {
         if (!ballotFor(zip)) {
           emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: "Not cached" });
-          emit({ type: "unsupported", zip, message: `ZIP ${zip || "(blank)"} isn't covered yet. Every Texas ZIP works; for California we have 94103 and 90012. More states next.` });
+          emit({ type: "unsupported", zip, message: "Austin and San Francisco for now. New York is coming soon." });
         } else await run(zip, emit);
       } catch (e: any) {
         emit({ type: "error", message: String(e?.message || e) });
