@@ -81,6 +81,71 @@ function oddsForCandidate(avg: { name: string; prob: number }[] | undefined, nam
   return avg.find((o) => o.name.toLowerCase().includes(last)) ?? null;
 }
 
+const usd = (n: number) =>
+  n >= 1e6 ? `$${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `$${Math.round(n / 1e3)}K` : `$${Math.round(n)}`;
+const titleCase = (s: string) => s.toLowerCase().replace(/\b([a-z])/g, (m) => m.toUpperCase()).replace(/\b(Llc|Inc|Pac|Usa|Llp|Ut)\b/g, (m) => m.toUpperCase());
+
+function Share({ label, value }: { label: string; value: number | null }) {
+  if (value == null) return <p className="text-xs text-slate-400">{label}: unsure</p>;
+  return (
+    <div>
+      <div className="flex justify-between text-xs text-slate-600"><span>{label}</span><span className="font-semibold tabular-nums text-navy">{pct(value)}</span></div>
+      <Progress value={Math.round(value * 100)} className="mt-1 h-1.5" aria-label={`${label}: ${pct(value)}`} />
+    </div>
+  );
+}
+
+function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
+  const through = m.coverageThrough ? new Date(m.coverageThrough + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "unsure";
+  const donors = (m.topEmployers?.length || 0) + (m.topCommittees?.length || 0);
+  return (
+    <div className="rounded-md border border-slate-200 p-3 text-sm">
+      <p className="eyebrow mb-2">Campaign money</p>
+      <dl className="grid grid-cols-3 gap-2">
+        {[["Raised", m.raised], ["Spent", m.spent], ["Cash on hand", m.cashOnHand]].map(([k, v]) => (
+          <div key={k as string}>
+            <dt className="text-xs text-slate-500">{k}</dt>
+            <dd className="text-lg font-bold tabular-nums text-navy">{usd(v as number)}</dd>
+          </div>
+        ))}
+      </dl>
+      <div className="mt-3 space-y-2">
+        <Share label="From small donors (under $200)" value={m.smallDonorPct} />
+        <Share label="From in-state donors (itemized)" value={m.inStatePct} />
+      </div>
+      {donors > 0 && (
+        <details className="mt-3">
+          <summary className="cursor-pointer text-sm font-medium text-navy">Top donors</summary>
+          {m.topEmployers?.length ? (
+            <div className="mt-2">
+              <p className="text-xs text-slate-500">Employers of individual donors</p>
+              <ul className="mt-1 space-y-0.5">
+                {m.topEmployers.map((e) => (
+                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)}</span><span className="tabular-nums text-slate-600">{usd(e.total)}</span></li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {m.topCommittees?.length ? (
+            <div className="mt-2">
+              <p className="text-xs text-slate-500">PACs, party and joint fundraising committees</p>
+              <ul className="mt-1 space-y-0.5">
+                {m.topCommittees.map((e) => (
+                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)} <span className="text-xs text-slate-400">({e.kind})</span></span><span className="tabular-nums text-slate-600">{usd(e.total)}</span></li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {m.donorsSource && <p className="mt-2"><Src href={m.donorsSource.url}>All receipts on FEC</Src></p>}
+        </details>
+      )}
+      <p className="mt-2 text-[11px] text-slate-500">
+        {m.lastReport ? `${titleCase(m.lastReport)} report, ` : ""}through {through}. <a className="text-slate-500" href={m.source.url} target="_blank" rel="noreferrer">FEC</a>. Individual donors are not named.
+      </p>
+    </div>
+  );
+}
+
 function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
   return (
     <Card className="flex h-full flex-col">
@@ -119,6 +184,7 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
           <Src href={c.finance?.url}>{c.finance?.label?.startsWith("FEC") ? "FEC" : c.finance?.label?.includes("Ethics") ? "TEC" : "Finance"}</Src>
         </div>
         {c.photo && <p className="text-[11px] text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
+        {c.money && <MoneyBlock m={c.money} />}
         {c.accountability?.length ? (
           <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-sm">
             <p className="eyebrow mb-2">Said vs. did</p>

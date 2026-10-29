@@ -1,0 +1,4963 @@
+{
+ "fetchedAt": "2026-10-29T20:59:44.312Z",
+ "cycle": 2026,
+ "candidates": {
+  "S6TX00479": {
+   "name": "James Talarico",
+   "raised": 146349912.38,
+   "spent": 136427054.98,
+   "cashOnHand": 9922857.4,
+   "individual": 139776602.82,
+   "smallDonorPct": 0.5387162888553596,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00919084",
+    "name": "TALARICO FOR TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/S6TX00479/?cycle=2026"
+   },
+   "inStatePct": 0.5503164063984296,
+   "topEmployers": [
+    {
+     "name": "UNIVERSITY OF TEXAS",
+     "total": 83750.99
+    },
+    {
+     "name": "BAYLOR COLLEGE OF MEDICINE",
+     "total": 61975.16
+    },
+    {
+     "name": "GOOGLE",
+     "total": 56792.86
+    },
+    {
+     "name": "APPLE, INC.",
+     "total": 35684.97
+    },
+    {
+     "name": "HOUSTON METHODIST",
+     "total": 32352.77
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "TALARICO VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 2300000
+    },
+    {
+     "name": "VAN HOLLEN TALARICO VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 92800
+    },
+    {
+     "name": "BROWN, PAPPAS, PELTOLA, TALARICO SENATE VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 92000
+    },
+    {
+     "name": "MAJORITY 2026",
+     "kind": "joint fundraising",
+     "total": 60420
+    },
+    {
+     "name": "PAPPAS PELTOLA TALARICO VINDMAN SENATE VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 49000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00919084&two_year_transaction_period=2026"
+   }
+  },
+  "S6TX00388": {
+   "name": "Ken Paxton",
+   "raised": 22327473.92,
+   "spent": 17543065.62,
+   "cashOnHand": 4784408.3,
+   "individual": 20997954.85,
+   "smallDonorPct": 0.2894216862267422,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "TERMINATION REPORT",
+   "committee": {
+    "id": "C00901918",
+    "name": "KEN PAXTON FOR SENATE"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/S6TX00388/?cycle=2026"
+   },
+   "inStatePct": 0.8289478535762582,
+   "topEmployers": [
+    {
+     "name": "RYAN LLC",
+     "total": 250000
+    },
+    {
+     "name": "ENTREPRENEUR",
+     "total": 56420.25
+    },
+    {
+     "name": "SELF",
+     "total": 53838.37
+    },
+    {
+     "name": "LEDWELL",
+     "total": 49000
+    },
+    {
+     "name": "REPUBLIC AMUSEMENTS",
+     "total": 49000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "NRSC",
+     "kind": "party",
+     "total": 62000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00901918&two_year_transaction_period=2026"
+   }
+  },
+  "S6TX00594": {
+   "name": "Ted Brown",
+   "status": "no filings"
+  },
+  "H2TX01112": {
+   "name": "Nathaniel Moran",
+   "raised": 2380646.71,
+   "spent": 1802029.87,
+   "cashOnHand": 959562.96,
+   "individual": 1067672.58,
+   "smallDonorPct": 0.4094678913642233,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00796086",
+    "name": "NATHANIEL MORAN FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX01112/?cycle=2026"
+   },
+   "inStatePct": 0.6370158308103384,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 26896.1
+    },
+    {
+     "name": "CHARTER BROKERAGE LLC",
+     "total": 20500
+    },
+    {
+     "name": "LANIER LAW FIRM",
+     "total": 16000
+    },
+    {
+     "name": "ARNOLD VENTURES",
+     "total": 10500
+    },
+    {
+     "name": "ANTHROPIC",
+     "total": 10500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "MORAN VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 259722.21000000002
+    },
+    {
+     "name": "BROOKSHIRE GROCERY COMPANY PAC",
+     "kind": "PAC",
+     "total": 10800
+    },
+    {
+     "name": "HEALTH CARE SERVICE CORPORATION EMPLOYEES' PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "TEXAS ASSOCIATION FOR HOME CARE & HOSPICE, INC. TEXAS HOME CARE & HOSPICE PAC- FEDERAL",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "TRINITY INDUSTRIES EMPLOYEE PAC (SF) INC.",
+     "kind": "PAC",
+     "total": 8000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00796086&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX01352": {
+   "name": "Yolanda Prince",
+   "raised": 33181.85,
+   "spent": 19850.91,
+   "cashOnHand": 8231.92,
+   "individual": 26143.6,
+   "smallDonorPct": 0.008888217383986903,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00922625",
+    "name": "YOLANDA R. PRINCE FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX01352/?cycle=2026"
+   },
+   "inStatePct": 1,
+   "topEmployers": [],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00922625&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX02251": {
+   "name": "Shaun Finnie",
+   "raised": 3158587.64,
+   "spent": 2896939.04,
+   "cashOnHand": 261648.6,
+   "individual": 898365.87,
+   "smallDonorPct": 0.094524528185827,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00909051",
+    "name": "SHAUN FINNIE FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX02251/?cycle=2026"
+   },
+   "inStatePct": 0.4158743229706097,
+   "topEmployers": [
+    {
+     "name": "EVERCORE",
+     "total": 118650
+    },
+    {
+     "name": "WARBURG PINCUS",
+     "total": 14000
+    },
+    {
+     "name": "MONARCH GARDEN COMPANY",
+     "total": 14000
+    },
+    {
+     "name": "BLACKSTONE",
+     "total": 13000
+    },
+    {
+     "name": "APOLLO",
+     "total": 9250
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00909051&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX08175": {
+   "name": "Steve Toth",
+   "raised": 1035120.97,
+   "spent": 922740.87,
+   "cashOnHand": 112380.1,
+   "individual": 808323.01,
+   "smallDonorPct": 0.07631060756268711,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00911669",
+    "name": "TOTH FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX08175/?cycle=2026"
+   },
+   "inStatePct": 0.9634785082019278,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 60150.48
+    },
+    {
+     "name": "COLE HEALTH",
+     "total": 35000
+    },
+    {
+     "name": "WNB",
+     "total": 24500
+    },
+    {
+     "name": "PROBUILT SOFTWARE",
+     "total": 21000
+    },
+    {
+     "name": "GRACE WOODLANDS",
+     "total": 21000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "STEVE TOTH VICTORY COMMITTEE",
+     "kind": "joint fundraising",
+     "total": 29275.42
+    },
+    {
+     "name": "SENATE CONSERVATIVES FUND",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "TEXAS VALUES PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "NATIONAL AUTOMOBILE DEALERS ASSOCIATION POLITICAL ACTION COM",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "BUCKEYE LIBERTY PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00911669&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX00064": {
+   "name": "Keith Self",
+   "raised": 887245.18,
+   "spent": 704254.69,
+   "cashOnHand": 292331.38,
+   "individual": 649641.74,
+   "smallDonorPct": 0.2682915817570466,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00791293",
+    "name": "SELF FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX00064/?cycle=2026"
+   },
+   "inStatePct": 0.7261536096006375,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 52066.75
+    },
+    {
+     "name": "ARADI PROPERIES",
+     "total": 7600
+    },
+    {
+     "name": "SOUTHWEST AIRLINES",
+     "total": 7000
+    },
+    {
+     "name": "BEAL BANK",
+     "total": 7000
+    },
+    {
+     "name": "THE O'REILLY GROUP",
+     "total": 6800
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "SPACE TECHNOLOGIES CORP PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "TEXAS FARM BUREAU AGFUND",
+     "kind": "PAC",
+     "total": 9600
+    },
+    {
+     "name": "LET'S GET TO WORK PAC",
+     "kind": "PAC",
+     "total": 7000
+    },
+    {
+     "name": "AMERICAN REVIVAL PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00791293&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX03234": {
+   "name": "Evan Hunt",
+   "raised": 702785.91,
+   "spent": 646670.58,
+   "cashOnHand": 56115.33,
+   "individual": 620655.91,
+   "smallDonorPct": 0.5359058451566182,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00902437",
+    "name": "ELECT EVAN HUNT"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX03234/?cycle=2026"
+   },
+   "inStatePct": 0.49574593630644126,
+   "topEmployers": [
+    {
+     "name": "FOY INC",
+     "total": 7000
+    },
+    {
+     "name": "FISH & RICHARDSON P.C.",
+     "total": 7000
+    },
+    {
+     "name": "DONALD HENLEY",
+     "total": 6250
+    },
+    {
+     "name": "OPENJAR",
+     "total": 3500
+    },
+    {
+     "name": "NORTH COMPASS POLITICAL",
+     "total": 3500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "FUTURE DEMOCRATS PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00902437&two_year_transaction_period=2026"
+   }
+  },
+  "H0TX04219": {
+   "name": "Pat Fallon",
+   "raised": 1024466.07,
+   "spent": 585149.8,
+   "cashOnHand": 1099394.54,
+   "individual": 316060.13,
+   "smallDonorPct": 0.010879100758453778,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00750307",
+    "name": "FALLON FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H0TX04219/?cycle=2026"
+   },
+   "inStatePct": 0.6785415557572289,
+   "topEmployers": [
+    {
+     "name": "FA PEINADO, LLC",
+     "total": 12000
+    },
+    {
+     "name": "ANTHROPIC",
+     "total": 10000
+    },
+    {
+     "name": "AIRBORNE ASPECT",
+     "total": 7000
+    },
+    {
+     "name": "ADVANCED FIXTURES INC",
+     "total": 7000
+    },
+    {
+     "name": "DOUGLASS DISTRIBUTING",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "FALLON VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 231629.6
+    },
+    {
+     "name": "ANTI-WOKE FUND",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "KOCH INDUSTRIES, INC. POLITICAL ACTION COMMITTEE (KOCHPAC)",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN INSTITUTE OF CERTIFIED PUBLIC ACCOUNTANTS PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00750307&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX04174": {
+   "name": "Jason Pearce",
+   "raised": 27748.78,
+   "spent": 25036.8,
+   "cashOnHand": 2711.98,
+   "individual": 18044.4,
+   "smallDonorPct": 0.46548513666289815,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00923870",
+    "name": "JASON PEARCE FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX04174/?cycle=2026"
+   },
+   "inStatePct": 0.8518518518518519,
+   "topEmployers": [
+    {
+     "name": "MARY SISSON",
+     "total": 500
+    },
+    {
+     "name": "JP MORGAN CHASE & CO.",
+     "total": 500
+    },
+    {
+     "name": "NUVEM",
+     "total": 400
+    },
+    {
+     "name": "ANGEL GUZMAN",
+     "total": 250
+    },
+    {
+     "name": "SELF",
+     "total": 250
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00923870&two_year_transaction_period=2026"
+   }
+  },
+  "H8TX05144": {
+   "name": "Lance Gooden",
+   "raised": 1526218.36,
+   "spent": 899736.9,
+   "cashOnHand": 1343838.42,
+   "individual": 435092.09,
+   "smallDonorPct": 0.014231676792837121,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00662601",
+    "name": "LANCE GOODEN FOR CONGRESS COMMITTEE"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8TX05144/?cycle=2026"
+   },
+   "inStatePct": 0.6782976806428747,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 145150
+    },
+    {
+     "name": "OWNER",
+     "total": 13300
+    },
+    {
+     "name": "LEGACY MEDICAL",
+     "total": 13200
+    },
+    {
+     "name": "LILLY ENTERPRISES",
+     "total": 13000
+    },
+    {
+     "name": "UP MANAGEMENT",
+     "total": 10500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GOODEN VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 239796.69
+    },
+    {
+     "name": "GOODEN VICTORY",
+     "kind": "joint fundraising",
+     "total": 156507.67
+    },
+    {
+     "name": "ARDA-ROC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "VITORIA PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "DELL TECHNOLOGIES, INC. POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00662601&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX05189": {
+   "name": "Chelsey Hockett",
+   "raised": 56907.83,
+   "spent": -43669.28,
+   "cashOnHand": 27222.7,
+   "individual": 56907.83,
+   "smallDonorPct": 0.5737444214618621,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00920314",
+    "name": "CHELSEY HOCKETT FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX05189/?cycle=2026"
+   },
+   "inStatePct": 0.571472298745026,
+   "topEmployers": [
+    {
+     "name": "NATIONWIDE MUTUAL",
+     "total": 2000
+    },
+    {
+     "name": "LYFT",
+     "total": 500
+    },
+    {
+     "name": "SHERMCO",
+     "total": 300
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00920314&two_year_transaction_period=2026"
+   }
+  },
+  "H8TX06266": {
+   "name": "Jake Ellzey",
+   "raised": 5518242.29,
+   "spent": 4009018.44,
+   "cashOnHand": 2604671.49,
+   "individual": 1841855.27,
+   "smallDonorPct": 0.25667705150361786,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00770438",
+    "name": "JAKE ELLZEY FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8TX06266/?cycle=2026"
+   },
+   "inStatePct": 0.24067343217120465,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 139616.89
+    },
+    {
+     "name": "ALLEN CONTROL SYSTEMS",
+     "total": 33300
+    },
+    {
+     "name": "BLUE WATER AUTONOMY",
+     "total": 14400
+    },
+    {
+     "name": "SARONIC TECHNOLOGIES",
+     "total": 11500
+    },
+    {
+     "name": "CORNERSTONE GOVERNMENT AFFAIRS",
+     "total": 11500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "SERVICE AND HONOR",
+     "kind": "joint fundraising",
+     "total": 1829443.54
+    },
+    {
+     "name": "JAKE ELLZEY VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 254633.16999999998
+    },
+    {
+     "name": "AMERICAN PATRIOTS",
+     "kind": "joint fundraising",
+     "total": 129460.76000000001
+    },
+    {
+     "name": "TRUE NORTH PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "NATSO INC. NATSO PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00770438&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX25203": {
+   "name": "Danny Minton",
+   "raised": 147189.2,
+   "spent": 107550.94,
+   "cashOnHand": 39638.26,
+   "individual": 128189.86,
+   "smallDonorPct": 0.6417423343780858,
+   "coverageThrough": "2026-09-30",
+   "lastReport": "OCTOBER QUARTERLY",
+   "committee": {
+    "id": "C00893842",
+    "name": "DANNY MINTON FOR TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX25203/?cycle=2026"
+   },
+   "inStatePct": 0.5698663426488457,
+   "topEmployers": [
+    {
+     "name": "DONALD HENLEY",
+     "total": 3500
+    },
+    {
+     "name": "SLB",
+     "total": 2000
+    },
+    {
+     "name": "AUSTIN REGIONAL CLINIC",
+     "total": 2000
+    },
+    {
+     "name": "UNM",
+     "total": 2000
+    },
+    {
+     "name": "TEXAS ONCOLOGY",
+     "total": 1625
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00893842&two_year_transaction_period=2026"
+   }
+  },
+  "H8TX07140": {
+   "name": "Lizzie Pannill Fletcher",
+   "raised": 1846897.72,
+   "spent": 1670749.69,
+   "cashOnHand": 1492809.82,
+   "individual": 324853.83,
+   "smallDonorPct": 0.11543545600185783,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00640045",
+    "name": "ELIZABETH PANNILL FLETCHER FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8TX07140/?cycle=2026"
+   },
+   "inStatePct": 0.9003640362036505,
+   "topEmployers": [
+    {
+     "name": "AZA",
+     "total": 23500
+    },
+    {
+     "name": "BLANK ROME LLP",
+     "total": 14000
+    },
+    {
+     "name": "AZA LAW",
+     "total": 10500
+    },
+    {
+     "name": "BCM",
+     "total": 9000
+    },
+    {
+     "name": "PLAINS ALL AMERICAN PIPELINE",
+     "total": 8500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "FRIENDS OF LIZZIE FLETCHER",
+     "kind": "joint fundraising",
+     "total": 529000
+    },
+    {
+     "name": "CONOCOPHILLIPS SPIRIT PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "SIEMENS ENERGY, INC. PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "EXXON MOBIL CORPORATION-MOBIL POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "BP CORPORATION NORTH AMERICA INC. POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00640045&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX07151": {
+   "name": "Alexander Hale",
+   "raised": 115678.12,
+   "spent": 96559.1,
+   "cashOnHand": 19119.02,
+   "individual": 109552.16,
+   "smallDonorPct": 0.06190840965618569,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00930305",
+    "name": "ALEXANDER HALE FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX07151/?cycle=2026"
+   },
+   "inStatePct": 0.9255045395697333,
+   "topEmployers": [
+    {
+     "name": "SEGMENT WEALTH MANAGEMENT",
+     "total": 6000
+    },
+    {
+     "name": "SELF",
+     "total": 5548.94
+    },
+    {
+     "name": "INVESTING",
+     "total": 3643.56
+    },
+    {
+     "name": "HOUSTON ENERGY",
+     "total": 3500
+    },
+    {
+     "name": "REAL ESTATE DEVELOPER",
+     "total": 3000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "TARGA RESOURCES CORP. FEDERAL PAC",
+     "kind": "PAC",
+     "total": 2500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00930305&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX07177": {
+   "name": "Espoir Ngabo",
+   "raised": 3132.88,
+   "spent": 3125,
+   "cashOnHand": 0,
+   "individual": 2132.88,
+   "smallDonorPct": 0.35709932110573495,
+   "coverageThrough": "2026-09-30",
+   "lastReport": "OCTOBER QUARTERLY",
+   "committee": {
+    "id": "C00936005",
+    "name": "CAMPAIGN COMMITTEE FOR ESPOIR NGABO"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX07177/?cycle=2026"
+   },
+   "inStatePct": 0.6153307614331658,
+   "topEmployers": [
+    {
+     "name": "STAPLETON &STAPLETON",
+     "total": 843.76
+    },
+    {
+     "name": "PORTLAND NAVAL SHIPYARD",
+     "total": 527.47
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00936005&two_year_transaction_period=2026"
+   }
+  },
+  "H0TX08145": {
+   "name": "Laura Jones",
+   "raised": 30781.89,
+   "spent": 29168.1,
+   "cashOnHand": 4114.54,
+   "individual": 27856.89,
+   "smallDonorPct": 0.363389093326642,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00721597",
+    "name": "LAURA JONES FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H0TX08145/?cycle=2026"
+   },
+   "inStatePct": 0.9837251356238698,
+   "topEmployers": [
+    {
+     "name": "FAITH UNITED METHODIST",
+     "total": 570
+    },
+    {
+     "name": "BAKER HUGHES",
+     "total": 500
+    },
+    {
+     "name": "CONOCO PHILLIPS",
+     "total": 250
+    },
+    {
+     "name": "HEWLETT PACKARD ENTERPRISES",
+     "total": 250
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "TEXAS MAJORITY PAC",
+     "kind": "PAC",
+     "total": 2625
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00721597&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX08209": {
+   "name": "Jessica Steinmann",
+   "raised": 2441284.26,
+   "spent": 2361913.74,
+   "cashOnHand": 79370.52,
+   "individual": 889795.84,
+   "smallDonorPct": 0.08933744846458262,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00919530",
+    "name": "JESSICA STEINMANN FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX08209/?cycle=2026"
+   },
+   "inStatePct": 0.7675912544955306,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 52130.88
+    },
+    {
+     "name": "WASTE CONNECTIONS",
+     "total": 12500
+    },
+    {
+     "name": "CENTERPOINT ENERGY",
+     "total": 11913.28
+    },
+    {
+     "name": "ELLISONDEVELOPMENT",
+     "total": 7287.12
+    },
+    {
+     "name": "MAGNOLIA PHARMACY",
+     "total": 7104.1
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "JESSICA STEINMANN VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 248000
+    },
+    {
+     "name": "GOP WINNING WOMEN 2026",
+     "kind": "joint fundraising",
+     "total": 58262.5
+    },
+    {
+     "name": "WINNING EDGE FUND",
+     "kind": "joint fundraising",
+     "total": 11212.5
+    },
+    {
+     "name": "VALERO ENERGY CORPORATION POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "ELECTING MAJORITY MAKING EFFECTIVE REPUBLICANS PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00919530&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX09231": {
+   "name": "Leticia Gutierrez",
+   "raised": 215052.56,
+   "spent": 104160.83,
+   "cashOnHand": 110891.73,
+   "individual": 214302.56,
+   "smallDonorPct": 0.17777053153261446,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00931121",
+    "name": "LETICIA GUTIERREZ FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX09231/?cycle=2026"
+   },
+   "inStatePct": 0.935507301396793,
+   "topEmployers": [
+    {
+     "name": "DOMINGO GARCIA LAW OFFICE",
+     "total": 3500
+    },
+    {
+     "name": "HOUSTON METHODISY PRIMARY CARE",
+     "total": 3500
+    },
+    {
+     "name": "SEHC",
+     "total": 3500
+    },
+    {
+     "name": "OWNER",
+     "total": 2569.88
+    },
+    {
+     "name": "SUSMAN GODFREY",
+     "total": 1000
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00931121&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX09140": {
+   "name": "Alex Mealer",
+   "raised": 2782239.54,
+   "spent": 2580967.94,
+   "cashOnHand": 201271.6,
+   "individual": 1973710.69,
+   "smallDonorPct": 0.02789811104483606,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00917112",
+    "name": "ALEXANDRA DEL MORAL MEALER FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX09140/?cycle=2026"
+   },
+   "inStatePct": 0.9040569439417317,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 147860.73
+    },
+    {
+     "name": "VEGA ENERGY HOLDINGS",
+     "total": 38500
+    },
+    {
+     "name": "QUANTUM CAPITAL GROUP",
+     "total": 31791.98
+    },
+    {
+     "name": "COMMUNITY AUTOGROUP",
+     "total": 24000
+    },
+    {
+     "name": "SCF PARTNERS",
+     "total": 23750
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GOP WINNING WOMEN 2026",
+     "kind": "joint fundraising",
+     "total": 72049.18000000001
+    },
+    {
+     "name": "ALEX VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 27644.99
+    },
+    {
+     "name": "VALUE IN ELECTING WOMEN PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "SENATE CONSERVATIVES FUND",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "HISPANIC LEADERSHIP TRUST",
+     "kind": "PAC",
+     "total": 15000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00917112&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX31102": {
+   "name": "Caitlin Rourk",
+   "raised": 576475.06,
+   "spent": 497138.61,
+   "cashOnHand": 79336.45,
+   "individual": 533979.05,
+   "smallDonorPct": 0.324367238752157,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00910695",
+    "name": "CAITLIN ROURK FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX31102/?cycle=2026"
+   },
+   "inStatePct": 0.6371942791641122,
+   "topEmployers": [
+    {
+     "name": "DCI GROUP",
+     "total": 14000
+    },
+    {
+     "name": "WHOSMYREP",
+     "total": 7000
+    },
+    {
+     "name": "SELF",
+     "total": 6630
+    },
+    {
+     "name": "AVIOR WEALTH MANAGEMENT",
+     "total": 4500
+    },
+    {
+     "name": "ARM LIMITED",
+     "total": 4000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "IBEW PAC VOLUNTARY FUND",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "DONNA HOWARD CAMPAIGN",
+     "kind": "PAC",
+     "total": 1000
+    },
+    {
+     "name": "TEXAS DEMOCRATIC WOMEN OF THE BV",
+     "kind": "PAC",
+     "total": 750
+    },
+    {
+     "name": "WALKER COUNTY DEMOCRAT CLUB",
+     "kind": "PAC",
+     "total": 500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00910695&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX10221": {
+   "name": "Chris Gober",
+   "raised": 3103392.03,
+   "spent": 2937827.26,
+   "cashOnHand": 165564.77,
+   "individual": 764651.02,
+   "smallDonorPct": 0.0163278537181576,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00922062",
+    "name": "CHRIS GOBER FOR TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX10221/?cycle=2026"
+   },
+   "inStatePct": 0.7300654127950272,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 46750
+    },
+    {
+     "name": "MISSOURI ELECTRIC COOPERATIVES",
+     "total": 14000
+    },
+    {
+     "name": "HARRISON HOLDINGS",
+     "total": 13500
+    },
+    {
+     "name": "POOLHOUSE",
+     "total": 13000
+    },
+    {
+     "name": "LEX POLITICA PLLC",
+     "total": 11000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GOBER BOLD FRONTIERS FUND",
+     "kind": "joint fundraising",
+     "total": 76500
+    },
+    {
+     "name": "INDEPENDENT BANKERS ASSOCIATION OF TEXAS FEDERAL PAC (IBAT F",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN REVIVAL PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICA'S CREDIT UNIONS PAC OF CREDIT UNION NATIONAL ASSOCIA",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "AMERICAN COUNCIL OF ENGINEERING COMPANIES (ACEC/PAC)",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00922062&two_year_transaction_period=2026"
+   }
+  },
+  "H0TX11230": {
+   "name": "August Pfluger",
+   "raised": 3609434.17,
+   "spent": 3903716.14,
+   "cashOnHand": 2029823.57,
+   "individual": 844471.35,
+   "smallDonorPct": 0.3566862747919157,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00719294",
+    "name": "AUGUST PFLUGER FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H0TX11230/?cycle=2026"
+   },
+   "inStatePct": 0.7473023927817986,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 184765.51
+    },
+    {
+     "name": "SHANNON CLINIC",
+     "total": 15750
+    },
+    {
+     "name": "TILL",
+     "total": 14000
+    },
+    {
+     "name": "BC OPERATING, INC.",
+     "total": 14000
+    },
+    {
+     "name": "SHELBURNE FINANCIAL SERVICES",
+     "total": 14000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "PFLUGER VICTORY COMMITTEE",
+     "kind": "joint fundraising",
+     "total": 2090687.6399999997
+    },
+    {
+     "name": "AMERICAN BATTLEGROUND FUND",
+     "kind": "joint fundraising",
+     "total": 91128.9
+    },
+    {
+     "name": "ACPAC ACA INTERNATIONAL PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "ENERGY TRANSFER EMPLOYEE MANAGEMENT COMPANY PAC (ENERGY TRANSFER PAC)",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00719294&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX11112": {
+   "name": "Claire Reynolds",
+   "raised": 128534.75,
+   "spent": 72765.59,
+   "cashOnHand": 55769.16,
+   "individual": 122401.8,
+   "smallDonorPct": 0.29084384379968264,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00929711",
+    "name": "CLAIRE REYNOLDS FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX11112/?cycle=2026"
+   },
+   "inStatePct": 0.6598286337600177,
+   "topEmployers": [
+    {
+     "name": "GOOGLE",
+     "total": 7856
+    },
+    {
+     "name": "UT AUSTIN",
+     "total": 4500
+    },
+    {
+     "name": "PACIFIC CAPITAL ASSOCIATES",
+     "total": 4500
+    },
+    {
+     "name": "RUNZERO",
+     "total": 4159.7
+    },
+    {
+     "name": "DOXIMITY",
+     "total": 3500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "VOTE SAVE AMERICA",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "TEXAS DEMOCRATIC WOMEN OF HIGHLAND LAKES",
+     "kind": "PAC",
+     "total": 1000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00929711&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX12065": {
+   "name": "Craig Goldman",
+   "raised": 1932744.66,
+   "spent": 956139.8,
+   "cashOnHand": 1512501.32,
+   "individual": 429762.94,
+   "smallDonorPct": 0.02080474877615087,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00855528",
+    "name": "CRAIG GOLDMAN FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX12065/?cycle=2026"
+   },
+   "inStatePct": 0.8456265059213355,
+   "topEmployers": [
+    {
+     "name": "LMBILP",
+     "total": 19000
+    },
+    {
+     "name": "HILLWOOD",
+     "total": 15781.88
+    },
+    {
+     "name": "UINTA WAX",
+     "total": 14000
+    },
+    {
+     "name": "KELLY HART",
+     "total": 12000
+    },
+    {
+     "name": "DEASON CAPITAL SERVICES",
+     "total": 10500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GOLDMAN VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 776120.5
+    },
+    {
+     "name": "THE HOME DEPOT INC. POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "REPUBLICAN JEWISH COALITION-POLITICAL ACTION COMMITTEE (RJC-",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "NATIONAL CATTLEMEN'S BEEF ASSOCIATION POLITICAL ACTION COMMI",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "VALERO ENERGY CORPORATION POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00855528&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX12169": {
+   "name": "Heli Rodriguez Prilliman",
+   "status": "no filings"
+  },
+  "H0TX13228": {
+   "name": "Ronny L. Jackson",
+   "raised": 4806245.43,
+   "spent": 2811529.61,
+   "cashOnHand": 5396663.45,
+   "individual": 3254031.15,
+   "smallDonorPct": 0.5355374763391555,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00730531",
+    "name": "TEXANS FOR RONNY JACKSON"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H0TX13228/?cycle=2026"
+   },
+   "inStatePct": 0.26718306281529275,
+   "topEmployers": [
+    {
+     "name": "ALBERS AEROSPACDE",
+     "total": 8750
+    },
+    {
+     "name": "CORNERSTONE GOVERNMENT AFFAIRS",
+     "total": 8500
+    },
+    {
+     "name": "KRATEOSKY LLC",
+     "total": 8500
+    },
+    {
+     "name": "S&B SERVICES",
+     "total": 7000
+    },
+    {
+     "name": "FERMI",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "TEAM RONNY",
+     "kind": "joint fundraising",
+     "total": 1049358.54
+    },
+    {
+     "name": "BUCKEYE LIBERTY POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "SEABOARD CORPORATION POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "REJOICE PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "THE FARM CREDIT COUNCIL POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00730531&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX13159": {
+   "name": "Mark Nair",
+   "raised": 137623.75,
+   "spent": 134800.08,
+   "cashOnHand": 2823.67,
+   "individual": 125589.83,
+   "smallDonorPct": 0.2715005665665763,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00914200",
+    "name": "MARK NAIR FOR CD13"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX13159/?cycle=2026"
+   },
+   "inStatePct": 0.9793831304782539,
+   "topEmployers": [
+    {
+     "name": "STATE OF TEXAS",
+     "total": 3066.04
+    },
+    {
+     "name": "AMARILLO MEDICAL SERVICES",
+     "total": 2527.04
+    },
+    {
+     "name": "BAPTIST SAINT ANTHONY'S",
+     "total": 1935
+    },
+    {
+     "name": "TYSON FOODS, INC.",
+     "total": 1568
+    },
+    {
+     "name": "TEXAS JUVENILE JUSTICE DEP",
+     "total": 1547
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00914200&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX14149": {
+   "name": "Randy Weber",
+   "raised": 1132031.98,
+   "spent": 823759.17,
+   "cashOnHand": 928845.02,
+   "individual": 280753.03,
+   "smallDonorPct": 0.009439007657370607,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00502229",
+    "name": "WEBER FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX14149/?cycle=2026"
+   },
+   "inStatePct": 0.7795199883897419,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 23220
+    },
+    {
+     "name": "TRANS-GLOBAL SOLUTIONS INC.",
+     "total": 14000
+    },
+    {
+     "name": "GARVER REAL ESTATE",
+     "total": 12300
+    },
+    {
+     "name": "RICELAND HEALTHCARE",
+     "total": 8500
+    },
+    {
+     "name": "RBC",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "WEBER VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 211823.19999999998
+    },
+    {
+     "name": "SPACE EXPLORATION TECHNOLOGIES CORP. PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "VALERO ENERGY CORPORATION POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "MARATHON PETROLEUM CORPORATION EMPLOYEES PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00502229&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX14181": {
+   "name": "Thurman Bill Bartie",
+   "raised": 39403.19,
+   "spent": 38564.42,
+   "cashOnHand": 4754.11,
+   "individual": 38303.19,
+   "smallDonorPct": 0.06787946382533673,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00925867",
+    "name": "COMMITTEE TO ELECT THURMAN BILL BARTIE TO CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX14181/?cycle=2026"
+   },
+   "inStatePct": 0.9495843368617762,
+   "topEmployers": [
+    {
+     "name": "SELF EMPLOYED  - ENERGY CO.",
+     "total": 3500
+    },
+    {
+     "name": "BEAUMONT EMERGENCY MEDICAL CEN",
+     "total": 3000
+    },
+    {
+     "name": "SERVICE FIRST CLEANING",
+     "total": 1500
+    },
+    {
+     "name": "LAW OFFICE OF JOSEPH PLUMBAR",
+     "total": 1500
+    },
+    {
+     "name": "PROVOST UMPHREY, LLC",
+     "total": 1250
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "BARTIE CAMPAIGN",
+     "kind": "party",
+     "total": 1100
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00925867&two_year_transaction_period=2026"
+   }
+  },
+  "H0TX15124": {
+   "name": "Monica De La Cruz",
+   "raised": 6814266.73,
+   "spent": 7034424.76,
+   "cashOnHand": 393811.86,
+   "individual": 4141343.52,
+   "smallDonorPct": 0.3847274591700618,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00765719",
+    "name": "MONICA FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H0TX15124/?cycle=2026"
+   },
+   "inStatePct": 0.40208305288063745,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 72892.46
+    },
+    {
+     "name": "LA LOMITA INC.",
+     "total": 28000
+    },
+    {
+     "name": "THE ONION HAUS",
+     "total": 16400
+    },
+    {
+     "name": "STARKEY HEARING TECHNOLOGIES",
+     "total": 12600
+    },
+    {
+     "name": "NEW YORK LIFE",
+     "total": 12000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GROW THE MAJORITY",
+     "kind": "joint fundraising",
+     "total": 548666.88
+    },
+    {
+     "name": "MONICA VICTORY COMMITTEE",
+     "kind": "joint fundraising",
+     "total": 221169.11
+    },
+    {
+     "name": "TEAM MONICA VICTORY",
+     "kind": "joint fundraising",
+     "total": 200101.71
+    },
+    {
+     "name": "EMMER MAJORITY BUILDERS",
+     "kind": "joint fundraising",
+     "total": 131728.41
+    },
+    {
+     "name": "GOP WINNING WOMEN 2026",
+     "kind": "joint fundraising",
+     "total": 37927.7
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00765719&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX15246": {
+   "name": "Bobby Pulido",
+   "raised": 6819246.79,
+   "spent": 5549792.34,
+   "cashOnHand": 1269454.45,
+   "individual": 4891187.48,
+   "smallDonorPct": 0.2545182954221987,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00919985",
+    "name": "BOBBY PULIDO FOR TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX15246/?cycle=2026"
+   },
+   "inStatePct": 0.38413110738770084,
+   "topEmployers": [
+    {
+     "name": "CAPITAL GROUP",
+     "total": 14000
+    },
+    {
+     "name": "JANE STREET",
+     "total": 12722.22
+    },
+    {
+     "name": "GOOGLE",
+     "total": 11138.88
+    },
+    {
+     "name": "WYATT RANCHES",
+     "total": 10500
+    },
+    {
+     "name": "NO EMPLOYER",
+     "total": 9857.15
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "PULIDO VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 99238.23000000001
+    },
+    {
+     "name": "JUNTOS PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "IMPOSSIBLE TO INEVITABLE",
+     "kind": "joint fundraising",
+     "total": 14500
+    },
+    {
+     "name": "FAIR SHOT PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "SD PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00919985&two_year_transaction_period=2026"
+   }
+  },
+  "H8TX16109": {
+   "name": "Veronica Escobar",
+   "raised": 1068096.19,
+   "spent": 967172.79,
+   "cashOnHand": 216768.02,
+   "individual": 564112.76,
+   "smallDonorPct": 0.04582979119281046,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00653923",
+    "name": "VERONICA ESCOBAR FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8TX16109/?cycle=2026"
+   },
+   "inStatePct": 0.8469217462863213,
+   "topEmployers": [
+    {
+     "name": "WESTSTAR BANK",
+     "total": 11250
+    },
+    {
+     "name": "INKIT",
+     "total": 10500
+    },
+    {
+     "name": "TRANSTELCO",
+     "total": 7000
+    },
+    {
+     "name": "JOBE MATERIALS",
+     "total": 7000
+    },
+    {
+     "name": "FOX AUTO",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "AMERICAN FEDERATION OF TEACHERS, AFL-CIO COMMITTEE ON POLITICAL EDUCATION",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "DELOITTE POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 7500
+    },
+    {
+     "name": "L3HARRIS TECHNOLOGIES, INC. PAC",
+     "kind": "PAC",
+     "total": 5500
+    },
+    {
+     "name": "SEIU COPE (SERVICE EMPS INT'L UNION CMTE ON POLITICAL EDUCATION)",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "OSI SYSTEMS INC. OSI PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00653923&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX16152": {
+   "name": "Adam Bauman",
+   "raised": 3293,
+   "spent": 520,
+   "cashOnHand": 2857.72,
+   "individual": 1600,
+   "smallDonorPct": 0.0625,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00923532",
+    "name": "ADAM BAUMAN FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX16152/?cycle=2026"
+   },
+   "inStatePct": null,
+   "topEmployers": [],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00923532&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX03126": {
+   "name": "Pete Sessions",
+   "raised": 1323419.64,
+   "spent": 730787.86,
+   "cashOnHand": 1033567.44,
+   "individual": 620687.72,
+   "smallDonorPct": 0.00899486137731225,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00303305",
+    "name": "PETE SESSIONS FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX03126/?cycle=2026"
+   },
+   "inStatePct": 0.5335500838236803,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 50800
+    },
+    {
+     "name": "BANKERS LIFE",
+     "total": 7500
+    },
+    {
+     "name": "US ENERGY STREAM, INC.",
+     "total": 7500
+    },
+    {
+     "name": "SUGAR & SPICE BAKERY",
+     "total": 7500
+    },
+    {
+     "name": "PLANO 6500 LLC",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "AMERICAN CRYSTAL SUGAR PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "ERNST & YOUNG PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "UBS AMERICAS INC PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "BUCKEYE LIBERTY PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "NATIONAL CATTLEMEN'S BEEF ASSOCIATION PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00303305&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX17168": {
+   "name": "Casey Shepard",
+   "raised": 93530.74,
+   "spent": 11012.78,
+   "cashOnHand": 78197.57,
+   "individual": 88128.47,
+   "smallDonorPct": 0.04585884674952373,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00934547",
+    "name": "CASEY SHEPARD FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX17168/?cycle=2026"
+   },
+   "inStatePct": 1,
+   "topEmployers": [
+    {
+     "name": "MIDWAY ISD",
+     "total": 76712
+    },
+    {
+     "name": "NURSE PRACTITIONER",
+     "total": 200
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00934547&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX18232": {
+   "name": "Christian Menefee",
+   "raised": 3761777.28,
+   "spent": 3684091.86,
+   "cashOnHand": 77685.42,
+   "individual": 3463952.99,
+   "smallDonorPct": 0.20628491554673203,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00899831",
+    "name": "CHRISTIAN D. MENEFEE FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX18232/?cycle=2026"
+   },
+   "inStatePct": 0.8338033159968172,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 199670.95
+    },
+    {
+     "name": "AZA",
+     "total": 50850
+    },
+    {
+     "name": "KIRKLAND & ELLIS LLP",
+     "total": 46360
+    },
+    {
+     "name": "NORTON ROSE FULBRIGHT US LLP",
+     "total": 42743
+    },
+    {
+     "name": "KIRKLAND & ELLIS",
+     "total": 36750
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "JANE FONDA CLIMATE PAC",
+     "kind": "PAC",
+     "total": 20000
+    },
+    {
+     "name": "MEDICARE FOR ALL",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "AAJ",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "MIDWEST REGION LABORERS' POLITICAL LEAGUE",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "D.R.I.V.E. - DEMOCRAT, REPUBLICAN, INDEPENDENT VOTER EDUCATION (THE PAC OF THE INTERNATIONAL BROTHERHOOD OF TEAMSTERS)",
+     "kind": "PAC",
+     "total": 15000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00899831&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX18497": {
+   "name": "Ronald Whitfield",
+   "status": "no filings"
+  },
+  "H6TX19198": {
+   "name": "Kyle Rable",
+   "raised": 49029.91,
+   "spent": 39878.6,
+   "cashOnHand": 6317.07,
+   "individual": 47829.91,
+   "smallDonorPct": 0.46480622689860795,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00900514",
+    "name": "RABLE FOR WEST TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX19198/?cycle=2026"
+   },
+   "inStatePct": 0.9547644136685233,
+   "topEmployers": [
+    {
+     "name": "BLANK",
+     "total": 1500
+    },
+    {
+     "name": "MAIN COURSE PRODUCTIONS",
+     "total": 1200
+    },
+    {
+     "name": "OPTOMI",
+     "total": 820
+    },
+    {
+     "name": "TTU",
+     "total": 500
+    },
+    {
+     "name": "US MILITARY",
+     "total": 500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "CWA-COPE PCC",
+     "kind": "PAC",
+     "total": 1000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00900514&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX19206": {
+   "name": "Tom Sell",
+   "raised": 2502266.26,
+   "spent": 2234259.45,
+   "cashOnHand": 268006.81,
+   "individual": 1699990.38,
+   "smallDonorPct": 0.005510831184821176,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00926345",
+    "name": "CONSERVATIVE TOM SELL FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX19206/?cycle=2026"
+   },
+   "inStatePct": 0.8409203438830906,
+   "topEmployers": [
+    {
+     "name": "RED ROCK DAIRY",
+     "total": 38500
+    },
+    {
+     "name": "HARGROVE CROP INSURANCE",
+     "total": 21500
+    },
+    {
+     "name": "ARMTECH INSURANCE SERVICES INC",
+     "total": 18500
+    },
+    {
+     "name": "B.E. IMPLEMENT, INC",
+     "total": 17500
+    },
+    {
+     "name": "CEV MULTIMEDIA",
+     "total": 17000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "WESTERN PEANUT GROWERS ASSOCIATION, INC. POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "NATIONAL CATTLEMEN'S BEEF ASSOCIATION POLITICAL ACTION COMMITTEE (NCBA-PAC)",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "MINN-DAK FARMERS COOPERATIVE SUGAR PAC (MDSPAC)",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "AMERICAN CRYSTAL SUGAR COMPANY POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "PLAINS COTTON GROWERS INC. PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00926345&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX35011": {
+   "name": "Joaquin Castro",
+   "raised": 592415.74,
+   "spent": 601756.67,
+   "cashOnHand": 129316.59,
+   "individual": 424412.74,
+   "smallDonorPct": 0.11090816925052721,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00497933",
+    "name": "CASTRO FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX35011/?cycle=2026"
+   },
+   "inStatePct": 0.8014442363315256,
+   "topEmployers": [
+    {
+     "name": "HARTMAN FOUNDATION",
+     "total": 9300
+    },
+    {
+     "name": "THE HERRERA LAW FIRM",
+     "total": 8500
+    },
+    {
+     "name": "SILBEY STRATEGIES",
+     "total": 7000
+    },
+    {
+     "name": "OCANAS GROUP",
+     "total": 7000
+    },
+    {
+     "name": "SERNA AND SERNA",
+     "total": 6111.2
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "MIDWEST REGION LABORERS' POLITICAL LEAGUE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN ASSOCIATION FOR JUSTICE POLITICAL ACTION COMMITTEE (AAJ PAC)",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "NATIONAL BEER WHOLESALERS ASSOCIATION POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 9000
+    },
+    {
+     "name": "PAKISTANI AMERICAN PUBLIC AFFAIRS COMMITTEE PAK-PAC",
+     "kind": "PAC",
+     "total": 7500
+    },
+    {
+     "name": "MACHINISTS NON-PARTISAN POLITICAL LEAGUE OF THE INTERNATIONAL ASSOCIATION OF MACHINISTS & AEROSPACE WORKERS",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00497933&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX20113": {
+   "name": "Edgardo Baez",
+   "raised": 69063.4,
+   "spent": 60532.19,
+   "cashOnHand": 8531.21,
+   "individual": 26578.4,
+   "smallDonorPct": 0.1704440447882491,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00905661",
+    "name": "DR. BAEZ FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX20113/?cycle=2026"
+   },
+   "inStatePct": 0.8552600763215055,
+   "topEmployers": [
+    {
+     "name": "VOLK & MCELROY, LLP",
+     "total": 1200
+    },
+    {
+     "name": "SAN ANTONIO PREMIER INTERNAL MEDICINE",
+     "total": 1041.02
+    },
+    {
+     "name": "DALTON WADE REAL ESTATE GROUP",
+     "total": 1000
+    },
+    {
+     "name": "SAN ANTONIO MED SPA",
+     "total": 1000
+    },
+    {
+     "name": "ANCIRA",
+     "total": 521.15
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "HONOR COURAGE COMMITMENT PAC",
+     "kind": "PAC",
+     "total": 500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00905661&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX21108": {
+   "name": "Kristin Hook",
+   "raised": 388865.29,
+   "spent": 340972.01,
+   "cashOnHand": 52250.44,
+   "individual": 380767.87,
+   "smallDonorPct": 0.2875631286852013,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "TERMINATION REPORT",
+   "committee": {
+    "id": "C00929703",
+    "name": "DR. KRISTIN HOOK FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX21108/?cycle=2026"
+   },
+   "inStatePct": 0.7798849402446891,
+   "topEmployers": [
+    {
+     "name": "AMD",
+     "total": 4250
+    },
+    {
+     "name": "PDT PARTNERS",
+     "total": 3500
+    },
+    {
+     "name": "WHOSMYREP",
+     "total": 3500
+    },
+    {
+     "name": "FANTASTIC FNINDS ANIQUES",
+     "total": 2500
+    },
+    {
+     "name": "ATTORNEY",
+     "total": 2000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "DEMOCRATIC WOMEN OF COMAL COUNTY",
+     "kind": "PAC",
+     "total": 2500
+    },
+    {
+     "name": "BLANCO COUNTY DEMOCRATIC PARTY",
+     "kind": "PAC",
+     "total": 1000
+    },
+    {
+     "name": "LEADERS IN EDUCATION",
+     "kind": "PAC",
+     "total": 500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00929703&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX21301": {
+   "name": "Mark Teixeira",
+   "raised": 4392605.96,
+   "spent": 3952066.56,
+   "cashOnHand": 440539.4,
+   "individual": 836171.96,
+   "smallDonorPct": 0.017689196370564732,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00917658",
+    "name": "MARK TEIXEIRA FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX21301/?cycle=2026"
+   },
+   "inStatePct": 0.6453086770001834,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 40139.66
+    },
+    {
+     "name": "CAHILL GORDON",
+     "total": 17500
+    },
+    {
+     "name": "8VC",
+     "total": 14000
+    },
+    {
+     "name": "POLUNSKY BEITEL GREEN LLP",
+     "total": 10500
+    },
+    {
+     "name": "HAWTHORNE DD INC",
+     "total": 10500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "TEIXEIRA VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 122000
+    },
+    {
+     "name": "E-PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "PATRIOTS IN ACTION",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "SPACE EXPLORATION TECHNOLOGIES CORP. PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "HISPANIC LEADERSHIP TRUST",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00917658&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX22197": {
+   "name": "Marquette Greene-Scott",
+   "raised": 68294.77,
+   "spent": 65867.9,
+   "cashOnHand": 2630.47,
+   "individual": 60160.77,
+   "smallDonorPct": 0.4260379313629131,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00856872",
+    "name": "MARQUETTE GREENE-SCOTT FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX22197/?cycle=2026"
+   },
+   "inStatePct": 0.5386897968500343,
+   "topEmployers": [
+    {
+     "name": "ADICO, LLC",
+     "total": 2500
+    },
+    {
+     "name": "MARIE MORGAN-GOWDY",
+     "total": 1000
+    },
+    {
+     "name": "FORT BEND COUNTY",
+     "total": 1000
+    },
+    {
+     "name": "SELF",
+     "total": 750
+    },
+    {
+     "name": "VARIOUS",
+     "total": 505
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "ALPHA KAPPA ALPHA SORORITY PAC, INC. (AKA AKA 1908 PAC)",
+     "kind": "party",
+     "total": 5000
+    },
+    {
+     "name": "TEXAS MAJORITY PAC",
+     "kind": "PAC",
+     "total": 1634
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00856872&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX22283": {
+   "name": "Trever Nehls",
+   "raised": 327410.4,
+   "spent": 252643.4,
+   "cashOnHand": 74767,
+   "individual": 136107.89,
+   "smallDonorPct": 0.021551065114594016,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00930065",
+    "name": "TREVER NEHLS FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX22283/?cycle=2026"
+   },
+   "inStatePct": 0.9084978669363213,
+   "topEmployers": [
+    {
+     "name": "AVALANCHE FOOD GROUP",
+     "total": 7000
+    },
+    {
+     "name": "DETECTACHEM",
+     "total": 6000
+    },
+    {
+     "name": "JBLK TEXAS LAND & LEASE LLC",
+     "total": 3750
+    },
+    {
+     "name": "KRAKEN OIL AND GAS",
+     "total": 3615.7
+    },
+    {
+     "name": "SELF",
+     "total": 3500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "AMERICAN REVIVAL PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "WORKING FOR OHIO",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "SMART TD PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "PHILLIPS 66 PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "MR. SOUTHERN MISSOURIAN IN THE HOUSE PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00930065&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX23273": {
+   "name": "Katy Padilla Stout",
+   "raised": 1117715.08,
+   "spent": 973291.43,
+   "cashOnHand": 144423.65,
+   "individual": 1017398.32,
+   "smallDonorPct": 0.3962490423613045,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00926121",
+    "name": "KATY PADILLA STOUT FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX23273/?cycle=2026"
+   },
+   "inStatePct": 0.5097813868795362,
+   "topEmployers": [
+    {
+     "name": "Q PRIME, INC.",
+     "total": 7000
+    },
+    {
+     "name": "GRAVELY PC",
+     "total": 7000
+    },
+    {
+     "name": "ICSI",
+     "total": 3500
+    },
+    {
+     "name": "ALSOP LOUIE PARTNERS",
+     "total": 3500
+    },
+    {
+     "name": "CAPULA INVESTMENTS US",
+     "total": 3500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "IMPOSSIBLE TO INEVITABLE",
+     "kind": "joint fundraising",
+     "total": 7400
+    },
+    {
+     "name": "FAIR SHOT PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "CHC BOLD PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "EMILYS LIST",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "MIDWEST REGION LABORERS POLITICAL LEAGUE",
+     "kind": "PAC",
+     "total": 2500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00926121&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX23120": {
+   "name": "Brandon Herrera",
+   "raised": 3115205.22,
+   "spent": 2804434.23,
+   "cashOnHand": 318811.95,
+   "individual": 140199.92,
+   "smallDonorPct": 0.18534190319081492,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00844324",
+    "name": "BRANDON HERRERA FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX23120/?cycle=2026"
+   },
+   "inStatePct": 0.3260973165556323,
+   "topEmployers": [
+    {
+     "name": "UNITEMIZED",
+     "total": 39815.35
+    },
+    {
+     "name": "SELF",
+     "total": 15950
+    },
+    {
+     "name": "EXECUTIVE",
+     "total": 11000
+    },
+    {
+     "name": "REITRED",
+     "total": 7500
+    },
+    {
+     "name": "HOMELIGHT",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "BRANDON HERRERA VICTORY COMMITTEE",
+     "kind": "joint fundraising",
+     "total": 1369332.5500000003
+    },
+    {
+     "name": "ELECTING MAJORITY MAKING EFFECTIVE REPUBLICANS PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "FIRST IN FREEDOM PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "BUCKEYE LIBERTY PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "THE EYE OF THE TIGER PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00844324&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX16111": {
+   "name": "Ben Mendoza",
+   "status": "no filings"
+  },
+  "H0TX24209": {
+   "name": "Beth Van Duyne",
+   "raised": 3049506.14,
+   "spent": 3327165.93,
+   "cashOnHand": 1683212.32,
+   "individual": 702631.69,
+   "smallDonorPct": 0.14614157240758668,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00714865",
+    "name": "BETH VAN DUYNE FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H0TX24209/?cycle=2026"
+   },
+   "inStatePct": 0.7209485818999917,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 53723.04
+    },
+    {
+     "name": "CHARTER BROKERAGE LLC",
+     "total": 35199.98
+    },
+    {
+     "name": "PGL",
+     "total": 14600
+    },
+    {
+     "name": "ELLIOTT INVESTMENT MANAGEMENT",
+     "total": 14000
+    },
+    {
+     "name": "SEYTEC",
+     "total": 11250
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "BETH VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 696000
+    },
+    {
+     "name": "GOP WINNING WOMEN 2026",
+     "kind": "joint fundraising",
+     "total": 22658.02
+    },
+    {
+     "name": "AMERICAN MEDICAL REHABILITATION PROVIDERS ASSOCIATION INC. P",
+     "kind": "PAC",
+     "total": 11000
+    },
+    {
+     "name": "UBS AMERICAS INC. POLITICAL ACTION COMMITTEE (UBS PAC)",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "KAH HOSPICE COMPANY INC. PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00714865&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX24172": {
+   "name": "Kevin Burge",
+   "raised": 334210.32,
+   "spent": 252864.3,
+   "cashOnHand": 81346.02,
+   "individual": 328210.32,
+   "smallDonorPct": 0.337541945664597,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00905547",
+    "name": "KEVIN BURGE FOR UNITED STATES CONGRESS CAMPAIGN COMMITTEE"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX24172/?cycle=2026"
+   },
+   "inStatePct": 0.909919329301657,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 8795
+    },
+    {
+     "name": "ERIC JOHNSON",
+     "total": 4000
+    },
+    {
+     "name": "LONGHORN III INVESTMENTS",
+     "total": 3500
+    },
+    {
+     "name": "BULLE ROCK CAPITAL",
+     "total": 3500
+    },
+    {
+     "name": "AMERICAN AIRLINES",
+     "total": 3500
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00905547&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX33040": {
+   "name": "Roger Williams",
+   "raised": 1654633.09,
+   "spent": 1020983.22,
+   "cashOnHand": 1205150.83,
+   "individual": 87292.63,
+   "smallDonorPct": 0.01303855777973467,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00498121",
+    "name": "ROGER WILLIAMS FOR U S CONGRESS COMMITTEE"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX33040/?cycle=2026"
+   },
+   "inStatePct": 0.967748041492564,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 62650
+    },
+    {
+     "name": "FBT",
+     "total": 14000
+    },
+    {
+     "name": "DOUBLE EAGLE",
+     "total": 14000
+    },
+    {
+     "name": "PIERSON & PATTERSON",
+     "total": 13600
+    },
+    {
+     "name": "WW TICHENOR & COMPANY",
+     "total": 8600
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "ROGER FOR CONGRESS VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 881027.0299999999
+    },
+    {
+     "name": "ON WISCONSIN PAC INC.",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "NATIONAL BEER WHOLESALERS ASSOCIATION POLITICAL ACTION COMMI",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN BANKERS ASSOCIATION PAC (BANKPAC)",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "FIELD OF DREAMS PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00498121&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX25237": {
+   "name": "Dione Sims",
+   "raised": 546.48,
+   "spent": 3550,
+   "cashOnHand": -3003.52,
+   "individual": 541.48,
+   "smallDonorPct": 0.9538302430376007,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00930974",
+    "name": "DIONE SIMS FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX25237/?cycle=2026"
+   },
+   "inStatePct": 1,
+   "topEmployers": [],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00930974&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX26149": {
+   "name": "Brandon Gill",
+   "raised": 7939470.36,
+   "spent": 5974958.45,
+   "cashOnHand": 2092335.31,
+   "individual": 6950492.01,
+   "smallDonorPct": 0.5881046139063183,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00857359",
+    "name": "BRANDON GILL FOR TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX26149/?cycle=2026"
+   },
+   "inStatePct": 0.48246221442149945,
+   "topEmployers": [
+    {
+     "name": "ENTREPRENEUR",
+     "total": 21216.11
+    },
+    {
+     "name": "CNA METALS",
+     "total": 20600
+    },
+    {
+     "name": "CREATIVE SOLUTIONS IN HEALTHCARE",
+     "total": 20000
+    },
+    {
+     "name": "VERITAS ENERGY",
+     "total": 19396.69
+    },
+    {
+     "name": "STANTON LLP",
+     "total": 17000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "BRANDON GILL VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 381049.65
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00857359&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX26144": {
+   "name": "Steven Shook",
+   "raised": 35820.67,
+   "spent": 30195.23,
+   "cashOnHand": 5602.96,
+   "individual": 35820.67,
+   "smallDonorPct": 0.47440960763715473,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00918573",
+    "name": "SHOOK FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX26144/?cycle=2026"
+   },
+   "inStatePct": 0.9203271896744037,
+   "topEmployers": [
+    {
+     "name": "RANJIT NAIR",
+     "total": 5000
+    },
+    {
+     "name": "STEVEN KIM",
+     "total": 2500
+    },
+    {
+     "name": "LUNG&SLEEP CENTER OF NTX",
+     "total": 1501
+    },
+    {
+     "name": "LCS",
+     "total": 1000
+    },
+    {
+     "name": "LUNG & SLEEP CENTER OF N. TX",
+     "total": 500
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00918573&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX01261": {
+   "name": "Phil Gray",
+   "status": "no filings"
+  },
+  "H8TX27049": {
+   "name": "Michael Cloud",
+   "raised": 1219653.23,
+   "spent": 1080726.05,
+   "cashOnHand": 275804.47,
+   "individual": 909871.29,
+   "smallDonorPct": 0.38699963815761235,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00655332",
+    "name": "CLOUD FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8TX27049/?cycle=2026"
+   },
+   "inStatePct": 0.8307008167461007,
+   "topEmployers": [
+    {
+     "name": "VICTORIA COLLEGE",
+     "total": 17976.42
+    },
+    {
+     "name": "MAGIC INDUSTRIES INC",
+     "total": 13200
+    },
+    {
+     "name": "MERCER CONSTRUCTION COMPANY",
+     "total": 13000
+    },
+    {
+     "name": "HHA HOSPITAL MEDICINE",
+     "total": 12000
+    },
+    {
+     "name": "BRAVO ORDNANCE",
+     "total": 8500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "CLOUD VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 22209.67
+    },
+    {
+     "name": "SPACE EXPLORATION TECHNOLOGIES CORP. PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "BUCKEYE LIBERTY PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "THE FARM CREDIT COUNCIL POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 7500
+    },
+    {
+     "name": "LETS GET TO WORK PAC",
+     "kind": "PAC",
+     "total": 7000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00655332&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX27089": {
+   "name": "Tanya Lloyd",
+   "raised": 270814.09,
+   "spent": 251322.25,
+   "cashOnHand": 19679.17,
+   "individual": 270742.2,
+   "smallDonorPct": 0.6882042400482821,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00859603",
+    "name": "TANYA LLOYD FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX27089/?cycle=2026"
+   },
+   "inStatePct": 0.7639542940354421,
+   "topEmployers": [
+    {
+     "name": "LAW OFFICE OF ERIC ALAN ISAACSON",
+     "total": 2250
+    },
+    {
+     "name": "SELF",
+     "total": 1885
+    },
+    {
+     "name": "AGILITY HEATING & AIR",
+     "total": 1000
+    },
+    {
+     "name": "SEHC",
+     "total": 1000
+    },
+    {
+     "name": "LYNNE DOBSON",
+     "total": 1000
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00859603&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX23082": {
+   "name": "Henry Cuellar",
+   "raised": 3043039.01,
+   "spent": 2433767.42,
+   "cashOnHand": 657230.5,
+   "individual": 1672467.39,
+   "smallDonorPct": 0.041230950398381164,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00371302",
+    "name": "TEXANS FOR HENRY CUELLAR CONGRESSIONAL CAMPAIGN"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX23082/?cycle=2026"
+   },
+   "inStatePct": 0.5047185997037787,
+   "topEmployers": [
+    {
+     "name": "STARR-CAMARGO BRIDGE CO.",
+     "total": 10500
+    },
+    {
+     "name": "KISTLER INVESTMENT COMPANY",
+     "total": 10500
+    },
+    {
+     "name": "AKIN GUMP",
+     "total": 7300
+    },
+    {
+     "name": "PG RENTAL & LEASING LLC",
+     "total": 7000
+    },
+    {
+     "name": "ANDURIL INDUSTRIES INC.",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "JEFFRIES BATTLEGROUND PROTECTION FUND",
+     "kind": "joint fundraising",
+     "total": 52684
+    },
+    {
+     "name": "FRONTLINE PROTECTION FUND",
+     "kind": "joint fundraising",
+     "total": 24217.32
+    },
+    {
+     "name": "CLARK FRONTLINE VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 15200
+    },
+    {
+     "name": "NATIONAL ASSOCIATION OF LANDSCAPE PROFESSIONALS, INC. PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "INTERNATIONAL ASSOCIATION OF SHEET METAL, AIR, RAIL AND TRANSPORTATION WORKERS PAL",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00371302&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX28124": {
+   "name": "Tano Tijerina",
+   "raised": 1862406.86,
+   "spent": 1749356.76,
+   "cashOnHand": 113050.1,
+   "individual": 847971.25,
+   "smallDonorPct": 0.2256492068569542,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "TERMINATION REPORT",
+   "committee": {
+    "id": "C00929174",
+    "name": "TANO TIJERINA FOR CONGRESS INC"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX28124/?cycle=2026"
+   },
+   "inStatePct": 0.5449479706568326,
+   "topEmployers": [
+    {
+     "name": "BRISCOE RANCH INC.",
+     "total": 25083.65
+    },
+    {
+     "name": "SELF",
+     "total": 22630.58
+    },
+    {
+     "name": "ADAPTIVE CONSTRUCTION SOLUTIONS",
+     "total": 14000
+    },
+    {
+     "name": "STARKEY HEARING TECHNOLOGIES",
+     "total": 14000
+    },
+    {
+     "name": "JAM INVESTING LLC",
+     "total": 10410.16
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GROW THE MAJORITY",
+     "kind": "joint fundraising",
+     "total": 148012.78
+    },
+    {
+     "name": "EMMER MAJORITY BUILDERS",
+     "kind": "joint fundraising",
+     "total": 114303.43000000001
+    },
+    {
+     "name": "TANO TIJERINA FOR CONGRESS-GTM NOMINEE FUND: TX-28",
+     "kind": "joint fundraising",
+     "total": 105654.73
+    },
+    {
+     "name": "DEFEND OUR MAJORITY",
+     "kind": "joint fundraising",
+     "total": 47846.38
+    },
+    {
+     "name": "TIJERINA FOR TX-28 REPUBLICAN NOMINEE FUND 2026",
+     "kind": "joint fundraising",
+     "total": 11620.44
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00929174&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX28108": {
+   "name": "Marlon Duran",
+   "status": "no filings"
+  },
+  "H8TX29052": {
+   "name": "Sylvia Garcia",
+   "raised": 1201321.76,
+   "spent": 1337311.57,
+   "cashOnHand": 235764,
+   "individual": 416203.38,
+   "smallDonorPct": 0.043496475208827,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00660555",
+    "name": "SYLVIA GARCIA FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8TX29052/?cycle=2026"
+   },
+   "inStatePct": 0.9043605015673981,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 23910
+    },
+    {
+     "name": "LANIER LAW FIRM",
+     "total": 6000
+    },
+    {
+     "name": "GONZALEZ & ASSOCIATES INC",
+     "total": 5000
+    },
+    {
+     "name": "STEPTOE LLP",
+     "total": 5000
+    },
+    {
+     "name": "THE GOODMAN CORPORATION",
+     "total": 4500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "MACHINISTS NON PARTISAN POLITICAL LEAGUE OF THE INTERNATIONAL ASSOCIATION OF MACHINISTS &",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "FAIR SHOT PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "EXXON MOBIL CORPORATION-MOBIL POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "COURAGE TO CHANGE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "ERNST & YOUNG POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00660555&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX29122": {
+   "name": "Martha Fierro",
+   "raised": 585,
+   "spent": 93.28,
+   "cashOnHand": 491.72,
+   "individual": 585,
+   "smallDonorPct": 1,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00931170",
+    "name": "FIERRO FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX29122/?cycle=2026"
+   },
+   "inStatePct": null,
+   "topEmployers": [],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00931170&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX30245": {
+   "name": "Frederick Haynes",
+   "raised": 694864.53,
+   "spent": 535828.88,
+   "cashOnHand": 159035.65,
+   "individual": 597599.87,
+   "smallDonorPct": 0.15639205209331788,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00931667",
+    "name": "HAYNES FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX30245/?cycle=2026"
+   },
+   "inStatePct": 0.5885292903277964,
+   "topEmployers": [
+    {
+     "name": "ROCKET MONEY",
+     "total": 10500
+    },
+    {
+     "name": "RICELAND HEALTHCARE",
+     "total": 10500
+    },
+    {
+     "name": "BLOCK",
+     "total": 10500
+    },
+    {
+     "name": "STATE FARM INSURANCE",
+     "total": 10000
+    },
+    {
+     "name": "HAMILTON WINGO LLP",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "UNITED FOOD AND COMMERCIAL WORKERS INTERNATIONAL UNION ACTIVE BALLOT CLUB",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "MEDICARE FOR ALL",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "MARCH ON PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "CONGRESSIONAL PROGRESSIVE CAUCUS PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "JUSTICE DEMOCRATS PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00931667&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX30211": {
+   "name": "Everett Jackson",
+   "raised": 25348.99,
+   "spent": 22885.98,
+   "cashOnHand": 2463.01,
+   "individual": 25148.99,
+   "smallDonorPct": 0.12523524801592428,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00924167",
+    "name": "JACKSON 4 TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX30211/?cycle=2026"
+   },
+   "inStatePct": 1,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 9300.63
+    },
+    {
+     "name": "HAJ INC",
+     "total": 1000
+    },
+    {
+     "name": "WALNUT HILL MEDICAL",
+     "total": 208.65
+    },
+    {
+     "name": "NEW HOPE PROPERTY",
+     "total": 52.4
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00924167&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX31044": {
+   "name": "John Carter",
+   "raised": 1522249.68,
+   "spent": 1404517.68,
+   "cashOnHand": 159170.95,
+   "individual": 427840.99,
+   "smallDonorPct": 0.0077495379767142,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00371203",
+    "name": "JOHN CARTER FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX31044/?cycle=2026"
+   },
+   "inStatePct": 0.3789912627320834,
+   "topEmployers": [
+    {
+     "name": "FIREFLY AEROSPACE",
+     "total": 18000
+    },
+    {
+     "name": "TRIDENT RESEARCH",
+     "total": 16800
+    },
+    {
+     "name": "TRIDEUM",
+     "total": 14000
+    },
+    {
+     "name": "OMNI FEDERAL",
+     "total": 14000
+    },
+    {
+     "name": "AEON",
+     "total": 14000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "JUDGE CARTER VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 526755.7
+    },
+    {
+     "name": "SPACE EXPLORATION TECHNOLOGIES CORP PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "GENERAL DYNAMICS CORPORATION PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "LEONARDO DRS PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN SOC. OF ANESTHESIOLOGISTS PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00371203&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX31094": {
+   "name": "Justin Early",
+   "raised": 291879.92,
+   "spent": 271032.4,
+   "cashOnHand": 20847.52,
+   "individual": 238134.27,
+   "smallDonorPct": 0.5905159303614721,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00907329",
+    "name": "JUSTIN EARLY FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX31094/?cycle=2026"
+   },
+   "inStatePct": 0.8885553639031384,
+   "topEmployers": [
+    {
+     "name": "GM FINANCIAL",
+     "total": 3000
+    },
+    {
+     "name": "ASSOCIA",
+     "total": 1380
+    },
+    {
+     "name": "ARMIS",
+     "total": 1100
+    },
+    {
+     "name": "SWIMLANE",
+     "total": 1000
+    },
+    {
+     "name": "LEGALZOOM",
+     "total": 1000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "INTERNATIONAL BROTHERHOOD OF ELECTRICAL WORKERS POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 3500
+    },
+    {
+     "name": "MACHINISTS NON PARTISAN POLITICAL LEAGUE OF THE INTERNATIONAL ASSOCIATION OF MACHINISTS & AEROSPACE WORKERS",
+     "kind": "PAC",
+     "total": 2500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00907329&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX31169": {
+   "name": "Greg Stoker",
+   "raised": 78678.27,
+   "spent": 66280.72,
+   "cashOnHand": 12397.55,
+   "individual": 77969.63,
+   "smallDonorPct": 0.4508688831792584,
+   "coverageThrough": "2026-06-30",
+   "lastReport": "JULY QUARTERLY",
+   "committee": {
+    "id": "C00929653",
+    "name": "CAMPAIGN COMMITTEE FOR GREG STOKER"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX31169/?cycle=2026"
+   },
+   "inStatePct": 0.5143642220275834,
+   "topEmployers": [
+    {
+     "name": "NVIDIA",
+     "total": 3775
+    },
+    {
+     "name": "INTERNATIONAL GROCERY STORES",
+     "total": 3500
+    },
+    {
+     "name": "COZMO ENTERPRISES LLC",
+     "total": 3500
+    },
+    {
+     "name": "ID MASTERS, PLLC",
+     "total": 3230
+    },
+    {
+     "name": "EMERSON",
+     "total": 1725.94
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00929653&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX32217": {
+   "name": "Dan Barrios",
+   "raised": 160379.07,
+   "spent": 151633.9,
+   "cashOnHand": 8745.17,
+   "individual": 150813.58,
+   "smallDonorPct": 0.3041822891545974,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00930024",
+    "name": "DAN BARRIOS FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX32217/?cycle=2026"
+   },
+   "inStatePct": 0.9442588359416212,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 6340
+    },
+    {
+     "name": "JOHN PAUL II HIGH SCHOOL",
+     "total": 5500
+    },
+    {
+     "name": "REGINA T. MONTOYA PLLC",
+     "total": 3500
+    },
+    {
+     "name": "JOHNNY LEE AND ASSOCIATES",
+     "total": 1000
+    },
+    {
+     "name": "EPIC AUTO INC",
+     "total": 1000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "TX-32 DEMOCRATS",
+     "kind": "party",
+     "total": 750
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00930024&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX32225": {
+   "name": "Jace Yarbrough",
+   "raised": 1261760.06,
+   "spent": 1138666.34,
+   "cashOnHand": 123093.72,
+   "individual": 620071.55,
+   "smallDonorPct": 0.1827259773489043,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00930297",
+    "name": "JACE YARBROUGH FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX32225/?cycle=2026"
+   },
+   "inStatePct": 0.7340709934241564,
+   "topEmployers": [
+    {
+     "name": "BECK  STONE",
+     "total": 13623.05
+    },
+    {
+     "name": "BAKER BOTTS LLP",
+     "total": 7000
+    },
+    {
+     "name": "COHEN KLINGENSTEIN LLC",
+     "total": 7000
+    },
+    {
+     "name": "KEMMERER MANAGEMENT CORP",
+     "total": 7000
+    },
+    {
+     "name": "HILLWOOD",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "MR. SOUTHERN MISSOURIAN IN THE HOUSE PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "BUCKEYE LIBERTY PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "THE EYE OF THE TIGER PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "ELECTING MAJORITY MAKING EFFECTIVE REPUBLICANS PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN REVIVAL PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00930297&two_year_transaction_period=2026"
+   }
+  },
+  "H8TX32098": {
+   "name": "Colin Allred",
+   "raised": 8134455.95,
+   "spent": 7836027.76,
+   "cashOnHand": 298428.19,
+   "individual": 3763448.64,
+   "smallDonorPct": 0.48345499143041315,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00929844",
+    "name": "ALLRED FOR TEXAS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8TX32098/?cycle=2026"
+   },
+   "inStatePct": 0.5372550367760336,
+   "topEmployers": [
+    {
+     "name": "ROCHELLE MCCULLOUGH LLP",
+     "total": 15500
+    },
+    {
+     "name": "LONE PINE CAPITAL",
+     "total": 14000
+    },
+    {
+     "name": "ANTHROPIC PBC",
+     "total": 14000
+    },
+    {
+     "name": "FAY LIDJI",
+     "total": 13250
+    },
+    {
+     "name": "JPM RANCH CO",
+     "total": 10525
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "ALLRED FOR TEXAS 2026",
+     "kind": "joint fundraising",
+     "total": 4193476.12
+    },
+    {
+     "name": "FRIENDS OF COLIN ALLRED 2024",
+     "kind": "joint fundraising",
+     "total": 44131.55
+    },
+    {
+     "name": "SMART TD PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERIPAC: THE FUND FOR A GREATER AMERICA",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "AMERICAN FEDERATION OF TEACHERS, AFL-CIO COMMITTEE ON POLITICAL EDUCATION",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00929844&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX33248": {
+   "name": "Patrick Gillespie",
+   "status": "no filings"
+  },
+  "H6TX15162": {
+   "name": "Vicente Gonzalez Jr.",
+   "raised": 5211344.04,
+   "spent": 4096454.52,
+   "cashOnHand": 1396949.28,
+   "individual": 2766134.36,
+   "smallDonorPct": 0.10235296740972481,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00592659",
+    "name": "VICENTE GONZALEZ FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX15162/?cycle=2026"
+   },
+   "inStatePct": 0.24253458984014173,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 93912.83
+    },
+    {
+     "name": "NO EMPLOYER",
+     "total": 46237.5
+    },
+    {
+     "name": "KKR",
+     "total": 19833.66
+    },
+    {
+     "name": "SI, LLC",
+     "total": 14000
+    },
+    {
+     "name": "INSIGHT PARTNERS",
+     "total": 10500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "HOUSE VICTORY PROJECT 2026",
+     "kind": "joint fundraising",
+     "total": 351810
+    },
+    {
+     "name": "JEFFRIES BATTLEGROUND PROTECTION FUND",
+     "kind": "joint fundraising",
+     "total": 52684
+    },
+    {
+     "name": "DEMOCRACY SUMMER 2026",
+     "kind": "joint fundraising",
+     "total": 45750
+    },
+    {
+     "name": "BLUE DOG VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 44840.85
+    },
+    {
+     "name": "FRONTLINE PROTECTION FUND",
+     "kind": "joint fundraising",
+     "total": 26197.11
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00592659&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX34080": {
+   "name": "Eric Flores",
+   "raised": 4009073.67,
+   "spent": 3762621.4,
+   "cashOnHand": 246427.27,
+   "individual": 1983098.75,
+   "smallDonorPct": 0.3483040468862178,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "TERMINATION REPORT",
+   "committee": {
+    "id": "C00912246",
+    "name": "ERIC FLORES FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX34080/?cycle=2026"
+   },
+   "inStatePct": 0.5339845154648009,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 45442.74
+    },
+    {
+     "name": "STEELECREEK MANAGEMENT LLC",
+     "total": 14000
+    },
+    {
+     "name": "STARKEY HEARING TECHNOLOGIES",
+     "total": 14000
+    },
+    {
+     "name": "FULTON CONSTRUCTION",
+     "total": 8000
+    },
+    {
+     "name": "VALLEY OMS",
+     "total": 7500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GROW THE MAJORITY",
+     "kind": "joint fundraising",
+     "total": 156819.79
+    },
+    {
+     "name": "EMMER MAJORITY BUILDERS",
+     "kind": "joint fundraising",
+     "total": 109026.85
+    },
+    {
+     "name": "ERIC FLORES FOR CONGRESS-GTM NOMINEE FUND: TX-34",
+     "kind": "joint fundraising",
+     "total": 102674.25
+    },
+    {
+     "name": "DEFEND OUR MAJORITY",
+     "kind": "joint fundraising",
+     "total": 47994.84
+    },
+    {
+     "name": "SECURE THE BORDER NOW",
+     "kind": "joint fundraising",
+     "total": 44017.13
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00912246&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX34106": {
+   "name": "Eddie Espinoza",
+   "status": "no filings"
+  },
+  "H0TX34059": {
+   "name": "Chris Royal",
+   "status": "no filings"
+  },
+  "H6TX35095": {
+   "name": "Johnny Garcia",
+   "raised": 2201578.83,
+   "spent": 2052076.08,
+   "cashOnHand": 149502.75,
+   "individual": 1764055.84,
+   "smallDonorPct": 0.270682383841092,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00922799",
+    "name": "JOHNNY GARCIA FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX35095/?cycle=2026"
+   },
+   "inStatePct": 0.26404069062235025,
+   "topEmployers": [
+    {
+     "name": "CRISIS INTERVENTION SERVICES INC.",
+     "total": 7000
+    },
+    {
+     "name": "HONOR NYC",
+     "total": 7000
+    },
+    {
+     "name": "HUDSON RIVER TRADING",
+     "total": 7000
+    },
+    {
+     "name": "JANE STREET",
+     "total": 7000
+    },
+    {
+     "name": "RESTORATION WORKS",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "BLUE DOG POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 12500
+    },
+    {
+     "name": "JOBS, EDUCATION, & FAMILIES FIRST  JEFF PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "INNOVATION FOR GOOD PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "FAIR SHOT PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "CA LUV PAC (CALIFORNIA LEADERSHIP UNITED FOR VICTORY PAC)",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00922799&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX35087": {
+   "name": "Carlos De La Cruz",
+   "raised": 2021117.55,
+   "spent": 1708510.47,
+   "cashOnHand": 312607.08,
+   "individual": 1237241.52,
+   "smallDonorPct": 0.3378468174912203,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00922013",
+    "name": "CARLOS FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX35087/?cycle=2026"
+   },
+   "inStatePct": 0.7643717957260036,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 25499
+    },
+    {
+     "name": "RAVE GEARS",
+     "total": 7500
+    },
+    {
+     "name": "CUMBERLAND DEVELOPMENT CO.",
+     "total": 7000
+    },
+    {
+     "name": "SWINBANK MANAGEMENT",
+     "total": 7000
+    },
+    {
+     "name": "TOWNE CONSTRUCTION",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "GROW THE MAJORITY",
+     "kind": "joint fundraising",
+     "total": 22374.19
+    },
+    {
+     "name": "AMERICAN REVIVAL PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "KEEP TEXAS TEXAS PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "SEAL PAC SUPPORTING ELECTING AMERICAN LEADERS PAC",
+     "kind": "PAC",
+     "total": 11000
+    },
+    {
+     "name": "TEXAS VALUES PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00922013&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX02079": {
+   "name": "Brian Babin",
+   "raised": 1201013.89,
+   "spent": 918916.66,
+   "cashOnHand": 928299.88,
+   "individual": 266702.02,
+   "smallDonorPct": 0.015288635609134118,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00553859",
+    "name": "DR. BRIAN BABIN FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX02079/?cycle=2026"
+   },
+   "inStatePct": 0.7669523118955885,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 59185.04
+    },
+    {
+     "name": "ANDREESSEN HOROWITZ",
+     "total": 21000
+    },
+    {
+     "name": "TRANS GLOBAL SOLUTIONS, INC.",
+     "total": 10500
+    },
+    {
+     "name": "RETIRED/THE MODERN GROUP, LTD",
+     "total": 7000
+    },
+    {
+     "name": "STI GROUP",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "BABIN VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 303761.88
+    },
+    {
+     "name": "AMERICAN CHEMISTRY COUNCIL PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "SPACE EXPLORATION TECHNOLOGIES CORP. PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "TEXAS FARM BUREAU AGFUND, INC. (FEDERAL)",
+     "kind": "PAC",
+     "total": 9600
+    },
+    {
+     "name": "AMERICAN ASSOCIATION OF ORAL AND MAXILLOFACIAL SURGERY PAC",
+     "kind": "PAC",
+     "total": 7500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00553859&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX14111": {
+   "name": "Rhonda Hart",
+   "raised": 24315.62,
+   "spent": 19570.52,
+   "cashOnHand": 5935.1,
+   "individual": 24315.62,
+   "smallDonorPct": 0.9154864239529981,
+   "coverageThrough": "2026-09-30",
+   "lastReport": "OCTOBER QUARTERLY",
+   "committee": {
+    "id": "C00924365",
+    "name": "RHONDA JEAN HART CAMPAIGN"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX14111/?cycle=2026"
+   },
+   "inStatePct": null,
+   "topEmployers": [],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00924365&two_year_transaction_period=2026"
+   }
+  },
+  "H2TX35144": {
+   "name": "Greg Casar",
+   "raised": 1382791.38,
+   "spent": 1209544.92,
+   "cashOnHand": 544085.42,
+   "individual": 1028401.32,
+   "smallDonorPct": 0.27840067338692254,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00791897",
+    "name": "GREG CASAR FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H2TX35144/?cycle=2026"
+   },
+   "inStatePct": 0.5779120052372495,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 64890.26
+    },
+    {
+     "name": "CITY OF AUSTIN",
+     "total": 7900
+    },
+    {
+     "name": "HEISING-SIMONS FOUNDATION",
+     "total": 7250
+    },
+    {
+     "name": "PRESTON-WERNER VENTURES LLC",
+     "total": 7000
+    },
+    {
+     "name": "ADELANTO HEALTHCARE VENTURES LLC",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "CASAR VICTORY FUND",
+     "kind": "joint fundraising",
+     "total": 22550
+    },
+    {
+     "name": "SEIU COPE (SERVICE EMPLOYEES INTERNATIONAL UNION COMMITTEE ON POLITICAL EDUCATION)",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "MACHINISTS NON PARTISAN POLITICAL LEAGUE OF THE INTERNATIONAL ASSOCIATION OF MACHINISTS & AEROSPACE WORKERS",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "NATIONAL BEER WHOLESALERS ASSOCIATION POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "ROOTED IN COMMUNITY LEADERSHIP PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00791897&two_year_transaction_period=2026"
+   }
+  },
+  "H4TX38011": {
+   "name": "Melissa McDonough",
+   "raised": 124711.24,
+   "spent": 102969.36,
+   "cashOnHand": 44441.67,
+   "individual": 75180.93,
+   "smallDonorPct": 0.2746697866067898,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00836940",
+    "name": "MELISSA MCDONOUGH FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H4TX38011/?cycle=2026"
+   },
+   "inStatePct": 0.9498257274864229,
+   "topEmployers": [
+    {
+     "name": "EVENIS",
+     "total": 3500
+    },
+    {
+     "name": "SELF",
+     "total": 1988
+    },
+    {
+     "name": "AQUARIUM SYSTEMS",
+     "total": 1100
+    },
+    {
+     "name": "MONARCH INTERESTS",
+     "total": 1000
+    },
+    {
+     "name": "CCM",
+     "total": 750
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "CY-FAIR AREA DEMOCRATIC CLUB",
+     "kind": "party",
+     "total": 1000
+    },
+    {
+     "name": "LEE PAC",
+     "kind": "PAC",
+     "total": 500
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00836940&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX02244": {
+   "name": "Jon Bonck",
+   "raised": 2202298.38,
+   "spent": 1954128.09,
+   "cashOnHand": 248170.29,
+   "individual": 1118386.57,
+   "smallDonorPct": 0.029041693517474907,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00904151",
+    "name": "JON BONCK FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX02244/?cycle=2026"
+   },
+   "inStatePct": 0.9067159799005399,
+   "topEmployers": [
+    {
+     "name": "SELF",
+     "total": 62024.22
+    },
+    {
+     "name": "US ARMY",
+     "total": 15615.7
+    },
+    {
+     "name": "INTERNAL REVENUE SERVICE",
+     "total": 14000
+    },
+    {
+     "name": "RIDA DEVELOPMENT",
+     "total": 14000
+    },
+    {
+     "name": "VEGA ENERGY HOLDINGS",
+     "total": 14000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "EYE OF THE TIGER PAC",
+     "kind": "PAC",
+     "total": 15000
+    },
+    {
+     "name": "AMERICAN REVIVAL PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "EMMER PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "JOBS, FREEDOM, AND SECURITY PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "GILL PAC",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00904151&two_year_transaction_period=2026"
+   }
+  },
+  "H6TX38123": {
+   "name": "Alex McMenemy",
+   "raised": 9887.9,
+   "spent": 9142.34,
+   "cashOnHand": 745.56,
+   "individual": 5780.56,
+   "smallDonorPct": 0.09000858048355176,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00929737",
+    "name": "ALEX FOR THE PEOPLE"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX38123/?cycle=2026"
+   },
+   "inStatePct": 1,
+   "topEmployers": [
+    {
+     "name": "DROPOFF",
+     "total": 316.61
+    },
+    {
+     "name": "CAREXM",
+     "total": 211.18
+    }
+   ],
+   "topCommittees": [],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00929737&two_year_transaction_period=2026"
+   }
+  },
+  "H8CA34266": {
+   "name": "Jimmy Gomez",
+   "raised": 1336235.14,
+   "spent": 796599.28,
+   "cashOnHand": 628394.77,
+   "individual": 767168.88,
+   "smallDonorPct": 0.016705656777944382,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00629659",
+    "name": "JIMMY GOMEZ FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8CA34266/?cycle=2026"
+   },
+   "inStatePct": 0.6699343174461969,
+   "topEmployers": [
+    {
+     "name": "ANDREESSEN HOROWITZ",
+     "total": 10000
+    },
+    {
+     "name": "MOELIS & COMPANY",
+     "total": 9000
+    },
+    {
+     "name": "LINEAR CITY DEVELOPMENT LLC",
+     "total": 8500
+    },
+    {
+     "name": "UNIVERSITY OF CALIFORNIA LOS ANGELES",
+     "total": 8186.4
+    },
+    {
+     "name": "MANUEL GONZALES PC",
+     "total": 7750
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "UNITED FOOD AND COMMERCIAL WORKERS INTERNATIONAL UNION ACTIVE BALLOT CLUB",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN CRYSTAL SUGAR COMPANY POLITICAL ACTION COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "AMERICAN FEDERATION OF TEACHERS, AFL-CIO COMMITTEE ON POLITICAL EDUCATION",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "TURQUOISE PAC",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "INTERNATIONAL ASSOCIATION OF SHEET METAL, AIR, RAIL AND TRANSPORTATION WORKERS PAL",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00629659&two_year_transaction_period=2026"
+   }
+  },
+  "H6CA34286": {
+   "name": "Angela Gonzales-Torres",
+   "raised": 509751.75,
+   "spent": 404933.43,
+   "cashOnHand": 104818.32,
+   "individual": 481409.25,
+   "smallDonorPct": 0.5282048485773799,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00901652",
+    "name": "ANGELA FOR CA34"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6CA34286/?cycle=2026"
+   },
+   "inStatePct": 0.718633181329808,
+   "topEmployers": [
+    {
+     "name": "NEW CONSENSUS",
+     "total": 7000
+    },
+    {
+     "name": "PRESTON-WERNER VENTURES",
+     "total": 7000
+    },
+    {
+     "name": "MIDDLE SEAT",
+     "total": 3583.33
+    },
+    {
+     "name": "BLOCK",
+     "total": 3500
+    },
+    {
+     "name": "STANFORD UNIVERSITY",
+     "total": 2500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "JUSTICE DEMOCRATS PAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "DAVID KIM FOR CONGRESS - CA34",
+     "kind": "PAC",
+     "total": 2000
+    },
+    {
+     "name": "A NEW POLICY PAC",
+     "kind": "PAC",
+     "total": 475
+    },
+    {
+     "name": "AMERICANS FOR DEMOCRATIC ACTION SOCAL",
+     "kind": "PAC",
+     "total": 250
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00901652&two_year_transaction_period=2026"
+   }
+  },
+  "H6CA11268": {
+   "name": "Connie Chan",
+   "raised": 2404664.18,
+   "spent": 1822859.27,
+   "cashOnHand": 581804.91,
+   "individual": 2147688.34,
+   "smallDonorPct": 0.1007673347986794,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00927558",
+    "name": "CONNIE CHAN FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6CA11268/?cycle=2026"
+   },
+   "inStatePct": 0.9545270482198747,
+   "topEmployers": [
+    {
+     "name": "LEETCODE",
+     "total": 14000
+    },
+    {
+     "name": "UCSF",
+     "total": 11079.5
+    },
+    {
+     "name": "UMOJA BIOPHARMA",
+     "total": 7500
+    },
+    {
+     "name": "BOOKSMITH & ALEMBIC",
+     "total": 7000
+    },
+    {
+     "name": "CAVIUM",
+     "total": 7000
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "UA UNION PLUMBERS & PIPEFITTERS VOTE! PAC (UNITED ASSOCIATION OF JOURNEYMEN AND APPRENTICES OF THE PLUMBING & PIPEFITTING INDUSTRY OF THE UNITED STATES AND CANADA)",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "PAC TO THE FUTURE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "INTERNATIONAL BROTHERHOOD OF BOILERMAKERS CAMPAIGN ASSISTANCE FUND",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "ELECT DEMOCRATIC WOMEN",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "CAPA21- FEDERAL",
+     "kind": "PAC",
+     "total": 10000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00927558&two_year_transaction_period=2026"
+   }
+  },
+  "H8CA11116": {
+   "name": "Scott Wiener",
+   "raised": 5808855.03,
+   "spent": 5198326.16,
+   "cashOnHand": 611039.24,
+   "individual": 5561993.88,
+   "smallDonorPct": 0.03820466986921604,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "committee": {
+    "id": "C00909283",
+    "name": "SCOTT WIENER FOR CONGRESS"
+   },
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H8CA11116/?cycle=2026"
+   },
+   "inStatePct": 0.8473356316697747,
+   "topEmployers": [
+    {
+     "name": "ANTHROPIC",
+     "total": 144299
+    },
+    {
+     "name": "OPENAI",
+     "total": 105250
+    },
+    {
+     "name": "OPEN PHILANTHROPY",
+     "total": 78680
+    },
+    {
+     "name": "GOOGLE",
+     "total": 75811
+    },
+    {
+     "name": "ANTHROPIC PBC",
+     "total": 45500
+    }
+   ],
+   "topCommittees": [
+    {
+     "name": "CARPENTERS LEGISLATIVE IMPROVEMENT COMMITTEE",
+     "kind": "PAC",
+     "total": 10000
+    },
+    {
+     "name": "THE NATIONAL ASSOCIATION OF REALTORS RPAC",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "PACE OF CALIFORNIA SCHOOL EMPLOYEES ASSOCIATION - LOCAL, STATE, FEDERAL CANDIDATES",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "YOUTH SAVE DEMOCRACY",
+     "kind": "PAC",
+     "total": 5000
+    },
+    {
+     "name": "SAN FRANCISCO BAR PILOTS PAC",
+     "kind": "PAC",
+     "total": 5000
+    }
+   ],
+   "donorsSource": {
+    "label": "FEC itemized receipts",
+    "url": "https://www.fec.gov/data/receipts/?committee_id=C00909283&two_year_transaction_period=2026"
+   }
+  }
+ }
+}
