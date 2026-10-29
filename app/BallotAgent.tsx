@@ -209,21 +209,6 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
         </div>
         {c.photo && <p className="text-xs text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
         {c.money && <MoneyBlock m={c.money} />}
-        {c.accountability?.length ? (
-          <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-sm">
-            <p className="eyebrow mb-2">Said vs. did</p>
-            {(c.accountability as (NonNullable<Politician["accountability"]>[number] & { issue?: string; rationale?: string })[]).map((a, i) => (
-              <div key={i} className="mb-3 last:mb-0">
-                <p className="flex items-center justify-between gap-2 font-medium text-navy">
-                  {a.issue || "Promise"} <Badge variant={a.status === "kept" ? "outline" : "muted"}>{a.status}</Badge>
-                </p>
-                <p className="mt-1 text-slate-700"><span className="font-semibold">Said:</span> {a.promise} <Src href={a.promiseSource.url}>{a.promiseSource.label}</Src></p>
-                <p className="mt-1 text-slate-700"><span className="font-semibold">Did:</span> {a.record} {a.recordSource && <Src href={a.recordSource.url}>{a.recordSource.label}</Src>}</p>
-                {a.rationale && <p className="mt-1 text-xs text-slate-500">{a.rationale}</p>}
-              </div>
-            ))}
-          </div>
-        ) : null}
       </CardContent>
     </Card>
   );
