@@ -20,7 +20,7 @@ export type Stance = { value: number; quote: string; sourceUrl: string };
 type StanceFile = { stances: Record<string, { name: string } & Record<string, Stance | string>> };
 const STANCES = (stancesData as unknown as StanceFile).stances;
 
-export const candidateId = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+export const candidateId = (name: string) => name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 export function stancesFor(name: string): Record<string, Stance> {
   const rec = STANCES[candidateId(name)];

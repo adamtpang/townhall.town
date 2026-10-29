@@ -109,6 +109,11 @@
         "value": 3,
         "quote": "strengthen rural healthcare so families don’t have to drive hours for treatment",
         "sourceUrl": "https://ballotpedia.org/Chris_Gober#Campaign_themes"
+      },
+      "immigration": {
+        "value": 5,
+        "quote": "I will work with President Trump to secure our border and crush the cartels on Day One by fully enforcing immigration laws",
+        "sourceUrl": "https://ballotpedia.org/Chris_Gober#Campaign_themes"
       }
     },
     "greg-casar": {
@@ -151,6 +156,21 @@
         "value": -4,
         "quote": "raises the school homestead exemption",
         "sourceUrl": "https://www.ltgov.texas.gov/?p=7910"
+      },
+      "energy": {
+        "value": -3,
+        "quote": "strengthen our grid by adding additional reliable thermal power",
+        "sourceUrl": "https://www.danpatrick.org/"
+      },
+      "immigration": {
+        "value": 4,
+        "quote": "secure our border",
+        "sourceUrl": "https://www.danpatrick.org/"
+      },
+      "safety": {
+        "value": 3,
+        "quote": "support law enforcement",
+        "sourceUrl": "https://www.danpatrick.org/"
       }
     },
     "sarah-eckhardt": {
@@ -180,6 +200,16 @@
         "value": -4,
         "quote": "Protect oil and gas jobs",
         "sourceUrl": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+      },
+      "immigration": {
+        "value": 5,
+        "quote": "Aggressively enforce President Trump’s border security agenda and deportation orders",
+        "sourceUrl": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+      },
+      "safety": {
+        "value": 4,
+        "quote": "Support zero-tolerance policies for violent crime and stronger bonds for dangerous offenders to keep criminals off our streets",
+        "sourceUrl": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
       }
     },
     "mark-teixeira": {
@@ -188,6 +218,84 @@
         "value": -3,
         "quote": "Lower costs, expand choice, and stop Washington from controlling your healthcare decisions.",
         "sourceUrl": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes"
+      }
+    },
+    "ken-paxton": {
+      "name": "Ken Paxton",
+      "taxes": {
+        "value": -4,
+        "quote": "Ken Paxton will champion President Trump’s legislative priorities, including cutting taxes",
+        "sourceUrl": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+      },
+      "immigration": {
+        "value": 5,
+        "quote": "securing the border and deporting illegal aliens",
+        "sourceUrl": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+      },
+      "energy": {
+        "value": -3,
+        "quote": "remove harmful regulations designed to hurt our energy companies",
+        "sourceUrl": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+      }
+    },
+    "ted-brown": {
+      "name": "Ted Brown",
+      "immigration": {
+        "value": -4,
+        "quote": "Immigration is good for this country and should be encouraged.",
+        "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes"
+      }
+    },
+    "dawn-buckingham": {
+      "name": "Dawn Buckingham",
+      "taxes": {
+        "value": -4,
+        "quote": "BANNING STATE INCOME TAX",
+        "sourceUrl": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+      },
+      "immigration": {
+        "value": 4,
+        "quote": "SECURING THE BORDER",
+        "sourceUrl": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+      }
+    },
+    "bo-french": {
+      "name": "Bo French",
+      "energy": {
+        "value": -5,
+        "quote": "Chairman French will put the Texas oil and gas industry first by prioritizing the operators who keep the Texas economy running.",
+        "sourceUrl": "https://ballotpedia.org/Bo_French#Campaign_themes"
+      }
+    },
+    "donald-huffines": {
+      "name": "Donald Huffines",
+      "taxes": {
+        "value": -3,
+        "quote": "I am passionate about shrinking the size of government, defending liberty, and protecting taxpayers.",
+        "sourceUrl": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+      },
+      "immigration": {
+        "value": 4,
+        "quote": "I will stand with President Trump to secure the border, enforce our immigration laws, and expose the true cost of illegal immigration",
+        "sourceUrl": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+      }
+    },
+    "lauren-pena": {
+      "name": "Lauren Peña",
+      "immigration": {
+        "value": 5,
+        "quote": "Close the border. Finish the wall. End catch-and-release.",
+        "sourceUrl": "https://www.thelobbynews.com/2026-midterms/texas/37th-district"
+      },
+      "taxes": {
+        "value": -4,
+        "quote": "I will fight to restore economic sanity by lowering taxes, increasing take-home pay, and enforcing a balanced budget.",
+        "sourceUrl": "https://www.ballotready.org/people/lauren-b-pena"
+      },
+      "energy": {
+        "value": -3,
+        "quote": "I will unleash American energy so families are never forced to choose between groceries and electricity.",
+        "sourceUrl": "https://www.ballotready.org/people/lauren-b-pena"
       }
     }
   }
