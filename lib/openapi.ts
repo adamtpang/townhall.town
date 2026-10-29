@@ -1,5 +1,5 @@
 // OpenAPI 3.1 description of the public API. Documents only the routes that exist:
-// app/api/agent/route.ts (GET, POST) and app/api/locate/route.ts (GET). Served at /openapi.json.
+// app/api/agent/route.ts (GET, POST) and app/api/locate/route.ts (POST). Served at /openapi.json.
 import { COVERAGE, SITE } from "./site";
 
 const zips = COVERAGE.map((c) => c.zip);
@@ -78,15 +78,28 @@ export function openApiSpec() {
         },
       },
       "/api/locate": {
-        get: {
+        post: {
           operationId: "locateZip",
           tags: ["location"],
           summary: "Coordinates to ZIP",
           description: "Looks up the ZIP Code Tabulation Area for a point using the public U.S. Census Geocoder. Coordinates are not stored.",
-          parameters: [
-            { name: "lat", in: "query", required: true, description: "Latitude in decimal degrees.", schema: { type: "number", minimum: -90, maximum: 90 }, example: 30.2672 },
-            { name: "lon", in: "query", required: true, description: "Longitude in decimal degrees.", schema: { type: "number", minimum: -180, maximum: 180 }, example: -97.7431 },
-          ],
+          requestBody: {
+            required: true,
+            description: "Coordinates go in the JSON body, not the URL, so they do not appear in request paths or logs of URLs.",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  required: ["lat", "lon"],
+                  properties: {
+                    lat: { type: "number", minimum: -90, maximum: 90, description: "Latitude in decimal degrees." },
+                    lon: { type: "number", minimum: -180, maximum: 180, description: "Longitude in decimal degrees." },
+                  },
+                },
+                example: { lat: 30.2672, lon: -97.7431 },
+              },
+            },
+          },
           responses: {
             "200": {
               description: "The ZIP for the point.",
@@ -101,9 +114,9 @@ export function openApiSpec() {
                 },
               },
             },
-            "400": err("lat or lon is missing or out of range.", { code: "invalid", message: "lat and lon are required decimal degrees (lat -90..90, lon -180..180)." }),
+            "400": err("The body is not JSON, or lat or lon is missing or out of range.", { code: "invalid", message: 'Send a JSON body {"lat": <number>, "lon": <number>} in decimal degrees (lat -90..90, lon -180..180).' }),
             "404": err("The point is not inside a U.S. ZIP Code Tabulation Area.", { code: "not_found", message: "No ZIP found for this location" }),
-            "405": notAllowed("GET"),
+            "405": notAllowed("POST"),
             "502": err("The Census Geocoder did not answer.", { code: "upstream_unavailable", message: "Census geocoder unavailable" }),
           },
         },

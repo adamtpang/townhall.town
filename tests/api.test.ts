@@ -42,12 +42,13 @@ describe("/api/agent ZIP validation (exactly 5 digits, no trimming or slicing)",
 });
 
 describe("/api/locate errors", () => {
-  it.each(["", "?lat=30", "?lon=-97", "?lat=abc&lon=-97", "?lat=&lon=", "?lat=91&lon=0", "?lat=0&lon=181", "?lat=1e3&lon=0"])("GET %s is 400 invalid", async (q) => {
-    await expectError(await locate.GET(new Request(`${B}/api/locate${q}`)), 400, "invalid");
+  const post = (body: string) => locate.POST(new Request(`${B}/api/locate`, { method: "POST", headers: { "content-type": "application/json" }, body }));
+  it.each(["", "{", "null", "[]", "{}", '{"lat":30}', '{"lon":-97}', '{"lat":"abc","lon":-97}', '{"lat":"","lon":""}', '{"lat":91,"lon":0}', '{"lat":0,"lon":181}', '{"lat":"1e3","lon":0}', '{"lat":null,"lon":null}'])("POST %s is 400 invalid", async (body) => {
+    await expectError(await post(body), 400, "invalid");
   });
-  it.each(["POST", "PUT", "PATCH", "DELETE"] as const)("%s is 405 with Allow: GET", async (m) => {
-    const res = await expectError(await (locate as any)[m](new Request(`${B}/api/locate`, { method: m })), 405, "method_not_allowed");
-    expect(res.headers.get("allow")).toBe("GET");
+  it.each(["GET", "PUT", "PATCH", "DELETE"] as const)("%s is 405 with Allow: POST", async (m) => {
+    const res = await expectError(await (locate as any)[m](new Request(`${B}/api/locate?lat=30.2672&lon=-97.7431`, { method: m })), 405, "method_not_allowed");
+    expect(res.headers.get("allow")).toBe("POST");
   });
 });
 
@@ -58,12 +59,17 @@ describe("unknown /api routes", () => {
 });
 
 // Route files under app/api, as OpenAPI paths. The catch-all is excluded: it only serves 404s.
+// Preview-only test harness, 404 on production and deliberately not in the public spec (see tests/towny.test.ts).
+const PREVIEW_ONLY = new Set(["/api/towny-test"]);
 function apiRoutes(dir = "app/api", prefix = "/api"): string[] {
+  return allRoutes(dir, prefix).filter((r) => !PREVIEW_ONLY.has(r));
+}
+function allRoutes(dir: string, prefix: string): string[] {
   return readdirSync(dir).flatMap((d) => {
     const p = join(dir, d);
     if (!statSync(p).isDirectory() || d.startsWith("[")) return [];
     const here = readdirSync(p).includes("route.ts") ? [`${prefix}/${d}`] : [];
-    return [...here, ...apiRoutes(p, `${prefix}/${d}`)];
+    return [...here, ...allRoutes(p, `${prefix}/${d}`)];
   });
 }
 const methodsOf = (path: string) =>

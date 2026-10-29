@@ -1,26 +1,17 @@
-import { generateText, tool, stepCountIs, type LanguageModel } from "ai";
-import { createXai } from "@ai-sdk/xai";
+import { generateText, tool, stepCountIs } from "ai";
 import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../../../lib/tools";
 import { civicTools } from "../../../lib/civicTools";
 import { dataTools } from "../../../lib/dataTools";
 import { apiError, isZip, methodNotAllowed } from "../../../lib/apiError";
+import { GATEWAY_FALLBACKS, modelLadder } from "../../../lib/models";
+import { getElectionDates, longDateIn } from "../../../lib/logistics";
+import { townyPrompt } from "../../../lib/townyPrompt";
+import { townyTools } from "../../../lib/townyTools";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
-
-// Model ladder: Vercel AI Gateway model strings (auth via OIDC on Vercel or AI_GATEWAY_API_KEY),
-// then direct xAI if XAI_API_KEY is configured. Override the gateway list with AGENT_MODELS.
-const GATEWAY_MODELS = (process.env.AGENT_MODELS || "google/gemini-2.5-flash-lite,openai/gpt-4.1-mini,openai/gpt-5-nano").split(",").map((m) => m.trim()).filter(Boolean);
-function modelLadder(): { label: string; model: LanguageModel }[] {
-  const out: { label: string; model: LanguageModel }[] = GATEWAY_MODELS.map((m) => ({ label: m + " (AI Gateway)", model: m }));
-  if (process.env.XAI_API_KEY) {
-    const xai = createXai({ apiKey: process.env.XAI_API_KEY });
-    out.unshift({ label: "grok-4-fast-non-reasoning (xAI)", model: xai("grok-4-fast-non-reasoning") });
-  }
-  return out;
-}
 
 const STEP_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
@@ -92,10 +83,8 @@ function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
   };
 }
 
-const SYSTEM = `You are townhall.town, a strictly nonpartisan ballot agent.
-In your FIRST step, call all five tools in parallel, each exactly once: getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems.
-Then write a 2-3 sentence neutral summary of what is on this voter's ballot and the top local problems.
-Never recommend a candidate or say who is "best". Never state facts about candidates that are not in tool results. Market odds are market prices, not predictions of truth.`;
+// System prompt: Civic's Towny prompt, verbatim (lib/townyPrompt.ts), with {{TODAY}} in the ZIP's time zone.
+const systemFor = (zip: string) => townyPrompt(longDateIn(getElectionDates(zip)?.timezone ?? "America/Chicago"));
 
 async function run(zip: string, emit: Emit) {
   const results: Record<string, unknown> = {};
@@ -110,11 +99,10 @@ async function run(zip: string, emit: Emit) {
       const res = await generateText({
         model: lm,
         maxRetries: 0,
-        // Gateway-side fallbacks (ids checked against the AI Gateway model list; xai/grok-3-mini is not listed).
-        providerOptions: { gateway: { models: ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"] } },
-        system: SYSTEM,
+        providerOptions: GATEWAY_FALLBACKS,
+        system: systemFor(zip),
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
-        tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools },
+        tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools, ...townyTools },
         stopWhen: stepCountIs(3),
         abortSignal: AbortSignal.timeout(25000),
       });

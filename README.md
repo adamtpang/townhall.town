@@ -14,7 +14,7 @@ npm run dev                  # http://localhost:3000
 npm run build
 ```
 Try the demo ZIPs: 78701 (Austin), 94103 (San Francisco), and 10001 (New York); 78130 (New Braunfels) and 90012 (Los Angeles) also work.
-API: `GET /api/agent?zip=78701` streams NDJSON (`status`, `step`, `result`). `GET /api/locate?lat=..&lon=..` maps coordinates to a ZIP via the Census geocoder.
+API: `GET /api/agent?zip=78701` streams NDJSON (`status`, `step`, `result`). `POST /api/locate` with `{"lat":..,"lon":..}` maps coordinates to a ZIP via the Census geocoder.
 
 ## Open source: contribute
 
@@ -67,20 +67,17 @@ See `.env.example` (placeholders only, never commit real values):
 - `AGENT_MODELS`: optional comma-separated gateway model ladder.
 - `XAI_API_KEY`: optional direct xAI fallback.
 - `FEC_API_KEY`, `CONGRESS_API_KEY`: optional api.data.gov keys for OpenFEC and Congress.gov. Without them the tools use `DEMO_KEY` (low hourly limit).
-- `OPENSTATES_API_KEY`, `GOOGLE_CIVIC_API_KEY`: optional. Without them `getStateLegislators` and `getVoterInfo` return `unavailable`.
 
 ### Live data tools (`lib/dataTools.ts`)
 Optional tools the model can call, each returning a source URL, or `{ status: "unavailable", reason }` when a key is missing or the call fails:
 - `getCampaignFinance`: OpenFEC receipts, spending and cash on hand for a federal candidate.
 - `getSponsoredBills`: the current U.S. House member for a state and district, with recent sponsored bills (Congress.gov).
 - `getCountyUnemployment`: latest monthly county unemployment rate (BLS LAUS). A county figure, so it differs from the ZIP-level ACS 5-year number.
-- `getStateLegislators`: state legislators for a point (Open States).
-- `getVoterInfo`: polling place and early-vote sites for an address (Google Civic voterinfo).
 
 ## API
 Public, no key. OpenAPI 3.1 spec at [/openapi.json](https://townhall.town/openapi.json), docs with curl examples at [/developers](https://townhall.town/developers), RFC 9727 catalog at `/.well-known/api-catalog`.
 - `GET /api/agent?zip=78701` or `POST /api/agent` `{"zip":"78701"}`: NDJSON stream ending in one `result` (or `unsupported`) line.
-- `GET /api/locate?lat=..&lon=..`: `{"zip","source"}` from the Census Geocoder.
+- `POST /api/locate` `{"lat":30.2672,"lon":-97.7431}`: `{"zip","source"}` from the Census Geocoder. Coordinates go in the body, never the URL; `GET` is 405.
 - Every API error is `application/json` `{"error":{"code","message"}}`: 400 `invalid`, 404 `not_found` (also any unknown `/api/*`), 405 `method_not_allowed` (with `Allow`), 502 `upstream_unavailable`.
 
 ## Shared data contract

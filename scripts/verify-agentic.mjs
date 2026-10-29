@@ -113,7 +113,7 @@ for (const ua of ["GPTBot/1.1 (+https://openai.com/gptbot)", "ClaudeBot/1.0 (+cl
 const oa = await get("/openapi.json");
 let spec = null;
 try { spec = JSON.parse(oa.body); } catch {}
-ok(oa.status === 200 && /^application\/json/.test(oa.type) && spec?.openapi === "3.1.0" && !!spec.paths["/api/agent"]?.get && !!spec.paths["/api/agent"]?.post && !!spec.paths["/api/locate"]?.get, "openapi.json", `${oa.status} ${oa.type} ${spec ? Object.keys(spec.paths).join(",") : "unparsed"}`);
+ok(oa.status === 200 && /^application\/json/.test(oa.type) && spec?.openapi === "3.1.0" && !!spec.paths["/api/agent"]?.get && !!spec.paths["/api/agent"]?.post && !!spec.paths["/api/locate"]?.post && !spec.paths["/api/locate"]?.get, "openapi.json", `${oa.status} ${oa.type} ${spec ? Object.keys(spec.paths).join(",") : "unparsed"}`);
 const cat = await get("/.well-known/api-catalog");
 ok(cat.status === 200 && /linkset\+json/.test(cat.type) && cat.body.includes("/openapi.json"), "api-catalog", `${cat.status} ${cat.type}`);
 ok(/<link[^>]*rel="service-desc"[^>]*href="\/openapi\.json"/.test(home.body) || /<link[^>]*href="\/openapi\.json"[^>]*rel="service-desc"/.test(home.body), "homepage link rel=service-desc");
@@ -141,14 +141,15 @@ await apiErr('agent POST {"zip":"787011"} -> 400', "/api/agent", 400, "invalid",
 await apiErr("agent POST bad JSON -> 400", "/api/agent", 400, "invalid", { method: "POST", type: "application/json", body: "{" });
 const put = await apiErr("agent PUT -> 405", "/api/agent", 405, "method_not_allowed", { method: "PUT", allow: true });
 ok(put.headers.get("allow") === "GET, POST", "agent 405 Allow header", put.headers.get("allow"));
-await apiErr("locate no lat/lon -> 400", "/api/locate", 400, "invalid");
-const lp = await apiErr("locate POST -> 405", "/api/locate", 405, "method_not_allowed", { method: "POST", allow: true });
-ok(lp.headers.get("allow") === "GET", "locate 405 Allow header", lp.headers.get("allow"));
+await apiErr("locate POST no lat/lon -> 400", "/api/locate", 400, "invalid", { method: "POST", type: "application/json", body: "{}" });
+await apiErr("locate POST bad JSON -> 400", "/api/locate", 400, "invalid", { method: "POST", type: "application/json", body: "{" });
+const lp = await apiErr("locate GET -> 405 (coordinates never in the URL)", "/api/locate?lat=30.2672&lon=-97.7431", 405, "method_not_allowed", { allow: true });
+ok(lp.headers.get("allow") === "POST", "locate 405 Allow header", lp.headers.get("allow"));
 await apiErr("unknown /api route -> 404", `/api/nope-${Date.now()}`, 404, "not_found");
 await apiErr("unknown /api route POST -> 404", "/api/v1/ballot", 404, "not_found", { method: "POST" });
 const un = await get("/api/agent?zip=90210");
 ok(un.status === 200 && un.type.startsWith("application/x-ndjson") && un.body.includes('"type":"unsupported"') && un.body.includes("We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now."), "agent uncovered ZIP -> unsupported line", `${un.status} ${un.type}`);
-const loc = await get("/api/locate?lat=30.2672&lon=-97.7431");
+const loc = await get("/api/locate", { method: "POST", type: "application/json", body: '{"lat":30.2672,"lon":-97.7431}' });
 ok(loc.status === 200 && /"zip":"\d{5}"/.test(loc.body), "locate Austin", loc.body.slice(0, 80));
 
 console.log(failed ? `\n${failed} check(s) failed` : "\nAll checks passed");

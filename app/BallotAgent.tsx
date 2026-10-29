@@ -16,6 +16,7 @@ import IssueMatch from "./IssueMatch";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
+import { planRows, type PlanRow } from "../lib/logistics";
 
 const NYC_READY = true;
 const DEMO = [
@@ -280,7 +281,7 @@ export default function BallotAgent() {
     navigator.geolocation.getCurrentPosition(
       async (p) => {
         try {
-          const r = await fetch(`/api/locate?lat=${p.coords.latitude}&lon=${p.coords.longitude}`);
+          const r = await fetch("/api/locate", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ lat: p.coords.latitude, lon: p.coords.longitude }) });
           const d = await r.json();
           if (d.zip) run(d.zip);
           else setNotice((typeof d.error === "string" ? d.error : d.error?.message) || "Couldn't find a ZIP for your location.");
@@ -349,7 +350,7 @@ export default function BallotAgent() {
           <section id="plan" className="border-t border-black py-24">
             <p className="text-sm text-black/50">03</p>
             <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">Your plan</h2>
-            <Plan state={b.state} />
+            <Plan zip={b.zip} state={b.state} />
           </section>
         </div>
       )}
@@ -375,69 +376,6 @@ function MarketBlock({ mk }: { mk: { quotes: MarketQuote[]; status: string; avg:
           </p>
         ))}
       </div>
-    </div>
-  );
-}
-
-function GamePlan({ state }: { state: "TX" | "CA" }) {
-  if (state === "TX")
-    return (
-      <div className="grid gap-4 sm:grid-cols-3">
-        <Card>
-          <CardHeader><span className="eyebrow">When</span><CardTitle>Early voting through Fri, Oct 30</CardTitle></CardHeader>
-          <CardContent className="space-y-2 text-sm text-slate-700">
-            <p>Early voting runs Oct 19–30. Election Day is <strong>Tuesday, Nov 3, 2026</strong>.</p>
-            <p>The registration deadline (Oct 5) has passed. <a href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do">Check if you're registered</a>.</p>
-            <p className="text-xs text-slate-500">Source: <a href="https://www.sos.state.tx.us/">Texas SOS</a>, <a href="https://www.votetexas.gov/">VoteTexas.gov</a></p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><span className="eyebrow">Where</span><CardTitle>Find your polling place</CardTitle></CardHeader>
-          <CardContent className="space-y-2 text-sm text-slate-700">
-            <p>Locations and hours are set by your county. Use the official lookup:</p>
-            <p><Src href="https://www.votetexas.gov/voting/where.html">VoteTexas.gov: where to vote</Src></p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><span className="eyebrow">What to bring</span><CardTitle>One approved photo ID</CardTitle></CardHeader>
-          <CardContent className="text-sm text-slate-700">
-            <ul className="list-disc space-y-1 pl-5">
-              <li>Texas Driver License (DPS)</li>
-              <li>Texas Election Identification Certificate (DPS)</li>
-              <li>Texas Personal ID Card (DPS)</li>
-              <li>Texas Handgun License (DPS)</li>
-              <li>U.S. Military ID with photo</li>
-              <li>U.S. Citizenship Certificate with photo</li>
-              <li>U.S. Passport (book or card)</li>
-            </ul>
-            <p className="mt-2 text-xs text-slate-500">Can be expired up to 4 years (any length if you're 70+). No ID and can't reasonably get one? Sign a Reasonable Impediment Declaration and bring a supporting document. <a href="https://www.votetexas.gov/voting/need-id.html">Source: VoteTexas.gov</a></p>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  return (
-    <div className="grid gap-4 sm:grid-cols-3">
-      <Card>
-        <CardHeader><span className="eyebrow">When</span><CardTitle>Election Day: Tue, Nov 3, 2026</CardTitle></CardHeader>
-        <CardContent className="space-y-2 text-sm text-slate-700">
-          <p>Mail ballots must be postmarked by Election Day or dropped off at a drop box or vote center. Early in-person voting is available in every county.</p>
-          <p className="text-xs text-slate-500">Source: <a href="https://www.sos.ca.gov/elections">sos.ca.gov</a></p>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader><span className="eyebrow">Where</span><CardTitle>Vote centers and drop boxes</CardTitle></CardHeader>
-        <CardContent className="space-y-2 text-sm text-slate-700">
-          <p><Src href="https://caearlyvoting.sos.ca.gov/">caearlyvoting.sos.ca.gov</Src></p>
-          <p><Src href="https://www.sos.ca.gov/elections">Polling place lookup (sos.ca.gov)</Src></p>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader><span className="eyebrow">What to bring</span><CardTitle>Usually no ID needed</CardTitle></CardHeader>
-        <CardContent className="space-y-2 text-sm text-slate-700">
-          <p>Most California voters don't need ID. Some first-time voters may be asked for one. Check your status first.</p>
-          <p><Src href="https://voterstatus.sos.ca.gov/">Check your voter status</Src></p>
-        </CardContent>
-      </Card>
     </div>
   );
 }
@@ -474,36 +412,45 @@ function TurnoutSection({ t }: { t: TurnoutDetail }) {
 }
 
 
-function Plan({ state }: { state: "TX" | "CA" | "NY" }) {
-  const rows =
-    state === "TX"
-      ? [
-          { k: "Oct 30", v: "Last day of early voting", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
-          { k: "Nov 3", v: "Election Day, 7 a.m. to 7 p.m.", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
-          { k: "Where", v: "Your county sets locations", src: "https://www.votetexas.gov/voting/where.html", s: "Find your polling place" },
-          { k: "Bring", v: "One approved photo ID", src: "https://www.votetexas.gov/voting/need-id.html", s: "Accepted IDs" },
-        ]
-      : state === "NY"
-      ? [
-          { k: "Nov 1", v: "Last day of early voting (started Oct 24)", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
-          { k: "Nov 2", v: "Last day to request a mail ballot in person", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
-          { k: "Nov 3", v: "Election Day", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
-          { k: "Where", v: "Early voting and Election Day sites can differ", src: "https://findmypollsite.vote.nyc/", s: "NYC Board of Elections: find my poll site" },
-          { k: "Bring", v: "ID rules depend on how you registered", src: "https://elections.ny.gov/", s: "New York State Board of Elections" },
-        ]
-      : [
-          { k: "Nov 3", v: "Election Day. Mail ballots postmarked by today", src: "https://www.sos.ca.gov/elections", s: "sos.ca.gov" },
-          { k: "Where", v: "Vote centers and drop boxes", src: "https://caearlyvoting.sos.ca.gov/", s: "caearlyvoting.sos.ca.gov" },
-          { k: "Bring", v: "Usually no ID needed", src: "https://voterstatus.sos.ca.gov/", s: "Check your voter status" },
-        ];
+// Plan rows come from data/election_dates.json + data/polling_locations.json (lib/logistics.ts).
+// Only the ID ("Bring") row is still hand-written: ID rules are not in Civic's data files yet.
+const BRING: Record<"TX" | "CA" | "NY", PlanRow> = {
+  TX: { k: "Bring", title: "One approved photo ID", src: "https://www.votetexas.gov/voting/need-id.html", s: "Accepted IDs" },
+  NY: { k: "Bring", title: "ID rules depend on how you registered", src: "https://elections.ny.gov/", s: "New York State Board of Elections" },
+  CA: { k: "Bring", title: "Usually no ID needed", src: "https://voterstatus.sos.ca.gov/", s: "Check your voter status" },
+};
+// ZIPs we cover without official logistics data get links to the official source only, no dates.
+const LOOKUP: Record<"TX" | "CA" | "NY", PlanRow> = {
+  TX: { k: "When", title: "Dates, hours and places are set by your county", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
+  NY: { k: "When", title: "Dates, hours and places", src: "https://findmypollsite.vote.nyc/", s: "NYC Board of Elections" },
+  CA: { k: "When", title: "Dates, hours and vote centers are set by your county", src: "https://caearlyvoting.sos.ca.gov/", s: "caearlyvoting.sos.ca.gov" },
+};
+
+function Plan({ zip, state }: { zip: string; state: "TX" | "CA" | "NY" }) {
+  const official = planRows(zip);
+  const rows = [...(official.length ? official : [LOOKUP[state]]), BRING[state]];
   return (
     <dl className="mt-16">
       {rows.map((r) => (
-        <div key={r.k} className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
+        <div key={r.k + r.title} className={`grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12${r.past ? " opacity-50" : ""}`}>
           <dt className="font-serif text-5xl leading-none sm:col-span-4 sm:text-6xl">{r.k}</dt>
           <dd className="sm:col-span-8">
-            <p className="text-xl">{r.v}</p>
-            <a className="mt-1 inline-block text-sm" href={r.src} target="_blank" rel="noreferrer">{r.s} ↗</a>
+            <p className="text-xl">{r.title}</p>
+            {r.detail?.map((d) => <p key={d} className="mt-2 text-base text-black/70">{d}</p>)}
+            {r.sites?.map((g) => (
+              <div key={g.label} className="mt-4">
+                <p className="text-sm text-black/50">{g.label}</p>
+                <ul className="mt-1 space-y-2">
+                  {g.list.map((x) => (
+                    <li key={x.name + x.address} className="text-base">
+                      <span className="font-medium">{x.name}</span>{x.room ? `, ${x.room}` : ""}
+                      <span className="block text-sm text-black/60">{x.address}{x.dates ? ` · ${x.dates}` : ""}{x.hours ? ` · ${x.hours}` : ""}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <a className="mt-2 inline-block text-sm" href={r.src} target="_blank" rel="noreferrer">{r.s} ↗</a>
           </dd>
         </div>
       ))}

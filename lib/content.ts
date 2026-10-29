@@ -77,12 +77,22 @@ export const ABOUT: PageContent = {
   ],
 };
 
+// Every sentence here is checked against the code (feat/agentic) and Vercel's docs, per Civic's towny_privacy.md.
+// Open gaps, stated plainly on the page rather than promised: no zero-data-retention or no-training routing is
+// turned on; Vercel runtime-log retention for this project is not confirmed; no private contact channel; the
+// Towny messaging service (SMS, WhatsApp, email, STOP/HELP/DELETE) is not built.
 export const PRIVACY: PageContent = {
   path: "/privacy",
   title: "Privacy",
   description: "What townhall.town stores, what it sends, and what it does not collect.",
-  lead: "townhall.town has no accounts and keeps as little as possible. This page lists exactly what the site stores and sends.",
+  lead: "townhall.town has no accounts and keeps as little as possible. This page lists exactly what the site stores and sends, and what we have not yet been able to promise.",
   sections: [
+    {
+      heading: "The short version",
+      paragraphs: [
+        "We don't sell or share your information. There are no ads, no data brokers, and nothing goes to campaigns or parties. The site only needs your ZIP code. Your issue answers stay on your device. We show what candidates said, with a link to where they said it, and we never recommend a candidate.",
+      ],
+    },
     {
       heading: "No account",
       paragraphs: [
@@ -96,28 +106,41 @@ export const PRIVACY: PageContent = {
       ],
     },
     {
-      heading: "The ballot agent",
+      heading: "The ballot agent and AI services",
       paragraphs: [
-        "When you ask for a ballot, your browser sends only the 5-digit ZIP to the site's /api/agent route. The server looks up the races for that ZIP, and an AI model, reached through Vercel AI Gateway, writes a short summary from those results. If the gateway is unavailable, the same request may go directly to xAI when that fallback is configured. The ZIP is the only input from you.",
+        "When you ask for a ballot, your browser sends only the 5-digit ZIP, in the body of a request to the site's /api/agent route. The server looks up the races for that ZIP. It then sends a short prompt containing the ZIP and our ballot data (not your answers) to an AI model that writes a summary. The model is reached through Vercel AI Gateway (today Google or OpenAI models). If a direct xAI key is configured, the prompt goes to xAI first. The server does not save the ZIP or the prompt.",
+        "Vercel says AI Gateway itself does not keep prompts or responses after a request completes. It keeps request metadata such as the model, provider, token counts, cost and timing. We have not turned on the gateway's zero-data-retention or no-training routing, so the AI provider's own data policy applies to the prompt.",
       ],
     },
     {
       heading: "Location",
       paragraphs: [
-        "If you choose to use your location, your browser asks for permission first. The coordinates are sent to the site's /api/locate route, which asks the public U.S. Census Geocoder for the matching ZIP. townhall.town does not store the coordinates.",
+        "If you choose to use your location, your browser asks for permission first. The coordinates are sent in the body of a request to the site's /api/locate route, never in the web address. The server passes them to the public U.S. Census Geocoder to find the matching ZIP. townhall.town does not store the coordinates.",
       ],
     },
     {
-      heading: "Analytics and cookies",
+      heading: "Analytics, cookies and server logs",
       paragraphs: [
-        "townhall.town does not include analytics, ad pixels or tracking scripts, and it does not set cookies. The site is hosted on Vercel, which keeps standard request logs such as IP address, user agent and page path for operating the service, as described in Vercel's privacy policy.",
+        "townhall.town does not include analytics, ad pixels or tracking scripts, and it does not set cookies. The site is hosted on Vercel, which keeps standard request logs such as IP address, user agent and page path for operating the service, as described in Vercel's privacy policy. The site's own pages send your ZIP and coordinates in request bodies, not in the page path. We have not yet confirmed how many days Vercel keeps these logs for this project.",
       ],
     },
     {
       heading: "Other sites",
       paragraphs: [
-        "Candidate photos load from Wikimedia, so your browser contacts Wikimedia when a photo is shown. Source links open other sites with their own policies. Server-side lookups to public data sources such as the FEC, Polymarket and Kalshi send race identifiers, not information about you.",
-        `Questions about privacy: [open an issue on GitHub](${SITE.issues}).`,
+        "Candidate photos load from Wikimedia, so your browser contacts Wikimedia when a photo is shown. Source links open other sites with their own policies.",
+        "The server also fetches public data while building a ballot. It sends candidate names or IDs to the FEC and Congress.gov, the county code for your ZIP to the Bureau of Labor Statistics, and market IDs for races to Polymarket and Kalshi. These requests come from our server, so they don't include your IP address, and they never include your answers.",
+      ],
+    },
+    {
+      heading: "Messages",
+      paragraphs: [
+        "townhall.town does not run a texting, WhatsApp or email service yet, so it holds no phone numbers, email addresses or messages. This page will be updated before any messaging starts.",
+      ],
+    },
+    {
+      heading: "Contact",
+      paragraphs: [
+        `Questions about privacy: [open an issue on GitHub](${SITE.issues}). GitHub issues are public. We don't have a private contact address yet.`,
       ],
     },
   ],
@@ -166,7 +189,7 @@ export const DEVELOPERS: PageContent = {
       heading: "Endpoints",
       items: [
         "GET /api/agent?zip=78701 or POST /api/agent with JSON {\"zip\":\"78701\"}: the ballot for a ZIP, streamed as newline-delimited JSON (application/x-ndjson).",
-        "GET /api/locate?lat=30.2672&lon=-97.7431: the ZIP for a point, from the U.S. Census Geocoder.",
+        "POST /api/locate with JSON {\"lat\":30.2672,\"lon\":-97.7431}: the ZIP for a point, from the U.S. Census Geocoder. Coordinates go in the body, not the URL.",
         `[openapi.json](${SITE.url}/openapi.json): OpenAPI 3.1 description of both endpoints, with every parameter and response.`,
       ],
     },
@@ -184,7 +207,7 @@ export const DEVELOPERS: PageContent = {
     {
       heading: "Find a ZIP",
       paragraphs: ['Returns {"zip":"78701","source":"U.S. Census Geocoder (ZCTA)"}. Coordinates are not stored.'],
-      code: [`curl "${SITE.url}/api/locate?lat=30.2672&lon=-97.7431"`],
+      code: [`curl -X POST "${SITE.url}/api/locate" -H "content-type: application/json" -d '{"lat":30.2672,"lon":-97.7431}'`],
     },
     {
       heading: "Errors",

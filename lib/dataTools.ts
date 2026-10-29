@@ -85,42 +85,6 @@ export async function getCountyUnemployment(input: { zip?: string; countyFips?: 
   }
 }
 
-/** Open States: state legislators for a point. Needs OPENSTATES_API_KEY. */
-export async function getStateLegislators(input: { lat: number; lng: number }) {
-  const key = process.env.OPENSTATES_API_KEY;
-  if (!key) return unavailable("OPENSTATES_API_KEY is not set.", "https://open.pluralpolicy.com/");
-  try {
-    const r = await getJson(`https://v3.openstates.org/people.geo?lat=${input.lat}&lng=${input.lng}`, { "X-API-KEY": key });
-    return {
-      legislators: (r.results ?? []).map((p: any) => ({ name: p.name, party: p.party, chamber: p.current_role?.org_classification, district: p.current_role?.district, url: p.openstates_url })),
-      source: "https://open.pluralpolicy.com/",
-    };
-  } catch (e: any) {
-    return unavailable(`Open States: ${e?.message || e}`, "https://open.pluralpolicy.com/");
-  }
-}
-
-/** Google Civic voterinfo: polling place and early-vote sites for an address. Needs GOOGLE_CIVIC_API_KEY. */
-export async function getVoterInfo(input: { address: string; electionId?: string }) {
-  const key = process.env.GOOGLE_CIVIC_API_KEY;
-  if (!key) return unavailable("GOOGLE_CIVIC_API_KEY is not set.", "https://developers.google.com/civic-information");
-  const q = new URLSearchParams({ key, address: input.address });
-  if (input.electionId) q.set("electionId", input.electionId);
-  try {
-    const r = await getJson(`https://www.googleapis.com/civicinfo/v2/voterinfo?${q}`);
-    const site = (s: any) => ({ name: s.address?.locationName ?? null, address: [s.address?.line1, s.address?.city, s.address?.state, s.address?.zip].filter(Boolean).join(", "), hours: s.pollingHours ?? null });
-    return {
-      election: r.election?.name ?? null,
-      pollingLocations: (r.pollingLocations ?? []).slice(0, 3).map(site),
-      earlyVoteSites: (r.earlyVoteSites ?? []).slice(0, 3).map(site),
-      officialInfo: r.state?.[0]?.electionAdministrationBody?.electionInfoUrl ?? null,
-      source: "https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery",
-    };
-  } catch (e: any) {
-    return unavailable(`Google Civic: ${e?.message || e}`, "https://developers.google.com/civic-information");
-  }
-}
-
 export const dataTools = {
   getCampaignFinance: tool({
     description: "Federal campaign finance totals from OpenFEC (receipts, spending, cash on hand) for one candidate, by FEC candidate id or by name and state. Facts only, with a source URL.",
@@ -136,15 +100,5 @@ export const dataTools = {
     description: "Latest monthly county unemployment rate from BLS LAUS, for a ZIP we cover or a 5-digit county FIPS code.",
     inputSchema: z.object({ zip: z.string().optional(), countyFips: z.string().optional() }),
     execute: async (i) => getCountyUnemployment(i),
-  }),
-  getStateLegislators: tool({
-    description: "State legislators (state senate and house/assembly) for a latitude and longitude, from Open States. Returns unavailable if no key is configured.",
-    inputSchema: z.object({ lat: z.number(), lng: z.number() }),
-    execute: async (i) => getStateLegislators(i),
-  }),
-  getVoterInfo: tool({
-    description: "Polling place and early-vote sites for a street address, from the Google Civic Information voterinfo API. Returns unavailable if no key is configured.",
-    inputSchema: z.object({ address: z.string(), electionId: z.string().optional() }),
-    execute: async (i) => getVoterInfo(i),
   }),
 };
