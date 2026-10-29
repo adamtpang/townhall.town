@@ -1,0 +1,57 @@
+{
+ "dates": [
+  {
+   "label": "Election Day",
+   "date": "2026-11-03",
+   "source": "https://ballotpedia.org/Texas_elections,_2026"
+  },
+  {
+   "label": "Voter registration deadline (PASSED)",
+   "date": "2026-10-05",
+   "quote": "The deadline to register and be eligible to vote in the November 3, 2026 Election is October 5, 2026.",
+   "source": "https://www.votetexas.gov/faq/registration.html"
+  },
+  {
+   "label": "Early voting (in person)",
+   "date_range": [
+    "2026-10-19",
+    "2026-10-30"
+   ],
+   "quote": "Early voting for the November 3 Election runs Oct. 19-30.",
+   "source": "https://www.sos.state.tx.us/ (site-wide election notice banner, read 2026-10-29)"
+  },
+  {
+   "label": "Primary",
+   "date": "2026-03-03",
+   "source": "https://ballotpedia.org/Texas_elections,_2026"
+  },
+  {
+   "label": "Primary runoff",
+   "date": "2026-05-26",
+   "source": "https://ballotpedia.org/Texas_elections,_2026"
+  }
+ ],
+ "links": {
+  "VoteTexas.gov": "https://www.votetexas.gov/",
+  "Am I registered (SOS)": "https://teamrv-mvp.sos.texas.gov/MVP/mvp.do",
+  "ID requirements": "https://www.votetexas.gov/register-to-vote/need-id.html",
+  "Polling place (VoteTexas)": "https://www.votetexas.gov/voting/where.html"
+ },
+ "unverified": [
+  "Election Day polling hours (7 a.m.-7 p.m. is standard in Texas; not re-verified this session)"
+ ],
+ "eligibility": {
+  "rules": [
+   "U.S. citizen",
+   "resident of the county where you register",
+   "at least 17y10m when applying and 18 on Election Day",
+   "not a felon with an uncompleted sentence",
+   "not declared mentally incapacitated without the right to vote by a court"
+  ],
+  "source": "https://www.votetexas.gov/register-to-vote/eligibility-for-registration.html"
+ },
+ "moved_counties": {
+  "note": "Moved counties and missed re-registration? A \"limited ballot\" may be available during early voting only, at the main early voting location.",
+  "source": "https://www.votetexas.gov/faq/registration.html"
+ }
+}

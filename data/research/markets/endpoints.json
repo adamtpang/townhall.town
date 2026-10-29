@@ -1,0 +1,41 @@
+{
+ "polymarket": {
+  "auth": "none (read-only public)",
+  "docs": "https://docs.polymarket.com/",
+  "search": "GET https://gamma-api.polymarket.com/public-search?q=Texas%20Senate",
+  "event": "GET https://gamma-api.polymarket.com/events?slug=texas-senate-election-winner",
+  "fields": "events[].markets[]: groupItemTitle, outcomePrices (JSON string [\"yes\",\"no\"]), clobTokenIds (JSON string), volume, updatedAt, closed",
+  "price_history": "GET https://clob.polymarket.com/prices-history?market=<yes_token_id>&interval=1m&fidelity=1440",
+  "sample_history_file": "../../research/markets/pm_history_texas_senate_talarico.json"
+ },
+ "kalshi": {
+  "auth": "none for market data",
+  "docs": "https://docs.kalshi.com/",
+  "series_list": "GET https://api.elections.kalshi.com/trade-api/v2/series?category=Elections",
+  "events": "GET https://api.elections.kalshi.com/trade-api/v2/events?series_ticker=SENATETX&with_nested_markets=true&status=open",
+  "fields": "events[].markets[]: yes_sub_title, ticker, last_price_dollars, yes_bid_dollars, yes_ask_dollars, volume_fp",
+  "candlesticks": "GET https://api.elections.kalshi.com/trade-api/v2/series/{series}/markets/{ticker}/candlesticks?start_ts=<unix>&end_ts=<unix>&period_interval=1440",
+  "sample_candles_file": "../../research/markets/kalshi_candles_GOVPARTYTX-26-R.json",
+  "known_series": {
+   "TX": [
+    "SENATETX",
+    "GOVPARTYTX",
+    "KXLTGOVTX",
+    "KXATTYGENTX",
+    "KXHOUSETX35"
+   ],
+   "CA": [
+    "KXGOVCA",
+    "GOVPARTYCA",
+    "KXCAWEALTHTAX",
+    "KXCAWEALTHTAXMOVD",
+    "KXCAVOTERID",
+    "KXCAINSCOMGEN"
+   ]
+  },
+  "not_found": [
+   "TX-10 and TX-37 House (searched series list 2026-10-29; none)"
+  ]
+ },
+ "display_rule": "Always label as \"Market odds (Polymarket/Kalshi), as of <timestamp>\". Never call it a prediction, poll or endorsement. Refresh at request time; cache <=5 min."
+}

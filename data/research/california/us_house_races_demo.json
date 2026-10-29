@@ -1,0 +1,109 @@
+{
+ "_meta": {
+  "retrieved_at": "2026-10-29T19:49:23+00:00",
+  "election": "California general election, November 3, 2026",
+  "primary_source": "https://ballotpedia.org/California_elections,_2026",
+  "note": "California uses a top-two primary, so two candidates of the same party can meet in November (e.g. Insurance Commissioner, CA-11, CA-34). No U.S. Senate seat from California is up in 2026 (not on Ballotpedia list). Parsed from Ballotpedia.",
+  "note2": "Only CA-11 (SF) and CA-34 (downtown LA) fetched for demo ZIPs. Ballotpedia: boundaries changed via Proposition 50 (approved Nov 2025).",
+  "zip_assignment": {
+   "94103": {
+    "district": 11,
+    "confidence": "likely, UNVERIFIED for Prop 50 map"
+   },
+   "90012": {
+    "district": 34,
+    "confidence": "likely, UNVERIFIED for Prop 50 map"
+   }
+  }
+ },
+ "races": [
+  {
+   "race": "U.S. House California District 11",
+   "office_key": "us_house",
+   "district": 11,
+   "what_it_controls": "Writes and votes on federal laws; all federal tax and spending bills must start in the House. Can impeach federal officials. 2-year term; represents one of Texas's 38 districts.",
+   "what_it_controls_source": "https://www.house.gov/the-house-explained",
+   "source": "https://ballotpedia.org/California%27s_11th_Congressional_District_election,_2026",
+   "candidates": [
+    {
+     "name": "Connie Chan",
+     "party": "D",
+     "incumbent": false,
+     "incumbent_source": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+     "ballotpedia": "https://ballotpedia.org/Connie_Chan",
+     "campaign_website": null,
+     "official_website": null,
+     "fec": {
+      "candidate_id": "H6CA11268",
+      "fec_name": "CHAN, CONNIE",
+      "url": "https://www.fec.gov/data/candidate/H6CA11268/",
+      "match": "name+state+office(+district) match against FEC /v1/candidates; verify"
+     },
+     "state_finance": null,
+     "stated_positions": null
+    },
+    {
+     "name": "Scott Wiener",
+     "party": "D",
+     "incumbent": false,
+     "incumbent_source": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+     "ballotpedia": "https://ballotpedia.org/Scott_Wiener",
+     "campaign_website": null,
+     "official_website": null,
+     "fec": {
+      "candidate_id": "H8CA11116",
+      "fec_name": "WIENER, SCOTT",
+      "url": "https://www.fec.gov/data/candidate/H8CA11116/",
+      "match": "name+state+office(+district) match against FEC /v1/candidates; verify"
+     },
+     "state_finance": null,
+     "stated_positions": null
+    }
+   ]
+  },
+  {
+   "race": "U.S. House California District 34",
+   "office_key": "us_house",
+   "district": 34,
+   "what_it_controls": "Writes and votes on federal laws; all federal tax and spending bills must start in the House. Can impeach federal officials. 2-year term; represents one of Texas's 38 districts.",
+   "what_it_controls_source": "https://www.house.gov/the-house-explained",
+   "source": "https://ballotpedia.org/California%27s_34th_Congressional_District_election,_2026",
+   "candidates": [
+    {
+     "name": "Jimmy Gomez",
+     "party": "D",
+     "incumbent": true,
+     "incumbent_source": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+     "ballotpedia": "https://ballotpedia.org/Jimmy_Gomez",
+     "campaign_website": null,
+     "official_website": null,
+     "fec": {
+      "candidate_id": "H8CA34266",
+      "fec_name": "GOMEZ, JIMMY",
+      "url": "https://www.fec.gov/data/candidate/H8CA34266/",
+      "match": "name+state+office(+district) match against FEC /v1/candidates; verify"
+     },
+     "state_finance": null,
+     "stated_positions": null
+    },
+    {
+     "name": "Angela Gonzales-Torres",
+     "party": "D",
+     "incumbent": false,
+     "incumbent_source": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+     "ballotpedia": "https://ballotpedia.org/Angela_Gonzales-Torres",
+     "campaign_website": null,
+     "official_website": null,
+     "fec": {
+      "candidate_id": "H6CA34286",
+      "fec_name": "GONZALES-TORRES, ANGELA",
+      "url": "https://www.fec.gov/data/candidate/H6CA34286/",
+      "match": "name+state+office(+district) match against FEC /v1/candidates; verify"
+     },
+     "state_finance": null,
+     "stated_positions": null
+    }
+   ]
+  }
+ ]
+}

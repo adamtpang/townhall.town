@@ -1,0 +1,303 @@
+{
+ "_meta": {
+  "note": "Pre-joined demo bundle for cached ZIPs. ZIP->district for TX via ZCTA centroid in PLANC2333 polygons (a ZIP can span districts: always show \"verify by address\"). CA district assignment UNVERIFIED.",
+  "address_lookup_links": {
+   "TX": "https://teamrv-mvp.sos.texas.gov/MVP/mvp.do",
+   "CA": "https://voterstatus.sos.ca.gov/"
+  }
+ },
+ "zips": {
+  "78130": {
+   "state": "TX",
+   "us_house_district": 35,
+   "district_confidence": "centroid method; verify by address",
+   "statewide_races": "texas/statewide_races.json",
+   "metrics": {
+    "state": "TX",
+    "zcta": {
+     "population": 104009.0,
+     "median_household_income_usd": 83064.0,
+     "poverty_rate_pct": 7.7,
+     "uninsured_rate_pct": 12.1,
+     "renters_cost_burdened_30pct_plus_pct": 51.6,
+     "acs_unemployment_rate_pct": 4.4,
+     "bachelors_or_higher_age25plus_pct": 36.3,
+     "median_gross_rent_usd": 1659.0,
+     "median_home_value_usd": 323200.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/86000US78130/"
+    },
+    "county": {
+     "name": "Comal County",
+     "fips": "48091",
+     "population": 183826.0,
+     "median_household_income_usd": 101889.0,
+     "poverty_rate_pct": 6.5,
+     "uninsured_rate_pct": 10.5,
+     "renters_cost_burdened_30pct_plus_pct": 52.7,
+     "acs_unemployment_rate_pct": 3.9,
+     "bachelors_or_higher_age25plus_pct": 43.3,
+     "median_gross_rent_usd": 1603.0,
+     "median_home_value_usd": 427200.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/05000US48091/",
+     "bls_unemployment": {
+      "rate": 4.0,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LAUCN480910000000003",
+      "source": "https://data.bls.gov/timeseries/LAUCN480910000000003"
+     }
+    },
+    "state_compare": {
+     "population": 30188424.0,
+     "median_household_income_usd": 78476.0,
+     "poverty_rate_pct": 13.8,
+     "uninsured_rate_pct": 17.1,
+     "renters_cost_burdened_30pct_plus_pct": 51.7,
+     "acs_unemployment_rate_pct": 5.3,
+     "bachelors_or_higher_age25plus_pct": 33.8,
+     "median_gross_rent_usd": 1403.0,
+     "median_home_value_usd": 283800.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/04000US48/",
+     "bls_unemployment": {
+      "rate": 4.4,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LASST480000000000003",
+      "source": "https://data.bls.gov/timeseries/LASST480000000000003"
+     }
+    },
+    "us_compare": {
+     "population": 334922500.0,
+     "median_household_income_usd": 80734.0,
+     "poverty_rate_pct": 12.5,
+     "uninsured_rate_pct": 8.4,
+     "renters_cost_burdened_30pct_plus_pct": 51.1,
+     "acs_unemployment_rate_pct": 5.2,
+     "bachelors_or_higher_age25plus_pct": 35.7,
+     "median_gross_rent_usd": 1413.0,
+     "median_home_value_usd": 332700.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/01000US/"
+    }
+   }
+  },
+  "78701": {
+   "state": "TX",
+   "us_house_district": 10,
+   "district_confidence": "centroid method; verify by address",
+   "statewide_races": "texas/statewide_races.json",
+   "metrics": {
+    "state": "TX",
+    "zcta": {
+     "population": 11824.0,
+     "median_household_income_usd": 162168.0,
+     "poverty_rate_pct": 9.7,
+     "uninsured_rate_pct": 5.1,
+     "renters_cost_burdened_30pct_plus_pct": 30.3,
+     "acs_unemployment_rate_pct": 1.4,
+     "bachelors_or_higher_age25plus_pct": 82.3,
+     "median_gross_rent_usd": 2759.0,
+     "median_home_value_usd": 722400.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/86000US78701/"
+    },
+    "county": {
+     "name": "Travis County",
+     "fips": "48453",
+     "population": 1330015.0,
+     "median_household_income_usd": 99611.0,
+     "poverty_rate_pct": 10.9,
+     "uninsured_rate_pct": 12.1,
+     "renters_cost_burdened_30pct_plus_pct": 48.5,
+     "acs_unemployment_rate_pct": 4.6,
+     "bachelors_or_higher_age25plus_pct": 56.6,
+     "median_gross_rent_usd": 1744.0,
+     "median_home_value_usd": 523000.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/05000US48453/",
+     "bls_unemployment": {
+      "rate": 3.6,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LAUCN484530000000003",
+      "source": "https://data.bls.gov/timeseries/LAUCN484530000000003"
+     }
+    },
+    "state_compare": {
+     "population": 30188424.0,
+     "median_household_income_usd": 78476.0,
+     "poverty_rate_pct": 13.8,
+     "uninsured_rate_pct": 17.1,
+     "renters_cost_burdened_30pct_plus_pct": 51.7,
+     "acs_unemployment_rate_pct": 5.3,
+     "bachelors_or_higher_age25plus_pct": 33.8,
+     "median_gross_rent_usd": 1403.0,
+     "median_home_value_usd": 283800.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/04000US48/",
+     "bls_unemployment": {
+      "rate": 4.4,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LASST480000000000003",
+      "source": "https://data.bls.gov/timeseries/LASST480000000000003"
+     }
+    },
+    "us_compare": {
+     "population": 334922500.0,
+     "median_household_income_usd": 80734.0,
+     "poverty_rate_pct": 12.5,
+     "uninsured_rate_pct": 8.4,
+     "renters_cost_burdened_30pct_plus_pct": 51.1,
+     "acs_unemployment_rate_pct": 5.2,
+     "bachelors_or_higher_age25plus_pct": 35.7,
+     "median_gross_rent_usd": 1413.0,
+     "median_home_value_usd": 332700.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/01000US/"
+    }
+   }
+  },
+  "94103": {
+   "state": "CA",
+   "us_house_district": 11,
+   "district_confidence": "UNVERIFIED (Prop 50 map)",
+   "statewide_races": "california/statewide_races.json",
+   "metrics": {
+    "state": "CA",
+    "zcta": {
+     "population": 34964.0,
+     "median_household_income_usd": 116438.0,
+     "poverty_rate_pct": 19.7,
+     "uninsured_rate_pct": 4.9,
+     "renters_cost_burdened_30pct_plus_pct": 38.8,
+     "acs_unemployment_rate_pct": 7.2,
+     "bachelors_or_higher_age25plus_pct": 54.2,
+     "median_gross_rent_usd": 2218.0,
+     "median_home_value_usd": 1022800.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/86000US94103/"
+    },
+    "county": {
+     "name": "San Francisco County",
+     "fips": "06075",
+     "population": 830235.0,
+     "median_household_income_usd": 140970.0,
+     "poverty_rate_pct": 11.2,
+     "uninsured_rate_pct": 3.3,
+     "renters_cost_burdened_30pct_plus_pct": 39.6,
+     "acs_unemployment_rate_pct": 6.1,
+     "bachelors_or_higher_age25plus_pct": 60.3,
+     "median_gross_rent_usd": 2476.0,
+     "median_home_value_usd": 1394500.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/05000US06075/",
+     "bls_unemployment": {
+      "rate": 4.0,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LAUCN060750000000003",
+      "source": "https://data.bls.gov/timeseries/LAUCN060750000000003"
+     }
+    },
+    "state_compare": {
+     "population": 39287376.0,
+     "median_household_income_usd": 99122.0,
+     "poverty_rate_pct": 12.0,
+     "uninsured_rate_pct": 6.6,
+     "renters_cost_burdened_30pct_plus_pct": 55.3,
+     "acs_unemployment_rate_pct": 6.6,
+     "bachelors_or_higher_age25plus_pct": 37.1,
+     "median_gross_rent_usd": 2036.0,
+     "median_home_value_usd": 734700.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/04000US06/",
+     "bls_unemployment": {
+      "rate": 5.1,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LASST060000000000003",
+      "source": "https://data.bls.gov/timeseries/LASST060000000000003"
+     }
+    },
+    "us_compare": {
+     "population": 334922500.0,
+     "median_household_income_usd": 80734.0,
+     "poverty_rate_pct": 12.5,
+     "uninsured_rate_pct": 8.4,
+     "renters_cost_burdened_30pct_plus_pct": 51.1,
+     "acs_unemployment_rate_pct": 5.2,
+     "bachelors_or_higher_age25plus_pct": 35.7,
+     "median_gross_rent_usd": 1413.0,
+     "median_home_value_usd": 332700.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/01000US/"
+    }
+   }
+  },
+  "90012": {
+   "state": "CA",
+   "us_house_district": 34,
+   "district_confidence": "UNVERIFIED (Prop 50 map)",
+   "statewide_races": "california/statewide_races.json",
+   "metrics": {
+    "state": "CA",
+    "zcta": {
+     "population": 37336.0,
+     "median_household_income_usd": 66860.0,
+     "poverty_rate_pct": 23.2,
+     "uninsured_rate_pct": 8.5,
+     "renters_cost_burdened_30pct_plus_pct": 56.6,
+     "acs_unemployment_rate_pct": 6.9,
+     "bachelors_or_higher_age25plus_pct": 38.8,
+     "median_gross_rent_usd": 2116.0,
+     "median_home_value_usd": 693600.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/86000US90012/"
+    },
+    "county": {
+     "name": "Los Angeles County",
+     "fips": "06037",
+     "population": 9808667.0,
+     "median_household_income_usd": 90112.0,
+     "poverty_rate_pct": 13.7,
+     "uninsured_rate_pct": 8.2,
+     "renters_cost_burdened_30pct_plus_pct": 57.7,
+     "acs_unemployment_rate_pct": 7.3,
+     "bachelors_or_higher_age25plus_pct": 36.0,
+     "median_gross_rent_usd": 1954.0,
+     "median_home_value_usd": 834200.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/05000US06037/",
+     "bls_unemployment": {
+      "rate": 4.5,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LAUCN060370000000003",
+      "source": "https://data.bls.gov/timeseries/LAUCN060370000000003"
+     }
+    },
+    "state_compare": {
+     "population": 39287376.0,
+     "median_household_income_usd": 99122.0,
+     "poverty_rate_pct": 12.0,
+     "uninsured_rate_pct": 6.6,
+     "renters_cost_burdened_30pct_plus_pct": 55.3,
+     "acs_unemployment_rate_pct": 6.6,
+     "bachelors_or_higher_age25plus_pct": 37.1,
+     "median_gross_rent_usd": 2036.0,
+     "median_home_value_usd": 734700.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/04000US06/",
+     "bls_unemployment": {
+      "rate": 5.1,
+      "period": "September 2026",
+      "preliminary": true,
+      "series": "LASST060000000000003",
+      "source": "https://data.bls.gov/timeseries/LASST060000000000003"
+     }
+    },
+    "us_compare": {
+     "population": 334922500.0,
+     "median_household_income_usd": 80734.0,
+     "poverty_rate_pct": 12.5,
+     "uninsured_rate_pct": 8.4,
+     "renters_cost_burdened_30pct_plus_pct": 51.1,
+     "acs_unemployment_rate_pct": 5.2,
+     "bachelors_or_higher_age25plus_pct": 35.7,
+     "median_gross_rent_usd": 1413.0,
+     "median_home_value_usd": 332700.0,
+     "census_reporter_url": "https://censusreporter.org/profiles/01000US/"
+    }
+   }
+  }
+ }
+}

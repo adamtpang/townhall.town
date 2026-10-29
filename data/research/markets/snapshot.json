@@ -1,0 +1,719 @@
+{
+ "_meta": {
+  "retrieved_at_utc": "2026-10-29T19:49:46+00:00",
+  "label": "MARKET ODDS \u2014 prices on prediction markets, not polls, forecasts or endorsements. A price of 0.70 means traders were paying ~70\u00a2 for a $1 contract that pays if the outcome happens. Markets can be thin, wrong, or manipulated.",
+  "sources": {
+   "polymarket": "https://gamma-api.polymarket.com/events?slug=<slug>",
+   "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events?series_ticker=<S>&with_nested_markets=true"
+  }
+ },
+ "polymarket": {
+  "TX.us_senate": {
+   "title": "Texas Senate Election Winner",
+   "slug": "texas-senate-election-winner",
+   "url": "https://polymarket.com/event/texas-senate-election-winner",
+   "volume_usd": 8196816,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "James Talarico (D)",
+     "question": "Will the Democrats win the Texas Senate race in 2026?",
+     "yes_price": 0.705,
+     "volume_usd": 3315871,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "15290572385458522370285732869432740297199321382471116558439914335588167718663"
+    },
+    {
+     "outcome": "Ken Paxton (R)",
+     "question": "Will the Republicans win the Texas Senate race in 2026?",
+     "yes_price": 0.295,
+     "volume_usd": 4880944,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "21265207456609426291246075480390336499088453711419597084147957999650569091884"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.governor": {
+   "title": "Texas Governor Election Winner",
+   "slug": "texas-governor-winner-2026",
+   "url": "https://polymarket.com/event/texas-governor-winner-2026",
+   "volume_usd": 1381770,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Greg Abbott (R)",
+     "question": "Will the Republicans win the Texas governor race in 2026?",
+     "yes_price": 0.635,
+     "volume_usd": 843365,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "54743173400191373818547682740700297683169841200363505623023527116388816282328"
+    },
+    {
+     "outcome": "Gina Hinojosa (D) ",
+     "question": "Will the Democrats win the Texas governor race in 2026?",
+     "yes_price": 0.35,
+     "volume_usd": 538405,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "48232987449750988261789196083999659380058157021032932634331257492238853387252"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.lt_governor": {
+   "title": "Texas Lieutenant Governor Election Winner",
+   "slug": "texas-lieutenant-governor-election-winner-2026",
+   "url": "https://polymarket.com/event/texas-lieutenant-governor-election-winner-2026",
+   "volume_usd": 22795,
+   "end_date": "2026-11-03T23:59:00Z",
+   "markets": [
+    {
+     "outcome": "Dan Patrick (R)",
+     "question": "Will the Republican Party candidate win the 2026 Texas Lieutenant Governor election?",
+     "yes_price": 0.76,
+     "volume_usd": 9903,
+     "updated_at": "2026-10-29T19:48:44.644852Z",
+     "yes_token_id": "38601260482570384968710837880306414330361708836762827643277699212874441917745"
+    },
+    {
+     "outcome": "Other",
+     "question": "Will a candidate not listed above win the 2026 Texas Lieutenant Governor election?",
+     "yes_price": 0.5,
+     "volume_usd": 0,
+     "updated_at": "2026-09-04T18:05:33.408744Z",
+     "yes_token_id": "70520885471793349278094624487060691132945688105290803640480843579710224142954"
+    },
+    {
+     "outcome": "Vikki Goodwin (D)",
+     "question": "Will the Democratic Party candidate win the 2026 Texas Lieutenant Governor election?",
+     "yes_price": 0.245,
+     "volume_usd": 12892,
+     "updated_at": "2026-10-29T19:48:44.644852Z",
+     "yes_token_id": "94288714604163574102049252490824493204211229391717289463753112166641141429805"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.attorney_general": {
+   "title": "Texas Attorney General Election Winner",
+   "slug": "texas-attorney-general-election-winner-2026",
+   "url": "https://polymarket.com/event/texas-attorney-general-election-winner-2026",
+   "volume_usd": 6009,
+   "end_date": "2026-11-03T23:59:00Z",
+   "markets": [
+    {
+     "outcome": "Mayes Middleton (R)",
+     "question": "Will the Republican Party candidate win the 2026 Texas Attorney General election?",
+     "yes_price": 0.74,
+     "volume_usd": 3032,
+     "updated_at": "2026-10-29T19:48:44.644852Z",
+     "yes_token_id": "53772782833150955080353454621983775357028745836829034097119409391267787565933"
+    },
+    {
+     "outcome": "Other",
+     "question": "Will a candidate not listed above win the 2026 Texas Attorney General election?",
+     "yes_price": 0.5,
+     "volume_usd": 0,
+     "updated_at": "2026-09-04T17:55:17.677018Z",
+     "yes_token_id": "93107200958043585493039454464533631708952646434416625884954420553240824737672"
+    },
+    {
+     "outcome": "Nathan Johnson (D)",
+     "question": "Will the Democratic Party candidate win the 2026 Texas Attorney General election?",
+     "yes_price": 0.265,
+     "volume_usd": 2978,
+     "updated_at": "2026-10-29T19:40:45.300545Z",
+     "yes_token_id": "30846770823356402570798988867109528394996675202956564325187354309358974096962"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.us_house_10": {
+   "title": "TX-10 House Election Winner",
+   "slug": "tx-10-house-election-winner",
+   "url": "https://polymarket.com/event/tx-10-house-election-winner",
+   "volume_usd": 37166,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Chris Gober (R)",
+     "question": "Will the Republican Party win the TX-10 House seat?",
+     "yes_price": 0.91,
+     "volume_usd": 15038,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "64035689762837710867761939305525594848883389446873127621212024689466809937742"
+    },
+    {
+     "outcome": "Caitlin Rourk (D)",
+     "question": "Will the Democratic Party win the TX-10 House seat?",
+     "yes_price": 0.085,
+     "volume_usd": 22128,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "45936021436236821794890838846994150050132171038490721910195287795862244906501"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.us_house_23": {
+   "title": "TX-23 House Election Winner",
+   "slug": "tx-23-house-election-winner",
+   "url": "https://polymarket.com/event/tx-23-house-election-winner",
+   "volume_usd": 139057,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Brandon Herrera (R)",
+     "question": "Will the Republican Party win the TX-23 House seat?",
+     "yes_price": 0.58,
+     "volume_usd": 80905,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "55410211684588113064622608223269234944992958173935625527924582089831994856267"
+    },
+    {
+     "outcome": "Katy Padilla Stout (D)",
+     "question": "Will the Democratic Party win the TX-23 House seat?",
+     "yes_price": 0.405,
+     "volume_usd": 58152,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "61226688777298855109760287075145560866932162430262148603800321887784593630496"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.us_house_35": {
+   "title": "TX-35 House Election Winner",
+   "slug": "tx-35-house-election-winner",
+   "url": "https://polymarket.com/event/tx-35-house-election-winner",
+   "volume_usd": 95206,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Johnny Garcia (D)",
+     "question": "Will the Democratic Party win the TX-35 House seat?",
+     "yes_price": 0.695,
+     "volume_usd": 42710,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "5339899814292845593775846980480523063906400681832167807317855849721141409634"
+    },
+    {
+     "outcome": "Carlos De La Cruz (R)",
+     "question": "Will the Republican Party win the TX-35 House seat?",
+     "yes_price": 0.305,
+     "volume_usd": 52496,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "96980372047003520505526503615842060406979095885695228562228782836801789185916"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.us_house_37": {
+   "title": "TX-37 House Election Winner",
+   "slug": "tx-37-house-election-winner",
+   "url": "https://polymarket.com/event/tx-37-house-election-winner",
+   "volume_usd": 45575,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Greg Casar (D)",
+     "question": "Will the Democratic Party win the TX-37 House seat?",
+     "yes_price": 0.975,
+     "volume_usd": 27143,
+     "updated_at": "2026-10-29T19:32:45.476474Z",
+     "yes_token_id": "36791172772751317797970931065239588552987488292393018528491154606038203454362"
+    },
+    {
+     "outcome": "Lauren Pe\u00f1a (R)",
+     "question": "Will the Republican Party win the TX-37 House seat?",
+     "yes_price": 0.0175,
+     "volume_usd": 18432,
+     "updated_at": "2026-10-29T19:38:43.413426Z",
+     "yes_token_id": "102539465930094397154166714684622223283206547914280408899762471676331901776593"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.governor": {
+   "title": "California Governor Election Winner",
+   "slug": "california-governor-election-2026",
+   "url": "https://polymarket.com/event/california-governor-election-2026",
+   "volume_usd": 43125345,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Xavier Becerra",
+     "question": "Will Xavier Becerra win the California Governor Election in 2026?",
+     "yes_price": 0.973,
+     "volume_usd": 2670486,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "60977129292396881848833910361112107174416489010090570432106122538120602786646"
+    },
+    {
+     "outcome": "Steve Hilton",
+     "question": "Will Steve Hilton win the California Governor Election in 2026?",
+     "yes_price": 0.0275,
+     "volume_usd": 4008381,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "82742036522262670996662794097029680950132682539859985097974842241612036171395"
+    },
+    {
+     "outcome": "Rick Caruso",
+     "question": "Will Rick Caruso win the California Governor Election in 2026?",
+     "yes_price": 0.0005,
+     "volume_usd": 1799524,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "97079880955117270083666806029014143818118511996487378321036003805764596740938"
+    },
+    {
+     "outcome": "Alex Padilla",
+     "question": "Will Alex Padilla win the California Governor Election in 2026?",
+     "yes_price": 0.0005,
+     "volume_usd": 1997777,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "27917044669327306061079144978831477036721566699378308758417293047296113420189"
+    },
+    {
+     "outcome": "Katie Porter",
+     "question": "Will Katie Porter win the California Governor Election in 2026?",
+     "yes_price": 0.0005,
+     "volume_usd": 1771198,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "59961507866677494040607532131294205317570935112758647200306330458606615546543"
+    },
+    {
+     "outcome": "Antonio Villaraigosa",
+     "question": "Will Antonio Villaraigosa win the California Governor Election in 2026?",
+     "yes_price": 0.0005,
+     "volume_usd": 1619014,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "36414954588752207538819032120216717092589056211565128836805997597026535658896"
+    },
+    {
+     "outcome": "Stephen Cloobeck",
+     "question": "Will Stephen Cloobeck win the California Governor Election in 2026?",
+     "yes_price": 0.0005,
+     "volume_usd": 1573704,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "56625712760763435913938435276890711697397809531508832909291686351381221361003"
+    },
+    {
+     "outcome": "Butch Ware",
+     "question": "Will Butch Ware win the California Governor Election in 2026?",
+     "yes_price": 0.0005,
+     "volume_usd": 1314420,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "5596862834696125721576904607560330168562395965947471642144909672400781563525"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.prop_40_billionaire_tax": {
+   "title": "Billionaire one-time wealth tax passes in California election 2026?",
+   "slug": "billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+   "url": "https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+   "volume_usd": 4446201,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Billionaire one-time wealth tax passes in California election 2026?",
+     "question": "Billionaire one-time wealth tax passes in California election 2026?",
+     "yes_price": 0.245,
+     "volume_usd": 4446201,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "38487155026041533062980821872238023790862908049855818921747904019478875496931"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00",
+   "prop_mapping_note": "Matched to Proposition number by title similarity with Ballotpedia list; verify against market rules."
+  },
+  "CA.prop_44_clinic_funding": {
+   "title": "California Clinic Funding Proposition",
+   "slug": "california-clinic-funding-proposition",
+   "url": "https://polymarket.com/event/california-clinic-funding-proposition",
+   "volume_usd": 3040,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "California Clinic Funding Proposition",
+     "question": "California Clinic Funding Proposition",
+     "yes_price": 0.24,
+     "volume_usd": 3040,
+     "updated_at": "2026-10-29T19:48:44.644852Z",
+     "yes_token_id": "78644501745477669881359332880924178634278300105512039049389803992423709186214"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00",
+   "prop_mapping_note": "Matched to Proposition number by title similarity with Ballotpedia list; verify against market rules."
+  },
+  "CA.prop_37_homebuying_loan": {
+   "title": "California Homebuying Loan Program Proposition",
+   "slug": "california-homebuying-loan-program-proposition",
+   "url": "https://polymarket.com/event/california-homebuying-loan-program-proposition",
+   "volume_usd": 3733,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "California Homebuying Loan Program Proposition",
+     "question": "California Homebuying Loan Program Proposition",
+     "yes_price": 0.67,
+     "volume_usd": 3733,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "62605838690784936611758838477189431130552791119275256176656552409828635047010"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00",
+   "prop_mapping_note": "Matched to Proposition number by title similarity with Ballotpedia list; verify against market rules."
+  },
+  "CA.prop_42_retroactive_tax": {
+   "title": "California Retroactive Tax Prohibition Proposition",
+   "slug": "california-retroactive-tax-prohibition-proposition",
+   "url": "https://polymarket.com/event/california-retroactive-tax-prohibition-proposition",
+   "volume_usd": 214,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "California Retroactive Tax Prohibition Proposition",
+     "question": "California Retroactive Tax Prohibition Proposition",
+     "yes_price": 0.32,
+     "volume_usd": 214,
+     "updated_at": "2026-10-29T19:32:45.476474Z",
+     "yes_token_id": "64863348259647030568784044923656355540140238418100400497710843777243439170692"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00",
+   "prop_mapping_note": "Matched to Proposition number by title similarity with Ballotpedia list; verify against market rules."
+  },
+  "CA.prop_38_immunology_bond": {
+   "title": "California Immunology Research Bond Proposition",
+   "slug": "california-immunology-research-bond-proposition",
+   "url": "https://polymarket.com/event/california-immunology-research-bond-proposition",
+   "volume_usd": 3294,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "California Immunology Research Bond Proposition",
+     "question": "California Immunology Research Bond Proposition",
+     "yes_price": 0.645,
+     "volume_usd": 3294,
+     "updated_at": "2026-10-29T19:48:44.644852Z",
+     "yes_token_id": "43643720828368206421036731338447092306578242560545302269195095480519087477624"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00",
+   "prop_mapping_note": "Matched to Proposition number by title similarity with Ballotpedia list; verify against market rules."
+  },
+  "CA.us_house_11": {
+   "title": "CA-11 House Election Winner",
+   "slug": "ca-11-house-election-winner",
+   "url": "https://polymarket.com/event/ca-11-house-election-winner",
+   "volume_usd": 22565,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Democratic Party",
+     "question": "Will the Democratic Party win the CA-11 House seat?",
+     "yes_price": 0.9845,
+     "volume_usd": 14980,
+     "updated_at": "2026-10-29T19:18:46.586433Z",
+     "yes_token_id": "9130588473619242725872857503737754849419956680804659889247137655010532613440"
+    },
+    {
+     "outcome": "Republican Party",
+     "question": "Will the Republican Party win the CA-11 House seat?",
+     "yes_price": 0.007,
+     "volume_usd": 7585,
+     "updated_at": "2026-10-29T19:46:45.306497Z",
+     "yes_token_id": "55041019516151972530389030667526540644897041416557870078518647689170714451932"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.us_house_34": {
+   "title": "CA-34 House Election Winner",
+   "slug": "ca-34-house-election-winner",
+   "url": "https://polymarket.com/event/ca-34-house-election-winner",
+   "volume_usd": 50696,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Democratic Party",
+     "question": "Will the Democratic Party win the CA-34 House seat?",
+     "yes_price": 0.9815,
+     "volume_usd": 20516,
+     "updated_at": "2026-10-29T19:34:44.305688Z",
+     "yes_token_id": "102850096314044976976869686628352815119058171758414789142382361025435570398552"
+    },
+    {
+     "outcome": "Republican Party",
+     "question": "Will the Republican Party win the CA-34 House seat?",
+     "yes_price": 0.004,
+     "volume_usd": 30180,
+     "updated_at": "2026-10-29T19:44:44.398975Z",
+     "yes_token_id": "42809074194139165260823673249538407426344332810949071439665787441872553241032"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "US.senate_control": {
+   "title": "Which party will win the Senate in 2026?",
+   "slug": "which-party-will-win-the-senate-in-2026",
+   "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+   "volume_usd": 10898065,
+   "end_date": "2026-11-04T04:59:00Z",
+   "markets": [
+    {
+     "outcome": "Democratic Party",
+     "question": "Will the Democratic Party control the Senate after the 2026 Midterm elections?",
+     "yes_price": 0.675,
+     "volume_usd": 6266655,
+     "updated_at": "2026-10-29T19:48:44.644852Z",
+     "yes_token_id": "113287701564209339913693347405685749986285999146352375265161592243948562084773"
+    },
+    {
+     "outcome": "Republican Party",
+     "question": "Will the Republican Party control the Senate after the 2026 Midterm elections?",
+     "yes_price": 0.325,
+     "volume_usd": 4631410,
+     "updated_at": "2026-10-29T19:48:44.644852Z",
+     "yes_token_id": "51939490109676186832507970701169130490548061087912630009168726706475001411420"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  }
+ },
+ "kalshi": {
+  "TX.us_senate": {
+   "title": "Texas Senate winner?",
+   "event_ticker": "SENATETX-26",
+   "series_ticker": "SENATETX",
+   "url": "https://kalshi.com/markets/senatetx",
+   "markets": [
+    {
+     "outcome": "James Talarico",
+     "ticker": "SENATETX-26-D",
+     "last_price": 0.68,
+     "yes_bid": 0.68,
+     "yes_ask": 0.69,
+     "volume": "16318165.28"
+    },
+    {
+     "outcome": "Ken Paxton",
+     "ticker": "SENATETX-26-R",
+     "last_price": 0.31,
+     "yes_bid": 0.31,
+     "yes_ask": 0.32,
+     "volume": "34496981.63"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.governor": {
+   "title": "Texas Governor winner?",
+   "event_ticker": "GOVPARTYTX-26",
+   "series_ticker": "GOVPARTYTX",
+   "url": "https://kalshi.com/markets/govpartytx",
+   "markets": [
+    {
+     "outcome": "Greg Abbott",
+     "ticker": "GOVPARTYTX-26-R",
+     "last_price": 0.64,
+     "yes_bid": 0.63,
+     "yes_ask": 0.64,
+     "volume": "6038551.05"
+    },
+    {
+     "outcome": "Gina Hinojosa",
+     "ticker": "GOVPARTYTX-26-D",
+     "last_price": 0.37,
+     "yes_bid": 0.36,
+     "yes_ask": 0.37,
+     "volume": "3845324.93"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.lt_governor": {
+   "title": "Texas Lieutenant Governor winner?",
+   "event_ticker": "KXLTGOVTX-26",
+   "series_ticker": "KXLTGOVTX",
+   "url": "https://kalshi.com/markets/kxltgovtx",
+   "markets": [
+    {
+     "outcome": "Dan Patrick",
+     "ticker": "KXLTGOVTX-26-GOP",
+     "last_price": 0.73,
+     "yes_bid": 0.74,
+     "yes_ask": 0.76,
+     "volume": "27201.92"
+    },
+    {
+     "outcome": "Vikki Goodwin",
+     "ticker": "KXLTGOVTX-26-DEM",
+     "last_price": 0.25,
+     "yes_bid": 0.25,
+     "yes_ask": 0.26,
+     "volume": "26732.56"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.attorney_general": {
+   "title": "Texas Attorney General winner?",
+   "event_ticker": "KXATTYGENTX-26",
+   "series_ticker": "KXATTYGENTX",
+   "url": "https://kalshi.com/markets/kxattygentx",
+   "markets": [
+    {
+     "outcome": "Mayes Middleton",
+     "ticker": "KXATTYGENTX-26-R",
+     "last_price": 0.75,
+     "yes_bid": 0.74,
+     "yes_ask": 0.75,
+     "volume": "11282.76"
+    },
+    {
+     "outcome": "Nathan Johnson",
+     "ticker": "KXATTYGENTX-26-D",
+     "last_price": 0.27,
+     "yes_bid": 0.26,
+     "yes_ask": 0.27,
+     "volume": "13139.65"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "TX.us_house_35": {
+   "title": "TX-35 House winner?",
+   "event_ticker": "KXHOUSETX35-26",
+   "series_ticker": "KXHOUSETX35",
+   "url": "https://kalshi.com/markets/kxhousetx35",
+   "markets": [
+    {
+     "outcome": "Johnny C. Garcia",
+     "ticker": "KXHOUSETX35-26-D",
+     "last_price": 0.72,
+     "yes_bid": 0.71,
+     "yes_ask": 0.72,
+     "volume": "134909.86"
+    },
+    {
+     "outcome": "Carlos De La Cruz",
+     "ticker": "KXHOUSETX35-26-R",
+     "last_price": 0.28,
+     "yes_bid": 0.28,
+     "yes_ask": 0.29,
+     "volume": "183823.69"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.governor": {
+   "title": "California Governor winner? (Person)",
+   "event_ticker": "KXGOVCA-26",
+   "series_ticker": "KXGOVCA",
+   "url": "https://kalshi.com/markets/kxgovca",
+   "markets": [
+    {
+     "outcome": "Xavier Becerra",
+     "ticker": "KXGOVCA-26-XBEC",
+     "last_price": 0.97,
+     "yes_bid": 0.968,
+     "yes_ask": 0.97,
+     "volume": "7243636.56"
+    },
+    {
+     "outcome": "Steve Hilton",
+     "ticker": "KXGOVCA-26-SHIL",
+     "last_price": 0.03,
+     "yes_bid": 0.029,
+     "yes_ask": 0.03,
+     "volume": "17301566.09"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.governor_party": {
+   "title": "California Governor winner?",
+   "event_ticker": "GOVPARTYCA-26",
+   "series_ticker": "GOVPARTYCA",
+   "url": "https://kalshi.com/markets/govpartyca",
+   "markets": [
+    {
+     "outcome": "Xavier Becerra",
+     "ticker": "GOVPARTYCA-26-D",
+     "last_price": 0.97,
+     "yes_bid": 0.97,
+     "yes_ask": 0.971,
+     "volume": "627816.18"
+    },
+    {
+     "outcome": "Steve Hilton",
+     "ticker": "GOVPARTYCA-26-R",
+     "last_price": 0.037,
+     "yes_bid": 0.034,
+     "yes_ask": 0.037,
+     "volume": "2343185.59"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.prop_40_billionaire_tax": {
+   "title": "Will the California billionaire wealth tax pass?",
+   "event_ticker": "KXCAWEALTHTAX-26",
+   "series_ticker": "KXCAWEALTHTAX",
+   "url": "https://kalshi.com/markets/kxcawealthtax",
+   "markets": [
+    {
+     "outcome": "In 2026",
+     "ticker": "KXCAWEALTHTAX-26",
+     "last_price": 0.27,
+     "yes_bid": 0.26,
+     "yes_ask": 0.27,
+     "volume": "1883748.80"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.prop_39_voter_id": {
+   "title": "Will the California Voter ID initiative pass?",
+   "event_ticker": "KXCAVOTERID-26",
+   "series_ticker": "KXCAVOTERID",
+   "url": "https://kalshi.com/markets/kxcavoterid",
+   "markets": [
+    {
+     "outcome": "Yes",
+     "ticker": "KXCAVOTERID-26",
+     "last_price": 0.17,
+     "yes_bid": 0.15,
+     "yes_ask": 0.17,
+     "volume": "41773.63"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  },
+  "CA.insurance_commissioner": {
+   "title": "California Insurance Commissioner winner?",
+   "event_ticker": "KXCAINSCOMGEN-26",
+   "series_ticker": "KXCAINSCOMGEN",
+   "url": "https://kalshi.com/markets/kxcainscomgen",
+   "markets": [
+    {
+     "outcome": "Ben Allen",
+     "ticker": "KXCAINSCOMGEN-26-BALL",
+     "last_price": 0.66,
+     "yes_bid": 0.57,
+     "yes_ask": 0.65,
+     "volume": "4012.14"
+    },
+    {
+     "outcome": "Jane Kim",
+     "ticker": "KXCAINSCOMGEN-26-JKIM",
+     "last_price": 0.35,
+     "yes_bid": 0.34,
+     "yes_ask": 0.4,
+     "volume": "1325.65"
+    }
+   ],
+   "fetched_at_utc": "2026-10-29T19:49:46+00:00"
+  }
+ }
+}

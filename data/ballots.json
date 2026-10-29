@@ -1,0 +1,1764 @@
+{
+ "78130": {
+  "zip": "78130",
+  "state": "TX",
+  "place": "New Braunfels, TX",
+  "county": "Comal County",
+  "counties": [
+   "05000US48091"
+  ],
+  "districts": [
+   {
+    "id": "tx-35",
+    "label": "TX-35 (U.S. House)",
+    "note": "ZIP centroid falls inside District 35 on PLANC2333"
+   },
+   {
+    "id": "tx-21",
+    "label": "TX-21 (U.S. House)",
+    "note": "ZIP also borders/overlaps District 21 (centroid ~0.5 km away)"
+   }
+  ],
+  "districtSource": {
+   "label": "Texas Legislative Council PLANC2333 shapefile (2025 congressional map) + Census 2024 ZCTA Gazetteer centroid",
+   "url": "https://data.capitol.texas.gov/dataset/planc2333"
+  },
+  "splitWarning": "This ZIP spans more than one U.S. House district. Your exact district depends on your street address.",
+  "electionDate": "2026-11-03",
+  "races": [
+   {
+    "id": "tx-35",
+    "title": "U.S. House Texas District 35",
+    "level": "federal",
+    "office": "Writes and votes on federal laws and the federal budget; all spending bills start in the House. 2-year term.",
+    "candidates": [
+     {
+      "name": "Johnny Garcia",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Johnny_Garcia_(Texas_congressional_candidate)",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Johnny%20Garcia"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Carlos De La Cruz",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Carlos_De_La_Cruz",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Carlos%20De%20La%20Cruz"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas%27_35th_Congressional_District_election,_2026"
+   },
+   {
+    "id": "tx-21",
+    "title": "U.S. House Texas District 21",
+    "level": "federal",
+    "office": "Writes and votes on federal laws and the federal budget; all spending bills start in the House. 2-year term.",
+    "candidates": [
+     {
+      "name": "Kristin Hook",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Kristin_Hook",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Kristin%20Hook"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Mark Teixeira",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Mark_Teixeira",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Mark%20Teixeira"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas%27_21st_Congressional_District_election,_2026"
+   },
+   {
+    "id": "us-senate-tx",
+    "title": "U.S. Senate Texas",
+    "level": "federal",
+    "office": "Writes and votes on federal laws, confirms judges and cabinet picks, ratifies treaties. 6-year term.",
+    "candidates": [
+     {
+      "name": "James Talarico",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/James_Talarico",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=James%20Talarico"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Ken Paxton",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Ken_Paxton",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Ken%20Paxton"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Ted Brown",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Ted_Brown_(Texas)",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Ted%20Brown"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026"
+   },
+   {
+    "id": "tx-gov",
+    "title": "Governor of Texas",
+    "level": "state",
+    "office": "Runs the state executive branch, signs or vetoes state laws, appoints many officials, can call special sessions.",
+    "candidates": [
+     {
+      "name": "Greg Abbott",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Greg_Abbott",
+      "incumbent": true,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Gina Hinojosa",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Pat Dixon",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Pat_Dixon",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_gubernatorial_election,_2026"
+   },
+   {
+    "id": "tx-ltgov",
+    "title": "Lieutenant Governor of Texas",
+    "level": "state",
+    "office": "Presides over the Texas Senate and controls which bills get heard there; one of the most powerful offices in Texas.",
+    "candidates": [
+     {
+      "name": "Dan Patrick",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Dan_Patrick",
+      "incumbent": true,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Vikki Goodwin",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Kevin McCormick",
+      "party": "Green",
+      "ballotpedia": "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Anthony Cristo",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Anthony_Cristo",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_lieutenant_gubernatorial_election,_2026"
+   },
+   {
+    "id": "tx-ag",
+    "title": "Attorney General of Texas",
+    "level": "state",
+    "office": "The state's lawyer: sues and defends on behalf of Texas, enforces consumer protection, collects child support.",
+    "candidates": [
+     {
+      "name": "Nathan Johnson",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Nathan_Johnson_(Texas)",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Mayes Middleton",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Mayes_Middleton",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Tom Oxford",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Tom_Oxford",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Attorney_General_election,_2026"
+   },
+   {
+    "id": "tx-comptroller",
+    "title": "Texas Comptroller of Public Accounts",
+    "level": "state",
+    "office": "Texas's tax collector and accountant; certifies whether the state budget fits projected revenue.",
+    "candidates": [
+     {
+      "name": "Donald Huffines",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Donald_Huffines",
+      "incumbent": true,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Sarah Eckhardt",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Sarah_Eckhardt",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Shehla Faizi",
+      "party": "Green",
+      "ballotpedia": "https://ballotpedia.org/Shehla_Faizi",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "V. Alonzo Echavarria-Garza",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Comptroller_election,_2026"
+   },
+   {
+    "id": "tx-land",
+    "title": "tx-land",
+    "level": "state",
+    "office": "Manages state-owned land and mineral rights (money goes to schools), the Alamo, and disaster housing recovery.",
+    "candidates": [],
+    "source": null,
+    "note": "Candidate list not parsed from our Ballotpedia snapshot: unsure. Check your sample ballot."
+   },
+   {
+    "id": "tx-agcomm",
+    "title": "Texas Commissioner of Agriculture",
+    "level": "state",
+    "office": "Regulates agriculture, fuel pumps and scales, and runs school-lunch nutrition programs.",
+    "candidates": [
+     {
+      "name": "Clayton Tucker",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Clayton_Tucker",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Nate Sheets",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Nate_Sheets",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Austin Kelly",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Austin_Kelly",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Agriculture_Commissioner_election,_2026"
+   },
+   {
+    "id": "tx-rrc",
+    "title": "tx-rrc",
+    "level": "state",
+    "office": "Despite the name, regulates oil, gas, pipelines and mining in Texas (not railroads).",
+    "candidates": [],
+    "source": null,
+    "note": "Candidate list not parsed from our Ballotpedia snapshot: unsure. Check your sample ballot."
+   }
+  ],
+  "measures": [],
+  "measuresNote": "No statewide Texas propositions found for Nov 3, 2026 in our sources (Texas constitutional amendments are usually voted in odd years). Local measures: unsure, check your county.",
+  "problems": [
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "rent",
+    "topic": "housing",
+    "label": "Renters paying 30%+ of income on rent",
+    "value": 51.6,
+    "unit": "%",
+    "table": "B25070",
+    "source": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US78130",
+    "stateValue": 51.7
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "uninsured",
+    "topic": "healthcare",
+    "label": "People without health insurance",
+    "value": 12.1,
+    "unit": "%",
+    "table": "B27010",
+    "source": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US78130",
+    "stateValue": 17.1
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "jobs",
+    "topic": "jobs",
+    "label": "Unemployment rate (labor force 16+)",
+    "value": 4.4,
+    "unit": "%",
+    "table": "B23025",
+    "source": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US78130",
+    "stateValue": 5.3
+   }
+  ],
+  "context": {
+   "medianIncome": 83064.0,
+   "medianRent": 1659.0,
+   "population": 104009.0,
+   "profile": "https://censusreporter.org/profiles/86000US78130/"
+  },
+  "verify": {
+   "label": "VoteTexas.gov (official)",
+   "url": "https://www.votetexas.gov/"
+  },
+  "builtAt": "2026-10-29T19:48:44+00:00"
+ },
+ "78701": {
+  "zip": "78701",
+  "state": "TX",
+  "place": "Austin, TX (downtown)",
+  "county": "Travis County",
+  "counties": [
+   "05000US48453"
+  ],
+  "districts": [
+   {
+    "id": "tx-10",
+    "label": "TX-10 (U.S. House)",
+    "note": "ZIP centroid falls inside District 10 on PLANC2333"
+   },
+   {
+    "id": "tx-37",
+    "label": "TX-37 (U.S. House)",
+    "note": "ZIP also borders/overlaps District 37 (centroid ~0.4 km away)"
+   }
+  ],
+  "districtSource": {
+   "label": "Texas Legislative Council PLANC2333 shapefile (2025 congressional map) + Census 2024 ZCTA Gazetteer centroid",
+   "url": "https://data.capitol.texas.gov/dataset/planc2333"
+  },
+  "splitWarning": "This ZIP spans more than one U.S. House district. Your exact district depends on your street address.",
+  "electionDate": "2026-11-03",
+  "races": [
+   {
+    "id": "tx-10",
+    "title": "U.S. House Texas District 10",
+    "level": "federal",
+    "office": "Writes and votes on federal laws and the federal budget; all spending bills start in the House. 2-year term.",
+    "candidates": [
+     {
+      "name": "Caitlin Rourk",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Caitlin_Rourk",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Caitlin%20Rourk"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Chris Gober",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Chris_Gober",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Chris%20Gober"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas%27_10th_Congressional_District_election,_2026"
+   },
+   {
+    "id": "tx-37",
+    "title": "U.S. House Texas District 37",
+    "level": "federal",
+    "office": "Writes and votes on federal laws and the federal budget; all spending bills start in the House. 2-year term.",
+    "candidates": [
+     {
+      "name": "Greg Casar",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Greg_Casar",
+      "incumbent": true,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Greg%20Casar"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Lauren Pe\u00f1a",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Lauren_Pe\u00f1a",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Lauren%20Pe%C3%B1a"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas%27_37th_Congressional_District_election,_2026"
+   },
+   {
+    "id": "us-senate-tx",
+    "title": "U.S. Senate Texas",
+    "level": "federal",
+    "office": "Writes and votes on federal laws, confirms judges and cabinet picks, ratifies treaties. 6-year term.",
+    "candidates": [
+     {
+      "name": "James Talarico",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/James_Talarico",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=James%20Talarico"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Ken Paxton",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Ken_Paxton",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Ken%20Paxton"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Ted Brown",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Ted_Brown_(Texas)",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Ted%20Brown"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026"
+   },
+   {
+    "id": "tx-gov",
+    "title": "Governor of Texas",
+    "level": "state",
+    "office": "Runs the state executive branch, signs or vetoes state laws, appoints many officials, can call special sessions.",
+    "candidates": [
+     {
+      "name": "Greg Abbott",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Greg_Abbott",
+      "incumbent": true,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Gina Hinojosa",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Pat Dixon",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Pat_Dixon",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_gubernatorial_election,_2026"
+   },
+   {
+    "id": "tx-ltgov",
+    "title": "Lieutenant Governor of Texas",
+    "level": "state",
+    "office": "Presides over the Texas Senate and controls which bills get heard there; one of the most powerful offices in Texas.",
+    "candidates": [
+     {
+      "name": "Dan Patrick",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Dan_Patrick",
+      "incumbent": true,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Vikki Goodwin",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Kevin McCormick",
+      "party": "Green",
+      "ballotpedia": "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Anthony Cristo",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Anthony_Cristo",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_lieutenant_gubernatorial_election,_2026"
+   },
+   {
+    "id": "tx-ag",
+    "title": "Attorney General of Texas",
+    "level": "state",
+    "office": "The state's lawyer: sues and defends on behalf of Texas, enforces consumer protection, collects child support.",
+    "candidates": [
+     {
+      "name": "Nathan Johnson",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Nathan_Johnson_(Texas)",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Mayes Middleton",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Mayes_Middleton",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Tom Oxford",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Tom_Oxford",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Attorney_General_election,_2026"
+   },
+   {
+    "id": "tx-comptroller",
+    "title": "Texas Comptroller of Public Accounts",
+    "level": "state",
+    "office": "Texas's tax collector and accountant; certifies whether the state budget fits projected revenue.",
+    "candidates": [
+     {
+      "name": "Donald Huffines",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Donald_Huffines",
+      "incumbent": true,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Sarah Eckhardt",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Sarah_Eckhardt",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Shehla Faizi",
+      "party": "Green",
+      "ballotpedia": "https://ballotpedia.org/Shehla_Faizi",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "V. Alonzo Echavarria-Garza",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Comptroller_election,_2026"
+   },
+   {
+    "id": "tx-land",
+    "title": "tx-land",
+    "level": "state",
+    "office": "Manages state-owned land and mineral rights (money goes to schools), the Alamo, and disaster housing recovery.",
+    "candidates": [],
+    "source": null,
+    "note": "Candidate list not parsed from our Ballotpedia snapshot: unsure. Check your sample ballot."
+   },
+   {
+    "id": "tx-agcomm",
+    "title": "Texas Commissioner of Agriculture",
+    "level": "state",
+    "office": "Regulates agriculture, fuel pumps and scales, and runs school-lunch nutrition programs.",
+    "candidates": [
+     {
+      "name": "Clayton Tucker",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Clayton_Tucker",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Nate Sheets",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Nate_Sheets",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Austin Kelly",
+      "party": "Libertarian",
+      "ballotpedia": "https://ballotpedia.org/Austin_Kelly",
+      "incumbent": false,
+      "finance": {
+       "label": "TEC filings (search)",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Agriculture_Commissioner_election,_2026"
+   },
+   {
+    "id": "tx-rrc",
+    "title": "tx-rrc",
+    "level": "state",
+    "office": "Despite the name, regulates oil, gas, pipelines and mining in Texas (not railroads).",
+    "candidates": [],
+    "source": null,
+    "note": "Candidate list not parsed from our Ballotpedia snapshot: unsure. Check your sample ballot."
+   }
+  ],
+  "measures": [],
+  "measuresNote": "No statewide Texas propositions found for Nov 3, 2026 in our sources (Texas constitutional amendments are usually voted in odd years). Local measures: unsure, check your county.",
+  "problems": [
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "rent",
+    "topic": "housing",
+    "label": "Renters paying 30%+ of income on rent",
+    "value": 30.3,
+    "unit": "%",
+    "table": "B25070",
+    "source": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US78701",
+    "stateValue": 51.7
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "uninsured",
+    "topic": "healthcare",
+    "label": "People without health insurance",
+    "value": 5.1,
+    "unit": "%",
+    "table": "B27010",
+    "source": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US78701",
+    "stateValue": 17.1
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "jobs",
+    "topic": "jobs",
+    "label": "Unemployment rate (labor force 16+)",
+    "value": 1.4,
+    "unit": "%",
+    "table": "B23025",
+    "source": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US78701",
+    "stateValue": 5.3
+   }
+  ],
+  "context": {
+   "medianIncome": 162168.0,
+   "medianRent": 2759.0,
+   "population": 11824.0,
+   "profile": "https://censusreporter.org/profiles/86000US78701/"
+  },
+  "verify": {
+   "label": "VoteTexas.gov (official)",
+   "url": "https://www.votetexas.gov/"
+  },
+  "builtAt": "2026-10-29T19:48:44+00:00"
+ },
+ "94103": {
+  "zip": "94103",
+  "state": "CA",
+  "place": "San Francisco, CA (SoMa)",
+  "county": "San Francisco County",
+  "counties": [
+   "05000US06075"
+  ],
+  "districts": [
+   {
+    "id": "ca-11",
+    "label": "CA-11 (U.S. House)",
+    "note": "District assignment: unsure, verify with your county; based on Ballotpedia district coverage of San Francisco"
+   }
+  ],
+  "districtSource": {
+   "label": "Ballotpedia: California's 11th Congressional District election, 2026",
+   "url": "https://ballotpedia.org/California%27s_11th_Congressional_District_election,_2026"
+  },
+  "splitWarning": null,
+  "electionDate": "2026-11-03",
+  "races": [
+   {
+    "id": "ca-11",
+    "title": "U.S. House California District 11",
+    "level": "federal",
+    "office": "Writes and votes on federal laws and the federal budget; all spending bills start in the House. 2-year term.",
+    "candidates": [
+     {
+      "name": "Connie Chan",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Connie_Chan",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Connie%20Chan"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Scott Wiener",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Scott_Wiener",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Scott%20Wiener"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California%27s_11th_Congressional_District_election,_2026"
+   },
+   {
+    "id": "ca-gov",
+    "title": "Governor of California",
+    "level": "state",
+    "office": "Runs the state executive branch, signs or vetoes state laws, appoints many officials, can call special sessions.",
+    "candidates": [
+     {
+      "name": "Xavier Becerra",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Xavier_Becerra",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Steve Hilton",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Steve_Hilton",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_gubernatorial_election,_2026"
+   },
+   {
+    "id": "ca-ltgov",
+    "title": "Lieutenant Governor of California",
+    "level": "state",
+    "office": "Steps in when the governor is away; casts tie-breaking votes in the state Senate; sits on university boards.",
+    "candidates": [
+     {
+      "name": "Fiona Ma",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Fiona_Ma",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Gloria J. Romero",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Gloria_J._Romero",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_lieutenant_gubernatorial_election,_2026"
+   },
+   {
+    "id": "ca-ag",
+    "title": "Attorney General of California",
+    "level": "state",
+    "office": "California's top lawyer and law-enforcement officer; sues and defends on behalf of the state.",
+    "candidates": [
+     {
+      "name": "Rob Bonta",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Rob_Bonta",
+      "incumbent": true,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Michael Gates",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Michael_Gates_(California)",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Attorney_General_election,_2026"
+   },
+   {
+    "id": "ca-sos",
+    "title": "California Secretary of State",
+    "level": "state",
+    "office": "Runs state elections, certifies results, and keeps business filings.",
+    "candidates": [
+     {
+      "name": "Shirley Weber",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Shirley_Weber",
+      "incumbent": true,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Donald P. Wagner",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Donald_P._Wagner",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Secretary_of_State_election,_2026"
+   },
+   {
+    "id": "ca-controller",
+    "title": "California Controller",
+    "level": "state",
+    "office": "The state's chief fiscal officer: pays the state's bills and audits how money is spent.",
+    "candidates": [
+     {
+      "name": "Malia Cohen",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Malia_Cohen",
+      "incumbent": true,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Herb Morgan",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Herb_Morgan",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Controller_election,_2026"
+   },
+   {
+    "id": "ca-treasurer",
+    "title": "California Treasurer",
+    "level": "state",
+    "office": "Manages the state's cash and investments and sells state bonds.",
+    "candidates": [
+     {
+      "name": "Eleni Kounalakis",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Eleni_Kounalakis",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Jennifer Hawks",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Jennifer_Hawks",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Treasurer_election,_2026"
+   },
+   {
+    "id": "ca-insurance",
+    "title": "California Commissioner of Insurance",
+    "level": "state",
+    "office": "Regulates insurance companies and approves or rejects rate increases (home, auto, health).",
+    "candidates": [
+     {
+      "name": "Ben Allen",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Ben_Allen",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Jane Kim",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Jane_Kim",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Insurance_Commissioner_election,_2026"
+   },
+   {
+    "id": "ca-spi",
+    "title": "California Superintendent of Public Instruction",
+    "level": "state",
+    "office": "Leads the state Department of Education; nonpartisan office overseeing K-12 public schools.",
+    "candidates": [
+     {
+      "name": "Richard Barrera",
+      "party": "Nonpartisan",
+      "ballotpedia": "https://ballotpedia.org/Richard_Barrera",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Sonja Shaw",
+      "party": "Nonpartisan",
+      "ballotpedia": "https://ballotpedia.org/Sonja_Shaw_(California)",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Superintendent_of_Public_Instruction_election,_2026"
+   }
+  ],
+  "measures": [
+   {
+    "id": "Proposition 1",
+    "title": "Proposition 1 (Housing, Bonds)",
+    "summary": "Issue $11.25 billion in bonds to fund Multifamily Housing Program, CalVet Home Loan Program, and youth housing",
+    "type": "BI",
+    "source": "https://ballotpedia.org/California_Proposition_1,_Veteran_and_Housing_Assistance_Programs_Bond_Measure_(2026)"
+   },
+   {
+    "id": "Proposition 2",
+    "title": "Proposition 2 (Budget stabilization)",
+    "summary": "Increase the Budget Stabilization Account (BSA) cap from 10% of general fund revenue to 20% and excluding deposits into the BSA from the Gann Limit",
+    "type": "LRCA",
+    "source": "https://ballotpedia.org/California_Proposition_2,_Budget_Stabilization_Account_Cap_Increase_and_Gann_Limit_Changes_Amendment_(2026)"
+   },
+   {
+    "id": "Proposition 3",
+    "title": "Proposition 3 (Higher education funding, Public education funding, Income taxes)",
+    "summary": "Renew the additional income taxes enacted with the approval of Proposition 30 in 2012 that fund education and early childhood programs.",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 4",
+    "title": "Proposition 4 (Election administration, Campaign finance)",
+    "summary": "Allow the state and local governments to create programs that provide candidates with public funds under spending limits and eligibility rules",
+    "type": "LRSS",
+    "source": "https://ballotpedia.org/California_Proposition_4,_Allow_Public_Financing_of_Election_Campaigns_Measure_(2026)"
+   },
+   {
+    "id": "Proposition 5",
+    "title": "Proposition 5 (State executive structure, Recall)",
+    "summary": "Eliminate the successor election when a state officer is recalled, thereby leaving the office vacant until it is filled according to state law",
+    "type": "LRCA",
+    "source": "https://ballotpedia.org/California_Proposition_5,_Eliminate_State_Officer_Recall_Successor_Elections_Amendment_(2026)"
+   },
+   {
+    "id": "Proposition 37",
+    "title": "Proposition 37 (Housing)",
+    "summary": "Establish a second mortgage homebuyer program for qualified homebuyers on qualifying homes and issue $25 billion in bonds to fund the program",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_37,_Second_Mortgage_Homebuyer_Program_and_Revenue_Bond_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 38",
+    "title": "Proposition 38 (Healthcare facility, Healthcare governance, Bonds, Vaccinations and disease)",
+    "summary": "Issue $8.4 billion in general obligation bonds to fund immunology and immunotherapy research",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_38,_Immunology_and_Immunotherapy_Research_Funding_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 39",
+    "title": "Proposition 39 (Election administration, Voter ID)",
+    "summary": "Require voters to present government-issued identification when casting ballots and require election officials to use government data to confirm voter citizenship and report verification rates",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 40",
+    "title": "Proposition 40 (Income taxes, Public health insurance)",
+    "summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
+    "type": "CICA/SS",
+    "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 41",
+    "title": "Proposition 41 (Tax administration, Revenue and spending limits)",
+    "summary": "Require state laws or ballot initiatives levying a new special tax enacted after January 1, 2026 to require the government entities or departments receiving revenue from the new tax to eliminate their lowest-performing programs and reinvest those savings in higher-performing programs",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 42",
+    "title": "Proposition 42 (Income taxes)",
+    "summary": "Prohibit the enactment of new taxes after January 1, 2026 on ownership or accumulation of retirement holdings, individually-owned assets, and other forms of personal savings",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 43",
+    "title": "Proposition 43 (Supermajority, Local government)",
+    "summary": "Require two-thirds vote by electorate to enact, extend, or increase local special tax initiatives and prohibit local governments and ballot initiatives from enacting ad valorem property taxes except those authorized elsewhere in the state constitution",
+    "type": "LRCA",
+    "source": "https://ballotpedia.org/California_Proposition_43,_Two-Thirds_Vote_Requirement_for_Local_Special_Tax_Initiatives_and_Property_Tax_Initiative_Prohibition_Amendment_(2026)"
+   },
+   {
+    "id": "Proposition 44",
+    "title": "Proposition 44 (Business, Healthcare governance)",
+    "summary": "Prohibit healthcare clinics, specifically federally-qualified health centers and related organizations, from spending less than 90% of their annual revenue on mission-related purposes",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_44,_Spending_Requirements_for_Federally_Qualified_Health_Centers_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 45",
+    "title": "Proposition 45 (Administrative powers, Land use)",
+    "summary": "Establish timelines for local and state agencies to review plans and solicit public comment for essential projects, such as housing, improvements to water supply, transportation, energy, and facilities for health and public safety",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_45,_Changes_to_Environmental_Review_Process_for_Certain_Projects_Initiative_(2026)"
+   }
+  ],
+  "measuresNote": "Statewide propositions from Ballotpedia, as of Oct 28, 2026. Local measures not included.",
+  "problems": [
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "rent",
+    "topic": "housing",
+    "label": "Renters paying 30%+ of income on rent",
+    "value": 38.8,
+    "unit": "%",
+    "table": "B25070",
+    "source": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US94103",
+    "stateValue": 55.3
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "uninsured",
+    "topic": "healthcare",
+    "label": "People without health insurance",
+    "value": 4.9,
+    "unit": "%",
+    "table": "B27010",
+    "source": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US94103",
+    "stateValue": 6.6
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "jobs",
+    "topic": "jobs",
+    "label": "Unemployment rate (labor force 16+)",
+    "value": 7.2,
+    "unit": "%",
+    "table": "B23025",
+    "source": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US94103",
+    "stateValue": 6.6
+   }
+  ],
+  "context": {
+   "medianIncome": 116438.0,
+   "medianRent": 2218.0,
+   "population": 34964.0,
+   "profile": "https://censusreporter.org/profiles/86000US94103/"
+  },
+  "verify": {
+   "label": "California Secretary of State (official)",
+   "url": "https://www.sos.ca.gov/elections"
+  },
+  "builtAt": "2026-10-29T19:48:44+00:00"
+ },
+ "90012": {
+  "zip": "90012",
+  "state": "CA",
+  "place": "Los Angeles, CA (Downtown/Chinatown)",
+  "county": "Los Angeles County",
+  "counties": [
+   "05000US06037"
+  ],
+  "districts": [
+   {
+    "id": "ca-34",
+    "label": "CA-34 (U.S. House)",
+    "note": "District assignment: unsure, verify with your county; downtown LA is in CA-34 per Ballotpedia"
+   }
+  ],
+  "districtSource": {
+   "label": "Ballotpedia: California's 34th Congressional District election, 2026",
+   "url": "https://ballotpedia.org/California%27s_34th_Congressional_District_election,_2026"
+  },
+  "splitWarning": null,
+  "electionDate": "2026-11-03",
+  "races": [
+   {
+    "id": "ca-34",
+    "title": "U.S. House California District 34",
+    "level": "federal",
+    "office": "Writes and votes on federal laws and the federal budget; all spending bills start in the House. 2-year term.",
+    "candidates": [
+     {
+      "name": "Jimmy Gomez",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Jimmy_Gomez",
+      "incumbent": true,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Jimmy%20Gomez"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Angela Gonzales-Torres",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Angela_Gonzales-Torres",
+      "incumbent": false,
+      "finance": {
+       "label": "FEC filings (search)",
+       "url": "https://www.fec.gov/data/candidates/?search=Angela%20Gonzales-Torres"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California%27s_34th_Congressional_District_election,_2026"
+   },
+   {
+    "id": "ca-gov",
+    "title": "Governor of California",
+    "level": "state",
+    "office": "Runs the state executive branch, signs or vetoes state laws, appoints many officials, can call special sessions.",
+    "candidates": [
+     {
+      "name": "Xavier Becerra",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Xavier_Becerra",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Steve Hilton",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Steve_Hilton",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_gubernatorial_election,_2026"
+   },
+   {
+    "id": "ca-ltgov",
+    "title": "Lieutenant Governor of California",
+    "level": "state",
+    "office": "Steps in when the governor is away; casts tie-breaking votes in the state Senate; sits on university boards.",
+    "candidates": [
+     {
+      "name": "Fiona Ma",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Fiona_Ma",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Gloria J. Romero",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Gloria_J._Romero",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_lieutenant_gubernatorial_election,_2026"
+   },
+   {
+    "id": "ca-ag",
+    "title": "Attorney General of California",
+    "level": "state",
+    "office": "California's top lawyer and law-enforcement officer; sues and defends on behalf of the state.",
+    "candidates": [
+     {
+      "name": "Rob Bonta",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Rob_Bonta",
+      "incumbent": true,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Michael Gates",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Michael_Gates_(California)",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Attorney_General_election,_2026"
+   },
+   {
+    "id": "ca-sos",
+    "title": "California Secretary of State",
+    "level": "state",
+    "office": "Runs state elections, certifies results, and keeps business filings.",
+    "candidates": [
+     {
+      "name": "Shirley Weber",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Shirley_Weber",
+      "incumbent": true,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Donald P. Wagner",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Donald_P._Wagner",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Secretary_of_State_election,_2026"
+   },
+   {
+    "id": "ca-controller",
+    "title": "California Controller",
+    "level": "state",
+    "office": "The state's chief fiscal officer: pays the state's bills and audits how money is spent.",
+    "candidates": [
+     {
+      "name": "Malia Cohen",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Malia_Cohen",
+      "incumbent": true,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Herb Morgan",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Herb_Morgan",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Controller_election,_2026"
+   },
+   {
+    "id": "ca-treasurer",
+    "title": "California Treasurer",
+    "level": "state",
+    "office": "Manages the state's cash and investments and sells state bonds.",
+    "candidates": [
+     {
+      "name": "Eleni Kounalakis",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Eleni_Kounalakis",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Jennifer Hawks",
+      "party": "Republican",
+      "ballotpedia": "https://ballotpedia.org/Jennifer_Hawks",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Treasurer_election,_2026"
+   },
+   {
+    "id": "ca-insurance",
+    "title": "California Commissioner of Insurance",
+    "level": "state",
+    "office": "Regulates insurance companies and approves or rejects rate increases (home, auto, health).",
+    "candidates": [
+     {
+      "name": "Ben Allen",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Ben_Allen",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Jane Kim",
+      "party": "Democratic",
+      "ballotpedia": "https://ballotpedia.org/Jane_Kim",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Insurance_Commissioner_election,_2026"
+   },
+   {
+    "id": "ca-spi",
+    "title": "California Superintendent of Public Instruction",
+    "level": "state",
+    "office": "Leads the state Department of Education; nonpartisan office overseeing K-12 public schools.",
+    "candidates": [
+     {
+      "name": "Richard Barrera",
+      "party": "Nonpartisan",
+      "ballotpedia": "https://ballotpedia.org/Richard_Barrera",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     },
+     {
+      "name": "Sonja Shaw",
+      "party": "Nonpartisan",
+      "ballotpedia": "https://ballotpedia.org/Sonja_Shaw_(California)",
+      "incumbent": false,
+      "finance": {
+       "label": "Cal-Access (search)",
+       "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
+      },
+      "officialSite": null
+     }
+    ],
+    "source": "https://ballotpedia.org/California_Superintendent_of_Public_Instruction_election,_2026"
+   }
+  ],
+  "measures": [
+   {
+    "id": "Proposition 1",
+    "title": "Proposition 1 (Housing, Bonds)",
+    "summary": "Issue $11.25 billion in bonds to fund Multifamily Housing Program, CalVet Home Loan Program, and youth housing",
+    "type": "BI",
+    "source": "https://ballotpedia.org/California_Proposition_1,_Veteran_and_Housing_Assistance_Programs_Bond_Measure_(2026)"
+   },
+   {
+    "id": "Proposition 2",
+    "title": "Proposition 2 (Budget stabilization)",
+    "summary": "Increase the Budget Stabilization Account (BSA) cap from 10% of general fund revenue to 20% and excluding deposits into the BSA from the Gann Limit",
+    "type": "LRCA",
+    "source": "https://ballotpedia.org/California_Proposition_2,_Budget_Stabilization_Account_Cap_Increase_and_Gann_Limit_Changes_Amendment_(2026)"
+   },
+   {
+    "id": "Proposition 3",
+    "title": "Proposition 3 (Higher education funding, Public education funding, Income taxes)",
+    "summary": "Renew the additional income taxes enacted with the approval of Proposition 30 in 2012 that fund education and early childhood programs.",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 4",
+    "title": "Proposition 4 (Election administration, Campaign finance)",
+    "summary": "Allow the state and local governments to create programs that provide candidates with public funds under spending limits and eligibility rules",
+    "type": "LRSS",
+    "source": "https://ballotpedia.org/California_Proposition_4,_Allow_Public_Financing_of_Election_Campaigns_Measure_(2026)"
+   },
+   {
+    "id": "Proposition 5",
+    "title": "Proposition 5 (State executive structure, Recall)",
+    "summary": "Eliminate the successor election when a state officer is recalled, thereby leaving the office vacant until it is filled according to state law",
+    "type": "LRCA",
+    "source": "https://ballotpedia.org/California_Proposition_5,_Eliminate_State_Officer_Recall_Successor_Elections_Amendment_(2026)"
+   },
+   {
+    "id": "Proposition 37",
+    "title": "Proposition 37 (Housing)",
+    "summary": "Establish a second mortgage homebuyer program for qualified homebuyers on qualifying homes and issue $25 billion in bonds to fund the program",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_37,_Second_Mortgage_Homebuyer_Program_and_Revenue_Bond_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 38",
+    "title": "Proposition 38 (Healthcare facility, Healthcare governance, Bonds, Vaccinations and disease)",
+    "summary": "Issue $8.4 billion in general obligation bonds to fund immunology and immunotherapy research",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_38,_Immunology_and_Immunotherapy_Research_Funding_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 39",
+    "title": "Proposition 39 (Election administration, Voter ID)",
+    "summary": "Require voters to present government-issued identification when casting ballots and require election officials to use government data to confirm voter citizenship and report verification rates",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 40",
+    "title": "Proposition 40 (Income taxes, Public health insurance)",
+    "summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
+    "type": "CICA/SS",
+    "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 41",
+    "title": "Proposition 41 (Tax administration, Revenue and spending limits)",
+    "summary": "Require state laws or ballot initiatives levying a new special tax enacted after January 1, 2026 to require the government entities or departments receiving revenue from the new tax to eliminate their lowest-performing programs and reinvest those savings in higher-performing programs",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 42",
+    "title": "Proposition 42 (Income taxes)",
+    "summary": "Prohibit the enactment of new taxes after January 1, 2026 on ownership or accumulation of retirement holdings, individually-owned assets, and other forms of personal savings",
+    "type": "CICA",
+    "source": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 43",
+    "title": "Proposition 43 (Supermajority, Local government)",
+    "summary": "Require two-thirds vote by electorate to enact, extend, or increase local special tax initiatives and prohibit local governments and ballot initiatives from enacting ad valorem property taxes except those authorized elsewhere in the state constitution",
+    "type": "LRCA",
+    "source": "https://ballotpedia.org/California_Proposition_43,_Two-Thirds_Vote_Requirement_for_Local_Special_Tax_Initiatives_and_Property_Tax_Initiative_Prohibition_Amendment_(2026)"
+   },
+   {
+    "id": "Proposition 44",
+    "title": "Proposition 44 (Business, Healthcare governance)",
+    "summary": "Prohibit healthcare clinics, specifically federally-qualified health centers and related organizations, from spending less than 90% of their annual revenue on mission-related purposes",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_44,_Spending_Requirements_for_Federally_Qualified_Health_Centers_Initiative_(2026)"
+   },
+   {
+    "id": "Proposition 45",
+    "title": "Proposition 45 (Administrative powers, Land use)",
+    "summary": "Establish timelines for local and state agencies to review plans and solicit public comment for essential projects, such as housing, improvements to water supply, transportation, energy, and facilities for health and public safety",
+    "type": "CISS",
+    "source": "https://ballotpedia.org/California_Proposition_45,_Changes_to_Environmental_Review_Process_for_Certain_Projects_Initiative_(2026)"
+   }
+  ],
+  "measuresNote": "Statewide propositions from Ballotpedia, as of Oct 28, 2026. Local measures not included.",
+  "problems": [
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "rent",
+    "topic": "housing",
+    "label": "Renters paying 30%+ of income on rent",
+    "value": 56.6,
+    "unit": "%",
+    "table": "B25070",
+    "source": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US90012",
+    "stateValue": 55.3
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "uninsured",
+    "topic": "healthcare",
+    "label": "People without health insurance",
+    "value": 8.5,
+    "unit": "%",
+    "table": "B27010",
+    "source": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US90012",
+    "stateValue": 6.6
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "jobs",
+    "topic": "jobs",
+    "label": "Unemployment rate (labor force 16+)",
+    "value": 6.9,
+    "unit": "%",
+    "table": "B23025",
+    "source": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US90012",
+    "stateValue": 6.6
+   }
+  ],
+  "context": {
+   "medianIncome": 66860.0,
+   "medianRent": 2116.0,
+   "population": 37336.0,
+   "profile": "https://censusreporter.org/profiles/86000US90012/"
+  },
+  "verify": {
+   "label": "California Secretary of State (official)",
+   "url": "https://www.sos.ca.gov/elections"
+  },
+  "builtAt": "2026-10-29T19:48:44+00:00"
+ }
+}

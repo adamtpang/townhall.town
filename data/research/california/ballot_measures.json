@@ -1,0 +1,125 @@
+{
+ "_meta": {
+  "retrieved_at": "2026-10-29T19:49:23+00:00",
+  "source": "https://ballotpedia.org/California_2026_ballot_propositions",
+  "type_key": {
+   "BI": "bond issue (legislature)",
+   "LRCA": "legislatively referred constitutional amendment",
+   "LRSS": "legislatively referred state statute",
+   "CISS": "citizen initiated state statute",
+   "CICA": "citizen initiated constitutional amendment",
+   "CICA/SS": "combined initiated amendment + statute"
+  },
+  "official": "https://www.sos.ca.gov/elections/ballot-measures/qualified-ballot-measures"
+ },
+ "propositions": [
+  {
+   "number": "Proposition 1",
+   "type": "BI",
+   "subject": "Housing; Bonds",
+   "ballotpedia_summary": "Issue $11.25 billion in bonds to fund Multifamily Housing Program, CalVet Home Loan Program, and youth housing",
+   "source": "https://ballotpedia.org/California_Proposition_1,_Veteran_and_Housing_Assistance_Programs_Bond_Measure_(2026)"
+  },
+  {
+   "number": "Proposition 2",
+   "type": "LRCA",
+   "subject": "Budget stabilization",
+   "ballotpedia_summary": "Increase the Budget Stabilization Account (BSA) cap from 10% of general fund revenue to 20% and excluding deposits into the BSA from the Gann Limit",
+   "source": "https://ballotpedia.org/California_Proposition_2,_Budget_Stabilization_Account_Cap_Increase_and_Gann_Limit_Changes_Amendment_(2026)"
+  },
+  {
+   "number": "Proposition 37",
+   "type": "CISS",
+   "subject": "Housing",
+   "ballotpedia_summary": "Establish a second mortgage homebuyer program for qualified homebuyers on qualifying homes and issue $25 billion in bonds to fund the program",
+   "source": "https://ballotpedia.org/California_Proposition_37,_Second_Mortgage_Homebuyer_Program_and_Revenue_Bond_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 38",
+   "type": "CISS",
+   "subject": "Healthcare facility; Healthcare governance; Bonds; Vaccinations and disease",
+   "ballotpedia_summary": "Issue $8.4 billion in general obligation bonds to fund immunology and immunotherapy research",
+   "source": "https://ballotpedia.org/California_Proposition_38,_Immunology_and_Immunotherapy_Research_Funding_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 39",
+   "type": "CICA",
+   "subject": "Election administration; Voter ID",
+   "ballotpedia_summary": "Require voters to present government-issued identification when casting ballots and require election officials to use government data to confirm voter citizenship and report verification rates",
+   "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 3",
+   "type": "CICA",
+   "subject": "Higher education funding; Public education funding; Income taxes",
+   "ballotpedia_summary": "Renew the additional income taxes enacted with the approval of Proposition 30 in 2012 that fund education and early childhood programs.",
+   "source": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 40",
+   "type": "CICA/SS",
+   "subject": "Income taxes; Public health insurance",
+   "ballotpedia_summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
+   "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 41",
+   "type": "CICA",
+   "subject": "Tax administration; Revenue and spending limits",
+   "ballotpedia_summary": "Require state laws or ballot initiatives levying a new special tax enacted after January 1, 2026 to require the government entities or departments receiving revenue from the new tax to eliminate their lowest-performing programs and reinvest those savings in higher-performing programs",
+   "source": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 42",
+   "type": "CICA",
+   "subject": "Income taxes",
+   "ballotpedia_summary": "Prohibit the enactment of new taxes after January 1, 2026 on ownership or accumulation of retirement holdings, individually-owned assets, and other forms of personal savings",
+   "source": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 43",
+   "type": "LRCA",
+   "subject": "Supermajority; Local government",
+   "ballotpedia_summary": "Require two-thirds vote by electorate to enact, extend, or increase local special tax initiatives and prohibit local governments and ballot initiatives from enacting ad valorem property taxes except those authorized elsewhere in the state constitution",
+   "source": "https://ballotpedia.org/California_Proposition_43,_Two-Thirds_Vote_Requirement_for_Local_Special_Tax_Initiatives_and_Property_Tax_Initiative_Prohibition_Amendment_(2026)"
+  },
+  {
+   "number": "Proposition 44",
+   "type": "CISS",
+   "subject": "Business; Healthcare governance",
+   "ballotpedia_summary": "Prohibit healthcare clinics, specifically federally-qualified health centers and related organizations, from spending less than 90% of their annual revenue on mission-related purposes",
+   "source": "https://ballotpedia.org/California_Proposition_44,_Spending_Requirements_for_Federally_Qualified_Health_Centers_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 45",
+   "type": "CISS",
+   "subject": "Administrative powers; Land use",
+   "ballotpedia_summary": "Establish timelines for local and state agencies to review plans and solicit public comment for essential projects, such as housing, improvements to water supply, transportation, energy, and facilities for health and public safety",
+   "source": "https://ballotpedia.org/California_Proposition_45,_Changes_to_Environmental_Review_Process_for_Certain_Projects_Initiative_(2026)"
+  },
+  {
+   "number": "Proposition 4",
+   "type": "LRSS",
+   "subject": "Election administration; Campaign finance",
+   "ballotpedia_summary": "Allow the state and local governments to create programs that provide candidates with public funds under spending limits and eligibility rules",
+   "source": "https://ballotpedia.org/California_Proposition_4,_Allow_Public_Financing_of_Election_Campaigns_Measure_(2026)"
+  },
+  {
+   "number": "Proposition 5",
+   "type": "LRCA",
+   "subject": "State executive structure; Recall",
+   "ballotpedia_summary": "Eliminate the successor election when a state officer is recalled, thereby leaving the office vacant until it is filled according to state law",
+   "source": "https://ballotpedia.org/California_Proposition_5,_Eliminate_State_Officer_Recall_Successor_Elections_Amendment_(2026)"
+  }
+ ],
+ "billionaire_tax": {
+  "verified": true,
+  "measure": "Proposition 40",
+  "ballotpedia_summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
+  "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)",
+  "market_evidence": [
+   "Polymarket event billionaire-one-time-wealth-tax-on-california-ballot resolved Yes (closed)",
+   "Kalshi KXCAWEALTHTAXMOVD titles it \"California Proposition 40\""
+  ]
+ }
+}
