@@ -1,12 +1,24 @@
-import { generateText, tool, stepCountIs } from "ai";
+import { generateText, tool, stepCountIs, type LanguageModel } from "ai";
+import { createXai } from "@ai-sdk/xai";
 import { z } from "zod";
-import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor, DEMO_ZIPS } from "../../../lib/tools";
+import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../../../lib/tools";
+import { civicTools } from "../../../lib/civicTools";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const MODELS = (process.env.AGENT_MODELS || "xai/grok-4-fast-non-reasoning,openai/gpt-4o-mini").split(",");
+// Model ladder: Vercel AI Gateway model strings (auth via OIDC on Vercel or AI_GATEWAY_API_KEY),
+// then direct xAI if XAI_API_KEY is configured. Override the gateway list with AGENT_MODELS.
+const GATEWAY_MODELS = (process.env.AGENT_MODELS || "google/gemini-2.5-flash-lite,openai/gpt-4.1-mini,openai/gpt-5-nano").split(",").map((m) => m.trim()).filter(Boolean);
+function modelLadder(): { label: string; model: LanguageModel }[] {
+  const out: { label: string; model: LanguageModel }[] = GATEWAY_MODELS.map((m) => ({ label: m + " (AI Gateway)", model: m }));
+  if (process.env.XAI_API_KEY) {
+    const xai = createXai({ apiKey: process.env.XAI_API_KEY });
+    out.unshift({ label: "grok-4-fast-non-reasoning (xAI)", model: xai("grok-4-fast-non-reasoning") });
+  }
+  return out;
+}
 
 const STEP_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
@@ -47,7 +59,7 @@ function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
   };
   const allRaceIds = () => {
     const b = ballotFor(zip);
-    return b ? [...b.races.map((r: any) => r.id), ...b.measures.map((m: any) => m.id)] : [];
+    return b ? [...b.races.map((r) => r.id), ...b.measures.map((m) => m.id)] : [];
   };
   return {
     getDistricts: tool({
@@ -79,7 +91,7 @@ function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
 }
 
 const SYSTEM = `You are townhall.town, a strictly nonpartisan ballot agent.
-Use the tools in order: getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems. Call each exactly once.
+In your FIRST step, call all five tools in parallel, each exactly once: getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems.
 Then write a 2-3 sentence neutral summary of what is on this voter's ballot and the top local problems.
 Never recommend a candidate or say who is "best". Never state facts about candidates that are not in tool results. Market odds are market prices, not predictions of truth.`;
 
@@ -90,19 +102,20 @@ async function run(zip: string, emit: Emit) {
   let narration = "";
   let error: string | null = null;
 
-  for (const m of MODELS) {
+  for (const { label: m, model: lm } of modelLadder()) {
     try {
-      emit({ type: "status", message: `Asking model ${m} to plan tool calls…` });
+      emit({ type: "status", message: `Asking ${m} to plan tool calls…` });
       const res = await generateText({
-        model: m.trim(),
+        model: lm,
+        maxRetries: 0,
         system: SYSTEM,
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
-        tools: makeTools(zip, emit, results),
-        stopWhen: stepCountIs(8),
-        abortSignal: AbortSignal.timeout(35000),
+        tools: { ...makeTools(zip, emit, results), ...civicTools },
+        stopWhen: stepCountIs(3),
+        abortSignal: AbortSignal.timeout(25000),
       });
       narration = res.text;
-      model = m.trim();
+      model = m;
       mode = "live";
       error = null;
       break;
@@ -144,7 +157,7 @@ async function handle(zip: string) {
       try {
         if (!ballotFor(zip)) {
           emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: "Not cached" });
-          emit({ type: "unsupported", zip, message: `We only have demo ZIPs cached right now (${DEMO_ZIPS.join(", ")}). Texas first, California second; more ZIPs coming.` });
+          emit({ type: "unsupported", zip, message: `ZIP ${zip || "(blank)"} isn't covered yet. Every Texas ZIP works; for California we have 94103 and 90012. More states next.` });
         } else await run(zip, emit);
       } catch (e: any) {
         emit({ type: "error", message: String(e?.message || e) });

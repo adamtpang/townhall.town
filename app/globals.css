@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body { @apply bg-stone-50 text-stone-900 antialiased; }
-a { @apply underline decoration-stone-300 underline-offset-2 hover:decoration-stone-700; }
+body { @apply bg-white text-slate-900 antialiased; }
+a { @apply text-navy-700 underline decoration-slate-300 underline-offset-2 hover:decoration-navy-700; }
+.eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-slate-500; }
