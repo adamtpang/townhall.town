@@ -12,6 +12,7 @@ import { Progress } from "../components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Tip, TooltipProvider } from "../components/ui/tooltip";
+import IssueMatch from "./IssueMatch";
 
 const DEMO = [
   { zip: "78130", label: "New Braunfels, TX" },
@@ -384,6 +385,8 @@ export default function BallotAgent() {
               })}
             </Accordion>
           </Section>
+
+          <IssueMatch state={b.state} races={b.races} />
 
           {/* 4 + 5. Problems and measures */}
           <Section n={4} title="What's on the table" sub="Local problems from Census data, and the measures on your ballot. Pick the problems you care about.">

@@ -1,0 +1,186 @@
+{
+ "asOf": "2026-10-29",
+ "method": "Hand-curated from sourced positions already in data/ballots.json and data/accountability.json. An issue is mapped only when the quoted source clearly states a direction; everything else is unknown. No model is called at runtime.",
+ "stances": {
+  "james-talarico": {
+   "name": "James Talarico",
+   "housing": {
+    "value": 7,
+    "quote": "I’ll continue lowering costs by cutting red tape so we can build more homes",
+    "sourceUrl": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+   },
+   "healthcare": {
+    "value": 7,
+    "quote": "restore the ACA Tax Credits",
+    "sourceUrl": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+   },
+   "taxes": {
+    "value": -5,
+    "quote": "I am proposing a cost-of-living tax cut",
+    "sourceUrl": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+   }
+  },
+  "vikki-goodwin": {
+   "name": "Vikki Goodwin",
+   "housing": {
+    "value": 7,
+    "quote": "Increasing supply and addressing the issue of housing affordability.",
+    "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+   },
+   "healthcare": {
+    "value": 6,
+    "quote": "Health care should be affordable and accessible.",
+    "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+   },
+   "wages": {
+    "value": 6,
+    "quote": "good job opportunities and living wages",
+    "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+   }
+  },
+  "caitlin-rourk": {
+   "name": "Caitlin Rourk",
+   "housing": {
+    "value": 6,
+    "quote": "real solutions to rising housing costs",
+    "sourceUrl": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes"
+   },
+   "healthcare": {
+    "value": 6,
+    "quote": "affordable, accessible health care",
+    "sourceUrl": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes"
+   },
+   "wages": {
+    "value": 7,
+    "quote": "a living minimum wage",
+    "sourceUrl": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes"
+   }
+  },
+  "malia-cohen": {
+   "name": "Malia Cohen",
+   "housing": {
+    "value": 6,
+    "quote": "I have emphasized affordable housing",
+    "sourceUrl": "https://ballotpedia.org/Malia_Cohen#Campaign_themes"
+   },
+   "healthcare": {
+    "value": 6,
+    "quote": "successfully advocated to provide children with healthcare",
+    "sourceUrl": "https://ballotpedia.org/Malia_Cohen#Campaign_themes"
+   },
+   "wages": {
+    "value": 8,
+    "quote": "I championed the $15 minimum wage",
+    "sourceUrl": "https://ballotpedia.org/Malia_Cohen#Campaign_themes"
+   }
+  },
+  "eleni-kounalakis": {
+   "name": "Eleni Kounalakis",
+   "housing": {
+    "value": 7,
+    "quote": "fight to build more affordable homes",
+    "sourceUrl": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes"
+   },
+   "energy": {
+    "value": 5,
+    "quote": "We need to create more good-paying jobs while also protecting our environment.",
+    "sourceUrl": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes"
+   }
+  },
+  "richard-barrera": {
+   "name": "Richard Barrera",
+   "housing": {
+    "value": 6,
+    "quote": "we are building affordable housing for school employees on district land",
+    "sourceUrl": "https://ballotpedia.org/Richard_Barrera#Campaign_themes"
+   }
+  },
+  "nathan-johnson": {
+   "name": "Nathan Johnson",
+   "healthcare": {
+    "value": 9,
+    "quote": "I have been the lead voice in advocating for Medicaid expansion in Texas.",
+    "sourceUrl": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes"
+   }
+  },
+  "chris-gober": {
+   "name": "Chris Gober",
+   "healthcare": {
+    "value": 5,
+    "quote": "strengthen rural healthcare so families don’t have to drive hours for treatment",
+    "sourceUrl": "https://ballotpedia.org/Chris_Gober#Campaign_themes"
+   }
+  },
+  "greg-casar": {
+   "name": "Greg Casar",
+   "healthcare": {
+    "value": 6,
+    "quote": "funding mental health care",
+    "sourceUrl": "https://ballotpedia.org/Greg_Casar#Campaign_themes"
+   },
+   "safety": {
+    "value": -6,
+    "quote": "I’m for effective criminal diversion programs",
+    "sourceUrl": "https://ballotpedia.org/Greg_Casar#Campaign_themes"
+   }
+  },
+  "jane-kim": {
+   "name": "Jane Kim",
+   "healthcare": {
+    "value": 9,
+    "quote": "I will create a plan to guarantee healthcare for every child in California by establishing Medicare for Kids.",
+    "sourceUrl": "https://ballotpedia.org/Jane_Kim#Campaign_themes"
+   },
+   "infrastructure": {
+    "value": 6,
+    "quote": "investing a share of this revenue in community resiliency and infrastructure",
+    "sourceUrl": "https://ballotpedia.org/Jane_Kim#Campaign_themes"
+   }
+  },
+  "steve-hilton": {
+   "name": "Steve Hilton",
+   "taxes": {
+    "value": -7,
+    "quote": "driven by the highest taxes in America",
+    "sourceUrl": "https://ballotpedia.org/Steve_Hilton#Campaign_themes"
+   }
+  },
+  "dan-patrick": {
+   "name": "Dan Patrick",
+   "taxes": {
+    "value": -7,
+    "quote": "raises the school homestead exemption",
+    "sourceUrl": "https://www.ltgov.texas.gov/?p=7910"
+   }
+  },
+  "sarah-eckhardt": {
+   "name": "Sarah Eckhardt",
+   "safety": {
+    "value": -6,
+    "quote": "instituting jail and arrest diversion",
+    "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+   }
+  },
+  "greg-abbott": {
+   "name": "Greg Abbott",
+   "safety": {
+    "value": 8,
+    "quote": "so judges could deny bail to defendants charged with the most serious violent crimes",
+    "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-announces-bail-reform-an-emergency-item"
+   },
+   "education": {
+    "value": 9,
+    "quote": "named school choice an emergency item",
+    "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-delivers-2025-state-of-the-state-address"
+   }
+  },
+  "mayes-middleton": {
+   "name": "Mayes Middleton",
+   "energy": {
+    "value": -8,
+    "quote": "Protect oil and gas jobs",
+    "sourceUrl": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+   }
+  }
+ }
+}
