@@ -26,7 +26,7 @@ const DEMO = [
   { zip: "10001", label: NYC_READY ? "New York" : "New York, coming soon", ready: NYC_READY },
 ];
 // Advertised: Austin, SF, NYC. 78130 and 90012 stay working but are not advertised.
-const SUPPORTED = new Set(["78701", "94103", "78130", "90012", ...(NYC_READY ? ["10001"] : [])]);
+const SUPPORTED = new Set(["78701", "94103", ...(NYC_READY ? ["10001"] : [])]);
 const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
 const TOOL_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
@@ -244,12 +244,13 @@ export default function BallotAgent() {
   const [elapsed, setElapsed] = useState<number | null>(null);
 
   async function run(z: string) {
-    z = z.replace(/\D/g, "").slice(0, 5);
+    const raw = z.trim();
+    z = raw.replace(/\D/g, "");
     setResult(null);
     setSteps({});
     setStatus([]);
-    if (z.length !== 5) return setNotice("Enter a 5-digit ZIP code.");
-    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin, San Francisco, and New York 10001 for now."); }
+    if (!/^\d{5}$/.test(raw) || z === "00000") { setZip(raw); return setNotice("Enter a valid 5-digit ZIP"); }
+    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin, SF and NYC for now."); }
     setZip(z);
     setBusy(true);
     setSteps({});
@@ -274,7 +275,7 @@ export default function BallotAgent() {
           const e = JSON.parse(line);
           if (e.type === "step") setSteps((s) => ({ ...s, [e.tool]: e }));
           else if (e.type === "status") { console.debug("[agent]", e.message); setStatus((s) => [...s, "Looking up your ballot…"]); }
-          else if (e.type === "unsupported") setNotice("Austin, San Francisco, and New York 10001 for now.");
+          else if (e.type === "unsupported") setNotice("Austin, SF and NYC for now.");
           else if (e.type === "error") { console.error("[agent]", e.message); setNotice("Couldn't load your ballot right now. Please try again."); }
           else if (e.type === "result") {
             setResult(e);

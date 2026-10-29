@@ -2,10 +2,12 @@
 import { useEffect, useState } from "react";
 import { Slider } from "../components/ui/slider";
 import { Checkbox } from "../components/ui/checkbox";
-import { Portrait, type Photo } from "../components/Portrait";
-import { ISSUES, overlap, stancesFor, type Answers } from "../lib/issues";
+import { type Photo } from "../components/Portrait";
+import { PortraitRow } from "../components/PortraitRow";
+import { ISSUES, stancesFor, type Answers } from "../lib/issues";
+import { overlapFor, overlapLabel, METHOD } from "../lib/overlapCore.mjs";
 
-type Cand = { name: string; party?: string | null; photo?: Photo; causes?: { id: string; label: string; quote: string; source: { label: string; url: string } }[] };
+type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null; officialSite?: string | null; finance?: { label?: string; url?: string } | null; causes?: { id: string; label: string; quote: string; source: { label: string; url: string } }[] };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
 const KEY = "townhall.issueAnswers.v2";
 // Candidate tier within a race, from overlap % only (needs 2+ sourced stances on issues you answered).
@@ -61,24 +63,22 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
         <p className="mt-1 border-l-2 border-[#3760f2] pl-4 text-sm text-black/70">
           Overlap, not a recommendation. Sourced positions only. Ballot order.
         </p>
+        <details className="mt-2"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap is counted</summary><p className="max-w-2xl pb-2 text-sm text-black/80">{METHOD}</p></details>
         {answeredCount === 0 ? (
           <p className="mt-4 text-black/60">Move a slider to see overlap.</p>
         ) : (
           <div className="mt-8 space-y-16">
             {withCands.map((r) => {
-              const rows = r.candidates.map((c) => { const st = stancesFor(c.name); return { c, st, o: overlap(answers, st, ids) }; });
-              const compare = rows.filter((x) => x.o.n >= 2).length >= 2;
+              const rows = r.candidates.map((c) => { const st = stancesFor(c.name); return { c, st, o: overlapFor(answers, st, ids) }; });
               return (
               <div key={r.id} data-race={r.id}>
                 <p className="font-serif text-3xl leading-tight text-black">{r.title || r.id}</p>
-                {!compare && <p className="mt-1 text-sm text-slate-500">Not enough sourced positions to compare candidates in this race yet.</p>}
-                <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3">
+                <PortraitRow cands={r.candidates} />
+                <ul className="mt-4 divide-y divide-black/15 border-t border-black/15">
                   {rows.map(({ c, st, o }) => {
-                    const agree = o.shared.filter((id) => { const a = answers[id] as number; const v = st[id].value; return a * v > 0 || Math.abs(a - v) <= 1; }).length;
                     return (
-                      <li key={c.name} className="text-sm" data-overlap={c.name}>
-                        <Portrait name={c.name} photo={c.photo} forceInitials={failed[r.id] || r.candidates.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
-                        <p className="mt-3 text-base font-medium text-black">{c.name}{c.party ? <span className="font-normal text-slate-500"> · {c.party}</span> : null}</p>
+                      <li key={c.name} className="py-4 text-sm" data-overlap={c.name}>
+                        <p className="text-base font-[530] text-black">{c.name}{c.party ? <span className="font-[450] text-black/60"> · {c.party}</span> : null}</p>
                         {c.causes?.length ? (
                           <p className="mt-1 text-xs text-black/60">Talks about{" "}
                             {c.causes.slice(0, 3).map((k, j) => (
@@ -86,31 +86,28 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
                             ))}
                           </p>
                         ) : null}
-                        {o.n === 0 ? (
-                          <p className="mt-1 text-slate-500">No sourced positions on your issues.</p>
-                        ) : (
+                        {o.enough && o.pct !== null ? (
                           <>
-                            {compare && o.n >= 2 && o.pct !== null ? (
-                              <>
-                                <p className="mt-1 text-slate-800"><span className="mr-3 inline-block min-w-[2rem] font-serif text-5xl leading-none">{tierOf(o.pct)}</span>Lines up on {agree} of {o.n} compared issues</p>
-                                <p className="text-xs text-slate-500">Tier based on your answers and sourced records.</p>
-                              </>
-                            ) : (
-                              <p className="mt-1 text-xs text-slate-500">{o.n} sourced position{o.n === 1 ? "" : "s"} on your issues. Not tiered.</p>
-                            )}
-                            <details className="mt-1" open>
-                              <summary className="flex min-h-11 cursor-pointer items-center text-xs text-navy-700">Sourced positions</summary>
-                              <ul className="space-y-2">
-                                {o.shared.map((id) => (
-                                  <li key={id} className="text-xs text-slate-600">
-                                    <span className="font-medium">{ISSUES.find((i) => i.id === id)?.label}:</span> “{st[id].quote}”{" "}
-                                    <a href={st[id].sourceUrl} target="_blank" rel="noreferrer">source</a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </details>
+                            <p className="mt-1 text-black"><span className="mr-2 font-serif text-5xl leading-none tabular-nums">{o.pct}%</span><span className="text-sm text-black/60">overlap</span></p>
+                            <p className="text-sm text-black/60">{overlapLabel(c.name, o)}</p>
                           </>
+                        ) : (
+                          <p className="mt-1 text-sm text-black/60">{o.n === 0 ? "We're still sourcing this." : "Not enough sourced positions"}</p>
                         )}
+                        {o.n > 0 && (
+                          <details className="mt-1" open={o.n < 3}>
+                            <summary className="flex min-h-11 cursor-pointer items-center text-sm text-black/60">Sourced positions ({o.n})</summary>
+                            <ul className="space-y-2">
+                              {o.counted.map((id: string) => (
+                                <li key={id} className="text-sm text-black/80">
+                                  <span className="font-[530]">{ISSUES.find((i) => i.id === id)?.label}:</span> “{st[id].quote}”{" "}
+                                  <a href={st[id].sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">source ↗</a>
+                                </li>
+                              ))}
+                            </ul>
+                          </details>
+                        )}
+                        <CandLinks c={c} />
                       </li>
                     );
                   })}
@@ -122,5 +119,23 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
         )}
       </div>
     </section>
+  );
+}
+
+/** Known, data-backed links for a candidate. Only URLs present in the data; nothing guessed. */
+function CandLinks({ c }: { c: Cand }) {
+  const links = [
+    c.campaignSite && { href: c.campaignSite, label: "Campaign site" },
+    c.ballotpedia && { href: c.ballotpedia, label: "Ballotpedia" },
+    c.officialSite && { href: c.officialSite, label: "Official page" },
+    c.finance?.url && { href: c.finance.url, label: /fec\.gov/.test(c.finance.url) ? "FEC filings" : /ethics\.state\.tx/.test(c.finance.url) ? "Texas Ethics Commission" : /cal-access|sos\.ca\.gov/i.test(c.finance.url) ? "Cal-Access" : "Campaign finance" },
+  ].filter(Boolean) as { href: string; label: string }[];
+  if (!links.length) return null;
+  return (
+    <p className="text-sm">
+      {links.map((l, i) => (
+        <span key={l.href}>{i ? <span className="text-black/60"> · </span> : null}<a href={l.href} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">{l.label} ↗</a></span>
+      ))}
+    </p>
   );
 }

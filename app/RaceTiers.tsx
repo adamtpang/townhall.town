@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Portrait, type Photo } from "../components/Portrait";
+import { type Photo } from "../components/Portrait";
+import { PortraitRow } from "../components/PortraitRow";
 import type { MeasureMath } from "../lib/measures";
 import officesData from "../data/offices.json";
 const OFFICES = officesData.offices;
@@ -33,7 +34,9 @@ export function tierFor(r: RaceLite, mk: Mk) {
   const comp = lead ? 1 + (1 - Math.abs(lead.prob - 0.5) * 2) : 1;
   const score = imp.v * comp;
   const tier = score >= 4.5 ? "S" : score >= 3 ? "A" : score >= 2 ? "B" : "C";
-  const why = `${imp.why[0].toUpperCase()}${imp.why.slice(1)}${lead ? `; market leader at ${Math.round(lead.prob * 100)}%, ${comp >= 1.6 ? "close" : comp >= 1.3 ? "leaning" : "lopsided"}` : ". No market odds yet"}.`;
+  const p = lead ? Math.round(lead.prob * 100) : 0;
+  const how = comp >= 1.6 ? "a close race" : comp >= 1.3 ? "leaning one way" : "not close";
+  const why = `${imp.why[0].toUpperCase()}${imp.why.slice(1)}. ${lead ? `Prediction markets give the front-runner a ${p}% chance: ${how}` : "No market odds yet"}.`;
   return { tier, score, why };
 }
 
@@ -43,47 +46,34 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
   const [failed, setFailed] = useState<Record<string, boolean>>({});
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
   const tiers = ["S", "A", "B", "C"] as const;
+  const TIER_NAME = { S: "Most at stake", A: "High", B: "Moderate", C: "Lower" } as const;
   return (
     <section className="border-t border-black py-24" id="tiers">
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
-      <p className="mt-4 max-w-2xl text-black/50">Office impact × how close the race is. Ranks races, never candidates.</p>
+      <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake means a top office in a close race, then High, Moderate and Lower. Closeness comes from prediction market odds where they exist.</p>
       <div className="mt-10">
         {tiers.map((t) => {
           const list = rows.filter((x) => x.tier === t);
           if (!list.length) return null;
           const top = t === tiers.find((tt) => rows.some((x) => x.tier === tt));
           return (
-            <details key={t} open={top} className="group border-t border-black/15 py-6" data-tier={t}>
+            <details key={t} open className="group border-t border-black/15 py-6" data-tier={t}>
               <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
-                <span className="w-16 font-serif text-7xl leading-none md:w-24">{t}</span>
-                <span className="text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}<span className="ml-2 inline-block group-open:rotate-180">↓</span></span>
+                <span className="text-sm font-[530]">{TIER_NAME[t]}</span>
+                <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
               </summary>
-              <ul className="mt-6 space-y-10 sm:pl-[7.5rem]">
+              {top && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
+              <ul className="mt-6 space-y-10">
                 {list.map(({ r, why, mk }) => (
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>
-                    {r.candidates?.length && !failed[r.id] && r.candidates.every((x) => x.photo?.url) ? (
-                      // One row, identical tiles, never wraps: N equal columns down to 64px, then scroll-snap sideways.
-                      // Any missing or broken portrait hides the whole row, so no candidate looks different.
-                      <div className="-mx-6 my-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:px-0" data-photo-row>
-                        <ul role="list" className="grid snap-x snap-mandatory gap-3 lg:gap-5" style={{ gridTemplateColumns: `repeat(${r.candidates.length}, minmax(64px, 1fr))`, maxWidth: `${r.candidates.length * 160 + (r.candidates.length - 1) * 20}px` }}>
-                          {r.candidates.map((c) => (
-                            <li key={c.name} className="min-w-0 snap-start" data-photo-tile>
-                              <Portrait name={c.name} photo={c.photo} credit={false} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
-                              <p className="mt-2 line-clamp-2 min-h-10 break-words text-sm font-medium leading-5">{c.name}</p>
-                              {c.party && <p className="truncate text-xs text-black/60">{c.party}</p>}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ) : r.candidates?.length ? (
-                      <p className="my-3 text-base">{r.candidates.map((c) => c.name).join(" · ")}</p>
-                    ) : null}
+                    {r.candidates?.length ? <PortraitRow cands={r.candidates} /> : null}
                     <p className="text-sm text-black/60">
                       {why}{" "}
                       {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">race source</a>}
-                      {lead(mk) && mk?.quotes?.[0]?.url && <> · <a href={mk.quotes[0].url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">market</a></>}
+                      {lead(mk) && mk?.quotes?.[0]?.url && <> · <a href={mk.quotes[0].url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">prediction market odds ({/kalshi/i.test(mk.quotes[0].url) ? "Kalshi" : /polymarket/i.test(mk.quotes[0].url) ? "Polymarket" : "market"}) ↗</a></>}
                       {r.verify && <> · {r.verify}</>}
                     </p>
                     <OfficeCard id={r.id} fallback={r.office && r.officeSource && !/^unsure/i.test(r.office) ? { learn: r.office, sourceUrl: r.officeSource } : undefined} />
@@ -127,7 +117,7 @@ function MeasureRows({ measures }: { measures: MeasureMath[] }) {
   return (
     <details className="group border-t border-black/15 py-6" data-tier="measures">
       <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
-        <span className="font-serif text-5xl leading-none md:w-24">Props</span>
+        <span className="text-sm font-[530]">Measures</span>
         <span className="text-sm text-black/60">{measures.length} measure{measures.length === 1 ? "" : "s"}, doing the math<span className="ml-2 inline-block group-open:rotate-180">↓</span></span>
       </summary>
       <ul className="mt-6 sm:pl-[7.5rem]">

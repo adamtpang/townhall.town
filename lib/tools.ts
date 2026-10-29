@@ -35,7 +35,11 @@ export function ballotFor(zip: string): Ballot | null {
   return b ? enrich(b) : null;
 }
 
+/** Adam's scope for the Hack Fair build: only fully sourced ZIPs. Other ZIPs get "Austin, SF and NYC for now." */
+export const SCOPE = new Set(["78701", "94103", "10001"]);
+
 function baseBallot(zip: string): Ballot | null {
+  if (!SCOPE.has(zip)) return null;
   if (B[zip]) return { ...B[zip], cached: true };
   const cd = TX.zipToCd[zip];
   if (!cd || !TX.house[String(cd)]) return null;
@@ -59,7 +63,7 @@ function baseBallot(zip: string): Ballot | null {
 
 export function getDistricts(zip: string) {
   const b = ballotFor(zip);
-  if (!b) return { zip, found: false, message: "Only Texas ZIPs, the California demo ZIPs (94103, 90012) and New York 10001 are covered right now." };
+  if (!b) return { zip, found: false, message: "Austin, SF and NYC for now." };
   return { zip, found: true, state: b.state, place: b.place, county: b.county, districts: b.districts, source: b.districtSource, splitWarning: b.splitWarning };
 }
 
