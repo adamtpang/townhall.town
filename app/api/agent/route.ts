@@ -108,6 +108,8 @@ async function run(zip: string, emit: Emit) {
       const res = await generateText({
         model: lm,
         maxRetries: 0,
+        // Gateway-side fallbacks (ids checked against the AI Gateway model list; xai/grok-3-mini is not listed).
+        providerOptions: { gateway: { models: ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"] } },
         system: SYSTEM,
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
         tools: { ...makeTools(zip, emit, results), ...civicTools },
