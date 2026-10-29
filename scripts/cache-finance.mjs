@@ -7,7 +7,7 @@ import fs from "node:fs";
 const KEY = process.env.FEC_API_KEY || "DEMO_KEY";
 const API = "https://api.open.fec.gov/v1";
 const CYCLE = 2026;
-const NOT_EMPLOYERS = /^(NOT EMPLOYED|SELF[- ]EMPLOYED|NONE|NULL|N\/?A|INFORMATION REQUESTED.*|REQUESTED|UNEMPLOYED|RETIRED|HOMEMAKER|STUDENT|-)$/i;
+const NOT_EMPLOYERS = /^(NOT EMPLOYED|SELF([- ]EMPLOYED)?|NONE|NULL|N\/?A|INFORMATION REQUESTED.*|REQUESTED|UNEMPLOYED|RETIRED|HOMEMAKER|STUDENT|-)$/i;
 // Form 3 receipt lines from committees: 11B party, 11C other committees (PACs), 12 transfers (joint fundraising).
 const COMMITTEE_LINES = { "11B": "party", "11C": "PAC", "12": "joint fundraising" };
 
