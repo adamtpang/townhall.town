@@ -111,7 +111,7 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
           <Tip label="Market odds: average trading price on Polymarket/Kalshi. Not a forecast or endorsement.">
             <div className="text-right">
               <div className="text-2xl font-bold tabular-nums text-navy">{pct(odds.prob)}</div>
-              <div className="text-[11px] uppercase tracking-wide text-slate-500">market odds</div>
+              <div className="text-xs uppercase tracking-wide text-slate-500">market odds</div>
             </div>
           </Tip>
         )}
@@ -124,7 +124,7 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
           <Src href={c.ballotpedia}>Ballotpedia</Src>
           <Src href={c.finance?.url}>{c.finance?.label?.startsWith("FEC") ? "FEC" : c.finance?.label?.includes("Ethics") ? "TEC" : "Finance"}</Src>
         </div>
-        {c.photo && <p className="text-[11px] text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
+        {c.photo && <p className="text-xs text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
         {c.accountability?.length ? (
           <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-sm">
             <p className="eyebrow mb-2">Said vs. did</p>

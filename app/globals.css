@@ -40,3 +40,11 @@
   .nds-hairline { @apply border-t border-foreground/10; }
   .nds-link-arrow::after { content: " \2197"; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -11,7 +11,7 @@ const button = cva(
         outline: "border border-black/20 bg-transparent text-black hover:border-black",
         ghost: "bg-transparent text-black hover:text-[#3760f2]",
       },
-      size: { default: "h-11 px-5 text-sm", sm: "h-9 rounded-full px-4 text-sm", lg: "h-16 px-8 text-lg" },
+      size: { default: "h-11 px-5 text-sm", sm: "min-h-11 rounded-full px-4 py-2 text-sm", lg: "h-16 px-8 text-lg" },
     },
     defaultVariants: { variant: "default", size: "default" },
   }

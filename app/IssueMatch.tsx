@@ -41,7 +41,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
             <div key={i.id} className="border-t border-black/15 py-4" data-issue={i.id}>
               <div className="flex items-center justify-between gap-2">
                 <p className="font-semibold text-navy">{i.label}</p>
-                <label className="flex items-center gap-1.5 text-sm text-slate-600">
+                <label className="-mr-2 flex min-h-11 cursor-pointer items-center gap-1.5 px-2 text-sm text-slate-600">
                   <Checkbox checked={skipped} onCheckedChange={(c) => set(i.id, c === true ? null : 0)} aria-label={`Skip ${i.label}`} /> Skip
                 </label>
               </div>
@@ -84,7 +84,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
                             <p className="text-xs text-slate-500">{o.n >= 2 ? "Tier based on your answers and sourced records." : "Not enough record to tier."}</p>
                             <p className="text-xs text-slate-500">Based on {o.n} sourced position{o.n === 1 ? "" : "s"}.{o.n === 1 ? " Thin evidence: one position only." : ""}</p>
                             <details className="mt-2" open={o.n >= 2}>
-                              <summary className="cursor-pointer text-xs text-navy-700">Show sourced positions</summary>
+                              <summary className="flex min-h-11 cursor-pointer items-center text-xs text-navy-700">Show sourced positions</summary>
                               <ul className="mt-2 space-y-2">
                                 {o.shared.map((id) => (
                                   <li key={id} className="text-xs text-slate-600">
