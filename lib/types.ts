@@ -48,7 +48,7 @@ export type TurnoutStats = {
 
 export type Jurisdiction = {
   zip: string;
-  state: "TX" | "CA";
+  state: "TX" | "CA" | "NY";
   place: string;
   county: string;
   counties: string[];

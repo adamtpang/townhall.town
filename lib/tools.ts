@@ -1,4 +1,5 @@
 import ballots from "../data/ballots.json";
+import ny from "../data/ny.json";
 import tx from "../data/tx.json";
 import marketMap from "../data/markets-map.json";
 import marketCache from "../data/markets-cache.json";
@@ -18,7 +19,7 @@ export type Ballot = Jurisdiction & {
   cached: boolean;
 };
 
-const B = ballots as unknown as Record<string, Ballot>;
+const B = { ...ballots, ...ny } as unknown as Record<string, Ballot>;
 const TX = tx as unknown as { statewide: Race[]; house: Record<string, Race>; zipToCd: Record<string, number>; zipSource: { label: string; url: string } };
 export const DEMO_ZIPS = Object.keys(B);
 
@@ -57,7 +58,7 @@ function baseBallot(zip: string): Ballot | null {
 
 export function getDistricts(zip: string) {
   const b = ballotFor(zip);
-  if (!b) return { zip, found: false, message: "Only Texas ZIPs and the California demo ZIPs (94103, 90012) are covered right now." };
+  if (!b) return { zip, found: false, message: "Only Texas ZIPs, the California demo ZIPs (94103, 90012) and New York 10001 are covered right now." };
   return { zip, found: true, state: b.state, place: b.place, county: b.county, districts: b.districts, source: b.districtSource, splitWarning: b.splitWarning };
 }
 
