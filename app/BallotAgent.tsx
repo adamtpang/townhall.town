@@ -16,8 +16,9 @@ import IssueMatch from "./IssueMatch";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
-import Plan from "./Plan";
-import { measuresFor, shortTitle } from "../lib/measures";
+import { UNSUPPORTED } from "../lib/narration.mjs";
+import { TrackRecordBlock } from "../components/TrackRecord";
+import { measuresFor } from "../lib/measures";
 
 const NYC_READY = true;
 const DEMO = [
@@ -211,21 +212,7 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
         </div>
         {c.photo && <p className="text-xs text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
         {c.money && <MoneyBlock m={c.money} />}
-        {c.accountability?.length ? (
-          <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-sm">
-            <p className="eyebrow mb-2">Said vs. did</p>
-            {(c.accountability as (NonNullable<Politician["accountability"]>[number] & { issue?: string; rationale?: string })[]).map((a, i) => (
-              <div key={i} className="mb-3 last:mb-0">
-                <p className="flex items-center justify-between gap-2 font-medium text-navy">
-                  {a.issue || "Promise"} <Badge variant={a.status === "kept" ? "outline" : "muted"}>{a.status}</Badge>
-                </p>
-                <p className="mt-1 text-slate-700"><span className="font-semibold">Said:</span> {a.promise} <Src href={a.promiseSource.url}>{a.promiseSource.label}</Src></p>
-                <p className="mt-1 text-slate-700"><span className="font-semibold">Did:</span> {a.record} {a.recordSource && <Src href={a.recordSource.url}>{a.recordSource.label}</Src>}</p>
-                {a.rationale && <p className="mt-1 text-xs text-slate-500">{a.rationale}</p>}
-              </div>
-            ))}
-          </div>
-        ) : null}
+        {c.accountability ? <TrackRecordBlock name={c.name} t={c.accountability} /> : null}
       </CardContent>
     </Card>
   );
@@ -244,13 +231,13 @@ export default function BallotAgent() {
   const [elapsed, setElapsed] = useState<number | null>(null);
 
   async function run(z: string) {
-    const raw = z.trim();
-    z = raw.replace(/\D/g, "");
+    const raw = z;
+    z = raw;
     setResult(null);
     setSteps({});
     setStatus([]);
     if (!/^\d{5}$/.test(raw) || z === "00000") { setZip(raw); return setNotice("Enter a valid 5-digit ZIP"); }
-    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin, SF and NYC for now."); }
+    if (!SUPPORTED.has(z)) { setZip(z); return setNotice(UNSUPPORTED); }
     setZip(z);
     setBusy(true);
     setSteps({});
@@ -275,7 +262,7 @@ export default function BallotAgent() {
           const e = JSON.parse(line);
           if (e.type === "step") setSteps((s) => ({ ...s, [e.tool]: e }));
           else if (e.type === "status") { console.debug("[agent]", e.message); setStatus((s) => [...s, "Looking up your ballot…"]); }
-          else if (e.type === "unsupported") setNotice("Austin, SF and NYC for now.");
+          else if (e.type === "unsupported") setNotice(UNSUPPORTED);
           else if (e.type === "error") { console.error("[agent]", e.message); setNotice("Couldn't load your ballot right now. Please try again."); }
           else if (e.type === "result") {
             setResult(e);
@@ -364,12 +351,7 @@ export default function BallotAgent() {
             {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">Check your exact district by address</a></>}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} />
-          <IssueMatch state={b.state} races={b.races} />
-          <section id="plan" className="border-t border-black py-24">
-            <p className="text-sm text-black/50">03</p>
-            <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">Your plan</h2>
-            <Plan zip={b.zip} state={b.state} place={b.place} electionDate={b.electionDate} races={b.races} measures={measureMath.length ? measureMath.map((m) => ({ id: m.id, title: shortTitle(m.title) })) : b.measures || []} />
-          </section>
+          <IssueMatch zip={b.zip} state={b.state} races={b.races} />
         </div>
       )}
 
@@ -407,7 +389,7 @@ function GamePlan({ state }: { state: "TX" | "CA" }) {
           <CardContent className="space-y-2 text-sm text-slate-700">
             <p>Early voting runs Oct 19–30. Election Day is <strong>Tuesday, Nov 3, 2026</strong>.</p>
             <p>The registration deadline (Oct 5) has passed. <a href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do">Check if you're registered</a>.</p>
-            <p className="text-xs text-slate-500">Source: <a href="https://www.sos.state.tx.us/">Texas SOS</a>, <a href="https://www.votetexas.gov/">VoteTexas.gov</a></p>
+            <p className="text-xs text-slate-500">Source: <a href="https://www.sos.state.tx.us/">Texas Secretary of State</a>, <a href="https://www.votetexas.gov/">VoteTexas.gov</a></p>
           </CardContent>
         </Card>
         <Card>

@@ -1,0 +1,298 @@
+{
+ "stances": {
+  "james-talarico": {
+   "name": "James Talarico",
+   "immigration": {
+    "value": 1,
+    "quote": "My plan includes hiring more Border Patrol agents and immigration judges, using modernized surveillance technology, focusing ICE resources on deporting those who mean to do us harm, and stopping this corrupt project to build a border wall through Big Bend",
+    "sourceUrl": "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/"
+   },
+   "energy": {
+    "value": 2,
+    "quote": "set minimum federal requirements for new data center projects to protect our grid, environment, and jobs and ensure transparency",
+    "sourceUrl": "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/"
+   },
+   "safety": {
+    "value": -2,
+    "quote": "In the Senate, I'll support legalizing marijuana for adults — regulating and imposing taxes on its sales to support public safety and health programs.",
+    "sourceUrl": "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/"
+   },
+   "education": {
+    "value": -5,
+    "quote": "I'm committed to strengthening our schools and fighting back against a national voucher scam that will defund schools to subsidize private education for the wealthiest.",
+    "sourceUrl": "https://ballotpedia.org/James_Talarico"
+   },
+   "wages": {
+    "value": 4,
+    "quote": "one that increases the state minimum wage and ensures equal pay for equal work for all Texans",
+    "sourceUrl": "https://ballotpedia.org/James_Talarico"
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "Expand access to high-speed internet: Increase funding dedicated to expanding high-speed internet access across Texas to meet the federal government’s original $3.3 billion commitment to our state.",
+    "sourceUrl": "https://jamestalarico.com/issue/rural-investment/"
+   }
+  },
+  "ted-brown": {
+   "name": "Ted Brown",
+   "safety": {
+    "value": -4,
+    "quote": "Anyone ever convicted of a federal or state marijuana offense should have their record expunged. No one should ever have been arrested for a plant.",
+    "sourceUrl": "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/"
+   },
+   "education": {
+    "value": 4,
+    "quote": "The best alternative would be tuition tax credits for parents (or anyone else) who send a child to private school.",
+    "sourceUrl": "https://tedbrown.org/website/"
+   },
+   "housing": {
+    "value": -3,
+    "quote": "Eliminate roadblocks to starting new businesses or building more housing.",
+    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+   },
+   "infrastructure": {
+    "value": -3,
+    "quote": "This has to involve massive cuts in the federal budget in every single program and department.",
+    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+   },
+   "wages": {
+    "value": -3,
+    "quote": "I believe in the free market, where people freely trade with each other without government regulations and controls.",
+    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Ted_Brown_(Texas)",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/",
+     "https://tedbrown.org/"
+    ]
+   },
+   "taxes": {
+    "value": -5,
+    "quote": "Taxes are always too high, at the federal, state, and local levels. Elected officials are thirsty for more of our money to finance their programs and big plans (or more accurately, boondoggles) and to pay off their big campaign contributors. I will never vote to raise taxes.",
+    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+   },
+   "healthcare": {
+    "value": -5,
+    "quote": "Health care is not a right or a privilege. It’s a service, and like other goods and services, it should be provided by free-market competition.",
+    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+   }
+  },
+  "ken-paxton": {
+   "name": "Ken Paxton",
+   "housing": {
+    "value": 2,
+    "quote": "The cost of building it, and then interest rates have made it very difficult for many of our citizens to afford housing. And so we are going to make it easier for people to buy houses.",
+    "sourceUrl": "https://www.texastribune.org/2026/08/05/texas-senate-james-talarico-economic-agenda-ken-paxton/"
+   },
+   "education": {
+    "value": 5,
+    "quote": "This universal school choice bill is a historic step in ensuring that students will have the freedom to seek the educational option that is right for them, not be trapped in schools that fail to meet their academic needs",
+    "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-celebrates-school-choice-texans-and-vows-defend-new-law"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "I will not stand idly by as cities run by pro-crime extremists deliberately violate Texas law and promote the use of illicit drugs that harm our communities",
+    "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-five-cities-over-marijuana-policies-preventing-enforcement-texas"
+   },
+   "healthcare": {
+    "value": -4,
+    "quote": "With no remaining legitimate basis for the law, it is time that Americans are finally free from the stranglehold of Obamacare, once and for all.",
+    "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/ag-paxton-and-wisconsin-ag-file-20-state-lawsuit-end-grip-obamacare-texas-and-nation"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Ken_Paxton",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Ken_Paxton",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/"
+    ]
+   }
+  },
+  "gina-hinojosa": {
+   "name": "Gina Hinojosa",
+   "immigration": {
+    "value": -2,
+    "quote": "We can secure the border while treating immigrants humanely and protecting due process. Longtime, law-abiding residents should have a path to legal status.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "energy": {
+    "value": 3,
+    "quote": "We know that the state needs improved grid reliability and better ways to get wind, solar, and other clean and affordable energy onto the grid",
+    "sourceUrl": "https://ginafortexas.com/priority/an-affordable-texas-that-works-for-everyone/"
+   },
+   "safety": {
+    "value": 1,
+    "quote": "As Governor, Gina Hinojosa will ensure local law enforcement has the tools, resources, and training needed to keep their communities safe – without unlawful surveillance.",
+    "sourceUrl": "https://ginafortexas.com/2026/10/new-ad-hinojosa-releases-flock-hunt-ad/"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Gina_Hinojosa",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://ginafortexas.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Gina_Hinojosa",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://ginafortexas.com/"
+    ]
+   },
+   "education": {
+    "value": -5,
+    "quote": "Every child deserves a strong neighborhood public school, but Greg Abbott’s elite donors want to suck the money out of them to turn a profit.",
+    "sourceUrl": "https://ballotpedia.org/Gina_Hinojosa"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "We need to reign in these out-of-control profiteers who are making healthcare more expensive and making Texans sicker.",
+    "sourceUrl": "https://ballotpedia.org/Gina_Hinojosa"
+   },
+   "housing": {
+    "value": 3,
+    "quote": "As Governor, Gina will preserve homeownership for Texans by stopping private equity firms from buying up housing.",
+    "sourceUrl": "https://ginafortexas.com/priority/an-affordable-texas-that-works-for-everyone/"
+   },
+   "taxes": {
+    "value": -2,
+    "quote": "We must end these corporate subsidies and use the savings to cut property taxes, with the end goal of eliminating residential property taxes.",
+    "sourceUrl": "https://ginafortexas.com/priority/an-affordable-texas-that-works-for-everyone/"
+   }
+  },
+  "pat-dixon": {
+   "name": "Pat Dixon",
+   "healthcare": {
+    "value": -4,
+    "quote": "Allowing more choice and competition will lower prices. While restrictions to new hospitals and health care have been reduced, I defend the free market.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "But I believe Texas should go further: adults should be free to make their own choices, provided they don’t harm others.",
+    "sourceUrl": "https://patdixon.org/the-war-on-hemp/"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Pat_Dixon",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://patdixon.org/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Pat_Dixon",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://patdixon.org/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Pat_Dixon",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://patdixon.org/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Pat_Dixon",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://patdixon.org/"
+    ]
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "I am a Libertarian and I want to eliminate government functions that are bad for taxpayers, which will reduce spending and taxation",
+    "sourceUrl": "https://ballotpedia.org/Pat_Dixon"
+   },
+   "education": {
+    "value": 5,
+    "quote": "Ideally, I would like a statewide scholarship. Every child would be given the same amount of money to follow them to any school.",
+    "sourceUrl": "https://patdixon.org/school-choice/"
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "if you are peaceful and productive, welcome",
+    "sourceUrl": "https://patdixon.org/the-border/"
+   }
+  },
+  "greg-abbott": {
+   "name": "Greg Abbott",
+   "infrastructure": {
+    "value": 4,
+    "quote": "In my State of the State Address, I called on the Texas legislature to make the largest investment in water in Texas history. This law written by Chairman Perry and Chairman Harris does just that, providing a $20 billion generational investment for both new water supply and for the repairing of existing infrastructure.",
+    "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-signs-largest-generational-water-investment-in-texas-history-in-lubbock"
+   },
+   "energy": {
+    "value": -5,
+    "quote": "The Permian Basin is the crown jewel of Texas' mighty oil and gas industry, and the State of Texas will do whatever it takes to protect its production and the hundreds of thousands of good-paying energy jobs in our state,",
+    "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-statement-on-texas-stopping-president-bidens-attacks-on-permian-basin"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Greg_Abbott",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.gregabbott.com/"
+    ]
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "Limiting local government spending to population + inflation or 3.5% (the lesser of the two) would ensure fiscally responsible governance.",
+    "sourceUrl": "https://www.gregabbott.com/policy/"
+   },
+   "housing": {
+    "value": 3,
+    "quote": "Cutting red tape and expanding the housing supply will make housing more affordable for all Texans",
+    "sourceUrl": "https://www.gregabbott.com/policy/"
+   },
+   "healthcare": {
+    "value": -2,
+    "quote": "many health plans are weighed down by an excess of expensive health insurance mandates, which translate to higher premiums for hardworking Texans.",
+    "sourceUrl": "https://www.gregabbott.com/policy/"
+   },
+   "immigration": {
+    "value": 4,
+    "quote": "Governor Abbott's plan is simple: illegal immigrants arrested for violent felonies must be denied bail and held behind bars while awaiting trail.",
+    "sourceUrl": "https://www.gregabbott.com/policy/"
+   }
+  }
+ }
+}

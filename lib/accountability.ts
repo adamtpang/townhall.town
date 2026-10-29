@@ -1,60 +1,53 @@
-// Accountability plug-in for the shared contract in lib/types.ts.
-// Said vs did: each record pairs a public promise with the vote, bill or action
-// that kept or broke it, both sourced. Nonpartisan: records, never vote advice.
+// Track record plug-in. Source of truth: Civic's data/accountability.json (replaced wholesale 2026-10-29).
+// Labels are only consistent / inconsistent / mixed/unclear. A score shows only with 3+ checkable pairs
+// (consistent + inconsistent); otherwise "Not enough records", or "No voting record" for people who never held office.
+// Method: /methodology/accountability (data/civic/accountability_method.md). Records, never vote advice.
 import data from "../data/accountability.json";
-import type { AccountabilityRecord, Politician, Source } from "./types";
+import type { AccountabilityRecord, Politician, TrackRecord } from "./types";
 
-type RawRecord = {
+type RawPair = {
   issue: string;
-  said: { text: string; date: string; source: string };
-  did: { text: string; date: string; source: string } | null;
-  status: "kept" | "broken" | "in_progress" | "compromise" | "unclear";
-  rationale: string;
+  claim: { quote: string; sourceUrl: string; date: string | null };
+  action: { description: string; bill?: string | null; vote?: string | null; date: string | null; sourceUrl: string };
+  classification: AccountabilityRecord["classification"];
+  reason: string;
 };
-type RawPolitician = { name: string; office: string; party: string; promises: RawRecord[] };
-const people = (data as { asOf: string; politicians: RawPolitician[] }).politicians;
+type RawCand = { slug: string; name: string; aliases?: string[]; accountability: { officesHeld?: string[]; officesVerified?: string; consistent: number; inconsistent: number; mixedUnclear: number; display: string; status: string; pairs: RawPair[] } };
+const D = data as unknown as { asOf: string; method: string; score_min_inputs: number; score_methodology_url: string; candidates: Record<string, RawCand> };
 
-const norm = (s: string) => s.toLowerCase().replace(/[^a-z]/g, "");
-const src = (url: string, date?: string): Source => ({
-  label: `${new URL(url).hostname.replace(/^www\./, "")}${date ? `, ${date}` : ""}`,
-  url,
-});
+export const METHOD_TEXT = D.method;
+export const METHOD_URL = "/methodology/accountability";
+/** Scores stay hidden for every candidate until /methodology/accountability is live on the public site.
+ *  Flip to true only when that page is live; the "Not enough records" / "No voting record" states are not scores. */
+export const SHOW_SCORES = false;
+export const MIN_PAIRS = D.score_min_inputs ?? 3;
+const slug = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const index = new Map<string, RawCand>();
+for (const c of Object.values(D.candidates)) for (const k of [c.slug, c.name, ...(c.aliases ?? [])]) index.set(slug(k), c);
 
-const STATUS: Record<RawRecord["status"], AccountabilityRecord["status"]> = {
-  kept: "kept",
-  broken: "broken",
-  in_progress: "in progress",
-  compromise: "kept",
-  unclear: "unclear",
-};
-
-export type AccountabilityDetail = AccountabilityRecord & { issue: string; rationale: string; compromise?: boolean };
-
-export function getAccountability(name: string): AccountabilityDetail[] {
-  const p = people.find((x) => norm(x.name) === norm(name));
-  if (!p) return [];
-  return p.promises.map((r) => ({
-    issue: r.issue,
-    promise: r.said.text,
-    promiseSource: src(r.said.source, r.said.date),
-    record: r.did ? r.did.text : "no record found",
-    recordSource: r.did ? src(r.did.source, r.did.date) : undefined,
-    status: r.did ? STATUS[r.status] : "no record found",
-    compromise: r.status === "compromise" || undefined,
-    rationale: r.rationale,
+export function trackRecordFor(name: string, aka?: string | null): TrackRecord | null {
+  const c = index.get(slug(name)) ?? (aka ? index.get(slug(aka)) : undefined);
+  if (!c) return null;
+  const a = c.accountability;
+  const pairs: AccountabilityRecord[] = a.pairs.map((p) => ({
+    issue: p.issue,
+    said: { quote: p.claim.quote, url: p.claim.sourceUrl, date: p.claim.date },
+    did: { text: p.action.description, bill: p.action.bill ?? null, vote: p.action.vote ?? null, url: p.action.sourceUrl, date: p.action.date },
+    classification: p.classification,
+    reason: p.reason,
   }));
+  const checkable = a.consistent + a.inconsistent;
+  const score = checkable >= MIN_PAIRS ? Math.round((a.consistent / checkable) * 100) : null;
+  const display = score !== null
+    ? (SHOW_SCORES ? `${a.consistent} of ${checkable} checked pairs consistent` : "Score not shown until the method page is published; checked pairs are listed below")
+    : a.status === "No voting record" ? "No voting record" : "Not enough records";
+  // Office line only when Civic verified the office history (never for "unsure").
+  const offices = a.officesVerified === "verified" && a.officesHeld?.length ? a.officesHeld : null;
+  return { display, score: SHOW_SCORES ? score : null, offices, consistent: a.consistent, inconsistent: a.inconsistent, mixedUnclear: a.mixedUnclear, pairs, asOf: D.asOf };
 }
 
-/** Kept share of decided records (kept, broken, compromise counts half). Null if nothing decided. */
-export function keptRate(records: AccountabilityDetail[]): number | null {
-  const decided = records.filter((r) => r.status === "kept" || r.status === "broken");
-  if (!decided.length) return null;
-  const score = decided.reduce((n, r) => n + (r.status === "broken" ? 0 : r.compromise ? 0.5 : 1), 0);
-  return Math.round((score / decided.length) * 100);
-}
-
-/** Attach accountability to a Politician without changing anything else. */
-export function withAccountability<T extends Politician>(p: T): T {
-  const accountability = getAccountability(p.name);
-  return accountability.length ? { ...p, accountability } : p;
+/** Attach the track record without changing anything else. */
+export function withAccountability<T extends Politician & { aka?: string | null }>(p: T): T {
+  const accountability = trackRecordFor(p.name, p.aka);
+  return accountability ? { ...p, accountability } : p;
 }

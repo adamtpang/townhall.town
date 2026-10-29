@@ -1,0 +1,1472 @@
+{
+ "stances": {
+  "xavier-becerra": {
+   "name": "Xavier Becerra",
+   "wages": {
+    "value": 3,
+    "quote": "We're subsidizing that employment by not making that employer really pay a living wage for those workers.",
+    "sourceUrl": "https://laist.com/news/politics/2026-election-california-primary-xavier-becerra-california-governor-transcript",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "LAist AirTalk interview transcript, Apr 15, 2026"
+   },
+   "safety": {
+    "value": 1,
+    "quote": "they want safety first... as governor, I'll make sure, for example, the prop 36 that Californians voted for is fully implemented. The important part of prop 36 is making sure we provide the non-criminal support",
+    "sourceUrl": "https://calmatters.org/california-voter-guide-2026/governor/videos/transcripts/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "CalMatters 2026 voter guide Q&A transcript (Justice). Qualified: commits to implementing Prop 36 but stresses treatment and judicial discretion, so mild value"
+   },
+   "education": {
+    "value": -5,
+    "quote": "I'll make sure that every public dollar, taxpayer dollar that we put in our schools and nine out of 10 kids in California go to public schools, that those dollars, taxpayer dollars stay in our public schools.",
+    "sourceUrl": "https://transcripts.cnn.com/show/skc/date/2026-09-30/segment/01",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "CNN California governor debate (host transcript), Sep 30, 2026"
+   }
+  },
+  "steve-hilton": {
+   "name": "Steve Hilton",
+   "wages": {
+    "value": -3,
+    "quote": "We already have the highest unemployment rate in the country. Now they're pushing up the minimum wage... It's just going to throw more thousands of Californians on the scrap heap.",
+    "sourceUrl": "https://www.usatoday.com/story/news/nation/california/2026/08/01/california-minimum-wage-increasing-in-2027-heres-what-to-know/91136160007/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "USA Today, Aug 1, 2026, quoting Hilton's video on X about the 2027 minimum wage increase (page text seeded via WebFetch; curl blocked)"
+   }
+  },
+  "fiona-ma": {
+   "name": "Fiona Ma",
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide"
+    ]
+   }
+  },
+  "gloria-j-romero": {
+   "name": "Gloria J. Romero",
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+     "https://ivoterguide.com/candidate/91226/race/30573/election/1454",
+     "https://www.gloriaromero4ltgov.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+     "https://ivoterguide.com/candidate/91226/race/30573/election/1454",
+     "https://www.gloriaromero4ltgov.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+     "https://ivoterguide.com/candidate/91226/race/30573/election/1454",
+     "https://www.gloriaromero4ltgov.com/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+     "https://ivoterguide.com/candidate/91226/race/30573/election/1454",
+     "https://www.gloriaromero4ltgov.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com",
+     "https://www.kcra.com/article/california-voter-guide-2026-lieutenant-governor/73839291",
+     "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+     "https://ivoterguide.com/candidate/91226/race/30573/election/1454",
+     "https://www.gloriaromero4ltgov.com/"
+    ]
+   }
+  },
+  "rob-bonta": {
+   "name": "Rob Bonta",
+   "wages": {
+    "value": 4,
+    "quote": "SB 3 Leno Senate Third Reading By HERNÁNDEZ Mar 31, 2016 For (48) ... Rob Bonta",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 3 ($15 statewide minimum wage), Mar 31, 2016"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "SB 1 Beall Third Reading Urgency By FRAZIER Apr 6, 2017 For (54) ... Rob Bonta",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 1 (gas tax and vehicle fee increase for road repair), Apr 6, 2017"
+   },
+   "safety": {
+    "value": null,
+    "status": "Mixed statements found; not mapped (pending civic review)",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Rob_Bonta",
+     "https://robbonta.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+     "https://www.kcra.com/article/california-attorney-general-prop-36-funding/64922395",
+     "https://www.kcra.com/article/rob-bonta-explains-why-he-should-be-reelected-attorney-general-ca-politics-360/74096679"
+    ],
+    "note": "KCRA May 2025: \"The people of the state have spoken loud and clear. And so, I think, getting a funding, a full implementation is critical\" (Prop 36). KCRA 2026: \"The best crime is the crime that never occurs because it's prevented... Successful rehabilitation promotes public safety.\" Directions conflict; left unmapped."
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Rob_Bonta",
+     "https://robbonta.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+     "https://www.kcra.com/article/california-attorney-general-prop-36-funding/64922395",
+     "https://www.kcra.com/article/rob-bonta-explains-why-he-should-be-reelected-attorney-general-ca-politics-360/74096679"
+    ]
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "SB 1 Beall Third Reading Urgency By FRAZIER Apr 6, 2017 For (54) ... Rob Bonta",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 1 (Road Repair and Accountability Act, ~$5B/yr transportation funding), Apr 6, 2017"
+   }
+  },
+  "michael-gates": {
+   "name": "Michael Gates",
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://www.gates4ag.com/press-releases",
+     "https://ballotpedia.org/Michael_Gates"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://www.gates4ag.com/press-releases",
+     "https://ballotpedia.org/Michael_Gates"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://www.gates4ag.com/press-releases",
+     "https://ballotpedia.org/Michael_Gates"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://www.gates4ag.com/press-releases",
+     "https://ballotpedia.org/Michael_Gates"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://www.gates4ag.com/press-releases",
+     "https://ballotpedia.org/Michael_Gates"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/",
+     "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+     "https://www.gates4ag.com/press-releases",
+     "https://ballotpedia.org/Michael_Gates"
+    ]
+   }
+  },
+  "donald-p-wagner": {
+   "name": "Donald P. Wagner",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-secretary-of-state-weber-wagner-voter-guide",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+     "http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm",
+     "https://voiceofoc.org/2024/10/orange-county-supervisors-jump-into-street-crime-debate/",
+     "https://voiceofoc.org/2024/01/eastern-oc-supervisors-election-could-get-decided-in-march-primary/",
+     "https://voiceofoc.org/2024/02/how-will-californias-prop-1-impact-orange-countys-mental-health-funding/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-secretary-of-state-weber-wagner-voter-guide",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+     "http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm",
+     "https://voiceofoc.org/2024/10/orange-county-supervisors-jump-into-street-crime-debate/",
+     "https://voiceofoc.org/2024/01/eastern-oc-supervisors-election-could-get-decided-in-march-primary/",
+     "https://voiceofoc.org/2024/02/how-will-californias-prop-1-impact-orange-countys-mental-health-funding/"
+    ]
+   },
+   "wages": {
+    "value": -4,
+    "quote": "SB 3 Leno Senate Third Reading By HERNÁNDEZ Mar 31, 2016 ... Against (26) ... Donald Wagner",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote AGAINST SB 3 ($15 statewide minimum wage), Mar 31, 2016"
+   },
+   "safety": {
+    "value": 3,
+    "quote": "These crimes are harming businesses and residents alike ... It’s past time to act.",
+    "sourceUrl": "https://voiceofoc.org/2024/10/orange-county-supervisors-jump-into-street-crime-debate/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Voice of OC, Oct 2024: Wagner (OC Board chair) on the Prop. 36 resolution he co-requested; board voted 3-1 in support (official minutes item S14H, Reso 24-113, Oct 8 2024: http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm). Prop. 36 restores penalties for repeat theft/drug offenses: clear enforcement direction (+3)."
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-secretary-of-state-weber-wagner-voter-guide",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+     "http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm",
+     "https://voiceofoc.org/2024/10/orange-county-supervisors-jump-into-street-crime-debate/",
+     "https://voiceofoc.org/2024/01/eastern-oc-supervisors-election-could-get-decided-in-march-primary/",
+     "https://voiceofoc.org/2024/02/how-will-californias-prop-1-impact-orange-countys-mental-health-funding/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-secretary-of-state-weber-wagner-voter-guide",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+     "http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm",
+     "https://voiceofoc.org/2024/10/orange-county-supervisors-jump-into-street-crime-debate/",
+     "https://voiceofoc.org/2024/01/eastern-oc-supervisors-election-could-get-decided-in-march-primary/",
+     "https://voiceofoc.org/2024/02/how-will-californias-prop-1-impact-orange-countys-mental-health-funding/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-secretary-of-state-weber-wagner-voter-guide",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+     "http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm",
+     "https://voiceofoc.org/2024/10/orange-county-supervisors-jump-into-street-crime-debate/",
+     "https://voiceofoc.org/2024/01/eastern-oc-supervisors-election-could-get-decided-in-march-primary/",
+     "https://voiceofoc.org/2024/02/how-will-californias-prop-1-impact-orange-countys-mental-health-funding/"
+    ]
+   }
+  },
+  "eleni-kounalakis": {
+   "name": "Eleni Kounalakis",
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide"
+    ]
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "California has benefited from America’s generous immigration policies over the last few generations in particular. That is what has made California great... And we absolutely need to be looking at this differently and first and foremost, stop the terrible treatment that immigrants and immigrant families are experiencing right now.",
+    "sourceUrl": "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "KCRA CA Politics 360 interview, Aug 23 2026; direct quote. Clear direction against current enforcement treatment, no absolute policy commitment"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide"
+    ]
+   }
+  },
+  "jennifer-hawks": {
+   "name": "Jennifer Hawks",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Jennifer_Hawks",
+     "https://HawksForUs.com",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide",
+     "https://hawksforus.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Jennifer_Hawks",
+     "https://HawksForUs.com",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide",
+     "https://hawksforus.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Jennifer_Hawks",
+     "https://HawksForUs.com",
+     "https://www.kcra.com/article/eleni-kounalakis-californias-state-treasurer-race/73499115",
+     "https://www.kcra.com/article/jennifer-hawks-explains-why-she-should-be-californias-state-treasurer-ca-politics-360/74233606",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide",
+     "https://hawksforus.com/"
+    ]
+   }
+  },
+  "ben-allen": {
+   "name": "Ben Allen",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1"
+    ]
+   },
+   "wages": {
+    "value": 4,
+    "quote": "SB3 Leno, et al. Concurrence Mar 31, 2016 For (26) ... Benjamin Allen",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Senate, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Senate floor concurrence vote FOR SB 3 ($15 statewide minimum wage), Mar 31, 2016"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "Senate 3rd Reading SB1 Beall et al. Urgency Clause Apr 6, 2017 For (27) ... Benjamin Allen",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Senate, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Senate floor vote FOR SB 1 (gas tax and vehicle fee increase for road repair), Apr 6, 2017"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+     "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1"
+    ]
+   }
+  },
+  "jane-kim": {
+   "name": "Jane Kim",
+   "housing": {
+    "value": 3,
+    "quote": "My mother taught me to negotiate relentlessly in a world that did not see her, and it is what allowed me to walk into a room full of older white men and demand 40% affordable and middle-income housing",
+    "sourceUrl": "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "CalMatters, Oct 2026; direct quote at Oct 3 2026 SF rally, describing her demand that developers include 40% affordable/middle-income housing. Clear direction (government action on housing costs), not an absolute policy pledge"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/",
+     "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+     "https://laist.com/news/politics/voter-guides/2026-election-california-general-insurance-commissioner",
+     "https://www.kqed.org/voterguide/california/insurance-commissioner",
+     "https://calmatters.org/economy/2026/10/insurance-commissioner-california-nov-election/"
+    ]
+   }
+  },
+  "richard-barrera": {
+   "name": "Richard Barrera",
+   "immigration": {
+    "value": -5,
+    "quote": "It's time for us to organize, stand up to Trump, abolish ICE and create the schools our students are worthy of",
+    "sourceUrl": "https://www.latimes.com/politics/story/2026-09-14/union-power-maga-politics-california-school-chief-race",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Los Angeles Times (Rector & Blume), Sep 14, 2026: direct quote from Barrera's Feb 2026 CA Democratic Party convention speech. Original publisher URL; replaces Yahoo syndication link. Replaces round2 immigration -3 with a stronger explicit statement"
+   }
+  },
+  "sonja-shaw": {
+   "name": "Sonja Shaw",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com",
+     "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+     "https://www.championnewspapers.com/community_news/article_dab6a319-c442-4cd3-be5a-2155029ee767.html",
+     "https://www.latimes.com/politics/story/2026-09-14/union-power-maga-politics-california-school-chief-race"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com",
+     "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+     "https://www.championnewspapers.com/community_news/article_dab6a319-c442-4cd3-be5a-2155029ee767.html",
+     "https://www.latimes.com/politics/story/2026-09-14/union-power-maga-politics-california-school-chief-race"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com",
+     "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+     "https://www.championnewspapers.com/community_news/article_dab6a319-c442-4cd3-be5a-2155029ee767.html",
+     "https://www.latimes.com/politics/story/2026-09-14/union-power-maga-politics-california-school-chief-race"
+    ]
+   },
+   "safety": {
+    "value": 2,
+    "quote": "we aimed to support staff and hold students accountable for their actions while navigating state-level challenges on suspensions and expulsions ... students must be held accountable and receive support at home",
+    "sourceUrl": "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Chino Champion, Jan 27, 2024: Shaw as CVUSD board president on school discipline. Mild (+2): accountability paired with support; consistent with batch2 Laurance Lee school-discipline mapping. Seeded via WebFetch after curl rate-limit (429)."
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com",
+     "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+     "https://www.championnewspapers.com/community_news/article_dab6a319-c442-4cd3-be5a-2155029ee767.html",
+     "https://www.latimes.com/politics/story/2026-09-14/union-power-maga-politics-california-school-chief-race"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com",
+     "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+     "https://www.championnewspapers.com/community_news/article_dab6a319-c442-4cd3-be5a-2155029ee767.html",
+     "https://www.latimes.com/politics/story/2026-09-14/union-power-maga-politics-california-school-chief-race"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com",
+     "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+     "https://www.championnewspapers.com/community_news/article_dab6a319-c442-4cd3-be5a-2155029ee767.html",
+     "https://www.latimes.com/politics/story/2026-09-14/union-power-maga-politics-california-school-chief-race"
+    ]
+   }
+  },
+  "jamo-muhammad": {
+   "name": "Jamo Muhammad",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad",
+     "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+     "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/"
+    ]
+   }
+  },
+  "autumn-brown-garibay": {
+   "name": "Autumn Brown Garibay",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view"
+    ]
+   }
+  },
+  "elijah-ball": {
+   "name": "Elijah Ball",
+   "housing": {
+    "value": 2,
+    "quote": "Housing affordability and tenant protections",
+    "sourceUrl": "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Democratic Party 2026 endorsement questionnaire, listed as a top platform priority; mild, no specific policy"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view"
+    ]
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "Economic and worker justice, including union rights and fair taxation of large corporations",
+    "sourceUrl": "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Democratic Party 2026 endorsement questionnaire (linked from sfdems.org/2026-november-endorsements-questionaires), listed as a top platform priority; mild, no specific measure"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1A5L3AsZl5d2oomiHe0cKXUak-nFBIm6z/view"
+    ]
+   }
+  },
+  "rome-moses-jones": {
+   "name": "Rome Moses Jones",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices"
+    ]
+   }
+  },
+  "erwin-tam": {
+   "name": "Erwin Tam",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   },
+   "taxes": {
+    "value": 1,
+    "quote": "I want the Board to begin preparing a parcel-tax renewal measure well before that deadline ... but a renewal will only have a strong chance of passing if CCSF first demonstrates real spending discipline and financial transparency",
+    "sourceUrl": "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Democratic Party 2026 endorsement questionnaire; supports renewing existing CCSF parcel tax (keep revenue for services), qualified on spending discipline"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.sfdems.org/2026-november-endorsements-questionaires",
+     "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view"
+    ]
+   }
+  },
+  "lisa-wynn": {
+   "name": "Lisa Wynn",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+     "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/"
+    ]
+   }
+  }
+ }
+}

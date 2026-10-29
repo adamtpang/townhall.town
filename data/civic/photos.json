@@ -1,0 +1,1056 @@
+{
+ "asOf": "2026-10-29",
+ "method": "Portraits from Wikimedia Commons / English Wikipedia file pages (license and author read from the file page metadata via the MediaWiki API) or official .gov pages. Every imageUrl checked with curl -sI (HTTP 200 + image/* content-type) on 2026-10-29. Candidates without a verifiably licensed portrait are omitted, not guessed. Ballotpedia-hosted photos are not used because Ballotpedia does not state a reuse license for them.",
+ "photos": [
+  {
+   "slug": "james-talarico",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Antonioaesparza, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "us-senate-tx"
+  },
+  {
+   "slug": "ken-paxton",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ken_Paxton_-_55022425595_%28cropped%29.jpg/500px-Ken_Paxton_-_55022425595_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Gage Skidmore, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "us-senate-tx"
+  },
+  {
+   "slug": "greg-abbott",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Greg_Abbott_at_NASA_2024_%28cropped%29.jpg/500px-Greg_Abbott_at_NASA_2024_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg",
+   "license": "Public domain",
+   "credit": "NASA Johnson Space Center / NASA-JSC/ROBERT MARKOWITZ, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-gov"
+  },
+  {
+   "slug": "gina-hinojosa",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg/500px-Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_LBJ_Library_Forum_(3x4_cropped).jpg",
+   "license": "Public domain",
+   "credit": "LBJ Library, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-gov"
+  },
+  {
+   "slug": "xavier-becerra",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/HHS_Xavier_Becerra.jpg/500px-HHS_Xavier_Becerra.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg",
+   "license": "Public domain",
+   "credit": "United States Department of Health and Human Services, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-gov"
+  },
+  {
+   "slug": "steve-hilton",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Gage Skidmore, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Republican",
+   "race": "ca-gov"
+  },
+  {
+   "slug": "kathy-hochul-adrienne-adams-lt-gov",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/World_Cup_Transportation_and_Safety_%28cropped%29.jpg/500px-World_Cup_Transportation_and_Safety_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:World_Cup_Transportation_and_Safety_(cropped).jpg",
+   "license": "CC BY 4.0",
+   "credit": "Metropolitan Transportation Authority, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Ballot line is the Hochul/Adams ticket; photo shows Kathy Hochul (cropped from a joint MTA briefing photo).",
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-governor"
+  },
+  {
+   "slug": "kathy-hochul",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/World_Cup_Transportation_and_Safety_%28cropped%29.jpg/500px-World_Cup_Transportation_and_Safety_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:World_Cup_Transportation_and_Safety_(cropped).jpg",
+   "license": "CC BY 4.0",
+   "credit": "Metropolitan Transportation Authority, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Ballot line is the Hochul/Adams ticket; photo shows Kathy Hochul (cropped from a joint MTA briefing photo). Alias entry: same photo as kathy-hochul-adrienne-adams-lt-gov (slug used in another ballot file).",
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-governor"
+  },
+  {
+   "slug": "adrienne-adams",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Adrienne_Adams%2C_2022.jpg/500px-Adrienne_Adams%2C_2022.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Adrienne_Adams,_2022.jpg",
+   "license": "CC BY 3.0",
+   "credit": "NYC Mayor's Office, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Running mate on the Hochul ticket (Lt. Gov.); not a separate ballot line.",
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-governor"
+  },
+  {
+   "slug": "bruce-blakeman-todd-hood-lt-gov",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Blakeman_Profile_Picture.jpg/500px-Blakeman_Profile_Picture.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Blakeman_Profile_Picture.jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Arthur Raslich, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Ballot line is the Blakeman/Hood ticket; photo shows Bruce Blakeman.",
+   "zip": "10001",
+   "party": "Republican, Conservative, Vote Affordable",
+   "race": "ny-governor"
+  },
+  {
+   "slug": "bruce-blakeman",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Blakeman_Profile_Picture.jpg/500px-Blakeman_Profile_Picture.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Blakeman_Profile_Picture.jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Arthur Raslich, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Ballot line is the Blakeman/Hood ticket; photo shows Bruce Blakeman. Alias entry: same photo as bruce-blakeman-todd-hood-lt-gov (slug used in another ballot file).",
+   "zip": "10001",
+   "party": "Republican, Conservative, Vote Affordable",
+   "race": "ny-governor"
+  },
+  {
+   "slug": "letitia-james",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Letitia_James_Interview_Feb_2020.png",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Letitia_James_Interview_Feb_2020.png",
+   "license": "CC BY 3.0",
+   "credit": "WBLS, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/png"
+   },
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-attorney-general"
+  },
+  {
+   "slug": "thomas-p-dinapoli",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/TPD%27s_Headshot_%28cropped%29.jpg/500px-TPD%27s_Headshot_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:TPD%27s_Headshot_(cropped).jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Office of NYS Comptroller, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-comptroller"
+  },
+  {
+   "slug": "joseph-hernandez",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Joseph_Hernandez.png/500px-Joseph_Hernandez.png",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Joseph_Hernandez.png",
+   "license": "CC BY-SA 4.0",
+   "credit": "Hernandez for NYC, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/png"
+   },
+   "note": "Released by the Hernandez campaign under CC BY-SA 4.0 with Wikimedia VRT permission ticket 2025102510006873.",
+   "zip": "10001",
+   "party": "Republican, Conservative",
+   "race": "ny-comptroller"
+  },
+  {
+   "slug": "dan-patrick",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg/500px-Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Maryland GovPics, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-ltgov"
+  },
+  {
+   "slug": "vikki-goodwin",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Cole-Wilson-93, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-ltgov"
+  },
+  {
+   "slug": "kevin-mccormick",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg",
+   "license": "CC0",
+   "credit": "WikiBunny2K1, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Green",
+   "race": "tx-ltgov"
+  },
+  {
+   "slug": "nathan-johnson",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg/500px-Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg",
+   "sourcePage": "https://en.wikipedia.org/wiki/File:Nathan_M._Johnson_(Texas_Senate)_speaks_at_Massachusetts_State_House_on_Aug._5,_2025,_amid_Texas_walkout_over_redistricting_(3x4).jpg",
+   "license": "Public domain (PD-MAGov)",
+   "credit": "Henry Shifrin/Massachusetts Governor's Press Office, via English Wikipedia",
+   "via": "English Wikipedia (local file)",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Hosted on English Wikipedia (not Commons); licensed via {{PD-MAGov}} (Massachusetts Governor's Press Office).",
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-ag"
+  },
+  {
+   "slug": "mayes-middleton",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mayes_Middleton_by_Gage_Skidmore.jpg/500px-Mayes_Middleton_by_Gage_Skidmore.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg",
+   "license": "CC BY-SA 3.0",
+   "credit": "Gage Skidmore, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-ag"
+  },
+  {
+   "slug": "donald-huffines",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Don_Huffines_%2851370822589%29_%28cropped%29.jpg/500px-Don_Huffines_%2851370822589%29_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg",
+   "license": "CC BY-SA 2.0",
+   "credit": "Gage Skidmore from Surprise, AZ, United States of America, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-comptroller"
+  },
+  {
+   "slug": "sarah-eckhardt",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sarah_Eckhardt_%28cropped%29.jpg/500px-Sarah_Eckhardt_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg",
+   "license": "CC BY 4.0",
+   "credit": "Jeffrey Clemmons, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-comptroller"
+  },
+  {
+   "slug": "dawn-buckingham",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg/500px-Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Sen._Dawn_Buckingham,_M.D_(cropped).jpg",
+   "license": "Public domain",
+   "credit": "Jay Godwin, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-land"
+  },
+  {
+   "slug": "clayton-tucker",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg",
+   "license": "CC0",
+   "credit": "DivaaNut, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-agcomm"
+  },
+  {
+   "slug": "jon-rosenthal",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Photo_of_Jon_Rosenthal.jpg/500px-Photo_of_Jon_Rosenthal.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Scriptrix101, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-rrc"
+  },
+  {
+   "slug": "jimmy-blacklock",
+   "imageUrl": "https://www.txcourts.gov/media/1460030/chief-justice-jimmy-blacklock-web.jpg",
+   "sourcePage": "https://www.txcourts.gov/supreme/about-the-court/justices/chief-justice-jimmy-blacklock/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Supreme Court of Texas, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-supreme-court-place-1-chief-justice"
+  },
+  {
+   "slug": "maggie-ellis",
+   "imageUrl": "https://www.txcourts.gov/media/1460168/ellis1.jpg",
+   "sourcePage": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-maggie-ellis/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Third Court of Appeals, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-supreme-court-place-1-chief-justice"
+  },
+  {
+   "slug": "kyle-hawkins",
+   "imageUrl": "https://www.txcourts.gov/media/1461570/justice-kyle-hawkins.jpg",
+   "sourcePage": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-kyle-d-hawkins/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Supreme Court of Texas, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-supreme-court-place-7"
+  },
+  {
+   "slug": "brett-busby",
+   "imageUrl": "https://www.txcourts.gov/media/1461169/brett-busby.png",
+   "sourcePage": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-brett-busby/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Supreme Court of Texas, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/png"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-supreme-court-place-8"
+  },
+  {
+   "slug": "gisela-triana",
+   "imageUrl": "https://www.txcourts.gov/media/1460157/gt.jpg",
+   "sourcePage": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-gisela-d-triana/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Third Court of Appeals, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-supreme-court-place-8"
+  },
+  {
+   "slug": "kevin-patrick-yeary",
+   "imageUrl": "https://www.txcourts.gov/media/1462538/yeary.jpg",
+   "sourcePage": "https://www.txcourts.gov/cca/about-the-court/judges/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Texas Court of Criminal Appeals, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-court-of-criminal-appeals-place-4"
+  },
+  {
+   "slug": "audra-riley",
+   "imageUrl": "https://www.dallascounty.org/Assets/uploads/images/courts/criminal-district/court3/riley-sm.jpg",
+   "sourcePage": "https://www.dallascounty.org/government/courts/criminal_district/court3/",
+   "license": "Dallas County official court photo (county government work); no reuse license stated on the page",
+   "credit": "Dallas County, Texas (Criminal District Court No. 3)",
+   "via": "Official .gov bio",
+   "note": "Small image (100x125).",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-court-of-criminal-appeals-place-4"
+  },
+  {
+   "slug": "james-p-sullivan",
+   "imageUrl": "https://www.txcourts.gov/media/1460010/justice-james-p-sullivan-2025-web.jpg",
+   "sourcePage": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Supreme Court of Texas, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-supreme-court-place-2"
+  },
+  {
+   "slug": "chari-kelly",
+   "imageUrl": "https://www.txcourts.gov/media/1445093/kelly-1.jpg",
+   "sourcePage": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-chari-l-kelly/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Third Court of Appeals, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-supreme-court-place-2"
+  },
+  {
+   "slug": "scott-brister",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
+   "license": "CC BY-SA 3.0",
+   "credit": "AndrewsKurth, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-15th-coa-chief-justice"
+  },
+  {
+   "slug": "scott-k-field",
+   "imageUrl": "https://www.txcourts.gov/media/1459003/justice-scott-field-bio-photo.jpg",
+   "sourcePage": "https://www.txcourts.gov/15thcoa/about-the-court/justices/justice-scott-field/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Fifteenth Court of Appeals, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-15th-coa-place-2"
+  },
+  {
+   "slug": "april-farris",
+   "imageUrl": "https://www.txcourts.gov/media/1461250/af-web-page-091025.jpg",
+   "sourcePage": "https://www.txcourts.gov/15thcoa/about-the-court/justices/justice-april-farris/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Fifteenth Court of Appeals, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-15th-coa-place-3"
+  },
+  {
+   "slug": "cory-liu",
+   "imageUrl": "https://www.traviscountytx.gov/images/courts/civil/20250617-Judge_Liu_headshot_cropped.jpeg",
+   "sourcePage": "https://www.traviscountytx.gov/courts/civil/district/250",
+   "license": "Travis County official court headshot (county government work); no reuse license stated on the page",
+   "credit": "Travis County, Texas (250th Civil District Court)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Republican",
+   "race": "tx-3rd-coa-chief-justice"
+  },
+  {
+   "slug": "darlene-byrne",
+   "imageUrl": "https://www.txcourts.gov/media/1460167/byrne1.jpg",
+   "sourcePage": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/chief-justice-darlene-byrne/",
+   "license": "Texas Judicial Branch official portrait (state government work). txcourts.gov Site Policies state no copyright/reuse license; use for identification with credit to the court.",
+   "credit": "Third Court of Appeals, Texas Judicial Branch (txcourts.gov)",
+   "via": "Official .gov bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-3rd-coa-chief-justice"
+  },
+  {
+   "slug": "rob-bonta",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rob_Bonta_official_portrait_%28cropped%29.jpg/500px-Rob_Bonta_official_portrait_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg",
+   "license": "Public domain",
+   "credit": "Douglas Despres, California Attorney General's Office, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-ag"
+  },
+  {
+   "slug": "michael-gates",
+   "imageUrl": "https://www.justice.gov/sites/default/files/2025-05/250507-crt-anti-semitism_08_0.jpg",
+   "sourcePage": "https://www.justice.gov/opa/gallery/civil-rights-division-hosts-union-orthodox-jewish-congregations-america-justice",
+   "license": "Public domain (U.S. Department of Justice; justice.gov: 'Unless otherwise indicated, information on Department of Justice websites is in the public domain')",
+   "credit": "U.S. Department of Justice, Office of Public Affairs",
+   "via": "Official .gov (federal)",
+   "note": "Event photo (May 7, 2025): Deputy Assistant AG Michael E. Gates delivering remarks at a podium; not a studio portrait.",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Republican",
+   "race": "ca-ag"
+  },
+  {
+   "slug": "malia-cohen",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Malia_Cohen_State_Controller_portrait.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg",
+   "license": "Public domain",
+   "credit": "California Government, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-controller"
+  },
+  {
+   "slug": "ben-allen",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ben_Allen%2C_2021.jpg/500px-Ben_Allen%2C_2021.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg",
+   "license": "Public domain",
+   "credit": "California State Senate, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-insurance"
+  },
+  {
+   "slug": "jane-kim",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/SupervisorJaneKim.png/500px-SupervisorJaneKim.png",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:SupervisorJaneKim.png",
+   "license": "CC BY 2.0",
+   "credit": "Jane Kim, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/png"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-insurance"
+  },
+  {
+   "slug": "shirley-weber",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirley_Weber.jpg/500px-Shirley_Weber.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg",
+   "license": "Public domain",
+   "credit": "California Secretary of State's office, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-sos"
+  },
+  {
+   "slug": "donald-p-wagner",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Donald_P._Wagner%2C_2022.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg",
+   "license": "Public domain",
+   "credit": "Orange County Board of Supervisors, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Republican",
+   "race": "ca-sos"
+  },
+  {
+   "slug": "richard-barrera",
+   "imageUrl": "https://cdnsm5-ss18.sharpschool.com/UserFiles/Servers/Server_27732394/Image/%20About/Board%20of%20Edu/Richard%20NEW%202020-21.jpg",
+   "sourcePage": "https://www.sandiegounified.org/cms/One.aspx?pageId=28172771&portalId=27732478",
+   "license": "San Diego Unified School District official board photo (public agency work); no reuse license stated on the page",
+   "credit": "San Diego Unified School District",
+   "via": "Official school-district bio",
+   "note": "Served from the district's CMS CDN (sandiegounified.org URL 301-redirects here).",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Nonpartisan",
+   "race": "ca-spi"
+  },
+  {
+   "slug": "sonja-shaw",
+   "imageUrl": "https://files.smartsites.parentsquare.com/7144/BOE_SShaw_1749608105.png",
+   "sourcePage": "https://www.chino.k12.ca.us/145710_3",
+   "license": "Chino Valley Unified School District official board photo (public agency work); no reuse license stated on the page",
+   "credit": "Chino Valley Unified School District",
+   "via": "Official school-district bio",
+   "check": {
+    "status": "200",
+    "contentType": "image/png"
+   },
+   "zip": "94103",
+   "party": "Nonpartisan",
+   "race": "ca-spi"
+  },
+  {
+   "slug": "eleni-kounalakis",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/LG_Kounalakis_Signing_%28cropped%29.jpg/500px-LG_Kounalakis_Signing_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg",
+   "license": "Public domain",
+   "credit": "Office of Lieutenant Governor Eleni Kounalakis, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-treasurer"
+  },
+  {
+   "slug": "fiona-ma",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fiona_Ma_official2.jpg/500px-Fiona_Ma_official2.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Fiona_Ma_official2.jpg",
+   "license": "Public domain",
+   "credit": "California Treasurer's Office, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-ltgov"
+  },
+  {
+   "slug": "gloria-j-romero",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Gloria_Romero%2C_c._2007.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Gloria_Romero,_c._2007.jpg",
+   "license": "Public domain",
+   "credit": "State of California, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Republican",
+   "race": "ca-ltgov"
+  },
+  {
+   "slug": "sally-j-lieber",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sally_Lieber_Square.jpg/500px-Sally_Lieber_Square.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Sally_Lieber_Square.jpg",
+   "license": "Public domain",
+   "credit": "California State Board of Equalization, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-boe-2"
+  },
+  {
+   "slug": "kelli-m-evans",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Kelli_Evans.jpg/500px-Kelli_Evans.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Kelli_Evans.jpg",
+   "license": "Public domain",
+   "credit": "JUDICIAL BRANCH OF CALIFORNIA, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Nonpartisan",
+   "race": "ca-supreme-evans"
+  },
+  {
+   "slug": "joshua-groban",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Justice_Joshua_P._Groban.png",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Justice_Joshua_P._Groban.png",
+   "license": "Public domain",
+   "credit": "© 2019 Judicial Council of California, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/png"
+   },
+   "zip": "94103",
+   "party": "Nonpartisan",
+   "race": "ca-supreme-groban"
+  },
+  {
+   "slug": "micah-lasher",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg/500px-FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:FWNY25;_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_(cropped).jpg",
+   "license": "Public domain",
+   "credit": "Lance Cpl. Steven Wells, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "10001",
+   "party": "Democratic",
+   "race": "ny-12"
+  },
+  {
+   "slug": "caroline-shinkle",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
+   "license": "CC0",
+   "credit": "AidansStuff, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Casual selfie-style photo cropped to the candidate; CC0 dedication by uploader.",
+   "zip": "10001",
+   "party": "Republican, Conservative",
+   "race": "ny-12"
+  },
+  {
+   "slug": "greg-casar",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg/500px-Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg",
+   "license": "Public domain",
+   "credit": "U.S. House of Representatives, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-37"
+  },
+  {
+   "slug": "connie-chan",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Connie_Chan%2C_2025.jpg/500px-Connie_Chan%2C_2025.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg",
+   "license": "Public domain",
+   "credit": "San Francisco Board of Supervisors, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-11"
+  },
+  {
+   "slug": "scott-wiener",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Scott_Wiener_Official_Biography_Portrait.jpg/500px-Scott_Wiener_Official_Biography_Portrait.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg",
+   "license": "Public domain",
+   "credit": "California State Senate, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-11"
+  },
+  {
+   "slug": "erik-bottcher",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Erik_Bottcher_MTA_2024_%28cropped%29.jpg/500px-Erik_Bottcher_MTA_2024_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Erik_Bottcher_MTA_2024_(cropped).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Metropolitan Transportation Authority, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-sd-47"
+  },
+  {
+   "slug": "erik-d-bottcher",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Erik_Bottcher_MTA_2024_%28cropped%29.jpg/500px-Erik_Bottcher_MTA_2024_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Erik_Bottcher_MTA_2024_(cropped).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Metropolitan Transportation Authority, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-sd-47",
+   "note": "Alias entry: same photo as erik-bottcher (slug used in another ballot file)."
+  },
+  {
+   "slug": "liz-krueger",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%2803-04-19%29_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol%2C_Albany_NY_%28cropped%29.jpg/500px-%2803-04-19%29_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol%2C_Albany_NY_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:(03-04-19)_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol,_Albany_NY_(cropped).jpg",
+   "license": "CC BY 2.0",
+   "credit": "New York Senate Photo, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "10001",
+   "party": "Democratic",
+   "race": "ny-sd-28"
+  },
+  {
+   "slug": "tony-simone",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tony_Simone_MTA_Pride_Month_2024.jpg/500px-Tony_Simone_MTA_Pride_Month_2024.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Tony_Simone_MTA_Pride_Month_2024.jpg",
+   "license": "CC BY 2.0",
+   "credit": "Metropolitan Transportation Authority, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Event photo (MTA sign unveiling, 2024); Simone is the foreground subject.",
+   "zip": "10001",
+   "party": "Democratic, Working Families",
+   "race": "ny-ad-75"
+  },
+  {
+   "slug": "montserrat-garibay",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg/500px-LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:LBJ_Library_Future_Forum_-_Sanctuary_Cities_(Montserrat_Garibay).jpg",
+   "license": "Public domain",
+   "credit": "LBJ Library, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "tx-hd-49"
+  },
+  {
+   "slug": "matt-haney",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Matt_Haney%2C_2022.jpg/500px-Matt_Haney%2C_2022.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Matt_Haney,_2022.jpg",
+   "license": "Public domain",
+   "credit": "California State Assembly, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Democratic",
+   "race": "ca-ad-17"
+  },
+  {
+   "slug": "andy-brown",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Andy_Brown_headshot.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Andy_Brown_headshot.jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "Unknown authorUnknown author, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Commons lists the author as unknown under CC BY-SA 4.0; file description says headshot of Travis County Judge Andy Brown. Lower-confidence license provenance.",
+   "zip": "78701",
+   "party": "Democratic",
+   "race": "travis-county-judge"
+  },
+  {
+   "slug": "victor-a-rodriguez",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Victor_A._Rodriguez.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Victor_A._Rodriguez.jpg",
+   "license": "Public domain",
+   "credit": "https://www.courts.ca.gov/46041.htm, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Nonpartisan",
+   "race": "ca-coa-1-3b"
+  },
+  {
+   "slug": "manohar-raju",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Manohar-Raju-SF-Public-Defender-headshot.jpg/500px-Manohar-Raju-SF-Public-Defender-headshot.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Manohar-Raju-SF-Public-Defender-headshot.jpg",
+   "license": "Public domain",
+   "credit": "San Francisco, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Nonpartisan",
+   "race": "sf-public-defender"
+  },
+  {
+   "slug": "matt-dorsey",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Matt_Dorsey%2C_2022.jpg/500px-Matt_Dorsey%2C_2022.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Matt_Dorsey,_2022.jpg",
+   "license": "Public domain",
+   "credit": "San Francisco Board of Supervisors, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "zip": "94103",
+   "party": "Nonpartisan",
+   "race": "sf-supervisor-6"
+  },
+  {
+   "slug": "carl-wilson",
+   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg/500px-Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg",
+   "sourcePage": "https://commons.wikimedia.org/wiki/File:Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_(cropped).jpg",
+   "license": "CC BY 4.0",
+   "credit": "Metropolitan Transportation Authority, via Wikimedia Commons",
+   "via": "Wikimedia Commons",
+   "check": {
+    "status": "200",
+    "contentType": "image/jpeg"
+   },
+   "note": "Cropped from an MTA event photo (CC BY 4.0).",
+   "zip": "10001",
+   "party": "Democratic",
+   "race": "nyc-council-3"
+  }
+ ]
+}

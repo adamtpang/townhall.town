@@ -232,7 +232,9 @@
    "ifNo": {
     "text": "A voter's identity would continue to be established with the voter's signature.",
     "sourceUrl": "https://voterguide.sos.ca.gov/propositions/39/"
-   }
+   },
+   "officialTitle": "PROHIBITS CITIZENS FROM VOTING UNLESS THEY PRESENT GOVERNMENT-ISSUED IDENTIFICATION. INITIATIVE CONSTITUTIONAL AMENDMENT.",
+   "officialTitleSource": "https://voterguide.sos.ca.gov/propositions/39/title-summary.htm"
   },
   {
    "id": "ca-prop-40",
@@ -995,6 +997,146 @@
    "ifNo": {
     "text": "The City Charter would not be amended on this point.",
     "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=4"
+   }
+  },
+  {
+   "id": "nyc-prop-1",
+   "title": "NYC Proposal 1 (Public space consents)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whoPays": {
+    "text": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whatChanges": {
+    "text": "Speed up approval of revocable consents to use public space (ramps, cafes, benches): public hearings become optional and the Council can no longer reject sidewalk cafe permits",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifYes": {
+    "text": "A \"yes\" vote speeds up process to use public space while maintaining community input.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifNo": {
+    "text": "A \"no\" vote maintains longer process with mandatory public hearing to use public space and Council review of sidewalk cafes.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   }
+  },
+  {
+   "id": "nyc-prop-2",
+   "title": "NYC Proposal 2 (Contractor paperwork)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whoPays": {
+    "text": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whatChanges": {
+    "text": "Let the Procurement Policy Board simplify contractor questionnaires and require it to meet at least quarterly",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifYes": {
+    "text": "A \"yes\" vote amends Procurement Policy Board authority, including simplifying contractor questionnaire. Authorizes Mayor to delegate certain contract approvals.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifNo": {
+    "text": "A \"no\" vote leaves law unchanged, with Mayor and Comptroller maintaining longer questionnaire.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   }
+  },
+  {
+   "id": "nyc-prop-3",
+   "title": "NYC Proposal 3 (Street safety, city property, leasing)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whoPays": {
+    "text": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whatChanges": {
+    "text": "Streamline approvals for street safety projects, sale or lease of certain city property, and office leases for city workers",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifYes": {
+    "text": "A \"yes\" vote simplifies street project approval, City property disposition, and office leasing.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifNo": {
+    "text": "A \"no\" vote maintains intra-agency consultation for road projects, Council approval for City dispositions, and Council disapproval of office leases.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   }
+  },
+  {
+   "id": "nyc-prop-4",
+   "title": "NYC Proposal 4 (Building permits)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whoPays": {
+    "text": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whatChanges": {
+    "text": "Create a central construction permit system and move waterfront permitting from Small Business Services to the Department of Buildings",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifYes": {
+    "text": "A \"yes\" vote simplifies permitting by authorizing a centralized permitting hub, moving waterfront permitting to Department of Buildings, and allowing additional Department of Buildings officials to issue approvals.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifNo": {
+    "text": "A \"no\" vote leaves law unchanged.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   }
+  },
+  {
+   "id": "nyc-prop-5",
+   "title": "NYC Proposal 5 (Rainy day fund)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whoPays": {
+    "text": "No official estimate",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "whatChanges": {
+    "text": "Set a reserve target of at least 12% of the prior year's tax revenue and require a published deposit plan",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifYes": {
+    "text": "A \"yes\" vote requires the Mayor to develop methodology for calculating deposits to rainy day fund, with deposits subject to approval in the City budget.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   "ifNo": {
+    "text": "A \"no\" vote leaves laws unchanged, with no reserves target.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
    }
   }
  ]

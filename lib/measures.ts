@@ -3,11 +3,11 @@ import data from "../data/measures.json";
 export type Sourced = { text: string; sourceUrl: string | null };
 export type MeasureMath = {
   id: string; title: string; zips: string[]; jurisdiction: string;
-  cost: { value: string; sourceUrl: string | null }; whoPays: Sourced; whatChanges: Sourced; ifYes?: Sourced; ifNo?: Sourced; notes?: string;
+  cost: { value: string; sourceUrl: string | null }; whoPays: Sourced; whatChanges: Sourced; ifYes?: Sourced; ifNo?: Sourced; notes?: string; officialTitle?: string; officialTitleSource?: string;
 };
 const ALL = (data as { measures: MeasureMath[] }).measures;
 
-/** "Doing the math" rows for a ZIP: statewide first, then local, in file order. Every field carries its own source URL. */
+/** Measure rows for a ZIP: statewide first, then local, in file order. Every field carries its own source URL. */
 export function measuresFor(zip: string): MeasureMath[] {
   return ALL.filter((m) => m.zips.includes(zip));
 }

@@ -1,0 +1,722 @@
+{
+ "stances": {
+  "dawn-buckingham": {
+   "name": "Dawn Buckingham",
+   "energy": {
+    "value": -4,
+    "quote": "She spent years fighting against federal overreach by Joe Biden, even taking him to court over the inappropriate listing of endangered species and his efforts to halt Liquefied Natural Gas (LNG) exports.",
+    "sourceUrl": "https://dawnbuckingham.com/"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "She has delivered over $9 BILLION in disaster recovery and an additional $1 BILLION in flood mitigation projects across the state.",
+    "sourceUrl": "https://dawnbuckingham.com/"
+   },
+   "healthcare": {
+    "value": -2,
+    "quote": "Simply put, we need to get rid of the meddling that comes between a doctor and her patient, and restore the balance of power between patients and the doctors they employ.",
+    "sourceUrl": "https://ballotpedia.org/Dawn_Buckingham"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Dawn_Buckingham",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://dawnbuckingham.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Dawn_Buckingham",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://dawnbuckingham.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Dawn_Buckingham",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://dawnbuckingham.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Dawn_Buckingham",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://dawnbuckingham.com/"
+    ]
+   }
+  },
+  "benjamin-flores": {
+   "name": "Benjamin Flores",
+   "housing": {
+    "value": 3,
+    "quote": "I will work to put underutilized state lands to productive use, attract responsible investment, and explore opportunities to support affordable housing through strategic land agreements.",
+    "sourceUrl": "https://letsgowithben.com/"
+   },
+   "immigration": {
+    "value": -1,
+    "quote": "Texas can protect its border without surrendering control of state lands or sacrificing parks, resources and private property rights. I will demand transparent agreements, lawful coordination and review of every proposal.",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Benjamin_Flores",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://letsgowithben.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Benjamin_Flores",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://letsgowithben.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Benjamin_Flores",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://letsgowithben.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Benjamin_Flores",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://letsgowithben.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Benjamin_Flores",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://letsgowithben.com/"
+    ]
+   },
+   "energy": {
+    "value": 1,
+    "quote": "That means embracing innovation, welcoming renewable energy producers alongside oil and gas, and running tighter operations.",
+    "sourceUrl": "https://ballotpedia.org/Benjamin_Flores"
+   },
+   "infrastructure": {
+    "value": 2,
+    "quote": "I'll strengthen the GLO's storm protection programs and fix the disaster recovery system so help reaches the people who need it most, quickly and fairly.",
+    "sourceUrl": "https://ballotpedia.org/Benjamin_Flores"
+   }
+  },
+  "clayton-tucker": {
+   "name": "Clayton Tucker",
+   "immigration": {
+    "value": -2,
+    "quote": "This deems the expansion of the border wall in this area unnecessary and a massive waste of taxpayer dollars.",
+    "sourceUrl": "https://www.claytontuckertx.com/big_bend"
+   },
+   "energy": {
+    "value": 3,
+    "quote": "Because of their underregulation, PFAS contamination is a growing problem.",
+    "sourceUrl": "https://www.claytontuckertx.com/pfas"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Clayton_Tucker",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Clayton_Tucker",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Clayton_Tucker",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Clayton_Tucker",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Clayton_Tucker",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "we need a government that fights to increase access to affordable, timely healthcare for all Texans",
+    "sourceUrl": "https://ballotpedia.org/Clayton_Tucker"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "We need significant investments in rural infrastructure, healthcare, broadband connectivity, and other incentives to attract jobs back to rural Texas.",
+    "sourceUrl": "https://ballotpedia.org/Clayton_Tucker"
+   }
+  },
+  "jon-rosenthal": {
+   "name": "Jon Rosenthal",
+   "taxes": {
+    "value": 2,
+    "quote": "My number 1 priority upon getting elected will be to lobby the Legislature for a dramatic increase to the RRC budget; to accelerate the plugging of Orphan Wells, hire more Technicians, Inspectors and Contractors, and also to increase wages for Commission Employees to be more competitive with prevailing wages.",
+    "sourceUrl": "https://jonrosenthaltx.com/priority/increase-rrc-resources-to-actually-do-the-work/"
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "Improving our energy infrastructure for more reliable power, plugging zombie and orphan wells, weatherizing the grid, managing our growth with infrastructure upgrades, addressing our water supply (across the board),",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/"
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "SB 8: Agreements between sheriffs and the United States Immigration and Customs Enforcement to enforce federal immigration law",
+    "sourceUrl": "https://capitollens.org/texas/votes/89r-house-4130-sb8/",
+    "voteRecord": "Voted Nay (conference committee report, June 1, 2025; passed 89-52)"
+   },
+   "education": {
+    "value": -2,
+    "quote": "Public schools first - because this is our future. We must provide the best education possible to ALL of our kids, and that also means taking care of our teachers.",
+    "sourceUrl": "https://ballotpedia.org/Jon_Rosenthal"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Jon_Rosenthal",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Jon_Rosenthal",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Jon_Rosenthal",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/"
+    ]
+   },
+   "energy": {
+    "value": 1,
+    "quote": "promoting an “All of the Above” approach to energy production, and striking a sensible balance between environmental concerns and industry activity.",
+    "sourceUrl": "https://ballotpedia.org/Jon_Rosenthal"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "It would be good for Texas, as we would have certain items like Medicaid expansion and marijuana legalization in law by now!",
+    "sourceUrl": "https://ballotpedia.org/Jon_Rosenthal"
+   }
+  },
+  "nate-sheets": {
+   "name": "Nate Sheets",
+   "infrastructure": {
+    "value": 3,
+    "quote": "We need to invest wisely in water infrastructure, conservation, and innovation while protecting the farmers and ranchers who depend on reliable water to feed Texas and the nation.",
+    "sourceUrl": "https://dallasexpress.com/state/texas-agriculture-commissioner-candidates-lay-out-competing-visions-for-states-water-future/"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nate_Sheets",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/",
+     "https://dallasexpress.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nate_Sheets",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/",
+     "https://dallasexpress.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nate_Sheets",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/",
+     "https://dallasexpress.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nate_Sheets",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/",
+     "https://dallasexpress.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nate_Sheets",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/",
+     "https://dallasexpress.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nate_Sheets",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/",
+     "https://dallasexpress.com/"
+    ]
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "Fiscal Responsibility: DOGE / Audit agency to cut unnecessary taxes, fees, and regulations",
+    "sourceUrl": "https://ballotpedia.org/Nate_Sheets"
+   },
+   "immigration": {
+    "value": 5,
+    "quote": "Nate supports requiring federal e-Verify for all legal employment in Texas and will vigorously advocate for passing state legislature to ensure that anyone who works in Texas has had their citizenship verified, ending the economic magnet once and for all.",
+    "sourceUrl": "https://ballotpedia.org/Nate_Sheets"
+   }
+  },
+  "bo-french": {
+   "name": "Bo French",
+   "immigration": {
+    "value": 5,
+    "quote": "We're going to send all these people home.",
+    "sourceUrl": "https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/03/31/railroad-commission-candidate-calls-for-deportation-of-100m"
+   },
+   "education": {
+    "value": 3,
+    "quote": "I support local control of schools including charter schools and any other system that protects parents’ rights to ensure their child gets a great education. We are punishing low-income children by forcing them to stay in underperforming schools.",
+    "sourceUrl": "https://ballotpedia.org/Bo_French"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Bo_French",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://spectrumlocalnews.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Bo_French",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://spectrumlocalnews.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Bo_French",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://spectrumlocalnews.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Bo_French",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://spectrumlocalnews.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Bo_French",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://spectrumlocalnews.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Bo_French",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://spectrumlocalnews.com/"
+    ]
+   }
+  },
+  "neil-snider": {
+   "name": "Neill Snider",
+   "education": {
+    "value": 4,
+    "quote": "Open the Permanent school fund to all Texas school children and not only Public school children. Include Private school and Homeschool children.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Neill_Snider",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://www.voteneillsnider.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Neill_Snider",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://www.voteneillsnider.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Neill_Snider",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://www.voteneillsnider.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Neill_Snider",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://www.voteneillsnider.com/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Neill_Snider",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://www.voteneillsnider.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Neill_Snider",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-land-commissioner/",
+     "https://www.voteneillsnider.com/"
+    ]
+   },
+   "taxes": {
+    "value": -2,
+    "quote": "The General Land Office should focus on its core responsibilities, operate with transparency, and avoid political favoritism and unnecessary spending.",
+    "sourceUrl": "https://www.voteneillsnider.com/"
+   },
+   "energy": {
+    "value": -1,
+    "quote": "As Land Commissioner, I would support responsible energy production, fair leasing practices, and reducing wasteful spending within the General Land Office itself.",
+    "sourceUrl": "https://www.voteneillsnider.com/"
+   }
+  },
+  "austin-kelly": {
+   "name": "Austin Kelly",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Austin_Kelly",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/"
+    ]
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "I am committed to shrinking the size of the state bureaucracy and cutting wasteful spending within the Department of Agriculture.",
+    "sourceUrl": "https://ballotpedia.org/Austin_Kelly"
+   }
+  },
+  "arthur-dibianca": {
+   "name": "Arthur DiBianca",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Arthur_DiBianca",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://votedibianca.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Arthur_DiBianca",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://votedibianca.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Arthur_DiBianca",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://votedibianca.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Arthur_DiBianca",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://votedibianca.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Arthur_DiBianca",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://votedibianca.com/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Arthur_DiBianca",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://votedibianca.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Arthur_DiBianca",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-get-to-know-3-candidates-for-texas-railroad-commissioner/",
+     "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+     "https://votedibianca.com/"
+    ]
+   },
+   "energy": {
+    "value": -2,
+    "quote": "A restitution-based system is better than trying to constrain oil and gas companies in advance.",
+    "sourceUrl": "https://ballotpedia.org/Arthur_DiBianca"
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "Vote Libertarian. Help downsize government across the board.",
+    "sourceUrl": "https://votedibianca.com/"
+   }
+  }
+ }
+}

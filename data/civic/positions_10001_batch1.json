@@ -1,0 +1,511 @@
+{
+ "stances": {
+  "kathy-hochul-adrienne-adams-lt-gov": {
+   "name": "Kathy C. Hochul / Adrienne E. Adams",
+   "race": "ny-governor",
+   "party": "Democratic, Working Families",
+   "safety": {
+    "value": 3,
+    "quote": "Putting boots on the ground in our streets and subways to keep New Yorkers safe",
+    "sourceUrl": "https://kathyhochul.com/accomplishments/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "Secured funding for the Gateway Tunnel after Trump abruptly froze it",
+    "sourceUrl": "https://kathyhochul.com/accomplishments/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": -2,
+    "quote": "Cutting middle-class taxes to the lowest rate in 70 years",
+    "sourceUrl": "https://kathyhochul.com/accomplishments/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": 4,
+    "quote": "To combat the housing shortage impacting all New Yorkers, we need to build more housing — full stop,",
+    "sourceUrl": "https://www.governor.ny.gov/news/governor-hochul-announces-construction-underway-229-unit-affordable-housing-development",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "official press release, Aug 11 2026 (verified via WebFetch; site blocks curl)"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "Even when Washington falls short, I’m going to keep doing everything I can to protect families, strengthen our health care system and make sure every New Yorker gets the care they need.",
+    "sourceUrl": "https://www.governor.ny.gov/news/statement-governor-kathy-hochul-154",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "official statement, Mar 20 2026; qualified (\"no state can fully backfill these draconian cuts\") so +3 not +5 (verified via WebFetch)"
+   },
+   "immigration": {
+    "value": -2,
+    "quote": "Holding ICE agents accountable",
+    "sourceUrl": "https://kathyhochul.com/accomplishments/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "campaign accomplishments list; mild"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://kathyhochul.com/accomplishments/",
+     "https://kathyhochul.com/",
+     "https://www.governor.ny.gov/news/governor-hochul-announces-construction-underway-229-unit-affordable-housing-development",
+     "https://www.governor.ny.gov/news/statement-governor-kathy-hochul-154"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://kathyhochul.com/accomplishments/",
+     "https://kathyhochul.com/",
+     "https://www.governor.ny.gov/news/governor-hochul-announces-construction-underway-229-unit-affordable-housing-development",
+     "https://www.governor.ny.gov/news/statement-governor-kathy-hochul-154"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://kathyhochul.com/accomplishments/",
+     "https://kathyhochul.com/",
+     "https://www.governor.ny.gov/news/governor-hochul-announces-construction-underway-229-unit-affordable-housing-development",
+     "https://www.governor.ny.gov/news/statement-governor-kathy-hochul-154"
+    ]
+   }
+  },
+  "bruce-blakeman-todd-hood-lt-gov": {
+   "name": "Bruce A. Blakeman / Todd Hood",
+   "race": "ny-governor",
+   "party": "Republican, Conservative, Vote Affordable",
+   "immigration": {
+    "value": 4,
+    "quote": "Blakeman said NO to Kathy Hochul’s sanctuary policies, and worked with ICE to take criminals off our streets.",
+    "sourceUrl": "https://www.blakemanfornewyork.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "Kathy Hochul has surrendered New York to violent gangs who use her ‘Raise the Age’ law and Cashless Bail policies every single day to terrorize the public",
+    "sourceUrl": "https://www.blakemanfornewyork.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "As County Executive he didn’t raise property or sales taxes by a single penny. As Governor, he will deliver real relief to homeowners and renters",
+    "sourceUrl": "https://www.blakemanfornewyork.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": -3,
+    "quote": "The bad thing about it is that nobody is investing in affordable housing anymore in New York",
+    "sourceUrl": "https://nypost.com/2026/06/28/us-news/gops-bruce-blakeman-blasts-dangerous-mamdani-hochul-in-pitch-to-moderates/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "weak: lament about lack of investment, direction inferred; consider dropping"
+   },
+   "energy": {
+    "value": -4,
+    "quote": "We’re sitting on one of the largest natural gas reserves in the world. Yet Kathy Hochul wont let us extract that natural gas.",
+    "sourceUrl": "https://nypost.com/2026/10/20/us-news/blakeman-joins-former-gov-pataki-in-call-to-tap-nys-natural-gas-as-energy-prices-soar/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "direct quote in NY Post, Oct 20 2026 (\"wont\" as printed); he also said \"It’s got to be a balanced approach to energy\" so -4 not -5"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.blakemanfornewyork.com/",
+     "https://nypost.com/2026/10/20/us-news/blakeman-joins-former-gov-pataki-in-call-to-tap-nys-natural-gas-as-energy-prices-soar/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.blakemanfornewyork.com/",
+     "https://nypost.com/2026/10/20/us-news/blakeman-joins-former-gov-pataki-in-call-to-tap-nys-natural-gas-as-energy-prices-soar/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.blakemanfornewyork.com/",
+     "https://nypost.com/2026/10/20/us-news/blakeman-joins-former-gov-pataki-in-call-to-tap-nys-natural-gas-as-energy-prices-soar/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.blakemanfornewyork.com/",
+     "https://nypost.com/2026/10/20/us-news/blakeman-joins-former-gov-pataki-in-call-to-tap-nys-natural-gas-as-energy-prices-soar/"
+    ]
+   }
+  },
+  "letitia-james": {
+   "name": "Letitia A. James",
+   "race": "ny-attorney-general",
+   "party": "Democratic, Working Families",
+   "immigration": {
+    "value": -4,
+    "quote": "Letitia has led the fight to protect immigrants in New York and across the country against the Trump administration’s chaotic and illegal immigration activities.",
+    "sourceUrl": "https://jamesforny.com/priorities/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": 2,
+    "quote": "Letitia is fighting for New Yorkers to have fair wages and access to good-paying jobs, while protecting the men and women of organized labor.",
+    "sourceUrl": "https://jamesforny.com/priorities/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 3,
+    "quote": "Real safety means tough enforcement on guns, drugs, and fraud.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Letitia+A.+James&boroughCode=&candidateId=V1097&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=D%2CWF",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces round2 +2"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "Health care is not a privilege reserved only for the wealthy or the healthy. It is a right, and my office will always fight to protect it,",
+    "sourceUrl": "https://ag.ny.gov/press-release/2026/attorney-general-james-sues-block-hhs-rule-will-strip-health-insurance-millions",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://jamesforny.com/priorities/",
+     "https://ag.ny.gov/press-release/2026/attorney-general-james-sues-block-hhs-rule-will-strip-health-insurance-millions",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Letitia+A.+James&boroughCode=&candidateId=V1097&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://jamesforny.com/priorities/",
+     "https://ag.ny.gov/press-release/2026/attorney-general-james-sues-block-hhs-rule-will-strip-health-insurance-millions",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Letitia+A.+James&boroughCode=&candidateId=V1097&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://jamesforny.com/priorities/",
+     "https://ag.ny.gov/press-release/2026/attorney-general-james-sues-block-hhs-rule-will-strip-health-insurance-millions",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Letitia+A.+James&boroughCode=&candidateId=V1097&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://jamesforny.com/priorities/",
+     "https://ag.ny.gov/press-release/2026/attorney-general-james-sues-block-hhs-rule-will-strip-health-insurance-millions",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Letitia+A.+James&boroughCode=&candidateId=V1097&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://jamesforny.com/priorities/",
+     "https://ag.ny.gov/press-release/2026/attorney-general-james-sues-block-hhs-rule-will-strip-health-insurance-millions",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Letitia+A.+James&boroughCode=&candidateId=V1097&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=D%2CWF"
+    ]
+   }
+  },
+  "saritha-komatireddy": {
+   "name": "Saritha Komatireddy",
+   "race": "ny-attorney-general",
+   "party": "Republican, Conservative",
+   "safety": {
+    "value": 5,
+    "quote": "Restructure the AG’s office by assigning 350 AAGs – half the office – to prosecute crime;",
+    "sourceUrl": "https://sarithafornewyork.com/komatireddy-unveils-expansive-day-one-agenda-to-protect-new-yorkers-from-crime-fraud-and-corruption-and-take-the-homeless-and-mentally-ill-off-the-streets-humanely/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "Put the $3B in opioid settlement money where it belongs: free residential mental health care and drug treatment to every New Yorker who needs it;",
+    "sourceUrl": "https://sarithafornewyork.com/komatireddy-unveils-expansive-day-one-agenda-to-protect-new-yorkers-from-crime-fraud-and-corruption-and-take-the-homeless-and-mentally-ill-off-the-streets-humanely/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "We don't need a tax hike.",
+    "sourceUrl": "https://sarithafornewyork.com/remarks/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "remarks on homeowners tax, March 2026"
+   },
+   "immigration": {
+    "value": 2,
+    "quote": "If a violent criminal is here illegally, they should be removed.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Saritha+Komatireddy&boroughCode=&candidateId=V1817&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=R%2CC",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "limited to violent criminals: mild"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://sarithafornewyork.com/",
+     "https://sarithafornewyork.com/remarks/",
+     "https://sarithafornewyork.com/remarks-2/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Saritha+Komatireddy&boroughCode=&candidateId=V1817&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=R%2CC"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://sarithafornewyork.com/",
+     "https://sarithafornewyork.com/remarks/",
+     "https://sarithafornewyork.com/remarks-2/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Saritha+Komatireddy&boroughCode=&candidateId=V1817&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=R%2CC"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://sarithafornewyork.com/",
+     "https://sarithafornewyork.com/remarks/",
+     "https://sarithafornewyork.com/remarks-2/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Saritha+Komatireddy&boroughCode=&candidateId=V1817&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=R%2CC"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://sarithafornewyork.com/",
+     "https://sarithafornewyork.com/remarks/",
+     "https://sarithafornewyork.com/remarks-2/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Saritha+Komatireddy&boroughCode=&candidateId=V1817&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=R%2CC"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://sarithafornewyork.com/",
+     "https://sarithafornewyork.com/remarks/",
+     "https://sarithafornewyork.com/remarks-2/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/attorney-general/profile/?bannerTitle=Saritha+Komatireddy&boroughCode=&candidateId=V1817&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=16&officelevel=2&partyId=R%2CC"
+    ]
+   }
+  },
+  "thomas-p-dinapoli": {
+   "name": "Thomas P. DiNapoli",
+   "race": "ny-comptroller",
+   "party": "Democratic, Working Families",
+   "immigration": {
+    "value": -4,
+    "quote": "I will do everything in my power to protect undocumented immigrants, and all immigrants, from the chaos of Donald Trump.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Thomas+P.+DiNapoli&boroughCode=&candidateId=V1098&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=D%2CWF",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces round2 -3; stronger 2026 statement"
+   },
+   "energy": {
+    "value": 2,
+    "quote": "Our Sustainable Investment and Climate Solutions program has committed more than $28 billion toward a goal of $40 billion by 2035, investing in climate solutions and clean energy",
+    "sourceUrl": "https://citizensunion.org/wp-content/uploads/2026/10/Tom-DiNapoli-72.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "infrastructure": {
+    "value": 2,
+    "quote": "My reports have also identified substantial infrastructure challenges at the State and local levels, including State and local roads, bridges and water systems, as well as the need for investments in building resiliency.",
+    "sourceUrl": "https://citizensunion.org/wp-content/uploads/2026/10/Tom-DiNapoli-72.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "Health care is a human right. The biggest threat to health care in New York right now is from Trump cuts to Medicaid.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Thomas+P.+DiNapoli&boroughCode=&candidateId=V1098&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=D%2CWF",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.dinapolifornewyork.com/record-policy",
+     "https://citizensunion.org/wp-content/uploads/2026/10/Tom-DiNapoli-72.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Thomas+P.+DiNapoli&boroughCode=&candidateId=V1098&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.dinapolifornewyork.com/record-policy",
+     "https://citizensunion.org/wp-content/uploads/2026/10/Tom-DiNapoli-72.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Thomas+P.+DiNapoli&boroughCode=&candidateId=V1098&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.dinapolifornewyork.com/record-policy",
+     "https://citizensunion.org/wp-content/uploads/2026/10/Tom-DiNapoli-72.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Thomas+P.+DiNapoli&boroughCode=&candidateId=V1098&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.dinapolifornewyork.com/record-policy",
+     "https://citizensunion.org/wp-content/uploads/2026/10/Tom-DiNapoli-72.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Thomas+P.+DiNapoli&boroughCode=&candidateId=V1098&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=D%2CWF"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.dinapolifornewyork.com/record-policy",
+     "https://citizensunion.org/wp-content/uploads/2026/10/Tom-DiNapoli-72.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Thomas+P.+DiNapoli&boroughCode=&candidateId=V1098&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=D%2CWF"
+    ]
+   }
+  },
+  "joseph-hernandez": {
+   "name": "Joseph Hernandez",
+   "race": "ny-comptroller",
+   "party": "Republican, Conservative",
+   "taxes": {
+    "value": -4,
+    "quote": "His approach is simple: stop Albany’s tax-and-spend policies",
+    "sourceUrl": "https://hernandezforny.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "Violent criminals must be prosecuted, law enforcement must have the resources to do their jobs",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Joseph+Hernandez&boroughCode=&candidateId=V1815&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=R%2CC",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "immigration": {
+    "value": 4,
+    "quote": "The border must be secure, immigration laws must be enforced, and legal immigration should be encouraged.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Joseph+Hernandez&boroughCode=&candidateId=V1815&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=R%2CC",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "housing": {
+    "value": -3,
+    "quote": "Government should remove barriers and regulations to building, not create them.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Joseph+Hernandez&boroughCode=&candidateId=V1815&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=R%2CC",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "deregulation / supply"
+   },
+   "healthcare": {
+    "value": -4,
+    "quote": "The future of American healthcare should rest on free markets, innovation, accountability, and patient choice, and not the slow, relentless expansion of government.",
+    "sourceUrl": "https://hernandezforny.com/the-quiet-government-takeover-of-american-healthcare/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": -3,
+    "quote": "Third, stop passing the cost of Albany's energy mandates onto working families' monthly bills.",
+    "sourceUrl": "https://hernandezforny.com/hernandez-blasts-hochuls-taxpayer-funded-bribe-ahead-of-election-day/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://hernandezforny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Joseph+Hernandez&boroughCode=&candidateId=V1815&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=R%2CC",
+     "https://hernandezforny.com/the-quiet-government-takeover-of-american-healthcare/",
+     "https://hernandezforny.com/hernandez-blasts-hochuls-taxpayer-funded-bribe-ahead-of-election-day/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://hernandezforny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Joseph+Hernandez&boroughCode=&candidateId=V1815&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=R%2CC",
+     "https://hernandezforny.com/the-quiet-government-takeover-of-american-healthcare/",
+     "https://hernandezforny.com/hernandez-blasts-hochuls-taxpayer-funded-bribe-ahead-of-election-day/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://hernandezforny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/comptroller/profile/?bannerTitle=Joseph+Hernandez&boroughCode=&candidateId=V1815&districtID=&electionCycle=2026&geoAreaAbbr=&officeType=18&officelevel=2&partyId=R%2CC",
+     "https://hernandezforny.com/the-quiet-government-takeover-of-american-healthcare/",
+     "https://hernandezforny.com/hernandez-blasts-hochuls-taxpayer-funded-bribe-ahead-of-election-day/"
+    ]
+   }
+  }
+ }
+}

@@ -8,8 +8,9 @@ import type { Jurisdiction, Race, Politician } from "./types";
 import { fetchPolymarket, fetchKalshi } from "./marketsCore.mjs";
 import { withAccountability } from "./accountability";
 import { getTurnout } from "./turnout";
-import { withLicensedPhoto } from "./photos";
+import { allOrNone, withLicensedPhoto } from "./photos";
 import { withMoney } from "./money";
+import { raceMeta } from "./raceMeta";
 
 /** Jurisdiction plus app-only extras (measures, verify links, context). Extra fields only; contract fields unchanged. */
 export type Ballot = Jurisdiction & {
@@ -27,7 +28,7 @@ export const DEMO_ZIPS = Object.keys(B);
 /** Attach the accountability, money and turnout plug-ins (optional contract fields). */
 function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
-  return { ...b, turnout, races: b.races.map((r) => ({ ...r, candidates: r.candidates.map((c) => withMoney(withAccountability(withLicensedPhoto(c)))) })) };
+  return { ...b, turnout, races: b.races.map((r) => ({ ...r, meta: raceMeta(b.zip, r.id), candidates: allOrNone(r.candidates.map((c) => withMoney(withAccountability(withLicensedPhoto(c))))) })) };
 }
 
 export function ballotFor(zip: string): Ballot | null {
@@ -35,7 +36,7 @@ export function ballotFor(zip: string): Ballot | null {
   return b ? enrich(b) : null;
 }
 
-/** Adam's scope for the Hack Fair build: only fully sourced ZIPs. Other ZIPs get "Austin, SF and NYC for now." */
+/** Adam's scope for the Hack Fair build: only fully sourced ZIPs. Other ZIPs get "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." */
 export const SCOPE = new Set(["78701", "94103", "10001"]);
 
 function baseBallot(zip: string): Ballot | null {
@@ -63,7 +64,7 @@ function baseBallot(zip: string): Ballot | null {
 
 export function getDistricts(zip: string) {
   const b = ballotFor(zip);
-  if (!b) return { zip, found: false, message: "Austin, SF and NYC for now." };
+  if (!b) return { zip, found: false, message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." };
   return { zip, found: true, state: b.state, place: b.place, county: b.county, districts: b.districts, source: b.districtSource, splitWarning: b.splitWarning };
 }
 

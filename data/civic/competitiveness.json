@@ -1,0 +1,3524 @@
+{
+ "_meta": {
+  "generated": "2026-10-29T16:56:55-05:00",
+  "zips": [
+   "78701",
+   "94103",
+   "10001"
+  ],
+  "ratingRule": {
+   "competitive": "any rater says Toss-up or Tilt, OR the market top contract is between 0.35 and 0.65 inclusive",
+   "leans": "otherwise, any rater says Lean",
+   "safe": "otherwise, every listed rater says Likely/Solid/Safe, OR the market top contract is above 0.85",
+   "unsure": "everything else (including races with no rater and no market)",
+   "order": "rules are applied in the order competitive -> leans -> safe -> unsure",
+   "marketPrice": "midpoint of yes bid/ask when both exist, else last trade price; Kalshi first, Polymarket only where no Kalshi market was found; PredictIt is supplementary and never used for the rating",
+   "priorResults": "never used for the rating; shown only as labeled \"prior result\" with an official source"
+  },
+  "raterCoverage": "Cook, Sabato and Inside Elections rate only federal and governor races; down-ballot races rely on markets alone.",
+  "displayRules": [
+   "Never name a favored candidate in prose; never use the words leading, trailing or favored.",
+   "Show market caption with the source name; for Polymarket show the fallback caption."
+  ],
+  "termsOfUse": {
+   "Kalshi": {
+    "url": "https://kalshi-public-docs.s3.amazonaws.com/kalshi-data-terms-of-service.pdf",
+    "developerAgreement": "https://assets.kalshi.com/Kalshi-Developer-Agreement.pdf",
+    "summary": "Kalshi Data Terms: personal, non-commercial use only, in the form presented on the website; publicly displaying, publishing, redistributing, compiling or caching Kalshi Data requires prior written authorization. Developer Agreement v1.1 limits API use to facilitating the member's own trading. Public display on townhall.town needs written permission from Kalshi."
+   },
+   "Polymarket": {
+    "url": "https://polymarket.com/tos",
+    "builderCodeOfConduct": "https://builders.polymarket.com/code-of-conduct",
+    "summary": "ToS bars harvesting or collecting information from the site for any unauthorized purpose; Builders Code of Conduct says the terms prohibit reselling or redistributing data to capital-markets firms or market-data distributors without written agreement. No explicit public-display licence found; confirm with Polymarket before display."
+   },
+   "PredictIt": {
+    "url": "https://www.predictit.org/terms-and-conditions",
+    "apiNote": "API FAQ (predictit.org/api/about/faqs, as quoted by settledmarkets.com): \"This data is for non-commercial use and PredictIt shall be attributed as the source.\"",
+    "summary": "Non-commercial use with attribution to PredictIt; site terms prohibit scraping the website and commercial use. The FAQ wording was not read first-hand this turn."
+   },
+   "Cook Political Report": {
+    "url": "https://www.cookpolitical.com/",
+    "summary": "Ratings pages direct users to Cook's terms of use; API/licensed access is by request. Quote the rating with attribution and link; get permission for systematic reuse."
+   },
+   "Sabato's Crystal Ball": {
+    "url": "https://centerforpolitics.org/crystalball/2026-rating-changes/",
+    "summary": "Ratings are published as images; only text from the rating-changes log was used. Attribute and link."
+   },
+   "Inside Elections": {
+    "url": "https://insideelections.com/",
+    "summary": "Ratings read from the site's public ratings cache JSON that backs the ratings maps; no separate data licence found. Attribute and link; ask before systematic reuse."
+   }
+  },
+  "counts": {
+   "safe": 10,
+   "competitive": 6,
+   "unsure": 87
+  },
+  "contestStatusCounts": {
+   "contested": 51,
+   "uncontested": 34,
+   "retention": 13,
+   "multi-seat": 5
+  },
+  "unsureByContestStatus": {
+   "contested": 35,
+   "uncontested": 34,
+   "retention": 13,
+   "multi-seat": 5
+  },
+  "contestStatusNote": "contestStatus is a ballot fact, not a rating; uncontested and retention races stay unsure under the rating rule because no rater or market covers them."
+ },
+ "races": [
+  {
+   "zip": "78701",
+   "raceId": "tx-10",
+   "candidates": [
+    "Caitlin Rourk",
+    "Chris Gober"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "all raters list Likely/Solid/Safe"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Solid R",
+     "ratingDate": "2026-10-23",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Solid Republican",
+     "ratingDate": "2025-12-05",
+     "sourceUrl": "https://insideelections.com/ratings/house/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:27-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Polymarket",
+    "sourceUrl": "https://polymarket.com/event/tx-10-house-election-winner",
+    "dataUrl": "https://gamma-api.polymarket.com/events?slug=tx-10-house-election-winner",
+    "asOf": "2026-10-29T16:41:59-05:00",
+    "caption": "Prices from Polymarket (fallback: no Kalshi market found for this race).",
+    "contracts": [
+     {
+      "candidate": "Chris Gober",
+      "marketLabel": "Chris Gober (R)",
+      "yesPrice": "0.91",
+      "lastTradePrice": 0.91,
+      "bestBid": 0.9,
+      "bestAsk": 0.92,
+      "volume": "15037.801405999999",
+      "ratingPrice": 0.91,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Caitlin Rourk",
+      "marketLabel": "Caitlin Rourk (D)",
+      "yesPrice": "0.09",
+      "lastTradePrice": 0.1,
+      "bestBid": 0.08,
+      "bestAsk": 0.1,
+      "volume": "22148.374647999994",
+      "ratingPrice": 0.09,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-37",
+   "candidates": [
+    "Greg Casar",
+    "Lauren Peña"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "all raters list Likely/Solid/Safe"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Solid D",
+     "ratingDate": "2026-10-23",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Solid Democrat",
+     "ratingDate": "2025-12-05",
+     "sourceUrl": "https://insideelections.com/ratings/house/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:27-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Polymarket",
+    "sourceUrl": "https://polymarket.com/event/tx-37-house-election-winner",
+    "dataUrl": "https://gamma-api.polymarket.com/events?slug=tx-37-house-election-winner",
+    "asOf": "2026-10-29T16:42:07-05:00",
+    "caption": "Prices from Polymarket (fallback: no Kalshi market found for this race).",
+    "contracts": [
+     {
+      "candidate": "Greg Casar",
+      "marketLabel": "Greg Casar (D)",
+      "yesPrice": "0.975",
+      "lastTradePrice": 0.982,
+      "bestBid": 0.968,
+      "bestAsk": 0.982,
+      "volume": "27143.254372000003",
+      "ratingPrice": 0.975,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Lauren Peña",
+      "marketLabel": "Lauren Peña (R)",
+      "yesPrice": "0.017",
+      "lastTradePrice": 0.029,
+      "bestBid": 0.005,
+      "bestAsk": 0.029,
+      "volume": "18431.585672",
+      "ratingPrice": 0.017,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "us-senate-tx",
+   "candidates": [
+    "James Talarico",
+    "Ken Paxton",
+    "Ted Brown"
+   ],
+   "rating": "competitive",
+   "ratingBasis": [
+    "a rater lists Toss-up/Tilt"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Toss Up",
+     "ratingDate": "2026-10-20",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/senate-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Sabato's Crystal Ball",
+     "rating": "Toss-up",
+     "ratingDate": "2026-08-26",
+     "sourceUrl": "https://centerforpolitics.org/crystalball/2026-rating-changes/",
+     "asOf": "2026-10-29",
+     "method": "Latest listed change for TX Senate on the rating-changes log (Leans Republican -> Toss-up); no later TX Senate change listed through Oct. 27, 2026."
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Tilt Democrat",
+     "ratingDate": "2026-10-29",
+     "sourceUrl": "https://insideelections.com/ratings/senate/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_senate_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:28-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "SENATETX-26",
+    "seriesTicker": "SENATETX",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=SENATETX&limit=100",
+    "publicUrl": "https://kalshi.com/markets/senatetx",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:00-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "James Talarico",
+      "ticker": "SENATETX-26-D",
+      "marketSubtitle": "James Talarico",
+      "lastPrice": "0.6900",
+      "yesBid": "0.6800",
+      "yesAsk": "0.6900",
+      "volume": "16352799.23",
+      "status": "active",
+      "ratingPrice": 0.685,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Ken Paxton",
+      "ticker": "SENATETX-26-R",
+      "marketSubtitle": "Ken Paxton",
+      "lastPrice": "0.3200",
+      "yesBid": "0.3100",
+      "yesAsk": "0.3200",
+      "volume": "34957834.48",
+      "status": "active",
+      "ratingPrice": 0.315,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [
+    {
+     "source": "PredictIt",
+     "role": "supplementary (not used for the rating)",
+     "marketName": "Which party will win the 2026 US Senate election in Texas?",
+     "sourceUrl": "https://www.predictit.org/markets/detail/8173/Which-party-will-win-the-2026-US-Senate-election-in-Texas",
+     "dataUrl": "https://www.predictit.org/api/marketdata/all/",
+     "asOf": "2026-10-29T16:40:58-05:00",
+     "feedTimeStamp": "2026-10-29T17:40:50.8231526",
+     "contracts": [
+      {
+       "candidate": "James Talarico",
+       "contractName": "Democrats (Talarico)",
+       "lastTradePrice": 0.68,
+       "bestBuyYesCost": 0.69,
+       "bestSellYesCost": 0.67
+      },
+      {
+       "candidate": "Ken Paxton",
+       "contractName": "Republican (Paxton)",
+       "lastTradePrice": 0.32,
+       "bestBuyYesCost": 0.34,
+       "bestSellYesCost": 0.31
+      }
+     ]
+    }
+   ],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-gov",
+   "candidates": [
+    "Greg Abbott",
+    "Gina Hinojosa",
+    "Pat Dixon"
+   ],
+   "rating": "competitive",
+   "ratingBasis": [
+    "a rater lists Toss-up/Tilt"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Lean R",
+     "ratingDate": "2026-10-29",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/governor-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Sabato's Crystal Ball",
+     "rating": "Leans Republican",
+     "ratingDate": "2026-09-22",
+     "sourceUrl": "https://centerforpolitics.org/crystalball/2026-rating-changes/",
+     "asOf": "2026-10-29",
+     "method": "Latest listed change for TX Governor (Likely Republican -> Leans Republican); no later change listed through Oct. 27, 2026."
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Tilt Republican",
+     "ratingDate": "2026-10-29",
+     "sourceUrl": "https://insideelections.com/ratings/governor/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_governor_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:29-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "GOVPARTYTX-26",
+    "seriesTicker": "GOVPARTYTX",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=GOVPARTYTX&limit=100",
+    "publicUrl": "https://kalshi.com/markets/govpartytx",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:32-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Greg Abbott",
+      "ticker": "GOVPARTYTX-26-R",
+      "marketSubtitle": "Greg Abbott",
+      "lastPrice": "0.6400",
+      "yesBid": "0.6300",
+      "yesAsk": "0.6400",
+      "volume": "6084880.87",
+      "status": "active",
+      "ratingPrice": 0.635,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Gina Hinojosa",
+      "ticker": "GOVPARTYTX-26-D",
+      "marketSubtitle": "Gina Hinojosa",
+      "lastPrice": "0.3700",
+      "yesBid": "0.3600",
+      "yesAsk": "0.3700",
+      "volume": "3859922.85",
+      "status": "active",
+      "ratingPrice": 0.365,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [
+    {
+     "source": "PredictIt",
+     "role": "supplementary (not used for the rating)",
+     "marketName": "Which party will win the 2026 election for governor of Texas?",
+     "sourceUrl": "https://www.predictit.org/markets/detail/8418/Which-party-will-win-the-2026-election-for-governor-of-Texas",
+     "dataUrl": "https://www.predictit.org/api/marketdata/all/",
+     "asOf": "2026-10-29T16:40:58-05:00",
+     "feedTimeStamp": "2026-10-29T17:40:50.8231526",
+     "contracts": [
+      {
+       "candidate": "Greg Abbott",
+       "contractName": "Republican",
+       "lastTradePrice": 0.67,
+       "bestBuyYesCost": 0.68,
+       "bestSellYesCost": 0.65
+      },
+      {
+       "candidate": "Gina Hinojosa",
+       "contractName": "Democratic",
+       "lastTradePrice": 0.33,
+       "bestBuyYesCost": 0.38,
+       "bestSellYesCost": 0.34
+      }
+     ]
+    }
+   ],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-ltgov",
+   "candidates": [
+    "Dan Patrick",
+    "Vikki Goodwin",
+    "Kevin McCormick",
+    "Anthony Cristo"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXLTGOVTX-26",
+    "seriesTicker": "KXLTGOVTX",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXLTGOVTX&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxltgovtx",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:36-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Dan Patrick",
+      "ticker": "KXLTGOVTX-26-GOP",
+      "marketSubtitle": "Dan Patrick",
+      "lastPrice": "0.7300",
+      "yesBid": "0.7500",
+      "yesAsk": "0.7600",
+      "volume": "27201.92",
+      "status": "active",
+      "ratingPrice": 0.755,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Vikki Goodwin",
+      "ticker": "KXLTGOVTX-26-DEM",
+      "marketSubtitle": "Vikki Goodwin",
+      "lastPrice": "0.2500",
+      "yesBid": "0.2500",
+      "yesAsk": "0.2600",
+      "volume": "26732.56",
+      "status": "active",
+      "ratingPrice": 0.255,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-ag",
+   "candidates": [
+    "Nathan Johnson",
+    "Mayes Middleton",
+    "Tom Oxford"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXATTYGENTX-26",
+    "seriesTicker": "KXATTYGENTX",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXATTYGENTX&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxattygentx",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:37-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Mayes Middleton",
+      "ticker": "KXATTYGENTX-26-R",
+      "marketSubtitle": "Mayes Middleton",
+      "lastPrice": "0.7400",
+      "yesBid": "0.7400",
+      "yesAsk": "0.7500",
+      "volume": "11625.76",
+      "status": "active",
+      "ratingPrice": 0.745,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Nathan Johnson",
+      "ticker": "KXATTYGENTX-26-D",
+      "marketSubtitle": "Nathan Johnson",
+      "lastPrice": "0.2700",
+      "yesBid": "0.2600",
+      "yesAsk": "0.2700",
+      "volume": "13139.65",
+      "status": "active",
+      "ratingPrice": 0.265,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-comptroller",
+   "candidates": [
+    "Donald Huffines",
+    "Sarah Eckhardt",
+    "Shehla Faizi",
+    "V. Alonzo Echavarria-Garza"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXCOMPTROLLER-26",
+    "seriesTicker": "KXTXCOMPTROLLER",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXCOMPTROLLER&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxcomptroller",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:38-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Donald Huffines",
+      "ticker": "KXTXCOMPTROLLER-26-DHUF",
+      "marketSubtitle": "Don Huffines",
+      "lastPrice": "0.8200",
+      "yesBid": "0.8100",
+      "yesAsk": "0.8500",
+      "volume": "1266.71",
+      "status": "active",
+      "ratingPrice": 0.83,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Sarah Eckhardt",
+      "ticker": "KXTXCOMPTROLLER-26-SECK",
+      "marketSubtitle": "Sarah Eckhardt",
+      "lastPrice": "0.1900",
+      "yesBid": "0.1300",
+      "yesAsk": "0.1900",
+      "volume": "459.54",
+      "status": "active",
+      "ratingPrice": 0.16,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.06)",
+       "low volume"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-land",
+   "candidates": [
+    "Dawn Buckingham",
+    "Benjamin Flores",
+    "Neil Snider"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXGLO-26",
+    "seriesTicker": "KXTXGLO",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXGLO&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxglo",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:39-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Dawn Buckingham",
+      "ticker": "KXTXGLO-26-DBUC",
+      "marketSubtitle": "Dawn Buckingham",
+      "lastPrice": "0.8500",
+      "yesBid": "0.7800",
+      "yesAsk": "0.8600",
+      "volume": "174.39",
+      "status": "active",
+      "ratingPrice": 0.82,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.08)",
+       "low volume"
+      ]
+     },
+     {
+      "candidate": "Benjamin Flores",
+      "ticker": "KXTXGLO-26-BFLO",
+      "marketSubtitle": "Benjamin Flores",
+      "lastPrice": "0.2400",
+      "yesBid": "0.1400",
+      "yesAsk": "0.2400",
+      "volume": "83.12",
+      "status": "active",
+      "ratingPrice": 0.19,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.10)",
+       "low volume"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-agcomm",
+   "candidates": [
+    "Clayton Tucker",
+    "Nate Sheets",
+    "Austin Kelly"
+   ],
+   "rating": "competitive",
+   "ratingBasis": [
+    "market top contract 0.56 within 0.35-0.65"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXAGCOM-26",
+    "seriesTicker": "KXTXAGCOM",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXAGCOM&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxagcom",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:40-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Nate Sheets",
+      "ticker": "KXTXAGCOM-26-NSHE",
+      "marketSubtitle": "Nate Sheets",
+      "lastPrice": "0.6000",
+      "yesBid": "0.5200",
+      "yesAsk": "0.6000",
+      "volume": "5027.29",
+      "status": "active",
+      "ratingPrice": 0.56,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.08)"
+      ]
+     },
+     {
+      "candidate": "Clayton Tucker",
+      "ticker": "KXTXAGCOM-26-CTUC",
+      "marketSubtitle": "Clayton Tucker",
+      "lastPrice": "0.4200",
+      "yesBid": "0.4300",
+      "yesAsk": "0.4700",
+      "volume": "3949.73",
+      "status": "active",
+      "ratingPrice": 0.45,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-rrc",
+   "candidates": [
+    "Jon Rosenthal",
+    "Bo French",
+    "Arthur DiBianca"
+   ],
+   "rating": "competitive",
+   "ratingBasis": [
+    "market top contract 0.58 within 0.35-0.65"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXRAILROAD-26",
+    "seriesTicker": "KXTXRAILROAD",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXRAILROAD&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxrailroad",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:49:07-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Jon Rosenthal",
+      "ticker": "KXTXRAILROAD-26-JROS",
+      "marketSubtitle": "Jon Rosenthal",
+      "lastPrice": "0.5600",
+      "yesBid": "0.5600",
+      "yesAsk": "0.6000",
+      "volume": "73110.51",
+      "status": "active",
+      "ratingPrice": 0.58,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Bo French",
+      "ticker": "KXTXRAILROAD-26-BFRE",
+      "marketSubtitle": "Bo French",
+      "lastPrice": "0.4400",
+      "yesBid": "0.4000",
+      "yesAsk": "0.4200",
+      "volume": "125391.82",
+      "status": "active",
+      "ratingPrice": 0.41,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-1-chief-justice",
+   "candidates": [
+    "Jimmy Blacklock",
+    "Maggie Ellis"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXSUPREMECHIEF-26NOV03",
+    "seriesTicker": "KXTXSUPREMECHIEF",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXSUPREMECHIEF&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxsupremechief",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:41-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Jimmy Blacklock",
+      "ticker": "KXTXSUPREMECHIEF-26NOV03-JBLA",
+      "marketSubtitle": "Jimmy Blacklock",
+      "lastPrice": "0.8200",
+      "yesBid": "0.7500",
+      "yesAsk": "0.8300",
+      "volume": "1156.97",
+      "status": "active",
+      "ratingPrice": 0.79,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.08)"
+      ]
+     },
+     {
+      "candidate": "Maggie Ellis",
+      "ticker": "KXTXSUPREMECHIEF-26NOV03-MELL",
+      "marketSubtitle": "Maggie Ellis",
+      "lastPrice": "0.2700",
+      "yesBid": "0.1700",
+      "yesAsk": "0.2700",
+      "volume": "30.00",
+      "status": "active",
+      "ratingPrice": 0.22,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.10)",
+       "last trade differs from quote midpoint by >=0.05",
+       "low volume"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-7",
+   "candidates": [
+    "Kyle Hawkins",
+    "Kristen Hawkins"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXSUPREME7-26NOV03",
+    "seriesTicker": "KXTXSUPREME7",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXSUPREME7&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxsupreme7",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:43-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Kyle Hawkins",
+      "ticker": "KXTXSUPREME7-26NOV03-KYLE",
+      "marketSubtitle": "Kyle Hawkins",
+      "lastPrice": "0.8400",
+      "yesBid": "0.7600",
+      "yesAsk": "0.8600",
+      "volume": "0.58",
+      "status": "active",
+      "ratingPrice": 0.81,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.10)",
+       "low volume"
+      ]
+     },
+     {
+      "candidate": "Kristen Hawkins",
+      "ticker": "KXTXSUPREME7-26NOV03-KRISTEN",
+      "marketSubtitle": "Kristen Hawkins",
+      "lastPrice": "0.2100",
+      "yesBid": "0.1400",
+      "yesAsk": "0.2400",
+      "volume": "387.30",
+      "status": "active",
+      "ratingPrice": 0.19,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.10)",
+       "low volume"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-8",
+   "candidates": [
+    "Brett Busby",
+    "Gisela Triana"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXSUPREME8-26NOV03",
+    "seriesTicker": "KXTXSUPREME8",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXSUPREME8&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxsupreme8",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:43-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Brett Busby",
+      "ticker": "KXTXSUPREME8-26NOV03-BRETT",
+      "marketSubtitle": "Brett Busby",
+      "lastPrice": "0.8600",
+      "yesBid": "0.7700",
+      "yesAsk": "0.8500",
+      "volume": "914.01",
+      "status": "active",
+      "ratingPrice": 0.81,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.08)",
+       "low volume"
+      ]
+     },
+     {
+      "candidate": "Gisela Triana",
+      "ticker": "KXTXSUPREME8-26NOV03-GISELA",
+      "marketSubtitle": "Gisela D. Triana",
+      "lastPrice": "0.1500",
+      "yesBid": "0.1400",
+      "yesAsk": "0.2300",
+      "volume": "1104.23",
+      "status": "active",
+      "ratingPrice": 0.185,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.09)"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-3",
+   "candidates": [
+    "Okey Anyiam",
+    "Thomas Smith",
+    "Mark Ash"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-4",
+   "candidates": [
+    "Kevin Patrick Yeary",
+    "Audra Riley"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-9",
+   "candidates": [
+    "Holly Taylor",
+    "John Messinger"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-11",
+   "candidates": [
+    "Connie Chan",
+    "Scott Wiener"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "all raters list Likely/Solid/Safe"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Solid D",
+     "ratingDate": "2026-10-23",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Solid Democrat",
+     "ratingDate": "2025-12-05",
+     "sourceUrl": "https://insideelections.com/ratings/house/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:27-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXCA11PERSON-26",
+    "seriesTicker": "KXCA11PERSON",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXCA11PERSON&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxca11person",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:49-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Scott Wiener",
+      "ticker": "KXCA11PERSON-26-SWIE",
+      "marketSubtitle": "Scott Wiener",
+      "lastPrice": "0.8000",
+      "yesBid": "0.7900",
+      "yesAsk": "0.8000",
+      "volume": "244884.25",
+      "status": "active",
+      "ratingPrice": 0.795,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Connie Chan",
+      "ticker": "KXCA11PERSON-26-CCHA",
+      "marketSubtitle": "Connie Chan",
+      "lastPrice": "0.2100",
+      "yesBid": "0.2100",
+      "yesAsk": "0.2200",
+      "volume": "65488.20",
+      "status": "active",
+      "ratingPrice": 0.215,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "notes": [
+    "Both candidates are Democrats; the rater ratings are party-level, while the Kalshi market is candidate-level."
+   ],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-ag",
+   "candidates": [
+    "Rob Bonta",
+    "Michael Gates"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "market top contract 0.965 above 0.85"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXCAATTORNEYGENERAL-26",
+    "seriesTicker": "KXCAATTORNEYGENERAL",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXCAATTORNEYGENERAL&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxcaattorneygeneral",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:48-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Rob Bonta",
+      "ticker": "KXCAATTORNEYGENERAL-26-RBON",
+      "marketSubtitle": "Rob Bonta",
+      "lastPrice": "0.9700",
+      "yesBid": "0.9600",
+      "yesAsk": "0.9700",
+      "volume": "2457.28",
+      "status": "active",
+      "ratingPrice": 0.965,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Michael Gates",
+      "ticker": "KXCAATTORNEYGENERAL-26-MGAT",
+      "marketSubtitle": "Michael E. Gates",
+      "lastPrice": "0.0300",
+      "yesBid": "0.0200",
+      "yesAsk": "0.0300",
+      "volume": "10326.52",
+      "status": "active",
+      "ratingPrice": 0.025,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-controller",
+   "candidates": [
+    "Malia Cohen",
+    "Herb Morgan"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "priorResult": {
+    "label": "prior result",
+    "text": "2022 CA Controller general: last decided by 1,147,511 votes (10.7%).",
+    "sourceUrl": "https://elections.cdn.sos.ca.gov/sov/2022-general/sov/06-summary.pdf",
+    "see": "turnout.json"
+   },
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-insurance",
+   "candidates": [
+    "Ben Allen",
+    "Jane Kim"
+   ],
+   "rating": "competitive",
+   "ratingBasis": [
+    "market top contract 0.61 within 0.35-0.65"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXCAINSCOMGEN-26",
+    "seriesTicker": "KXCAINSCOMGEN",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXCAINSCOMGEN&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxcainscomgen",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:45-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Ben Allen",
+      "ticker": "KXCAINSCOMGEN-26-BALL",
+      "marketSubtitle": "Ben Allen",
+      "lastPrice": "0.6600",
+      "yesBid": "0.5700",
+      "yesAsk": "0.6500",
+      "volume": "4012.14",
+      "status": "active",
+      "ratingPrice": 0.61,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.08)",
+       "last trade differs from quote midpoint by >=0.05"
+      ]
+     },
+     {
+      "candidate": "Jane Kim",
+      "ticker": "KXCAINSCOMGEN-26-JKIM",
+      "marketSubtitle": "Jane Kim",
+      "lastPrice": "0.3500",
+      "yesBid": "0.3400",
+      "yesAsk": "0.4000",
+      "volume": "1325.65",
+      "status": "active",
+      "ratingPrice": 0.37,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.06)"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-sos",
+   "candidates": [
+    "Shirley Weber",
+    "Donald P. Wagner"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "market top contract 0.97 above 0.85"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXSECSTATECA-26NOV03",
+    "seriesTicker": "KXSECSTATECA",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXSECSTATECA&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxsecstateca",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:47-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Shirley Weber",
+      "ticker": "KXSECSTATECA-26NOV03-SWEB",
+      "marketSubtitle": "Shirley N. Weber",
+      "lastPrice": "0.9400",
+      "yesBid": "0.9600",
+      "yesAsk": "0.9800",
+      "volume": "423.05",
+      "status": "active",
+      "ratingPrice": 0.97,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "low volume"
+      ]
+     },
+     {
+      "candidate": "Donald P. Wagner",
+      "ticker": "KXSECSTATECA-26NOV03-DWAG",
+      "marketSubtitle": "Donald P. (Don) Wagner",
+      "lastPrice": "0.0200",
+      "yesBid": "0.0200",
+      "yesAsk": "0.0500",
+      "volume": "205.00",
+      "status": "active",
+      "ratingPrice": 0.035,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "low volume"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-spi",
+   "candidates": [
+    "Richard Barrera",
+    "Sonja Shaw"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXCASUPT-26NOV03",
+    "seriesTicker": "KXCASUPT",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXCASUPT&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxcasupt",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:46-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Richard Barrera",
+      "ticker": "KXCASUPT-26NOV03-RBAR",
+      "marketSubtitle": "Richard Barrera",
+      "lastPrice": "0.9400",
+      "yesBid": "0.6800",
+      "yesAsk": "0.7600",
+      "volume": "843.10",
+      "status": "active",
+      "ratingPrice": 0.72,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.08)",
+       "last trade differs from quote midpoint by >=0.05",
+       "low volume"
+      ]
+     },
+     {
+      "candidate": "Sonja Shaw",
+      "ticker": "KXCASUPT-26NOV03-SSHA",
+      "marketSubtitle": "Sonja Shaw",
+      "lastPrice": "0.2500",
+      "yesBid": "0.2300",
+      "yesAsk": "0.2700",
+      "volume": "1223.17",
+      "status": "active",
+      "ratingPrice": 0.25,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-treasurer",
+   "candidates": [
+    "Eleni Kounalakis",
+    "Jennifer Hawks"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "priorResult": {
+    "label": "prior result",
+    "text": "2022 CA Treasurer general: last decided by 1,881,295 votes (17.59%).",
+    "sourceUrl": "https://elections.cdn.sos.ca.gov/sov/2022-general/sov/06-summary.pdf",
+    "see": "turnout.json"
+   },
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-gov",
+   "candidates": [
+    "Xavier Becerra",
+    "Steve Hilton"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "all raters list Likely/Solid/Safe"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Solid D",
+     "ratingDate": "2026-10-29",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/governor-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Solid Democrat",
+     "ratingDate": "2025-02-06",
+     "sourceUrl": "https://insideelections.com/ratings/governor/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_governor_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:29-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXGOVCA-26",
+    "seriesTicker": "KXGOVCA",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXGOVCA&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxgovca",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:33-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Xavier Becerra",
+      "ticker": "KXGOVCA-26-XBEC",
+      "marketSubtitle": "Xavier Becerra",
+      "lastPrice": "0.9680",
+      "yesBid": "0.9680",
+      "yesAsk": "0.9690",
+      "volume": "7295132.86",
+      "status": "active",
+      "ratingPrice": 0.9685,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Steve Hilton",
+      "ticker": "KXGOVCA-26-SHIL",
+      "marketSubtitle": "Steve Hilton",
+      "lastPrice": "0.0380",
+      "yesBid": "0.0360",
+      "yesAsk": "0.0380",
+      "volume": "17345706.20",
+      "status": "active",
+      "ratingPrice": 0.037,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [
+    {
+     "source": "PredictIt",
+     "role": "supplementary (not used for the rating)",
+     "marketName": "Who will win the 2026 election for governor of California?",
+     "sourceUrl": "https://www.predictit.org/markets/detail/8166/Who-will-win-the-2026-election-for-governor-of-California",
+     "dataUrl": "https://www.predictit.org/api/marketdata/all/",
+     "asOf": "2026-10-29T16:40:58-05:00",
+     "feedTimeStamp": "2026-10-29T17:40:50.8231526",
+     "contracts": [
+      {
+       "candidate": "Xavier Becerra",
+       "contractName": "Xavier Becerra",
+       "lastTradePrice": 0.97,
+       "bestBuyYesCost": 0.97,
+       "bestSellYesCost": 0.96
+      },
+      {
+       "candidate": "Steve Hilton",
+       "contractName": "Steve Hilton",
+       "lastTradePrice": 0.03,
+       "bestBuyYesCost": 0.04,
+       "bestSellYesCost": 0.03
+      }
+     ]
+    }
+   ],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-ltgov",
+   "candidates": [
+    "Fiona Ma",
+    "Gloria J. Romero"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "market top contract 0.9465 above 0.85"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXCALIEUTENANTGOV-26NOV03",
+    "seriesTicker": "KXCALIEUTENANTGOV",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXCALIEUTENANTGOV&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxcalieutenantgov",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:44-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Fiona Ma",
+      "ticker": "KXCALIEUTENANTGOV-26NOV03-FMA",
+      "marketSubtitle": "Fiona Ma",
+      "lastPrice": "0.9580",
+      "yesBid": "0.9350",
+      "yesAsk": "0.9580",
+      "volume": "27839.45",
+      "status": "active",
+      "ratingPrice": 0.9465,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Gloria J. Romero",
+      "ticker": "KXCALIEUTENANTGOV-26NOV03-GROM",
+      "marketSubtitle": "Gloria Romero",
+      "lastPrice": "0.0420",
+      "yesBid": "0.0300",
+      "yesAsk": "0.0420",
+      "volume": "6414.08",
+      "status": "active",
+      "ratingPrice": 0.036,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-governor",
+   "candidates": [
+    "Kathy Hochul / Adrienne Adams (Lt. Gov.)",
+    "Bruce Blakeman / Todd Hood (Lt. Gov.)"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "all raters list Likely/Solid/Safe"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Solid D",
+     "ratingDate": "2026-10-29",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/governor-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Sabato's Crystal Ball",
+     "rating": "Safe Democratic",
+     "ratingDate": "2026-03-19",
+     "sourceUrl": "https://centerforpolitics.org/crystalball/2026-rating-changes/",
+     "asOf": "2026-10-29",
+     "method": "Latest listed change for NY Governor (Likely Democratic -> Safe Democratic); no later change listed through Oct. 27, 2026."
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Likely Democrat",
+     "ratingDate": "2025-08-28",
+     "sourceUrl": "https://insideelections.com/ratings/governor/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_governor_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:29-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "GOVPARTYNY-26",
+    "seriesTicker": "GOVPARTYNY",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=GOVPARTYNY&limit=100",
+    "publicUrl": "https://kalshi.com/markets/govpartyny",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:35-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Kathy Hochul / Adrienne Adams (Lt. Gov.)",
+      "ticker": "GOVPARTYNY-26-D",
+      "marketSubtitle": "Kathy Hochul",
+      "lastPrice": "0.9610",
+      "yesBid": "0.9600",
+      "yesAsk": "0.9610",
+      "volume": "1287862.49",
+      "status": "active",
+      "ratingPrice": 0.9605,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Bruce Blakeman / Todd Hood (Lt. Gov.)",
+      "ticker": "GOVPARTYNY-26-R",
+      "marketSubtitle": "Bruce Blakeman",
+      "lastPrice": "0.0450",
+      "yesBid": "0.0440",
+      "yesAsk": "0.0450",
+      "volume": "4563382.72",
+      "status": "active",
+      "ratingPrice": 0.0445,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [
+    {
+     "source": "PredictIt",
+     "role": "supplementary (not used for the rating)",
+     "marketName": "Which party will win the 2026 election for governor of New York?",
+     "sourceUrl": "https://www.predictit.org/markets/detail/8215/Which-party-will-win-the-2026-election-for-governor-of-New-York",
+     "dataUrl": "https://www.predictit.org/api/marketdata/all/",
+     "asOf": "2026-10-29T16:40:58-05:00",
+     "feedTimeStamp": "2026-10-29T17:40:50.8231526",
+     "contracts": [
+      {
+       "candidate": "Kathy Hochul / Adrienne Adams (Lt. Gov.)",
+       "contractName": "Democratic",
+       "lastTradePrice": 0.96,
+       "bestBuyYesCost": 0.98,
+       "bestSellYesCost": 0.96
+      },
+      {
+       "candidate": "Bruce Blakeman / Todd Hood (Lt. Gov.)",
+       "contractName": "Republican",
+       "lastTradePrice": 0.03,
+       "bestBuyYesCost": 0.04,
+       "bestSellYesCost": 0.02
+      }
+     ]
+    }
+   ],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-attorney-general",
+   "candidates": [
+    "Letitia James",
+    "Saritha Komatireddy"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "market top contract 0.9545 above 0.85"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXATTYGENNY-26",
+    "seriesTicker": "KXATTYGENNY",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXATTYGENNY&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxattygenny",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:48:50-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Letitia James",
+      "ticker": "KXATTYGENNY-26-D",
+      "marketSubtitle": "Letitia James",
+      "lastPrice": "0.9520",
+      "yesBid": "0.9530",
+      "yesAsk": "0.9560",
+      "volume": "513318.50",
+      "status": "active",
+      "ratingPrice": 0.9545,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Saritha Komatireddy",
+      "ticker": "KXATTYGENNY-26-R",
+      "marketSubtitle": "Saritha Komatireddy",
+      "lastPrice": "0.0490",
+      "yesBid": "0.0480",
+      "yesAsk": "0.0510",
+      "volume": "978513.44",
+      "status": "active",
+      "ratingPrice": 0.0495,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-comptroller",
+   "candidates": [
+    "Thomas P. DiNapoli",
+    "Joseph Hernandez"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-12",
+   "candidates": [
+    "Micah Lasher",
+    "Caroline Shinkle",
+    "Wilneida Negron",
+    "Karen Ortiz"
+   ],
+   "rating": "safe",
+   "ratingBasis": [
+    "all raters list Likely/Solid/Safe"
+   ],
+   "raters": [
+    {
+     "rater": "Cook Political Report",
+     "rating": "Solid D",
+     "ratingDate": "2026-10-23",
+     "sourceUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
+     "asOf": "2026-10-29"
+    },
+    {
+     "rater": "Inside Elections",
+     "rating": "Solid Democrat",
+     "ratingDate": "2025-12-05",
+     "sourceUrl": "https://insideelections.com/ratings/house/",
+     "dataUrl": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json",
+     "asOf": "2026-10-29T16:50:27-05:00",
+     "pageLastUpdated": "2026-10-29T13:05:00-05:00"
+    }
+   ],
+   "market": {
+    "source": "Polymarket",
+    "sourceUrl": "https://polymarket.com/event/ny-12-house-election-winner",
+    "dataUrl": "https://gamma-api.polymarket.com/events?slug=ny-12-house-election-winner",
+    "asOf": "2026-10-29T16:42:00-05:00",
+    "caption": "Prices from Polymarket (fallback: no Kalshi market found for this race).",
+    "contracts": [
+     {
+      "candidate": "Micah Lasher",
+      "marketLabel": "Micah Lasher (D)",
+      "yesPrice": "0.968",
+      "lastTradePrice": 0.97,
+      "bestBid": 0.954,
+      "bestAsk": 0.982,
+      "volume": "17658.838141",
+      "ratingPrice": 0.968,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Caroline Shinkle",
+      "marketLabel": "Caroline Shinkle (R)",
+      "yesPrice": "0.021",
+      "lastTradePrice": 0.012,
+      "bestBid": 0.005,
+      "bestAsk": 0.037,
+      "volume": "17674.665132999995",
+      "ratingPrice": 0.021,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested"
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-sd-47",
+   "candidates": [
+    "Erik Bottcher",
+    "Charlotte Friedman"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-sd-28",
+   "candidates": [
+    "Liz Krueger",
+    "Alina Bonsell"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-ad-75",
+   "candidates": [
+    "Tony Simone",
+    "Cristina Fontanelli"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-2-unexpired",
+   "candidates": [
+    "James P. Sullivan",
+    "Chari Kelly"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and market (if any) outside both thresholds"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXTXSUPREME2-26NOV03",
+    "seriesTicker": "KXTXSUPREME2",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXTXSUPREME2&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxtxsupreme2",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:55:57-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "James P. Sullivan",
+      "ticker": "KXTXSUPREME2-26NOV03-JAMES",
+      "marketSubtitle": "James P. Sullivan",
+      "lastPrice": "0.8700",
+      "yesBid": "0.7900",
+      "yesAsk": "0.8900",
+      "volume": "74.47",
+      "status": "active",
+      "ratingPrice": 0.84,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.10)",
+       "low volume"
+      ]
+     },
+     {
+      "candidate": "Chari Kelly",
+      "ticker": "KXTXSUPREME2-26NOV03-CHARI",
+      "marketSubtitle": "Chari Kelly",
+      "lastPrice": "0.1500",
+      "yesBid": "0.1100",
+      "yesAsk": "0.2100",
+      "volume": "69.21",
+      "status": "active",
+      "ratingPrice": 0.16,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.10)",
+       "low volume"
+      ]
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-sboe-5",
+   "candidates": [
+    "Mica Arellano",
+    "Allison Bush"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-house-49",
+   "candidates": [
+    "Montserrat Garibay",
+    "Arshia Papari"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-house-51",
+   "candidates": [
+    "Jessica Martinez",
+    "Maria Luisa “Lulu” Flores"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-15coa-chief",
+   "candidates": [
+    "Scott Brister",
+    "Jerry Zimmerer"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-15coa-place-2",
+   "candidates": [
+    "Scott K. Field",
+    "Tom Baker"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-15coa-place-3",
+   "candidates": [
+    "April Farris",
+    "Marc M. Meyer"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-3coa-chief",
+   "candidates": [
+    "Cory Liu",
+    "Darlene Byrne"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-147th",
+   "candidates": [
+    "Cliff Brown"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-201st",
+   "candidates": [
+    "Amy Clark Meachum"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-250th",
+   "candidates": [
+    "Kennon Lily Wooten"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-261st",
+   "candidates": [
+    "Daniella Deseta Lyttle"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-299th",
+   "candidates": [
+    "Karen R. Sage"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-331st",
+   "candidates": [
+    "Chantal Melissa Eldridge"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-403rd",
+   "candidates": [
+    "Brandy Mueller"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-419th",
+   "candidates": [
+    "Catherine A. Mauzy"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-455th",
+   "candidates": [
+    "Laurie Eiserloh"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-459th",
+   "candidates": [
+    "Maya Guerra Gamble"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-county-judge",
+   "candidates": [
+    "Andy Brown"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-1",
+   "candidates": [
+    "Todd Wong"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-2",
+   "candidates": [
+    "Leslie Dippel"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-3",
+   "candidates": [
+    "Bianca Garcia"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-4",
+   "candidates": [
+    "Dimple Malhotra"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-5",
+   "candidates": [
+    "Mary Ann Espiritu"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-6",
+   "candidates": [
+    "Denise Hernández"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-7",
+   "candidates": [
+    "Elisabeth Earle"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-probate-1",
+   "candidates": [
+    "Guy Herman"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-clerk",
+   "candidates": [
+    "Velva L. Price"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-county-clerk",
+   "candidates": [
+    "Dyana Limon-Mercado"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-county-treasurer",
+   "candidates": [
+    "Dolores Ortega Carter"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-commissioner-4",
+   "candidates": [
+    "George Morales III"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-jp-5",
+   "candidates": [
+    "Tanisa Jeffers"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-jp-4",
+   "candidates": [
+    "Raul Arturo Gonzalez"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-constable-4-unexpired",
+   "candidates": [
+    "Gabriel Padilla"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-cad-place-1",
+   "candidates": [
+    "Skyler A. Korgel"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-cad-place-2",
+   "candidates": [
+    "Brian Peña"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-cad-place-3",
+   "candidates": [
+    "Yvonne Muñoz",
+    "Phil Gorman"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "austin-council-9",
+   "candidates": [
+    "Rich Heyman",
+    "Katie Kam",
+    "Zohaib “Zo” Qadri",
+    "Dave Thadani",
+    "Kai Huang"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "aisd-at-large-9",
+   "candidates": [
+    "Cynthia Soliz",
+    "Kirk Becker",
+    "Pamela Mathai"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-1",
+   "candidates": [
+    "Dana Walker",
+    "Gloria Gonzales-Dholakia"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-2",
+   "candidates": [
+    "Gigi Edwards Bryant"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-3",
+   "candidates": [
+    "Trevor Hale",
+    "Nan McRaven"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-ad-17",
+   "candidates": [
+    "Matt Haney",
+    "Manuel Noris-Barrera"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-boe-2",
+   "candidates": [
+    "Sally J. Lieber",
+    "John Pimentel"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-supreme-evans",
+   "candidates": [
+    "Kelli M. Evans"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-supreme-groban",
+   "candidates": [
+    "Joshua Groban"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-1",
+   "candidates": [
+    "Charles A. Smiley"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-1b",
+   "candidates": [
+    "Kathleen M. Banke"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-1c",
+   "candidates": [
+    "Monique Langhorne Wilson"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-2pj",
+   "candidates": [
+    "Therese M. Stewart"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-2",
+   "candidates": [
+    "Tara M. Desautels"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-3",
+   "candidates": [
+    "Ioana Petrou"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-3b",
+   "candidates": [
+    "Victor A. Rodriguez"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-4pj",
+   "candidates": [
+    "Tracie L. Brown"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-5",
+   "candidates": [
+    "Mark Simons"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-5b",
+   "candidates": [
+    "Danny Y. Chou"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "ca-coa-1-5c",
+   "candidates": [
+    "Gordon Burns"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "retention (Yes/No vote on one judge)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-assessor-recorder",
+   "candidates": [
+    "Joaquin Torres"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-public-defender",
+   "candidates": [
+    "Manohar Raju"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-supervisor-6",
+   "candidates": [
+    "Alex Behrend",
+    "Matt Dorsey"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-supervisor-8",
+   "candidates": [
+    "Gary McCoy",
+    "Michael T. Nguyen",
+    "Darshini Patel",
+    "Emanuel \"Manny\" Yekutiel"
+   ],
+   "rating": "competitive",
+   "ratingBasis": [
+    "market top contract 0.64 within 0.35-0.65"
+   ],
+   "raters": [],
+   "market": {
+    "source": "Kalshi",
+    "eventTicker": "KXSFD8-26",
+    "seriesTicker": "KXSFD8",
+    "sourceUrl": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXSFD8&limit=100",
+    "publicUrl": "https://kalshi.com/markets/kxsfd8",
+    "publicUrlVerified": false,
+    "asOf": "2026-10-29T16:55:59-05:00",
+    "caption": "Prices from Kalshi.",
+    "contracts": [
+     {
+      "candidate": "Gary McCoy",
+      "ticker": "KXSFD8-26-GMCC",
+      "marketSubtitle": "Gary McCoy",
+      "lastPrice": "0.6600",
+      "yesBid": "0.6100",
+      "yesAsk": "0.6700",
+      "volume": "7048.17",
+      "status": "active",
+      "ratingPrice": 0.64,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.06)"
+      ]
+     },
+     {
+      "candidate": "Michael T. Nguyen",
+      "ticker": "KXSFD8-26-MNGU",
+      "marketSubtitle": "Michael Nguyen",
+      "lastPrice": "0.0300",
+      "yesBid": "0.0100",
+      "yesAsk": "0.0500",
+      "volume": "8620.23",
+      "status": "active",
+      "ratingPrice": 0.03,
+      "ratingPriceMethod": "midpoint of yes bid/ask"
+     },
+     {
+      "candidate": "Darshini Patel",
+      "ticker": "KXSFD8-26-DPAT",
+      "marketSubtitle": "Darshini Patel",
+      "lastPrice": "0.2400",
+      "yesBid": "0.1900",
+      "yesAsk": "0.2600",
+      "volume": "6616.63",
+      "status": "active",
+      "ratingPrice": 0.225,
+      "ratingPriceMethod": "midpoint of yes bid/ask",
+      "dataQualityFlags": [
+       "wide spread (0.07)"
+      ]
+     },
+     {
+      "candidate": "Emanuel \"Manny\" Yekutiel",
+      "ticker": "KXSFD8-26-MYEK",
+      "marketSubtitle": "Manny Yekutiel",
+      "lastPrice": "0.1500",
+      "yesBid": "0.0000",
+      "yesAsk": "0.0500",
+      "volume": "9280.39",
+      "status": "active",
+      "ratingPrice": 0.15,
+      "ratingPriceMethod": "last trade price (no two-sided quote)"
+     }
+    ]
+   },
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "notes": [
+    "Ranked-choice contest; the Kalshi market is on the final winner."
+   ]
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-supervisor-10",
+   "candidates": [
+    "Pearci \"PJ\" Bastiany III",
+    "Dionjay (DJ) Brookter",
+    "Deandra Bryant",
+    "Theo Ellington",
+    "J.R. Eppler",
+    "Ellsworth \"Ell\" M. Jennison, Jr.",
+    "Mike Trouble Lin",
+    "Jamo Muhammad",
+    "Jessica Pessecow",
+    "Shawn M. Richard"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-board-of-education",
+   "candidates": [
+    "Autumn Brown Garibay",
+    "Virginia Cheung",
+    "Alida Fisher",
+    "Ryan Hazelton",
+    "Phil Kim",
+    "Laurance Lee",
+    "Reina Tello",
+    "Tim Tung"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "multi-seat (vote for 3)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-community-college-board",
+   "candidates": [
+    "Elijah Ball",
+    "Rome Moses Jones",
+    "Monroe Lace",
+    "Leah LaCroix",
+    "Jeremy Lee",
+    "Bunny McFadden",
+    "Erwin Tam",
+    "Lisa Wynn"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "multi-seat (vote for 3)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "94103",
+   "raceId": "sf-community-college-board-partial",
+   "candidates": [
+    "Ruth Ferguson"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-supreme-1jd",
+   "candidates": [
+    "Saliann Scarpulla",
+    "Kathleen Waterman-Marshall",
+    "Shlomo S. Hagler",
+    "Manuel J. Mendez",
+    "Hasa A. Kingo",
+    "Christopher Chin",
+    "Amy S. Taylor",
+    "Joshua E. Goldfein",
+    "Sienna M. Fontaine",
+    "Bob Cohen",
+    "Jeffrey W. Rizzo"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "multi-seat (vote for 6)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-surrogate-ny",
+   "candidates": [
+    "Rita Mella"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-civil-county-ny",
+   "candidates": [
+    "Josh E. Hanshaft",
+    "Emily Morales-Minerva",
+    "Vlad Frants"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "multi-seat (vote for 3)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-civil-3md-ny",
+   "candidates": [
+    "Steven Benathen"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "uncontested (one candidate on the ballot)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-civil-9md-ny",
+   "candidates": [
+    "Jennifer Frankola-Crawford",
+    "Brian J. Krist"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "multi-seat (vote for 2)",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  },
+  {
+   "zip": "10001",
+   "raceId": "nyc-council-3",
+   "candidates": [
+    "Carl Wilson",
+    "Haris Bhatti"
+   ],
+   "rating": "unsure",
+   "ratingBasis": [
+    "no rater rating and no market found"
+   ],
+   "raters": [],
+   "market": null,
+   "supplementaryMarkets": [],
+   "contestStatus": "contested",
+   "raceSource": "ballots_additions.json",
+   "marketGap": "No Kalshi or Polymarket market found for this race (searched on 2026-10-29)."
+  }
+ ],
+ "tickerMap": [
+  {
+   "raceId": "us-senate-tx",
+   "source": "Kalshi",
+   "series": "SENATETX",
+   "candidate": "James Talarico",
+   "ticker": "SENATETX-26-D"
+  },
+  {
+   "raceId": "us-senate-tx",
+   "source": "Kalshi",
+   "series": "SENATETX",
+   "candidate": "Ken Paxton",
+   "ticker": "SENATETX-26-R"
+  },
+  {
+   "raceId": "tx-gov",
+   "source": "Kalshi",
+   "series": "GOVPARTYTX",
+   "candidate": "Greg Abbott",
+   "ticker": "GOVPARTYTX-26-R"
+  },
+  {
+   "raceId": "tx-gov",
+   "source": "Kalshi",
+   "series": "GOVPARTYTX",
+   "candidate": "Gina Hinojosa",
+   "ticker": "GOVPARTYTX-26-D"
+  },
+  {
+   "raceId": "tx-ltgov",
+   "source": "Kalshi",
+   "series": "KXLTGOVTX",
+   "candidate": "Dan Patrick",
+   "ticker": "KXLTGOVTX-26-GOP"
+  },
+  {
+   "raceId": "tx-ltgov",
+   "source": "Kalshi",
+   "series": "KXLTGOVTX",
+   "candidate": "Vikki Goodwin",
+   "ticker": "KXLTGOVTX-26-DEM"
+  },
+  {
+   "raceId": "tx-ag",
+   "source": "Kalshi",
+   "series": "KXATTYGENTX",
+   "candidate": "Mayes Middleton",
+   "ticker": "KXATTYGENTX-26-R"
+  },
+  {
+   "raceId": "tx-ag",
+   "source": "Kalshi",
+   "series": "KXATTYGENTX",
+   "candidate": "Nathan Johnson",
+   "ticker": "KXATTYGENTX-26-D"
+  },
+  {
+   "raceId": "tx-comptroller",
+   "source": "Kalshi",
+   "series": "KXTXCOMPTROLLER",
+   "candidate": "Donald Huffines",
+   "ticker": "KXTXCOMPTROLLER-26-DHUF"
+  },
+  {
+   "raceId": "tx-comptroller",
+   "source": "Kalshi",
+   "series": "KXTXCOMPTROLLER",
+   "candidate": "Sarah Eckhardt",
+   "ticker": "KXTXCOMPTROLLER-26-SECK"
+  },
+  {
+   "raceId": "tx-land",
+   "source": "Kalshi",
+   "series": "KXTXGLO",
+   "candidate": "Dawn Buckingham",
+   "ticker": "KXTXGLO-26-DBUC"
+  },
+  {
+   "raceId": "tx-land",
+   "source": "Kalshi",
+   "series": "KXTXGLO",
+   "candidate": "Benjamin Flores",
+   "ticker": "KXTXGLO-26-BFLO"
+  },
+  {
+   "raceId": "tx-agcomm",
+   "source": "Kalshi",
+   "series": "KXTXAGCOM",
+   "candidate": "Nate Sheets",
+   "ticker": "KXTXAGCOM-26-NSHE"
+  },
+  {
+   "raceId": "tx-agcomm",
+   "source": "Kalshi",
+   "series": "KXTXAGCOM",
+   "candidate": "Clayton Tucker",
+   "ticker": "KXTXAGCOM-26-CTUC"
+  },
+  {
+   "raceId": "tx-rrc",
+   "source": "Kalshi",
+   "series": "KXTXRAILROAD",
+   "candidate": "Jon Rosenthal",
+   "ticker": "KXTXRAILROAD-26-JROS"
+  },
+  {
+   "raceId": "tx-rrc",
+   "source": "Kalshi",
+   "series": "KXTXRAILROAD",
+   "candidate": "Bo French",
+   "ticker": "KXTXRAILROAD-26-BFRE"
+  },
+  {
+   "raceId": "tx-supreme-court-place-1-chief-justice",
+   "source": "Kalshi",
+   "series": "KXTXSUPREMECHIEF",
+   "candidate": "Jimmy Blacklock",
+   "ticker": "KXTXSUPREMECHIEF-26NOV03-JBLA"
+  },
+  {
+   "raceId": "tx-supreme-court-place-1-chief-justice",
+   "source": "Kalshi",
+   "series": "KXTXSUPREMECHIEF",
+   "candidate": "Maggie Ellis",
+   "ticker": "KXTXSUPREMECHIEF-26NOV03-MELL"
+  },
+  {
+   "raceId": "tx-supreme-court-place-7",
+   "source": "Kalshi",
+   "series": "KXTXSUPREME7",
+   "candidate": "Kyle Hawkins",
+   "ticker": "KXTXSUPREME7-26NOV03-KYLE"
+  },
+  {
+   "raceId": "tx-supreme-court-place-7",
+   "source": "Kalshi",
+   "series": "KXTXSUPREME7",
+   "candidate": "Kristen Hawkins",
+   "ticker": "KXTXSUPREME7-26NOV03-KRISTEN"
+  },
+  {
+   "raceId": "tx-supreme-court-place-8",
+   "source": "Kalshi",
+   "series": "KXTXSUPREME8",
+   "candidate": "Brett Busby",
+   "ticker": "KXTXSUPREME8-26NOV03-BRETT"
+  },
+  {
+   "raceId": "tx-supreme-court-place-8",
+   "source": "Kalshi",
+   "series": "KXTXSUPREME8",
+   "candidate": "Gisela Triana",
+   "ticker": "KXTXSUPREME8-26NOV03-GISELA"
+  },
+  {
+   "raceId": "ca-gov",
+   "source": "Kalshi",
+   "series": "KXGOVCA",
+   "candidate": "Xavier Becerra",
+   "ticker": "KXGOVCA-26-XBEC"
+  },
+  {
+   "raceId": "ca-gov",
+   "source": "Kalshi",
+   "series": "KXGOVCA",
+   "candidate": "Steve Hilton",
+   "ticker": "KXGOVCA-26-SHIL"
+  },
+  {
+   "raceId": "ca-ltgov",
+   "source": "Kalshi",
+   "series": "KXCALIEUTENANTGOV",
+   "candidate": "Fiona Ma",
+   "ticker": "KXCALIEUTENANTGOV-26NOV03-FMA"
+  },
+  {
+   "raceId": "ca-ltgov",
+   "source": "Kalshi",
+   "series": "KXCALIEUTENANTGOV",
+   "candidate": "Gloria J. Romero",
+   "ticker": "KXCALIEUTENANTGOV-26NOV03-GROM"
+  },
+  {
+   "raceId": "ca-insurance",
+   "source": "Kalshi",
+   "series": "KXCAINSCOMGEN",
+   "candidate": "Ben Allen",
+   "ticker": "KXCAINSCOMGEN-26-BALL"
+  },
+  {
+   "raceId": "ca-insurance",
+   "source": "Kalshi",
+   "series": "KXCAINSCOMGEN",
+   "candidate": "Jane Kim",
+   "ticker": "KXCAINSCOMGEN-26-JKIM"
+  },
+  {
+   "raceId": "ca-spi",
+   "source": "Kalshi",
+   "series": "KXCASUPT",
+   "candidate": "Richard Barrera",
+   "ticker": "KXCASUPT-26NOV03-RBAR"
+  },
+  {
+   "raceId": "ca-spi",
+   "source": "Kalshi",
+   "series": "KXCASUPT",
+   "candidate": "Sonja Shaw",
+   "ticker": "KXCASUPT-26NOV03-SSHA"
+  },
+  {
+   "raceId": "ca-sos",
+   "source": "Kalshi",
+   "series": "KXSECSTATECA",
+   "candidate": "Shirley Weber",
+   "ticker": "KXSECSTATECA-26NOV03-SWEB"
+  },
+  {
+   "raceId": "ca-sos",
+   "source": "Kalshi",
+   "series": "KXSECSTATECA",
+   "candidate": "Donald P. Wagner",
+   "ticker": "KXSECSTATECA-26NOV03-DWAG"
+  },
+  {
+   "raceId": "ca-ag",
+   "source": "Kalshi",
+   "series": "KXCAATTORNEYGENERAL",
+   "candidate": "Rob Bonta",
+   "ticker": "KXCAATTORNEYGENERAL-26-RBON"
+  },
+  {
+   "raceId": "ca-ag",
+   "source": "Kalshi",
+   "series": "KXCAATTORNEYGENERAL",
+   "candidate": "Michael Gates",
+   "ticker": "KXCAATTORNEYGENERAL-26-MGAT"
+  },
+  {
+   "raceId": "ca-11",
+   "source": "Kalshi",
+   "series": "KXCA11PERSON",
+   "candidate": "Scott Wiener",
+   "ticker": "KXCA11PERSON-26-SWIE"
+  },
+  {
+   "raceId": "ca-11",
+   "source": "Kalshi",
+   "series": "KXCA11PERSON",
+   "candidate": "Connie Chan",
+   "ticker": "KXCA11PERSON-26-CCHA"
+  },
+  {
+   "raceId": "ny-governor",
+   "source": "Kalshi",
+   "series": "GOVPARTYNY",
+   "candidate": "Kathy Hochul / Adrienne Adams (Lt. Gov.)",
+   "ticker": "GOVPARTYNY-26-D"
+  },
+  {
+   "raceId": "ny-governor",
+   "source": "Kalshi",
+   "series": "GOVPARTYNY",
+   "candidate": "Bruce Blakeman / Todd Hood (Lt. Gov.)",
+   "ticker": "GOVPARTYNY-26-R"
+  },
+  {
+   "raceId": "tx-supreme-court-place-2-unexpired",
+   "source": "Kalshi",
+   "series": "KXTXSUPREME2",
+   "candidate": "James P. Sullivan",
+   "ticker": "KXTXSUPREME2-26NOV03-JAMES"
+  },
+  {
+   "raceId": "tx-supreme-court-place-2-unexpired",
+   "source": "Kalshi",
+   "series": "KXTXSUPREME2",
+   "candidate": "Chari Kelly",
+   "ticker": "KXTXSUPREME2-26NOV03-CHARI"
+  },
+  {
+   "raceId": "sf-supervisor-8",
+   "source": "Kalshi",
+   "series": "KXSFD8",
+   "candidate": "Gary McCoy",
+   "ticker": "KXSFD8-26-GMCC"
+  },
+  {
+   "raceId": "sf-supervisor-8",
+   "source": "Kalshi",
+   "series": "KXSFD8",
+   "candidate": "Michael T. Nguyen",
+   "ticker": "KXSFD8-26-MNGU"
+  },
+  {
+   "raceId": "sf-supervisor-8",
+   "source": "Kalshi",
+   "series": "KXSFD8",
+   "candidate": "Darshini Patel",
+   "ticker": "KXSFD8-26-DPAT"
+  },
+  {
+   "raceId": "sf-supervisor-8",
+   "source": "Kalshi",
+   "series": "KXSFD8",
+   "candidate": "Emanuel \"Manny\" Yekutiel",
+   "ticker": "KXSFD8-26-MYEK"
+  },
+  {
+   "raceId": "ny-attorney-general",
+   "source": "Kalshi",
+   "series": "KXATTYGENNY",
+   "candidate": "Letitia James",
+   "ticker": "KXATTYGENNY-26-D"
+  },
+  {
+   "raceId": "ny-attorney-general",
+   "source": "Kalshi",
+   "series": "KXATTYGENNY",
+   "candidate": "Saritha Komatireddy",
+   "ticker": "KXATTYGENNY-26-R"
+  },
+  {
+   "raceId": "tx-10",
+   "source": "Polymarket",
+   "candidate": "Chris Gober",
+   "marketLabel": "Chris Gober (R)"
+  },
+  {
+   "raceId": "tx-10",
+   "source": "Polymarket",
+   "candidate": "Caitlin Rourk",
+   "marketLabel": "Caitlin Rourk (D)"
+  },
+  {
+   "raceId": "tx-37",
+   "source": "Polymarket",
+   "candidate": "Greg Casar",
+   "marketLabel": "Greg Casar (D)"
+  },
+  {
+   "raceId": "tx-37",
+   "source": "Polymarket",
+   "candidate": "Lauren Peña",
+   "marketLabel": "Lauren Peña (R)"
+  },
+  {
+   "raceId": "ny-12",
+   "source": "Polymarket",
+   "candidate": "Micah Lasher",
+   "marketLabel": "Micah Lasher (D)"
+  },
+  {
+   "raceId": "ny-12",
+   "source": "Polymarket",
+   "candidate": "Caroline Shinkle",
+   "marketLabel": "Caroline Shinkle (R)"
+  },
+  {
+   "raceId": "ca-gov",
+   "source": "PredictIt",
+   "marketId": 8166,
+   "candidate": "Xavier Becerra",
+   "contractName": "Xavier Becerra"
+  },
+  {
+   "raceId": "ca-gov",
+   "source": "PredictIt",
+   "marketId": 8166,
+   "candidate": "Steve Hilton",
+   "contractName": "Steve Hilton"
+  },
+  {
+   "raceId": "us-senate-tx",
+   "source": "PredictIt",
+   "marketId": 8173,
+   "candidate": "James Talarico",
+   "contractName": "Democrats (Talarico)"
+  },
+  {
+   "raceId": "us-senate-tx",
+   "source": "PredictIt",
+   "marketId": 8173,
+   "candidate": "Ken Paxton",
+   "contractName": "Republican (Paxton)"
+  },
+  {
+   "raceId": "ny-governor",
+   "source": "PredictIt",
+   "marketId": 8215,
+   "candidate": "Kathy Hochul / Adrienne Adams (Lt. Gov.)",
+   "contractName": "Democratic"
+  },
+  {
+   "raceId": "ny-governor",
+   "source": "PredictIt",
+   "marketId": 8215,
+   "candidate": "Bruce Blakeman / Todd Hood (Lt. Gov.)",
+   "contractName": "Republican"
+  },
+  {
+   "raceId": "tx-gov",
+   "source": "PredictIt",
+   "marketId": 8418,
+   "candidate": "Greg Abbott",
+   "contractName": "Republican"
+  },
+  {
+   "raceId": "tx-gov",
+   "source": "PredictIt",
+   "marketId": 8418,
+   "candidate": "Gina Hinojosa",
+   "contractName": "Democratic"
+  }
+ ]
+}

@@ -15,20 +15,23 @@ export type Politician = {
   positions?: { issue: string; text: string; source: Source }[]; // stated positions only
   causes?: Cause[];                // issues the candidate talks about most, from their own campaign themes
   // Plug-in fields (optional):
-  accountability?: AccountabilityRecord[]; // from lib/accountability.ts
+  accountability?: TrackRecord;      // from lib/accountability.ts (Civic data only)
   money?: Money;                   // from lib/money.ts (FEC, federal only)
 };
 
 // A cause pill: keyword match in the candidate's verbatim campaign themes, with the sentence that matched.
 export type Cause = { id: string; label: string; mentions: number; quote: string; match?: string; source: Source };
 
+/** One said-vs-did pair (Civic accountability.json, method at /methodology/accountability). */
 export type AccountabilityRecord = {
-  promise: string;
-  promiseSource: Source;
-  record: string | "no record found";
-  recordSource?: Source;
-  status: "kept" | "broken" | "in progress" | "unclear" | "no record found";
+  issue: string;
+  said: { quote: string; url: string; date: string | null };
+  did: { text: string; bill?: string | null; vote?: string | null; url: string; date: string | null };
+  classification: "consistent" | "inconsistent" | "mixed/unclear";
+  reason: string;
 };
+/** Track-record summary. score only when consistent + inconsistent >= 3; else display is "Not enough records" or "No voting record". */
+export type TrackRecord = { display: string; score: number | null; consistent: number; inconsistent: number; mixedUnclear: number; pairs: AccountabilityRecord[]; asOf: string; offices: string[] | null };
 
 export type Race = {
   id: string;                       // e.g. "tx-35", "tx-governor", "ca-prop-40"

@@ -51,7 +51,7 @@ One request, one bounded tool loop, streamed back to the browser as NDJSON (`app
 | `getMarketOdds` | Live Polymarket / Kalshi prices per contest, or "no market found" | Polymarket, Kalshi (cached snapshot fallback) |
 | `getLocalProblems` | 3 local problems: rent burden, uninsured rate, unemployment | Census ACS 2024 5-year |
 | `getTurnout` | County turnout, eligible non-voters, what one ballot counts for (demo ZIPs) | Texas and California Secretary of State, Census Reporter |
-| `getAccountability` | Said vs. did for 7 incumbents, both sides sourced, plus a kept rate | Official records (clerk.house.gov, state offices) and news coverage |
+| `getAccountability` | Track record: said-vs-did pairs marked consistent, inconsistent or mixed/unclear; a score only with 3+ checkable pairs | Civic accountability.json; official records only (method at /methodology/accountability) |
 
 **Loop steps**
 1. The ZIP is normalized to 5 digits. If it isn't covered, the stream returns `unsupported` and stops.

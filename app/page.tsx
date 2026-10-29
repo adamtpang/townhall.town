@@ -13,10 +13,9 @@ export default function Home() {
         <section className="pb-10 pt-12 sm:pt-40">
           <p className="mb-6 text-sm font-[530] text-black/60">Nov 3, 2026 · Austin · San Francisco · New York</p>
           <h1 className="font-serif text-[clamp(48px,7vw,120px)] leading-[0.98] tracking-[-0.02em] text-black [text-wrap:balance]">
-            <span className="block">Don&rsquo;t know who to vote for?</span>
-            <span className="block">Towny tells you who, when and where.</span>
+            Know your ballot in 2 minutes.
           </h1>
-          <p className="mt-6 max-w-[40ch] text-xl font-[450] text-black/60">Your ballot, explained in 2 minutes. Sourced and nonpartisan.</p>
+          <p className="mt-6 max-w-[36ch] text-xl leading-7 font-[450] text-black/60">Who&rsquo;s running, when to vote, where to go. Sourced and nonpartisan.</p>
         </section>
         <BallotAgent />
         <div className="mt-32">

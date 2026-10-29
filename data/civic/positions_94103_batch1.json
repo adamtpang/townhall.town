@@ -1,0 +1,1785 @@
+{
+ "stances": {
+  "connie-chan": {
+   "name": "Connie Chan",
+   "housing": {
+    "value": 4,
+    "quote": "Expand federal programs to build housing for working people",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 5,
+    "quote": "Connie Chan supports Medicare for All which guarantees that every American has a right to health care, everyone is covered, and the health care system is no longer driven by insurance companies.",
+    "sourceUrl": "https://ballotpedia.org/Connie_Chan",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "wages": {
+    "value": 4,
+    "quote": "work in solidarity with organized labor to raise the national minimum wage and secure fair wages for all workers",
+    "sourceUrl": "https://ballotpedia.org/Connie_Chan",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "require billionaires and big corporations to pay their fair share",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Connie_Chan"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Connie_Chan"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Connie_Chan"
+    ]
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "supports creating a pathway to citizenship, protecting and reaffirming birthright citizenship, and protecting San Francisco as a sanctuary city.",
+    "sourceUrl": "https://ballotpedia.org/Connie_Chan",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Connie_Chan"
+    ]
+   }
+  },
+  "scott-wiener": {
+   "name": "Scott Wiener",
+   "housing": {
+    "value": 4,
+    "quote": "In Congress, I'll pass national legislation to make housing affordable for working people",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 5,
+    "quote": "Scott is a leader in expanding access to health care — including creation of a Medicare for All single payer system of universal coverage",
+    "sourceUrl": "https://ballotpedia.org/Scott_Wiener",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Scott_Wiener"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Scott_Wiener"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Scott_Wiener"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Scott_Wiener"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Scott_Wiener"
+    ]
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "ICE has become a terror organization. We must abolish ICE and hold officials and agents accountable for lawless behavior.",
+    "sourceUrl": "https://ballotpedia.org/Scott_Wiener",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "Increase federal investment in public transit",
+    "sourceUrl": "https://ballotpedia.org/Scott_Wiener",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   }
+  },
+  "xavier-becerra": {
+   "name": "Xavier Becerra",
+   "housing": {
+    "value": 4,
+    "quote": "My administration will pursue zoning reform, expand by-right approvals near jobs and transit, and improve the laws allowing entry-level ownership options like duplexes and small condos.",
+    "sourceUrl": "https://www.xavierbecerra2026.com/priorities/housing/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "healthcare": {
+    "value": 5,
+    "quote": "We need to protect coverage for every Californian today while building toward a system where universal access is not a promise deferred but a guarantee delivered.",
+    "sourceUrl": "https://www.xavierbecerra2026.com/priorities/health-care/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/governor-candidate-statements.htm",
+     "https://ballotpedia.org/Xavier_Becerra",
+     "https://xavierbecerra2026.com/",
+     "https://www.xavierbecerra2026.com/priorities/",
+     "https://www.xavierbecerra2026.com/priorities/economy-and-affordability/",
+     "https://www.xavierbecerra2026.com/priorities/homelessness/"
+    ]
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "much of this ballot gives us something to build with — housing that people can afford, permanent funding for schools and health care, and a stronger rainy day fund, all without raising taxes on working Californians",
+    "sourceUrl": "https://www.xavierbecerra2026.com/2026/07/31/becerra-announces-positions-on-key-november-ballot-measures/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign press release Jul 31 2026: YES on Prop 3 (makes permanent the high-earner income tax rates funding schools/health care), NO on Prop 40 one-time wealth tax. Mild/mixed, hence +2."
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/governor-candidate-statements.htm",
+     "https://ballotpedia.org/Xavier_Becerra",
+     "https://xavierbecerra2026.com/",
+     "https://www.xavierbecerra2026.com/priorities/",
+     "https://www.xavierbecerra2026.com/priorities/economy-and-affordability/",
+     "https://www.xavierbecerra2026.com/priorities/homelessness/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/governor-candidate-statements.htm",
+     "https://ballotpedia.org/Xavier_Becerra",
+     "https://xavierbecerra2026.com/",
+     "https://www.xavierbecerra2026.com/priorities/",
+     "https://www.xavierbecerra2026.com/priorities/economy-and-affordability/",
+     "https://www.xavierbecerra2026.com/priorities/homelessness/"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "California’s clean-energy transition is necessary and urgent",
+    "sourceUrl": "https://www.xavierbecerra2026.com/priorities/energy-utilities/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "immigration": {
+    "value": -2,
+    "quote": "When Trump and his administration threaten access to healthcare, affordable housing, fair wages, or protections for immigrants and marginalized communities, the state has a responsibility to step in and fight.",
+    "sourceUrl": "https://www.xavierbecerra2026.com/priorities/fighting-donald-trump/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I will fight for major investments in wildfire prevention, flood control, and seismic retrofits",
+    "sourceUrl": "https://www.xavierbecerra2026.com/priorities/california-disaster-preparedness-resilience/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "steve-hilton": {
+   "name": "Steve Hilton",
+   "housing": {
+    "value": 3,
+    "quote": "We have plenty of space to build the homes people want, and I will work to sweep away the ridiculous bureaucratic obstacles to getting it done.",
+    "sourceUrl": "https://ballotpedia.org/Steve_Hilton",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "healthcare": {
+    "value": -3,
+    "quote": "California does not lack healthcare spending. It lacks a system that treats the patient as the customer.",
+    "sourceUrl": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official campaign policy page; favors patient-controlled accounts, Medi-Cal work requirements and market cost reforms over more government spending. Text via WebFetch (JS-rendered)."
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/governor-candidate-statements.htm",
+     "https://ballotpedia.org/Steve_Hilton",
+     "https://stevehiltonforgovernor.com/",
+     "https://stevehiltonforgovernor.com/policies"
+    ]
+   },
+   "safety": {
+    "value": 4,
+    "quote": "People need to know that if they commit a crime they will be caught, prosecuted and convicted.",
+    "sourceUrl": "https://ballotpedia.org/Steve_Hilton",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "education": {
+    "value": 3,
+    "quote": "protecting (and, where parents want them, expanding) charter schools, and over time introducing school choice.",
+    "sourceUrl": "https://ballotpedia.org/Steve_Hilton",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "energy": {
+    "value": -5,
+    "quote": "Additional deregulation measures, including immediate steps to increase California oil production",
+    "sourceUrl": "https://stevehiltonforgovernor.com/policies/3-dollar-gas",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official campaign site policy page; also proposes suspending the LCFS and cap-and-trade fees on gasoline. Text captured via WebFetch (JS-rendered page)."
+   },
+   "immigration": {
+    "value": 3,
+    "quote": "We need to get back to the basic principle that we should enforce the law — whether it’s on homelessness, open air drug markets, shoplifting, illegal immigration or violent crime.",
+    "sourceUrl": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign website text quoted verbatim by Ballotpedia (Apr 8, 2026)"
+   },
+   "infrastructure": {
+    "value": -3,
+    "quote": "Cancel state funding for high-speed rail.",
+    "sourceUrl": "https://stevehiltonforgovernor.com/policies/cut-state-spending-below-300-billion",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official campaign policy page (Cut State Spending Below $300 Billion). Text via WebFetch (JS-rendered)."
+   }
+  },
+  "fiona-ma": {
+   "name": "Fiona Ma",
+   "housing": {
+    "value": 3,
+    "quote": "As State Treasurer, I financed a record number of affordable housing units, expanded down-payment assistance for first-time homebuyers",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com"
+    ]
+   },
+   "energy": {
+    "value": 2,
+    "quote": "I am also focused on protecting California’s coast and environment from pollution and long term damage so future generations inherit a healthy state.",
+    "sourceUrl": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Ballotpedia Candidate Connection survey, 2026"
+   },
+   "immigration": {
+    "value": -2,
+    "quote": "I am dedicated to protecting immigrant communities from fear and discrimination and ensuring dignity and fairness.",
+    "sourceUrl": "https://ballotpedia.org/Fiona_Ma",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Fiona_Ma",
+     "https://fionama.com"
+    ]
+   }
+  },
+  "gloria-j-romero": {
+   "name": "Gloria J. Romero",
+   "housing": {
+    "value": 2,
+    "quote": "I will work with our Governor to review the necessity of many of our laws and regulations, which have created hardships in homebuilding, driving up the cost of living and decreasing homeownership rates.",
+    "sourceUrl": "https://ballotpedia.org/Gloria_J._Romero#Campaign_themes",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Ballotpedia Candidate Connection survey, 2026"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com"
+    ]
+   },
+   "taxes": {
+    "value": -2,
+    "quote": "California’s budget is bloated with bureaucracy and waste.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com"
+    ]
+   },
+   "education": {
+    "value": 4,
+    "quote": "authored landmark school-choice reforms to give parents and students trapped in failing schools real opportunities",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "energy": {
+    "value": -3,
+    "quote": "Gloria will also work with federal partners to safely provide for uncovering untapped energy reserves.",
+    "sourceUrl": "https://gloriajromero.com",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+     "https://ballotpedia.org/Gloria_J._Romero",
+     "https://gloriajromero.com"
+    ]
+   }
+  },
+  "rob-bonta": {
+   "name": "Rob Bonta",
+   "housing": {
+    "value": 4,
+    "quote": "Like every other city in California, Huntington Beach has a legal obligation to build its fair share of housing.",
+    "sourceUrl": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-celebrates-denial-en-banc-review-huntington-beach%E2%80%99s",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official AG press release, April 21, 2025"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "Attorney General Bonta believes health care is a human right. He is defending Obamacare and California’s health care expansions from GOP legal attacks.",
+    "sourceUrl": "https://robbonta.com/issues/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Rob_Bonta",
+     "https://robbonta.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Rob_Bonta",
+     "https://robbonta.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Rob_Bonta",
+     "https://robbonta.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Rob_Bonta",
+     "https://robbonta.com/"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "ensuring California remains a global leader in the fight against climate change.",
+    "sourceUrl": "https://robbonta.com/issues/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "we will not divert vital public safety resources for federal immigration enforcement",
+    "sourceUrl": "https://oag.ca.gov/news/press-releases/preparation-new-threats-california%E2%80%99s-immigrant-communities-attorney-general",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official AG press release, Jan 17, 2025 (SB 54 guidance)"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Rob_Bonta",
+     "https://robbonta.com/"
+    ]
+   }
+  },
+  "michael-gates": {
+   "name": "Michael Gates",
+   "housing": {
+    "value": -3,
+    "quote": "Push back against state mandates that override local plans and voter-approved city charters",
+    "sourceUrl": "https://www.gates4ag.com/issues",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/"
+    ]
+   },
+   "safety": {
+    "value": 4,
+    "quote": "As Attorney General, he will prosecute violent criminals, combat fentanyl trafficking and organized retail theft, and ensure laws are enforced fairly and consistently",
+    "sourceUrl": "https://ballotpedia.org/Michael_Gates_(California)",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/"
+    ]
+   },
+   "immigration": {
+    "value": 4,
+    "quote": "It's very obstructive, this sanctuary state law, and it prevents good, sound law enforcement practices.",
+    "sourceUrl": "https://www.foxnews.com/us/non-sanctuary-coastal-enclave-sues-california-right-enforce-own-laws",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Direct quote to Fox News, Jan 2025, as Huntington Beach City Attorney suing over SB 54"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+     "https://ballotpedia.org/Michael_Gates_(California)",
+     "https://www.gates4ag.com/"
+    ]
+   }
+  },
+  "shirley-weber": {
+   "name": "Shirley Weber",
+   "housing": {
+    "value": 3,
+    "quote": "AB 1482 Chiu Concurrence in Senate Amendments ... For",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201920200ab1482",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR AB 1482 (Tenant Protection Act, statewide rent cap), Sep 11, 2019"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Shirley_Weber",
+     "https://drshirleyweber.com/"
+    ]
+   },
+   "wages": {
+    "value": 4,
+    "quote": "SB 3 Leno Senate Third Reading By HERNÁNDEZ ... For",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 3 ($15 statewide minimum wage), Mar 31, 2016"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 1 (gas tax and vehicle fee increase for road repair), Apr 6, 2017"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Shirley_Weber",
+     "https://drshirleyweber.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Shirley_Weber",
+     "https://drshirleyweber.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Shirley_Weber",
+     "https://drshirleyweber.com/"
+    ]
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "SB 54 De León Senate Third Reading By GONZALEZ FLETCHER ... Sep 15, 2017 ... For (51) ... Shirley Weber",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb54",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 54 (California Values Act, limits state/local cooperation with federal immigration enforcement), Sep 15, 2017"
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 1 (Road Repair and Accountability Act, ~$5B/yr transportation funding), Apr 6, 2017"
+   }
+  },
+  "donald-p-wagner": {
+   "name": "Donald P. Wagner",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/"
+    ]
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "The liberal tax and spend crowd in Sacramento needs to understand that no society has ever taxed its way to prosperity.",
+    "sourceUrl": "https://ballotpedia.org/Donald_P._Wagner",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/"
+    ]
+   },
+   "immigration": {
+    "value": 4,
+    "quote": "I'll fight for our communities by working to put a stop to illegal immigration.",
+    "sourceUrl": "https://ballotpedia.org/Donald_P._Wagner",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/sos-candidate-statements.htm",
+     "https://ballotpedia.org/Donald_P._Wagner",
+     "https://wagnerforcalifornia.com/"
+    ]
+   }
+  },
+  "malia-cohen": {
+   "name": "Malia Cohen",
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+     "https://ballotpedia.org/Malia_Cohen"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+     "https://ballotpedia.org/Malia_Cohen"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+     "https://ballotpedia.org/Malia_Cohen"
+    ]
+   },
+   "energy": {
+    "value": 4,
+    "quote": "Building a better future for all in California requires continued action on climate change and reducing our greenhouse gas emissions.",
+    "sourceUrl": "https://maliacohenforca.com/issues/acting-to-protect-our-planet",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+     "https://ballotpedia.org/Malia_Cohen"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+     "https://ballotpedia.org/Malia_Cohen"
+    ]
+   }
+  },
+  "herb-morgan": {
+   "name": "Herb Morgan",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+     "https://ballotpedia.org/Herb_Morgan",
+     "https://www.herbmorgan.com/"
+    ]
+   },
+   "healthcare": {
+    "value": -3,
+    "quote": "Medicaid and Medicare should remain available, but no other taxpayer-funded programs are necessary. ... C",
+    "sourceUrl": "https://ivoterguide.com/candidate/91093/race/30575/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026; candidate selected option C"
+   },
+   "wages": {
+    "value": -4,
+    "quote": "The best way to raise wages is through a thriving economy and competitive labor markets — not government mandates. Artificially forcing wages higher increases costs, reduces hiring, and destroys jobs",
+    "sourceUrl": "https://ivoterguide.com/candidate/91093/race/30575/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026"
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "My commitment remains restoring the California Dream through competent governance, lower taxes, and restored fiscal responsibility.",
+    "sourceUrl": "https://www.herbmorgan.com/post/statement-california-s-budget-isn-t-balanced-taxpayers-deserve-the-truth",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "The primary goal of the criminal justice system must be public protection first, followed by justice. ... ensuring swift, certain punishment for those who violate the law",
+    "sourceUrl": "https://ivoterguide.com/candidate/91093/race/30575/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+     "https://ballotpedia.org/Herb_Morgan",
+     "https://www.herbmorgan.com/"
+    ]
+   },
+   "energy": {
+    "value": -4,
+    "quote": "Man-made climate change is a global threat and requires urgent political action. ... Strongly Disagree ... What do you believe is the most reliable energy source that will supply the growing demand for electricity? ... Natural Gas",
+    "sourceUrl": "https://ivoterguide.com/candidate/91093/race/30575/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026; candidate's selected answers"
+   },
+   "immigration": {
+    "value": 3,
+    "quote": "I support the existence of sanctuary cities to protect undocumented persons. ... Strongly Disagree",
+    "sourceUrl": "https://ivoterguide.com/candidate/91093/race/30575/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026; candidate's selected answer"
+   },
+   "infrastructure": {
+    "value": -2,
+    "quote": "As State Controller, I will not rubber-stamp payments for a project that fails to meet the legal safeguards voters demanded ... If the project no longer complies with Proposition 1A, the money stops.",
+    "sourceUrl": "https://www.herbmorgan.com/post/california-high-speed-rail-payments-halt-proposition-1a",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign press release May 26, 2026: pledge to halt High-Speed Rail disbursements pending Prop 1A compliance (conditional, so mild)"
+   }
+  },
+  "eleni-kounalakis": {
+   "name": "Eleni Kounalakis",
+   "healthcare": {
+    "value": 2,
+    "quote": "As Treasurer, I will build more affordable housing through public finance; invest in the financial future of children and families, defend health care and immigrant communities",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official CA SOS Voter Information Guide candidate statement, General 2026 (mild: 'defend health care')"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Eleni_Kounalakis",
+     "https://eleniforca.com/"
+    ]
+   }
+  },
+  "jennifer-hawks": {
+   "name": "Jennifer Hawks",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Jennifer_Hawks",
+     "https://HawksForUs.com"
+    ]
+   },
+   "healthcare": {
+    "value": 2,
+    "quote": "B) Healthcare insurance funded by the government should be available for all who want it, along with private healthcare options.",
+    "sourceUrl": "https://ivoterguide.com/candidate/92338/race/30576/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026; candidate's selected option B (of A-D)"
+   },
+   "wages": {
+    "value": -3,
+    "quote": "I believe California’s minimum wage has become too high, especially for small businesses that are already struggling with some of the highest costs in the country.",
+    "sourceUrl": "https://ivoterguide.com/candidate/92338/race/30576/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026"
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Jennifer_Hawks",
+     "https://HawksForUs.com"
+    ]
+   },
+   "safety": {
+    "value": 4,
+    "quote": "The first goal of our criminal justice system should be to protect law-abiding citizens and keep our communities safe. You break the law, you pay the price, period.",
+    "sourceUrl": "https://ivoterguide.com/candidate/92338/race/30576/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/treasurer-candidate-statements.htm",
+     "https://ballotpedia.org/Jennifer_Hawks",
+     "https://HawksForUs.com"
+    ]
+   },
+   "energy": {
+    "value": -3,
+    "quote": "Man-made climate change is a global threat and requires urgent political action. ... Disagree ... Natural Gas – Abundant in the U.S., dependable, and able to provide power when demand increases. ... Hydroelectric Power, Oil and Coal",
+    "sourceUrl": "https://ivoterguide.com/candidate/92338/race/30576/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026"
+   },
+   "immigration": {
+    "value": 4,
+    "quote": "I support the existence of sanctuary cities to protect undocumented persons. ... Strongly Disagree ... It is destroying our nation",
+    "sourceUrl": "https://ivoterguide.com/candidate/92338/race/30576/election/1454",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "iVoterGuide candidate questionnaire (candidate's own answers; iVoterGuide is a conservative advocacy guide), 2026"
+   },
+   "infrastructure": {
+    "value": -2,
+    "quote": "We already have more than 70 billion dollars in bond debt -- we can't let Sacramento spend even more on its unfinished projects.",
+    "sourceUrl": "https://ballotpedia.org/Jennifer_Hawks",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   }
+  },
+  "ben-allen": {
+   "name": "Ben Allen",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/"
+    ]
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "Senate 3rd Reading SB562 Lara et al. ... For",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb562",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Recorded vote (CA Senate, via CalMatters Digital Democracy): FOR SB 562 (Healthy California Act, single-payer health care), Jun 1, 2017. Pre-2024; no newer health-coverage statement found yet"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/"
+    ]
+   },
+   "energy": {
+    "value": 4,
+    "quote": "I’m passionate about tackling climate change, especially because of what it means for my kids and the kind of future they’re going to inherit.",
+    "sourceUrl": "https://ballotpedia.org/Ben_Allen",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Ben_Allen",
+     "https://www.benallenca.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I’ve passed laws holding polluters accountable and investing in wildfire prevention, water infrastructure, and resilience",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   }
+  },
+  "jane-kim": {
+   "name": "Jane Kim",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "a public system would address climate disaster instead of avoiding it ... It could require the worst corporate polluters to pay into the system, connecting the source of climate risk to its costs.",
+    "sourceUrl": "https://janekim.org/issues/lowercosts",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign site policy page, 2026"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/insurance-commissioner-candidate-statements.htm",
+     "https://ballotpedia.org/Jane_Kim",
+     "https://www.janekim.org/"
+    ]
+   }
+  },
+  "richard-barrera": {
+   "name": "Richard Barrera",
+   "healthcare": {
+    "value": 3,
+    "quote": "We need to expand access to school counselors, physical, and mental health services so students can get the support they need when they need it.",
+    "sourceUrl": "https://barreraforedu.com/priorities",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign site priorities, 2026"
+   },
+   "wages": {
+    "value": 4,
+    "quote": "I led the campaign that won a higher minimum wage and paid sick days for 200,000 workers",
+    "sourceUrl": "https://ballotpedia.org/Richard_Barrera",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Ballotpedia Candidate Connection survey, 2026 (record as labor council leader)"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "That means leading a statewide effort to increase education funding and reinvest California’s wealth into its public schools",
+    "sourceUrl": "https://www.barreraforedu.com/priorities",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Richard_Barrera",
+     "https://www.barreraforedu.com/"
+    ]
+   },
+   "education": {
+    "value": -4,
+    "quote": "It only goes to families who are already in private schools. And what the research shows is when that happens, we actually see declines in student achievement across the board, as compared to our experience in San Diego, that when we invest in public schools, we see growth and high performance",
+    "sourceUrl": "https://www.cbs8.com/article/news/education/san-diego-unified-leader-testifies-dc-funds-slams-immigration-enforcement/509-4fe1c9e5-42b0-4c4b-bd7c-3b239f326b9c",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "CBS8 (KFMB) news, Jul 23, 2025: Barrera on federal private-school tax credits/vouchers. Verified via WebFetch (curl blocked)"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Richard_Barrera",
+     "https://www.barreraforedu.com/"
+    ]
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "It's time for us to organize, stand up to Trump, abolish ICE and create the schools our students are worthy of",
+    "sourceUrl": "https://www.yahoo.com/news/politics/articles/union-power-vs-maga-politics-100000162.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "LA Times (syndicated on Yahoo), Sep 14, 2026: quote from Barrera's CA Democratic Party convention speech. Replaces round2 immigration -3 with a stronger explicit statement"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Richard_Barrera",
+     "https://www.barreraforedu.com/"
+    ]
+   }
+  },
+  "sonja-shaw": {
+   "name": "Sonja Shaw",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com"
+    ]
+   },
+   "taxes": {
+    "value": -2,
+    "quote": "cut wasteful bureaucracy; and demand fiscal transparency to ensure money reaches classrooms where it belongs",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com"
+    ]
+   },
+   "education": {
+    "value": 4,
+    "quote": "the money should follow the child",
+    "sourceUrl": "https://www.jns.org/news/u-s-news/ethnic-studies-a-gateway-to-jew-hatred-california-superintendent-candidate-says",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "carried over from positions_round2.json (re-verified quote)"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+     "https://ballotpedia.org/Sonja_Shaw_(California)",
+     "https://www.shawforca.com"
+    ]
+   }
+  },
+  "matt-haney": {
+   "name": "Matt Haney",
+   "housing": {
+    "value": 4,
+    "quote": "I am fighting every day to reduce homelessness, build housing, reduce the cost of living",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "defend access to health care for all",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "Proposed first-in-nation tax on private immigration detention corporations",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   }
+  },
+  "manuel-noris-barrera": {
+   "name": "Manuel Noris-Barrera",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   },
+   "taxes": {
+    "value": -1,
+    "quote": "Wasteful spending is rampant, and taxpayers are footing the bill for inefficiency and mismanagement",
+    "sourceUrl": "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 5 2024 (AD17), candidate's own statement, right column (PDF text via pdftotext). Mild: criticizes wasteful spending; no specific tax position. 2024 statement; no 2026 statement filed (write-in)."
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://ballotpedia.org/Manuel_Noris-Barrera",
+     "https://voterist.com/candidate/manuel-noris-barrera",
+     "https://manuelnoris.com/platform",
+     "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf"
+    ]
+   }
+  },
+  "sally-j-lieber": {
+   "name": "Sally J. Lieber",
+   "housing": {
+    "value": 4,
+    "quote": "We must work to resolve these hurdles and to ensure that housing production, connected to services and transit, is a top priority",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/sally-lieber/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF BOE questionnaire 2026, candidate's own written answers (June 2026 primary)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/june-2026/sally-lieber/"
+    ]
+   },
+   "wages": {
+    "value": 3,
+    "quote": "I authored legislation to raise the statewide minimum wage",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official CA SOS Voter Information Guide candidate statement, Nov 2026; past Assembly record cited in 2026 statement"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "I do not accept contributions from corporate PACs and will always insist that wealthy interests pay what they owe",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official CA SOS Voter Information Guide candidate statement, Nov 2026"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/june-2026/sally-lieber/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/june-2026/sally-lieber/"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "protect our coast and the San Francisco Bay, expand renewable energy",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official CA SOS Voter Information Guide candidate statement, Nov 2026; past Assembly record cited in 2026 statement"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/june-2026/sally-lieber/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/june-2026/sally-lieber/"
+    ]
+   }
+  },
+  "john-pimentel": {
+   "name": "John Pimentel",
+   "housing": {
+    "value": 3,
+    "quote": "unlock housing near jobs and transit, coordinate infrastructure funding, and remove duplicative delays",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF BOE questionnaire 2026, candidate's own written answers"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/"
+    ]
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "Aggressively oppose broad tax increases like the SEIU/Lieber sponsored",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF BOE questionnaire 2026, candidate's own written answers; he also supports closing narrow loopholes for wealthy/corporations and ending sales tax on prepared food, so held at -3"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/"
+    ]
+   },
+   "energy": {
+    "value": 2,
+    "quote": "encourage an appropriately-paced, consistent transition to clean energy by enabling a fair return to investors so private sector investments will occur",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF BOE questionnaire 2026, candidate's own written answers"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://voterguide.sos.ca.gov/candidates/boe-candidate-statements.htm",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/"
+    ]
+   },
+   "infrastructure": {
+    "value": 2,
+    "quote": "eliminate regulations that discourage new housing construction and investment in necessary utility and transportation infrastructure",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/john-pimentel/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF BOE questionnaire 2026, candidate's own written answers"
+   }
+  }
+ }
+}

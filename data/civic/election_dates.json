@@ -1,0 +1,184 @@
+{
+  "builtAt": "2026-10-29T17:05:00-05:00",
+  "note": "Official sources only (county/city election offices and state election officials). null = not found in an official source. All times local to the jurisdiction. openOnOct30 = whether an eligible unregistered person can still register AND vote in this election on Fri Oct 30, 2026.",
+  "jurisdictions": {
+    "78701": {
+      "name": "Travis County, TX",
+      "timezone": "America/Chicago",
+      "earlyVoting": {
+        "start": "2026-10-19",
+        "end": "2026-10-30",
+        "hours": "7:00 AM-7:00 PM daily (Monday-Sunday), Oct 19-30; select sites extended to 7:00 AM-10:00 PM on Thu Oct 29 and Fri Oct 30",
+        "dailyHours": [
+          {"dates": "2026-10-19 to 2026-10-28", "hours": "7:00 AM-7:00 PM", "appliesTo": "all early voting sites"},
+          {"dates": "2026-10-29 to 2026-10-30", "hours": "7:00 AM-10:00 PM", "appliesTo": "extended-hours sites only (marked * on the county list): Ben Hur Shrine Center, Lakeway Activity Center, Millennium Youth Entertainment Complex, PfISD Rock Gym, Randalls Brodie, Travis County Clerk (5501 Airport Blvd), UT Texas Union"},
+          {"dates": "2026-10-29 to 2026-10-30", "hours": "7:00 AM-7:00 PM", "appliesTo": "all other early voting sites"},
+          {"dates": "2026-10-30", "hours": "unsure (not stated separately)", "appliesTo": "TCC Complex (3614 Bill Price Rd, Del Valle) is an early voting site on Fri Oct 30 only"}
+        ],
+        "anySite": true,
+        "anySiteNote": "You may vote at any polling site in Travis County.",
+        "mainLocation": "Travis County Clerk's Office, 5501 Airport Blvd, Austin, TX 78751",
+        "locationsIn78701": [
+          "Austin City Hall, Media Room 1034, 301 W 2nd St",
+          "Austin Recreation Center, Dance Studio, 1301 Shoal Creek Blvd",
+          "Travis County Civil and Family Courts Facility, Conference Room, 1700 Guadalupe St"
+        ],
+        "locationsUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf",
+        "status": "Ends Fri Oct 30, 2026 (last day)",
+        "sourceUrl": "https://votetravis.gov/current-election-information/current-election/",
+        "sourceUrls": [
+          "https://votetravis.gov/current-election-information/current-election/",
+          "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf",
+          "https://services.austintexas.gov/edims/document.cfm?id=482453"
+        ]
+      },
+      "registration": {
+        "deadline": "2026-10-05",
+        "openOnOct30": false,
+        "notes": "Texas has no same-day registration; the Oct 5 deadline has passed. A voter who moved from another Texas county and is still registered there may be eligible for a 'limited ballot', available only during early voting (through Oct 30) at 5501 Airport Blvd; call (512) 238-8683 to confirm eligibility.",
+        "sourceUrl": "https://votetravis.gov/current-election-information/current-election/"
+      },
+      "mail": {
+        "eligibility": "Texas ballot by mail is limited to eligible voters (e.g., 65+, disabled, absent from the county, etc.).",
+        "requestDeadline": "2026-10-23",
+        "requestDeadlineRule": "Application must be received (not postmarked) by close of business or 12 noon, whichever is later, on Fri Oct 23, 2026.",
+        "returnDeadline": "2026-11-03",
+        "returnRule": "Postmark + receipt: USPS ballots must be postmarked by 7:00 PM on Election Day (Nov 3) and received by 5:00 PM on the next business day (Wed Nov 4, 2026). If no postmark, must be received by 7:00 PM Nov 3. Common/contract carrier: received by 7:00 PM Nov 3 (or by 5:00 PM next day if carrier receipt mark shows before 7:00 PM Nov 3). In-person hand delivery by the voter only, with ID, at 5501 Airport Blvd on Election Day only, 7:00 AM-7:00 PM.",
+        "postmarkedBy": "2026-11-03T19:00",
+        "receivedBy": "2026-11-04T17:00",
+        "sourceUrl": "https://votetravis.gov/voter-information/ballot-by-mail/"
+      },
+      "electionDay": {
+        "date": "2026-11-03",
+        "hours": "7:00 AM-7:00 PM",
+        "anySite": true,
+        "locationsUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf",
+        "sourceUrl": "https://votetravis.gov/current-election-information/current-election/"
+      }
+    },
+    "94103": {
+      "name": "City and County of San Francisco, CA",
+      "timezone": "America/Los_Angeles",
+      "earlyVoting": {
+        "start": "2026-10-05",
+        "end": "2026-11-03",
+        "hours": "Weekdays 8:00 AM-5:00 PM (closed Mon Oct 12 holiday); weekends Oct 24-25 and Oct 31-Nov 1 10:00 AM-4:00 PM; Election Day 7:00 AM-8:00 PM",
+        "dailyHours": [
+          {"dates": "2026-10-05 to 2026-11-02 (weekdays)", "hours": "8:00 AM-5:00 PM", "appliesTo": "City Hall Voting Center; closed 2026-10-12"},
+          {"dates": "2026-10-24, 2026-10-25, 2026-10-31, 2026-11-01", "hours": "10:00 AM-4:00 PM", "appliesTo": "City Hall Voting Center (weekend entry via Grove Street)"},
+          {"dates": "2026-11-03", "hours": "7:00 AM-8:00 PM", "appliesTo": "City Hall Voting Center and all 501 polling places"}
+        ],
+        "mainLocation": "City Hall Voting Center, ground floor of City Hall in front of Room 48, 1 Dr. Carlton B. Goodlett Place, San Francisco, CA 94102",
+        "otherLocations": "Only the City Hall Voting Center is listed for in-person voting before Election Day. 37 official ballot drop boxes in SF from Oct 5 through Election Day.",
+        "locationsUrl": "https://www.sf.gov/location--city-hall-voting-center",
+        "status": "Ongoing through Election Day",
+        "sourceUrl": "https://www.sf.gov/november-3-2026-consolidated-general-election",
+        "sourceUrls": [
+          "https://www.sf.gov/november-3-2026-consolidated-general-election",
+          "https://www.sf.gov/vote-in-person",
+          "https://www.sf.gov/news-the-department-of-elections-opens-the-city-hall-voting-center-on-the-two-weekends-before-election-day"
+        ]
+      },
+      "registration": {
+        "deadline": "2026-10-19",
+        "deadlineMeaning": "Regular deadline (15 days before) to register and be mailed a ballot",
+        "openOnOct30": true,
+        "notes": "Same-day (conditional) voter registration: eligible residents can still register and vote in person at the City Hall Voting Center through Nov 3 (Fri Oct 30 hours: 8:00 AM-5:00 PM) or at any SF polling place on Election Day. Ballots are counted once the county verifies the registration. Eligible non-citizen residents can also register and vote in the Board of Education contest only.",
+        "sourceUrl": "https://www.sf.gov/same-day-voter-registration",
+        "sourceUrls": [
+          "https://www.sf.gov/same-day-voter-registration",
+          "https://www.sf.gov/november-3-2026-consolidated-general-election",
+          "https://www.sos.ca.gov/elections/voter-registration/same-day-reg"
+        ]
+      },
+      "mail": {
+        "eligibility": "Every registered California voter is mailed a ballot (mailed to SF voters in early October).",
+        "requestDeadline": "2026-10-27",
+        "requestDeadlineRule": "No application needed. Replacement ballot requests: contact the Department or use the Voter Portal at least 7 days before Election Day (by Tue Oct 27, 2026); after that, vote in person.",
+        "returnDeadline": "2026-11-03",
+        "returnRule": "Postmark + receipt: mailed ballots must be postmarked on or before Nov 3 and received no later than 7 days after Election Day (Tue Nov 10, 2026). Or drop off at any California drop box, polling place, vote center, or county elections office by 8:00 PM Nov 3. Postage-paid envelope.",
+        "postmarkedBy": "2026-11-03",
+        "receivedBy": "2026-11-10",
+        "sourceUrl": "https://www.sf.gov/november-3-2026-consolidated-general-election",
+        "sourceUrls": [
+          "https://www.sf.gov/november-3-2026-consolidated-general-election",
+          "https://www.sf.gov/vote-mail",
+          "https://www.sos.ca.gov/elections/voter-registration/vote-mail"
+        ]
+      },
+      "electionDay": {
+        "date": "2026-11-03",
+        "hours": "7:00 AM-8:00 PM",
+        "anySite": false,
+        "anySiteNote": "501 polling places; voters have an assigned polling place (back cover of Voter Information Pamphlet / Voter Portal). Same-day registrants can register and vote at any SF polling place.",
+        "locationsUrl": "https://www.sf.gov/vote-in-person",
+        "sourceUrl": "https://www.sf.gov/november-3-2026-consolidated-general-election"
+      }
+    },
+    "10001": {
+      "name": "New York County (Manhattan), New York City, NY",
+      "timezone": "America/New_York",
+      "earlyVoting": {
+        "start": "2026-10-24",
+        "end": "2026-11-01",
+        "hours": "Varies by day (see dailyHours)",
+        "dailyHours": [
+          {"date": "2026-10-24", "day": "Sat", "hours": "9:00 AM-5:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-1"},
+          {"date": "2026-10-25", "day": "Sun", "hours": "9:00 AM-5:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-2"},
+          {"date": "2026-10-26", "day": "Mon", "hours": "9:00 AM-5:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-3"},
+          {"date": "2026-10-27", "day": "Tue", "hours": "10:00 AM-8:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-4"},
+          {"date": "2026-10-28", "day": "Wed", "hours": "10:00 AM-8:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-5"},
+          {"date": "2026-10-29", "day": "Thu", "hours": "8:00 AM-4:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-6"},
+          {"date": "2026-10-30", "day": "Fri", "hours": "9:00 AM-5:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-7"},
+          {"date": "2026-10-31", "day": "Sat", "hours": "9:00 AM-5:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-8"},
+          {"date": "2026-11-01", "day": "Sun", "hours": "9:00 AM-5:00 PM", "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-9"}
+        ],
+        "anySite": false,
+        "anySiteNote": "NYC voters are assigned an early voting site, which may differ from their Election Day poll site. Look it up by address.",
+        "locationsUrl": "https://findmypollsite.vote.nyc/",
+        "mainLocation": "Manhattan borough office (mail ballot applications/drop-off, not an early voting site): 200 Varick Street, 10th Fl, New York, NY 10014",
+        "status": "Ongoing through Sun Nov 1",
+        "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-7",
+        "sourceUrls": [
+          "https://vote.nyc/election/general-election-early-voting-day-7",
+          "https://elections.ny.gov/system/files/documents/2026/02/standard-english.pdf",
+          "https://ag.ny.gov/press-release/2026/attorney-general-james-issues-voter-guidance-inform-new-yorkers-their-rights"
+        ]
+      },
+      "registration": {
+        "deadline": "2026-10-24",
+        "openOnOct30": false,
+        "notes": "Applications (in person or by mail) must be received by the board of elections by Sat Oct 24, 2026 (10 days before). No same-day registration found in official sources. Deadline has passed.",
+        "sourceUrl": "https://vote.nyc/page/registration-deadlines",
+        "sourceUrls": [
+          "https://vote.nyc/page/registration-deadlines",
+          "https://elections.ny.gov/registration-and-voting-deadlines"
+        ]
+      },
+      "mail": {
+        "eligibility": "Any registered voter may request an early mail ballot (no excuse); absentee ballots are for voters with a stated reason.",
+        "requestDeadline": "2026-10-24",
+        "requestDeadlineRule": "Online portal or mail applications must be received by Sat Oct 24, 2026 (passed). In-person applications at the county board of elections through Mon Nov 2, 2026. Manhattan office: 200 Varick St, 10th Fl; extended hours Fri Oct 30 10:00 AM-4:00 PM, Sat Oct 31 9:00 AM-4:00 PM, Sun Nov 1 10:00 AM-4:00 PM, Mon Nov 2 9:00 AM-5:00 PM (regular weekday hours).",
+        "inPersonRequestDeadline": "2026-11-02",
+        "returnDeadline": "2026-11-03",
+        "returnRule": "Postmark + receipt: postmarked no later than Nov 3 and received by the county BOE by Tue Nov 10, 2026. Or drop off at the county BOE office by 9:00 PM Nov 3, any early voting site in the county Oct 24-Nov 1, or any Election Day poll site in the county by 9:00 PM Nov 3. Postage included.",
+        "postmarkedBy": "2026-11-03",
+        "receivedBy": "2026-11-10",
+        "sourceUrl": "https://vote.nyc/page/all-important-dates",
+        "sourceUrls": [
+          "https://vote.nyc/page/all-important-dates",
+          "https://vote.nyc/page/absentee-voting",
+          "https://elections.ny.gov/request-ballot",
+          "https://vote.nyc/sites/default/files/news/2026-10/Extended_Absentee_Hours_NovGen2026_FINAL.pdf"
+        ]
+      },
+      "electionDay": {
+        "date": "2026-11-03",
+        "hours": "6:00 AM-9:00 PM",
+        "anySite": false,
+        "locationsUrl": "https://findmypollsite.vote.nyc/",
+        "sourceUrl": "https://vote.nyc/election/general-election-early-voting-day-7"
+      }
+    }
+  }
+}

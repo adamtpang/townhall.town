@@ -1,0 +1,667 @@
+{
+ "stances": {
+  "erik-bottcher": {
+   "name": "Erik D. Bottcher",
+   "race": "ny-sd-47",
+   "party": "Democratic, Working Families",
+   "housing": {
+    "value": 3,
+    "quote": "delivered thousands of units of affordable housing",
+    "sourceUrl": "https://www.erikbottcher.com/about",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "We in New York City have concrete rules in place against cooperation with ICE in civil immigration matters. It has worked very well here in New York City and has not compromised public safety.",
+    "sourceUrl": "https://www.westsiderag.com/2026/03/03/a-conversation-with-erik-bottcher-the-upper-west-sides-new-state-senator",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "Healthcare is a human right. We should expand access to affordable, high-quality care",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Erik+D.+Bottcher&boroughCode=&candidateId=V1620&districtID=&electionCycle=2026&geoAreaAbbr=47&officeType=8&officelevel=2&partyId=D%2CWF",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces round2 +3 (anecdote quote)"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "Police officers are not equipped to address the underlying problems that are the root causes of much of this behavior, nor is that their role or responsibility,",
+    "sourceUrl": "https://www.amny.com/politics/erik-bottcher-b-heard-expansion-western-manhattan/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "as Council Member, calling for B-HEARD civilian mental-health response expansion"
+   },
+   "energy": {
+    "value": 4,
+    "quote": "But focusing only on short-term implementation costs ignores the far greater cost of remaining dependent on fossil fuels.",
+    "sourceUrl": "https://www.amny.com/oped/the-fossil-fuel-illusion-new-york/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "op-ed written by the candidate, amNY Apr 12 2026; urges following through on CLCPA cap-and-invest"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.erikbottcher.com/about",
+     "https://www.erikbottcher.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Erik+D.+Bottcher&boroughCode=&candidateId=V1620&districtID=&electionCycle=2026&geoAreaAbbr=47&officeType=8&officelevel=2&partyId=D%2CWF",
+     "https://www.amny.com/politics/erik-bottcher-b-heard-expansion-western-manhattan/",
+     "https://www.amny.com/oped/the-fossil-fuel-illusion-new-york/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.erikbottcher.com/about",
+     "https://www.erikbottcher.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Erik+D.+Bottcher&boroughCode=&candidateId=V1620&districtID=&electionCycle=2026&geoAreaAbbr=47&officeType=8&officelevel=2&partyId=D%2CWF",
+     "https://www.amny.com/politics/erik-bottcher-b-heard-expansion-western-manhattan/",
+     "https://www.amny.com/oped/the-fossil-fuel-illusion-new-york/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.erikbottcher.com/about",
+     "https://www.erikbottcher.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Erik+D.+Bottcher&boroughCode=&candidateId=V1620&districtID=&electionCycle=2026&geoAreaAbbr=47&officeType=8&officelevel=2&partyId=D%2CWF",
+     "https://www.amny.com/politics/erik-bottcher-b-heard-expansion-western-manhattan/",
+     "https://www.amny.com/oped/the-fossil-fuel-illusion-new-york/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.erikbottcher.com/about",
+     "https://www.erikbottcher.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Erik+D.+Bottcher&boroughCode=&candidateId=V1620&districtID=&electionCycle=2026&geoAreaAbbr=47&officeType=8&officelevel=2&partyId=D%2CWF",
+     "https://www.amny.com/politics/erik-bottcher-b-heard-expansion-western-manhattan/",
+     "https://www.amny.com/oped/the-fossil-fuel-illusion-new-york/"
+    ]
+   }
+  },
+  "charlotte-friedman": {
+   "name": "Charlotte Friedman",
+   "race": "ny-sd-47",
+   "party": "Republican",
+   "immigration": {
+    "value": 5,
+    "quote": "Our existing laws ensure illegal aliens may be removed promptly. Let’s get it done.",
+    "sourceUrl": "https://charlotte4nysenate.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "Let’s keep danger off the streets, and the dangerous behind bars.",
+    "sourceUrl": "https://charlotte4nysenate.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://charlotte4nysenate.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://charlotte4nysenate.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://charlotte4nysenate.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://charlotte4nysenate.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://charlotte4nysenate.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://charlotte4nysenate.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://charlotte4nysenate.com/"
+    ]
+   }
+  },
+  "liz-krueger": {
+   "name": "Liz Krueger",
+   "race": "ny-sd-28",
+   "party": "Democratic",
+   "housing": {
+    "value": 4,
+    "quote": "We must expand affordable housing without subsidizing development of luxury housing with taxpayer dollars.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces undated lizkrueger.com entry"
+   },
+   "safety": {
+    "value": -2,
+    "quote": "Shootings have fallen to historic lows in NY driven by record investments in gun violence prevention, problem solving courts & mental health services.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces undated entry; prevention/diversion emphasis, mild"
+   },
+   "energy": {
+    "value": 3,
+    "quote": "Much of my work is on the climate crisis to ensure future generations have a livable planet & access to clean, affordable energy.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces undated lizkrueger.com entry"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "work to ensure that all NYers can afford and access high quality care, preferably through a single-payer, universal healthcare system",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces undated lizkrueger.com entry"
+   },
+   "infrastructure": {
+    "value": 2,
+    "quote": "Worked to pass legislation to enable implementation with Bus Rapid Transit, now in progress on the upper East Side;",
+    "sourceUrl": "https://www.lizkrueger.com/issues/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "lizkrueger.com/issues page is undated legacy (pre-2024) content; kept only because nothing newer found",
+    "sourceDate": "undated, pre-2024"
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "limit local law enforcement cooperation with civil immigration enforcement",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.lizkrueger.com/issues/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.lizkrueger.com/issues/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.lizkrueger.com/issues/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Liz+Krueger&boroughCode=&candidateId=V1174&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=D"
+    ]
+   }
+  },
+  "alina-bonsell": {
+   "name": "Alina Bonsell",
+   "race": "ny-sd-28",
+   "party": "Republican, Block Mamdani",
+   "taxes": {
+    "value": -4,
+    "quote": "oppose new tax burdens, including estate tax changes that take a share of what families have",
+    "sourceUrl": "https://www.alinabonsell.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "fight for a fully funded, well-supported NYPD, and real consequences for repeat offenders.",
+    "sourceUrl": "https://www.alinabonsell.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": -3,
+    "quote": "Oppose COPA and protect property owners’ right to sell.",
+    "sourceUrl": "https://www.alinabonsell.com/8-point-plan",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": -3,
+    "quote": "Allow consumers to choose plans that do not automatically include every state-mandated service they may not need, reducing the cost built into their premiums.",
+    "sourceUrl": "https://www.alinabonsell.com/8-point-plan",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": 4,
+    "quote": "I support expanding charter schools, modernizing curriculum, reducing administrative overhead, and giving parents more educational choices.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.alinabonsell.com/",
+     "https://www.alinabonsell.com/8-point-plan",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.alinabonsell.com/",
+     "https://www.alinabonsell.com/8-point-plan",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.alinabonsell.com/",
+     "https://www.alinabonsell.com/8-point-plan",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.alinabonsell.com/",
+     "https://www.alinabonsell.com/8-point-plan",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH"
+    ]
+   }
+  },
+  "tony-simone": {
+   "name": "Tony Simone",
+   "race": "ny-ad-75",
+   "party": "Democratic, Working Families",
+   "housing": {
+    "value": 3,
+    "quote": "Implementing a land value tax in New York could be a powerful tool to unlock underutilized land, incentivize development, and create a more equitable and efficient housing market",
+    "sourceUrl": "https://www.nyassembly.gov/mem/Tony-Simone/story/113673",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "This is why we must pass legislation A6596A proposed by Assemblymember Linda Rosenthal that would require Medicaid to cover gender-affirming care regardless of federal funding",
+    "sourceUrl": "https://www.nyassembly.gov/mem/Tony-Simone/story/115096",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": 4,
+    "quote": "We must tackle climate change from all angles, including decreasing driving and improving public transportation, and we must act now before it is too late.",
+    "sourceUrl": "https://nyassembly.gov/mem/Tony-Simone/story/109817",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "Nowhere in America should immigrants be terrorized by masked agents. Citizens and immigrants alike should feel safe.",
+    "sourceUrl": "https://nystateofpolitics.com/state-of-politics/new-york/politics/2026/06/05/hochul-trump-mamdani-legislative-session-",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": 4,
+    "quote": "ask New Yorkers who make over $5 million per year, and corporations with profits over $10 million to pay their fair share so we can protect essential services and invest in working families.",
+    "sourceUrl": "https://www.investinourny.org/post/elected-officials-call-on-governor-hochul-to-tax-the-rich-fund-essential-services-in-new-york-state",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "candidate quote within coalition (advocacy) release, 2026 budget cycle"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://nyassembly.gov/mem/Tony-Simone/",
+     "https://www.tonysimone.com/",
+     "https://www.investinourny.org/post/elected-officials-call-on-governor-hochul-to-tax-the-rich-fund-essential-services-in-new-york-state"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://nyassembly.gov/mem/Tony-Simone/",
+     "https://www.tonysimone.com/",
+     "https://www.investinourny.org/post/elected-officials-call-on-governor-hochul-to-tax-the-rich-fund-essential-services-in-new-york-state"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://nyassembly.gov/mem/Tony-Simone/",
+     "https://www.tonysimone.com/",
+     "https://www.investinourny.org/post/elected-officials-call-on-governor-hochul-to-tax-the-rich-fund-essential-services-in-new-york-state"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://nyassembly.gov/mem/Tony-Simone/",
+     "https://www.tonysimone.com/",
+     "https://www.investinourny.org/post/elected-officials-call-on-governor-hochul-to-tax-the-rich-fund-essential-services-in-new-york-state"
+    ]
+   }
+  },
+  "cristina-fontanelli": {
+   "name": "Cristina Fontanelli",
+   "race": "ny-ad-75",
+   "party": "Republican, Save NYC",
+   "safety": {
+    "value": 4,
+    "quote": "I will support policies that restore law and order, hold repeat offenders accountable",
+    "sourceUrl": "https://www.cristinafontanelli4ny.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "I will fight to reduce taxes, cut unnecessary regulations, and support small businesses",
+    "sourceUrl": "https://www.cristinafontanelli4ny.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": 2,
+    "quote": "I will work to reduce burdensome regulations, encourage responsible development, and promote solutions that expand housing supply.",
+    "sourceUrl": "https://www.cristinafontanelli4ny.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": -2,
+    "quote": "I support policies that increase competition, access to care, and reduce costs while ensuring patients and doctors, not government bureaucrats, are making healthcare decisions.",
+    "sourceUrl": "https://www.cristinafontanelli4ny.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.cristinafontanelli4ny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/member-of-the-assembly/profile/?bannerTitle=Cristina+Fontanelli&boroughCode=&candidateId=V1804&districtID=&electionCycle=2026&geoAreaAbbr=75&officeType=7&officelevel=2&partyId=OTH%2CR"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.cristinafontanelli4ny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/member-of-the-assembly/profile/?bannerTitle=Cristina+Fontanelli&boroughCode=&candidateId=V1804&districtID=&electionCycle=2026&geoAreaAbbr=75&officeType=7&officelevel=2&partyId=OTH%2CR"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.cristinafontanelli4ny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/member-of-the-assembly/profile/?bannerTitle=Cristina+Fontanelli&boroughCode=&candidateId=V1804&districtID=&electionCycle=2026&geoAreaAbbr=75&officeType=7&officelevel=2&partyId=OTH%2CR"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.cristinafontanelli4ny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/member-of-the-assembly/profile/?bannerTitle=Cristina+Fontanelli&boroughCode=&candidateId=V1804&districtID=&electionCycle=2026&geoAreaAbbr=75&officeType=7&officelevel=2&partyId=OTH%2CR"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.cristinafontanelli4ny.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/member-of-the-assembly/profile/?bannerTitle=Cristina+Fontanelli&boroughCode=&candidateId=V1804&districtID=&electionCycle=2026&geoAreaAbbr=75&officeType=7&officelevel=2&partyId=OTH%2CR"
+    ]
+   }
+  },
+  "carl-wilson": {
+   "name": "Carl Wilson",
+   "race": "nyc-council-3",
+   "party": "Democratic",
+   "safety": {
+    "value": -3,
+    "quote": "Police should focus on serious crime, with crisis response shifted to civilian agencies.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "housing": {
+    "value": 4,
+    "quote": "I support building more housing of all types, with deeper, long-term affordability, strong tenant protections",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "Health care is a human right. We must expand access to affordable, high-quality care",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "We must protect immigrant communities from discrimination, defend sanctuary policies",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "Build out accessible and reliable public transit options and infrastructure.",
+    "sourceUrl": "https://citizensunion.org/wp-content/uploads/2026/04/Carl-Wilson.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Citizens Union questionnaire"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "http://www.carlwilsonnyc.com",
+     "https://citizensunion.org/wp-content/uploads/2026/04/Carl-Wilson.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "http://www.carlwilsonnyc.com",
+     "https://citizensunion.org/wp-content/uploads/2026/04/Carl-Wilson.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "http://www.carlwilsonnyc.com",
+     "https://citizensunion.org/wp-content/uploads/2026/04/Carl-Wilson.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "http://www.carlwilsonnyc.com",
+     "https://citizensunion.org/wp-content/uploads/2026/04/Carl-Wilson.pdf",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Carl+Wilson&boroughCode=&candidateId=3064&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   }
+  },
+  "haris-bhatti": {
+   "name": "Haris Bhatti",
+   "race": "nyc-council-3",
+   "party": "Haris Bhatti",
+   "healthcare": {
+    "value": 5,
+    "quote": "I support Universal Health Care following the United Kingdom model. No Deductibles, No Premiums, No Copays. Paid by Income Taxes, payroll taxes. Single Payer.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "Increase the size of the NYPD & NYPD Transit.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "housing": {
+    "value": 3,
+    "quote": "I support Increasing supply of affordable housing while maintaining neighborhood character (e.g. Building more on NYCHA land) & CityFHEPS voucher program.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "energy": {
+    "value": -4,
+    "quote": "Repeal local law 97.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "Local Law 97 = NYC building-emissions limits"
+   },
+   "immigration": {
+    "value": 3,
+    "quote": "States and Municipalities must obey and enforce federal law",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://harisfornewyork.com/",
+     "https://harisfornewyork.com/policy/repealing-local-law-97/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://harisfornewyork.com/",
+     "https://harisfornewyork.com/policy/repealing-local-law-97/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://harisfornewyork.com/",
+     "https://harisfornewyork.com/policy/repealing-local-law-97/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://harisfornewyork.com/",
+     "https://harisfornewyork.com/policy/repealing-local-law-97/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Haris+Bhatti&boroughCode=&candidateId=3075&districtID=03&electionCycle=2026&geoAreaAbbr=&officeType=5&officelevel=1&partyId=OTH"
+    ]
+   }
+  }
+ }
+}

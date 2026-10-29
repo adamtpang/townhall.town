@@ -21,8 +21,8 @@ export function planDates(state: St, electionDate: string): PlanDate[] {
   if (state === "TX") {
     const out: PlanDate[] = [];
     // Early-voting range is Oct 19-30 per the Texas SOS election notice (re-read 2026-10-29).
-    if (txEarly?.date_range?.[1]) out.push({ id: "early-voting-ends", label: "Last day of early voting", date: txEarly.date_range[1], source: { label: "Texas SOS", url: "https://www.sos.state.tx.us/" } });
-    out.push({ id: "election-day", label: "Election Day", date: electionDate, source: { label: "Texas SOS", url: "https://www.sos.state.tx.us/" } });
+    if (txEarly?.date_range?.[1]) out.push({ id: "early-voting-ends", label: "Last day of early voting", date: txEarly.date_range[1], source: { label: "Texas Secretary of State", url: "https://www.sos.state.tx.us/" } });
+    out.push({ id: "election-day", label: "Election Day", date: electionDate, source: { label: "Texas Secretary of State", url: "https://www.sos.state.tx.us/" } });
     return out;
   }
   // California: sos.ca.gov and voterguide.sos.ca.gov: Nov 3, polls 7:00 a.m. - 8:00 p.m.; mailed ballots postmarked on or before Nov 3. No separate early-voting end date.

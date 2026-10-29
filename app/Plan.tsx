@@ -57,7 +57,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
   }
   function shareText() {
     const lines = rows.filter((r) => picks[r.id] && picks[r.id] !== UNDECIDED).map((r) => `${r.title}: ${picks[r.id]}`);
-    return [`My ballot plan, ${fmtDate(electionDate)}, 2026`, ...(lines.length ? lines : ["No picks yet"]), SITE].join("\n");
+    return [`My ballot plan, ${fmtDate(electionDate)}, 2026`, ...(lines.length ? lines : ["No choices yet"]), SITE].join("\n");
   }
   async function share() {
     const text = shareText();
@@ -109,7 +109,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
         </div>
         <div className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12" id="picks">
           <dt className="sm:col-span-4">
-            <span className="font-serif text-5xl leading-none">Picks</span>
+            <span className="font-serif text-5xl leading-none">Your choices</span>
             <p className="mt-3 text-sm text-black/60">{decided} of {rows.length} decided. Saved on this device only.</p>
           </dt>
           <dd className="sm:col-span-8">
@@ -145,7 +145,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
               <li key={r.id}><span>{r.title}</span><b>{picks[r.id] || UNDECIDED}</b></li>
             ))}
           </ol>
-          <p className="ps-foot">Bring: {id.text}. Find your polling place: {look[0].url}{addr.trim() ? ` · Polling place: ${addr.trim()}` : ""}. Nonpartisan; picks are yours and stay on your device.</p>
+          <p className="ps-foot">Bring: {id.text}. Find your polling place: {look[0].url}{addr.trim() ? ` · Polling place: ${addr.trim()}` : ""}. Nonpartisan; your choices are yours and stay on your device.</p>
         </div>,
         document.body
       )}

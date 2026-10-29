@@ -12,8 +12,8 @@ export const HOME_SECTIONS: Section[] = [
   {
     heading: "How it works",
     paragraphs: [
-      `Enter a 5-digit ZIP, or share your location. townhall.town finds your U.S. House district, then lists every race and statewide measure on your ${SITE.electionLabel} ballot and what each office controls.`,
-      "For each candidate you see party, incumbency, the issues they raise in their own campaign themes, and campaign money from public filings. Every fact links its source. When a fact cannot be confirmed, it is marked unsure.",
+      `Enter a 5-digit ZIP. townhall.town lists the races and measures we have sourced for your ${SITE.electionLabel} ballot, what each office controls, and when and where to vote.`,
+      "For each candidate you see party, links to their filings and pages, and positions taken from public sources, linked on each claim. When a fact cannot be confirmed, it is marked unsure or not shown.",
       "An AI model writes a short neutral summary from those sourced records only. It does not recommend candidates or positions. Your issue answers stay in your browser, and there is no account.",
       `Covered ZIPs today: ${coverageLine}.`,
     ],
@@ -21,9 +21,9 @@ export const HOME_SECTIONS: Section[] = [
   {
     heading: "Sources",
     items: [
-      "Candidates and campaign themes: [Ballotpedia](https://ballotpedia.org)",
-      "Campaign money: [FEC](https://www.fec.gov), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov)",
-      "Dates, ID rules and polling places: [VoteTexas.gov](https://www.votetexas.gov), [California Secretary of State](https://www.sos.ca.gov/elections), [NYC Board of Elections](https://vote.nyc)",
+      "Candidates and positions: official candidate lists from county and state election offices, [Ballotpedia](https://ballotpedia.org), candidates' own campaign sites, and news reports, linked on each claim",
+      "Campaign finance links: [FEC](https://www.fec.gov), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov) filing pages",
+      "Dates, ID rules and polling places: [Travis County Clerk](https://votetravis.gov), [SF Department of Elections](https://www.sf.gov/november-3-2026-consolidated-general-election), [VoteTexas.gov](https://www.votetexas.gov), [California Secretary of State](https://www.sos.ca.gov/elections), [NYC Board of Elections](https://vote.nyc)",
       "Local data and ZIP geography: [U.S. Census Bureau](https://www.census.gov) American Community Survey 2024 5-year",
       "Market odds: [Polymarket](https://polymarket.com) and [Kalshi](https://kalshi.com) prices, shown as market prices, not forecasts",
     ],
@@ -92,7 +92,7 @@ export const PRIVACY: PageContent = {
     {
       heading: "Your answers stay on your device",
       paragraphs: [
-        "When you answer the issue questions, your answers are saved in your browser's localStorage under the key townhall.issueAnswers.v2 so they are still there next visit. They are not sent to the server. Clearing site data in your browser removes them.",
+        "When you answer the issue questions, your answers are saved in your browser's localStorage under the key th-answers-v1 so they are still there next visit. They are not sent to the server. Clearing site data in your browser removes them.",
       ],
     },
     {
@@ -116,7 +116,7 @@ export const PRIVACY: PageContent = {
     {
       heading: "Other sites",
       paragraphs: [
-        "Candidate photos load from Wikimedia, so your browser contacts Wikimedia when a photo is shown. Source links open other sites with their own policies. Server-side lookups to public data sources such as the FEC, Polymarket and Kalshi send race identifiers, not information about you.",
+        "Candidate photos are served from townhall.town itself, with credit to their source. Source links open other sites with their own policies. Server-side lookups to public data sources such as the FEC, Polymarket and Kalshi send race identifiers, not information about you.",
         `Questions about privacy: [open an issue on GitHub](${SITE.issues}).`,
       ],
     },

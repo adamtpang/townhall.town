@@ -2,7 +2,7 @@
 //   tools: { ...existingTools, ...civicTools }
 import { tool } from "ai";
 import { z } from "zod";
-import { getAccountability, keptRate } from "./accountability";
+import { trackRecordFor, METHOD_TEXT, METHOD_URL } from "./accountability";
 import { getTurnout } from "./turnout";
 
 export const civicTools = {
@@ -14,11 +14,11 @@ export const civicTools = {
   }),
   getAccountability: tool({
     description:
-      "Said vs did for one incumbent: each public promise paired with the vote, bill or action that kept or broke it, both sourced, plus a kept rate. Nonpartisan. Report the record; never tell the user who to vote for.",
-    inputSchema: z.object({ name: z.string().describe("Politician name exactly as on the ballot") }),
+      "Track record for one candidate: said-vs-did pairs, each marked consistent, inconsistent or mixed/unclear by a written rule, both halves sourced. A score appears only with 3+ checkable pairs. Nonpartisan. Report the record; never tell the user who to vote for.",
+    inputSchema: z.object({ name: z.string().describe("Candidate name exactly as on the ballot") }),
     execute: async ({ name }) => {
-      const records = getAccountability(name);
-      return records.length ? { name, keptRate: keptRate(records), records } : { name, status: "no record found" };
+      const t = trackRecordFor(name);
+      return t ? { name, method: METHOD_TEXT, methodUrl: METHOD_URL, ...t } : { name, status: "no record found" };
     },
   }),
 };

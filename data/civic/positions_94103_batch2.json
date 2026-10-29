@@ -1,0 +1,2856 @@
+{
+ "stances": {
+  "joaquin-torres": {
+   "name": "Joaquin Torres",
+   "housing": {
+    "value": 2,
+    "quote": "too many of our neighbors continue to struggle with housing insecurity, the high cost of living, and access to basic necessities like affordable childcare and economic opportunity. I believe we should hold ourselves to a higher standard. A city with our resources should continue working toward solutions that make San Francisco more affordable",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Assessor-Recorder questionnaire Nov 2026, candidate's own written answers; mild, general affordability"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/"
+    ]
+   }
+  },
+  "manohar-raju": {
+   "name": "Manohar Raju",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/"
+    ]
+   },
+   "healthcare": {
+    "value": 2,
+    "quote": "Greater funding to provide a full substance abuse and mental health inquiry upon initial appointment would be beneficial",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Public Defender questionnaire Nov 2026, candidate's own written answers; mild"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/"
+    ]
+   },
+   "safety": {
+    "value": -4,
+    "quote": "Diversionary programs are designed to do the opposite. ... These are the kinds of programs we ought to push to make our communities safer.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manohar-raju/"
+    ]
+   }
+  },
+  "alex-behrend": {
+   "name": "Alex Behrend",
+   "housing": {
+    "value": 4,
+    "quote": "As Supervisor, I'll demand Board votes for additional fees on AI companies to prevent displacement.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-district-6-candidates-ai-boom-sf-rising-rents/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' questionnaire, candidate's own written answer, Oct 2026"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "wages": {
+    "value": 3,
+    "quote": "We will enforce CRIMINAL CODES on corporations to fix working conditions and protect wages.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "taxes": {
+    "value": 4,
+    "quote": "We must vote YES on the billionaire tax on this November's ballot to ensure that billionaires pay their fair share.",
+    "sourceUrl": "https://alexforalld6.com/policy-for-all",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign site policy page, 2026"
+   },
+   "safety": {
+    "value": -4,
+    "quote": "Eliminating wasteful law enforcement overtime, mass arrests, jail expansion, and the illegal RESET Center.",
+    "sourceUrl": "https://alexforalld6.com/policy-for-all",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign site policy page, 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "To meet the needs of District 6 (and all San Francisco) residents, we must: Provide more frequent service so residents can get transit when we need it; Restore the transit lines",
+    "sourceUrl": "https://alexforalld6.com/policy-for-all",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Campaign site policy page, 2026"
+   }
+  },
+  "matt-dorsey": {
+   "name": "Matt Dorsey",
+   "housing": {
+    "value": 4,
+    "quote": "We need the full panoply of near- and long-term solutions — but above all, to BUILD MORE HOUSING at every income level.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-district-6-candidates-ai-boom-sf-rising-rents/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' questionnaire, candidate's own written answer, Oct 2026"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "with Trump cuts to Medicaid poised to eviscerate federal support for drug treatment in 2027, we have our work cut out for us to backfill funding and protect our investments in treatment and recovery",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-6-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' questionnaire roundup, candidate's own written answers, Oct 2026 (Week 1)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/matt-dorsey/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/matt-dorsey/"
+    ]
+   },
+   "safety": {
+    "value": 4,
+    "quote": "Supporting SoMa businesses means enforcing the law — consistently and fully — to end unlawful competition and improve safety.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-district-6-candidates-how-should-san-francisco-support-soma-businesses/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' questionnaire, candidate's own written answer, Oct 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/matt-dorsey/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/matt-dorsey/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/matt-dorsey/"
+    ]
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "Yes, San Francisco should make it a priority to expand its protected bike lane network",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/matt-dorsey/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026"
+   }
+  },
+  "gary-mccoy": {
+   "name": "Gary McCoy",
+   "housing": {
+    "value": 4,
+    "quote": "Streamline housing approvals to build more homes faster ... Strengthen tenant protections and champion affordable housing",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "I am the Campaign Manager for her Save Our Health Care Campaign, fighting to protect Medicaid and the Affordable Care Act",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "taxes": {
+    "value": 5,
+    "quote": "We should absolutely tax overpaid CEOs to protect San Franciscans and keep essential services in place",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026; June 2026 Prop D (Overpaid CEO tax)"
+   },
+   "safety": {
+    "value": -2,
+    "quote": "Expand mental health crisis response teams and fund substance use treatment and recovery",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "immigration": {
+    "value": -2,
+    "quote": "privacy is an important part of safety when undocumented immigrants are being kidnapped on and off our streets",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026; opposes Flock data use against immigrants"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "Build better streets through safety improvements, expanded protected bike lanes, and expanded slow streets",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   }
+  },
+  "michael-t-nguyen": {
+   "name": "Michael T. Nguyen",
+   "housing": {
+    "value": 3,
+    "quote": "My platform is built on three things: affordability, housing production for working families, and good governance.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "San Francisco is facing devastating federal cuts to Medicaid and the programs our most vulnerable residents depend on",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026"
+   },
+   "wages": {
+    "value": 4,
+    "quote": "raising the minimum wage to a living wage",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/nguyen_d8.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers"
+   },
+   "taxes": {
+    "value": 4,
+    "quote": "Yes, I am publicly supporting the Overpaid CEO Act.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026; June 2026 Prop D"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "I disagree with Mayor Lurie’s punitive approach to cleaning up downtown",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026; also supports funding prevention, harm reduction, treatment and enforcement"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/nguyen_d8.html"
+    ]
+   },
+   "energy": {
+    "value": 5,
+    "quote": "phasing out fossil fuel infrastructure in city operations, expanding public and community-owned renewable power, and viewing every land use and budget decision through a climate emergency lens",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/nguyen_d8.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers"
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "I will introduce legislation prohibiting city resources from supporting federal immigration enforcement",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/nguyen_d8.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I'll fight to make sure pot holes are filled and basic services, like MUNI, aren't cut.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   }
+  },
+  "darshini-patel": {
+   "name": "Darshini Patel",
+   "housing": {
+    "value": 4,
+    "quote": "Attack the housing backlog with a public pipeline tracker, enforceable timelines, and a second affordable housing site in District 8",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 2,
+    "quote": "Defend the LGBTQ health clinics this district relies on",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/patel_d8.html"
+    ]
+   },
+   "taxes": {
+    "value": 4,
+    "quote": "Yes, I supported Prop D.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026; June 2026 Overpaid CEO gross-receipts tax"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "I disagree with Mayor Lurie’s decision to spend $14 million on RESET, an arrest-based program",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/patel_d8.html"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "the city just cut the Environment Department's General Fund support by about 80% while accepting a climate award. We need to restore it",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/patel_d8.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers; also supports Diablo Canyon as carbon-free power"
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "Sanctuary is non-negotiable, and preparation beats reaction. In response to past activity: no local cooperation with ICE, period",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/patel_d8.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "transit reliability is climate policy. Every rider the J-Church loses to unreliability becomes a car trip, which is why I treat Muni funding and published route-level performance data as environmental commitments",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/patel_d8.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers"
+   }
+  },
+  "emanuel-manny-yekutiel": {
+   "name": "Emanuel \"Manny\" Yekutiel",
+   "housing": {
+    "value": 4,
+    "quote": "I'm running to deliver 10,000 new homes",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manny-yekutiel/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manny-yekutiel/"
+    ]
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "I don’t support this, and I join Mayor Lurie in his concern about this tax at this time.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-8-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D8 roundup, candidate's own written answer (attributed by heading), 2026; opposing June 2026 Prop D"
+   },
+   "safety": {
+    "value": 3,
+    "quote": "pair that with greater accountability and enforcement in keeping our streets clean and safe",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/manny-yekutiel/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manny-yekutiel/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manny-yekutiel/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/manny-yekutiel/"
+    ]
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "protected bike lanes are essential infrastructure, and San Francisco should move urgently to build out a citywide network",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/manny-yekutiel/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026"
+   }
+  },
+  "pearci-pj-bastiany-iii": {
+   "name": "Pearci \"PJ\" Bastiany III",
+   "housing": {
+    "value": 4,
+    "quote": "I also want to ban luxury housing developments to prioritize 100% affordable housing.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/bastiany_d10.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers (due Jul 11, 2026)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/bastiany_d10.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/bastiany_d10.html"
+    ]
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "I support land use rules and taxation that keep capital local: commercial vacancy and flipping taxes",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/bastiany_d10.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers (due Jul 11, 2026)"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/bastiany_d10.html"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/bastiany_d10.html"
+    ]
+   },
+   "energy": {
+    "value": 4,
+    "quote": "I support phasing out diesel and biodiesel transit, expanding public power, and building a local/regional clean energy system of Solar, Wind and Tidal",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/bastiany_d10.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers (due Jul 11, 2026)"
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "San Francisco should refuse to cooperate with ICE beyond what state and local law absolutely requires",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/bastiany_d10.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers (due Jul 11, 2026)"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I would enforce Transit First by prioritizing dedicated transit lanes, removing parking or through-traffic where necessary to speed buses and protect riders",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/bastiany_d10.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers (due Jul 11, 2026)"
+   }
+  },
+  "dionjay-dj-brookter": {
+   "name": "Dionjay (DJ) Brookter",
+   "housing": {
+    "value": 4,
+    "quote": "I will fight to expand affordable housing, prevent displacement, create family-sustaining careers, and lower the overall cost of living for working people",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-10-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D10 roundup, candidate's own written answers, Oct 2026 (Week 1)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "safety": {
+    "value": -2,
+    "quote": "I would oppose expanding Flock and other mass-surveillance technology in District 10.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-10-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D10 roundup, candidate's own written answers, Oct 2026 (Week 5); also supports accountable community policing, so mild"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "Data centers consume enormous amounts of electricity, water, land, and infrastructure while creating relatively few permanent jobs. In a dense, built-out city like San Francisco, they can also compound environmental burdens.",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-10-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D10 roundup, candidate's own written answers, Oct 2026 (Week 6; supports moratorium and permanent ban)"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   }
+  },
+  "deandra-bryant": {
+   "name": "Deandra Bryant",
+   "housing": {
+    "value": 3,
+    "quote": "I will focus on expanding homeownership opportunities, improving housing stability",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 2,
+    "quote": "I support expanding shelter options, permanent supportive housing, mental health treatment, addiction recovery services",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/"
+    ]
+   },
+   "safety": {
+    "value": 2,
+    "quote": "First, we need enough police officers to respond quickly to emergencies and investigate crimes thoroughly.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026; pairs with community policing and prevention, so mild"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/deandra-bryant/"
+    ]
+   }
+  },
+  "theo-ellington": {
+   "name": "Theo Ellington",
+   "housing": {
+    "value": 4,
+    "quote": "As City Commissioner, I led the creation of over 1,000 affordable homes ... affordable housing without displacement",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/theo-ellington/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/theo-ellington/"
+    ]
+   },
+   "taxes": {
+    "value": -2,
+    "quote": "Solving the MUNI funding crisis by taxes alone would be both politically unsustainable and fiscally irresponsible given the city's existing deficit.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/theo-ellington/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026; favors SFMTA efficiency before new taxes"
+   },
+   "safety": {
+    "value": 3,
+    "quote": "bring back consistent foot and bicycle patrols on commercial corridors and residential blocks",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/theo-ellington/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/theo-ellington/"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "Hunters Point Shipyard cleanup: Demand full re-testing of all previously fraudulently certified remediation areas, with independent oversight",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/theo-ellington/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026; environmental-justice priority"
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "an absolute bar on sharing data with federal immigration enforcement",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-franciscos-district-10-supervisor-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local 'Meet the Candidates' D10 roundup, candidate's own written answers, Oct 2026 (Week 5)"
+   },
+   "infrastructure": {
+    "value": 2,
+    "quote": "District 10 can be a center for jobs and innovation, affordable housing without displacement, clean streets and parks, real community policing, better transit, and clean air.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   }
+  },
+  "jr-eppler": {
+   "name": "J.R. Eppler",
+   "housing": {
+    "value": 3,
+    "quote": "Increasing the amount of affordable housing along the Bayfront.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/jr-eppler/",
+     "https://sfgreens.org/questionnaires/2026/eppler_d10.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/jr-eppler/",
+     "https://sfgreens.org/questionnaires/2026/eppler_d10.html"
+    ]
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "that's why I strongly support the ballot measures now being developed for November 2026. The regional Connect Bay Area Act",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/jr-eppler/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026; supports transit sales tax measure"
+   },
+   "safety": {
+    "value": 2,
+    "quote": "Public safety grounded in proven crime reduction tactics, like community policing and foot patrols.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/jr-eppler/",
+     "https://sfgreens.org/questionnaires/2026/eppler_d10.html"
+    ]
+   },
+   "energy": {
+    "value": 2,
+    "quote": "a significant expansion of tree canopy and green infrastructure in the district's highest-burden neighborhoods",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/jr-eppler/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, 2026"
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "That means no cooperation between municipal agencies and ICE through detainers, information sharing, or 287(g) agreements",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/eppler_d10.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party Supervisor questionnaire 2026, candidate's own written answers"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "Securing funding for safe streets, transit, parks and community facilities.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   }
+  },
+  "ellsworth-ell-m-jennison-jr": {
+   "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "energy": {
+    "value": 2,
+    "quote": "HAVE PIER 68 TESTED FOR TOXCITY AND DESIGNATED A SUPER FUND IF APPLICABLE.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   }
+  },
+  "mike-trouble-lin": {
+   "name": "Mike Trouble Lin",
+   "housing": {
+    "value": 3,
+    "quote": "Let’s get more housing built with as little delay as possible",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/"
+    ]
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "We can not tax our way out of MUNI’s funding crisis",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers; also supports reducing city headcount to close the deficit"
+   },
+   "safety": {
+    "value": 5,
+    "quote": "I would be a vocal supporter of fully funding SFPD including foot patrol units, more flock cameras and drones",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/"
+    ]
+   },
+   "infrastructure": {
+    "value": -2,
+    "quote": "Shut down stations that are underutilized",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/mike-trouble-lin/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers"
+   }
+  },
+  "jamo-muhammad": {
+   "name": "Jamo Muhammad",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+     "https://voterdecoder.org/candidates/7837",
+     "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+     "https://ballotpedia.org/Jamo_Muhammad"
+    ]
+   }
+  },
+  "jessica-pessecow": {
+   "name": "Jessica Pessecow",
+   "housing": {
+    "value": 3,
+    "quote": "I advocate for economic opportunities, helping business owners, cheaper housing, improving transportation, bettering health care",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "healthcare": {
+    "value": 2,
+    "quote": "I advocate for economic opportunities, helping business owners, cheaper housing, improving transportation, bettering health care",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I am dedicated to obtain funding for neighborhood infrastructure around Jackson Playground Park and the MLK Jr Pool",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Official SF Voter Information Pamphlet, Nov 3 2026, candidate's own statement (PDF text extracted with pdftotext)"
+   }
+  },
+  "shawn-m-richard": {
+   "name": "Shawn M. Richard",
+   "housing": {
+    "value": 4,
+    "quote": "My goal is simple: build more homes, build them faster, make them more affordable",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "If there are no detox beds, no psychiatric stabilization options, and no low-barrier shelter spaces, then the system is just documenting crises instead of resolving them. A real strategy requires expanding those resources",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/"
+    ]
+   },
+   "safety": {
+    "value": -2,
+    "quote": "But the default posture should be health-first, not enforcement-first",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers; mixed: also says yes to SFPD full staffing and arresting dealers, so held mild"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "San Francisco should build a citywide protected bike lane network",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/shawn-richard/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF Supervisor questionnaire Nov 2026, candidate's own written answers; also backs bus-only lanes"
+   }
+  },
+  "autumn-brown-garibay": {
+   "name": "Autumn Brown Garibay",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/"
+    ]
+   }
+  },
+  "virginia-cheung": {
+   "name": "Virginia Cheung",
+   "housing": {
+    "value": 2,
+    "quote": "Any underutilized sites should remain community assets and repurposed as hubs for early childhood programs, family services, or educator housing.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/cheung_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+    ]
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "advance structural reforms, including modernizing Prop 13, strengthening Prop 98 by raising the base",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/cheung_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+    ]
+   },
+   "education": {
+    "value": -3,
+    "quote": "Charter schools can play a limited role, but they should not undermine public school funding, equity, or stability.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/cheung_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers; axis note: answer is about charter schools (publicly funded, privately run), so held to moderate strength"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+    ]
+   }
+  },
+  "alida-fisher": {
+   "name": "Alida Fisher",
+   "housing": {
+    "value": 2,
+    "quote": "We have built Shirley Chisholm Village, the largest educator workforce housing in California at the time it opened.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/alida-fisher/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026); incumbent citing record"
+   },
+   "healthcare": {
+    "value": 2,
+    "quote": "We will now offer fully funded dependent health care benefits to educators",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/alida-fisher/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/alida-fisher/",
+     "https://sfgreens.org/questionnaires/2026/fisher_boe.html"
+    ]
+   },
+   "taxes": {
+    "value": 4,
+    "quote": "I have stood alongside educators, community members, and city leaders for years working towards the passage of The Living Wage for Educators Act, the Student Success Fund, and many other bond measures and parcel taxes.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/fisher_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/alida-fisher/",
+     "https://sfgreens.org/questionnaires/2026/fisher_boe.html"
+    ]
+   },
+   "education": {
+    "value": -3,
+    "quote": "I was the sole board member to vote against renewing the KIPP Bayview Elementary School charter last year",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/fisher_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers; axis note: answer is about charter schools (publicly funded, privately run), so held to moderate strength"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/alida-fisher/",
+     "https://sfgreens.org/questionnaires/2026/fisher_boe.html"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/alida-fisher/",
+     "https://sfgreens.org/questionnaires/2026/fisher_boe.html"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/alida-fisher/",
+     "https://sfgreens.org/questionnaires/2026/fisher_boe.html"
+    ]
+   }
+  },
+  "ryan-hazelton": {
+   "name": "Ryan Hazelton",
+   "housing": {
+    "value": 3,
+    "quote": "I find myself frustrated by the strong pushback to build more affordable housing across neighborhoods in our city.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+     "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+     "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+     "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+    ]
+   },
+   "safety": {
+    "value": -2,
+    "quote": "Often issues of safety and violence within schools are a result of risk factors at home that can be tended to through resources like those that Beacon Schools or Community Schools provide.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026); school-safety answer favoring prevention/services"
+   },
+   "education": {
+    "value": -2,
+    "quote": "If there's a genuine unmet need mobilizing parents to start a new charter, our district should be the one meeting that need, not ceding the ground.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/hazelton_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers; axis note: answer is about charter schools (publicly funded, privately run), so held to moderate strength"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+     "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+     "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/",
+     "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+    ]
+   }
+  },
+  "phil-kim": {
+   "name": "Phil Kim",
+   "housing": {
+    "value": 2,
+    "quote": "I support exploring partnerships that use district land for educator housing, with careful evaluation of financial sustainability and community impact",
+    "sourceUrl": "https://missionlocal.org/2026/10/meet-the-candidates-san-francisco-school-board-race/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Mission Local school board candidate Q&A, candidate's own written answer (attributed by h3 heading)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   }
+  },
+  "laurance-lee": {
+   "name": "Laurance Lee",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/",
+     "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/",
+     "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/",
+     "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+    ]
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "San Francisco should also renew reliable local revenue",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers"
+   },
+   "safety": {
+    "value": 3,
+    "quote": "We need clear, enforceable codes of conduct and consistent consequences.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026); also supports School Resource Officers as an option"
+   },
+   "education": {
+    "value": -3,
+    "quote": "San Francisco does not need additional charter schools, especially while the number of school-age children is declining.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_boe.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party School Board endorsement questionnaire 2026, candidate's own written answers; axis note: answer is about charter schools (publicly funded, privately run), so held to moderate strength"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/",
+     "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/",
+     "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/",
+     "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+    ]
+   }
+  },
+  "reina-tello": {
+   "name": "Reina Tello",
+   "housing": {
+    "value": 2,
+    "quote": "we must tackle the cost of living by finding the solutions for teacher housing",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "We must integrate health care, mental health support, and social services directly into the academic program.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/"
+    ]
+   },
+   "safety": {
+    "value": -3,
+    "quote": "School safety is best achieved through a community school model that includes wrap-around services.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/reina-tello/"
+    ]
+   }
+  },
+  "tim-tung": {
+   "name": "Tim Tung",
+   "housing": {
+    "value": 2,
+    "quote": "I would recommend that the Superintendent investigate expanding affordable teacher housing opportunities",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/"
+    ]
+   },
+   "safety": {
+    "value": 2,
+    "quote": "safety monitors to prevent intruders from coming onto school campuses and stopping physical altercations",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026); physical-security approach, mild"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/tim-tung/"
+    ]
+   }
+  },
+  "elijah-ball": {
+   "name": "Elijah Ball",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/"
+    ]
+   }
+  },
+  "rome-moses-jones": {
+   "name": "Rome Moses Jones",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   }
+  },
+  "monroe-lace": {
+   "name": "Monroe Lace",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "The Board must place a successor measure before voters early enough that CCSF is not gambling",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026); on renewing CCSF parcel tax expiring 2032"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/"
+    ]
+   }
+  },
+  "leah-lacroix": {
+   "name": "Leah LaCroix",
+   "housing": {
+    "value": 2,
+    "quote": "I would be open to using a portion of CCSF's real estate holdings to pursue 100% affordable housing for students and faculty",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board endorsement questionnaire 2026, candidate's own written answers (due Aug 26, 2026)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+    ]
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "I fully support Free City and the grant program, and strongly oppose any cuts or reductions to the program.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board endorsement questionnaire 2026, candidate's own written answers (due Aug 26, 2026); Free City is funded by voter-approved Prop W transfer tax; also pledges to 'help champion any future ballot measure for Free City'"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+    ]
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "San Francisco deserves a robust, reliable, well connected, and fully-funded public transportation system. I will advocate for more local, state, and federal funding",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board endorsement questionnaire 2026, candidate's own written answers (due Aug 26, 2026)"
+   }
+  },
+  "jeremy-lee": {
+   "name": "Jeremy Lee",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lee_ccb.html"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lee_ccb.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lee_ccb.html"
+    ]
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "I want a dedicated local funding source for both Free City and childcare",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board questionnaire 2026, candidate's own written answers"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lee_ccb.html"
+    ]
+   },
+   "education": {
+    "value": -2,
+    "quote": "I am also very skeptical about the privatization of public resources and public education",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board questionnaire 2026, candidate's own written answers; mild, about privatization at CCSF"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/lee_ccb.html"
+    ]
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "CCSF already prohibits its police from participating in immigration enforcement and bars ICE from campus without a judicial warrant. My job as a trustee is to make sure those protections are real, dependable, and consistent across all sites",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board questionnaire 2026, candidate's own written answers"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I want to see more public transit serving our campuses",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board questionnaire 2026, candidate's own written answers; also supports free Muni for CCSF students"
+   }
+  },
+  "bunny-mcfadden": {
+   "name": "Bunny McFadden",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html"
+    ]
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "Free City is crucial and must not be a political bargaining chip.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board endorsement questionnaire 2026, candidate's own written answers (due Aug 26, 2026); says Free City 'should be fully funded'"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "I will work with the community to limit exposure to policing",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board endorsement questionnaire 2026, candidate's own written answers (due Aug 26, 2026)"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html"
+    ]
+   },
+   "energy": {
+    "value": 2,
+    "quote": "I think there are opportunities to pursue grants that can fund operational and facility improvements like decarbonization.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board endorsement questionnaire 2026, candidate's own written answers (due Aug 26, 2026)"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html"
+    ]
+   },
+   "infrastructure": {
+    "value": 2,
+    "quote": "I will also continue advocating for public transportation that serves the public to the highest level.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "SF Green Party College Board endorsement questionnaire 2026, candidate's own written answers (due Aug 26, 2026)"
+   }
+  },
+  "erwin-tam": {
+   "name": "Erwin Tam",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/"
+    ]
+   }
+  },
+  "lisa-wynn": {
+   "name": "Lisa Wynn",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    ]
+   }
+  },
+  "ruth-ferguson": {
+   "name": "Ruth Ferguson",
+   "housing": {
+    "value": 3,
+    "quote": "organizing to rezone Bernal Heights to improve our housing affordability",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/"
+    ]
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "protect and grow the Free City and parcel tax revenue streams",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "GrowSF candidate questionnaire, candidate's own written answers, Nov 2026 election (published 2026)"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+     "https://growsf.org/voter-guide/questionnaires/november-2026/ruth-ferguson/"
+    ]
+   }
+  }
+ }
+}

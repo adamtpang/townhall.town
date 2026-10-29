@@ -11,14 +11,49 @@
    {
     "id": "ny-12",
     "label": "NY-12 (U.S. House)",
-    "note": "ZCTA 10001 lies entirely inside NY-12 (Census 119th Congress relationship file)"
+    "note": "100%"
+   },
+   {
+    "id": "ny-sd-47",
+    "label": "NY Senate District 47",
+    "note": "SPLIT: ~63.7% (2020 blocks; NYC DCP NYC_State_Senate_Districts)"
+   },
+   {
+    "id": "ny-sd-28",
+    "label": "NY Senate District 28",
+    "note": "SPLIT: ~36.3%"
+   },
+   {
+    "id": "ny-ad-75",
+    "label": "NY Assembly District 75",
+    "note": "100%"
+   },
+   {
+    "id": "nyc-cd-3",
+    "label": "NYC Council District 3",
+    "note": "SPLIT: ~95.1%"
+   },
+   {
+    "id": "nyc-cd-4",
+    "label": "NYC Council District 4",
+    "note": "SPLIT: ~4.9%. No race in 2026"
+   },
+   {
+    "id": "ny-mcd-3",
+    "label": "Manhattan 3rd Municipal Court District",
+    "note": "SPLIT: ~70.6%"
+   },
+   {
+    "id": "ny-mcd-9",
+    "label": "Manhattan 9th Municipal Court District",
+    "note": "SPLIT: ~29.4%"
    }
   ],
   "districtSource": {
-   "label": "Census 2020 ZCTA to 119th Congressional District relationship file",
-   "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt"
+   "label": "NYC DCP district layers (services5.arcgis.com/GfwWNkhOj9bNBqoJ) population-weighted with 2020 Census blocks inside Census ZCTA 10001 (total 32,612). ZCTA approximates the USPS ZIP",
+   "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services"
   },
-  "splitWarning": null,
+  "splitWarning": "10001 spans more than one district for State Senate (SD47/SD28), City Council (CD3/CD4) and Civil Court municipal district (3rd/9th). Your exact ballot depends on your street address; see findmypollsite.vote.nyc.",
   "electionDate": "2026-11-03",
   "races": [
    {
@@ -29,7 +64,7 @@
     "officeSource": "https://www.house.gov/the-house-explained",
     "candidates": [
      {
-      "name": "Micah Lasher",
+      "name": "Micah C. Lasher",
       "party": "Democratic",
       "incumbent": false,
       "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
@@ -47,7 +82,9 @@
        "url": "https://www.fec.gov/data/candidate/H6NY12172/"
       },
       "positions": [],
-      "hasThemes": false
+      "hasThemes": false,
+      "aka": "Micah Lasher",
+      "nameSource": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
      },
      {
       "name": "Caroline Shinkle",
@@ -93,7 +130,7 @@
      },
      {
       "name": "Karen Ortiz",
-      "party": "Karen Ortiz Party",
+      "party": "Karen Ortiz (independent line)",
       "incumbent": false,
       "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
       "ballotpedia": "https://ballotpedia.org/Karen_Ortiz",
@@ -117,13 +154,13 @@
    },
    {
     "id": "ny-governor",
-    "title": "Governor of New York",
+    "title": "Governor and Lieutenant Governor",
     "level": "state",
     "office": "Heads the state executive branch: proposes the state budget, signs or vetoes bills passed by the Legislature, appoints agency heads and judges to the Court of Appeals, and commands the state National Guard. 4-year term; elected on a joint ticket with the Lieutenant Governor.",
     "officeSource": "https://www.governor.ny.gov/",
     "candidates": [
      {
-      "name": "Kathy Hochul",
+      "name": "Kathy C. Hochul / Adrienne E. Adams",
       "party": "Democratic / Working Families Party",
       "incumbent": true,
       "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
@@ -135,10 +172,12 @@
       "finance": null,
       "positions": [],
       "hasThemes": false,
-      "runningMate": "Adrienne Adams"
+      "runningMate": "Adrienne Adams",
+      "aka": "Kathy Hochul",
+      "nameSource": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
      },
      {
-      "name": "Bruce Blakeman",
+      "name": "Bruce A. Blakeman / Todd Hood",
       "party": "Republican / Conservative Party / Vote Affordable Party",
       "incumbent": false,
       "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
@@ -150,11 +189,15 @@
       "finance": null,
       "positions": [],
       "hasThemes": false,
-      "runningMate": "Todd Hood"
+      "runningMate": "Todd Hood",
+      "aka": "Bruce Blakeman",
+      "nameSource": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
      }
     ],
     "source": "https://ballotpedia.org/New_York_gubernatorial_election,_2026",
-    "note": "Governor and Lieutenant Governor run together. Write-in candidates (Jonathan Makeley, Jean Anglade) are listed on Ballotpedia but not printed on the ballot."
+    "note": "Governor and Lieutenant Governor run together. Write-in candidates (Jonathan Makeley, Jean Anglade) are listed on Ballotpedia but not printed on the ballot.",
+    "akaTitle": "Governor of New York",
+    "titleSource": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
    },
    {
     "id": "ny-attorney-general",
@@ -164,7 +207,7 @@
     "officeSource": "https://ag.ny.gov/",
     "candidates": [
      {
-      "name": "Letitia James",
+      "name": "Letitia A. James",
       "party": "Democratic / Working Families Party",
       "incumbent": true,
       "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
@@ -175,7 +218,9 @@
       "photo": null,
       "finance": null,
       "positions": [],
-      "hasThemes": false
+      "hasThemes": false,
+      "aka": "Letitia James",
+      "nameSource": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
      },
      {
       "name": "Saritha Komatireddy",
@@ -235,6 +280,510 @@
      }
     ],
     "source": "https://ballotpedia.org/New_York_Comptroller_election,_2026"
+   },
+   {
+    "id": "ny-sd-47",
+    "title": "State Senator, District 47",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Erik D. Bottcher",
+      "party": "Democratic / Working Families Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Charlotte Friedman",
+      "party": "Republican",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf",
+    "appliesNote": "SPLIT: ~63.7% of 10001 (ZCTA) residents are in SD47",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "ny-sd-28",
+    "title": "State Senator, District 28",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Liz Krueger",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Alina Bonsell",
+      "party": "Republican / Block Mamdani Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf",
+    "appliesNote": "SPLIT: ~36.3% of 10001 (ZCTA) residents are in SD28",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "ny-ad-75",
+    "title": "Member of Assembly, District 75",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Tony Simone",
+      "party": "Democratic / Working Families Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Cristina Fontanelli",
+      "party": "Republican / Save NYC Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf",
+    "appliesNote": "10001 is 100% in AD75"
+   },
+   {
+    "id": "ny-supreme-1jd",
+    "title": "Justice of the Supreme Court, 1st Judicial District (choose up to 6)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Saliann Scarpulla",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Kathleen Waterman-Marshall",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Shlomo S. Hagler",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Manuel J. Mendez",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Hasa A. Kingo",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Christopher Chin",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Amy S. Taylor",
+      "party": "Working Families Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Joshua E. Goldfein",
+      "party": "Working Families Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Sienna M. Fontaine",
+      "party": "Working Families Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Bob Cohen",
+      "party": "Working Families Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Jeffrey W. Rizzo",
+      "party": "Working Families Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf",
+    "appliesNote": "New York County (all of Manhattan)",
+    "judicial": "ny"
+   },
+   {
+    "id": "ny-surrogate-ny",
+    "title": "Surrogate, New York County",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Rita Mella",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
+    "appliesNote": "Source is the NYC BOE contest list (marked TENTATIVE, printed 9/11/2026)",
+    "tentative": true,
+    "judicial": "ny"
+   },
+   {
+    "id": "ny-civil-county-ny",
+    "title": "Judge of the Civil Court, County, New York (choose up to 3)",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Josh E. Hanshaft",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Emily Morales-Minerva",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Vlad Frants",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
+    "appliesNote": "Source is the NYC BOE contest list (TENTATIVE, 9/11/2026)",
+    "tentative": true,
+    "judicial": "ny"
+   },
+   {
+    "id": "ny-civil-3md-ny",
+    "title": "Judge of the Civil Court, District, 3rd Municipal Court District, New York",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Steven Benathen",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
+    "appliesNote": "SPLIT: ~70.6% of 10001 (ZCTA) residents are in the 3rd Municipal Court District. Source: TENTATIVE contest list",
+    "dependsOnAddress": true,
+    "tentative": true,
+    "judicial": "ny"
+   },
+   {
+    "id": "ny-civil-9md-ny",
+    "title": "Judge of the Civil Court, District, 9th Municipal Court District, New York (choose up to 2)",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Jennifer Frankola-Crawford",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Brian J. Krist",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
+    "appliesNote": "SPLIT: ~29.4% of 10001 (ZCTA) residents are in the 9th Municipal Court District. Source: TENTATIVE contest list",
+    "dependsOnAddress": true,
+    "tentative": true,
+    "judicial": "ny"
+   },
+   {
+    "id": "nyc-council-3",
+    "title": "Member of the City Council, 3rd Council District",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Carl Wilson",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Haris Bhatti",
+      "party": "Haris Bhatti Party",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
+    "appliesNote": "SPLIT: ~95.1% of 10001 (ZCTA) residents are in Council District 3; ~4.9% are in CD4, which has no 2026 race. Whether this is a special election is unsure. Source: TENTATIVE contest list",
+    "dependsOnAddress": true,
+    "tentative": true
    }
   ],
   "measures": [
@@ -274,7 +823,7 @@
     "source": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
    }
   ],
-  "measuresNote": "NYC Charter proposals from NYC Votes (NYC Campaign Finance Board). Statewide ballot questions: unsure, none found in our sources; verify with the NYS Board of Elections. State Senate, Assembly, judicial and City Council races are not shown yet. New York has no U.S. Senate race in 2026.",
+  "measuresNote": "NYC Charter Proposals 1–5 are on the ballot (already in the data; titles match the NYC BOE contest list). Neither the NYC BOE contest list for New York County nor the NYS certification lists any statewide ballot proposal; verify on your sample ballot at findmypollsite.vote.nyc.",
   "problems": [
    {
     "year": "ACS 2024 5-year (2020-2024)",
@@ -332,6 +881,30 @@
    "label": "NYC Board of Elections poll site and sample ballot lookup (official)",
    "url": "https://findmypollsite.vote.nyc/"
   },
-  "builtAt": "2026-10-29"
+  "builtAt": "2026-10-29",
+  "multiDistrictFlags": [
+   {
+    "type": "NY State Senate",
+    "districts": [
+     "SD47 ~63.7%",
+     "SD28 ~36.3%"
+    ]
+   },
+   {
+    "type": "NYC Council",
+    "districts": [
+     "CD3 ~95.1%",
+     "CD4 ~4.9% (no race)"
+    ]
+   },
+   {
+    "type": "Civil Court municipal district",
+    "districts": [
+     "3rd ~70.6%",
+     "9th ~29.4%"
+    ]
+   }
+  ],
+  "partyNote": "Following data/ny.json convention, fusion lines are joined with ' / ' and minor lines get 'Party' appended. The official line names are 'Working Families', 'Conservative', 'Block Mamdani', 'Save NYC' and 'Haris Bhatti'. The NYS certification shows no Conservative line for SD28, SD47 or AD75."
  }
 }

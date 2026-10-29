@@ -1,0 +1,205 @@
+{
+ "zip": "10001",
+ "note": "Batch5: only added candidate-issues under 'stances'; 'nullsRechecked' lists still-null pairs re-searched on 2026-10-29 (merge their URLs into 'searched' if desired).",
+ "stances": {
+  "kathy-hochul-adrienne-adams-lt-gov": {
+   "name": "Kathy C. Hochul / Adrienne E. Adams",
+   "race": "ny-governor",
+   "party": "Democratic, Working Families",
+   "wages": {
+    "value": 3,
+    "quote": "By continuing these investments and indexing wages to inflation, we’re making sure New Yorkers can keep up with rising costs by taking home more money.",
+    "sourceUrl": "https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-reminds-new-yorkers-minimum-wage-increase-january-1",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "official press release, Dec 22 2025 (verified via WebFetch; site blocks curl)"
+   },
+   "energy": {
+    "value": 3,
+    "quote": "we will continue to fight back against the unending war against clean energy",
+    "sourceUrl": "https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-announce-lawsuit-challenging-trump",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "Governor Hochul quoted in joint AG/Governor release, Sep 22 2026; +3 not +4/5 because her record also includes gas approvals"
+   }
+  },
+  "letitia-james": {
+   "name": "Letitia A. James",
+   "race": "ny-attorney-general",
+   "party": "Democratic, Working Families",
+   "energy": {
+    "value": 4,
+    "quote": "As demand for energy continues to skyrocket, these wind projects have become more important than ever.",
+    "sourceUrl": "https://ag.ny.gov/press-release/2026/attorney-general-james-intervenes-stop-trump-administration-freeze-wind-energy",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "official AG press release, Jul 16 2026"
+   }
+  },
+  "bruce-blakeman-todd-hood-lt-gov": {
+   "name": "Bruce A. Blakeman / Todd Hood",
+   "race": "ny-governor",
+   "party": "Republican, Conservative, Vote Affordable",
+   "education": {
+    "value": 3,
+    "quote": "Kathy Hochul is taking opportunities away from New York children, plain and simple.",
+    "sourceUrl": "https://nypost.com/2026/01/26/us-news/hochul-refuses-to-jump-on-chance-to-help-neediest-ny-students-critics-gripe-but-she-blames-trump/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "direct quote in NY Post, Jan 26 2026; urging NY to opt into the federal scholarship tax credit (tuition assistance incl. private/religious schools)"
+   },
+   "healthcare": {
+    "value": -3,
+    "quote": "make the program more efficient and more in line with what other states are spending",
+    "sourceUrl": "https://lilifepolitics.com/news/politics/blakeman-hochul-spar-over-medicaid/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "direct quote, Feb 28 2026; on cutting NY Medicaid spending"
+   },
+   "wages": {
+    "value": -3,
+    "quote": "I think the minimum wage is where it should be. We should not increase it",
+    "sourceUrl": "https://www.fingerlakes1.com/2026/10/29/blakeman-opposes-minimum-wage-increase-drawing-criticism-from-democrats/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "direct quote (from The Chief interview) reported Oct 29 2026"
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "This situation demands immediate action - not studies, not excuses, but shovels in the ground and funding where it's needed most.",
+    "sourceUrl": "https://www.longisland.com/articles/02-22-26/blakeman-slams-hochul-over-crumbling-infrastructure-after-dangerous-damage-found-on-state-bridge.html",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "direct quote, Feb 22 2026; also proposed new Outerbridge Crossing (CBS NY, Oct 1 2026)"
+   }
+  },
+  "saritha-komatireddy": {
+   "name": "Saritha Komatireddy",
+   "race": "ny-attorney-general",
+   "party": "Republican, Conservative",
+   "energy": {
+    "value": -3,
+    "quote": "Ms. James went to court — again and again — to defend a mandate that forces higher cooling and heating bills on families who can least afford them.",
+    "sourceUrl": "https://sarithafornewyork.com/komatireddy-letitia-james-just-made-your-electricbill-go-up-and-affordable-housing-harder-to-build/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "campaign site, Jul 7 2026; opposes the All-Electric Buildings Act (gas ban in new buildings)"
+   }
+  },
+  "alina-bonsell": {
+   "name": "Alina Bonsell",
+   "race": "ny-sd-28",
+   "party": "Republican, Block Mamdani",
+   "energy": {
+    "value": -2,
+    "quote": "Reevaluate New York’s blanket fracking ban only for appropriate locations and under strict safeguards",
+    "sourceUrl": "https://www.alinabonsell.com/8-point-plan",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "note": "campaign platform (undated, live Oct 2026); mild/qualified: same plank also supports cost-effective solar/wind/storage and nuclear, calls a $200M solar allocation 'an inefficient waste of taxpayer money'"
+   }
+  }
+ },
+ "nullsRechecked": {
+  "erik-bottcher:wages": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://intro.nyc/1135-2024",
+    "https://intro.nyc/1133-2024",
+    "https://www.governor.ny.gov/sites/default/files/2026-10/gpb_44_minimum_wage_rates-bill.pdf (name only in blank co-sponsor list; not a statement)",
+    "https://www.nysenate.gov/legislation/bills/2025/S2078 (timed out)"
+   ]
+  },
+  "hochul:education": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://www.governor.ny.gov/news/statement-governor-kathy-hochul-180 (mixed: conditional opt-in to scholarship tax credit + 'My commitment to public education has not changed')"
+   ]
+  },
+  "dinapoli:taxes": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://gothamist.com (declined to take a position)",
+    "https://www.cityandstateny.com/politics/2026/10/dinapoli-defends-record-medicaid-fraud-comptroller-debate/416380/"
+   ]
+  },
+  "dinapoli:safety": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "NYC Votes cached answer (corruption only)",
+    "https://ny1.com/nyc/all-boroughs/politics/2026/10/27/hernandez-hopes-to-end-dinapolis-long-winning-streak-as-state-comptroller"
+   ]
+  },
+  "friedman:*": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://charlotte4nysenate.com",
+    "https://theballotbrief.com/candidate/charlotte-friedman-ny",
+    "Ballotpedia (403)"
+   ]
+  },
+  "komatireddy:housing/wages/education/infrastructure": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://sarithafornewyork.com",
+    "https://citizensunion.org (CU questionnaire PDF)",
+    "NYC Votes cached page"
+   ]
+  },
+  "caroline-shinkle:wages/infrastructure": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://carolinefornewyork.com/priorities",
+    "https://patch.com/new-york/upper-east-side-nyc/election-q-meet-ny-12-candidate-caroline-shinkle"
+   ]
+  },
+  "fontanelli:*": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://www.cristinafontanelli4ny.com",
+    "https://www.chelseanewsny.com/news/state-assembly-district-75-election-fontanelli-v-simone-FB6322733"
+   ]
+  },
+  "negron:education/energy/infrastructure": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://www.wilneidany12.com/my-first-hundred-days (Title I funding statement does not address public vs private direction)"
+   ]
+  },
+  "ortiz:wages/taxes/energy/infrastructure": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://ko4congress.com/",
+    "https://patch.com/new-york/upper-east-side-nyc/election-q-meet-ny-12-candidate-karen-ortiz (no fed tax on first $100k + Medicare for All: mixed on taxes axis)"
+   ]
+  },
+  "bhatti:wages/taxes/education/infrastructure": {
+   "value": null,
+   "status": "No public statement found",
+   "checkedDate": "2026-10-29",
+   "searched": [
+    "https://harisfornewyork.com/policies/ ('Education PreK-12' heading only)"
+   ]
+  }
+ }
+}

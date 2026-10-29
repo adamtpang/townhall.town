@@ -1,9 +1,14 @@
+import { validZip } from "../../../lib/zip.mjs";
+import { cleanNarration, UNSUPPORTED } from "../../../lib/narration.mjs";
 import { generateText, tool, stepCountIs, type LanguageModel } from "ai";
 import { createXai } from "@ai-sdk/xai";
 import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../../../lib/tools";
 import { civicTools } from "../../../lib/civicTools";
 import { dataTools } from "../../../lib/dataTools";
+// Towny privacy P0: never send a voter address to Google Civic voterinfo. Real fix lands with the feat/agentic merge.
+const { getVoterInfo: _noVoterInfo, ...hackFairDataTools } = dataTools;
+void _noVoterInfo;
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -113,9 +118,9 @@ async function run(zip: string, emit: Emit) {
         providerOptions: { gateway: { models: ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"] } },
         system: SYSTEM,
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
-        tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools },
+        tools: { ...makeTools(zip, emit, results), ...civicTools, ...hackFairDataTools },
         stopWhen: stepCountIs(3),
-        abortSignal: AbortSignal.timeout(25000),
+        abortSignal: AbortSignal.timeout(6000), // ~6s per model, then the next rung or the deterministic path
       });
       narration = res.text;
       model = m;
@@ -144,15 +149,16 @@ async function run(zip: string, emit: Emit) {
     model,
     modelError: mode === "fallback" ? error : null,
     toolsRunByModel: mode === "live" ? order.filter((n) => !missing.includes(n)) : [],
-    narration,
+    narration: (() => { const b = ballotFor(zip) as any; return cleanNarration(narration, zip, b?.races?.length ?? 0, b?.measures?.length ?? 0); })(),
     ballot: ballotFor(zip),
     markets: results.getMarketOdds ?? {},
     generatedAt: new Date().toISOString(),
   });
 }
 
-async function handle(zip: string) {
-  zip = (zip || "").replace(/\D/g, "").slice(0, 5);
+async function handle(raw: string) {
+  const zip = validZip(raw);
+  if (!zip) return new Response(JSON.stringify({ type: "invalid", message: "Enter a valid 5-digit ZIP" }) + "\n", { status: 400, headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store" } });
   const enc = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
@@ -160,7 +166,7 @@ async function handle(zip: string) {
       try {
         if (!ballotFor(zip)) {
           emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: "Not cached" });
-          emit({ type: "unsupported", zip, message: "Austin, San Francisco, and New York 10001 for now." });
+          emit({ type: "unsupported", zip, message: UNSUPPORTED });
         } else await run(zip, emit);
       } catch (e: any) {
         emit({ type: "error", message: String(e?.message || e) });
