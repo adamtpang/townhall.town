@@ -17,6 +17,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
 import Plan from "./Plan";
+import { measuresFor, shortTitle } from "../lib/measures";
 
 const NYC_READY = true;
 const DEMO = [
@@ -314,6 +315,7 @@ export default function BallotAgent() {
 
   const b = result?.ballot;
   const races = (b?.races || []) as R[];
+  const measureMath = useMemo(() => (b ? measuresFor(b.zip) : []), [b]);
   const problems = (b?.problems || []) as Problem[];
   const markets = result?.markets || {};
   const doneCount = TOOLS.filter((t) => steps[t]?.status === "done").length;
@@ -358,14 +360,14 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-32">
           <p className="text-sm text-black/60">
-            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check your exact district by address</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
+            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">Check your exact district by address</a></>}
           </p>
-          <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
+          <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} />
           <IssueMatch state={b.state} races={b.races} />
           <section id="plan" className="border-t border-black py-24">
             <p className="text-sm text-black/50">03</p>
             <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">Your plan</h2>
-            <Plan zip={b.zip} state={b.state} place={b.place} electionDate={b.electionDate} races={b.races} measures={b.measures || []} />
+            <Plan zip={b.zip} state={b.state} place={b.place} electionDate={b.electionDate} races={b.races} measures={measureMath.length ? measureMath.map((m) => ({ id: m.id, title: shortTitle(m.title) })) : b.measures || []} />
           </section>
         </div>
       )}

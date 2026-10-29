@@ -1,19 +1,19 @@
 import stancesData from "../data/stances.json";
 
-export type Issue = { id: string; label: string; low: string; high: string; caOnly?: boolean };
+export type Issue = { id: string; label: string; low: string; high: string; lowShort: string; highShort: string; caOnly?: boolean };
 
 /** Each issue is a policy direction from -5 (left end) to +5 (right end), integer steps. Neither end is a party. */
 export const ISSUES: Issue[] = [
-  { id: "housing", label: "Housing costs", low: "Government should stay out of housing costs", high: "Government should act to lower housing costs" },
-  { id: "healthcare", label: "Healthcare access", low: "Smaller government role in healthcare", high: "Government should expand healthcare access" },
-  { id: "wages", label: "Jobs and wages", low: "Leave wages to the market", high: "Government should act to raise wages" },
-  { id: "taxes", label: "Taxes", low: "Lower taxes, fewer public services", high: "Higher taxes, more public services" },
-  { id: "safety", label: "Public safety", low: "More emphasis on diversion and prevention", high: "More emphasis on detention and enforcement" },
-  { id: "education", label: "Education", low: "Keep public school money in public schools", high: "Let public school money follow students to private schools" },
-  { id: "energy", label: "Energy and grid", low: "Prioritize oil and gas", high: "Prioritize environmental protection and renewables" },
-  { id: "immigration", label: "Immigration and border", low: "Less border enforcement", high: "More border enforcement" },
-  { id: "wealthtax", label: "Wealth tax (Prop 40)", low: "No new tax on very large fortunes", high: "A new tax on very large fortunes", caOnly: true },
-  { id: "infrastructure", label: "Water and infrastructure", low: "Less public spending on water and infrastructure", high: "More public spending on water and infrastructure" },
+  { id: "housing", label: "Housing costs", low: "Government should stay out of housing costs", high: "Government should act to lower housing costs", lowShort: "Hands off", highShort: "Act on costs" },
+  { id: "healthcare", label: "Healthcare access", low: "Smaller government role in healthcare", high: "Government should expand healthcare access", lowShort: "Smaller role", highShort: "Expand access" },
+  { id: "wages", label: "Jobs and wages", low: "Leave wages to the market", high: "Government should act to raise wages", lowShort: "Market", highShort: "Government" },
+  { id: "taxes", label: "Taxes", low: "Lower taxes, fewer public services", high: "Higher taxes, more public services", lowShort: "Lower taxes", highShort: "More services" },
+  { id: "safety", label: "Public safety", low: "More emphasis on diversion and prevention", high: "More emphasis on detention and enforcement", lowShort: "Prevention", highShort: "Enforcement" },
+  { id: "education", label: "Education", low: "Keep public school money in public schools", high: "Let public school money follow students to private schools", lowShort: "Public schools only", highShort: "Money follows students" },
+  { id: "energy", label: "Energy and grid", low: "Prioritize oil and gas", high: "Prioritize environmental protection and renewables", lowShort: "Oil & gas", highShort: "Renewables" },
+  { id: "immigration", label: "Immigration and border", low: "Less border enforcement", high: "More border enforcement", lowShort: "Less enforcement", highShort: "More enforcement" },
+  { id: "wealthtax", label: "Wealth tax (Prop 40)", low: "No new tax on very large fortunes", high: "A new tax on very large fortunes", lowShort: "No new tax", highShort: "New tax", caOnly: true },
+  { id: "infrastructure", label: "Water and infrastructure", low: "Less public spending on water and infrastructure", high: "More public spending on water and infrastructure", lowShort: "Spend less", highShort: "Spend more" },
 ];
 
 export type Stance = { value: number; quote: string; sourceUrl: string };

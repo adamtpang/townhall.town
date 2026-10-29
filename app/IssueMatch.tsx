@@ -31,9 +31,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
     <section className="border-t border-black py-24" id="what-matters">
       <p className="nds-caption-upper text-black/60">02</p>
       <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">Who lines up with you</h2>
-      <h3 className="mt-8 text-2xl font-medium tracking-tight">What matters to you?</h3>
-            <p className="mt-2 text-sm text-black/50">Your answers stay on this device. No sign-in, nothing sent to a server.</p>
-      <a href="#overlap" className="mt-4 inline-block text-sm">See your issue overlap ↓</a>
+      <p className="mt-4 text-sm text-black/60">Stays on this device.</p>
 
       <div className="mt-6 grid grid-cols-1 gap-0">
         {issues.map((i) => {
@@ -43,16 +41,15 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
             <div key={i.id} className="border-t border-black/15 py-4" data-issue={i.id}>
               <div className="flex items-center justify-between gap-2">
                 <p className="font-semibold text-navy">{i.label}</p>
-                <label className="-mr-2 flex min-h-11 cursor-pointer items-center gap-1.5 px-2 text-sm text-slate-600">
-                  <Checkbox checked={skipped} onCheckedChange={(c) => set(i.id, c === true ? null : 0)} aria-label={`Skip ${i.label}`} /> Skip
+                <label className="-mr-2 flex min-h-11 cursor-pointer items-center gap-2 px-2 text-sm text-black/60">
+                  <Checkbox checked={skipped} onCheckedChange={(c) => set(i.id, c === true ? null : 0)} aria-label={`Skip ${i.label}`} className="relative border-black/60 after:absolute after:-inset-3 after:content-['']" /> Skip
                 </label>
               </div>
               <Slider className={`mt-4 ${skipped ? "opacity-40" : ""}`} min={-5} max={5} step={1} value={[skipped ? 0 : (v as number)]}
                 onValueChange={([x]) => set(i.id, x)} aria-label={i.label} />
-              <div className="mt-2 flex justify-between gap-4 text-xs text-slate-500">
-                <span className="max-w-[45%]"><b className="block text-black">-5</b>{i.low}</span>
-                <span className="text-base font-medium text-black">{skipped ? "Skipped" : (v as number) > 0 ? `+${v}` : v}</span>
-                <span className="max-w-[45%] text-right"><b className="block text-black">+5</b>{i.high}</span>
+              <div className="mt-2 flex justify-between gap-4 text-sm text-black/60">
+                <span className="truncate">{i.lowShort}</span>
+                <span className="truncate text-right">{i.highShort}</span>
               </div>
             </div>
           );
@@ -62,10 +59,10 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
       <div className="mt-10" id="overlap">
         <h3 className="text-2xl font-medium tracking-tight">Issue overlap</h3>
         <p className="mt-1 border-l-2 border-[#3760f2] pl-4 text-sm text-black/70">
-          <strong>Issue overlap, not a recommendation.</strong> It compares your answers with positions candidates have stated in sourced material, only where both exist. Most candidates have few or no sourced positions, so a missing score says nothing about them. Candidates are shown in ballot order.
+          Overlap, not a recommendation. Sourced positions only. Ballot order.
         </p>
         {answeredCount === 0 ? (
-          <p className="mt-4 text-slate-600">Answer at least one issue above to see overlap and candidate tiers. With no answers, nothing is tiered.</p>
+          <p className="mt-4 text-black/60">Move a slider to see overlap.</p>
         ) : (
           <div className="mt-8 space-y-16">
             {withCands.map((r) => {

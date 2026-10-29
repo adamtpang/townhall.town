@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Portrait, type Photo } from "../components/Portrait";
+import type { MeasureMath } from "../lib/measures";
+import { offices as OFFICES } from "../data/offices.json";
 type Avg = { name: string; prob: number }[];
-type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
 
 /**
@@ -36,7 +38,7 @@ export function tierFor(r: RaceLite, mk: Mk) {
 
 const lead = (mk: Mk) => !!mk?.avg?.length;
 
-export default function RaceTiers({ races, market }: { races: RaceLite[]; market: (id: string) => Mk }) {
+export default function RaceTiers({ races, market, measures = [] }: { races: RaceLite[]; market: (id: string) => Mk; measures?: MeasureMath[] }) {
   const [failed, setFailed] = useState<Record<string, boolean>>({});
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
   const tiers = ["S", "A", "B", "C"] as const;
@@ -60,29 +62,96 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                 {list.map(({ r, why, mk }) => (
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>
-                    {r.candidates?.length ? (
-                      <div className="-mx-6 my-3 flex snap-x snap-mandatory flex-nowrap gap-3 overflow-x-auto scroll-px-6 px-6 pb-1 sm:mx-0 sm:px-0" data-photo-row>
-                        {/* One failed or missing photo switches the whole race to initials, so tiles stay consistent. */}
-                        {r.candidates.map((c) => (
-                          <div key={c.name} className="w-28 flex-none snap-start md:w-40">
-                            <Portrait name={c.name} photo={c.photo} credit={false} boxClassName="h-[140px] md:h-52" forceInitials={failed[r.id] || r.candidates!.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
-                            <p className="mt-1 text-sm font-medium leading-tight text-black/80">{c.name}</p>
-                          </div>
-                        ))}
+                    {r.candidates?.length && !failed[r.id] && r.candidates.every((x) => x.photo?.url) ? (
+                      // One row, identical tiles, never wraps: N equal columns down to 64px, then scroll-snap sideways.
+                      // Any missing or broken portrait hides the whole row, so no candidate looks different.
+                      <div className="-mx-6 my-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:px-0" data-photo-row>
+                        <ul role="list" className="grid snap-x snap-mandatory gap-3 lg:gap-5" style={{ gridTemplateColumns: `repeat(${r.candidates.length}, minmax(64px, 1fr))`, maxWidth: `${r.candidates.length * 160 + (r.candidates.length - 1) * 20}px` }}>
+                          {r.candidates.map((c) => (
+                            <li key={c.name} className="min-w-0 snap-start" data-photo-tile>
+                              <Portrait name={c.name} photo={c.photo} credit={false} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
+                              <p className="mt-2 line-clamp-2 min-h-10 break-words text-sm font-medium leading-5">{c.name}</p>
+                              {c.party && <p className="truncate text-xs text-black/60">{c.party}</p>}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
+                    ) : r.candidates?.length ? (
+                      <p className="my-3 text-base">{r.candidates.map((c) => c.name).join(" · ")}</p>
                     ) : null}
                     <p className="text-sm text-black/60">
                       {why}{" "}
-                      {r.source && <a href={r.source} target="_blank" rel="noreferrer">race source</a>}
-                      {lead(mk) && mk?.quotes?.[0]?.url && <> · <a href={mk.quotes[0].url} target="_blank" rel="noreferrer">market</a></>}
+                      {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">race source</a>}
+                      {lead(mk) && mk?.quotes?.[0]?.url && <> · <a href={mk.quotes[0].url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">market</a></>}
+                      {r.verify && <> · {r.verify}</>}
                     </p>
+                    <OfficeCard id={r.id} fallback={r.office && r.officeSource && !/^unsure/i.test(r.office) ? { learn: r.office, sourceUrl: r.officeSource } : undefined} />
                   </li>
                 ))}
               </ul>
             </details>
           );
         })}
+        {measures.length > 0 && <MeasureRows measures={measures} />}
       </div>
     </section>
+  );
+}
+
+/** 'unsure' in sourced data renders as a plain statement, never blank. */
+const said = (v?: string | null) => (!v || /^\s*unsure\b/i.test(v) ? "No official estimate" : v.replace(/\bunsure\b/gi, "no official estimate"));
+
+/** Learn in 30 seconds: what the office does, from data/offices.json (Civic, sourced). No source, no summary. */
+function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; sourceUrl: string } }) {
+  const o = (OFFICES as Record<string, { learn?: string | null; sourceUrl?: string | null }>)[id];
+  const ok = o?.learn && o.sourceUrl && !/^\s*unsure/i.test(o.learn) ? { learn: o.learn, sourceUrl: o.sourceUrl } : fallback;
+  if (!ok) return null; // No source, no card (Design spec 8.5).
+  return (
+    <details className="group/o" data-office={id}>
+      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">
+        What this office does<span aria-hidden className="ml-2 inline-block group-open/o:rotate-180">↓</span>
+      </summary>
+      <p className="max-w-2xl pb-2 text-base">
+        {ok.learn}{" "}
+        <a href={ok.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap text-sm">{host(ok.sourceUrl)} ↗</a>
+      </p>
+    </details>
+  );
+}
+
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
+
+/** Doing the math: one compact expandable row per measure. Numbers are quoted from official analyses and each links its source. */
+function MeasureRows({ measures }: { measures: MeasureMath[] }) {
+  return (
+    <details className="group border-t border-black/15 py-6" data-tier="measures">
+      <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
+        <span className="font-serif text-5xl leading-none md:w-24">Props</span>
+        <span className="text-sm text-black/60">{measures.length} measure{measures.length === 1 ? "" : "s"}, doing the math<span className="ml-2 inline-block group-open:rotate-180">↓</span></span>
+      </summary>
+      <ul className="mt-6 sm:pl-[7.5rem]">
+        {measures.map((m) => (
+          <li key={m.id} className="border-t border-black/10 first:border-t-0">
+            <details className="group/m" data-measure={m.id}>
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
+                <span className="text-base font-medium">{m.title}</span>
+                <span aria-hidden className="text-sm text-black/50 group-open/m:rotate-180">↓</span>
+              </summary>
+              <dl className="grid gap-4 pb-6 sm:grid-cols-2">
+                {([["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", (m.ifYes ?? m.whatChanges).text, (m.ifYes ?? m.whatChanges).sourceUrl], ["If no", m.ifNo?.text, m.ifNo?.sourceUrl]] as const).map(([k, v, u]) => (
+                  <div key={k}>
+                    <dt className="text-xs uppercase tracking-wide text-black/50">{k}</dt>
+                    <dd className="mt-1 text-sm">
+                      {said(v)}{" "}
+                      {u && <a href={u} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host(u)} ↗</a>}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </details>
   );
 }

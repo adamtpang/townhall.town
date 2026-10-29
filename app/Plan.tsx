@@ -36,7 +36,9 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
   const [shared, setShared] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setPicks(load(zip)); setMounted(true); }, [zip]);
-  const dates = planDates(state, electionDate);
+  // Past dates drop off (compared in Central Time), so the Oct 30 early-voting row hides after Oct 30.
+  const todayCT = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
+  const dates = planDates(state, electionDate).filter((d) => d.date >= todayCT);
   const look = lookups(state);
   const id = bring(state);
   const rows = useMemo(
