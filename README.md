@@ -39,6 +39,16 @@ See `.env.example` (placeholders only, never commit real values):
 - `AI_GATEWAY_API_KEY`: local dev only; on Vercel the gateway authenticates with OIDC.
 - `AGENT_MODELS`: optional comma-separated gateway model ladder.
 - `XAI_API_KEY`: optional direct xAI fallback.
+- `FEC_API_KEY`, `CONGRESS_API_KEY`: optional api.data.gov keys for OpenFEC and Congress.gov. Without them the tools use `DEMO_KEY` (low hourly limit).
+- `OPENSTATES_API_KEY`, `GOOGLE_CIVIC_API_KEY`: optional. Without them `getStateLegislators` and `getVoterInfo` return `unavailable`.
+
+### Live data tools (`lib/dataTools.ts`)
+Optional tools the model can call, each returning a source URL, or `{ status: "unavailable", reason }` when a key is missing or the call fails:
+- `getCampaignFinance`: OpenFEC receipts, spending and cash on hand for a federal candidate.
+- `getSponsoredBills`: the current U.S. House member for a state and district, with recent sponsored bills (Congress.gov).
+- `getCountyUnemployment`: latest monthly county unemployment rate (BLS LAUS). A county figure, so it differs from the ZIP-level ACS 5-year number.
+- `getStateLegislators`: state legislators for a point (Open States).
+- `getVoterInfo`: polling place and early-vote sites for an address (Google Civic voterinfo).
 
 ## Shared data contract
 `lib/types.ts` is the shared contract; plug-ins only add optional fields. `lib/accountability.ts` adds `politician.accountability` ("said vs. did", every record has both source links) and `lib/turnout.ts` adds jurisdiction `turnout` (county turnout, eligible non-voters, 2026 registration, all sourced). Both are also exposed to the model as tools via `lib/civicTools.ts`.
