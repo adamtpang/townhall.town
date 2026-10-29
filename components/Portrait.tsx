@@ -1,4 +1,5 @@
 "use client";
+import { initials as initialsOf } from "./PortraitRow";
 import { useState } from "react";
 import { cn } from "../lib/utils";
 
@@ -7,7 +8,7 @@ export type Photo = { url: string; credit: string; license?: string; page?: stri
 /** Licensed or Ballotpedia portrait with its credit. Falls back to initials; never a generated image. */
 export function Portrait({ name, photo, className, boxClassName, credit = true, forceInitials = false, onFail }: { name: string; photo: Photo; className?: string; boxClassName?: string; credit?: boolean; forceInitials?: boolean; onFail?: () => void }) {
   const [broken, setBroken] = useState(false);
-  const initials = name.split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
+  const initials = initialsOf(name);
   const show = photo?.url && !broken && !forceInitials;
   return (
     <figure className={cn("m-0", className)}>

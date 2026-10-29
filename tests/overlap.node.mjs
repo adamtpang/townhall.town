@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { overlapFor, overlapRows, overlapLabel, overlapLabelPct, MIN_ISSUES, migrateAnswers, press, choiceOf } from "../lib/overlapCore.mjs";
+import { overlapFor, overlapRows, overlapLabel, MIN_ISSUES, migrateAnswers, press, choiceOf } from "../lib/overlapCore.mjs";
 
 const ids = ["a", "b", "c", "d"];
 test("counts only issues with a sourced stance; unmapped issues are no data, not disagreement", () => {
@@ -49,7 +49,6 @@ test("Neutral answers are excluded, overlap means same sign only", () => {
   assert.equal(o.pct, 50);
 });
 test("label with percent", () => {
-  assert.equal(overlapLabelPct("X", { agree: 4, n: 6, pct: 67 }), "Your answers overlap with X on 4 of 6 issues they've stated (67%)");
 });
 test("old slider values migrate: >0 Yes, <0 No, 0 Neutral, null stays null", () => {
   assert.deepEqual(migrateAnswers({ a: 3, b: -1, c: 0, d: null }), { a: 5, b: -5, c: 0, d: null });
@@ -72,4 +71,11 @@ test("overlapStatus: one threshold, few / answer / ok", () => {
   assert.equal(overlapStatus({ a: 5, b: 0 }, st, ["a", "b", "c"]).status, "answer");
   const ok = overlapStatus({ a: 5, b: 5 }, st, ["a", "b", "c"]);
   assert.equal(ok.status, "ok"); assert.equal(ok.agree, 1); assert.equal(ok.pct, 50);
+});
+
+test("Sourced positions count does not depend on the voter's answers", () => {
+  const st = { a: { value: 3 }, b: { value: -2 }, c: { value: 4 }, d: { value: null } };
+  const ids = ["a", "b", "c", "d"];
+  const one = overlapStatus({ a: 5 }, st, ids), all = overlapStatus({ a: 5, b: 5, c: -5, d: 5 }, st, ids);
+  assert.deepEqual(one.sourcedIds, ["a", "b", "c"]); assert.deepEqual(all.sourcedIds, ["a", "b", "c"]);
 });

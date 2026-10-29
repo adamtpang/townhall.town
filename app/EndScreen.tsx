@@ -56,16 +56,23 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
         <div className="lg:col-span-6" data-end="who">
           <p className="text-sm font-[530] text-black/60">Who</p>
           <h3 className="mt-2 font-serif text-2xl leading-7 lg:text-[32px] lg:leading-9">Who lines up with you</h3>
-          <p className="mt-3 border-l-2 border-[#3760F2] pl-4 text-base text-black">Overlap, not a recommendation. Candidates are in ballot order.</p>
+          <p className="mt-3 text-xs leading-4 text-black/60" data-overlap-caption>Overlap, not a recommendation. Candidates are in ballot order.</p>
           <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap is counted</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p></details>
           {judicial.length > 0 && (
             <p className="mt-4 text-sm text-black/60" data-judicial-note>
-              {judicial.some((r) => r.judicial === "ny") ? <>Judicial candidates can&rsquo;t state positions on issues (<a href="https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">22 NYCRR 100.5(A)(4)(d) ↗{ext}</a>), so no overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>
-                : <>Judicial candidates&rsquo; positions on these issues aren&rsquo;t public; see qualifications. No overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>}
+              {(() => {
+                const st = judicial.some((r) => r.judicial === "ny") ? "ny" : judicial.some((r) => r.judicial === "ca") ? "ca" : "tx";
+                const J = {
+                  ny: ["Judicial candidates can\u2019t state positions on issues", "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5", "22 NYCRR 100.5(A)(4)(d)"],
+                  tx: ["Texas judicial candidates can\u2019t pledge or promise how they\u2019ll rule on cases or classes of cases", "https://www.txcourts.gov/All_Archived_Documents/SupremeCourt/AdministrativeOrders/miscdocket/02/02916700.pdf", "Code of Judicial Conduct, Canon 5"],
+                  ca: ["California judicial candidates can\u2019t make statements that commit them on issues likely to come before the courts", "https://www.courts.ca.gov/documents/ca_code_judicial_ethics.pdf", "Code of Judicial Ethics, Canon 5"],
+                }[st];
+                return <>{J[0]} (<a href={J[1]} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-3 after:content-['']">{J[2]} ↗{ext}</a>), so no overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>;
+              })()}
             </p>
           )}
           {zipNone ? (
-            <p className="mt-6 text-base text-black" data-zip-none>We haven&rsquo;t found 2 or more sourced positions for any candidate on this ballot yet, so there is no overlap to show. Each candidate&rsquo;s sources are linked in the races above.</p>
+            <p className="mt-6 text-base text-black" data-zip-none>Not enough sourced positions for any candidate on this ballot yet, so there is no overlap to show. Each candidate&rsquo;s sources are linked in the races above.</p>
           ) : answered === 0 ? (
             <p className="mt-4 text-base text-black/60">Answer Yes, Neutral or No above to see overlap.</p>
           ) : (
@@ -77,17 +84,17 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                     {rows.map(({ c, o }) => (
                       <li key={c.name} className="py-2" data-overlap={c.name} data-status={o.status}>
                         {o.status === "ok" ? (
-                          <p className="text-base text-black">{overlapLabel(c.name, o)} <span className="text-sm text-black/60">({o.pct}%)</span></p>
+                          <p className="text-base text-black">{overlapLabel(c.name, o)}</p>
                         ) : (
                           <p className="text-base text-black"><span className="font-[530]">{c.name}</span><span className="text-black/60">: {o.status === "few" ? "Not enough sourced positions" : "Answer Yes or No on more of their issues to compare"}</span></p>
                         )}
                         {nullNotes(c.name, ids).length > 0 && (
                           <p className="text-sm text-black/60" data-null-status>{nullNotes(c.name, ids).map(([id, t]) => `${ISSUES.find((i) => i.id === id)?.label}: ${t}`).join(" · ")}</p>
                         )}
-                        {o.n > 0 && (
-                          <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Sourced positions ({o.n})</summary>
+                        {o.sourcedIds.length > 0 && (
+                          <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60" data-sourced-n={o.sourcedIds.length}>Sourced positions ({o.sourcedIds.length})</summary>
                             <ul className="space-y-2 pb-2">
-                              {o.counted.map((id: string) => { const st = stancesFor(c.name)[id]; return (
+                              {o.sourcedIds.map((id: string) => { const st = stancesFor(c.name)[id]; return (
                                 <li key={id} className="text-sm text-black/80"><span className="font-[530]">{ISSUES.find((i) => i.id === id)?.label}:</span> {voteLine(st) ? <>{voteLine(st)}</> : <>&ldquo;{st.quote}&rdquo;</>} <span className="text-black/60" data-quote-year>{st.year ? `(${st.year})` : "(date unsure)"}</span> {st.sourceUrl ? <a href={st.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center text-[#3760F2]">{sourceLabel(st.sourceUrl)} ↗{ext}</a> : null}</li>
                               ); })}
                             </ul>
@@ -113,7 +120,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
             <>
               <p className="mt-4 text-base font-[530]">{site.name}</p>
               <p className="text-base text-black/80">{site.address}</p>
-              {site.hours && <p className="mt-1 text-sm text-black/60">{where.phase === "early" ? "Early voting: " : "Election Day: "}{site.hours}</p>}
+              {site.hours && !/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d/.test(site.hours) && <p className="mt-1 text-sm text-black/60">{where.phase === "early" ? "Early voting: " : "Election Day: "}{site.hours}</p>}
               <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-maps-url={mapsUrl(site.address)}>
                 Directions ↗{ext}
               </Button>
@@ -148,7 +155,15 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
           <p className="text-sm font-[530] text-black/60">When</p>
           <h3 className="mt-2 font-serif text-2xl leading-7 lg:text-[32px] lg:leading-9">When to go</h3>
           <ul className="mt-4 space-y-3">
-            {early && (<li><p className="text-sm font-[530]">Early voting, {fmt(early.start)} to {fmt(early.end)}</p>{early.hours && <p className="text-base text-black/80">{early.hours}</p>}</li>)}
+            {early && (<li data-early><p className="text-sm font-[530]">Early voting, {fmt(early.start)} to {fmt(early.end)}</p>
+              {early.daily?.length ? (
+                <ul className="mt-1 space-y-1" data-daily-hours>
+                  {early.daily.map((d: { label: string; hours: string; appliesTo: string | null }, i: number) => (
+                    <li key={i} className="text-base text-black/80">{d.label}: {d.hours}{d.appliesTo && early.daily.length > 1 && new Set(early.daily.map((x: { appliesTo: string | null }) => x.appliesTo)).size > 1 ? <span className="block text-xs leading-4 text-black/60">{d.appliesTo}</span> : null}</li>
+                  ))}
+                </ul>
+              ) : early.hours ? <p className="text-base text-black/80">{early.hours}</p> : <p className="text-base text-black/80">Hours vary by day</p>}
+              <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-['']">Early voting source ↗{ext}</a></li>)}
             {ed && (<li><p className="text-sm font-[530]">Election Day, {fmt(ed.start)}</p><p className="text-base text-black/80">{ed.hours ? `Polls open ${ed.hours}` : "Poll hours not found in an official source"}</p></li>)}
             {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className="text-[#3760F2]">How ↗{ext}</a></p></li>)}
             {when.missing.map((m: string) => <li key={m} className="text-sm text-black/60">{m}: not found in an official source yet.</li>)}
@@ -158,11 +173,11 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <Button onClick={() => window.open(gcalUrl(ed, site ? site.address : ""), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-gcal-url={gcalUrl(ed, site ? site.address : "")}>
                 Add to Google Calendar ↗{ext}
               </Button>
-              <p className="mt-1 text-sm">
-                <button type="button" onClick={downloadIcs} className="inline-flex min-h-11 items-center text-[#3760F2] hover:underline" data-ics>Download .ics (Apple, Outlook)</button>
-                {early && <><span className="text-black/60"> · </span><a href={gcalUrl(early, site ? site.address : "")} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]" data-gcal-early>Early voting to Google ↗{ext}</a></>}
-              </p>
-              <p className="text-xs leading-4 text-black/60"><a href={ed.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">Dates source ↗{ext}</a></p>
+              <div className="mt-2 flex flex-col items-start gap-2 text-sm" data-cal-links>
+                <button type="button" onClick={downloadIcs} className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-[''] hover:underline" data-ics>Download .ics (Apple, Outlook)</button>
+                {early && <a href={gcalUrl(early, site ? site.address : "")} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-[''] hover:underline" data-gcal-early>Early voting to Google ↗{ext}</a>}
+                <a href={ed.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-['']">Dates source ↗{ext}</a>
+              </div>
             </>
           )}
         </div>

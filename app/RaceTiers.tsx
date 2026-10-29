@@ -7,11 +7,9 @@ import officesData from "../data/offices.json";
 const OFFICES = officesData.offices;
 type Avg = { name: string; prob: number }[];
 import type { RaceMeta } from "../lib/raceMeta";
-import type { TrackRecord } from "../lib/types";
-import { TrackRecordList } from "../components/TrackRecord";
 import { ISSUES } from "../lib/issues";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
-type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo; accountability?: TrackRecord }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
 
 /**
@@ -27,6 +25,8 @@ export function impactOf(r: RaceLite): { v: number; why: string } {
   const t = r.title.toLowerCase();
   if (/president|u\.s\. senate|^governor/.test(t)) return { v: 3, why: "top federal or statewide office" };
   if (r.level === "measure") return { v: 2, why: "statewide ballot measure" };
+  // County / city / precinct offices are local even when titled Treasurer or Commissioner (QA P2).
+  if (/\bcounty\b|\bcity\b|precinct|municipal|board of/.test(t) && !/court at law|district court|court of|justice/.test(t)) return { v: 1, why: "local office" };
   if (/u\.s\. house|lieutenant governor|attorney general|comptroller|secretary of state|treasurer|controller|insurance commissioner|superintendent|commissioner/.test(t))
     return { v: 2, why: /u\.s\. house/.test(t) ? "your U.S. House seat" : "statewide executive office" };
   if (/court|judge|justice|appeals/.test(t)) return { v: 1, why: "judicial seat" };
@@ -61,29 +61,20 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
   const tiers = ["S", "A", "B", "C"] as const;
   const TIER_NAME = { S: "Most at stake", A: "High", B: "Moderate", C: "Lower" } as const;
-  return (
-    <section className="border-t border-black py-24" id="tiers">
-      <p className="nds-caption-upper text-black/60">01</p>
-      <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
-      <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
-      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Groups, from most to least at stake: Most at stake (a top office in a competitive race), High, Moderate and Lower. &ldquo;Competitive&rdquo; comes from published race ratings and prediction markets; it never says who is ahead.</p>
-      <div className="mt-10">
-        {tiers.map((t) => {
-          const list = rows.filter((x) => x.tier === t);
-          if (!list.length) return null;
-          const top = t === tiers.find((tt) => rows.some((x) => x.tier === tt));
-          return (
-            <details key={t} open className="group border-t border-black/15 py-6" data-tier={t}>
-              <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
-                <span className="text-sm font-[530]">{TIER_NAME[t]}</span>
-                <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
-              </summary>
-              {top && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
-              <ul className="mt-6 space-y-10">
-                {list.map(({ r, why }) => (
+  const [showAll, setShowAll] = useState(false);
+  // Design P1: court races sit in one collapsed group; Moderate and Lower wait behind one "Show all" button.
+  const isJudicial = (r: RaceLite) => !!r.judicial || impactOf(r).why === "judicial seat";
+  const judicial = rows.filter((x) => isJudicial(x.r));
+  const nonJudicial = rows.filter((x) => !isJudicial(x.r));
+  const hiddenCount = nonJudicial.filter((x) => x.tier === "B" || x.tier === "C").length;
+  const groups = [
+    ...tiers.filter((t) => t === "S" || t === "A" || showAll).map((t) => ({ key: t as string, name: TIER_NAME[t] as string, list: nonJudicial.filter((x) => x.tier === t), eager: t === "S" || t === "A", open: true })),
+  ].filter((g) => g.list.length);
+  const judicialGroup = judicial.length ? [{ key: "judicial", name: `Judicial races (${judicial.length})`, list: judicial, eager: false, open: false }] : [];
+  const raceItem = ({ r, why }: { r: RaceLite; why: string }, eager: boolean) => (
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>
-                    {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={tiers.indexOf(t) < 2} /> : null}
+                    {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
                     <p className="text-sm text-black/60" data-why>{why}{r.meta ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {r.appliesNote.replace(/^SPLIT( \(sliver\))?:\s*/, "").replace(/^unsure:\s*/, "Unsure: ")}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
@@ -95,7 +86,6 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                         {r.verify && <><span aria-hidden>·</span><span>{r.verify}</span></>}
                       </p>
                     )}
-                    {r.candidates?.some((c) => c.accountability) ? <TrackRecordList cands={r.candidates.filter((c) => c.accountability) as { name: string; accountability: TrackRecord }[]} /> : null}
                     {r.meta?.why ? (
                       <details className="group/w" data-why-matters>
                         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">Why this race matters<span aria-hidden className="ml-2 inline-block group-open/w:rotate-180">↓</span></summary>
@@ -114,11 +104,43 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                     {r.meta?.news.length ? <NewsList items={r.meta.news} /> : null}
                     <OfficeCard id={r.id} fallback={r.office && r.officeSource && !/^unsure/i.test(r.office) ? { learn: r.office, sourceUrl: r.officeSource } : undefined} />
                   </li>
-                ))}
+  );
+  return (
+    <section className="border-t border-black py-24" id="tiers">
+      <p className="nds-caption-upper text-black/60">01</p>
+      <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
+      <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Groups, from most to least at stake: Most at stake (a top office in a competitive race), High, Moderate and Lower. &ldquo;Competitive&rdquo; comes from published race ratings and prediction markets; it never says who is ahead.</p>
+      <div className="mt-10">
+        {groups.map(({ key, name, list, eager, open }) => (
+            <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
+              <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
+                <span className="text-sm font-[530]">{name}</span>
+                <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
+                <span aria-hidden className="inline-block text-sm text-black/60 group-open:rotate-180">↓</span>
+              </summary>
+              {key === "S" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
+              <ul className="mt-6 space-y-10">
+                {list.map((x) => raceItem(x, eager))}
               </ul>
             </details>
-          );
-        })}
+        ))}
+        {hiddenCount > 0 && !showAll && (
+          <button type="button" onClick={() => setShowAll(true)} data-show-all className="mt-6 inline-flex min-h-11 items-center border border-black/30 px-5 text-base text-black hover:border-black">Show all {nonJudicial.length} races</button>
+        )}
+        {judicialGroup.map(({ key, name, list, eager, open }) => (
+            <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
+              <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
+                <span className="text-sm font-[530]">{name}</span>
+                <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
+                <span aria-hidden className="inline-block text-sm text-black/60 group-open:rotate-180">↓</span>
+              </summary>
+              {key === "S" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
+              <ul className="mt-6 space-y-10">
+                {list.map((x) => raceItem(x, eager))}
+              </ul>
+            </details>
+        ))}
         {measures.length > 0 && <MeasureRows measures={measures} />}
       </div>
     </section>
@@ -165,17 +187,36 @@ function MeasureRows({ measures }: { measures: MeasureMath[] }) {
                 <span aria-hidden className="text-sm text-black/50 group-open/m:rotate-180">↓</span>
               </summary>
               {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-xs uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
-              <dl className="grid gap-4 pb-6 sm:grid-cols-2">
-                {([["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", (m.ifYes ?? m.whatChanges).text, (m.ifYes ?? m.whatChanges).sourceUrl], ["If no", m.ifNo?.text, m.ifNo?.sourceUrl]] as const).map(([k, v, u]) => (
-                  <div key={k}>
-                    <dt className="text-xs uppercase tracking-wide text-black/50">{k}</dt>
-                    <dd className="mt-1 text-sm">
-                      {said(v)}{" "}
-                      {u && <a href={u} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host(u)} ↗</a>}
-                    </dd>
+{(() => {
+                const all = [["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", (m.ifYes ?? m.whatChanges).text, (m.ifYes ?? m.whatChanges).sourceUrl], ["If no", m.ifNo?.text, m.ifNo?.sourceUrl]] as const;
+                const none = (v?: string | null) => said(v) === "No official estimate";
+                const rows = all.filter(([, v]) => !none(v));
+                const src = m.officialTitleSource || all.find(([, , u]) => u)?.[2];
+                const noCost = none(m.cost.value) && none(m.whoPays.text);
+                return (
+                  <div className="pb-6">
+                    {rows.length > 0 && (
+                      <dl className="grid gap-4 sm:grid-cols-2">
+                        {rows.map(([k, v, u]) => (
+                          <div key={k}>
+                            <dt className="text-xs uppercase tracking-wide text-black/50">{k}</dt>
+                            <dd className="mt-1 text-sm">
+                              {said(v)}{" "}
+                              {u && <a href={u} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host(u)} ↗</a>}
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                    )}
+                    {(noCost || rows.length === 0) && (
+                      <p className="mt-2 text-sm text-black/70" data-measure-oneline>
+                        {rows.length === 0 ? "No plain-language explainer yet; read the official text." : "No official cost estimate."}{" "}
+                        {src && <a href={src} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host(src)} ↗</a>}
+                      </p>
+                    )}
                   </div>
-                ))}
-              </dl>
+                );
+              })()}
             </details>
           </li>
         ))}

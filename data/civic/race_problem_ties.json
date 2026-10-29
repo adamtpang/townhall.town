@@ -3993,8 +3993,8 @@
           "issue": "education",
           "role": "administers_agency",
           "text": "The superintendent runs the state Department of Education.",
-          "sourceUrl": "https://www.cde.ca.gov/eo/mn/sp/",
-          "sourceCite": "CDE Superintendent page",
+          "sourceUrl": "https://www.cde.ca.gov/eo/",
+          "sourceCite": "CDE Executive Office page",
           "sourceCheck": "URL resolves (200); text not matched by script"
         }
       ],

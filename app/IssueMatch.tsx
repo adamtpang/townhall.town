@@ -59,7 +59,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
               <li key={i.id} className="border-t border-black/15 py-6" data-issue={i.id}>
                 <p className="text-sm font-[530] text-black/60">{i.label}</p>
                 <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
-                {i.reason ? <p className="mt-1 text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {i.reason}{i.reasonUrl ? <> <a href={i.reasonUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">Source ↗</a></> : null}</p> : null}
+                {i.reason ? <p className="mt-1 text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {i.reason}{i.reasonUrl ? <> <a href={i.reasonUrl} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-3 after:content-['']">Source ↗</a></> : null}</p> : null}
                 <div role="radiogroup" aria-labelledby={`q-${i.id}`} className="mt-4 grid grid-cols-3 gap-2 md:flex md:gap-3">
                   {CHOICES.map((c) => {
                     const on = sel === c.k;
@@ -84,9 +84,9 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
           {!confirm ? (
             <button type="button" onClick={() => setConfirm(true)} data-reset className="inline-flex h-12 items-center border border-black/30 px-5 text-base text-black hover:border-black">Reset my answers</button>
           ) : (
-            <span className="inline-flex min-h-11 items-center gap-3 text-sm">Clear answers saved on this device?
-              <button type="button" onClick={reset} className="min-h-11 font-[530] text-[#3760F2]">Clear</button>
-              <button type="button" onClick={() => setConfirm(false)} className="min-h-11 text-black/60">Cancel</button>
+            <span role="alertdialog" aria-live="assertive" aria-label="Confirm reset" className="inline-flex min-h-12 flex-wrap items-center gap-3 border border-black bg-[#FFF4D6] px-4 py-2 text-base text-black" data-reset-confirm>Clear all answers saved on this device?
+              <button type="button" autoFocus onClick={reset} className="inline-flex h-11 items-center bg-black px-4 font-[530] text-[#F2F2F2] hover:bg-black/80">Yes, clear</button>
+              <button type="button" onClick={() => setConfirm(false)} className="inline-flex h-11 items-center border border-black/30 px-4 text-black hover:border-black">Cancel</button>
             </span>
           )}
         </div>

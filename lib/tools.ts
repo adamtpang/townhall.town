@@ -6,7 +6,6 @@ import marketCache from "../data/markets-cache.json";
 import type { Jurisdiction, Race, Politician } from "./types";
 // @ts-ignore plain ESM helper shared with scripts/
 import { fetchPolymarket, fetchKalshi } from "./marketsCore.mjs";
-import { withAccountability } from "./accountability";
 import { getTurnout } from "./turnout";
 import { allOrNone, withLicensedPhoto } from "./photos";
 import { withMoney } from "./money";
@@ -25,10 +24,22 @@ const B = { ...ballots, ...ny } as unknown as Record<string, Ballot>;
 const TX = tx as unknown as { statewide: Race[]; house: Record<string, Race>; zipToCd: Record<string, number>; zipSource: { label: string; url: string } };
 export const DEMO_ZIPS = Object.keys(B);
 
-/** Attach the accountability, money and turnout plug-ins (optional contract fields). */
+/** Attach the money and turnout plug-ins (optional contract fields). */
 function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
-  return { ...b, turnout, races: b.races.map((r) => ({ ...r, meta: raceMeta(b.zip, r.id), candidates: allOrNone(r.candidates.map((c) => withMoney(withAccountability(withLicensedPhoto(c))))) })) };
+  const titleN = new Map<string, number>();
+  for (const r of b.races) titleN.set(r.title, (titleN.get(r.title) ?? 0) + 1);
+  return { ...b, turnout, races: b.races.map((r0) => {
+    // Same-titled single-candidate seats (CA retention races) get the justice's name so each title is distinct.
+    const dup = (titleN.get(r0.title) ?? 0) > 1 && r0.candidates.length === 1;
+    const r = { ...r0, title: dup ? r0.title.replace(/( \(retention[^)]*\))?$/, (m) => `: ${r0.candidates[0].name}${m}`) : r0.title } as Race;
+    if (/^\s*unsure/i.test(String((r as { office?: string }).office ?? ""))) (r as { office?: string }).office = undefined; // never show "unsure" as an office description
+    // Judicial races: no issue tags and no "why it matters" issue stats (judges can't campaign on issues).
+    const meta = raceMeta(b.zip, r.id);
+    const jud = !!(r as { judicial?: unknown }).judicial;
+    const cands = r.candidates.map((c) => withMoney(withLicensedPhoto(jud ? { ...c, causes: undefined } : c)));
+    return { ...r, meta: jud && meta ? { ...meta, why: null } : meta, candidates: allOrNone(cands) };
+  }) };
 }
 
 export function ballotFor(zip: string): Ballot | null {

@@ -1,4 +1,5 @@
 "use client";
+import { initials } from "../components/PortraitRow";
 import { useMemo, useRef, useState } from "react";
 import { CheckCircle2, CircleDashed, ExternalLink, LocateFixed, Loader2, MapPin, AlertTriangle, Info } from "lucide-react";
 import type { Politician, Race } from "../lib/types";
@@ -17,7 +18,6 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
 import { UNSUPPORTED } from "../lib/narration.mjs";
-import { TrackRecordBlock } from "../components/TrackRecord";
 import { measuresFor } from "../lib/measures";
 
 const NYC_READY = true;
@@ -47,7 +47,6 @@ type Problem = { id: string; label: string; value: string; year: string; topic?:
 
 const ct = (iso: string) =>
   new Date(iso).toLocaleString("en-US", { timeZone: "America/Chicago", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) + " CT";
-const initials = (n: string) => n.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).slice(0, 2).join("");
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 
 function Section({ n, title, sub, children }: { n: number; title: string; sub?: string; children: React.ReactNode }) {
@@ -212,7 +211,6 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
         </div>
         {c.photo && <p className="text-xs text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
         {c.money && <MoneyBlock m={c.money} />}
-        {c.accountability ? <TrackRecordBlock name={c.name} t={c.accountability} /> : null}
       </CardContent>
     </Card>
   );
@@ -337,7 +335,7 @@ export default function BallotAgent() {
           </Button>
         ))}
       </div>
-      {notice && <p className="mt-6 text-base text-black">{notice}</p>}
+      <p role="status" aria-live="polite" className="mt-6 text-base text-black empty:hidden" data-zip-notice>{notice ?? ""}</p>
       {(busy || (result && !b)) && (
         <div className="mt-10 max-w-2xl">
           <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
