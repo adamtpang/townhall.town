@@ -157,7 +157,7 @@ async function handle(zip: string) {
       try {
         if (!ballotFor(zip)) {
           emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: "Not cached" });
-          emit({ type: "unsupported", zip, message: `ZIP ${zip || "(blank)"} isn't covered yet. Every Texas ZIP works; for California we have 94103 and 90012. More states next.` });
+          emit({ type: "unsupported", zip, message: `ZIP ${zip || "(blank)"} isn't covered yet. Austin, SF and NYC for now.` });
         } else await run(zip, emit);
       } catch (e: any) {
         emit({ type: "error", message: String(e?.message || e) });

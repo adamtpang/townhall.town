@@ -3,32 +3,29 @@ import BallotAgent from "./BallotAgent";
 export default function Home() {
   return (
     <>
-      <div className="bg-slate-100 text-xs text-slate-700">
-        <div className="mx-auto max-w-5xl px-6 py-1.5">An independent, nonpartisan civic tool. Not a government website. Not affiliated with any campaign or party.</div>
+      <div className="bg-black text-[11px] text-white/70">
+        <div className="mx-auto max-w-site px-6 py-1.5">An independent, nonpartisan civic tool. Not a government website. Not affiliated with any campaign or party.</div>
       </div>
-      <header className="border-b border-slate-200">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <span className="flex items-center gap-2 text-lg font-bold tracking-tight text-navy">
-            <span aria-hidden className="inline-block h-5 w-1.5 rounded-sm bg-flagred" />
+      <header className="bg-black text-white">
+        <div className="mx-auto flex max-w-site items-center justify-between px-6 py-6">
+          <span className="flex items-center gap-3 text-base font-medium tracking-tight">
+            <span aria-hidden className="inline-block h-4 w-4 bg-[#3760f2]" />
             townhall.town
           </span>
-          <span className="text-sm text-slate-600">General election · Tue, Nov 3, 2026</span>
+          <span className="text-sm text-white/70">General election · Tue, Nov 3, 2026</span>
         </div>
       </header>
-      <main className="mx-auto max-w-5xl px-6">
-        <section className="pb-10 pt-16 sm:pt-24">
-          <p className="eyebrow">Texas · California</p>
-          <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight text-navy sm:text-6xl">Your ballot, explained in 60 seconds</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-            Enter your ZIP. An AI agent finds your districts, lists every race, looks up the candidates, checks prediction markets and
-            local Census data, and links a source for every fact. It never tells you who to vote for.
-          </p>
+      <main className="mx-auto max-w-site px-6">
+        <section className="pb-12 pt-20 sm:pt-32">
+          <p className="nds-caption-upper text-black/60">Austin · San Francisco · New York</p>
+          <h1 className="mt-6 max-w-5xl text-[clamp(3rem,8vw,7.5rem)] font-medium leading-[0.95] tracking-[-0.04em] text-black">Your ballot, explained in&nbsp;seconds.</h1>
+          <p className="mt-8 max-w-xl text-xl leading-snug text-black/60">Enter your ZIP. An agent reads every race and links a source for every fact. You decide.</p>
         </section>
         <BallotAgent />
       </main>
-      <footer className="mt-24 border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-5xl space-y-3 px-6 py-10 text-sm leading-relaxed text-slate-600">
-          <p className="font-semibold text-navy">Disclaimer</p>
+      <footer className="mt-32 bg-black text-white/70 [&_a]:text-white">
+        <div className="mx-auto max-w-site space-y-3 px-6 py-16 text-sm leading-relaxed">
+          <p className="font-medium text-white">Disclaimer</p>
           <p>
             townhall.town is nonpartisan and does not endorse candidates, parties or measures. Market odds are trading prices on Polymarket and
             Kalshi, not forecasts we endorse. Candidate statements are quoted from sources and linked; anything we could not source is marked

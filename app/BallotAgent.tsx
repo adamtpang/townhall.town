@@ -13,20 +13,23 @@ import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Tip, TooltipProvider } from "../components/ui/tooltip";
 import IssueMatch from "./IssueMatch";
+import RaceTiers from "./RaceTiers";
 
+const NYC_READY = false;
 const DEMO = [
-  { zip: "78130", label: "New Braunfels, TX" },
-  { zip: "78701", label: "Austin, TX" },
-  { zip: "94103", label: "San Francisco, CA" },
-  { zip: "90012", label: "Los Angeles, CA" },
+  { zip: "78701", label: "Austin", ready: true },
+  { zip: "94103", label: "San Francisco", ready: true },
+  { zip: "10001", label: NYC_READY ? "New York" : "New York, coming soon", ready: NYC_READY },
 ];
+// Advertised: Austin, SF, NYC. 78130 and 90012 stay working but are not advertised.
+const SUPPORTED = new Set(["78701", "94103", "78130", "90012", ...(NYC_READY ? ["10001"] : [])]);
 const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
 const TOOL_LABEL: Record<string, string> = {
-  getDistricts: "Find your districts",
-  getRaces: "List every race and measure",
-  getCandidates: "Look up candidates",
-  getMarketOdds: "Check prediction markets",
-  getLocalProblems: "Pull local Census data",
+  getDistricts: "Finding your districts",
+  getRaces: "Listing every race and measure",
+  getCandidates: "Looking up candidates",
+  getMarketOdds: "Checking prediction markets",
+  getLocalProblems: "Pulling local Census data",
 };
 const TOPIC_LABEL: Record<string, string> = { housing: "Housing costs", healthcare: "Health coverage", jobs: "Jobs" };
 
@@ -155,6 +158,7 @@ export default function BallotAgent() {
   async function run(z: string) {
     z = z.replace(/\D/g, "").slice(0, 5);
     if (z.length !== 5) return setNotice("Enter a 5-digit ZIP code.");
+    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin, SF and NYC for now. Try 78701 (Austin) or 94103 (San Francisco)."); }
     setZip(z);
     setBusy(true);
     setSteps({});
@@ -226,55 +230,46 @@ export default function BallotAgent() {
 
   return (
     <TooltipProvider>
-      {/* 1. Location */}
-      <Card className="border-navy/20 bg-navy-50/40">
-        <CardContent className="p-6 sm:p-8">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              run(zip);
-            }}
-            className="flex flex-col gap-3 sm:flex-row"
-          >
-            <label className="sr-only" htmlFor="zip">ZIP code</label>
-            <input
-              id="zip"
-              inputMode="numeric"
-              autoComplete="postal-code"
-              placeholder="ZIP code"
-              value={zip}
-              onChange={(e) => setZip(e.target.value.replace(/\D/g, "").slice(0, 5))}
-              className="h-14 flex-1 rounded-md border border-slate-300 bg-white px-4 text-xl tracking-wide text-navy outline-none focus:border-navy focus:ring-2 focus:ring-navy/20"
-            />
-            <button disabled={busy} className="h-14 rounded-md bg-navy px-8 text-lg font-semibold text-white hover:bg-navy-700 disabled:opacity-60">
-              {busy ? "Working…" : "Explain my ballot"}
-            </button>
-            <button type="button" onClick={locate} disabled={busy || locating} className="flex h-14 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 text-navy hover:bg-slate-50">
-              {locating ? <Loader2 className="h-4 w-4 animate-spin" /> : <LocateFixed className="h-4 w-4" />} Use my location
-            </button>
-          </form>
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-slate-600">
-            <span>Try:</span>
-            {DEMO.map((d) => (
-              <button key={d.zip} onClick={() => run(d.zip)} disabled={busy} className="rounded-full border border-slate-300 bg-white px-3 py-1 hover:border-navy hover:text-navy">
-                {d.zip} · {d.label}
-              </button>
-            ))}
-          </div>
-          <p className="mt-3 text-xs text-slate-500">Every Texas ZIP works. California: 94103 and 90012 for now. Location is used once to find your ZIP and is not stored.</p>
-        </CardContent>
-      </Card>
+      {/* 1. ZIP */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          run(zip);
+        }}
+        className="flex max-w-3xl flex-col gap-0 border-b-2 border-black sm:flex-row"
+      >
+        <label className="sr-only" htmlFor="zip">ZIP code</label>
+        <input
+          id="zip"
+          inputMode="numeric"
+          autoComplete="postal-code"
+          placeholder="Enter your ZIP"
+          value={zip}
+          onChange={(e) => setZip(e.target.value.replace(/\D/g, "").slice(0, 5))}
+          className="h-20 flex-1 bg-transparent text-4xl font-medium tracking-tight text-black outline-none placeholder:text-black/30"
+        />
+        <button disabled={busy} className="h-20 bg-black px-10 text-lg font-medium text-white transition-opacity hover:opacity-80 disabled:opacity-60">
+          {busy ? "Working…" : "Explain my ballot →"}
+        </button>
+      </form>
+      <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+        {DEMO.map((d) => (
+          <button key={d.zip} onClick={() => d.ready && run(d.zip)} disabled={busy || !d.ready} className="rounded-full border border-black/20 px-4 py-2 text-black transition-colors hover:border-black disabled:cursor-not-allowed disabled:text-black/40 disabled:hover:border-black/20">
+            {d.label}{d.ready ? ` ${d.zip}` : ""}
+          </button>
+        ))}
+      </div>
 
       {notice && <p className="mt-6 flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 p-4 text-amber-900"><Info className="mt-0.5 h-4 w-4 shrink-0" />{notice}</p>}
 
       {(busy || result) && (
-        <Card className="mt-6">
-          <CardHeader className="pb-2">
+        <Card className="mt-16">
+          <CardHeader className="px-0 pb-2">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <CardTitle className="text-base">Agent steps</CardTitle>
+              <CardTitle className="text-2xl font-medium">What the agent is doing</CardTitle>
               {result ? (
                 result.mode === "live" ? (
-                  <Badge variant="accent">Live AI agent · {result.model}</Badge>
+                  <Badge variant="accent">Live AI agent</Badge>
                 ) : (
                   <Tip label={`No model was available (${result.modelError || "unknown"}). The same tools ran in a fixed order.`}>
                     <span><Badge variant="warn">Fallback mode (no model)</Badge></span>
@@ -284,7 +279,7 @@ export default function BallotAgent() {
                 <Badge variant="muted"><Loader2 className="h-3 w-3 animate-spin" /> running</Badge>
               )}
             </div>
-            <Progress value={(doneCount / TOOLS.length) * 100} className="mt-3" />
+            
           </CardHeader>
           <CardContent>
             <ol className="space-y-2">
@@ -294,7 +289,7 @@ export default function BallotAgent() {
                   <li key={t} className="flex items-start gap-3 text-sm">
                     {s?.status === "done" ? <CheckCircle2 className="mt-0.5 h-4 w-4 text-navy" /> : s ? <Loader2 className="mt-0.5 h-4 w-4 animate-spin text-slate-500" /> : <CircleDashed className="mt-0.5 h-4 w-4 text-slate-300" />}
                     <span>
-                      <span className="font-medium text-navy">{TOOL_LABEL[t]}</span> <code className="text-xs text-slate-400">{t}</code>
+                      <span className="font-medium text-navy">{TOOL_LABEL[t]}</span>
                       {s?.summary && <span className="block text-slate-600">{s.summary}</span>}
                     </span>
                   </li>
@@ -314,7 +309,17 @@ export default function BallotAgent() {
       )}
 
       {b && (
-        <div id="ballot" className="mt-6">
+        <div id="ballot" className="mt-16">
+          <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
+          <IssueMatch state={b.state} races={b.races} />
+          <section className="border-t border-black py-16" id="plan">
+            <p className="nds-caption-upper text-black/60">03</p>
+            <h2 className="mt-3 text-5xl font-medium tracking-[-0.03em] text-black">Your plan</h2>
+            <p className="mt-3 max-w-2xl text-black/60">Where, when and what to bring.</p>
+            <div className="mt-10"><GamePlan state={b.state} /></div>
+          </section>
+          <details className="border-t border-black py-10">
+            <summary className="cursor-pointer text-2xl font-medium tracking-tight">All races, candidates, markets and sources</summary>
           {/* 2. Elections */}
           <Section n={2} title="Elections you can vote in" sub={`${b.place} · General election, Tuesday, Nov 3, 2026`}>
             <div className="mb-4 flex flex-wrap gap-2">
@@ -373,7 +378,7 @@ export default function BallotAgent() {
                       {r.turnout && (
                         <div className="mt-4 rounded border border-slate-200 p-4 text-sm">
                           <p className="eyebrow mb-2">Last time: {r.turnout.pastElection}</p>
-                          {r.turnout.voteShare.map((v) => <p key={v.name}>{v.name}: {v.pct}%</p>)}
+                          {r.turnout.voteShare.map((v) => <p key={v.name}>{v.name}: {String(v.pct).replace(/%+$/, "")}%</p>)}
                           {r.turnout.eligibleNonVoters != null && <p className="mt-1">Eligible non-voters: {r.turnout.eligibleNonVoters.toLocaleString()}</p>}
                           <p className="mt-1">{r.turnout.sources.map((s) => <Src key={s.url} href={s.url}>{s.label}</Src>)}</p>
                         </div>
@@ -385,8 +390,6 @@ export default function BallotAgent() {
               })}
             </Accordion>
           </Section>
-
-          <IssueMatch state={b.state} races={b.races} />
 
           {/* 4 + 5. Problems and measures */}
           <Section n={4} title="What's on the table" sub="Local problems from Census data, and the measures on your ballot. Pick the problems you care about.">
@@ -412,7 +415,7 @@ export default function BallotAgent() {
                               <CardDescription>{p.label}</CardDescription>
                             </CardHeader>
                             <CardContent className="text-xs text-slate-500">
-                              {p.stateValue != null && <p>State: {p.stateValue}%</p>}
+                              {p.stateValue != null && <p>State: {String(p.stateValue).replace(/%+$/, "")}%</p>}
                               <p>{p.year} · <a href={p.source.url}>{p.source.label}</a></p>
                             </CardContent>
                           </Card>
@@ -520,10 +523,7 @@ export default function BallotAgent() {
 
           {b.turnout && <TurnoutSection t={b.turnout as TurnoutDetail} />}
 
-          {/* 8. Game plan */}
-          <Section n={b.turnout ? 8 : 7} title="Your game plan" sub="When, where and what to bring.">
-            <GamePlan state={b.state} />
-          </Section>
+          </details>
         </div>
       )}
     </TooltipProvider>
