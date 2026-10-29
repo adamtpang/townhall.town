@@ -16,8 +16,8 @@ export function TrackRecordBlock({ name, t }: { name: string; t: TrackRecord }) 
             {t.pairs.map((a, i) => (
               <li key={i}>
                 <p className="font-[530]">{a.issue}: <span className="font-[450] text-black/70">{CLASS_LABEL[a.classification] || a.classification}</span></p>
-                <p className="mt-1 text-black/80">Said: &ldquo;{a.said.quote}&rdquo; <a href={a.said.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">source ↗{ext}</a></p>
-                <p className="text-black/80">Record: {a.did.text}{a.did.date ? ` (${a.did.date})` : ""} <a href={a.did.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">official record ↗{ext}</a></p>
+                <p className="mt-1 text-black/80">Said: &ldquo;{a.said.quote}&rdquo; <a href={a.said.url} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center text-[#3760F2]">source ↗{ext}</a></p>
+                <p className="text-black/80">Record: {a.did.text}{a.did.date ? ` (${a.did.date})` : ""} <a href={a.did.url} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center text-[#3760F2]">official record ↗{ext}</a></p>
                 <p className="text-xs text-black/60">{a.reason}</p>
               </li>
             ))}

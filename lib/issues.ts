@@ -46,7 +46,7 @@ export type Answers = Record<string, number | null>; // null = skipped
 /** Cosine similarity over issues the user answered (not skipped) AND the candidate has a sourced stance on. */
 export function overlap(answers: Answers, stances: Record<string, Stance>, issueIds: string[]) {
   const answered = issueIds.filter((id) => typeof answers[id] === "number");
-  const shared = answered.filter((id) => stances[id]);
+  const shared = answered.filter((id) => stances[id] && stances[id].value !== null);
   let dot = 0, a2 = 0, b2 = 0;
   for (const id of shared) {
     const a = answers[id] as number, b = stances[id].value ?? 0;

@@ -182,3 +182,13 @@ _b = _d['stances']['rob-bonta']
 if _b.get('safety', {}).get('value') is None:
     _b['safety'] = {"value": None, "status": "Mixed statements; no clear position from a valid source", "sourceUrl": None}
     json.dump(_d, open('data/stances.json', 'w'), indent=2, ensure_ascii=False)
+
+# Adam 5:47: internal 'Pending: …' statuses are never shown to voters. Value stays null (never counted).
+_d = json.load(open('data/stances.json'))
+_n = 0
+for _c in _d['stances'].values():
+    for _k, _v in _c.items():
+        if isinstance(_v, dict) and _v.get('value') is None and str(_v.get('status', '')).lower().startswith('pending'):
+            _v['status'] = 'Still being sourced'; _v['sourceUrl'] = None; _v.pop('quote', None); _n += 1
+json.dump(_d, open('data/stances.json', 'w'), indent=2, ensure_ascii=False)
+print('pending->still being sourced', _n)

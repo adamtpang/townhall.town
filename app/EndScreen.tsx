@@ -88,7 +88,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                           <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Sourced positions ({o.n})</summary>
                             <ul className="space-y-2 pb-2">
                               {o.counted.map((id: string) => { const st = stancesFor(c.name)[id]; return (
-                                <li key={id} className="text-sm text-black/80"><span className="font-[530]">{ISSUES.find((i) => i.id === id)?.label}:</span> {voteLine(st) ? <>{voteLine(st)}</> : <>&ldquo;{st.quote}&rdquo;</>} <span className="text-black/60" data-quote-year>{st.year ? `(${st.year})` : "(date unsure)"}</span> {st.sourceUrl ? <a href={st.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">{sourceLabel(st.sourceUrl)} ↗{ext}</a> : null}</li>
+                                <li key={id} className="text-sm text-black/80"><span className="font-[530]">{ISSUES.find((i) => i.id === id)?.label}:</span> {voteLine(st) ? <>{voteLine(st)}</> : <>&ldquo;{st.quote}&rdquo;</>} <span className="text-black/60" data-quote-year>{st.year ? `(${st.year})` : "(date unsure)"}</span> {st.sourceUrl ? <a href={st.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center text-[#3760F2]">{sourceLabel(st.sourceUrl)} ↗{ext}</a> : null}</li>
                               ); })}
                             </ul>
                           </details>

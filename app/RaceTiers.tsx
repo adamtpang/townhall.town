@@ -101,11 +101,11 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">Why this race matters<span aria-hidden className="ml-2 inline-block group-open/w:rotate-180">↓</span></summary>
                         <div className="max-w-2xl pb-2 text-sm">
                           <p className="text-base">{r.meta.why.summary}</p>
-                          {r.meta.why.problems.length > 0 && <ul className="mt-2 space-y-1">{r.meta.why.problems.map((p) => <li key={p.label + p.geography}>{p.label}: {p.value}{p.unit === "%" ? "%" : ` ${p.unit}`} ({p.geography}, {p.year}) <a href={p.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host(p.sourceUrl)} ↗</a></li>)}</ul>}
+                          {r.meta.why.problems.length > 0 && <ul className="mt-2 space-y-1">{r.meta.why.problems.map((p) => <li key={p.label + p.geography}>{p.label}: {p.value}{p.unit === "%" ? "%" : ` ${p.unit}`} ({p.geography}, {p.year}) <a href={p.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center whitespace-nowrap">{host(p.sourceUrl)} ↗</a></li>)}</ul>}
                           {r.meta.why.authority.length > 0 && (
                             <div className="mt-2" data-authority>
                               <p className="text-black/60">What this office does on each issue</p>
-                              <ul className="space-y-1">{r.meta.why.authority.map((a) => <li key={a.issue}>{ISSUE_LABEL[a.issue] ?? a.issue}: {a.role} <a href={a.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">{a.cite} ↗</a></li>)}</ul>
+                              <ul className="space-y-1">{r.meta.why.authority.map((a) => <li key={a.issue}>{ISSUE_LABEL[a.issue] ?? a.issue}: {a.role} <a href={a.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center">{a.cite} ↗</a></li>)}</ul>
                             </div>
                           )}
                         </div>
