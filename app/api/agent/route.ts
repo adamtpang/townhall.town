@@ -43,7 +43,7 @@ function summarize(name: string, r: any): string {
       return `${v.filter((x) => x.quotes.length).length} of ${v.length} contests have a market (${v.filter((x) => x.status === "live").length} live)`;
     }
     case "getLocalProblems":
-      return r.problems.map((p: any) => `${p.label}: ${p.value}${p.unit}`).join(" · ");
+      return r.problems.map((p: any) => `${p.label}: ${String(p.value).endsWith(p.unit) ? p.value : `${p.value}${p.unit}`}`).join(" · ");
   }
   return "done";
 }
