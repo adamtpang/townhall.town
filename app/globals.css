@@ -1,5 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body { @apply bg-stone-50 text-stone-900 antialiased; }
-a { @apply underline decoration-stone-300 underline-offset-2 hover:decoration-stone-700; }
+
+/* Design system modeled on the National Design Studio (ndstudio.gov), with civic navy and
+   red from america.gov. Monochrome first: ink on light gray, sharp edges, hairline borders,
+   no shadows. Color comes from imagery, links, and the flag accents only. */
+@layer base {
+  :root {
+    --background: 0 0% 94.9%;          /* #f2f2f2 surface */
+    --foreground: 0 0% 0.4%;           /* #010101 ink */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0.4%;
+    --muted: 0 0% 90.2%;
+    --muted-foreground: 0 0% 42%;      /* #6b6b6b */
+    --border: 0 0% 85.5%;
+    --input: 0 0% 85.5%;
+    --ring: 0 0% 0.4%;
+    --primary: 0 0% 0.4%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 100% 6.1%;        /* #000c1f navy */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 227 88% 58%;             /* #3760f2 link blue */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 355 100% 37.5%;     /* #bf000f */
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.125rem;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  a {
+    @apply transition-opacity duration-500 ease-nds hover:opacity-60;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  /* 12-column grid that matches ndstudio.gov's .grid-container */
+  .nds-grid {
+    @apply grid grid-cols-2 gap-x-4 px-6 md:grid-cols-12 md:gap-x-5 md:px-5 lg:px-10 mx-auto max-w-grid;
+  }
+  .nds-caption-upper {
+    @apply text-nds-micro uppercase tracking-wide text-muted-foreground;
+  }
+  .nds-hairline {
+    @apply border-t border-foreground/10;
+  }
+  .nds-link-arrow::after {
+    content: " \2197";
+  }
+}
