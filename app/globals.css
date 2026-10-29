@@ -60,3 +60,17 @@ body {
   background-size: auto, auto, 48px 48px, 48px 48px;
   background-attachment: fixed;
 }
+
+/* Print: only the one-page plan sheet. */
+#print-sheet { display: none; }
+@media print {
+  @page { margin: 14mm; }
+  html, body { background: #fff !important; }
+  body > *:not(#print-sheet) { display: none !important; }
+  #print-sheet { display: block !important; color: #000; font-size: 11pt; line-height: 1.35; }
+  #print-sheet h1 { font-family: var(--font-serif, serif); font-size: 28pt; line-height: 1; margin: 6pt 0 12pt; }
+  #print-sheet .ps-head, #print-sheet .ps-foot { font-size: 9pt; color: #444; }
+  #print-sheet ol { list-style: none; padding: 0; margin: 0 0 10pt; columns: 2; column-gap: 18pt; }
+  #print-sheet li { display: flex; justify-content: space-between; gap: 8pt; border-top: 0.5pt solid #bbb; padding: 3pt 0; break-inside: avoid; }
+  #print-sheet li b { font-weight: 600; text-align: right; }
+}

@@ -16,6 +16,7 @@ import IssueMatch from "./IssueMatch";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
+import Plan from "./Plan";
 
 const NYC_READY = true;
 const DEMO = [
@@ -364,7 +365,7 @@ export default function BallotAgent() {
           <section id="plan" className="border-t border-black py-24">
             <p className="text-sm text-black/50">03</p>
             <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">Your plan</h2>
-            <Plan state={b.state} />
+            <Plan zip={b.zip} state={b.state} place={b.place} electionDate={b.electionDate} races={b.races} measures={b.measures || []} />
           </section>
         </div>
       )}
@@ -489,39 +490,3 @@ function TurnoutSection({ t }: { t: TurnoutDetail }) {
 }
 
 
-function Plan({ state }: { state: "TX" | "CA" | "NY" }) {
-  const rows =
-    state === "TX"
-      ? [
-          { k: "Oct 30", v: "Last day of early voting", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
-          { k: "Nov 3", v: "Election Day, 7 a.m. to 7 p.m.", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
-          { k: "Where", v: "Your county sets locations", src: "https://www.votetexas.gov/voting/where.html", s: "Find your polling place" },
-          { k: "Bring", v: "One approved photo ID", src: "https://www.votetexas.gov/voting/need-id.html", s: "Accepted IDs" },
-        ]
-      : state === "NY"
-      ? [
-          { k: "Nov 1", v: "Last day of early voting (started Oct 24)", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
-          { k: "Nov 2", v: "Last day to request a mail ballot in person", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
-          { k: "Nov 3", v: "Election Day", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
-          { k: "Where", v: "Early voting and Election Day sites can differ", src: "https://findmypollsite.vote.nyc/", s: "NYC Board of Elections: find my poll site" },
-          { k: "Bring", v: "ID rules depend on how you registered", src: "https://elections.ny.gov/", s: "New York State Board of Elections" },
-        ]
-      : [
-          { k: "Nov 3", v: "Election Day. Mail ballots postmarked by today", src: "https://www.sos.ca.gov/elections", s: "sos.ca.gov" },
-          { k: "Where", v: "Vote centers and drop boxes", src: "https://caearlyvoting.sos.ca.gov/", s: "caearlyvoting.sos.ca.gov" },
-          { k: "Bring", v: "Usually no ID needed", src: "https://voterstatus.sos.ca.gov/", s: "Check your voter status" },
-        ];
-  return (
-    <dl className="mt-16">
-      {rows.map((r) => (
-        <div key={r.k} className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
-          <dt className="font-serif text-5xl leading-none sm:col-span-4 sm:text-6xl">{r.k}</dt>
-          <dd className="sm:col-span-8">
-            <p className="text-xl">{r.v}</p>
-            <a className="mt-1 inline-block text-sm" href={r.src} target="_blank" rel="noreferrer">{r.s} ↗</a>
-          </dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
