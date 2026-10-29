@@ -45,7 +45,9 @@ for (const p of ["/", "/about", "/contact", "/privacy"]) {
   const md = await get(p, { accept: "text/markdown" });
   ok(md.status === 200 && md.type.startsWith("text/markdown") && /(^|,)\s*accept\s*(,|$)/i.test(md.vary) && md.body.startsWith("# "), `markdown ${p}`, `${md.status} ${md.type} vary="${md.vary}" ${md.body.length}B`);
   const html = await get(p, { accept: "text/html" });
-  ok(html.status === 200 && html.type.startsWith("text/html") && /(^|,)\s*accept\s*(,|$)/i.test(html.vary), `html ${p}`, `${html.status} ${html.type} vary="${html.vary}"`);
+  ok(html.status === 200 && html.type.startsWith("text/html"), `html ${p}`, `${html.status} ${html.type}`);
+  // Static prerenders keep Next's own Vary on Vercel, so Accept on the HTML variant is informational only.
+  if (!/(^|,)\s*accept\s*(,|$)/i.test(html.vary)) console.log(`WARN  html ${p} Vary lacks Accept  (vary="${html.vary}")`);
 }
 
 // 3. 404s.

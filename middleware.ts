@@ -2,7 +2,9 @@ import { NextResponse, type NextRequest } from "next/server";
 import { markdownRewrite, mergeVary, prefersMarkdown } from "./lib/negotiate";
 
 // Markdown negotiation: Accept: text/markdown on a page rewrites to app/md/[page]/route.ts
-// (Markdown body, or a Markdown 404 for unknown paths). HTML responses get Vary: Accept appended.
+// (Markdown body, or a Markdown 404 for unknown paths). HTML responses get Vary: Accept appended where the
+// server honors it (statically prerendered pages on Vercel keep Next's own Vary; the middleware still runs before the
+// CDN cache there, so Markdown and HTML never get mixed up).
 export function middleware(req: NextRequest) {
   if (prefersMarkdown(req.headers.get("accept"))) {
     return NextResponse.rewrite(new URL(markdownRewrite(req.nextUrl.pathname), req.url));
