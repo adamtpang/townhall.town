@@ -4,6 +4,7 @@ import tx from "../data/tx.json";
 import marketMap from "../data/markets-map.json";
 import marketCache from "../data/markets-cache.json";
 import type { Jurisdiction, Race, Politician } from "./types";
+import { COVERED_ZIPS, isCoveredZip, UNSUPPORTED_MESSAGE } from "./site";
 // @ts-ignore plain ESM helper shared with scripts/
 import { fetchPolymarket, fetchKalshi } from "./marketsCore.mjs";
 import { withAccountability } from "./accountability";
@@ -22,7 +23,8 @@ export type Ballot = Jurisdiction & {
 
 const B = { ...ballots, ...ny } as unknown as Record<string, Ballot>;
 const TX = tx as unknown as { statewide: Race[]; house: Record<string, Race>; zipToCd: Record<string, number>; zipSource: { label: string; url: string } };
-export const DEMO_ZIPS = Object.keys(B);
+// Served ZIPs only (lib/site.ts). Other cached ballots (78130, 90012) and the statewide Texas ZIP path stay in data but are never served.
+export const DEMO_ZIPS = COVERED_ZIPS.filter((z) => z in B);
 
 /** Attach the accountability, money and turnout plug-ins (optional contract fields). */
 function enrich(b: Ballot): Ballot {
@@ -31,6 +33,7 @@ function enrich(b: Ballot): Ballot {
 }
 
 export function ballotFor(zip: string): Ballot | null {
+  if (!isCoveredZip(zip)) return null;
   const b = baseBallot(zip);
   return b ? enrich(b) : null;
 }
@@ -59,7 +62,7 @@ function baseBallot(zip: string): Ballot | null {
 
 export function getDistricts(zip: string) {
   const b = ballotFor(zip);
-  if (!b) return { zip, found: false, message: "Only Texas ZIPs, the California demo ZIPs (94103, 90012) and New York 10001 are covered right now." };
+  if (!b) return { zip, found: false, message: UNSUPPORTED_MESSAGE };
   return { zip, found: true, state: b.state, place: b.place, county: b.county, districts: b.districts, source: b.districtSource, splitWarning: b.splitWarning };
 }
 

@@ -8,6 +8,7 @@ import { GATEWAY_FALLBACKS, modelLadder } from "../../../lib/models";
 import { getElectionDates, longDateIn } from "../../../lib/logistics";
 import { townyPrompt } from "../../../lib/townyPrompt";
 import { townyTools } from "../../../lib/townyTools";
+import { UNSUPPORTED_MESSAGE } from "../../../lib/site";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -150,8 +151,8 @@ function handle(zip: string) {
       const emit: Emit = (e) => controller.enqueue(enc.encode(JSON.stringify(e) + "\n"));
       try {
         if (!ballotFor(zip)) {
-          emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: "Not cached" });
-          emit({ type: "unsupported", zip, message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." });
+          emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: UNSUPPORTED_MESSAGE });
+          emit({ type: "unsupported", zip, message: UNSUPPORTED_MESSAGE });
         } else await run(zip, emit);
       } catch (e: any) {
         emit({ type: "error", message: String(e?.message || e) });

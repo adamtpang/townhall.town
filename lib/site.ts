@@ -19,6 +19,11 @@ export const COVERAGE = [
   { zip: "10001", place: "New York, New York" },
 ] as const;
 
+// The only ZIPs the site and API serve. Every other 5-digit ZIP, cached data or not, gets UNSUPPORTED_MESSAGE.
+export const COVERED_ZIPS: readonly string[] = COVERAGE.map((c) => c.zip);
+export const isCoveredZip = (zip: string) => COVERED_ZIPS.includes(zip);
+export const UNSUPPORTED_MESSAGE = "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now.";
+
 // Indexable pages, used by app/sitemap.ts and the Markdown negotiation middleware.
 export const PAGES = ["/", "/about", "/contact", "/privacy", "/developers"] as const;
 export type PagePath = (typeof PAGES)[number];

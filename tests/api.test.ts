@@ -116,3 +116,31 @@ describe("race labels", () => {
     }
   });
 });
+
+describe("Only 78701, 94103 and 10001 are served (cache and live paths)", () => {
+  const MSG = "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now.";
+  // 78130 and 90012 have cached ballots in data/ballots.json; 78702 and 75201 hit the statewide Texas ZIP path; 00000 and 90210 have nothing.
+  it.each(["78130", "90012", "78702", "75201", "00000", "90210"])("GET and POST zip=%s end with the unsupported line and no ballot", async (z) => {
+    for (const res of [await agent.GET(new Request(`${B}/api/agent?zip=${z}`)), await agent.POST(post(JSON.stringify({ zip: z })))]) {
+      expect(res.status).toBe(200);
+      const lines = (await res.text()).trim().split("\n").map((l) => JSON.parse(l));
+      expect(lines.at(-1)).toEqual({ type: "unsupported", zip: z, message: MSG });
+      expect(lines.some((l) => l.type === "result" || "ballot" in l || l.cached !== undefined)).toBe(false);
+      expect(JSON.stringify(lines)).not.toMatch(/Not cached/);
+      const step = lines.find((l) => l.type === "step");
+      expect(step?.summary).toBe(MSG);
+    }
+  });
+  it("ballotFor and the data tools serve the three ZIPs and nothing else", async () => {
+    const { ballotFor, DEMO_ZIPS, getDistricts, getRaces } = await import("../lib/tools");
+    const { COVERED_ZIPS } = await import("../lib/site");
+    expect([...COVERED_ZIPS].sort()).toEqual(["10001", "78701", "94103"]);
+    expect([...DEMO_ZIPS].sort()).toEqual(["10001", "78701", "94103"]);
+    for (const z of COVERED_ZIPS) expect(ballotFor(z)?.zip).toBe(z);
+    for (const z of ["78130", "90012", "78702", "75201"]) {
+      expect(ballotFor(z)).toBeNull();
+      expect(getDistricts(z)).toEqual({ zip: z, found: false, message: MSG });
+      expect(getRaces(z).races).toEqual([]);
+    }
+  });
+});
