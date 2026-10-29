@@ -12,6 +12,33 @@ TOPICS = {
     "healthcare": r"\b(health ?care|health insurance|medicaid|medicare|uninsured|hospitals?|ACA)\b",
     "jobs": r"\b(jobs?|wages?|workers?|employment|unemploy\w*|paychecks?)\b",
 }
+# Cause pills: which issues a candidate talks about in their own campaign themes.
+# Neutral labels only; each pill keeps the verbatim sentence it matched so the UI can show it.
+CAUSES = {
+    "cost-of-living": ("Cost of living", r"\b(cost of living|affordab\w*|inflation|grocer\w*|prices)\b"),
+    "taxes": ("Taxes", r"\b(tax|taxes|taxpayers?|property tax\w*|tax cuts?)\b"),
+    "economy": ("Jobs & economy", r"\b(jobs?|wages?|workers?|economy|economic|small business\w*|employment)\b"),
+    "housing": ("Housing", r"\b(housing|rents?|renters?|homeowners?|home prices|homelessness)\b"),
+    "healthcare": ("Health care", r"\b(health ?care|health insurance|medicaid|medicare|uninsured|hospitals?|ACA|prescription)\b"),
+    "education": ("Education", r"\b(schools?|education|teachers?|students?|universit\w*|college|school choice|vouchers?)\b"),
+    "immigration": ("Immigration & border", r"\b(border|immigra\w*|illegal aliens?|asylum|migrants?|deport\w*)\b"),
+    "public-safety": ("Public safety", r"\b(crime|police|law enforcement|public safety|fentanyl|cartels?|criminals?)\b"),
+    "guns": ("Guns", r"\b(guns?|second amendment|2nd amendment|firearms?)\b"),
+    "abortion": ("Abortion", r"\b(abortions?|pro-life|unborn|reproductive|roe v\.? wade)\b"),
+    "energy": ("Energy", r"\b(energy|oil|natural gas|power grid|electric grid|ERCOT|utilit\w*)\b"),
+    "environment": ("Environment & climate", r"\b(climate|environment\w*|pollution|clean air|conservation)\b"),
+    "water": ("Water", r"\b(water|drought|flood\w*)\b"),
+    "democracy": ("Elections & voting", r"\b(elections?|voting|voters?|ballot box|gerrymander\w*|campaign finance)\b"),
+    "corruption": ("Corruption & ethics", r"\b(corrupt\w*|dark money|super PACs?|ethics|accountab\w*)\b"),
+    "spending": ("Government spending", r"\b(spending|waste|budget|debt|DOGE|efficien\w*|audit\w*)\b"),
+    "veterans": ("Veterans & military", r"\b(veterans?|military|troops)\b"),
+    "seniors": ("Seniors & Social Security", r"\b(social security|seniors?|retirees?)\b"),
+    "agriculture": ("Farms & ranches", r"\b(farm\w*|ranch\w*|agricultur\w*)\b"),
+    "transportation": ("Roads & transportation", r"\b(roads?|traffic|highways?|transportation|transit|infrastructure)\b"),
+}
+NOT_A_CAUSE = re.compile(r"\b(endorse\w*|endorsed by|backed by)\b", re.I)
+MAX_CAUSES = 5
+
 BOILER = re.compile(r"(See also: Ballotpedia|Candidate Connection|Ballotpedia reserves|Who fills out|Help improve Ballotpedia|has not yet completed|did not complete|survey questions appear|campaign website stated the following|click here)", re.I)
 media = J(MEDIA) if os.path.exists(MEDIA) else {}
 
@@ -35,6 +62,22 @@ def positions(c):
             out.append({"issue": topic, "text": s[:320] + ("…" if len(s) > 320 else ""), "match": "keyword match in verbatim campaign themes", "source": {"label": "Ballotpedia campaign themes (verbatim)", "url": src}})
             break
     return out, bool(lines)
+
+def causes(c):
+    """Up to MAX_CAUSES issues the candidate mentions most, each with the first verbatim sentence that matched."""
+    sp = c.get("stated_positions") or {}
+    text, src = sp.get("text") or "", sp.get("source") or c.get("ballotpedia")
+    lines = [l.strip() for l in text.split("\n") if l.strip() and not BOILER.search(l)]
+    sents = [s for l in lines for s in re.split(r"(?<=[.!?])\s+", l) if s and not NOT_A_CAUSE.search(s)]
+    found = []
+    for cid, (label, rx) in CAUSES.items():
+        hits = [s for s in sents if re.search(rx, s, re.I)]
+        if hits:
+            q = hits[0]
+            found.append({"id": cid, "label": label, "mentions": len(hits), "quote": q[:240] + ("…" if len(q) > 240 else ""),
+                          "match": "keyword match in verbatim campaign themes", "source": {"label": "Ballotpedia campaign themes (verbatim)", "url": src}})
+    found.sort(key=lambda x: -x["mentions"])  # stable: ties keep CAUSES order
+    return found[:MAX_CAUSES]
 
 def politician(c, state, federal):
     k = media_key(c["ballotpedia"]) if c.get("ballotpedia") else None
@@ -61,6 +104,7 @@ def politician(c, state, federal):
         "photo": {"url": md["photo"], "credit": "Photo via Ballotpedia", "license": "see Ballotpedia page"} if md.get("photo") else None,
         "finance": fin,
         "positions": pos,
+        "causes": causes(c),
         "hasThemes": has_themes,
     }
     if c["name"] == "Donald Huffines":
@@ -105,4 +149,4 @@ json.dump({"statewide": tx_state, "house": tx_house, "zipToCd": zip_to_cd,
 n = sum(len(r["candidates"]) for r in tx_state) + sum(len(r["candidates"]) for r in tx_house.values())
 print("tx statewide", len(tx_state), "house", len(tx_house), "zips", len(zip_to_cd), "cands", n)
 allc = [c for r in tx_state + list(tx_house.values()) + ca_state + list(ca_house.values()) for c in r["candidates"]]
-print("photos", sum(1 for c in allc if c["photo"]), "/", len(allc), "x", sum(1 for c in allc if c["x"]), "positions>0", sum(1 for c in allc if c["positions"]))
+print("photos", sum(1 for c in allc if c["photo"]), "/", len(allc), "x", sum(1 for c in allc if c["x"]), "positions>0", sum(1 for c in allc if c["positions"]), "causes>0", sum(1 for c in allc if c["causes"]))

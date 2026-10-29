@@ -111,6 +111,24 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
         )}
       </CardHeader>
       <CardContent className="mt-auto space-y-2">
+        <div>
+          <p className="eyebrow mb-1.5">Talks about</p>
+          {c.causes?.length ? (
+            <ul className="flex flex-wrap gap-1.5" aria-label={`Issues ${c.name} talks about`}>
+              {c.causes.map((k) => (
+                <li key={k.id}>
+                  <Tip label={`“${k.quote}” (${k.mentions} mention${k.mentions === 1 ? "" : "s"}; keyword match in ${k.source.label}, verify)`}>
+                    <a href={k.source.url} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-full border border-[#bfd9ea] bg-[#e7f2f8] px-2.5 py-0.5 text-xs font-medium text-flagblue no-underline hover:bg-[#d4e8f3]">
+                      {k.label}
+                    </a>
+                  </Tip>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <span className="text-sm text-slate-400">Causes: unsure (no campaign themes on file)</span>
+          )}
+        </div>
         <div className="flex flex-wrap gap-x-3 gap-y-1">
           {c.officialSite ? <Src href={c.officialSite}>Official site</Src> : <span className="text-sm text-slate-400">Official site: unsure</span>}
           <Src href={c.campaignSite}>Campaign</Src>
