@@ -12,8 +12,10 @@ type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
  *           1.5 = state legislature; 1 = judicial and local.
  *   competitiveness: 1 + (1 - |p_leader - 0.5| * 2) using the averaged market price of the leading outcome
  *           (2.0 at a 50/50 race, 1.0 at 100/0). No market = 1.0 (no boost, never inferred).
- *   S >= 4.5, A >= 3, B >= 2, else C.
+ *   Labels: "Most at stake" >= 4.5, "High" >= 3, "Moderate" >= 2, else "Lower".
  */
+export const TIER_LABELS = ["Most at stake", "High", "Moderate", "Lower"] as const;
+export type TierLabel = (typeof TIER_LABELS)[number];
 export function impactOf(r: RaceLite): { v: number; why: string } {
   const t = r.title.toLowerCase();
   if (/president|u\.s\. senate|^governor/.test(t)) return { v: 3, why: "top federal or statewide office" };
@@ -29,7 +31,7 @@ export function tierFor(r: RaceLite, mk: Mk) {
   const lead = mk?.avg?.[0];
   const comp = lead ? 1 + (1 - Math.abs(lead.prob - 0.5) * 2) : 1;
   const score = imp.v * comp;
-  const tier = score >= 4.5 ? "S" : score >= 3 ? "A" : score >= 2 ? "B" : "C";
+  const tier: TierLabel = score >= 4.5 ? "Most at stake" : score >= 3 ? "High" : score >= 2 ? "Moderate" : "Lower";
   const why = `${imp.why[0].toUpperCase()}${imp.why.slice(1)}; ${lead ? `market leader at ${Math.round(lead.prob * 100)}%, ${comp >= 1.6 ? "close" : comp >= 1.3 ? "leaning" : "lopsided"}` : "no market, so no competitiveness boost"}.`;
   return { tier, score, why };
 }
@@ -37,24 +39,25 @@ export function tierFor(r: RaceLite, mk: Mk) {
 export default function RaceTiers({ races, market }: { races: RaceLite[]; market: (id: string) => Mk }) {
   const [failed, setFailed] = useState<Record<string, boolean>>({});
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
-  const tiers = ["S", "A", "B", "C"] as const;
+  const tiers = TIER_LABELS;
   return (
     <section className="border-t border-black py-24" id="tiers">
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/50">Office impact × how close the race is. Ranks races, never candidates.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/50" data-legend>Most at stake: score 4.5 or more. High: 3 or more. Moderate: 2 or more. Lower: under 2.</p>
       <div className="mt-10">
         {tiers.map((t) => {
           const list = rows.filter((x) => x.tier === t);
           if (!list.length) return null;
           const top = t === tiers.find((tt) => rows.some((x) => x.tier === tt));
           return (
-            <details key={t} open={top} className="group border-t border-black/15 py-6" data-tier={t}>
+            <details key={t} open={top} className="group border-t border-black/15 py-6" data-tier={t.toLowerCase().replace(/ /g, "-")}>
               <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
-                <span className="w-16 font-serif text-7xl leading-none md:w-24">{t}</span>
+                <span className="font-serif text-4xl leading-none md:text-5xl">{t}</span>
                 <span className="text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}<span className="ml-2 inline-block group-open:rotate-180">↓</span></span>
               </summary>
-              <ul className="mt-6 space-y-10 sm:pl-[7.5rem]">
+              <ul className="mt-6 space-y-10">
                 {list.map(({ r, why, mk }) => (
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>

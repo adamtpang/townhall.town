@@ -59,7 +59,7 @@ Which field depends on the file:
 - A race's `source` is a URL string. A ZIP measure's `source` is a URL string.
 - Candidates, problems, `districtSource`, and `verify` use `{ label, url }`.
 
-If you cannot find a source, write `unsure` or `no record found`. That is what `lib/turnout.ts`, `lib/accountability.ts`, and `lib/dataTools.ts` already return when a record is missing. Do not guess party, incumbency, quotes, vote totals, or biography.
+If you cannot find a source, write `unsure` or `no record found`. That is what `lib/turnout.ts` and `lib/dataTools.ts` already return when a record is missing. Do not guess party, incumbency, quotes, vote totals, or biography.
 
 `data/measures.json` is `{ builtAt, note, measures }`. Each measure has `id`, `title`, `zips`, `jurisdiction`, `cost` (`{ value, sourceUrl }`), `whoPays` (`{ text, sourceUrl }`), `whatChanges` (`{ text, sourceUrl }`), and optional `notes`. The file note says `unsure` where the official text gives no figure. Keep that. Austin propositions still say the per-home tax impact is `unsure`.
 
@@ -67,9 +67,9 @@ If you cannot find a source, write `unsure` or `no record found`. That is what `
 
 Do not call a candidate the best. Do not tell the reader who to vote for.
 
-`app/RaceTiers.tsx` ranks races, not candidates. The score is office impact times competitiveness. No market means competitiveness 1 and the line "no market, so no competitiveness boost". Do not invent odds.
+`app/RaceTiers.tsx` ranks races, not candidates, with plain labels: Most at stake, High, Moderate, Lower. The score is office impact times competitiveness. No market means competitiveness 1 and the line "no market, so no competitiveness boost". Do not invent odds.
 
-`app/IssueMatch.tsx` compares slider answers to sourced stances. The label is overlap ("Lines up on N of M compared issues"), not a recommendation. Fewer than 2 sourced stances on the answered issues is not tiered. No answers, no tiers.
+`app/IssueMatch.tsx` compares slider answers to sourced stances. The label is overlap ("Lines up on N of M compared issues"), not a recommendation. Candidates get no grade or tier. With fewer than 2 sourced stances on the answered issues, only the count of sourced positions is shown. No answers, no overlap.
 
 Portraits come from `data/photos.json` (`{ asOf, method, photos }`). `photos` is keyed by ballot name. Each value is `{ url, credit, license, page }`. `lib/photos.ts` applies them. `components/Portrait.tsx` falls back to initials. Do not add generated candidate photos. A missing licensed image stays initials.
 

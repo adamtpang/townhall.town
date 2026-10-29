@@ -63,7 +63,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
           <strong>Issue overlap, not a recommendation.</strong> It compares your answers with positions candidates have stated in sourced material, only where both exist. Most candidates have few or no sourced positions, so a missing score says nothing about them. Candidates are shown in ballot order.
         </p>
         {answeredCount === 0 ? (
-          <p className="mt-4 text-slate-600">Answer at least one issue above to see overlap and candidate tiers. With no answers, nothing is tiered.</p>
+          <p className="mt-4 text-slate-600">Answer at least one issue above to see overlap.</p>
         ) : (
           <div className="mt-8 space-y-16">
             {withCands.map((r) => {
@@ -94,7 +94,7 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"
                             {compare && o.n >= 2 && o.pct !== null ? (
                               <p className="mt-1 text-slate-800">Lines up on {agree} of {o.n} compared issues</p>
                             ) : (
-                              <p className="mt-1 text-xs text-slate-500">{o.n} sourced position{o.n === 1 ? "" : "s"} on your issues. Not tiered.</p>
+                              <p className="mt-1 text-xs text-slate-500">{o.n} sourced position{o.n === 1 ? "" : "s"} on your issues.</p>
                             )}
                             <details className="mt-1" open>
                               <summary className="flex min-h-11 cursor-pointer items-center text-xs text-navy-700">Sourced positions</summary>

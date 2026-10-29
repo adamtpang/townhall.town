@@ -1,6 +1,6 @@
 # townhall.town
 
-**Your ballot, explained in seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Scope: **Austin (78701), San Francisco (94103), New York (10001)**; 78130 and 90012 also work, other ZIPs get "Austin, San Francisco, and New York 10001 for now." Enter a ZIP and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
+**Your ballot, explained in seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Scope: **Austin (78701), San Francisco (94103), New York (10001)**; 78130 and 90012 also work, other ZIPs get "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." Enter a ZIP and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
 
 Live: https://townhall.town
 
@@ -29,7 +29,7 @@ flowchart LR
   U[ZIP or geolocation] --> A[/api/agent/]
   A -->|AI SDK generateText + tools| M{Model via AI Gateway}
   M --> T1[getDistricts] & T2[getRaces] & T3[getCandidates] & T4[getMarketOdds] & T5[getLocalProblems]
-  M -.optional.-> T6[getTurnout] & T7[getAccountability]
+  M -.optional.-> T6[getTurnout]
   A -->|model unavailable| F[Deterministic fallback: same tools, no model]
   T1 & T2 & T3 --> D[(data/ballots.json, data/tx.json)]
   T4 --> P[Polymarket / Kalshi live, cached snapshot fallback]
@@ -51,10 +51,9 @@ One request, one bounded tool loop, streamed back to the browser as NDJSON (`app
 | `getMarketOdds` | Live Polymarket / Kalshi prices per contest, or "no market found" | Polymarket, Kalshi (cached snapshot fallback) |
 | `getLocalProblems` | 3 local problems: rent burden, uninsured rate, unemployment | Census ACS 2024 5-year |
 | `getTurnout` | County turnout, eligible non-voters, what one ballot counts for (demo ZIPs) | Texas and California Secretary of State, Census Reporter |
-| `getAccountability` | Said vs. did for 7 incumbents, both sides sourced, plus a kept rate | Official records (clerk.house.gov, state offices) and news coverage |
 
 **Loop steps**
-1. The ZIP is normalized to 5 digits. If it isn't covered, the stream returns `unsupported` and stops.
+1. The ZIP must be exactly 5 digits (`/^\d{5}$/`, no trimming or slicing); anything else gets a JSON 400 `{"error":{"code":"invalid","message":"..."}}`. If a valid ZIP isn't covered, the stream returns `unsupported` and stops.
 2. The model gets a strict nonpartisan system prompt and is told to call the five core tools in parallel in its first step.
 3. `generateText` runs with `stopWhen: stepCountIs(3)` and a 25-second timeout. Each tool call streams a `step` event (running, then done with a one-line summary), which is the live "Agent steps" panel.
 4. The model writes a 2 to 3 sentence neutral summary from tool results only. It may not recommend a candidate.
@@ -78,8 +77,14 @@ Optional tools the model can call, each returning a source URL, or `{ status: "u
 - `getStateLegislators`: state legislators for a point (Open States).
 - `getVoterInfo`: polling place and early-vote sites for an address (Google Civic voterinfo).
 
+## API
+Public, no key. OpenAPI 3.1 spec at [/openapi.json](https://townhall.town/openapi.json), docs with curl examples at [/developers](https://townhall.town/developers), RFC 9727 catalog at `/.well-known/api-catalog`.
+- `GET /api/agent?zip=78701` or `POST /api/agent` `{"zip":"78701"}`: NDJSON stream ending in one `result` (or `unsupported`) line.
+- `GET /api/locate?lat=..&lon=..`: `{"zip","source"}` from the Census Geocoder.
+- Every API error is `application/json` `{"error":{"code","message"}}`: 400 `invalid`, 404 `not_found` (also any unknown `/api/*`), 405 `method_not_allowed` (with `Allow`), 502 `upstream_unavailable`.
+
 ## Shared data contract
-`lib/types.ts` is the shared contract; plug-ins only add optional fields. `lib/accountability.ts` adds `politician.accountability` ("said vs. did", every record has both source links) and `lib/turnout.ts` adds jurisdiction `turnout` (county turnout, eligible non-voters, 2026 registration, all sourced). Both are also exposed to the model as tools via `lib/civicTools.ts`.
+`lib/types.ts` is the shared contract; plug-ins only add optional fields. `lib/turnout.ts` adds jurisdiction `turnout` (county turnout, eligible non-voters, 2026 registration, all sourced), also exposed to the model as a tool via `lib/civicTools.ts`.
 
 ## Data
 
@@ -114,27 +119,26 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 
 ## Next steps
 1. **World elections expansion:** same schema (race → office explainer → candidates → sources → market odds) for other countries; Polymarket/Kalshi already list many non-US elections. Start with upcoming national elections that have markets, plus Wikipedia/official electoral-commission candidate lists.
-2. **Promise tracking after Nov 3:** freeze each winner's stated positions (the verbatim excerpts here, timestamped) and track votes/bills/actions against them (Congress.gov API, Texas Legislature Online, CA leginfo), with each item linked to the record — "said → did" with no editorializing.
-3. Address-level district lookup (Google Civic Divisions API → OCD-ID, or Census geocoder), down-ballot local races, TEC/FEC finance summaries, Spanish translation.
+2. Address-level district lookup (Google Civic Divisions API → OCD-ID, or Census geocoder), down-ballot local races, TEC/FEC finance summaries, Spanish translation.
 
-- Accountability records cover 7 politicians only; turnout covers the 4 demo counties only.
+- Turnout covers the 4 demo counties only.
 - **Comptroller:** Donald Huffines is shown as the incumbent. Gov. Abbott appointed him after Kelly Hancock resigned; Hancock had lost the March 3 GOP primary to Huffines (Ballotpedia Texas_Comptroller_election,_2026; comptroller.texas.gov lists Huffines).
 
 ## Disclaimer
 Independent and nonpartisan; not a government website. Always confirm your ballot with official sources: [VoteTexas.gov](https://www.votetexas.gov/), [California Secretary of State](https://www.sos.ca.gov/elections), [CA early voting](https://caearlyvoting.sos.ca.gov/).
 
-## Race tiers (S/A/B/C)
+## Race labels
 
 
 "What matters on your ballot" ranks races, never candidates. Score = office impact × competitiveness.
 
 - Office impact: 3 = President, U.S. Senate, Governor; 2 = ballot measure, U.S. House, other statewide executive office; 1.5 = state legislature; 1 = judicial and local.
 - Competitiveness: 1 + (1 − |p_leader − 0.5| × 2), where p_leader is the leading prediction-market probability for the race; 1 when no market exists.
-- Tiers: S ≥ 4.5, A ≥ 3, B ≥ 2, otherwise C. Each race shows a one-line reason plus its race source and market link.
+- Labels: "Most at stake" ≥ 4.5, "High" ≥ 3, "Moderate" ≥ 2, otherwise "Lower", with a one-line legend under the heading. Each race shows a one-line reason plus its race source and market link. Labels apply to races only, never candidates.
 
 Candidate overlap ("Who lines up with you") uses only your slider answers (−5..+5, stored in localStorage) and verbatim sourced stances in data/stances.json. Overlap = (cosine + 1) / 2 on shared issues; hidden below 2 sourced stances ("Not enough record"). It is issue overlap, not a recommendation.
 
-### Questionnaire and candidate tiers
+### Questionnaire
 - 10 issues (CA adds Prop 40), each a -5..+5 integer slider, one per row with neutral policy-direction labels at both ends; every issue can be skipped.
-- Candidate tier within a race, "based on your answers and sourced records": S ≥ 85% overlap, A ≥ 70%, B ≥ 50%, otherwise C. Requires at least 2 sourced stances on your issues, else "Not enough record to tier". No answers, no tiers. Ballot order is kept; nothing is labeled "best".
+- Candidates get no grade or tier. With at least 2 sourced stances on your answered issues, a candidate shows "Lines up on N of M compared issues"; otherwise only the count of sourced positions. No answers, no overlap. Ballot order is kept; nothing is labeled "best".
 - **Answers stay on your device** (localStorage key `townhall.issueAnswers.v2`). No sign-in, nothing is sent to a server.

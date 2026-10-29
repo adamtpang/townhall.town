@@ -4,6 +4,7 @@ import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../../../lib/tools";
 import { civicTools } from "../../../lib/civicTools";
 import { dataTools } from "../../../lib/dataTools";
+import { apiError, isZip, methodNotAllowed } from "../../../lib/apiError";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -151,8 +152,9 @@ async function run(zip: string, emit: Emit) {
   });
 }
 
-async function handle(zip: string) {
-  zip = (zip || "").replace(/\D/g, "").slice(0, 5);
+const INVALID_ZIP = "zip must be exactly 5 digits, for example 78701.";
+
+function handle(zip: string) {
   const enc = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
@@ -160,7 +162,7 @@ async function handle(zip: string) {
       try {
         if (!ballotFor(zip)) {
           emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: "Not cached" });
-          emit({ type: "unsupported", zip, message: "Austin, San Francisco, and New York 10001 for now." });
+          emit({ type: "unsupported", zip, message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." });
         } else await run(zip, emit);
       } catch (e: any) {
         emit({ type: "error", message: String(e?.message || e) });
@@ -172,9 +174,19 @@ async function handle(zip: string) {
 }
 
 export async function GET(req: Request) {
-  return handle(new URL(req.url).searchParams.get("zip") || "");
+  const zip = new URL(req.url).searchParams.get("zip");
+  return isZip(zip) ? handle(zip) : apiError(400, "invalid", INVALID_ZIP);
 }
 export async function POST(req: Request) {
-  const body = await req.json().catch(() => ({}));
-  return handle(String(body.zip || ""));
+  let body: unknown;
+  try {
+    body = await req.json();
+  } catch {
+    return apiError(400, "invalid", 'Body must be JSON like {"zip":"78701"}.');
+  }
+  const zip = body && typeof body === "object" ? (body as { zip?: unknown }).zip : undefined;
+  return isZip(zip) ? handle(zip) : apiError(400, "invalid", INVALID_ZIP);
 }
+
+const notAllowed = methodNotAllowed(["GET", "POST"]);
+export { notAllowed as PUT, notAllowed as PATCH, notAllowed as DELETE };

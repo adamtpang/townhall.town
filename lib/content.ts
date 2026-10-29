@@ -3,7 +3,7 @@
 // Copy rules: nonpartisan, no endorsements, no em dashes.
 import { COVERAGE, SITE, type PagePath } from "./site";
 
-export type Section = { heading: string; paragraphs?: string[]; items?: string[] };
+export type Section = { heading: string; paragraphs?: string[]; items?: string[]; code?: string[] };
 export type PageContent = { path: PagePath; title: string; description: string; lead: string; sections: Section[] };
 
 const coverageLine = COVERAGE.map((c) => `${c.zip} (${c.place})`).join(", ");
@@ -156,13 +156,67 @@ export const CONTACT: PageContent = {
   ],
 };
 
-export const CONTENT: Record<PagePath, PageContent> = { "/": HOME, "/about": ABOUT, "/contact": CONTACT, "/privacy": PRIVACY };
+export const DEVELOPERS: PageContent = {
+  path: "/developers",
+  title: "Developers",
+  description: "The townhall.town API: ballot data and ZIP lookup, free, no key. OpenAPI 3.1 spec and curl examples.",
+  lead: `townhall.town has a small public API. It is free, needs no key or account, and returns the same sourced ballot data the site shows. The full description is the [OpenAPI 3.1 spec](${SITE.url}/openapi.json).`,
+  sections: [
+    {
+      heading: "Endpoints",
+      items: [
+        "GET /api/agent?zip=78701 or POST /api/agent with JSON {\"zip\":\"78701\"}: the ballot for a ZIP, streamed as newline-delimited JSON (application/x-ndjson).",
+        "GET /api/locate?lat=30.2672&lon=-97.7431: the ZIP for a point, from the U.S. Census Geocoder.",
+        `[openapi.json](${SITE.url}/openapi.json): OpenAPI 3.1 description of both endpoints, with every parameter and response.`,
+      ],
+    },
+    {
+      heading: "Get a ballot",
+      paragraphs: [
+        `Covered ZIPs: ${coverageLine}. Each line of the response is one JSON event. Step and status lines arrive while the data tools run. The last line has "type":"result" with the full ballot: districts, races, candidates, measures, market prices and local Census data, each with its source. A 5-digit ZIP that is not covered ends with one "type":"unsupported" line instead.`,
+      ],
+      code: [
+        `curl -N "${SITE.url}/api/agent?zip=78701"`,
+        `curl -N -X POST "${SITE.url}/api/agent" -H "content-type: application/json" -d '{"zip":"94103"}'`,
+        `curl -s "${SITE.url}/api/agent?zip=10001" | tail -n 1 | jq '.ballot.races[].title'`,
+      ],
+    },
+    {
+      heading: "Find a ZIP",
+      paragraphs: ['Returns {"zip":"78701","source":"U.S. Census Geocoder (ZCTA)"}. Coordinates are not stored.'],
+      code: [`curl "${SITE.url}/api/locate?lat=30.2672&lon=-97.7431"`],
+    },
+    {
+      heading: "Errors",
+      paragraphs: [
+        'Every API error is JSON with Content-Type application/json and the shape {"error":{"code":"...","message":"..."}}. The zip must be exactly 5 digits; it is not trimmed or cut down.',
+      ],
+      items: [
+        "400 invalid: a zip that is not exactly 5 digits, a body that is not JSON, or a missing or out of range lat or lon.",
+        "404 not_found: an unknown /api/ path, or a point with no ZIP.",
+        "405 method_not_allowed: a method the route does not support. The Allow header lists the supported ones.",
+        "502 upstream_unavailable: the Census Geocoder did not answer.",
+      ],
+      code: [`curl -i "${SITE.url}/api/agent?zip=7870"`, '{"error":{"code":"invalid","message":"zip must be exactly 5 digits, for example 78701."}}'],
+    },
+    {
+      heading: "Use and limits",
+      paragraphs: [
+        "The data is nonpartisan and sourced, and the AI summary only restates the returned records. Please cache results on your side and keep request rates modest. Market prices are market prices, not forecasts. Confirm dates and polling places with your state or county election office.",
+        `Agent guide: [llms.txt](${SITE.url}/llms.txt). Source code and issues: [GitHub](${SITE.github}).`,
+      ],
+    },
+  ],
+};
+
+export const CONTENT: Record<PagePath, PageContent> = { "/": HOME, "/about": ABOUT, "/contact": CONTACT, "/privacy": PRIVACY, "/developers": DEVELOPERS };
 
 function sectionMd(s: Section, level = 2): string {
   const out = [`${"#".repeat(level)} ${s.heading}`, ""];
   for (const p of s.paragraphs ?? []) out.push(p, "");
   for (const i of s.items ?? []) out.push(`- ${i}`);
   if (s.items?.length) out.push("");
+  for (const c of s.code ?? []) out.push("```sh", c, "```", "");
   return out.join("\n");
 }
 
@@ -173,6 +227,8 @@ const NAV_MD = [
   `- [About](${SITE.url}/about)`,
   `- [Contact](${SITE.url}/contact)`,
   `- [Privacy](${SITE.url}/privacy)`,
+  `- [Developers](${SITE.url}/developers)`,
+  `- [OpenAPI spec](${SITE.url}/openapi.json)`,
   `- [llms.txt](${SITE.url}/llms.txt)`,
   `- [Sitemap](${SITE.url}/sitemap.xml)`,
   `- [Source code](${SITE.github})`,
@@ -188,6 +244,7 @@ export function pageMarkdown(path: PagePath): string {
       "",
       `- Open ${SITE.url}, enter a covered ZIP, and press Go. Results render in the browser.`,
       `- Programmatic: \`GET ${SITE.url}/api/agent?zip=78701\` (or \`POST\` with JSON \`{"zip":"78701"}\`) returns newline-delimited JSON. The last line has \`"type":"result"\` with the full ballot.`,
+      `- API docs: ${SITE.url}/developers (OpenAPI 3.1: ${SITE.url}/openapi.json)`,
       `- Agent guide: ${SITE.url}/llms.txt`,
       ""
     );

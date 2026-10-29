@@ -39,6 +39,11 @@ export function SectionBlock({ s }: { s: Section }) {
             ))}
           </ul>
         ) : null}
+        {s.code?.map((c, i) => (
+          <pre key={i} className="overflow-x-auto bg-black/[0.04] p-4 text-sm leading-relaxed text-black">
+            <code>{c}</code>
+          </pre>
+        ))}
       </div>
     </section>
   );

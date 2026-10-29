@@ -11,6 +11,7 @@ describe("sitemap", () => {
       "https://townhall.town/about",
       "https://townhall.town/contact",
       "https://townhall.town/privacy",
+      "https://townhall.town/developers",
     ]);
     for (const e of s) expect(String(e.lastModified)).toMatch(/^\d{4}-\d{2}-\d{2}/);
   });

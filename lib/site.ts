@@ -20,7 +20,7 @@ export const COVERAGE = [
 ] as const;
 
 // Indexable pages, used by app/sitemap.ts and the Markdown negotiation middleware.
-export const PAGES = ["/", "/about", "/contact", "/privacy"] as const;
+export const PAGES = ["/", "/about", "/contact", "/privacy", "/developers"] as const;
 export type PagePath = (typeof PAGES)[number];
 
 // Bump when page copy changes; used as sitemap lastmod.

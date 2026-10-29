@@ -12,15 +12,16 @@ const ok = (cond, name, detail = "") => {
   console.log(`${cond ? "PASS" : "FAIL"}  ${name}${detail ? `  (${detail})` : ""}`);
 };
 
-async function get(path, { accept, ua } = {}) {
+async function get(path, { accept, ua, method = "GET", body, type } = {}) {
   const headers = {};
+  if (type) headers["content-type"] = type;
   if (accept) headers.accept = accept;
   if (ua) headers["user-agent"] = ua;
   if (cookie) headers.cookie = cookie;
   const t0 = Date.now();
-  const res = await fetch(BASE + path, { headers, redirect: "follow" });
-  const body = await res.text();
-  return { status: res.status, type: res.headers.get("content-type") || "", vary: res.headers.get("vary") || "", headers: res.headers, body, ms: Date.now() - t0 };
+  const res = await fetch(BASE + path, { method, headers, body, redirect: "follow" });
+  const text = await res.text();
+  return { status: res.status, type: res.headers.get("content-type") || "", vary: res.headers.get("vary") || "", headers: res.headers, body: text, ms: Date.now() - t0 };
 }
 
 const textOf = (html) =>
@@ -41,7 +42,7 @@ if (SHARE) {
 }
 
 // 1-2. Markdown negotiation on every page, HTML stays HTML.
-for (const p of ["/", "/about", "/contact", "/privacy"]) {
+for (const p of ["/", "/about", "/contact", "/privacy", "/developers"]) {
   const md = await get(p, { accept: "text/markdown" });
   ok(md.status === 200 && md.type.startsWith("text/markdown") && /(^|,)\s*accept\s*(,|$)/i.test(md.vary) && md.body.startsWith("# "), `markdown ${p}`, `${md.status} ${md.type} vary="${md.vary}" ${md.body.length}B`);
   const html = await get(p, { accept: "text/html" });
@@ -66,7 +67,7 @@ ok(full.status === 200 && full.body.length > llms.body.length, "llms-full.txt", 
 // 5. sitemap and robots.
 const sm = await get("/sitemap.xml");
 const locs = [...sm.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-ok(sm.status === 200 && /xml/.test(sm.type) && locs.length === 4 && (sm.body.match(/<lastmod>/g) || []).length === 4, "sitemap.xml", `${sm.status} ${sm.type} ${locs.join(" ")}`);
+ok(sm.status === 200 && /xml/.test(sm.type) && locs.length === 5 && (sm.body.match(/<lastmod>/g) || []).length === 5, "sitemap.xml", `${sm.status} ${sm.type} ${locs.join(" ")}`);
 const rb = await get("/robots.txt");
 ok(rb.status === 200 && /User-Agent: \*/i.test(rb.body) && /^Allow: \/$/m.test(rb.body) && !/^Disallow: \/$/m.test(rb.body) && /Sitemap: https:\/\/townhall\.town\/sitemap\.xml/.test(rb.body), "robots.txt", rb.body.replace(/\n/g, " | "));
 
@@ -107,6 +108,48 @@ for (const ua of ["GPTBot/1.1 (+https://openai.com/gptbot)", "ClaudeBot/1.0 (+cl
   const r = await get("/", { ua });
   ok(r.status === 200, `UA ${ua.split("/")[0]}`, `${r.status} ${r.ms}ms`);
 }
+
+// 9. API: OpenAPI spec, discovery hooks, JSON errors.
+const oa = await get("/openapi.json");
+let spec = null;
+try { spec = JSON.parse(oa.body); } catch {}
+ok(oa.status === 200 && /^application\/json/.test(oa.type) && spec?.openapi === "3.1.0" && !!spec.paths["/api/agent"]?.get && !!spec.paths["/api/agent"]?.post && !!spec.paths["/api/locate"]?.get, "openapi.json", `${oa.status} ${oa.type} ${spec ? Object.keys(spec.paths).join(",") : "unparsed"}`);
+const cat = await get("/.well-known/api-catalog");
+ok(cat.status === 200 && /linkset\+json/.test(cat.type) && cat.body.includes("/openapi.json"), "api-catalog", `${cat.status} ${cat.type}`);
+ok(/<link[^>]*rel="service-desc"[^>]*href="\/openapi\.json"/.test(home.body) || /<link[^>]*href="\/openapi\.json"[^>]*rel="service-desc"/.test(home.body), "homepage link rel=service-desc");
+ok(/<footer[\s\S]*href="\/developers"[^>]*>API<\/a>[\s\S]*<\/footer>/.test(home.body), "footer API link");
+ok(graph.some((n) => n["@type"] === "WebAPI" && /openapi\.json$/.test(n.documentation || "")), "JSON-LD WebAPI");
+ok(llms.body.includes("/openapi.json") && llms.body.includes("/developers"), "llms.txt links the API docs");
+const dev = await get("/developers", { accept: "text/html" });
+ok(dev.status === 200 && /curl/.test(dev.body) && dev.body.includes("/openapi.json"), "developers page", `${dev.status}`);
+for (const [p, md] of [["/index.md", "# townhall.town"], ["/about.md", "# About"]]) {
+  const r = await get(p);
+  ok(r.status === 200 && r.type.startsWith("text/markdown") && r.body.startsWith(md), `markdown alias ${p}`, `${r.status} ${r.type}`);
+}
+async function apiErr(name, path, status, code, opts = {}) {
+  const r = await get(path, opts);
+  let b = null;
+  try { b = JSON.parse(r.body); } catch {}
+  ok(r.status === status && /^application\/json/.test(r.type) && b?.error?.code === code && typeof b?.error?.message === "string", name, `${r.status} ${r.type} ${r.body.slice(0, 90)}${opts.allow ? ` allow="${r.headers.get("allow")}"` : ""}`);
+  return r;
+}
+await apiErr("agent GET zip=787011 -> 400", "/api/agent?zip=787011", 400, "invalid");
+await apiErr("agent GET zip=7870 -> 400", "/api/agent?zip=7870", 400, "invalid");
+await apiErr("agent GET zip=%2078701 -> 400", "/api/agent?zip=%2078701", 400, "invalid");
+await apiErr("agent GET no zip -> 400", "/api/agent", 400, "invalid");
+await apiErr('agent POST {"zip":"787011"} -> 400', "/api/agent", 400, "invalid", { method: "POST", type: "application/json", body: '{"zip":"787011"}' });
+await apiErr("agent POST bad JSON -> 400", "/api/agent", 400, "invalid", { method: "POST", type: "application/json", body: "{" });
+const put = await apiErr("agent PUT -> 405", "/api/agent", 405, "method_not_allowed", { method: "PUT", allow: true });
+ok(put.headers.get("allow") === "GET, POST", "agent 405 Allow header", put.headers.get("allow"));
+await apiErr("locate no lat/lon -> 400", "/api/locate", 400, "invalid");
+const lp = await apiErr("locate POST -> 405", "/api/locate", 405, "method_not_allowed", { method: "POST", allow: true });
+ok(lp.headers.get("allow") === "GET", "locate 405 Allow header", lp.headers.get("allow"));
+await apiErr("unknown /api route -> 404", `/api/nope-${Date.now()}`, 404, "not_found");
+await apiErr("unknown /api route POST -> 404", "/api/v1/ballot", 404, "not_found", { method: "POST" });
+const un = await get("/api/agent?zip=90210");
+ok(un.status === 200 && un.type.startsWith("application/x-ndjson") && un.body.includes('"type":"unsupported"') && un.body.includes("We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now."), "agent uncovered ZIP -> unsupported line", `${un.status} ${un.type}`);
+const loc = await get("/api/locate?lat=30.2672&lon=-97.7431");
+ok(loc.status === 200 && /"zip":"\d{5}"/.test(loc.body), "locate Austin", loc.body.slice(0, 80));
 
 console.log(failed ? `\n${failed} check(s) failed` : "\nAll checks passed");
 process.exit(failed ? 1 : 0);

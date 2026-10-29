@@ -22,6 +22,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${publicSans.variable} ${serif.variable} ${grotesk.variable}`}>
+      <head>
+        <link rel="service-desc" type="application/json" href="/openapi.json" />
+        <link rel="service-doc" type="text/html" href="/developers" />
+        <link rel="api-catalog" href="/.well-known/api-catalog" />
+      </head>
       <body className="font-sans text-[#010101] antialiased">{children}</body>
     </html>
   );

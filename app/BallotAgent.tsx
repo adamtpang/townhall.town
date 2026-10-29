@@ -232,7 +232,7 @@ export default function BallotAgent() {
     setSteps({});
     setStatus([]);
     if (z.length !== 5) return setNotice("Enter a 5-digit ZIP code.");
-    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin, San Francisco, and New York 10001 for now."); }
+    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now."); }
     setZip(z);
     setBusy(true);
     setSteps({});
@@ -257,7 +257,7 @@ export default function BallotAgent() {
           const e = JSON.parse(line);
           if (e.type === "step") setSteps((s) => ({ ...s, [e.tool]: e }));
           else if (e.type === "status") { console.debug("[agent]", e.message); setStatus((s) => [...s, "Looking up your ballot…"]); }
-          else if (e.type === "unsupported") setNotice("Austin, San Francisco, and New York 10001 for now.");
+          else if (e.type === "unsupported") setNotice("We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now.");
           else if (e.type === "error") { console.error("[agent]", e.message); setNotice("Couldn't load your ballot right now. Please try again."); }
           else if (e.type === "result") {
             setResult(e);
@@ -283,7 +283,7 @@ export default function BallotAgent() {
           const r = await fetch(`/api/locate?lat=${p.coords.latitude}&lon=${p.coords.longitude}`);
           const d = await r.json();
           if (d.zip) run(d.zip);
-          else setNotice(d.error || "Couldn't find a ZIP for your location.");
+          else setNotice((typeof d.error === "string" ? d.error : d.error?.message) || "Couldn't find a ZIP for your location.");
         } finally {
           setLocating(false);
         }
