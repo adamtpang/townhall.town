@@ -3,6 +3,7 @@ import { createXai } from "@ai-sdk/xai";
 import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../../../lib/tools";
 import { civicTools } from "../../../lib/civicTools";
+import { dataTools } from "../../../lib/dataTools";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -112,7 +113,7 @@ async function run(zip: string, emit: Emit) {
         providerOptions: { gateway: { models: ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"] } },
         system: SYSTEM,
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
-        tools: { ...makeTools(zip, emit, results), ...civicTools },
+        tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools },
         stopWhen: stepCountIs(3),
         abortSignal: AbortSignal.timeout(25000),
       });
