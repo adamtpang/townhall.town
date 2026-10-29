@@ -177,6 +177,9 @@ export default function BallotAgent() {
 
   async function run(z: string) {
     z = z.replace(/\D/g, "").slice(0, 5);
+    setResult(null);
+    setSteps({});
+    setStatus([]);
     if (z.length !== 5) return setNotice("Enter a 5-digit ZIP code.");
     if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin and San Francisco for now. New York is coming soon."); }
     setZip(z);
@@ -288,7 +291,7 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-32">
           <p className="text-sm text-black/60">
-            {b.place}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">{b.state === "TX" ? "Find your polling place" : "Check which is yours"}</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
+            {b.place}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
