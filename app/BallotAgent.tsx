@@ -5,6 +5,7 @@ import type { Politician, Race } from "../lib/types";
 import type { Ballot, MarketQuote } from "../lib/tools";
 import type { TurnoutDetail } from "../lib/turnout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { GamePlanNY } from "./GamePlanNY";
 import { Badge } from "../components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
 import { Checkbox } from "../components/ui/checkbox";
@@ -519,7 +520,7 @@ export default function BallotAgent() {
 
           {/* 8. Game plan */}
           <Section n={b.turnout ? 8 : 7} title="Your game plan" sub="When, where and what to bring.">
-            <GamePlan state={b.state} />
+            {b.state === "NY" ? <GamePlanNY /> : <GamePlan state={b.state} />}
           </Section>
         </div>
       )}
