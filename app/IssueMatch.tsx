@@ -25,13 +25,12 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
   const withCands = races.filter((r) => r.candidates?.length);
 
   return (
-    <section className="border-t border-black py-16" id="what-matters">
+    <section className="border-t border-black py-24" id="what-matters">
       <p className="nds-caption-upper text-black/60">02</p>
-      <h2 className="mt-3 text-5xl font-medium tracking-[-0.03em] text-black">Who lines up with you</h2>
+      <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">Who lines up with you</h2>
       <h3 className="mt-8 text-2xl font-medium tracking-tight">What matters to you?</h3>
-      <p className="mt-1 text-slate-600">Move a slider toward the direction you prefer, or leave it on Skip. Skipped issues are left out of the overlap.</p>
-      <p className="mt-2 text-sm font-medium text-slate-700">Your answers stay on this device. No sign-in, nothing sent to a server.</p>
-      <a href="#overlap" className="sticky top-2 z-10 mt-4 inline-block rounded-full bg-black px-4 py-2 text-sm font-medium text-white no-underline">See your issue overlap ↓</a>
+            <p className="mt-2 text-sm text-black/50">Your answers stay on this device. No sign-in, nothing sent to a server.</p>
+      <a href="#overlap" className="mt-4 inline-block text-sm">See your issue overlap ↓</a>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         {issues.map((i) => {
@@ -77,10 +76,10 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
                       <li key={c.name} className="border-t border-black/15 py-3 text-sm" data-overlap={c.name}>
                         <p className="font-medium text-navy">{c.name}{c.party ? <span className="font-normal text-slate-500"> · {c.party}</span> : null}</p>
                         {o.n < 2 ? (
-                          <p className="mt-1 text-slate-500">{o.n === 0 ? "No sourced positions on your issues." : "Not enough record: only 1 sourced position on your issues (thin evidence), so no overlap is shown."}</p>
+                          <p className="mt-1 text-slate-500">{o.n === 0 ? "No sourced positions on your issues." : "Not enough record."}</p>
                         ) : (
                           <>
-                            <p className="mt-1 text-slate-800">{o.n >= 2 && o.pct !== null ? <span className="mr-2 inline-block min-w-[2rem] text-3xl font-medium leading-none tracking-tight">{tierOf(o.pct)}</span> : null}{o.pct}% issue overlap on {o.n} of {o.m} issues</p>
+                            <p className="mt-1 text-slate-800">{o.n >= 2 && o.pct !== null ? <span className="mr-3 inline-block min-w-[2rem] font-serif text-5xl leading-none">{tierOf(o.pct)}</span> : null}{o.pct}% issue overlap on {o.n} of {o.m} issues</p>
                             <p className="text-xs text-slate-500">{o.n >= 2 ? "Tier based on your answers and sourced records." : "Not enough record to tier."}</p>
                             <p className="text-xs text-slate-500">Based on {o.n} sourced position{o.n === 1 ? "" : "s"}.{o.n === 1 ? " Thin evidence: one position only." : ""}</p>
                             <details className="mt-2" open={o.n >= 2}>

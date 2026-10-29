@@ -13,6 +13,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Tip, TooltipProvider } from "../components/ui/tooltip";
 import IssueMatch from "./IssueMatch";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
 
 const NYC_READY = false;
@@ -230,306 +232,56 @@ export default function BallotAgent() {
 
   return (
     <TooltipProvider>
-      {/* 1. ZIP */}
       <form
         onSubmit={(e) => {
           e.preventDefault();
           run(zip);
         }}
-        className="flex max-w-3xl flex-col gap-0 border-b-2 border-black sm:flex-row"
+        className="flex max-w-2xl items-end gap-4"
       >
-        <label className="sr-only" htmlFor="zip">ZIP code</label>
-        <input
-          id="zip"
+        <Input
           inputMode="numeric"
           autoComplete="postal-code"
+          aria-label="ZIP code"
           placeholder="Enter your ZIP"
           value={zip}
-          onChange={(e) => setZip(e.target.value.replace(/\D/g, "").slice(0, 5))}
-          className="h-20 flex-1 bg-transparent text-4xl font-medium tracking-tight text-black outline-none placeholder:text-black/30"
+          onChange={(e) => setZip(e.target.value)}
+          className="h-16 text-3xl sm:text-4xl"
         />
-        <button disabled={busy} className="h-20 bg-black px-10 text-lg font-medium text-white transition-opacity hover:opacity-80 disabled:opacity-60">
-          {busy ? "Working…" : "Explain my ballot →"}
-        </button>
+        <Button type="submit" size="lg" disabled={busy}>{busy ? "Reading…" : "Go"}</Button>
       </form>
-      <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+      <div className="mt-6 flex flex-wrap gap-2">
         {DEMO.map((d) => (
-          <button key={d.zip} onClick={() => d.ready && run(d.zip)} disabled={busy || !d.ready} className="rounded-full border border-black/20 px-4 py-2 text-black transition-colors hover:border-black disabled:cursor-not-allowed disabled:text-black/40 disabled:hover:border-black/20">
-            {d.label}{d.ready ? ` ${d.zip}` : ""}
-          </button>
+          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)}>
+            {d.label}
+          </Button>
         ))}
       </div>
-
-      {notice && <p className="mt-6 flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 p-4 text-amber-900"><Info className="mt-0.5 h-4 w-4 shrink-0" />{notice}</p>}
-
-      {(busy || result) && (
-        <Card className="mt-16">
-          <CardHeader className="px-0 pb-2">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <CardTitle className="text-2xl font-medium">What the agent is doing</CardTitle>
-              {result ? (
-                result.mode === "live" ? (
-                  <Badge variant="accent">Live AI agent</Badge>
-                ) : (
-                  <Tip label={`No model was available (${result.modelError || "unknown"}). The same tools ran in a fixed order.`}>
-                    <span><Badge variant="warn">Fallback mode (no model)</Badge></span>
-                  </Tip>
-                )
-              ) : (
-                <Badge variant="muted"><Loader2 className="h-3 w-3 animate-spin" /> running</Badge>
-              )}
-            </div>
-            
-          </CardHeader>
-          <CardContent>
-            <ol className="space-y-2">
-              {TOOLS.map((t) => {
-                const s = steps[t];
-                return (
-                  <li key={t} className="flex items-start gap-3 text-sm">
-                    {s?.status === "done" ? <CheckCircle2 className="mt-0.5 h-4 w-4 text-navy" /> : s ? <Loader2 className="mt-0.5 h-4 w-4 animate-spin text-slate-500" /> : <CircleDashed className="mt-0.5 h-4 w-4 text-slate-300" />}
-                    <span>
-                      <span className="font-medium text-navy">{TOOL_LABEL[t]}</span>
-                      {s?.summary && <span className="block text-slate-600">{s.summary}</span>}
-                    </span>
-                  </li>
-                );
-              })}
-            </ol>
-            {status.length > 0 && (
-              <details className="mt-3 text-xs text-slate-500">
-                <summary className="cursor-pointer">Agent log ({status.length})</summary>
-                {status.map((s, i) => <p key={i}>{s}</p>)}
-              </details>
-            )}
-            {result?.narration && <p className="mt-4 border-l-2 border-navy pl-3 text-slate-700">{result.narration}</p>}
-            {elapsed && <p className="mt-3 text-xs text-slate-500">Done in {elapsed.toFixed(1)}s · {ct(result!.generatedAt)}</p>}
-          </CardContent>
-        </Card>
+      {notice && <p className="mt-6 text-base text-black">{notice}</p>}
+      {(busy || (result && !b)) && (
+        <div className="mt-10 max-w-2xl">
+          <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
+          <p className="mt-2 text-sm text-black/50">{busy ? (TOOLS.map((t) => steps[t]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((t) => steps[t]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
+        </div>
       )}
 
       {b && (
-        <div id="ballot" className="mt-16">
-          <div className="mb-10 border-t border-black/15 pt-4 text-sm text-black/70">
-            {b.splitWarning && b.districts.length > 1 && <p><strong className="text-black">Your ZIP spans more than one U.S. House district</strong>, so both are shown. <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"}>Check which district is yours</a>.</p>}
-            <p className="mt-1">State legislative, judicial, county and city races are not shown yet. Check your full ballot at <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"}>{b.state === "TX" ? "VoteTexas.gov" : "sos.ca.gov"}</a>.</p>
-          </div>
+        <div id="ballot" className="mt-32">
+          <p className="text-sm text-black/50">
+            {b.place} · {elapsed ? `${elapsed.toFixed(1)}s` : ""} · {result?.mode === "live" ? "Live agent" : "Fallback mode (no model)"}
+            {b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}
+            {" "}· Local races not shown yet.
+          </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
-          <section className="border-t border-black py-16" id="plan">
-            <p className="nds-caption-upper text-black/60">03</p>
-            <h2 className="mt-3 text-5xl font-medium tracking-[-0.03em] text-black">Your plan</h2>
-            <p className="mt-3 max-w-2xl text-black/60">Where, when and what to bring.</p>
-            <div className="mt-10"><GamePlan state={b.state} /></div>
+          <section id="plan" className="border-t border-black py-24">
+            <p className="text-sm text-black/50">03</p>
+            <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">Your plan</h2>
+            <Plan state={b.state} />
           </section>
-          <details className="border-t border-black py-10">
-            <summary className="cursor-pointer text-2xl font-medium tracking-tight">All races, candidates, markets and sources</summary>
-          {/* 2. Elections */}
-          <Section n={2} title="Elections you can vote in" sub={`${b.place} · General election, Tuesday, Nov 3, 2026`}>
-            <div className="mb-4 flex flex-wrap gap-2">
-              {b.districts.map((d) => (
-                <Badge key={d.id} variant="outline" className="text-sm"><MapPin className="h-3 w-3" />{d.label}</Badge>
-              ))}
-            </div>
-            <div className="mb-6 space-y-2 text-sm">
-              <p className="flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 p-3 text-amber-900">
-                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>
-                  <strong>Verify by address.</strong> Districts come from your ZIP's center point, not your street address.{" "}
-                  {b.splitWarning && b.districts.length > 1 ? "Your ZIP may be split, so both possible House races are shown. " : ""}
-                  {b.state === "CA" && "California's House districts were redrawn under Prop 50 (2025); this ZIP's district is unconfirmed. "}
-                  Check your exact ballot at <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"}>{b.state === "TX" ? "VoteTexas.gov" : "sos.ca.gov"}</a>.
-                </span>
-              </p>
-              <p className="text-slate-500">District source: <a href={b.districtSource.url}>{b.districtSource.label}</a>. State legislative, judicial district, county and city races are not shown yet.</p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {races.map((r) => (
-                <a key={r.id} href={`#race-${r.id}`} className="block rounded-md border border-slate-200 p-4 no-underline hover:border-navy">
-                  <span className="eyebrow">{r.level === "federal" ? "Federal" : "State"}</span>
-                  <span className="mt-1 block font-semibold text-navy">{r.title}</span>
-                  <span className="mt-1 block text-sm text-slate-600">{r.candidates.length ? `${r.candidates.length} candidates` : "Candidates: unsure"}</span>
-                </a>
-              ))}
-            </div>
-          </Section>
-
-          {/* 3. Candidates */}
-          <Section n={3} title="Who's running" sub="Official sites and social links come from Ballotpedia. Photos are licensed Wikimedia Commons portraits where available, otherwise Ballotpedia, each credited. Missing items say “unsure”.">
-            <Accordion type="multiple" defaultValue={races.slice(0, 2).map((r) => r.id)}>
-              {races.map((r) => {
-                const mk = marketFor(markets, r.id);
-                return (
-                  <AccordionItem key={r.id} value={r.id} id={`race-${r.id}`}>
-                    <AccordionTrigger>
-                      <span>
-                        {r.title}
-                        <span className="ml-2 text-sm font-normal text-slate-500">{r.candidates.length} candidates</span>
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <p className="mb-4 max-w-3xl text-slate-700">
-                        <span className="font-semibold text-navy">What this office does: </span>
-                        {r.office} {r.officeSource && <Src href={r.officeSource}>source</Src>}
-                      </p>
-                      {r.candidates.length ? (
-                        <div className="grid gap-4 sm:grid-cols-2">
-                          {(r.candidates as Pol[]).map((c) => <CandidateCard key={c.name} c={c} odds={oddsForCandidate(mk?.avg, c.name)} />)}
-                        </div>
-                      ) : (
-                        <p className="text-slate-500">Candidates: unsure. See the source.</p>
-                      )}
-                      {r.turnout && (
-                        <div className="mt-4 rounded border border-slate-200 p-4 text-sm">
-                          <p className="eyebrow mb-2">Last time: {r.turnout.pastElection}</p>
-                          {r.turnout.voteShare.map((v) => <p key={v.name}>{v.name}: {String(v.pct).replace(/%+$/, "")}%</p>)}
-                          {r.turnout.eligibleNonVoters != null && <p className="mt-1">Eligible non-voters: {r.turnout.eligibleNonVoters.toLocaleString()}</p>}
-                          <p className="mt-1">{r.turnout.sources.map((s) => <Src key={s.url} href={s.url}>{s.label}</Src>)}</p>
-                        </div>
-                      )}
-                      <p className="mt-3"><Src href={r.source}>Race source (Ballotpedia)</Src></p>
-                    </AccordionContent>
-                  </AccordionItem>
-                );
-              })}
-            </Accordion>
-          </Section>
-
-          {/* 4 + 5. Problems and measures */}
-          <Section n={4} title="What's on the table" sub="Local problems from Census data, and the measures on your ballot. Pick the problems you care about.">
-            <Tabs defaultValue="problems">
-              <TabsList>
-                <TabsTrigger value="problems">Area problems</TabsTrigger>
-                <TabsTrigger value="measures">Ballot measures ({b.measures.length})</TabsTrigger>
-              </TabsList>
-              <TabsContent value="problems">
-                {problems.length ? (
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    {problems.map((p) => {
-                      const key = p.topic || p.id;
-                      return (
-                        <label key={p.id} className="cursor-pointer">
-                          <Card className={care[key] ? "border-navy ring-1 ring-navy" : ""}>
-                            <CardHeader>
-                              <div className="flex items-center justify-between">
-                                <span className="eyebrow">{TOPIC_LABEL[key] || key}</span>
-                                <Checkbox checked={!!care[key]} onCheckedChange={(v) => setCare((s) => ({ ...s, [key]: !!v }))} aria-label={`Care about ${p.label}`} />
-                              </div>
-                              <div className="mt-2 text-4xl font-bold tabular-nums text-navy">{p.value}</div>
-                              <CardDescription>{p.label}</CardDescription>
-                            </CardHeader>
-                            <CardContent className="text-xs text-slate-500">
-                              {p.stateValue != null && <p>State: {String(p.stateValue).replace(/%+$/, "")}%</p>}
-                              <p>{p.year} · <a href={p.source.url}>{p.source.label}</a></p>
-                            </CardContent>
-                          </Card>
-                        </label>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  <p className="text-slate-600">Local Census metrics are cached for the demo ZIPs (78130, 78701, 94103, 90012) only. Statewide data is coming next.</p>
-                )}
-              </TabsContent>
-              <TabsContent value="measures">
-                {b.measures.length ? (
-                  <Accordion type="multiple">
-                    {b.measures.map((m) => {
-                      const mk = marketFor(markets, m.id);
-                      return (
-                        <AccordionItem key={m.id} value={m.id}>
-                          <AccordionTrigger>
-                            <span className="flex flex-wrap items-center gap-2">
-                              {m.title}
-                              {mk && <Badge variant="muted">market odds {pct(mk.avg[0].prob)} {mk.avg[0].name.toLowerCase().startsWith("yes") ? "yes" : mk.avg[0].name}</Badge>}
-                            </span>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            {m.summary && <p className="max-w-3xl text-slate-700">{m.summary}</p>}
-                            {m.id === "Proposition 40" && <p className="mt-2 text-sm text-slate-600">Verified on the ballot: listed under “On the ballot” on Ballotpedia's California 2026 ballot propositions page.</p>}
-                            {mk && <MarketBlock mk={mk} />}
-                            <p className="mt-3"><Src href={m.source}>Source</Src></p>
-                          </AccordionContent>
-                        </AccordionItem>
-                      );
-                    })}
-                  </Accordion>
-                ) : (
-                  <p className="text-slate-600">{b.measuresNote || "No statewide measures found."}</p>
-                )}
-              </TabsContent>
-            </Tabs>
-          </Section>
-
-          {/* 6. Alignment */}
-          <Section n={5} title="Who has said something about it" sub="Quotes from each candidate's own campaign themes, matched by keyword. This is not a ranking and not advice on how to vote.">
-            {picked.length === 0 ? (
-              <p className="text-slate-600">{problems.length ? "Pick at least one problem above." : "Pick a demo ZIP to see local problems."}</p>
-            ) : (
-              <Tabs defaultValue={picked[0].topic || picked[0].id}>
-                <TabsList>
-                  {picked.map((p) => <TabsTrigger key={p.id} value={p.topic || p.id}>{TOPIC_LABEL[p.topic || p.id] || p.label}</TabsTrigger>)}
-                </TabsList>
-                {picked.map((p) => {
-                  const topic = p.topic || p.id;
-                  return (
-                    <TabsContent key={p.id} value={topic} className="space-y-6">
-                      {races.filter((r) => r.candidates.length).map((r) => (
-                        <div key={r.id}>
-                          <p className="mb-2 font-semibold text-navy">{r.title}</p>
-                          <ul className="space-y-2">
-                            {(r.candidates as Pol[]).map((c) => {
-                              const pos = c.positions?.find((x) => x.issue === topic);
-                              return (
-                                <li key={c.name} className="grid gap-1 rounded-md border border-slate-200 p-3 text-sm sm:grid-cols-[180px_1fr]">
-                                  <span className="font-medium">{c.name}</span>
-                                  {pos ? (
-                                    <span className="text-slate-700">
-                                      “{pos.text}” <Src href={pos.source.url}>source</Src>
-                                      <span className="block text-xs text-slate-400">{(pos as { match?: string }).match || "stated position"}; read the full source for context.</span>
-                                    </span>
-                                  ) : (
-                                    <span className="text-slate-400">No stated position found</span>
-                                  )}
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        </div>
-                      ))}
-                    </TabsContent>
-                  );
-                })}
-              </Tabs>
-            )}
-          </Section>
-
-          {/* 7. Markets */}
-          <Section n={6} title="What the markets say" sub="Market odds are prices traders pay on Polymarket and Kalshi. They are not forecasts we endorse, and thin markets swing.">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {marketRaces.map((r) => {
-                const mk = marketFor(markets, r.id)!;
-                return (
-                  <Card key={r.id}>
-                    <CardHeader>
-                      <CardTitle className="text-base">{r.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <MarketBlock mk={mk} />
-                      <p className="mt-4 text-sm text-slate-700"><span className="font-semibold text-navy">If they win, this office controls: </span>{r.office}</p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-            <p className="mt-4 text-sm text-slate-500">No market found for: {races.filter((r) => !marketFor(markets, r.id)).map((r) => r.title).join(", ") || "none"}.</p>
-          </Section>
-
-          {b.turnout && <TurnoutSection t={b.turnout as TurnoutDetail} />}
-
-          </details>
         </div>
       )}
+
     </TooltipProvider>
   );
 }
@@ -646,5 +398,35 @@ function TurnoutSection({ t }: { t: TurnoutDetail }) {
         {t.sources.map((s) => <Src key={s.url} href={s.url}>{s.label}</Src>)}
       </div>
     </Section>
+  );
+}
+
+
+function Plan({ state }: { state: "TX" | "CA" }) {
+  const rows =
+    state === "TX"
+      ? [
+          { k: "Oct 30", v: "Last day of early voting", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
+          { k: "Nov 3", v: "Election Day, 7 a.m. to 7 p.m.", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
+          { k: "Where", v: "Your county sets locations", src: "https://www.votetexas.gov/voting/where.html", s: "Find your polling place" },
+          { k: "Bring", v: "One approved photo ID", src: "https://www.votetexas.gov/voting/need-id.html", s: "Accepted IDs" },
+        ]
+      : [
+          { k: "Nov 3", v: "Election Day. Mail ballots postmarked by today", src: "https://www.sos.ca.gov/elections", s: "sos.ca.gov" },
+          { k: "Where", v: "Vote centers and drop boxes", src: "https://caearlyvoting.sos.ca.gov/", s: "caearlyvoting.sos.ca.gov" },
+          { k: "Bring", v: "Usually no ID needed", src: "https://voterstatus.sos.ca.gov/", s: "Check your voter status" },
+        ];
+  return (
+    <dl className="mt-16">
+      {rows.map((r) => (
+        <div key={r.k} className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
+          <dt className="font-serif text-5xl leading-none sm:col-span-4 sm:text-6xl">{r.k}</dt>
+          <dd className="sm:col-span-8">
+            <p className="text-xl">{r.v}</p>
+            <a className="mt-1 inline-block text-sm" href={r.src} target="_blank" rel="noreferrer">{r.s} ↗</a>
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }

@@ -36,17 +36,17 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
   const tiers = ["S", "A", "B", "C"] as const;
   return (
-    <section className="border-t border-black py-16" id="tiers">
+    <section className="border-t border-black py-24" id="tiers">
       <p className="nds-caption-upper text-black/60">01</p>
-      <h2 className="mt-3 text-5xl font-medium tracking-[-0.03em] text-black">What matters on your ballot</h2>
-      <p className="mt-3 max-w-2xl text-black/60">Races ranked by how much the office controls times how close the race is. This ranks races, never candidates.</p>
+      <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
+      <p className="mt-4 max-w-2xl text-black/50">Office impact × how close the race is. Ranks races, never candidates.</p>
       <div className="mt-10">
         {tiers.map((t) => {
           const list = rows.filter((x) => x.tier === t);
           if (!list.length) return null;
           return (
             <div key={t} className="grid grid-cols-[4rem_1fr] gap-6 border-t border-black/15 py-6 md:grid-cols-[6rem_1fr]">
-              <p className="text-6xl font-medium leading-none tracking-tight">{t}</p>
+              <p className="font-serif text-7xl leading-none">{t}</p>
               <ul className="space-y-4">
                 {list.map(({ r, why, mk }) => (
                   <li key={r.id}>
