@@ -1813,7 +1813,7 @@
       "hasThemes": true
      },
      {
-      "name": "Neil Snider",
+      "name": "Neill Snider",
       "party": "Libertarian",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -2305,7 +2305,7 @@
    },
    {
     "id": "tx-supreme-court-place-1-chief-justice",
-    "title": "Texas Supreme Court Place 1 Chief Justice",
+    "title": "Texas Supreme Court Chief Justice",
     "level": "state",
     "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
@@ -4674,7 +4674,7 @@
       "hasThemes": true
      },
      {
-      "name": "Neil Snider",
+      "name": "Neill Snider",
       "party": "Libertarian",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -5166,7 +5166,7 @@
    },
    {
     "id": "tx-supreme-court-place-1-chief-justice",
-    "title": "Texas Supreme Court Place 1 Chief Justice",
+    "title": "Texas Supreme Court Chief Justice",
     "level": "state",
     "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
@@ -5642,10 +5642,349 @@
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-supreme-court-place-2",
+    "title": "Texas Supreme Court Place 2 (unexpired term)",
+    "level": "state",
+    "office": "Highest Texas court for civil and juvenile cases; justices run in partisan elections for 6-year terms; this seat fills the remainder of an unexpired term.",
+    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "candidates": [
+     {
+      "name": "James P. Sullivan",
+      "party": "Republican",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Chari Kelly",
+      "party": "Democratic",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1"
+   },
+   {
+    "id": "tx-15th-coa-chief-justice",
+    "title": "15th Court of Appeals Chief Justice",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/15thcoa/",
+    "candidates": [
+     {
+      "name": "Scott Brister",
+      "party": "Republican",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Jerry Zimmerer",
+      "party": "Democratic",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1"
+   },
+   {
+    "id": "tx-15th-coa-place-2",
+    "title": "15th Court of Appeals Place 2",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/15thcoa/",
+    "candidates": [
+     {
+      "name": "Scott K. Field",
+      "party": "Republican",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Tom Baker",
+      "party": "Democratic",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1"
+   },
+   {
+    "id": "tx-15th-coa-place-3",
+    "title": "15th Court of Appeals Place 3",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/15thcoa/",
+    "candidates": [
+     {
+      "name": "April Farris",
+      "party": "Republican",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Marc M. Meyer",
+      "party": "Democratic",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1"
+   },
+   {
+    "id": "tx-3rd-coa-chief-justice",
+    "title": "3rd Court of Appeals Chief Justice",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/3rdcoa/",
+    "candidates": [
+     {
+      "name": "Cory Liu",
+      "party": "Republican",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Darlene Byrne",
+      "party": "Democratic",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1"
+   },
+   {
+    "id": "tx-sboe-5",
+    "title": "State Board of Education District 5",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://tea.texas.gov/about-tea/leadership/state-board-of-education",
+    "candidates": [
+     {
+      "name": "Mica Arellano",
+      "party": "Republican",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Allison Bush",
+      "party": "Democratic",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1",
+    "verify": "Check that District 5 is yours by address."
+   },
+   {
+    "id": "tx-hd-49",
+    "title": "Texas House District 49",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://house.texas.gov/",
+    "candidates": [
+     {
+      "name": "Montserrat Garibay",
+      "party": "Democratic",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Arshia Papari",
+      "party": "Green",
+      "incumbent": null,
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1",
+    "verify": "Check that District 49 is yours by address."
    }
   ],
-  "measures": [],
-  "measuresNote": "No statewide Texas propositions found for Nov 3, 2026 in our sources (Texas constitutional amendments are usually voted in odd years). Local measures: unsure, check your county.",
+  "measures": [
+   {
+    "id": "austin-prop-a",
+    "title": "City of Austin Proposition A: Parks, recreation, aquatic and open space bonds",
+    "summary": "The City could issue $260,000,000 in bonds for park, recreation, aquatic and open space improvements and levy taxes to repay them. Ballot language states: THIS IS A TAX INCREASE.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-b",
+    "title": "City of Austin Proposition B: Library facility bonds",
+    "summary": "The City could issue $35,000,000 in bonds for library facilities and levy taxes to repay them. Ballot language states: THIS IS A TAX INCREASE.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-c",
+    "title": "City of Austin Proposition C: Charter amendment",
+    "summary": "The City Charter would be amended to clarify that the Independent Citizens Redistricting Commission is independent of City Council control, allow it to review districts after boundary changes, create exceptions for student members, set an effective date for its plan, increase potential appointees, clarify vacancy filling, and allow staff communication consistent with the Texas Open Meetings Act.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-d",
+    "title": "City of Austin Proposition D: Charter amendment",
+    "summary": "The City Charter would be amended to delete language requiring the City Council to meet at least once each week.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-e",
+    "title": "City of Austin Proposition E: Charter amendment",
+    "summary": "The City Charter would be amended to delete language requiring the City Council to determine its rules and order of business by ordinance.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-f",
+    "title": "City of Austin Proposition F: Charter amendment",
+    "summary": "The City Charter would be amended to clarify the meaning of the term 'election' and have campaign contribution and expenditure limits adjusted each January 1 instead of with budget adoption.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-g",
+    "title": "City of Austin Proposition G: Charter amendment",
+    "summary": "The City Charter would be amended to require initiative and petitioned charter amendment elections to be held on the next available even-year November election date that allows time to meet legal requirements.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=4"
+   },
+   {
+    "id": "austin-prop-h",
+    "title": "City of Austin Proposition H: Charter amendment",
+    "summary": "The City Charter would be amended to provide that the City Council appoints and removes the City Attorney.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=4"
+   },
+   {
+    "id": "austin-prop-i",
+    "title": "City of Austin Proposition I: Charter amendment",
+    "summary": "The City Charter would be amended to require an Independent Affordability and Efficiency Initiative on a regular basis and before any tax rate increase election, with the contractor required to identify annual and multi-year savings exceeding the cost of its service.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=4"
+   },
+   {
+    "id": "austin-prop-j",
+    "title": "City of Austin Proposition J: Charter amendment",
+    "summary": "The City Charter would be amended to make non-substantive corrections and change or remove language that is moot or unenforceable because of state law or a final court order.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=4"
+   }
+  ],
+  "measuresNote": "No Texas statewide propositions on Nov 3, 2026 (Texas Legislative Reference Library). City of Austin Props A to J are on the ballot (Travis County sample ballot).",
   "problems": [
    {
     "year": "ACS 2024 5-year (2020-2024)",
@@ -7137,105 +7476,182 @@
   ],
   "measures": [
    {
-    "id": "Proposition 1",
+    "id": "ca-prop-1",
     "title": "Proposition 1 (Housing, Bonds)",
     "summary": "Issue $11.25 billion in bonds to fund Multifamily Housing Program, CalVet Home Loan Program, and youth housing",
     "type": "BI",
     "source": "https://ballotpedia.org/California_Proposition_1,_Veteran_and_Housing_Assistance_Programs_Bond_Measure_(2026)"
    },
    {
-    "id": "Proposition 2",
+    "id": "ca-prop-2",
     "title": "Proposition 2 (Budget stabilization)",
     "summary": "Increase the Budget Stabilization Account (BSA) cap from 10% of general fund revenue to 20% and excluding deposits into the BSA from the Gann Limit",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_2,_Budget_Stabilization_Account_Cap_Increase_and_Gann_Limit_Changes_Amendment_(2026)"
    },
    {
-    "id": "Proposition 3",
+    "id": "ca-prop-3",
     "title": "Proposition 3 (Higher education funding, Public education funding, Income taxes)",
     "summary": "Renew the additional income taxes enacted with the approval of Proposition 30 in 2012 that fund education and early childhood programs.",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 4",
+    "id": "ca-prop-4",
     "title": "Proposition 4 (Election administration, Campaign finance)",
     "summary": "Allow the state and local governments to create programs that provide candidates with public funds under spending limits and eligibility rules",
     "type": "LRSS",
     "source": "https://ballotpedia.org/California_Proposition_4,_Allow_Public_Financing_of_Election_Campaigns_Measure_(2026)"
    },
    {
-    "id": "Proposition 5",
+    "id": "ca-prop-5",
     "title": "Proposition 5 (State executive structure, Recall)",
     "summary": "Eliminate the successor election when a state officer is recalled, thereby leaving the office vacant until it is filled according to state law",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_5,_Eliminate_State_Officer_Recall_Successor_Elections_Amendment_(2026)"
    },
    {
-    "id": "Proposition 37",
+    "id": "ca-prop-37",
     "title": "Proposition 37 (Housing)",
     "summary": "Establish a second mortgage homebuyer program for qualified homebuyers on qualifying homes and issue $25 billion in bonds to fund the program",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_37,_Second_Mortgage_Homebuyer_Program_and_Revenue_Bond_Initiative_(2026)"
    },
    {
-    "id": "Proposition 38",
+    "id": "ca-prop-38",
     "title": "Proposition 38 (Healthcare facility, Healthcare governance, Bonds, Vaccinations and disease)",
     "summary": "Issue $8.4 billion in general obligation bonds to fund immunology and immunotherapy research",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_38,_Immunology_and_Immunotherapy_Research_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 39",
+    "id": "ca-prop-39",
     "title": "Proposition 39 (Election administration, Voter ID)",
     "summary": "Require voters to present government-issued identification when casting ballots and require election officials to use government data to confirm voter citizenship and report verification rates",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)"
    },
    {
-    "id": "Proposition 40",
+    "id": "ca-prop-40",
     "title": "Proposition 40 (Income taxes, Public health insurance)",
     "summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
     "type": "CICA/SS",
     "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)"
    },
    {
-    "id": "Proposition 41",
+    "id": "ca-prop-41",
     "title": "Proposition 41 (Tax administration, Revenue and spending limits)",
     "summary": "Require state laws or ballot initiatives levying a new special tax enacted after January 1, 2026 to require the government entities or departments receiving revenue from the new tax to eliminate their lowest-performing programs and reinvest those savings in higher-performing programs",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)"
    },
    {
-    "id": "Proposition 42",
+    "id": "ca-prop-42",
     "title": "Proposition 42 (Income taxes)",
     "summary": "Prohibit the enactment of new taxes after January 1, 2026 on ownership or accumulation of retirement holdings, individually-owned assets, and other forms of personal savings",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)"
    },
    {
-    "id": "Proposition 43",
+    "id": "ca-prop-43",
     "title": "Proposition 43 (Supermajority, Local government)",
     "summary": "Require two-thirds vote by electorate to enact, extend, or increase local special tax initiatives and prohibit local governments and ballot initiatives from enacting ad valorem property taxes except those authorized elsewhere in the state constitution",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_43,_Two-Thirds_Vote_Requirement_for_Local_Special_Tax_Initiatives_and_Property_Tax_Initiative_Prohibition_Amendment_(2026)"
    },
    {
-    "id": "Proposition 44",
+    "id": "ca-prop-44",
     "title": "Proposition 44 (Business, Healthcare governance)",
     "summary": "Prohibit healthcare clinics, specifically federally-qualified health centers and related organizations, from spending less than 90% of their annual revenue on mission-related purposes",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_44,_Spending_Requirements_for_Federally_Qualified_Health_Centers_Initiative_(2026)"
    },
    {
-    "id": "Proposition 45",
+    "id": "ca-prop-45",
     "title": "Proposition 45 (Administrative powers, Land use)",
     "summary": "Establish timelines for local and state agencies to review plans and solicit public comment for essential projects, such as housing, improvements to water supply, transportation, energy, and facilities for health and public safety",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_45,_Changes_to_Environmental_Review_Process_for_Certain_Projects_Initiative_(2026)"
+   },
+   {
+    "id": "sf-rtm",
+    "title": "Regional Measure RTM: Regional Transit Measure",
+    "summary": "A 1.0% (SF) / 0.5% (other four counties) sales tax would be imposed for 14 years, with revenue distributed to BART, Muni, Caltrain, AC Transit, VTA and other agencies. Requires 50%+1 of votes across all five counties combined.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=54"
+   },
+   {
+    "id": "sf-prop-a",
+    "title": "SF Proposition A: Charter Changes Affecting Various City Departments and Commissions",
+    "summary": "The Charter would be amended to change certain processes and eliminate or reorganize some commissions.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=66"
+   },
+   {
+    "id": "sf-prop-b",
+    "title": "SF Proposition B: Establishing a Municipal Finance Corporation and a Public Bank",
+    "summary": "The City would be authorized to establish a municipal finance corporation and a public bank.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=72"
+   },
+   {
+    "id": "sf-prop-c",
+    "title": "SF Proposition C: Contributions to the Housing Trust Fund",
+    "summary": "The City's required contributions to the Housing Trust Fund would increase and be extended to 2058, with conditions allowing freezes or reductions in deficit years.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=80"
+   },
+   {
+    "id": "sf-prop-d",
+    "title": "SF Proposition D: Changes to Ballot Measure Process",
+    "summary": "Signature thresholds for initiatives would rise from 2% to 8% (about 10,600 to 42,500 signatures), the Mayor and four Supervisors could no longer place measures directly, and special elections would require 10% of registered voters.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=86"
+   },
+   {
+    "id": "sf-prop-e",
+    "title": "SF Proposition E: City Administrator's Authority and Changes to City Contracting",
+    "summary": "Board of Supervisors approval thresholds would rise from $1 million to $4.5 million (revenue contracts) and $10 million to $25 million (expenditure contracts); the City Administrator term would go from 5 to 10 years.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=96"
+   },
+   {
+    "id": "sf-prop-f",
+    "title": "SF Proposition F: Changes to Executive Branch Management",
+    "summary": "The Charter would be amended to change the structure of the City's executive branch as described in the measure.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=102"
+   },
+   {
+    "id": "sf-prop-g",
+    "title": "SF Proposition G: Allowing Private Vehicles on the Upper Great Highway in Sunset Dunes Park",
+    "summary": "The Upper Great Highway park would close and the road would reopen to private vehicles from Monday 4 a.m. to Friday 6 p.m., except holidays.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=110"
+   },
+   {
+    "id": "sf-prop-h",
+    "title": "SF Proposition H: Parcel Tax to Fund Muni Operations",
+    "summary": "A parcel tax would fund Muni service from July 1, 2027 to June 30, 2042.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=126"
+   },
+   {
+    "id": "sf-prop-i",
+    "title": "SF Proposition I: Changes to Real Property Transfer Tax",
+    "summary": "Part of the existing transfer tax would be dedicated to specific affordable housing programs instead of the General Fund.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=134"
+   },
+   {
+    "id": "sf-prop-j",
+    "title": "SF Proposition J: Removal of Foreclosure Exemption for Real Property Transfer Tax",
+    "summary": "The transfer tax exemption for these foreclosure transfers would end for the covered property types.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=146"
    }
   ],
-  "measuresNote": "Statewide propositions from Ballotpedia, as of Oct 28, 2026. Local measures not included.",
+  "measuresNote": "14 California statewide propositions (Ballotpedia; official voter guide) and 11 San Francisco local measures: the Regional Transit Measure and Props A to J (SF Voter Information Pamphlet).",
   "problems": [
    {
     "year": "ACS 2024 5-year (2020-2024)",
@@ -8727,98 +9143,98 @@
   ],
   "measures": [
    {
-    "id": "Proposition 1",
+    "id": "ca-prop-1",
     "title": "Proposition 1 (Housing, Bonds)",
     "summary": "Issue $11.25 billion in bonds to fund Multifamily Housing Program, CalVet Home Loan Program, and youth housing",
     "type": "BI",
     "source": "https://ballotpedia.org/California_Proposition_1,_Veteran_and_Housing_Assistance_Programs_Bond_Measure_(2026)"
    },
    {
-    "id": "Proposition 2",
+    "id": "ca-prop-2",
     "title": "Proposition 2 (Budget stabilization)",
     "summary": "Increase the Budget Stabilization Account (BSA) cap from 10% of general fund revenue to 20% and excluding deposits into the BSA from the Gann Limit",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_2,_Budget_Stabilization_Account_Cap_Increase_and_Gann_Limit_Changes_Amendment_(2026)"
    },
    {
-    "id": "Proposition 3",
+    "id": "ca-prop-3",
     "title": "Proposition 3 (Higher education funding, Public education funding, Income taxes)",
     "summary": "Renew the additional income taxes enacted with the approval of Proposition 30 in 2012 that fund education and early childhood programs.",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 4",
+    "id": "ca-prop-4",
     "title": "Proposition 4 (Election administration, Campaign finance)",
     "summary": "Allow the state and local governments to create programs that provide candidates with public funds under spending limits and eligibility rules",
     "type": "LRSS",
     "source": "https://ballotpedia.org/California_Proposition_4,_Allow_Public_Financing_of_Election_Campaigns_Measure_(2026)"
    },
    {
-    "id": "Proposition 5",
+    "id": "ca-prop-5",
     "title": "Proposition 5 (State executive structure, Recall)",
     "summary": "Eliminate the successor election when a state officer is recalled, thereby leaving the office vacant until it is filled according to state law",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_5,_Eliminate_State_Officer_Recall_Successor_Elections_Amendment_(2026)"
    },
    {
-    "id": "Proposition 37",
+    "id": "ca-prop-37",
     "title": "Proposition 37 (Housing)",
     "summary": "Establish a second mortgage homebuyer program for qualified homebuyers on qualifying homes and issue $25 billion in bonds to fund the program",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_37,_Second_Mortgage_Homebuyer_Program_and_Revenue_Bond_Initiative_(2026)"
    },
    {
-    "id": "Proposition 38",
+    "id": "ca-prop-38",
     "title": "Proposition 38 (Healthcare facility, Healthcare governance, Bonds, Vaccinations and disease)",
     "summary": "Issue $8.4 billion in general obligation bonds to fund immunology and immunotherapy research",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_38,_Immunology_and_Immunotherapy_Research_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 39",
+    "id": "ca-prop-39",
     "title": "Proposition 39 (Election administration, Voter ID)",
     "summary": "Require voters to present government-issued identification when casting ballots and require election officials to use government data to confirm voter citizenship and report verification rates",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)"
    },
    {
-    "id": "Proposition 40",
+    "id": "ca-prop-40",
     "title": "Proposition 40 (Income taxes, Public health insurance)",
     "summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
     "type": "CICA/SS",
     "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)"
    },
    {
-    "id": "Proposition 41",
+    "id": "ca-prop-41",
     "title": "Proposition 41 (Tax administration, Revenue and spending limits)",
     "summary": "Require state laws or ballot initiatives levying a new special tax enacted after January 1, 2026 to require the government entities or departments receiving revenue from the new tax to eliminate their lowest-performing programs and reinvest those savings in higher-performing programs",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)"
    },
    {
-    "id": "Proposition 42",
+    "id": "ca-prop-42",
     "title": "Proposition 42 (Income taxes)",
     "summary": "Prohibit the enactment of new taxes after January 1, 2026 on ownership or accumulation of retirement holdings, individually-owned assets, and other forms of personal savings",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)"
    },
    {
-    "id": "Proposition 43",
+    "id": "ca-prop-43",
     "title": "Proposition 43 (Supermajority, Local government)",
     "summary": "Require two-thirds vote by electorate to enact, extend, or increase local special tax initiatives and prohibit local governments and ballot initiatives from enacting ad valorem property taxes except those authorized elsewhere in the state constitution",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_43,_Two-Thirds_Vote_Requirement_for_Local_Special_Tax_Initiatives_and_Property_Tax_Initiative_Prohibition_Amendment_(2026)"
    },
    {
-    "id": "Proposition 44",
+    "id": "ca-prop-44",
     "title": "Proposition 44 (Business, Healthcare governance)",
     "summary": "Prohibit healthcare clinics, specifically federally-qualified health centers and related organizations, from spending less than 90% of their annual revenue on mission-related purposes",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_44,_Spending_Requirements_for_Federally_Qualified_Health_Centers_Initiative_(2026)"
    },
    {
-    "id": "Proposition 45",
+    "id": "ca-prop-45",
     "title": "Proposition 45 (Administrative powers, Land use)",
     "summary": "Establish timelines for local and state agencies to review plans and solicit public comment for essential projects, such as housing, improvements to water supply, transportation, energy, and facilities for health and public safety",
     "type": "CISS",

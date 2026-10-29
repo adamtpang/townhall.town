@@ -61,7 +61,7 @@ Which field depends on the file:
 
 If you cannot find a source, write `unsure` or `no record found`. That is what `lib/turnout.ts`, `lib/accountability.ts`, and `lib/dataTools.ts` already return when a record is missing. Do not guess party, incumbency, quotes, vote totals, or biography.
 
-`data/measures.json` is `{ builtAt, note, measures }`. Each measure has `id`, `title`, `zips`, `jurisdiction`, `cost` (`{ value, sourceUrl }`), `whoPays` (`{ text, sourceUrl }`), `whatChanges` (`{ text, sourceUrl }`), and optional `notes`. The file note says `unsure` where the official text gives no figure. Keep that. Austin propositions still say the per-home tax impact is `unsure`.
+`data/measures.json` is `{ builtAt, note, measures }`. Each measure has `id`, `title`, `zips`, `jurisdiction`, `cost` (`{ value, sourceUrl }`), `whoPays` (`{ text, sourceUrl }`), `whatChanges` (`{ text, sourceUrl }`), optional `ifYes` / `ifNo` (`{ text, sourceUrl }`), and optional `notes`. Ids are `ca-prop-N`, `sf-rtm`, `sf-prop-x` and `austin-prop-x`, matching `measures[].id` in `data/ballots.json`. `data/offices.json` holds the 30-second office summaries, keyed by race id (`learn`, `sourceUrl`; `unsure` or a null source renders as "No sourced summary yet"). The file note says `unsure` where the official text gives no figure. Keep that. Austin propositions still say the per-home tax impact is `unsure`.
 
 ## Nonpartisan
 
