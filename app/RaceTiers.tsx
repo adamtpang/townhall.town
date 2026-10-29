@@ -1,6 +1,7 @@
 "use client";
+import { Portrait, type Photo } from "../components/Portrait";
 type Avg = { name: string; prob: number }[];
-type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string };
+type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
 
 /**
@@ -51,10 +52,20 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                 <span className="w-16 font-serif text-7xl leading-none md:w-24">{t}</span>
                 <span className="text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}<span className="ml-2 inline-block group-open:rotate-180">↓</span></span>
               </summary>
-              <ul className="mt-4 space-y-4 pl-[5.5rem] md:pl-[7.5rem]">
+              <ul className="mt-6 space-y-10 sm:pl-[7.5rem]">
                 {list.map(({ r, why, mk }) => (
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>
+                    {r.candidates?.length ? (
+                      <div className="my-3 flex gap-3 overflow-x-auto pb-1">
+                        {r.candidates.map((c) => (
+                          <div key={c.name} className="w-24 shrink-0 sm:w-28">
+                            <Portrait name={c.name} photo={c.photo} credit={false} />
+                            <p className="mt-1 text-xs leading-tight text-black/80">{c.name}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
                     <p className="text-sm text-black/60">
                       {why}{" "}
                       {r.source && <a href={r.source} target="_blank" rel="noreferrer">race source</a>}

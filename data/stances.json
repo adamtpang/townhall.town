@@ -181,6 +181,14 @@
         "quote": "Protect oil and gas jobs",
         "sourceUrl": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
       }
+    },
+    "mark-teixeira": {
+      "name": "Mark Teixeira",
+      "healthcare": {
+        "value": -3,
+        "quote": "Lower costs, expand choice, and stop Washington from controlling your healthcare decisions.",
+        "sourceUrl": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes"
+      }
     }
   }
 }

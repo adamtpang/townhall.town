@@ -2,9 +2,10 @@
 import { useEffect, useState } from "react";
 import { Slider } from "../components/ui/slider";
 import { Checkbox } from "../components/ui/checkbox";
+import { Portrait, type Photo } from "../components/Portrait";
 import { ISSUES, overlap, stancesFor, type Answers } from "../lib/issues";
 
-type Cand = { name: string; party?: string | null };
+type Cand = { name: string; party?: string | null; photo?: Photo };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
 const KEY = "townhall.issueAnswers.v2";
 // Candidate tier within a race, from overlap % only (needs 2+ sourced stances on issues you answered).
@@ -65,27 +66,36 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
         {answeredCount === 0 ? (
           <p className="mt-4 text-slate-600">Answer at least one issue above to see overlap and candidate tiers. With no answers, nothing is tiered.</p>
         ) : (
-          <div className="mt-4 space-y-6">
-            {withCands.map((r) => (
-              <div key={r.id}>
-                <p className="font-semibold text-slate-800">{r.title || r.id}</p>
-                <ul className="mt-2 grid gap-2 md:grid-cols-2">
-                  {r.candidates.map((c) => {
-                    const st = stancesFor(c.name);
-                    const o = overlap(answers, st, ids);
+          <div className="mt-8 space-y-16">
+            {withCands.map((r) => {
+              const rows = r.candidates.map((c) => { const st = stancesFor(c.name); return { c, st, o: overlap(answers, st, ids) }; });
+              const compare = rows.filter((x) => x.o.n >= 2).length >= 2;
+              return (
+              <div key={r.id} data-race={r.id}>
+                <p className="font-serif text-3xl leading-tight text-black">{r.title || r.id}</p>
+                {!compare && <p className="mt-1 text-sm text-slate-500">Not enough sourced positions to compare candidates in this race yet.</p>}
+                <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3">
+                  {rows.map(({ c, st, o }) => {
+                    const agree = o.shared.filter((id) => { const a = answers[id] as number; const v = st[id].value; return a * v > 0 || Math.abs(a - v) <= 1; }).length;
                     return (
-                      <li key={c.name} className="border-t border-black/15 py-3 text-sm" data-overlap={c.name}>
-                        <p className="font-medium text-navy">{c.name}{c.party ? <span className="font-normal text-slate-500"> · {c.party}</span> : null}</p>
-                        {o.n < 2 ? (
-                          <p className="mt-1 text-slate-500">{o.n === 0 ? "No sourced positions on your issues." : "Not enough record."}</p>
+                      <li key={c.name} className="text-sm" data-overlap={c.name}>
+                        <Portrait name={c.name} photo={c.photo} />
+                        <p className="mt-3 text-base font-medium text-black">{c.name}{c.party ? <span className="font-normal text-slate-500"> · {c.party}</span> : null}</p>
+                        {o.n === 0 ? (
+                          <p className="mt-1 text-slate-500">No sourced positions on your issues.</p>
                         ) : (
                           <>
-                            <p className="mt-1 text-slate-800">{o.n >= 2 && o.pct !== null ? <span className="mr-3 inline-block min-w-[2rem] font-serif text-5xl leading-none">{tierOf(o.pct)}</span> : null}{o.pct}% issue overlap on {o.n} of {o.m} issues</p>
-                            <p className="text-xs text-slate-500">{o.n >= 2 ? "Tier based on your answers and sourced records." : "Not enough record to tier."}</p>
-                            <p className="text-xs text-slate-500">Based on {o.n} sourced position{o.n === 1 ? "" : "s"}.{o.n === 1 ? " Thin evidence: one position only." : ""}</p>
-                            <details className="mt-2" open={o.n >= 2}>
-                              <summary className="flex min-h-11 cursor-pointer items-center text-xs text-navy-700">Show sourced positions</summary>
-                              <ul className="mt-2 space-y-2">
+                            {compare && o.n >= 2 && o.pct !== null ? (
+                              <>
+                                <p className="mt-1 text-slate-800"><span className="mr-3 inline-block min-w-[2rem] font-serif text-5xl leading-none">{tierOf(o.pct)}</span>Lines up on {agree} of {o.n} compared issues</p>
+                                <p className="text-xs text-slate-500">Tier based on your answers and sourced records.</p>
+                              </>
+                            ) : (
+                              <p className="mt-1 text-xs text-slate-500">{o.n} sourced position{o.n === 1 ? "" : "s"} on your issues. Not tiered.</p>
+                            )}
+                            <details className="mt-1" open>
+                              <summary className="flex min-h-11 cursor-pointer items-center text-xs text-navy-700">Sourced positions</summary>
+                              <ul className="space-y-2">
                                 {o.shared.map((id) => (
                                   <li key={id} className="text-xs text-slate-600">
                                     <span className="font-medium">{ISSUES.find((i) => i.id === id)?.label}:</span> “{st[id].quote}”{" "}
@@ -101,7 +111,8 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
                   })}
                 </ul>
               </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
