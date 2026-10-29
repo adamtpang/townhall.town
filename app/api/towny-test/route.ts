@@ -1,9 +1,9 @@
 // PREVIEW-ONLY test harness for Civic's Towny prompt tests (towny_prompt.md). Not a shipped feature:
 // returns the standard 404 JSON on production. One voter message in, one Towny reply out. Nothing is stored or logged.
-import { generateText, tool, stepCountIs } from "ai";
+import { tool } from "ai";
 import { z } from "zod";
 import { apiError, isZip, methodNotAllowed } from "../../../lib/apiError";
-import { GATEWAY_FALLBACKS, modelLadder } from "../../../lib/models";
+import { runTowny } from "../../../lib/townyRun";
 import { getElectionDates, longDateIn } from "../../../lib/logistics";
 import { townyPrompt } from "../../../lib/townyPrompt";
 import { townyTools } from "../../../lib/townyTools";
@@ -12,7 +12,7 @@ import { getCandidates, getDistricts, getMarketOdds, getRaces } from "../../../l
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const maxDuration = 60;
+export const maxDuration = 120;
 
 const enabled = () => process.env.VERCEL_ENV !== "production";
 const notFound = () => apiError(404, "not_found", "No API route at this path. See /openapi.json.");
@@ -47,30 +47,13 @@ export async function POST(req: Request) {
   const clean = redact(message);
   const tz = (zip && getElectionDates(zip)?.timezone) || "America/Chicago";
   const prompt = (zip ? `Voter's ZIP: ${zip}\n\n` : "") + clean.text;
-  const calls: { name: string; input: unknown }[] = [];
-  let lastError: string | null = null;
-  for (const { label, model } of modelLadder()) {
-    try {
-      const res = await generateText({
-        model,
-        maxRetries: 0,
-        providerOptions: GATEWAY_FALLBACKS,
-        system: townyPrompt(longDateIn(tz)),
-        prompt,
-        tools: { ...coreTools, ...townyTools },
-        stopWhen: stepCountIs(6),
-        abortSignal: AbortSignal.timeout(40000),
-        onStepFinish: (s) => s.toolCalls.forEach((c) => calls.push({ name: c.toolName, input: c.input })),
-      });
-      return Response.json(
-        { handledBy: "model", model: label, redacted: clean.redacted, modelSaw: prompt, toolCalls: calls, reply: res.text, flags: outputFlags(res.text) },
-        { headers: { "Cache-Control": "no-store" } }
-      );
-    } catch {
-      lastError = `model ${label} unavailable`;
-    }
-  }
-  return apiError(502, "upstream_unavailable", lastError ?? "No model available.");
+  const turn = await runTowny({ system: townyPrompt(longDateIn(tz)), prompt, tools: { ...coreTools, ...townyTools } });
+  if (turn.ok)
+    return Response.json(
+      { handledBy: "model", model: turn.model, redacted: clean.redacted, modelSaw: prompt, toolCalls: turn.toolCalls, reply: turn.reply, flags: outputFlags(turn.reply), failedAttempts: turn.attempts },
+      { headers: { "Cache-Control": "no-store" } }
+    );
+  return apiError(502, "upstream_unavailable", turn.attempts.map((a) => `${a.model}: ${a.error}`).join(" | ") || "No model available.");
 }
 
 const notAllowed = () => (enabled() ? methodNotAllowed(["POST"])() : notFound());

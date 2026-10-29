@@ -22,11 +22,34 @@ function findCandidate(name: string): Politician | null {
   return null;
 }
 
+// Everyday words for the issue ids in lib/issues.ts ("rent" is housing). An issue that maps to none has no sourced records.
+const ISSUE_WORDS: [string, RegExp][] = [
+  ["housing", /hous|rent|home|evict|zoning|afford/],
+  ["healthcare", /health|medic|insur|hospital|mental/],
+  ["wages", /wage|job|work|labor|pay\b|employ/],
+  ["taxes", /tax/],
+  ["safety", /safety|crime|polic|criminal|jail|prison/],
+  ["education", /educat|school|teacher|voucher/],
+  ["energy", /energy|grid|oil|gas\b|climate|renewab|power/],
+  ["immigration", /immigra|border|migra|asylum/],
+  ["wealthtax", /wealth|prop(osition)? ?40/],
+  ["infrastructure", /infrastr|water|road|transit|bridge/],
+];
+export function issueIdsFor(issue: string): string[] {
+  const q = issue.toLowerCase().trim();
+  const direct = ISSUES.filter((i) => i.id === q || i.label.toLowerCase() === q).map((i) => i.id);
+  if (direct.length) return direct;
+  if (/\bai\b|artificial intel/.test(q)) return []; // not an issue we track
+  return ISSUE_WORDS.filter(([, re]) => re.test(q)).map(([id]) => id);
+}
+
 /** Published stances only, with the quote and its source URL. */
 export function getCandidatePositions(name: string, issue?: string) {
   const c = findCandidate(name);
   const rec = STANCES[candidateId(name)];
-  const issueIds = issue ? ISSUES.filter((i) => i.id === issue.toLowerCase() || i.label.toLowerCase().includes(issue.toLowerCase())).map((i) => i.id) : null;
+  if (!c && !rec)
+    return { status: "unknown candidate", name, message: "No candidate by that name on a covered ballot. Call getCandidates and pass one candidate's name exactly as listed." };
+  const issueIds = issue ? issueIdsFor(issue) : null;
   const positions = Object.entries(rec ?? {})
     .filter(([k, v]) => k !== "name" && v && typeof v === "object")
     .filter(([, v]) => !HIDDEN.has(String((v as { status?: string }).status ?? "").toLowerCase()))
@@ -52,8 +75,8 @@ export const townyTools = {
     execute: async ({ zip }) => getPollingLocations(zip) ?? NOT_COVERED,
   }),
   getCandidatePositions: tool({
-    description: "A candidate's published, sourced positions (exact quote plus sourceUrl), optionally for one issue. Returns status 'no public statement found' when there is none.",
-    inputSchema: z.object({ name: z.string().describe("Candidate name as on the ballot"), issue: z.string().optional().describe("Issue, e.g. housing, healthcare, immigration") }),
+    description: "One candidate's published, sourced positions (exact quote plus sourceUrl), optionally for one issue. Pass a person's name from getCandidates, not a race or office; call once per candidate. Returns status 'no public statement found' when there is none.",
+    inputSchema: z.object({ name: z.string().describe("One candidate's name exactly as getCandidates lists it, e.g. James Talarico"), issue: z.string().optional().describe("Issue, e.g. housing, healthcare, immigration") }),
     execute: async ({ name, issue }) => getCandidatePositions(name, issue),
   }),
   getPrivacySummary: tool({

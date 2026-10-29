@@ -4,7 +4,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { TOWNY_PROMPT_TEMPLATE, townyPrompt } from "../lib/townyPrompt";
 import { keywordOf, FIXED_REPLY, deleteMyData, getPrivacySummary, redact, outputFlags } from "../lib/townyControls";
 import { planRows, getElectionDates, getPollingLocations, LOGISTICS_ZIPS, NO_ONLINE_VOTING } from "../lib/logistics";
-import { getCandidatePositions } from "../lib/townyTools";
+import { getCandidatePositions, issueIdsFor } from "../lib/townyTools";
 import { dataTools } from "../lib/dataTools";
 import { CONTENT } from "../lib/content";
 import * as townyTest from "../app/api/towny-test/route";
@@ -113,7 +113,7 @@ describe("Candidate positions", () => {
     if (r.status === "published") for (const p of r.positions) { expect(p.quote.length).toBeGreaterThan(0); expect(p.sourceUrl).toMatch(/^https?:\/\//); }
   });
   it("no record means no public statement found", () => {
-    expect(getCandidatePositions("Nobody Real").status).toBe("no public statement found");
+    expect(getCandidatePositions("Kevin McCormick").status).toBe("no public statement found");
   });
 });
 
@@ -149,4 +149,23 @@ describe("Privacy page is truthful", () => {
     expect(text).not.toMatch(/we don't allow these companies to train/i);
   });
   it("coordinates go in the body", () => expect(text).toMatch(/never in the web address/));
+});
+
+describe("getCandidatePositions: names and everyday issue words", () => {
+  it("maps everyday words to tracked issues, and untracked topics to none", () => {
+    expect(issueIdsFor("rent")).toEqual(["housing"]);
+    expect(issueIdsFor("health care")).toEqual(["healthcare"]);
+    expect(issueIdsFor("the border")).toEqual(["immigration"]);
+    expect(issueIdsFor("AI regulation")).toEqual([]);
+  });
+  it("a race or office name is not a candidate", () => {
+    expect(getCandidatePositions("Governor", "rent").status).toBe("unknown candidate");
+    expect(getCandidatePositions("U.S. Senate Texas").status).toBe("unknown candidate");
+  });
+  it("rent finds a published housing quote; an untracked topic finds none", () => {
+    const r = getCandidatePositions("James Talarico", "rent") as any;
+    expect(r.status).toBe("published");
+    expect(r.positions[0].sourceUrl).toMatch(/^https:\/\//);
+    expect(getCandidatePositions("James Talarico", "AI regulation").status).toBe("no public statement found");
+  });
 });

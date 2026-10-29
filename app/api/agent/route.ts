@@ -99,6 +99,7 @@ async function run(zip: string, emit: Emit) {
       const res = await generateText({
         model: lm,
         maxRetries: 0,
+        temperature: 0,
         providerOptions: GATEWAY_FALLBACKS,
         system: systemFor(zip),
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
