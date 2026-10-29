@@ -1,6 +1,6 @@
 # townhall.town
 
-**Your ballot, explained in 60 seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Enter a ZIP (any Texas ZIP; California demo ZIPs 94103 and 90012), and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
+**Your ballot, explained in seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Scope: **Austin (78701), San Francisco (94103), New York (10001, coming soon)**; 78130 and 90012 also work, other ZIPs get "Austin, SF and NYC for now." Enter a ZIP and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
 
 Live: https://townhall.town
 
@@ -13,7 +13,7 @@ cp .env.example .env.local   # optional: without a key the app runs in fallback 
 npm run dev                  # http://localhost:3000
 npm run build
 ```
-Try the demo ZIPs: 78130 (New Braunfels), 78701 (Austin), 94103 (San Francisco), 90012 (Los Angeles).
+Try the demo ZIPs: 78701 (Austin) and 94103 (San Francisco); 78130 (New Braunfels) and 90012 (Los Angeles) also work. New York 10001 is coming soon.
 API: `GET /api/agent?zip=78701` streams NDJSON (`status`, `step`, `result`). `GET /api/locate?lat=..&lon=..` maps coordinates to a ZIP via the Census geocoder.
 
 ## Stack
@@ -32,7 +32,7 @@ flowchart LR
   T5 --> C[(ACS 2024 5-yr)]
   A --> UI[Ballot UI: elections, candidates, problems, alignment, markets, turnout, game plan]
 ```
-The UI badge says honestly which mode ran: **live** (model name shown) or **fallback mode (no model)**.
+One model serves every ZIP: `google/gemini-2.5-flash-lite` via the Vercel AI Gateway (the rest of the ladder is only a failover). The UI shows plain steps ("Finding your districts", ...) and a **Live AI agent** or **fallback mode (no model)** label, without model or tool names.
 
 ## Environment variables
 See `.env.example` (placeholders only, never commit real values):
@@ -87,6 +87,7 @@ Independent and nonpartisan; not a government website. Always confirm your ballo
 
 ## Race tiers (S/A/B/C)
 
+
 "What matters on your ballot" ranks races, never candidates. Score = office impact × competitiveness.
 
 - Office impact: 3 = President, U.S. Senate, Governor; 2 = ballot measure, U.S. House, other statewide executive office; 1.5 = state legislature; 1 = judicial and local.
@@ -94,3 +95,8 @@ Independent and nonpartisan; not a government website. Always confirm your ballo
 - Tiers: S ≥ 4.5, A ≥ 3, B ≥ 2, otherwise C. Each race shows a one-line reason plus its race source and market link.
 
 Candidate overlap ("Who lines up with you") uses only your slider answers (−10..+10, stored in localStorage) and verbatim sourced stances in data/stances.json. Overlap = (cosine + 1) / 2 on shared issues; hidden below 2 sourced stances ("Not enough record"). It is issue overlap, not a recommendation.
+
+### Questionnaire and candidate tiers
+- 10 issues (CA adds Prop 40), each a -10..+10 slider with neutral policy-direction labels at both ends; every issue can be skipped.
+- Candidate tier within a race, "based on your answers and sourced records": S ≥ 85% overlap, A ≥ 70%, B ≥ 50%, otherwise C. Requires at least 2 sourced stances on your issues, else "Not enough record to tier". No answers, no tiers. Ballot order is kept; nothing is labeled "best".
+- **Answers stay on your device** (localStorage key `townhall.issueAnswers.v1`). No sign-in, nothing is sent to a server.
