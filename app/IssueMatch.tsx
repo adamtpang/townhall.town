@@ -5,7 +5,7 @@ import { Checkbox } from "../components/ui/checkbox";
 import { Portrait, type Photo } from "../components/Portrait";
 import { ISSUES, overlap, stancesFor, type Answers } from "../lib/issues";
 
-type Cand = { name: string; party?: string | null; photo?: Photo };
+type Cand = { name: string; party?: string | null; photo?: Photo; causes?: { id: string; label: string; quote: string; source: { label: string; url: string } }[] };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
 const KEY = "townhall.issueAnswers.v2";
 // Candidate tier within a race, from overlap % only (needs 2+ sourced stances on issues you answered).
@@ -81,6 +81,13 @@ export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races
                       <li key={c.name} className="text-sm" data-overlap={c.name}>
                         <Portrait name={c.name} photo={c.photo} />
                         <p className="mt-3 text-base font-medium text-black">{c.name}{c.party ? <span className="font-normal text-slate-500"> · {c.party}</span> : null}</p>
+                        {c.causes?.length ? (
+                          <p className="mt-1 text-xs text-black/60">Talks about{" "}
+                            {c.causes.slice(0, 3).map((k, j) => (
+                              <span key={k.id}>{j ? " · " : ""}<a href={k.source.url} target="_blank" rel="noreferrer" title={`“${k.quote}” (keyword match in ${k.source.label})`}>{k.label}</a></span>
+                            ))}
+                          </p>
+                        ) : null}
                         {o.n === 0 ? (
                           <p className="mt-1 text-slate-500">No sourced positions on your issues.</p>
                         ) : (
