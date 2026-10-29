@@ -36,7 +36,7 @@ function summarize(name: string, r: any): string {
     case "getDistricts":
       return r.found ? `${r.place}: ${r.districts.map((d: any) => d.label).join(", ")}` : r.message;
     case "getRaces":
-      return `${r.races.length} races, ${r.measures.length} statewide measures on Nov 3, 2026`;
+      return `${r.races.length} races, ${r.measures.length} ballot measures on Nov 3, 2026`;
     case "getCandidates":
       return `${r.races.reduce((n: number, x: any) => n + x.candidates.length, 0)} candidates across ${r.races.length} races`;
     case "getMarketOdds": {
@@ -160,7 +160,7 @@ async function handle(zip: string) {
       try {
         if (!ballotFor(zip)) {
           emit({ type: "step", tool: "getDistricts", label: STEP_LABEL.getDistricts, status: "done", summary: "Not cached" });
-          emit({ type: "unsupported", zip, message: "Austin and San Francisco for now. New York is coming soon." });
+          emit({ type: "unsupported", zip, message: "Austin, San Francisco, and New York 10001 for now." });
         } else await run(zip, emit);
       } catch (e: any) {
         emit({ type: "error", message: String(e?.message || e) });

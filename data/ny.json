@@ -1,0 +1,337 @@
+{
+ "10001": {
+  "zip": "10001",
+  "state": "NY",
+  "place": "New York, NY (Chelsea / Midtown West)",
+  "county": "New York County (Manhattan)",
+  "counties": [
+   "05000US36061"
+  ],
+  "districts": [
+   {
+    "id": "ny-12",
+    "label": "NY-12 (U.S. House)",
+    "note": "ZCTA 10001 lies entirely inside NY-12 (Census 119th Congress relationship file)"
+   }
+  ],
+  "districtSource": {
+   "label": "Census 2020 ZCTA to 119th Congressional District relationship file",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt"
+  },
+  "splitWarning": null,
+  "electionDate": "2026-11-03",
+  "races": [
+   {
+    "id": "ny-12",
+    "title": "U.S. House New York District 12",
+    "level": "federal",
+    "office": "Writes and votes on federal laws; all federal tax and spending bills must start in the House. Can impeach federal officials. 2-year term; represents one of New York's 26 districts. Open seat in 2026 (Jerrold Nadler is not running).",
+    "officeSource": "https://www.house.gov/the-house-explained",
+    "candidates": [
+     {
+      "name": "Micah Lasher",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Micah_Lasher",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/Screenshot-2026-09-30-at-2_29_48___PM_20260930_183625_61739_1.png",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: H6NY12172 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/H6NY12172/"
+      },
+      "positions": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Caroline Shinkle",
+      "party": "Republican / Conservative Party",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Caroline_Shinkle",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/Caroline-Shinkle-headshot-1_20260827_201656_52991_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: H6NY12404 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/H6NY12404/"
+      },
+      "positions": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Wilneida Negron",
+      "party": "For All of Us Party",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Wilneida_Negron",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/Wilneida_Negron_20251205_020126.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: H6NY12313 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/H6NY12313/"
+      },
+      "positions": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Karen Ortiz",
+      "party": "Karen Ortiz Party",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Karen_Ortiz",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/Karen-Ortiz-outside-with-trans-pride-pin_20261008_193841_64990_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: H6NY12297 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/H6NY12297/"
+      },
+      "positions": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/New_York%27s_12th_Congressional_District_election,_2026"
+   },
+   {
+    "id": "ny-governor",
+    "title": "Governor of New York",
+    "level": "state",
+    "office": "Heads the state executive branch: proposes the state budget, signs or vetoes bills passed by the Legislature, appoints agency heads and judges to the Court of Appeals, and commands the state National Guard. 4-year term; elected on a joint ticket with the Lieutenant Governor.",
+    "officeSource": "https://www.governor.ny.gov/",
+    "candidates": [
+     {
+      "name": "Kathy Hochul",
+      "party": "Democratic / Working Families Party",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Kathy_Hochul",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "hasThemes": false,
+      "runningMate": "Adrienne Adams"
+     },
+     {
+      "name": "Bruce Blakeman",
+      "party": "Republican / Conservative Party / Vote Affordable Party",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Bruce_Blakeman",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "hasThemes": false,
+      "runningMate": "Todd Hood"
+     }
+    ],
+    "source": "https://ballotpedia.org/New_York_gubernatorial_election,_2026",
+    "note": "Governor and Lieutenant Governor run together. Write-in candidates (Jonathan Makeley, Jean Anglade) are listed on Ballotpedia but not printed on the ballot."
+   },
+   {
+    "id": "ny-attorney-general",
+    "title": "Attorney General of New York",
+    "level": "state",
+    "office": "Chief legal officer: represents the state in court, enforces consumer, labor, civil rights and environmental laws, and can sue businesses and the federal government on the state's behalf. 4-year term.",
+    "officeSource": "https://ag.ny.gov/",
+    "candidates": [
+     {
+      "name": "Letitia James",
+      "party": "Democratic / Working Families Party",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Letitia_James",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Saritha Komatireddy",
+      "party": "Republican / Conservative Party",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Saritha_Komatireddy",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/New_York_Attorney_General_election,_2026"
+   },
+   {
+    "id": "ny-comptroller",
+    "title": "New York State Comptroller",
+    "level": "state",
+    "office": "Chief fiscal officer: audits state agencies and local governments, manages the state pension fund, and approves state contracts and payments. 4-year term.",
+    "officeSource": "https://www.osc.ny.gov/",
+    "candidates": [
+     {
+      "name": "Thomas P. DiNapoli",
+      "party": "Democratic / Working Families Party",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Thomas_DiNapoli",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Joseph Hernandez",
+      "party": "Republican / Conservative Party",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
+      "ballotpedia": "https://ballotpedia.org/Joseph_Hernandez_(New_York)",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/Joseph_Hernandez_2025.png",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": null,
+      "positions": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/New_York_Comptroller_election,_2026"
+   }
+  ],
+  "measures": [
+   {
+    "id": "NYC Proposal 1",
+    "title": "NYC Proposal 1 (Public space consents)",
+    "summary": "Speed up approval of revocable consents to use public space (ramps, cafes, benches): public hearings become optional and the Council can no longer reject sidewalk cafe permits",
+    "type": "City Charter amendment",
+    "source": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   {
+    "id": "NYC Proposal 2",
+    "title": "NYC Proposal 2 (Contractor paperwork)",
+    "summary": "Let the Procurement Policy Board simplify contractor questionnaires and require it to meet at least quarterly",
+    "type": "City Charter amendment",
+    "source": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   {
+    "id": "NYC Proposal 3",
+    "title": "NYC Proposal 3 (Street safety, city property, leasing)",
+    "summary": "Streamline approvals for street safety projects, sale or lease of certain city property, and office leases for city workers",
+    "type": "City Charter amendment",
+    "source": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   {
+    "id": "NYC Proposal 4",
+    "title": "NYC Proposal 4 (Building permits)",
+    "summary": "Create a central construction permit system and move waterfront permitting from Small Business Services to the Department of Buildings",
+    "type": "City Charter amendment",
+    "source": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   },
+   {
+    "id": "NYC Proposal 5",
+    "title": "NYC Proposal 5 (Rainy day fund)",
+    "summary": "Set a reserve target of at least 12% of the prior year's tax revenue and require a published deposit plan",
+    "type": "City Charter amendment",
+    "source": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+   }
+  ],
+  "measuresNote": "NYC Charter proposals from NYC Votes (NYC Campaign Finance Board). Statewide ballot questions: unsure, none found in our sources; verify with the NYS Board of Elections. State Senate, Assembly, judicial and City Council races are not shown yet. New York has no U.S. Senate race in 2026.",
+  "problems": [
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "rent",
+    "topic": "housing",
+    "label": "Renters paying 30%+ of income on rent",
+    "value": "40.3%",
+    "unit": "%",
+    "table": "B25070",
+    "source": {
+     "label": "Census ACS B25070 via Census Reporter",
+     "url": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US10001"
+    },
+    "stateValue": 52.1,
+    "numeric": 40.3
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "uninsured",
+    "topic": "healthcare",
+    "label": "People without health insurance",
+    "value": "3.3%",
+    "unit": "%",
+    "table": "B27010",
+    "source": {
+     "label": "Census ACS B27010 via Census Reporter",
+     "url": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US10001"
+    },
+    "stateValue": 5.1,
+    "numeric": 3.3
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "jobs",
+    "topic": "jobs",
+    "label": "Unemployment rate (labor force 16+)",
+    "value": "5.7%",
+    "unit": "%",
+    "table": "B23025",
+    "source": {
+     "label": "Census ACS B23025 via Census Reporter",
+     "url": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US10001"
+    },
+    "stateValue": 6.4,
+    "numeric": 5.7
+   }
+  ],
+  "context": {
+   "medianIncome": 129852.0,
+   "medianRent": 3361.0,
+   "population": 30511.0,
+   "profile": "https://censusreporter.org/profiles/86000US10001/"
+  },
+  "verify": {
+   "label": "NYC Board of Elections poll site and sample ballot lookup (official)",
+   "url": "https://findmypollsite.vote.nyc/"
+  },
+  "builtAt": "2026-10-29"
+ }
+}

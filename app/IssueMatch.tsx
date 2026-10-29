@@ -11,7 +11,7 @@ const KEY = "townhall.issueAnswers.v2";
 // Candidate tier within a race, from overlap % only (needs 2+ sourced stances on issues you answered).
 const tierOf = (pct: number) => (pct >= 85 ? "S" : pct >= 70 ? "A" : pct >= 50 ? "B" : "C");
 
-export default function IssueMatch({ state, races }: { state: "TX" | "CA"; races: RaceLite[] }) {
+export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"; races: RaceLite[] }) {
   const issues = ISSUES.filter((i) => !i.caOnly || state === "CA");
   const ids = issues.map((i) => i.id);
   const [answers, setAnswers] = useState<Answers>({});

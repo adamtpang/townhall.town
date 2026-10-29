@@ -17,7 +17,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
 
-const NYC_READY = false;
+const NYC_READY = true;
 const DEMO = [
   { zip: "78701", label: "Austin", ready: true },
   { zip: "94103", label: "San Francisco", ready: true },
@@ -247,7 +247,7 @@ export default function BallotAgent() {
     setSteps({});
     setStatus([]);
     if (z.length !== 5) return setNotice("Enter a 5-digit ZIP code.");
-    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin and San Francisco for now. New York is coming soon."); }
+    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin, San Francisco, and New York 10001 for now."); }
     setZip(z);
     setBusy(true);
     setSteps({});
@@ -272,7 +272,7 @@ export default function BallotAgent() {
           const e = JSON.parse(line);
           if (e.type === "step") setSteps((s) => ({ ...s, [e.tool]: e }));
           else if (e.type === "status") { console.debug("[agent]", e.message); setStatus((s) => [...s, "Looking up your ballot…"]); }
-          else if (e.type === "unsupported") setNotice("Austin and San Francisco for now. New York is coming soon.");
+          else if (e.type === "unsupported") setNotice("Austin, San Francisco, and New York 10001 for now.");
           else if (e.type === "error") { console.error("[agent]", e.message); setNotice("Couldn't load your ballot right now. Please try again."); }
           else if (e.type === "result") {
             setResult(e);
@@ -357,7 +357,7 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-32">
           <p className="text-sm text-black/60">
-            {b.place}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
+            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
@@ -489,7 +489,7 @@ function TurnoutSection({ t }: { t: TurnoutDetail }) {
 }
 
 
-function Plan({ state }: { state: "TX" | "CA" }) {
+function Plan({ state }: { state: "TX" | "CA" | "NY" }) {
   const rows =
     state === "TX"
       ? [
@@ -497,6 +497,14 @@ function Plan({ state }: { state: "TX" | "CA" }) {
           { k: "Nov 3", v: "Election Day, 7 a.m. to 7 p.m.", src: "https://www.votetexas.gov/voting/when.html", s: "VoteTexas.gov" },
           { k: "Where", v: "Your county sets locations", src: "https://www.votetexas.gov/voting/where.html", s: "Find your polling place" },
           { k: "Bring", v: "One approved photo ID", src: "https://www.votetexas.gov/voting/need-id.html", s: "Accepted IDs" },
+        ]
+      : state === "NY"
+      ? [
+          { k: "Nov 1", v: "Last day of early voting (started Oct 24)", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
+          { k: "Nov 2", v: "Last day to request a mail ballot in person", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
+          { k: "Nov 3", v: "Election Day", src: "https://www.nycvotes.org/whats-on-the-ballot", s: "NYC Votes" },
+          { k: "Where", v: "Early voting and Election Day sites can differ", src: "https://findmypollsite.vote.nyc/", s: "NYC Board of Elections: find my poll site" },
+          { k: "Bring", v: "ID rules depend on how you registered", src: "https://elections.ny.gov/", s: "New York State Board of Elections" },
         ]
       : [
           { k: "Nov 3", v: "Election Day. Mail ballots postmarked by today", src: "https://www.sos.ca.gov/elections", s: "sos.ca.gov" },

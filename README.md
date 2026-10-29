@@ -1,6 +1,6 @@
 # townhall.town
 
-**Your ballot, explained in seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Scope: **Austin (78701), San Francisco (94103), New York (10001, coming soon)**; 78130 and 90012 also work, other ZIPs get "Austin, SF and NYC for now." Enter a ZIP and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
+**Your ballot, explained in seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Scope: **Austin (78701), San Francisco (94103), New York (10001)**; 78130 and 90012 also work, other ZIPs get "Austin, San Francisco, and New York 10001 for now." Enter a ZIP and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
 
 Live: https://townhall.town
 
@@ -13,7 +13,7 @@ cp .env.example .env.local   # optional: without a key the app runs in fallback 
 npm run dev                  # http://localhost:3000
 npm run build
 ```
-Try the demo ZIPs: 78701 (Austin) and 94103 (San Francisco); 78130 (New Braunfels) and 90012 (Los Angeles) also work. New York 10001 is coming soon.
+Try the demo ZIPs: 78701 (Austin), 94103 (San Francisco), and 10001 (New York); 78130 (New Braunfels) and 90012 (Los Angeles) also work.
 API: `GET /api/agent?zip=78701` streams NDJSON (`status`, `step`, `result`). `GET /api/locate?lat=..&lon=..` maps coordinates to a ZIP via the Census geocoder.
 
 ## Stack
