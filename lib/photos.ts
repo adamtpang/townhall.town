@@ -18,9 +18,15 @@ export function withPhoto<T extends Politician>(p: T): T {
   return found ? { ...p, photo: { url: found.url, credit: `${found.credit} (${found.license})`, license: found.license } } : p;
 }
 
-/** Prefer a clearly licensed portrait from data/photos.json over an existing photo; keep the existing one when none is listed. */
+type Hosted = { name: string; file: string; sourceUrl: string; credit: string; license: string; page: string | null; via: string };
+const hosted = ((data as { selfHosted?: Record<string, Hosted> }).selfHosted ?? {}) as Record<string, Hosted>;
+export const slug = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+/** Self-hosted portrait from public/portraits (built by scripts/portraits.mjs from licensed or Ballotpedia files), or none.
+ *  No hotlinks: a candidate without a self-hosted file has photo null, and the race then shows no portraits. */
 export function withLicensedPhoto<T extends Politician>(p: T): T {
-  const found = photoFor(p.name);
-  if (!found) return p;
-  return { ...p, photo: { url: found.url, credit: `Photo: ${found.credit} (${found.license}), Wikimedia Commons`, license: found.license, page: found.page } };
+  const h = hosted[slug(p.name)];
+  if (!h) return { ...p, photo: null };
+  const credit = h.via === "Wikimedia Commons" ? `Photo: ${h.credit} (${h.license}), Wikimedia Commons` : h.credit;
+  return { ...p, photo: { url: h.file, credit, license: h.license, page: h.page ?? undefined } };
 }

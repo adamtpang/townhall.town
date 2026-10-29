@@ -2,32 +2,800 @@
  "asOf": "2026-10-29",
  "method": "Wikimedia Commons or official portraits only, with license and credit as stated on the file page. A missing name means no clearly licensed image was found.",
  "photos": {
-  "Mark Teixeira": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Mark_Teixeira_basepaths_2011.jpg/500px-Mark_Teixeira_basepaths_2011.jpg","credit":"Keith Allison","license":"CC BY-SA 2.0","page":"https://commons.wikimedia.org/wiki/File:Mark_Teixeira_basepaths_2011.jpg"},
-  "James Talarico": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg","credit":"Antonioaesparza","license":"CC BY-SA 4.0","page":"https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg"},
-  "Ken Paxton": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ken_Paxton_-_55022425595_%28cropped%29.jpg/500px-Ken_Paxton_-_55022425595_%28cropped%29.jpg","credit":"Gage Skidmore","license":"CC BY-SA 4.0","page":"https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg"},
-  "Greg Abbott": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Greg_Abbott_at_NASA_2024_%28cropped%29.jpg/500px-Greg_Abbott_at_NASA_2024_%28cropped%29.jpg","credit":"NASA Johnson Space Center / Robert Markowitz","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg"},
-  "Gina Hinojosa": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg/500px-Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg","credit":"LBJ Library","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_LBJ_Library_Forum_(3x4_cropped).jpg"},
-  "Dan Patrick": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg/500px-Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg","credit":"Maryland GovPics","license":"CC BY 2.0","page":"https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg"},
-  "Vikki Goodwin": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg","credit":"Cole-Wilson-93","license":"CC BY-SA 4.0","page":"https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg"},
-  "Kevin McCormick": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg","credit":"WikiBunny2K1","license":"CC0","page":"https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg"},
-  "Mayes Middleton": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mayes_Middleton_by_Gage_Skidmore.jpg/500px-Mayes_Middleton_by_Gage_Skidmore.jpg","credit":"Gage Skidmore","license":"CC BY-SA 3.0","page":"https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg"},
-  "Donald Huffines": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Don_Huffines_%2851370822589%29_%28cropped%29.jpg/500px-Don_Huffines_%2851370822589%29_%28cropped%29.jpg","credit":"Gage Skidmore","license":"CC BY-SA 2.0","page":"https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg"},
-  "Sarah Eckhardt": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sarah_Eckhardt_%28cropped%29.jpg/500px-Sarah_Eckhardt_%28cropped%29.jpg","credit":"Jeffrey Clemmons","license":"CC BY 4.0","page":"https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg"},
-  "Clayton Tucker": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg","credit":"DivaaNut","license":"CC0","page":"https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg"},
-  "Greg Casar": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg/500px-Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg","credit":"U.S. House of Representatives","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg"},
-  "Jimmy Gomez": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Jimmy_Gomez_official_portrait_%28light_crop%29.jpg/500px-Jimmy_Gomez_official_portrait_%28light_crop%29.jpg","credit":"US House Office of Photography","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Jimmy_Gomez_official_portrait_(light_crop).jpg"},
-  "Xavier Becerra": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/HHS_Xavier_Becerra.jpg/500px-HHS_Xavier_Becerra.jpg","credit":"U.S. Department of Health and Human Services","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg"},
-  "Steve Hilton": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg","credit":"Gage Skidmore","license":"CC BY 2.0","page":"https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg"},
-  "Fiona Ma": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fiona_Ma_official2.jpg/500px-Fiona_Ma_official2.jpg","credit":"California Treasurer's Office","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Fiona_Ma_official2.jpg"},
-  "Gloria J. Romero": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gloria_Romero%2C_c._2007.jpg/500px-Gloria_Romero%2C_c._2007.jpg","credit":"State of California","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Gloria_Romero,_c._2007.jpg"},
-  "Rob Bonta": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rob_Bonta_official_portrait_%28cropped%29.jpg/500px-Rob_Bonta_official_portrait_%28cropped%29.jpg","credit":"Douglas Despres, California Attorney General's Office","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg"},
-  "Shirley Weber": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirley_Weber.jpg/500px-Shirley_Weber.jpg","credit":"California Secretary of State's office","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg"},
-  "Donald P. Wagner": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Donald_P._Wagner%2C_2022.jpg/500px-Donald_P._Wagner%2C_2022.jpg","credit":"Orange County Board of Supervisors","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg"},
-  "Malia Cohen": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Malia_Cohen_State_Controller_portrait.jpg/500px-Malia_Cohen_State_Controller_portrait.jpg","credit":"California Government","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg"},
-  "Eleni Kounalakis": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/LG_Kounalakis_Signing_%28cropped%29.jpg/500px-LG_Kounalakis_Signing_%28cropped%29.jpg","credit":"Office of Lieutenant Governor Eleni Kounalakis","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg"},
-  "Ben Allen": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ben_Allen%2C_2021.jpg/500px-Ben_Allen%2C_2021.jpg","credit":"California State Senate","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg"},
-  "Jane Kim": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/SupervisorJaneKim.png/500px-SupervisorJaneKim.png","credit":"Jane Kim","license":"CC BY 2.0","page":"https://commons.wikimedia.org/wiki/File:SupervisorJaneKim.png"},
-  "Connie Chan": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Connie_Chan%2C_2025.jpg/500px-Connie_Chan%2C_2025.jpg","credit":"San Francisco Board of Supervisors","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg"},
-  "Scott Wiener": {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Scott_Wiener_Official_Biography_Portrait.jpg/500px-Scott_Wiener_Official_Biography_Portrait.jpg","credit":"California State Senate","license":"Public domain","page":"https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg"}
- }
+  "Mark Teixeira": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Mark_Teixeira_basepaths_2011.jpg/500px-Mark_Teixeira_basepaths_2011.jpg",
+   "credit": "Keith Allison",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Mark_Teixeira_basepaths_2011.jpg"
+  },
+  "James Talarico": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg",
+   "credit": "Antonioaesparza",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg"
+  },
+  "Ken Paxton": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ken_Paxton_-_55022425595_%28cropped%29.jpg/500px-Ken_Paxton_-_55022425595_%28cropped%29.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg"
+  },
+  "Greg Abbott": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Greg_Abbott_at_NASA_2024_%28cropped%29.jpg/500px-Greg_Abbott_at_NASA_2024_%28cropped%29.jpg",
+   "credit": "NASA Johnson Space Center / Robert Markowitz",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg"
+  },
+  "Gina Hinojosa": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg/500px-Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg",
+   "credit": "LBJ Library",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_LBJ_Library_Forum_(3x4_cropped).jpg"
+  },
+  "Dan Patrick": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg/500px-Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg",
+   "credit": "Maryland GovPics",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg"
+  },
+  "Vikki Goodwin": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
+   "credit": "Cole-Wilson-93",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg"
+  },
+  "Kevin McCormick": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg",
+   "credit": "WikiBunny2K1",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg"
+  },
+  "Mayes Middleton": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mayes_Middleton_by_Gage_Skidmore.jpg/500px-Mayes_Middleton_by_Gage_Skidmore.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg"
+  },
+  "Donald Huffines": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Don_Huffines_%2851370822589%29_%28cropped%29.jpg/500px-Don_Huffines_%2851370822589%29_%28cropped%29.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg"
+  },
+  "Sarah Eckhardt": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sarah_Eckhardt_%28cropped%29.jpg/500px-Sarah_Eckhardt_%28cropped%29.jpg",
+   "credit": "Jeffrey Clemmons",
+   "license": "CC BY 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg"
+  },
+  "Clayton Tucker": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
+   "credit": "DivaaNut",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg"
+  },
+  "Greg Casar": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg/500px-Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg",
+   "credit": "U.S. House of Representatives",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg"
+  },
+  "Jimmy Gomez": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Jimmy_Gomez_official_portrait_%28light_crop%29.jpg/500px-Jimmy_Gomez_official_portrait_%28light_crop%29.jpg",
+   "credit": "US House Office of Photography",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Jimmy_Gomez_official_portrait_(light_crop).jpg"
+  },
+  "Xavier Becerra": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/HHS_Xavier_Becerra.jpg/500px-HHS_Xavier_Becerra.jpg",
+   "credit": "U.S. Department of Health and Human Services",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg"
+  },
+  "Steve Hilton": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg"
+  },
+  "Fiona Ma": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fiona_Ma_official2.jpg/500px-Fiona_Ma_official2.jpg",
+   "credit": "California Treasurer's Office",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Fiona_Ma_official2.jpg"
+  },
+  "Gloria J. Romero": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gloria_Romero%2C_c._2007.jpg/500px-Gloria_Romero%2C_c._2007.jpg",
+   "credit": "State of California",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Gloria_Romero,_c._2007.jpg"
+  },
+  "Rob Bonta": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rob_Bonta_official_portrait_%28cropped%29.jpg/500px-Rob_Bonta_official_portrait_%28cropped%29.jpg",
+   "credit": "Douglas Despres, California Attorney General's Office",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg"
+  },
+  "Shirley Weber": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirley_Weber.jpg/500px-Shirley_Weber.jpg",
+   "credit": "California Secretary of State's office",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg"
+  },
+  "Donald P. Wagner": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Donald_P._Wagner%2C_2022.jpg/500px-Donald_P._Wagner%2C_2022.jpg",
+   "credit": "Orange County Board of Supervisors",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg"
+  },
+  "Malia Cohen": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Malia_Cohen_State_Controller_portrait.jpg/500px-Malia_Cohen_State_Controller_portrait.jpg",
+   "credit": "California Government",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg"
+  },
+  "Eleni Kounalakis": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/LG_Kounalakis_Signing_%28cropped%29.jpg/500px-LG_Kounalakis_Signing_%28cropped%29.jpg",
+   "credit": "Office of Lieutenant Governor Eleni Kounalakis",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg"
+  },
+  "Ben Allen": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ben_Allen%2C_2021.jpg/500px-Ben_Allen%2C_2021.jpg",
+   "credit": "California State Senate",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg"
+  },
+  "Jane Kim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/SupervisorJaneKim.png/500px-SupervisorJaneKim.png",
+   "credit": "Jane Kim",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:SupervisorJaneKim.png"
+  },
+  "Connie Chan": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Connie_Chan%2C_2025.jpg/500px-Connie_Chan%2C_2025.jpg",
+   "credit": "San Francisco Board of Supervisors",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg"
+  },
+  "Scott Wiener": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Scott_Wiener_Official_Biography_Portrait.jpg/500px-Scott_Wiener_Official_Biography_Portrait.jpg",
+   "credit": "California State Senate",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg"
+  }
+ },
+ "selfHosted": {
+  "johnny-garcia": {
+   "name": "Johnny Garcia",
+   "file": "/portraits/johnny-garcia.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Johnny_Garcia_20251021_102841.jpeg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Johnny_Garcia_(Texas_congressional_candidate)",
+   "via": "Ballotpedia"
+  },
+  "carlos-de-la-cruz": {
+   "name": "Carlos De La Cruz",
+   "file": "/portraits/carlos-de-la-cruz.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Carlos_De_La_Cruz.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Carlos_De_La_Cruz",
+   "via": "Ballotpedia"
+  },
+  "kristin-hook": {
+   "name": "Kristin Hook",
+   "file": "/portraits/kristin-hook.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kristin_Hook_20260311_082749.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Kristin_Hook",
+   "via": "Ballotpedia"
+  },
+  "mark-teixeira": {
+   "name": "Mark Teixeira",
+   "file": "/portraits/mark-teixeira.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Mark_Teixeira_basepaths_2011.jpg/500px-Mark_Teixeira_basepaths_2011.jpg",
+   "credit": "Keith Allison",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Mark_Teixeira_basepaths_2011.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "james-talarico": {
+   "name": "James Talarico",
+   "file": "/portraits/james-talarico.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg",
+   "credit": "Antonioaesparza",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "ken-paxton": {
+   "name": "Ken Paxton",
+   "file": "/portraits/ken-paxton.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ken_Paxton_-_55022425595_%28cropped%29.jpg/500px-Ken_Paxton_-_55022425595_%28cropped%29.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "ted-brown": {
+   "name": "Ted Brown",
+   "file": "/portraits/ted-brown.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/TedBrown2024.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Ted_Brown_(Texas)",
+   "via": "Ballotpedia"
+  },
+  "greg-abbott": {
+   "name": "Greg Abbott",
+   "file": "/portraits/greg-abbott.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Greg_Abbott_at_NASA_2024_%28cropped%29.jpg/500px-Greg_Abbott_at_NASA_2024_%28cropped%29.jpg",
+   "credit": "NASA Johnson Space Center / Robert Markowitz",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "gina-hinojosa": {
+   "name": "Gina Hinojosa",
+   "file": "/portraits/gina-hinojosa.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg/500px-Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg",
+   "credit": "LBJ Library",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_LBJ_Library_Forum_(3x4_cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "pat-dixon": {
+   "name": "Pat Dixon",
+   "file": "/portraits/pat-dixon.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/PatDixon2.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Pat_Dixon",
+   "via": "Ballotpedia"
+  },
+  "dan-patrick": {
+   "name": "Dan Patrick",
+   "file": "/portraits/dan-patrick.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg/500px-Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg",
+   "credit": "Maryland GovPics",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "vikki-goodwin": {
+   "name": "Vikki Goodwin",
+   "file": "/portraits/vikki-goodwin.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
+   "credit": "Cole-Wilson-93",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "kevin-mccormick": {
+   "name": "Kevin McCormick",
+   "file": "/portraits/kevin-mccormick.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg",
+   "credit": "WikiBunny2K1",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "anthony-cristo": {
+   "name": "Anthony Cristo",
+   "file": "/portraits/anthony-cristo.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ACristo_20260602_014108_39402_1.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Anthony_Cristo",
+   "via": "Ballotpedia"
+  },
+  "nathan-johnson": {
+   "name": "Nathan Johnson",
+   "file": "/portraits/nathan-johnson.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nathan_Johnson_20230724_022433.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Nathan_Johnson_(Texas)",
+   "via": "Ballotpedia"
+  },
+  "mayes-middleton": {
+   "name": "Mayes Middleton",
+   "file": "/portraits/mayes-middleton.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mayes_Middleton_by_Gage_Skidmore.jpg/500px-Mayes_Middleton_by_Gage_Skidmore.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "tom-oxford": {
+   "name": "Tom Oxford",
+   "file": "/portraits/tom-oxford.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/tom_oxford_.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Tom_Oxford",
+   "via": "Ballotpedia"
+  },
+  "donald-huffines": {
+   "name": "Donald Huffines",
+   "file": "/portraits/donald-huffines.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Don_Huffines_%2851370822589%29_%28cropped%29.jpg/500px-Don_Huffines_%2851370822589%29_%28cropped%29.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "sarah-eckhardt": {
+   "name": "Sarah Eckhardt",
+   "file": "/portraits/sarah-eckhardt.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sarah_Eckhardt_%28cropped%29.jpg/500px-Sarah_Eckhardt_%28cropped%29.jpg",
+   "credit": "Jeffrey Clemmons",
+   "license": "CC BY 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "shehla-faizi": {
+   "name": "Shehla Faizi",
+   "file": "/portraits/shehla-faizi.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Shehla_Faizi_20260205_113042.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Shehla_Faizi",
+   "via": "Ballotpedia"
+  },
+  "dawn-buckingham": {
+   "name": "Dawn Buckingham",
+   "file": "/portraits/dawn-buckingham.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/_Dawn-Buckingham_.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Dawn_Buckingham",
+   "via": "Ballotpedia"
+  },
+  "benjamin-flores": {
+   "name": "Benjamin Flores",
+   "file": "/portraits/benjamin-flores.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/BenjaminFlores.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Benjamin_Flores",
+   "via": "Ballotpedia"
+  },
+  "clayton-tucker": {
+   "name": "Clayton Tucker",
+   "file": "/portraits/clayton-tucker.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
+   "credit": "DivaaNut",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "nate-sheets": {
+   "name": "Nate Sheets",
+   "file": "/portraits/nate-sheets.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nate_Sheets.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Nate_Sheets",
+   "via": "Ballotpedia"
+  },
+  "austin-kelly": {
+   "name": "Austin Kelly",
+   "file": "/portraits/austin-kelly.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Austin_Kelly.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Austin_Kelly",
+   "via": "Ballotpedia"
+  },
+  "jon-rosenthal": {
+   "name": "Jon Rosenthal",
+   "file": "/portraits/jon-rosenthal.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jon_Rosenthal_26.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Jon_Rosenthal",
+   "via": "Ballotpedia"
+  },
+  "bo-french": {
+   "name": "Bo French",
+   "file": "/portraits/bo-french.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/BoFrench26.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Bo_French",
+   "via": "Ballotpedia"
+  },
+  "arthur-dibianca": {
+   "name": "Arthur DiBianca",
+   "file": "/portraits/arthur-dibianca.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/adbianca.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Arthur_DiBianca",
+   "via": "Ballotpedia"
+  },
+  "jimmy-blacklock": {
+   "name": "Jimmy Blacklock",
+   "file": "/portraits/jimmy-blacklock.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/blacklock_mm_2.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Jimmy_Blacklock",
+   "via": "Ballotpedia"
+  },
+  "maggie-ellis": {
+   "name": "Maggie Ellis",
+   "file": "/portraits/maggie-ellis.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Maggie_Ellis_2026.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Maggie_Ellis",
+   "via": "Ballotpedia"
+  },
+  "kyle-hawkins": {
+   "name": "Kyle Hawkins",
+   "file": "/portraits/kyle-hawkins.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Justice-Kyle-Hawkins_20261010_205905_36588_1.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Kyle_Hawkins",
+   "via": "Ballotpedia"
+  },
+  "kristen-hawkins": {
+   "name": "Kristen Hawkins",
+   "file": "/portraits/kristen-hawkins.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kristen_Hawkins.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Kristen_Hawkins",
+   "via": "Ballotpedia"
+  },
+  "brett-busby": {
+   "name": "Brett Busby",
+   "file": "/portraits/brett-busby.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Busby_2104_web_cr.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Brett_Busby",
+   "via": "Ballotpedia"
+  },
+  "gisela-triana": {
+   "name": "Gisela Triana",
+   "file": "/portraits/gisela-triana.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Gisela_D._Triana.jpeg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Gisela_Triana",
+   "via": "Ballotpedia"
+  },
+  "okey-anyiam": {
+   "name": "Okey Anyiam",
+   "file": "/portraits/okey-anyiam.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Okey_Anyiam_2026.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Okey_Anyiam",
+   "via": "Ballotpedia"
+  },
+  "thomas-smith": {
+   "name": "Thomas Smith",
+   "file": "/portraits/thomas-smith.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Thomas_Smith_2026.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Thomas_Smith_(Texas)",
+   "via": "Ballotpedia"
+  },
+  "mark-ash": {
+   "name": "Mark Ash",
+   "file": "/portraits/mark-ash.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Mark-Ash.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Mark_Ash",
+   "via": "Ballotpedia"
+  },
+  "kevin-patrick-yeary": {
+   "name": "Kevin Patrick Yeary",
+   "file": "/portraits/kevin-patrick-yeary.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/KevinYeary.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Kevin_Patrick_Yeary",
+   "via": "Ballotpedia"
+  },
+  "audra-riley": {
+   "name": "Audra Riley",
+   "file": "/portraits/audra-riley.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Audra_Riley.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Audra_Riley",
+   "via": "Ballotpedia"
+  },
+  "holly-taylor": {
+   "name": "Holly Taylor",
+   "file": "/portraits/holly-taylor.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/HT-head-shot-2026_20261018_020531_68182_1.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Holly_Taylor_(Texas)",
+   "via": "Ballotpedia"
+  },
+  "john-messinger": {
+   "name": "John Messinger",
+   "file": "/portraits/john-messinger.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/jmessinger.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/John_Messinger",
+   "via": "Ballotpedia"
+  },
+  "caitlin-rourk": {
+   "name": "Caitlin Rourk",
+   "file": "/portraits/caitlin-rourk.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/CaitlinRourk2025.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Caitlin_Rourk",
+   "via": "Ballotpedia"
+  },
+  "chris-gober": {
+   "name": "Chris Gober",
+   "file": "/portraits/chris-gober.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Chris_Gober_26.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Chris_Gober",
+   "via": "Ballotpedia"
+  },
+  "greg-casar": {
+   "name": "Greg Casar",
+   "file": "/portraits/greg-casar.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg/500px-Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg",
+   "credit": "U.S. House of Representatives",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "lauren-pena": {
+   "name": "Lauren Peña",
+   "file": "/portraits/lauren-pena.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Lauren_Pena_2025.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Lauren_Peña",
+   "via": "Ballotpedia"
+  },
+  "jimmy-gomez": {
+   "name": "Jimmy Gomez",
+   "file": "/portraits/jimmy-gomez.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Jimmy_Gomez_official_portrait_%28light_crop%29.jpg/500px-Jimmy_Gomez_official_portrait_%28light_crop%29.jpg",
+   "credit": "US House Office of Photography",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Jimmy_Gomez_official_portrait_(light_crop).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "angela-gonzales-torres": {
+   "name": "Angela Gonzales-Torres",
+   "file": "/portraits/angela-gonzales-torres.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Angela_GonzalesTorres_20250814_062216.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Angela_Gonzales-Torres",
+   "via": "Ballotpedia"
+  },
+  "rob-bonta": {
+   "name": "Rob Bonta",
+   "file": "/portraits/rob-bonta.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rob_Bonta_official_portrait_%28cropped%29.jpg/500px-Rob_Bonta_official_portrait_%28cropped%29.jpg",
+   "credit": "Douglas Despres, California Attorney General's Office",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "michael-gates": {
+   "name": "Michael Gates",
+   "file": "/portraits/michael-gates.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/MichaelGates.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Michael_Gates_(California)",
+   "via": "Ballotpedia"
+  },
+  "malia-cohen": {
+   "name": "Malia Cohen",
+   "file": "/portraits/malia-cohen.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Malia_Cohen_State_Controller_portrait.jpg/500px-Malia_Cohen_State_Controller_portrait.jpg",
+   "credit": "California Government",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "herb-morgan": {
+   "name": "Herb Morgan",
+   "file": "/portraits/herb-morgan.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Herb_Morgan_20260402_065151.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Herb_Morgan",
+   "via": "Ballotpedia"
+  },
+  "ben-allen": {
+   "name": "Ben Allen",
+   "file": "/portraits/ben-allen.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ben_Allen%2C_2021.jpg/500px-Ben_Allen%2C_2021.jpg",
+   "credit": "California State Senate",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "jane-kim": {
+   "name": "Jane Kim",
+   "file": "/portraits/jane-kim.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/SupervisorJaneKim.png/500px-SupervisorJaneKim.png",
+   "credit": "Jane Kim",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:SupervisorJaneKim.png",
+   "via": "Wikimedia Commons"
+  },
+  "shirley-weber": {
+   "name": "Shirley Weber",
+   "file": "/portraits/shirley-weber.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirley_Weber.jpg/500px-Shirley_Weber.jpg",
+   "credit": "California Secretary of State's office",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "donald-p-wagner": {
+   "name": "Donald P. Wagner",
+   "file": "/portraits/donald-p-wagner.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Donald_P._Wagner%2C_2022.jpg/500px-Donald_P._Wagner%2C_2022.jpg",
+   "credit": "Orange County Board of Supervisors",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "richard-barrera": {
+   "name": "Richard Barrera",
+   "file": "/portraits/richard-barrera.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/RichardBarrera2026_2026-04-30_134234.jpeg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Richard_Barrera",
+   "via": "Ballotpedia"
+  },
+  "sonja-shaw": {
+   "name": "Sonja Shaw",
+   "file": "/portraits/sonja-shaw.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Sonja_Shaw_20260417_055442.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Sonja_Shaw_(California)",
+   "via": "Ballotpedia"
+  },
+  "eleni-kounalakis": {
+   "name": "Eleni Kounalakis",
+   "file": "/portraits/eleni-kounalakis.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/LG_Kounalakis_Signing_%28cropped%29.jpg/500px-LG_Kounalakis_Signing_%28cropped%29.jpg",
+   "credit": "Office of Lieutenant Governor Eleni Kounalakis",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "jennifer-hawks": {
+   "name": "Jennifer Hawks",
+   "file": "/portraits/jennifer-hawks.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Untitled-1_20260506_041426_19269.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Jennifer_Hawks",
+   "via": "Ballotpedia"
+  },
+  "xavier-becerra": {
+   "name": "Xavier Becerra",
+   "file": "/portraits/xavier-becerra.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/HHS_Xavier_Becerra.jpg/500px-HHS_Xavier_Becerra.jpg",
+   "credit": "U.S. Department of Health and Human Services",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "steve-hilton": {
+   "name": "Steve Hilton",
+   "file": "/portraits/steve-hilton.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
+   "credit": "Gage Skidmore",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg",
+   "via": "Wikimedia Commons"
+  },
+  "fiona-ma": {
+   "name": "Fiona Ma",
+   "file": "/portraits/fiona-ma.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fiona_Ma_official2.jpg/500px-Fiona_Ma_official2.jpg",
+   "credit": "California Treasurer's Office",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Fiona_Ma_official2.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "gloria-j-romero": {
+   "name": "Gloria J. Romero",
+   "file": "/portraits/gloria-j-romero.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gloria_Romero%2C_c._2007.jpg/500px-Gloria_Romero%2C_c._2007.jpg",
+   "credit": "State of California",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Gloria_Romero,_c._2007.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "connie-chan": {
+   "name": "Connie Chan",
+   "file": "/portraits/connie-chan.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Connie_Chan%2C_2025.jpg/500px-Connie_Chan%2C_2025.jpg",
+   "credit": "San Francisco Board of Supervisors",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "scott-wiener": {
+   "name": "Scott Wiener",
+   "file": "/portraits/scott-wiener.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Scott_Wiener_Official_Biography_Portrait.jpg/500px-Scott_Wiener_Official_Biography_Portrait.jpg",
+   "credit": "California State Senate",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg",
+   "via": "Wikimedia Commons"
+  },
+  "micah-lasher": {
+   "name": "Micah Lasher",
+   "file": "/portraits/micah-lasher.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/Screenshot-2026-09-30-at-2_29_48___PM_20260930_183625_61739_1.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Micah_Lasher",
+   "via": "Ballotpedia"
+  },
+  "caroline-shinkle": {
+   "name": "Caroline Shinkle",
+   "file": "/portraits/caroline-shinkle.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/Caroline-Shinkle-headshot-1_20260827_201656_52991_1.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Caroline_Shinkle",
+   "via": "Ballotpedia"
+  },
+  "wilneida-negron": {
+   "name": "Wilneida Negron",
+   "file": "/portraits/wilneida-negron.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/Wilneida_Negron_20251205_020126.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Wilneida_Negron",
+   "via": "Ballotpedia"
+  },
+  "karen-ortiz": {
+   "name": "Karen Ortiz",
+   "file": "/portraits/karen-ortiz.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/Karen-Ortiz-outside-with-trans-pride-pin_20261008_193841_64990_1.jpg",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Karen_Ortiz",
+   "via": "Ballotpedia"
+  },
+  "joseph-hernandez": {
+   "name": "Joseph Hernandez",
+   "file": "/portraits/joseph-hernandez.avif",
+   "sourceUrl": "https://s3.amazonaws.com/ballotpedia-api4/files/Joseph_Hernandez_2025.png",
+   "credit": "Photo via Ballotpedia",
+   "license": "see Ballotpedia page",
+   "page": "https://ballotpedia.org/Joseph_Hernandez_(New_York)",
+   "via": "Ballotpedia"
+  }
+ },
+ "selfHostedNote": "Built by scripts/portraits.mjs on 2026-10-29. Resized and re-encoded only. Ballotpedia-sourced files keep Ballotpedia's credit; their license is as stated on the Ballotpedia page."
 }
