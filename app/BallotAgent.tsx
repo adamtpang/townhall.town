@@ -16,6 +16,9 @@ import IssueMatch from "./IssueMatch";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
+import MeasureMath from "./MeasureMath";
+import measureData from "../data/measures.json";
+const MEASURE_ZIPS = new Set((measureData as { measures: { zips: string[] }[] }).measures.flatMap((m) => m.zips));
 
 const NYC_READY = true;
 const DEMO = [
@@ -361,8 +364,9 @@ export default function BallotAgent() {
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
+          <MeasureMath zip={b.zip} n="03" />
           <section id="plan" className="border-t border-black py-24">
-            <p className="text-sm text-black/50">03</p>
+            <p className="text-sm text-black/50">{MEASURE_ZIPS.has(b.zip) ? "04" : "03"}</p>
             <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">Your plan</h2>
             <Plan state={b.state} />
           </section>
