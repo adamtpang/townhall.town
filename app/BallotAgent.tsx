@@ -329,7 +329,7 @@ export default function BallotAgent() {
                   <strong>Verify by address.</strong> Districts come from your ZIP's center point, not your street address.{" "}
                   {b.splitWarning && b.districts.length > 1 ? "Your ZIP may be split, so both possible House races are shown. " : ""}
                   {b.state === "CA" && "California's House districts were redrawn under Prop 50 (2025); this ZIP's district is unconfirmed. "}
-                  Check your exact ballot at <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"}>{b.state === "TX" ? "VoteTexas.gov" : "sos.ca.gov"}</a>.
+                  {b.state === "NY" && b.verify ? <>Check your exact ballot at <a href={b.verify.url}>{b.verify.label}</a>.</> : <>Check your exact ballot at <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"}>{b.state === "TX" ? "VoteTexas.gov" : "sos.ca.gov"}</a>.</>}
                 </span>
               </p>
               <p className="text-slate-500">District source: <a href={b.districtSource.url}>{b.districtSource.label}</a>. State legislative, judicial district, county and city races are not shown yet.</p>
