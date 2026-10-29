@@ -178,7 +178,7 @@ export default function BallotAgent() {
   async function run(z: string) {
     z = z.replace(/\D/g, "").slice(0, 5);
     if (z.length !== 5) return setNotice("Enter a 5-digit ZIP code.");
-    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin, SF and NYC for now. Try 78701 (Austin) or 94103 (San Francisco)."); }
+    if (!SUPPORTED.has(z)) { setZip(z); return setNotice("Austin and San Francisco for now. New York is coming soon."); }
     setZip(z);
     setBusy(true);
     setSteps({});
@@ -202,8 +202,9 @@ export default function BallotAgent() {
           if (!line.trim()) continue;
           const e = JSON.parse(line);
           if (e.type === "step") setSteps((s) => ({ ...s, [e.tool]: e }));
-          else if (e.type === "status") setStatus((s) => [...s, e.message]);
-          else if (e.type === "unsupported" || e.type === "error") setNotice(e.message);
+          else if (e.type === "status") { console.debug("[agent]", e.message); setStatus((s) => [...s, "Looking up your ballot…"]); }
+          else if (e.type === "unsupported") setNotice("Austin and San Francisco for now. New York is coming soon.");
+          else if (e.type === "error") { console.error("[agent]", e.message); setNotice("Couldn't load your ballot right now. Please try again."); }
           else if (e.type === "result") {
             setResult(e);
             setCare(Object.fromEntries(((e.ballot?.problems || []) as Problem[]).map((p) => [p.topic || p.id, true])));
@@ -212,6 +213,7 @@ export default function BallotAgent() {
         }
       }
     } catch (err) {
+      console.error("[agent]", err);
       setNotice("Something went wrong talking to the agent. Please try again.");
     }
     setBusy(false);
@@ -286,8 +288,8 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-32">
           <p className="text-sm text-black/50">
-            {b.place} · {elapsed ? `${elapsed.toFixed(1)}s` : ""} · {result?.mode === "live" ? "Live agent" : "Fallback mode (no model)"}
-            {b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}
+            {b.place} · {elapsed ? `${elapsed.toFixed(1)}s` : ""}
+            {b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://www.votetexas.gov/voting/where.html" : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">{b.state === "TX" ? "Find your polling place" : "Check which is yours"}</a></>}
             {" "}· Local races not shown yet.{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />

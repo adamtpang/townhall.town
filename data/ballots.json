@@ -2197,7 +2197,6 @@
       "ballotpedia": "https://ballotpedia.org/Bo_French",
       "officialSite": null,
       "campaignSite": "https://bofrench.com",
-      "x": "https://x.com/BoFrenchTX",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/BoFrench26.jpg",
        "credit": "Photo via Ballotpedia",
@@ -2418,7 +2417,6 @@
       "ballotpedia": "https://ballotpedia.org/Kristen_Hawkins",
       "officialSite": null,
       "campaignSite": "https://judgehawkins.com/",
-      "x": "https://x.com/kbrauchle",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kristen_Hawkins.png",
        "credit": "Photo via Ballotpedia",
@@ -2994,7 +2992,6 @@
       "ballotpedia": "https://ballotpedia.org/Chris_Gober",
       "officialSite": null,
       "campaignSite": "https://chrisgober.com/",
-      "x": "https://x.com/chrisgobertx",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Chris_Gober_26.jpg",
        "credit": "Photo via Ballotpedia",
@@ -3207,7 +3204,6 @@
       "ballotpedia": "https://ballotpedia.org/Lauren_Peña",
       "officialSite": null,
       "campaignSite": null,
-      "x": "https://x.com/LaurenBPena4TX",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Lauren_Pena_2025.png",
        "credit": "Photo via Ballotpedia",
@@ -5062,7 +5058,6 @@
       "ballotpedia": "https://ballotpedia.org/Bo_French",
       "officialSite": null,
       "campaignSite": "https://bofrench.com",
-      "x": "https://x.com/BoFrenchTX",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/BoFrench26.jpg",
        "credit": "Photo via Ballotpedia",
@@ -5283,7 +5278,6 @@
       "ballotpedia": "https://ballotpedia.org/Kristen_Hawkins",
       "officialSite": null,
       "campaignSite": "https://judgehawkins.com/",
-      "x": "https://x.com/kbrauchle",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kristen_Hawkins.png",
        "credit": "Photo via Ballotpedia",
@@ -6242,7 +6236,7 @@
     "title": "California Secretary of State",
     "level": "state",
     "office": "Chief elections officer (certifies ballot measures and results) and keeper of business filings. 4-year term.",
-    "officeSource": "https://www.sos.ca.gov/administration/about-office-secretary-state",
+    "officeSource": "https://www.sos.ca.gov/",
     "candidates": [
      {
       "name": "Shirley Weber",
@@ -6556,7 +6550,7 @@
     "title": "California Treasurer",
     "level": "state",
     "office": "The state's banker: sells state bonds, invests state money, and manages cash. 4-year term.",
-    "officeSource": "https://www.treasurer.ca.gov/about.asp",
+    "officeSource": "https://www.treasurer.ca.gov/",
     "candidates": [
      {
       "name": "Eleni Kounalakis",
@@ -6738,7 +6732,7 @@
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Xavier_Becerra",
       "officialSite": null,
-      "campaignSite": "http://xavierbecerra2026.com/",
+      "campaignSite": "https://xavierbecerra2026.com/",
       "x": "https://x.com/XavierBecerra",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Xavier_Becerra.jpg",
@@ -7832,7 +7826,7 @@
     "title": "California Secretary of State",
     "level": "state",
     "office": "Chief elections officer (certifies ballot measures and results) and keeper of business filings. 4-year term.",
-    "officeSource": "https://www.sos.ca.gov/administration/about-office-secretary-state",
+    "officeSource": "https://www.sos.ca.gov/",
     "candidates": [
      {
       "name": "Shirley Weber",
@@ -8146,7 +8140,7 @@
     "title": "California Treasurer",
     "level": "state",
     "office": "The state's banker: sells state bonds, invests state money, and manages cash. 4-year term.",
-    "officeSource": "https://www.treasurer.ca.gov/about.asp",
+    "officeSource": "https://www.treasurer.ca.gov/",
     "candidates": [
      {
       "name": "Eleni Kounalakis",
@@ -8328,7 +8322,7 @@
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Xavier_Becerra",
       "officialSite": null,
-      "campaignSite": "http://xavierbecerra2026.com/",
+      "campaignSite": "https://xavierbecerra2026.com/",
       "x": "https://x.com/XavierBecerra",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Xavier_Becerra.jpg",
