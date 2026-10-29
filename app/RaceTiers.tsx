@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Portrait, type Photo } from "../components/Portrait";
 import type { MeasureMath } from "../lib/measures";
-import { offices as OFFICES } from "../data/offices.json";
+import officesData from "../data/offices.json";
+const OFFICES = officesData.offices;
 type Avg = { name: string; prob: number }[];
 type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
