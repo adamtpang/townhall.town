@@ -1,0 +1,448 @@
+{
+ "builtAt": "2026-10-29",
+ "note": "Official sources only: CA LAO and SoS voter guide, SF Department of Elections voter pamphlet, Travis County Clerk sample ballot and City of Austin election ordinances. 'unsure' where the official text gives no figure.",
+ "measures": [
+  {
+   "id": "ca-prop-40",
+   "title": "California Proposition 40: Imposes One-Time Tax on Certain Taxpayers",
+   "zips": [
+    "94103",
+    "90012"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Temporary state revenue increase, probably tens of billions of dollars spread over several years; possible ongoing decrease of less than $1 billion per year in state income tax revenue from billionaires (LAO)",
+    "sourceUrl": "https://lao.ca.gov/BallotAnalysis/Proposition?number=40&year=2026"
+   },
+   "whoPays": {
+    "text": "Billionaires who were California residents on January 1, 2026: a one-time 5% tax on net worth. Real estate, pensions and retirement accounts generally excluded. Due in 2027; can be spread over five years at extra cost.",
+    "sourceUrl": "https://lao.ca.gov/BallotAnalysis/Proposition?number=40&year=2026"
+   },
+   "whatChanges": {
+    "text": "90% of the money must go to health care services; the rest to education, food assistance and administering the tax. Exempt from the constitution's school funding and spending limit rules.",
+    "sourceUrl": "https://lao.ca.gov/BallotAnalysis/Proposition?number=40&year=2026"
+   },
+   "notes": "Supporters' ~$100 billion figure is a campaign claim, not the LAO estimate. Official voter guide: https://voterguide.sos.ca.gov/propositions/40/"
+  },
+  {
+   "id": "sf-prop-a",
+   "title": "SF Proposition A: Charter Changes Affecting Various City Departments and Commissions",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "Saves about $365,000 to $450,000 per year (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "No new tax. Savings and costs fall within the City budget.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Updates the Charter to match how departments operate, changes some processes (e.g. legal settlements approved by resolution instead of ordinance), eliminates or reorganizes some commissions and advisory bodies, and requires a task force every ten years to review commissions.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-b",
+   "title": "SF Proposition B: Establishing a Municipal Finance Corporation and a Public Bank",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "No direct cost. If the City later creates the finance corporation and public bank: about $310 million to $460 million over eight years (Controller, citing 2023 Reinvestment Working Group estimates)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "City funds, only if the City chooses to create the corporation and bank; no tax in the measure.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Authorizes the City to create a municipal finance corporation (makes loans, takes no deposits) if funding exists, which may become a public bank (loans and deposits) after three years, for affordable housing, homeownership, small business and environmental projects.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-c",
+   "title": "SF Proposition C: Contributions to the Housing Trust Fund",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "About $6 million in added General Fund costs starting FY 2028-29, growing to about $60 million per year by FY 2034-35 (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "The City General Fund (a spending mandate with no new funding source).",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Grows the City's yearly Housing Trust Fund contribution (last year $50.8 million) until it reaches at least $125 million, then caps increases at 3%; contributions can pause during large deficits; extends the fund from 2043 to 2058.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-d",
+   "title": "SF Proposition D: Changes to Ballot Measure Process",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "Minimal; may reduce costs at a level that cannot be determined (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "No new tax.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Raises initiative signatures from 2% to 8% of registered voters (about 10,600 to about 42,500), requires a Board majority to place ordinances on the ballot, ends the Mayor's direct path, lets proponents withdraw measures, and raises the special-election threshold to 10% of registered voters.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-e",
+   "title": "SF Proposition E: City Administrator's Authority and Changes to City Contracting",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "Minimal, at a level that cannot be determined (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "No new tax.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Gives the City Administrator exclusive power to propose contracting rules and set citywide technology policy, extends the term from five to ten years, and raises Board approval thresholds (revenue contracts and leases from $1 million to $4.5 million; spending contracts from $10 million to $25 million).",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-f",
+   "title": "SF Proposition F: Changes to Executive Branch Management",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "Minimal, at a level that cannot be determined; a deputy mayor would cost about $250,000 per year on average (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "No new tax.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Lets the Mayor hire and remove most department heads, remove most commissioners at will, transfer responsibilities between or combine most departments (unless the Board objects), and use deputy mayors.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-g",
+   "title": "SF Proposition G: Allowing Private Vehicles on the Upper Great Highway in Sunset Dunes Park",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "About $9.8 million one-time capital cost plus about $500,000 to $1.9 million per year (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "City budget; no tax in the measure.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Closes Sunset Dunes Park Monday 4 a.m. to Friday 6 p.m. (except weekday holidays) to reopen the Upper Great Highway to private vehicles, after required permits.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-h",
+   "title": "SF Proposition H: Parcel Tax to Fund Muni Operations",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "Raises about $177 million per year for Muni starting FY 2027-28, rising with inflation; admin costs about $2-3 million one-time and $4-6 million per year (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "San Francisco property owners, July 1, 2027 to June 30, 2042, adjusted for inflation: base $129 per single-family parcel, $249 per multifamily parcel (capped at $50,000), $799 per non-residential or mixed-use parcel, plus per-square-foot amounts for larger buildings.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Creates a new annual parcel tax for 15 years, with revenue deposited into the Stronger Muni Fund for Muni transit service operations and administration.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-i",
+   "title": "SF Proposition I: Changes to Real Property Transfer Tax",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "About $1 million per year less City revenue from FY 2027-28, and shifts $120 million per year from the General Fund to affordable housing, adding $120 million to the projected General Fund deficit (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "Whoever pays the transfer tax on property transfers of $10 million or more, at the same combined rates as today (e.g. 5.5% becomes 2.75% + a new 2.75%). The pamphlet says the measure does not raise the rate on any transfer.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Dedicates half of the transfer tax on properties over $10 million to affordable housing, including social housing and housing assistance.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "sf-prop-j",
+   "title": "SF Proposition J: Removal of Foreclosure Exemption for Real Property Transfer Tax",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "San Francisco",
+   "cost": {
+    "value": "Could raise an average of $100 million to $150 million per year over the first five years, highly unpredictable (Controller)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "Lenders taking commercial, industrial and larger residential property through foreclosure (or in lieu of it), taxed on full market value starting March 1, 2027. Single-family homes, buildings under five units and small mixed-use keep the tax break.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Ends the partial foreclosure exemption for those properties and raises the City's spending limit for four years.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "bay-area-rtm",
+   "title": "Regional Measure RTM: Regional Transit Measure",
+   "zips": [
+    "94103"
+   ],
+   "jurisdiction": "Bay Area (Alameda, Contra Costa, San Mateo, Santa Clara, San Francisco)",
+   "cost": {
+    "value": "About $980 million per year for 14 years (district legal counsel's impartial analysis)",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whoPays": {
+    "text": "Shoppers, through a sales tax: 1% in San Francisco and 0.5% in Alameda, Contra Costa, San Mateo and Santa Clara counties, for 14 years.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "whatChanges": {
+    "text": "Funds BART, Muni, Caltrain, AC Transit, VTA, SamTrans and other transit plus targeted road repairs, with financial oversight. Needs 50%+1 of all votes across the five counties.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-a",
+   "title": "City of Austin Proposition A: Parks, recreation, aquatic and open space bonds",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "$260,000,000 in bonds, plus interest (maximum net effective interest rate 6.00%). Per-home tax impact: unsure (not in the documents we found)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+   },
+   "whoPays": {
+    "text": "City of Austin property taxpayers. The ballot says: THIS IS A TAX INCREASE.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Authorizes bonds for citywide park, recreation, aquatic and open space improvements, with priority projects named in the ordinance (e.g. Gus Garcia Recreation Center, Doris Miller Auditorium, Mayfield Park).",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-b",
+   "title": "City of Austin Proposition B: Library facility bonds",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "$35,000,000 in bonds, plus interest (maximum net effective interest rate 6.00%). Per-home tax impact: unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+   },
+   "whoPays": {
+    "text": "City of Austin property taxpayers. The ballot says: THIS IS A TAX INCREASE.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Authorizes bonds for library facilities.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-c",
+   "title": "City of Austin Proposition C: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Clarifies that the Independent Citizens Redistricting Commission is independent of Council, lets it review districts after boundary changes, adds exceptions for student members, sets when its plan takes effect, and changes appointment and vacancy rules.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-d",
+   "title": "City of Austin Proposition D: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Deletes the Charter rule that Council must meet at least once a week.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-e",
+   "title": "City of Austin Proposition E: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Deletes the rule that Council sets its rules and order of business by ordinance.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-f",
+   "title": "City of Austin Proposition F: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Clarifies the meaning of 'election' and updates campaign contribution and spending limits each January 1 instead of with the budget.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-g",
+   "title": "City of Austin Proposition G: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Holds citizen-initiated and petitioned charter elections on the next available even-year November date.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-h",
+   "title": "City of Austin Proposition H: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Has the City Council appoint and remove the City Attorney.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-i",
+   "title": "City of Austin Proposition I: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Requires a regular Independent Affordability and Efficiency Initiative, including before any tax rate election, with the contractor required to find savings above its own cost.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  },
+  {
+   "id": "atx-prop-j",
+   "title": "City of Austin Proposition J: Charter amendment",
+   "zips": [
+    "78701"
+   ],
+   "jurisdiction": "City of Austin",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whoPays": {
+    "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   },
+   "whatChanges": {
+    "text": "Makes non-substantive fixes (typos, punctuation) and removes language superseded by state law or court order.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+   }
+  }
+ ]
+}

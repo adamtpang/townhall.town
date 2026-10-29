@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: { DEFAULT: "#162e51", 900: "#000c1f", 700: "#1a4480", 50: "#eef2f7" },
+        navy: { DEFAULT: "#010101", 700: "#3760f2", 900: "#000000", 50: "#f2f2f2" },
         flagred: "#b50909",
         flagblue: "#005ea2",
         flag: { red: "#d80007", blue: "#002664" },
@@ -28,7 +28,7 @@ export default {
         ring: token("ring"),
       },
       fontFamily: {
-        sans: ["var(--font-public-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-grotesk)", "var(--font-public-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Georgia", "Times New Roman", "serif"],
       },
       fontSize: {

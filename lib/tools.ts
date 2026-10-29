@@ -9,6 +9,7 @@ import { fetchPolymarket, fetchKalshi } from "./marketsCore.mjs";
 import { withAccountability } from "./accountability";
 import { getTurnout } from "./turnout";
 import { withLicensedPhoto } from "./photos";
+import { withMoney } from "./money";
 
 /** Jurisdiction plus app-only extras (measures, verify links, context). Extra fields only; contract fields unchanged. */
 export type Ballot = Jurisdiction & {
@@ -23,10 +24,10 @@ const B = { ...ballots, ...ny } as unknown as Record<string, Ballot>;
 const TX = tx as unknown as { statewide: Race[]; house: Record<string, Race>; zipToCd: Record<string, number>; zipSource: { label: string; url: string } };
 export const DEMO_ZIPS = Object.keys(B);
 
-/** Attach the accountability and turnout plug-ins (optional contract fields). */
+/** Attach the accountability, money and turnout plug-ins (optional contract fields). */
 function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
-  return { ...b, turnout, races: b.races.map((r) => ({ ...r, candidates: r.candidates.map((c) => withAccountability(withLicensedPhoto(c))) })) };
+  return { ...b, turnout, races: b.races.map((r) => ({ ...r, candidates: r.candidates.map((c) => withMoney(withAccountability(withLicensedPhoto(c)))) })) };
 }
 
 export function ballotFor(zip: string): Ballot | null {
