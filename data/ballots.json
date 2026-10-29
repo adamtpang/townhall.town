@@ -52,19 +52,7 @@
        "url": "https://www.fec.gov/data/candidate/H6TX35095/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Johnny_Garcia_(Texas_congressional_candidate)#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -333,17 +321,6 @@
         }
        },
        {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 2,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes"
-        }
-       },
-       {
         "id": "corruption",
         "label": "Corruption & ethics",
         "mentions": 2,
@@ -357,6 +334,17 @@
        {
         "id": "taxes",
         "label": "Taxes",
+        "mentions": 1,
+        "quote": "Expand DOGE to cut insane wasteful spending, rein in the Deep State, and grow the economy by putting taxpayers first.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Mark_Teixeira#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
         "mentions": 1,
         "quote": "Expand DOGE to cut insane wasteful spending, rein in the Deep State, and grow the economy by putting taxpayers first.",
         "match": "keyword match in verbatim campaign themes",
@@ -670,19 +658,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Greg_Abbott#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -710,17 +686,6 @@
         "label": "Taxes",
         "mentions": 1,
         "quote": "Every challenge in Texas boils down to tax dollars being spent to pad the pockets of the well-connected, corrupt elite, instead of what Texans need.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Gina_Hinojosa#Campaign_themes"
-        }
-       },
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -858,19 +823,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Dan_Patrick#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -1295,10 +1248,10 @@
         }
        },
        {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 6,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 5,
+        "quote": "Sue to stop “sanctuary cities” from ignoring the law and harboring illegal criminals",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -1306,10 +1259,10 @@
         }
        },
        {
-        "id": "public-safety",
-        "label": "Public safety",
+        "id": "democracy",
+        "label": "Elections & voting",
         "mentions": 5,
-        "quote": "Sue to stop “sanctuary cities” from ignoring the law and harboring illegal criminals",
+        "quote": "As your Attorney General, I will lead the charge to secure our border, protect Texas kids, ensure fairness in girls’ and women’s sports, protect Texas taxpayers and consumers, ensure strict election integrity, and root out waste, fraud, and…",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -1360,20 +1313,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Tom_Oxford#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Attorney_General_election,_2026"
@@ -1692,20 +1633,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Comptroller_election,_2026"
@@ -1781,10 +1710,10 @@
         }
        },
        {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 4,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
+        "id": "education",
+        "label": "Education",
+        "mentions": 3,
+        "quote": "Local Education :",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -1792,10 +1721,10 @@
         }
        },
        {
-        "id": "education",
-        "label": "Education",
+        "id": "democracy",
+        "label": "Elections & voting",
         "mentions": 3,
-        "quote": "Local Education :",
+        "quote": "ELECTION INTEGRITY",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -1898,19 +1827,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Neil_Snider_(Texas)#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -2413,20 +2330,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Jimmy_Blacklock#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Maggie Ellis",
@@ -2453,17 +2358,6 @@
         "label": "Public safety",
         "mentions": 1,
         "quote": "I have experience working on all sides of the docket, in both civil and criminal cases, representing individuals, representing the State, and as a judge.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Maggie_Ellis#Campaign_themes"
-        }
-       },
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -2513,20 +2407,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Kyle_Hawkins#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Kristen Hawkins",
@@ -2547,20 +2429,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Kristen_Hawkins#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
@@ -2591,19 +2461,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Brett_Busby#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -2625,19 +2483,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Gisela_Triana#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -2669,20 +2515,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Okey_Anyiam#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Thomas Smith",
@@ -2703,19 +2537,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Thomas_Smith_(Texas)#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -2737,20 +2559,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Mark_Ash#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
@@ -2781,20 +2591,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Kevin_Patrick_Yeary#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Audra Riley",
@@ -2815,19 +2613,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Audra_Riley#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -2973,8 +2759,8 @@
        {
         "id": "democracy",
         "label": "Elections & voting",
-        "mentions": 3,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
+        "mentions": 2,
+        "quote": "Sometimes, the results were intended but the voters change their minds about what they want the law to be.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -3737,19 +3523,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Greg_Abbott#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -3777,17 +3551,6 @@
         "label": "Taxes",
         "mentions": 1,
         "quote": "Every challenge in Texas boils down to tax dollars being spent to pad the pockets of the well-connected, corrupt elite, instead of what Texans need.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Gina_Hinojosa#Campaign_themes"
-        }
-       },
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -3925,19 +3688,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Dan_Patrick#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -4362,10 +4113,10 @@
         }
        },
        {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 6,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 5,
+        "quote": "Sue to stop “sanctuary cities” from ignoring the law and harboring illegal criminals",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -4373,10 +4124,10 @@
         }
        },
        {
-        "id": "public-safety",
-        "label": "Public safety",
+        "id": "democracy",
+        "label": "Elections & voting",
         "mentions": 5,
-        "quote": "Sue to stop “sanctuary cities” from ignoring the law and harboring illegal criminals",
+        "quote": "As your Attorney General, I will lead the charge to secure our border, protect Texas kids, ensure fairness in girls’ and women’s sports, protect Texas taxpayers and consumers, ensure strict election integrity, and root out waste, fraud, and…",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -4427,20 +4178,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Tom_Oxford#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Attorney_General_election,_2026"
@@ -4759,20 +4498,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Comptroller_election,_2026"
@@ -4848,10 +4575,10 @@
         }
        },
        {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 4,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
+        "id": "education",
+        "label": "Education",
+        "mentions": 3,
+        "quote": "Local Education :",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -4859,10 +4586,10 @@
         }
        },
        {
-        "id": "education",
-        "label": "Education",
+        "id": "democracy",
+        "label": "Elections & voting",
         "mentions": 3,
-        "quote": "Local Education :",
+        "quote": "ELECTION INTEGRITY",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -4965,19 +4692,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Neil_Snider_(Texas)#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -5480,20 +5195,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Jimmy_Blacklock#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Maggie Ellis",
@@ -5520,17 +5223,6 @@
         "label": "Public safety",
         "mentions": 1,
         "quote": "I have experience working on all sides of the docket, in both civil and criminal cases, representing individuals, representing the State, and as a judge.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Maggie_Ellis#Campaign_themes"
-        }
-       },
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -5580,20 +5272,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Kyle_Hawkins#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Kristen Hawkins",
@@ -5614,20 +5294,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Kristen_Hawkins#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
@@ -5658,19 +5326,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Brett_Busby#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -5692,19 +5348,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Gisela_Triana#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -5736,20 +5380,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Okey_Anyiam#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Thomas Smith",
@@ -5770,19 +5402,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Thomas_Smith_(Texas)#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -5804,20 +5424,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Mark_Ash#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
@@ -5848,20 +5456,8 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Kevin_Patrick_Yeary#Campaign_themes"
-        }
-       }
-      ],
-      "hasThemes": true
+      "causes": [],
+      "hasThemes": false
      },
      {
       "name": "Audra Riley",
@@ -5882,19 +5478,7 @@
        "url": "https://www.ethics.state.tx.us/search/cf/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Audra_Riley#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -6040,8 +5624,8 @@
        {
         "id": "democracy",
         "label": "Elections & voting",
-        "mentions": 3,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
+        "mentions": 2,
+        "quote": "Sometimes, the results were intended but the voters change their minds about what they want the law to be.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -6229,19 +5813,7 @@
        "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Rob_Bonta#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -6446,19 +6018,7 @@
        "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Herb_Morgan#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -6730,17 +6290,6 @@
         "label": "Housing",
         "mentions": 1,
         "quote": "And, it is also the place where I am a homeowner, sent my children to public schools, and actively participated in the civic and cultural life of these neighborhoods for over 30 years.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Shirley_Weber#Campaign_themes"
-        }
-       },
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",
@@ -7854,19 +7403,7 @@
        "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Rob_Bonta#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      },
      {
@@ -8071,19 +7608,7 @@
        "url": "https://cal-access.sos.ca.gov/Campaign/Candidates/"
       },
       "positions": [],
-      "causes": [
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Herb_Morgan#Campaign_themes"
-        }
-       }
-      ],
+      "causes": [],
       "hasThemes": true
      }
     ],
@@ -8355,17 +7880,6 @@
         "label": "Housing",
         "mentions": 1,
         "quote": "And, it is also the place where I am a homeowner, sent my children to public schools, and actively participated in the civic and cultural life of these neighborhoods for over 30 years.",
-        "match": "keyword match in verbatim campaign themes",
-        "source": {
-         "label": "Ballotpedia campaign themes (verbatim)",
-         "url": "https://ballotpedia.org/Shirley_Weber#Campaign_themes"
-        }
-       },
-       {
-        "id": "democracy",
-        "label": "Elections & voting",
-        "mentions": 1,
-        "quote": "Completing the survey will update the candidate's Ballotpedia profile, letting voters know who they are and what they stand for.",
         "match": "keyword match in verbatim campaign themes",
         "source": {
          "label": "Ballotpedia campaign themes (verbatim)",

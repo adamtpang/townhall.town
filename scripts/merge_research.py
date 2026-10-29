@@ -39,7 +39,7 @@ CAUSES = {
 NOT_A_CAUSE = re.compile(r"\b(endorse\w*|endorsed by|backed by)\b", re.I)
 MAX_CAUSES = 5
 
-BOILER = re.compile(r"(See also: Ballotpedia|Candidate Connection|Ballotpedia reserves|Who fills out|Help improve Ballotpedia|has not yet completed|did not complete|survey questions appear|campaign website stated the following|click here)", re.I)
+BOILER = re.compile(r"(See also: Ballotpedia|Candidate Connection|Ballotpedia reserves|Who fills out|Help improve Ballotpedia|has not yet completed|did not complete|survey questions appear|campaign website stated the following|click here|Candidate Survey|Ballotpedia profile|candidates have taken Ballotpedia)", re.I)
 media = J(MEDIA) if os.path.exists(MEDIA) else {}
 
 def media_key(url):
