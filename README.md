@@ -34,6 +34,30 @@ flowchart LR
 ```
 The UI badge says honestly which mode ran: **live** (model name shown) or **fallback mode (no model)**.
 
+### How the agent works
+One request, one bounded tool loop, streamed back to the browser as NDJSON (`app/api/agent/route.ts`).
+
+**Tools the model can call**
+
+| Tool | Returns | Source |
+| --- | --- | --- |
+| `getDistricts` | U.S. House district(s), state, county for the ZIP | Census 2024 ZCTA centroids in PLANC2333 (TX) |
+| `getRaces` | Every race and statewide measure on the Nov 3, 2026 ballot, with what each office controls | `data/ballots.json`, `data/tx.json` |
+| `getCandidates` | General-election candidates: name, party, incumbent | Ballotpedia, FEC |
+| `getMarketOdds` | Live Polymarket / Kalshi prices per contest, or "no market found" | Polymarket, Kalshi (cached snapshot fallback) |
+| `getLocalProblems` | 3 local problems: rent burden, uninsured rate, unemployment | Census ACS 2024 5-year |
+| `getTurnout` | County turnout, eligible non-voters, what one ballot counts for (demo ZIPs) | Texas and California Secretary of State, Census Reporter |
+| `getAccountability` | Said vs. did for 7 incumbents, both sides sourced, plus a kept rate | Official records (clerk.house.gov, state offices) and news coverage |
+
+**Loop steps**
+1. The ZIP is normalized to 5 digits. If it isn't covered, the stream returns `unsupported` and stops.
+2. The model gets a strict nonpartisan system prompt and is told to call the five core tools in parallel in its first step.
+3. `generateText` runs with `stopWhen: stepCountIs(3)` and a 25-second timeout. Each tool call streams a `step` event (running, then done with a one-line summary), which is the live "Agent steps" panel.
+4. The model writes a 2 to 3 sentence neutral summary from tool results only. It may not recommend a candidate.
+5. If a model fails, the next one in the ladder is tried (`AGENT_MODELS`, default `google/gemini-2.5-flash-lite`, `openai/gpt-4.1-mini`, `openai/gpt-5-nano`, with direct xAI first when `XAI_API_KEY` is set).
+6. Any core tool the model skipped is run deterministically, so the ballot is always complete. With no model at all, every tool runs this way and the badge says fallback.
+7. A final `result` event carries the mode, model, which tools the model chose to call, the narration, the full ballot and market odds. The UI renders from that.
+
 ## Environment variables
 See `.env.example` (placeholders only, never commit real values):
 - `AI_GATEWAY_API_KEY`: local dev only; on Vercel the gateway authenticates with OIDC.
