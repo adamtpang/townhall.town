@@ -1,0 +1,436 @@
+{
+  "offices": {
+    "tx-10": {
+      "office": "U.S. House Texas District 10",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Writes and votes on federal laws; all federal tax and spending bills start in the House, which can impeach federal officials. 2-year term.",
+      "sourceUrl": "https://www.house.gov/the-house-explained"
+    },
+    "tx-37": {
+      "office": "U.S. House Texas District 37",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Writes and votes on federal laws; all federal tax and spending bills start in the House, which can impeach federal officials. 2-year term.",
+      "sourceUrl": "https://www.house.gov/the-house-explained"
+    },
+    "us-senate-tx": {
+      "office": "U.S. Senate Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Writes federal laws, approves the federal budget with the House, confirms judges, cabinet members and ambassadors, and ratifies treaties. 6-year term; Texas has 2 senators.",
+      "sourceUrl": "https://www.senate.gov/about/origins-foundations/senate-and-constitution/constitution.htm"
+    },
+    "tx-gov": {
+      "office": "Governor of Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Signs or vetoes bills (including line-item budget vetoes), calls special legislative sessions, appoints many state board members, and commands state military forces. 4-year term.",
+      "sourceUrl": "https://ballotpedia.org/Governor_of_Texas"
+    },
+    "tx-ltgov": {
+      "office": "Lieutenant Governor of Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Presides over the Texas Senate, appoints Senate committees, controls which bills reach the floor, and co-chairs the Legislative Budget Board. 4-year term.",
+      "sourceUrl": "https://ballotpedia.org/Lieutenant_Governor_of_Texas"
+    },
+    "tx-ag": {
+      "office": "Attorney General of Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "The state's lawyer: represents Texas in court, issues legal opinions to state officials, and runs child-support enforcement and consumer-protection divisions. 4-year term.",
+      "sourceUrl": "https://www.texasattorneygeneral.gov/about-office"
+    },
+    "tx-comptroller": {
+      "office": "Texas Comptroller of Public Accounts",
+      "zip": [
+        "78701"
+      ],
+      "learn": "The state's chief tax collector, accountant and revenue estimator; certifies that the state budget fits within estimated revenue and manages state funds. 4-year term.",
+      "sourceUrl": "https://comptroller.texas.gov/about/"
+    },
+    "tx-land": {
+      "office": "Texas Land Commissioner",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Runs the General Land Office: state-owned land and mineral rights supporting the Permanent School Fund, the Gulf coast, the Alamo, and veterans' land programs. 4-year term.",
+      "sourceUrl": "https://www.glo.texas.gov/about-glo"
+    },
+    "tx-agcomm": {
+      "office": "Texas Commissioner of Agriculture",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Runs the Texas Department of Agriculture: farm and ranch programs, school-lunch programs, pesticide regulation, and inspection of gas pumps and scales. 4-year term.",
+      "sourceUrl": "https://texasagriculture.gov/About"
+    },
+    "tx-rrc": {
+      "office": "Texas Railroad Commission",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Regulates Texas oil and natural gas (drilling permits, pipelines, gas utilities) and surface coal and uranium mining, not railroads. 3 commissioners, 6-year staggered terms.",
+      "sourceUrl": "https://www.rrc.texas.gov/about-us/"
+    },
+    "tx-supreme-court-place-1-chief-justice": {
+      "office": "Chief Justice, Texas Supreme Court",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for civil and juvenile cases; justices run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+    },
+    "tx-supreme-court-place-7": {
+      "office": "Texas Supreme Court Place 7",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for civil and juvenile cases; justices run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+    },
+    "tx-supreme-court-place-8": {
+      "office": "Texas Supreme Court Place 8",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for civil and juvenile cases; justices run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+    },
+    "tx-supreme-court-place-2": {
+      "office": "Texas Supreme Court Place 2 (unexpired term)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for civil and juvenile cases; justices run in partisan elections for 6-year terms; this seat fills the remainder of an unexpired term.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+    },
+    "tx-court-of-criminal-appeals-place-3": {
+      "office": "Texas Court of Criminal Appeals Place 3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/cca/about-the-court/"
+    },
+    "tx-court-of-criminal-appeals-place-4": {
+      "office": "Texas Court of Criminal Appeals Place 4",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/cca/about-the-court/"
+    },
+    "tx-court-of-criminal-appeals-place-9": {
+      "office": "Texas Court of Criminal Appeals Place 9",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/cca/about-the-court/"
+    },
+    "ca-11": {
+      "office": "U.S. House California District 11",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Writes and votes on federal laws; all federal tax and spending bills start in the House, which can impeach federal officials. 2-year term.",
+      "sourceUrl": "https://www.house.gov/the-house-explained"
+    },
+    "ca-ag": {
+      "office": "Attorney General of California",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Chief law officer: heads the state Department of Justice, represents California in court, and oversees law enforcement statewide. 4-year term.",
+      "sourceUrl": "https://oag.ca.gov/about"
+    },
+    "ca-controller": {
+      "office": "California Controller",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Chief fiscal officer: pays state bills and payroll, audits state and local spending, and sits on the CalPERS and CalSTRS pension boards. 4-year term.",
+      "sourceUrl": "https://www.sco.ca.gov/eo_about.html"
+    },
+    "ca-insurance": {
+      "office": "California Commissioner of Insurance",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Runs the Department of Insurance: approves or rejects home, auto and health insurance rate changes and enforces insurance law. 4-year term.",
+      "sourceUrl": "https://www.insurance.ca.gov/0500-about-us/"
+    },
+    "ca-sos": {
+      "office": "California Secretary of State",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Chief elections officer who certifies ballot measures and results, and keeper of business filings. 4-year term.",
+      "sourceUrl": "https://www.sos.ca.gov/"
+    },
+    "ca-spi": {
+      "office": "California Superintendent of Public Instruction",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Nonpartisan head of the state Department of Education; administers K-12 programs and is executive officer of the State Board of Education. 4-year term.",
+      "sourceUrl": "https://www.cde.ca.gov/eo/"
+    },
+    "ca-treasurer": {
+      "office": "California Treasurer",
+      "zip": [
+        "94103"
+      ],
+      "learn": "The state's banker: sells state bonds, invests state money, and manages state cash. 4-year term.",
+      "sourceUrl": "https://www.treasurer.ca.gov/"
+    },
+    "ca-gov": {
+      "office": "Governor of California",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Signs or vetoes bills (with line-item veto on spending), proposes the state budget each January, appoints judges and agency heads, and can grant pardons. 4-year term.",
+      "sourceUrl": "https://ballotpedia.org/Governor_of_California"
+    },
+    "ca-ltgov": {
+      "office": "Lieutenant Governor of California",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Acting governor when the governor is absent, President of the State Senate with a tie-breaking vote, and member of UC Regents and CSU Trustees. 4-year term.",
+      "sourceUrl": "https://ltg.ca.gov/"
+    },
+    "ca-boe-2": {
+      "office": "California Board of Equalization District 2",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of five members (four elected plus the Controller) overseeing property tax assessment, the alcoholic beverage tax and the tax on insurers. 4-year term.",
+      "sourceUrl": "https://www.boe.ca.gov/info/about.htm"
+    },
+    "sf-assessor-recorder": {
+      "office": "San Francisco Assessor-Recorder",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Determines which San Francisco properties are subject to property tax and assesses their value. 4-year term; current salary $267,488.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-public-defender": {
+      "office": "San Francisco Public Defender",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Provides legal representation to San Franciscans charged with crimes who cannot afford an attorney. 4-year term; current salary $307,892.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-supervisor-d6": {
+      "office": "San Francisco Board of Supervisors District 6",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of 11 members of the city's legislative branch, which enacts local laws and adopts the annual budget. 4-year term; current salary $180,102.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-board-of-education": {
+      "office": "San Francisco Board of Education",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Seven-member board governing the San Francisco Unified School District (K-12). 4-year terms; $6,000 annual stipend; three seats on this ballot.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-community-college-board": {
+      "office": "San Francisco Community College Board",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Seven-member board governing City College and other adult learning centers. 4-year terms; $6,000 stipend; three full-term seats plus one unexpired term on this ballot.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "austin-isd-trustees": {
+      "office": "Austin ISD Board of Trustees (Districts 1, 4, 6, 7 and At-Large 9)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Nine-member elected board that sets the direction of Austin ISD educational programs and services. 4-year terms, filled on a rotating basis.",
+      "sourceUrl": "https://www.austinisd.org/board"
+    },
+    "tx-15th-coa-chief-justice": {
+      "office": "Chief Justice, 15th Court of Appeals",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "tx-15th-coa-place-2": {
+      "office": "15th Court of Appeals Place 2",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "tx-15th-coa-place-3": {
+      "office": "15th Court of Appeals Place 3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "tx-3rd-coa-chief-justice": {
+      "office": "Chief Justice, 3rd Court of Appeals",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "tx-sboe-5": {
+      "office": "Texas State Board of Education District 5",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "tx-hd-49": {
+      "office": "Texas House District 49",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-district-judges": {
+      "office": "Travis County District Judges (147th, 201st, 250th, 261st, 299th, 331st, 403rd, 419th, 455th, 459th)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-county-courts-at-law": {
+      "office": "Travis County Courts at Law 1-7",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-probate-1": {
+      "office": "Travis County Probate Court No. 1",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-county-judge": {
+      "office": "Travis County Judge",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-county-clerk": {
+      "office": "Travis County Clerk",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-district-clerk": {
+      "office": "Travis County District Clerk",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-county-treasurer": {
+      "office": "Travis County Treasurer",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-commissioner": {
+      "office": "Travis County Commissioner (precinct for 78701 to verify)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-jp": {
+      "office": "Travis County Justice of the Peace (precinct for 78701 to verify)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "tcad-board": {
+      "office": "Travis Central Appraisal District Board, Places 1-3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "austin-council-d9": {
+      "office": "Austin City Council District 9",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "acc-trustees": {
+      "office": "Austin Community College Trustees, Places 1-3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "ca-ad17": {
+      "office": "California State Assembly District 17",
+      "zip": [
+        "94103"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "ca-supreme-court-retention": {
+      "office": "California Supreme Court Associate Justices (retention)",
+      "zip": [
+        "94103"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "ca-court-of-appeal-retention": {
+      "office": "California Court of Appeal, First District Justices (retention)",
+      "zip": [
+        "94103"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    }
+  }
+}
