@@ -149,3 +149,73 @@ describe("Only 78701, 94103 and 10001 are served (cache and live paths)", () => 
     }
   });
 });
+
+describe("QA P1-6 / Civic (c): plain tier words, SBOE is a state office", () => {
+  it("no score or market-leader jargon in the tier UI", () => {
+    const src = readFileSync(join(process.cwd(), "app/RaceTiers.tsx"), "utf8").replace(/\/\*[\s\S]*?\*\//g, "");
+    expect(src).not.toMatch(/market leader|score \d|score ≥/i);
+  });
+  it("SBOE is labelled a state office", async () => {
+    const { impactOf } = await import("../app/RaceTiers");
+    expect(impactOf({ id: "tx-sboe-5", title: "State Board of Education, District 5", level: "state" } as never).why).toBe("state office");
+  });
+});
+
+describe("QA P2: .ics early-voting text", () => {
+  it("readable dates, no 'unsure', description span matches the event", async () => {
+    const { whenFor } = await import("../lib/endscreen.mjs");
+    for (const z of ["78701", "94103", "10001"]) {
+      const e = whenFor(z, "2026-10-29").events.find((x: { kind: string }) => x.kind === "early");
+      if (!e) continue;
+      expect(e.details).not.toMatch(/unsure/i);
+      expect(e.details).not.toMatch(/\d{4}-\d{2}-\d{2}/);
+      expect(e.start).toBe("2026-10-29");
+      expect(e.details).toContain("Thu, Oct 29");
+    }
+  });
+});
+
+describe("Civic qa_fixes2 + rule (a)", () => {
+  const read = (f: string) => readFileSync(join(process.cwd(), f), "utf8");
+  it("office text keyed by exact race id, sourced", () => {
+    const o = JSON.parse(read("data/offices.json")).offices;
+    for (const k of ["tx-sboe-5", "tx-hd-49", "travis-district-clerk", "travis-county-clerk", "travis-jp-4", "travis-jp-5", "travis-cad-place-1", "travis-cad-place-2", "travis-cad-place-3", "austin-council-9", "acc-trustee-place-1", "acc-trustee-place-2", "acc-trustee-place-3", "ca-ad-17", "sf-supervisor-6", "aisd-at-large-9"]) {
+      expect(o[k]?.learn, k).toBeTruthy();
+      expect(o[k].learn).not.toMatch(/^unsure/i);
+      expect(o[k].sourceUrl).toMatch(/^https:\/\//);
+    }
+    expect(o["tcad-board"]).toBeUndefined();
+  });
+  it("Corrected-Final2 bedsheet, www candidate sites, Travis turnout source", () => {
+    for (const f of ["data/ballots.json", "data/measures.json", "data/stances.json", "data/accountability.json", "data/turnout.json"]) {
+      const s = read(f);
+      expect(s, f).not.toContain("Final-FINAL");
+      expect(s, f).not.toMatch(/https:\/\/(anthonycristo|votedibianca)\.com/);
+      expect(s, f).not.toContain("lagovistatexas");
+    }
+    expect(read("data/measures.json")).toMatch(/\$1\.10 more per year on a \$100,000 homestead \(assumes a \$20,000 exemption\)/);
+  });
+  it("no keyword-matched tags reach the ballot payload; judicial candidates carry none", async () => {
+    const { ballotFor } = await import("../lib/tools");
+    for (const z of ["78701", "94103", "10001"]) for (const r of ballotFor(z)!.races) for (const c of r.candidates as { causes?: unknown; positions?: { match?: string }[] }[]) {
+      expect(c.causes).toBeUndefined();
+      for (const p of c.positions ?? []) expect(p.match ?? "").not.toMatch(/keyword/i);
+      if ((r as { judicial?: unknown }).judicial) expect(c.positions).toBeUndefined();
+    }
+  });
+});
+
+describe("Civic qa_fixes3: every race on 78701/94103/10001 has sourced office text", () => {
+  it("no 'not verified' office card", async () => {
+    const { ballotFor } = await import("../lib/tools");
+    const O = JSON.parse(readFileSync(join(process.cwd(), "data/offices.json"), "utf8")).offices;
+    const bad: string[] = [];
+    for (const z of ["78701", "94103", "10001"]) for (const r of ballotFor(z)!.races as { id: string; office?: string; officeSource?: string }[]) {
+      const o = O[r.id];
+      const ok = (o?.learn && o.sourceUrl && !/^\s*unsure/i.test(o.learn)) || (r.office && r.officeSource && !/^unsure/i.test(r.office));
+      if (!ok) bad.push(`${z}:${r.id}`);
+    }
+    expect(bad).toEqual([]);
+    expect(ballotFor("78701")!.races.some((r) => r.id === "travis-commissioner-2")).toBe(false);
+  });
+});

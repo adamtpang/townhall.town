@@ -7,9 +7,14 @@ const LABEL = { yes: "Yes", neutral: "Neutral", no: "No" } as const;
 
 /** Chat interview: Towny asks one open question, turns the reply into Yes/Neutral/No answers,
  *  and the voter checks them in the buttons below. Buttons stay the fallback. Nothing is stored on a server. */
-export default function TownyInterview({ zip, city, issues, onFill }: { zip: string; city: string; issues: { id: string; label: string }[]; onFill: (f: Fill[]) => void }) {
+export default function TownyInterview({ zip, city, issues, onFill, answered = 0 }: { zip: string; city: string; issues: { id: string; label: string }[]; onFill: (f: Fill[]) => void; answered?: number }) {
   const [open, setOpen] = useState(false);
-  const [msgs, setMsgs] = useState<Msg[]>([{ from: "towny", text: `What do you care about in ${city}? Say it in your own words, like “rents are too high” or “I'm unsure about the tax.”` }]);
+  const ask = `What do you care about in ${city}? Say it in your own words, like “rents are too high” or “I'm unsure about the tax.”`;
+  // Answers are saved once per browser and carry across ZIPs, so say so instead of starting over silently.
+  const opener = (n: number) => n > 0
+    ? `You've already answered ${n} of ${issues.length}, saved in this browser. Want to add more? Say it in your own words, like “rents are too high” or “I'm unsure about the tax.”`
+    : ask;
+  const [msgs, setMsgs] = useState<Msg[]>([{ from: "towny", text: ask }]);
   const [said, setSaid] = useState<string[]>([]);
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
@@ -44,14 +49,14 @@ export default function TownyInterview({ zip, city, issues, onFill }: { zip: str
 
   if (!open) return (
     <div className="mt-6" data-interview>
-      <button type="button" onClick={() => setOpen(true)} data-interview-start
+      <button type="button" onClick={() => { setMsgs([{ from: "towny", text: opener(answered) }]); setOpen(true); }} data-interview-start
         className="inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2]">
         Or tell Towny in your own words
       </button>
     </div>
   );
   return (
-    <div className="mt-6 border border-black/15 p-4 md:p-6" data-interview>
+    <div className="mt-6 max-w-2xl border border-black/15 p-4 md:p-6" data-interview>
       <ol className="space-y-3" aria-live="polite">
         {msgs.map((m, i) => (
           <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>

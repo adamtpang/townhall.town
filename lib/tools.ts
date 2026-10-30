@@ -39,7 +39,13 @@ function enrich(b: Ballot): Ballot {
     // Judicial races: no issue tags and no "why it matters" issue stats (judges can't campaign on issues).
     const meta = raceMeta(b.zip, r.id);
     const jud = !!(r as { judicial?: unknown }).judicial;
-    const cands = r.candidates.map((c) => withMoney(withLicensedPhoto({ ...c, causes: undefined }) /* no keyword-matched tags anywhere (Civic rule 1) */));
+    // Civic rule (a): no keyword-matched tags anywhere. `causes` are all keyword matches; `positions` keep only
+    // entries that are not keyword matches, and judicial candidates keep none.
+    const sourced = (ps: unknown) => (Array.isArray(ps) ? ps.filter((p: { match?: string }) => !/keyword/i.test(String(p?.match ?? ""))) : []);
+    const cands = r.candidates.map((c) => {
+      const ps = jud ? [] : sourced((c as { positions?: unknown }).positions);
+      return withMoney(withLicensedPhoto({ ...c, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
+    });
     return { ...r, meta: jud && meta ? { ...meta, why: null } : meta, candidates: cands /* Design 8:05: initials only where a photo is truly missing */ };
   }) };
 }

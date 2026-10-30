@@ -18,7 +18,7 @@ export default function TownyResearch({ zip, raceId, title, names, issues }: { z
     setState("running"); setSteps([]); setCites([]); setNone({}); setErr("");
     try {
       const res = await fetch(`/api/research?zip=${zip}&race=${encodeURIComponent(raceId)}&issues=${issues.join(",")}`);
-      if (!res.ok || !res.body) { const j = await res.json().catch(() => ({})); throw new Error(j.message || `Research failed (${res.status})`); }
+      if (!res.ok || !res.body) { const j = await res.json().catch(() => ({})); throw new Error(res.status === 429 ? "Too many research requests in the last minute. Please wait a moment and try again." : j.error?.message || j.message || `Research failed (${res.status})`); }
       const rd = res.body.getReader(); const dec = new TextDecoder(); let buf = "";
       for (;;) {
         const { value, done } = await rd.read(); if (done) break;
@@ -44,7 +44,9 @@ export default function TownyResearch({ zip, raceId, title, names, issues }: { z
         </button>
       ) : (
         <div className="border-l border-black/15 pl-4" aria-live="polite">
-          <p className="text-xs leading-4 text-black/60">Towny reads each candidate&rsquo;s listed pages and quotes them word for word, with the link. Quotes are not checked by a person and are not counted in overlap.</p>
+          <p className="text-xs leading-4 text-black/60">Towny reads each candidate&rsquo;s listed pages and news results the same way, and shows only words in quotation marks that the page attributes to the candidate by name, copied exactly, with the link. Quotes are not checked by a person and are not counted in overlap.</p>
+          {(() => { const total = steps.length, fin = steps.filter((x) => x.status !== "running").length; const pct = state === "done" ? 100 : total ? Math.round((fin / total) * 100) : 4;
+            return <div className="mt-3 h-1 w-full rounded-none bg-black/10" role="progressbar" aria-label="Research progress" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100} data-research-progress><div className="h-1 rounded-none bg-black transition-[width]" style={{ width: `${pct}%` }} /></div>; })()}
           {names.map((n) => {
             const st = steps.filter((s) => s.name === n), cs = cites.filter((c) => c.name === n);
             if (!st.length && !none[n]) return null;

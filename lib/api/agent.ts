@@ -66,11 +66,14 @@ function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
       description: "List every race and statewide measure on the Nov 3, 2026 ballot for the ZIP, with what each office controls.",
       inputSchema: z.object({ zip: z.string() }),
       execute: async () => wrap("getRaces", { zip }, () => getRaces(zip)),
+      // The model only needs ids and titles; the full sourced records go to the client in `result.ballot`.
+      toModelOutput: (r: any) => ({ type: "json", value: { zip: r.zip, electionDate: r.electionDate, raceCount: r.races.length, measureCount: r.measures.length, races: r.races.map((x: any) => ({ id: x.id, title: x.title })), measures: r.measures.map((x: any) => ({ id: x.id, title: x.title })) } }),
     }),
     getCandidates: tool({
       description: "Get general-election candidates (name, party, incumbent) for the races. Pass race ids from getRaces, or none for all.",
       inputSchema: z.object({ zip: z.string(), raceIds: z.array(z.string()).optional() }),
       execute: async () => wrap("getCandidates", { zip }, () => getCandidates(zip)),
+      toModelOutput: (r: any) => ({ type: "json", value: { zip: r.zip, races: r.races.map((x: any) => ({ id: x.id, title: x.title, candidates: x.candidates.map((c: any) => ({ name: c.name, party: c.party ?? null, incumbent: !!c.incumbent })) })) } }),
     }),
     getMarketOdds: tool({
       description: "Fetch live prediction-market odds (Polymarket, Kalshi) for race ids / measure ids. Returns 'no market found' when none exists.",
@@ -87,6 +90,15 @@ function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
 
 // System prompt: Civic's Towny prompt, verbatim (lib/townyPrompt.ts), with {{TODAY}} in the ZIP's time zone.
 const systemFor = (zip: string) => townyPrompt(longDateIn(getElectionDates(zip)?.timezone ?? "America/Chicago"));
+
+const NARRATION_TOKENS = 320;
+/** Cut a length-capped narration back to its last complete line or sentence and say where the rest is. */
+export function trimNarration(t: string): string {
+  const s = String(t ?? "");
+  const cut = Math.max(s.lastIndexOf("\n"), s.search(/[.!?](?=[^.!?]*$)/) + 1);
+  const head = (cut > 0 ? s.slice(0, cut) : s).trim();
+  return head ? `${head}\n\nThe full list of races and measures, with sources, is in the ballot data.` : "";
+}
 
 async function run(zip: string, emit: Emit) {
   const results: Record<string, unknown> = {};
@@ -107,9 +119,11 @@ async function run(zip: string, emit: Emit) {
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
         tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools, ...townyTools },
         stopWhen: stepCountIs(3),
+        // Keeps the ballot response fast on long ballots (78701 has 58 races); the full list is in result.ballot.
+        maxOutputTokens: NARRATION_TOKENS,
         abortSignal: AbortSignal.timeout(25000),
       });
-      narration = res.text;
+      narration = res.finishReason === "length" ? trimNarration(res.text) : res.text;
       model = m;
       mode = "live";
       error = null;

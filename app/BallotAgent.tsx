@@ -1,6 +1,8 @@
 "use client";
 import { initials } from "../components/PortraitRow";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { voteMatters } from "../lib/voteMatters.mjs";
 import { CheckCircle2, CircleDashed, ExternalLink, LocateFixed, Loader2, MapPin, AlertTriangle, Info } from "lucide-react";
 import type { Politician, Race } from "../lib/types";
 import type { Ballot, MarketQuote } from "../lib/tools";
@@ -13,12 +15,16 @@ import { Progress } from "../components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Tip, TooltipProvider } from "../components/ui/tooltip";
-import IssueMatch from "./IssueMatch";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import RaceTiers from "./RaceTiers";
 import { COVERED_ZIPS, UNSUPPORTED_MESSAGE as UNSUPPORTED } from "../lib/site";
 import { measuresFor } from "../lib/measures";
+import dynamic from "next/dynamic";
+
+// QA P2 bundle trim: everything below the ZIP box (tiers + office text, issues, Towny chat, research, plan)
+// only renders after a ballot loads, so it is fetched then, not on first paint.
+const RaceTiers = dynamic(() => import("./RaceTiers"), { ssr: false, loading: () => <p className="py-24 text-base text-black/60">Loading races…</p> });
+const IssueMatch = dynamic(() => import("./IssueMatch"), { ssr: false });
 
 const NYC_READY = true;
 const DEMO = [
@@ -217,6 +223,17 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
   );
 }
 
+/** Design 2: one sourced sentence under the hero subline, only once a ZIP is known. */
+function HeroStat({ vm }: { vm: { text: string; sources: { label: string; url: string }[] } }) {
+  return (
+    <div className="mt-12 max-w-2xl border-l-2 border-black pl-4" data-vote-matters>
+      <p className="text-sm font-[530] text-black/60">Your vote matters most here</p>
+      <p className="mt-1 text-xl leading-7 font-[450] text-black">{vm.text}</p>
+      <p className="mt-1 text-xs leading-4">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-3 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
+    </div>
+  );
+}
+
 export default function BallotAgent() {
   const [zip, setZip] = useState("");
   const [busy, setBusy] = useState(false);
@@ -311,8 +328,13 @@ export default function BallotAgent() {
   const picked = problems.filter((p) => care[p.topic || p.id]);
   const marketRaces = useMemo(() => races.filter((r) => marketFor(markets, r.id)), [races, markets]);
 
+  const [heroSlot, setHeroSlot] = useState<HTMLElement | null>(null);
+  useEffect(() => setHeroSlot(document.getElementById("hero-stat")), []);
+  const vm = b ? voteMatters(b.zip) : null;
+
   return (
     <TooltipProvider>
+      {heroSlot && vm ? createPortal(<HeroStat vm={vm} />, heroSlot) : null}
       <form
         onSubmit={(e) => {
           e.preventDefault();

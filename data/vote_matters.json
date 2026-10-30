@@ -1,14 +1,37 @@
 {
-  "method": "Closest statewide contest in the state's last general election, from the official statement of vote, next to eligible county residents who did not vote that year (data/turnout.json). A ZIP with no sourced close result shows nothing.",
-  "zips": {
-    "94103": {
-      "contest": "Proposition 32 (minimum wage), California, Nov 5, 2024",
-      "closestOf": "the 10 statewide measures on the 2024 ballot (Props 2-6 and 32-36)",
-      "yes": 7469803, "no": 7686126, "total": 15155929,
-      "sourceUrl": "https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/59-state-ballot-measures.pdf",
-      "county": "San Francisco", "eligible": 616994, "cast": 412231,
-      "eligibleSourceUrl": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US06075",
-      "castSourceUrl": "https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/03-voter-participation-stats-by-county.pdf"
-    }
+ "method": "One sourced sentence per ZIP. Where the state's last general had a close statewide contest, its margin next to adult citizens (Census ACS 2024 1-year B29001) who did not vote that year; otherwise official county turnout. A ZIP with no sourced numbers shows nothing.",
+ "zips": {
+  "94103": {
+   "contest": "Proposition 32 (minimum wage), California, Nov 5, 2024",
+   "closestOf": "the 10 statewide measures on the 2024 ballot (Props 2-6 and 32-36)",
+   "yes": 7469803,
+   "no": 7686126,
+   "total": 15155929,
+   "sourceUrl": "https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/59-state-ballot-measures.pdf",
+   "county": "San Francisco",
+   "eligible": 616994,
+   "cast": 412231,
+   "eligibleSourceUrl": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US06075",
+   "castSourceUrl": "https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/03-voter-participation-stats-by-county.pdf",
+   "kind": "margin",
+   "short": "Prop 32",
+   "year": "2024",
+   "who": "adult citizens in SF (Census estimate)"
+  },
+  "78701": {
+   "kind": "turnout",
+   "county": "Travis County",
+   "election": "Nov 2024",
+   "registered": 925858,
+   "cast": 587090,
+   "turnoutPct": 63.41,
+   "eligible": 946382,
+   "who": "adult citizens in Travis County (Census estimate)",
+   "castSourceUrl": "https://votetravis.gov/wp-content/uploads/G24-Final-Reconciliation_Updated.pdf",
+   "castSourceLabel": "Travis County Clerk – G24 Election Reconciliation, Official Totals",
+   "supplementUrl": "https://votetravis.gov/wp-content/uploads/G24-Provisional-Hand-Count-w_Cover.pdf",
+   "supplementLabel": "About 19 provisional ballots counted Nov 18, 2024",
+   "eligibleSourceUrl": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US48453"
   }
+ }
 }

@@ -20,6 +20,7 @@ export default function Home() {
             <span className="max-sm:block">Your vote matters.</span>
           </p>
           <p className="mt-3 max-w-[36ch] text-base leading-6 font-[450] text-black/60">Who&rsquo;s running, when to vote, where to go. Sourced and nonpartisan.</p>
+          <div id="hero-stat" />
         </section>
         <BallotAgent />
         <div className="mt-32">

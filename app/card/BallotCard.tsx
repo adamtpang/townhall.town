@@ -45,7 +45,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
       {early ? <p className="mt-1 text-base text-black/80">Early voting {fmt(early.start).replace(/, \d{4}$/, "")} to {fmt(early.end)}. <a href={early.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
       {when.mail ? <p className="mt-1 text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
 
-      <section className="mt-10 border-t border-black pt-6">
+      <section className="mt-10 border-t border-black/15 pt-6">
         <h2 className="text-sm font-[530] text-black/60">Where</h2>
         {site ? (<>
           <p className="mt-2 text-base font-[530]">{site.name}</p><p className="text-base text-black/80">{site.address}</p>
@@ -56,7 +56,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
         ) : <p className="mt-2 text-base text-black/60">No sourced polling place for this ZIP yet.</p>}
       </section>
 
-      <section className="mt-10 border-t border-black pt-6">
+      <section className="mt-10 border-t border-black/15 pt-6">
         <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
         <p className="mt-1 text-xs leading-4 text-black/60" data-overlap-caption>Overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
         {answers === null ? <p className="mt-3 text-base text-black/60">Loading…</p> : rows.length === 0 ? (

@@ -25,6 +25,8 @@ export function impactOf(r: RaceLite): { v: number; why: string } {
   const t = r.title.toLowerCase();
   if (/president|u\.s\. senate|^governor/.test(t)) return { v: 3, why: "top federal or statewide office" };
   if (r.level === "measure") return { v: 2, why: "statewide ballot measure" };
+  // Statewide boards (SBOE, Railroad Commission) are state offices, not local (QA P2 / Civic rule c).
+  if (/state board of education|railroad commission/.test(t)) return { v: 1, why: "state office" };
   // County / city / precinct offices are local even when titled Treasurer or Commissioner (QA P2).
   if (/\bcounty\b|\bcity\b|precinct|municipal|board of/.test(t) && !/court at law|district court|court of|justice/.test(t)) return { v: 1, why: "local office" };
   if (/u\.s\. house|lieutenant governor|attorney general|comptroller|secretary of state|treasurer|controller|insurance commissioner|superintendent|commissioner/.test(t))
@@ -74,8 +76,8 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
   ].filter((g) => g.list.length);
   const judicialGroup = judicial.length ? [{ key: "judicial", name: `Judicial races (${judicial.length})`, list: judicial, eager: false, open: false }] : [];
   const raceItem = ({ r, why }: { r: RaceLite; why: string }, eager: boolean) => (
-                  <li key={r.id}>
-                    <p className="text-lg font-medium">{r.title}</p>
+                  <li key={r.id} className="font-[450]">
+                    <p className="text-lg font-[530]" data-race-title>{r.title}</p>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
                     <p className="text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No market data" ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
                     {!r.meta || r.meta.closeness === "No market data" ? <p className="text-xs leading-4 text-black/60" data-no-odds>No market odds yet</p> : null}
@@ -113,7 +115,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
-      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake means a top office in a close race. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings or prediction markets call it close; otherwise &ldquo;Not closely contested&rdquo;. Neither says who is ahead.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings or prediction markets call it close; otherwise &ldquo;Not closely contested&rdquo;. Neither says who is ahead.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
