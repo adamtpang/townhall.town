@@ -1,4 +1,209 @@
 {
- "fetchedAt": null,
- "zips": {}
+ "fetchedAt": "2026-10-30T18:25:40.684Z",
+ "zips": {
+  "10001": [
+   {
+    "title": "Democrats' early voting lead in NJ keeps growing ahead of Election Day",
+    "url": "https://gothamist.com/news/democrats-early-voting-lead-in-nj-keeps-growing-ahead-of-election-day",
+    "outlet": "Gothamist",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Editor’s note: Finding – and teaching – America’s Next Top City Council Member",
+    "url": "https://www.cityandstateny.com/opinion/2026/10/editors-note-finding-and-teaching-americas-next-top-city-council-member/416936/",
+    "outlet": "City & State NY",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "NYC Council takes key step toward Mamdani's promised Department of Community Safety",
+    "url": "https://gothamist.com/news/nyc-council-takes-key-step-toward-mamdanis-promised-department-of-community-safety",
+    "outlet": "Gothamist",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "The evolution of Kathy Hochul and key Jewish voting blocs",
+    "url": "https://www.cityandstateny.com/politics/2026/10/evolution-kathy-hochul-and-key-jewish-voting-blocs/416932/",
+    "outlet": "City & State NY",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "NY progressives have found a way to vote for Hochul, with an asterisk",
+    "url": "https://gothamist.com/news/ny-progressives-have-found-a-way-to-vote-for-hochul-with-an-asterisk",
+    "outlet": "Gothamist",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "A guide to New York’s invented ballot lines this election",
+    "url": "https://www.cityandstateny.com/politics/2026/10/guide-new-yorks-invented-ballot-lines-election/416917/",
+    "outlet": "City & State NY",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "How NYC voters could determine outcome of race for governor",
+    "url": "https://gothamist.com/news/how-nyc-voters-could-determine-outcome-of-race-for-governor",
+    "outlet": "Gothamist",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "Constantino campaign appears to have paid $28K to woman who threatened Gendebien with DEC complaint",
+    "url": "https://www.cityandstateny.com/politics/2026/10/constantino-campaign-appears-have-paid-28k-woman-who-threatened-gendebien-dec-complaint/416899/",
+    "outlet": "City & State NY",
+    "date": "2026-10-28"
+   },
+   {
+    "title": "NY's housing crisis is on the ballot. Here's what the candidates say they'll do about it.",
+    "url": "https://gothamist.com/news/nys-housing-crisis-is-on-the-ballot-heres-what-the-candidates-say-theyll-do-about-it",
+    "outlet": "Gothamist",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "NYC Council members back Linda Tigani amid Mamdani plans to replace her",
+    "url": "https://www.cityandstateny.com/politics/2026/10/nyc-council-members-back-linda-tigani-amid-mamdani-plans-replace-her/416898/",
+    "outlet": "City & State NY",
+    "date": "2026-10-28"
+   },
+   {
+    "title": "Mamdani extends NYC racial equity leader's term after Council pushes back on replacement",
+    "url": "https://gothamist.com/news/mamdani-extends-term-for-racial-equity-leader-after-city-council-pushes-back-on-replacement",
+    "outlet": "Gothamist",
+    "date": "2026-10-28"
+   },
+   {
+    "title": "New Siena poll has Hochul up 14 points over Blakeman days before election",
+    "url": "https://www.cityandstateny.com/politics/2026/10/new-siena-poll-has-hochul-14-points-over-blakeman-days-election/416857/",
+    "outlet": "City & State NY",
+    "date": "2026-10-28"
+   }
+  ],
+  "78701": [
+   {
+    "title": "Ken Paxton's political rise, from the Tea Party to Trump's MAGA movement",
+    "url": "https://www.kut.org/politics/2026-10-30/ken-paxtons-political-roots-tea-party-trump-maga-texas-us-senate-race",
+    "outlet": "KUT News",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Democrats ride THC ban backlash in race for lieutenant governor",
+    "url": "https://www.kut.org/politics/2026-10-30/texas-lieutenant-governor-race-hemp-cannabis-thc-election-2026",
+    "outlet": "KUT News",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Texas judges on the state's highest courts are on the midterm ballot. Here's what to know",
+    "url": "https://www.kut.org/politics/2026-10-30/who-is-running-for-texas-supreme-court-criminal-appeals-15th-judge-candidates",
+    "outlet": "KUT News",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Republicans in Texas Panhandle seek major change to ballot counting process statewide",
+    "url": "https://www.kut.org/politics/2026-10-29/republicans-in-texas-panhandle-seek-major-change-to-ballot-counting-process-statewide",
+    "outlet": "KUT News",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "Abbott’s appeal freezes Hinojosa’s access to Musk emails",
+    "url": "https://www.kut.org/politics/2026-10-28/gina-hinojosa-abbott-musk-emails-appeals-court-stay",
+    "outlet": "KUT News",
+    "date": "2026-10-28"
+   },
+   {
+    "title": "Trump visits Lubbock and Corpus Christi as Republicans fight to hold Texas’ U.S. Senate seat",
+    "url": "https://www.kut.org/politics/2026-10-27/trump-texas-visit-paxton-senate-election-2026",
+    "outlet": "KUT News",
+    "date": "2026-10-27"
+   },
+   {
+    "title": "Hays County growing pains frame Texas House District 45 race",
+    "url": "https://www.kut.org/politics/2026-10-27/hays-county-texas-house-district-45-race-buda-kyle-san-marcos-2026-election",
+    "outlet": "KUT News",
+    "date": "2026-10-27"
+   },
+   {
+    "title": "Gina Hinojosa wins court order to review Abbott-Musk emails, Gov. Abbott appeals",
+    "url": "https://www.kut.org/politics/2026-10-27/gina-hinojosa-abbott-musk-emails-court-ruling-appeal",
+    "outlet": "KUT News",
+    "date": "2026-10-27"
+   },
+   {
+    "title": "Follow along as these Lakeway seniors head to the polls, even with cancer and broken bones",
+    "url": "https://www.kut.org/politics/2026-10-27/austin-tx-seniors-voting-midterms",
+    "outlet": "KUT News",
+    "date": "2026-10-27"
+   }
+  ],
+  "94103": [
+   {
+    "title": "Speaker emerita, speaking: Nancy Pelosi’s final push to elect Connie Chan to Congress",
+    "url": "https://missionlocal.org/2026/10/nancy-pelosi-connie-chan-congress/",
+    "outlet": "Mission Local",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Jane Kim and Ben Allen squabble over state-run wildfire insurance",
+    "url": "https://calmatters.org/newsletter/jane-kim-ben-allen-wildfire-insurance/",
+    "outlet": "CalMatters",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Mayor’s ‘strong’ policies leave SFPD with Flock data longer than other Bay Area cities",
+    "url": "https://missionlocal.org/2026/10/police-flock-photos-bay-area/",
+    "outlet": "Mission Local",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "California can’t afford to keep Prop. 13 loopholes open when billions of dollars are on the line",
+    "url": "https://calmatters.org/commentary/2026/10/proposition-13-california-loophole-taxes/",
+    "outlet": "CalMatters",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Meet the District 10 Candidates: Should SFUSD remove the lottery system?",
+    "url": "https://missionlocal.org/2026/10/meet-the-district-10-candidates-school-lottery/",
+    "outlet": "Mission Local",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "California’s campaign drama entices political junkies, but serious issues get short shrift",
+    "url": "https://calmatters.org/commentary/2026/10/political-junkies-california-campaign-drama/",
+    "outlet": "CalMatters",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Meet the District 8 candidates: Who will you vote for?",
+    "url": "https://missionlocal.org/2026/10/san-francisco-district-8-candidates-ballot-voting/",
+    "outlet": "Mission Local",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "How Prop. 45 could reshape California’s fight over data centers",
+    "url": "https://calmatters.org/economy/technology/2026/10/prop-45-could-open-door-for-california-data-centers/",
+    "outlet": "CalMatters",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Union behind California billionaire tax hit by strike from own campaign staff, days before vote",
+    "url": "https://missionlocal.org/2026/10/billionaire-tax-prop-40-wealth-seiu-uhw/",
+    "outlet": "Mission Local",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "Google and Meta spent big this election cycle. Is Big Tech trying to ‘buy the Legislature’?",
+    "url": "https://calmatters.org/economy/technology/2026/10/tech-interests-spend-big-on-california-election/",
+    "outlet": "CalMatters",
+    "date": "2026-10-30"
+   },
+   {
+    "title": "Real-estate money floods fight against San Francisco ‘social housing’ measure",
+    "url": "https://missionlocal.org/2026/10/san-francisco-proposition-i-affordable-social-housing/",
+    "outlet": "Mission Local",
+    "date": "2026-10-29"
+   },
+   {
+    "title": "Candidates are giving lowkey instructions on how to attack their opponents. Here’s how it works",
+    "url": "https://calmatters.org/politics/2026/10/california-legislature-election-redboxing/",
+    "outlet": "CalMatters",
+    "date": "2026-10-30"
+   }
+  ]
+ }
 }
