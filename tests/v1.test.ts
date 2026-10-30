@@ -158,7 +158,7 @@ describe("OpenAPI versioning and response coverage", () => {
   const spec = openApiSpec() as any;
   const ops = Object.entries(spec.paths).flatMap(([p, item]: [string, any]) => Object.entries(item).map(([m, op]) => ({ p, m, op: op as any })));
   it("lists the /v1 paths first and sets info.version", () => {
-    expect(Object.keys(spec.paths)).toEqual(["/api/v1/agent", "/api/v1/locate", "/api/agent", "/api/locate", "/api/research", "/api/interview"]);
+    expect(Object.keys(spec.paths)).toEqual(["/api/v1/agent", "/api/v1/locate", "/api/agent", "/api/locate", "/api/research", "/api/interview", "/api/towny/followup"]);
     expect(spec.info.version).toBe("1.0.0");
     expect(spec.info.description).toContain("RFC 9745");
     expect(spec.info.description).toContain("RFC 8594");
