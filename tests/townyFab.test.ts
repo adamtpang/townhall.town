@@ -84,7 +84,7 @@ describe("Towny FAQ and brief", () => {
     expect(TOWNY_BRIEF).toMatch(/never (shared|sold)|not (shared|sold)/i);
     expect(townyBrief(false)).not.toMatch(/FEC money|campaign money/i);
     expect(townyBrief(true)).toMatch(/FEC/);
-    expect(src("lib/api/agent.ts")).toContain("TOWNY_BRIEF");
+    // lib/api/agent.ts is Claude's (no-touch on feat/towny-fab-v3, 9229c66): the brief is used by Towny's own routes, not the ballot agent.
     expect(src("lib/api/agent.ts")).toContain("townyPrompt(");
   });
   it("new files: no letter grades, no emoji, no 10-12px text", () => {

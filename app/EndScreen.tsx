@@ -139,7 +139,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
           ) : (
             <p className="mt-4 text-base text-black/60">No sourced polling place for this ZIP yet.</p>
           )}
-          {where.portalUrl ? <p className="mt-2 text-sm"><a href={where.portalUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-[#3760F2]" data-end-portal>Voter Portal ↗{ext}</a></p> : null}
+          {where.portalUrl ? <p className="mt-2 text-sm"><a href={where.portalUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link" data-end-portal>Voter Portal ↗{ext}</a></p> : null}
         </div>
 
         {/* WHEN */}

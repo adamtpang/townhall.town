@@ -23,7 +23,7 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
-      <main className="mx-auto max-w-site px-6 pb-24 lg:px-10 lg:pb-0">
+      <main className="mx-auto max-w-site px-6 lg:px-10 pb-24 lg:pb-0">
         {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
         <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
           <h1 className={`${H1} [text-wrap:balance]`}>
