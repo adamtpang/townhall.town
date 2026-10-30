@@ -5,12 +5,15 @@ import { getElectionDates } from "../logistics";
 export type FaqLink = { label: string; url: string };
 export type Faq = { id: string; q: string; match: RegExp; a: string; links: FaqLink[] };
 
+export const UNSURE_DATE = "Unsure: we couldn't confirm this in a cited source.";
 export const WHO_LINE = "I don't pick for you. I can show where each candidate's sourced positions overlap with your answers.";
+export const OFFICE_NAMES: Record<string, string> = { "78701": "Travis County Elections", "94103": "SF Department of Elections", "10001": "NYC Board of Elections" };
 export const OFFICES: Record<string, FaqLink> = {
   "78701": { label: "Travis County Elections", url: "https://votetravis.gov" },
-  "94103": { label: "SF Department of Elections", url: "https://sfelections.org" },
+  "94103": { label: "sfelections.org", url: "https://sfelections.org" }, // chip label per Civic, Oct 30 1:37 PM CT
   "10001": { label: "NYC Board of Elections", url: "https://vote.nyc" },
 };
+export const VOTE_GOV: FaqLink = { label: "vote.gov", url: "https://vote.gov" };
 const ABOUT = { label: "About townhall.town", url: "https://townhall.town/about" };
 const GITHUB = { label: "GitHub", url: "https://github.com/adamtpang/townhall.town" };
 
@@ -18,7 +21,8 @@ export const FAQS: Faq[] = [
   {
     id: "match", q: "How are candidates matched?",
     match: /\b(match|matched|matching|overlap|compare|lines? up)\b/i,
-    a: "Towny doesn't rank, pick or grade candidates. It shows where each candidate's sourced positions overlap with your answers, on a -2 to +2 scale. That overlap is not a recommendation. Unsure never counts. \"No public position found yet\" means we searched and found nothing citable. It doesn't mean the candidate has no view.",
+    // Civic, Oct 30 1:38 PM CT: exact wording.
+    a: "It shows where each candidate's sourced positions overlap with your answers, which you give on a -2 to +2 scale.",
     links: [ABOUT],
   },
   {
@@ -36,8 +40,8 @@ export const FAQS: Faq[] = [
   {
     id: "zips", q: "Why only 3 ZIPs?",
     match: /\b(only (3|three)|why .*zips?|other zips?|more zips?|coverage)\b/i,
-    a: "Each ballot is checked by hand against official sources. We started with Austin 78701, San Francisco 94103 and New York City 10001. Other ZIPs: Austin, SF and NYC for now.",
-    links: [ABOUT],
+    a: "Each ballot is checked against official sources. We started with Austin 78701, San Francisco 94103 and New York City 10001. For other places, check vote.gov.",
+    links: [VOTE_GOV, ABOUT],
   },
   {
     id: "city", q: "How do I add my city?",
@@ -63,18 +67,21 @@ const longDate = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateStrin
 export const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
 
 /** "When and where": Election Day plus the ZIP's early-voting window from Civic's election_dates.json, date-aware.
- *  No hours or sites here; the official office link has them. Unknown ZIP: the three official offices. */
+ *  No hours or sites here; the official office link has them. Unknown ZIP: the three official offices.
+ *  Civic, Oct 30 1:37-1:38 PM CT: 78701 (ends Oct 30, votetravis.gov) and 10001 (through Sun Nov 1, vote.nyc) are verified in
+ *  their cited sources. 94103 in-person early voting ends Mon Nov 2 (Nov 3 is Election Day), so its data end is 2026-11-02.
+ *  A ZIP with no cited end date says UNSURE_DATE plus the official office link; never an invented date. */
 export function whenWhere(zip: string | null, today = todayCT()): { a: string; links: FaqLink[] } {
   const ed = "Election Day is Tuesday, November 3, 2026.";
   const office = zip ? OFFICES[zip] : undefined;
   if (!zip || !office) return { a: `${ed} For hours and polling places, check your official election office.`, links: ["78701", "94103", "10001"].map((z) => OFFICES[z]) };
   const j = getElectionDates(zip);
   const ev = j?.earlyVoting;
-  let early = " Early voting: no record found.";
+  let early = ` ${UNSURE_DATE}`;
   if (ev?.end) early = ev.end < today ? ` Early voting ended ${longDate(ev.end)}.` : ev.end === today ? ` Early voting ends today, ${longDate(ev.end)}.` : ` Early voting runs through ${longDate(ev.end)}.`;
   const links = [office];
   if (ev?.sourceUrl && ev.sourceUrl !== office.url) links.push({ label: "Early voting source", url: ev.sourceUrl });
-  return { a: `${ed}${early} For hours and polling places, check ${office.label}.`, links };
+  return { a: `${ed}${early} For hours and polling places, check ${OFFICE_NAMES[zip]}.`, links };
 }
 
 /** The FAQ entry for a question, or null. */

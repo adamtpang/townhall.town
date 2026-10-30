@@ -6,10 +6,14 @@ export const TOWNY_LABEL = "Ask Towny";
 export const TOWNY_OPENER = "Hi, I'm Towny. What do you want to know about your ballot in Austin, San Francisco or New York City?";
 export const TOWNY_CAPTION = "Nonpartisan. Every fact links its source.";
 export const TOWNY_SUGGESTIONS = ["What's on my ballot?", "Where do I vote?", "Help me think through an issue"] as const;
-import { WHO_LINE } from "./towny/faq";
+import { WHO_LINE, VOTE_GOV } from "./towny/faq";
 export const WHO_TO_VOTE_REPLY = WHO_LINE;
 export const WHO_CHIP = "Show where they overlap with my answers";
-export const OUT_OF_SCOPE = UNSUPPORTED_MESSAGE; // "Austin, SF and NYC for now."
+// Civic, Oct 30 1:37 PM CT: inside the Towny chat, places we don't cover get this line with vote.gov linked. The page's ZIP
+// box keeps UNSUPPORTED_MESSAGE ("Austin, SF and NYC for now.") exactly, per Adam's rule and its tests.
+export const OUT_OF_SCOPE = "Towny covers Austin (78701), San Francisco (94103) and New York City (10001) right now. For your ballot, check vote.gov.";
+export const OUT_OF_SCOPE_LINKS = [VOTE_GOV];
+export const ZIP_BOX_UNSUPPORTED = UNSUPPORTED_MESSAGE;
 export const ASK_ZIP = "Which ZIP? 78701, 94103 or 10001.";
 export const THINKING = "Towny is thinking";
 export const PLACEHOLDER = "Ask about your ballot";
@@ -24,7 +28,7 @@ const OTHER_PLACE = /\b(houston|dallas|san antonio|fort worth|el paso|los angele
 export const zipsIn = (text: string) => (String(text).match(/\b\d{5}\b/g) || []);
 
 export type Route =
-  | { kind: "fixed"; reply: string; chips?: string[]; zip?: string }
+  | { kind: "fixed"; reply: string; chips?: string[]; zip?: string; links?: { label: string; url: string }[] }
   | { kind: "think"; zip: string | null }
   | { kind: "ask"; zip: string };
 
@@ -33,8 +37,8 @@ export function routeTurn(text: string, zip: string | null): Route {
   const t = String(text || "").trim();
   const zs = zipsIn(t);
   const bad = zs.find((z) => !COVERED_ZIPS.includes(z));
-  if (bad) return { kind: "fixed", reply: OUT_OF_SCOPE };
-  if (!zs.length && OTHER_PLACE.test(t)) return { kind: "fixed", reply: OUT_OF_SCOPE };
+  if (bad) return { kind: "fixed", reply: OUT_OF_SCOPE, links: OUT_OF_SCOPE_LINKS };
+  if (!zs.length && OTHER_PLACE.test(t)) return { kind: "fixed", reply: OUT_OF_SCOPE, links: OUT_OF_SCOPE_LINKS };
   const z = zs[0] ?? zip;
   const known = z && COVERED_ZIPS.includes(z) ? z : null;
   if (ASKS_WHO.test(t)) return { kind: "fixed", reply: WHO_TO_VOTE_REPLY, chips: [WHO_CHIP], zip: known ?? undefined };

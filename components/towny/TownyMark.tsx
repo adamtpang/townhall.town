@@ -2,7 +2,7 @@
 // swap the SVG body here to change it everywhere (floating button and panel header).
 // Design spec (towny-c.svg): viewBox 64, currentColor draws the box; --k (set to the surface behind it) cuts the slot, eyes and smile.
 export function TownyMark({ size = 36, label, className }: { size?: number; label?: string; className?: string }) {
-  const face = "var(--k, #F2F2F2)";
+  const face = "var(--k, hsl(var(--background)))"; // theme token fallback, no hardcoded colour
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} fill="none" className={className} data-towny-mark="c"
       {...(label ? { role: "img", "aria-label": label } : { "aria-hidden": true, focusable: "false" })}>

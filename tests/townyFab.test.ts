@@ -47,7 +47,8 @@ describe("Towny floating button and panel", () => {
   it("only 78701, 94103, 10001; anything else gets exactly the scope line; Houston stays hidden", () => {
     for (const q of ["77002", "my zip is 90012", "What's on my ballot in Houston?", "Dallas", "Chicago ballot"]) {
       const r = chat.routeTurn(q, null);
-      expect(r.kind === "fixed" && r.reply).toBe("Austin, SF and NYC for now.");
+      expect(r.kind === "fixed" && r.reply).toBe("Towny covers Austin (78701), San Francisco (94103) and New York City (10001) right now. For your ballot, check vote.gov.");
+      expect(r.kind === "fixed" && r.links?.map((l) => l.url)).toEqual(["https://vote.gov"]);
     }
     for (const z of ["78701", "94103", "10001"]) expect(chat.routeTurn(z, null).kind).toBe("fixed");
     expect(chat.routeTurn("What's on my ballot?", "94103").kind).toBe("ask");
@@ -60,9 +61,9 @@ describe("Towny FAQ and brief", () => {
     expect(FAQS.map((f) => f.q)).toEqual(["How are candidates matched?", "Where does the data come from?", "Is it partisan?", "Why only 3 ZIPs?", "How do I add my city?", "Who should I vote for?", "When and where do I vote?"]);
     for (const f of FAQS) { const a = faqFor(f.q, "78701", "2026-10-30")!; expect(a.a.length).toBeGreaterThan(20); if (f.id === "who") { expect(a.a).toBe(WHO_LINE); continue; } expect(a.links.length).toBeGreaterThan(0); for (const l of a.links) expect(l.url).toMatch(/^https:\/\//); }
   });
-  it("matching answer: overlap, not a recommendation, unsure never counts, no grades", () => {
+  it("matching answer: Civic's exact line (1:38 PM CT), overlap on a -2 to +2 scale, no grades", () => {
     const a = faqFor("How are candidates matched?", null)!.a;
-    expect(a).toMatch(/-2 to \+2/); expect(a).toMatch(/not a recommendation/); expect(a).toMatch(/[Uu]nsure never counts/);
+    expect(a).toBe("It shows where each candidate's sourced positions overlap with your answers, which you give on a -2 to +2 scale.");
   });
   it("when and where: Election Day, official office link, early voting date-aware, no hours", () => {
     const tx = whenWhere("78701", "2026-10-30");

@@ -40,7 +40,6 @@ export default function TownyFab() {
   const [zip, setZip] = useState<string | null>(null);
   const [zipFocused, setZipFocused] = useState(false);
   const [lifted, setLifted] = useState(false);
-  const [announce, setAnnounce] = useState("");
   const fab = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
@@ -70,6 +69,13 @@ export default function TownyFab() {
 
   const close = useCallback(() => { setOpen(false); requestAnimationFrame(() => fab.current?.focus()); }, []);
   useEffect(() => { if (open) { setZip((z) => z ?? pageZip()); requestAnimationFrame(() => input.current?.focus()); } }, [open]);
+  // Design, Oct 30 1:38 PM CT: while the phone sheet is open the page behind it does not scroll. Desktop (lg) keeps the page live.
+  useEffect(() => {
+    if (!open || window.matchMedia("(min-width: 1024px)").matches) return;
+    const b = document.body.style; const prev = b.overflow;
+    b.overflow = "hidden"; document.body.dataset.townyLock = "1";
+    return () => { b.overflow = prev; delete document.body.dataset.townyLock; };
+  }, [open]);
   useEffect(() => { end.current?.scrollIntoView({ block: "end" }); }, [msgs, busy]);
 
   // Focus trap + Esc.
@@ -83,7 +89,9 @@ export default function TownyFab() {
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 
-  const say = (m: Omit<Msg, "from">) => { setMsgs((x) => [...x, { from: "towny", ...m }]); setAnnounce([m.text, ...(m.links || []).map((l) => host(l.url))].join(" ")); };
+  // QA pre-pass 1ee5f9c P2-2: each reply renders once. The message log itself is the polite live region (role=log), so
+  // there is no second, duplicate copy of the text for screen readers.
+  const say = (m: Omit<Msg, "from">) => { setMsgs((x) => [...x, { from: "towny", ...m }]); };
 
   function applyFills(z: string, fills: { issue: string; choice: "yes" | "neutral" | "no" }[]) {
     const issues = issuesFor(z, STATE_OF[z]);
@@ -127,7 +135,7 @@ export default function TownyFab() {
     const r = routeTurn(t, zip);
     const z = r.kind === "fixed" ? r.zip ?? zip : r.zip;
     if (r.kind !== "fixed" || r.zip) setZip2(z ?? null);
-    if (r.kind === "fixed" && (r.reply === OUT_OF_SCOPE || r.reply === WHO_TO_VOTE_REPLY)) return say({ text: r.reply, chips: r.chips });
+    if (r.kind === "fixed" && (r.reply === OUT_OF_SCOPE || r.reply === WHO_TO_VOTE_REPLY)) return say({ text: r.reply, chips: r.chips, links: r.links });
     const faq = faqFor(t, z ?? null);
     if (faq) return say({ text: faq.a, links: faq.links, chips: faq.id === "who" ? [WHO_CHIP] : undefined });
     if (r.kind === "fixed") {
@@ -187,9 +195,9 @@ export default function TownyFab() {
           <div className="fixed inset-0 z-50 bg-black/40 lg:hidden" aria-hidden onClick={close} data-towny-overlay />
           <div ref={panel} role="dialog" aria-modal="true" aria-label="Towny chat" onKeyDown={onKeyDown} data-towny-panel
             style={{ ["--k" as string]: "hsl(var(--background))" }}
-            className="fixed inset-x-0 bottom-0 z-50 flex h-[85dvh] flex-col rounded-none border-t border-border bg-background text-[#010101] lg:inset-x-auto lg:bottom-6 lg:right-6 lg:h-[640px] lg:max-h-[calc(100dvh-48px)] lg:w-[400px] lg:border lg:shadow-lg">
+            className="fixed inset-x-0 bottom-0 z-50 flex h-[85dvh] flex-col rounded-none border-t border-border bg-background text-foreground lg:inset-x-auto lg:bottom-6 lg:right-6 lg:h-[640px] lg:max-h-[calc(100dvh-48px)] lg:w-[400px] lg:border lg:shadow-lg">
             <header className="flex h-16 shrink-0 items-center gap-3 border-b border-border pl-4 pr-1">
-              <TownyMark size={40} className="shrink-0 text-[#010101]" />
+              <TownyMark size={40} className="shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
                 <p className="text-xl font-[530] leading-6">Towny</p>
                 <p className="truncate text-sm leading-5 text-muted-foreground" data-towny-caption>{TOWNY_CAPTION}</p>
@@ -197,18 +205,18 @@ export default function TownyFab() {
               <button type="button" onClick={close} aria-label="Close Towny" className="flex h-11 w-11 shrink-0 items-center justify-center" data-towny-close><X size={20} aria-hidden /></button>
             </header>
             <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
-              <ol className="space-y-4" data-towny-log>
+              <ol className="space-y-4" role="log" aria-live="polite" aria-relevant="additions" aria-label="Towny conversation" data-towny-log data-towny-live>
                 {msgs.map((m, i) => (
                   <li key={i} data-msg={m.from} className={m.from === "you" ? "ml-auto w-fit max-w-[85%] bg-muted px-4 py-3 text-base leading-6" : "text-base leading-6"}>
                     {m.text}
                     {m.links?.length ? (
                       <span className="mt-1 flex flex-wrap gap-x-4" data-towny-links>
-                        {m.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" title={l.label} className="inline-flex min-h-11 items-center whitespace-nowrap text-sm text-[#3760F2]" data-towny-source>{host(l.url)} ↗<span className="sr-only"> (opens in a new tab)</span></a>)}
+                        {m.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" title={l.label} className="inline-flex min-h-11 items-center whitespace-nowrap text-sm text-primary underline underline-offset-4" data-towny-source>{host(l.url)} ↗<span className="sr-only"> (opens in a new tab)</span></a>)}
                       </span>
                     ) : null}
                     {m.chips?.length ? (
                       <span className="mt-3 flex flex-wrap gap-2" data-towny-chips>
-                        {m.chips.map((c) => <Button key={c} type="button" variant="outline" onClick={() => chip(c)} className="h-auto min-h-11 whitespace-normal rounded-none border-black/30 py-2 text-left text-base font-[450]" data-towny-chip>{c}</Button>)}
+                        {m.chips.map((c) => <Button key={c} type="button" variant="outline" onClick={() => chip(c)} className="h-auto min-h-11 whitespace-normal rounded-none border-input py-2 text-left text-base font-[450]" data-towny-chip>{c}</Button>)}
                       </span>
                     ) : null}
                   </li>
@@ -216,14 +224,13 @@ export default function TownyFab() {
                 {busy ? <li className="text-base leading-6 text-muted-foreground motion-safe:animate-pulse" data-towny-thinking>{THINKING}</li> : null}
               </ol>
               <div ref={end} />
-              <p className="sr-only" aria-live="polite" data-towny-live>{announce}</p>
             </div>
             <form className="flex shrink-0 items-end gap-2 border-t border-border p-3" onSubmit={(e) => { e.preventDefault(); send(text); }}>
               <label htmlFor="towny-fab-say" className="sr-only">{PLACEHOLDER}</label>
               <textarea id="towny-fab-say" ref={input} rows={1} value={text} maxLength={600} placeholder={PLACEHOLDER} autoComplete="off" data-towny-input
                 onChange={(e) => { setText(e.target.value); autosize(e.target); }}
                 onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) { e.preventDefault(); send(text); } }}
-                className="max-h-[116px] min-h-11 min-w-0 flex-1 resize-none rounded-none border border-black/30 bg-transparent px-3 py-2.5 text-base leading-6 text-[#010101] placeholder:text-muted-foreground" />
+                className="max-h-[116px] min-h-11 min-w-0 flex-1 resize-none rounded-none border border-input bg-transparent px-3 py-2.5 text-base leading-6 text-foreground placeholder:text-muted-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:shadow-none" />
               <Button type="submit" aria-label="Send" disabled={!text.trim()} className="h-11 w-11 shrink-0 rounded-none bg-primary p-0 text-primary-foreground hover:bg-primary/90" data-towny-send><ArrowUp size={20} aria-hidden /></Button>
             </form>
           </div>

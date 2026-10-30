@@ -3,7 +3,7 @@
 // floating Towny panel give the same answers. Unknown questions get a helpful reply with suggestion chips, never a dead end.
 import { ballotFor } from "../tools";
 import { townyFact, todayCT } from "../townyFacts";
-import { faqFor, WHO_LINE } from "./faq";
+import { faqFor, WHO_LINE, OFFICES } from "./faq";
 import { ASKS_WHO, WHO_CHIP } from "../townyChat";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
@@ -17,30 +17,72 @@ const STOP = new Set(["the", "of", "a", "an", "for", "my", "race", "seat", "offi
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
 const words = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter((w) => w && !STOP.has(w));
 
-/** "Who is running for <office>?": candidates in ballot order from the ballot data, with the race's source. */
+// QA pre-pass 1ee5f9c P1 (Oct 30, 1:39 PM CT): common office names map to the ballot's own race titles. A query can match
+// several races (e.g. "senate" on 10001 = two State Senator districts); each one is listed.
+const ALIASES: { q: RegExp; title: RegExp }[] = [
+  { q: /\b(lieutenant|lt\.?)\s*gov/i, title: /lieutenant governor/i },
+  { q: /\bgovernor\b/i, title: /^governor\b/i },
+  { q: /\bsenat(e|or|ors)\b/i, title: /\bsenat(e|or)\b/i },
+  { q: /\b(house|congress|congressional|congressman|congresswoman|representatives?|rep)\b/i, title: /\bU\.S\. (house|representative)|\bstate representative\b|\bassembly\b/i },
+  { q: /\bassembly\b/i, title: /\bassembly\b/i },
+  { q: /\bmayor\b/i, title: /\bmayor\b/i },
+  // San Francisco's city council is its Board of Supervisors.
+  { q: /\b(city )?council\b|\bsupervisors?\b/i, title: /\bcouncil\b|\bboard of supervisors\b/i },
+  { q: /\battorney general\b|\b(ag)\b/i, title: /\battorney general\b/i },
+  { q: /\bcomptroller\b|\bcontroller\b/i, title: /\bc(omp)?troller\b/i },
+  { q: /\bschool board\b|\bboard of (education|trustees)\b/i, title: /\bboard of (education|trustees)\b/i },
+];
+const FEDERAL = /\bU\.S\.|\bUS\b/;
+/** Narrow an alias hit by "state" / "U.S." words in the question: "state senate" = state races only, "U.S. house" or
+ *  "congress" = federal only. Bare "house" or "representative" also means the U.S. House. */
+function scope(q: string, titles: { title: string }[]) {
+  if (/\bstate\b/i.test(q)) return titles.filter((r) => !FEDERAL.test(r.title));
+  if (/\b(u\.?s\.?|federal|congress\w*|house)\b/i.test(q) || /^\s*(the\s+)?(representatives?|rep)\s*$/i.test(q)) return titles.filter((r) => FEDERAL.test(r.title) || !/representative|assembly/i.test(r.title));
+  return titles;
+}
+export const UNSURE_ORDER = "Unsure: we couldn't confirm the ballot order in a cited source.";
+type Race = { title: string; level?: string; source?: string; candidates?: { name: string }[] };
+
+/** "Who is running for <office>?": the ballot data's candidates for each matching race. Civic, Oct 30 1:37 PM CT: the order
+ *  is not yet checked against each office's sample ballot, so the reply says so (UNSURE_ORDER) and links the official
+ *  election office first; the race's own source (e.g. Ballotpedia) stays as the second link, for who is running. */
 export function runningFor(zip: string, text: string): Curated | null {
   const m = ASKS_RUNNING.exec(String(text || "").trim());
   if (!m) return null;
   const b = ballotFor(zip);
   if (!b) return null;
-  const q = words(m[1]);
-  if (!q.length) return null;
-  const races = b.races.filter((r) => r.level !== "measure");
-  const hits = races.filter((r) => { const t = words(r.title); return q.every((w) => t.includes(w) || t.some((x) => x.startsWith(w) && w.length >= 4)); });
-  // "Governor" should find "Governor of Texas", not "Lieutenant Governor of Texas": keep the closest titles.
-  const extra = (r: { title: string }) => words(r.title).length - q.length;
-  const best = hits.length ? Math.min(...hits.map(extra)) : 0;
-  const pick = hits.filter((r) => extra(r) === best || q.length >= 3).slice(0, 3);
+  const office = OFFICES[zip];
+  const races = (b.races as Race[]).filter((r) => r.level !== "measure");
+  const qText = m[1];
+  const alias = ALIASES.filter((a) => a.q.test(qText));
+  // "Lieutenant governor" must not also pull in the governor alias.
+  const use = alias.some((a) => a.title.source.startsWith("lieutenant")) ? alias.filter((a) => !a.title.source.startsWith("^governor")) : alias;
+  let pick: Race[];
+  if (use.length) {
+    pick = scope(qText, races.filter((r) => use.some((a) => a.title.test(r.title))));
+  } else {
+    const q = words(qText);
+    if (!q.length) return null;
+    const hits = races.filter((r) => { const t = words(r.title); return q.every((w) => t.includes(w) || t.some((x) => x.startsWith(w) && w.length >= 4)); });
+    const extra = (r: { title: string }) => words(r.title).length - q.length;
+    const best = hits.length ? Math.min(...hits.map(extra)) : 0;
+    pick = hits.filter((r) => extra(r) === best || q.length >= 3);
+  }
+  pick = pick.slice(0, 6);
   if (!pick.length) {
-    const searched = [...new Set([...races.map((r) => (r as { source?: string }).source).filter(Boolean) as string[], ...(b.verify?.url ? [b.verify.url] : [])].map(host))];
-    return { intent: "running-none", reply: `${NO_RECORD} Searched: the ${zip} ballot from ${searched.join(", ")}.`, links: b.verify?.url ? [{ label: b.verify.label, url: b.verify.url }] : [], chips: ["What's on my ballot?"] };
+    // QA P2-1: every host named in "Searched:" is also a link.
+    const urls = [...races.map((r) => r.source).filter(Boolean) as string[], ...(b.verify?.url ? [b.verify.url] : [])];
+    const byHost = new Map<string, string>();
+    for (const u of urls) if (!byHost.has(host(u))) byHost.set(host(u), u);
+    return { intent: "running-none", reply: `${NO_RECORD} Searched: the ${zip} ballot from ${[...byHost.keys()].join(", ")}.`,
+      links: [...byHost].map(([h, url]) => ({ label: h, url })), chips: ["What's on my ballot?"] };
   }
   const lines = pick.map((r) => {
     const names = (r.candidates || []).map((c) => c.name);
     return `${r.title}: ${names.length ? names.join(", ") : "no candidates listed"}.`;
   });
-  const links = [...new Map(pick.map((r) => (r as { source?: string }).source).filter(Boolean).map((u) => [u as string, { label: "Candidate list source", url: u as string }])).values()];
-  return { intent: "running", reply: `${lines.join(" ")} Listed in ballot order.`, links };
+  const lists = [...new Map(pick.map((r) => r.source).filter(Boolean).map((u) => [u as string, { label: host(u as string), url: u as string }])).values()];
+  return { intent: "running", reply: `${lines.join(" ")} ${UNSURE_ORDER}`, links: [office, ...lists.filter((l) => host(l.url) !== host(office.url))] };
 }
 
 /** Everything Towny answers without a model, in this order. null = let the interview model read it for issue answers. */
