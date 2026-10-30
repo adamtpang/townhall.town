@@ -1,18 +1,41 @@
 {
- "_note": "Local outlets per covered ZIP for the news strip (app/LocalNews.tsx). Headlines only, linked to the outlet. Feed URLs not yet fetched from the build session (network blocked); scripts/cache-news.mjs logs any that fail.",
+ "_note": "Local outlets per covered ZIP for the news strip (app/LocalNews.tsx). Headlines only, linked to the outlet. scripts/cache-news.mjs logs any feed that fails and skips it.",
  "78701": [
-  { "outlet": "The Texas Tribune", "url": "https://www.texastribune.org/feeds/latest/" },
-  { "outlet": "KUT News", "url": "https://www.kut.org/news.rss" },
-  { "outlet": "Austin Monitor", "url": "https://www.austinmonitor.com/feed/" }
+  {
+   "outlet": "The Texas Tribune",
+   "url": "https://feeds.texastribune.org/feeds/main/"
+  },
+  {
+   "outlet": "KUT News",
+   "url": "https://www.kut.org/politics.rss"
+  },
+  {
+   "outlet": "Austin Monitor",
+   "url": "https://austinmonitor.com/feed/"
+  }
  ],
  "94103": [
-  { "outlet": "KQED", "url": "https://www.kqed.org/news/feed" },
-  { "outlet": "Mission Local", "url": "https://missionlocal.org/feed/" },
-  { "outlet": "CalMatters", "url": "https://calmatters.org/feed/" }
+  {
+   "outlet": "Mission Local",
+   "url": "https://missionlocal.org/feed/"
+  },
+  {
+   "outlet": "CalMatters",
+   "url": "https://calmatters.org/feed/"
+  }
  ],
  "10001": [
-  { "outlet": "THE CITY", "url": "https://www.thecity.nyc/feed/" },
-  { "outlet": "Gothamist", "url": "https://gothamist.com/feed" },
-  { "outlet": "City & State NY", "url": "https://www.cityandstateny.com/rss/all/" }
+  {
+   "outlet": "THE CITY",
+   "url": "https://www.thecityreporter.nyc/feed/"
+  },
+  {
+   "outlet": "Gothamist",
+   "url": "https://gothamist.com/feed"
+  },
+  {
+   "outlet": "City & State NY",
+   "url": "https://www.cityandstateny.com/rss/all/"
+  }
  ]
 }
