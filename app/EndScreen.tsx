@@ -55,7 +55,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
   return (
     <section id="end" className="border-t border-black py-24" data-end-screen>
       <p className="nds-caption-upper text-black/60">03</p>
-      <h2 className="mt-3 font-serif text-5xl leading-none tracking-tight text-black lg:text-[72px]">Your plan</h2>
+      <h2 className="mt-3 font-serif text-[40px] font-[530] leading-none tracking-[-0.02em] text-black md:text-[56px]">Your plan</h2>
       <a href={cardPath(zip, answers, ids)} className="mt-6 inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2]" data-card-link>Take it with you: one-page ballot card</a>
       <div className="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-5">
         {/* WHO */}

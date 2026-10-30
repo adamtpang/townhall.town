@@ -90,11 +90,6 @@ function marketFor(markets: Markets, id: string) {
   const avg = Object.entries(acc).map(([name, v]) => ({ name, prob: v.reduce((a, b) => a + b, 0) / v.length })).sort((a, b) => b.prob - a.prob);
   return { ...m, avg };
 }
-function oddsForCandidate(avg: { name: string; prob: number }[] | undefined, name: string) {
-  if (!avg) return null;
-  const last = name.split(" ").slice(-1)[0].toLowerCase();
-  return avg.find((o) => o.name.toLowerCase().includes(last)) ?? null;
-}
 
 const usd = (n: number) =>
   n >= 1e6 ? `$${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `$${Math.round(n / 1e3)}K` : `$${Math.round(n)}`;
@@ -161,67 +156,6 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
   );
 }
 
-function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
-  return (
-    <Card className="flex h-full flex-col">
-      <CardHeader className="flex flex-row items-start gap-4">
-        <Avatar>
-          {c.photo?.url && <AvatarImage src={c.photo.url} alt={`Photo of ${c.name}`} />}
-          <AvatarFallback>{initials(c.name)}</AvatarFallback>
-        </Avatar>
-        <div className="min-w-0 flex-1">
-          <CardTitle className="text-base">{c.name}</CardTitle>
-          <p className="text-sm text-slate-600">{c.party || "Party: unsure"}</p>
-          <div className="mt-1.5 flex flex-wrap gap-1.5">
-            {c.incumbent === true && (
-              <Tip label={c.incumbentNote || c.incumbentSource || "Listed as incumbent on Ballotpedia"}>
-                <span><Badge variant="muted">Incumbent</Badge></span>
-              </Tip>
-            )}
-            {c.incumbent === "unsure" && <Badge variant="warn">Incumbent: unsure</Badge>}
-          </div>
-        </div>
-        {odds && (
-          <Tip label="Market odds: average trading price on Polymarket/Kalshi. Not a forecast or endorsement.">
-            <div className="text-right">
-              <div className="text-2xl font-bold tabular-nums text-navy">{pct(odds.prob)}</div>
-              <div className="text-xs uppercase tracking-wide text-slate-500">market odds</div>
-            </div>
-          </Tip>
-        )}
-      </CardHeader>
-      <CardContent className="mt-auto space-y-2">
-        <div>
-          <p className="eyebrow mb-1.5">Talks about</p>
-          {c.causes?.length ? (
-            <ul className="flex flex-wrap gap-1.5" aria-label={`Issues ${c.name} talks about`}>
-              {c.causes.map((k) => (
-                <li key={k.id}>
-                  <Tip label={`“${k.quote}” (${k.mentions} mention${k.mentions === 1 ? "" : "s"}; keyword match in ${k.source.label}, verify)`}>
-                    <a href={k.source.url} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-full border border-[#bfd9ea] bg-[#e7f2f8] px-2.5 py-0.5 text-xs font-medium text-flagblue no-underline hover:bg-[#d4e8f3]">
-                      {k.label}
-                    </a>
-                  </Tip>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <span className="text-sm text-slate-400">Causes: unsure (no campaign themes on file)</span>
-          )}
-        </div>
-        <div className="flex flex-wrap gap-x-3 gap-y-1">
-          {c.officialSite ? <Src href={c.officialSite}>Official site</Src> : <span className="text-sm text-slate-400">Official site: unsure</span>}
-          <Src href={c.campaignSite}>Campaign</Src>
-          {c.x ? <Src href={c.x}>X</Src> : <span className="text-sm text-slate-400">X: unsure</span>}
-          <Src href={c.ballotpedia}>Ballotpedia</Src>
-          <Src href={c.finance?.url}>{c.finance?.label?.startsWith("FEC") ? "FEC" : c.finance?.label?.includes("Ethics") ? "TEC" : "Finance"}</Src>
-        </div>
-        {c.photo && <p className="text-xs text-slate-400">{c.photo.page ? <a className="text-slate-400" href={c.photo.page} target="_blank" rel="noreferrer">{c.photo.credit}</a> : c.photo.credit}</p>}
-        {c.money && <MoneyBlock m={c.money} />}
-      </CardContent>
-    </Card>
-  );
-}
 
 /** Design 2: one sourced sentence under the hero subline, only once a ZIP is known. */
 function HeroStat({ vm }: { vm: { text: string; sources: { label: string; title?: string; url: string }[] } }) {

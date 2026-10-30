@@ -30,7 +30,9 @@ export type Race = {
   source: string;
   market?: { platform: "polymarket" | "kalshi"; odds: Record<string, number>; url: string; fetchedAt: string; matchedByTitle?: boolean } | null;
   // Plug-in field (optional):
-  turnout?: TurnoutStats;           // from lib/turnout.ts
+  turnout?: TurnoutStats;
+  judicial?: "tx" | "ca" | "ny" | boolean;
+  judicialNote?: string;            // set on every judicial race (lib/judicial.ts)           // from lib/turnout.ts
 };
 
 export type TurnoutStats = {

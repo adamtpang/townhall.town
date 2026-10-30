@@ -65,7 +65,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
     <>
       <section className="border-t border-black py-24" id="what-matters">
         <p className="nds-caption-upper text-black/60">02</p>
-        <h2 className="mt-3 font-serif text-5xl leading-none tracking-tight text-black lg:text-[72px]">Who lines up with you</h2>
+        <h2 className="mt-3 font-serif text-[40px] font-[530] leading-none tracking-[-0.02em] text-black md:text-[56px]">Who lines up with you</h2>
         <p className="mt-4 text-base leading-6 text-black" data-issue-intro>{ISSUE_INTRO}</p>
         <p className="mt-2 text-sm text-black/60" aria-live="polite" data-progress>{answered} of {ids.length} answered</p>
 

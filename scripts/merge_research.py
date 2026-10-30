@@ -1,5 +1,6 @@
 """Merge the research data layer (/workspace/townhall/data) into the app's data files.
 Outputs: data/ballots.json (4 demo ZIPs, enriched) and data/tx.json (statewide + 38 House races + ZIP->CD for any TX ZIP)."""
+# WARNING: do not re-run as-is. It does not build TX Supreme Court Place 2 and would overwrite hand-verified Civic data in tx.json/ballots.json.
 import json, re, os, sys
 from urllib.parse import unquote
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,7 +80,11 @@ def causes(c):
     found.sort(key=lambda x: -x["mentions"])  # stable: ties keep CAUSES order
     return found[:MAX_CAUSES]
 
+# SOS-certified ballot spellings (2026 ballot cert). The research snapshot keeps the Ballotpedia spellings.
+CERT = {"Neil Snider": "Neill Snider", "Donald Huffines": "Don Huffines", "Austin Kelly": "Austin R. Kelly", "Gisela Triana": "Gisela D. Triana", "James Sullivan": "James P. Sullivan"}
+
 def politician(c, state, federal):
+    c = {**c, "name": CERT.get(c["name"], c["name"])}
     k = media_key(c["ballotpedia"]) if c.get("ballotpedia") else None
     md = media.get(k, {}) if k else {}
     xs = md.get("x") or {}
@@ -107,7 +112,7 @@ def politician(c, state, federal):
         "causes": causes(c),
         "hasThemes": has_themes,
     }
-    if c["name"] == "Donald Huffines":
+    if c["name"] == "Don Huffines":
         p["incumbentNote"] = "Sitting Comptroller: Gov. Abbott appointed Huffines after Kelly Hancock (R) resigned; Hancock had lost the Mar 3 GOP primary to Huffines (Ballotpedia; comptroller.texas.gov lists Huffines)."
     return p
 

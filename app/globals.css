@@ -27,9 +27,13 @@
     --destructive-foreground: 0 0% 100%;
     --radius: 0.375rem;
   }
-  body { @apply text-[#010101] antialiased; }
+  /* ndstudio.gov (#27): one book weight (450) for all text, 530 as the only emphasis. */
+  body { @apply text-[#010101] antialiased; font-weight: 450; }
+  b, strong { font-weight: 530; }
   /* Design p6 #5: links and their separators read at 450, not 400; a utility weight class still wins. */
   a { font-weight: 450; }
+  /* Design: H1/H2 at 530, -0.02em, line-height ~1.0. */
+  h1, h2 { font-weight: 530; line-height: 1; }
   a { @apply text-navy-700 underline decoration-slate-300 underline-offset-2 hover:decoration-navy-700; }
   h1, h2, h3 { letter-spacing: -0.02em; }
   :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2; }
@@ -51,7 +55,7 @@
   }
 }
 
-/* Flat ground, #F2F2F2 all the way down (Design P3 review). */
+/* Flat ground, as on ndstudio.gov (#27): ink on #f2f2f2, no grid or glow. */
 body {
   background: #f2f2f2;
 }
@@ -63,9 +67,9 @@ body {
   html, body { background: #fff !important; }
   body > *:not(#print-sheet) { display: none !important; }
   #print-sheet { display: block !important; color: #000; font-size: 11pt; line-height: 1.35; }
-  #print-sheet h1 { font-family: var(--font-serif, serif); font-size: 28pt; line-height: 1; margin: 6pt 0 12pt; }
+  #print-sheet h1 { font-family: var(--font-grotesk), sans-serif; font-weight: 530; font-size: 28pt; line-height: 1; margin: 6pt 0 12pt; }
   #print-sheet .ps-head, #print-sheet .ps-foot { font-size: 9pt; color: #444; }
   #print-sheet ol { list-style: none; padding: 0; margin: 0 0 10pt; columns: 2; column-gap: 18pt; }
   #print-sheet li { display: flex; justify-content: space-between; gap: 8pt; border-top: 0.5pt solid #bbb; padding: 3pt 0; break-inside: avoid; }
-  #print-sheet li b { font-weight: 600; text-align: right; }
+  #print-sheet li b { font-weight: 530; text-align: right; }
 }

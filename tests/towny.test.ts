@@ -28,7 +28,7 @@ describe("Towny system prompt", () => {
 
 describe("No third-party address or coordinate tools", () => {
   it("getVoterInfo and getStateLegislators are gone", () => {
-    expect(Object.keys(dataTools).sort()).toEqual(["getCampaignFinance", "getCountyUnemployment", "getSponsoredBills"]);
+    expect(Object.keys(dataTools).sort()).toEqual(["getCampaignFinance", "getCountyUnemployment", "getSponsoredBills", "getZipIncomeRent"]);
     for (const f of ["lib/dataTools.ts", "lib/api/agent.ts"]) {
       const src = readFileSync(f, "utf8");
       expect(src).not.toMatch(/civicinfo|openstates|getVoterInfo|getStateLegislators/i);

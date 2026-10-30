@@ -419,6 +419,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
             office: { type: "string", description: "What the office controls, in plain words." },
             candidates: { type: "array", items: { $ref: "#/components/schemas/Candidate" } },
             source: { type: "string" },
+            judicialNote: { type: "string", description: "Present on every judicial race: judicial candidates' positions on these issues aren't public." },
           },
         },
         Candidate: {

@@ -22,7 +22,7 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 ## Limitations
 - **ZIP ≠ district.** ZIP→district uses the ZIP's center point; ZIPs on a boundary may be wrong. Always say "verify by address" and link VoteTexas / CA voter status. CA ZIP→district (94103→CA-11, 90012→CA-34) is **unverified** under the Prop 50 map.
 - **Federal + statewide only.** No state legislature, State Board of Education, county, city, school board, or local measures yet.
-- **Incumbent flags** come from Ballotpedia's bold-name convention (Comptroller Donald Huffines flagged — verify).
+- **Incumbent flags** come from Ballotpedia's bold-name convention (Comptroller Don Huffines flagged — verify).
 - **FEC matches** are name+district string matches (86/87); verify the ID before showing finance.
 - **Positions** are verbatim Ballotpedia excerpts, sometimes including survey boilerplate; many candidates have none. The app must not paraphrase into new claims; "problem ↔ position" links should quote and mark "unsure" when the match is inferred.
 - **Market odds** are trader prices, not forecasts or endorsements; thin markets swing. Snapshot is from Oct 29, 2026 ~2:50 PM CT; refresh live.

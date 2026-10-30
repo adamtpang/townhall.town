@@ -11,7 +11,7 @@ type Avg = { name: string; prob: number }[];
 import type { RaceMeta } from "../lib/raceMeta";
 import { ISSUES } from "../lib/issues";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
-type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; judicialNote?: string; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
 
 /**
@@ -89,7 +89,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                     <p className="text-lg font-[530]" data-race-title>{r.title}</p>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
                     <p className="text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No market data" ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
-                    {!r.meta || r.meta.closeness === "No market data" ? <p className="text-xs leading-4 text-black/60" data-no-odds>No market odds yet</p> : null}
+                    {r.judicialNote ? <p className="text-sm text-black/60" data-judicial-note>{r.judicialNote}</p> : null}
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {plain(r.appliesNote)}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.tentative ? <p className="text-sm text-black/60" data-tentative>Tentative: from the NYC Board of Elections&rsquo; tentative contest list. Check your sample ballot.</p> : null}
@@ -122,7 +122,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
   return (
     <section className="border-t border-black py-24" id="tiers">
       <p className="nds-caption-upper text-black/60">01</p>
-      <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
+      <h2 className="mt-3 font-serif text-[40px] font-[530] leading-none tracking-[-0.02em] text-black md:text-[56px]">What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
       <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings or prediction markets call it close; otherwise &ldquo;Not closely contested&rdquo;. Neither says who is ahead.</p>
       <div className="mt-10">

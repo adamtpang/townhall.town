@@ -67,12 +67,14 @@ See `.env.example` (placeholders only, never commit real values):
 - `AGENT_MODELS`: optional comma-separated gateway model ladder.
 - `XAI_API_KEY`: optional direct xAI fallback.
 - `FEC_API_KEY`, `CONGRESS_API_KEY`: optional api.data.gov keys for OpenFEC and Congress.gov. Without them the tools use `DEMO_KEY` (low hourly limit).
+- `CENSUS_API_KEY`: optional. Without it `getZipIncomeRent` returns `unavailable`.
 
 ### Live data tools (`lib/dataTools.ts`)
 Optional tools the model can call, each returning a source URL, or `{ status: "unavailable", reason }` when a key is missing or the call fails:
 - `getCampaignFinance`: OpenFEC receipts, spending and cash on hand for a federal candidate.
 - `getSponsoredBills`: the current U.S. House member for a state and district, with recent sponsored bills (Congress.gov).
 - `getCountyUnemployment`: latest monthly county unemployment rate (BLS LAUS). A county figure, so it differs from the ZIP-level ACS 5-year number.
+- `getZipIncomeRent`: median household income (B19013) and median gross rent (B25064) for a ZIP Code Tabulation Area (geo ID prefix 860Z200US), Census ACS 5-year, with margins of error. Needs `CENSUS_API_KEY`; without it returns `unavailable`.
 
 ## API
 Public, no key. OpenAPI 3.1 spec at [/openapi.json](https://townhall.town/openapi.json), docs with curl examples at [/developers](https://townhall.town/developers), RFC 9727 catalog at `/.well-known/api-catalog`.
@@ -107,7 +109,7 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 ## Limitations
 - **ZIP ≠ district.** ZIP→district uses the ZIP's center point; ZIPs on a boundary may be wrong. Always say "verify by address" and link VoteTexas / CA voter status. CA ZIP→district (94103→CA-11, 90012→CA-34) is **unverified** under the Prop 50 map.
 - **Federal + statewide only.** No state legislature, State Board of Education, county, city, school board, or local measures yet.
-- **Incumbent flags** come from Ballotpedia's bold-name convention (Comptroller Donald Huffines flagged — verify).
+- **Incumbent flags** come from Ballotpedia's bold-name convention (Comptroller Don Huffines flagged — verify).
 - **FEC matches** are name+district string matches (86/87); verify the ID before showing finance.
 - **Positions** are verbatim Ballotpedia excerpts, sometimes including survey boilerplate; many candidates have none. The app must not paraphrase into new claims; "problem ↔ position" links should quote and mark "unsure" when the match is inferred.
 - **Market odds** are trader prices, not forecasts or endorsements; thin markets swing. Snapshot is from Oct 29, 2026 ~2:50 PM CT; refresh live.
@@ -119,7 +121,7 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 2. Address-level district lookup (Google Civic Divisions API → OCD-ID, or Census geocoder), down-ballot local races, TEC/FEC finance summaries, Spanish translation.
 
 - Turnout covers the 4 demo counties only.
-- **Comptroller:** Donald Huffines is shown as the incumbent. Gov. Abbott appointed him after Kelly Hancock resigned; Hancock had lost the March 3 GOP primary to Huffines (Ballotpedia Texas_Comptroller_election,_2026; comptroller.texas.gov lists Huffines).
+- **Comptroller:** Don Huffines is shown as the incumbent. Gov. Abbott appointed him after Kelly Hancock resigned; Hancock had lost the March 3 GOP primary to Huffines (Ballotpedia Texas_Comptroller_election,_2026; comptroller.texas.gov lists Huffines).
 
 ## Disclaimer
 Independent and nonpartisan; not a government website. Always confirm your ballot with official sources: [VoteTexas.gov](https://www.votetexas.gov/), [California Secretary of State](https://www.sos.ca.gov/elections), [CA early voting](https://caearlyvoting.sos.ca.gov/).
