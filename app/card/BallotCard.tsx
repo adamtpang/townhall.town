@@ -70,7 +70,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
 
       <section className="mt-10 border-t border-black/15 pt-6">
         <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
-        <p className="mt-1 text-base leading-6 text-black" data-overlap-caption>Issue overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
+        <p className="mt-1 text-base leading-6 text-black" data-overlap-caption>Issue overlap with your answers, not a recommendation.. Court races are not compared.</p>
         
         <>
             {answers === null ? null : answered === 0 ? <p className="mt-3 text-base text-black/80">No answers yet. <a href="/" className={link}>Answer a few questions</a> to compare.</p> : yesNo === 0 ? <p className="mt-3 text-base text-black/80" data-card-no-overlap>Neutral answers aren&rsquo;t compared; answer Yes or No on an issue to compare. <a href="/" className={link}>Change your answers</a>.</p> : null}

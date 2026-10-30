@@ -68,8 +68,8 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
         <div className="lg:col-span-6" data-end="who">
           <p className="text-sm font-[530] text-black/60">Who</p>
           <h3 className={`mt-2 ${H3}`}>Who lines up with you</h3>
-          <p className="mt-3 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation. Candidates are in ballot order.</p>
-          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">{SHOW_ACCOUNTABILITY ? "How overlap and record work" : "How overlap works"}</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p>{SHOW_ACCOUNTABILITY ? <p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p> : null}</details>
+          <p className="mt-3 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation..</p>
+          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">{SHOW_ACCOUNTABILITY ? "How overlap and record work" : "How overlap works"}</summary><p className="pb-2 text-sm text-black/80">{METHOD}.</p>{SHOW_ACCOUNTABILITY ? <p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p> : null}</details>
           {judicial.length > 0 && (
             <p className="mt-4 max-w-[45ch] text-sm text-black/60" data-judicial-note>
               {(() => {
