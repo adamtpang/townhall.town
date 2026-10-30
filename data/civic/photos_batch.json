@@ -655,13 +655,23 @@
  "mark-ash": {
   "name": "Mark Ash",
   "raceId": "tx-court-of-criminal-appeals-place-3",
-  "status": "no headshot found",
-  "sourcesChecked": [
-   "Wikimedia Commons file search (intitle:\"Mark Ash\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)",
-   "party page only (lp.org/LPTexas, not allowed)",
+  "photoUrl": "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-1/272330064_349335627193811_4591728942131523261_n.jpg?stp=dst-jpg_tt6&cstp=mx450x600&ctp=s450x600&_nc_cat=106&ccb=1-7&_nc_sid=3ab345&_nc_ohc=dqVPpElF-ZgQ7kNvwHqM1kL&_nc_oc=AdpaX8jCN28btC4PpqQzudENKhIYZ7FbD5i7RlqgaAL8t6RMUuFhr-bwcmaYXZVeLci5goHYhLc0iDDr8oqv_O-W&_nc_zt=24&_nc_ht=scontent-hou1-1.xx&_nc_gid=9IA9mT5CPUCxmNGrI_ea3A&_nc_ss=7b20f&oh=00_AQRoP9QFDQejRxl7P_BH5jh1HPSCr6D78d_gKofTXvhgLA&oe=6AEA3849",
+  "localFile": "/workspace/townhall/civic/photos_local/mark-ash.jpg",
+  "pageUrl": "https://www.facebook.com/markashlibertarian",
+  "sourceType": "own social profile",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Mark Ash own social profile",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "profile photo of the Facebook page \"Mark Ash Libertarian\" (page text: \"Pro Freedom, Pro Liberty Criminal Defense Lawyer in Houston, Texas\"). The CCA Place 3 Libertarian nominee is Mark J. Ash, a Houston criminal-defense attorney (State Bar of Texas listing id 149864; LPTexas candidate list).",
+  "verified": "200 image/jpeg 450x600 (GET, 2026-10-30 ~04:10 CT)",
+  "urlNote": "signed Facebook CDN URL (oe= expiry about 2026-11-03 1:38 PM CT); use localFile",
+  "cropNote": "head-and-shoulders headshot in suit and tie; portrait 3:4, crop to square from the top",
+  "alsoChecked": [
+   "no campaign site found",
    "X @markash is an unrelated default-avatar account",
-   "no campaign site found"
+   "lp.org / LPTexas party pages not allowed",
+   "LinkedIn linkedin.com/in/mark-ash-35121876 not fetched (sign-in)"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -2171,14 +2181,22 @@
  "dionjay-dj-brookter": {
   "name": "Dionjay (DJ) Brookter",
   "raceId": "sf-supervisor-10",
-  "status": "no headshot found",
-  "sourcesChecked": [
-   "Wikimedia Commons file search (intitle:\"Dionjay (DJ) Brookter\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)",
-   "https://www.dj4d10.com/meetdj : the only photo is a podium shot (alt text is the camera filename \"655A6064.jpg\"); the page does not caption or name him in it",
-   "Instagram @djlbrookter avatar: not fetchable"
-  ],
-  "note": "Dropped under the rule: keep only if the page explicitly captions or names him in that photo.",
+  "photoUrl": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/840901129_3041620276192554_7208380494305078560_n.jpg?stp=dst-jpg_tt6&cstp=mx1063x1063&ctp=s720x720&_nc_cat=105&ccb=1-7&_nc_sid=3ab345&_nc_ohc=B3Yarv6IUAcQ7kNvwG5U4bf&_nc_oc=AdoybI7c8QavuO8k7BZanHSSK9-kBKv0JMnYmyWFE6PBNIu8Zf1Gu8iHRtQYT3RmMGP1hMfeMXM-bZrSPt1Pr6Lh&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=1niG-Jam1kJ33nnhcfs1lA&_nc_ss=7b20f&oh=00_AQRwAyIN3hqRKIEbG-7Ib9SJZ3XIT4NafSSeZ_ZW0pVKmw&oe=6AEA469E",
+  "localFile": "/workspace/townhall/civic/photos_local/dionjay-dj-brookter.jpg",
+  "pageUrl": "https://www.facebook.com/dionjay.brookter/",
+  "sourceType": "own social profile",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: DJ Brookter own social profile",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "profile photo of the Facebook profile \"Dion-Jay Brookter\", which his campaign site dj4d10.com links in its social links (with Instagram @djlbrookter and LinkedIn djbrookter)",
+  "verified": "200 image/jpeg 720x720 (GET, 2026-10-30 ~04:10 CT)",
+  "urlNote": "signed Facebook CDN URL (oe= expiry about 2026-11-03 2:39 PM CT); use localFile",
+  "cropNote": "head-and-shoulders headshot in a navy suit, outdoor background; square, no crop needed",
+  "replaced": {
+   "status": "no headshot found",
+   "why": "QA9: the earlier dj4d10.com podium photo was uncaptioned; this profile photo is his own account, linked from his campaign site, so identity is confirmed by ownership."
+  },
   "checkedDate": "2026-10-30"
  },
  "deandra-bryant": {
@@ -2194,7 +2212,8 @@
    "Browser pass 2026-10-30: DuckDuckGo search; GrowSF, Ballotpedia, SF Chronicle, KQED, GoodParty, League guide PDF. A Facebook page (deandra.r.jones) could not be confirmed as hers."
   ],
   "checkedDate": "2026-10-30",
-  "note": "Has a campaign committee (Deandra Bryant for Supervisor 2026) but no campaign website found. Ballotpedia blocks automated fetch."
+  "note": "Has a campaign committee (Deandra Bryant for Supervisor 2026) but no campaign website found. Ballotpedia blocks automated fetch.",
+  "qa9": "QA9 recheck: still not found. Web search (GrowSF questionnaire, SF Chronicle, SF Ethics committee, slogan \"From Survivor to Supervisor\"): no campaign site or social profile tied to her. KQED voter guide lists no links (its photo is media, not allowed)."
  },
  "theo-ellington": {
   "name": "Theo Ellington",
@@ -2233,7 +2252,8 @@
    "Browser pass 2026-10-30: DuckDuckGo search; Ballotpedia, GoodParty, Sway, Ballot Book, KQED, Blue Voter Guide."
   ],
   "checkedDate": "2026-10-30",
-  "note": "No campaign website found."
+  "note": "No campaign website found.",
+  "qa9": "QA9 recheck: still not found. Web search (Elections Simplified, Potrero Hill Dem Club questionnaires, Sway, Ballot Book): no campaign site, contact or social profile listed."
  },
  "mike-trouble-lin": {
   "name": "Mike Trouble Lin",
@@ -2261,7 +2281,8 @@
    "Browser pass 2026-10-30: DuckDuckGo search; Ballotpedia, GoodParty, Civoren, SF Bayview, Davis Vanguard, SFGate."
   ],
   "checkedDate": "2026-10-30",
-  "note": "No campaign website found. (Photos in news coverage, such as the Davis Vanguard and SF Bay View, are not allowed sources.)"
+  "note": "No campaign website found. (Photos in news coverage, such as the Davis Vanguard and SF Bay View, are not allowed sources.)",
+  "qa9": "QA9 recheck: still not found. He says he is \"on Facebook under my name\", but several \"Jamo Muhammad\" Facebook accounts exist and none is tied to the candidate by a page. facebook.com/jmuhammad26 has a cartoon logo (\"Gotta Keep It Lit\"), not a photo; facebook.com/jamo.muhammad has the default avatar. KQED voter guide lists no links."
  },
  "jessica-pessecow": {
   "name": "Jessica Pessecow",
@@ -2276,7 +2297,8 @@
    "Browser pass 2026-10-30: DuckDuckGo search; Ballotpedia, GoodParty, Vote or Else, SFGate, Davis Vanguard, Potrero View; Facebook/Instagram required sign-in."
   ],
   "checkedDate": "2026-10-30",
-  "note": "No campaign website found."
+  "note": "No campaign website found.",
+  "qa9": "QA9 recheck: still not found. No campaign site (jessicapessecow.com, jessicaford10.com, pessecow.com do not resolve). A Luma profile \"Jessica pessecow\" has the default avatar and links X @SayYesToTheJess (default avatar, no bio) and thisthegame.com (a game, no photo); nothing ties these to the candidate."
  },
  "shawn-m-richard": {
   "name": "Shawn M. Richard",
@@ -2591,21 +2613,30 @@
  "kathy-c-hochul-adrienne-e-adams": {
   "name": "Kathy C. Hochul / Adrienne E. Adams",
   "raceId": "ny-governor",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/World_Cup_Transportation_and_Safety_%28cropped%29.jpg/500px-World_Cup_Transportation_and_Safety_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:World_Cup_Transportation_and_Safety_(cropped).jpg",
-  "license": "CC BY 4.0",
-  "attribution": "Photo: Metropolitan Transportation Authority",
-  "licenseDetail": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:World_Cup_Transportation_and_Safety_(cropped).jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2026,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1160,
-  "photoWidth": 500,
-  "fileTitle": "File:World_Cup_Transportation_and_Safety_(cropped).jpg",
-  "note": "Ticket entry: photo shows gubernatorial candidate Kathy Hochul only (Commons category \"Kathy Hochul in 2026\"). Running mate Adrienne Adams also has a verified Commons photo if the site wants both: https://commons.wikimedia.org/wiki/File:Adrienne_Adams,_2022.jpg (CC BY 3.0, NYC Mayor's Office, 727px).",
-  "parity": "UNRESOLVED (QA7): ny-governor: the formal official portrait on Commons is from 2011 (US Congress); using it would put the race outside the 6-year photo-age rule (Blakeman 2022) and switch the race to initials. governor.ny.gov returned 403. Keep the 2026 MTA photo; crop to head and shoulders.",
-  "cropNote": "event photo: crop to head and shoulders, centred on the face"
+  "photoUrl": "https://kathyhochul.com/wp-content/uploads/2026/05/kha.jpg",
+  "pageUrl": "https://kathyhochul.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Kathy Hochul campaign site",
+  "photoYear": 2025,
+  "photoYearBasis": "shown in the photo: a sign behind her reads \"Flip your ballot & vote yes on Props 2, 3, 4 & 5\" with an \"...ember 4th\" date, which matches the New York City ballot proposals 2-5 on November 4, 2025. File uploaded 2026/05 (/wp-content/uploads/2026/05/). 3 years from opponent Blakeman (2022), within the 6-year rule.",
+  "identityEvidence": "image (wp-image-16841) on the home page of her campaign site kathyhochul.com; viewed: she is the woman in the centre in a tan coat, matching her other official photos",
+  "verified": "200 image/jpeg 800x800 (GET, 2026-10-30 ~04:10 CT)",
+  "cropNote": "street crowd photo: crop to head and shoulders centred on her (tan coat, centre of frame); leave out the people around her and the sign",
+  "note": "Ticket entry: photo shows gubernatorial candidate Kathy Hochul only. Running mate Adrienne Adams has her own entry (adrienne-e-adams).",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/World_Cup_Transportation_and_Safety_%28cropped%29.jpg/500px-World_Cup_Transportation_and_Safety_%28cropped%29.jpg",
+   "attribution": "Photo: Metropolitan Transportation Authority",
+   "license": "CC BY 4.0",
+   "why": "The MTA is a state agency, so this is an agency press photo; it breaks the no-press rule even though the Commons license is open. The QA7 parity flag on this entry is resolved: the new photo (2025) is within 6 years of Blakeman (2022)."
+  },
+  "alsoChecked": [
+   "governor.ny.gov: 403 to scripted requests (official portrait not reachable)",
+   "Campaign X @KathyHochul avatar https://pbs.twimg.com/profile_images/2031778682109370368/w_kWbZwC_400x400.jpg (200 image/jpeg 400x400): speech at a podium, year not stated; fallback only",
+   "Official X @GovKathyHochul avatar https://pbs.twimg.com/profile_images/1885380872288743424/BosbYPN-_400x400.jpg: photo includes children; not used",
+   "kathyhochul.com About page: group and archival photos only"
+  ],
+  "checkedDate": "2026-10-30"
  },
  "bruce-a-blakeman-todd-hood": {
   "name": "Bruce A. Blakeman / Todd Hood",
@@ -2805,7 +2836,8 @@
    "nycourts.gov (no public judge photo page for this court)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Acting Supreme Court Justice; no campaign site found."
+  "note": "Acting Supreme Court Justice; no campaign site found.",
+  "qa9": "QA9 recheck: no campaign site found (Branch voter guide says no website as of 2026-09-09 for this race's nominees); no official photo page found."
  },
  "shlomo-s-hagler": {
   "name": "Shlomo S. Hagler",
@@ -2819,7 +2851,8 @@
    "nycourts.gov (no public judge photo page for this court)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Incumbent; no campaign site found."
+  "note": "Incumbent; no campaign site found.",
+  "qa9": "QA9 recheck: no campaign site found. Elevated to the Appellate Division, First Dept. in 2025, but the AD1 justices page (Internet Archive capture 2026-03-26) has no Justice_Hagler page yet; nycourts.gov returns 403 to scripted requests. A person in a browser could try nycourts.gov/courts/AD1/JusticesOfTheCourt/."
  },
  "manuel-j-mendez": {
   "name": "Manuel J. Mendez",
@@ -2846,7 +2879,8 @@
    "LinkedIn profile exists (linkedin.com/in/hasa-kingo-285a8989) but its photo is not publicly retrievable without login"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Has a campaign committee but no campaign website found."
+  "note": "Has a campaign committee but no campaign website found.",
+  "qa9": "QA9 recheck: no campaign site (Branch: no website or online campaign information as of 2026-09-09); no official photo page found."
  },
  "christopher-chin": {
   "name": "Christopher Chin",
@@ -2860,7 +2894,8 @@
    "nycourts.gov (no public judge photo page for this court)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Acting Supreme Court Justice; no campaign site found."
+  "note": "Acting Supreme Court Justice; no campaign site found.",
+  "qa9": "QA9 recheck: no campaign site (Branch: no website or online campaign information as of 2026-09-09); no official photo page found."
  },
  "amy-s-taylor": {
   "name": "Amy S. Taylor",
@@ -2873,7 +2908,8 @@
    "web search for a campaign site (name + office + 2026)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Working Families Party placeholder nominee, not actively campaigning; no campaign site."
+  "note": "Working Families Party placeholder nominee, not actively campaigning; no campaign site.",
+  "qa9": "QA9 recheck: Working Families Party ballot placeholder (not an active campaign, per amNY); no campaign site or photo."
  },
  "joshua-e-goldfein": {
   "name": "Joshua E. Goldfein",
@@ -2886,7 +2922,8 @@
    "web search for a campaign site (name + office + 2026)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Working Families Party placeholder nominee, not actively campaigning; no campaign site. (Employer staff pages are not an allowed source.)"
+  "note": "Working Families Party placeholder nominee, not actively campaigning; no campaign site. (Employer staff pages are not an allowed source.)",
+  "qa9": "QA9 recheck: Working Families Party ballot placeholder (not an active campaign, per amNY); no campaign site or photo."
  },
  "sienna-m-fontaine": {
   "name": "Sienna M. Fontaine",
@@ -2900,7 +2937,8 @@
    "X @SiennaFontaine (default avatar, no photo)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Working Families Party placeholder nominee, not actively campaigning; no campaign site."
+  "note": "Working Families Party placeholder nominee, not actively campaigning; no campaign site.",
+  "qa9": "QA9 recheck: Working Families Party ballot placeholder (not an active campaign, per amNY); no campaign site or photo."
  },
  "bob-cohen": {
   "name": "Bob Cohen",
@@ -2954,7 +2992,8 @@
    "nycourts.gov (no public judge photo page for this court)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Has a Re-Elect Josh Hanshaft committee but no campaign website found."
+  "note": "Has a Re-Elect Josh Hanshaft committee but no campaign website found.",
+  "qa9": "QA9 recheck: no campaign site or social profile found (Ballotpedia lists only an email; Ballot Brief found no website)."
  },
  "emily-morales-minerva": {
   "name": "Emily Morales-Minerva",

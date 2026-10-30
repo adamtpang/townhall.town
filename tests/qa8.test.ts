@@ -88,3 +88,28 @@ describe("charter rule: charter-school stances are not scored on education", () 
     expect(m.default.data.races.length).toBe(19);
   });
 });
+
+// Civic QA9 (photo_gaps9.md, Oct 30 ~4:10 AM CT): Hochul's campaign-site photo replaces the MTA agency photo; Mark Ash
+// (completes tx-court-of-criminal-appeals-place-3) and DJ Brookter self-hosted from Civic's saved localFiles.
+describe("Civic QA9 photos", () => {
+  const ph = JSON.parse(fs.readFileSync("data/photos.json", "utf8"));
+  it("Hochul shows the kathyhochul.com photo with a head-and-shoulders focus; the MTA agency photo is gone", () => {
+    const h = ph.hotlinked["kathy-c-hochul-adrienne-e-adams"];
+    expect(h.url).toBe("https://kathyhochul.com/wp-content/uploads/2026/05/kha.jpg");
+    expect(h.page).toBe("https://kathyhochul.com/");
+    expect(h.focus).toEqual([0.62, 0.32, 2.2]);
+    expect(ph.selfHosted["kathy-c-hochul-adrienne-e-adams"]).toBeUndefined();
+    expect(fs.existsSync("public/portraits/kathy-c-hochul-adrienne-e-adams.avif")).toBe(false);
+    expect(JSON.stringify(h)).not.toMatch(/MTA|wikimedia/i);
+  });
+  it.each(["mark-ash", "dionjay-dj-brookter"])("%s is self-hosted from Civic's localFile, credited to the own social profile", (id) => {
+    const s = ph.selfHosted[id];
+    expect(s.file).toBe(`/portraits/${id}.webp`);
+    expect(fs.existsSync(`public${s.file}`)).toBe(true);
+    expect(s.via).toBe("own social profile");
+    expect(ph.hotlinked[id]).toBeUndefined();
+  });
+  it("tx-court-of-criminal-appeals-place-3 is complete", () => {
+    expect(ph.incompleteRaces).not.toContain("tx-court-of-criminal-appeals-place-3");
+  });
+});

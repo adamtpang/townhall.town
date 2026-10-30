@@ -299,6 +299,17 @@
    "width": 400,
    "height": 400
   },
+  "mark-ash": {
+   "name": "mark-ash",
+   "file": "/portraits/mark-ash.webp",
+   "sourceUrl": "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-1/272330064_349335627193811_4591728942131523261_n.jpg?stp=dst-jpg_tt6&cstp=mx450x600&ctp=s450x600&_nc_cat=106&ccb=1-7&_nc_sid=3ab345&_nc_ohc=dqVPpElF-ZgQ7kNvwHqM1kL&_nc_oc=AdpaX8jCN28btC4PpqQzudENKhIYZ7FbD5i7RlqgaAL8t6RMUuFhr-bwcmaYXZVeLci5goHYhLc0iDDr8oqv_O-W&_nc_zt=24&_nc_ht=scontent-hou1-1.xx&_nc_gid=9IA9mT5CPUCxmNGrI_ea3A&_nc_ss=7b20f&oh=00_AQRoP9QFDQejRxl7P_BH5jh1HPSCr6D78d_gKofTXvhgLA&oe=6AEA3849",
+   "credit": "Mark Ash own social profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.facebook.com/markashlibertarian",
+   "via": "own social profile",
+   "width": 450,
+   "height": 600
+  },
   "kevin-patrick-yeary": {
    "name": "kevin-patrick-yeary",
    "file": "/portraits/kevin-patrick-yeary.webp",
@@ -649,6 +660,17 @@
    "width": 750,
    "height": 490
   },
+  "dionjay-dj-brookter": {
+   "name": "dionjay-dj-brookter",
+   "file": "/portraits/dionjay-dj-brookter.webp",
+   "sourceUrl": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/840901129_3041620276192554_7208380494305078560_n.jpg?stp=dst-jpg_tt6&cstp=mx1063x1063&ctp=s720x720&_nc_cat=105&ccb=1-7&_nc_sid=3ab345&_nc_ohc=B3Yarv6IUAcQ7kNvwG5U4bf&_nc_oc=AdoybI7c8QavuO8k7BZanHSSK9-kBKv0JMnYmyWFE6PBNIu8Zf1Gu8iHRtQYT3RmMGP1hMfeMXM-bZrSPt1Pr6Lh&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=1niG-Jam1kJ33nnhcfs1lA&_nc_ss=7b20f&oh=00_AQRwAyIN3hqRKIEbG-7Ib9SJZ3XIT4NafSSeZ_ZW0pVKmw&oe=6AEA469E",
+   "credit": "DJ Brookter own social profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.facebook.com/dionjay.brookter/",
+   "via": "own social profile",
+   "width": 720,
+   "height": 720
+  },
   "mike-trouble-lin": {
    "name": "mike-trouble-lin",
    "file": "/portraits/mike-trouble-lin.webp",
@@ -697,17 +719,6 @@
    "via": "Wikimedia Commons",
    "width": 347,
    "height": 463
-  },
-  "kathy-c-hochul-adrienne-e-adams": {
-   "name": "kathy-c-hochul-adrienne-e-adams",
-   "file": "/portraits/kathy-c-hochul-adrienne-e-adams.avif",
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/World_Cup_Transportation_and_Safety_%28cropped%29.jpg/500px-World_Cup_Transportation_and_Safety_%28cropped%29.jpg",
-   "credit": "Metropolitan Transportation Authority",
-   "license": "CC BY 4.0",
-   "page": "https://commons.wikimedia.org/wiki/File:World_Cup_Transportation_and_Safety_(cropped).jpg",
-   "via": "Wikimedia Commons",
-   "width": 500,
-   "height": 660
   },
   "bruce-a-blakeman-todd-hood": {
    "name": "bruce-a-blakeman-todd-hood",
@@ -1759,6 +1770,20 @@
    "via": "campaign site",
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 1644
+  },
+  "kathy-c-hochul-adrienne-e-adams": {
+   "name": "kathy-c-hochul-adrienne-e-adams",
+   "url": "https://kathyhochul.com/wp-content/uploads/2026/05/kha.jpg",
+   "credit": "Kathy Hochul campaign site",
+   "page": "https://kathyhochul.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 800,
+   "focus": [
+    0.62,
+    0.32,
+    2.2
+   ]
   },
   "letitia-a-james": {
    "name": "letitia-a-james",

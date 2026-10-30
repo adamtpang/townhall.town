@@ -40,6 +40,9 @@ export const FOCUS = {
   // Civic qa_fixes8: transparent cutout at a podium, mic at lower left. Head and shoulders, mic out of frame; the tile's
   // light (black/5 on white) background shows through the transparent area. Rendered in Chrome and viewed (4:05 AM CT).
   "letitia-a-james": [0.5, 0.15, 1.3],
+  // Civic QA9 (photo_gaps9.md): Hochul's campaign-site street photo (kha.jpg, 800x800) replaces the MTA agency photo.
+  // Crowd shot: head and shoulders on her, the sign at left and the people beside her out of frame. Simulated and viewed (4:20 AM CT).
+  "kathy-c-hochul-adrienne-e-adams": [0.62, 0.32, 2.2],
 };
 // Older face crops on licensed event photos: [left, top, width, height] as fractions of the source (pixels cut, not edited).
 const CROP = {
