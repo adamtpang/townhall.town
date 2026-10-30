@@ -31,8 +31,15 @@ describe("fair cards (Adam 9:58 AM CT Oct 30)", () => {
     expect(c).toMatch(/SHOW_ACCOUNTABILITY \?/);
     expect(c).toMatch(/Record: \{recLine\}/);
     expect(c).toMatch(/line-clamp-2/); expect(c).toMatch(/pointsFor\(raceId, c\.name\)/);
-    expect(c).toMatch(/Matches you on \$\{o\.agree\} of \$\{o\.n\} issues/);
+    expect(c).toMatch(/Issue overlap with your answers: \$\{o\.agree\} of \$\{o\.n\} issues/);
     expect(c).toMatch(/o\.n >= 2 \?/);
+  });
+  it("the -2..+2 control has a neutral 2px black focus ring with 2px offset and no blue/red (10:34 AM CT)", () => {
+    const m = src("app/IssueMatch.tsx");
+    const cls = (m.match(/itemClassName="([^"]+)"/) ?? [])[1] ?? "";
+    expect(cls).toMatch(/focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2/);
+    expect(cls).not.toMatch(/accent|#3760|blue|red|ring-\[hsl/i);
+    expect(src("components/CandidateRow.tsx")).not.toMatch(/Matches you/);
   });
   it("record counts only sourced, non-null stances", () => {
     const st = { a: { value: 3, sourceUrl: "u" }, b: { value: null, sourceUrl: "u" }, c: { value: 0, sourceUrl: "u" }, d: { value: 2 } };

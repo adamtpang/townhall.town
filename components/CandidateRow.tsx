@@ -87,8 +87,9 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   const main = (mp?.p ?? []).filter((x) => !!x.u).slice(0, 3);
   const recLine = mp?.r?.t || NO_RECORD_LINE;
   const recUrl = mp?.r?.u ?? null;
+  // Adam 10:34 AM CT Oct 30: overlap is labeled as overlap, never a match or a recommendation.
   // Fit: shown only when 2+ issues overlap (both sides non-zero); a 0 answer never counts.
-  const fitLine = o.n >= 2 ? `Matches you on ${o.agree} of ${o.n} issues` : null;
+  const fitLine = o.n >= 2 ? `Issue overlap with your answers: ${o.agree} of ${o.n} issues` : null;
   void answeredYesNo;
   const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
   return (
