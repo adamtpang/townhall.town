@@ -62,7 +62,7 @@ export default function AgentTrace({
               </span>
               <span className="text-black/70 sm:col-span-6">{s.summary}</span>
               <span className="text-xs text-black/50 sm:col-span-2 sm:text-right">
-                {s.ms != null ? `${s.ms} ms` : ""} · {k === "analyze" ? t("model reasoning") : chose ? t("model called") : t("auto-completed")}
+                {s.ms != null ? `${s.ms} ms` : ""} · {k === "analyze" ? (s.summary?.includes("computed") ? t("computed from data") : t("model reasoning")) : chose ? t("model called") : t("auto-completed")}
               </span>
               <span className="text-xs text-black/50 sm:col-span-12 sm:pl-0">{t("Source")}: {t(SOURCE[k] ?? "")}</span>
             </li>

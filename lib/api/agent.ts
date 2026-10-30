@@ -121,7 +121,7 @@ async function analyze(zip: string, results: Record<string, any>, emit: Emit): P
   };
   emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "running", input: { zip } });
   const t0 = Date.now();
-  for (const { label: m, model: lm } of modelLadder()) {
+  for (const { label: m, model: lm } of modelLadder().slice(0, 1)) {
     try {
       const res = await generateText({
         model: lm,
@@ -144,8 +144,25 @@ Write at most 3 bullets, each under 35 words, starting with "- ". Bullet 1: if a
       /* try the next model */
     }
   }
-  emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: "No model available; showing the plain summary" });
-  return null;
+  const text = factBullets(facts);
+  emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: text ? `${text.split(/\n/).length} insights computed from the data (model busy)` : "No insights for this ZIP" });
+  return text ? { text, model: "computed" } : null;
+}
+
+/** The same three insights, written from the computed facts, for when no model is available. */
+function factBullets(f: { contestsByMarket: any[]; measuresWithCost: any[]; localProblemFurthestFromState: any }): string {
+  const out: string[] = [];
+  const close = f.contestsByMarket.find((c) => c.competitive);
+  if (close) out.push(`- Closest contest: ${close.contest}, with ${close.leader} at ${close.marketPricePct}% on Polymarket.`);
+  else if (f.contestsByMarket.length) {
+    const top = [...f.contestsByMarket].sort((a, b) => b.marketPricePct - a.marketPricePct)[0];
+    out.push(`- No contest is close on Polymarket; the most lopsided is ${top.contest}, with ${top.leader} at ${top.marketPricePct}%.`);
+  }
+  const m = f.measuresWithCost[0];
+  if (m) out.push(`- ${m.measure}: ${m.cost}`);
+  const p = f.localProblemFurthestFromState;
+  if (p) out.push(`- ${p.problem}: ${p.value} here vs ${p.state}% statewide.`);
+  return out.join("\n");
 }
 
 async function run(zip: string, emit: Emit) {
