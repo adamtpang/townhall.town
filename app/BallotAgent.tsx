@@ -41,17 +41,19 @@ const DEMO = [
 // Served: Austin, SF, NYC only (lib/site.ts COVERED_ZIPS); the API returns "unsupported" for every other ZIP.
 // 77002 (Houston) stays cached in data/ballots.json but is hidden until after the Oct 30 Hack Fair (Adam; main #31).
 const SUPPORTED = new Set<string>(COVERED_ZIPS);
-const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
+const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems", "getCampaignFinance", "getCountyUnemployment"];
 const TOOL_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
   getRaces: "Listing every race and measure",
   getCandidates: "Looking up candidates",
   getMarketOdds: "Checking Polymarket prices",
   getLocalProblems: "Pulling local Census data",
+  getCampaignFinance: "Checking OpenFEC campaign finance",
+  getCountyUnemployment: "Checking BLS county unemployment",
 };
 const TOPIC_LABEL: Record<string, string> = { housing: "Housing costs", healthcare: "Health coverage", jobs: "Jobs" };
 
-type Step = { tool: string; status: "running" | "done"; summary?: string; ms?: number };
+type Step = { tool: string; status: "running" | "done"; summary?: string; ms?: number; checked?: string; source?: { label: string; url: string } | null };
 type Markets = Record<string, { quotes: MarketQuote[]; status: string }>;
 type Result = { mode: "live" | "fallback"; model: string | null; modelError: string | null; toolsRunByModel: string[]; narration: string; summaryBullets?: import("./AgentTrace").SummaryBullet[]; ballot: Ballot; markets: Markets; generatedAt: string };
 type Pol = Politician & { campaignSite?: string | null; incumbentNote?: string; incumbentSource?: string; hasThemes?: boolean; positions?: (NonNullable<Politician["positions"]>[number] & { match?: string })[] };
