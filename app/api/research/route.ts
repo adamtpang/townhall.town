@@ -56,6 +56,7 @@ export async function GET(req: Request) {
         const urls = [...new Set([c.campaignSite, c.officialSite, c.ballotpedia].filter((u: unknown): u is string => typeof u === "string" && /^https:\/\//.test(u)))];
         emit({ type: "candidate", name: c.name, sources: urls.length });
         let found = 0;
+        const seen = new Set<string>(); // the same article often appears under two URLs
         emit({ type: "step", name: c.name, url: "search:" + c.name, label: "Searching the web", status: "running" });
         const sr = await search(c.name, race.office || race.title, ballot?.place || zip || "");
         emit({ type: "step", name: c.name, url: "search:" + c.name, label: "Searching the web", status: sr.urls.length ? "done" : "failed", detail: sr.status });
@@ -73,7 +74,8 @@ export async function GET(req: Request) {
           const r = await read(u);
           // On pages that are not the candidate's own, keep only sentences that name them.
           const quotes = r.text ? findQuotes(r.text, ids, 1, own.has(u) ? undefined : last) : [];
-          const keep = quotes.slice(0, Math.max(0, 4 - found)); found += keep.length;
+          const fresh = quotes.filter((x) => { const k = x.quote.toLowerCase().replace(/[^a-z0-9]+/g, ""); if (seen.has(k)) return false; seen.add(k); return true; });
+          const keep = fresh.slice(0, Math.max(0, 4 - found)); found += keep.length;
           emit({ type: "step", name: c.name, url: u, label: `Reading ${host(u)}`, status: r.text ? "done" : "failed", detail: r.text ? `${quotes.length} quote${quotes.length === 1 ? "" : "s"} found` : r.status });
           for (const x of keep) emit({ type: "citation", name: c.name, issue: x.issue, quote: x.quote, url: u });
         }));
