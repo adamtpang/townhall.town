@@ -20,7 +20,7 @@ describe("Towny system prompt", () => {
     expect(p).toBe(TOWNY_PROMPT_TEMPLATE.split("{{TODAY}}").join("Thursday, October 29, 2026"));
   });
   it("the agent route uses it", () => {
-    const src = readFileSync("app/api/agent/route.ts", "utf8");
+    const src = readFileSync("lib/api/agent.ts", "utf8");
     expect(src).toContain("townyPrompt(");
     expect(src).not.toMatch(/const SYSTEM = `/);
   });
@@ -29,7 +29,7 @@ describe("Towny system prompt", () => {
 describe("No third-party address or coordinate tools", () => {
   it("getVoterInfo and getStateLegislators are gone", () => {
     expect(Object.keys(dataTools).sort()).toEqual(["getCampaignFinance", "getCountyUnemployment", "getSponsoredBills"]);
-    for (const f of ["lib/dataTools.ts", "app/api/agent/route.ts"]) {
+    for (const f of ["lib/dataTools.ts", "lib/api/agent.ts"]) {
       const src = readFileSync(f, "utf8");
       expect(src).not.toMatch(/civicinfo|openstates|getVoterInfo|getStateLegislators/i);
     }

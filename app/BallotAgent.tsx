@@ -245,6 +245,8 @@ export default function BallotAgent() {
     t0.current = Date.now();
     try {
       const res = await fetch("/api/agent", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ zip: z }) });
+      // API errors (400, 429, 500) are one JSON object, not a stream.
+      if (!res.ok) throw new Error(res.status === 429 ? "rate_limited" : `HTTP ${res.status}`);
       const reader = res.body!.getReader();
       const dec = new TextDecoder();
       let buf = "";
@@ -270,7 +272,7 @@ export default function BallotAgent() {
       }
     } catch (err) {
       console.error("[agent]", err);
-      setNotice("Something went wrong talking to the agent. Please try again.");
+      setNotice((err as Error)?.message === "rate_limited" ? "Too many lookups in the last minute. Please wait a moment and try again." : "Something went wrong talking to the agent. Please try again.");
     }
     setBusy(false);
     setTimeout(() => document.getElementById("ballot")?.scrollIntoView({ behavior: "smooth" }), 100);

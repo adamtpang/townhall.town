@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import * as agent from "../app/api/agent/route";
 import * as locate from "../app/api/locate/route";
 import * as catchAll from "../app/api/[...slug]/route";
@@ -8,6 +8,10 @@ import { GET as openapiGET } from "../app/openapi.json/route";
 import { GET as catalogGET } from "../app/.well-known/api-catalog/route";
 import { openApiSpec } from "../lib/openapi";
 import { tierFor, TIER_LABELS } from "../app/RaceTiers";
+import { resetRateLimits } from "../lib/rateLimit";
+
+// These tests call the agent far more than 10 times a minute from one (unknown) client; start each with fresh counters.
+beforeEach(() => resetRateLimits());
 
 const B = "https://townhall.town";
 async function expectError(res: Response, status: number, code: string) {

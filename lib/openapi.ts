@@ -1,28 +1,154 @@
-// OpenAPI 3.1 description of the public API. Documents only the routes that exist:
-// app/api/agent/route.ts (GET, POST) and app/api/locate/route.ts (POST). Served at /openapi.json.
+// OpenAPI 3.1 description of the public API. Documents only the routes that exist: /api/v1/agent (GET, POST) and
+// /api/v1/locate (POST), plus their unversioned aliases /api/agent and /api/locate. Served at /openapi.json.
 import { COVERAGE, SITE } from "./site";
+import { AGENT_POLICY, LOCATE_POLICY } from "./rateLimit";
 
 const zips = COVERAGE.map((c) => c.zip);
-const err = (description: string, example: { code: string; message: string }) => ({
-  description,
-  content: { "application/json": { schema: { $ref: "#/components/schemas/Error" }, example: { error: example } } },
+
+// Response headers, defined once in components.headers.
+const H = (name: string) => ({ $ref: `#/components/headers/${name}` });
+const rlHeaders = {
+  "API-Version": H("API-Version"),
+  "RateLimit-Policy": H("RateLimit-Policy"),
+  RateLimit: H("RateLimit"),
+  "RateLimit-Limit": H("RateLimit-Limit"),
+  "RateLimit-Remaining": H("RateLimit-Remaining"),
+  "RateLimit-Reset": H("RateLimit-Reset"),
+};
+const errContent = (example: { code: string; message: string }) => ({
+  "application/json": { schema: { $ref: "#/components/schemas/Error" }, example: { error: example } },
 });
-const invalidZip = err("The zip is not exactly 5 digits. Nothing is trimmed or sliced.", { code: "invalid", message: "zip must be exactly 5 digits, for example 78701." });
-const ndjson = {
+const err = (description: string, example: { code: string; message: string }, headers: Record<string, unknown> = rlHeaders) => ({
+  description,
+  headers,
+  content: errContent(example),
+});
+const invalidZip = err("The zip is not exactly 5 digits, or the body is not JSON. Nothing is trimmed or sliced.", { code: "invalid", message: "zip must be exactly 5 digits, for example 78701." });
+const tooMany = (policy: { limit: number; windowSec: number }) => ({
+  description: `Rate limited: more than ${policy.limit} requests in ${policy.windowSec} seconds from this client. Wait Retry-After seconds.`,
+  headers: { ...rlHeaders, "Retry-After": H("Retry-After") },
+  content: errContent({ code: "rate_limited", message: `Too many requests: the limit is ${policy.limit} per ${policy.windowSec} seconds per client. Retry after 42 seconds.` }),
+});
+const internal = err("Unexpected server error, or (JSON mode only) the agent run failed.", { code: "internal", message: "Unexpected server error." });
+const notAllowed = (allow: string) => ({
+  ...err(
+    "Method not allowed. The Allow header lists the supported methods.",
+    { code: "method_not_allowed", message: `Method not allowed. Use ${allow.replace(", ", " or ")}.` },
+    { "API-Version": H("API-Version"), Allow: { description: "Supported methods.", schema: { type: "string", example: allow } } }
+  ),
+});
+const ballotOk = {
   description:
-    "A stream of newline-delimited JSON events. Step and status events arrive while tools run. The stream ends with one `result` event, or one `unsupported` event for a 5-digit ZIP that is not covered, or one `error` event if the run fails after the stream started.",
+    "The ballot run. Default (Accept: */* or application/x-ndjson): a stream of newline-delimited JSON, one AgentEvent per line. Step and status events arrive while tools run; the stream ends with one `result` event, or one `unsupported` event for a 5-digit ZIP that is not covered, or one `error` event if the run fails after the stream started. With `Accept: application/json` (preferred over NDJSON) the server waits for the run and returns only the final event as one JSON object (ResultEvent or UnsupportedEvent; a failed run is a 500 Error).",
+  headers: { ...rlHeaders, Vary: { description: "Always Accept: the media type depends on it.", schema: { type: "string", const: "Accept" } } },
   content: {
     "application/x-ndjson": {
       schema: { $ref: "#/components/schemas/AgentEvent" },
+      "x-ndjson-item-schema": { $ref: "#/components/schemas/AgentEvent" },
+      example: { type: "unsupported", zip: "90210", message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." },
+    },
+    "application/json": {
+      schema: { $ref: "#/components/schemas/AgentFinalEvent" },
       example: { type: "unsupported", zip: "90210", message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." },
     },
   },
 };
-const notAllowed = (allow: string) => ({
-  ...err("Method not allowed. The Allow header lists the supported methods.", { code: "method_not_allowed", message: `Method not allowed. Use ${allow.replace(", ", " or ")}.` }),
-  headers: { Allow: { schema: { type: "string", example: allow } } },
-});
 const source = { $ref: "#/components/schemas/Source" };
+const acceptParam = {
+  name: "Accept",
+  in: "header",
+  required: false,
+  description: "Omit (or send application/x-ndjson) for the live stream. Send application/json for one buffered JSON object with the final event.",
+  schema: { type: "string", examples: ["application/x-ndjson", "application/json"] },
+};
+
+const zipBody = {
+  required: true,
+  content: {
+    "application/json": {
+      schema: { type: "object", required: ["zip"], properties: { zip: { type: "string", pattern: "^\\d{5}$", description: "Exactly 5 digits, as a string." } } },
+      example: { zip: "78701" },
+    },
+  },
+};
+const locateBody = {
+  required: true,
+  description: "Coordinates go in the JSON body, not the URL, so they do not appear in request paths or logs of URLs.",
+  content: {
+    "application/json": {
+      schema: {
+        type: "object",
+        required: ["lat", "lon"],
+        properties: {
+          lat: { type: "number", minimum: -90, maximum: 90, description: "Latitude in decimal degrees." },
+          lon: { type: "number", minimum: -180, maximum: 180, description: "Longitude in decimal degrees." },
+        },
+      },
+      example: { lat: 30.2672, lon: -97.7431 },
+    },
+  },
+};
+
+/** The agent and locate operations, for a path prefix. `alias` marks the unversioned paths. */
+function agentPath(alias: boolean) {
+  const sfx = alias ? "Unversioned" : "";
+  const aliasNote = alias ? " Unversioned alias of /api/v1/agent with identical behavior. Prefer /api/v1/agent in new code." : "";
+  return {
+    get: {
+      operationId: `getBallot${sfx}`,
+      tags: ["ballot"],
+      summary: alias ? "Explain the ballot for a ZIP (alias of /api/v1/agent)" : "Explain the ballot for a ZIP",
+      description:
+        "Runs the ballot agent for a ZIP: districts, races, candidates, market odds and local Census data, plus a short neutral AI summary written only from those records. Responses are not cached (Cache-Control: no-store). Rate limited per client: see RateLimit headers." +
+        aliasNote,
+      parameters: [{ name: "zip", in: "query", required: true, description: "Exactly 5 digits.", schema: { type: "string", pattern: "^\\d{5}$", examples: zips } }, acceptParam],
+      responses: { "200": ballotOk, "400": invalidZip, "405": notAllowed("GET, POST"), "429": tooMany(AGENT_POLICY), "500": internal },
+    },
+    post: {
+      operationId: `postBallot${sfx}`,
+      tags: ["ballot"],
+      summary: alias ? "Explain the ballot for a ZIP, JSON body (alias of /api/v1/agent)" : "Explain the ballot for a ZIP (JSON body)",
+      description: "Same as GET, with the ZIP in a JSON body. The townhall.town page calls the /api/agent alias this way." + aliasNote,
+      parameters: [acceptParam],
+      requestBody: zipBody,
+      responses: { "200": ballotOk, "400": invalidZip, "405": notAllowed("GET, POST"), "429": tooMany(AGENT_POLICY), "500": internal },
+    },
+  };
+}
+function locatePath(alias: boolean) {
+  return {
+    post: {
+      operationId: alias ? "locateZipUnversioned" : "locateZip",
+      tags: ["location"],
+      summary: alias ? "Coordinates to ZIP (alias of /api/v1/locate)" : "Coordinates to ZIP",
+      description:
+        "Looks up the ZIP Code Tabulation Area for a point using the public U.S. Census Geocoder. Coordinates are not stored. Rate limited per client: see RateLimit headers." +
+        (alias ? " Unversioned alias of /api/v1/locate with identical behavior. Prefer /api/v1/locate in new code." : ""),
+      requestBody: locateBody,
+      responses: {
+        "200": {
+          description: "The ZIP for the point.",
+          headers: rlHeaders,
+          content: { "application/json": { schema: { $ref: "#/components/schemas/LocateResult" }, example: { zip: "78701", source: "U.S. Census Geocoder (ZCTA)" } } },
+        },
+        "400": err("The body is not JSON, or lat or lon is missing or out of range.", { code: "invalid", message: 'Send a JSON body {"lat": <number>, "lon": <number>} in decimal degrees (lat -90..90, lon -180..180).' }),
+        "404": err("The point is not inside a U.S. ZIP Code Tabulation Area.", { code: "not_found", message: "No ZIP found for this location" }),
+        "405": notAllowed("POST"),
+        "429": tooMany(LOCATE_POLICY),
+        "500": internal,
+        "502": err("The Census Geocoder did not answer.", { code: "upstream_unavailable", message: "Census geocoder unavailable" }),
+      },
+    },
+  };
+}
+
+export const VERSIONING = {
+  current: "v1",
+  strategy: "url-path",
+  summary:
+    "The API is versioned in the URL path (/api/v1/...). Every response carries API-Version. Non-breaking changes (new optional fields, new endpoints) ship in place. Breaking changes ship under a new /api/vN path; the previous version keeps working for at least 90 days after the new one launches, and during that time its responses carry Deprecation (RFC 9745) and Sunset (RFC 8594) headers plus a Link to this policy. The unversioned /api/agent and /api/locate paths are aliases of /api/v1 and follow the same policy.",
+  minimumNoticeDays: 90,
+};
 
 export function openApiSpec() {
   return {
@@ -31,11 +157,26 @@ export function openApiSpec() {
       title: "townhall.town API",
       version: "1.0.0",
       summary: "Nonpartisan, sourced ballot data for the Nov 3, 2026 U.S. general election.",
-      description: `Free, no key, no account. Covered ZIPs: ${COVERAGE.map((c) => `${c.zip} (${c.place})`).join(", ")}. Every fact carries a source link; facts that cannot be confirmed are marked unsure. Every API error is JSON: {"error":{"code","message"}}.`,
+      description: `Free, no key, no account. Covered ZIPs: ${COVERAGE.map((c) => `${c.zip} (${c.place})`).join(", ")}. Every fact carries a source link; facts that cannot be confirmed are marked unsure. Every API error is JSON: {"error":{"code","message"}}.
+
+Versioning and deprecation: ${VERSIONING.summary} Policy: ${SITE.url}/developers#versioning
+
+Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} requests per minute on the ballot agent, ${LOCATE_POLICY.limit} on locate. Counters are kept in memory per server instance, so the limit is approximate, not a guarantee. Every response carries RateLimit-Policy and RateLimit (draft-ietf-httpapi-ratelimit-headers) and RateLimit-Limit, RateLimit-Remaining and RateLimit-Reset. Over the limit you get 429 with Retry-After and the usual JSON error body (code rate_limited).`,
       license: { name: "MIT", identifier: "MIT" },
       contact: { name: "GitHub issues", url: SITE.issues },
     },
-    externalDocs: { description: "Developer guide with curl examples", url: `${SITE.url}/developers` },
+    "x-api-versioning": {
+      ...VERSIONING,
+      header: "API-Version",
+      deprecationHeaders: ["Deprecation (RFC 9745)", "Sunset (RFC 8594)", 'Link rel="deprecation"'],
+      policyUrl: `${SITE.url}/developers#versioning`,
+    },
+    "x-rate-limits": {
+      headers: ["RateLimit-Policy", "RateLimit", "RateLimit-Limit", "RateLimit-Remaining", "RateLimit-Reset", "Retry-After"],
+      scope: "per client IP, per server instance (approximate, not guaranteed)",
+      policies: [AGENT_POLICY, LOCATE_POLICY].map((p) => ({ name: p.name, limit: p.limit, windowSeconds: p.windowSec })),
+    },
+    externalDocs: { description: "townhall.town API and developer docs, with curl examples", url: `${SITE.url}/developers` },
     servers: [{ url: SITE.url }],
     // No authentication: the API is public and keyless.
     security: [],
@@ -43,86 +184,29 @@ export function openApiSpec() {
       { name: "ballot", description: "Races, candidates, measures and sources for a covered ZIP." },
       { name: "location", description: "Coordinates to ZIP via the U.S. Census Geocoder." },
     ],
+    // Canonical /v1 paths first, then the unversioned aliases.
     paths: {
-      "/api/agent": {
-        get: {
-          operationId: "getBallot",
-          tags: ["ballot"],
-          summary: "Explain the ballot for a ZIP",
-          description:
-            "Runs the ballot agent for a ZIP: districts, races, candidates, market odds and local Census data, plus a short neutral AI summary written only from those records. Responses are not cached (Cache-Control: no-store).",
-          parameters: [
-            { name: "zip", in: "query", required: true, description: "Exactly 5 digits.", schema: { type: "string", pattern: "^\\d{5}$", examples: zips } },
-          ],
-          responses: { "200": ndjson, "400": invalidZip, "405": notAllowed("GET, POST") },
-        },
-        post: {
-          operationId: "postBallot",
-          tags: ["ballot"],
-          summary: "Explain the ballot for a ZIP (JSON body)",
-          description: "Same as GET, with the ZIP in a JSON body. This is what the townhall.town page calls.",
-          requestBody: {
-            required: true,
-            content: {
-              "application/json": {
-                schema: {
-                  type: "object",
-                  required: ["zip"],
-                  properties: { zip: { type: "string", pattern: "^\\d{5}$", description: "Exactly 5 digits, as a string." } },
-                },
-                example: { zip: "78701" },
-              },
-            },
-          },
-          responses: { "200": ndjson, "400": invalidZip, "405": notAllowed("GET, POST") },
-        },
-      },
-      "/api/locate": {
-        post: {
-          operationId: "locateZip",
-          tags: ["location"],
-          summary: "Coordinates to ZIP",
-          description: "Looks up the ZIP Code Tabulation Area for a point using the public U.S. Census Geocoder. Coordinates are not stored.",
-          requestBody: {
-            required: true,
-            description: "Coordinates go in the JSON body, not the URL, so they do not appear in request paths or logs of URLs.",
-            content: {
-              "application/json": {
-                schema: {
-                  type: "object",
-                  required: ["lat", "lon"],
-                  properties: {
-                    lat: { type: "number", minimum: -90, maximum: 90, description: "Latitude in decimal degrees." },
-                    lon: { type: "number", minimum: -180, maximum: 180, description: "Longitude in decimal degrees." },
-                  },
-                },
-                example: { lat: 30.2672, lon: -97.7431 },
-              },
-            },
-          },
-          responses: {
-            "200": {
-              description: "The ZIP for the point.",
-              content: {
-                "application/json": {
-                  schema: {
-                    type: "object",
-                    required: ["zip", "source"],
-                    properties: { zip: { type: "string", pattern: "^\\d{5}$" }, source: { type: "string", const: "U.S. Census Geocoder (ZCTA)" } },
-                  },
-                  example: { zip: "78701", source: "U.S. Census Geocoder (ZCTA)" },
-                },
-              },
-            },
-            "400": err("The body is not JSON, or lat or lon is missing or out of range.", { code: "invalid", message: 'Send a JSON body {"lat": <number>, "lon": <number>} in decimal degrees (lat -90..90, lon -180..180).' }),
-            "404": err("The point is not inside a U.S. ZIP Code Tabulation Area.", { code: "not_found", message: "No ZIP found for this location" }),
-            "405": notAllowed("POST"),
-            "502": err("The Census Geocoder did not answer.", { code: "upstream_unavailable", message: "Census geocoder unavailable" }),
-          },
-        },
-      },
+      "/api/v1/agent": agentPath(false),
+      "/api/v1/locate": locatePath(false),
+      "/api/agent": agentPath(true),
+      "/api/locate": locatePath(true),
     },
     components: {
+      headers: {
+        "API-Version": { description: "Major version of the API that served the response.", schema: { type: "string", const: "1" } },
+        "RateLimit-Policy": {
+          description: 'Quota policy (draft-ietf-httpapi-ratelimit-headers): name, q = requests allowed, w = window in seconds. Example: "agent";q=10;w=60',
+          schema: { type: "string", examples: ['"agent";q=10;w=60', '"locate";q=30;w=60'] },
+        },
+        RateLimit: {
+          description: 'Current service limit (draft-ietf-httpapi-ratelimit-headers): r = requests left, t = seconds until the window resets. Example: "agent";r=9;t=60',
+          schema: { type: "string", examples: ['"agent";r=9;t=60'] },
+        },
+        "RateLimit-Limit": { description: "Requests allowed per window.", schema: { type: "integer", examples: [10] } },
+        "RateLimit-Remaining": { description: "Requests left in the current window.", schema: { type: "integer", minimum: 0, examples: [9] } },
+        "RateLimit-Reset": { description: "Seconds until the current window resets.", schema: { type: "integer", minimum: 1, examples: [60] } },
+        "Retry-After": { description: "Seconds to wait before retrying (RFC 9110). Sent on 429.", schema: { type: "integer", minimum: 1, examples: [42] } },
+      },
       schemas: {
         Error: {
           type: "object",
@@ -132,7 +216,7 @@ export function openApiSpec() {
               type: "object",
               required: ["code", "message"],
               properties: {
-                code: { type: "string", enum: ["invalid", "not_found", "method_not_allowed", "upstream_unavailable", "internal"] },
+                code: { type: "string", enum: ["invalid", "not_found", "method_not_allowed", "upstream_unavailable", "rate_limited", "internal"] },
                 message: { type: "string" },
               },
             },
@@ -144,8 +228,18 @@ export function openApiSpec() {
           required: ["label", "url"],
           properties: { label: { type: "string" }, url: { type: "string", format: "uri" }, retrieved: { type: "string" } },
         },
+        LocateResult: {
+          type: "object",
+          required: ["zip", "source"],
+          properties: { zip: { type: "string", pattern: "^\\d{5}$" }, source: { type: "string", const: "U.S. Census Geocoder (ZCTA)" } },
+        },
+        AgentFinalEvent: {
+          description: "The final event of a run, returned alone as application/json when the client sends Accept: application/json.",
+          oneOf: [{ $ref: "#/components/schemas/ResultEvent" }, { $ref: "#/components/schemas/UnsupportedEvent" }],
+          discriminator: { propertyName: "type", mapping: { result: "#/components/schemas/ResultEvent", unsupported: "#/components/schemas/UnsupportedEvent" } },
+        },
         AgentEvent: {
-          description: "One line of the NDJSON stream.",
+          description: "One line of the NDJSON stream (application/x-ndjson): each line is one JSON object matching this schema.",
           oneOf: [
             { $ref: "#/components/schemas/StepEvent" },
             { $ref: "#/components/schemas/StatusEvent" },
