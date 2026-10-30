@@ -121,8 +121,10 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
         <section className={tile} data-www-tile="where">
           <h2 className={tileH}>{tr("Where")}</h2>
           {edWhere.lookupUrl && edWhere.dependsOnAddress === false ? <p className="mt-1 text-base leading-6 font-[530]" data-www-any-center>Any {edWhere.jurisdiction ?? county} vote center</p> : null}
-          {edWhere.lookupUrl ? <a href={edWhere.lookupUrl} className={extLink} target="_blank" rel="noreferrer" data-card-map>{tr("Find your polling place")} ↗{ext}</a> : <p className="mt-1 text-base text-black/60">No sourced polling place for this ZIP yet.</p>}
-          {print?.whereExtra ? <a href={print.whereExtra.url} className={extLink} target="_blank" rel="noreferrer" data-www-portal>{print.whereExtra.label} ↗{ext}</a> : null}
+          {edWhere.lookupUrl ? <a href={edWhere.lookupUrl} className={extLink} target="_blank" rel="noreferrer" data-card-map data-card-lookup>{where.lookupLabel ?? tr("Find your polling place")} ↗{ext}</a> : <p className="mt-1 text-base text-black/60">No sourced polling place for this ZIP yet.</p>}
+          {/* Merge of prod 3cf1594: its Voter Portal link (where.portalUrl, data-card-portal) is the same SF portal as whereExtra. */}
+          {print?.whereExtra ? <a href={print.whereExtra.url} className={extLink} target="_blank" rel="noreferrer" data-www-portal data-card-portal>{print.whereExtra.label} ↗{ext}</a>
+            : where.portalUrl ? <a href={where.portalUrl} className={extLink} target="_blank" rel="noreferrer" data-card-portal>Voter Portal ↗{ext}</a> : null}
           {wait ? <a href={wait.url} className={extLink} target="_blank" rel="noreferrer" data-www-wait>{wait.label} ↗{ext}</a> : null}
         </section>
       </div>
@@ -156,8 +158,8 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
       </dialog>
       {when.mail ? <p className="mt-10 text-base font-[450] text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
 
-      <section className="mt-10 border-t border-black/15 pt-6">
-        <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
+      <section className="mt-10 border-t border-black/15 pt-6" id="card-overlap" data-card-overlap>
+        <h2 className="text-sm font-[530] text-black/60" tabIndex={-1}>Who lines up with you</h2>
         <p className="mt-1 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation. Court races are not compared.</p>
         
         <>

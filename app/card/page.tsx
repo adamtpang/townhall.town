@@ -3,7 +3,9 @@ import { redirect } from "next/navigation";
 import { validZip } from "../../lib/zip.mjs";
 import { ballotFor } from "../../lib/tools";
 import { issuesFor } from "../../lib/issueOrder";
+import { inOfficialOrder } from "../../lib/ballotOrder";
 import BallotCard from "./BallotCard";
+import TownyFab from "../../components/towny/TownyFab";
 import type { PrintData } from "./PrintBallot";
 import { printRules, officialOrder, orderCite, raceOrder } from "../../lib/printRules";
 import { splitGroupsFor, splitIds } from "../../lib/printText";
@@ -20,7 +22,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ z
   const ids = issuesFor(zip, b.state).map((i) => i.id);
   // Photo (already all-or-none per race), site link: the same row as the Who section (Adam, Oct 29 11:28 PM CT).
   const bRaces = raceOrder(zip, b.races);
-  const races = bRaces.map((r) => ({ id: r.id, title: r.title, level: r.level, judicial: (r as { judicial?: unknown }).judicial ? true : false, meta: (r as { meta?: unknown }).meta ?? null, candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, photo: c.photo ?? null, campaignSite: (c as { campaignSite?: string | null }).campaignSite ?? null, officialSite: c.officialSite ?? null })) }));
+  // Merge of prod 3cf1594 (Civic P1, 2:58 PM CT): on-screen candidates in the confirmed official order (lib/ballotOrder).
+  const races = bRaces.map((r) => ({ id: r.id, title: r.title, level: r.level, judicial: (r as { judicial?: unknown }).judicial ? true : false, meta: (r as { meta?: unknown }).meta ?? null, candidates: inOfficialOrder(zip, r.id, r.candidates).map((c) => ({ name: c.name, party: c.party, photo: c.photo ?? null, campaignSite: (c as { campaignSite?: string | null }).campaignSite ?? null, officialSite: c.officialSite ?? null })) }));
   // Printed ballot: every race (court races too) and measure in data order; candidates in Civic's confirmed official order
   // (bp22 ballot_order_check), else data order with a † (Design addendum, Oct 30). Voter rules verbatim from Civic (print24).
   const st = b.state as PrintData["state"];
@@ -43,5 +46,11 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ z
     splitGroups,
     measures: ((b as { measures?: { id: string; title: string; source?: string | null }[] }).measures ?? []).map((m) => ({ id: m.id, title: m.title })),
   };
-  return <div data-print-root><BallotCard zip={zip} place={b.place} county={(b as { county?: string }).county ? `${(b as { county?: string }).county}, ${b.state}` : null} ids={ids} races={races} print={print} /></div>;
+  // Merge of prod 3cf1594 (QA 6b2ae5c P1-3): /card gets the same Towny button and panel, scoped to its ZIP.
+  return (
+    <>
+      <div data-print-root><BallotCard zip={zip} place={b.place} county={(b as { county?: string }).county ? `${(b as { county?: string }).county}, ${b.state}` : null} ids={ids} races={races} print={print} /></div>
+      <TownyFab zip={zip} />
+    </>
+  );
 }

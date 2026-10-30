@@ -1,0 +1,768 @@
+{
+ "_about": "Races whose candidate order was confirmed against an official sample ballot. Copied from Civic's civic/bp22/ballot_order_check.json (generated 2026-10-30): 78701 and 10001 rows with status MATCH or MISMATCH; party labels after each name dropped. Every other race (all of 94103, and the 7 unconfirmed 10001 races) is unsure.",
+ "races": [
+  {
+   "zip": "78701",
+   "raceId": "tx-10",
+   "title": "U.S. House Texas District 10",
+   "officialOrder": [
+    "Chris Gober",
+    "Caitlin Rourk"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-37",
+   "title": "U.S. House Texas District 37",
+   "officialOrder": [
+    "Lauren B. Peña",
+    "Greg Casar"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "us-senate-tx",
+   "title": "U.S. Senate Texas",
+   "officialOrder": [
+    "Ken Paxton",
+    "James Talarico",
+    "Ted Brown"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-gov",
+   "title": "Governor of Texas",
+   "officialOrder": [
+    "Greg Abbott",
+    "Gina Hinojosa",
+    "Pat Dixon"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-ltgov",
+   "title": "Lieutenant Governor of Texas",
+   "officialOrder": [
+    "Dan Patrick",
+    "Vikki Goodwin",
+    "Anthony Cristo",
+    "Kevin McCormick"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-ag",
+   "title": "Attorney General of Texas",
+   "officialOrder": [
+    "Mayes Middleton",
+    "Nathan Johnson",
+    "Tom Oxford"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-comptroller",
+   "title": "Texas Comptroller of Public Accounts",
+   "officialOrder": [
+    "Don Huffines",
+    "Sarah Eckhardt",
+    "V. Alonzo Echavarria-Garza",
+    "Shehla Faizi"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-land",
+   "title": "Texas Land Commissioner",
+   "officialOrder": [
+    "Dawn Buckingham",
+    "Benjamin Flores",
+    "Neill Snider"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-agcomm",
+   "title": "Texas Commissioner of Agriculture",
+   "officialOrder": [
+    "Nate Sheets",
+    "Clayton Tucker",
+    "Austin R. Kelly"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-rrc",
+   "title": "Texas Railroad Commission",
+   "officialOrder": [
+    "Bo French",
+    "Jon Rosenthal",
+    "Arthur DiBianca"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-1-chief-justice",
+   "title": "Texas Supreme Court Chief Justice",
+   "officialOrder": [
+    "Jimmy Blacklock",
+    "Maggie Ellis"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-2",
+   "title": "Texas Supreme Court Place 2 (Unexpired Term)",
+   "officialOrder": [
+    "James P. Sullivan",
+    "Chari Kelly"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-7",
+   "title": "Texas Supreme Court Place 7",
+   "officialOrder": [
+    "Kyle Hawkins",
+    "Kristen Hawkins"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-8",
+   "title": "Texas Supreme Court Place 8",
+   "officialOrder": [
+    "Brett Busby",
+    "Gisela D. Triana"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-3",
+   "title": "Texas Court of Criminal Appeals Place 3",
+   "officialOrder": [
+    "Thomas Smith",
+    "Okey Anyiam",
+    "Mark Ash"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-4",
+   "title": "Texas Court of Criminal Appeals Place 4",
+   "officialOrder": [
+    "Kevin Patrick Yeary",
+    "Audra Riley"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-9",
+   "title": "Texas Court of Criminal Appeals Place 9",
+   "officialOrder": [
+    "John Messinger",
+    "Holly Taylor"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-15th-coa-chief-justice",
+   "title": "15th Court of Appeals Chief Justice",
+   "officialOrder": [
+    "Scott Brister",
+    "Jerry Zimmerer"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-15th-coa-place-2",
+   "title": "15th Court of Appeals Place 2",
+   "officialOrder": [
+    "Scott K. Field",
+    "Tom Baker"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-15th-coa-place-3",
+   "title": "15th Court of Appeals Place 3",
+   "officialOrder": [
+    "April Farris",
+    "Marc M. Meyer"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-3rd-coa-chief-justice",
+   "title": "3rd Court of Appeals Chief Justice",
+   "officialOrder": [
+    "Cory Liu",
+    "Darlene Byrne"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-sboe-5",
+   "title": "State Board of Education District 5",
+   "officialOrder": [
+    "Mica Arellano",
+    "Allison Bush"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-hd-49",
+   "title": "Texas House District 49",
+   "officialOrder": [
+    "Montserrat Garibay",
+    "Arshia Papari"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "tx-house-51",
+   "title": "State Representative, District 51",
+   "officialOrder": [
+    "Jessica Martinez",
+    "Maria Luisa “Lulu” Flores"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 1,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-147th",
+   "title": "District Judge, 147th Judicial District",
+   "officialOrder": [
+    "Cliff Brown"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-201st",
+   "title": "District Judge, 201st Judicial District",
+   "officialOrder": [
+    "Amy Clark Meachum"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-250th",
+   "title": "District Judge, 250th Judicial District",
+   "officialOrder": [
+    "Kennon Lily Wooten"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-261st",
+   "title": "District Judge, 261st Judicial District",
+   "officialOrder": [
+    "Daniella Deseta Lyttle"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-299th",
+   "title": "District Judge, 299th Judicial District",
+   "officialOrder": [
+    "Karen R. Sage"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-331st",
+   "title": "District Judge, 331st Judicial District",
+   "officialOrder": [
+    "Chantal Melissa Eldridge"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-403rd",
+   "title": "District Judge, 403rd Judicial District",
+   "officialOrder": [
+    "Brandy Mueller"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-419th",
+   "title": "District Judge, 419th Judicial District",
+   "officialOrder": [
+    "Catherine A. Mauzy"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-455th",
+   "title": "District Judge, 455th Judicial District",
+   "officialOrder": [
+    "Laurie Eiserloh"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-judge-459th",
+   "title": "District Judge, 459th Judicial District",
+   "officialOrder": [
+    "Maya Guerra Gamble"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-county-judge",
+   "title": "County Judge",
+   "officialOrder": [
+    "Andy Brown"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-1",
+   "title": "Judge, County Court at Law No. 1",
+   "officialOrder": [
+    "Todd Wong"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-2",
+   "title": "Judge, County Court at Law No. 2",
+   "officialOrder": [
+    "Leslie Dippel"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-3",
+   "title": "Judge, County Court at Law No. 3",
+   "officialOrder": [
+    "Bianca Garcia"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-4",
+   "title": "Judge, County Court at Law No. 4",
+   "officialOrder": [
+    "Dimple Malhotra"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-5",
+   "title": "Judge, County Court at Law No. 5",
+   "officialOrder": [
+    "Mary Ann Espiritu"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-6",
+   "title": "Judge, County Court at Law No. 6",
+   "officialOrder": [
+    "Denise Hernández"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-ccl-7",
+   "title": "Judge, County Court at Law No. 7",
+   "officialOrder": [
+    "Elisabeth Earle"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-probate-1",
+   "title": "Judge, Probate Court No. 1",
+   "officialOrder": [
+    "Guy Herman"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-district-clerk",
+   "title": "District Clerk",
+   "officialOrder": [
+    "Velva L. Price"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-county-clerk",
+   "title": "County Clerk",
+   "officialOrder": [
+    "Dyana Limon-Mercado"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-county-treasurer",
+   "title": "County Treasurer",
+   "officialOrder": [
+    "Dolores Ortega Carter"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-commissioner-4",
+   "title": "Travis County Commissioner, Precinct 4",
+   "officialOrder": [
+    "George Morales III"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-jp-5",
+   "title": "Justice of the Peace, Precinct 5",
+   "officialOrder": [
+    "Tanisa Jeffers"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-jp-4",
+   "title": "Justice of the Peace, Precinct 4",
+   "officialOrder": [
+    "Raul Arturo Gonzalez"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-constable-4-unexpired",
+   "title": "County Constable, Precinct 4 - Unexpired Term",
+   "officialOrder": [
+    "Gabriel Padilla"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-cad-place-1",
+   "title": "Travis Central Appraisal District Board of Directors, Place 1",
+   "officialOrder": [
+    "Skyler A. Korgel"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-cad-place-2",
+   "title": "Travis Central Appraisal District Board of Directors, Place 2",
+   "officialOrder": [
+    "Brian Peña"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "travis-cad-place-3",
+   "title": "Travis Central Appraisal District Board of Directors, Place 3",
+   "officialOrder": [
+    "Yvonne Muñoz",
+    "Phil Gorman"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 2,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "austin-council-9",
+   "title": "Austin City Council, District 9",
+   "officialOrder": [
+    "Rich Heyman",
+    "Katie Kam",
+    "Zohaib “Zo” Qadri",
+    "Dave Thadani",
+    "Kai Huang"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 3,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "aisd-at-large-9",
+   "title": "Austin ISD Board of Trustees, At-Large Position 9",
+   "officialOrder": [
+    "Cynthia Soliz",
+    "Kirk Becker",
+    "Pamela Mathai"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 7,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-1",
+   "title": "Austin Community College Board of Trustees, Place 1",
+   "officialOrder": [
+    "Dana Walker",
+    "Gloria Gonzales-Dholakia"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 7,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-2",
+   "title": "Austin Community College Board of Trustees, Place 2",
+   "officialOrder": [
+    "Gigi Edwards Bryant"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 7,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-3",
+   "title": "Austin Community College Board of Trustees, Place 3",
+   "officialOrder": [
+    "Trevor Hale",
+    "Nan McRaven"
+   ],
+   "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+   "page": 7,
+   "sourceKind": "official sample (bedsheet) ballot, Travis County Elections"
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-governor",
+   "title": "Governor and Lieutenant Governor",
+   "officialOrder": [
+    "Kathy C. Hochul / Adrienne E. Adams",
+    "Bruce A. Blakeman / Todd Hood"
+   ],
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+   "page": 1,
+   "sourceKind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-attorney-general",
+   "title": "Attorney General of New York",
+   "officialOrder": [
+    "Letitia A. James",
+    "Saritha Komatireddy"
+   ],
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+   "page": 1,
+   "sourceKind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-comptroller",
+   "title": "New York State Comptroller",
+   "officialOrder": [
+    "Thomas P. DiNapoli",
+    "Joseph Hernandez"
+   ],
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+   "page": 1,
+   "sourceKind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-supreme-1jd",
+   "title": "Justice of the Supreme Court, 1st Judicial District (choose up to 6)",
+   "officialOrder": [
+    "Shlomo S. Hagler",
+    "Manuel J. Mendez",
+    "Saliann Scarpulla",
+    "Hasa A. Kingo",
+    "Kathleen Waterman-Marshall",
+    "Christopher Chin",
+    "Amy S. Taylor",
+    "Joshua E. Goldfein",
+    "Sienna M. Fontaine",
+    "Bob Cohen",
+    "Jeffrey W. Rizzo"
+   ],
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+   "page": 3,
+   "sourceKind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-surrogate-ny",
+   "title": "Surrogate, New York County",
+   "officialOrder": [
+    "Rita Mella"
+   ],
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+   "page": 3,
+   "sourceKind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot."
+  },
+  {
+   "zip": "10001",
+   "raceId": "ny-civil-county-ny",
+   "title": "Judge of the Civil Court, County, New York (choose up to 3)",
+   "officialOrder": [
+    "Josh E. Hanshaft",
+    "Emily Morales-Minerva",
+    "Vlad Frants"
+   ],
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+   "page": 3,
+   "sourceKind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot."
+  }
+ ]
+}
