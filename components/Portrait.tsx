@@ -21,7 +21,7 @@ export function Portrait({ name, photo, className, boxClassName, credit = true, 
         )}
       </div>
       {credit && show ? (
-        <figcaption className="mt-1 truncate text-sm text-black/60">
+        <figcaption className="mt-1 text-sm leading-5 text-black/50 [word-break:break-word]">
           {photo!.page ? <a href={photo!.page} target="_blank" rel="noreferrer" className="text-black/60">{photo!.credit}</a> : photo!.credit}
         </figcaption>
       ) : null}

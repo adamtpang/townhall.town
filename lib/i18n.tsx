@@ -15,7 +15,11 @@ const ES: Record<string, string> = {
     "No partidista. No es un sitio del gobierno. No respaldamos a nadie. Cada dato enlaza su fuente; confírmelo con su estado.",
   // Search
   "ZIP code": "Código postal",
-  "Enter your ZIP": "Escriba su código postal",
+  "Enter your ZIP": "Su código postal",
+  // Design p9: answer buttons
+  Yes: "Sí",
+  Neutral: "Neutral",
+  No: "No",
   Go: "Ir",
   "Reading…": "Leyendo…",
   "New York, coming soon": "Nueva York, muy pronto",
@@ -52,8 +56,6 @@ const ES: Record<string, string> = {
   Skipped: "Omitido",
   "Issue overlap": "Coincidencia por tema",
   "Issue overlap, not a recommendation.": "Coincidencia por tema, no una recomendación.",
-  "Not enough sourced positions to compare candidates in this race yet.":
-    "Aún no hay suficientes posturas con fuente para comparar candidatos en esta contienda.",
   "No sourced positions on your issues.": "No hay posturas con fuente sobre sus temas.",
   "Sourced positions": "Posturas con fuente",
   source: "fuente",
@@ -150,10 +152,20 @@ const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({ 
  *  see notes/spanish-untranslated.md. Candidate facts and sourced text are never translated. */
 export const SPANISH_ENABLED = process.env.NEXT_PUBLIC_SPANISH !== "0";
 
+export const LANG_KEY = "th-lang";
+
 export function LangProvider({ children }: { children: ReactNode }) {
-  // English on every fresh load: the choice is kept in memory only.
-  const [lang, setLang] = useState<Lang>("en");
+  // QA 4e15da7: ?lang=es (or ?lang=en) works, and the choice is remembered on this device (localStorage th-lang).
+  const [lang, setLangState] = useState<Lang>("en");
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(location.search).get("lang");
+      const pick = q === "es" || q === "en" ? q : localStorage.getItem(LANG_KEY);
+      if (SPANISH_ENABLED && (pick === "es" || pick === "en")) setLangState(pick);
+    } catch { /* ignore */ }
+  }, []);
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+  const setLang = (l: Lang) => { setLangState(l); try { localStorage.setItem(LANG_KEY, l); } catch { /* ignore */ } };
   return (
     <LangContext.Provider value={{ lang, setLang }}>
       <div lang={lang}>{children}</div>

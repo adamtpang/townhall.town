@@ -8,7 +8,8 @@ import { COVERED_ZIPS, isCoveredZip, UNSUPPORTED_MESSAGE } from "./site";
 // @ts-ignore plain ESM helper shared with scripts/
 import { fetchPolymarket, marketCoversBallot } from "./marketsCore.mjs";
 import { getTurnout } from "./turnout";
-import { withLicensedPhoto } from "./photos";
+import { withLicensedPhoto, allOrNone, slug as nameSlug } from "./photos";
+import SITES from "../data/campaign-sites.json";
 import { withMoney } from "./money";
 import { raceMeta } from "./raceMeta";
 import { stancesFor, sourceLabel, ISSUES } from "./issues";
@@ -77,9 +78,10 @@ function enrich(b: Ballot): Ballot {
     const cands = r.candidates.map((c) => {
       const kept = jud ? [] : sourced((c as { positions?: unknown }).positions);
       const ps = jud ? [] : kept.length ? kept : publishedPositions(c.name);
-      return withMoney(withLicensedPhoto({ ...c, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
+      const site = (c as { campaignSite?: string | null }).campaignSite || (SITES.bySlug as Record<string, string>)[nameSlug(c.name)] || null;
+      return withMoney(withLicensedPhoto({ ...c, campaignSite: site, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
     });
-    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: cands /* Design 8:05: initials only where a photo is truly missing */ };
+    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: allOrNone(cands) /* Photo fairness (Oct 29 11:34 PM): if any candidate in a race lacks a real photo, the whole race shows initials */ };
   }) };
 }
 

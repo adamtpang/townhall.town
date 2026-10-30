@@ -51,10 +51,10 @@ describe("Civic merge checks", () => {
       const end = renderToStaticMarkup(h(EndScreen, { zip: z, races: b.races as never, answers: allYes, ids: ISSUES.map((i) => i.id), answered: ISSUES.length }));
       const html = [tiers, renderToStaticMarkup(h(IssueMatch, { zip: z, state: b.state, races: b.races as never })), end].join("\n");
       // Strip the grade rows; nothing else may show a bare letter or a "Tier/Grade X".
-      const rest = html.replace(/<p[^>]*data-grade="[SABC]"[^>]*>.*?<\/p>/g, "");
+      const rest = html.replace(/<p[^>]*data-grade="[SABC]"[^>]*>.*?<\/p>/g, "").replace(/<span[^>]*data-grade-slot[^>]*>[SABC]?<\/span>/g, "");
       expect(rest, z).not.toMatch(/>\s*[SABC]\s*</);
       expect(rest, z).not.toMatch(/\b(Tier|Grade)\s+[SABC]\b/);
-      for (const m of html.matchAll(/data-grade="([SABC])"[^>]*>(.*?)<\/p>/g)) expect(m[2]).toMatch(/issue overlap, not a recommendation/);
+      for (const m of html.matchAll(/data-grade="([SABC])"[^>]*>(.*?)<\/p>/g)) expect(m[2]).toMatch(/^Grade shows how many of your issue picks match this candidate&#x27;s sourced stances \(\d+ of \d+ issues?\)\. It is not an endorsement or a rating of the candidate\.$/);
       // Candidates' own sourced words (quotes, Ballotpedia survey summaries) may say "best"; our copy never does.
       expect(html.replace(/“[^”]*”/g, "").replace(/data-bp-summary="true">Ballotpedia summary:<\/span>[^<]*/g, ""), z).not.toMatch(/\b(best|vote for)\b/i);
       expect(html, z).not.toMatch(/market odds|No market odds yet|\d+% chance|Kalshi|Leader on Polymarket|data-market-line/i);

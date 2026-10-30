@@ -1,35 +1,22 @@
 "use client";
-import { stanceForm } from "../lib/stanceForm";
 import { H2, H3, HIT } from "../lib/typeScale";
-import { JUDICIAL_RULES } from "../lib/judicial";
+import { JUDICIAL_RULES, judicialShort } from "../lib/judicial";
 import { useMemo } from "react";
-import type { Photo } from "../components/Portrait";
 import { Button } from "../components/ui/button";
-import { stancesFor, sourceLabel, ISSUES, type Answers } from "../lib/issues";
-import { overlapStatus, overlapLabel, METHOD, MIN_ISSUES } from "../lib/overlapCore.mjs";
+import { stancesFor, type Answers } from "../lib/issues";
+import { overlapStatus, METHOD } from "../lib/overlapCore.mjs";
 import TownyResearch from "./TownyResearch";
 import { cardPath } from "../lib/card.mjs";
-import { gradeFor, GRADE_NOTE } from "../lib/grades.mjs";
+import { gradeFor, GRADE_RULE } from "../lib/grades.mjs";
+import CandidateRow, { type RowCand } from "../components/CandidateRow";
 import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl } from "../lib/endscreen.mjs";
 
-type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null };
-type RaceLite = { id: string; title?: string; judicial?: "ny" | "tx" | "ca" | boolean; candidates: Cand[] };
+type Cand = RowCand & { ballotpedia?: string | null };
+type RaceLite = { id: string; title?: string; level?: string; judicial?: "ny" | "tx" | "ca" | boolean; candidates: Cand[] };
 const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
 const fmt = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "short", month: "short", day: "numeric" });
 const ext = <span className="sr-only"> (opens in a new tab)</span>;
 
-/** A roll-call vote shown as the record itself, e.g. "Voted Nay on SB 8". */
-function voteLine(st: { voteRecord?: string; quote?: string; bill?: string }) {
-  if (!st?.voteRecord) return null;
-  const vote = st.voteRecord.split(" (")[0];
-  const bill = st.bill ?? /^([A-Z]{1,4} \d+)\b/.exec(st.quote || "")?.[1];
-  return bill ? `${vote} on ${bill}` : vote;
-}
-/** Issues with no usable position: Civic's status text, exactly as written. Not counted. */
-function nullNotes(name: string, ids: string[]): [string, string][] {
-  const st = stancesFor(name);
-  return ids.filter((id) => st[id] && st[id].value === null && st[id].status).map((id) => [id, st[id].status as string]);
-}
 
 /** The 90-second path ends here: Who / Where / When, one primary action each. Data only from sourced files. */
 export default function EndScreen({ zip, races, answers, ids, answered }: { zip: string; races: RaceLite[]; answers: Answers; ids: string[]; answered: number }) {
@@ -49,9 +36,8 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
   const judicial = races.filter((r) => r.judicial && r.candidates?.length);
   const rowsByRace = races.filter((r) => r.candidates?.length && !r.judicial).map((race) => {
     const rows = race.candidates.map((c) => ({ c, o: overlapStatus(answers, stancesFor(c.name), ids) }));
-    return { race, rows, any: rows.some((x) => x.o.sourced >= MIN_ISSUES) };
+    return { race, rows };
   });
-  const zipNone = !rowsByRace.some((r) => r.any);
   // QA P2: Neutral is a real answer but is never compared, so say that instead of asking for answers again.
   const yesNo = ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length;
 
@@ -65,71 +51,32 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
         <div className="lg:col-span-6" data-end="who">
           <p className="text-sm font-[530] text-black/60">Who</p>
           <h3 className={`mt-2 ${H3}`}>Who lines up with you</h3>
-          <p className="mt-3 text-sm leading-5 text-black/60" data-overlap-caption>Overlap, not a recommendation. Candidates are in ballot order.</p>
-          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap is counted</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p></details>
+          <p className="mt-3 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation. Candidates are in ballot order.</p>
+          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap and grades work</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p><p className="pb-2 text-sm text-black/80" data-grade-rule>{GRADE_RULE}</p></details>
           {judicial.length > 0 && (
             <p className="mt-4 max-w-[45ch] text-sm text-black/60" data-judicial-note>
               {(() => {
                 const st = judicial.some((r) => r.judicial === "ny") ? "ny" : judicial.some((r) => r.judicial === "ca") ? "ca" : "tx";
                 const J = JUDICIAL_RULES[st];
-                return <>{J[0]} (<a href={J[1]} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{J[2]} ↗{ext}</a>), so no overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>;
+                return <>{J[0]} (<a href={J[1]} title={J[2]} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{judicialShort(J[2])} ↗{ext}</a>), so no overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>;
               })()}
             </p>
           )}
-          {zipNone ? (
-            <p className="mt-6 text-base text-black" data-zip-none>Not enough sourced positions for any candidate on this ballot yet, so there is no overlap to show. Each candidate&rsquo;s sources are linked in the races above.</p>
-          ) : answered === 0 ? (
-            <p className="mt-4 text-base text-black/60">Answer Yes, Neutral or No above to see overlap.</p>
-          ) : yesNo === 0 ? (
-            <p className="mt-4 text-base text-black/60" data-neutral-only>You answered Neutral on {answered === 1 ? "your issue" : `all ${answered} issues`}. Neutral answers aren&rsquo;t compared, so there&rsquo;s no overlap to show. Answer Yes or No on an issue to compare.</p>
+          {answered < 3 ? (
+            <p className="mt-4 text-base text-black/80" data-who-gate>Answer 3 issues to see who lines up with you.</p>
           ) : (
             <div className="mt-6 space-y-8">
-              {rowsByRace.filter((r) => r.any).map(({ race: r, rows }) => (
+              {yesNo === 0 ? <p className="text-base text-black/60" data-neutral-only>You answered Neutral on all {answered} issues. Neutral answers aren&rsquo;t compared, so there&rsquo;s no overlap to show. Answer Yes or No on an issue to compare.</p> : null}
+              {rowsByRace.map(({ race: r, rows }) => (
                 <div key={r.id} data-race={r.id}>
                   <p className="text-base font-[530]">{r.title || r.id}</p>
                   <ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {rows.map(({ c, o }) => (
-                      <li key={c.name} className="py-2" data-overlap={c.name} data-status={o.status}>
-                        {o.status === "ok" ? (
-                          <>
-                            <p className="text-base text-black">{overlapLabel(c.name, o)}</p>
-                            {(() => { const g = gradeFor(o, !!r.judicial, answered); return g ? <p className="text-sm text-black/60" data-grade={g}>Issue-overlap grade: <span className="font-[530] text-black">{g}</span> ({GRADE_NOTE})</p> : null; })()}
-                          </>
-                        ) : (
-                          <p className="text-base text-black"><span className="font-[530]">{c.name}</span><span className="text-black/60">: {o.status === "few" ? "Not enough sourced positions" : "Answer Yes or No on more of their issues to compare (Neutral isn\u2019t compared)"}</span></p>
-                        )}
-                        {nullNotes(c.name, ids).length > 0 && (
-                          <p className="text-sm text-black/60" data-null-status>{nullNotes(c.name, ids).map(([id, t]) => `${ISSUES.find((i) => i.id === id)?.label}: ${t}`).join(" · ")}</p>
-                        )}
-                        {o.sourcedIds.length > 0 && (
-                          <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60" data-sourced-n={o.sourcedIds.length}>Sourced positions ({o.sourcedIds.length})</summary>
-                            <ul className="space-y-2 pb-2">
-                              {o.sourcedIds.map((id: string) => { const st = stancesFor(c.name)[id]; return (
-                                <li key={id} className="text-sm text-black/80"><span className="font-[530]">{ISSUES.find((i) => i.id === id)?.label}:</span> {voteLine(st) ? <>{voteLine(st)}</> : stanceForm(st) === "summary" ? <><span className="text-black/60" data-bp-summary>Ballotpedia summary:</span> {st.quote}</> : <>&ldquo;{st.quote}&rdquo;</>} <span className="text-black/60" data-quote-year>{st.year ? `(${st.year})` : "(date unsure)"}</span> {st.sourceUrl ? <a href={st.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center text-[#3760F2]">{sourceLabel(st.sourceUrl)} ↗{ext}</a> : null}</li>
-                              ); })}
-                            </ul>
-                          </details>
-                        )}
-                      </li>
-                    ))}
+                    {rows.map(({ c, o }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answeredYesNo={yesNo > 0} grade={gradeFor(o, !!r.judicial, answered, undefined, r, zip)} />)}
                   </ul>
-                  {/* QA P2: the live research button on every non-judicial race, including ones with overlap (e.g. Governor on 94103). */}
+                  {/* QA P2: the live research button on every non-judicial race. */}
                   <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
                 </div>
               ))}
-              {rowsByRace.some((r) => !r.any) && (
-                <div data-race-none-list>
-                  <p className="text-sm text-black/60" data-race-none>Not enough sourced positions to compare yet in {rowsByRace.filter((r) => !r.any).length} race{rowsByRace.filter((r) => !r.any).length === 1 ? "" : "s"}.</p>
-                  <ul className="mt-2 divide-y divide-black/15 border-t border-black/15">
-                    {rowsByRace.filter((r) => !r.any).map(({ race: r }) => (
-                      <li key={r.id} className="py-2" data-race-none-item={r.id}>
-                        <p className="text-base font-[530]">{r.title || r.id}</p>
-                        <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
             </div>
           )}
         </div>

@@ -7,7 +7,7 @@ const LABEL = { yes: "Yes", neutral: "Neutral", no: "No" } as const;
 
 /** Chat interview: Towny asks one open question, turns the reply into Yes/Neutral/No answers,
  *  and the voter checks them in the buttons below. Buttons stay the fallback. Nothing is stored on a server. */
-export default function TownyInterview({ zip, city, issues, onFill, answered = 0, savedZip = null }: { zip: string; city: string; issues: { id: string; label: string }[]; onFill: (f: Fill[]) => void; answered?: number; savedZip?: string | null }) {
+export default function TownyInterview({ zip, city, issues, onFill, answered = 0, carried = 0, savedZip = null }: { zip: string; city: string; issues: { id: string; label: string }[]; onFill: (f: Fill[]) => void; answered?: number; carried?: number; savedZip?: string | null }) {
   const [open, setOpen] = useState(false);
   const ask = `What do you care about in ${city}? Say it in your own words, like “rents are too high” or “I'm unsure about the tax.”`;
   // Answers are saved once per browser and carry across ZIPs, so say so instead of starting over silently.
@@ -49,8 +49,9 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
 
   // QA P2 (4c21a5c): the carry-over is also said on the page, not only inside the chat.
   // QA P2 (9dfe90d): normal body text, and it says when the answers came from another ZIP.
-  const carry = answered > 0
-    ? <p className="mb-3 text-base leading-6 text-black" data-carryover>{carryText(answered, zip, savedZip)}</p>
+  // Design p9: only answers that were saved before this page load (carried), never ones given in this session.
+  const carry = carried > 0
+    ? <p className="mb-3 text-base leading-6 text-black" data-carryover>{carryText(carried, zip, savedZip)}</p>
     : null;
   if (!open) return (
     <div className="mt-6" data-interview>

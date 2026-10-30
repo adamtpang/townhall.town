@@ -1,0 +1,212 @@
+// Oct 29 11:28-11:42 PM CT round: photos (licensed, race-level fairness), source links, no-position line,
+// Civic grade gate (fail closed), gap-fill batch 2, judicial short link, Spanish, carry-over, market line.
+import { describe, it, expect } from "vitest";
+import fs from "node:fs";
+import { createElement as h } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { ballotFor } from "../lib/tools";
+import { allOrNone, withLicensedPhoto } from "../lib/photos";
+import { eligibleSet, raceGradesEligible, gradeFor, gradeLabel, letterFor, MIN_TOP_SAMPLE } from "../lib/grades.mjs";
+import ELIG from "../lib/gradesEligibility.gen.mjs";
+import { overlapStatus } from "../lib/overlapCore.mjs";
+import { stancesFor, ISSUES } from "../lib/issues";
+import CandidateRow, { NO_POSITION, sourcesChecked } from "../components/CandidateRow";
+import EndScreen from "../app/EndScreen";
+import BallotCard from "../app/card/BallotCard";
+import { judicialShort, JUDICIAL_RULES } from "../lib/judicial";
+import { leaderLine, isPlaceholder } from "../lib/marketLine";
+import { MarketLine } from "../app/RaceTiers";
+
+const src = (p: string) => fs.readFileSync(p, "utf8");
+const ids = ISSUES.map((i) => i.id);
+const ZIPS = ["78701", "94103", "10001"];
+const PB = JSON.parse(src("data/civic/photos_batch.json"));
+const yesAll = Object.fromEntries(ids.map((i) => [i, 5]));
+const card = (z: string) => { const b = ballotFor(z)!; return renderToStaticMarkup(h(BallotCard, { zip: z, place: z, ids, races: b.races as never })); };
+const rowOf = (html: string, n: string) => html.split(`data-overlap="${n.replace(/"/g, "&quot;")}"`)[1]?.split(/data-overlap="|data-card-race=/)[0] ?? "";
+const end = (z: string, answers: Record<string, number> = yesAll) => renderToStaticMarkup(h(EndScreen, { zip: z, races: ballotFor(z)!.races as never, answers, ids, answered: Object.keys(answers).length }));
+
+describe("photos: licensed only, race-level fairness", () => {
+  it("no race mixes photos and initials, on every ZIP", () => {
+    for (const z of ZIPS) for (const r of ballotFor(z)!.races) {
+      const c = (r as { candidates?: { photo?: unknown }[] }).candidates ?? [];
+      const n = c.filter((x) => x.photo).length;
+      expect(n === 0 || n === c.length, `${z} ${r.id}`).toBe(true);
+    }
+  });
+  it("allOrNone: one missing photo means initials for the whole race", () => {
+    const p = { url: "/portraits/x.avif", credit: "Photo: X" };
+    expect(allOrNone([{ photo: p }, { photo: null }]).every((c) => c.photo === null)).toBe(true);
+    expect(allOrNone([{ photo: p }, { photo: p }]).every((c) => c.photo)).toBe(true);
+  });
+  it("D9, HD49, HD51 and the NY governor ticket show initials; ca-ag shows photos", () => {
+    const race = (z: string, id: string) => ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { photo?: unknown }[] };
+    for (const [z, id] of [["78701", "austin-council-9"], ["78701", "tx-hd-49"], ["78701", "tx-house-51"], ["10001", "ny-governor"]])
+      expect(race(z, id).candidates.every((c) => !c.photo), id).toBe(true);
+    expect(race("94103", "ca-ag").candidates.every((c) => c.photo)).toBe(true);
+  });
+  it("every shown photo is in Civic's licensed file with attribution, self-hosted, never txcourts.gov or the Fisher video still", () => {
+    const hosted = JSON.parse(src("data/photos.json")).selfHosted as Record<string, { file: string; credit: string; license: string; sourceUrl: string }>;
+    for (const [id, x] of Object.entries(hosted)) {
+      expect(PB[id]?.photoUrl, id).toBe(x.sourceUrl);
+      expect(x.credit, id).toBe(PB[id].attribution);
+      expect(x.license, id).toBeTruthy();
+      expect(fs.existsSync(`public${x.file}`), id).toBe(true);
+      expect(x.sourceUrl).not.toMatch(/txcourts\.gov/i);
+    }
+    expect(hosted["alida-fisher"]).toBeUndefined();
+    expect(hosted["bruce-a-blakeman-todd-hood"]).toBeUndefined();
+    for (const f of fs.readdirSync("public/portraits")) expect(hosted[f.replace(/\.avif$/, "")], f).toBeTruthy();
+  });
+  it("attribution is visible (not collapsed) wherever a photo appears, at 14px muted", () => {
+    const html = renderToStaticMarkup(h(CandidateRow, { c: { name: "Rob Bonta", photo: (withLicensedPhoto({ name: "Rob Bonta" } as never) as { photo: unknown }).photo as never }, o: overlapStatus({}, stancesFor("Rob Bonta"), ids), grade: null, ids }));
+    expect(html).toMatch(/data-photo-credit[^>]*>[^<]*public domain/i);
+    expect(src("components/PortraitRow.tsx")).not.toMatch(/<details[^>]*data-photo-credits/);
+    expect(src("components/PortraitRow.tsx")).toMatch(/text-sm leading-5 text-black\/50[^"]*" aria-label="Photo credits" data-photo-credits/);
+  });
+  it("never a generated image: no image-generation code paths", () => {
+    for (const f of ["scripts/ingest-photos.mjs", "lib/photos.ts", "components/PortraitRow.tsx", "components/CandidateRow.tsx"]) expect(src(f)).not.toMatch(/openai|dall-?e|stable-?diffusion|generateImage/i);
+  });
+});
+
+describe("grades: Civic gate, fail closed", () => {
+  const race = { id: "tx-10", candidates: [{ name: "A" }, { name: "B" }] };
+  const ok3 = { status: "ok", agree: 3, n: 3 };
+  it("no file means no grades anywhere", () => {
+    const none = eligibleSet(null);
+    expect(raceGradesEligible(race, "78701", none)).toBe(false);
+    expect(gradeFor(ok3, false, 3, true, race, "78701", none)).toBeNull();
+    expect(eligibleSet({}).size).toBe(0);
+    expect(eligibleSet({ races: { "tx-10": { reason: "x" } } }).size).toBe(0); // missing flag = not eligible
+  });
+  it("fixture: an eligible race shows a letter; {races:[ids]} works too", () => {
+    const f = { races: { "tx-10": { zip: "78701", raceId: "tx-10", gradesEligible: true, reason: "ok" }, "tx-37": { zip: "78701", raceId: "tx-37", gradesEligible: false } } };
+    const s = eligibleSet(f);
+    expect(gradeFor(ok3, false, 3, true, race, "78701", s)).toBe("S");
+    expect(gradeFor(ok3, false, 3, true, { ...race, id: "tx-37" }, "78701", s)).toBeNull();
+    expect(gradeFor(ok3, false, 3, true, race, null, eligibleSet({ races: ["tx-10"] }))).toBe("S");
+  });
+  it("judicial, measures and unopposed races never grade, even if listed", () => {
+    const s = eligibleSet({ races: ["j", "m", "u"] });
+    expect(raceGradesEligible({ id: "j", judicial: "tx", candidates: [{}, {}] }, null, s)).toBe(false);
+    expect(raceGradesEligible({ id: "m", level: "measure", candidates: [{}, {}] }, null, s)).toBe(false);
+    expect(raceGradesEligible({ id: "u", candidates: [{}] }, null, s)).toBe(false);
+  });
+  it("the shipped gate matches Civic's grades_eligibility.json and grade_races.json (19 races; D9 not eligible)", () => {
+    expect(ELIG.present).toBe(true);
+    const full = JSON.parse(src("data/civic/grades_eligibility.json"));
+    const list = JSON.parse(src("data/civic/grade_races.json")).races as string[];
+    const gen = [...eligibleSet(ELIG.data)].map((x) => x.split(":")[1]).sort();
+    expect(gen).toEqual([...list].sort());
+    expect(gen).toEqual(Object.values(full.races as Record<string, { raceId: string; gradesEligible: boolean }>).filter((r) => r.gradesEligible).map((r) => r.raceId).sort());
+    expect(gen).not.toContain("austin-council-9");
+    expect(Object.keys(full.races).length).toBe(143);
+  });
+  it("label word for word with x of y; S and A need 3+", () => {
+    expect(gradeLabel(2, 3)).toBe("Grade shows how many of your issue picks match this candidate's sourced stances (2 of 3 issues). It is not an endorsement or a rating of the candidate.");
+    expect(MIN_TOP_SAMPLE).toBe(3);
+    expect(letterFor(2, 2)).toBe("B");
+    expect(letterFor(3, 3)).toBe("S");
+  });
+  it("rendered: grades only in eligible races; every letter carries the label; D9 has none", () => {
+    for (const z of ZIPS) {
+      const html = end(z);
+      const b = ballotFor(z)!;
+      for (const m of html.matchAll(/data-grade="([SABC])"[^>]*>(.*?)<\/p>/g)) expect(m[2]).toMatch(/^Grade shows how many .* \(\d+ of \d+ issues?\)\. It is not an endorsement/);
+      for (const r of b.races) if (!raceGradesEligible(r, z)) for (const c of ((r as { candidates?: { name: string }[] }).candidates ?? [])) {
+        const row = rowOf(html, c.name);
+        expect(row, `${z} ${c.name}`).not.toMatch(/data-grade="/);
+      }
+    }
+    expect(end("94103")).toMatch(/data-grade="[SABC]"/);
+  });
+});
+
+describe("positions: sources, no-position line, gap-fill batch 2", () => {
+  it("'Not enough sourced positions' is gone from code and every render", () => {
+    for (const f of ["components/CandidateRow.tsx", "app/EndScreen.tsx", "app/card/BallotCard.tsx", "lib/i18n.tsx", "lib/overlapCore.mjs"]) expect(src(f)).not.toMatch(/not enough sourced/i);
+    for (const z of ZIPS) { expect(card(z)).not.toMatch(/not enough sourced/i); expect(end(z)).not.toMatch(/not enough sourced/i); }
+  });
+  it("every shown position links to its source", () => {
+    for (const z of ZIPS) {
+      const html = card(z);
+      const items = [...html.matchAll(/<li[^>]*data-position="[^"]+"[^>]*>(.*?)<\/li>/g)];
+      expect(items.length).toBeGreaterThan(20);
+      for (const m of items) expect(m[1]).toMatch(/<a href="https?:\/\//);
+    }
+  });
+  it("candidates with fewer than 2 sourced issues show the no-position line with checked sources (linked) and never an empty state", () => {
+    let shown = 0;
+    for (const z of ["78701", "94103"]) {
+      const html = card(z);
+      for (const r of ballotFor(z)!.races) {
+        if ((r as { judicial?: unknown }).judicial) continue;
+        for (const c of ((r as { candidates?: { name: string }[] }).candidates ?? [])) {
+          const o = overlapStatus({}, stancesFor(c.name), ids);
+          if (o.sourced >= 2) continue;
+          const row = rowOf(html, c.name);
+          expect(row, c.name).toMatch(/data-no-position/);
+          expect(row).toMatch(/No public position found yet/);
+          if (sourcesChecked(c.name).length) expect(row).toMatch(/data-checked-source/);
+          shown++;
+        }
+      }
+    }
+    expect(shown).toBeGreaterThanOrEqual(25);
+  });
+  it("Katie Kam, Dave Thadani and Kai Huang (D9) and HD 49/51 rows show sourced positions with links", () => {
+    const html = card("78701");
+    for (const n of ["Katie Kam", "Dave Thadani", "Kai Huang", "Montserrat Garibay", "Arshia Papari", "Jessica Martinez"]) {
+      const row = rowOf(html, n);
+      expect(row, n).toMatch(/data-position=/);
+      expect(row, n).not.toMatch(/data-no-position/);
+    }
+  });
+  it("NO_POSITION is Adam's wording", () => { expect(NO_POSITION).toBe("No public position found yet. Sources checked:"); });
+  it("gap-fill batch 2 merged: Thadani has housing + energy; unsure items are null (never scored) and shown as unclear", () => {
+    const t = stancesFor("Dave Thadani");
+    expect(t.housing.value).toBe(4); expect(t.energy.value).toBe(2);
+    expect(t.safety.value).toBeNull(); expect(t.safety.status).toBe("unsure");
+    expect(overlapStatus({ safety: 5, taxes: 5 }, t, ids).sourcedIds).not.toContain("safety");
+    const html = renderToStaticMarkup(h(CandidateRow, { c: { name: "Dave Thadani" }, o: overlapStatus({}, t, ids), grade: null, ids }));
+    expect(html).toMatch(/data-unsure="safety"/);
+    expect(src("scripts/merge_gapfill.py")).not.toMatch(/import merge_research|subprocess|os\.system/);
+  });
+});
+
+describe("design p9 / QA 4e15da7 items", () => {
+  it("P0: the judicial link reads 'Canon 5 ↗' with the full title in title, no nowrap", () => {
+    expect(judicialShort(JUDICIAL_RULES.tx[2])).toBe("Canon 5");
+    const s = src("app/RaceTiers.tsx");
+    expect(s).toMatch(/title=\{r.judicialNoteSource.label\}/); expect(s).not.toMatch(/whitespace-nowrap[^"]*" data-judicial-source/);
+    expect(s).toMatch(/\{judicialShort\(r.judicialNoteSource.label\)\} ↗/);
+  });
+  it("Spanish: Sí / Su código postal; ?lang= and localStorage remembered; toggle stays", () => {
+    const s = src("lib/i18n.tsx");
+    expect(s).toMatch(/"Sí"/); expect(s).toMatch(/Su código postal/);
+    expect(s).toMatch(/LANG_KEY = "th-lang"/); expect(s).toMatch(/lang=/);
+  });
+  it("carry-over notice only for answers saved before page load", () => {
+    expect(src("app/TownyInterview.tsx")).toMatch(/const carry = carried > 0/);
+    expect(src("app/IssueMatch.tsx")).toMatch(/carried/);
+  });
+  it("Who: under 3 answers, the prompt instead of rows", () => {
+    expect(end("78701", { housing: 5 })).toMatch(/Answer 3 issues to see who lines up with you\./);
+  });
+  it("market line lists the other prices from the same market and never placeholders", () => {
+    const q = { source: "Polymarket" as const, title: "T", url: "https://polymarket.com/event/x", fetchedAt: "2026-10-30T03:58:00Z", outcomes: [{ name: "Ann Lee", prob: 0.6 }, { name: "Bo Diaz", prob: 0.3 }, { name: "Person C", prob: 0.1 }] };
+    const html = renderToStaticMarkup(h(MarketLine, { line: leaderLine(q as never) }));
+    expect(html).toMatch(/Same market: Bo Diaz at 30%/);
+    expect(html).not.toMatch(/Person C/);
+    expect(isPlaceholder("Option A")).toBe(true);
+    expect(leaderLine({ ...q, outcomes: [{ name: "Person A", prob: 0.7 }] } as never)).toBeNull();
+  });
+  it("P1 tiles under 768px: 56px column, 40px tile centred, gap-2; 5 fit 342px; more than 5 fall back to 44px", () => {
+    const s = src("components/PortraitRow.tsx");
+    expect(s).toMatch(/length > ?5 ?\? ?"\[--w:44px\]" ?: ?"\[--w:56px\]"/);
+    expect(s).toMatch(/\[--p:40px\]/); expect(s).toMatch(/gap-2 overflow-hidden md:gap-3/); expect(s).toMatch(/mx-auto/);
+    expect(5 * 56 + 4 * 8).toBeLessThanOrEqual(342);
+    expect(6 * 44 + 5 * 8).toBeLessThanOrEqual(342);
+    expect(s).toMatch(/truncate text-sm font-\[530\] leading-5" title=\{c.name\}/);
+  });
+});

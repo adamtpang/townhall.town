@@ -2,14 +2,16 @@
 import { useEffect, useMemo, useState } from "react";
 import { H1 } from "../../lib/typeScale";
 import { stancesFor, type Answers } from "../../lib/issues";
-import { overlapStatus, overlapLabel } from "../../lib/overlapCore.mjs";
+import { overlapStatus } from "../../lib/overlapCore.mjs";
+import { gradeFor, GRADE_RULE } from "../../lib/grades.mjs";
+import CandidateRow, { type RowCand } from "../../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl } from "../../lib/endscreen.mjs";
 import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
 
 const ANSWERS_KEY = "th-answers-v1";
 const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
 const fmt = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
-type RaceLite = { id: string; title?: string; judicial: boolean; candidates: { name: string }[] };
+type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; candidates: RowCand[] };
 
 /** One printable page: overlap lines (not a recommendation), where, when, calendar. State is the URL hash or this device only. */
 export default function BallotCard({ zip, place, ids, races }: { zip: string; place: string; ids: string[]; races: RaceLite[] }) {
@@ -26,7 +28,9 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
   const site = where.sites[0];
   const ed = when.events.find((e: { kind: string }) => e.kind === "election");
   const early = when.events.find((e: { kind: string }) => e.kind === "early");
-  const rows = (answers ? races.filter((r) => !r.judicial && r.candidates.length) : []).map((r) => ({ r, list: r.candidates.map((c) => ({ c, o: overlapStatus(answers!, stancesFor(c.name), ids) })) })).filter((x) => x.list.some((y) => y.o.status === "ok"));
+  const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => ({ r, list: r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })) })); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in ballot order (Adam, 11:28 PM: photos and sources on every row)
+  const answered = answers ? ids.filter((id) => typeof answers[id] === "number").length : 0;
+  const yesNo = answers ? ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length : 0;
 
   function ics() {
     const blob = new Blob([buildIcs(when.events, site ? site.address : "")], { type: "text/calendar;charset=utf-8" });
@@ -59,23 +63,21 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
 
       <section className="mt-10 border-t border-black/15 pt-6">
         <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
-        <p className="mt-1 text-sm leading-5 text-black/60" data-overlap-caption>Overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
-        {answers === null ? <p className="mt-3 text-base text-black/60">Loading…</p> : rows.length === 0 ? (
-          Object.values(answers).some((v) => typeof v === "number") ? (
-            <p className="mt-3 text-base text-black/80" data-card-no-overlap>{Object.values(answers).some((v) => typeof v === "number" && v !== 0) ? "No overlap to show: no candidate has enough sourced positions on the issues you answered Yes or No." : "No overlap to show. Neutral answers aren\u2019t compared; answer Yes or No on an issue to compare."} <a href="/" className={link}>Change your answers</a>.</p>
-          ) : <p className="mt-3 text-base text-black/80">No overlap to show yet. <a href="/" className={link}>Answer a few questions</a>.</p>
-        ) : (
-          <ul className="mt-3 space-y-4">
-            {rows.map(({ r, list }) => (
-              <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
-                <p className="text-base font-[530]">{r.title || r.id}</p>
-                <ul className="mt-1 border-t border-black/15">
-                  {list.map(({ c, o }) => <li key={c.name} className="border-b border-black/15 py-1.5 text-base">{o.status === "ok" ? overlapLabel(c.name, o) : <>{c.name}<span className="text-black/60">: not enough sourced positions</span></>}</li>)}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        )}
+        <p className="mt-1 text-base leading-6 text-black" data-overlap-caption>Issue overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
+        <details className="print:hidden"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How grades work</summary><p className="pb-2 text-sm text-black/80" data-grade-rule>{GRADE_RULE}</p></details>
+        <>
+            {answers === null ? null : answered === 0 ? <p className="mt-3 text-base text-black/80">No answers yet. <a href="/" className={link}>Answer a few questions</a> to compare.</p> : yesNo === 0 ? <p className="mt-3 text-base text-black/80" data-card-no-overlap>Neutral answers aren&rsquo;t compared; answer Yes or No on an issue to compare. <a href="/" className={link}>Change your answers</a>.</p> : null}
+            <ul className="mt-3 space-y-6">
+              {rows.map(({ r, list }) => (
+                <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
+                  <p className="text-base font-[530]">{r.title || r.id}</p>
+                  <ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
+                    {list.map(({ c, o }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answeredYesNo={yesNo > 0} grade={gradeFor(o, r.judicial, answered, undefined, r, zip)} />)}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+        </>
       </section>
 
       <div className="mt-10 flex flex-wrap gap-3 print:hidden">

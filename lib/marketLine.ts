@@ -17,14 +17,18 @@ export function pctOf(p: number): string {
   return n >= 100 ? ">99%" : n <= 0 ? "<1%" : `${n}%`;
 }
 
-export type LeaderLine = { name: string; pct: string; url: string; title: string; fetched: string; closeness: "Competitive" | "Not closely contested" };
+export type LeaderLine = { name: string; pct: string; url: string; title: string; fetched: string; closeness: "Competitive" | "Not closely contested"; others?: { name: string; pct: string }[] };
+/** Polymarket placeholder outcomes ("Person A", "Option B") are never shown. */
+export const isPlaceholder = (n: string) => /^(person|option|other)\s+[a-z0-9]$/i.test(String(n).trim());
 
 /** "Leader on Polymarket: <name> at N%". Null unless there is a live Polymarket quote with a priced outcome. */
 export function leaderLine(q: PolyQuote | null | undefined): LeaderLine | null {
   if (!q || q.source !== "Polymarket" || !q.url || !q.fetchedAt) return null;
   const top = q.outcomes?.[0];
-  if (!top || typeof top.prob !== "number" || !isFinite(top.prob)) return null;
+  if (!top || typeof top.prob !== "number" || !isFinite(top.prob) || isPlaceholder(top.name)) return null;
+  // QA P2: the other candidates' prices from the same market (placeholders dropped).
+  const others = (q.outcomes ?? []).slice(1).filter((o) => typeof o.prob === "number" && isFinite(o.prob) && !isPlaceholder(o.name)).map((o) => ({ name: o.name, pct: pctOf(o.prob) }));
   const closeness = polymarketCloseness(q);
   if (closeness === "No market data") return null;
-  return { name: top.name, pct: pctOf(top.prob), url: q.url, title: q.title, fetched: fetchedCT(q.fetchedAt), closeness };
+  return { name: top.name, pct: pctOf(top.prob), url: q.url, title: q.title, fetched: fetchedCT(q.fetchedAt), closeness, others };
 }

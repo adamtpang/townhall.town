@@ -9,6 +9,7 @@ import { type Answers } from "../lib/issues";
 import { issuesFor, ISSUE_INTRO } from "../lib/issueOrder";
 import { migrateAnswers, press, choiceOf } from "../lib/overlapCore.mjs";
 import EndScreen from "./EndScreen";
+import { useT } from "../lib/i18n";
 
 type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null; officialSite?: string | null; finance?: { label?: string; url?: string } | null };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
@@ -35,11 +36,14 @@ const CITY: Record<string, string> = { "78701": "Austin", "94103": "San Francisc
 
 export default function IssueMatch({ zip, state, races }: { zip: string; state: "TX" | "CA" | "NY"; races: RaceLite[] }) {
   const issues = issuesFor(zip, state);
+  const t = useT();
   const ids = issues.map((i) => i.id);
   const [answers, setAnswers] = useState<Answers>({});
   const [confirm, setConfirm] = useState(false);
   const [savedZip, setSavedZip] = useState<string | null>(null);
-  useEffect(() => { setAnswers(load()); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
+  // Design p9: the carry-over notice only when th-answers-v1 already held answers BEFORE this page load (fresh browser: none).
+  const [carried, setCarried] = useState(0);
+  useEffect(() => { const a = load(); setAnswers(a); setCarried(ids.filter((id) => a[id] !== null && a[id] !== undefined).length); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
   const markZip = () => { try { localStorage.setItem(ANSWERS_ZIP_KEY, zip); } catch { /* ignore */ } };
   function choose(id: string, k: "yes" | "neutral" | "no", pole: "high" | "low" = "high") {
     const next = press(answers, id, k, pole) as Answers;
@@ -63,7 +67,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
   }
   function reset() {
     try { for (const k of Object.keys(localStorage)) if (k.startsWith("townhall.") || k.startsWith("th-")) localStorage.removeItem(k); } catch { /* ignore */ }
-    setAnswers({}); setFromChat({}); setConfirm(false);
+    setAnswers({}); setFromChat({}); setConfirm(false); setCarried(0);
     window.dispatchEvent(new Event("townhall:reset"));
   }
   const answered = ids.filter((id) => answers[id] !== null && answers[id] !== undefined).length;
@@ -76,7 +80,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
         <p className="mt-4 text-base leading-6 text-black" data-issue-intro>{ISSUE_INTRO}</p>
         <p className="mt-2 text-sm text-black/60" aria-live="polite" data-progress>{answered} of {ids.length} answered</p>
 
-        <TownyInterview zip={zip} city={CITY[zip] || "your area"} issues={issues.map((i) => ({ id: i.id, label: i.label }))} onFill={fill} answered={answered} savedZip={savedZip} />
+        <TownyInterview zip={zip} city={CITY[zip] || "your area"} issues={issues.map((i) => ({ id: i.id, label: i.label }))} onFill={fill} answered={answered} carried={carried} savedZip={savedZip} />
 
         <ol className="mt-6">
           {issues.map((i) => {
@@ -93,7 +97,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
                       <button key={c.k} type="button" role="radio" aria-checked={on} data-choice={c.k}
                         onClick={() => choose(i.id, c.k, i.yesMeansPole)}
                         className={`h-14 border text-base font-[530] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3760F2] md:h-12 md:w-[120px] ${on ? "border-black bg-black text-[#F2F2F2]" : "border-black/30 bg-transparent text-black hover:border-black"}`}>
-                        {c.label}
+                        {t(c.label)}
                       </button>
                     );
                   })}

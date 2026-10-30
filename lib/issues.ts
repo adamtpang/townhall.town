@@ -18,7 +18,7 @@ export const ISSUES: Issue[] = [
 ];
 
 /** value null = no usable position (status says why, shown verbatim); never counted. */
-export type Stance = { value: number | null; quote?: string; sourceUrl?: string | null; status?: string; voteRecord?: string; bill?: string; year?: number };
+export type Stance = { value: number | null; quote?: string; summary?: string; sourceUrl?: string | null; status?: string; voteRecord?: string; bill?: string; year?: number };
 // Year of each quote, from the source's own date (scripts/quote_years.py). Missing = 'date unsure'.
 const YEARS = (quoteYears as unknown as { years: Record<string, { year: number }> }).years;
 /** Questionnaires are labeled as such, never as endorsements. */

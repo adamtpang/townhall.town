@@ -7,7 +7,7 @@ import { getMarketOdds, MARKET_SLUGS, ballotFor } from "../lib/tools";
 import { raceMeta, KALSHI_ONLY_DROPPED } from "../lib/raceMeta";
 import { leaderLine, pctOf, fetchedCT } from "../lib/marketLine";
 import { polymarketCloseness, marketCoversBallot } from "../lib/marketsCore.mjs";
-import { CANDIDATE_GRADES, gradeFor, letterFor, GRADE_NOTE } from "../lib/grades.mjs";
+import { CANDIDATE_GRADES, gradeFor, letterFor } from "../lib/grades.mjs";
 import { overlapStatus } from "../lib/overlapCore.mjs";
 import { stancesFor, ISSUES } from "../lib/issues";
 import RaceTiers, { tierFor, MarketLine } from "../app/RaceTiers";
@@ -139,9 +139,10 @@ describe("CANDIDATE_GRADES (issue overlap, preview only)", () => {
     expect(gradeFor(ok(2, 2), true)).toBeNull();
     expect(gradeFor(ok(2, 2), false, 0)).toBeNull();
     expect(gradeFor(ok(2, 2), false, 1, false)).toBeNull();
-    expect(gradeFor(ok(2, 2), false, 1)).toBe("S");
+    // Fail closed: no Civic eligibility file in this preview, so no race gets a letter (see tests/round1129.test.ts).
+    expect(gradeFor(ok(3, 3), false, 1, true, { id: "x", candidates: [{}, {}] }, "78701")).toBeNull();
   });
-  it("EndScreen: grades labelled as issue overlap, ballot order kept, 'Not enough sourced positions' otherwise, no 'best'/'vote for'", () => {
+  it("EndScreen: grades labelled as issue overlap, ballot order kept, no 'Not enough sourced positions' text, no 'best'/'vote for'", () => {
     const allYes = Object.fromEntries(ISSUES.map((i) => [i.id, 5]));
     const ids = ISSUES.map((i) => i.id);
     let graded = 0;
@@ -163,19 +164,19 @@ describe("CANDIDATE_GRADES (issue overlap, preview only)", () => {
           if (g) { graded++; expect(html).toContain(`data-grade="${g}"`); }
           if (o.status === "few" && shown.includes(c.name)) {
             const li = block.split(/data-overlap="/).find((x) => x.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&").startsWith(c.name + '"'))!;
-            expect(li).toMatch(/Not enough sourced positions/);
-            expect(li).not.toMatch(/data-grade/);
+            expect(li).not.toMatch(/Not enough sourced positions/i);
+            expect(li).not.toMatch(/data-grade="/);
           }
         }
       }
-      for (const m of html.matchAll(/data-grade="[SABC]"[^>]*>(.*?)<\/p>/g)) expect(m[1]).toContain(GRADE_NOTE);
+      expect(html).not.toMatch(/Not enough sourced positions/i);
     }
-    expect(graded).toBeGreaterThan(0);
+    expect(graded).toBe(0); // fail closed until Civic's grades_eligibility.json lands
   });
   it("no grade before any Yes/No answer, and the API never carries letters", () => {
     const b = ballotFor("94103")!;
     const html = renderToStaticMarkup(h(EndScreen, { zip: "94103", races: b.races as never, answers: {}, ids: ISSUES.map((i) => i.id), answered: 0 }));
-    expect(html).not.toMatch(/data-grade/);
+    expect(html).not.toMatch(/data-grade="/);
     for (const f of ["lib/tools.ts", "lib/api/agent.ts", "lib/openapi.ts", "app/api/research/route.ts", "lib/v1.ts"].filter((f) => fs.existsSync(f))) expect(src(f), f).not.toMatch(/grades\.mjs|gradeFor|CANDIDATE_GRADES/);
   });
 });

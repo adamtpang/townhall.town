@@ -2029,8 +2029,10 @@
       },
       "healthcare": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "quote": "The state should have no involvement in decisions about our personal health."
       },
       "wages": {
         "value": null,
@@ -2717,8 +2719,9 @@
       },
       "education": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored.",
+        "sourceUrl": "https://jessicaforhd51.com/"
       },
       "energy": {
         "value": null,
@@ -2899,13 +2902,15 @@
       },
       "taxes": {
         "value": -3,
-        "quote": "We need to reduce tax and fee burdens.",
-        "sourceUrl": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/"
+        "quote": "We shouldn't be raising taxes,",
+        "sourceUrl": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+        "year": 2026
       },
       "safety": {
         "value": 3,
-        "quote": "the County to prosecute or commit repeat offenders to involuntary psychiatric stays",
-        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+        "quote": "If we aren't addressing the repeat offenders, I think we're not addressing public safety.",
+        "sourceUrl": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+        "year": 2026
       },
       "education": {
         "value": null,
@@ -2924,8 +2929,10 @@
       },
       "infrastructure": {
         "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "quote": "Cancel Project Connect light rail; consider monorail for commuter routes. No highway expansions."
       }
     },
     "zohaib-zo-qadri": {
@@ -2946,9 +2953,11 @@
         "sourceUrl": "https://www.zoforaustin.com/"
       },
       "taxes": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": 3,
+        "quote": "",
+        "sourceUrl": "https://data.austintexas.gov/City-Government/Zohaib-Zo-Qadri-Austin-City-Council-Voting-Record/3gx6-24u6",
+        "summary": "Official votes: voted yes to adopt the FY2025-26 property tax rate above the voter-approval rate and yes to order the Nov 2025 tax rate election (Prop Q).",
+        "year": 2025
       },
       "safety": {
         "value": -2,
@@ -2962,8 +2971,10 @@
       },
       "energy": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "quote": "I have publicly opposed new data centers that consume enormous amounts of those resources"
       },
       "immigration": {
         "value": null,
@@ -2979,9 +2990,10 @@
     "dave-thadani": {
       "name": "Dave Thadani",
       "housing": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": 4,
+        "quote": "We need to ensure abundant, accessible, and affordable housing (AAAH) for all within Austin.",
+        "sourceUrl": "https://daveforaustintx.com/",
+        "year": 2026
       },
       "healthcare": {
         "value": null,
@@ -2995,13 +3007,16 @@
       },
       "taxes": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored.",
+        "sourceUrl": "https://daveforaustintx.com/"
       },
       "safety": {
         "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored.",
+        "sourceUrl": "https://daveforaustintx.com/",
+        "quote": "a proactive police presence, as they are the most effective tools for protecting personal freedoms and delivering a safe and walkable city"
       },
       "education": {
         "value": null,
@@ -3009,9 +3024,10 @@
         "sourceUrl": null
       },
       "energy": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": 2,
+        "quote": "AI infrastructure has no place within the city of Austin at the moment, as current infrastructure is loud, environmentally detrimental, and amasses strain on local resources.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "year": 2026
       },
       "immigration": {
         "value": null,
@@ -3027,9 +3043,10 @@
     "kai-huang": {
       "name": "Kai Huang",
       "housing": {
-        "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "value": 3,
+        "quote": "Faster permits, lower fees and fewer barriers to building, so supply keeps up with demand and renters stop paying for City Hall's red tape.",
+        "sourceUrl": "https://kai4atx.com/",
+        "year": 2026
       },
       "healthcare": {
         "value": null,
@@ -3042,14 +3059,16 @@
         "sourceUrl": null
       },
       "taxes": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": -3,
+        "quote": "No new tax rate election.",
+        "sourceUrl": "https://kai4atx.com/",
+        "year": 2026
       },
       "safety": {
         "value": 3,
-        "quote": "I think we need to be harder on crime, especially around theft,",
-        "sourceUrl": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026"
+        "quote": "Fully staff APD with faster hiring and better retention, more lighting and cameras in entertainment districts, and crisis teams so officers can focus on serious crime.",
+        "sourceUrl": "https://kai4atx.com/",
+        "year": 2026
       },
       "education": {
         "value": null,
@@ -3068,8 +3087,9 @@
       },
       "infrastructure": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored.",
+        "sourceUrl": "https://kai4atx.com/"
       }
     },
     "pamela-mathai": {
@@ -3197,8 +3217,10 @@
       },
       "education": {
         "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "quote": "Moving all students to charter schools will free up the $1.5B AISD M&O tax"
       },
       "energy": {
         "value": null,
@@ -3235,8 +3257,9 @@
       },
       "taxes": {
         "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Backs expanding free tuition while saying ACC must \"scrutinize operations and spending\". No tax-level position; not scored.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
       },
       "safety": {
         "value": null,
@@ -3333,8 +3356,10 @@
       },
       "taxes": {
         "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" Ambiguous; not scored.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "quote": "There are a plethora of equally abhorrent external answers including raising property taxes. If we want good things, we need to pay for them."
       },
       "safety": {
         "value": null,
@@ -3981,6 +4006,18 @@
         "value": null,
         "status": "No public statement found",
         "sourceUrl": null
+      },
+      "housing": {
+        "value": 3,
+        "quote": "I’ll continue to prioritize and incentivize the development of more affordable housing and work to provide assistance to first-time homebuyers.",
+        "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/malia-cohen/",
+        "year": 2026
+      },
+      "healthcare": {
+        "value": 2,
+        "quote": "Preserve California’s commitments to public education, healthcare access, climate resilience, and infrastructure investments",
+        "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/malia-cohen/",
+        "year": 2026
       }
     },
     "herb-w-morgan": {
@@ -5117,8 +5154,9 @@
       },
       "safety": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored.",
+        "sourceUrl": "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/"
       },
       "education": {
         "value": null,
@@ -5126,9 +5164,10 @@
         "sourceUrl": null
       },
       "energy": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": 2,
+        "quote": "All need to be held responsible! I believe the data centers will be more of the same.",
+        "sourceUrl": "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+        "year": 2026
       },
       "immigration": {
         "value": null,
@@ -6052,6 +6091,65 @@
         "status": "No public statement found",
         "sourceUrl": null
       }
+    },
+    "lauren-b-pena": {
+      "name": "Lauren B. Peña",
+      "taxes": {
+        "value": -3,
+        "quote": "I will support tax relief for working families",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "year": 2026
+      },
+      "housing": {
+        "value": 2,
+        "quote": "expand housing supply by cutting federal barriers",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "year": 2026
+      },
+      "healthcare": {
+        "value": -2,
+        "quote": "",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "summary": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection.",
+        "year": 2026
+      },
+      "immigration": {
+        "value": null,
+        "status": "unsure",
+        "summary": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+      }
+    },
+    "velva-l-price": {
+      "name": "Velva L. Price"
+    },
+    "dolores-ortega-carter": {
+      "name": "Dolores Ortega Carter"
+    },
+    "gabriel-padilla": {
+      "name": "Gabriel Padilla"
+    },
+    "skyler-a-korgel": {
+      "name": "Skyler A. Korgel"
+    },
+    "brian-pena": {
+      "name": "Brian Peña"
+    },
+    "dyana-limon-mercado": {
+      "name": "Dyana Limon-Mercado"
+    },
+    "george-morales-iii": {
+      "name": "George Morales III",
+      "taxes": {
+        "value": 2,
+        "quote": "",
+        "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
+        "summary": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+        "year": 2026
+      }
+    },
+    "gigi-edwards-bryant": {
+      "name": "Gigi Edwards Bryant"
     }
   }
 }

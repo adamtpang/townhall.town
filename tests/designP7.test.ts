@@ -48,7 +48,8 @@ describe("Design p7 (4c21a5c)", () => {
     expect(end).toMatch(/className=\{`\$\{HIT\} text-\[#3760F2\]`\} data-how-register>How ↗/);
     expect(end).toMatch(/after:-inset-y-4 after:content-\[''\]" data-early-source>Early voting source/);
     expect(end).not.toMatch(/after:-inset-y-1[^>]*>Early voting source/);
-    expect(src("components/PortraitRow.tsx")).toMatch(/className=\{`\$\{HIT\} text-\[#3760F2\]`\} data-photo-credit>/);
+    // Oct 29 11:42 PM CT: attribution is always visible, small and muted (was a blue link in a collapsed list).
+    expect(src("components/PortraitRow.tsx")).toMatch(/className=\{`\$\{HIT\} text-black\/50 underline decoration-black\/20`\} data-photo-credit>/);
     expect(src("app/RaceTiers.tsx")).toMatch(/className=\{`\$\{HIT\} text-black underline-offset-2 hover:underline`\} data-news-link>/);
   });
   it("5. ballot starts mt-6 below the city chips (no ~100px band)", () => {

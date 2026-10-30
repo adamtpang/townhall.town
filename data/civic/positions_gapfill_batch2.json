@@ -1,0 +1,1477 @@
+{
+ "_meta": {
+  "asOf": "2026-10-30",
+  "baseline": "townhall feat2 branch (feat/actionable @4e15da7) data/stances.json; ids via candidateId(name).",
+  "scale": "-5..+5 per data/issue_order.json axes; verification_rule.md bar. score null + status \"unsure\" = ambiguous, not scored.",
+  "sourcesCheckedNote": "If a candidate has no scorable stance, the site can show \"No public statement found as of Oct 30, 2026\" using sourcesChecked.",
+  "judicialSkipped": true
+ },
+ "dave-thadani": {
+  "zip": "78701",
+  "name": "Dave Thadani",
+  "race": "Austin City Council, District 9",
+  "stances": [
+   {
+    "issue": "housing",
+    "score": 4,
+    "summary": "Calls for abundant, affordable housing for all and expanding existing programs such as vouchers and permanent supportive housing.",
+    "sourceUrl": "https://daveforaustintx.com/",
+    "sourceTitle": "Dave Thadani campaign site (daveforaustintx.com)",
+    "date": "2026-10-30",
+    "quote": "We need to ensure abundant, accessible, and affordable housing (AAAH) for all within Austin.",
+    "sourceType": "campaign site"
+   },
+   {
+    "issue": "energy",
+    "score": 2,
+    "summary": "Says data centers/AI infrastructure do not belong in Austin for now, citing environmental harm and strain on local resources.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "AI infrastructure has no place within the city of Austin at the moment, as current infrastructure is loud, environmentally detrimental, and amasses strain on local resources.",
+    "sourceType": "questionnaire"
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "safety",
+    "score": null,
+    "status": "unsure",
+    "summary": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored.",
+    "sourceUrl": "https://daveforaustintx.com/",
+    "sourceTitle": "Dave Thadani campaign site (daveforaustintx.com)",
+    "date": "2026-10-30",
+    "quote": "a proactive police presence, as they are the most effective tools for protecting personal freedoms and delivering a safe and walkable city"
+   },
+   {
+    "issue": "taxes",
+    "score": null,
+    "status": "unsure",
+    "summary": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored.",
+    "sourceUrl": "https://daveforaustintx.com/",
+    "sourceTitle": "Dave Thadani campaign site (daveforaustintx.com)",
+    "date": "2026-10-30"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://daveforaustintx.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Housing, transit, police, spending language found (used above)."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; housing/infrastructure/data-center answers (infrastructure already in repo)."
+   },
+   {
+    "url": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "title": "KUT: Austin City Council District 9 candidates (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Did not respond to interview requests per KUT."
+   },
+   {
+    "url": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+    "title": "FOX 7 Austin: Meet the candidates for Austin City Council District 9 (Oct 26, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Did not respond to multiple interview requests per FOX 7."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+    "title": "Community Impact: Meet the candidates running for Austin City Council District 9",
+    "dateChecked": "2026-10-30",
+    "result": "No Q&A answers from Thadani."
+   },
+   {
+    "url": "https://ballotpedia.org/Dave_Thadani",
+    "title": "Ballotpedia: Dave Thadani",
+    "dateChecked": "2026-10-30",
+    "result": "Candidate Connection survey not completed."
+   },
+   {
+    "url": "https://www.yahoo.com/news/politics/articles/austin-city-councils-district-9-110000811.html",
+    "title": "Austin American-Statesman (via Yahoo News): Austin City Council District 9 race (Oct 12, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "No direct quotes from Thadani usable for a new issue."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "infrastructure"
+  ],
+  "sourcedIssuesAfter": [
+   "energy",
+   "housing",
+   "infrastructure"
+  ]
+ },
+ "kai-huang": {
+  "zip": "78701",
+  "name": "Kai Huang",
+  "race": "Austin City Council, District 9",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": -3,
+    "summary": "Opposes a new tax rate election and wants downtown growth, not tax increases, to pay for priorities.",
+    "sourceUrl": "https://kai4atx.com/",
+    "sourceTitle": "Kai Huang campaign site (kai4atx.com)",
+    "date": "2026-10-30",
+    "quote": "No new tax rate election.",
+    "sourceType": "campaign site"
+   },
+   {
+    "issue": "housing",
+    "score": 3,
+    "summary": "Wants faster permits, lower fees and fewer barriers so housing supply keeps up with demand (scored like other cut-red-tape-to-build-homes statements).",
+    "sourceUrl": "https://kai4atx.com/",
+    "sourceTitle": "Kai Huang campaign site (kai4atx.com)",
+    "date": "2026-10-30",
+    "quote": "Faster permits, lower fees and fewer barriers to building, so supply keeps up with demand and renters stop paying for City Hall's red tape.",
+    "sourceType": "campaign site"
+   },
+   {
+    "issue": "safety",
+    "score": 3,
+    "summary": "Reinforces existing score: fully staff APD, more lighting and cameras, crisis teams, and consistent enforcement of the camping ban.",
+    "sourceUrl": "https://kai4atx.com/",
+    "sourceTitle": "Kai Huang campaign site (kai4atx.com)",
+    "date": "2026-10-30",
+    "quote": "Fully staff APD with faster hiring and better retention, more lighting and cameras in entertainment districts, and crisis teams so officers can focus on serious crime.",
+    "sourceType": "campaign site (corroborates existing KUT-sourced score)"
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "infrastructure",
+    "score": null,
+    "status": "unsure",
+    "summary": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored.",
+    "sourceUrl": "https://kai4atx.com/",
+    "sourceTitle": "Kai Huang campaign site (kai4atx.com)",
+    "date": "2026-10-30"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://kai4atx.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Taxes, housing, safety, transit language found (used above)."
+   },
+   {
+    "url": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+    "title": "FOX 7 Austin: Meet the candidates for Austin City Council District 9 (Oct 26, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Quotes on spending accountability and supporting Prop I (external audit); not mapped to a new axis."
+   },
+   {
+    "url": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "title": "KUT: Austin City Council District 9 candidates (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Crime quote already in repo; homelessness quote too general to score."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "\"No response received.\""
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+    "title": "Community Impact: Meet the candidates running for Austin City Council District 9",
+    "dateChecked": "2026-10-30",
+    "result": "No Q&A answers from Huang."
+   },
+   {
+    "url": "https://ballotpedia.org/Kai_Huang",
+    "title": "Ballotpedia: Kai Huang",
+    "dateChecked": "2026-10-30",
+    "result": "Candidate Connection survey not completed."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "safety"
+  ],
+  "sourcedIssuesAfter": [
+   "housing",
+   "safety",
+   "taxes"
+  ]
+ },
+ "katie-kam": {
+  "zip": "78701",
+  "name": "Katie Kam",
+  "race": "Austin City Council, District 9",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": -3,
+    "summary": "Reinforces existing score: says the city should not be raising taxes.",
+    "sourceUrl": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "sourceTitle": "KUT: Austin City Council District 9 candidates (Oct 19, 2026)",
+    "date": "2026-10-19",
+    "quote": "We shouldn't be raising taxes,",
+    "sourceType": "news interview (corroborates existing score)"
+   },
+   {
+    "issue": "safety",
+    "score": 3,
+    "summary": "Reinforces existing score: focus resources on repeat offenders.",
+    "sourceUrl": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+    "sourceTitle": "FOX 7 Austin: Meet the candidates for Austin City Council District 9 (Oct 26, 2026)",
+    "date": "2026-10-26",
+    "quote": "If we aren't addressing the repeat offenders, I think we're not addressing public safety.",
+    "sourceType": "news interview (corroborates existing score)"
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "infrastructure",
+    "score": null,
+    "status": "unsure",
+    "summary": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "Cancel Project Connect light rail; consider monorail for commuter routes. No highway expansions."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.katiekamforaustin.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Headline priorities only on the home page (accountability, transit, safety); no new scorable axis."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; housing/safety/energy already in repo; infrastructure mixed."
+   },
+   {
+    "url": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "title": "KUT: Austin City Council District 9 candidates (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Tax quote corroborates existing taxes score."
+   },
+   {
+    "url": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+    "title": "FOX 7 Austin: Meet the candidates for Austin City Council District 9 (Oct 26, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Repeat-offender and Project Connect quotes."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+    "title": "Community Impact: Meet the candidates running for Austin City Council District 9",
+    "dateChecked": "2026-10-30",
+    "result": "Tax answer already in repo."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "energy",
+   "housing",
+   "safety",
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "energy",
+   "housing",
+   "safety",
+   "taxes"
+  ]
+ },
+ "zohaib-zo-qadri": {
+  "zip": "78701",
+  "name": "Zohaib \"Zo\" Qadri",
+  "race": "Austin City Council, District 9",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": 3,
+    "summary": "Official votes: voted yes to adopt the FY2025-26 property tax rate above the voter-approval rate and yes to order the Nov 2025 tax rate election (Prop Q).",
+    "sourceUrl": "https://data.austintexas.gov/City-Government/Zohaib-Zo-Qadri-Austin-City-Council-Voting-Record/3gx6-24u6",
+    "sourceTitle": "City of Austin Open Data: Zohaib \"Zo\" Qadri Council Voting Record (items 250813_BG_001 and 250813_BG_010, Aug 13, 2025)",
+    "date": "2025-08-13",
+    "sourceType": "official vote; ordinance text https://services.austintexas.gov/edims/document.cfm?id=457193. +3 not +5: council votes, not a stated philosophy; the TRE vote was unanimous."
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "energy",
+    "score": null,
+    "status": "unsure",
+    "summary": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "I have publicly opposed new data centers that consume enormous amounts of those resources"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; housing/safety/infrastructure already in repo."
+   },
+   {
+    "url": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "title": "KUT: Austin City Council District 9 candidates (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Housing/Project Connect quotes corroborate existing scores."
+   },
+   {
+    "url": "https://www.yahoo.com/news/politics/articles/austin-city-councils-district-9-110000811.html",
+    "title": "Austin American-Statesman (via Yahoo News): Austin City Council District 9 race (Oct 12, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Police and tax quotes; tax quote too vague to score on its own."
+   },
+   {
+    "url": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+    "title": "FOX 7 Austin: Meet the candidates for Austin City Council District 9 (Oct 26, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Opposes Prop I; supports Project Connect (corroborates infrastructure)."
+   },
+   {
+    "url": "https://data.austintexas.gov/resource/3gx6-24u6.json",
+    "title": "City of Austin Open Data voting record API",
+    "dateChecked": "2026-10-30",
+    "result": "Aug 13, 2025 budget votes found (used above)."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "housing",
+   "infrastructure",
+   "safety",
+   "wages"
+  ],
+  "sourcedIssuesAfter": [
+   "housing",
+   "infrastructure",
+   "safety",
+   "taxes",
+   "wages"
+  ]
+ },
+ "rich-heyman": {
+  "zip": "78701",
+  "name": "Rich Heyman",
+  "race": "Austin City Council, District 9",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; safety/infrastructure already in repo. Data-center answer (\"suspend data center development\") not used to change energy score."
+   },
+   {
+    "url": "https://www.yahoo.com/news/politics/articles/austin-city-councils-district-9-110000811.html",
+    "title": "Austin American-Statesman (via Yahoo News): Austin City Council District 9 race (Oct 12, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Quotes on policing and working people; consistent with existing safety score; no new axis."
+   },
+   {
+    "url": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+    "title": "FOX 7 Austin: Meet the candidates for Austin City Council District 9 (Oct 26, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Opposes Prop I; wants Project Connect reassessed; no new scorable axis."
+   },
+   {
+    "url": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "title": "KUT: Austin City Council District 9 candidates (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Wage quote already in repo."
+   }
+  ],
+  "note": "Already 6 sourced issues in repo; no change needed. Checked the same sources as opponents for balance.",
+  "sourcedIssuesBefore": [
+   "energy",
+   "housing",
+   "infrastructure",
+   "safety",
+   "taxes",
+   "wages"
+  ],
+  "sourcedIssuesAfter": [
+   "energy",
+   "housing",
+   "infrastructure",
+   "safety",
+   "taxes",
+   "wages"
+  ]
+ },
+ "montserrat-garibay": {
+  "zip": "78701",
+  "name": "Montserrat Garibay",
+  "race": "Texas House District 49",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; healthcare/taxes/energy/infrastructure already in repo."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+    "title": "Community Impact HD49 Q&A",
+    "dateChecked": "2026-10-30",
+    "result": "Wage quote already in repo."
+   },
+   {
+    "url": "https://journals.house.texas.gov/HJRNL/89R/HTML/89RDAY46FINAL.HTM",
+    "title": "Texas House Journal, Apr 17 2025 (SB 2 record vote 300)",
+    "dateChecked": "2026-10-30",
+    "result": "Not a House member in 2025; no vote record."
+   }
+  ],
+  "note": "Already 5 sourced issues; opponent Papari also 5. Balanced; no change.",
+  "sourcedIssuesBefore": [
+   "energy",
+   "healthcare",
+   "infrastructure",
+   "taxes",
+   "wages"
+  ],
+  "sourcedIssuesAfter": [
+   "energy",
+   "healthcare",
+   "infrastructure",
+   "taxes",
+   "wages"
+  ]
+ },
+ "arshia-papari": {
+  "zip": "78701",
+  "name": "Arshia Papari",
+  "race": "Texas House District 49",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; healthcare/education/energy/infrastructure already in repo."
+   },
+   {
+    "url": "https://www.arshiafortexas.org/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Housing (rent freeze) already in repo."
+   }
+  ],
+  "note": "Already 5 sourced issues; opponent Garibay also 5. Balanced; no change.",
+  "sourcedIssuesBefore": [
+   "education",
+   "energy",
+   "healthcare",
+   "housing",
+   "infrastructure"
+  ],
+  "sourcedIssuesAfter": [
+   "education",
+   "energy",
+   "healthcare",
+   "housing",
+   "infrastructure"
+  ]
+ },
+ "jessica-martinez": {
+  "zip": "78701",
+  "name": "Jessica Martinez",
+  "race": "Texas House District 51",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "summary": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored.",
+    "sourceUrl": "https://jessicaforhd51.com/",
+    "sourceTitle": "Jessica Martinez campaign site (jessicaforhd51.com)",
+    "date": "2026-10-30"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://jessicaforhd51.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Taxes/safety/infrastructure already in repo; utility-cost and homelessness items not mappable to an axis."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "\"No response received.\""
+   },
+   {
+    "url": "https://ballotpedia.org/Jessica_Martinez_(Texas)",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Candidate Connection survey not completed."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/",
+    "title": "Community Impact HD51 coverage",
+    "dateChecked": "2026-10-30",
+    "result": "No HD51 Q&A answers found from Martinez."
+   }
+  ],
+  "note": "3 sourced issues vs. 7 for Flores (incumbent, answered LWV). Uneven because Martinez published far less, not because she was checked less; same source set checked for both.",
+  "sourcedIssuesBefore": [
+   "infrastructure",
+   "safety",
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "infrastructure",
+   "safety",
+   "taxes"
+  ]
+ },
+ "maria-luisa-lulu-flores": {
+  "zip": "78701",
+  "name": "Maria Luisa \"Lulu\" Flores",
+  "race": "Texas House District 51",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; healthcare/education/energy/infrastructure already in repo."
+   },
+   {
+    "url": "https://www.voteluluflores.com/issues/",
+    "title": "Campaign issues page",
+    "dateChecked": "2026-10-30",
+    "result": "Wages/taxes/safety already in repo."
+   },
+   {
+    "url": "https://journals.house.texas.gov/HJRNL/89R/HTML/89RDAY46FINAL.HTM",
+    "title": "Texas House Journal, Apr 17 2025 (SB 2 record vote 300)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed among Nays on SB 2 (education savings accounts); consistent with existing education -5, no change."
+   }
+  ],
+  "note": "Already 7 sourced issues; no change.",
+  "sourcedIssuesBefore": [
+   "education",
+   "energy",
+   "healthcare",
+   "infrastructure",
+   "safety",
+   "taxes",
+   "wages"
+  ],
+  "sourcedIssuesAfter": [
+   "education",
+   "energy",
+   "healthcare",
+   "infrastructure",
+   "safety",
+   "taxes",
+   "wages"
+  ]
+ },
+ "lauren-b-pena": {
+  "zip": "78701",
+  "name": "Lauren B. Peña",
+  "race": "U.S. House Texas District 37",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": -3,
+    "summary": "Supports tax relief for working families and fighting what she calls reckless federal spending.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "I will support tax relief for working families",
+    "sourceType": "questionnaire"
+   },
+   {
+    "issue": "housing",
+    "score": 2,
+    "summary": "Wants to expand housing supply by cutting federal barriers (mild; scored like other cut-barriers-to-build statements).",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "expand housing supply by cutting federal barriers",
+    "sourceType": "questionnaire"
+   },
+   {
+    "issue": "healthcare",
+    "score": -2,
+    "summary": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "sourceType": "questionnaire (answer written in third person by the campaign; no first-person quote used)"
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "immigration",
+    "score": null,
+    "status": "unsure",
+    "summary": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded (healthcare, affordability, immigration, checks and balances)."
+   },
+   {
+    "url": "https://ballotpedia.org/Lauren_Pe%C3%B1a",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Fetch blocked (403) from this network; not reviewed."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": [
+   "healthcare",
+   "housing",
+   "taxes"
+  ]
+ },
+ "tom-oxford": {
+  "zip": "78701",
+  "name": "Tom Oxford",
+  "race": "Attorney General of Texas",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "healthcare",
+    "score": null,
+    "status": "unsure",
+    "summary": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "The state should have no involvement in decisions about our personal health."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; immigration (due process) already in repo; elections/ethics answers not on an axis."
+   },
+   {
+    "url": "https://ballotpedia.org/Tom_Oxford",
+    "title": "Ballotpedia (via search snippet; direct fetch 403)",
+    "dateChecked": "2026-10-30",
+    "result": "Candidate Connection survey not completed."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "immigration"
+  ],
+  "sourcedIssuesAfter": [
+   "immigration"
+  ]
+ },
+ "v-alonzo-echavarria-garza": {
+  "zip": "78701",
+  "name": "V. Alonzo Echavarria-Garza",
+  "race": "Texas Comptroller of Public Accounts",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "\"No response received.\""
+   },
+   {
+    "url": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Fetch blocked (403); no campaign site found in search."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "austin-r-kelly": {
+  "zip": "78701",
+  "name": "Austin R. Kelly",
+  "race": "Texas Commissioner of Agriculture",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "\"No response received.\""
+   },
+   {
+    "url": "https://ballotpedia.org/Austin_Kelly",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Fetch blocked (403); taxes already in repo; nothing new found."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "taxes"
+  ]
+ },
+ "mica-arellano": {
+  "zip": "78701",
+  "name": "Mica Arellano",
+  "race": "State Board of Education District 5",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "\"No response received.\""
+   },
+   {
+    "url": "https://ballotpedia.org/Mica_Arellano",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Fetch blocked (403); no campaign site found."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "allison-bush": {
+  "zip": "78701",
+  "name": "Allison Bush",
+  "race": "State Board of Education District 5",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded (teacher support, AI, civics, reading lists); no new axis."
+   },
+   {
+    "url": "https://www.allisonfortx.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Charter/voucher accountability text supports the existing education score; nothing on other axes."
+   }
+  ],
+  "note": "Opponent Mica Arellano has 0; race is thin on both sides.",
+  "sourcedIssuesBefore": [
+   "education"
+  ],
+  "sourcedIssuesAfter": [
+   "education"
+  ]
+ },
+ "velva-l-price": {
+  "zip": "78701",
+  "name": "Velva L. Price",
+  "race": "District Clerk",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed \"Unopposed\"; no questionnaire answers printed."
+   }
+  ],
+  "note": "Unopposed administrative/board office; no issue statements found.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "dolores-ortega-carter": {
+  "zip": "78701",
+  "name": "Dolores Ortega Carter",
+  "race": "County Treasurer",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed \"Unopposed\"; no questionnaire answers printed."
+   }
+  ],
+  "note": "Unopposed administrative/board office; no issue statements found.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "gabriel-padilla": {
+  "zip": "78701",
+  "name": "Gabriel Padilla",
+  "race": "County Constable, Precinct 4 - Unexpired Term",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed \"Unopposed\"; no questionnaire answers printed."
+   }
+  ],
+  "note": "Unopposed administrative/board office; no issue statements found.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "skyler-a-korgel": {
+  "zip": "78701",
+  "name": "Skyler A. Korgel",
+  "race": "Travis Central Appraisal District Board of Directors, Place 1",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed \"Unopposed\"; no questionnaire answers printed."
+   }
+  ],
+  "note": "Unopposed administrative/board office; no issue statements found.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "brian-pena": {
+  "zip": "78701",
+  "name": "Brian Peña",
+  "race": "Travis Central Appraisal District Board of Directors, Place 2",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed \"Unopposed\"; no questionnaire answers printed."
+   }
+  ],
+  "note": "Unopposed administrative/board office; no issue statements found.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "dyana-limon-mercado": {
+  "zip": "78701",
+  "name": "Dyana Limon-Mercado",
+  "race": "County Clerk",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded on poll workers and election administration only; no issue axis."
+   }
+  ],
+  "note": "Election-administration office; answers do not map to issue axes.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "george-morales-iii": {
+  "zip": "78701",
+  "name": "George Morales III",
+  "race": "Travis County Commissioner, Precinct 4",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": 2,
+    "summary": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+    "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
+    "sourceTitle": "Travis County: Notice of Public Hearing on Tax Increase (vote on proposed rate)",
+    "date": "2026-09-04",
+    "sourceType": "official vote"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed \"Unopposed\"; no questionnaire answers printed."
+   }
+  ],
+  "note": "Unopposed.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": [
+   "taxes"
+  ]
+ },
+ "yvonne-munoz": {
+  "zip": "78701",
+  "name": "Yvonne Muñoz",
+  "race": "Travis Central Appraisal District Board of Directors, Place 3",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; answers about appraisal criteria and hiring only; no issue axis."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "phil-gorman": {
+  "zip": "78701",
+  "name": "Phil Gorman",
+  "race": "Travis Central Appraisal District Board of Directors, Place 3",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; answers about appraisal fairness/governance only."
+   },
+   {
+    "url": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+    "title": "Austin Bulldog: TCAD candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Prop Q opposition is in reporter's words; not scored (as in batch 1)."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "kirk-becker": {
+  "zip": "78701",
+  "name": "Kirk Becker",
+  "race": "Austin ISD Board of Trustees, At-Large Position 9",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "summary": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "Moving all students to charter schools will free up the $1.5B AISD M&O tax"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded; taxes already in repo."
+   },
+   {
+    "url": "https://kirk4aisd.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Empty or unreachable."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "taxes"
+  ]
+ },
+ "dana-walker": {
+  "zip": "78701",
+  "name": "Dana Walker",
+  "race": "Austin Community College Board of Trustees, Place 1",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "taxes",
+    "score": null,
+    "status": "unsure",
+    "summary": "Backs expanding free tuition while saying ACC must \"scrutinize operations and spending\". No tax-level position; not scored.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded (workforce, student success, budget)."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+    "title": "KUT ACC candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in batch 1; nothing scorable."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "gloria-gonzales-dholakia": {
+  "zip": "78701",
+  "name": "Gloria Gonzales-Dholakia",
+  "race": "Austin Community College Board of Trustees, Place 1",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded (pathways, free tuition, AI); no new axis."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "taxes"
+  ]
+ },
+ "gigi-edwards-bryant": {
+  "zip": "78701",
+  "name": "Gigi Edwards Bryant",
+  "race": "Austin Community College Board of Trustees, Place 2",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed \"Unopposed\"; no questionnaire answers printed."
+   },
+   {
+    "url": "https://sites.austincc.edu/newsroom/2026/09/16/acc-approves-new-property-tax-rate-for-fy2026-27/",
+    "title": "ACC newsroom: FY2026-27 tax rate",
+    "dateChecked": "2026-10-30",
+    "result": "No individual votes listed; the rate rose but average bills fell, so direction is unclear."
+   }
+  ],
+  "note": "Unopposed.",
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "trevor-hale": {
+  "zip": "78701",
+  "name": "Trevor Hale",
+  "race": "Austin Community College Board of Trustees, Place 3",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "taxes",
+    "score": null,
+    "status": "unsure",
+    "summary": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" Ambiguous; not scored.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "date": "2026-10",
+    "quote": "There are a plethora of equally abhorrent external answers including raising property taxes. If we want good things, we need to pay for them."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded (workforce, branding, budget, term limits)."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "nan-mcraven": {
+  "zip": "78701",
+  "name": "Nan McRaven",
+  "race": "Austin Community College Board of Trustees, Place 3",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Responded (free tuition, fundraising, child care); no issue axis."
+   },
+   {
+    "url": "https://sites.austincc.edu/newsroom/2026/09/16/acc-approves-new-property-tax-rate-for-fy2026-27/",
+    "title": "ACC newsroom: FY2026-27 tax rate",
+    "dateChecked": "2026-10-30",
+    "result": "No individual votes listed."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "malia-m-cohen": {
+  "zip": "94103",
+  "name": "Malia M. Cohen",
+  "race": "California Controller",
+  "stances": [
+   {
+    "issue": "housing",
+    "score": 3,
+    "summary": "Says she will keep prioritizing and incentivizing more affordable housing and helping first-time homebuyers.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/malia-cohen/",
+    "sourceTitle": "GrowSF candidate questionnaire, June 2026 primary (candidate's own answers)",
+    "date": "2026-04-07",
+    "quote": "I’ll continue to prioritize and incentivize the development of more affordable housing and work to provide assistance to first-time homebuyers.",
+    "sourceType": "questionnaire (GrowSF is a slate org; only her own answers used)"
+   },
+   {
+    "issue": "healthcare",
+    "score": 2,
+    "summary": "Lists preserving California's commitments to healthcare access (with education, climate and infrastructure) as a priority. Mild.",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/malia-cohen/",
+    "sourceTitle": "GrowSF candidate questionnaire, June 2026 primary (candidate's own answers)",
+    "date": "2026-04-07",
+    "quote": "Preserve California’s commitments to public education, healthcare access, climate resilience, and infrastructure investments",
+    "sourceType": "questionnaire"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.maliacohenforca.com/accomplishments",
+    "title": "Campaign accomplishments page",
+    "dateChecked": "2026-10-30",
+    "result": "Housing-related; corroborates."
+   },
+   {
+    "url": "https://www.kcra.com/article/malia-cohen-explains-why-she-should-be-reelected-state-controller-ca-politics-360/74165176",
+    "title": "KCRA interview",
+    "dateChecked": "2026-10-30",
+    "result": "Fiscal-accountability remarks only."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "energy"
+  ],
+  "sourcedIssuesAfter": [
+   "energy",
+   "healthcare",
+   "housing"
+  ]
+ },
+ "jamo-muhammad": {
+  "zip": "94103",
+  "name": "Jamo Muhammad",
+  "race": "Board of Supervisors, District 10",
+  "stances": [
+   {
+    "issue": "energy",
+    "score": 2,
+    "summary": "Wants polluters at the Hunters Point shipyard held responsible and expects data centers to bring \"more of the same\" harm. Mild environment-first (scored like Jennison's Pier 68 superfund statement).",
+    "sourceUrl": "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+    "sourceTitle": "SF Bay View: D10 candidate Jamo Muhammad speaks (Q&A, Sept 9, 2026)",
+    "date": "2026-09-09",
+    "quote": "All need to be held responsible! I believe the data centers will be more of the same.",
+    "sourceType": "news Q&A, candidate's own words"
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "safety",
+    "score": null,
+    "status": "unsure",
+    "summary": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored.",
+    "sourceUrl": "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+    "sourceTitle": "SF Bay View Q&A",
+    "date": "2026-09-09"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+    "title": "Potrero Hill Dem Club D10 questionnaires",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; nothing scorable."
+   },
+   {
+    "url": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+    "title": "KQED voter guide D10",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; nothing scorable."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": [
+   "energy"
+  ]
+ },
+ "ellsworth-ell-m-jennison-jr": {
+  "zip": "94103",
+  "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
+  "race": "Board of Supervisors, District 10",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+    "title": "Potrero Hill Dem Club D10 questionnaires",
+    "dateChecked": "2026-10-30",
+    "result": "No answers found."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "energy"
+  ],
+  "sourcedIssuesAfter": [
+   "energy"
+  ]
+ },
+ "manuel-noris-barrera": {
+  "zip": "94103",
+  "name": "Manuel Noris-Barrera",
+  "race": "State Assembly Member District 17",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://manuelnoris.com/platform",
+    "title": "Campaign platform (2024 page)",
+    "dateChecked": "2026-10-30",
+    "result": "Core principles only (\"community safety, family values\"); no scorable policy."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "taxes"
+  ]
+ },
+ "joaquin-torres": {
+  "zip": "94103",
+  "name": "Joaquin Torres",
+  "race": "Assessor-Recorder",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/",
+    "title": "GrowSF questionnaire",
+    "dateChecked": "2026-10-30",
+    "result": "Housing already in repo; no other axis."
+   },
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "housing"
+  ],
+  "sourcedIssuesAfter": [
+   "housing"
+  ]
+ },
+ "autumn-brown-garibay": {
+  "zip": "94103",
+  "name": "Autumn Brown-Garibay",
+  "race": "Board of Education (choose up to 3)",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+    "title": "GrowSF questionnaire",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no axis answers."
+   },
+   {
+    "url": "https://www.sfdems.org/2026-november-endorsements-questionaires",
+    "title": "SF Dem Party questionnaires",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no axis answers."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "phil-kim": {
+  "zip": "94103",
+  "name": "Phil Kim",
+  "race": "Board of Education (choose up to 3)",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://missionlocal.org/2026/10/meet-the-candidates-san-francisco-school-board-race/",
+    "title": "Mission Local school board Q&A",
+    "dateChecked": "2026-10-30",
+    "result": "Housing already in repo."
+   },
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "housing"
+  ],
+  "sourcedIssuesAfter": [
+   "housing"
+  ]
+ },
+ "rome-moses-jones": {
+  "zip": "94103",
+  "name": "Rome Moses-Jones",
+  "race": "Community College Board (choose up to 3)",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+    "title": "KALW City College trustee candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked; no further axis."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ },
+ "monroe-lace": {
+  "zip": "94103",
+  "name": "Monroe Lace",
+  "race": "Community College Board (choose up to 3)",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+    "title": "KALW City College trustee candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked; no further axis."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "taxes"
+  ]
+ },
+ "erwin-tam": {
+  "zip": "94103",
+  "name": "Erwin Tam",
+  "race": "Community College Board (choose up to 3)",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+    "title": "KALW City College trustee candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked; no further axis."
+   }
+  ],
+  "sourcedIssuesBefore": [
+   "taxes"
+  ],
+  "sourcedIssuesAfter": [
+   "taxes"
+  ]
+ },
+ "lisa-wynn": {
+  "zip": "94103",
+  "name": "Lisa Wynn",
+  "race": "Community College Board (choose up to 3)",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in prior batch; no further axis found."
+   },
+   {
+    "url": "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/",
+    "title": "The Guardsman profile (Oct 20, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Internships, spending accountability, supports Free City; no axis-mappable stance."
+   }
+  ],
+  "sourcedIssuesBefore": [],
+  "sourcedIssuesAfter": []
+ }
+}
