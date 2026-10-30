@@ -2,11 +2,11 @@
 // before (and instead of) any model. Server-side (uses ballotFor). Used by /api/interview, so the page's Towny chat and the
 // floating Towny panel give the same answers. Unknown questions get a helpful reply with suggestion chips, never a dead end.
 import { ballotFor } from "../tools";
-import { townyFact, todayCT, ASKS_EARLY } from "../townyFacts";
+import { townyFact, todayCT, ASKS_EARLY, ASKS_HOURS } from "../townyFacts";
 import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
 import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace, zipsIn, cityOfZip } from "../townyChat";
 import { COVERED_ZIPS } from "../site";
-import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, officialOrder, type OrderSource } from "../ballotOrder";
+import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, officialOrder, orderSourceLinks, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
 
@@ -46,7 +46,8 @@ function scope(q: string, titles: { title: string }[]) {
 // (OFFICES["94103"] = SF_DOE). Checked with curl at 2:10 PM CT: it answers 200 after one sf.gov redirect.
 export { SF_DOE };
 const officeFor = (zip: string) => OFFICES[zip];
-export const UNSURE_ORDER = "Unsure: we couldn't confirm the ballot order in a cited source.";
+// Adam, Oct 30 3:24 PM CT: every unconfirmed race gets Civic's one unsure line, on every path.
+export const UNSURE_ORDER = ORDER_UNSURE;
 type Race = { id?: string; title: string; level?: string; source?: string; candidates?: { name: string }[] };
 
 /** "Who is running for <office>?": the ballot data's candidates for each matching race. Civic, Oct 30 1:37 PM CT: the order
@@ -94,18 +95,47 @@ export function runningFor(zip: string, text: string, only?: (r: Race) => boolea
   }
   // Civic P1 (Oct 30, 2:58 PM CT): races confirmed against the official sample ballot (data/ballot_order.json) are listed in
   // that order and say so, with the sample ballot linked; every other race keeps the unsure line. Mixed answers say it per race.
+  // Civic towny_order_check P0 (3:25 PM CT): districts a ZIP spans are one "Depending on your address" item with the lookup linked.
   const conf = pick.map((r) => (ownBallot ? officialOrder(zip, r.id ?? "") : null));
   const all = conf.every(Boolean), none = conf.every((c) => !c);
-  const lines = pick.map((r, i) => {
-    const names = (ownBallot ? inOfficialOrder(zip, r.id ?? "", r.candidates || []) : r.candidates || []).map((c) => c.name);
-    const tail = all || none ? "" : ` ${conf[i] ? ORDER_CONFIRMED : UNSURE_ORDER}`;
-    return `${r.title}: ${names.length ? names.join(", ") : "no candidates listed"}.${tail}`;
+  const segs = segments(ownBallot ? zip : "", pick);
+  const lines = segs.map((g) => {
+    const tail = all || none ? "" : ` ${officialOrder(zip, g.races[0].id ?? "") && ownBallot ? ORDER_CONFIRMED : UNSURE_ORDER}`;
+    return `${segText(zip, g, ownBallot)}${tail}`;
   });
-  const sample = sourcesOf(conf);
+  const sample = orderSourceLinks(sourcesOf(conf));
   const lists = [...new Map(pick.map((r) => r.source).filter(Boolean).map((u) => [u as string, { label: host(u as string), url: u as string }])).values()];
   const reply = all ? `${lines.join(" ")} ${ORDER_CONFIRMED}` : none ? `${lines.join(" ")} ${UNSURE_ORDER}` : lines.join(" ");
-  return { intent: "running", reply, links: [...sample, office, ...lists.filter((l) => host(l.url) !== host(office.url))] };
+  return { intent: "running", reply, links: uniq([...sample, ...splitLinks(segs), office, ...lists.filter((l) => host(l.url) !== host(office.url))]) };
 }
+
+/** Races in the order given, with the districts of one split group (2+ present) pulled together at the first one's place. */
+type Seg = { races: Race[]; split: SplitGroup | null };
+function segments(zip: string, races: Race[]): Seg[] {
+  const out: Seg[] = [];
+  const byGroup = new Map<SplitGroup, Seg>();
+  for (const r of races) {
+    const g = zip ? splitOf(zip, r.id ?? "") : null;
+    const n = g ? races.filter((x) => g.raceIds.includes(x.id ?? "")).length : 0;
+    if (g && n > 1) {
+      const seg = byGroup.get(g);
+      if (seg) { seg.races.push(r); continue; }
+      const fresh = { races: [r], split: g };
+      byGroup.set(g, fresh); out.push(fresh);
+    } else out.push({ races: [r], split: null });
+  }
+  return out;
+}
+const namesOf = (zip: string, r: Race, own = true) => {
+  const c = own ? inOfficialOrder(zip, r.id ?? "", r.candidates || []) : r.candidates || [];
+  if (c.length === 1 && r.title.includes(c[0].name)) return ""; // retention rows already name the justice
+  return c.length ? c.map((x) => x.name).join(", ") : "no candidates listed";
+};
+const segText = (zip: string, g: Seg, own = true) =>
+  g.split ? `${SPLIT_LINE}: ${g.races.map((r) => item(r.title, namesOf(zip, r, own))).join("; ")}.` : `${item(g.races[0].title, namesOf(zip, g.races[0], own))}.`;
+const item = (title: string, names: string) => (names ? `${title}: ${names}` : title);
+const splitLinks = (segs: Seg[]) => segs.flatMap((g) => (g.split ? [g.split.lookup] : []));
+const uniq = <T extends { url: string }>(l: T[]) => [...new Map(l.map((x) => [x.url, x])).values()];
 
 // QA pre-pass 6b2ae5c P1-1 (Oct 30, 2:00 PM CT): "What order are candidates on my ballot?" used to get the race count.
 // Civic P1 (Oct 30, 2:58 PM CT): per race, from data/ballot_order.json. A race confirmed against the official sample ballot
@@ -122,19 +152,22 @@ export function ballotOrder(zip: string, text = ""): Curated | null {
   const b = ballotFor(zip);
   const races = ((b?.races ?? []) as Race[]).filter((r) => r.level !== "measure" && (r.candidates?.length ?? 0) > 0);
   const named = pickRaces(races, String(text || "").replace(/\bin order to\b/gi, " ").replace(/['’]s\b/gi, " ").replace(ORDER_WORDS, " ")) ?? [];
-  if (named.length) {
-    // The question names races: one line each.
-    const conf = named.map((r) => officialOrder(zip, r.id ?? ""));
-    const lines = named.flatMap((r, i) => conf[i] ? [`${r.title}: ${inOfficialOrder(zip, r.id ?? "", r.candidates || []).map((c) => c.name).join(", ")}. ${ORDER_CONFIRMED}`] : []);
-    const unsure = named.filter((_, i) => !conf[i]).map((r) => r.title);
-    if (unsure.length) lines.push(`${unsure.join("; ")}: ${ORDER_UNSURE}`);
-    return { intent: "ballot-order", reply: lines.join(" "), links: dedupeByHost([...sourcesOf(conf), office]) };
+  // Adam, Oct 30 3:24 PM CT (Civic towny_order_check): every answer names the candidates. Confirmed races say ORDER_CONFIRMED with
+  // the official source (78701: candidate order within each race, 58/58, never the order of the races); every other race says
+  // ORDER_UNSURE. Races are never presented in ballot order. Split districts are one "Depending on your address" item.
+  const pick = named.length ? named : races;
+  const conf = pick.map((r) => officialOrder(zip, r.id ?? ""));
+  const yes = pick.filter((_, i) => conf[i]), no = pick.filter((_, i) => !conf[i]);
+  const segY = segments(zip, yes), segN = segments(zip, no);
+  const one = named.length === 1 || (segY.length + segN.length === 1);
+  const parts: string[] = [];
+  if (!named.length) parts.push("Here are the candidates in each race. The races are not listed in the order they appear on the ballot.");
+  if (one) parts.push(`${segText(zip, [...segY, ...segN][0])} ${yes.length ? ORDER_CONFIRMED : ORDER_UNSURE}`);
+  else {
+    if (segY.length) parts.push(`${ORDER_CONFIRMED} That is the order of the candidates within each of these races: ${segY.map((g) => segText(zip, g)).join(" ")}`);
+    if (segN.length) parts.push(`${ORDER_UNSURE} That applies to these races: ${segN.map((g) => segText(zip, g)).join(" ")}`);
   }
-  const conf = races.map((r) => officialOrder(zip, r.id ?? ""));
-  if (races.length && conf.every(Boolean)) return { intent: "ballot-order", reply: ORDER_CONFIRMED, links: dedupeByHost([...sourcesOf(conf), office]) };
-  if (conf.every((c) => !c)) return { intent: "ballot-order", reply: BALLOT_ORDER_LINE, links: [office] };
-  const yes = races.filter((_, i) => conf[i]).map((r) => r.title), no = races.filter((_, i) => !conf[i]).map((r) => r.title);
-  return { intent: "ballot-order", reply: `${yes.join("; ")}: ${ORDER_CONFIRMED} ${no.join("; ")}: ${ORDER_UNSURE}`, links: dedupeByHost([...sourcesOf(conf), office]) };
+  return { intent: "ballot-order", reply: parts.join(" "), links: uniq(dedupeByHost([...orderSourceLinks(sourcesOf(conf)), ...splitLinks([...segY, ...segN]), office])) };
 }
 
 // Civic, Oct 30 2:10 PM CT: a race that is the same on every ballot in the covered city. Statewide and U.S. Senate races are;
@@ -170,8 +203,13 @@ export function curated(zip: string, text: string, today: string = todayCT()): C
   if (asksOrder(t)) { const o = ballotOrder(zip, t); if (o) return o; }
   const run = runningFor(zip, t);
   if (run) return { ...run, links: dedupeByHost(run.links) };
+  // "Where can I vote early and what are the hours?": the where answer (office, lookup, portal), then the hours with Election Day.
+  if (ASKS_HOURS.test(t) && /\bwhere\b/i.test(t)) {
+    const w = faqFor(t, zip, today), h = townyFact(zip, t, today);
+    if (w?.id === "when" && h && !w.a.includes(h.reply)) return { intent: "faq-when", reply: `${w.a} ${h.reply}`, links: withPolling(zip, [...w.links, ...h.links]) };
+  }
   const fact = townyFact(zip, t, today);
-  if (fact) return { intent: "fact", ...fact, links: ASKS_EARLY.test(t) ? withPolling(zip, fact.links) : dedupeByHost(fact.links) };
+  if (fact) return { intent: "fact", ...fact, links: ASKS_EARLY.test(t) || ASKS_HOURS.test(t) ? withPolling(zip, fact.links) : dedupeByHost(fact.links) };
   const faq = faqFor(t, zip, today);
   if (faq) return { intent: `faq-${faq.id}`, reply: faq.a, links: faq.id === "when" ? withPolling(zip, faq.links) : dedupeByHost(faq.links) };
   return null;

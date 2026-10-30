@@ -7,6 +7,9 @@ import { whereFor, dailyRows } from "./endscreen.mjs";
 
 export const ASKS_BALLOT = /\b(what'?s|what is|what are|who'?s|who is|who are|show)\b[^?]*\b(my|the|our)\s+ballot\b|\bon my ballot\b/i;
 export const ASKS_EARLY = /\bearly[\s-]*vot/i;
+// QA (Adam, Oct 30 3:24 PM CT): "What are the hours?", "What time do polls open and close?", "Where can I vote early and what
+// are the hours?" get the hours answer (early voting rows, then the Election Day row from the same data).
+export const ASKS_HOURS = /\bhours?\b|\bwhat time\b|\b(polls?|polling (places?|sites?)|voting (centers?|sites?))\b[^?]*\b(open|close|closes|opens)\b|\b(open|close)s?\b[^?]*\bpolls?\b|\bvote early\b/i;
 
 export type TownyLink = { label: string; url: string };
 /** The page's own "today": the current date in America/Chicago (app/EndScreen.tsx todayCT). */
@@ -17,7 +20,8 @@ const longDay = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString
  *  data (rendered as real links by app/TownyInterview.tsx), never pasted into the reply text. */
 export function townyFact(zip: string, text: string, today?: string): { reply: string; links: TownyLink[] } | null {
   const t = String(text || "");
-  if (ASKS_EARLY.test(t)) {
+  const hoursAsk = !ASKS_EARLY.test(t) && ASKS_HOURS.test(t);
+  if (ASKS_EARLY.test(t) || hoursAsk) {
     const j = getElectionDates(zip);
     if (!j) return null;
     const ev = j.earlyVoting;
@@ -52,6 +56,15 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
       const after = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => { const iso = String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []; return iso.length > 0 && iso.every((x) => x > ev.end); });
       const ed = dailyRows(after, d, ev.sourceUrl, j.timezone) as { label: string; hours: string; appliesTo: string | null }[];
       if (rows.length && ed.length) hours += ` Election Day, ${ed.map((x) => `${x.label}: ${x.hours}${x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`;
+    }
+    // An hours question also gets the Election Day hours from data/election_dates.json (electionDay.hours, word for word) when
+    // the early-voting rows above did not already include them (78701, 10001).
+    if (hoursAsk && j.electionDay?.hours && !/Election Day,/.test(hours)) {
+      const ed = dailyRows([{ dates: j.electionDay.date, hours: j.electionDay.hours, appliesTo: null }], d, j.electionDay.sourceUrl, j.timezone) as { label: string; hours: string }[];
+      if (ed.length) {
+        hours += ` Election Day, ${ed.map((x) => `${x.label}: ${x.hours}`).join("; ")}.`;
+        if (j.electionDay.sourceUrl && !links.some((l) => l.url === j.electionDay.sourceUrl)) links.push({ label: "Election Day hours source", url: j.electionDay.sourceUrl });
+      }
     }
     return { reply: `${when}${hours}`, links };
   }

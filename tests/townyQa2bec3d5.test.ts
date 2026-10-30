@@ -11,8 +11,8 @@ const src = (f: string) => readFileSync(root + f, "utf8");
 describe("94103 office link", () => {
   it("ballot order: the exact line, linked to the SF Department of Elections", () => {
     const r = curated("94103", "What order are candidates on my ballot?")!;
-    expect(r.reply).toBe(BALLOT_ORDER_LINE);
-    expect(r.links).toEqual([{ label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" }]);
+    expect(r.reply).toContain(`${BALLOT_ORDER_LINE} That applies to these races:`); // v3.1: candidates named
+    expect(r.links).toEqual([{ label: "California Secretary of State, voter status lookup", url: "https://voterstatus.sos.ca.gov/" }, { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" }]);
   });
   it("who's running: the SF Department of Elections first, no sfelections.org", () => {
     const r = curated("94103", "Who is running for Governor of California?")!;
@@ -22,8 +22,9 @@ describe("94103 office link", () => {
   });
   it("other ZIPs keep their offices", () => {
     // Civic P1 (Oct 30, 2:58 PM CT): the confirmed sample ballot comes first (78701's is on votetravis.gov, one link per host).
-    expect(curated("78701", "What order are candidates on my ballot?")!.links).toEqual([{ label: "Travis County sample ballot", url: "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf" }]);
-    expect(curated("10001", "What order are candidates on my ballot?")!.links).toEqual([{ label: "NYC Board of Elections sample ballot, New York County", url: "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf" }, OFFICES["10001"]]);
+    // v3.1 (Oct 30, 3:24 PM CT): plus the district lookup for the split races, and the Board's Find My Poll Site for 10001.
+    expect(curated("78701", "What order are candidates on my ballot?")!.links).toEqual([{ label: "Travis County sample ballot", url: "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf" }, { label: "Texas Secretary of State, My Voter Portal (look up your districts by address)", url: "https://teamrv-mvp.sos.texas.gov/MVP/mvp.do" }]);
+    expect(curated("10001", "What order are candidates on my ballot?")!.links).toEqual([{ label: "Copy of an official NYC Board of Elections ballot (New York County, Assembly District 71), posted on a third-party website, not the Board's", url: "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf" }, { label: "Find My Poll Site / View Sample Ballot, NYC Board of Elections", url: "https://findmypollsite.vote.nyc/" }, OFFICES["10001"]]);
   });
 });
 

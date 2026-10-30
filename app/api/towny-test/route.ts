@@ -10,6 +10,9 @@ import { townyPrompt } from "../../../lib/townyPrompt";
 import { townyTools } from "../../../lib/townyTools";
 import { FIXED_REPLY, deleteMyData, keywordOf, outputFlags, redact } from "../../../lib/townyControls";
 import { getCandidates, getDistricts, getMarketOdds, getRaces } from "../../../lib/tools";
+import { asksOrder, ballotOrder, curated } from "../../../lib/towny/answer";
+import { guardReply } from "../../../lib/towny/orderGuard";
+import { ASKS_EARLY, ASKS_HOURS } from "../../../lib/townyFacts";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,14 +49,25 @@ export async function POST(req: Request) {
   if (kw) return Response.json({ handledBy: "code", keyword: kw, reply: FIXED_REPLY[kw] }, { headers: { "Cache-Control": "no-store" } });
 
   const clean = redact(message);
+  // Civic towny_order_check NO-GO (Adam, Oct 30 3:24 PM CT): ballot-order questions get the deterministic, sourced answer before
+  // the model (same as /api/interview); so do hours questions (Election Day row included). Sources are in the reply text too.
+  if (zip && (asksOrder(clean.text) || ASKS_HOURS.test(clean.text) || ASKS_EARLY.test(clean.text))) {
+    const c = asksOrder(clean.text) ? ballotOrder(zip, clean.text) : curated(zip, clean.text);
+    if (c) {
+      const reply = `${c.reply}\n\nSources: ${c.links.map((l) => `${l.label}: ${l.url}`).join("; ")}`;
+      return Response.json({ handledBy: "code", intent: c.intent, reply, links: c.links, flags: outputFlags(reply) }, { headers: { "Cache-Control": "no-store" } });
+    }
+  }
   const tz = (zip && getElectionDates(zip)?.timezone) || "America/Chicago";
   const prompt = (zip ? `Voter's ZIP: ${zip}\n\n` : "") + clean.text;
   const turn = await runTowny({ system: `${townyPrompt(longDateIn(tz))}\n\n${TOWNY_BRIEF}`, prompt, tools: { ...coreTools, ...townyTools } });
-  if (turn.ok)
+  if (turn.ok) {
+    const g = guardReply(zip, turn.reply);
     return Response.json(
-      { handledBy: "model", model: turn.model, redacted: clean.redacted, modelSaw: prompt, toolCalls: turn.toolCalls, reply: turn.reply, flags: outputFlags(turn.reply), failedAttempts: turn.attempts },
+      { handledBy: "model", model: turn.model, redacted: clean.redacted, modelSaw: prompt, toolCalls: turn.toolCalls, reply: g.reply, guard: g.changed, flags: outputFlags(g.reply), failedAttempts: turn.attempts },
       { headers: { "Cache-Control": "no-store" } }
     );
+  }
   return apiError(502, "upstream_unavailable", turn.attempts.map((a) => `${a.model}: ${a.error}`).join(" | ") || "No model available.");
 }
 

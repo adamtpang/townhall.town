@@ -18,19 +18,22 @@ describe("P1-1 ballot order", () => {
     "What position on the ballot is Talarico?", "In what order do the names appear?", "Who's first on the ballot?"];
   // Civic P1 (Oct 30, 2:58 PM CT): per race. 78701 is fully confirmed against the Travis County sample ballot; 10001 has 6
   // confirmed and 7 unsure races; 94103 stays unsure. Office links below are 94103's (10001 keeps vote.nyc after its sample ballot).
-  it("every phrasing, on all 3 ZIPs: per-race order lines from Civic's check, no names for a ZIP-wide question", () => {
+  // v3.1 (Adam, Oct 30 3:24 PM CT, Civic towny_order_check): ZIP-wide answers now name the candidates, say the races are not
+  // in ballot order, and give the confirmed / unsure line per group.
+  it("every phrasing, on all 3 ZIPs: per-race order lines from Civic's check, with candidates named", () => {
     expect(BALLOT_ORDER_LINE).toBe("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.");
     for (const z of ZIPS) for (const q of QS) {
       const c = curated(z, q, "2026-10-30")!;
       expect(c.intent, `${z} ${q}`).toBe("ballot-order");
-      if (z === "78701") { expect(c.reply).toBe(ORDER_CONFIRMED); expect(c.links[0].url).toMatch(/^https:\/\/votetravis\.gov\/.+Ballot.+\.pdf$/); continue; }
-      if (z === "10001") { expect(c.reply).toContain(ORDER_CONFIRMED); expect(c.reply).toContain(BALLOT_ORDER_LINE); expect(c.reply).not.toMatch(/Hochul|Talarico|Bottcher/); expect(c.links.map((l) => l.url)).toContain(OFFICES["10001"].url); continue; }
-      expect(c.reply.split("\n")[0]).toBe(BALLOT_ORDER_LINE);
-      expect(c.reply).toBe(BALLOT_ORDER_LINE);
-      // 94103: SF Department of Elections on sf.gov (Adam, Oct 30 2:08 PM CT); the others reuse OFFICES.
-      expect(c.links).toEqual([z === "94103" ? { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" } : OFFICES[z]]);
+      expect(c.reply).toContain("The races are not listed in the order they appear on the ballot.");
+      if (z === "78701") { expect(c.reply).toContain(ORDER_CONFIRMED); expect(c.reply).not.toContain(BALLOT_ORDER_LINE); expect(c.reply).toContain("Talarico"); expect(c.links[0].url).toMatch(/^https:\/\/votetravis\.gov\/.+Ballot.+\.pdf$/); continue; }
+      if (z === "10001") { expect(c.reply).toContain(ORDER_CONFIRMED); expect(c.reply).toContain(BALLOT_ORDER_LINE); expect(c.reply).toMatch(/Hochul/); expect(c.reply).toMatch(/Bottcher/); expect(c.links.map((l) => l.url)).toContain(OFFICES["10001"].url); continue; }
+      expect(c.reply).toContain(BALLOT_ORDER_LINE);
+      expect(c.reply).not.toContain(ORDER_CONFIRMED);
+      expect(c.reply).toContain("Becerra");
+      expect(c.links).toContainEqual({ label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" });
     }
-    expect(curated("94103", "What order are candidates on my ballot?")!.links[0].url).toBe("https://www.sf.gov/departments/department-elections");
+    expect(curated("94103", "What order are candidates on my ballot?")!.links.map((l) => l.url)).toContain("https://www.sf.gov/departments/department-elections");
     expect(host(curated("78701", "ballot order")!.links[0].url)).toBe("votetravis.gov");
     expect(curated("10001", "ballot order")!.links.some((l) => l.url === "https://vote.nyc")).toBe(true);
   });
