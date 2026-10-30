@@ -52,8 +52,17 @@ describe("split districts", () => {
     const host = new URL(url).hostname.replace(/^www\./, "");
     for (const id of groups[z]) {
       const blk = h.match(new RegExp(`data-print-split="${id}"[\\s\\S]*?</div>`))![0];
-      expect(blk).toMatch(/<p class="pb-strong" data-print-split-line="true">Depending on your address, you(&#x27;|\u2019)ll have one of these<\/p><p data-print-split-link="true"><span class="pb-label">/);
+      expect(blk).toMatch(/<p data-print-split-line="true">Depending on your address, you(&#x27;|\u2019)ll have one of these<\/p><p data-print-split-link="true"><span class="pb-label">/);
       expect(blk).toContain(host);
+    }
+  });
+  it("each split intro and its races are one group block (Design P1, 3:43 PM CT)", () => {
+    const want = { "78701": ["tx-10 tx-37", "tx-hd-49 tx-house-51"], "94103": ["sf-supervisor-6 sf-supervisor-8 sf-supervisor-10"], "10001": ["ny-sd-47 ny-sd-28", "ny-civil-3md-ny ny-civil-9md-ny"] } as const;
+    for (const z of Object.keys(want) as (keyof typeof want)[]) {
+      const h = html(z);
+      expect([...h.matchAll(/class="pb-split-group" data-print-split-group="([^"]+)"/g)].map((m) => m[1])).toEqual([...want[z]]);
+      expect(h).not.toMatch(/data-print-split="[^"]+"[^>]*class="[^"]*pb-strong/);
+      expect(h).toMatch(/<div class="pb-split" data-print-split="/);
     }
   });
   it("the sentence is behind one flag, on, word for word", () => {

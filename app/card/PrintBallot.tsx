@@ -7,7 +7,7 @@
 // Links can't be clicked on paper, so each link prints as a short label with a numbered note, and the full URL is printed
 // once in the numbered list at the end (the only place long URLs may break anywhere). No QR code: no QR library is in the
 // dependencies.
-import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_UNSURE_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, displayParty, pickedLine, splitStart } from "../../lib/printText";
+import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_UNSURE_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, displayParty, pickedLine, splitStart, SPLIT_GROUPS } from "../../lib/printText";
 import type { OrderCite, PrintRules, VoterRule } from "../../lib/printRules";
 import type { St } from "../../lib/plan";
 
@@ -61,6 +61,26 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
   const ocAlso = (o: OrderCite) => o.also ? <> <span className="pb-src">{o.also.label}</span>{cite(o.also.label, o.also.url)}</> : null;
   const sheetCite = unconfirmed === 0 && oc ? <>{cite(oc.label, oc.url)}{ocAlso(oc)}</> : null;
   const raceIds = races.map((r) => r.id);
+  const raceItem = (r: PrintRace) => (
+        <li key={r.id} className="pb-race" data-print-race={r.id} data-order-confirmed={r.orderConfirmed ? "1" : "0"}>
+          <p className="pb-race-title"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="pb-order-unsure" /></p>
+          {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE}{cite(oc.label, oc.url)}</p> : null}
+          <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); const ch = retentionChoices(r.title); const mark = picks[r.id] === c.name ? " pb-box-on" : "";
+            return ch
+              ? <li key={c.name} className="pb-cand pb-cand-ret" data-print-retention={ch.join("/")}><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span><span className="pb-choices">{ch.map((w) => <span key={w} className="pb-choice"><span className="pb-box-mark" aria-hidden />{w}</span>)}</span></li>
+              : <li key={c.name} className="pb-cand"><span className={`pb-box-mark${mark}`} aria-hidden data-print-picked={mark ? "1" : undefined} /><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span></li>; })}</ul>
+        </li>
+
+  );
+  // Split districts (Design P1, 3:43 PM CT): the group intro and the races it introduces print as one unbreakable block.
+  const segs: { sp: ReturnType<typeof splitStart>; rs: PrintRace[] }[] = [];
+  for (let i = 0; i < races.length; i++) {
+    const sp = splitStart(zip, races[i].id, raceIds);
+    const g = sp ? (SPLIT_GROUPS[zip] || []).find((x) => x.includes(races[i].id))! : null;
+    let j = i + 1;
+    if (g) while (j < races.length && g.includes(races[j].id)) j++;
+    segs.push({ sp, rs: races.slice(i, j) }); i = j - 1;
+  }
   return (
     <div id="ballot-print" className="hidden print:block" aria-hidden data-print-ballot>
       <header className="pb-mast">
@@ -80,17 +100,12 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
       {unconfirmed ? <p className="pb-muted" id="pb-order-unsure" data-print-order-unsure={unconfirmed}>† {ORDER_UNSURE_LINE}</p>
         : oc ? <p className="pb-muted" data-print-order-confirmed="sheet">{ORDER_CONFIRMED_LINE} <span className="pb-src">{oc.label}</span>{sheetCite}</p> : null}
       <ol className="pb-races" data-print-races={races.length}>
-        {races.map((r) => (
-          <li key={r.id} className="pb-race" data-print-race={r.id} data-order-confirmed={r.orderConfirmed ? "1" : "0"}>
-            {(() => { const sp = splitStart(zip, r.id, raceIds); return sp ? <div className="pb-order" data-print-split={r.id}>{sp.line ? <p className="pb-strong" data-print-split-line>{sp.line}</p> : null}<p data-print-split-link><span className="pb-label">{host(sp.url)}</span>{cite("Official lookup", sp.url)}</p></div> : null; })()}
-            <p className="pb-race-title"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="pb-order-unsure" /></p>
-            {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE}{cite(oc.label, oc.url)}</p> : null}
-            <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); const ch = retentionChoices(r.title); const mark = picks[r.id] === c.name ? " pb-box-on" : "";
-              return ch
-                ? <li key={c.name} className="pb-cand pb-cand-ret" data-print-retention={ch.join("/")}><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span><span className="pb-choices">{ch.map((w) => <span key={w} className="pb-choice"><span className="pb-box-mark" aria-hidden />{w}</span>)}</span></li>
-                : <li key={c.name} className="pb-cand"><span className={`pb-box-mark${mark}`} aria-hidden data-print-picked={mark ? "1" : undefined} /><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span></li>; })}</ul>
+        {segs.map((g) => g.sp ? (
+          <li key={`g-${g.rs[0].id}`} className="pb-split-group" data-print-split-group={g.rs.map((r) => r.id).join(" ")}>
+            <div className="pb-split" data-print-split={g.rs[0].id}>{g.sp.line ? <p data-print-split-line>{g.sp.line}</p> : null}<p data-print-split-link><span className="pb-label">{host(g.sp.url)}</span>{cite("Official lookup", g.sp.url)}</p></div>
+            <ol className="pb-split-races">{g.rs.map(raceItem)}</ol>
           </li>
-        ))}
+        ) : raceItem(g.rs[0]))}
       </ol>
 
       {data.measures.length ? (<>

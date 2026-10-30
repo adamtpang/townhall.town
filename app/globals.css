@@ -158,6 +158,8 @@ body {
   #ballot-print .pb-race { break-inside: avoid; page-break-inside: avoid; border-top: 0.75pt solid #010101; padding: 2pt 0 3pt; }
   #ballot-print .pb-measures { columns: 3; column-gap: 12pt; margin-bottom: 4pt; }
   #ballot-print .pb-measures li { break-inside: avoid; font-weight: 600; font-size: 10pt; line-height: 1.2; padding: 1pt 0 3pt; }
+  #ballot-print .pb-split-group { break-inside: avoid; page-break-inside: avoid; }
+  #ballot-print .pb-split { font-size: 10pt; font-weight: 400; line-height: 1.2; color: rgba(1, 1, 1, 0.7); border-top: 0.5pt solid #010101; margin-top: 4pt; padding: 2pt 0; }
   #ballot-print .pb-race-title { font-weight: 600; font-size: 10.5pt; line-height: 1.2; margin-bottom: 2pt; }
   #ballot-print .pb-race ul { display: flex; flex-direction: column; gap: 4pt; }
   #ballot-print .pb-cand { display: flex; align-items: flex-start; gap: 5pt; font-size: 10pt; line-height: 1.2; }
