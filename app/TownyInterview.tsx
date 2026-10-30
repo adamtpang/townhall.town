@@ -4,7 +4,8 @@ import { WHO_CHIP } from "../lib/townyChat";
 import { useT } from "../lib/i18n";
 
 export type Fill = { issue: string; choice: "yes" | "neutral" | "no"; words: string };
-type Msg = { from: "towny" | "you"; text: string; links?: { label: string; url: string }[]; chips?: string[] };
+type Step = { tool: string; label: string; status: "running" | "done"; ms?: number; source?: { label: string; url: string } | null };
+type Msg = { from: "towny" | "you"; text: string; links?: { label: string; url: string }[]; chips?: string[]; steps?: Step[] };
 const LABEL = { yes: "Yes", neutral: "Neutral", no: "No" } as const;
 
 /** Chat interview: Towny asks one open question, turns the reply into Yes/Neutral/No answers,
@@ -22,6 +23,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const [filled, setFilled] = useState<Record<string, true>>({});
+  const [live, setLive] = useState<Step[]>([]);
 
   // QA judge-path P2 (Oct 30, 1:25 PM CT): a message sent while a reply is pending is queued and answered in order.
   const queue = useRef<string[]>([]);
@@ -48,9 +50,32 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
     let reply: string;
     let links: { label: string; url: string }[] = [];
     let chips: string[] | undefined;
+    let steps: Step[] = [];
     try {
-      const r = await fetch("/api/interview", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ zip, messages: all.map((x) => ({ text: x })) }) });
-      const j = await r.json();
+      // Towny agent (lib/towny/agent.ts): each real tool call streams as a step, then one result line.
+      const r = await fetch("/api/interview", { method: "POST", headers: { "content-type": "application/json", accept: "application/x-ndjson" }, body: JSON.stringify({ zip, messages: all.map((x) => ({ text: x })) }) });
+      let j: any = {};
+      if ((r.headers.get("content-type") ?? "").includes("ndjson") && r.body) {
+        const reader = r.body.getReader();
+        const dec = new TextDecoder();
+        let buf = "";
+        setLive([]);
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buf += dec.decode(value, { stream: true });
+          let i;
+          while ((i = buf.indexOf("\n")) >= 0) {
+            const line = buf.slice(0, i); buf = buf.slice(i + 1);
+            if (!line.trim()) continue;
+            const e = JSON.parse(line);
+            if (e.type === "step") setLive((x) => [...x.filter((y) => y.tool !== e.tool), e]);
+            else if (e.type === "result") j = e;
+          }
+        }
+        setLive([]);
+      } else j = await r.json();
+      if (Array.isArray(j.steps)) steps = j.steps;
       const fills = (Array.isArray(j.answers) ? j.answers : []) as Fill[];
       if (fills.length) {
         const fresh = fills.filter((f) => !filledRef.current[f.issue]);
@@ -70,7 +95,9 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
     } catch {
       reply = "I couldn't reach Towny just now. Try again in a moment.";
     }
-    setMsgs((m) => [...m, { from: "towny", text: reply, links, chips }]);
+    // A source already shown on its step is not repeated in the links row.
+    links = links.filter((l) => !steps.some((s) => s.source?.url === l.url));
+    setMsgs((m) => [...m, { from: "towny", text: reply, links, chips, steps }]);
   }
   function chip(c: string) {
     if (c === WHO_CHIP) { document.querySelector("#what-matters [data-issue-intro]")?.scrollIntoView({ block: "start" }); return; }
@@ -101,6 +128,13 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
         {msgs.map((m, i) => (
           <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>
             {m.text}
+            {m.steps?.length ? (
+              <ol className="mt-2 space-y-1 border-l-2 border-brand-700 pl-3 text-sm text-black/60" data-towny-steps>
+                {m.steps.map((s) => (
+                  <li key={s.tool}>{s.label}{s.ms != null ? ` · ${s.ms} ms` : ""}{s.source ? <> · <a href={s.source.url} target="_blank" rel="noreferrer" className="th-link">{s.source.label} ↗</a></> : null}</li>
+                ))}
+              </ol>
+            ) : null}
             {m.links?.length ? (
               <span className="mt-1 flex flex-wrap gap-x-4" data-towny-links>
                 {m.links.map((l) => (
@@ -115,7 +149,11 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
             ) : null}
           </li>
         ))}
-        {busy ? <li className="text-sm text-black/60">Reading what you wrote…</li> : null}
+        {busy ? (
+          <li className="text-sm text-black/60" data-towny-live>
+            {live.length ? live.map((s) => <span key={s.tool} className="block">{s.label}{s.status === "done" ? ` · ${s.ms} ms` : "…"}</span>) : "Reading what you wrote…"}
+          </li>
+        ) : null}
       </ol>
       {said.length < 12 ? (
         <form className="mt-4 flex gap-2" onSubmit={(e) => { e.preventDefault(); send(); }}>
@@ -125,7 +163,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
           <button type="submit" disabled={!text.trim()} data-interview-send className="h-12 bg-black px-5 text-base font-[530] text-[#F2F2F2] disabled:opacity-40">Send</button>
         </form>
       ) : null}
-      <p className="mt-3 text-sm text-black/60">What you type goes to an AI model only to fill the answers. It isn&apos;t saved. Please leave out names and addresses.</p>
+      <p className="mt-3 text-sm text-black/60">What you type goes to an AI model to fill the answers or answer your question. It isn&apos;t saved. Please leave out names and addresses.</p>
     </div>
   );
 }

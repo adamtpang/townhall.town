@@ -6,10 +6,11 @@ import { apiError, methodNotAllowed, withHeaders, API_VERSION_HEADERS } from "..
 import { issuesFor } from "../../../lib/issueOrder";
 import { ballotFor } from "../../../lib/tools";
 import { curated, helpful } from "../../../lib/towny/answer";
+import { townyAgent, isQuestion, type Emit } from "../../../lib/towny/agent";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 // AI Gateway only (OIDC on Vercel). Nothing the voter types is stored or logged by this route.
 const MODELS = (process.env.INTERVIEW_MODELS || "openai/gpt-4.1-mini,google/gemini-2.5-flash-lite,openai/gpt-5-nano").split(",").map((m) => m.trim()).filter(Boolean);
@@ -21,6 +22,22 @@ const Out = z.object({
     words: z.string().describe("the voter's own words that support this, copied exactly, under 100 characters"),
   })),
 });
+
+// A free-text question (or a message that fills no issue answer) goes to the Towny tool loop (lib/towny/agent.ts).
+// With "accept: application/x-ndjson" every real tool call streams as a step event, then one result event.
+const wantsStream = (req: Request) => (req.headers.get("accept") ?? "").includes("application/x-ndjson");
+function respond(req: Request, run: (emit: Emit) => Promise<Record<string, unknown>>): Response | Promise<Response> {
+  if (!wantsStream(req)) return run(() => {}).then((j) => Response.json(j, { headers: { "cache-control": "no-store" } }));
+  const enc = new TextEncoder();
+  const body = new ReadableStream({
+    async start(c) {
+      const emit: Emit = (e) => c.enqueue(enc.encode(JSON.stringify(e) + "\n"));
+      try { emit({ type: "result", ...(await run(emit)) }); } catch { emit({ type: "result", answers: [], reply: "I couldn't reach Towny just now. Try again in a moment.", links: [] }); }
+      c.close();
+    },
+  });
+  return new Response(body, { headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store" } });
+}
 
 async function interview(req: Request): Promise<Response> {
   const body = await req.json().catch(() => null);
@@ -35,7 +52,12 @@ async function interview(req: Request): Promise<Response> {
   // from curated data in code (lib/towny/answer.ts), never by the model.
   const c = curated(zip, msgs[msgs.length - 1]);
   if (c) return Response.json({ answers: [], reply: c.reply, links: c.links, chips: c.chips ?? [], intent: c.intent }, { headers: { "cache-control": "no-store" } });
-  const help = () => { const h = helpful(zip); return Response.json({ answers: [], reply: h.reply, links: [], chips: h.chips, intent: h.intent }, { headers: { "cache-control": "no-store" } }); };
+  const helpObj = () => { const h = helpful(zip); return { answers: [], reply: h.reply, links: [], chips: h.chips, intent: h.intent }; };
+  const ask = async (emit: Emit) => {
+    const a = await townyAgent(zip, msgs, emit);
+    return a ? { answers: [], reply: a.reply, links: a.links, intent: "agent", model: a.model, steps: a.steps } : helpObj();
+  };
+  if (isQuestion(msgs[msgs.length - 1])) return respond(req, ask);
   const issues = issuesFor(zip, b.state);
   const list = issues.map((i) => `- ${i.id} (${(i as { label?: string }).label ?? i.id}): "${i.question}"`).join("\n");
   const said = msgs.join("\n");
@@ -53,11 +75,11 @@ ${list}`,
       const valid = new Set(issues.map((i) => i.id));
       const seen = new Set<string>();
       const answers = object.answers.filter((a) => valid.has(a.issue) && !seen.has(a.issue) && seen.add(a.issue) && said.toLowerCase().includes(a.words.trim().toLowerCase().slice(0, 40)));
-      if (!answers.length) return help();
-      return Response.json({ answers }, { headers: { "cache-control": "no-store" } });
+      if (!answers.length) return respond(req, ask);
+      return respond(req, async () => ({ answers }));
     } catch { /* retry */ }
   }
-  return help();
+  return respond(req, ask);
 }
 
 // Curated replies (lib/towny/answer.ts) read only shipped data and never call the model, so they are answered before the
