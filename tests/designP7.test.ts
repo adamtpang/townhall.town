@@ -45,7 +45,7 @@ describe("Design p7 (4c21a5c)", () => {
   it("4. pseudo hit areas on How, Early voting source, photo credits and news links (round 0222: 28px, sized so neighbours never overlap; design p12 tap test)", () => {
     expect(HIT).toBe("relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']");
     const end = src("app/EndScreen.tsx");
-    expect(end).toMatch(/className=\{`\$\{HIT\} text-\[#3760F2\]`\} data-how-register>How ↗/);
+    expect(end).toMatch(/className=\{`\$\{HIT\} th-link`\} data-how-register>How ↗/);
     expect(end).toMatch(/after:-inset-y-1 after:content-\[''\]" data-early-source>Early voting source/);
     expect(end).not.toMatch(/after:-inset-y-4|after:-inset-x-3/);
     // Oct 29 11:42 PM CT: attribution is always visible, small and muted (was a blue link in a collapsed list).

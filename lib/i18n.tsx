@@ -211,7 +211,7 @@ export function LangToggle() {
   const { lang, setLang } = useContext(LangContext);
   if (!SPANISH_ENABLED) return null;
   return (
-    <button type="button" onClick={() => setLang(lang === "en" ? "es" : "en")} className="inline-flex min-h-11 items-center text-sm text-black/60 underline underline-offset-4" aria-label={lang === "en" ? "Ver en español" : "View in English"}>
+    <button type="button" onClick={() => setLang(lang === "en" ? "es" : "en")} className="inline-flex min-h-11 items-center text-sm text-black/70 underline decoration-brand-600 decoration-1 underline-offset-4 hover:text-brand-700" aria-label={lang === "en" ? "Ver en español" : "View in English"}>
       {lang === "en" ? "Español" : "English"}
     </button>
   );

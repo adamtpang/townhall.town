@@ -64,7 +64,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
     <div className="mt-6" data-interview>
       {carry}
       <button type="button" onClick={() => { setMsgs([{ from: "towny", text: opener(answered) }]); setOpen(true); }} data-interview-start
-        className="inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2]">
+        className="inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black [@media(hover:hover)]:hover:bg-brand-50">
         Or tell Towny in your own words
       </button>
     </div>
@@ -79,7 +79,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
             {m.links?.length ? (
               <span className="mt-1 flex flex-wrap gap-x-4" data-towny-links>
                 {m.links.map((l) => (
-                  <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm text-[#3760F2] underline-offset-2 hover:underline" data-towny-source>{l.label} ↗</a>
+                  <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm th-link underline-offset-2 hover:underline" data-towny-source>{l.label} ↗</a>
                 ))}
               </span>
             ) : null}
@@ -91,7 +91,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
         <form className="mt-4 flex gap-2" onSubmit={(e) => { e.preventDefault(); send(); }}>
           <label htmlFor="towny-say" className="sr-only">Your answer</label>
           <input id="towny-say" value={text} onChange={(e) => setText(e.target.value)} maxLength={600} autoComplete="off" data-interview-input
-            className="h-12 min-w-0 flex-1 border border-black/30 bg-transparent px-3 text-base text-black focus:border-black focus:outline-none" placeholder="Type here" />
+            className="h-12 min-w-0 flex-1 border border-black/45 bg-transparent px-3 text-base text-black focus:border-brand-600 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600" placeholder="Type here" />
           <button type="submit" disabled={busy || !text.trim()} data-interview-send className="h-12 bg-black px-5 text-base font-[530] text-[#F2F2F2] disabled:opacity-40">Send</button>
         </form>
       ) : null}

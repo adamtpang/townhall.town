@@ -48,7 +48,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
     const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
     try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
   }
-  const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-[#3760F2] underline-offset-2 hover:underline print:text-black";
+  const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link underline-offset-2 hover:underline print:text-black";
   return (
     <main className="mx-auto max-w-[720px] px-5 py-12 text-black print:px-0 print:py-0" data-ballot-card>
       <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>
@@ -91,9 +91,9 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
       <div className="mt-10 flex flex-wrap gap-3 print:hidden">
         <button type="button" onClick={() => window.print()} className="h-12 bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80" data-card-print>Print</button>
         <button type="button" onClick={share} className="h-12 border border-black px-6 text-base font-[530]" data-card-share>{copied ? "Link copied" : "Share link"}</button>
-        {gcalEd ? <Button onClick={() => window.open(gcalEd, "_blank", "noopener")} className="h-12 rounded-none border border-black bg-transparent px-6 text-base font-[530] text-black hover:bg-transparent hover:border-black hover:text-black" data-card-gcal={gcalEd}>Add to Google Calendar ↗<span className="sr-only"> (opens in a new tab)</span></Button> : null}
+        {gcalEd ? <Button onClick={() => window.open(gcalEd, "_blank", "noopener")} className="h-12 rounded-none border border-black bg-transparent px-6 text-base font-[530] text-black hover:border-black hover:text-black [@media(hover:hover)]:hover:bg-brand-50" data-card-gcal={gcalEd}>Add to Google Calendar ↗<span className="sr-only"> (opens in a new tab)</span></Button> : null}
         {ed ? <button type="button" onClick={ics} className="inline-flex min-h-12 items-center px-2 text-sm text-black/60 underline decoration-black/20 underline-offset-2 hover:text-black" data-card-ics>or download .ics</button> : null}
-        <a href="/" className="inline-flex h-12 items-center px-2 text-base text-[#3760F2]">Back to the full ballot</a>
+        <a href="/" className="inline-flex h-12 items-center px-2 text-base th-link">Back to the full ballot</a>
       </div>
       <p className="mt-6 text-sm leading-5 text-black/60">Your answers stay on this device and in this link. townhall.town stores nothing on a server. <a href={ed?.sourceUrl} className={link} target="_blank" rel="noreferrer">Dates source ↗</a></p>
     </main>

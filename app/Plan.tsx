@@ -79,7 +79,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
               <p className="text-xl">{d.label}</p>
               {d.note && <p className="mt-1 text-sm text-black/60">{d.note}</p>}
               <div className="flex flex-wrap items-center gap-x-6">
-                <button type="button" onClick={() => download(`${d.id}.ics`, ics(d, place))} className="inline-flex min-h-11 items-center text-sm text-[#3760f2] underline decoration-black/20 underline-offset-2 hover:decoration-[#3760f2]">Add to calendar</button>
+                <button type="button" onClick={() => download(`${d.id}.ics`, ics(d, place))} className="inline-flex min-h-11 items-center text-sm th-link underline decoration-black/20 underline-offset-2 hover:decoration-current">Add to calendar</button>
                 <Ext href={d.source.url}>{d.source.label}</Ext>
               </div>
             </dd>
@@ -125,7 +125,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
                   <div className="clear-both flex flex-wrap gap-x-6 pt-1">
                     {[...r.options, { v: UNDECIDED }].map((o) => (
                       <label key={o.v} className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm">
-                        <input type="radio" name={`pick-${r.id}`} value={o.v} checked={(picks[r.id] || UNDECIDED) === o.v} onChange={() => pick(r.id, o.v)} className="h-4 w-4 accent-[#3760f2]" />
+                        <input type="radio" name={`pick-${r.id}`} value={o.v} checked={(picks[r.id] || UNDECIDED) === o.v} onChange={() => pick(r.id, o.v)} className="h-4 w-4 accent-brand-700" />
                         <span>{o.v}{"sub" in o && o.sub ? <span className="text-black/50"> · {o.sub}</span> : null}</span>
                       </label>
                     ))}

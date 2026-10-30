@@ -12,8 +12,9 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
-      <main className="mx-auto max-w-site px-6">
-        <section className="pb-10 pt-12 lg:pt-20" data-hero>
+      <main className="mx-auto max-w-site px-6 lg:px-10">
+        {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
+        <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
           <p className="mb-6 text-sm font-[530] text-black/60">Nov 3, 2026 · Austin · San Francisco · New York</p>
           <h1 className={`${H1} [text-wrap:balance]`}>
             <T>Know your ballot in 2 minutes.</T>

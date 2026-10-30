@@ -41,7 +41,7 @@ export default function TownyResearch({ zip, raceId, title, names, issues }: { z
   return (
     <div className="mt-2" data-towny-research={raceId}>
       {state === "idle" ? (
-        <button type="button" onClick={run} className="inline-flex min-h-11 items-center border border-black/30 px-4 text-sm text-black hover:border-black" data-research-start>
+        <button type="button" onClick={run} className="inline-flex min-h-11 items-center border border-black/45 px-4 text-sm text-black hover:border-black [@media(hover:hover)]:hover:bg-brand-50" data-research-start>
           Have Towny read the candidates&rsquo; own pages
         </button>
       ) : (
@@ -59,7 +59,7 @@ export default function TownyResearch({ zip, raceId, title, names, issues }: { z
                   {st.map((s) => <li key={s.url} className="text-sm leading-5 font-[450] text-black/60" data-research-step={s.status}>{s.status === "running" ? "…" : s.status === "done" ? "✓" : "×"} {s.label}{s.detail ? `: ${s.detail}` : ""}</li>)}
                 </ul>
                 {cs.length > 0 && <ul className="mt-2 space-y-2">{cs.map((c, i) => (
-                  <li key={i} className="text-sm text-black/80" data-research-cite>&ldquo;{c.quote}&rdquo; <span className="text-black/60" data-research-source>{sourceLabel(c)}</span> <a href={c.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap text-[#3760F2]">{host(c.url)} ↗</a></li>
+                  <li key={i} className="text-sm text-black/80" data-research-cite>&ldquo;{c.quote}&rdquo; <span className="text-black/60" data-research-source>{sourceLabel(c)}</span> <a href={c.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap th-link">{host(c.url)} ↗</a></li>
                 ))}</ul>}
                 {none[n] && <p className="mt-1 text-sm text-black/60" data-research-none>{none[n]}.</p>}
               </div>

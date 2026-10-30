@@ -62,12 +62,12 @@ const pct = (x: number) => `${Math.round(x * 100)}%`;
 
 function Section({ n, title, sub, children }: { n: number; title: string; sub?: string; children: React.ReactNode }) {
   return (
-    <section className="border-t border-slate-200 py-12">
+    <section className="border-t border-neutral-200 py-12">
       <div className="mb-6 flex items-baseline gap-4">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-navy text-sm font-semibold text-navy">{n}</span>
         <div>
           <h2 className="text-2xl font-bold tracking-tight text-navy">{title}</h2>
-          {sub && <p className="mt-1 text-slate-600">{sub}</p>}
+          {sub && <p className="mt-1 text-neutral-600">{sub}</p>}
         </div>
       </div>
       {children}
@@ -96,10 +96,10 @@ const usd = (n: number) =>
 const titleCase = (s: string) => s.toLowerCase().replace(/\b([a-z])/g, (m) => m.toUpperCase()).replace(/\b(Llc|Inc|Pac|Usa|Llp|Ut)\b/g, (m) => m.toUpperCase());
 
 function Share({ label, value }: { label: string; value: number | null }) {
-  if (value == null) return <p className="text-sm text-slate-400">{label}: unsure</p>;
+  if (value == null) return <p className="text-sm text-neutral-400">{label}: unsure</p>;
   return (
     <div>
-      <div className="flex justify-between text-sm text-slate-600"><span>{label}</span><span className="font-semibold tabular-nums text-navy">{pct(value)}</span></div>
+      <div className="flex justify-between text-sm text-neutral-600"><span>{label}</span><span className="font-semibold tabular-nums text-navy">{pct(value)}</span></div>
       <Progress value={Math.round(value * 100)} className="mt-1 h-1.5" aria-label={`${label}: ${pct(value)}`} />
     </div>
   );
@@ -109,12 +109,12 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
   const through = m.coverageThrough ? new Date(m.coverageThrough + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "unsure";
   const donors = (m.topEmployers?.length || 0) + (m.topCommittees?.length || 0);
   return (
-    <div className="rounded-md border border-slate-200 p-3 text-sm">
+    <div className="rounded-md border border-neutral-200 p-3 text-sm">
       <p className="eyebrow mb-2">Campaign money</p>
       <dl className="grid grid-cols-3 gap-2">
         {[["Raised", m.raised], ["Spent", m.spent], ["Cash on hand", m.cashOnHand]].map(([k, v]) => (
           <div key={k as string}>
-            <dt className="text-sm text-slate-500">{k}</dt>
+            <dt className="text-sm text-neutral-500">{k}</dt>
             <dd className="text-lg font-bold tabular-nums text-navy">{usd(v as number)}</dd>
           </div>
         ))}
@@ -128,20 +128,20 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
           <summary className="cursor-pointer text-sm font-medium text-navy">Top donors</summary>
           {m.topEmployers?.length ? (
             <div className="mt-2">
-              <p className="text-sm text-slate-500">Employers of individual donors</p>
+              <p className="text-sm text-neutral-500">Employers of individual donors</p>
               <ul className="mt-1 space-y-0.5">
                 {m.topEmployers.map((e) => (
-                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)}</span><span className="tabular-nums text-slate-600">{usd(e.total)}</span></li>
+                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)}</span><span className="tabular-nums text-neutral-600">{usd(e.total)}</span></li>
                 ))}
               </ul>
             </div>
           ) : null}
           {m.topCommittees?.length ? (
             <div className="mt-2">
-              <p className="text-sm text-slate-500">PACs, party and joint fundraising committees</p>
+              <p className="text-sm text-neutral-500">PACs, party and joint fundraising committees</p>
               <ul className="mt-1 space-y-0.5">
                 {m.topCommittees.map((e) => (
-                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)} <span className="text-sm text-slate-400">({e.kind})</span></span><span className="tabular-nums text-slate-600">{usd(e.total)}</span></li>
+                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)} <span className="text-sm text-neutral-400">({e.kind})</span></span><span className="tabular-nums text-neutral-600">{usd(e.total)}</span></li>
                 ))}
               </ul>
             </div>
@@ -149,8 +149,8 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
           {m.donorsSource && <p className="mt-2"><Src href={m.donorsSource.url}>All receipts on FEC</Src></p>}
         </details>
       )}
-      <p className="mt-2 text-sm text-slate-500">
-        {m.lastReport ? `${titleCase(m.lastReport)} report, ` : ""}through {through}. <a className="text-slate-500" href={m.source.url} target="_blank" rel="noreferrer">FEC</a>. Individual donors are not named.
+      <p className="mt-2 text-sm text-neutral-500">
+        {m.lastReport ? `${titleCase(m.lastReport)} report, ` : ""}through {through}. <a className="text-neutral-500" href={m.source.url} target="_blank" rel="noreferrer">FEC</a>. Individual donors are not named.
       </p>
     </div>
   );
@@ -163,7 +163,7 @@ function HeroStat({ vm }: { vm: { text: string; sources: { label: string; title?
     <div className="mt-12 max-w-2xl border-l-2 border-black pl-4" data-vote-matters>
       <p className="text-sm font-[530] text-black/60">Your vote matters most here</p>
       <p className="mt-1 text-xl leading-7 font-[450] text-black">{vm.text}</p>
-      <p className="mt-1 text-sm leading-5 font-[450]">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} title={s.title} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
+      <p className="mt-1 text-sm leading-5 font-[450]">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} title={s.title} target="_blank" rel="noreferrer" className="relative th-link after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
     </div>
   );
 }
@@ -294,15 +294,15 @@ export default function BallotAgent() {
           placeholder={t("Enter your ZIP")}
           value={zip}
           onChange={(e) => setZip(e.target.value)}
-          className="h-16 rounded-none border border-black bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3760f2]"
+          className="h-16 rounded-none border border-black bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
         />
-        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
+        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none px-8 text-base font-[530]">{busy ? t("Reading…") : t("Go")}</Button>
       </form>
       {/* QA phone pass (Oct 30): the unsupported-ZIP notice sits right under the input so it is visible above the keyboard. */}
       <p role="status" aria-live="polite" className="mt-3 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {DEMO.map((d) => (
-          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530]">
+          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530] [@media(hover:hover)]:hover:bg-brand-50">
             {d.label}
           </Button>
         ))}
@@ -354,7 +354,7 @@ function TurnoutSection({ t }: { t: TurnoutDetail }) {
         ))}
       </div>
       {t.ifEveryoneVoted && (
-        <p className="mt-4 text-slate-700">If every eligible person had voted, about {t.ifEveryoneVoted.ballots.toLocaleString("en-US")} ballots would have been cast: {t.ifEveryoneVoted.multiplier}x the actual number.</p>
+        <p className="mt-4 text-neutral-700">If every eligible person had voted, about {t.ifEveryoneVoted.ballots.toLocaleString("en-US")} ballots would have been cast: {t.ifEveryoneVoted.multiplier}x the actual number.</p>
       )}
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
         {t.sources.map((s) => <Src key={s.url} href={s.url}>{s.label}</Src>)}

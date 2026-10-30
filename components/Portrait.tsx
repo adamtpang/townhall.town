@@ -40,7 +40,7 @@ export const focusStyle = (f?: Focus): React.CSSProperties | undefined =>
 export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNullable<Photo>; alt: string; eager?: boolean; onFail: () => void; imgRef?: React.Ref<HTMLImageElement> }) {
   const [mateOff, setMateOff] = useState(false);
   const m = photo.mate && !mateOff ? photo.mate : null;
-  const cls = "h-full w-full object-cover object-[center_20%]";
+  const cls = "h-full w-full object-cover object-[center_20%] grayscale contrast-[1.04]"; // P1-2: monochrome via CSS filter only
   // Design p14: self-hosted 112/160px squares (tiles are 40-56px, so 112 covers 2x screens and 160 covers 3x), with
   // width/height set; lazy and async below the fold (eager only for the first tiers).
   // Design p15 #3: the image sizes attribute is 40px under 1024px wide, 56px from 1024 up.

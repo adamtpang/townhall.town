@@ -34,10 +34,11 @@ describe("fair cards (Adam 9:58 AM CT Oct 30)", () => {
     expect(c).toMatch(/Issue overlap with your answers: \$\{o\.agree\} of \$\{o\.n\} issues/);
     expect(c).toMatch(/o\.n >= 2 \?/);
   });
-  it("the -2..+2 control has a neutral 2px black focus ring with 2px offset and no blue/red (10:34 AM CT)", () => {
+  it("the -2..+2 control has a 2px brand-600 focus ring with 2px offset, brand-700 selected, no blue/red (purple spec Oct 30)", () => {
     const m = src("app/IssueMatch.tsx");
     const cls = (m.match(/itemClassName="([^"]+)"/) ?? [])[1] ?? "";
-    expect(cls).toMatch(/focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2/);
+    expect(cls).toMatch(/focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2/);
+    expect(cls).toMatch(/data-\[state=on\]:bg-brand-700 data-\[state=on\]:text-white/);
     expect(cls).not.toMatch(/accent|#3760|blue|red|ring-\[hsl/i);
     expect(src("components/CandidateRow.tsx")).not.toMatch(/Matches you/);
   });
@@ -62,7 +63,7 @@ describe("fair cards (Adam 9:58 AM CT Oct 30)", () => {
     expect(s).toMatch(/<ToggleGroup /);
     expect(s).toMatch(/h-14 min-w-11 flex-\[1_1_0\]/);
     expect(s).toMatch(/md:h-12 md:w-24/);
-    expect(s).toMatch(/divide-x divide-black\/15 border border-black\/15/);
+    expect(s).toMatch(/divide-x divide-black\/45 border border-black\/45/);
     expect(s).toMatch(/ariaLabel: t\(c\.label\)/);
     const tg = s.slice(s.indexOf("<ToggleGroup "), s.indexOf("data-bucket-ends"));
     expect(tg).not.toMatch(/red|blue|#3760F2|#C|rose|sky|indigo/i);

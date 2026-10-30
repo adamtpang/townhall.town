@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 
-// Official navy/white palette (existing UI) plus ndstudio.gov-style design tokens from PR #2.
-// Token colors read CSS variables in app/globals.css (shadcn format). Flag red/blue are accents only, never party colors.
+// Ink on #f2f2f2 with the townhall purple accent, plus ndstudio.gov-style design tokens from PR #2.
+// Token colors read CSS variables in app/globals.css (shadcn format). Party labels are ink only.
 const token = (name: string) => `hsl(var(--${name}) / <alpha-value>)`;
 
 export default {
@@ -10,10 +10,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: { DEFAULT: "#010101", 700: "#3760f2", 900: "#000000", 50: "#f2f2f2" },
-        flagred: "#b50909",
-        flagblue: "#005ea2",
-        flag: { red: "#d80007", blue: "#002664" },
+        navy: { DEFAULT: "#010101", 700: "#6B2489", 900: "#000000", 50: "#f2f2f2" },
+        // townhall purple (design spec Oct 30 2026). No red or blue anywhere; party labels stay ink.
+        brand: { 50: "#F6EFF9", 100: "#ECDDF3", 300: "#C9A3DC", 500: "#9B4DB8", 600: "#862F9F", 700: "#6B2489", 900: "#3A1250", DEFAULT: "#862F9F" },
         ink: "#010101",
         // Neutral greys only: no blue-tinted slate on an ink-on-#f2f2f2 page.
         slate: colors.neutral,
@@ -51,7 +50,7 @@ export default {
       // Inter Tight at two weights only (450 body, 530 emphasis); nothing lighter or heavier.
       fontWeight: { light: "450", normal: "450", medium: "450", semibold: "530", bold: "530", extrabold: "530", black: "530" },
       maxWidth: { site: "87rem", grid: "2160px" },
-      transitionTimingFunction: { nds: "cubic-bezier(.215,.61,.355,1)" },
+      transitionTimingFunction: { nds: "cubic-bezier(.215,.61,.355,1)", nd: "cubic-bezier(.215,.61,.355,1)" },
     },
   },
   plugins: [],
