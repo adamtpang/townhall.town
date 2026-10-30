@@ -74,6 +74,7 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                       {r.source && <a href={r.source} target="_blank" rel="noreferrer">race source</a>}
                       {mk?.quotes?.[0]?.url && <> · <a href={mk.quotes[0].url} target="_blank" rel="noreferrer">market</a></>}
                     </p>
+                    {!mk?.quotes?.length && <p className="mt-1 text-sm text-black/50">No market odds yet</p>}
                   </li>
                 ))}
               </ul>
