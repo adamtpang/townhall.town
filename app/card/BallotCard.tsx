@@ -88,7 +88,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
     const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
     try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
   }
-  const splitP = (id: string, present: string[]) => { const sp = splitStart(zip, id, present); return sp ? <p className="mb-1 text-sm leading-5 text-black/80" data-card-split={id}>{sp.line}: <a href={sp.url} className="inline-flex min-h-11 items-center th-link underline-offset-2 hover:underline" target="_blank" rel="noreferrer">{linkHost(sp.url)} ↗{ext}</a></p> : null; };
+  const splitP = (id: string, present: string[]) => { const sp = splitStart(zip, id, present); return sp ? <div className="mb-1 text-sm leading-5 text-black/80" data-card-split={id}>{sp.line ? <p data-card-split-line>{sp.line}</p> : null}<a href={sp.url} className="inline-flex min-h-11 items-center th-link underline-offset-2 hover:underline" target="_blank" rel="noreferrer">{linkHost(sp.url)} ↗{ext}</a></div> : null; };
   const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link underline-offset-2 hover:underline print:text-black";
   return (
     <>

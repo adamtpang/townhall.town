@@ -72,3 +72,12 @@ export function officialOrder<C extends { name: string }>(zip: string, raceId: s
   if (!off || off.length !== cands.length || !cands.every((c) => off.includes(c.name))) return { candidates: cands, confirmed: false };
   return { candidates: [...cands].sort((a, b) => off.indexOf(a.name) - off.indexOf(b.name)), confirmed: true };
 }
+
+// Civic P1, Oct 30 3:35 PM CT: on the 10001 sheet and card, the 3 confirmed statewide races come first in official ballot
+// order (Governor with Lt Gov, Comptroller, Attorney General); every other race keeps its current relative order after them.
+export const NY_STATEWIDE_ORDER = ["ny-governor", "ny-comptroller", "ny-attorney-general"];
+export function raceOrder<R extends { id: string }>(zip: string, races: R[]): R[] {
+  if (zip !== "10001") return races;
+  const head = NY_STATEWIDE_ORDER.map((id) => races.find((r) => r.id === id)).filter((r): r is R => !!r);
+  return [...head, ...races.filter((r) => !NY_STATEWIDE_ORDER.includes(r.id))];
+}

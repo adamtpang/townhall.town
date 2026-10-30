@@ -82,9 +82,9 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
       <ol className="pb-races" data-print-races={races.length}>
         {races.map((r) => (
           <li key={r.id} className="pb-race" data-print-race={r.id} data-order-confirmed={r.orderConfirmed ? "1" : "0"}>
-            {(() => { const sp = splitStart(zip, r.id, raceIds); return sp ? <p className="pb-order pb-strong" data-print-split={r.id}>{sp.line}: <span className="pb-label">{host(sp.url)}</span>{cite("Official lookup", sp.url)}</p> : null; })()}
+            {(() => { const sp = splitStart(zip, r.id, raceIds); return sp ? <div className="pb-order" data-print-split={r.id}>{sp.line ? <p className="pb-strong" data-print-split-line>{sp.line}</p> : null}<p data-print-split-link><span className="pb-label">{host(sp.url)}</span>{cite("Official lookup", sp.url)}</p></div> : null; })()}
             <p className="pb-race-title"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="pb-order-unsure" /></p>
-            {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE} <span className="pb-src">{oc.label}</span>{cite(oc.label, oc.url)}{ocAlso(oc)}</p> : null}
+            {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE}{cite(oc.label, oc.url)}</p> : null}
             <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); const ch = retentionChoices(r.title); const mark = picks[r.id] === c.name ? " pb-box-on" : "";
               return ch
                 ? <li key={c.name} className="pb-cand pb-cand-ret" data-print-retention={ch.join("/")}><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span><span className="pb-choices">{ch.map((w) => <span key={w} className="pb-choice"><span className="pb-box-mark" aria-hidden />{w}</span>)}</span></li>
@@ -109,7 +109,7 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
         {booth ? <div data-print-booth><p className="pb-rule-h">This sheet</p>{rule(booth)}</div> : null}
         {devices ? <div data-print-devices><p className="pb-rule-h">Phones and devices</p>{rule(devices)}</div> : null}
         {data.verify ? <p className="pb-gap">Check your official sample ballot: {data.verify.label}{cite(data.verify.label, data.verify.url)}</p> : null}
-        <ol className="pb-notes" data-print-sources={notes.length}>{notes.map((n, i) => <li key={n.url}><span className="pb-num">[{i + 1}]</span> {n.label}: <span className="pb-url">{n.url.replace(/^https?:\/\/(www\.)?/, "")}</span></li>)}</ol>
+        <ol className="pb-notes" data-print-sources={notes.length}>{notes.map((n, i) => <li key={n.url} data-print-note={i + 1}><span className="pb-num">[{i + 1}]</span> {n.label}: <span className="pb-url">{n.url.replace(/^https?:\/\/(www\.)?/, "")}</span>{oc?.also && n.url === oc.url ? <> · {oc.also.label}: <span className="pb-url">{oc.also.url.replace(/^https?:\/\/(www\.)?/, "")}</span></> : null}</li>)}</ol>
       </section>
       <p className="pb-foot" data-print-footer>townhall.town · ZIP {zip} · Printed {longDate(today)}. Check your county for changes.</p>
     </div>

@@ -5,7 +5,7 @@ import { ballotFor } from "../../lib/tools";
 import { issuesFor } from "../../lib/issueOrder";
 import BallotCard from "./BallotCard";
 import type { PrintData } from "./PrintBallot";
-import { printRules, officialOrder, orderCite } from "../../lib/printRules";
+import { printRules, officialOrder, orderCite, raceOrder } from "../../lib/printRules";
 
 const SF_PORTAL = { label: "SF Department of Elections Voter Portal", url: "https://sfelections.org/tools/portal/" };
 
@@ -18,7 +18,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ z
   if (!zip || !b) redirect("/");
   const ids = issuesFor(zip, b.state).map((i) => i.id);
   // Photo (already all-or-none per race), site link: the same row as the Who section (Adam, Oct 29 11:28 PM CT).
-  const races = b.races.map((r) => ({ id: r.id, title: r.title, level: r.level, judicial: (r as { judicial?: unknown }).judicial ? true : false, meta: (r as { meta?: unknown }).meta ?? null, candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, photo: c.photo ?? null, campaignSite: (c as { campaignSite?: string | null }).campaignSite ?? null, officialSite: c.officialSite ?? null })) }));
+  const bRaces = raceOrder(zip, b.races);
+  const races = bRaces.map((r) => ({ id: r.id, title: r.title, level: r.level, judicial: (r as { judicial?: unknown }).judicial ? true : false, meta: (r as { meta?: unknown }).meta ?? null, candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, photo: c.photo ?? null, campaignSite: (c as { campaignSite?: string | null }).campaignSite ?? null, officialSite: c.officialSite ?? null })) }));
   // Printed ballot: every race (court races too) and measure in data order; candidates in Civic's confirmed official order
   // (bp22 ballot_order_check), else data order with a † (Design addendum, Oct 30). Voter rules verbatim from Civic (print24).
   const st = b.state as PrintData["state"];
@@ -30,7 +31,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ z
     whereExtra: zip === "94103" ? SF_PORTAL : null,
     rules: printRules(st),
     orderCite: orderCite(zip),
-    races: b.races.map((r) => {
+    races: bRaces.map((r) => {
       const o = officialOrder(zip, r.id, r.candidates.map((c) => ({ name: c.name, party: c.party ?? null })));
       return { id: r.id, title: r.title, judicial: !!(r as { judicial?: unknown }).judicial, orderConfirmed: o.confirmed, candidates: o.candidates };
     }),
