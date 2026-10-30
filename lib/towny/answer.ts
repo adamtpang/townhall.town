@@ -4,7 +4,8 @@
 import { ballotFor } from "../tools";
 import { townyFact, todayCT, ASKS_EARLY } from "../townyFacts";
 import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
-import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace } from "../townyChat";
+import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace, zipsIn, cityOfZip } from "../townyChat";
+import { COVERED_ZIPS } from "../site";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
 
@@ -124,7 +125,9 @@ export function sameCityReply(text: string): Curated | null {
 export function curated(zip: string, text: string, today: string = todayCT()): Curated | null {
   const t = String(text || "");
   // QA pre-pass 6b2ae5c P1-2: another state, a city outside the 3, or registering elsewhere: Civic's exact line, vote.gov.
-  if (outOfScope(t)) return { intent: "out-of-scope", reply: OUT_OF_SCOPE, links: [...OUT_OF_SCOPE_LINKS] };
+  // QA NO-GO a0bcef7 P0-2: a ZIP outside the 3 covered ZIPs and outside their cities (e.g. 78613) gets OUT_OF_SCOPE, never the
+  // page ZIP's ballot. Same rule as the panel's routeTurn. Other parts of a covered city (78745) keep the same-city line below.
+  if (outOfScope(t) || zipsIn(t).some((z) => !COVERED_ZIPS.includes(z) && !cityOfZip(z))) return { intent: "out-of-scope", reply: OUT_OF_SCOPE, links: [...OUT_OF_SCOPE_LINKS] };
   if (ASKS_WHO.test(t)) return { intent: "who", reply: WHO_LINE, links: [], chips: [WHO_CHIP] };
   const same = sameCityReply(t);
   if (same) return same;

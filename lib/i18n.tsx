@@ -83,8 +83,6 @@ const ES: Record<string, string> = {
   "No sourced positions on your issues.": "No hay posturas con fuente sobre sus temas.",
   "Sourced positions": "Posturas con fuente",
   source: "fuente",
-  "It compares your answers with positions candidates have stated in sourced material, only where both exist. Most candidates have few or no sourced positions, so a missing score says nothing about them. Candidates are shown in ballot order.":
-    "Compara sus respuestas con las posturas que los candidatos han expresado en material con fuente, solo donde existen ambas. La mayoría de los candidatos tiene pocas o ninguna postura con fuente, así que un puntaje faltante no dice nada de ellos.",
   "Talks about": "Habla de",
   "Lines up on": "Coincide en",
   of: "de",
