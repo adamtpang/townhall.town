@@ -1,0 +1,14 @@
+{
+  "method": "Closest statewide contest in the state's last general election, from the official statement of vote, next to eligible county residents who did not vote that year (data/turnout.json). A ZIP with no sourced close result shows nothing.",
+  "zips": {
+    "94103": {
+      "contest": "Proposition 32 (minimum wage), California, Nov 5, 2024",
+      "closestOf": "the 10 statewide measures on the 2024 ballot (Props 2-6 and 32-36)",
+      "yes": 7469803, "no": 7686126, "total": 15155929,
+      "sourceUrl": "https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/59-state-ballot-measures.pdf",
+      "county": "San Francisco", "eligible": 616994, "cast": 412231,
+      "eligibleSourceUrl": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US06075",
+      "castSourceUrl": "https://admin.cdn.sos.ca.gov/elections/sov/2024-general/sov/03-voter-participation-stats-by-county.pdf"
+    }
+  }
+}
