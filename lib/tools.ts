@@ -1,3 +1,4 @@
+import { withAcsMoe } from "./acsMoe";
 import NY_NOTES from "../data/ny-applies-notes.json";
 import ballots from "../data/ballots.json";
 import { JUDICIAL_NOTE, judicialSource } from "./judicial";
@@ -40,7 +41,7 @@ function publishedPositions(name: string) {
     .filter(([, st]) => st && st.value !== null && st.value !== undefined && st.sourceUrl && (st.quote || (st as { voteRecord?: string }).voteRecord))
     .map(([id, st]) => {
       const vr = (st as { voteRecord?: string }).voteRecord;
-      return { issue: ISSUES.find((i) => i.id === id)?.label ?? id, text: vr ? `${vr}${st.quote ? `: ${st.quote}` : ""}` : String(st.quote), form: stanceForm(st as { voteRecord?: string; sourceUrl?: string }), ...(st.year ? { year: st.year } : {}), source: { label: apiSourceLabel(String(st.sourceUrl)), url: String(st.sourceUrl) } };
+      return { issue: ISSUES.find((i) => i.id === id)?.label ?? id, text: vr ? `${vr}${st.quote ? `: ${st.quote}` : ""}` : String(st.quote), form: stanceForm(st as { voteRecord?: string; sourceUrl?: string }), ...(st.year ? { year: st.year } : {}), source: st.chipUrl && st.chip && st.chip !== "source" ? { label: st.chip, url: st.chipUrl } : { label: apiSourceLabel(String(st.sourceUrl)), url: String(st.sourceUrl) } };
     });
 }
 
@@ -66,7 +67,7 @@ function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
   const titleN = new Map<string, number>();
   for (const r of b.races) titleN.set(r.title, (titleN.get(r.title) ?? 0) + 1);
-  return { ...b, turnout, races: b.races.map((r0) => {
+  return { ...b, turnout, problems: b.problems?.map((p) => withAcsMoe(p as never)) as typeof b.problems, races: b.races.map((r0) => {
     // Same-titled single-candidate seats (CA retention races) get the justice's name so each title is distinct.
     const dup = (titleN.get(r0.title) ?? 0) > 1 && r0.candidates.length === 1;
     const t0 = b.state === "TX" ? txTitle(r0.title) : r0.title;
@@ -204,8 +205,29 @@ export async function getMarketOdds(raceIds: string[], fetcher: (slug: string, t
   return out;
 }
 
-export function getLocalProblems(zip: string) {
+// Civic audit26 (Oct 30): lead jobs with the county BLS LAUS rate (getCountyUnemployment); the ZIP-level ACS figure
+// is stored with its MOE in data/ (data/civic/acs_b23025_censusreporter.json) and never fetched live.
+const COUNTY_NAME: Record<string, string> = { "48453": "Travis County", "06075": "San Francisco County", "36061": "New York County" };
+const countyRate = new Map<string, { at: number; v: any }>();
+async function countyJobs(zip: string, fips: string | undefined) {
+  if (!fips || !COUNTY_NAME[fips]) return null;
+  const hit = countyRate.get(fips);
+  if (hit && Date.now() - hit.at < 3600_000) return hit.v;
+  try {
+    const { getCountyUnemployment } = await import("./dataTools");
+    const r: any = await Promise.race([getCountyUnemployment({ zip, countyFips: fips }), new Promise((res) => setTimeout(() => res(null), 2500))]);
+    if (!r || typeof r.rate !== "number" || !Number.isFinite(r.rate) || !r.source) return null;
+    const v = { id: "jobs-county", topic: "jobs", label: `Unemployment rate, ${COUNTY_NAME[fips]} (BLS LAUS${r.preliminary ? ", preliminary" : ""})`, value: `${r.rate}%`, unit: "%", year: r.period, numeric: r.rate, source: { label: "BLS LAUS", url: r.source } };
+    countyRate.set(fips, { at: Date.now(), v });
+    return v;
+  } catch { return null; }
+}
+export async function getLocalProblems(zip: string) {
   const b = ballotFor(zip);
   if (!b) return { zip, problems: [] };
-  return { zip, problems: b.problems || [], context: b.context, note: b.problems?.length ? undefined : "Census metrics are cached for the demo ZIPs only." };
+  // A value that already carries its MOE (unit "") is shown as written, never compared to a state figure.
+  const own = ((b.problems || []) as any[]).map((p) => (p.unit === "" ? (({ stateValue: _s, ...rest }) => rest)(p) : p));
+  const county = own.some((p) => p.topic === "jobs") ? await countyJobs(zip, b.counties?.[0]?.replace(/^05000US/, "")) : null;
+  const problems = county ? [county, ...own] : own;
+  return { zip, problems, context: b.context, note: b.problems?.length ? undefined : "Census metrics are cached for the demo ZIPs only." };
 }

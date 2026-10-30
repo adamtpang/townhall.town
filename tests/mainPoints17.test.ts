@@ -67,7 +67,7 @@ describe("main_points17 (Civic, Oct 30; was main_points16)", () => {
   });
   it("record lines clamp to 2 lines with the full text in title", () => {
     const row = rowOf(end("10001"), "Kathy C. Hochul / Adrienne E. Adams");
-    expect(row).toMatch(/class="line-clamp-2 min-w-0" title="Record: /);
+    expect(row).toMatch(/class="line-clamp-2 min-w-0 text-sm" title="Record: /);
   });
 });
 

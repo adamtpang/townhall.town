@@ -52,15 +52,20 @@ export function getCandidatePositions(name: string, issue?: string) {
   if (!c && !rec)
     return { status: "unknown candidate", name, message: "No candidate by that name on a covered ballot. Call getCandidates and pass one candidate's name exactly as listed." };
   const issueIds = issue ? issueIdsFor(issue) : null;
+  // Same shared rule as the site (lib/stanceEligibility.ts, applied in stancesFor): slogans and Ballotpedia records the
+  // audit drops (stale) or doesn't list come back flagged unsure, with no counted value; kept ones carry the audit's chip.
+  const st = stancesFor(name);
   const positions = Object.entries(rec ?? {})
     .filter(([k, v]) => k !== "name" && v && typeof v === "object")
     .filter(([, v]) => !HIDDEN.has(String((v as { status?: string }).status ?? "").toLowerCase()))
     // One sentence, one issue + Civic holds (lib/oneIssue.ts): same filtering as the site.
-    .filter(([k]) => { const d = stancesFor(name)[k]; return !(d && d.value === null && /same sentence as another issue|held for a Civic retag/.test(String(d.status ?? ""))); })
+    .filter(([k]) => { const d = st[k]; return !(d && d.value === null && /same sentence as another issue|held for a Civic retag/.test(String(d.status ?? ""))); })
     .filter(([k]) => !issueIds || issueIds.includes(k))
     .map(([k, v]) => {
       const s = v as { quote: string; sourceUrl: string; voteRecord?: string };
-      return { issue: ISSUES.find((i) => i.id === k)?.label ?? k, quote: s.quote, sourceUrl: s.sourceUrl, form: stanceForm(s) };
+      const d = st[k];
+      const unsure = d?.unsureReason ?? null;
+      return { issue: ISSUES.find((i) => i.id === k)?.label ?? k, quote: s.quote, sourceUrl: d?.chipUrl ?? s.sourceUrl, sourceLabel: d?.chip ?? null, form: stanceForm(s), counted: !!d && d.value !== null && !unsure, ...(unsure ? { status: "unsure", unsureReason: unsure } : {}) };
     });
   const base = { name: c?.name ?? name, onCoveredBallot: !!c, officialSite: liveUrl(c?.officialSite), ballotpedia: liveUrl(c?.ballotpedia) };
   if (!positions.length) return { ...base, status: "no public statement found", issue: issue ?? null };
@@ -79,7 +84,7 @@ export const townyTools = {
     execute: async ({ zip }) => getPollingLocations(zip) ?? NOT_COVERED,
   }),
   getCandidatePositions: tool({
-    description: "One candidate's published, sourced positions (exact quote plus sourceUrl), optionally for one issue. Pass a person's name from getCandidates, not a race or office; call once per candidate. Returns status 'no public statement found' when there is none.",
+    description: "One candidate's published, sourced positions (exact quote plus sourceUrl), optionally for one issue. Pass a person's name from getCandidates, not a race or office; call once per candidate. Returns status 'no public statement found' when there is none. A position with counted: false and status 'unsure' (unsureReason: slogan, stale, not audited) is unsure: say it is unsure, never state it as the candidate's position. Cite sourceLabel/sourceUrl as given.",
     inputSchema: z.object({ name: z.string().describe("One candidate's name exactly as getCandidates lists it, e.g. James Talarico"), issue: z.string().optional().describe("Issue, e.g. housing, healthcare, immigration") }),
     execute: async ({ name, issue }) => getCandidatePositions(name, issue),
   }),

@@ -79,7 +79,7 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
 
   return (
     <>
-      <section className="border-t border-black py-24" id="what-matters">
+      <section className="border-t border-black py-12 lg:py-16" id="what-matters">
         <p className="nds-caption-upper text-black/60">02</p>
         <h2 className={`mt-3 ${H2}`}>Who lines up with you</h2>
         <p className="mt-4 text-base leading-6 text-black" data-issue-intro>{ISSUE_INTRO}</p>

@@ -17,7 +17,8 @@ import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../lib/endscreen.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../lib/gcal";
-import type { Mk } from "./RaceTiers";
+import { FinanceRow, showFinanceFor, type Mk } from "./RaceTiers";
+type TierRace = Parameters<typeof FinanceRow>[0]["r"];
 
 type Cand = RowCand & { ballotpedia?: string | null };
 type RaceLite = { id: string; title?: string; level?: string; judicial?: "ny" | "tx" | "ca" | boolean; candidates: Cand[] };
@@ -64,7 +65,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
   const printPath = cardPath(zip, answers, ids).replace("#", "&print=1#");
 
   return (
-    <section id="end" className="border-t border-black py-24" data-end-screen>
+    <section id="end" className="border-t border-black py-12 lg:py-16" data-end-screen>
       <p className="nds-caption-upper text-black/60">03</p>
       <h2 className={`mt-3 ${H2}`}>Your plan</h2>
       {/* Design addendum Oct 30 (label approved by Adam): replaces the old one-page card link. The printable sheet
@@ -75,7 +76,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
         <div className="lg:col-span-6" data-end="who">
           <h3 className={H3}>Who lines up with you</h3>
           <p className="mt-3 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation.</p>
-          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">{SHOW_ACCOUNTABILITY ? "How overlap and record work" : "How overlap works"}</summary><p className="pb-2 text-sm text-black/80">{METHOD}</p>{SHOW_ACCOUNTABILITY ? <p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p> : null}</details>
+          <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">{SHOW_ACCOUNTABILITY ? "How overlap and record work" : "How overlap works"}</summary><p className="pb-2 text-sm text-black/80">{METHOD}</p>{SHOW_ACCOUNTABILITY ? <p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p> : null}</details>
           {judicial.length > 0 && (
             <p className="mt-4 max-w-[45ch] text-sm text-black/60" data-judicial-note>
               {(() => {
@@ -100,6 +101,8 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
                       {rows.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers} answeredYesNo={yesNo > 0} grade={grade} />)}
                     </ul>
                     <RaceFooter cands={rows.map(({ c }) => c)} gradesHidden={gradesHidden} /></PhotoGroup>
+                    {/* QA P1 (3e16451): expanding a federal race here (TX-37, NY-12) showed no money. Same FEC block as the race list. */}
+                    {showFinanceFor({ ...r, title: r.title || r.id } as TierRace, zip) ? <div data-who-finance={r.id}><FinanceRow r={{ ...r, title: r.title || r.id } as TierRace} /></div> : null}
                     {/* QA P2: the live research button on every non-judicial race. */}
                     <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
                   </>
@@ -120,9 +123,11 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
               <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-maps-url={mapsUrl(site.address)}>
                 Directions ↗{ext}
               </Button>
-              <p className="mt-2 text-sm leading-5 text-black/60"><a href={site.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link">Official site list ↗{ext}</a></p>
+              {/* Design 2:57 PM CT (Oct 30): the end-screen links stack with 44px rows and a 4px gap, never 3px apart. */}
+              <div className="mt-2 flex flex-col items-start gap-1 text-sm leading-5" data-end-links>
+              <a href={site.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center th-link" data-end-link="sites">Official site list ↗{ext}</a>
               {where.sites.length > 1 && (
-                <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Other sourced sites ({Math.min(where.sites.length - 1, 4)})</summary>
+                <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Other sourced sites ({Math.min(where.sites.length - 1, 4)})</summary>
                   <ul className="space-y-1 pb-2">
                     {where.sites.slice(1, 5).map((s: { name: string; address: string; hours?: string }) => (
                       <li key={s.name} className="text-sm"><a href={mapsUrl(s.address)} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link">{s.name} ↗{ext}</a><span className="block text-black/60">{s.address}</span>{s.hours && /\(last day\)/.test(s.hours) && <span className="block text-black/60" data-site-hours>{trimHours(s.hours)}</span>}</li>
@@ -131,8 +136,9 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
                 </details>
               )}
               {where.dependsOnAddress && where.lookupUrl && (
-                <p className="text-sm"><a href={where.lookupUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link">{where.lookupLabel ?? "Find your assigned polling place"} ↗{ext}</a></p>
+                <a href={where.lookupUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center th-link" data-end-link="lookup">{where.lookupLabel ?? "Find your assigned polling place"} ↗{ext}</a>
               )}
+              </div>
             </>
           ) : where.lookupUrl ? (
             <>

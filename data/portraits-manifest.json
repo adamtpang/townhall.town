@@ -2,7 +2,8 @@
  "builtBy": "scripts/ingest-photos.mjs",
  "sizes": [
   112,
-  160
+  160,
+  256
  ],
  "initialsOnly": {},
  "portraits": {
@@ -37,6 +38,11 @@
      "file": "/portraits/adrienne-e-adams-160.webp",
      "bytes": 2308,
      "sha256": "b8cd86b8b7ce1278900d88752ff9b6e0bbc913e6363f6d98c2b9dc5ac92bc571"
+    },
+    "256": {
+     "file": "/portraits/adrienne-e-adams-256.webp",
+     "bytes": 7234,
+     "sha256": "4351787d230d863e09004e8a43744958870f9a40ef8ca420b2d71583b4867fb1"
     }
    }
   },
@@ -71,6 +77,11 @@
      "file": "/portraits/alex-behrend-160.webp",
      "bytes": 3224,
      "sha256": "5f65ff6a5608daae5b22a3fc689b18b3915101b78f44a3e346c051b542219583"
+    },
+    "256": {
+     "file": "/portraits/alex-behrend-256.webp",
+     "bytes": 6326,
+     "sha256": "28cd48e17985ff5f42172c309fd03fd5876fa74fd72beec3321cb18007bbf5e3"
     }
    }
   },
@@ -139,6 +150,11 @@
      "file": "/portraits/alina-bonsell-160.webp",
      "bytes": 1782,
      "sha256": "e07b92786e6f2840a5bb17d0ed0d09f10a0faccba2a6c3937e8bc35e66ed877c"
+    },
+    "256": {
+     "file": "/portraits/alina-bonsell-256.webp",
+     "bytes": 3524,
+     "sha256": "2a3218cf44d8b3ba7432df1e02e3020aab5cd2418bfe6a9738068263629385bf"
     }
    }
   },
@@ -173,6 +189,11 @@
      "file": "/portraits/allison-bush-160.webp",
      "bytes": 2924,
      "sha256": "6ca017780b315dbda4b0cc03bd6c74015089431a87a712a6e20251a1d217c4a3"
+    },
+    "256": {
+     "file": "/portraits/allison-bush-256.webp",
+     "bytes": 5790,
+     "sha256": "862e61204956841bfe78890b3b5ee9f4c297d94d7ed987b1debbf15d720b6731"
     }
    }
   },
@@ -207,6 +228,11 @@
      "file": "/portraits/amy-clark-meachum-160.webp",
      "bytes": 4380,
      "sha256": "e489837770d3bda16629d042fe7dc7b448adc4121d39ab79aab8dd3f1bb69f7f"
+    },
+    "256": {
+     "file": "/portraits/amy-clark-meachum-256.webp",
+     "bytes": 9396,
+     "sha256": "2b3db751d2bed6ae33106b870740a9b066abcd7d86dc0bfa4cb4de74bfe88f0c"
     }
    }
   },
@@ -275,6 +301,11 @@
      "file": "/portraits/anthony-cristo-160.webp",
      "bytes": 1978,
      "sha256": "9edbd9697dce973a195c4ba3e93e3bb84d9e21d365be414dc52a1e36ba1b7248"
+    },
+    "256": {
+     "file": "/portraits/anthony-cristo-256.webp",
+     "bytes": 3818,
+     "sha256": "1e6133c20e16f008ae80f56289620bbb04818df456df1b35398c20e8163914ae"
     }
    }
   },
@@ -309,6 +340,11 @@
      "file": "/portraits/april-farris-160.webp",
      "bytes": 1844,
      "sha256": "5050addc34efbc32f1af02b03179352e2829ce15ae692a5ad2fc78f20410e62b"
+    },
+    "256": {
+     "file": "/portraits/april-farris-256.webp",
+     "bytes": 4028,
+     "sha256": "e37c8eb87295d941d5d2b7700fea1f9b4ee15bf13ca11b07b83325807f3f1e6f"
     }
    }
   },
@@ -349,6 +385,11 @@
      "file": "/portraits/arshia-papari-160.webp",
      "bytes": 4500,
      "sha256": "94d6c53cdcce579ae10b40151f686d46a1fa6fcdf2619c9898b7f24cf649b54b"
+    },
+    "256": {
+     "file": "/portraits/arshia-papari-256.webp",
+     "bytes": 9204,
+     "sha256": "a987c5d32167dfaf5a8cdf021437314202584ae63f8ed1f84cd082561ecd2ee6"
     }
    }
   },
@@ -383,6 +424,11 @@
      "file": "/portraits/arthur-dibianca-160.webp",
      "bytes": 1808,
      "sha256": "39b8be287940668be9b040c57eb67e6689886430112316edf5d8d02cc8cc5bd9"
+    },
+    "256": {
+     "file": "/portraits/arthur-dibianca-256.webp",
+     "bytes": 3382,
+     "sha256": "f98a44ecf7b5ce1b8c2278319cd6214b281bb28b2846d863fdaa9a5e6861cb0e"
     }
    }
   },
@@ -417,6 +463,11 @@
      "file": "/portraits/audra-riley-160.webp",
      "bytes": 3164,
      "sha256": "ffe89754b60fe42848dba1ac841ab394739d6380cb8ef77eacc2a71db04a0ae2"
+    },
+    "256": {
+     "file": "/portraits/audra-riley-256.webp",
+     "bytes": 6680,
+     "sha256": "f8b3a2ba5d60e12ee7ecf8447885bc8eacca3cd1e6ed09771ef738de66906d7d"
     }
    }
   },
@@ -451,6 +502,11 @@
      "file": "/portraits/austin-r-kelly-160.webp",
      "bytes": 3572,
      "sha256": "cdc621a5932860b86be3e73c67c72bfce0d2652344243f3b1bf84e96681266bb"
+    },
+    "256": {
+     "file": "/portraits/austin-r-kelly-256.webp",
+     "bytes": 8170,
+     "sha256": "6551783be4588e9f2a924965b3c99f391d9d4466fddc722a501f198258557c22"
     }
    }
   },
@@ -485,6 +541,11 @@
      "file": "/portraits/autumn-brown-garibay-160.webp",
      "bytes": 4616,
      "sha256": "0552e69078e0f336b687da6781797fec32a8a3873951f66c98843a7c76bd5c60"
+    },
+    "256": {
+     "file": "/portraits/autumn-brown-garibay-256.webp",
+     "bytes": 10272,
+     "sha256": "988905fa4aeae15c07df6ef62826f6c3018c6698c19b01412cc43a5fd387fc51"
     }
    }
   },
@@ -519,6 +580,11 @@
      "file": "/portraits/ben-allen-160.webp",
      "bytes": 2210,
      "sha256": "bff0d4f85990ab5d5ba6f8e0446c28f0327c8341c008898ec2af3b22430b4970"
+    },
+    "256": {
+     "file": "/portraits/ben-allen-256.webp",
+     "bytes": 5210,
+     "sha256": "107da33d2a3ebe31108f63504be79658247a73a5362d40d2e24917822f4ecb86"
     }
    }
   },
@@ -587,6 +653,11 @@
      "file": "/portraits/bianca-garcia-160.webp",
      "bytes": 3574,
      "sha256": "f636976b6d3da36d1407cd93a0d3912715424b1936ed2d79542727afcb82c035"
+    },
+    "256": {
+     "file": "/portraits/bianca-garcia-256.webp",
+     "bytes": 7128,
+     "sha256": "5e17a569dbaa0069bc711a798d90db3d82f0c646b72264a7a3f2ae71b8142ae4"
     }
    }
   },
@@ -621,6 +692,11 @@
      "file": "/portraits/bo-french-160.webp",
      "bytes": 2718,
      "sha256": "82f7e3b5128c929f6c53589288ef9dc870b72a10f08274cc0470341f5958dc86"
+    },
+    "256": {
+     "file": "/portraits/bo-french-256.webp",
+     "bytes": 5352,
+     "sha256": "631144db1ede2fd704a0d708864a5127bbc3cd650d68307fb0d9daca3cdd6c3b"
     }
    }
   },
@@ -655,6 +731,11 @@
      "file": "/portraits/brandy-mueller-160.webp",
      "bytes": 2652,
      "sha256": "993e203595b8e727e30fa08297f13c421e3f0c07aa0835b97fdec029c9e35aae"
+    },
+    "256": {
+     "file": "/portraits/brandy-mueller-256.webp",
+     "bytes": 4942,
+     "sha256": "a39929a51a45cb7b7c33ab796aac09f46fc440f3640544f3a5d064293ad3196f"
     }
    }
   },
@@ -689,6 +770,11 @@
      "file": "/portraits/brett-busby-160.webp",
      "bytes": 2064,
      "sha256": "6571a028c54ae9eeae2b4bc75aff3c1ddd8b7b751aca89a1c3b4abaaa444d621"
+    },
+    "256": {
+     "file": "/portraits/brett-busby-256.webp",
+     "bytes": 4044,
+     "sha256": "461302be43698dd76dcd1813bce01ee28d73c77b5f2b458419f3befbb756eb89"
     }
    }
   },
@@ -723,6 +809,11 @@
      "file": "/portraits/brian-j-krist-160.webp",
      "bytes": 1550,
      "sha256": "87aec8be9af29be41835147f4aa59a4aee84ce14a433ea701cfc466d6a0e46d0"
+    },
+    "256": {
+     "file": "/portraits/brian-j-krist-256.webp",
+     "bytes": 3178,
+     "sha256": "abde21a9bb5003b9e690d278f88d47c3c8b2939166a6df4b4771c54aeb17d136"
     }
    }
   },
@@ -757,6 +848,11 @@
      "file": "/portraits/brian-pena-160.webp",
      "bytes": 1942,
      "sha256": "31582b7692da184d5e83a69f527d320bc40394811d3701e3fc193e40459fa751"
+    },
+    "256": {
+     "file": "/portraits/brian-pena-256.webp",
+     "bytes": 4044,
+     "sha256": "cecce61b6a2bf7e9e226af71f251296dc87d92f2e7a88ecf571633634e17ecbe"
     }
    }
   },
@@ -791,6 +887,11 @@
      "file": "/portraits/bruce-a-blakeman-todd-hood-160.webp",
      "bytes": 2454,
      "sha256": "fc40e87ca34fa9f784d2cb91dfa20f66b5a5011ebe63f7ae3b6b14ec02542ca7"
+    },
+    "256": {
+     "file": "/portraits/bruce-a-blakeman-todd-hood-256.webp",
+     "bytes": 5474,
+     "sha256": "9aa8f56ec85b7ca0560444885d5704776e51be57fe52c1315f4339213ae4f95c"
     }
    }
   },
@@ -831,6 +932,11 @@
      "file": "/portraits/bunny-mcfadden-160.webp",
      "bytes": 3608,
      "sha256": "8fc313c38ccb8ae135130b3093bf85a14d0bb3858c2a92ea4d393400624262e1"
+    },
+    "256": {
+     "file": "/portraits/bunny-mcfadden-256.webp",
+     "bytes": 7072,
+     "sha256": "7ec5d4fe4c31007c4a93a09fae506d228ab14e80b0e7a4f00890bce52500ad66"
     }
    }
   },
@@ -865,6 +971,11 @@
      "file": "/portraits/caitlin-rourk-160.webp",
      "bytes": 6570,
      "sha256": "20c51d0eda653bf9cd67c07e8fe1cf143bfe3a68b11d24c6f4f9578a0f5be0d9"
+    },
+    "256": {
+     "file": "/portraits/caitlin-rourk-256.webp",
+     "bytes": 14286,
+     "sha256": "c54fca3ab5ada6de79cfb7a11ebd92bcd879ce58e97132a5b61ac0d43beb9dc3"
     }
    }
   },
@@ -899,6 +1010,11 @@
      "file": "/portraits/carl-wilson-160.webp",
      "bytes": 3932,
      "sha256": "93424f7b5998c9baa3179583a05fab33ad355275dc0179a35f36503779b0742f"
+    },
+    "256": {
+     "file": "/portraits/carl-wilson-256.webp",
+     "bytes": 7948,
+     "sha256": "ed9f9cc13a34c8ef2fd07447ae54b61ba09113f8d3fdeb6bce86ab07784a2ac2"
     }
    }
   },
@@ -933,6 +1049,11 @@
      "file": "/portraits/caroline-shinkle-160.webp",
      "bytes": 2670,
      "sha256": "4f715850b371cc08e893da10620cbd7baac50cb2ba3286b7daf0f8c46259fdc0"
+    },
+    "256": {
+     "file": "/portraits/caroline-shinkle-256.webp",
+     "bytes": 5270,
+     "sha256": "d6b024d71c10b4f1efdb6e5aba08c17817639f921cb6166b7d15d77f851e30e0"
     }
    }
   },
@@ -967,6 +1088,11 @@
      "file": "/portraits/catherine-a-mauzy-160.webp",
      "bytes": 3042,
      "sha256": "54234fb6fb01251a4f2bc671161936b83623dc81e066cc1f9fe2987ab7d75f64"
+    },
+    "256": {
+     "file": "/portraits/catherine-a-mauzy-256.webp",
+     "bytes": 7010,
+     "sha256": "fde8cb611783fe92f177f03ddf7d76981f1295446bb9a472773cc4fdcd98aa25"
     }
    }
   },
@@ -1001,6 +1127,11 @@
      "file": "/portraits/chantal-melissa-eldridge-160.webp",
      "bytes": 3024,
      "sha256": "0d407c9fdbfafb0e4c12bea3deb945cfd0e2ce96bee368b9202d1419ce327066"
+    },
+    "256": {
+     "file": "/portraits/chantal-melissa-eldridge-256.webp",
+     "bytes": 6066,
+     "sha256": "04c5dd82f50eb49fdc6d41d5946cf0b9166e5f89921c01d1e436d727a391078a"
     }
    }
   },
@@ -1035,6 +1166,11 @@
      "file": "/portraits/chari-kelly-160.webp",
      "bytes": 2210,
      "sha256": "ef125e4e7c42177e49ed2532fe964a5e41985cc46fdacfb1675e78896a3651e5"
+    },
+    "256": {
+     "file": "/portraits/chari-kelly-256.webp",
+     "bytes": 4458,
+     "sha256": "96c8c50da4334198255630021d750d448c7df055b101618c2170d751e5ca26c2"
     }
    }
   },
@@ -1069,6 +1205,11 @@
      "file": "/portraits/charles-a-smiley-160.webp",
      "bytes": 2108,
      "sha256": "1263ae9f9c2b5ff1d87277e846522cb6676f2b5daf050c54fc3225a76a6e3918"
+    },
+    "256": {
+     "file": "/portraits/charles-a-smiley-256.webp",
+     "bytes": 4208,
+     "sha256": "0fd97df9f74c69667b735185cc02d4ae74942d471726934b36b99ba84fb1de2a"
     }
    }
   },
@@ -1103,6 +1244,11 @@
      "file": "/portraits/charlotte-friedman-160.webp",
      "bytes": 3598,
      "sha256": "3a30be368c72b90d0adaebf580e4cda705080a887c49f65b61821b53bdcf0594"
+    },
+    "256": {
+     "file": "/portraits/charlotte-friedman-256.webp",
+     "bytes": 8002,
+     "sha256": "cad44c927b649113dd66871210e55ff58538073955dad0d45c4af9d099500d8f"
     }
    }
   },
@@ -1137,6 +1283,11 @@
      "file": "/portraits/chris-gober-160.webp",
      "bytes": 2064,
      "sha256": "5de2c314e734f6a70fc9a27f295eeb1bc06df92e82e83afa93a465a21d60a0d6"
+    },
+    "256": {
+     "file": "/portraits/chris-gober-256.webp",
+     "bytes": 6018,
+     "sha256": "92bbfbb93a03cf068ea62652ad34d79b5c790a707d369bf707b93440f52f12f8"
     }
    }
   },
@@ -1171,6 +1322,11 @@
      "file": "/portraits/clayton-tucker-160.webp",
      "bytes": 3244,
      "sha256": "64e9ac78dfa7af7f8b681ae00a1e684e4b2f8b3547ec55070200b1d117dfb378"
+    },
+    "256": {
+     "file": "/portraits/clayton-tucker-256.webp",
+     "bytes": 6110,
+     "sha256": "8c9540d865f31c8df74d4ace0100758ad3b51229396758a6026b850bffe1f25c"
     }
    }
   },
@@ -1205,6 +1361,11 @@
      "file": "/portraits/cliff-brown-160.webp",
      "bytes": 1414,
      "sha256": "bbb41e5001f75b2cd4029391a98846f9963debd87626293ad7ada92245d751d4"
+    },
+    "256": {
+     "file": "/portraits/cliff-brown-256.webp",
+     "bytes": 2480,
+     "sha256": "1a36ef1275fb3f7e9ba4fe234a467d1603fc728859ce32839beebb6bdf39e4e5"
     }
    }
   },
@@ -1239,6 +1400,11 @@
      "file": "/portraits/connie-chan-160.webp",
      "bytes": 2434,
      "sha256": "cbe52ac7fe2adad0813a9bdaf7462fcf38d6418512baf12193e086694c1b3481"
+    },
+    "256": {
+     "file": "/portraits/connie-chan-256.webp",
+     "bytes": 5558,
+     "sha256": "03b2cd8f2f305fae5fdf1583c911a27c6acda0fd51b586f850dd885e6cf32165"
     }
    }
   },
@@ -1273,6 +1439,11 @@
      "file": "/portraits/cory-liu-160.webp",
      "bytes": 2586,
      "sha256": "10779148b50b303dc914c44205a1a68a4e747ff17dc75601398b117fc2784412"
+    },
+    "256": {
+     "file": "/portraits/cory-liu-256.webp",
+     "bytes": 4960,
+     "sha256": "835e458effa7b53ba07ff16be8894ed2554589a9e6fc1ebc2b1c3dc7905c8265"
     }
    }
   },
@@ -1307,6 +1478,11 @@
      "file": "/portraits/cristina-fontanelli-160.webp",
      "bytes": 2472,
      "sha256": "4f93554e36ab9a5764bc33a01db0dd48651c12568f88544d03f718d257f1d3e3"
+    },
+    "256": {
+     "file": "/portraits/cristina-fontanelli-256.webp",
+     "bytes": 5066,
+     "sha256": "4482705f4c365a1225b124762944623f4af68cbcda0cf00dacbdea3d5097e4e5"
     }
    }
   },
@@ -1341,6 +1517,11 @@
      "file": "/portraits/cynthia-soliz-160.webp",
      "bytes": 4166,
      "sha256": "cc088ac12e972041659ee3e688bdcb1e7507b17a7239082f5c176f7273a9eb0f"
+    },
+    "256": {
+     "file": "/portraits/cynthia-soliz-256.webp",
+     "bytes": 8856,
+     "sha256": "0aefc49a1da55a054aa098bf2e0c88afba746154ddd79827219008c9f59d682c"
     }
    }
   },
@@ -1375,6 +1556,11 @@
      "file": "/portraits/dan-patrick-160.webp",
      "bytes": 2566,
      "sha256": "ec2ee46ab07c221cbee0f700388ee81d0472eb55e947d38cc3c91bfa5236362b"
+    },
+    "256": {
+     "file": "/portraits/dan-patrick-256.webp",
+     "bytes": 5526,
+     "sha256": "f72c1ec15191a77ab02f4c90702c2221f24a57e3d394cf2d0bcb614565ac0c15"
     }
    }
   },
@@ -1409,6 +1595,11 @@
      "file": "/portraits/dana-walker-160.webp",
      "bytes": 2048,
      "sha256": "44560cf43cda74eab430fbf3247a096974251e6792440d1df7702127438ec577"
+    },
+    "256": {
+     "file": "/portraits/dana-walker-256.webp",
+     "bytes": 4690,
+     "sha256": "189c267719fa19da5f19581005bc7a37a077bd470dce488f3ec76fb4ca87b9e7"
     }
    }
   },
@@ -1443,6 +1634,11 @@
      "file": "/portraits/daniella-deseta-lyttle-160.webp",
      "bytes": 4230,
      "sha256": "57a641da81d46f35a8846d1eff5c2b83420d25232328aec3bc7e540a24df9a17"
+    },
+    "256": {
+     "file": "/portraits/daniella-deseta-lyttle-256.webp",
+     "bytes": 8524,
+     "sha256": "1eda3a842852f76d759833ccfd58f63ffe60064d0fa2cf359e6c69b8fb89bb62"
     }
    }
   },
@@ -1477,6 +1673,11 @@
      "file": "/portraits/danny-y-chou-160.webp",
      "bytes": 2108,
      "sha256": "3ec899fddbe96ad5b4de8a1e782a2cb95fbbe156c85a732cd292e3229e4c09a1"
+    },
+    "256": {
+     "file": "/portraits/danny-y-chou-256.webp",
+     "bytes": 4170,
+     "sha256": "8928d0ff64903543b4eab0ee37bd2499e86998012c3f02ab0bc55ab46e1280f3"
     }
    }
   },
@@ -1511,6 +1712,11 @@
      "file": "/portraits/darlene-byrne-160.webp",
      "bytes": 2174,
      "sha256": "912f3168f19fb1af252fb6d85fb1536364742be41fb4ac76239b3835a889bcf0"
+    },
+    "256": {
+     "file": "/portraits/darlene-byrne-256.webp",
+     "bytes": 4560,
+     "sha256": "63a6646a1c2728a9c9d661ed6ef1b01518f8b8fbca35dcacbe28d35e4c390be0"
     }
    }
   },
@@ -1545,6 +1751,11 @@
      "file": "/portraits/darshini-patel-160.webp",
      "bytes": 4442,
      "sha256": "574a5d58a7678ea151e577e5e476cd2ecc941007518121a2082caa3a7b18783f"
+    },
+    "256": {
+     "file": "/portraits/darshini-patel-256.webp",
+     "bytes": 8344,
+     "sha256": "ac3192efd90bc7b9048bf6919057247180477d42e54ff207844cd8c80afa2afe"
     }
    }
   },
@@ -1579,6 +1790,11 @@
      "file": "/portraits/dave-thadani-160.webp",
      "bytes": 4150,
      "sha256": "7fa073093410800acaa3220b81a7f03c81b820b2190a55c1822e3e353c44c1d0"
+    },
+    "256": {
+     "file": "/portraits/dave-thadani-256.webp",
+     "bytes": 8878,
+     "sha256": "6943c5d202a95e43ce3bed9e8acfdfc6592856f0a397e22067af7d6c2aa5ad96"
     }
    }
   },
@@ -1613,6 +1829,11 @@
      "file": "/portraits/dawn-buckingham-160.webp",
      "bytes": 3082,
      "sha256": "0b71378c44e4dc6d0220fe16a2e9e81fba68f6649a08b7d21cb71c6ac15c03dc"
+    },
+    "256": {
+     "file": "/portraits/dawn-buckingham-256.webp",
+     "bytes": 5828,
+     "sha256": "1520ffb6ee53c5272a22b676db343a23ff0ea608b3a87a67cd048d4f9d0dc183"
     }
    }
   },
@@ -1647,6 +1868,11 @@
      "file": "/portraits/denise-hernandez-160.webp",
      "bytes": 2636,
      "sha256": "6a174691bbf8fe64af52e86a4141de72033f4aa80f6cd4f7332e3cfbf3a3370b"
+    },
+    "256": {
+     "file": "/portraits/denise-hernandez-256.webp",
+     "bytes": 4912,
+     "sha256": "e9c790a731f9cb6e2863c2d4b06f930efe65fe179117b2d9c1945d7fae5a509e"
     }
    }
   },
@@ -1681,6 +1907,11 @@
      "file": "/portraits/dimple-malhotra-160.webp",
      "bytes": 3656,
      "sha256": "c052c05e2afeaaf441d5703808f50e9b3482f56110527386aa4a9ad1467fb5e6"
+    },
+    "256": {
+     "file": "/portraits/dimple-malhotra-256.webp",
+     "bytes": 7452,
+     "sha256": "4b4466f39d78b4778c7ce7158fc25fdee8f4d81ed1fd60a2d5bf203744f587f6"
     }
    }
   },
@@ -1715,6 +1946,11 @@
      "file": "/portraits/dionjay-dj-brookter-160.webp",
      "bytes": 3102,
      "sha256": "4f545a3fe92e32ec72c7814686ed5a80cbbb470d6d263917cee4d99ffcf06730"
+    },
+    "256": {
+     "file": "/portraits/dionjay-dj-brookter-256.webp",
+     "bytes": 5654,
+     "sha256": "0eb273d09938ecb84cbe899dbe3c50963a7e480e4a43fb2d5df97cd3a8c3d4bf"
     }
    }
   },
@@ -1783,6 +2019,11 @@
      "file": "/portraits/don-huffines-160.webp",
      "bytes": 3190,
      "sha256": "8189d103f94f5a321e0a29ec11c2a2c2da6d0cbf2524134892ea0573937bcd57"
+    },
+    "256": {
+     "file": "/portraits/don-huffines-256.webp",
+     "bytes": 6982,
+     "sha256": "ea8ec140957a2df53440181ea1efc211755c41d67ed453529ea9aa697afaadea"
     }
    }
   },
@@ -1817,6 +2058,11 @@
      "file": "/portraits/donald-p-don-wagner-160.webp",
      "bytes": 2300,
      "sha256": "82e0713a375ac78e20c712c22c9616c162b178c339adaf461809db0b642f84de"
+    },
+    "256": {
+     "file": "/portraits/donald-p-don-wagner-256.webp",
+     "bytes": 5612,
+     "sha256": "e78214de0f502907018b575d921b6a1d2652de1f8e2e8059651daf8d19f584ff"
     }
    }
   },
@@ -1885,6 +2131,11 @@
      "file": "/portraits/eleni-kounalakis-160.webp",
      "bytes": 3520,
      "sha256": "a6eae607343bd8aacd65ef3cd81ba90e3cfcf400a9e41e092a18f6f5d2cea40f"
+    },
+    "256": {
+     "file": "/portraits/eleni-kounalakis-256.webp",
+     "bytes": 7422,
+     "sha256": "905bff66c290842704018389c7340ebe84fb4fc457f848fe0d7ca40b870cc423"
     }
    }
   },
@@ -1953,6 +2204,11 @@
      "file": "/portraits/elisabeth-earle-160.webp",
      "bytes": 2768,
      "sha256": "089bed801469531ca5fdf33265b09fb753e2f339464973ee25d9127876908504"
+    },
+    "256": {
+     "file": "/portraits/elisabeth-earle-256.webp",
+     "bytes": 5620,
+     "sha256": "2d4d7c01f73ba185d776d47022abaf83a6dd52b5358b9ae9f007f81a52f5fbfc"
     }
    }
   },
@@ -1987,6 +2243,11 @@
      "file": "/portraits/emanuel-manny-yekutiel-160.webp",
      "bytes": 4364,
      "sha256": "6e855cdd26b8c86f177be73a935b339f094cf4a1707c0971e6a5b0c88750e8fd"
+    },
+    "256": {
+     "file": "/portraits/emanuel-manny-yekutiel-256.webp",
+     "bytes": 8526,
+     "sha256": "62489d5ca750623c9d3e7414b2e8bd7a7457537b29a4105b40c7186aecaf01fd"
     }
    }
   },
@@ -2021,6 +2282,11 @@
      "file": "/portraits/erik-d-bottcher-160.webp",
      "bytes": 2612,
      "sha256": "6ead264cb1c74387405307f496a33cbdbbfe12479b09a44f4a25f33a766395b4"
+    },
+    "256": {
+     "file": "/portraits/erik-d-bottcher-256.webp",
+     "bytes": 5544,
+     "sha256": "80910f84dc87382c552df8f078cb01e76723eb72d727c24a8910add8187193f8"
     }
    }
   },
@@ -2089,6 +2355,11 @@
      "file": "/portraits/fiona-ma-160.webp",
      "bytes": 4014,
      "sha256": "767bb4c79a1ee3c6e163f6ebbe3e82329c773b1fffcfc412928a910d27dfd82f"
+    },
+    "256": {
+     "file": "/portraits/fiona-ma-256.webp",
+     "bytes": 9458,
+     "sha256": "cf6de75253222e7c6dd986afa28e50089f75e4e681072c1a1ec4dce2e6c4abcc"
     }
    }
   },
@@ -2123,6 +2394,11 @@
      "file": "/portraits/gabriel-padilla-160.webp",
      "bytes": 2552,
      "sha256": "078c12ac7fbd53d2065ad4c8974e6ec5a291425a81ef9391a785a807d2f83133"
+    },
+    "256": {
+     "file": "/portraits/gabriel-padilla-256.webp",
+     "bytes": 4768,
+     "sha256": "49799dc48db2e57bf5fc9573ad9d4006b465dd43bcce124c21ed2461c6597cad"
     }
    }
   },
@@ -2157,6 +2433,11 @@
      "file": "/portraits/gary-mccoy-160.webp",
      "bytes": 1994,
      "sha256": "bb672ee9f9ec2deab194a777159263c67553d793dc24d2c3c80e7bc81bb37c25"
+    },
+    "256": {
+     "file": "/portraits/gary-mccoy-256.webp",
+     "bytes": 3936,
+     "sha256": "63c59203de4f58f47a0729ab1a71ca431483150994ce312c2a57a7d41d3cd4d7"
     }
    }
   },
@@ -2191,6 +2472,11 @@
      "file": "/portraits/george-morales-iii-160.webp",
      "bytes": 2420,
      "sha256": "4afaa1238d08f6a601c3eb2870e745dc5ab2de755e2051127e0df31a21ac5f72"
+    },
+    "256": {
+     "file": "/portraits/george-morales-iii-256.webp",
+     "bytes": 4692,
+     "sha256": "060ad80376d5b979df3e3c74379fae287a35e162a4b68b988a137fe1de387a5e"
     }
    }
   },
@@ -2225,6 +2511,11 @@
      "file": "/portraits/gigi-edwards-bryant-160.webp",
      "bytes": 1660,
      "sha256": "95447709254808c6e8a5990541fa077b61270a5daeb814ae5ea699d0571eb8c3"
+    },
+    "256": {
+     "file": "/portraits/gigi-edwards-bryant-256.webp",
+     "bytes": 3258,
+     "sha256": "35e709dbe40bb721a694ab6263d4637b5de64eb8d55a557c7f8c373d7cb422dd"
     }
    }
   },
@@ -2259,6 +2550,11 @@
      "file": "/portraits/gina-hinojosa-160.webp",
      "bytes": 2460,
      "sha256": "11dc106c4f9e6a58b0fa14426766df7511dace199ad894974845f4a8a2c5db7b"
+    },
+    "256": {
+     "file": "/portraits/gina-hinojosa-256.webp",
+     "bytes": 4926,
+     "sha256": "c891248250aca7bde672806d11fef252ef4b6b8f86b9bd9a06768d66f153cc95"
     }
    }
   },
@@ -2293,6 +2589,11 @@
      "file": "/portraits/gisela-d-triana-160.webp",
      "bytes": 3440,
      "sha256": "5d0323a1f9baaf7a9fd7da02f0294f6377f1e0b30a6069d45ed72f6919a934eb"
+    },
+    "256": {
+     "file": "/portraits/gisela-d-triana-256.webp",
+     "bytes": 7610,
+     "sha256": "bc45002bbd4d473b95a970efc7b4e05c6411eb714f879a68c7067b29379d7945"
     }
    }
   },
@@ -2327,6 +2628,11 @@
      "file": "/portraits/gloria-gonzales-dholakia-160.webp",
      "bytes": 1836,
      "sha256": "569dbf0683be89527dce483847a20d3b26143af07c6eb2c81a5c59c37c0a0a49"
+    },
+    "256": {
+     "file": "/portraits/gloria-gonzales-dholakia-256.webp",
+     "bytes": 3572,
+     "sha256": "d29d2b1f0041ad3712a6d943471652c0b46f7f844a25db1bb3b28002f96e013e"
     }
    }
   },
@@ -2429,6 +2735,11 @@
      "file": "/portraits/greg-abbott-160.webp",
      "bytes": 2642,
      "sha256": "bc2ba5acb94249787f2a5820c2aa7f5975d74e42e39d8f8789916381155e4590"
+    },
+    "256": {
+     "file": "/portraits/greg-abbott-256.webp",
+     "bytes": 5142,
+     "sha256": "c0d20183825b0f6fb796e569fb6cf42edb8f53dedde31b1785d42132efd818df"
     }
    }
   },
@@ -2463,6 +2774,11 @@
      "file": "/portraits/greg-casar-160.webp",
      "bytes": 3882,
      "sha256": "1f7072ca081b02c3163c7bce6082cd444df163343e59c54ae94652f1ab06721f"
+    },
+    "256": {
+     "file": "/portraits/greg-casar-256.webp",
+     "bytes": 7898,
+     "sha256": "bee40c2c69914b2c5b15ff70b7cc5cc0ae2e2ab133dca814b937912eb7beaa1a"
     }
    }
   },
@@ -2531,6 +2847,11 @@
      "file": "/portraits/herb-w-morgan-160.webp",
      "bytes": 2860,
      "sha256": "ec12a0370db2314ae082ecd91071df79f0e80ac7e1ef262ab5a7f774b6be5dd9"
+    },
+    "256": {
+     "file": "/portraits/herb-w-morgan-256.webp",
+     "bytes": 6314,
+     "sha256": "05bbe4bdafe8ae0f590fe8bc8f55a3a0b4f4969bc4035c2243315f466c872121"
     }
    }
   },
@@ -2565,6 +2886,11 @@
      "file": "/portraits/holly-taylor-160.webp",
      "bytes": 3346,
      "sha256": "7d4689ceda945184fdbbb699da280558228f89d63c3e8a48bcbbe53ee9b8336c"
+    },
+    "256": {
+     "file": "/portraits/holly-taylor-256.webp",
+     "bytes": 7772,
+     "sha256": "08135275048813218c2860f712ffe6d3dc8204634ac521740189a0c4af21a78c"
     }
    }
   },
@@ -2633,6 +2959,11 @@
      "file": "/portraits/j-r-eppler-160.webp",
      "bytes": 2698,
      "sha256": "c77524a12227a44e6f0601e47f478b816d627ae065f000958f3279a9c4832605"
+    },
+    "256": {
+     "file": "/portraits/j-r-eppler-256.webp",
+     "bytes": 5148,
+     "sha256": "57260332c77d6c0f5fbb4356bd28d8185e97731a61ab9fcd1485380d00c99a6f"
     }
    }
   },
@@ -2667,6 +2998,11 @@
      "file": "/portraits/james-p-sullivan-160.webp",
      "bytes": 3106,
      "sha256": "eafbe99de195855e404883e98540d648ec22d1a4066b3592cb3f1f88cc4309cd"
+    },
+    "256": {
+     "file": "/portraits/james-p-sullivan-256.webp",
+     "bytes": 5850,
+     "sha256": "8ca4c6210c8887af008800ed4476ea4ec188433afb497f49215aa0acfe51de7d"
     }
    }
   },
@@ -2701,6 +3037,11 @@
      "file": "/portraits/james-talarico-160.webp",
      "bytes": 3298,
      "sha256": "34ceb7095e7d798c0177e45492d4e8bf81a3ee9d5c500264994691177417e3ba"
+    },
+    "256": {
+     "file": "/portraits/james-talarico-256.webp",
+     "bytes": 7304,
+     "sha256": "bd3f62387e3b2b807f210184eef06306fa09aa11d7aa811bf340f41ec3447281"
     }
    }
   },
@@ -2735,6 +3076,11 @@
      "file": "/portraits/jane-kim-160.webp",
      "bytes": 2330,
      "sha256": "ca3196e0e18f1c30200e11bf5dab2fe312059b448e2d06f7f52f01646ffee562"
+    },
+    "256": {
+     "file": "/portraits/jane-kim-256.webp",
+     "bytes": 4942,
+     "sha256": "723c876197746d4cc03401b3aeb23c27f8585ce64f2ac81e5454dd1aebd38544"
     }
    }
   },
@@ -2769,6 +3115,11 @@
      "file": "/portraits/jennifer-hawks-160.webp",
      "bytes": 2648,
      "sha256": "49655716ab655c2c155f88d8811a5899918a59a66685bd3d0bfed88e07b91d39"
+    },
+    "256": {
+     "file": "/portraits/jennifer-hawks-256.webp",
+     "bytes": 6068,
+     "sha256": "61c1a07ec6cb4178d278a012bd779342bbd0709394cb903699913adcf4a40287"
     }
    }
   },
@@ -2803,6 +3154,11 @@
      "file": "/portraits/jeremy-lee-160.webp",
      "bytes": 4602,
      "sha256": "9371c6f19908ef829308e3c6b80be5ed93dfa2b7bc92dd1685c99c13a941983d"
+    },
+    "256": {
+     "file": "/portraits/jeremy-lee-256.webp",
+     "bytes": 8776,
+     "sha256": "dc813b19e8fb8c87126a56817e868f3687daeebd4d003b4aa862c2f22a274640"
     }
    }
   },
@@ -2837,6 +3193,11 @@
      "file": "/portraits/jerry-zimmerer-160.webp",
      "bytes": 1488,
      "sha256": "920a3660c7a1a42d0f0383741ec6931d2352b051bba3bc10443eea7715aa5e14"
+    },
+    "256": {
+     "file": "/portraits/jerry-zimmerer-256.webp",
+     "bytes": 2872,
+     "sha256": "937ff6d1903c0fe9562980b0a8cad0ecc215d2f38f373e0f3a12b27b9ceb1f08"
     }
    }
   },
@@ -2905,6 +3266,11 @@
      "file": "/portraits/jimmy-blacklock-160.webp",
      "bytes": 1682,
      "sha256": "885c6ed1df10ada72a96fc9af1ac25b5ef9a9827551fa87d0f607ba80268379e"
+    },
+    "256": {
+     "file": "/portraits/jimmy-blacklock-256.webp",
+     "bytes": 3318,
+     "sha256": "f7ac143f56e80eb7c052389d850d6e97425977b5347952ca07f289c0a945af9a"
     }
    }
   },
@@ -2939,6 +3305,11 @@
      "file": "/portraits/joaquin-torres-160.webp",
      "bytes": 2992,
      "sha256": "d828ea2015dfaf9f77b48bfe4e603fb652fb53606fdd1a25b58ac9967a606f38"
+    },
+    "256": {
+     "file": "/portraits/joaquin-torres-256.webp",
+     "bytes": 5802,
+     "sha256": "9c58c2caf58f2e5f7af5b247d108cd669de80d0c12d3128e621de2954f6a5f65"
     }
    }
   },
@@ -2973,6 +3344,11 @@
      "file": "/portraits/john-messinger-160.webp",
      "bytes": 2546,
      "sha256": "a8177b715c1ecfcb67cada37323cdca9947beb400394502c39b2bf6a0342ae94"
+    },
+    "256": {
+     "file": "/portraits/john-messinger-256.webp",
+     "bytes": 5634,
+     "sha256": "e2b1945486205a60dcc959e890a1188655a4ada7d4a2044b6fb189d636d7a0cf"
     }
    }
   },
@@ -3007,6 +3383,11 @@
      "file": "/portraits/john-pimentel-160.webp",
      "bytes": 1826,
      "sha256": "edaee91d3764ee20068d25ddef3fa993483c70103362cc2223cb56a022655260"
+    },
+    "256": {
+     "file": "/portraits/john-pimentel-256.webp",
+     "bytes": 3962,
+     "sha256": "a660f915acca3945bfab4abb2c9a32911a2512c4aa68d65d8feabb3f490ba993"
     }
    }
   },
@@ -3041,6 +3422,11 @@
      "file": "/portraits/jon-rosenthal-160.webp",
      "bytes": 2872,
      "sha256": "d935d543439f8c86945715d38c6b2da6d8468a3cde1a9e3b1da486406b431cf0"
+    },
+    "256": {
+     "file": "/portraits/jon-rosenthal-256.webp",
+     "bytes": 5772,
+     "sha256": "206bdc728e9f1fc03147561e3e599c55703855abc25c359cc046e0811d41bf09"
     }
    }
   },
@@ -3075,6 +3461,11 @@
      "file": "/portraits/joseph-hernandez-160.webp",
      "bytes": 3698,
      "sha256": "a8e3f970afc9775916e49da874a50765e025471448695ee6eee11dfd5389d4f7"
+    },
+    "256": {
+     "file": "/portraits/joseph-hernandez-256.webp",
+     "bytes": 6950,
+     "sha256": "e10eacbf2c4312f24b1562b7abf6051b3144b322e8d6157b275c145adb57ddd1"
     }
    }
   },
@@ -3109,6 +3500,11 @@
      "file": "/portraits/joshua-groban-160.webp",
      "bytes": 2050,
      "sha256": "28675a86e161eb904dcb5501dff8b217195b7e1f9bc06fde08edb2201d453acb"
+    },
+    "256": {
+     "file": "/portraits/joshua-groban-256.webp",
+     "bytes": 3938,
+     "sha256": "d2d7ff71d844dde7ffab7f43572435fe89907b856172514c9c2c65ffc8e10573"
     }
    }
   },
@@ -3143,6 +3539,11 @@
      "file": "/portraits/kai-huang-160.webp",
      "bytes": 3216,
      "sha256": "e1513c28c34b2d2b4b53848657e2823fc2bb614caf5fd54324c08834d860d668"
+    },
+    "256": {
+     "file": "/portraits/kai-huang-256.webp",
+     "bytes": 6342,
+     "sha256": "b8d24e5ee63d62a10b1942b4e619ce72e1906f3c028ae4f06e5f9abf3b20b411"
     }
    }
   },
@@ -3177,6 +3578,11 @@
      "file": "/portraits/karen-ortiz-160.webp",
      "bytes": 1756,
      "sha256": "adff6a91d095d60502f7349e056aebbba4b3d461fe5735d066c9270f90b86c79"
+    },
+    "256": {
+     "file": "/portraits/karen-ortiz-256.webp",
+     "bytes": 3488,
+     "sha256": "f40663927a8000a57e484cb6fcff4c236e4965e45cfc58963032b4e58f1f38da"
     }
    }
   },
@@ -3211,6 +3617,11 @@
      "file": "/portraits/karen-r-sage-160.webp",
      "bytes": 2340,
      "sha256": "dc64244df0e278b68a52de7d6e8e1eb1ff3edd5616af8596436f55ccf7ce6ab1"
+    },
+    "256": {
+     "file": "/portraits/karen-r-sage-256.webp",
+     "bytes": 4222,
+     "sha256": "e8c1fe58b9da74c1219bbed2f9c99c2c839ae166d903092e53ece5bf11c18917"
     }
    }
   },
@@ -3279,6 +3690,11 @@
      "file": "/portraits/kathy-c-hochul-adrienne-e-adams-160.webp",
      "bytes": 4506,
      "sha256": "e367527c1095b8f352f0ab98f36f68b16b61bdbf722b100f7d6de8ab96ad8b9b"
+    },
+    "256": {
+     "file": "/portraits/kathy-c-hochul-adrienne-e-adams-256.webp",
+     "bytes": 9916,
+     "sha256": "d5fc178ea0ffc627808f3c02fa71e8c10cc85aaea82472a4cfa72a83a85261d1"
     }
    }
   },
@@ -3313,6 +3729,11 @@
      "file": "/portraits/katie-kam-160.webp",
      "bytes": 4406,
      "sha256": "b1fba8bf2862ba869a12f6365e0b3847390c03da107e6fbaf99b907bf90a2020"
+    },
+    "256": {
+     "file": "/portraits/katie-kam-256.webp",
+     "bytes": 8844,
+     "sha256": "049880e33d900065e6baba2e4a2c5e7bd6e1274aa97a2f5854303a33f88fa4f0"
     }
    }
   },
@@ -3347,6 +3768,11 @@
      "file": "/portraits/kelli-m-evans-160.webp",
      "bytes": 3596,
      "sha256": "e18612cc81097d38073996c05b3591ed6d890d57ee96872ea17dc7833581d635"
+    },
+    "256": {
+     "file": "/portraits/kelli-m-evans-256.webp",
+     "bytes": 6980,
+     "sha256": "67d421630147ed7132b2c2863a6b86e6c3c78daaa8a80fc9fae6603484301d32"
     }
    }
   },
@@ -3381,6 +3807,11 @@
      "file": "/portraits/ken-paxton-160.webp",
      "bytes": 2814,
      "sha256": "3b2f2de937a6375ad075337981ab8bf2040207de90465528ed2844934539682d"
+    },
+    "256": {
+     "file": "/portraits/ken-paxton-256.webp",
+     "bytes": 7060,
+     "sha256": "128cf67295bf1800e36dc4e26f81b71716cefbb8ebda30c1c4285ed35b814544"
     }
    }
   },
@@ -3415,6 +3846,11 @@
      "file": "/portraits/kennon-lily-wooten-160.webp",
      "bytes": 1484,
      "sha256": "421793782a541403aacac997d272fb311398a9842d853e0fe7a63b4ec093df63"
+    },
+    "256": {
+     "file": "/portraits/kennon-lily-wooten-256.webp",
+     "bytes": 2744,
+     "sha256": "a6f95234c52e9dae7c2853dee84b64ead4880fcdbd61605bd562c2226bca7bc5"
     }
    }
   },
@@ -3449,6 +3885,11 @@
      "file": "/portraits/kevin-mccormick-160.webp",
      "bytes": 2432,
      "sha256": "14fa1ffdf3a4d9e8c467fb41f6993711bdfd944854b0e9c820d76ffa35c0dcb7"
+    },
+    "256": {
+     "file": "/portraits/kevin-mccormick-256.webp",
+     "bytes": 5614,
+     "sha256": "0aab8edcf3a67a23ddcb590aa5f28ca434a35946304a4cc00d7ff65c0b9054cf"
     }
    }
   },
@@ -3483,6 +3924,11 @@
      "file": "/portraits/kevin-patrick-yeary-160.webp",
      "bytes": 3818,
      "sha256": "79691e05777e99f479e5f848703a309a6c2722850972311a045686cfd889ba82"
+    },
+    "256": {
+     "file": "/portraits/kevin-patrick-yeary-256.webp",
+     "bytes": 8602,
+     "sha256": "586808ab1b063db10861e9e55fb4b58ed8a88caf527d5dffbd9ff527cac92dd8"
     }
    }
   },
@@ -3517,6 +3963,11 @@
      "file": "/portraits/kristen-hawkins-160.webp",
      "bytes": 1588,
      "sha256": "80f4bf532d130b5f2395f69b8c744799b8e5b494347cdcd530e44503bedb945a"
+    },
+    "256": {
+     "file": "/portraits/kristen-hawkins-256.webp",
+     "bytes": 3156,
+     "sha256": "46c86020d1c664220f2656927af3b6aa964089c0abeb38cd5ce83fd35aa8a2b0"
     }
    }
   },
@@ -3551,6 +4002,11 @@
      "file": "/portraits/kyle-hawkins-160.webp",
      "bytes": 3578,
      "sha256": "f23cd01862e82e14f60ae59b47cff813339e520a1e227d1ffa40f1ebe4022270"
+    },
+    "256": {
+     "file": "/portraits/kyle-hawkins-256.webp",
+     "bytes": 7360,
+     "sha256": "b014d3289817dd39d76b756d0ce8f5b0503c1455327cd9c81d0e2bd759086579"
     }
    }
   },
@@ -3585,6 +4041,11 @@
      "file": "/portraits/laurance-lee-160.webp",
      "bytes": 3220,
      "sha256": "290da3766a89faec383ba90df980d78393345366447dbe728bba0f753b13980b"
+    },
+    "256": {
+     "file": "/portraits/laurance-lee-256.webp",
+     "bytes": 7068,
+     "sha256": "73f1e6fca0a90c0fc39671b6b7d9757f016c73c910081825cb882a0fcd4d21de"
     }
    }
   },
@@ -3619,6 +4080,11 @@
      "file": "/portraits/lauren-b-pena-160.webp",
      "bytes": 3024,
      "sha256": "bc93388652f139d278f73d125fc52cfffb5069f848056ebe6df3d7404f6b552b"
+    },
+    "256": {
+     "file": "/portraits/lauren-b-pena-256.webp",
+     "bytes": 5420,
+     "sha256": "842746bbf5ae243c8466e36b832b40a8fa479cc9d7fecba38576fae24205af70"
     }
    }
   },
@@ -3653,6 +4119,11 @@
      "file": "/portraits/laurie-eiserloh-160.webp",
      "bytes": 2294,
      "sha256": "001e615ae4668d08c764a3b2d988a81dbd1dd241862c8f791eb7d3e5c43f3086"
+    },
+    "256": {
+     "file": "/portraits/laurie-eiserloh-256.webp",
+     "bytes": 4324,
+     "sha256": "1ee5b4ceff174a6bc413d133af2faf7f18776feb93467f73c2ef2532e65d43d4"
     }
    }
   },
@@ -3687,6 +4158,11 @@
      "file": "/portraits/leah-lacroix-160.webp",
      "bytes": 2874,
      "sha256": "04ffd764bc7fcdff6cae252c6928bc1169a8a544f23cf89139cd0e5c1636ed41"
+    },
+    "256": {
+     "file": "/portraits/leah-lacroix-256.webp",
+     "bytes": 6504,
+     "sha256": "26dbf5f4fbb492f1cecaf27fff66c0cbb4b7bdb67354552808e8d21f98f18599"
     }
    }
   },
@@ -3721,6 +4197,11 @@
      "file": "/portraits/leslie-dippel-160.webp",
      "bytes": 3042,
      "sha256": "747cf793efb9146c2967522872c8924d923d88c8b877970cbfc1b70605e4a5de"
+    },
+    "256": {
+     "file": "/portraits/leslie-dippel-256.webp",
+     "bytes": 6446,
+     "sha256": "1e912f93a31eea55ded7fe94ec7a8f0d1dc5efdc31cbf740a356215f08cb1528"
     }
    }
   },
@@ -3755,6 +4236,11 @@
      "file": "/portraits/letitia-a-james-160.webp",
      "bytes": 3762,
      "sha256": "0b52ca6edda1a41fac53bf4d95c4edc393bf060cecff4e9691c7818eb3e188f1"
+    },
+    "256": {
+     "file": "/portraits/letitia-a-james-256.webp",
+     "bytes": 9580,
+     "sha256": "5b13bb06384e30a59ae04a3c10827c6bc3d014eedb117a4f022400552538b2a9"
     }
    }
   },
@@ -3789,6 +4275,11 @@
      "file": "/portraits/liz-krueger-160.webp",
      "bytes": 3214,
      "sha256": "fba9614506a73fb76a30f8326a24300fb07f22ad1f30a3d1cd8d4c1be9ef0182"
+    },
+    "256": {
+     "file": "/portraits/liz-krueger-256.webp",
+     "bytes": 8308,
+     "sha256": "88aeedeffb9c556021356d24da6a5a054d47feecc8c55bb0af797ba03365ca67"
     }
    }
   },
@@ -3823,6 +4314,11 @@
      "file": "/portraits/maggie-ellis-160.webp",
      "bytes": 3064,
      "sha256": "bc004b4fa07a2b0d362a2a405da60e4954b4424649f3a4da5ac8ba6fdf5916ad"
+    },
+    "256": {
+     "file": "/portraits/maggie-ellis-256.webp",
+     "bytes": 7132,
+     "sha256": "56204be792820355173309dcbae878168b31472ef236736b0db21de427110b9d"
     }
    }
   },
@@ -3857,6 +4353,11 @@
      "file": "/portraits/malia-m-cohen-160.webp",
      "bytes": 3384,
      "sha256": "ea85c0a5a4a1b1fb55d1bafbe224129d0fcc364b4002533df593d785a15ae6d3"
+    },
+    "256": {
+     "file": "/portraits/malia-m-cohen-256.webp",
+     "bytes": 5850,
+     "sha256": "39250cb128c8ed8100aa6f89724fa60ef9034c9f9fefcdab5d799fe136f09f81"
     }
    }
   },
@@ -3891,6 +4392,11 @@
      "file": "/portraits/manohar-raju-160.webp",
      "bytes": 4986,
      "sha256": "6adabd94851b5df9f4483c3c6b587f8288d03abe060c3871d17ac2591a8ecac0"
+    },
+    "256": {
+     "file": "/portraits/manohar-raju-256.webp",
+     "bytes": 13742,
+     "sha256": "1817fa1a507c94ceaeb72468dd56c8d62138b4a51b7c2849990bdbd701af1bc4"
     }
    }
   },
@@ -3925,6 +4431,11 @@
      "file": "/portraits/manuel-j-mendez-160.webp",
      "bytes": 3498,
      "sha256": "ff3737dc91212785b0250442ee380f22d9ef7fb4c6e04e3d659ccfbaf4d8d688"
+    },
+    "256": {
+     "file": "/portraits/manuel-j-mendez-256.webp",
+     "bytes": 6810,
+     "sha256": "e1ce35486ac545a14a96f59f7cef46eb543d58e051d8e6a5165c9eed8e70c631"
     }
    }
   },
@@ -3959,6 +4470,11 @@
      "file": "/portraits/manuel-noris-barrera-160.webp",
      "bytes": 3658,
      "sha256": "3aaef3f619cb9ab1e097f959400f78f222cbedf89dc81f3ea710b46b73e58610"
+    },
+    "256": {
+     "file": "/portraits/manuel-noris-barrera-256.webp",
+     "bytes": 6912,
+     "sha256": "5af214dc2127ca3955f066acf16e1c52f0c6f9d3f7cdabc84a24872a831e2ea7"
     }
    }
   },
@@ -3999,6 +4515,11 @@
      "file": "/portraits/marc-m-meyer-160.webp",
      "bytes": 1672,
      "sha256": "a0af11a82253a301937d73f7a5ec932fbfc888bd2ca3fbad9dcfcaa2d7b655cb"
+    },
+    "256": {
+     "file": "/portraits/marc-m-meyer-256.webp",
+     "bytes": 2962,
+     "sha256": "c38d3bf06123faf3ddb3f08d71e022e8b99e2f7679c135ea0b700a4a723d3d3e"
     }
    }
   },
@@ -4067,6 +4588,11 @@
      "file": "/portraits/mark-ash-160.webp",
      "bytes": 1858,
      "sha256": "ae6e3811b6288c4f0e8df14cc589c92cc9981ad526c40570d3bdc1cd6f5674b8"
+    },
+    "256": {
+     "file": "/portraits/mark-ash-256.webp",
+     "bytes": 4488,
+     "sha256": "c008eac087add5daccd61bf4aa7f9974f40ed0104317678d9b278f22fd1aa856"
     }
    }
   },
@@ -4135,6 +4661,11 @@
      "file": "/portraits/mary-ann-espiritu-160.webp",
      "bytes": 2484,
      "sha256": "a518476026cfbaf0c8ad6c219eb6a8f7dc10e5a341b49b0bb34bb171d464a827"
+    },
+    "256": {
+     "file": "/portraits/mary-ann-espiritu-256.webp",
+     "bytes": 5134,
+     "sha256": "704c0641aa62936cd1879c08c72c5653faed3be8fda2da4584e9c6f04150dad1"
     }
    }
   },
@@ -4169,6 +4700,11 @@
      "file": "/portraits/matt-dorsey-160.webp",
      "bytes": 2418,
      "sha256": "d85980ff70ea5cedb2cbb8a688c2eec4e8cb8eef3729eff993c157592956b745"
+    },
+    "256": {
+     "file": "/portraits/matt-dorsey-256.webp",
+     "bytes": 5496,
+     "sha256": "c49fe97e8d1d26f3d2f4ae749e0d210f497e650fd7d4d68fd22d850a7a561f61"
     }
    }
   },
@@ -4203,6 +4739,11 @@
      "file": "/portraits/matt-haney-160.webp",
      "bytes": 3310,
      "sha256": "6cdb3d6b72f776d24a24fdf33210a11a647ee9fc46509099578a15439157cd34"
+    },
+    "256": {
+     "file": "/portraits/matt-haney-256.webp",
+     "bytes": 6980,
+     "sha256": "d1be5a884ea6a5cef4c0e7520a06acf255c4666d1050ce580e3461c703a5b9ad"
     }
    }
   },
@@ -4237,6 +4778,11 @@
      "file": "/portraits/maya-guerra-gamble-160.webp",
      "bytes": 2118,
      "sha256": "f8a6c88ad2ed56d69617e7d1ca169286850f7baad44ca89787396def196d17c3"
+    },
+    "256": {
+     "file": "/portraits/maya-guerra-gamble-256.webp",
+     "bytes": 3948,
+     "sha256": "8fe49ce4d4c4ec850a4a4d166462eba337770c2b89efb6c2037fbf4375e2f97a"
     }
    }
   },
@@ -4271,6 +4817,11 @@
      "file": "/portraits/mayes-middleton-160.webp",
      "bytes": 2430,
      "sha256": "ce904791773d03c0063d4bbe1c5bbc830a81f920e340843ef930dfc4f1558211"
+    },
+    "256": {
+     "file": "/portraits/mayes-middleton-256.webp",
+     "bytes": 4868,
+     "sha256": "3663530079d8c9160946881463366a78fe3424d3d5c558df944f3599f5afcc9b"
     }
    }
   },
@@ -4305,6 +4856,11 @@
      "file": "/portraits/mica-arellano-160.webp",
      "bytes": 2892,
      "sha256": "3178e439a3b7f6faf4b2e2363d492b2f785cb64efa75aa17f95966706db8fd25"
+    },
+    "256": {
+     "file": "/portraits/mica-arellano-256.webp",
+     "bytes": 6006,
+     "sha256": "449af55ce768807183317dedd0aa96f39dd84b55988e98889abc9e4307fc3a7a"
     }
    }
   },
@@ -4339,6 +4895,11 @@
      "file": "/portraits/micah-c-lasher-160.webp",
      "bytes": 4232,
      "sha256": "25a47ecc23a8fd6180ccb6e0687fb6dd321f91e14d42aac06ea487f5ba9bde40"
+    },
+    "256": {
+     "file": "/portraits/micah-c-lasher-256.webp",
+     "bytes": 8450,
+     "sha256": "8abd3abd4da4ed248aed4b5126d19300f8cc031938bdacac8895a91cf1821c1f"
     }
    }
   },
@@ -4373,6 +4934,11 @@
      "file": "/portraits/michael-e-gates-160.webp",
      "bytes": 2142,
      "sha256": "75e6a4e48fc665ede331f54abc5f984bf63dad7de8bd39205dc200b6d6cedc6f"
+    },
+    "256": {
+     "file": "/portraits/michael-e-gates-256.webp",
+     "bytes": 4290,
+     "sha256": "d4fb7448e765bddbd3f422f82a147a78ac2537efbc68a0c3e990acbae2c94b9a"
     }
    }
   },
@@ -4407,6 +4973,11 @@
      "file": "/portraits/michael-t-nguyen-160.webp",
      "bytes": 3830,
      "sha256": "5c2e8ccaf23c5e2f32f9aff9a200216150d79d5d50a231e6659af00b36b325e0"
+    },
+    "256": {
+     "file": "/portraits/michael-t-nguyen-256.webp",
+     "bytes": 7798,
+     "sha256": "f541fa09e126ca06a5008f034b8999377b0330f215a346b4514ffe127022e75b"
     }
    }
   },
@@ -4475,6 +5046,11 @@
      "file": "/portraits/monique-langhorne-wilson-160.webp",
      "bytes": 1886,
      "sha256": "cb0e9f70539a686a231e93fc16c6180a053673a53eb1615fbfec977072208cee"
+    },
+    "256": {
+     "file": "/portraits/monique-langhorne-wilson-256.webp",
+     "bytes": 4124,
+     "sha256": "4a06174e7f575c5a60b657fcdf7227a650a52584474f4ddfb452464add641316"
     }
    }
   },
@@ -4509,6 +5085,11 @@
      "file": "/portraits/monroe-lace-160.webp",
      "bytes": 4198,
      "sha256": "1fcbc1840f7921a78ccc1ea27135050bc1b5a9cb9e6db28ee693b75bbab4f987"
+    },
+    "256": {
+     "file": "/portraits/monroe-lace-256.webp",
+     "bytes": 7644,
+     "sha256": "8d91b12729284667a58e95d2bc0d120b9051f3208dbf39c12b845df03751f234"
     }
    }
   },
@@ -4543,6 +5124,11 @@
      "file": "/portraits/montserrat-garibay-160.webp",
      "bytes": 1694,
      "sha256": "06d5c19b5204c1bb37eba2e52a968ad20c8fc85ff63965e78fbffc7c335792b9"
+    },
+    "256": {
+     "file": "/portraits/montserrat-garibay-256.webp",
+     "bytes": 3162,
+     "sha256": "9bbb05a43545c8ed7ac40b89eb11aa07563d913ab356dffaa2c18bdc7c5c116c"
     }
    }
   },
@@ -4577,6 +5163,11 @@
      "file": "/portraits/nan-mcraven-160.webp",
      "bytes": 3054,
      "sha256": "f5f792c594c59149fc9a1080073e796f7ced77c132f8c91d002aeabcd3756ab6"
+    },
+    "256": {
+     "file": "/portraits/nan-mcraven-256.webp",
+     "bytes": 6352,
+     "sha256": "375857111cd1d52ec7f298606d6dab2caeca4b581d3923e4daace1417fc110e3"
     }
    }
   },
@@ -4645,6 +5236,11 @@
      "file": "/portraits/nathan-johnson-160.webp",
      "bytes": 3576,
      "sha256": "981b4dcb354e2fbeafa515a1d7aa29b45a6d8b89f7ff5a728b6170825a236a35"
+    },
+    "256": {
+     "file": "/portraits/nathan-johnson-256.webp",
+     "bytes": 7328,
+     "sha256": "aaa727e1441a595396c9f39bd0774128e281a0c241203a20e9b17f4fdbca797b"
     }
    }
   },
@@ -4679,6 +5275,11 @@
      "file": "/portraits/neill-snider-160.webp",
      "bytes": 3944,
      "sha256": "3b6f1aefdb3e9ffe1ff102e1f68aec63585a02cf2eac723d9c5cc9cc153d2082"
+    },
+    "256": {
+     "file": "/portraits/neill-snider-256.webp",
+     "bytes": 8484,
+     "sha256": "593b931e78fadb762f0ea91ce66e5c041d60e259ac043541ee51c7ccc70d436f"
     }
    }
   },
@@ -4713,6 +5314,11 @@
      "file": "/portraits/okey-anyiam-160.webp",
      "bytes": 2130,
      "sha256": "b8e9309920f6a619e8ea8771fd74fd32df8e9a75c788cd1498b8c8a92e33c82c"
+    },
+    "256": {
+     "file": "/portraits/okey-anyiam-256.webp",
+     "bytes": 4706,
+     "sha256": "f1159b4394b5061e523c2f5a23f7f07799e6a932b25919bcb9f07c9730c92c22"
     }
    }
   },
@@ -4747,6 +5353,11 @@
      "file": "/portraits/pamela-mathai-160.webp",
      "bytes": 2550,
      "sha256": "6fb7809f5869821fef6f47b35be38bbc880b8e965a11958bc2cd38f866f6a978"
+    },
+    "256": {
+     "file": "/portraits/pamela-mathai-256.webp",
+     "bytes": 4920,
+     "sha256": "2885d4654dd022013e074d74f042ffe283c1e20e91cec8d3b7a4b1a4f094b709"
     }
    }
   },
@@ -4781,6 +5392,11 @@
      "file": "/portraits/pat-dixon-160.webp",
      "bytes": 3276,
      "sha256": "a6052cf7be6a688f567e4cf6b50990bfb4664124afe7ec0eda3772af2d78bc0c"
+    },
+    "256": {
+     "file": "/portraits/pat-dixon-256.webp",
+     "bytes": 8548,
+     "sha256": "ec508379f996d84daf6169c38381b1868e6610f5471452f3250e7596a8a3a4ef"
     }
    }
   },
@@ -4855,6 +5471,11 @@
      "file": "/portraits/phil-kim-160.webp",
      "bytes": 1508,
      "sha256": "eaad4431710776a49bb078d50932d8ff68d8d76155ae912675f3c6cc3a60352c"
+    },
+    "256": {
+     "file": "/portraits/phil-kim-256.webp",
+     "bytes": 2718,
+     "sha256": "a56ad75c0945001c3187c1883a566d9479f5c42dc99f52fd0280f3d0953457d6"
     }
    }
   },
@@ -4923,6 +5544,11 @@
      "file": "/portraits/reina-tello-160.webp",
      "bytes": 3564,
      "sha256": "f97696787e8f5d57fbecbec515141aec43499cb0474ef04144c1189dbabf176a"
+    },
+    "256": {
+     "file": "/portraits/reina-tello-256.webp",
+     "bytes": 6902,
+     "sha256": "0ba23597f2510d9304fe57d0cafd4103584e7fb20ff20f8a939e5da2b380a858"
     }
    }
   },
@@ -4957,6 +5583,11 @@
      "file": "/portraits/rich-heyman-160.webp",
      "bytes": 4168,
      "sha256": "6c6352a00eec185722b36adb79fc7b462ad65476a0d05a81b71fbae4d4901933"
+    },
+    "256": {
+     "file": "/portraits/rich-heyman-256.webp",
+     "bytes": 8756,
+     "sha256": "5ad0dc7d5ef4b1ebe35c1b4467c0d1f7a358d8925ec088c789ba1457c4226446"
     }
    }
   },
@@ -4991,6 +5622,11 @@
      "file": "/portraits/richard-barrera-160.webp",
      "bytes": 3886,
      "sha256": "70c4f5725b428d981b4e54cc4962dbf1cafdbb39a4c6b93991eddb33e2ca88e4"
+    },
+    "256": {
+     "file": "/portraits/richard-barrera-256.webp",
+     "bytes": 7986,
+     "sha256": "03e4dadde92a57a5d85ea421645f5689c71feb13770f80f7253eddae8cb90b65"
     }
    }
   },
@@ -5025,6 +5661,11 @@
      "file": "/portraits/rob-bonta-160.webp",
      "bytes": 2562,
      "sha256": "a0a82417838f5c1a30288a86133f90b2bace6efb802d15574e987dfd09f7a702"
+    },
+    "256": {
+     "file": "/portraits/rob-bonta-256.webp",
+     "bytes": 5858,
+     "sha256": "d7dd362b8b50e199ffb538567736b0f1feca265df5eb786778fea45ae729724e"
     }
    }
   },
@@ -5059,6 +5700,11 @@
      "file": "/portraits/ruth-ferguson-160.webp",
      "bytes": 4088,
      "sha256": "558c54e8f4cd7e5b2ecfe752e88f979b2f82da8f581262c4d4dd3e6d839db18f"
+    },
+    "256": {
+     "file": "/portraits/ruth-ferguson-256.webp",
+     "bytes": 8584,
+     "sha256": "d8fa325675fe23aaa4d6df6ab79487989cea1a06fc2969c7ce283a0cabc995e2"
     }
    }
   },
@@ -5093,6 +5739,11 @@
      "file": "/portraits/ryan-hazelton-160.webp",
      "bytes": 5464,
      "sha256": "448e0ff3ed817d37aeb5c89cd4361d28ec22429476ca2443dc34b3cfad3129fd"
+    },
+    "256": {
+     "file": "/portraits/ryan-hazelton-256.webp",
+     "bytes": 11742,
+     "sha256": "b45df58b7b5871b8090f7a36a79f0ca6ca1065ded975a145272349a446487aa4"
     }
    }
   },
@@ -5161,6 +5812,11 @@
      "file": "/portraits/sally-j-lieber-160.webp",
      "bytes": 3012,
      "sha256": "7f800b281afb50b63ba47ce43400dbd7e1f01796f50039ddd4b34826603dfe27"
+    },
+    "256": {
+     "file": "/portraits/sally-j-lieber-256.webp",
+     "bytes": 8558,
+     "sha256": "506de5420d4643c42a8187954c792163e9cedd938efc7ac0d0a138279ffdf25c"
     }
    }
   },
@@ -5195,6 +5851,11 @@
      "file": "/portraits/sarah-eckhardt-160.webp",
      "bytes": 3732,
      "sha256": "74ef332c973e6f97d8d416a3b84d5e792e4c7d2313b96aae0cf23d8b555cd0bd"
+    },
+    "256": {
+     "file": "/portraits/sarah-eckhardt-256.webp",
+     "bytes": 7954,
+     "sha256": "323aed295c09a9e6cc79c2a44a8458658354fe61daa0079fcd4a6fedbc210100"
     }
    }
   },
@@ -5229,6 +5890,11 @@
      "file": "/portraits/saritha-komatireddy-160.webp",
      "bytes": 2178,
      "sha256": "78f53b07172c8e1b605891d46d79c1ce107f1e133a6f8854140e46606ef6a79a"
+    },
+    "256": {
+     "file": "/portraits/saritha-komatireddy-256.webp",
+     "bytes": 4150,
+     "sha256": "9842422229837e90c74bd4a58087c1e7e62d808641b531c2f81b342a7e0b0e9e"
     }
    }
   },
@@ -5263,6 +5929,11 @@
      "file": "/portraits/scott-brister-160.webp",
      "bytes": 2504,
      "sha256": "df79143e3c526c15c79ff4e87d7fcc5cc89dfea4da59effd6079822248cd7969"
+    },
+    "256": {
+     "file": "/portraits/scott-brister-256.webp",
+     "bytes": 5138,
+     "sha256": "0db396a1c9bf5d559c6e433cf9b289a41822f0517c56b6cdb82c0b1a2defde10"
     }
    }
   },
@@ -5331,6 +6002,11 @@
      "file": "/portraits/scott-wiener-160.webp",
      "bytes": 2746,
      "sha256": "5c782ccfd66e4f0d93813a099a6e41da99c7dfb7d8d304e131177a46ffaf1d47"
+    },
+    "256": {
+     "file": "/portraits/scott-wiener-256.webp",
+     "bytes": 5600,
+     "sha256": "ef407236c1ee840f133104f57e56cee5981cc2d346a59e16f08e498841087d51"
     }
    }
   },
@@ -5365,6 +6041,11 @@
      "file": "/portraits/shawn-m-richard-160.webp",
      "bytes": 4178,
      "sha256": "c6f0982820890caf29706fd3d239fcf9184d4769ea2ef0e18b6eca978215e8f8"
+    },
+    "256": {
+     "file": "/portraits/shawn-m-richard-256.webp",
+     "bytes": 9630,
+     "sha256": "3a44cc523e5da4e2fcb8d674f6ee9a22a3043a0353d03a8393fef3d5057bf7d6"
     }
    }
   },
@@ -5399,6 +6080,11 @@
      "file": "/portraits/shehla-faizi-160.webp",
      "bytes": 6664,
      "sha256": "17a2d943178bb54c5da6ff68e6791e50ecccf77b170a61a53f72a113f70acb6d"
+    },
+    "256": {
+     "file": "/portraits/shehla-faizi-256.webp",
+     "bytes": 13806,
+     "sha256": "11945821ab720d0541fd40ec302572b2a3087191c73d5aeaf8f0ea85889960bf"
     }
    }
   },
@@ -5433,6 +6119,11 @@
      "file": "/portraits/shirley-n-weber-160.webp",
      "bytes": 2900,
      "sha256": "0c5f884184cd4dd77d5770b76b88c28c52c05e10afeca65c20e3af9196eba670"
+    },
+    "256": {
+     "file": "/portraits/shirley-n-weber-256.webp",
+     "bytes": 6742,
+     "sha256": "0cad585a17a820a938bd30c85642af0629c8496088f347ce2fae55722f4acbbe"
     }
    }
   },
@@ -5467,6 +6158,11 @@
      "file": "/portraits/skyler-a-korgel-160.webp",
      "bytes": 1950,
      "sha256": "db96d92a070d42286b3b5942c4a8720662025cdd16ffc1880226f0d141c181a2"
+    },
+    "256": {
+     "file": "/portraits/skyler-a-korgel-256.webp",
+     "bytes": 3970,
+     "sha256": "37767c74056b121a89353c24e67b717797d5f3648d8fe1317a6f13ba1c2cd86d"
     }
    }
   },
@@ -5501,6 +6197,11 @@
      "file": "/portraits/sonja-shaw-160.webp",
      "bytes": 3618,
      "sha256": "c560bf986ce2334a64ed8be6ed7780ac889c91806b2c6d5307ecec25d3cfd533"
+    },
+    "256": {
+     "file": "/portraits/sonja-shaw-256.webp",
+     "bytes": 7086,
+     "sha256": "7e1b65c29f01a5d42a1bff34a708cbed3850e05beabb7771a454e22c87047486"
     }
    }
   },
@@ -5535,6 +6236,11 @@
      "file": "/portraits/steve-hilton-160.webp",
      "bytes": 2394,
      "sha256": "575f435252e245636ad8ab258396918ebedd6b26eb20a2829a0f307fe72f2b3a"
+    },
+    "256": {
+     "file": "/portraits/steve-hilton-256.webp",
+     "bytes": 4694,
+     "sha256": "d2cddfd51bbab1ca94b4ef47a728c98dfb723b709ca95e9070b8036c93f78819"
     }
    }
   },
@@ -5603,6 +6309,11 @@
      "file": "/portraits/tanisa-jeffers-160.webp",
      "bytes": 2688,
      "sha256": "f7a9a91a14671a2d3303a8b852c4336ae6d9537e314ebe9728fb31875dfe1513"
+    },
+    "256": {
+     "file": "/portraits/tanisa-jeffers-256.webp",
+     "bytes": 5246,
+     "sha256": "cdf1f82cef94d7d3bfdfd7a230e7ceed23127478e1e4f3f047dc850ed9788798"
     }
    }
   },
@@ -5637,6 +6348,11 @@
      "file": "/portraits/tara-m-desautels-160.webp",
      "bytes": 2730,
      "sha256": "5f216953814e822df879c14d04e4fa3f9fd7c811838ded34065277c31578b43e"
+    },
+    "256": {
+     "file": "/portraits/tara-m-desautels-256.webp",
+     "bytes": 6040,
+     "sha256": "8a8df57ed7b7eae74caf4ba666c8c25a0b2b3a858aef188340b76fd956a81059"
     }
    }
   },
@@ -5671,6 +6387,11 @@
      "file": "/portraits/ted-brown-160.webp",
      "bytes": 1596,
      "sha256": "c40eabd52f2c740c0fbea2d2c1aeee3cd3de43d7cd207aa4cae2d7071b507216"
+    },
+    "256": {
+     "file": "/portraits/ted-brown-256.webp",
+     "bytes": 3186,
+     "sha256": "1975ea6fbee98b825137712e97b5ac1f43c81aeb6b8b9212f0adec81d202e213"
     }
    }
   },
@@ -5705,6 +6426,11 @@
      "file": "/portraits/theo-ellington-160.webp",
      "bytes": 3874,
      "sha256": "28deca3be183f9de88b3bb387c5f375c0f64d17d4c01fdc268a58388c8f491ed"
+    },
+    "256": {
+     "file": "/portraits/theo-ellington-256.webp",
+     "bytes": 8084,
+     "sha256": "3f10f732d6557af8aab47b0564b907f71f0e9547b38640a15900002b1132bf4a"
     }
    }
   },
@@ -5773,6 +6499,11 @@
      "file": "/portraits/thomas-p-dinapoli-160.webp",
      "bytes": 4082,
      "sha256": "aacdd770396515a2076dfef83706656a01bb4fdd2ee70a8a45aefe2cede02956"
+    },
+    "256": {
+     "file": "/portraits/thomas-p-dinapoli-256.webp",
+     "bytes": 8482,
+     "sha256": "f07cd67948ac95b3f75da206fa5653f79a5a2b3272f32ad60fd50f85380a87a0"
     }
    }
   },
@@ -5807,6 +6538,11 @@
      "file": "/portraits/thomas-smith-160.webp",
      "bytes": 1800,
      "sha256": "25c519e75e48af8628e217d209376de8d92a0cd083af1bfc7179fbb1b9b12f86"
+    },
+    "256": {
+     "file": "/portraits/thomas-smith-256.webp",
+     "bytes": 3542,
+     "sha256": "60e6a997fb0dc67712ed5711d5242062169fbae7ef6bc00bcc98e0e97671c4ff"
     }
    }
   },
@@ -5841,6 +6577,11 @@
      "file": "/portraits/tim-tung-160.webp",
      "bytes": 2846,
      "sha256": "de67c648b0546d9c21e2261fbfa6ffdebb64ec8c3ea2aa7cbca3dd8962d35d31"
+    },
+    "256": {
+     "file": "/portraits/tim-tung-256.webp",
+     "bytes": 6470,
+     "sha256": "9769897a5d2db130e597a19c532da4310cb5b74fd346379703b3191dfbfb9391"
     }
    }
   },
@@ -5875,6 +6616,11 @@
      "file": "/portraits/todd-hood-160.webp",
      "bytes": 2536,
      "sha256": "f93b226c5a8a443d752c49cbf9cf1b38ece568753dd8efd8d441e6b836568abe"
+    },
+    "256": {
+     "file": "/portraits/todd-hood-256.webp",
+     "bytes": 5184,
+     "sha256": "be070ac398b80b1e331b15c1a0e925a32ef55721a2a6e3d371fbd4edb767586c"
     }
    }
   },
@@ -5909,6 +6655,11 @@
      "file": "/portraits/todd-wong-160.webp",
      "bytes": 2064,
      "sha256": "1cbdb98beab4a5e430cb18990293c3875e23c731bc90f00aa20753185a0a51f8"
+    },
+    "256": {
+     "file": "/portraits/todd-wong-256.webp",
+     "bytes": 3766,
+     "sha256": "94a70e001a174dfb11dc515fdb6275afeadf3fc12432973000dfed593b7bf977"
     }
    }
   },
@@ -5943,6 +6694,11 @@
      "file": "/portraits/tom-baker-160.webp",
      "bytes": 2112,
      "sha256": "ced8ac5ae0aff48a1f691cddfc4b7d32a409362cf899971dbfb562e7d40a671d"
+    },
+    "256": {
+     "file": "/portraits/tom-baker-256.webp",
+     "bytes": 4070,
+     "sha256": "2696bf7e41362849038e541fd3b4b02200025932b38e9178930dbb839fa22128"
     }
    }
   },
@@ -5977,6 +6733,11 @@
      "file": "/portraits/tony-simone-160.webp",
      "bytes": 3564,
      "sha256": "2a5e76c4cbd1f35b541d63064b824f3b9efecaa0955d4f13ded714e268ee25ea"
+    },
+    "256": {
+     "file": "/portraits/tony-simone-256.webp",
+     "bytes": 6914,
+     "sha256": "41fb1052ea49b109fff38bfe024cb64ed9435e6fec52ab76086c9cf01ad02835"
     }
    }
   },
@@ -6045,6 +6806,11 @@
      "file": "/portraits/trevor-hale-160.webp",
      "bytes": 2116,
      "sha256": "0534d7900ff31dfac42f4e54a986762a6a2ee64dcdfdfc2a2a93f1438fe72421"
+    },
+    "256": {
+     "file": "/portraits/trevor-hale-256.webp",
+     "bytes": 4996,
+     "sha256": "e152836de015ce7e1c50a968299f38aef1e4fa040d103e1fd4a4280f71de535e"
     }
    }
   },
@@ -6113,6 +6879,11 @@
      "file": "/portraits/victor-a-rodriguez-160.webp",
      "bytes": 1986,
      "sha256": "0b6f3d151f39148f52bdf563067ec25b56aa822a3c38dc8eb4b38ce1a762057e"
+    },
+    "256": {
+     "file": "/portraits/victor-a-rodriguez-256.webp",
+     "bytes": 3904,
+     "sha256": "6145bc27bfb53c4f00a853ced3d2b788b9730c758862b627a6090e303602feef"
     }
    }
   },
@@ -6153,6 +6924,11 @@
      "file": "/portraits/vikki-goodwin-160.webp",
      "bytes": 1704,
      "sha256": "a005db7b9b0febb6d8e3b585fa58bcc8bff6808cff472c1b5a082e773debc09e"
+    },
+    "256": {
+     "file": "/portraits/vikki-goodwin-256.webp",
+     "bytes": 3298,
+     "sha256": "579c3bebebd9a12d6cf841cfa031d1b935d56ae44ddab6a553c509d4fc35c2b2"
     }
    }
   },
@@ -6187,6 +6963,11 @@
      "file": "/portraits/virginia-cheung-160.webp",
      "bytes": 2720,
      "sha256": "84678fd42fc3c3537367ec2022555a592f61335704ca80c1071aa9974b47174b"
+    },
+    "256": {
+     "file": "/portraits/virginia-cheung-256.webp",
+     "bytes": 5196,
+     "sha256": "95f58a08e419c5f695e15fa2b05336947cb2052b0435f9bc6a9b29431ac1a58a"
     }
    }
   },
@@ -6221,6 +7002,11 @@
      "file": "/portraits/vlad-frants-160.webp",
      "bytes": 3246,
      "sha256": "e54ddccb7c1e5e48f10d547880f07c09b5745343b1e9c536fcf1ed63145c817f"
+    },
+    "256": {
+     "file": "/portraits/vlad-frants-256.webp",
+     "bytes": 5988,
+     "sha256": "1f82c9f1f49af356c6f790cb80351b42f56b5db4868cc0de196d88c18dfc6e81"
     }
    }
   },
@@ -6255,6 +7041,11 @@
      "file": "/portraits/wilneida-negron-160.webp",
      "bytes": 2916,
      "sha256": "dfaf583585f91d45ae5f61cc1c254e2851f3c20e7206333b4001e8d4b5fdf9a5"
+    },
+    "256": {
+     "file": "/portraits/wilneida-negron-256.webp",
+     "bytes": 5320,
+     "sha256": "c5aeb2ae9923a399a1707ab9afd31f4e6389f9830543b3e8cff238cdc4c50f70"
     }
    }
   },
@@ -6289,6 +7080,11 @@
      "file": "/portraits/xavier-becerra-160.webp",
      "bytes": 3524,
      "sha256": "3d14f4850bc3c3c38d2cbfbd4eada3524ef15a8190c8162dff5aa3a6bc151585"
+    },
+    "256": {
+     "file": "/portraits/xavier-becerra-256.webp",
+     "bytes": 7364,
+     "sha256": "574ea29134fb153298c629202fce5261a1e317d995bb0577f23f63bc1f568456"
     }
    }
   },
@@ -6323,6 +7119,11 @@
      "file": "/portraits/yvonne-munoz-160.webp",
      "bytes": 1926,
      "sha256": "ba09065c2646cca42f3cdbed9bf81d2b1c73a2b970489c872f53d3514409e26f"
+    },
+    "256": {
+     "file": "/portraits/yvonne-munoz-256.webp",
+     "bytes": 3674,
+     "sha256": "225e7a2ce2a2e4f6139348109b9d4a7ca7977adc5ab5f7dd647a4e09e6a3aff8"
     }
    }
   },
@@ -6357,6 +7158,11 @@
      "file": "/portraits/zohaib-zo-qadri-160.webp",
      "bytes": 3194,
      "sha256": "78c8598a370f1c3b3a2bef224a5eacbb52587d891801641e0d6ed82d94866287"
+    },
+    "256": {
+     "file": "/portraits/zohaib-zo-qadri-256.webp",
+     "bytes": 6412,
+     "sha256": "d189116c1a17f7c7dc0a968766736ff9c732ed1ad4e91d7e694dc6ccc93d8fe0"
     }
    }
   }

@@ -1,6 +1,6 @@
 "use client";
 // Design p10 P1 (Who lines up, under 768px): each race folds to its title plus one line per candidate (every candidate
-// is named, in ballot order); the full rows, grades with their label, sources and the research button open below.
+// is named, in ballot-data order); the full rows, grades with their label, sources and the research button open below.
 // At 768px and up the fold starts open, so desktop is unchanged.
 import { useEffect, useState, type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";

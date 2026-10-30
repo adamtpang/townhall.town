@@ -9,10 +9,10 @@ import { correctedIssue } from "../lib/oneIssue";
 import P from "../data/photos.json";
 const src = (f: string) => fs.readFileSync(f, "utf8");
 describe("p11 + QA fb66b9b", () => {
-  it("#1 item and tile are separate: item max 56/64px, tile max 40px centred, label centred and truncated", () => {
+  it("#1 Design p10 (Adam 1:11 PM Oct 30: bigger): the item is the tile, 72/88/112px max, label centred at tile width", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toContain('"max-w-[80px] lg:max-w-[96px]"'); // widened in round 0222 (QA #6, 384px)
-    expect(s).toContain('"max-w-[40px] md:max-w-[48px] lg:max-w-[56px]"');
+    expect(s).toContain("[--tile-max:120px] md:gap-3 md:[--tile-max:140px] lg:gap-4 lg:[--tile-max:160px]");
+    expect(s).not.toContain('"max-w-[40px] md:max-w-[48px] lg:max-w-[56px]"');
     expect(s).toMatch(/relative mx-auto aspect-square w-full/);
     expect(s).not.toMatch(/md:text-left/);
   });

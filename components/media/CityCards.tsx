@@ -21,45 +21,57 @@ function open(e: React.MouseEvent<HTMLAnchorElement>, zip: string) {
   window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
 }
 
+// Adam 2:56 PM CT (Oct 30): the city choice sits at the top, 3 across at every width (no scroller, no mask).
+// Design landing spec P0-6 (3:03 PM): 106px 4:5 cards at 390, 384x216 at 1440; internal links, so no arrow. The
+// credits don't fit under a 106px card, so they move unchanged into one trust line under the row (no credits page).
+function Credit({ c }: { c: City }) {
+  return (
+    <span className="[overflow-wrap:anywhere]">
+      <span className="sr-only">{c.name}: </span>Photo: {c.author},{" "}
+      {c.licenseUrl ? (
+        <a href={c.licenseUrl} target="_blank" rel="noreferrer" aria-label={`${c.name} photo license: ${c.license} (opens in a new tab)`} className="th-link inline-flex min-h-11 items-center">{c.license}</a>
+      ) : (
+        c.license
+      )}
+    </span>
+  );
+}
+
 export default function CityCards() {
   return (
-    <ul className="-mr-6 flex snap-x snap-mandatory gap-3 overflow-x-auto pr-6 md:mr-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pr-0" data-city-cards>
-      {CITIES.map((c) => (
-        <li key={c.zip} className="th-card relative flex-[0_0_72%] snap-start md:flex-auto">
-          <div className="duo aspect-[4/5] bg-brand-50">
-            <img
-              src={`/media/${c.img}-600.webp`}
-              srcSet={`/media/${c.img}-600.webp 600w, /media/${c.img}-960.webp 960w`}
-              sizes="(min-width: 768px) 22vw, 72vw"
-              alt={c.alt}
-              loading="lazy"
-              decoding="async"
-              width={600}
-              height={750}
-            />
-          </div>
-          <a
-            href={`/?zip=${c.zip}`}
-            onClick={(e) => open(e, c.zip)}
-            className="mt-3 flex min-h-11 items-center gap-2 text-xl leading-[26px] font-[530] text-ink no-underline after:absolute after:inset-0 after:content-[''] hover:text-ink md:text-2xl md:leading-[30px]"
-            data-city-zip={c.zip}
-          >
-            {c.name}
-            <span className="text-brand-700" aria-hidden="true">↗</span>
-          </a>
-          <p className="text-sm leading-5 text-ink/60">{c.zip} · {c.county}</p>
-          <p className="text-sm leading-5 text-ink/60">
-            Photo: {c.author},{" "}
-            {c.licenseUrl ? (
-              <>
-                <a href={c.licenseUrl} target="_blank" rel="noreferrer" className="th-link relative z-[1]">{c.license}<span className="sr-only"> (opens in a new tab)</span></a>, modified (duotone)
-              </>
-            ) : (
-              c.license
-            )}
-          </p>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="grid grid-cols-3 gap-4 lg:grid-cols-12 lg:gap-6" data-city-cards>
+        {CITIES.map((c) => (
+          <li key={c.zip} className="th-card relative min-w-0 lg:col-span-4">
+            <div className="media-frame aspect-[4/5] bg-brand-50 lg:aspect-video">
+              <img
+                src={`/media/${c.img}-600.webp`}
+                srcSet={`/media/${c.img}-600.webp 600w, /media/${c.img}-960.webp 960w`}
+                sizes="(min-width: 1024px) 384px, 30vw"
+                alt={c.alt}
+                loading="lazy"
+                decoding="async"
+                width={600}
+                height={750}
+              />
+            </div>
+            <a
+              href={`/?zip=${c.zip}`}
+              onClick={(e) => open(e, c.zip)}
+              className="mt-2 flex min-h-11 items-center text-base leading-5 font-[530] tracking-[-0.02em] text-ink no-underline after:absolute after:inset-0 after:content-[''] hover:text-ink lg:mt-3 lg:text-2xl lg:leading-[30px]"
+              data-city-zip={c.zip}
+            >
+              {c.name}
+            </a>
+            <p className="text-sm leading-5 text-ink/60 max-lg:sr-only">{c.zip} · {c.county}</p>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 flex flex-wrap items-center gap-x-2 text-sm leading-5 text-ink/60" data-city-credit>
+        {CITIES.map((c, i) => (
+          <span key={c.zip} className="contents">{i > 0 && <span aria-hidden="true">·</span>}<Credit c={c} /></span>
+        ))}
+      </p>
+    </>
   );
 }

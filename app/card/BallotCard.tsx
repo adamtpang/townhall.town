@@ -19,13 +19,14 @@ import { LangProvider, LangToggle, useT } from "../../lib/i18n";
 import { ChevronDown } from "lucide-react";
 import { FOLD_LABEL, FOLD_LINKS, WAIT_LINK, linkHost } from "../../lib/cardLinks";
 import { DaggerTitle } from "./PrintBallot";
+import type { OrderLine } from "../../lib/types";
 
 const ANSWERS_KEY = "th-answers-v1";
 /** Picks per ZIP ({raceId: candidate name}), this device only (Plan.tsx key). */
 const PICKS_KEY = "townhall.picks.v1";
 const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
 const fmt = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
-type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; meta?: unknown; candidates: RowCand[] };
+type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; meta?: unknown; order?: OrderLine | null; candidates: RowCand[] };
 
 /** One printable page: overlap lines (not a recommendation), where, when, calendar. State is the URL hash or this device only. */
 export default function BallotCard(props: { zip: string; place: string; county?: string | null; ids: string[]; races: RaceLite[]; print?: PrintData }) {
@@ -169,8 +170,9 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
                   {splitP(r.id, rows.map((x) => x.r.id))}
                   <p className="text-base font-[530]">{r.title || r.id}</p>
+                  {r.order ? <p className="max-w-[60ch] mt-1 text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} cut />)}
+                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} cut avatar="lg" />)}
                   </ul>
                   <RaceFooter cands={list.map(({ c }) => c)} gradesHidden={null} /></PhotoGroup>
                 </li>

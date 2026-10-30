@@ -34,8 +34,11 @@ describe("p15 #2: Papari cropped to his head", () => {
 });
 
 describe("p15 #3: sizes attribute", () => {
-  it("40px under 1024px, 56px from 1024 up", () => {
-    expect(P).toContain('sizes: "(max-width: 1023px) 40px, 56px"');
+  it("40px under 1024px, 56px from 1024 up by default; row tiles 72/88/112px and the card avatar 96/128px (Adam 1:11 PM Oct 30: bigger)", () => {
+    expect(P).toContain('sizes = "(max-width: 1023px) 40px, 56px"');
+    expect(P).toContain("${p.url256} 256w");
+    expect(fs.readFileSync("components/PortraitRow.tsx", "utf8")).toContain('ROW_SIZES = "(max-width: 767px) 120px, (max-width: 1023px) 140px, 160px"');
+    expect(fs.readFileSync("components/CandidateRow.tsx", "utf8")).toContain('"(max-width: 1023px) 96px, 128px"');
     expect(P).not.toContain('sizes: "56px"');
   });
 });

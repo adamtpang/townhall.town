@@ -99,7 +99,8 @@ describe("P1-3 /card and P2 short viewports", () => {
     const page = src("app/card/page.tsx");
     expect(page).toMatch(/import TownyFab from "\.\.\/\.\.\/components\/towny\/TownyFab"/);
     expect(page).toMatch(/<TownyFab zip=\{zip\} \/>/);
-    expect(page).toMatch(/if \(!zip \|\| !b\) redirect\("\/"\)/);
+    // batch1 (Adam 2:58 C): a hidden ZIP like 77002 goes back to /?zip=77002 for the notice; no ZIP goes to "/".
+    expect(page).toMatch(/if \(!zip \|\| !b\) redirect\(zip \? `\/\?zip=\$\{zip\}` : "\/"\)/);
     const fab = src("components/towny/TownyFab.tsx");
     expect(fab).toMatch(/data-towny-fab[\s\S]*print:hidden/);
   });

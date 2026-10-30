@@ -1,0 +1,2832 @@
+[
+ {
+  "candidate": "James Talarico",
+  "party": "Democratic",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "housing",
+  "value": 4,
+  "quote": "I’ll continue lowering costs by cutting red tape so we can build more homes",
+  "current_source_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "James Talarico",
+  "party": "Democratic",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 4,
+  "quote": "restore the ACA Tax Credits",
+  "current_source_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "James Talarico",
+  "party": "Democratic",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -3,
+  "quote": "I am proposing a cost-of-living tax cut",
+  "current_source_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "James Talarico",
+  "party": "Democratic",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "education",
+  "value": -5,
+  "quote": "I'm committed to strengthening our schools and fighting back against a national voucher scam that will defund schools to subsidize private education for the wealthiest.",
+  "current_source_url": "https://ballotpedia.org/James_Talarico",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "James Talarico",
+  "party": "Democratic",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "wages",
+  "value": 4,
+  "quote": "one that increases the state minimum wage and ensures equal pay for equal work for all Texans",
+  "current_source_url": "https://ballotpedia.org/James_Talarico",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2022 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2022",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2022)",
+  "recommended_citation_url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "STALE: text is from a 2022 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Vikki Goodwin",
+  "party": "Democratic",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "wages",
+  "value": 4,
+  "quote": "Texas has not adjusted the minimum wage in decades, and it still remains at an abysmally low $7.25/hour. We should increase it to $15/hour as the minimum.",
+  "current_source_url": "https://ballotpedia.org/Vikki_Goodwin",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Vikki Goodwin",
+  "party": "Democratic",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "education",
+  "value": -5,
+  "quote": "As Lt Governor, my priority will be to put an end to private school vouchers or any program that diverts public dollars to private schools.",
+  "current_source_url": "https://ballotpedia.org/Vikki_Goodwin",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Vikki Goodwin",
+  "party": "Democratic",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "safety",
+  "value": -2,
+  "quote": "I believe Texas needs a sensible regulatory framework for THC rather than outright prohibition.",
+  "current_source_url": "https://ballotpedia.org/Vikki_Goodwin",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Goodwin's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.vikkigoodwin.com/issues",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (fetched HTML lacks text; site likely revised since Ballotpedia capture, unsure)",
+  "recommended_chip_label": "Campaign website (vikkigoodwin.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.vikkigoodwin.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Vikki Goodwin's campaign website (January 16, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Caitlin Rourk",
+  "party": "Democratic",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "housing",
+  "value": 3,
+  "quote": "real solutions to rising housing costs",
+  "current_source_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Caitlin Rourk",
+  "party": "Democratic",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 3,
+  "quote": "affordable, accessible health care",
+  "current_source_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Caitlin Rourk",
+  "party": "Democratic",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "wages",
+  "value": 4,
+  "quote": "a living minimum wage",
+  "current_source_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Caitlin Rourk",
+  "party": "Democratic",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "infrastructure",
+  "value": 4,
+  "quote": "I'll fight to bring federal dollars back to our district through smart investments, public-private partnerships, and funding for critical infrastructure like water, roads, broadband, and clean energy.",
+  "current_source_url": "https://ballotpedia.org/Caitlin_Rourk",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "NORMALIZED_MATCH (punctuation/case/whitespace differs)",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Caitlin Rourk",
+  "party": "Democratic",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": 3,
+  "quote": "Too often, economic policy favors the wealthy and well-connected; in Congress, I'll hold corporations accountable and ensure they pay their fair share.",
+  "current_source_url": "https://ballotpedia.org/Caitlin_Rourk",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "NORMALIZED_MATCH (punctuation/case/whitespace differs)",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Caitlin Rourk",
+  "party": "Democratic",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": 2,
+  "quote": "I’ll fight to bring federal dollars back to our district through smart investments, public-private partnerships, and funding for critical infrastructure like water, roads, broadband, and clean energy.",
+  "current_source_url": "https://ballotpedia.org/Caitlin_Rourk",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Eleni Kounalakis",
+  "party": "Democratic",
+  "race_id": "ca-treasurer",
+  "race_ids": [
+   "ca-treasurer"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "housing",
+  "value": 4,
+  "quote": "fight to build more affordable homes",
+  "current_source_url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2018 > Ballotpedia survey responses",
+  "bp_year": "2018",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2018)",
+  "recommended_citation_url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "2018 section preface: \"Eleni Kounalakis completed Ballotpedia's Candidate Connection survey.\"",
+   "STALE: text is from a 2018 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2018, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Eleni Kounalakis",
+  "party": "Democratic",
+  "race_id": "ca-treasurer",
+  "race_ids": [
+   "ca-treasurer"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "energy",
+  "value": 3,
+  "quote": "We need to create more good-paying jobs while also protecting our environment.",
+  "current_source_url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2018 > Ballotpedia survey responses",
+  "bp_year": "2018",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2018)",
+  "recommended_citation_url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "2018 section preface: \"Eleni Kounalakis completed Ballotpedia's Candidate Connection survey.\"",
+   "STALE: text is from a 2018 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2018, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Richard Barrera",
+  "party": "Nonpartisan",
+  "race_id": "ca-spi",
+  "race_ids": [
+   "ca-spi"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "housing",
+  "value": 3,
+  "quote": "we are building affordable housing for school employees on district land",
+  "current_source_url": "https://ballotpedia.org/Richard_Barrera#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Richard_Barrera#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Richard_Barrera#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Richard Barrera",
+  "party": "Nonpartisan",
+  "race_id": "ca-spi",
+  "race_ids": [
+   "ca-spi"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "wages",
+  "value": 4,
+  "quote": "I led the campaign that won a higher minimum wage and paid sick days for 200,000 workers",
+  "current_source_url": "https://ballotpedia.org/Richard_Barrera",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Richard_Barrera#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Who are you? Tell us about yourself.\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Richard_Barrera#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": "survey",
+  "engineering_gate_counts": true,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Nathan Johnson",
+  "party": "Democratic",
+  "race_id": "tx-ag",
+  "race_ids": [
+   "tx-ag"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 5,
+  "quote": "I have been the lead voice in advocating for Medicaid expansion in Texas.",
+  "current_source_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Nathan Johnson",
+  "party": "Democratic",
+  "race_id": "tx-ag",
+  "race_ids": [
+   "tx-ag"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": 2,
+  "quote": "I have passed 135 bills, including legislation to increase penalties on polluters",
+  "current_source_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Nathan Johnson",
+  "party": "Democratic",
+  "race_id": "tx-ag",
+  "race_ids": [
+   "tx-ag"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": -2,
+  "quote": "we should reject “shock and awe” border policy and tactics that violate the U.S. Constitution.",
+  "current_source_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Johnson's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://nathanfortexas.com/priorities/",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (nathanfortexas.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://nathanfortexas.com/priorities/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Nathan Johnson's campaign website (January 13, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Chris Gober",
+  "party": "Republican",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 3,
+  "quote": "strengthen rural healthcare so families don’t have to drive hours for treatment",
+  "current_source_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Gober's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://chrisgober.com/",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (chrisgober.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://chrisgober.com/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Chris Gober's campaign website (January 15, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Chris Gober",
+  "party": "Republican",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": 5,
+  "quote": "I will work with President Trump to secure our border and crush the cartels on Day One by fully enforcing immigration laws",
+  "current_source_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Chris Gober",
+  "party": "Republican",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "infrastructure",
+  "value": 2,
+  "quote": "ensuring rural Texas has the roads, water, and resources needed to thrive alongside our cities",
+  "current_source_url": "https://ballotpedia.org/Chris_Gober",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Chris Gober",
+  "party": "Republican",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -3,
+  "quote": "I'll attack the waste and fraud that has exploded our debt and made us vulnerable to our adversaries.",
+  "current_source_url": "https://ballotpedia.org/Chris_Gober",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Chris Gober",
+  "party": "Republican",
+  "race_id": "tx-10",
+  "race_ids": [
+   "tx-10"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "safety",
+  "value": 4,
+  "quote": "Crush the cartels by helping President Trump secure our border and empowering Texas law enforcement to halt the invasion of drugs, violence, and gangs into our community.",
+  "current_source_url": "https://ballotpedia.org/Chris_Gober",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Gober's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://chrisgober.com/",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (chrisgober.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://chrisgober.com/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Chris Gober's campaign website (January 15, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Greg Casar",
+  "party": "Democratic",
+  "race_id": "tx-37",
+  "race_ids": [
+   "tx-37"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 3,
+  "quote": "funding mental health care",
+  "current_source_url": "https://ballotpedia.org/Greg_Casar#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Greg_Casar#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2014 > (no h4; intro: \"Casar's 2014 campaign website highlighted the following issues:\") — \"Casar's 2014 campaign website highlighted the following issues:\"",
+  "bp_year": "2014",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "http://www.casarforcouncil.com/vision/",
+  "campaign_site_check": "UNREACHABLE (campaign URL dead / archive.org unreachable from box)",
+  "recommended_chip_label": "Campaign website (casarforcouncil.com, 2014; quoted by Ballotpedia)",
+  "recommended_citation_url": "http://www.casarforcouncil.com/vision/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia footnote: Gregorio Casar ... City Council District 4 \"Together We Can,\" accessed September 29, 2016",
+   "STALE: text is from a 2014 campaign site, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Greg Casar",
+  "party": "Democratic",
+  "race_id": "tx-37",
+  "race_ids": [
+   "tx-37"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "safety",
+  "value": -3,
+  "quote": "I’m for effective criminal diversion programs",
+  "current_source_url": "https://ballotpedia.org/Greg_Casar#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Greg_Casar#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2014 > (no h4; intro: \"Casar's 2014 campaign website highlighted the following issues:\") — \"Casar's 2014 campaign website highlighted the following issues:\"",
+  "bp_year": "2014",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "http://www.casarforcouncil.com/vision/",
+  "campaign_site_check": "UNREACHABLE (campaign URL dead / archive.org unreachable from box)",
+  "recommended_chip_label": "Campaign website (casarforcouncil.com, 2014; quoted by Ballotpedia)",
+  "recommended_citation_url": "http://www.casarforcouncil.com/vision/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia footnote: Gregorio Casar ... City Council District 4 \"Together We Can,\" accessed September 29, 2016",
+   "STALE: text is from a 2014 campaign site, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Jane Kim",
+  "party": "Democratic",
+  "race_id": "ca-insurance",
+  "race_ids": [
+   "ca-insurance"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "healthcare",
+  "value": 5,
+  "quote": "I will create a plan to guarantee healthcare for every child in California by establishing Medicare for Kids.",
+  "current_source_url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Jane Kim",
+  "party": "Democratic",
+  "race_id": "ca-insurance",
+  "race_ids": [
+   "ca-insurance"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "infrastructure",
+  "value": 3,
+  "quote": "investing a share of this revenue in community resiliency and infrastructure",
+  "current_source_url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Steve Hilton",
+  "party": "Republican",
+  "race_id": "ca-gov",
+  "race_ids": [
+   "ca-gov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "taxes",
+  "value": -4,
+  "quote": "driven by the highest taxes in America",
+  "current_source_url": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Hilton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://stevehiltonforgovernor.com/#vision",
+  "campaign_site_check": "UNREACHABLE (JS-only shell via curl; WebFetch timed out)",
+  "recommended_chip_label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://stevehiltonforgovernor.com/#vision",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Steve Hilton's campaign website (April 8, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Steve Hilton",
+  "party": "Republican",
+  "race_id": "ca-gov",
+  "race_ids": [
+   "ca-gov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "housing",
+  "value": 3,
+  "quote": "We have plenty of space to build the homes people want, and I will work to sweep away the ridiculous bureaucratic obstacles to getting it done.",
+  "current_source_url": "https://ballotpedia.org/Steve_Hilton",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Hilton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://stevehiltonforgovernor.com/#vision",
+  "campaign_site_check": "UNREACHABLE (JS-only shell via curl; WebFetch timed out)",
+  "recommended_chip_label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://stevehiltonforgovernor.com/#vision",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Steve Hilton's campaign website (April 8, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Steve Hilton",
+  "party": "Republican",
+  "race_id": "ca-gov",
+  "race_ids": [
+   "ca-gov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "safety",
+  "value": 4,
+  "quote": "People need to know that if they commit a crime they will be caught, prosecuted and convicted.",
+  "current_source_url": "https://ballotpedia.org/Steve_Hilton",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Hilton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://stevehiltonforgovernor.com/#vision",
+  "campaign_site_check": "UNREACHABLE (JS-only shell via curl; WebFetch timed out)",
+  "recommended_chip_label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://stevehiltonforgovernor.com/#vision",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Steve Hilton's campaign website (April 8, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Steve Hilton",
+  "party": "Republican",
+  "race_id": "ca-gov",
+  "race_ids": [
+   "ca-gov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "education",
+  "value": 3,
+  "quote": "protecting (and, where parents want them, expanding) charter schools, and over time introducing school choice.",
+  "current_source_url": "https://ballotpedia.org/Steve_Hilton",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Hilton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://stevehiltonforgovernor.com/#vision",
+  "campaign_site_check": "UNREACHABLE (JS-only shell via curl; WebFetch timed out)",
+  "recommended_chip_label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://stevehiltonforgovernor.com/#vision",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Steve Hilton's campaign website (April 8, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Steve Hilton",
+  "party": "Republican",
+  "race_id": "ca-gov",
+  "race_ids": [
+   "ca-gov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "immigration",
+  "value": 3,
+  "quote": "We need to get back to the basic principle that we should enforce the law — whether it’s on homelessness, open air drug markets, shoplifting, illegal immigration or violent crime.",
+  "current_source_url": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Steve_Hilton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Hilton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://stevehiltonforgovernor.com/#vision",
+  "campaign_site_check": "UNREACHABLE (JS-only shell via curl; WebFetch timed out)",
+  "recommended_chip_label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://stevehiltonforgovernor.com/#vision",
+  "keep": true,
+  "engineering_gate_kind": "campaign",
+  "engineering_gate_counts": true,
+  "notes": [
+   "Ballotpedia attribution: — Steve Hilton's campaign website (April 8, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Sarah Eckhardt",
+  "party": "Democratic",
+  "race_id": "tx-comptroller",
+  "race_ids": [
+   "tx-comptroller"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "safety",
+  "value": -3,
+  "quote": "instituting jail and arrest diversion",
+  "current_source_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2022 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2022",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2022)",
+  "recommended_citation_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "STALE: text is from a 2022 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Sarah Eckhardt",
+  "party": "Democratic",
+  "race_id": "tx-comptroller",
+  "race_ids": [
+   "tx-comptroller"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": 5,
+  "quote": "Eckhardt advocates for increases in renewable energy generation, decreases in per capita energy and water consumption",
+  "current_source_url": "https://ballotpedia.org/Sarah_Eckhardt",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2022 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2022",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2022)",
+  "recommended_citation_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "STALE: text is from a 2022 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Sarah Eckhardt",
+  "party": "Democratic",
+  "race_id": "tx-comptroller",
+  "race_ids": [
+   "tx-comptroller"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "infrastructure",
+  "value": 4,
+  "quote": "Texas has massive water infrastructure needs, with a $154B gap. We must use the $28B Rainy Day Fund to bridge this divide.",
+  "current_source_url": "https://ballotpedia.org/Sarah_Eckhardt",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Sarah Eckhardt",
+  "party": "Democratic",
+  "race_id": "tx-comptroller",
+  "race_ids": [
+   "tx-comptroller"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 4,
+  "quote": "Eckhardt advocates for an expansion of Medicaid to insure 1M more Texans and help rural hospitals stay open to serve them",
+  "current_source_url": "https://ballotpedia.org/Sarah_Eckhardt",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2022 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2022",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2022)",
+  "recommended_citation_url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "STALE: text is from a 2022 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Mayes Middleton",
+  "party": "Republican",
+  "race_id": "tx-ag",
+  "race_ids": [
+   "tx-ag"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": -4,
+  "quote": "Protect oil and gas jobs",
+  "current_source_url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Middleton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://mayesmiddleton.com/",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (mayesmiddleton.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://mayesmiddleton.com/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Mayes Middleton's campaign website (November 20, 2025)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Mayes Middleton",
+  "party": "Republican",
+  "race_id": "tx-ag",
+  "race_ids": [
+   "tx-ag"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": 5,
+  "quote": "Aggressively enforce President Trump’s border security agenda and deportation orders",
+  "current_source_url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Middleton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://mayesmiddleton.com/",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (mayesmiddleton.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://mayesmiddleton.com/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Mayes Middleton's campaign website (November 20, 2025)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Mayes Middleton",
+  "party": "Republican",
+  "race_id": "tx-ag",
+  "race_ids": [
+   "tx-ag"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "safety",
+  "value": 4,
+  "quote": "Support zero-tolerance policies for violent crime and stronger bonds for dangerous offenders to keep criminals off our streets",
+  "current_source_url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Middleton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://mayesmiddleton.com/",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (mayesmiddleton.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://mayesmiddleton.com/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Mayes Middleton's campaign website (November 20, 2025)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Ken Paxton",
+  "party": "Republican",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -4,
+  "quote": "Ken Paxton will champion President Trump’s legislative priorities, including cutting taxes",
+  "current_source_url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Paxton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.kenpaxton.com/issues",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (kenpaxton.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.kenpaxton.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Ken Paxton's campaign website (November 19, 2025)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Ken Paxton",
+  "party": "Republican",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": 5,
+  "quote": "securing the border and deporting illegal aliens",
+  "current_source_url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Paxton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.kenpaxton.com/issues",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (kenpaxton.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.kenpaxton.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Ken Paxton's campaign website (November 19, 2025)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Ken Paxton",
+  "party": "Republican",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": -3,
+  "quote": "remove harmful regulations designed to hurt our energy companies",
+  "current_source_url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Paxton's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.kenpaxton.com/issues",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (kenpaxton.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.kenpaxton.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Ken Paxton's campaign website (November 19, 2025)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Ted Brown",
+  "party": "Libertarian",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": -4,
+  "quote": "Immigration is good for this country and should be encouraged.",
+  "current_source_url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2024 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2024",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2024)",
+  "recommended_citation_url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "STALE: text is from a 2024 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2024, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Ted Brown",
+  "party": "Libertarian",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "housing",
+  "value": -3,
+  "quote": "Eliminate roadblocks to starting new businesses or building more housing.",
+  "current_source_url": "https://ballotpedia.org/Ted_Brown_(Texas)",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2022 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2022",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2022)",
+  "recommended_citation_url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "STALE: text is from a 2022 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Ted Brown",
+  "party": "Libertarian",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -5,
+  "quote": "Taxes are always too high, at the federal, state, and local levels. Elected officials are thirsty for more of our money to finance their programs and big plans (or more accurately, boondoggles) and to pay off their big campaign contributors. I will never vote to raise taxes.",
+  "current_source_url": "https://ballotpedia.org/Ted_Brown_(Texas)",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2024 > Campaign website — \"Brown’s campaign website stated the following:\"",
+  "bp_year": "2024",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://tedbrown.org/platform",
+  "campaign_site_check": "PARTIAL: 32/44 4-grams found on https://tedbrown.org/website/ (tedbrown.org/platform now 404); wording appears revised, unsure",
+  "recommended_chip_label": "Campaign website (tedbrown.org, 2024; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://tedbrown.org/platform",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia footnote: Ted Brown, Libertarian for U.S. Senator from Texas, \"Platform,\" accessed March 3, 2024",
+   "STALE: text is from a 2024 campaign site, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2024, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Ted Brown",
+  "party": "Libertarian",
+  "race_id": "us-senate-tx",
+  "race_ids": [
+   "us-senate-tx"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": -5,
+  "quote": "Health care is not a right or a privilege. It’s a service, and like other goods and services, it should be provided by free-market competition.",
+  "current_source_url": "https://ballotpedia.org/Ted_Brown_(Texas)",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2024 > Campaign website — \"Brown’s campaign website stated the following:\"",
+  "bp_year": "2024",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://tedbrown.org/platform",
+  "campaign_site_check": "CONFIRMED on https://tedbrown.org/website/ (tedbrown.org/platform now 404)",
+  "recommended_chip_label": "Campaign website (tedbrown.org, 2024; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://tedbrown.org/platform",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia footnote: Ted Brown, Libertarian for U.S. Senator from Texas, \"Platform,\" accessed March 3, 2024",
+   "STALE: text is from a 2024 campaign site, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2024, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Dawn Buckingham",
+  "party": "Republican",
+  "race_id": "tx-land",
+  "race_ids": [
+   "tx-land"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": -2,
+  "quote": "Simply put, we need to get rid of the meddling that comes between a doctor and her patient, and restore the balance of power between patients and the doctors they employ.",
+  "current_source_url": "https://ballotpedia.org/Dawn_Buckingham",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2016 > (no h4; intro: \"Buckingham's campaign website highlighted the following issues:\") — \"Buckingham's campaign website highlighted the following issues:\"",
+  "bp_year": "2016",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "http://dawnbuckingham.com/issues/",
+  "campaign_site_check": "UNREACHABLE (campaign URL dead / archive.org unreachable from box)",
+  "recommended_chip_label": "Campaign website (dawnbuckingham.com, 2016; quoted by Ballotpedia)",
+  "recommended_citation_url": "http://dawnbuckingham.com/issues/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia footnote: Dawn Buckingham for Texas Senate, \"Issues,\" accessed February 22, 2016",
+   "STALE: text is from a 2016 campaign site, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2016, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Bo French",
+  "party": "Republican",
+  "race_id": "tx-rrc",
+  "race_ids": [
+   "tx-rrc"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": -5,
+  "quote": "Chairman French will put the Texas oil and gas industry first by prioritizing the operators who keep the Texas economy running.",
+  "current_source_url": "https://ballotpedia.org/Bo_French#Campaign_themes",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Bo_French#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign websites — \"French's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://bofrench.com/issues/",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (bofrench.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://bofrench.com/issues/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Bo French's campaign website (May 20, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Don Huffines",
+  "party": "Republican",
+  "race_id": "tx-comptroller",
+  "race_ids": [
+   "tx-comptroller"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -3,
+  "quote": "I am passionate about shrinking the size of government, defending liberty, and protecting taxpayers.",
+  "current_source_url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Don Huffines",
+  "party": "Republican",
+  "race_id": "tx-comptroller",
+  "race_ids": [
+   "tx-comptroller"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": 4,
+  "quote": "I will stand with President Trump to secure the border, enforce our immigration laws, and expose the true cost of illegal immigration",
+  "current_source_url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Gina Hinojosa",
+  "party": "Democratic",
+  "race_id": "tx-gov",
+  "race_ids": [
+   "tx-gov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "education",
+  "value": -5,
+  "quote": "Every child deserves a strong neighborhood public school, but Greg Abbott’s elite donors want to suck the money out of them to turn a profit.",
+  "current_source_url": "https://ballotpedia.org/Gina_Hinojosa",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Gina_Hinojosa#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Hinojosa's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://ginafortexas.com/priorities/",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (page rewritten; now a short \"Securing the American Dream\" agenda)",
+  "recommended_chip_label": "Campaign website (ginafortexas.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://ginafortexas.com/priorities/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Gina Hinojosa's campaign website (January 14, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Gina Hinojosa",
+  "party": "Democratic",
+  "race_id": "tx-gov",
+  "race_ids": [
+   "tx-gov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 3,
+  "quote": "We need to reign in these out-of-control profiteers who are making healthcare more expensive and making Texans sicker.",
+  "current_source_url": "https://ballotpedia.org/Gina_Hinojosa",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Gina_Hinojosa#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Hinojosa's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://ginafortexas.com/priorities/",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (page rewritten; now a short \"Securing the American Dream\" agenda)",
+  "recommended_chip_label": "Campaign website (ginafortexas.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://ginafortexas.com/priorities/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Gina Hinojosa's campaign website (January 14, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Pat Dixon",
+  "party": "Libertarian",
+  "race_id": "tx-gov",
+  "race_ids": [
+   "tx-gov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -4,
+  "quote": "I am a Libertarian and I want to eliminate government functions that are bad for taxpayers, which will reduce spending and taxation",
+  "current_source_url": "https://ballotpedia.org/Pat_Dixon",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"In most states, governors have the power to make line-item vetoes. If that is true in your state, what would be your philosophy for how and when to use this power?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Kevin McCormick",
+  "party": "Green",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "infrastructure",
+  "value": 3,
+  "quote": "I also propose increasing the county road and bridge fund and allowing bicycle paths to be built with these funds.",
+  "current_source_url": "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Kevin McCormick",
+  "party": "Green",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": 4,
+  "quote": "As EV’s and renewable energy reduce fossil fuel dependence worldwide, the fossil fuel industry will continue to decline and its intimate connection to Texas transportation will drag the state down unless we take effective measures to disentangle our systems from fossil fuel dependence.",
+  "current_source_url": "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"McCormick's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://kmm2026.org/issues2026",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (page now lists proposal summaries only; full text may be on sub-pages, unsure)",
+  "recommended_chip_label": "Campaign website (kmm2026.org, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://kmm2026.org/issues2026",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Kevin McCormick's campaign website (March 26, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Kevin McCormick",
+  "party": "Green",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "safety",
+  "value": -4,
+  "quote": "Opposite to preventing drug use, the war on drugs promotes addiction, gang violence, and social decay.",
+  "current_source_url": "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"McCormick's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://kmm2026.org/issues2026",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (page now lists proposal summaries only; full text may be on sub-pages, unsure)",
+  "recommended_chip_label": "Campaign website (kmm2026.org, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://kmm2026.org/issues2026",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Kevin McCormick's campaign website (March 26, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Shehla Faizi",
+  "party": "Green",
+  "race_id": "tx-comptroller",
+  "race_ids": [
+   "tx-comptroller"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": -4,
+  "quote": "ICE tears our communities apart, and we’ve seen too many examples of racial profiling of US Citizens and ICE agents panicking and attacking bystanders.",
+  "current_source_url": "https://ballotpedia.org/Shehla_Faizi",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Anthony Cristo",
+  "party": "Libertarian",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "education",
+  "value": -2,
+  "quote": "We must fund all public schools properly.",
+  "current_source_url": "https://ballotpedia.org/Anthony_Cristo",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Anthony Cristo",
+  "party": "Libertarian",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": -3,
+  "quote": "We need to lead the nation in immigration reform by allowing these hard working individuals into our country to work and allowing them to return to their native country afterwards.",
+  "current_source_url": "https://ballotpedia.org/Anthony_Cristo",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Anthony Cristo",
+  "party": "Libertarian",
+  "race_id": "tx-ltgov",
+  "race_ids": [
+   "tx-ltgov"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "safety",
+  "value": -3,
+  "quote": "there are some people currently in office who want to maintain a steady flow of people through our prison system by creating or maintaining laws for victimless crimes.",
+  "current_source_url": "https://ballotpedia.org/Anthony_Cristo",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Benjamin Flores",
+  "party": "Democratic",
+  "race_id": "tx-land",
+  "race_ids": [
+   "tx-land"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": 1,
+  "quote": "That means embracing innovation, welcoming renewable energy producers alongside oil and gas, and running tighter operations.",
+  "current_source_url": "https://ballotpedia.org/Benjamin_Flores",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Benjamin Flores",
+  "party": "Democratic",
+  "race_id": "tx-land",
+  "race_ids": [
+   "tx-land"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "infrastructure",
+  "value": 2,
+  "quote": "I'll strengthen the GLO's storm protection programs and fix the disaster recovery system so help reaches the people who need it most, quickly and fairly.",
+  "current_source_url": "https://ballotpedia.org/Benjamin_Flores",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Clayton Tucker",
+  "party": "Democratic",
+  "race_id": "tx-agcomm",
+  "race_ids": [
+   "tx-agcomm"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 4,
+  "quote": "we need a government that fights to increase access to affordable, timely healthcare for all Texans",
+  "current_source_url": "https://ballotpedia.org/Clayton_Tucker",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Clayton_Tucker#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Tucker's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.claytontuckertx.com/issues",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (claytontuckertx.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.claytontuckertx.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Clayton Tucker's campaign website (January 16, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Clayton Tucker",
+  "party": "Democratic",
+  "race_id": "tx-agcomm",
+  "race_ids": [
+   "tx-agcomm"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "infrastructure",
+  "value": 3,
+  "quote": "We need significant investments in rural infrastructure, healthcare, broadband connectivity, and other incentives to attract jobs back to rural Texas.",
+  "current_source_url": "https://ballotpedia.org/Clayton_Tucker",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Clayton_Tucker#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Tucker's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.claytontuckertx.com/issues",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (fetched HTML lacks text; site likely revised since Ballotpedia capture, unsure)",
+  "recommended_chip_label": "Campaign website (claytontuckertx.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.claytontuckertx.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Clayton Tucker's campaign website (January 16, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Jon Rosenthal",
+  "party": "Democratic",
+  "race_id": "tx-rrc",
+  "race_ids": [
+   "tx-rrc"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "education",
+  "value": -2,
+  "quote": "Public schools first - because this is our future. We must provide the best education possible to ALL of our kids, and that also means taking care of our teachers.",
+  "current_source_url": "https://ballotpedia.org/Jon_Rosenthal",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2018 > Ballotpedia survey responses",
+  "bp_year": "2018",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2018)",
+  "recommended_citation_url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Manual fix: 2018 legacy Ballotpedia candidate survey (\"Jon Rosenthal participated in Ballotpedia's candidate survey on March 27, 2018\"); parser had mis-tagged as BP_VOICE.",
+   "STALE: text is from a 2018 survey, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2018, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Jon Rosenthal",
+  "party": "Democratic",
+  "race_id": "tx-rrc",
+  "race_ids": [
+   "tx-rrc"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": 1,
+  "quote": "promoting an “All of the Above” approach to energy production, and striking a sensible balance between environmental concerns and industry activity.",
+  "current_source_url": "https://ballotpedia.org/Jon_Rosenthal",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What do you believe are the core responsibilities for someone elected to this office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Jon Rosenthal",
+  "party": "Democratic",
+  "race_id": "tx-rrc",
+  "race_ids": [
+   "tx-rrc"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "healthcare",
+  "value": 4,
+  "quote": "It would be good for Texas, as we would have certain items like Medicaid expansion and marijuana legalization in law by now!",
+  "current_source_url": "https://ballotpedia.org/Jon_Rosenthal",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Would a state ballot initiative process be good or bad for your state?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Nate Sheets",
+  "party": "Republican",
+  "race_id": "tx-agcomm",
+  "race_ids": [
+   "tx-agcomm"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -3,
+  "quote": "Fiscal Responsibility: DOGE / Audit agency to cut unnecessary taxes, fees, and regulations",
+  "current_source_url": "https://ballotpedia.org/Nate_Sheets",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Nate Sheets",
+  "party": "Republican",
+  "race_id": "tx-agcomm",
+  "race_ids": [
+   "tx-agcomm"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "immigration",
+  "value": 5,
+  "quote": "Nate supports requiring federal e-Verify for all legal employment in Texas and will vigorously advocate for passing state legislature to ensure that anyone who works in Texas has had their citizenship verified, ending the economic magnet once and for all.",
+  "current_source_url": "https://ballotpedia.org/Nate_Sheets",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Sheets' campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://natesheets.com/nate-sheets-on-the-issues/",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (fetched HTML lacks text; site likely revised since Ballotpedia capture, unsure)",
+  "recommended_chip_label": "Campaign website (natesheets.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://natesheets.com/nate-sheets-on-the-issues/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Nate Sheets' campaign website (February 4, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Austin R. Kelly",
+  "party": "Libertarian",
+  "race_id": "tx-agcomm",
+  "race_ids": [
+   "tx-agcomm"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": -3,
+  "quote": "I am committed to shrinking the size of the state bureaucracy and cutting wasteful spending within the Department of Agriculture.",
+  "current_source_url": "https://ballotpedia.org/Austin_Kelly",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Arthur DiBianca",
+  "party": "Libertarian",
+  "race_id": "tx-rrc",
+  "race_ids": [
+   "tx-rrc"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "energy",
+  "value": -2,
+  "quote": "A restitution-based system is better than trying to constrain oil and gas companies in advance.",
+  "current_source_url": "https://ballotpedia.org/Arthur_DiBianca",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Arthur_DiBianca#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Arthur_DiBianca#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Connie Chan",
+  "party": "Democratic",
+  "race_id": "ca-11",
+  "race_ids": [
+   "ca-11"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "healthcare",
+  "value": 5,
+  "quote": "Connie Chan supports Medicare for All which guarantees that every American has a right to health care, everyone is covered, and the health care system is no longer driven by insurance companies.",
+  "current_source_url": "https://ballotpedia.org/Connie_Chan",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Connie_Chan#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign websites — \"Chan's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.conniechansf.com/issues",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (page now \"Connie Chan's Working People's Plan\" intro; quoted text absent)",
+  "recommended_chip_label": "Campaign website (conniechansf.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.conniechansf.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Connie Chan's campaign website (March 5, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Connie Chan",
+  "party": "Democratic",
+  "race_id": "ca-11",
+  "race_ids": [
+   "ca-11"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "wages",
+  "value": 4,
+  "quote": "work in solidarity with organized labor to raise the national minimum wage and secure fair wages for all workers",
+  "current_source_url": "https://ballotpedia.org/Connie_Chan",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Connie_Chan#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign websites — \"Chan's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.conniechansf.com/issues",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (page now \"Connie Chan's Working People's Plan\" intro; quoted text absent)",
+  "recommended_chip_label": "Campaign website (conniechansf.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.conniechansf.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Connie Chan's campaign website (March 5, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Connie Chan",
+  "party": "Democratic",
+  "race_id": "ca-11",
+  "race_ids": [
+   "ca-11"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "immigration",
+  "value": -4,
+  "quote": "supports creating a pathway to citizenship, protecting and reaffirming birthright citizenship, and protecting San Francisco as a sanctuary city.",
+  "current_source_url": "https://ballotpedia.org/Connie_Chan",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Connie_Chan#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign websites — \"Chan's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.conniechansf.com/issues",
+  "campaign_site_check": "NOT_ON_CURRENT_PAGE (page now \"Connie Chan's Working People's Plan\" intro; quoted text absent)",
+  "recommended_chip_label": "Campaign website (conniechansf.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.conniechansf.com/issues",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Connie Chan's campaign website (March 5, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Scott Wiener",
+  "party": "Democratic",
+  "race_id": "ca-11",
+  "race_ids": [
+   "ca-11"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "healthcare",
+  "value": 5,
+  "quote": "Scott is a leader in expanding access to health care — including creation of a Medicare for All single payer system of universal coverage",
+  "current_source_url": "https://ballotpedia.org/Scott_Wiener",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Scott_Wiener#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Wiener's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.scottwiener.com/platform",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (scottwiener.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.scottwiener.com/platform",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Scott Wiener's campaign website (March 5, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Scott Wiener",
+  "party": "Democratic",
+  "race_id": "ca-11",
+  "race_ids": [
+   "ca-11"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "immigration",
+  "value": -5,
+  "quote": "ICE has become a terror organization. We must abolish ICE and hold officials and agents accountable for lawless behavior.",
+  "current_source_url": "https://ballotpedia.org/Scott_Wiener",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Scott_Wiener#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Wiener's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.scottwiener.com/platform",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (scottwiener.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.scottwiener.com/platform",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Scott Wiener's campaign website (March 5, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Scott Wiener",
+  "party": "Democratic",
+  "race_id": "ca-11",
+  "race_ids": [
+   "ca-11"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "infrastructure",
+  "value": 4,
+  "quote": "Increase federal investment in public transit",
+  "current_source_url": "https://ballotpedia.org/Scott_Wiener",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Scott_Wiener#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Campaign website — \"Wiener's campaign website stated the following:\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://www.scottwiener.com/platform",
+  "campaign_site_check": "CONFIRMED on live site",
+  "recommended_chip_label": "Campaign website (scottwiener.com, 2026; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://www.scottwiener.com/platform",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia attribution: — Scott Wiener's campaign website (March 5, 2026)"
+  ],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Fiona Ma",
+  "party": "Democratic",
+  "race_id": "ca-ltgov",
+  "race_ids": [
+   "ca-ltgov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "energy",
+  "value": 2,
+  "quote": "I am also focused on protecting California’s coast and environment from pollution and long term damage so future generations inherit a healthy state.",
+  "current_source_url": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": "survey",
+  "engineering_gate_counts": true,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Fiona Ma",
+  "party": "Democratic",
+  "race_id": "ca-ltgov",
+  "race_ids": [
+   "ca-ltgov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "immigration",
+  "value": -2,
+  "quote": "I am dedicated to protecting immigrant communities from fear and discrimination and ensuring dignity and fairness.",
+  "current_source_url": "https://ballotpedia.org/Fiona_Ma",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Gloria J. Romero",
+  "party": "Republican",
+  "race_id": "ca-ltgov",
+  "race_ids": [
+   "ca-ltgov"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "housing",
+  "value": 2,
+  "quote": "I will work with our Governor to review the necessity of many of our laws and regulations, which have created hardships in homebuilding, driving up the cost of living and decreasing homeownership rates.",
+  "current_source_url": "https://ballotpedia.org/Gloria_J._Romero#Campaign_themes",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Gloria_J._Romero#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Gloria_J._Romero#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": "survey",
+  "engineering_gate_counts": true,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Michael Gates",
+  "party": "Republican",
+  "race_id": "ca-ag",
+  "race_ids": [
+   "ca-ag"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "safety",
+  "value": 4,
+  "quote": "As Attorney General, he will prosecute violent criminals, combat fentanyl trafficking and organized retail theft, and ensure laws are enforced fairly and consistently",
+  "current_source_url": "https://ballotpedia.org/Michael_Gates_(California)",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Michael_Gates_(California)#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Michael_Gates_(California)#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Donald P. Wagner",
+  "party": "Republican",
+  "race_id": "ca-sos",
+  "race_ids": [
+   "ca-sos"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "taxes",
+  "value": -4,
+  "quote": "The liberal tax and spend crowd in Sacramento needs to understand that no society has ever taxed its way to prosperity.",
+  "current_source_url": "https://ballotpedia.org/Donald_P._Wagner",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Donald_P._Wagner#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2014 > (no h4; intro: \"Wagner's 2014 state legislative campaign website highlighted the following issues:\") — \"Wagner's 2014 state legislative campaign website highlighted the following issues:\"",
+  "bp_year": "2014",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://web.archive.org/web/20141021023505/http://www.wagnerforassembly.com/issues/",
+  "campaign_site_check": "UNREACHABLE (campaign URL dead / archive.org unreachable from box)",
+  "recommended_chip_label": "Campaign website (wagnerforassembly.com (archived), 2014; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://web.archive.org/web/20141021023505/http://www.wagnerforassembly.com/issues/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia footnote: Wagner for Assembly, \"Issues,\" accessed October 4, 2016",
+   "STALE: text is from a 2014 campaign site, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Donald P. Wagner",
+  "party": "Republican",
+  "race_id": "ca-sos",
+  "race_ids": [
+   "ca-sos"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "immigration",
+  "value": 4,
+  "quote": "I'll fight for our communities by working to put a stop to illegal immigration.",
+  "current_source_url": "https://ballotpedia.org/Donald_P._Wagner",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Donald_P._Wagner#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2014 > (no h4; intro: \"Wagner's 2014 state legislative campaign website highlighted the following issues:\") — \"Wagner's 2014 state legislative campaign website highlighted the following issues:\"",
+  "bp_year": "2014",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": "https://web.archive.org/web/20141021023505/http://www.wagnerforassembly.com/issues/",
+  "campaign_site_check": "UNREACHABLE (campaign URL dead / archive.org unreachable from box)",
+  "recommended_chip_label": "Campaign website (wagnerforassembly.com (archived), 2014; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://web.archive.org/web/20141021023505/http://www.wagnerforassembly.com/issues/",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [
+   "Ballotpedia footnote: Wagner for Assembly, \"Issues,\" accessed October 4, 2016",
+   "STALE: text is from a 2014 campaign site, not the 2026 race; recommend showing the year on the chip (judgment call)."
+  ],
+  "keep_final": false,
+  "final_reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule"
+ },
+ {
+  "candidate": "Jennifer Hawks",
+  "party": "Republican",
+  "race_id": "ca-treasurer",
+  "race_ids": [
+   "ca-treasurer"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "infrastructure",
+  "value": -2,
+  "quote": "We already have more than 70 billion dollars in bond debt -- we can't let Sacramento spend even more on its unfinished projects.",
+  "current_source_url": "https://ballotpedia.org/Jennifer_Hawks",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Jennifer_Hawks#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Jennifer_Hawks#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Ben Allen",
+  "party": "Democratic",
+  "race_id": "ca-insurance",
+  "race_ids": [
+   "ca-insurance"
+  ],
+  "zips": [
+   "94103"
+  ],
+  "issue": "energy",
+  "value": 4,
+  "quote": "I’m passionate about tackling climate change, especially because of what it means for my kids and the kind of future they’re going to inherit.",
+  "current_source_url": "https://ballotpedia.org/Ben_Allen",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Ben_Allen#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Ben_Allen#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": null,
+  "engineering_gate_counts": false,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Skyler A. Korgel",
+  "party": "Nonpartisan",
+  "race_id": "travis-cad-place-1",
+  "race_ids": [
+   "travis-cad-place-1"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "taxes",
+  "value": 3,
+  "quote": "Personally, I am passionate about equitable taxation policy that fairly distributes tax burdens such that everyone is paying their fair share to support our schools, governments, public lands, and public services.",
+  "current_source_url": "https://ballotpedia.org/Skyler_Korgel",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": "survey",
+  "engineering_gate_counts": true,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Skyler A. Korgel",
+  "party": "Nonpartisan",
+  "race_id": "travis-cad-place-1",
+  "race_ids": [
+   "travis-cad-place-1"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "housing",
+  "value": 2,
+  "quote": "When Tesla, Oracle, Samsung etc pay the property taxes instead of getting huge discounts via underappraisal, then housing affordability improves for both owners AND renters",
+  "current_source_url": "https://ballotpedia.org/Skyler_Korgel",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"Please list below 3 key messages of your campaign. What are the main points you want voters to remember about your goals for your time in office?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": "survey",
+  "engineering_gate_counts": true,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ },
+ {
+  "candidate": "Skyler A. Korgel",
+  "party": "Nonpartisan",
+  "race_id": "travis-cad-place-1",
+  "race_ids": [
+   "travis-cad-place-1"
+  ],
+  "zips": [
+   "78701"
+  ],
+  "issue": "infrastructure",
+  "value": 2,
+  "quote": "expanding public transportation options and reducing car dependency",
+  "current_source_url": "https://ballotpedia.org/Skyler_Korgel",
+  "cls": "CC",
+  "evidence_url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2026 > Ballotpedia survey responses > Q: \"What areas of public policy are you personally passionate about?\"",
+  "bp_year": "2026",
+  "quote_match_on_bp": "EXACT",
+  "campaign_url": null,
+  "campaign_site_check": null,
+  "recommended_chip_label": "Ballotpedia Candidate Connection survey (2026)",
+  "recommended_citation_url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+  "keep": true,
+  "engineering_gate_kind": "survey",
+  "engineering_gate_counts": true,
+  "notes": [],
+  "keep_final": true,
+  "final_reason": "keep"
+ }
+]

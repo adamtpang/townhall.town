@@ -27,7 +27,7 @@ export function usePhotoOff() {
 }
 
 type Focus = [number, number, number];
-type Pic = { url: string; url112?: string; credit: string; author?: string; attribution?: string; license?: string; licenseUrl?: string | null; page?: string; hotlinked?: boolean; focus?: Focus };
+type Pic = { url: string; url112?: string; url256?: string; credit: string; author?: string; attribution?: string; license?: string; licenseUrl?: string | null; page?: string; hotlinked?: boolean; focus?: Focus };
 /** mate: the running mate's photo on a ticket (Civic role "running mate"), shown in the right half of the tile. */
 export type Photo = (Pic & { mate?: Pic & { name: string } }) | null | undefined;
 
@@ -37,14 +37,15 @@ export const focusStyle = (f?: Focus): React.CSSProperties | undefined =>
 
 /** The tile's image(s): one photo, or a ticket's two photos side by side (lead left, running mate right).
  *  A running mate's photo that fails to load just drops out; the lead's failure is the tile's failure. */
-export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNullable<Photo>; alt: string; eager?: boolean; onFail: () => void; imgRef?: React.Ref<HTMLImageElement> }) {
+export function TileImage({ photo, alt, eager, onFail, imgRef, sizes = "(max-width: 1023px) 40px, 56px" }: { photo: NonNullable<Photo>; alt: string; eager?: boolean; onFail: () => void; imgRef?: React.Ref<HTMLImageElement>; sizes?: string }) {
   const [mateOff, setMateOff] = useState(false);
   const m = photo.mate && !mateOff ? photo.mate : null;
   const cls = "h-full w-full object-cover object-[center_20%]";
-  // Design p14: self-hosted 112/160px squares (tiles are 40-56px, so 112 covers 2x screens and 160 covers 3x), with
-  // width/height set; lazy and async below the fold (eager only for the first tiers).
-  // Design p15 #3: the image sizes attribute is 40px under 1024px wide, 56px from 1024 up.
-  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w`, sizes: "(max-width: 1023px) 40px, 56px" } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
+  // Design p14: self-hosted 112/160px squares with width/height set; lazy and async below the fold (eager only for
+  // the first tiers). Adam 1:11 PM Oct 30 (bigger): a 256px square (q75, same original and crop) joins the srcset where
+  // the original crop is at least 256px; callers pass sizes for their tile (row tiles 72/88/112px, card avatar 96/128px).
+  // Design p15 #3 default: 40px under 1024px wide, 56px from 1024 up.
+  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w${p.url256 ? `, ${p.url256} 256w` : ""}`, sizes } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
   return (
     <span className="absolute inset-0 flex overflow-hidden" data-photo-img>
       <span className={cn("relative h-full overflow-hidden", m ? "w-1/2" : "w-full")}>
@@ -62,17 +63,19 @@ export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNul
 }
 
 /** Design p10 credit type: 12/16, weight 450, black/60, at most 60ch. The one place 12px text is allowed. */
-export const CREDIT = "max-w-[60ch] text-[12px] leading-4 font-[450] text-black/60 [word-break:break-word]";
+export const CREDIT = "max-w-[60ch] text-sm leading-5 font-[450] text-black/60 [word-break:break-word]";
 // Design p11 #2, superseded by Design 3:34 AM CT (Oct 30): credit links reach 44px through spacing (TAP below), never a
 // vertical pseudo-element. Kept identical to TAP so the per-candidate 'Photo:' credit follows the same rule.
 const CLINK = "relative flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:inline-flex md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']";
 /** Copy cuts (Oct 30): the candidate's name already labels the credit, so "Name's campaign site" reads "campaign site". */
 const shortCredit = (a: string) => a.replace(/^[^·]+?['\u2019]s (?:own )?(?=campaign site|official |X profile|Facebook profile|Linktree page|LinkedIn profile)/, "");
+/** QA P2 (Oct 30): every photo-credit link names its candidate for screen readers, e.g. "Jane Doe campaign site". */
+export const creditLabel = (name: string, author: string) => { const s = shortCredit(author); return /^(campaign site|official |X profile|Facebook profile|Linktree page|LinkedIn profile)/.test(s) ? `${name} ${s}` : `${name} photo: ${s}`; };
 /** "{author} · {license}" with the author linked to the file page and the license to its deed (no raw URLs). */
-export function CreditBody({ photo }: { photo: NonNullable<Photo> }) {
+export function CreditBody({ photo, name }: { photo: NonNullable<Photo>; name?: string }) {
   // Adam 12:16 AM CT: "Photo: {attribution}", linked to the source page (campaign, official or Commons file page).
-  const one = (p: Pic) => { const author = shortCredit(p.attribution ?? p.credit.replace(/^Photo:\s*/i, "")); return p.page ? <a href={p.page} target="_blank" rel="noreferrer" className={CLINK} data-photo-credit>{author}</a> : <span data-photo-credit>{author}</span>; };
-  return photo.mate ? <>{one(photo)} · {one(photo.mate)}</> : one(photo);
+  const one = (p: Pic, who?: string) => { const raw = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); const author = shortCredit(raw); return p.page ? <a href={p.page} target="_blank" rel="noreferrer" className={CLINK} aria-label={who ? creditLabel(who, raw) : undefined} data-photo-credit>{author}</a> : <span data-photo-credit>{author}</span>; };
+  return photo.mate ? <>{one(photo, name)} · {one(photo.mate, photo.mate.name)}</> : one(photo, name);
 }
 /** Design p12 #1: one credit line per race, "Photos: Name · credit   Name · credit".
  *  Design 3:34 AM CT (Oct 30): every credit link is at least 44px tall through spacing, not an invisible tap area.
@@ -85,12 +88,33 @@ export function RaceCredits({ cands, label }: { cands: { name: string; photo?: P
   const isOff = usePhotoOff();
   const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
   if (!keep.length) return null;
-  const link = (p: Pic, key: string) => { const author = shortCredit(p.attribution ?? p.credit.replace(/^Photo:\s*/i, "")); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} data-photo-credit>{author}</a> : <span key={key} className="flex min-h-11 items-center" data-photo-credit>{author}</span>; };
+  const link = (p: Pic, key: string, who: string) => { const raw = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); const author = shortCredit(raw); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} aria-label={creditLabel(who, raw)} data-photo-credit>{author}</a> : <span key={key} className="flex min-h-11 items-center" data-photo-credit>{author}</span>; };
   return <CreditRow count={keep.length}>{keep.map((c) => { const ph = c.photo!; return (
         <span key={c.name} className="flex flex-wrap items-center gap-x-1 md:gap-x-2 md:data-[overflow=true]:invisible" data-race-credit={c.name}>
-          <span>{label(c.name)} ·</span>{link(ph, "a")}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m")}</> : null}
+          <span>{label(c.name)} ·</span>{link(ph, "a", c.name)}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m", ph.mate.name)}</> : null}
         </span>
       ); })}</CreditRow>;
+}
+/** Below sm in the race list: every credit inside one "Photo credits (N)" disclosure (details/summary, 44px, 14px),
+ *  N = the photos credited (a ticket's running mate counts). Same fallback rule as RaceCredits; no photos, no disclosure. */
+export function PhoneCredits({ cands, label }: { cands: { name: string; photo?: Photo }[]; label: (name: string) => string }) {
+  const isOff = usePhotoOff();
+  const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
+  if (!keep.length) return null;
+  const n = keep.reduce((k, c) => k + (c.photo!.mate ? 2 : 1), 0);
+  const link = (p: Pic, key: string, who: string) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black" aria-label={`${creditLabel(who, author)} (opens in a new tab)`} data-photo-credit>{author}<span className="sr-only"> (opens in a new tab)</span></a> : <span key={key} className="inline-flex min-h-11 items-center" data-photo-credit>{author}</span>; };
+  return (
+    <details className="group/pc sm:hidden" data-phone-credits={n}>
+      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">Photo credits ({n})<span aria-hidden className="ml-2 inline-block group-open/pc:rotate-180">↓</span></summary>
+      <ul className="pb-2 text-sm leading-5 text-black/60 [word-break:break-word]" aria-label="Photo credits">
+        {keep.map((c) => { const ph = c.photo!; return (
+          <li key={c.name} className="flex flex-wrap items-center gap-x-1" data-race-credit={c.name}>
+            <span>{label(c.name)} ·</span>{link(ph, "a", c.name)}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m", ph.mate.name)}</> : null}
+          </li>
+        ); })}
+      </ul>
+    </details>
+  );
 }
 /** Design p13 #4: phones stack one credit per line; at 768px and up the row is inline (gap-x-6, no commas) and, if it
  *  would wrap past 1 line, is capped at 1 line (44px) with a "more" disclosure. Entries past the first line are made
@@ -123,7 +147,7 @@ function CreditRow({ count, children }: { count: number; children: ReactNode }) 
       </p>
       {wraps ? (
         // Design p14 #3: a 44x44 hit area (min-h-11 min-w-11, px-2, and after:-inset-x-3 reaching 12px into the 24px gap,
-        // which the last credit's 8px tap area never meets); 12/16 black/60, underlined.
+        // which the last credit's 8px tap area never meets); 14/20 black/60, underlined.
         <button type="button" aria-expanded={open} aria-controls={id} onClick={() => setOpen((v) => !v)} className={`relative hidden min-h-11 min-w-11 shrink-0 items-center justify-center px-2 underline decoration-black/20 underline-offset-2 hover:text-black after:absolute after:inset-y-0 after:-inset-x-3 after:content-[''] md:flex ${CREDIT}`} data-credits-more>
           {open ? "less" : "more"}
         </button>
@@ -134,11 +158,11 @@ function CreditRow({ count, children }: { count: number; children: ReactNode }) 
 export function PhotoCredit({ photo, name }: { photo: NonNullable<Photo>; name: string }) {
   const [off] = usePhotoFallback(name);
   if (off) return null;
-  return <p className={`mt-1 ${CREDIT}`} data-credit-line>Photo: <CreditBody photo={photo} /></p>;
+  return <p className={`mt-1 ${CREDIT}`} data-credit-line>Photo: <CreditBody photo={photo} name={name} /></p>;
 }
 
 /** Licensed or Ballotpedia portrait with its credit. Falls back to initials; never a generated image. */
-export function Portrait({ name, photo, className, boxClassName, credit = true, forceInitials = false, onFail }: { name: string; photo: Photo; className?: string; boxClassName?: string; credit?: boolean; forceInitials?: boolean; onFail?: () => void }) {
+export function Portrait({ name, photo, className, boxClassName, credit = true, forceInitials = false, onFail, sizes }: { name: string; photo: Photo; className?: string; boxClassName?: string; credit?: boolean; forceInitials?: boolean; onFail?: () => void; sizes?: string }) {
   const [broken, fail] = usePhotoFallback(name);
   const setBroken = (_: boolean) => fail();
   const show = photo?.url && !broken && !forceInitials;
@@ -146,13 +170,13 @@ export function Portrait({ name, photo, className, boxClassName, credit = true, 
     <figure className={cn("m-0", className)}>
       <div className={cn("relative aspect-square w-full overflow-hidden bg-[#e4e4e4]", boxClassName)}>
         {show ? (
-          <TileImage photo={photo!} alt={name} onFail={() => { setBroken(true); onFail?.(); }} />
+          <TileImage photo={photo!} alt={name} sizes={sizes} onFail={() => { setBroken(true); onFail?.(); }} />
         ) : (
           <AvatarPlaceholder />
         )}
       </div>
       {credit && show ? (
-        <figcaption className={`mt-1 ${CREDIT}`}>Photo: <CreditBody photo={photo!} /></figcaption>
+        <figcaption className={`mt-1 ${CREDIT}`}>Photo: <CreditBody photo={photo!} name={name} /></figcaption>
       ) : null}
     </figure>
   );

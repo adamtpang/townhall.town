@@ -24,6 +24,8 @@ export type Cause = { id: string; label: string; mentions: number; quote: string
 export type Race = {
   id: string;                       // e.g. "tx-35", "tx-governor", "ca-prop-40"
   title: string;
+  /** Ballot order line (lib/towny/ballotOrder.ts withOrderLines), added server-side; absent for one-choice contests. */
+  order?: OrderLine | null;
   level: "federal" | "state" | "county" | "local" | "measure";
   office: string;                   // plain words: what the office controls
   candidates: Politician[];         // empty for ballot measures
@@ -76,6 +78,10 @@ export type Money = {
   note?: string;                  // short sourced caveat, e.g. Civic's Ortiz note; shown in small muted text
   verified?: string;              // set on rows Civic checked (finance_fixes18)
   source: Source;
+  fecId?: string;                 // FEC candidate id (also in source.url)
   donorsSource?: Source;
-  fetchedAt: string;
+  fetchedAt?: string;
 };
+
+/** "Listed in the order on the official sample ballot." or the unsure line, with the source it points at. */
+export type OrderLine = { text: string; confirmed: boolean; url: string | null; label: string | null };

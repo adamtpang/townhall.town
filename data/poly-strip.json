@@ -1,0 +1,382 @@
+{
+ "_meta": "Polymarket strip markets from Civic's civic/poly25/banner_markets.json (Oct 30, 2026). Slugs, titles and questions are Civic's exact labels; no prices are stored here (prices are fetched live). ca-gov is limited to the two Nov 3 ballot candidates (Civic P0). ca-ltgov is kept out of the strip: Gloria Romero has no Polymarket market (Civic P0).",
+ "source": "civic/poly25/banner_markets.json",
+ "events": {
+  "us-senate-tx": {
+   "zip": "78701",
+   "slug": "texas-senate-election-winner",
+   "title": "Texas Senate Election Winner",
+   "url": "https://polymarket.com/event/texas-senate-election-winner",
+   "markets": [
+    {
+     "slug": "will-the-democrats-win-the-texas-senate-race-in-2026",
+     "question": "Will the Democrats win the Texas Senate race in 2026?"
+    },
+    {
+     "slug": "will-the-republicans-win-the-texas-senate-race-in-2026",
+     "question": "Will the Republicans win the Texas Senate race in 2026?"
+    }
+   ]
+  },
+  "tx-10": {
+   "zip": "78701",
+   "slug": "tx-10-house-election-winner",
+   "title": "TX-10 House Election Winner",
+   "url": "https://polymarket.com/event/tx-10-house-election-winner",
+   "markets": [
+    {
+     "slug": "will-the-republican-party-win-the-tx-10-house-seat",
+     "question": "Will the Republican Party win the TX-10 House seat?"
+    },
+    {
+     "slug": "will-the-democratic-party-win-the-tx-10-house-seat",
+     "question": "Will the Democratic Party win the TX-10 House seat?"
+    }
+   ]
+  },
+  "tx-37": {
+   "zip": "78701",
+   "slug": "tx-37-house-election-winner",
+   "title": "TX-37 House Election Winner",
+   "url": "https://polymarket.com/event/tx-37-house-election-winner",
+   "markets": [
+    {
+     "slug": "will-the-democratic-party-win-the-tx-37-house-seat",
+     "question": "Will the Democratic Party win the TX-37 House seat?"
+    },
+    {
+     "slug": "will-the-republican-party-win-the-tx-37-house-seat",
+     "question": "Will the Republican Party win the TX-37 House seat?"
+    }
+   ]
+  },
+  "tx-gov": {
+   "zip": "78701",
+   "slug": "texas-governor-winner-2026",
+   "title": "Texas Governor Election Winner",
+   "url": "https://polymarket.com/event/texas-governor-winner-2026",
+   "markets": [
+    {
+     "slug": "will-the-republicans-win-the-texas-governor-race-in-2026",
+     "question": "Will the Republicans win the Texas governor race in 2026?"
+    },
+    {
+     "slug": "will-the-democrats-win-the-texas-governor-race-in-2026",
+     "question": "Will the Democrats win the Texas governor race in 2026?"
+    }
+   ]
+  },
+  "tx-ltgov": {
+   "zip": "78701",
+   "slug": "texas-lieutenant-governor-election-winner-2026",
+   "title": "Texas Lieutenant Governor Election Winner",
+   "url": "https://polymarket.com/event/texas-lieutenant-governor-election-winner-2026",
+   "markets": [
+    {
+     "slug": "will-the-republican-party-candidate-win-the-2026-texas-lieutenant-governor-election",
+     "question": "Will the Republican Party candidate win the 2026 Texas Lieutenant Governor election?"
+    },
+    {
+     "slug": "will-the-democratic-party-candidate-win-the-2026-texas-lieutenant-governor-election",
+     "question": "Will the Democratic Party candidate win the 2026 Texas Lieutenant Governor election?"
+    }
+   ]
+  },
+  "tx-ag": {
+   "zip": "78701",
+   "slug": "texas-attorney-general-election-winner-2026",
+   "title": "Texas Attorney General Election Winner",
+   "url": "https://polymarket.com/event/texas-attorney-general-election-winner-2026",
+   "markets": [
+    {
+     "slug": "will-the-republican-party-candidate-win-the-2026-texas-attorney-general-election",
+     "question": "Will the Republican Party candidate win the 2026 Texas Attorney General election?"
+    },
+    {
+     "slug": "will-the-democratic-party-candidate-win-the-2026-texas-attorney-general-election",
+     "question": "Will the Democratic Party candidate win the 2026 Texas Attorney General election?"
+    }
+   ]
+  },
+  "tx-rrc": {
+   "zip": "78701",
+   "slug": "texas-railroad-commissioner-election-winner-2026",
+   "title": "Texas Railroad Commissioner Election Winner",
+   "url": "https://polymarket.com/event/texas-railroad-commissioner-election-winner-2026",
+   "markets": [
+    {
+     "slug": "will-the-democratic-party-candidate-win-the-2026-texas-railroad-commissioner-election",
+     "question": "Will the Democratic Party candidate win the 2026 Texas Railroad Commissioner election?"
+    },
+    {
+     "slug": "will-the-republican-party-candidate-win-the-2026-texas-railroad-commissioner-election",
+     "question": "Will the Republican Party candidate win the 2026 Texas Railroad Commissioner election?"
+    }
+   ]
+  },
+  "ca-gov": {
+   "zip": "94103",
+   "slug": "california-governor-election-2026",
+   "title": "California Governor Election Winner",
+   "url": "https://polymarket.com/event/california-governor-election-2026",
+   "markets": [
+    {
+     "slug": "will-xavier-becerra-win-the-california-governor-election-in-2026",
+     "question": "Will Xavier Becerra win the California Governor Election in 2026?"
+    },
+    {
+     "slug": "will-steve-hilton-win-the-california-governor-election-in-2026",
+     "question": "Will Steve Hilton win the California Governor Election in 2026?"
+    }
+   ]
+  },
+  "ny-12": {
+   "zip": "10001",
+   "slug": "ny-12-house-election-winner",
+   "title": "NY-12 House Election Winner",
+   "url": "https://polymarket.com/event/ny-12-house-election-winner",
+   "markets": [
+    {
+     "slug": "will-the-democratic-party-win-the-ny-12-house-seat",
+     "question": "Will the Democratic Party win the NY-12 House seat?"
+    },
+    {
+     "slug": "will-the-republican-party-win-the-ny-12-house-seat",
+     "question": "Will the Republican Party win the NY-12 House seat?"
+    }
+   ]
+  },
+  "ny-governor": {
+   "zip": "10001",
+   "slug": "new-york-governor-winner-2026",
+   "title": "New York Governor Election Winner",
+   "url": "https://polymarket.com/event/new-york-governor-winner-2026",
+   "markets": [
+    {
+     "slug": "will-the-democrats-win-the-new-york-governor-race-in-2026",
+     "question": "Will the Democrats win the New York governor race in 2026?"
+    },
+    {
+     "slug": "will-the-republicans-win-the-new-york-governor-race-in-2026",
+     "question": "Will the Republicans win the New York governor race in 2026?"
+    }
+   ]
+  },
+  "ny-attorney-general": {
+   "zip": "10001",
+   "slug": "new-york-attorney-general-election-winner-2026",
+   "title": "New York Attorney General Election Winner",
+   "url": "https://polymarket.com/event/new-york-attorney-general-election-winner-2026",
+   "markets": [
+    {
+     "slug": "will-the-democratic-party-candidate-win-the-2026-new-york-attorney-general-election",
+     "question": "Will the Democratic Party candidate win the 2026 New York Attorney General election?"
+    },
+    {
+     "slug": "will-the-republican-party-candidate-win-the-2026-new-york-attorney-general-election",
+     "question": "Will the Republican Party candidate win the 2026 New York Attorney General election?"
+    }
+   ]
+  },
+  "ca-prop-1": {
+   "zip": "94103",
+   "slug": "california-affordable-housing-bond-proposition",
+   "title": "California Affordable Housing Bond Proposition",
+   "url": "https://polymarket.com/event/california-affordable-housing-bond-proposition",
+   "markets": [
+    {
+     "slug": "california-affordable-housing-bond-proposition",
+     "question": "California Affordable Housing Bond Proposition"
+    }
+   ]
+  },
+  "ca-prop-2": {
+   "zip": "94103",
+   "slug": "california-rainy-day-fund-proposition",
+   "title": "California Rainy Day Fund Proposition",
+   "url": "https://polymarket.com/event/california-rainy-day-fund-proposition",
+   "markets": [
+    {
+     "slug": "california-rainy-day-fund-proposition",
+     "question": "California Rainy Day Fund Proposition"
+    }
+   ]
+  },
+  "ca-prop-3": {
+   "zip": "94103",
+   "slug": "california-high-earner-permanent-tax-proposition",
+   "title": "California High-Earner Permanent Tax Proposition",
+   "url": "https://polymarket.com/event/california-high-earner-permanent-tax-proposition",
+   "markets": [
+    {
+     "slug": "california-high-earner-permanent-tax-proposition",
+     "question": "California High-Earner Permanent Tax Proposition"
+    }
+   ]
+  },
+  "ca-prop-4": {
+   "zip": "94103",
+   "slug": "california-public-campaign-financing-proposition",
+   "title": "California Public Campaign Financing Proposition",
+   "url": "https://polymarket.com/event/california-public-campaign-financing-proposition",
+   "markets": [
+    {
+     "slug": "california-public-campaign-financing-proposition",
+     "question": "California Public Campaign Financing Proposition"
+    }
+   ]
+  },
+  "ca-prop-5": {
+   "zip": "94103",
+   "slug": "california-recall-election-reform-proposition",
+   "title": "California Recall Election Reform Proposition",
+   "url": "https://polymarket.com/event/california-recall-election-reform-proposition",
+   "markets": [
+    {
+     "slug": "california-recall-election-reform-proposition",
+     "question": "California Recall Election Reform Proposition"
+    }
+   ]
+  },
+  "ca-prop-37": {
+   "zip": "94103",
+   "slug": "california-homebuying-loan-program-proposition",
+   "title": "California Homebuying Loan Program Proposition",
+   "url": "https://polymarket.com/event/california-homebuying-loan-program-proposition",
+   "markets": [
+    {
+     "slug": "california-homebuying-loan-program-proposition",
+     "question": "California Homebuying Loan Program Proposition"
+    }
+   ]
+  },
+  "ca-prop-38": {
+   "zip": "94103",
+   "slug": "california-immunology-research-bond-proposition",
+   "title": "California Immunology Research Bond Proposition",
+   "url": "https://polymarket.com/event/california-immunology-research-bond-proposition",
+   "markets": [
+    {
+     "slug": "california-immunology-research-bond-proposition",
+     "question": "California Immunology Research Bond Proposition"
+    }
+   ]
+  },
+  "ca-prop-39": {
+   "zip": "94103",
+   "slug": "california-voter-id-referendum-passes",
+   "title": "California voter ID referendum passes?",
+   "url": "https://polymarket.com/event/california-voter-id-referendum-passes",
+   "markets": [
+    {
+     "slug": "california-voter-id-referendum-passes",
+     "question": "California voter ID referendum passes?"
+    }
+   ]
+  },
+  "ca-prop-40": {
+   "zip": "94103",
+   "slug": "billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+   "title": "Billionaire one-time wealth tax passes in California election 2026?",
+   "url": "https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+   "markets": [
+    {
+     "slug": "billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+     "question": "Billionaire one-time wealth tax passes in California election 2026?"
+    }
+   ]
+  },
+  "ca-prop-41": {
+   "zip": "94103",
+   "slug": "california-tax-spend-audit-proposition",
+   "title": "California Tax Spend Audit Proposition",
+   "url": "https://polymarket.com/event/california-tax-spend-audit-proposition",
+   "markets": [
+    {
+     "slug": "california-tax-spend-audit-proposition",
+     "question": "California Tax Spend Audit Proposition"
+    }
+   ]
+  },
+  "ca-prop-42": {
+   "zip": "94103",
+   "slug": "california-retroactive-tax-prohibition-proposition",
+   "title": "California Retroactive Tax Prohibition Proposition",
+   "url": "https://polymarket.com/event/california-retroactive-tax-prohibition-proposition",
+   "markets": [
+    {
+     "slug": "california-retroactive-tax-prohibition-proposition",
+     "question": "California Retroactive Tax Prohibition Proposition"
+    }
+   ]
+  },
+  "ca-prop-43": {
+   "zip": "94103",
+   "slug": "california-higher-local-tax-vote-threshold-proposition",
+   "title": "California Higher Local Tax Vote Threshold Proposition",
+   "url": "https://polymarket.com/event/california-higher-local-tax-vote-threshold-proposition",
+   "markets": [
+    {
+     "slug": "california-higher-local-tax-vote-threshold-proposition",
+     "question": "California Higher Local Tax Vote Threshold Proposition"
+    }
+   ]
+  },
+  "ca-prop-44": {
+   "zip": "94103",
+   "slug": "california-clinic-funding-proposition",
+   "title": "California Clinic Funding Proposition",
+   "url": "https://polymarket.com/event/california-clinic-funding-proposition",
+   "markets": [
+    {
+     "slug": "california-clinic-funding-proposition",
+     "question": "California Clinic Funding Proposition"
+    }
+   ]
+  },
+  "ca-prop-45": {
+   "zip": "94103",
+   "slug": "california-expedited-environmental-review-proposition",
+   "title": "California Expedited Environmental Review Proposition",
+   "url": "https://polymarket.com/event/california-expedited-environmental-review-proposition",
+   "markets": [
+    {
+     "slug": "california-expedited-environmental-review-proposition",
+     "question": "California Expedited Environmental Review Proposition"
+    }
+   ]
+  },
+  "national-senate": {
+   "zip": "national",
+   "slug": "which-party-will-win-the-senate-in-2026",
+   "title": "Which party will win the Senate in 2026?",
+   "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+   "markets": [
+    {
+     "slug": "will-the-democratic-party-control-the-senate-after-the-2026-midterm-elections",
+     "question": "Will the Democratic Party control the Senate after the 2026 Midterm elections?"
+    },
+    {
+     "slug": "will-the-republican-party-control-the-senate-after-the-2026-midterm-elections",
+     "question": "Will the Republican Party control the Senate after the 2026 Midterm elections?"
+    }
+   ]
+  },
+  "national-house": {
+   "zip": "national",
+   "slug": "which-party-will-win-the-house-in-2026",
+   "title": "Which party will win the House in 2026?",
+   "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
+   "markets": [
+    {
+     "slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
+     "question": "Will the Democratic Party control the House after the 2026 Midterm elections?"
+    },
+    {
+     "slug": "will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
+     "question": "Will the Republican Party control the House after the 2026 Midterm elections?"
+    }
+   ]
+  }
+ }
+}

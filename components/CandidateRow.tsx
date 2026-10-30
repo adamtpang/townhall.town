@@ -81,7 +81,7 @@ const issueLabel = (id: string) => ISSUES.find((i) => i.id === id)?.label ?? id;
  *  record line and the site link move (each with its own source link) into the existing "Show all positions" fold;
  *  "Record: No voting record found" and the repeated "No public position found yet on other issues." are dropped.
  *  Screen only: the printed sheet never shows positions. */
-export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, answers = {}, cut = false }: { c: RowCand; o: O; grade?: string | null; ids: string[]; raceId?: string; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined>; cut?: boolean }) {
+export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, answers = {}, cut = false, avatar }: { c: RowCand; o: O; grade?: string | null; ids: string[]; raceId?: string; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined>; cut?: boolean; avatar?: "lg" }) {
   const st = stancesFor(c.name);
   const site = liveUrl(c.campaignSite) || liveUrl(c.officialSite) || null;
   const checked = o.sourced < 2 ? cleanChecked(sourcesChecked(c.name)) : [];
@@ -115,19 +115,20 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
     <li key={k} className="min-w-0 text-base leading-6 text-black [overflow-wrap:anywhere]" data-main-point={x.i} data-point-type={x.k}>
       {x.k === "office" ? <><span className="text-base leading-6 font-[450] text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
       <span data-main-text>{x.t}</span>{" "}
-      <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
+      <a href={x.u} target="_blank" rel="noreferrer" className="relative [overflow-wrap:anywhere] text-sm leading-5 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
     </li>
   );
   const recordDiv = recShown ? (
-    <div className="mt-1 flex min-w-0 items-baseline gap-2 text-xs leading-4 text-black/60" data-record={rec.x} data-record-n={rec.n} data-record-id={mp?.id}>
-      <p className="line-clamp-2 min-w-0" title={`Record: ${recLine}`} data-record-line>Record: {recLine}</p>
-      {recUrl ? <a href={recUrl} target="_blank" rel="noreferrer" className="relative shrink-0 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-record-source>{sourceLabel(recUrl)}{ext}</a> : null}
+    <div className="mt-1 flex min-w-0 items-baseline gap-2 text-sm leading-5 text-black/60" data-record={rec.x} data-record-n={rec.n} data-record-id={mp?.id}>
+      <p className="line-clamp-2 min-w-0 text-sm" title={`Record: ${recLine}`} data-record-line>Record: {recLine}</p>
+      {recUrl ? <a href={recUrl} target="_blank" rel="noreferrer" className="relative shrink-0 text-sm text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-record-source>{sourceLabel(recUrl)}{ext}</a> : null}
     </div>
   ) : null;
   const siteP = site ? <p className="mt-1 text-sm"><a href={site} target="_blank" rel="noreferrer" className={`${HIT} th-link`} data-site-link>{liveUrl(c.campaignSite) ? "Campaign site" : "Official site"} ↗{ext}</a></p> : null;
   return (
     <li className="flex gap-3 py-3" data-overlap={c.name} data-status={o.status} data-photo-state={c.photo?.url ? "img" : "placeholder"}>
-      <Portrait name={c.name} photo={c.photo} credit={false} className="w-12 shrink-0" boxClassName="[&>span]:text-base" />
+      {/* Adam 1:11 PM Oct 30 (bigger): the /card avatar is a 96px square below 1024 and 128px from lg, radius 0. */}
+      <Portrait name={c.name} photo={c.photo} credit={false} className={avatar === "lg" ? "w-24 shrink-0 lg:w-32" : "w-12 shrink-0"} boxClassName="[&>span]:text-base" sizes={avatar === "lg" ? "(max-width: 1023px) 96px, 128px" : undefined} />
       <div className="min-w-0 flex-1">
         <p className="text-base font-[530] text-black">{c.name}</p>
         {/* Adam 9:58 AM CT Oct 30 + design 10:14 AM CT card order: name, fit line (only with 2+ shared issues), up to 3
@@ -165,14 +166,14 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
                     <span className="font-[530]">{issueLabel(id)}:</span>{" "}
                     {voteLine(s) ? <>{voteLine(s)}</> : stanceForm(s) === "summary" ? <><span className="text-black/60" data-bp-summary>Ballotpedia summary:</span> {s.quote}</> : s.quote ? <>&ldquo;{s.quote}&rdquo;</> : s.summary ? <><span className="text-black/60" data-summary>Summary:</span> {s.summary}</> : null}{" "}
                     {s.year ? <><span className="text-black/60" data-quote-year>({s.year})</span>{" "}</> : null}
-                    {s.sourceUrl ? <a href={s.sourceUrl} target="_blank" rel="noreferrer" title={s.year ? undefined : "Date unsure"} className={`${HIT} th-link`} data-own-line>{sourceLabel(s.sourceUrl)} ↗{ext}</a> : null}
+                    {s.sourceUrl ? <a href={s.chipUrl ?? s.sourceUrl} target="_blank" rel="noreferrer" title={s.year ? undefined : "Date unsure"} className={`${HIT} th-link`} data-own-line>{s.chipUrl && s.chip && s.chip !== "source" ? s.chip : sourceLabel(s.sourceUrl)} ↗{ext}</a> : null}
                   </li>
                 ); })}
               </ul>
             ) : null}
             {unsure.length > 0 ? (
               <ul className="mt-1 space-y-1" data-unsure-n={unsure.length}>
-                {unsure.map((id) => <li key={id} className="text-sm leading-5 text-black/60" data-unsure={id}><span className="font-[530]">{issueLabel(id)}: unclear, not compared.</span> {st[id].summary}{st[id].sourceUrl ? <>{" "}<a href={st[id].sourceUrl!} target="_blank" rel="noreferrer" className={`${HIT} th-link`}>{sourceLabel(st[id].sourceUrl)} ↗{ext}</a></> : null}</li>)}
+                {unsure.map((id) => <li key={id} className="text-sm leading-5 text-black/60" data-unsure={id}><span className="font-[530]">{issueLabel(id)}: unclear, not compared.</span> {st[id].summary}{st[id].sourceUrl ? <>{" "}<a href={st[id].sourceUrl!} target="_blank" rel="noreferrer" className={`${HIT} th-link`}>{st[id].sourceTitle ?? sourceLabel(st[id].sourceUrl)} ↗{ext}</a></> : null}</li>)}
               </ul>
             ) : null}
             {o.sourced >= 2 && noRec.length > 0 ? <p className="mt-1 text-sm text-black/60" data-null-status>No public position found yet: {noRec.map(issueLabel).join(", ")}</p> : null}
