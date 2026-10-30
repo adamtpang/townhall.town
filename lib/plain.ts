@@ -22,3 +22,15 @@ export function plain(s?: string | null): string {
     .replace(/\s+,/g, ",").replace(/,\s*\)/g, ")").replace(/\(\s*,\s*/g, "(").replace(/\.\s*\./g, ".").replace(/\s{2,}/g, " ")
     .trim();
 }
+
+/** QA 7391b20 P1-4: the API's appliesNote uses the same draft wording as the screen ("(draft, printed 9/11/2026)"). */
+export function draftWording(s?: string | null): string | undefined {
+  if (!s) return s ?? undefined;
+  return s
+    .replace(/\((marked )?TENTATIVE,\s*(?:printed\s+)?(\d{1,2}\/\d{1,2}\/\d{4})/g, "(draft, printed $2")
+    .replace(/\((marked )?TENTATIVE,\s*/g, "(draft, ")
+    .replace(/\bTENTATIVE contest list\b/g, "draft contest list")
+    .replace(/\bTENTATIVE\b/g, "draft");
+}
+/** "9/11/2026" from a note that says "printed 9/11/2026", else null. */
+export const printedDate = (s?: string | null) => /printed (\d{1,2}\/\d{1,2}\/\d{4})/.exec(draftWording(s) ?? "")?.[1] ?? null;

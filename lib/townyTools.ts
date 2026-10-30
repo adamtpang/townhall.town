@@ -4,7 +4,8 @@
 import { tool } from "ai";
 import { z } from "zod";
 import stancesData from "../data/stances.json";
-import { ISSUES, candidateId } from "./issues";
+import { ISSUES, candidateId, stancesFor } from "./issues";
+import { liveUrl } from "./links";
 import { getElectionDates, getPollingLocations } from "./logistics";
 import { ballotFor, DEMO_ZIPS } from "./tools";
 import { deleteMyData, getPrivacySummary } from "./townyControls";
@@ -54,12 +55,14 @@ export function getCandidatePositions(name: string, issue?: string) {
   const positions = Object.entries(rec ?? {})
     .filter(([k, v]) => k !== "name" && v && typeof v === "object")
     .filter(([, v]) => !HIDDEN.has(String((v as { status?: string }).status ?? "").toLowerCase()))
+    // One sentence, one issue + Civic holds (lib/oneIssue.ts): same filtering as the site.
+    .filter(([k]) => { const d = stancesFor(name)[k]; return !(d && d.value === null && /same sentence as another issue|held for a Civic retag/.test(String(d.status ?? ""))); })
     .filter(([k]) => !issueIds || issueIds.includes(k))
     .map(([k, v]) => {
       const s = v as { quote: string; sourceUrl: string; voteRecord?: string };
       return { issue: ISSUES.find((i) => i.id === k)?.label ?? k, quote: s.quote, sourceUrl: s.sourceUrl, form: stanceForm(s) };
     });
-  const base = { name: c?.name ?? name, onCoveredBallot: !!c, officialSite: c?.officialSite ?? null, ballotpedia: c?.ballotpedia ?? null };
+  const base = { name: c?.name ?? name, onCoveredBallot: !!c, officialSite: liveUrl(c?.officialSite), ballotpedia: liveUrl(c?.ballotpedia) };
   if (!positions.length) return { ...base, status: "no public statement found", issue: issue ?? null };
   return { ...base, status: "published", positions };
 }

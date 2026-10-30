@@ -2,7 +2,8 @@
 data/stances.json only (never ballots.json / ny.json, never scripts/merge_research.py).
 python3 scripts/merge_gapfill.py [data/civic/positions_gapfill_batch2.json ...]
 - "stances" with a numeric nonzero score and a sourceUrl fill or replace that issue (Civic's file wins issue by issue).
-- "unsure" items are display only: value stays null, status "unsure", never scored, and never overwrite a sourced value.
+- "unsure" items are display only: value stays null, status "unsure", never scored, and never overwrite a sourced value
+  unless the item says "override": true (a Civic downgrade; see scripts/civic_changes_to_gapfill.py).
 - "sourcesChecked" goes to data/sources-checked.json via scripts/build-sources-checked.mjs (run after this).
 """
 import json, sys, glob
@@ -14,7 +15,7 @@ added = unsure = 0
 for f in files:
     G = json.load(open(f))
     for cid, v in G.items():
-        if cid.startswith('_') or not isinstance(v, dict): continue
+        if cid.startswith('_') or not isinstance(v, dict) or 'name' not in v: continue  # skip notes blocks (linkFixes, appliesNotes, markets...)
         rec = st.setdefault(cid, {'name': v['name']})
         for x in v.get('stances', []):
             iss = x['issue']
@@ -27,7 +28,8 @@ for f in files:
         for x in v.get('unsure', []):
             iss = x['issue']
             cur = rec.get(iss)
-            if cur and isinstance(cur.get('value'), (int, float)) and cur['value'] != 0: continue
+            # "override": Civic downgraded a sourced value to unsure (qa_fixes5); otherwise never overwrite a sourced value.
+            if cur and isinstance(cur.get('value'), (int, float)) and cur['value'] != 0 and not x.get('override'): continue
             e = {'value': None, 'status': 'unsure', 'summary': x.get('summary', ''), 'sourceUrl': x.get('sourceUrl')}
             if x.get('quote'): e['quote'] = x['quote']
             if cur != e: unsure += 1

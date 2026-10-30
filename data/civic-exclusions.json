@@ -1,0 +1,21 @@
+{
+  "note": "Civic tag corrections for the live research layer and stances. retag: the quote moves to the new issue. exclude (no retag): held out until Civic retags it.",
+  "exclude": [
+    {
+      "name": "Xavier Becerra",
+      "issue": "wages",
+      "match": "clean[- ]energy|\\bgrid\\b",
+      "retag": "energy",
+      "score": 3,
+      "reason": "Civic qa_fixes4 (Oct 30, 2026): the Energy and Utilities sentence on /priorities was tagged wages; it is energy +3."
+    },
+    {
+      "name": "Steve Hilton",
+      "issue": "housing",
+      "match": "first \\$150,000 tax-free|vehicle registration|\\$3 gas",
+      "retag": "taxes",
+      "score": -4,
+      "reason": "Civic qa_fixes5 (Oct 30, 2026): the CBS SF campaign-stop quote lists tax and fee cuts; 'homelessness' is not housing costs. Taxes -4 (matches his stored taxes -4)."
+    }
+  ]
+}

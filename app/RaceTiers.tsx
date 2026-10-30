@@ -1,6 +1,6 @@
 "use client";
 import { judicialShort } from "../lib/judicial";
-import { plain } from "../lib/plain";
+import { plain, printedDate } from "../lib/plain";
 import { H2, H3, HIT } from "../lib/typeScale";
 const listOf = (xs: string[]) => (xs.length < 3 ? xs.join(" and ") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 import { useState } from "react";
@@ -15,7 +15,7 @@ import { polymarketCloseness } from "../lib/marketsCore.mjs";
 import type { RaceMeta } from "../lib/raceMeta";
 import { ISSUES } from "../lib/issues";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
-type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; splitNote?: string; sourceNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
 /** The one live Polymarket quote for a contest, or null. Never cached, never estimated. */
 export type Mk = PolyQuote | null;
 
@@ -118,9 +118,9 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                     <p className="max-w-[45ch] text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No rating" ? <> <span data-closeness>{r.meta.closeness} (race ratings).</span></> : null}{mk ? <> <span data-closeness-market>{polymarketCloseness(mk)} on Polymarket.</span></> : null}{r.meta?.contest ? <> {r.meta.contest.replace(/\.+$/, "")}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
                     <MarketLine line={leaderLine(mk)} />
                     {r.judicialNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" title={r.judicialNoteSource.label} className={`${HIT} break-words text-[#3760F2]`} data-judicial-source>{judicialShort(r.judicialNoteSource.label)} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
-                    {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {plain(r.appliesNote)}</span> : null}</p> : null}
+                    {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{(r.sourceNote ? r.splitNote : r.appliesNote) ? <span className="text-black/60"> {plain(r.sourceNote ? r.splitNote : r.appliesNote)}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
-                    {r.tentative ? <p className="text-sm text-black/60" data-tentative>Draft: from the NYC Board of Elections&rsquo; draft contest list. Check your sample ballot.</p> : null}
+                    {r.sourceNote ? <p className="max-w-[60ch] text-sm text-black/60" data-tentative>{r.sourceNote} Check your sample ballot.</p> : r.tentative ? <p className="text-sm text-black/60" data-tentative>TENTATIVE: from the NYC Board of Elections&rsquo; contest list{printedDate(r.appliesNote) ? `, printed ${printedDate(r.appliesNote)}` : ""}. Check your sample ballot.</p> : null}
                     {(r.source || r.verify || (r.meta?.closenessBasis.length ?? 0) > 0) && (
                       <p className="flex flex-wrap items-center gap-x-1 text-sm leading-5 text-black/60" data-race-links>
                         {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}

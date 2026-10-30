@@ -4,6 +4,7 @@ import { rateLimited, RESEARCH_POLICY } from "../../../lib/rateLimit";
 import { apiError, methodNotAllowed, withHeaders, API_VERSION_HEADERS } from "../../../lib/apiError";
 import { findQuotes, findOwnWords, ownIssueLinks, quoteFits, sameSite, textOf } from "../../../lib/research";
 import { ISSUES } from "../../../lib/issues";
+import { correctedIssue } from "../../../lib/oneIssue";
 import { generateText } from "ai";
 
 export const runtime = "nodejs";
@@ -121,7 +122,8 @@ async function research(req: Request): Promise<Response> {
             : isOwn(u) ? "nothing on these issues" : "no quote attributed to them";
           if (!r.text) failedAny = true;
           emit({ type: "step", name: c.name, url: u, label: `Reading ${host(u)}`, status: r.text ? "done" : "failed", detail });
-          for (const x of keep) emit({ type: "citation", name: c.name, issue: x.issue, quote: x.quote, url: u, ownSite: isOwn(u) });
+          // Civic tag corrections (data/civic-exclusions.json): retag to the right issue, or hold out until retagged.
+          for (const x of keep) { const fix = correctedIssue(String(c.name), x.issue, x.quote); if (fix === null) continue; emit({ type: "citation", name: c.name, issue: fix ?? x.issue, quote: x.quote, url: u, ownSite: isOwn(u) }); }
         });
         if (!found) emit({ type: "none", name: c.name, message: `No public statement found as of ${asOf()}` });
       }

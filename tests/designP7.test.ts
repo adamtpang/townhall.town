@@ -49,7 +49,8 @@ describe("Design p7 (4c21a5c)", () => {
     expect(end).toMatch(/after:-inset-y-4 after:content-\[''\]" data-early-source>Early voting source/);
     expect(end).not.toMatch(/after:-inset-y-1[^>]*>Early voting source/);
     // Oct 29 11:42 PM CT: attribution is always visible, small and muted (was a blue link in a collapsed list).
-    expect(src("components/PortraitRow.tsx")).toMatch(/className=\{`\$\{HIT\} text-black\/50 underline decoration-black\/20`\} data-photo-credit>/);
+    // Design p10 supersedes: credit is 12/16 weight 450 black/60, author linked to the file page, license to its deed.
+    expect(src("components/Portrait.tsx")).toMatch(/CREDIT = "max-w-\[60ch\] text-\[12px\] leading-4 font-\[450\] text-black\/60/);
     expect(src("app/RaceTiers.tsx")).toMatch(/className=\{`\$\{HIT\} text-black underline-offset-2 hover:underline`\} data-news-link>/);
   });
   it("5. ballot starts mt-6 below the city chips (no ~100px band)", () => {

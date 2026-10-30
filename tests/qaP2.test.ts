@@ -14,8 +14,9 @@ describe("QA P2 (60582ae)", () => {
     expect(plain("Table B29001 count")).not.toMatch(/B29001/);
   });
   it("no jargon in any rendered appliesNote", () => {
-    for (const z of ["78701", "94103", "10001"]) for (const r of ballotFor(z)!.races as { appliesNote?: string }[])
-      expect(plain(r.appliesNote)).not.toMatch(/ZCTA|edge artifact|TENTATIVE|ACS|B29001/);
+    // NYC rows with Civic's per-race source text (qa_fixes4) keep TENTATIVE by design; the jargon check covers the rest.
+    for (const z of ["78701", "94103", "10001"]) for (const r of ballotFor(z)!.races as { appliesNote?: string; splitNote?: string; sourceNote?: string }[])
+      expect(plain(r.sourceNote ? r.splitNote : r.appliesNote)).not.toMatch(/ZCTA|edge artifact|TENTATIVE|ACS|B29001/);
   });
   it("one authority line per power on 94103 Governor", () => {
     const a = raceMeta("94103", "ca-gov")!.why!.authority;

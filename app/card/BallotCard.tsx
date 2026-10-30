@@ -4,6 +4,7 @@ import { H1 } from "../../lib/typeScale";
 import { stancesFor, type Answers } from "../../lib/issues";
 import { overlapStatus } from "../../lib/overlapCore.mjs";
 import { gradeFor, GRADE_RULE } from "../../lib/grades.mjs";
+import { PhotoGroup } from "../../components/Portrait";
 import CandidateRow, { type RowCand } from "../../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl } from "../../lib/endscreen.mjs";
 import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
@@ -71,9 +72,9 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
               {rows.map(({ r, list }) => (
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
                   <p className="text-base font-[530]">{r.title || r.id}</p>
-                  <ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {list.map(({ c, o }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answeredYesNo={yesNo > 0} grade={gradeFor(o, r.judicial, answered, undefined, r, zip)} />)}
-                  </ul>
+                  <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
+                    {list.map(({ c, o }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={gradeFor(o, r.judicial, answered, undefined, r, zip)} />)}
+                  </ul></PhotoGroup>
                 </li>
               ))}
             </ul>

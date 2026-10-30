@@ -233,7 +233,7 @@ describe("QA 9dfe90d P2 + design p8", () => {
     expect(src("components/Prose.tsx")).toMatch(/text-base font-\[530\]/);
   });
   it("NYC banner says draft, matching the source notes", () => {
-    expect(src("app/RaceTiers.tsx")).toContain("Draft: from the NYC Board of Elections&rsquo; draft contest list");
+    expect(src("app/RaceTiers.tsx")).toContain("data-tentative>{r.sourceNote} Check your sample ballot."); // Civic qa_fixes4: TENTATIVE kept
     expect(src("app/RaceTiers.tsx")).not.toMatch(/tentative contest list/);
   });
 });

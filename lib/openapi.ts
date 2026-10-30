@@ -393,6 +393,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
                         title: { type: "string" },
                         url: { type: "string", format: "uri", description: "The Polymarket event page." },
                         api: { type: "string", format: "uri" },
+                        listed: { type: "array", items: { type: "string" }, description: "Every named outcome on the Polymarket event (used to check that the market lists every ballot candidate). Polymarket's unnamed placeholder slots ('Option A', 'Person B', a bare letter, 'Other') are removed." },
                         outcomes: { type: "array", maxItems: 4, items: { type: "object", required: ["name", "prob"], properties: { name: { type: "string" }, prob: { type: "number", minimum: 0, maximum: 1 } } } },
                         fetchedAt: { type: "string", format: "date-time" },
                       },

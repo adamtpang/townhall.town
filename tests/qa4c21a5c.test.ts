@@ -96,7 +96,8 @@ describe("QA 4c21a5c P2: labels", () => {
   it("10001 split notes name the real source (NYC BOE contest list), not 'draft contest list'", () => {
     const notes = races("10001").map((r) => plain(String(r.appliesNote || ""))).filter((n) => /Source/.test(n));
     expect(notes.length).toBeGreaterThan(0);
-    for (const n of notes) { expect(n).not.toMatch(/Source: draft contest list/); expect(n).toMatch(/NYC (BOE|Board of Elections) contest list \(draft, (printed )?9\/11\/2026\)/); }
+    // Superseded by Civic qa_fixes4 (Oct 30): the note is Civic's per-race text, which names the list and its print date.
+    for (const n of notes) { expect(n).not.toMatch(/Source: draft contest list/); expect(n).toMatch(/NYC Board of Elections General Contest List, printed 9\/11\/2026/); }
   });
 });
 

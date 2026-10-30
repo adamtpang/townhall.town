@@ -1,3 +1,4 @@
+import NY_NOTES from "../data/ny-applies-notes.json";
 import ballots from "../data/ballots.json";
 import { JUDICIAL_NOTE, judicialSource } from "./judicial";
 import ny from "../data/ny.json";
@@ -8,12 +9,14 @@ import { COVERED_ZIPS, isCoveredZip, UNSUPPORTED_MESSAGE } from "./site";
 // @ts-ignore plain ESM helper shared with scripts/
 import { fetchPolymarket, marketCoversBallot } from "./marketsCore.mjs";
 import { getTurnout } from "./turnout";
-import { withLicensedPhoto, allOrNone, slug as nameSlug } from "./photos";
+import { withLicensedPhoto, gatePhotos, slug as nameSlug } from "./photos";
 import SITES from "../data/campaign-sites.json";
+import { liveUrl } from "./links";
 import { withMoney } from "./money";
 import { raceMeta } from "./raceMeta";
 import { stancesFor, sourceLabel, ISSUES } from "./issues";
 import { stanceForm } from "./stanceForm";
+import { draftWording } from "./plain";
 
 /** Jurisdiction plus app-only extras (measures, verify links, context). Extra fields only; contract fields unchanged. */
 export type Ballot = Jurisdiction & {
@@ -68,6 +71,12 @@ function enrich(b: Ballot): Ballot {
     const dup = (titleN.get(r0.title) ?? 0) > 1 && r0.candidates.length === 1;
     const t0 = b.state === "TX" ? txTitle(r0.title) : r0.title;
     const r = { ...r0, title: dup ? t0.replace(/( \(retention[^)]*\))?$/, (m) => `: ${r0.candidates[0].name}${m}`) : t0 } as Race;
+    // Civic qa_fixes4 (Oct 30): NYC rows keep the TENTATIVE label and use Civic's per-race source text (data/ny-applies-notes.json),
+    // after the existing SPLIT text where there is one. Other notes keep the draft wording.
+    { const a = r as { id: string; appliesNote?: string; splitNote?: string; sourceNote?: string };
+      const civic = (NY_NOTES.byRace as Record<string, string>)[a.id];
+      if (civic) { const split = /^SPLIT[^]*?(?=\s*Source:|$)/.exec(a.appliesNote ?? "")?.[0]?.trim(); a.splitNote = split || undefined; a.sourceNote = civic; a.appliesNote = split ? `${split} ${civic}` : civic; }
+      else if (a.appliesNote) a.appliesNote = draftWording(a.appliesNote); }
     if (/^\s*unsure/i.test(String((r as { office?: string }).office ?? ""))) (r as { office?: string }).office = undefined; // never show "unsure" as an office description
     // Judicial races: no issue tags and no "why it matters" issue stats (judges can't campaign on issues).
     const meta = raceMeta(b.zip, r.id);
@@ -79,9 +88,10 @@ function enrich(b: Ballot): Ballot {
       const kept = jud ? [] : sourced((c as { positions?: unknown }).positions);
       const ps = jud ? [] : kept.length ? kept : publishedPositions(c.name);
       const site = (c as { campaignSite?: string | null }).campaignSite || (SITES.bySlug as Record<string, string>)[nameSlug(c.name)] || null;
-      return withMoney(withLicensedPhoto({ ...c, campaignSite: site, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
+      const live = { campaignSite: liveUrl(site), officialSite: liveUrl(c.officialSite), ballotpedia: liveUrl((c as { ballotpedia?: string | null }).ballotpedia) };
+      return withMoney(withLicensedPhoto({ ...c, ...live, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
     });
-    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: allOrNone(cands) /* Photo fairness (Oct 29 11:34 PM): if any candidate in a race lacks a real photo, the whole race shows initials */ };
+    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: gatePhotos(cands) /* PHOTO_GATE (lib/photos.ts): race mode by default = if any candidate in a race lacks a real photo, the whole race shows initials (Oct 29 11:34 PM) */ };
   }) };
 }
 
@@ -166,6 +176,9 @@ function ballotNamesFor(id: string): string[] {
  * with no quote, and a race with no matching market is "no market found". A candidate-race market that leaves out
  * anyone on the ballot is hidden ("market does not list every ballot candidate"), e.g. a primary-field market.
  */
+/** Polymarket placeholder outcome names: "Option A", "Person B", a bare letter, or "Other". */
+export const isListedPlaceholder = (n: string) => /^(?:(?:person|option)\s+)?[a-z0-9]$|^other$/i.test(String(n).trim());
+export const BALLOT_NAMES_ONLY = new Set(["ca-gov"]);
 export type MarketStatus = "live" | "unavailable" | "no market found" | "market does not list every ballot candidate";
 export async function getMarketOdds(raceIds: string[], fetcher: (slug: string, timeoutMs?: number) => Promise<MarketQuote> = fetchPolymarket as never, namesFor: (id: string) => string[] = ballotNamesFor) {
   const out: Record<string, { quotes: MarketQuote[]; status: MarketStatus }> = {};
@@ -174,11 +187,15 @@ export async function getMarketOdds(raceIds: string[], fetcher: (slug: string, t
       const slug = MARKET_SLUGS[id];
       if (!slug) return void (out[id] = { quotes: [], status: "no market found" });
       try {
-        const q = await fetcher(slug, 3000);
+        let q = await fetcher(slug, 3000);
+        // Civic qa_fixes4: ca-gov's market lists 20+ active people who are not on the ballot; show ballot names only.
+        if (q && BALLOT_NAMES_ONLY.has(id)) { const ok = (n: string) => namesFor(id).some((b) => marketCoversBallot([n], [b])); q = { ...q, outcomes: (q.outcomes ?? []).filter((o) => ok(o.name)), listed: (q.listed ?? []).filter(ok) }; }
         if (!q || !q.outcomes?.length) return void (out[id] = { quotes: [], status: "unavailable" });
         const listed = q.listed?.length ? q.listed : q.outcomes.map((o) => o.name);
         if (!marketCoversBallot(listed, namesFor(id))) return void (out[id] = { quotes: [], status: "market does not list every ballot candidate" });
-        out[id] = { quotes: [q], status: "live" };
+        // QA 7391b20 P1: Polymarket's unnamed slots ("Option A", "Person B", "A", "Other") never reach the API.
+        const named = listed.filter((n) => !isListedPlaceholder(n));
+        out[id] = { quotes: [{ ...q, listed: named }], status: "live" };
       } catch {
         out[id] = { quotes: [], status: "unavailable" };
       }

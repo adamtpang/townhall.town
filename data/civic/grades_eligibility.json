@@ -1,9 +1,15 @@
 {
  "_meta": {
-  "asOf": "2026-10-29T23:38:55-05:00",
-  "data": "feat2 (feat/actionable @4e15da7) data/stances.json + positions_gapfill_batch2.json scored stances. Sourced = numeric nonzero value (lib/overlapCore.mjs); \"unsure\" and wealthtax not counted.",
-  "rule": "gradesEligible only if: every candidate has 3+ sourced issues; 3+ issues sourced for every candidate; smallest count >= half of largest. Judicial, measures, unopposed always false.",
-  "raceIdSource": "race.id / measure.id from data/ballots.json (78701, 94103) and data/ny.json (10001); same ids the agent API returns (lib/api/agent.ts getRaces). 4 NY ids (ny-12, ny-governor, ny-attorney-general, ny-comptroller) are not keys in data/offices.json."
+  "asOf": "2026-10-30T00:24:43-05:00",
+  "data": "feat2 data/stances.json at 4e15da7 (batch2 baseline) + positions_gapfill_batch2.json + qa_fixes4.json scored stances, then qa_fixes5.json changes (unsure = removed, retag = new issue). Sourced = numeric nonzero value (lib/overlapCore.mjs).",
+  "rule": "gradesEligible only if: every candidate has 3+ sourced issues; 3+ issues sourced for every candidate; smallest count >= half of largest. Judicial (race.judicial set, the site flag), measures, unopposed always false.",
+  "judicialFlag": "Now uses race.judicial (the site flag). Batch2 matched the word \"judge\", which wrongly made travis-county-judge (County Judge, an executive office) judicial. That is the only race whose flag changed.",
+  "raceIdSource": "race.id / measure.id from data/ballots.json (78701, 94103) and data/ny.json (10001).",
+  "workingTreeCheck": {
+   "note": "Same computation on the current feat2 working-tree data/stances.json (uncommitted, includes qa_fixes4 already) + batch2 + qa4 + qa5.",
+   "eligibilityDiffersFor": [],
+   "candidateIssueDiffs": []
+  }
  },
  "races": {
   "tx-10": {
@@ -147,12 +153,10 @@
       "healthcare",
       "housing",
       "immigration",
-      "infrastructure",
       "safety",
-      "taxes",
-      "wages"
+      "taxes"
      ],
-     "sourcedIssueCount": 8
+     "sourcedIssueCount": 6
     }
    ],
    "sharedIssues": [
@@ -164,7 +168,7 @@
     "taxes"
    ],
    "gradesEligible": true,
-   "reason": "All 3 candidates have 3+ sourced issues (7-9); 6 shared (education, healthcare, housing, immigration, safety, taxes); min is at least half of max."
+   "reason": "All 3 candidates have 3+ sourced issues (6-9); 6 shared (education, healthcare, housing, immigration, safety, taxes); min is at least half of max."
   },
   "tx-gov": {
    "zip": "78701",
@@ -368,10 +372,9 @@
       "energy",
       "housing",
       "immigration",
-      "taxes",
-      "wages"
+      "taxes"
      ],
-     "sourcedIssueCount": 6
+     "sourcedIssueCount": 5
     },
     {
      "id": "sarah-eckhardt",
@@ -383,10 +386,9 @@
       "healthcare",
       "immigration",
       "infrastructure",
-      "safety",
-      "taxes"
+      "safety"
      ],
-     "sourcedIssueCount": 7
+     "sourcedIssueCount": 6
     },
     {
      "id": "shehla-faizi",
@@ -410,7 +412,7 @@
    ],
    "sharedIssues": [],
    "gradesEligible": false,
-   "reason": "Not eligible: under 3 sourced issues: V. Alonzo Echavarria-Garza (0); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 7)."
+   "reason": "Not eligible: under 3 sourced issues: V. Alonzo Echavarria-Garza (0); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 6)."
   },
   "tx-land": {
    "zip": "78701",
@@ -1182,20 +1184,30 @@
    "raceId": "travis-county-judge",
    "title": "County Judge",
    "level": "county",
-   "type": "judicial",
+   "type": "candidate",
    "inOfficesJson": true,
    "candidates": [
     {
      "id": "andy-brown",
      "name": "Andy Brown",
      "party": "Democratic",
-     "sourcedIssues": [],
-     "sourcedIssueCount": 0
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
     }
    ],
-   "sharedIssues": [],
+   "sharedIssues": [
+    "housing",
+    "infrastructure",
+    "safety",
+    "taxes"
+   ],
    "gradesEligible": false,
-   "reason": "Judicial race: grades never shown."
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
   },
   "travis-ccl-1": {
    "zip": "78701",
@@ -2120,10 +2132,9 @@
      "party": "Nonpartisan",
      "sourcedIssues": [
       "education",
-      "safety",
       "taxes"
      ],
-     "sourcedIssueCount": 3
+     "sourcedIssueCount": 2
     }
    ],
    "sharedIssues": [
@@ -2131,7 +2142,7 @@
     "taxes"
    ],
    "gradesEligible": false,
-   "reason": "Not eligible: only 2 issue(s) sourced for every candidate."
+   "reason": "Not eligible: under 3 sourced issues: Sonja Shaw (2); only 2 issue(s) sourced for every candidate; uneven records (min 2 < half of max 6)."
   },
   "ca-treasurer": {
    "zip": "94103",
@@ -3019,8 +3030,10 @@
      "id": "rome-moses-jones",
      "name": "Rome Moses Jones",
      "party": "Nonpartisan",
-     "sourcedIssues": [],
-     "sourcedIssueCount": 0
+     "sourcedIssues": [
+      "housing"
+     ],
+     "sourcedIssueCount": 1
     },
     {
      "id": "monroe-lace",
@@ -3037,10 +3050,9 @@
      "party": "Nonpartisan",
      "sourcedIssues": [
       "housing",
-      "infrastructure",
-      "taxes"
+      "infrastructure"
      ],
-     "sourcedIssueCount": 3
+     "sourcedIssueCount": 2
     },
     {
      "id": "jeremy-lee",
@@ -3061,10 +3073,9 @@
      "sourcedIssues": [
       "energy",
       "infrastructure",
-      "safety",
-      "taxes"
+      "safety"
      ],
-     "sourcedIssueCount": 4
+     "sourcedIssueCount": 3
     },
     {
      "id": "erwin-tam",
@@ -3085,7 +3096,7 @@
    ],
    "sharedIssues": [],
    "gradesEligible": false,
-   "reason": "Not eligible: under 3 sourced issues: Elijah Ball (2), Rome Moses Jones (0), Monroe Lace (1), Erwin Tam (1), Lisa Wynn (0); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 4)."
+   "reason": "Not eligible: under 3 sourced issues: Elijah Ball (2), Rome Moses Jones (1), Monroe Lace (1), Leah LaCroix (2), Erwin Tam (1), Lisa Wynn (0); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 4)."
   },
   "sf-community-college-board-partial": {
    "zip": "94103",

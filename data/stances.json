@@ -561,9 +561,11 @@
         "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt"
       },
       "taxes": {
-        "value": 2,
-        "quote": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools.",
-        "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt"
+        "value": null,
+        "status": "unsure",
+        "summary": "The quote names no tax level. The same source also points the other way (she lowered property taxes), so the direction is ambiguous.",
+        "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt",
+        "quote": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools."
       },
       "education": {
         "value": -4,
@@ -772,14 +774,18 @@
         "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
       },
       "infrastructure": {
-        "value": -3,
-        "quote": "This has to involve massive cuts in the federal budget in every single program and department.",
-        "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+        "value": null,
+        "status": "unsure",
+        "summary": "A cut-everything budget line gives no infrastructure-specific direction. A retag to taxes would duplicate his existing taxes -5 (\"Taxes are always too high...\"), so no retag is made. If the infrastructure entry is removed, set it to {value:null,status:\"unsure\"}.",
+        "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)",
+        "quote": "This has to involve massive cuts in the federal budget in every single program and department."
       },
       "wages": {
-        "value": -3,
-        "quote": "I believe in the free market, where people freely trade with each other without government regulations and controls.",
-        "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+        "value": null,
+        "status": "unsure",
+        "summary": "This is general free-market philosophy, so a wage direction would be inferred, not stated. Under the same standard, Don Huffines wages -4 is also changed (see below).",
+        "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)",
+        "quote": "I believe in the free market, where people freely trade with each other without government regulations and controls."
       },
       "energy": {
         "value": null,
@@ -921,9 +927,11 @@
         "sourceUrl": "https://donhuffines.com/"
       },
       "wages": {
-        "value": -4,
-        "quote": "Don Huffines believes government is the number one barrier to job creation and income growth. As Comptroller, he’ll fight to cut taxes and eliminate job-killing regulations that hold back Texas businesses and drive up the cost of living.",
-        "sourceUrl": "https://ballotpedia.org/Don_Huffines"
+        "value": null,
+        "status": "unsure",
+        "summary": "This is not one of the listed suspects. It is found by applying the Ted Brown wages standard to every candidate: general anti-regulation text with no wage-setting or minimum-wage position. It is also written in the third person (campaign/Ballotpedia text, not his own first-person words). Engineering can drop this item if they prefer to limit fixes to the listed suspects. Eligibility is unaffected either way (tx-comptroller is not eligible).",
+        "sourceUrl": "https://ballotpedia.org/Don_Huffines",
+        "quote": "Don Huffines believes government is the number one barrier to job creation and income growth. As Comptroller, he’ll fight to cut taxes and eliminate job-killing regulations that hold back Texas businesses and drive up the cost of living."
       },
       "healthcare": {
         "value": null,
@@ -1455,7 +1463,7 @@
       },
       "safety": {
         "value": -3,
-        "quote": "My focus will be on allocating funding for housing, healthcare, and programs such as SNAP.",
+        "quote": "Ensuring that people have their basic needs met and investing in truly affordable housing, healthcare, and food security have been shown to correspond with a decrease in crime. My focus will be on allocating funding for housing, healthcare, and programs such as SNAP.",
         "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
       },
       "wages": {
@@ -1879,7 +1887,7 @@
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
       },
       "energy": {
-        "value": 3,
+        "value": 2,
         "quote": "We know that the state needs improved grid reliability and better ways to get wind, solar, and other clean and affordable energy onto the grid",
         "sourceUrl": "https://ginafortexas.com/priority/an-affordable-texas-that-works-for-everyone/"
       },
@@ -3252,14 +3260,17 @@
       },
       "wages": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Same rule as Rome Moses Jones: this is a record item about public-employer pay (ACC staff), not wage policy. Dana Walker goes back to 0 sourced issues.",
+        "sourceUrl": "https://danawalkerforacc.com/",
+        "quote": "Raised wages for ACC employees"
       },
       "taxes": {
         "value": null,
         "status": "unsure",
-        "summary": "Backs expanding free tuition while saying ACC must \"scrutinize operations and spending\". No tax-level position; not scored.",
-        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+        "summary": "'protecting taxpayers' money' gives no tax-level direction. Not scored.",
+        "sourceUrl": "https://danawalkerforacc.com/",
+        "quote": "protecting taxpayers' money"
       },
       "safety": {
         "value": null,
@@ -4193,9 +4204,11 @@
         "sourceUrl": "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm"
       },
       "safety": {
-        "value": 2,
-        "quote": "we aimed to support staff and hold students accountable for their actions while navigating state-level challenges on suspensions and expulsions ... students must be held accountable and receive support at home",
-        "sourceUrl": "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html"
+        "value": null,
+        "status": "unsure",
+        "summary": "Student discipline is not the public-safety axis (enforcement vs treatment/prevention in public-safety funding). The quote also pairs accountability with \"receive support at home\", so it is mixed.",
+        "sourceUrl": "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+        "quote": "Working closely with Supt. Enfield, we aimed to support staff and hold students accountable for their actions while navigating state-level challenges on suspensions and expulsions"
       },
       "education": {
         "value": 4,
@@ -5038,8 +5051,9 @@
       "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
       "housing": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored.",
+        "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district"
       },
       "healthcare": {
         "value": null,
@@ -5048,8 +5062,9 @@
       },
       "wages": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored.",
+        "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district"
       },
       "taxes": {
         "value": null,
@@ -5711,9 +5726,10 @@
     "rome-moses-jones": {
       "name": "Rome Moses Jones",
       "housing": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": 3,
+        "quote": "If providing student housing and educator housing is an option, we need to pursue that option,",
+        "sourceUrl": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/",
+        "year": 2026
       },
       "healthcare": {
         "value": null,
@@ -5722,8 +5738,10 @@
       },
       "wages": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Precedent: public-employer pay statements have not been scored on wages. Alida Fisher (\"Living Wage for Educators Act\") has wages = \"No public statement found\" (her statement was scored only under taxes, for the parcel tax). Vikki Goodwin's \"teacher pay increases\" is not in her wages score (her wages +4 is the $15 minimum wage). The wages axis statement is \"Employers and workers, not government, should decide wage levels\". A trustee paying the college's own staff more is an employer decision, not wage policy for others.",
+        "sourceUrl": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/",
+        "quote": "I think we should pay our childcare and educators liveable wages"
       },
       "taxes": {
         "value": null,
@@ -5822,9 +5840,11 @@
         "sourceUrl": null
       },
       "taxes": {
-        "value": 3,
-        "quote": "I fully support Free City and the grant program, and strongly oppose any cuts or reductions to the program.",
-        "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+        "value": null,
+        "status": "unsure",
+        "summary": "This defends a program. It names no tax or tax level, and the future ballot measure is not identified as a tax. Compare Monroe Lace taxes +3, which explicitly calls for a \"successor CCSF parcel-tax measure\" (growsf.org, re-checked). Scoring LaCroix would mean inferring a tax.",
+        "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html",
+        "quote": "I fully support Free City and the grant program, and strongly oppose any cuts or reductions to the program."
       },
       "safety": {
         "value": null,
@@ -5918,9 +5938,11 @@
         "sourceUrl": null
       },
       "taxes": {
-        "value": 2,
-        "quote": "Free City is crucial and must not be a political bargaining chip.",
-        "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html"
+        "value": null,
+        "status": "unsure",
+        "summary": "Her funding ideas are enrollment, partnerships and grants. None of them is a tax, so there is no tax-level direction. This is the same standard as LaCroix.",
+        "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html",
+        "quote": "Free City is crucial and must not be a political bargaining chip."
       },
       "safety": {
         "value": -3,
@@ -6150,6 +6172,33 @@
     },
     "gigi-edwards-bryant": {
       "name": "Gigi Edwards Bryant"
+    },
+    "andy-brown": {
+      "name": "Andy Brown",
+      "taxes": {
+        "value": 2,
+        "quote": "County Judge Andy Brown FOR",
+        "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
+        "year": 2026
+      },
+      "safety": {
+        "value": -3,
+        "quote": "We can make our community safer and more stable by focusing on connecting people to the services they need outside of a jail.",
+        "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
+        "year": 2024
+      },
+      "housing": {
+        "value": 3,
+        "quote": "That meant tackling the affordability crisis and making sure more families have access to affordable and supportive quality housing.",
+        "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
+        "year": 2024
+      },
+      "infrastructure": {
+        "value": 3,
+        "quote": "We know a passenger rail system not only expands our transportation choices, it enhances the infrastructure crucial for improving people’s quality of life.",
+        "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
+        "year": 2024
+      }
     }
   }
 }

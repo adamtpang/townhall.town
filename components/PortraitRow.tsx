@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Photo } from "./Portrait";
-import { HIT } from "../lib/typeScale";
+import { CreditBody, CREDIT, PhotoGroup, usePhotoFallback, usePhotoOff, type Photo } from "./Portrait";
 
 type C = { name: string; party?: string | null; photo?: Photo };
 
@@ -22,8 +21,9 @@ export function labels(names: string[]) {
   });
 }
 
-function Tile({ c, eager, label, mate, reserveMate }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean }) {
-  const [broken, setBroken] = useState(false);
+function Tile({ c, eager, label, mate, reserveMate, max }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string }) {
+  const [broken, fail] = usePhotoFallback(c.name);
+  const setBroken = (_: boolean) => fail();
   const ref = useRef<HTMLImageElement>(null);
   // onError can fire before hydration attaches the handler; re-check once mounted.
   // A lazy image that hasn't started can also report complete with width 0, so probe the URL instead of trusting that.
@@ -34,18 +34,18 @@ function Tile({ c, eager, label, mate, reserveMate }: { c: C; eager?: boolean; l
   }, [c.photo?.url]);
   const show = !!c.photo?.url && !broken;
   return (
-    <li className="min-w-[28px]" style={{ flex: "0 1 var(--w)", width: "var(--w)" }} data-photo-tile data-photo-state={show ? "img" : "initials"}>
-      <div className="relative mx-auto aspect-square overflow-hidden bg-black/5 md:mx-0" style={{ width: "min(var(--p), 100%)" }}>
+    <li className={`min-w-0 ${max}`} style={{ flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "initials"}>
+      <div className="relative aspect-square w-full overflow-hidden bg-black/5">
         {/* Initials always sit underneath, so a slow, lazy or failed image never leaves a blank tile. */}
-        <span role={show ? undefined : "img"} aria-hidden={show ? true : undefined} aria-label={show ? undefined : `Photo not available: ${c.name}`}
+        <span role={show ? undefined : "img"} aria-hidden={show ? true : undefined} aria-label={show ? undefined : c.name}
           className="absolute inset-0 flex items-center justify-center font-sans text-sm font-[530] leading-none text-black/60 lg:text-base">{initials(c.name)}</span>
         {show ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img ref={ref} src={c.photo!.url} alt={split(c.name).lead} loading={eager ? "eager" : "lazy"} decoding="async" onError={() => setBroken(true)} className="absolute inset-0 h-full w-full object-cover object-top" />
+          <img ref={ref} src={c.photo!.url} alt={split(c.name).lead} loading={eager ? "eager" : "lazy"} decoding="async" referrerPolicy="no-referrer" onError={() => setBroken(true)} className="absolute inset-0 h-full w-full object-cover object-[center_20%]" />
         ) : null}
       </div>
-      <p className="mt-1 w-[var(--w)] text-center md:w-[calc(var(--p)+4px)] md:text-left truncate text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
-      {mate ? <p className="w-[var(--w)] truncate text-center text-sm md:w-[calc(var(--p)+4px)] md:text-left leading-5 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5" data-tile-mate-spacer /> : null}
+      <p className="mt-1 w-full text-center group-data-[dense=true]/row:max-md:sr-only md:text-left truncate text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
+      {mate ? <p className="w-full truncate text-center text-sm group-data-[dense=true]/row:max-md:sr-only md:text-left leading-5 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
     </li>
   );
 }
@@ -56,20 +56,30 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   if (!cands.length) return null;
   // Design p9 (<768): each item 56px wide (label w-14) with a centered 40px tile and gap-2, so 5 items fit 342px;
   // rows with more than 5 items fall back to 44px items. From 768 up the item is the tile (48 / 56px), gap-3.
-  const vars = size === "mini" ? "[--p:24px] [--w:24px] md:[--p:32px] md:[--w:32px]"
-    : `[--p:40px] ${cands.length > 5 ? "[--w:44px]" : "[--w:56px]"} md:[--p:48px] md:[--w:48px] lg:[--p:56px] lg:[--w:56px]`;
+  // Design p10 P0: every item flex 1 1 0 with min-width 0 and a max width (40 / 48 / 56px), so any number of candidates
+  // shares one row in equal tiles: never wraps, never hides or clips a candidate. Over 6 candidates under 768px the
+  // visible label goes sr-only (the name stays in aria-label/title and on the card).
+  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[40px] md:max-w-[48px] lg:max-w-[56px]";
+  const dense = size === "row" && cands.length > 6;
   return (
-    <>
-    <ul role="list" aria-label="Candidates in ballot order" className={`my-3 flex flex-nowrap gap-2 overflow-hidden md:gap-3 ${vars}`} data-photo-row>
-      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
+    <PhotoGroup>
+    <ul role="list" aria-label="Candidates in ballot order" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
+      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
-    {size === "row" && cands.some((c) => c.photo?.url) ? (
-      // Attribution is always visible wherever a photo appears (Oct 29 11:42 PM CT): small, muted.
-      <ul className="-mt-1 mb-2 space-y-0.5 text-sm leading-5 text-black/50 [word-break:break-word]" aria-label="Photo credits" data-photo-credits>{cands.filter((c) => c.photo?.url).map((c) => (
-        <li key={c.name}>{split(c.name).lead}: {c.photo!.page ? <a href={c.photo!.page} target="_blank" rel="noreferrer" className={`${HIT} text-black/50 underline decoration-black/20`} data-photo-credit>{c.photo!.credit}</a> : c.photo!.credit}{c.photo!.license && !c.photo!.credit.includes(c.photo!.license) ? ` (${c.photo!.license})` : ""}</li>
-      ))}</ul>
-    ) : null}
-    </>
+    {size === "row" ? <RowCredits cands={cands} /> : null}
+    </PhotoGroup>
   );
 }
 export const PortraitRow = CandidatePortraitRow;
+
+/** Design p10: one credit line under the row, credits joined by " · " (always visible wherever a photo appears).
+ *  Credits follow the fallback: a race (or, in candidate mode, a candidate) that reverted to initials drops its credit. */
+function RowCredits({ cands }: { cands: C[] }) {
+  const isOff = usePhotoOff();
+  const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
+  if (!keep.length) return null;
+  const L = labels(keep.map((c) => c.name));
+  return <p className={`-mt-1 mb-2 ${CREDIT}`} aria-label="Photo credits" data-photo-credits>{keep.length === 1 ? "Photo: " : "Photos: "}{keep.map((c, i) => (
+    <span key={c.name}>{i ? " · " : ""}{keep.length > 1 ? `${L[i].label}, ` : ""}<CreditBody photo={c.photo!} /></span>
+  ))}</p>;
+}

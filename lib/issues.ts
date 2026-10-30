@@ -4,6 +4,7 @@ import quoteYears from "../data/quote_years.json";
 export type Issue = { id: string; label: string; low: string; high: string; lowShort: string; highShort: string; caOnly?: boolean; question?: string; yesMeansPole?: "high" | "low"; reason?: string; reasonUrl?: string; poles?: Record<string, string> };
 
 /** Each issue is a policy direction from -5 (left end) to +5 (right end), integer steps. Neither end is a party. */
+import { duplicateSentenceIds, isExcluded } from "./oneIssue";
 export const ISSUES: Issue[] = [
   { id: "housing", question: "Should government act to lower housing costs?", label: "Housing costs", low: "Government should stay out of housing costs", high: "Government should act to lower housing costs", lowShort: "Hands off", highShort: "Act on costs" },
   { id: "healthcare", question: "Should government expand healthcare access?", label: "Healthcare access", low: "Smaller government role in healthcare", high: "Government should expand healthcare access", lowShort: "Smaller role", highShort: "Expand access" },
@@ -38,6 +39,10 @@ export function stancesFor(name: string): Record<string, Stance> {
   if (!rec) return {};
   const out: Record<string, Stance> = {};
   for (const [k, v] of Object.entries(rec)) if (k !== "name" && typeof v === "object") { const y = (v as Stance).year ?? YEARS[`${candidateId(name)}.${k}`]?.year; out[k] = y ? { ...(v as Stance), year: y } : (v as Stance); }
+  // One sentence, one issue (Oct 30 12:10 AM CT): a sentence tagged to several issues keeps only its best-fitting one.
+  // Dropped duplicates (and quotes held for a Civic retag) become value null, so they are neither shown nor counted.
+  for (const [id] of duplicateSentenceIds(out, ISSUES.map((i) => i.id))) out[id] = { value: null, status: "same sentence as another issue" };
+  for (const id of Object.keys(out)) if (out[id].value !== null && isExcluded(name, id, out[id].quote ?? out[id].summary)) out[id] = { value: null, status: "held for a Civic retag" }; // retagged quotes already sit under their new issue in stances.json
   return out;
 }
 

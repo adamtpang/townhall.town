@@ -29,6 +29,7 @@ export function SiteFooter() {
   return (
     <footer className="mx-auto mt-40 max-w-site border-t border-black/15 px-6 py-10 text-sm text-black/50">
       <p>Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.</p>
+      <p className="mt-2" data-photo-notice>Candidate photos are from their public campaign or official pages. <a href="/contact" className="text-black/60 underline underline-offset-2 hover:text-black">Contact us</a> to remove.</p>
       <nav aria-label="Site" className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
         {NAV.map((n) => (
           <a key={n.href} href={n.href} className="inline-flex min-h-11 items-center text-black/50 no-underline hover:text-black">

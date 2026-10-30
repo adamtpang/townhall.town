@@ -5,7 +5,9 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Caitlin Rourk\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: https://caitlinrourk.com/media — the \"CAITLIN ROURK PHOTOS\" button is href=\"#\"; no actual link or stated permission",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -15,7 +17,9 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Chris Gober\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Campaign site — no press kit; the /campaign-overview Drive links are opposition material, not media photos",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -25,9 +29,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg/500px-Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg",
   "license": "Public domain",
-  "attribution": "U.S. House of Representatives, public domain, via Wikimedia Commons",
+  "attribution": "Photo: U.S. House of Representatives, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: U.S. House of Representatives. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2023,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1437,
   "photoWidth": 500,
   "fileTitle": "File:Rep. Greg Casar - 118th Congress (3x4 cropped).jpg"
@@ -39,7 +46,9 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Lauren B. Peña\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "lauren4congress.com (campaign site, single-page app) — no press kit/media page found; TPPF profile headshot (texaspolicy.com) has no reuse terms"
+   "lauren4congress.com (campaign site, single-page app) — no press kit/media page found; TPPF profile headshot (texaspolicy.com) has no reuse terms",
+   "2nd pass 2026-10-30: https://lauren4congress.com/media — JS app; the bundle text shows only Social Media / Campaign Videos (TikTok) sections, with no press photos and no media-use permission",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -49,9 +58,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Antonioaesparza, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Antonioaesparza, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Antonioaesparza. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 634,
   "photoWidth": 500,
   "fileTitle": "File:James Talarico Press Conference (cropped).jpg"
@@ -62,9 +74,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ken_Paxton_-_55022425595_%28cropped%29.jpg/500px-Ken_Paxton_-_55022425595_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Gage Skidmore, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Gage Skidmore, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Gage Skidmore. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2023,
   "photoWidth": 500,
   "fileTitle": "File:Ken Paxton - 55022425595 (cropped).jpg"
@@ -76,7 +91,12 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Ted Brown\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "tedbrown.org/website/ (campaign site) — lists a media contact but offers no press kit or photos for media use"
+   "tedbrown.org/website/ (campaign site) — lists a media contact but offers no press kit or photos for media use",
+   "2nd pass 2026-10-30: Commons Category:Ted Brown — a 1950s TV personality, wrong person; File:Ted brown 2.png — a Brazilian man, wrong person",
+   "2nd pass 2026-10-30: https://lp.org/candidate/ted-brown — \"© 2026 Libertarian National Committee, Inc. All rights reserved.\"; no media-use permission",
+   "2nd pass 2026-10-30: https://lptexas.org/candidates — no license or media-use statement",
+   "2nd pass 2026-10-30: Openverse (Flickr CC) search by name — no image from the candidate's own or an official account",
+   "2nd pass 2026-10-30: https://tedbrown.org/website/index.html (campaign site) — media contact is email/phone only; no press photos or media kit; footer \"© 2025 Ted Brown Election Committee\"; site images (e.g. images/ted-smiling.jpg) have no stated reuse terms"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -86,9 +106,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Greg_Abbott_at_NASA_2024_%28cropped%29.jpg/500px-Greg_Abbott_at_NASA_2024_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg",
   "license": "Public domain",
-  "attribution": "NASA Johnson Space Center / NASA-JSC/ROBERT MARKOWITZ, public domain, via Wikimedia Commons",
+  "attribution": "Photo: NASA/Robert Markowitz, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: NASA Johnson Space Center / NASA-JSC/ROBERT MARKOWITZ. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2024,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1801,
   "photoWidth": 500,
   "fileTitle": "File:Greg Abbott at NASA 2024 (cropped).jpg"
@@ -96,15 +119,19 @@
  "gina-hinojosa": {
   "name": "Gina Hinojosa",
   "raceId": "tx-gov",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg/500px-Gina_Hinojosa_at_LBJ_Library_Forum_%283x4_cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_LBJ_Library_Forum_(3x4_cropped).jpg",
-  "license": "Public domain",
-  "attribution": "LBJ Library, public domain, via Wikimedia Commons",
+  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg/500px-Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
+  "pageUrl": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
+  "license": "CC0",
+  "attribution": "Photo: RRC1701, CC0",
+  "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: RRC1701. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
-  "originalWidth": 800,
+  "photoYear": 2024,
+  "photoYearBasis": "file page date 2024-01-28",
+  "originalWidth": 828,
   "photoWidth": 500,
-  "fileTitle": "File:Gina Hinojosa at LBJ Library Forum (3x4 cropped).jpg"
+  "fileTitle": "File:Gina Hinojosa at the AFL-CIO COPE convention in 2024.jpg",
+  "note": "Swapped 2026-10-30 for photo-age fairness: the 2024 photo replaces the 2017 LBJ Library photo, so it is comparable to Abbott (2024)."
  },
  "pat-dixon": {
   "name": "Pat Dixon",
@@ -113,7 +140,11 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Pat Dixon\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "Commons/Wikidata \"Pat Dixon.jpg\" is a comedian — a different person; Wikidata Q141659615 (TX politician) has no image"
+   "Commons/Wikidata \"Pat Dixon.jpg\" is a comedian — a different person; Wikidata Q141659615 (TX politician) has no image",
+   "2nd pass 2026-10-30: Commons File:Pat Dixon.jpg — shows a comedian of the same name, wrong person",
+   "2nd pass 2026-10-30: lptexas.org / lp.org — all rights reserved, no media-use permission",
+   "2nd pass 2026-10-30: Openverse (Flickr CC) search by name — no image from the candidate's own or an official account",
+   "2nd pass 2026-10-30: https://patdixon.org/ , /about-pat-dixon/ , /media-appearances/ (campaign site) — a headshot (wp-content/uploads/2026/07/pjd_headshot_260618.jpg) is on the About page, but there is no press/media-use permission or license anywhere; not acceptable"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -123,12 +154,16 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg/500px-Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg",
   "license": "CC BY 2.0",
-  "attribution": "Photo: Maryland GovPics, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons",
+  "attribution": "Photo: Maryland GovPics, CC BY 2.0",
+  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Maryland GovPics. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1479,
   "photoWidth": 500,
-  "fileTitle": "File:Lt. Governor Dan Patrick (54281823824) (cropped).jpg"
+  "fileTitle": "File:Lt. Governor Dan Patrick (54281823824) (cropped).jpg",
+  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
  },
  "vikki-goodwin": {
   "name": "Vikki Goodwin",
@@ -136,12 +171,16 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Cole-Wilson-93, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Cole-Wilson-93, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Cole-Wilson-93. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2019,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1800,
   "photoWidth": 500,
-  "fileTitle": "File:HiRes-Vikki Goodwin-6381-red (cropped).jpg"
+  "fileTitle": "File:HiRes-Vikki Goodwin-6381-red (cropped).jpg",
+  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
  },
  "kevin-mccormick": {
   "name": "Kevin McCormick",
@@ -149,12 +188,16 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg",
   "license": "CC0",
-  "attribution": "Photo: WikiBunny2K1, CC0 (https://creativecommons.org/publicdomain/zero/1.0/), via Wikimedia Commons",
+  "attribution": "Photo: WikiBunny2K1, CC0",
+  "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: WikiBunny2K1. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2026,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 4284,
   "photoWidth": 500,
-  "fileTitle": "File:Kevin McCormick (Texas politician).jpg"
+  "fileTitle": "File:Kevin McCormick (Texas politician).jpg",
+  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
  },
  "anthony-cristo": {
   "name": "Anthony Cristo",
@@ -162,22 +205,29 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Anthony Cristo\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons name and category search — none",
+   "2nd pass 2026-10-30: lptexas.org/candidates — no license statement"
   ],
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
  },
  "nathan-johnson": {
   "name": "Nathan Johnson",
   "raceId": "tx-ag",
   "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg/500px-Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg",
   "pageUrl": "https://en.wikipedia.org/wiki/File:Nathan_M._Johnson_(Texas_Senate)_speaks_at_Massachusetts_State_House_on_Aug._5,_2025,_amid_Texas_walkout_over_redistricting_(3x4).jpg",
-  "license": "Public domain (PD-MAGov: Massachusetts Governor's Press Office work, per file page)",
-  "attribution": "Henry Shifrin/Massachusetts Governor's Press Office, public domain, via English Wikipedia",
+  "license": "Public domain",
+  "attribution": "Photo: Henry Shifrin/Massachusetts Governor's Press Office, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: Henry Shifrin/Massachusetts Governor's Press Office. Via English Wikipedia: https://en.wikipedia.org/wiki/File:Nathan_M._Johnson_(Texas_Senate)_speaks_at_Massachusetts_State_House_on_Aug._5,_2025,_amid_Texas_walkout_over_redistricting_(3x4).jpg. Tag: PD-MAGov (work of the Massachusetts Governor's Press Office).",
   "sourceType": "English Wikipedia (local file, public domain)",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 747,
   "photoWidth": 500,
-  "fileTitle": "File:Nathan M. Johnson (Texas Senate) speaks at Massachusetts State House on Aug. 5, 2025, amid Texas walkout over redistricting (3x4).jpg"
+  "fileTitle": "File:Nathan M. Johnson (Texas Senate) speaks at Massachusetts State House on Aug. 5, 2025, amid Texas walkout over redistricting (3x4).jpg",
+  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
  },
  "mayes-middleton": {
   "name": "Mayes Middleton",
@@ -185,12 +235,16 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mayes_Middleton_by_Gage_Skidmore.jpg/500px-Mayes_Middleton_by_Gage_Skidmore.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg",
   "license": "CC BY-SA 3.0",
-  "attribution": "Photo: Gage Skidmore, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons",
+  "attribution": "Photo: Gage Skidmore, CC BY-SA 3.0",
+  "licenseDetail": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Author/credit on file page: Gage Skidmore. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2018,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1370,
   "photoWidth": 500,
-  "fileTitle": "File:Mayes Middleton by Gage Skidmore.jpg"
+  "fileTitle": "File:Mayes Middleton by Gage Skidmore.jpg",
+  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
  },
  "tom-oxford": {
   "name": "Tom Oxford",
@@ -198,9 +252,13 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Tom Oxford\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons name and category search — no file of this candidate",
+   "2nd pass 2026-10-30: lptexas.org/candidates — no license statement",
+   "2nd pass 2026-10-30: tomoxford.com — SSL certificate error, page not readable"
   ],
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
  },
  "don-huffines": {
   "name": "Don Huffines",
@@ -208,9 +266,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Don_Huffines_%2851370822589%29_%28cropped%29.jpg/500px-Don_Huffines_%2851370822589%29_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg",
   "license": "CC BY-SA 2.0",
-  "attribution": "Photo: Gage Skidmore from Surprise, AZ, United States of America, CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0/), via Wikimedia Commons",
+  "attribution": "Photo: Gage Skidmore, CC BY-SA 2.0",
+  "licenseDetail": "CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0/). Author/credit on file page: Gage Skidmore from Surprise, AZ, United States of America. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2021,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2248,
   "photoWidth": 500,
   "fileTitle": "File:Don Huffines (51370822589) (cropped).jpg"
@@ -221,9 +282,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sarah_Eckhardt_%28cropped%29.jpg/500px-Sarah_Eckhardt_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg",
   "license": "CC BY 4.0",
-  "attribution": "Photo: Jeffrey Clemmons, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Jeffrey Clemmons, CC BY 4.0",
+  "licenseDetail": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Author/credit on file page: Jeffrey Clemmons. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2026,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 3988,
   "photoWidth": 500,
   "fileTitle": "File:Sarah Eckhardt (cropped).jpg"
@@ -234,7 +298,9 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Shehla Faizi\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons name and category search — none",
+   "2nd pass 2026-10-30: https://www.faizifortexas.com/media — press coverage and interviews only; no photos offered for media use"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -244,7 +310,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"V. Alonzo Echavarria-Garza\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -254,9 +321,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg/500px-Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Sen._Dawn_Buckingham,_M.D_(cropped).jpg",
   "license": "Public domain",
-  "attribution": "Jay Godwin, public domain, via Wikimedia Commons",
+  "attribution": "Photo: Jay Godwin, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: Jay Godwin. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Sen._Dawn_Buckingham,_M.D_(cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2017,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 892,
   "photoWidth": 500,
   "fileTitle": "File:Sen. Dawn Buckingham, M.D (cropped).jpg"
@@ -267,7 +337,10 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Benjamin Flores\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons File:2026 TXDEM GFX JH 000422-.jpg — CC0 claimed by an uploader, but it is a Texas Democratic Party graphic and is tagged Category:Copyright violations; rejected",
+   "2nd pass 2026-10-30: Commons Category:Benjamin Flores Jr. (actor) and a Bolivian Benjamín Flores — wrong people",
+   "2nd pass 2026-10-30: https://www.letsgowithben.com/gallery-1 and /press-releases — photo gallery and a press contact, but no stated reuse/media-use permission"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -277,7 +350,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Neill Snider\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -287,9 +361,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg",
   "license": "CC0",
-  "attribution": "Photo: DivaaNut, CC0 (https://creativecommons.org/publicdomain/zero/1.0/), via Wikimedia Commons",
+  "attribution": "Photo: DivaaNut, CC0",
+  "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: DivaaNut. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2026,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 727,
   "photoWidth": 500,
   "fileTitle": "File:Clayton Tucker Speech Cropped (3x4).jpg"
@@ -300,7 +377,9 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Nate Sheets\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons name and category search — none",
+   "2nd pass 2026-10-30: https://natesheets.com/home/ — no press kit or media-use photos"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -311,7 +390,8 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Austin R. Kelly\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "Commons \"File:Austin Kelly - Official.png\" is categorized as an entrepreneur; cannot be tied to this candidate"
+   "Commons \"File:Austin Kelly - Official.png\" is categorized as an entrepreneur; cannot be tied to this candidate",
+   "2nd pass 2026-10-30: Commons File:Austin Kelly - Official.png (2015, User:AustinMotors, \"Entrepreneurs\") — cannot be tied to this candidate; rejected"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -321,9 +401,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Photo_of_Jon_Rosenthal.jpg/500px-Photo_of_Jon_Rosenthal.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Scriptrix101, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Scriptrix101, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Scriptrix101. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2026,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1365,
   "photoWidth": 500,
   "fileTitle": "File:Photo of Jon Rosenthal.jpg"
@@ -335,7 +418,9 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Bo French\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "bofrench.com and bofrench.com/news (campaign site) — no press kit or media photo page (/press, /media blocked/absent)"
+   "bofrench.com and bofrench.com/news (campaign site) — no press kit or media photo page (/press, /media blocked/absent)",
+   "2nd pass 2026-10-30: Commons name and category search — none",
+   "2nd pass 2026-10-30: https://bofrench.com/ — no press kit or media-use photo statement"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -345,7 +430,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Arthur DiBianca\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -514,9 +600,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
   "license": "CC BY-SA 3.0",
-  "attribution": "Photo: AndrewsKurth, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons",
+  "attribution": "Photo: AndrewsKurth, CC BY-SA 3.0",
+  "licenseDetail": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Author/credit on file page: AndrewsKurth. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2012,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 900,
   "photoWidth": 500,
   "fileTitle": "File:Brister Scott hiresRGB 12 2012.jpg"
@@ -605,7 +694,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Mica Arellano\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -615,7 +705,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Allison Bush\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -625,9 +716,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg/500px-LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:LBJ_Library_Future_Forum_-_Sanctuary_Cities_(Montserrat_Garibay).jpg",
   "license": "Public domain",
-  "attribution": "LBJ Library, public domain, via Wikimedia Commons",
+  "attribution": "Photo: LBJ Library, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: LBJ Library. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:LBJ_Library_Future_Forum_-_Sanctuary_Cities_(Montserrat_Garibay).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2018,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1379,
   "photoWidth": 500,
   "fileTitle": "File:LBJ Library Future Forum - Sanctuary Cities (Montserrat Garibay).jpg"
@@ -639,7 +733,8 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Arshia Papari\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "arshiafortexas.org (campaign site: home, platform, donate, sign) — no press/media page or press photos"
+   "arshiafortexas.org (campaign site: home, platform, donate, sign) — no press/media page or press photos",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -651,7 +746,8 @@
    "Wikimedia Commons file search (intitle:\"Jessica Martinez\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
    "jessicaforhd51.com / jessforhd51.com (campaign site) — no press/media page or press photos",
-   "Commons files titled \"Jessica Martinez\" depict other people (a Whittier, CA city councilor; an Argentine model/actress; a Paraguayan footballer) — not this candidate"
+   "Commons files titled \"Jessica Martinez\" depict other people (a Whittier, CA city councilor; an Argentine model/actress; a Paraguayan footballer) — not this candidate",
+   "2nd pass 2026-10-30: Commons categories for Jessica Martinez — a Paraguayan footballer and an Argentine woman, wrong people"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -663,7 +759,9 @@
    "Wikimedia Commons file search (intitle:\"Maria Luisa “Lulu” Flores\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
    "Texas House member photo exists (https://house.texas.gov/images/members/4150.jpg) but house.texas.gov site policy (https://house.texas.gov/help/privacy) prohibits incorporating House page graphics into another site; Legislative Reference Library says reproduction permission must come from House Photography — not acceptable",
-   "house.texas.gov/members/4150/media — \"No Media at this time\"; luluflores.com is a parked/for-sale domain; no campaign press kit found"
+   "house.texas.gov/members/4150/media — \"No Media at this time\"; luluflores.com is a parked/for-sale domain; no campaign press kit found",
+   "2nd pass 2026-10-30: Commons name and category search — none",
+   "2nd pass 2026-10-30: lulufloresfortexas.com — SSL error, not readable"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -778,15 +876,14 @@
  "andy-brown": {
   "name": "Andy Brown",
   "raceId": "travis-county-judge",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Andy_Brown_headshot.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Andy_Brown_headshot.jpg",
-  "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Unknown author Unknown author, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "originalWidth": 400,
-  "photoWidth": 400,
-  "fileTitle": "File:Andy Brown headshot.jpg"
+  "status": "no licensed photo found",
+  "sourcesChecked": [
+   "Wikimedia Commons file search (intitle:\"Andy Brown\") and full-text search — no free-licensed photo identifiable as this person",
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons File:Andy Brown headshot.jpg dropped. It claims CC BY-SA 4.0 but the author is \"unknown\" and the source is twitter.com/AndyBrownATX (not own work; the license cannot be traced to the copyright holder). No other Commons file; Category:Andy Brown (politician) is empty.",
+   "https://www.traviscountytx.gov/commissioners-court/county-judge/andy-brown-bio and ceremonial-documents page — the official photo is only \"furnished … upon request\"; no stated reuse terms"
+  ],
+  "checkedDate": "2026-10-30"
  },
  "todd-wong": {
   "name": "Todd Wong",
@@ -858,9 +955,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/5x7Elisabeth_IMG_013.jpg/500px-5x7Elisabeth_IMG_013.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: DustDevil22039, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: DustDevil22039, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: DustDevil22039. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2008,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1500,
   "photoWidth": 500,
   "fileTitle": "File:5x7Elisabeth IMG 013.jpg",
@@ -1116,9 +1216,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Trevor_Hale_%28head_shot%29.jpg/500px-Trevor_Hale_%28head_shot%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Trevor_Hale_(head_shot).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Bhkdynamo, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Bhkdynamo, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Bhkdynamo. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Trevor_Hale_(head_shot).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2014,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 600,
   "photoWidth": 500,
   "fileTitle": "File:Trevor Hale (head shot).jpg",
@@ -1141,9 +1244,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Connie_Chan%2C_2025.jpg/500px-Connie_Chan%2C_2025.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg",
   "license": "Public domain",
-  "attribution": "San Francisco Board of Supervisors, public domain, via Wikimedia Commons",
+  "attribution": "Photo: San Francisco Board of Supervisors, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: San Francisco Board of Supervisors. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1049,
   "photoWidth": 500,
   "fileTitle": "File:Connie Chan, 2025.jpg"
@@ -1154,9 +1260,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Scott_Wiener_Official_Biography_Portrait.jpg/500px-Scott_Wiener_Official_Biography_Portrait.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg",
   "license": "Public domain",
-  "attribution": "California State Senate, public domain, via Wikimedia Commons",
+  "attribution": "Photo: California State Senate, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: California State Senate. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 600,
   "photoWidth": 500,
   "fileTitle": "File:Scott Wiener Official Biography Portrait.jpg"
@@ -1167,9 +1276,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rob_Bonta_official_portrait_%28cropped%29.jpg/500px-Rob_Bonta_official_portrait_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg",
   "license": "Public domain",
-  "attribution": "Douglas Despres, California Attorney General's Office, public domain, via Wikimedia Commons",
+  "attribution": "Photo: Douglas Despres/California Attorney General's Office, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: Douglas Despres, California Attorney General's Office. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2023,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2127,
   "photoWidth": 500,
   "fileTitle": "File:Rob Bonta official portrait (cropped).jpg"
@@ -1179,8 +1291,11 @@
   "raceId": "ca-ag",
   "photoUrl": "https://www.justice.gov/sites/default/files/2025-05/250507-crt-anti-semitism_08_0.jpg",
   "pageUrl": "https://www.justice.gov/opa/gallery/civil-rights-division-hosts-union-orthodox-jewish-congregations-america-justice",
-  "license": "Public domain (U.S. federal government work; justice.gov: \"Unless otherwise indicated, information on Department of Justice websites is in the public domain\")",
-  "attribution": "U.S. Department of Justice (public domain)",
+  "license": "Public domain",
+  "attribution": "Photo: U.S. Department of Justice, Public domain",
+  "licenseDetail": "U.S. federal government work (17 U.S.C. § 105). justice.gov: \"Unless otherwise indicated, information on Department of Justice websites is in the public domain.\"",
+  "photoYear": 2025,
+  "photoYearBasis": "DOJ gallery, May 2025",
   "sourceType": "Official government (federal, public domain)",
   "checkedDate": "2026-10-30",
   "note": "DOJ gallery alt text: \"Deputy Assistant Attorney General Michael E. Gates delivers remarks at a podium\" (May 2025). Event photo, 900px wide; crop to face.",
@@ -1192,9 +1307,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Malia_Cohen_State_Controller_portrait.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg",
   "license": "Public domain",
-  "attribution": "California Government, public domain, via Wikimedia Commons",
+  "attribution": "Photo: California Government, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: California Government. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2023,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 280,
   "photoWidth": 280,
   "fileTitle": "File:Malia Cohen State Controller portrait.jpg"
@@ -1206,7 +1324,8 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Herb W Morgan\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "Commons \"File:Representative Herb Morgan dnd0486.jpg\" is a 1986 Florida legislator — a different person"
+   "Commons \"File:Representative Herb Morgan dnd0486.jpg\" is a 1986 Florida legislator — a different person",
+   "2nd pass 2026-10-30: Commons File:Representative Herb Morgan dnd0486.jpg — shows a Florida legislator, wrong person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -1216,9 +1335,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ben_Allen%2C_2021.jpg/500px-Ben_Allen%2C_2021.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg",
   "license": "Public domain",
-  "attribution": "California State Senate, public domain, via Wikimedia Commons",
+  "attribution": "Photo: California State Senate, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: California State Senate. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2021,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1168,
   "photoWidth": 500,
   "fileTitle": "File:Ben Allen, 2021.jpg"
@@ -1226,15 +1348,19 @@
  "jane-kim": {
   "name": "Jane Kim",
   "raceId": "ca-insurance",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/SupervisorJaneKim.png/500px-SupervisorJaneKim.png",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:SupervisorJaneKim.png",
-  "license": "CC BY 2.0",
-  "attribution": "Photo: Jane Kim, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons",
+  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Trans_March_San_Francisco_20170623-6632.jpg/500px-Trans_March_San_Francisco_20170623-6632.jpg",
+  "pageUrl": "https://commons.wikimedia.org/wiki/File:Trans_March_San_Francisco_20170623-6632.jpg",
+  "license": "CC BY-SA 4.0",
+  "attribution": "Photo: Pax Ahimsa Gethen, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Pax Ahimsa Gethen. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Trans_March_San_Francisco_20170623-6632.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
-  "originalWidth": 696,
+  "photoYear": 2017,
+  "photoYearBasis": "file page date 2017-06-23",
+  "originalWidth": 2430,
   "photoWidth": 500,
-  "fileTitle": "File:SupervisorJaneKim.png"
+  "fileTitle": "File:Trans March San Francisco 20170623-6632.jpg",
+  "note": "Swapped 2026-10-30 for photo-age fairness: the 2017 photo replaces the 2014 official portrait (7 yrs older than Ben Allen 2021). Event photo; crop to her face (upper left) to drop the person behind her."
  },
  "shirley-n-weber": {
   "name": "Shirley N. Weber",
@@ -1242,9 +1368,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirley_Weber.jpg/500px-Shirley_Weber.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg",
   "license": "Public domain",
-  "attribution": "California Secretary of State's office, public domain, via Wikimedia Commons",
+  "attribution": "Photo: California Secretary of State's office, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: California Secretary of State's office. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2021,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1638,
   "photoWidth": 500,
   "fileTitle": "File:Shirley Weber.jpg"
@@ -1255,9 +1384,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Donald_P._Wagner%2C_2022.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg",
   "license": "Public domain",
-  "attribution": "Orange County Board of Supervisors, public domain, via Wikimedia Commons",
+  "attribution": "Photo: Orange County Board of Supervisors, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: Orange County Board of Supervisors. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2022,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 460,
   "photoWidth": 460,
   "fileTitle": "File:Donald P. Wagner, 2022.jpg"
@@ -1265,13 +1397,17 @@
  "richard-barrera": {
   "name": "Richard Barrera",
   "raceId": "ca-spi",
-  "status": "no licensed photo found",
-  "sourcesChecked": [
-   "Wikimedia Commons file search (intitle:\"Richard Barrera\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)",
-   "San Diego Unified board photo exists (https://cdnsm5-ss18.sharpschool.com/UserFiles/Servers/Server_27732394/Image/%20About/Board%20of%20Edu/Richard%20NEW%202020-21.jpg); no reuse terms stated on sandiegounified.org — not acceptable"
-  ],
-  "checkedDate": "2026-10-30"
+  "photoUrl": "https://images.squarespace-cdn.com/content/v1/67b0f232273eb817e2f7a289/edc7eb84-98dd-425f-9367-3795de9dc8a1/Portrait-24-Edit_pp+%281%29.jpeg?format=500w",
+  "pageUrl": "https://www.barreraforedu.com/mediaresources",
+  "license": "Campaign press photo (offered for media use)",
+  "attribution": "Photo: Barrera for Superintendent campaign, press photo",
+  "licenseDetail": "The campaign Media Resources page (barreraforedu.com/mediaresources) offers \"Press Photos — Download All Photos\" with a campaign media contact; criterion (c). No CC license; use as a campaign-supplied press photo with credit.",
+  "photoYear": 2025,
+  "photoYearBasis": "estimated: campaign site built Feb 2025 (Squarespace content id); 2026 campaign press set",
+  "sourceType": "Campaign press/media page",
+  "checkedDate": "2026-10-30",
+  "note": "Portrait from the campaign Media Resources \"Press Photos\" section (same set as the Dropbox \"Download All Photos\" link). Served as image/webp at 500x749. Checked by eye: single-subject headshot on the candidate's own press page. Alternate in the same set: Portrait-45-Edit_pp.jpeg.",
+  "photoWidth": 500
  },
  "sonja-shaw": {
   "name": "Sonja Shaw",
@@ -1280,7 +1416,9 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Sonja Shaw\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "Chino Valley USD board photo exists (https://files.smartsites.parentsquare.com/7144/BOE_SShaw_1749608105.png); no reuse terms stated on chino.k12.ca.us — not acceptable"
+   "Chino Valley USD board photo exists (https://files.smartsites.parentsquare.com/7144/BOE_SShaw_1749608105.png); no reuse terms stated on chino.k12.ca.us — not acceptable",
+   "2nd pass 2026-10-30: https://shawforca.com — no press/media page and no press photos (only Instagram, which has no reuse terms)",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -1290,9 +1428,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/LG_Kounalakis_Signing_%28cropped%29.jpg/500px-LG_Kounalakis_Signing_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg",
   "license": "Public domain",
-  "attribution": "Office of Lieutenant Governor Eleni Kounalakis, public domain, via Wikimedia Commons",
+  "attribution": "Photo: Office of Lt. Governor Eleni Kounalakis, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: Office of Lieutenant Governor Eleni Kounalakis. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 797,
   "photoWidth": 500,
   "fileTitle": "File:LG Kounalakis Signing (cropped).jpg"
@@ -1304,7 +1445,9 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Jennifer Hawks\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "hawksforus.com/press-releases (campaign site) — press releases only, no press kit or downloadable photos"
+   "hawksforus.com/press-releases (campaign site) — press releases only, no press kit or downloadable photos",
+   "2nd pass 2026-10-30: https://hawksforus.com/press-releases (and /press, /media, /press-kit) — JS app that serves the same shell on every path; no press photos or media-use permission found",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -1314,9 +1457,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/HHS_Xavier_Becerra.jpg/500px-HHS_Xavier_Becerra.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg",
   "license": "Public domain",
-  "attribution": "United States Department of Health and Human Services, public domain, via Wikimedia Commons",
+  "attribution": "Photo: U.S. Department of Health and Human Services, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: United States Department of Health and Human Services. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2021,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2400,
   "photoWidth": 500,
   "fileTitle": "File:HHS Xavier Becerra.jpg"
@@ -1327,9 +1473,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg",
   "license": "CC BY 2.0",
-  "attribution": "Photo: Gage Skidmore, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons",
+  "attribution": "Photo: Gage Skidmore, CC BY 2.0",
+  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Gage Skidmore. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2024,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2645,
   "photoWidth": 500,
   "fileTitle": "File:Steve Hilton (54233445987 crop).jpg"
@@ -1337,15 +1486,20 @@
  "fiona-ma": {
   "name": "Fiona Ma",
   "raceId": "ca-ltgov",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fiona_Ma_official2.jpg/500px-Fiona_Ma_official2.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Fiona_Ma_official2.jpg",
+  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Fiona_Ma_2026_Treasurer_portrait_%28cropped%29.png",
+  "pageUrl": "https://commons.wikimedia.org/wiki/File:Fiona_Ma_2026_Treasurer_portrait_(cropped).png",
   "license": "Public domain",
-  "attribution": "California Treasurer's Office, public domain, via Wikimedia Commons",
+  "attribution": "Photo: California Treasurer's Office, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: California Treasurer's Office. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Fiona_Ma_2026_Treasurer_portrait_(cropped).png.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
-  "originalWidth": 576,
-  "photoWidth": 500,
-  "fileTitle": "File:Fiona Ma official2.jpg"
+  "photoYear": 2026,
+  "photoYearBasis": "file page date",
+  "originalWidth": 279,
+  "photoWidth": 279,
+  "fileTitle": "File:Fiona Ma 2026 Treasurer portrait (cropped).png",
+  "note": "Swapped 2026-10-30 to the current 2026 official portrait (treasurer.ca.gov/portraits, an official portrait gallery offered for download). Unscaled at 279x333.",
+  "raceNote": "photo ages not comparable (2007–2026); race shows initials"
  },
  "gloria-romero": {
   "name": "Gloria Romero",
@@ -1353,12 +1507,16 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Gloria_Romero%2C_c._2007.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Gloria_Romero,_c._2007.jpg",
   "license": "Public domain",
-  "attribution": "State of California, public domain, via Wikimedia Commons",
+  "attribution": "Photo: State of California, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: State of California. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Gloria_Romero,_c._2007.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2007,
+  "photoYearBasis": "estimated: c. 2007 state senate website banner (archived Feb 2007)",
   "originalWidth": 179,
   "photoWidth": 179,
-  "fileTitle": "File:Gloria Romero, c. 2007.jpg"
+  "fileTitle": "File:Gloria Romero, c. 2007.jpg",
+  "raceNote": "photo ages not comparable (2007–2026); race shows initials"
  },
  "matt-haney": {
   "name": "Matt Haney",
@@ -1366,9 +1524,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Matt_Haney%2C_2022.jpg/500px-Matt_Haney%2C_2022.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Matt_Haney,_2022.jpg",
   "license": "Public domain",
-  "attribution": "California State Assembly, public domain, via Wikimedia Commons",
+  "attribution": "Photo: California State Assembly, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: California State Assembly. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Matt_Haney,_2022.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2022,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 600,
   "photoWidth": 500,
   "fileTitle": "File:Matt Haney, 2022.jpg"
@@ -1379,7 +1540,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Manuel Noris-Barrera\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -1389,9 +1551,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sally_Lieber_Square.jpg/500px-Sally_Lieber_Square.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Sally_Lieber_Square.jpg",
   "license": "Public domain",
-  "attribution": "California State Board of Equalization, public domain, via Wikimedia Commons",
+  "attribution": "Photo: California State Board of Equalization, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: California State Board of Equalization. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Sally_Lieber_Square.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2022,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1000,
   "photoWidth": 500,
   "fileTitle": "File:Sally Lieber Square.jpg"
@@ -1402,35 +1567,34 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"John Pimentel\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Campaign-linked Flickr https://www.flickr.com/photos/204238289@N07/ (realname \"John Pimentel\") — all 17 photos are All Rights Reserved (license 0); not acceptable",
+   "2nd pass 2026-10-30: https://johnpimentel.com/news — videos and text only, no press photos with permission",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
  "kelli-m-evans": {
   "name": "Kelli M. Evans",
   "raceId": "ca-supreme-evans",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Kelli_Evans.jpg/500px-Kelli_Evans.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Kelli_Evans.jpg",
-  "license": "Public domain",
-  "attribution": "JUDICIAL BRANCH OF CALIFORNIA, public domain, via Wikimedia Commons",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "originalWidth": 866,
-  "photoWidth": 500,
-  "fileTitle": "File:Kelli Evans.jpg"
+  "status": "no licensed photo found",
+  "sourcesChecked": [
+   "Wikimedia Commons file search (intitle:\"Kelli M. Evans\") and full-text search — no free-licensed photo identifiable as this person",
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons File:Kelli Evans.jpg (source: Judicial Branch of California) is tagged PD-CAGov, but its source site states copyright with restrictive terms (https://courts.ca.gov/about/terms-use — Judicial Council site terms: content \"protected by applicable copyrights\", personal non-commercial download only, other use needs the copyright holder's permission). The license is unclear, so the photo was dropped per QA. No other Commons file found."
+  ],
+  "checkedDate": "2026-10-30"
  },
  "joshua-groban": {
   "name": "Joshua Groban",
   "raceId": "ca-supreme-groban",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Justice_Joshua_P._Groban.png",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Justice_Joshua_P._Groban.png",
-  "license": "Public domain",
-  "attribution": "© 2019 Judicial Council of California, public domain, via Wikimedia Commons",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "originalWidth": 150,
-  "photoWidth": 150,
-  "fileTitle": "File:Justice Joshua P. Groban.png"
+  "status": "no licensed photo found",
+  "sourcesChecked": [
+   "Wikimedia Commons file search (intitle:\"Joshua Groban\") and full-text search — no free-licensed photo identifiable as this person",
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons File:Justice Joshua P. Groban.png (author field \"© 2019 Judicial Council of California\") is tagged PD-CAGov, but its source site states copyright with restrictive terms (https://courts.ca.gov/about/terms-use — Judicial Council site terms: content \"protected by applicable copyrights\", personal non-commercial download only, other use needs the copyright holder's permission). The license is unclear, so the photo was dropped per QA. No other Commons file found."
+  ],
+  "checkedDate": "2026-10-30"
  },
  "charles-a-smiley": {
   "name": "Charles A. Smiley",
@@ -1501,15 +1665,13 @@
  "victor-a-rodriguez": {
   "name": "Victor A. Rodriguez",
   "raceId": "ca-coa-1-3b",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Victor_A._Rodriguez.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Victor_A._Rodriguez.jpg",
-  "license": "Public domain",
-  "attribution": "https://www.courts.ca.gov/46041.htm, public domain, via Wikimedia Commons",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "originalWidth": 449,
-  "photoWidth": 449,
-  "fileTitle": "File:Victor A. Rodriguez.jpg"
+  "status": "no licensed photo found",
+  "sourcesChecked": [
+   "Wikimedia Commons file search (intitle:\"Victor A. Rodriguez\") and full-text search — no free-licensed photo identifiable as this person",
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons File:Victor A. Rodriguez.jpg (source courts.ca.gov/46041.htm) is tagged PD-CAGov, but its source site states copyright with restrictive terms (https://courts.ca.gov/about/terms-use — Judicial Council site terms: content \"protected by applicable copyrights\", personal non-commercial download only, other use needs the copyright holder's permission). The license is unclear, so the photo was dropped per QA. No other Commons file found."
+  ],
+  "checkedDate": "2026-10-30"
  },
  "tracie-l-brown": {
   "name": "Tracie L. Brown",
@@ -1572,9 +1734,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Manohar-Raju-SF-Public-Defender-headshot.jpg/500px-Manohar-Raju-SF-Public-Defender-headshot.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Manohar-Raju-SF-Public-Defender-headshot.jpg",
   "license": "Public domain",
-  "attribution": "San Francisco, public domain, via Wikimedia Commons",
+  "attribution": "Photo: City and County of San Francisco, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: San Francisco. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Manohar-Raju-SF-Public-Defender-headshot.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2019,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 600,
   "photoWidth": 500,
   "fileTitle": "File:Manohar-Raju-SF-Public-Defender-headshot.jpg"
@@ -1595,9 +1760,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Matt_Dorsey%2C_2022.jpg/500px-Matt_Dorsey%2C_2022.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Matt_Dorsey,_2022.jpg",
   "license": "Public domain",
-  "attribution": "San Francisco Board of Supervisors, public domain, via Wikimedia Commons",
+  "attribution": "Photo: San Francisco Board of Supervisors, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: San Francisco Board of Supervisors. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Matt_Dorsey,_2022.jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2022,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2088,
   "photoWidth": 500,
   "fileTitle": "File:Matt Dorsey, 2022.jpg"
@@ -1768,9 +1936,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Alida_Fisher_-_Candidate_for_Board_of_Education.webm/500px--Alida_Fisher_-_Candidate_for_Board_of_Education.webm.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Alida_Fisher_-_Candidate_for_Board_of_Education.webm",
   "license": "CC BY 3.0",
-  "attribution": "Photo: SFGovTV, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/), via Wikimedia Commons",
+  "attribution": "Photo: SFGovTV, CC BY 3.0",
+  "licenseDetail": "CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Author/credit on file page: SFGovTV. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Alida_Fisher_-_Candidate_for_Board_of_Education.webm. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2018,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1920,
   "photoWidth": 500,
   "fileTitle": "File:Alida Fisher - Candidate for Board of Education.webm",
@@ -1922,9 +2093,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg/500px-FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:FWNY25;_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_(cropped).jpg",
   "license": "Public domain",
-  "attribution": "Lance Cpl. Steven Wells, public domain, via Wikimedia Commons",
+  "attribution": "Photo: Lance Cpl. Steven Wells/U.S. Marine Corps, Public domain",
+  "licenseDetail": "Public domain. Author/credit on file page: Lance Cpl. Steven Wells. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:FWNY25;_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_(cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1384,
   "photoWidth": 500,
   "fileTitle": "File:FWNY25; U.S. Marines and Sailors hold wreath laying ceremony Micah Lasher (cropped).jpg"
@@ -1935,9 +2109,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
   "license": "CC0",
-  "attribution": "Photo: AidansStuff, CC0 (https://creativecommons.org/publicdomain/zero/1.0/), via Wikimedia Commons",
+  "attribution": "Photo: AidansStuff, CC0",
+  "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: AidansStuff. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2026,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 347,
   "photoWidth": 347,
   "fileTitle": "File:Caroline Shinkle Selfie (cropped).jpg"
@@ -1948,7 +2125,9 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Wilneida Negron\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: wilneidany12.com — no press/media page",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -1958,7 +2137,9 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Karen Ortiz\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: https://ko4congress.com/media — press releases only; no photos offered for media use",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -1968,9 +2149,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/World_Cup_Transportation_and_Safety_%28cropped%29.jpg/500px-World_Cup_Transportation_and_Safety_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:World_Cup_Transportation_and_Safety_(cropped).jpg",
   "license": "CC BY 4.0",
-  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 4.0",
+  "licenseDetail": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:World_Cup_Transportation_and_Safety_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2026,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1160,
   "photoWidth": 500,
   "fileTitle": "File:World_Cup_Transportation_and_Safety_(cropped).jpg",
@@ -1982,13 +2166,16 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Blakeman_Profile_Picture.jpg/500px-Blakeman_Profile_Picture.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Blakeman_Profile_Picture.jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Arthur Raslich, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Arthur Raslich, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Arthur Raslich. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Blakeman_Profile_Picture.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2022,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 675,
   "photoWidth": 500,
   "fileTitle": "File:Blakeman_Profile_Picture.jpg",
-  "note": "Ticket entry: photo shows the gubernatorial candidate Bruce Blakeman only. No licensed photo found for running mate Todd Hood."
+  "note": "Ticket entry: photo shows the gubernatorial candidate Bruce Blakeman only. No licensed photo found for running mate Todd Hood. 2nd pass 2026-10-30, still none for Hood: Commons name/category search found nothing; the Madison County Sheriff page photo (madisoncounty.ny.gov ImageRepository documentID=6023) has no stated reuse terms (the county copyright page is JS-only); nygop.org is \"All Rights Reserved\"."
  },
  "letitia-a-james": {
   "name": "Letitia A. James",
@@ -1996,9 +2183,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Letitia_James_Interview_Feb_2020.png",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Letitia_James_Interview_Feb_2020.png",
   "license": "CC BY 3.0",
-  "attribution": "Photo: WBLS, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/), via Wikimedia Commons",
+  "attribution": "Photo: WBLS, CC BY 3.0",
+  "licenseDetail": "CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Author/credit on file page: WBLS. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Letitia_James_Interview_Feb_2020.png. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2020,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 337,
   "photoWidth": 337,
   "fileTitle": "File:Letitia James Interview Feb 2020.png"
@@ -2010,7 +2200,9 @@
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Saritha Komatireddy\") and full-text search — no free-licensed photo identifiable as this person",
    "Wikidata entity search — no matching item with an image (P18)",
-   "sarithafornewyork.com press releases/in-the-news pages — press contact only, no press kit or downloadable photos"
+   "sarithafornewyork.com press releases/in-the-news pages — press contact only, no press kit or downloadable photos",
+   "2nd pass 2026-10-30: No official DOJ/Senate/uscourts portrait found; only Getty/AFP news photos, which are not acceptable",
+   "2nd pass 2026-10-30: Commons name and category search — none"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -2020,9 +2212,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/TPD%27s_Headshot_%28cropped%29.jpg/500px-TPD%27s_Headshot_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:TPD%27s_Headshot_(cropped).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Office of NYS Comptroller, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Office of NYS Comptroller, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Office of NYS Comptroller. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:TPD%27s_Headshot_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2020,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 995,
   "photoWidth": 500,
   "fileTitle": "File:TPD's Headshot (cropped).jpg"
@@ -2033,9 +2228,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Joseph_Hernandez.png/500px-Joseph_Hernandez.png",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Hernandez.png",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Hernandez for NYC, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Hernandez for NYC, CC BY-SA 4.0",
+  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Hernandez for NYC. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Joseph_Hernandez.png. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2025,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1563,
   "photoWidth": 500,
   "fileTitle": "File:Joseph Hernandez.png"
@@ -2046,9 +2244,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Erik_Bottcher_MTA_2024_%28cropped%29.jpg/500px-Erik_Bottcher_MTA_2024_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Erik_Bottcher_MTA_2024_(cropped).jpg",
   "license": "CC BY 2.0",
-  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons",
+  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 2.0",
+  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Erik_Bottcher_MTA_2024_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2024,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 828,
   "photoWidth": 500,
   "fileTitle": "File:Erik Bottcher MTA 2024 (cropped).jpg"
@@ -2059,7 +2260,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Charlotte Friedman\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -2069,9 +2271,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%2803-04-19%29_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol%2C_Albany_NY_%28cropped%29.jpg/500px-%2803-04-19%29_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol%2C_Albany_NY_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:(03-04-19)_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol,_Albany_NY_(cropped).jpg",
   "license": "CC BY 2.0",
-  "attribution": "Photo: New York Senate Photo, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons",
+  "attribution": "Photo: New York Senate Photo, CC BY 2.0",
+  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: New York Senate Photo. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:(03-04-19)_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol,_Albany_NY_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2019,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1200,
   "photoWidth": 500,
   "fileTitle": "File:(03-04-19) NY State Senator Liz Krueger during Senate Session at the NY State Capitol, Albany NY (cropped).jpg"
@@ -2082,7 +2287,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Alina Bonsell\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -2092,9 +2298,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tony_Simone_MTA_Pride_Month_2024.jpg/500px-Tony_Simone_MTA_Pride_Month_2024.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Tony_Simone_MTA_Pride_Month_2024.jpg",
   "license": "CC BY 2.0",
-  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons",
+  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 2.0",
+  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tony_Simone_MTA_Pride_Month_2024.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2024,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 666,
   "photoWidth": 500,
   "fileTitle": "File:Tony Simone MTA Pride Month 2024.jpg"
@@ -2105,7 +2314,8 @@
   "status": "no licensed photo found",
   "sourcesChecked": [
    "Wikimedia Commons file search (intitle:\"Cristina Fontanelli\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)"
+   "Wikidata entity search — no matching item with an image (P18)",
+   "2nd pass 2026-10-30: Commons search by name and by category — no free-licensed photo of this person"
   ],
   "checkedDate": "2026-10-30"
  },
@@ -2313,9 +2523,12 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg/500px-Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_(cropped).jpg",
   "license": "CC BY 4.0",
-  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons",
+  "attribution": "Photo: Metropolitan Transportation Authority, CC BY 4.0",
+  "licenseDetail": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
+  "photoYear": 2026,
+  "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1115,
   "photoWidth": 500,
   "fileTitle": "File:Carl Wilson Speaks at Tracks Bar Reopening (cropped).jpg"

@@ -16,9 +16,9 @@ describe("QA 9dfe90d P1-2: 10001 source notes all say 'draft, printed 9/11/2026'
     for (const id of ids) {
       const r = b.races.find((x: any) => x.id === id);
       expect(r, id).toBeTruthy();
-      expect(plain(r.appliesNote), id).toContain("(draft, printed 9/11/2026)");
+      expect(r.sourceNote, id).toContain("printed 9/11/2026. Every page is still marked TENTATIVE"); // Civic qa_fixes4 keeps TENTATIVE
     }
-    for (const r of b.races.filter((x: any) => /9\/11\/2026/.test(x.appliesNote || ""))) expect(plain(r.appliesNote), r.id).toContain("draft, printed 9/11/2026");
+    for (const r of b.races.filter((x: any) => /9\/11\/2026/.test(x.appliesNote || "") && !x.sourceNote)) expect(plain(r.appliesNote), r.id).toContain("draft, printed 9/11/2026");
   });
 });
 

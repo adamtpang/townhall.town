@@ -1,0 +1,19 @@
+{
+ "note": "Built by scripts/check-links.mjs. Links listed under dead are hidden; replace maps http to a working https URL.",
+ "checkedAt": "2026-10-30T05:13:02.745Z",
+ "checked": 1018,
+ "dead": {
+  "http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm": "http-only (500); https: error: ECONNRESET",
+  "https://ballotpedia.org/Maria_Luisa_Flores": "404",
+  "https://kirk4aisd.com/": "error: ECONNRESET",
+  "https://www.marknair.com/meet-mark": "404",
+  "https://www.tonysimone.com/": "error: ECONNRESET"
+ },
+ "replace": {
+  "http://www.votejohnnygarcia.com/": "https://www.votejohnnygarcia.com/",
+  "http://www.carlwilsonnyc.com": "https://www.carlwilsonnyc.com",
+  "http://carlosforcongress.com/": "https://carlosforcongress.com/",
+  "http://jacksonfortexas.com/": "https://jacksonfortexas.com/",
+  "http://halefortexas.com/": "https://halefortexas.com/"
+ }
+}

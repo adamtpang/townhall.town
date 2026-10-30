@@ -106,6 +106,14 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 | `metrics/zip_metrics.json` | For 78130, 78701, 94103, 90012: income, poverty, uninsured, renter cost burden, unemployment, education, rent, home value — vs county, state, US; BLS Sept 2026 county unemployment | ACS 2024 5-yr via Census Reporter; BLS LAUS |
 | `demo_zips.json` | Pre-joined bundle for the 4 cached ZIPs | above |
 
+## Candidate photos
+
+- Source: Civic's `data/civic/photos_batch.json` (one entry per candidate id with `photoUrl`, `pageUrl`, `sourceType`, `license`, `attribution`). Run `node scripts/ingest-photos.mjs` after it changes.
+- Licensed photos (public domain, CC0, CC BY, CC BY-SA) are resized and self-hosted in `public/portraits`. A candidate's own public campaign or official headshot is allowed even when it is not licensed for reuse; those are hotlinked from their source URL, never copied. No news photos, and never a generated image.
+- Every photo carries a small credit, "Photo: {attribution}", linked to its source page.
+- `NEXT_PUBLIC_PHOTO_GATE` (build time): `race` (default) shows photos only when every candidate in the race has one; `candidate` shows each candidate's photo where one exists and initials otherwise. To flip without an env var, change `DEFAULT` in `lib/photoGate.ts` (the only switch). A photo that fails to load falls back to initials (per candidate, or per race in race mode).
+- **Takedowns:** add the candidate id (e.g. `"rob-bonta"`, the slug of the ballot name) to `data/photo_takedowns.json`, a JSON array. Any id there shows initials everywhere, with no credit. Requests come through /contact (linked from the footer).
+
 ## Limitations
 - **ZIP ≠ district.** ZIP→district uses the ZIP's center point; ZIPs on a boundary may be wrong. Always say "verify by address" and link VoteTexas / CA voter status. CA ZIP→district (94103→CA-11, 90012→CA-34) is **unverified** under the Prop 50 map.
 - **Federal + statewide only.** No state legislature, State Board of Education, county, city, school board, or local measures yet.

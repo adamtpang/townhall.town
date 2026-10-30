@@ -5,7 +5,7 @@ import fs from "node:fs";
 import { createElement as h } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { ballotFor } from "../lib/tools";
-import { allOrNone, withLicensedPhoto } from "../lib/photos";
+import { allOrNone, gatePhotos, withLicensedPhoto } from "../lib/photos";
 import { eligibleSet, raceGradesEligible, gradeFor, gradeLabel, letterFor, MIN_TOP_SAMPLE } from "../lib/grades.mjs";
 import ELIG from "../lib/gradesEligibility.gen.mjs";
 import { overlapStatus } from "../lib/overlapCore.mjs";
@@ -26,12 +26,19 @@ const card = (z: string) => { const b = ballotFor(z)!; return renderToStaticMark
 const rowOf = (html: string, n: string) => html.split(`data-overlap="${n.replace(/"/g, "&quot;")}"`)[1]?.split(/data-overlap="|data-card-race=/)[0] ?? "";
 const end = (z: string, answers: Record<string, number> = yesAll) => renderToStaticMarkup(h(EndScreen, { zip: z, races: ballotFor(z)!.races as never, answers, ids, answered: Object.keys(answers).length }));
 
-describe("photos: licensed only, race-level fairness", () => {
-  it("no race mixes photos and initials, on every ZIP", () => {
+describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by default, candidate behind the flag", () => {
+  it("race mode (behind the flag): no race mixes photos and initials, on every ZIP", () => {
     for (const z of ZIPS) for (const r of ballotFor(z)!.races) {
-      const c = (r as { candidates?: { photo?: unknown }[] }).candidates ?? [];
+      const c = allOrNone(((r as { candidates?: { photo?: unknown }[] }).candidates ?? []));
       const n = c.filter((x) => x.photo).length;
       expect(n === 0 || n === c.length, `${z} ${r.id}`).toBe(true);
+    }
+  });
+  it("candidate mode (flag): every candidate with a photo shows it", () => {
+    for (const z of ZIPS) for (const r of ballotFor(z)!.races) {
+      const raw = (r as unknown as { candidates: { name: string; aka?: string }[] }).candidates.map((c) => withLicensedPhoto({ ...c } as never) as { name: string; photo?: unknown });
+      const g = gatePhotos(raw, "candidate");
+      g.forEach((c, i) => expect(!!c.photo, `${z} ${c.name}`).toBe(!!raw[i].photo));
     }
   });
   it("allOrNone: one missing photo means initials for the whole race", () => {
@@ -39,8 +46,8 @@ describe("photos: licensed only, race-level fairness", () => {
     expect(allOrNone([{ photo: p }, { photo: null }]).every((c) => c.photo === null)).toBe(true);
     expect(allOrNone([{ photo: p }, { photo: p }]).every((c) => c.photo)).toBe(true);
   });
-  it("D9, HD49, HD51 and the NY governor ticket show initials; ca-ag shows photos", () => {
-    const race = (z: string, id: string) => ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { photo?: unknown }[] };
+  it("race mode: D9, HD49, HD51 and the NY governor ticket show initials; ca-ag shows photos", () => {
+    const race = (z: string, id: string) => ({ candidates: allOrNone((ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { photo?: unknown }[] }).candidates) });
     for (const [z, id] of [["78701", "austin-council-9"], ["78701", "tx-hd-49"], ["78701", "tx-house-51"], ["10001", "ny-governor"]])
       expect(race(z, id).candidates.every((c) => !c.photo), id).toBe(true);
     expect(race("94103", "ca-ag").candidates.every((c) => c.photo)).toBe(true);
@@ -49,7 +56,7 @@ describe("photos: licensed only, race-level fairness", () => {
     const hosted = JSON.parse(src("data/photos.json")).selfHosted as Record<string, { file: string; credit: string; license: string; sourceUrl: string }>;
     for (const [id, x] of Object.entries(hosted)) {
       expect(PB[id]?.photoUrl, id).toBe(x.sourceUrl);
-      expect(x.credit, id).toBe(PB[id].attribution);
+      expect(x.credit, id).toBe(String(PB[id].attribution).replace(/^photo:\s*/i, ""));
       expect(x.license, id).toBeTruthy();
       expect(fs.existsSync(`public${x.file}`), id).toBe(true);
       expect(x.sourceUrl).not.toMatch(/txcourts\.gov/i);
@@ -57,12 +64,22 @@ describe("photos: licensed only, race-level fairness", () => {
     expect(hosted["alida-fisher"]).toBeUndefined();
     expect(hosted["bruce-a-blakeman-todd-hood"]).toBeUndefined();
     for (const f of fs.readdirSync("public/portraits")) expect(hosted[f.replace(/\.avif$/, "")], f).toBeTruthy();
+    // Unlicensed campaign/official headshots are hotlinked (https, from Civic's photoUrl), never copied; never news photos.
+    const hot = (JSON.parse(src("data/photos.json")).hotlinked ?? {}) as Record<string, { url: string; page: string; via: string }>;
+    for (const [id, x] of Object.entries(hot)) {
+      expect(x.url, id).toBe(PB[id].photoUrl);
+      expect(x.url).toMatch(/^https:\/\//);
+      expect(x.page, id).toBeTruthy();
+      expect(x.via, id).toMatch(/campaign|official/i);
+      expect(x.via, id).not.toMatch(/news/i);
+      expect(fs.existsSync(`public/portraits/${id}.avif`), id).toBe(false);
+    }
   });
-  it("attribution is visible (not collapsed) wherever a photo appears, at 14px muted", () => {
+  it("attribution is visible (not collapsed) wherever a photo appears (design p10: 12/16 weight 450 black/60)", () => {
     const html = renderToStaticMarkup(h(CandidateRow, { c: { name: "Rob Bonta", photo: (withLicensedPhoto({ name: "Rob Bonta" } as never) as { photo: unknown }).photo as never }, o: overlapStatus({}, stancesFor("Rob Bonta"), ids), grade: null, ids }));
-    expect(html).toMatch(/data-photo-credit[^>]*>[^<]*public domain/i);
+    expect(html).toMatch(/data-credit-line[^>]*>Photo: <a href="https:\/\/commons\.wikimedia\.org\/[^"]+"[^>]*data-photo-credit[^>]*>[^<]*Public domain<\/a>/i);
     expect(src("components/PortraitRow.tsx")).not.toMatch(/<details[^>]*data-photo-credits/);
-    expect(src("components/PortraitRow.tsx")).toMatch(/text-sm leading-5 text-black\/50[^"]*" aria-label="Photo credits" data-photo-credits/);
+    expect(src("components/PortraitRow.tsx")).toMatch(/\$\{CREDIT\}`\} aria-label="Photo credits" data-photo-credits/);
   });
   it("never a generated image: no image-generation code paths", () => {
     for (const f of ["scripts/ingest-photos.mjs", "lib/photos.ts", "components/PortraitRow.tsx", "components/CandidateRow.tsx"]) expect(src(f)).not.toMatch(/openai|dall-?e|stable-?diffusion|generateImage/i);
@@ -201,12 +218,10 @@ describe("design p9 / QA 4e15da7 items", () => {
     expect(isPlaceholder("Option A")).toBe(true);
     expect(leaderLine({ ...q, outcomes: [{ name: "Person A", prob: 0.7 }] } as never)).toBeNull();
   });
-  it("P1 tiles under 768px: 56px column, 40px tile centred, gap-2; 5 fit 342px; more than 5 fall back to 44px", () => {
+  it("P1 tiles (superseded by design p10 P0): flex 1 1 0, min-w-0, max 40/48/56px, one row", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toMatch(/length > ?5 ?\? ?"\[--w:44px\]" ?: ?"\[--w:56px\]"/);
-    expect(s).toMatch(/\[--p:40px\]/); expect(s).toMatch(/gap-2 overflow-hidden md:gap-3/); expect(s).toMatch(/mx-auto/);
-    expect(5 * 56 + 4 * 8).toBeLessThanOrEqual(342);
-    expect(6 * 44 + 5 * 8).toBeLessThanOrEqual(342);
+    expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[40px\] md:max-w-\[48px\] lg:max-w-\[56px\]/);
+    expect(s).toMatch(/flex flex-nowrap gap-2 md:gap-3/);
     expect(s).toMatch(/truncate text-sm font-\[530\] leading-5" title=\{c.name\}/);
   });
 });
