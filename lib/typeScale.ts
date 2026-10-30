@@ -4,4 +4,4 @@ export const H1 = "font-sans text-[40px] font-[530] leading-none tracking-[-0.02
 export const H2 = "font-sans text-[28px] font-[530] leading-[1.1] tracking-[-0.02em] text-black md:text-[40px]";
 export const H3 = "font-sans text-xl font-[530] md:text-2xl";
 // Inline-link hit area: a 44px-tall pseudo element without changing layout.
-export const HIT = "relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']";
+export const HIT = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']";

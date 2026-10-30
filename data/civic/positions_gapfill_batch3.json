@@ -37,14 +37,15 @@
    {
     "issue": "taxes",
     "score": 2,
-    "summary": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+    "summary": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase).",
     "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
     "sourceTitle": "Travis County Notice of Public Hearing on Tax Increase, 2026",
     "date": "2026",
     "quote": "",
     "sourceType": "official record (vote)",
     "note": "Same basis and score as George Morales III taxes +2.",
-    "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)"
+    "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)",
+    "editorNote": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote."
    },
    {
     "issue": "safety",
@@ -146,19 +147,21 @@
     "issue": "wages",
     "score": null,
     "status": "unsure",
-    "summary": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored.",
+    "summary": "A KQED voter-guide paraphrase says he favors higher teacher wages; these are not his own words.",
     "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
     "sourceTitle": "KQED voter guide, SF Supervisor D10",
-    "date": "2026-10"
+    "date": "2026-10",
+    "editorNote": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored."
    },
    {
     "issue": "housing",
     "score": null,
     "status": "unsure",
-    "summary": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored.",
+    "summary": "A KQED voter-guide paraphrase includes the words \"not housing\" without clear context; the direction is unclear.",
     "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
     "sourceTitle": "KQED voter guide, SF Supervisor D10",
-    "date": "2026-10"
+    "date": "2026-10",
+    "editorNote": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored."
    }
   ],
   "result": "Still 1 sourced issue. No campaign site, questionnaire or contact exists, so no further own-words source is available.",
@@ -947,11 +950,12 @@
     "issue": "taxes",
     "score": null,
     "status": "unsure",
-    "summary": "'protecting taxpayers' money' gives no tax-level direction. Not scored.",
+    "summary": "Talks about protecting taxpayers' money; no position on tax levels.",
     "sourceUrl": "https://danawalkerforacc.com/",
     "sourceTitle": "Dana Walker campaign site",
     "date": "2026-10-30",
-    "quote": "protecting taxpayers' money"
+    "quote": "protecting taxpayers' money",
+    "editorNote": "'protecting taxpayers' money' gives no tax-level direction. Not scored."
    }
   ],
   "sourcesChecked": [

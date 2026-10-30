@@ -123,8 +123,8 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                     {r.sourceNote ? <div className="max-w-[60ch] text-sm leading-5 text-black/60" data-tentative>{/* QA fb66b9b P2: short lines; TENTATIVE (draft) stays visible first. */}<p className="font-[530] text-black/80">TENTATIVE: draft contest list. Check your sample ballot.</p><ul className="mt-1 space-y-1" data-note-lines>{r.sourceNote.split(/(?<=\.)\s+(?=[A-Z])/).map((l) => <li key={l}>{l}</li>)}</ul></div> : r.tentative ? <p className="text-sm text-black/60" data-tentative>TENTATIVE: from the NYC Board of Elections&rsquo; contest list{printedDate(r.appliesNote) ? `, printed ${printedDate(r.appliesNote)}` : ""}. Check your sample ballot.</p> : null}
                     {(r.source || r.verify || (r.meta?.closenessBasis.length ?? 0) > 0) && (
                       <p className="flex flex-wrap items-center gap-x-1 text-sm leading-5 text-black/60" data-race-links>
-                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
-                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{x.label} rating ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
+                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
+                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{x.label} rating ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
                         {r.verify && <><span aria-hidden>·</span><span>{r.verify}</span></>}
                       </p>
                     )}
@@ -204,7 +204,7 @@ function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; 
       </summary>
       <p className="max-w-2xl pb-2 text-base">
         {ok.learn}{" "}
-        <a href={ok.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap text-sm">{host(ok.sourceUrl)} ↗</a>
+        <a href={ok.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap text-sm">{host(ok.sourceUrl)} ↗</a>
       </p>
     </details>
   );
@@ -229,7 +229,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
                 <span aria-hidden className="text-sm font-[450] text-black/50 group-open/m:rotate-180">↓</span>
               </summary>
               <div className="pb-3"><MarketLine line={leaderLine(market(m.id))} /></div>
-              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
+              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
 {(() => {
                 const all = [["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", (m.ifYes ?? m.whatChanges).text, (m.ifYes ?? m.whatChanges).sourceUrl], ["If no", m.ifNo?.text, m.ifNo?.sourceUrl]] as const;
                 const none = (v?: string | null) => said(v) === "No official estimate";
@@ -245,7 +245,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
                             <dt className="text-sm uppercase tracking-wide text-black/50">{k}</dt>
                             <dd className="mt-1 text-sm">
                               {said(v)}{" "}
-                              {u && <a href={u} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap">{host(u)} ↗</a>}
+                              {u && <a href={u} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(u)} ↗</a>}
                             </dd>
                           </div>
                         ))}
@@ -254,7 +254,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
                     {(noCost || rows.length === 0) && (
                       <p className="mt-2 text-sm text-black/70" data-measure-oneline>
                         {rows.length === 0 ? "No plain-language explainer yet; read the official text." : "No official cost estimate published."}{" "}
-                        {(rows.length ? m.cost.sourceUrl || src : src) && <a href={(rows.length ? m.cost.sourceUrl || src : src)!} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap">{host((rows.length ? m.cost.sourceUrl || src : src)!)} ↗</a>}
+                        {(rows.length ? m.cost.sourceUrl || src : src) && <a href={(rows.length ? m.cost.sourceUrl || src : src)!} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host((rows.length ? m.cost.sourceUrl || src : src)!)} ↗</a>}
                       </p>
                     )}
                   </div>

@@ -97,7 +97,7 @@ describe("QA 4c21a5c P2: labels", () => {
     const notes = races("10001").map((r) => plain(String(r.appliesNote || ""))).filter((n) => /Source/.test(n));
     expect(notes.length).toBeGreaterThan(0);
     // Superseded by Civic qa_fixes4 (Oct 30): the note is Civic's per-race text, which names the list and its print date.
-    for (const n of notes) { expect(n).not.toMatch(/Source: draft contest list/); expect(n).toMatch(/NYC Board of Elections General Contest List, printed 9\/11\/2026/); }
+    for (const n of notes) { expect(n).not.toMatch(/Source: draft contest list/); expect(n).toMatch(/NYC (Board of Elections|BOE) (contest )?list.*9\/11\/2026/); } // shortened by Civic qa_fixes7 #3
   });
 });
 
@@ -109,7 +109,7 @@ describe("QA 4c21a5c P2: chat carry-over and 300% zoom", () => {
   });
   it("candidate names: one line with an ellipsis and the full name in title (design p8 overrides the wrap fix)", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toMatch(/truncate[^"]*" title=\{c\.name\} aria-label=\{c\.name\}/);
+    expect(s).toMatch(/line-clamp-2[^"]*" title=\{c\.name\} aria-label=\{c\.name\}/);
     expect(s).not.toMatch(/overflow-wrap:anywhere|break-words|break-all/);
   });
   it("hero top padding only grows on tall viewports (no ~300px band at 300% zoom)", () => {

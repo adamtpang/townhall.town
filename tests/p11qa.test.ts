@@ -11,18 +11,18 @@ const src = (f: string) => fs.readFileSync(f, "utf8");
 describe("p11 + QA fb66b9b", () => {
   it("#1 item and tile are separate: item max 56/64px, tile max 40px centred, label centred and truncated", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toContain('"max-w-[56px] lg:max-w-[64px]"');
+    expect(s).toContain('"max-w-[80px] lg:max-w-[96px]"'); // widened in round 0222 (QA #6, 384px)
     expect(s).toContain('"max-w-[40px] md:max-w-[48px] lg:max-w-[56px]"');
     expect(s).toMatch(/relative mx-auto aspect-square w-full/);
     expect(s).not.toMatch(/md:text-left/);
   });
   it("#2 credit links get a larger hit area", () => {
-    expect(src("components/Portrait.tsx")).toContain("after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']");
+    expect(src("components/Portrait.tsx")).toContain("after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']");
   });
-  it("#4 Hinojosa and Hilton have head-and-shoulders focus crops", () => {
-    const h = (P as unknown as { selfHosted: Record<string, { focus?: number[] }> }).selfHosted;
-    expect(h["gina-hinojosa"].focus).toEqual([0.5, 0.18, 1.5]);
-    expect(h["steve-hilton"].focus).toEqual([0.52, 0.15, 1.2]);
+  it("#4 Hinojosa and Hilton are head and shoulders (superseded by Civic qa_fixes7: their own campaign headshots, self-hosted, no zoom)", () => {
+    const h = (P as unknown as { selfHosted: Record<string, { focus?: number[]; file?: string }> }).selfHosted;
+    expect(h["gina-hinojosa"].focus).toBeUndefined(); expect(h["gina-hinojosa"].file).toBe("/portraits/gina-hinojosa.webp");
+    expect(h["steve-hilton"].focus).toBeUndefined(); expect(h["steve-hilton"].file).toBe("/portraits/steve-hilton.webp");
   });
   it("#5 checked sources: one League of Women Voters guide, Mission Local and SF Standard split, SF Assessor-Recorder", () => {
     const lab = (xs: { title?: string | null; url: string }[]) => xs.map((x) => x.title ?? x.url);
@@ -54,8 +54,8 @@ describe("p11 + QA fb66b9b", () => {
     }
     const w = stancesFor("Shirley N. Weber");
     expect([w.housing, w.wages, w.taxes, w.immigration].map((x) => x.voteRecord)).toEqual(["Voted Yes (Sep 11, 2019)", "Voted Yes (Mar 31, 2016)", "Voted Yes (Apr 6, 2017)", "Voted Yes (Sep 15, 2017)"]);
-    // infrastructure cites the same SB 1 roll call as taxes, so the existing one-source-one-issue rule still holds it out.
-    expect(w.infrastructure.status).toBe("same sentence as another issue");
+    // infrastructure cited the same SB 1 roll call as taxes; Civic qa_fixes7 #2 removed it from the data (one vote, one issue).
+    expect(w.infrastructure.status).toBe("No public statement found");
     expect(stancesFor("Ben Allen").healthcare.voteRecord).toBe("Voted Yes (Jun 1, 2017)");
     expect(src("lib/issues.ts")).not.toMatch(/County Judge \[/);
   });

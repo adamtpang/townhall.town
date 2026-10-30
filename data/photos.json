@@ -29,7 +29,7 @@
    "name": "james-talarico",
    "file": "/portraits/james-talarico.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg",
-   "credit": "Antonioaesparza",
+   "credit": "Wikimedia Commons user Antonioaesparza",
    "license": "CC BY-SA 4.0",
    "page": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg",
    "via": "Wikimedia Commons",
@@ -56,23 +56,23 @@
    "page": "https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 710
+   "height": 710,
+   "focus": [
+    0.5,
+    0.3,
+    1.15
+   ]
   },
   "gina-hinojosa": {
    "name": "gina-hinojosa",
-   "file": "/portraits/gina-hinojosa.avif",
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg/500px-Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
-   "credit": "RRC1701",
-   "license": "CC0",
-   "page": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
-   "via": "Wikimedia Commons",
-   "width": 500,
-   "height": 597,
-   "focus": [
-    0.5,
-    0.18,
-    1.5
-   ]
+   "file": "/portraits/gina-hinojosa.webp",
+   "sourceUrl": "https://ginafortexas.com/wp-content/uploads/2026/05/GH-Launch-AB-Meta-1200x630-3.png",
+   "credit": "Gina Hinojosa campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://ginafortexas.com/",
+   "via": "campaign site",
+   "width": 495,
+   "height": 610
   },
   "dan-patrick": {
    "name": "dan-patrick",
@@ -89,7 +89,7 @@
    "name": "vikki-goodwin",
    "file": "/portraits/vikki-goodwin.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
-   "credit": "Cole-Wilson-93",
+   "credit": "Wikimedia Commons user Cole-Wilson-93",
    "license": "CC BY-SA 4.0",
    "page": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
    "via": "Wikimedia Commons",
@@ -100,7 +100,7 @@
    "name": "kevin-mccormick",
    "file": "/portraits/kevin-mccormick.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg",
-   "credit": "WikiBunny2K1",
+   "credit": "Wikimedia Commons user WikiBunny2K1",
    "license": "CC0",
    "page": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg",
    "via": "Wikimedia Commons",
@@ -202,14 +202,25 @@
   },
   "clayton-tucker": {
    "name": "clayton-tucker",
-   "file": "/portraits/clayton-tucker.avif",
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
-   "credit": "DivaaNut",
-   "license": "CC0",
-   "page": "https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg",
-   "via": "Wikimedia Commons",
-   "width": 500,
-   "height": 667
+   "file": "/portraits/clayton-tucker.webp",
+   "sourceUrl": "https://assets.nationbuilder.com/cht/pages/2030/meta_images/original/default-image-3.jpg?1777483964",
+   "credit": "Clayton Tucker campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.claytontuckertx.com/about",
+   "via": "campaign site",
+   "width": 520,
+   "height": 650
+  },
+  "nate-sheets": {
+   "name": "nate-sheets",
+   "file": "/portraits/nate-sheets.webp",
+   "sourceUrl": "https://natesheets.com/wp-content/uploads/2025/07/Nate-Sheets-2.webp",
+   "credit": "Nate Sheets campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://natesheets.com/about-nate-sheets/",
+   "via": "campaign site",
+   "width": 194,
+   "height": 228
   },
   "austin-r-kelly": {
    "name": "austin-r-kelly",
@@ -219,14 +230,14 @@
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "page": "https://www.kellyfortx.com/",
    "via": "campaign site",
-   "width": 1080,
-   "height": 1078
+   "width": 490,
+   "height": 612
   },
   "jon-rosenthal": {
    "name": "jon-rosenthal",
    "file": "/portraits/jon-rosenthal.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Photo_of_Jon_Rosenthal.jpg/500px-Photo_of_Jon_Rosenthal.jpg",
-   "credit": "Scriptrix101",
+   "credit": "Wikimedia Commons user Scriptrix101",
    "license": "CC BY-SA 4.0",
    "page": "https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg",
    "via": "Wikimedia Commons",
@@ -244,6 +255,17 @@
    "width": 1280,
    "height": 1894
   },
+  "james-p-sullivan": {
+   "name": "james-p-sullivan",
+   "file": "/portraits/james-p-sullivan.webp",
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2074559207412580352/1cZBDz7B_400x400.jpg",
+   "credit": "James P. Sullivan own social profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://x.com/JudgeSullyTX",
+   "via": "own social profile",
+   "width": 400,
+   "height": 400
+  },
   "thomas-smith": {
    "name": "thomas-smith",
    "file": "/portraits/thomas-smith.webp",
@@ -255,16 +277,43 @@
    "width": 400,
    "height": 400
   },
+  "kevin-patrick-yeary": {
+   "name": "kevin-patrick-yeary",
+   "file": "/portraits/kevin-patrick-yeary.webp",
+   "sourceUrl": "https://pbs.twimg.com/profile_images/1595050870357606400/8AYJQPAO_400x400.jpg",
+   "credit": "Kevin Patrick Yeary own social profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://x.com/JudgeYeary",
+   "via": "own social profile",
+   "width": 400,
+   "height": 400
+  },
   "scott-brister": {
    "name": "scott-brister",
    "file": "/portraits/scott-brister.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
-   "credit": "AndrewsKurth",
+   "credit": "Wikimedia Commons user AndrewsKurth",
    "license": "CC BY-SA 3.0",
    "page": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
    "height": 625
+  },
+  "tom-baker": {
+   "name": "tom-baker",
+   "file": "/portraits/tom-baker.webp",
+   "sourceUrl": "https://justicetombaker.com/wp-content/uploads/2026/07/Tom-Baker-resized.png",
+   "credit": "Tom Baker campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://justicetombaker.com/about-thomas-baker/",
+   "via": "campaign site",
+   "width": 600,
+   "height": 838,
+   "focus": [
+    0.5,
+    0.32,
+    1.8
+   ]
   },
   "marc-m-meyer": {
    "name": "marc-m-meyer",
@@ -313,7 +362,7 @@
    "name": "elisabeth-earle",
    "file": "/portraits/elisabeth-earle.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/5x7Elisabeth_IMG_013.jpg/500px-5x7Elisabeth_IMG_013.jpg",
-   "credit": "DustDevil22039",
+   "credit": "Wikimedia Commons user DustDevil22039",
    "license": "CC BY-SA 4.0",
    "page": "https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg",
    "via": "Wikimedia Commons",
@@ -335,7 +384,7 @@
    "name": "trevor-hale",
    "file": "/portraits/trevor-hale.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Trevor_Hale_%28head_shot%29.jpg/500px-Trevor_Hale_%28head_shot%29.jpg",
-   "credit": "Bhkdynamo",
+   "credit": "Wikimedia Commons user Bhkdynamo",
    "license": "CC BY-SA 4.0",
    "page": "https://commons.wikimedia.org/wiki/File:Trevor_Hale_(head_shot).jpg",
    "via": "Wikimedia Commons",
@@ -377,13 +426,13 @@
   },
   "michael-e-gates": {
    "name": "michael-e-gates",
-   "file": "/portraits/michael-e-gates.avif",
-   "sourceUrl": "https://www.justice.gov/sites/default/files/2025-05/250507-crt-anti-semitism_08_0.jpg",
-   "credit": "U.S. Department of Justice",
-   "license": "Public domain",
-   "page": "https://www.justice.gov/opa/gallery/civil-rights-division-hosts-union-orthodox-jewish-congregations-america-justice",
-   "via": "Official government (federal, public domain)",
-   "width": 900,
+   "file": "/portraits/michael-e-gates.webp",
+   "sourceUrl": "https://irp.cdn-website.com/81d43f61/dms3rep/multi/opt/bannerv2-1920w.png",
+   "credit": "Michael E. Gates campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.gates4ag.com/",
+   "via": "campaign site",
+   "width": 480,
    "height": 600
   },
   "malia-m-cohen": {
@@ -410,14 +459,14 @@
   },
   "jane-kim": {
    "name": "jane-kim",
-   "file": "/portraits/jane-kim.avif",
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Trans_March_San_Francisco_20170623-6632.jpg/500px-Trans_March_San_Francisco_20170623-6632.jpg",
-   "credit": "Pax Ahimsa Gethen",
-   "license": "CC BY-SA 4.0",
-   "page": "https://commons.wikimedia.org/wiki/File:Trans_March_San_Francisco_20170623-6632.jpg",
-   "via": "Wikimedia Commons",
-   "width": 500,
-   "height": 600
+   "file": "/portraits/jane-kim.webp",
+   "sourceUrl": "https://run.imgix.net/86daf947-8fea-4921-83be-74f03c8a9ad0/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e.jpg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C0%2C3000%2C2001&w=1500&s=ce67458ce7dd216d01060919696bd02a",
+   "credit": "Jane Kim campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.janekim.org/MeetJane",
+   "via": "campaign site",
+   "width": 800,
+   "height": 1001
   },
   "shirley-n-weber": {
    "name": "shirley-n-weber",
@@ -461,23 +510,23 @@
    "page": "https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 625
+   "height": 625,
+   "focus": [
+    0.5,
+    0.3,
+    1.3
+   ]
   },
   "steve-hilton": {
    "name": "steve-hilton",
-   "file": "/portraits/steve-hilton.avif",
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
-   "credit": "Gage Skidmore",
-   "license": "CC BY 2.0",
-   "page": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg",
-   "via": "Wikimedia Commons",
-   "width": 500,
-   "height": 655,
-   "focus": [
-    0.52,
-    0.15,
-    1.2
-   ]
+   "file": "/portraits/steve-hilton.webp",
+   "sourceUrl": "https://stevehiltonforgovernor.com/photos/portrait-street.jpg",
+   "credit": "Steve Hilton campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://stevehiltonforgovernor.com/meet-steve",
+   "via": "campaign site",
+   "width": 900,
+   "height": 1125
   },
   "fiona-ma": {
    "name": "fiona-ma",
@@ -609,7 +658,7 @@
    "name": "caroline-shinkle",
    "file": "/portraits/caroline-shinkle.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
-   "credit": "AidansStuff",
+   "credit": "Wikimedia Commons user AidansStuff",
    "license": "CC0",
    "page": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
    "via": "Wikimedia Commons",
@@ -767,15 +816,6 @@
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 1536
   },
-  "nate-sheets": {
-   "name": "nate-sheets",
-   "url": "https://natesheets.com/wp-content/uploads/2025/07/Nate-Sheets-2.webp",
-   "credit": "Nate Sheets campaign site",
-   "page": "https://natesheets.com/about-nate-sheets/",
-   "via": "campaign site",
-   "license": "Not licensed; candidate's own public photo, credited and linked",
-   "width": 785
-  },
   "bo-french": {
    "name": "bo-french",
    "url": "https://bofrench.com/wp-content/uploads/2025/11/BoFrench03-updated.jpg",
@@ -789,6 +829,15 @@
     0.18,
     2
    ]
+  },
+  "jimmy-blacklock": {
+   "name": "jimmy-blacklock",
+   "url": "https://www.jimmyblacklock.com/wp-content/uploads/sites/240/2024/05/1_hero_fg.png",
+   "credit": "Jimmy Blacklock campaign site",
+   "page": "https://www.jimmyblacklock.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 969
   },
   "maggie-ellis": {
    "name": "maggie-ellis",
@@ -808,6 +857,15 @@
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 864
   },
+  "kyle-hawkins": {
+   "name": "kyle-hawkins",
+   "url": "https://justicekylehawkins.com/wp-content/uploads/2025/10/kyle_hawkins.jpg",
+   "credit": "Kyle Hawkins campaign site",
+   "page": "https://justicekylehawkins.com/",
+   "via": "campaign site",
+   "license": "Campaign press photo (offered for download)",
+   "width": 800
+  },
   "kristen-hawkins": {
    "name": "kristen-hawkins",
    "url": "https://hkt.texasjudges.com/img/portrait-1-864.jpg?v=bd31d4b46b",
@@ -816,6 +874,15 @@
    "via": "campaign site",
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 864
+  },
+  "brett-busby": {
+   "name": "brett-busby",
+   "url": "https://brettbusby.com/wp-content/uploads/2025/08/Brett-Busby-Headshot-2-1-768x899.jpg",
+   "credit": "Brett Busby campaign site",
+   "page": "https://brettbusby.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 768
   },
   "gisela-d-triana": {
    "name": "gisela-d-triana",
@@ -876,14 +943,28 @@
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 660
   },
-  "tom-baker": {
-   "name": "tom-baker",
-   "url": "https://justicetombaker.com/wp-content/uploads/2026/07/Tom-Baker-resized.png",
-   "credit": "Tom Baker campaign site",
-   "page": "https://justicetombaker.com/about-thomas-baker/",
+  "scott-k-field": {
+   "name": "scott-k-field",
+   "url": "https://justicescottfield.com/wp-content/uploads/2025/06/IMG_0398-768x862.jpeg",
+   "credit": "Scott K. Field campaign site",
+   "page": "https://justicescottfield.com/",
    "via": "campaign site",
    "license": "Not licensed; candidate's own public photo, credited and linked",
-   "width": 600
+   "width": 768,
+   "focus": [
+    0.66,
+    0.081,
+    3.4
+   ]
+  },
+  "april-farris": {
+   "name": "april-farris",
+   "url": "https://justiceaprilfarris.com/wp-content/uploads/2025/06/farris-3.jpg",
+   "credit": "April Farris campaign site",
+   "page": "https://justiceaprilfarris.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1377
   },
   "cory-liu": {
    "name": "cory-liu",
@@ -893,6 +974,15 @@
    "via": "official page",
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 1274
+  },
+  "darlene-byrne": {
+   "name": "darlene-byrne",
+   "url": "https://images.squarespace-cdn.com/content/v1/685c0a648d988d69c40f9f5d/120652e6-b49d-43c6-9754-6981053112ab/byrne1.jpg",
+   "credit": "Darlene Byrne campaign site",
+   "page": "https://www.justicedarlenebyrne.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2430
   },
   "mica-arellano": {
    "name": "mica-arellano",
@@ -1775,14 +1865,6 @@
  "selfHostedNote": "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json. Resized only (Civic cropNote applied as CSS focus). Never generated.",
  "leftOut": [],
  "excluded": [
-  "jimmy-blacklock",
-  "james-p-sullivan",
-  "kyle-hawkins",
-  "brett-busby",
-  "kevin-patrick-yeary",
-  "scott-k-field",
-  "april-farris",
-  "darlene-byrne",
   "alida-fisher"
  ]
 }

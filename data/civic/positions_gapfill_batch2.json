@@ -37,20 +37,22 @@
     "issue": "safety",
     "score": null,
     "status": "unsure",
-    "summary": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored.",
+    "summary": "Campaign site supports \"a proactive police presence\"; a League of Women Voters guide answer says \"rework police presence\". The direction is unclear.",
     "sourceUrl": "https://daveforaustintx.com/",
     "sourceTitle": "Dave Thadani campaign site (daveforaustintx.com)",
     "date": "2026-10-30",
-    "quote": "a proactive police presence, as they are the most effective tools for protecting personal freedoms and delivering a safe and walkable city"
+    "quote": "a proactive police presence, as they are the most effective tools for protecting personal freedoms and delivering a safe and walkable city",
+    "editorNote": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored."
    },
    {
     "issue": "taxes",
     "score": null,
     "status": "unsure",
-    "summary": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored.",
+    "summary": "Criticizes \"irresponsible city spending\" but takes no position on tax levels.",
     "sourceUrl": "https://daveforaustintx.com/",
     "sourceTitle": "Dave Thadani campaign site (daveforaustintx.com)",
-    "date": "2026-10-30"
+    "date": "2026-10-30",
+    "editorNote": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored."
    }
   ],
   "sourcesChecked": [
@@ -147,10 +149,11 @@
     "issue": "infrastructure",
     "score": null,
     "status": "unsure",
-    "summary": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored.",
+    "summary": "Wants a cost review and budget cap for light rail, but also \"better buses, signals and sidewalks now\"; mixed on spending.",
     "sourceUrl": "https://kai4atx.com/",
     "sourceTitle": "Kai Huang campaign site (kai4atx.com)",
-    "date": "2026-10-30"
+    "date": "2026-10-30",
+    "editorNote": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored."
    }
   ],
   "sourcesChecked": [
@@ -231,11 +234,12 @@
     "issue": "infrastructure",
     "score": null,
     "status": "unsure",
-    "summary": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored.",
+    "summary": "Would cancel Project Connect light rail and consider a monorail, and opposes highway expansions; mixed on overall spending.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
     "date": "2026-10",
-    "quote": "Cancel Project Connect light rail; consider monorail for commuter routes. No highway expansions."
+    "quote": "Cancel Project Connect light rail; consider monorail for commuter routes. No highway expansions.",
+    "editorNote": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored."
    }
   ],
   "sourcesChecked": [
@@ -303,11 +307,12 @@
     "issue": "energy",
     "score": null,
     "status": "unsure",
-    "summary": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored.",
+    "summary": "Opposes new data centers that use large amounts of water and power, framed around resources and residents' bills rather than environment vs. development.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
     "date": "2026-10",
-    "quote": "I have publicly opposed new data centers that consume enormous amounts of those resources"
+    "quote": "I have publicly opposed new data centers that consume enormous amounts of those resources",
+    "editorNote": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored."
    }
   ],
   "sourcesChecked": [
@@ -494,10 +499,11 @@
     "issue": "education",
     "score": null,
     "status": "unsure",
-    "summary": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored.",
+    "summary": "Campaign site focuses on academic excellence, workforce programs and parents' rights; no position on public money for private schools.",
     "sourceUrl": "https://jessicaforhd51.com/",
     "sourceTitle": "Jessica Martinez campaign site (jessicaforhd51.com)",
-    "date": "2026-10-30"
+    "date": "2026-10-30",
+    "editorNote": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored."
    }
   ],
   "sourcesChecked": [
@@ -612,11 +618,12 @@
    {
     "issue": "healthcare",
     "score": -2,
-    "summary": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection.",
+    "summary": "Favors market approaches: selling insurance across state lines, more health savings accounts and fewer regulations, while protecting patients with preexisting conditions.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
     "date": "2026-10",
-    "sourceType": "questionnaire (answer written in third person by the campaign; no first-person quote used)"
+    "sourceType": "questionnaire (answer written in third person by the campaign; no first-person quote used)",
+    "editorNote": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection."
    }
   ],
   "unsure": [
@@ -624,10 +631,11 @@
     "issue": "immigration",
     "score": null,
     "status": "unsure",
-    "summary": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored.",
+    "summary": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\"; mixed direction.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
-    "date": "2026-10"
+    "date": "2026-10",
+    "editorNote": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored."
    }
   ],
   "sourcesChecked": [
@@ -661,11 +669,12 @@
     "issue": "healthcare",
     "score": null,
     "status": "unsure",
-    "summary": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored.",
+    "summary": "Refers to the state staying out of personal health decisions, not to the government's role in paying for care.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
     "date": "2026-10",
-    "quote": "The state should have no involvement in decisions about our personal health."
+    "quote": "The state should have no involvement in decisions about our personal health.",
+    "editorNote": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored."
    }
   ],
   "sourcesChecked": [
@@ -906,12 +915,13 @@
    {
     "issue": "taxes",
     "score": 2,
-    "summary": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+    "summary": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase).",
     "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
     "sourceTitle": "Travis County: Notice of Public Hearing on Tax Increase (vote on proposed rate)",
     "date": "2026-09-04",
     "sourceType": "official vote",
-    "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)"
+    "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)",
+    "editorNote": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote."
    }
   ],
   "unsure": [],
@@ -979,11 +989,12 @@
     "issue": "education",
     "score": null,
     "status": "unsure",
-    "summary": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored.",
+    "summary": "Proposes moving all AISD students to charter schools; charter schools are public schools, so this isn't scored on the private-school-funding question.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
     "date": "2026-10",
-    "quote": "Moving all students to charter schools will free up the $1.5B AISD M&O tax"
+    "quote": "Moving all students to charter schools will free up the $1.5B AISD M&O tax",
+    "editorNote": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored."
    }
   ],
   "sourcesChecked": [
@@ -1017,10 +1028,11 @@
     "issue": "taxes",
     "score": null,
     "status": "unsure",
-    "summary": "Backs expanding free tuition while saying ACC must \"scrutinize operations and spending\". No tax-level position; not scored.",
+    "summary": "Backs expanding free tuition while saying the college must \"scrutinize operations and spending\"; no position on tax levels.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
-    "date": "2026-10"
+    "date": "2026-10",
+    "editorNote": "Backs expanding free tuition while saying ACC must \"scrutinize operations and spending\". No tax-level position; not scored."
    }
   ],
   "sourcesChecked": [
@@ -1095,11 +1107,12 @@
     "issue": "taxes",
     "score": null,
     "status": "unsure",
-    "summary": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" Ambiguous; not scored.",
+    "summary": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" The direction is unclear.",
     "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
     "sourceTitle": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
     "date": "2026-10",
-    "quote": "There are a plethora of equally abhorrent external answers including raising property taxes. If we want good things, we need to pay for them."
+    "quote": "There are a plethora of equally abhorrent external answers including raising property taxes. If we want good things, we need to pay for them.",
+    "editorNote": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" Ambiguous; not scored."
    }
   ],
   "sourcesChecked": [
@@ -1207,10 +1220,11 @@
     "issue": "safety",
     "score": null,
     "status": "unsure",
-    "summary": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored.",
+    "summary": "Stresses community-led violence reduction and criticizes police taking credit; no position on police funding vs. prevention.",
     "sourceUrl": "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
     "sourceTitle": "SF Bay View Q&A",
-    "date": "2026-09-09"
+    "date": "2026-09-09",
+    "editorNote": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored."
    }
   ],
   "sourcesChecked": [

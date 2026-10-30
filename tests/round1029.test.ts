@@ -220,7 +220,7 @@ describe("QA 9dfe90d P2 + design p8", () => {
   });
   it("names: one line with ellipsis, full name in title; tiles equal height", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toMatch(/truncate text-sm font-\[530\] leading-5" title=\{c\.name\}/);
+    expect(s).toMatch(/line-clamp-2 text-sm font-\[530\] leading-5" title=\{c\.name\}/); // round 0222: two-line labels at 384
     expect(s).toContain("data-tile-mate-spacer");
     expect(s).toContain("flex-nowrap");
   });

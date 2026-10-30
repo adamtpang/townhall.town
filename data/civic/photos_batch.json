@@ -23,7 +23,8 @@
   "photoYear": 2026,
   "identityEvidence": "headshot on \"About Pat Dixon\" page; filename pjd_headshot",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "parity": "tx-gov: campaign headshot, front-facing head and shoulders; comparable as is"
  },
  "caitlin-rourk": {
   "name": "Caitlin Rourk",
@@ -89,7 +90,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Antonioaesparza",
+  "attribution": "Photo: Wikimedia Commons user Antonioaesparza",
   "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Antonioaesparza. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -97,7 +98,8 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 634,
   "photoWidth": 500,
-  "fileTitle": "File:James Talarico Press Conference (cropped).jpg"
+  "fileTitle": "File:James Talarico Press Conference (cropped).jpg",
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; description names no photographer"
  },
  "ken-paxton": {
   "name": "Ken Paxton",
@@ -129,24 +131,33 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1801,
   "photoWidth": 500,
-  "fileTitle": "File:Greg Abbott at NASA 2024 (cropped).jpg"
+  "fileTitle": "File:Greg Abbott at NASA 2024 (cropped).jpg",
+  "cropNote": "Front-facing head and shoulders (NASA 2024, already cropped); a person is partly visible behind him at top right: crop to the central ~80% width to remove them.",
+  "parity": "tx-gov: head and shoulders; comparable"
  },
  "gina-hinojosa": {
   "name": "Gina Hinojosa",
   "raceId": "tx-gov",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg/500px-Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
-  "license": "CC0",
-  "attribution": "Photo: RRC1701",
-  "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: RRC1701. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg.",
-  "sourceType": "Wikimedia Commons",
+  "photoUrl": "https://ginafortexas.com/wp-content/uploads/2026/05/GH-Launch-AB-Meta-1200x630-3.png",
+  "localFile": "/workspace/townhall/civic/photos_local/gina-hinojosa.jpg",
+  "pageUrl": "https://ginafortexas.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Gina Hinojosa campaign site",
+  "photoYear": null,
+  "identityEvidence": "og:image of her campaign site ginafortexas.com (headshot left, \"Gina for Texas\" logo right); viewed: same person as the 2024 Commons photo previously used",
   "checkedDate": "2026-10-30",
-  "photoYear": 2024,
-  "photoYearBasis": "file page date 2024-01-28",
-  "originalWidth": 828,
-  "photoWidth": 500,
-  "fileTitle": "File:Gina Hinojosa at the AFL-CIO COPE convention in 2024.jpg",
-  "note": "Swapped 2026-10-30 for photo-age fairness: the 2024 photo replaces the 2017 LBJ Library photo, so it is comparable to Abbott (2024)."
+  "verified": "200 image/png (GET, 2026-10-30 ~02:30 CT); original 1200x630",
+  "cropNote": "localFile is the original cropped to (30,20,525,630) -> 495x610, front-facing head and shoulders; the campaign logo on the right is excluded. If photoUrl is used instead, crop to the left ~44% of the frame.",
+  "note": "Uploaded May 2026 (wp-content/uploads/2026/05); photo year not stated. Other images on the site are group or event photos.",
+  "replacedPhoto": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg/500px-Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
+   "attribution": "Photo: RRC1701",
+   "photoYear": 2024,
+   "reason": "QA7 photo parity: replaced with a front-facing head-and-shoulders photo from the candidate's own campaign site"
+  },
+  "parity": "head-and-shoulders, front-facing (QA7)"
  },
  "dan-patrick": {
   "name": "Dan Patrick",
@@ -171,7 +182,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Cole-Wilson-93",
+  "attribution": "Photo: Wikimedia Commons user Cole-Wilson-93",
   "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Cole-Wilson-93. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -180,6 +191,7 @@
   "originalWidth": 1800,
   "photoWidth": 500,
   "fileTitle": "File:HiRes-Vikki Goodwin-6381-red (cropped).jpg",
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated",
   "raceNote": "photo ages not comparable (2019–2026); race shows initials"
  },
  "kevin-mccormick": {
@@ -188,7 +200,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg",
   "license": "CC0",
-  "attribution": "Photo: WikiBunny2K1",
+  "attribution": "Photo: Wikimedia Commons user WikiBunny2K1",
   "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: WikiBunny2K1. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -197,6 +209,7 @@
   "originalWidth": 4284,
   "photoWidth": 500,
   "fileTitle": "File:Kevin McCormick (Texas politician).jpg",
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated",
   "raceNote": "photo ages not comparable (2019–2026); race shows initials"
  },
  "anthony-cristo": {
@@ -375,18 +388,26 @@
  "clayton-tucker": {
   "name": "Clayton Tucker",
   "raceId": "tx-agcomm",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg",
-  "license": "CC0",
-  "attribution": "Photo: DivaaNut",
-  "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: DivaaNut. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg.",
-  "sourceType": "Wikimedia Commons",
+  "photoUrl": "https://assets.nationbuilder.com/cht/pages/2030/meta_images/original/default-image-3.jpg?1777483964",
+  "localFile": "/workspace/townhall/civic/photos_local/clayton-tucker.jpg",
+  "pageUrl": "https://www.claytontuckertx.com/about",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Clayton Tucker campaign site",
+  "photoYear": null,
+  "identityEvidence": "Campaign share image on claytontuckertx.com (his logo \"Clayton Tucker for Ag Commissioner\" beside the photo); viewed: same person as the 2026 Commons speech photo previously used",
   "checkedDate": "2026-10-30",
-  "photoYear": 2026,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 727,
-  "photoWidth": 500,
-  "fileTitle": "File:Clayton Tucker Speech Cropped (3x4).jpg"
+  "verified": "200 image/png (GET, 2026-10-30 ~02:30 CT); original 1366x768",
+  "cropNote": "localFile is the original cropped to (780,40,1300,690) -> 520x650: front-facing head and shoulders (cowboy hat); the campaign logo is excluded; a goat's head shows at lower left",
+  "note": "Replaces a speech-with-microphone photo. Uploaded 2026 (asset timestamp); photo year not stated. The site has no studio headshot; this is the most portrait-like own image.",
+  "replacedPhoto": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Clayton_Tucker_Speech_Cropped_(3x4).jpg",
+   "attribution": "Photo: DivaaNut",
+   "photoYear": 2026,
+   "reason": "QA7 photo parity: replaced with a front-facing head-and-shoulders photo from the candidate's own campaign site"
+  },
+  "parity": "head-and-shoulders, front-facing (QA7)"
  },
  "nate-sheets": {
   "name": "Nate Sheets",
@@ -399,7 +420,10 @@
   "photoYear": 2025,
   "identityEvidence": "filename \"Nate-Sheets-2\" on the About Nate Sheets page",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/webp (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/webp (GET, 2026-10-30 ~00:40 CT)",
+  "localFile": "/workspace/townhall/civic/photos_local/nate-sheets.jpg",
+  "cropNote": "photoUrl is a waist-up photo inside a hexagon mask with white seam lines across the torso; localFile is the PNG version (Nate-Sheets-2.png, 785x796) cropped to (300,112,494,340) -> 194x228, head and shoulders above the seams (low resolution; display at <=190px)",
+  "parity": "tx-agcomm: own campaign photo cropped to head and shoulders; site has no studio headshot (checked the About and home pages: group, podium, family and bus-tour images only)"
  },
  "austin-r-kelly": {
   "name": "Austin R. Kelly",
@@ -414,7 +438,10 @@
   "checkedDate": "2026-10-30",
   "urlNote": "Google Sites 'sitesv-images-rt' URL: rotates and expires within minutes to hours (observed 403 on re-check). The site should re-extract it from the campaign page at build time, or show initials. No other own headshot found (no own X account found). Google Sites rotating image URL (expires); a local copy is saved at localFile for Engineering to host.",
   "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
-  "localFile": "/workspace/townhall/civic/photos_local/austin-r-kelly.jpg"
+  "localFile": "/workspace/townhall/civic/photos_local/austin-r-kelly-headshoulders.jpg",
+  "localFileOriginal": "/workspace/townhall/civic/photos_local/austin-r-kelly.jpg",
+  "cropNote": "localFile is the saved campaign image (1080x1078) cropped to (0,0,490,612): head and shoulders, campaign logo excluded. Original saved copy: photos_local/austin-r-kelly.jpg",
+  "parity": "tx-agcomm: field selfie, front-facing; comparable after crop"
  },
  "jon-rosenthal": {
   "name": "Jon Rosenthal",
@@ -422,7 +449,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Photo_of_Jon_Rosenthal.jpg/500px-Photo_of_Jon_Rosenthal.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Scriptrix101",
+  "attribution": "Photo: Wikimedia Commons user Scriptrix101",
   "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Scriptrix101. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -430,7 +457,8 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1365,
   "photoWidth": 500,
-  "fileTitle": "File:Photo of Jon Rosenthal.jpg"
+  "fileTitle": "File:Photo of Jon Rosenthal.jpg",
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
  },
  "bo-french": {
   "name": "Bo French",
@@ -464,15 +492,23 @@
  "jimmy-blacklock": {
   "name": "Jimmy Blacklock",
   "raceId": "tx-supreme-court-place-1-chief-justice",
-  "photoUrl": "https://www.txcourts.gov/media/1460030/chief-justice-jimmy-blacklock-web.jpg",
-  "pageUrl": "https://www.txcourts.gov/supreme/about-the-court/justices/chief-justice-jimmy-blacklock/",
-  "sourceType": "official page",
+  "photoUrl": "https://www.jimmyblacklock.com/wp-content/uploads/sites/240/2024/05/1_hero_fg.png",
+  "pageUrl": "https://www.jimmyblacklock.com/",
+  "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Supreme Court of Texas official page",
+  "attribution": "Photo: Jimmy Blacklock campaign site",
   "photoYear": null,
-  "identityEvidence": "filename and court bio page",
+  "identityEvidence": "Hero portrait (robe) on his campaign site (\"Chief Justice Jimmy Blacklock | TX Supreme Court\", \"Republican ... Vote Tuesday, November 3, 2026\"); viewed: same person as his court portrait",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/png (GET, 2026-10-30 ~01:20 CT)",
+  "cropNote": "transparent-background cutout (969x895); head and shoulders at top-centre",
+  "note": "Uploaded May 2024 (wp-content/uploads/2024/05); photo year not stated.",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/supreme/about-the-court/justices/chief-justice-jimmy-blacklock/",
+   "image": "https://www.txcourts.gov/media/1460030/chief-justice-jimmy-blacklock-web.jpg",
+   "year": "2026 (EXIF copyright \"Mark Matson ©2026\"; file modified Sep 30, 2026)",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "maggie-ellis": {
   "name": "Maggie Ellis",
@@ -490,15 +526,24 @@
  "james-p-sullivan": {
   "name": "James P. Sullivan",
   "raceId": "tx-supreme-court-place-2",
-  "photoUrl": "https://www.txcourts.gov/media/1460010/justice-james-p-sullivan-2025-web.jpg",
-  "pageUrl": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
-  "sourceType": "official page",
+  "photoUrl": "https://pbs.twimg.com/profile_images/2074559207412580352/1cZBDz7B_400x400.jpg",
+  "localFile": "/workspace/townhall/civic/photos_local/james-p-sullivan.jpg",
+  "pageUrl": "https://x.com/JudgeSullyTX",
+  "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Supreme Court of Texas official page",
-  "photoYear": 2025,
-  "identityEvidence": "filename \"justice-james-p-sullivan-2025\"",
+  "attribution": "Photo: James P. Sullivan own social profile",
+  "photoYear": null,
+  "identityEvidence": "X @JudgeSullyTX, name \"Justice James P. Sullivan\", bio \"Texas Supreme Court Justice\"; linked from his campaign site judgesully.com; viewed: same person as his 2025 court portrait",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)",
+  "urlNote": "X profile image URL (changes when the avatar changes); a local copy is saved at localFile for Engineering to host.",
+  "note": "Campaign site judgesully.com has no headshot (only a back-view swearing-in photo, a handshake with the Governor, and a Rice football photo). Avatar uploaded July 2026; photo year not stated.",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+   "image": "https://www.txcourts.gov/media/1460010/justice-james-p-sullivan-2025-web.jpg",
+   "year": "2025 (filename; EXIF \"Mark Matson ©2025\")",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "chari-kelly": {
   "name": "Chari Kelly",
@@ -516,15 +561,22 @@
  "kyle-hawkins": {
   "name": "Kyle Hawkins",
   "raceId": "tx-supreme-court-place-7",
-  "photoUrl": "https://www.txcourts.gov/media/1461570/justice-kyle-hawkins.jpg",
-  "pageUrl": "https://www.txcourts.gov/supreme/about-the-court/justices/",
-  "sourceType": "official page",
-  "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Supreme Court of Texas official page",
+  "photoUrl": "https://justicekylehawkins.com/wp-content/uploads/2025/10/kyle_hawkins.jpg",
+  "pageUrl": "https://justicekylehawkins.com/",
+  "sourceType": "campaign site",
+  "license": "Campaign press photo (offered for download)",
+  "attribution": "Photo: Kyle Hawkins campaign site",
   "photoYear": null,
-  "identityEvidence": "filename \"justice-kyle-hawkins\"; campaign site has only a wide event-style photo",
+  "identityEvidence": "Campaign site offers it as \"For a downloadable high-resolution image, click here\"; viewed: same person as his court portrait (grey hair, beard, glasses)",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)",
+  "note": "Uploaded Oct 2025; photo year not stated. Flag background; offered by the campaign as its press image (may originate from a prior government post, not confirmed).",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-kyle-d-hawkins/",
+   "image": "https://www.txcourts.gov/media/1461570/justice-kyle-hawkins.jpg",
+   "year": "2025 (EXIF edit date Nov 11, 2025; photographer not stated)",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "kristen-hawkins": {
   "name": "Kristen Hawkins",
@@ -542,15 +594,22 @@
  "brett-busby": {
   "name": "Brett Busby",
   "raceId": "tx-supreme-court-place-8",
-  "photoUrl": "https://www.txcourts.gov/media/1461169/brett-busby.png",
-  "pageUrl": "https://www.txcourts.gov/supreme/about-the-court/justices/",
-  "sourceType": "official page",
+  "photoUrl": "https://brettbusby.com/wp-content/uploads/2025/08/Brett-Busby-Headshot-2-1-768x899.jpg",
+  "pageUrl": "https://brettbusby.com/",
+  "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Supreme Court of Texas official page",
+  "attribution": "Photo: Brett Busby campaign site",
   "photoYear": null,
-  "identityEvidence": "filename \"brett-busby\"",
+  "identityEvidence": "File \"Brett-Busby-Headshot\" on his campaign site (\"Justice Brett Busby ... Supreme Court of Texas, Place 8\"); viewed: same portrait as his court page",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/png (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)",
+  "note": "Uploaded Aug 2025; photo year not stated.",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-brett-busby/",
+   "image": "https://www.txcourts.gov/media/1461169/brett-busby.png",
+   "year": "not stated (file modified Sep 2, 2025; no EXIF)",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "gisela-d-triana": {
   "name": "Gisela D. Triana",
@@ -609,15 +668,24 @@
  "kevin-patrick-yeary": {
   "name": "Kevin Patrick Yeary",
   "raceId": "tx-court-of-criminal-appeals-place-4",
-  "photoUrl": "https://www.txcourts.gov/media/1462538/yeary.jpg",
-  "pageUrl": "https://www.txcourts.gov/cca/about-the-court/judges/",
-  "sourceType": "official page",
+  "photoUrl": "https://pbs.twimg.com/profile_images/1595050870357606400/8AYJQPAO_400x400.jpg",
+  "localFile": "/workspace/townhall/civic/photos_local/kevin-patrick-yeary.jpg",
+  "pageUrl": "https://x.com/JudgeYeary",
+  "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Texas Court of Criminal Appeals official page",
+  "attribution": "Photo: Kevin Patrick Yeary own social profile",
   "photoYear": null,
-  "identityEvidence": "filename \"yeary\"",
+  "identityEvidence": "X @JudgeYeary, name \"Kevin Patrick Yeary\", bio \"Judge on the Texas Court of Criminal Appeals\"; linked from his campaign site judgeyeary.com; viewed: consistent with his court portrait and the campaign-site family photo (casual shirt, glasses, beard)",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)",
+  "urlNote": "X profile image URL (changes when the avatar changes); a local copy is saved at localFile for Engineering to host.",
+  "note": "Campaign site judgeyeary.com has only a 6-person family photo (2023) and a logo card, no headshot. Avatar uploaded Nov 2022, so photo is 2022 or earlier; year not stated. Casual (not robed) photo.",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/cca/about-the-court/judges/judge-kevin-yeary/",
+   "image": "https://www.txcourts.gov/media/1462538/yeary.jpg",
+   "year": "2017 (EXIF taken Sep 18, 2017; \"Mark Matson\")",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "audra-riley": {
   "name": "Audra Riley",
@@ -665,7 +733,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
   "license": "CC BY-SA 3.0",
-  "attribution": "Photo: AndrewsKurth",
+  "attribution": "Photo: Wikimedia Commons user AndrewsKurth",
   "licenseDetail": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Author/credit on file page: AndrewsKurth. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -673,7 +741,8 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 900,
   "photoWidth": 500,
-  "fileTitle": "File:Brister Scott hiresRGB 12 2012.jpg"
+  "fileTitle": "File:Brister Scott hiresRGB 12 2012.jpg",
+  "creditBasis": "Commons Author field is the user link \"AndrewsKurth\" (reads like a law-firm name, but the page states no person or firm as author); Credit \"Own work\""
  },
  "jerry-zimmerer": {
   "name": "Jerry Zimmerer",
@@ -691,15 +760,23 @@
  "scott-k-field": {
   "name": "Scott K. Field",
   "raceId": "tx-15th-coa-place-2",
-  "photoUrl": "https://www.txcourts.gov/media/1459003/justice-scott-field-bio-photo.jpg",
-  "pageUrl": "https://www.txcourts.gov/15thcoa/about-the-court/justices/",
-  "sourceType": "official page",
+  "photoUrl": "https://justicescottfield.com/wp-content/uploads/2025/06/IMG_0398-768x862.jpeg",
+  "pageUrl": "https://justicescottfield.com/",
+  "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Fifteenth Court of Appeals official page",
+  "attribution": "Photo: Scott K. Field campaign site",
   "photoYear": null,
-  "identityEvidence": "filename \"justice-scott-field-bio-photo\"",
+  "identityEvidence": "Photo on his campaign site (\"Homepage - Justice Field\"); viewed: the robed man on the right is the same person as his court portrait and the swearing-in photos on the same site",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)",
+  "cropNote": "two-person photo: crop to Justice Field (right, in robe); leave out the woman on the left",
+  "note": "Uploaded June 2025; photo year not stated. The site's other portraits (88_20250108_*) carry EXIF copyright \"The Texas House of Representatives\" (a government photographer at an event), so they were not used.",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/15thcoa/about-the-court/justices/justice-scott-field/",
+   "image": "https://www.txcourts.gov/media/1459003/justice-scott-field-bio-photo.jpg",
+   "year": "not stated (file modified Aug 9, 2024; no EXIF; 223x226, looks older than his campaign photos)",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "tom-baker": {
   "name": "Tom Baker",
@@ -717,15 +794,22 @@
  "april-farris": {
   "name": "April Farris",
   "raceId": "tx-15th-coa-place-3",
-  "photoUrl": "https://www.txcourts.gov/media/1461250/af-web-page-091025.jpg",
-  "pageUrl": "https://www.txcourts.gov/15thcoa/about-the-court/justices/",
-  "sourceType": "official page",
+  "photoUrl": "https://justiceaprilfarris.com/wp-content/uploads/2025/06/farris-3.jpg",
+  "pageUrl": "https://justiceaprilfarris.com/",
+  "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Fifteenth Court of Appeals official page",
-  "photoYear": 2025,
-  "identityEvidence": "15th COA justices page; filename af-web-page-091025",
+  "attribution": "Photo: April Farris campaign site",
+  "photoYear": null,
+  "identityEvidence": "Portrait (robe) on her campaign site (\"Justice April Farris | Fifteenth Court of Appeals | Texas\"); viewed: same person as her court portrait",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)",
+  "note": "Uploaded June 2025; photo year not stated. Second portrait on the site: wp-content/uploads/2025/06/Photo.jpg (robe, flags).",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/15thcoa/about-the-court/justices/justice-april-farris/",
+   "image": "https://www.txcourts.gov/media/1461250/af-web-page-091025.jpg",
+   "year": "2025 (filename \"091025\" and file modified Sep 10, 2025)",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "marc-m-meyer": {
   "name": "Marc M. Meyer",
@@ -768,15 +852,22 @@
  "darlene-byrne": {
   "name": "Darlene Byrne",
   "raceId": "tx-3rd-coa-chief-justice",
-  "photoUrl": "https://www.txcourts.gov/media/1460167/byrne1.jpg",
-  "pageUrl": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/",
-  "sourceType": "official page",
+  "photoUrl": "https://images.squarespace-cdn.com/content/v1/685c0a648d988d69c40f9f5d/120652e6-b49d-43c6-9754-6981053112ab/byrne1.jpg",
+  "pageUrl": "https://www.justicedarlenebyrne.com/",
+  "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Third Court of Appeals official page",
+  "attribution": "Photo: Darlene Byrne campaign site",
   "photoYear": null,
-  "identityEvidence": "filename \"byrne1\" on 3rd COA justices page",
+  "identityEvidence": "Portrait on her campaign site (\"Re-Elect Chief Justice Darlene Byrne\"); viewed: same portrait (same filename byrne1.jpg) as her Third Court of Appeals page",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/webp (GET, 2026-10-30 ~01:20 CT)",
+  "note": "Photo year not stated (court copy last modified Mar 2025).",
+  "txcourtsPortrait": {
+   "page": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/chief-justice-darlene-byrne/",
+   "image": "https://www.txcourts.gov/media/1460167/byrne1.jpg",
+   "year": "not stated (file modified Mar 18, 2025; no EXIF)",
+   "status": "not used (txcourts.gov excluded by ingest-photos EXCLUDE)"
+  }
  },
  "mica-arellano": {
   "name": "Mica Arellano",
@@ -1089,7 +1180,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/5x7Elisabeth_IMG_013.jpg/500px-5x7Elisabeth_IMG_013.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: DustDevil22039",
+  "attribution": "Photo: Wikimedia Commons user DustDevil22039",
   "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: DustDevil22039. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -1098,7 +1189,8 @@
   "originalWidth": 1500,
   "photoWidth": 500,
   "fileTitle": "File:5x7Elisabeth IMG 013.jpg",
-  "note": "Commons description: \"Photo of Judge Elisabeth Earle of Austin, Travis County, Texas.\" Used on Wikidata Q111529848."
+  "note": "Commons description: \"Photo of Judge Elisabeth Earle of Austin, Travis County, Texas.\" Used on Wikidata Q111529848.",
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
  },
  "guy-herman": {
   "name": "Guy Herman",
@@ -1321,7 +1413,8 @@
   "identityEvidence": "img alt \"Kai Huang speaking with neighbors\" (not a studio headshot)",
   "checkedDate": "2026-10-30",
   "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
-  "cropNote": "candid photo speaking with neighbors; crop to the candidate"
+  "cropNote": "candid photo speaking with neighbors; crop to the candidate",
+  "parity": "UNRESOLVED (QA7): austin-council-9: kai4atx.com has only kai-hero.jpg (speaking with neighbors) and kai-gameday.jpg (two-person photo); no headshot. Keep cropNote; opponents are headshots."
  },
  "cynthia-soliz": {
   "name": "Cynthia Soliz",
@@ -1406,7 +1499,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Trevor_Hale_%28head_shot%29.jpg/500px-Trevor_Hale_%28head_shot%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Trevor_Hale_(head_shot).jpg",
   "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Bhkdynamo",
+  "attribution": "Photo: Wikimedia Commons user Bhkdynamo",
   "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Bhkdynamo. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Trevor_Hale_(head_shot).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -1415,7 +1508,8 @@
   "originalWidth": 600,
   "photoWidth": 500,
   "fileTitle": "File:Trevor Hale (head shot).jpg",
-  "note": "Used on en.wikipedia \"Trevor Hale\" (professor, Huston-Tillotson / Texas A&M / UH-Downtown); KUT & Community Impact identify the ACC Place 3 candidate as the same retired professor. Photo dated 2014."
+  "note": "Used on en.wikipedia \"Trevor Hale\" (professor, Huston-Tillotson / Texas A&M / UH-Downtown); KUT & Community Impact identify the ACC Place 3 candidate as the same retired professor. Photo dated 2014.",
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
  },
  "nan-mcraven": {
   "name": "Nan McRaven",
@@ -1476,22 +1570,32 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2127,
   "photoWidth": 500,
-  "fileTitle": "File:Rob Bonta official portrait (cropped).jpg"
+  "fileTitle": "File:Rob Bonta official portrait (cropped).jpg",
+  "parity": "ca-ag: official portrait; comparable with the new Gates photo"
  },
  "michael-e-gates": {
   "name": "Michael E. Gates",
   "raceId": "ca-ag",
-  "photoUrl": "https://www.justice.gov/sites/default/files/2025-05/250507-crt-anti-semitism_08_0.jpg",
-  "pageUrl": "https://www.justice.gov/opa/gallery/civil-rights-division-hosts-union-orthodox-jewish-congregations-america-justice",
-  "license": "Public domain",
-  "attribution": "Photo: U.S. Department of Justice",
-  "licenseDetail": "U.S. federal government work (17 U.S.C. § 105). justice.gov: \"Unless otherwise indicated, information on Department of Justice websites is in the public domain.\"",
-  "photoYear": 2025,
-  "photoYearBasis": "DOJ gallery, May 2025",
-  "sourceType": "Official government (federal, public domain)",
+  "photoUrl": "https://irp.cdn-website.com/81d43f61/dms3rep/multi/opt/bannerv2-1920w.png",
+  "localFile": "/workspace/townhall/civic/photos_local/michael-e-gates.jpg",
+  "pageUrl": "https://www.gates4ag.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Michael E. Gates campaign site",
+  "photoYear": null,
+  "identityEvidence": "Posed photo on his campaign site gates4ag.com; viewed: same person as the DOJ podium photo previously used (that photo also appears on his own About page as DOJPodium2.png)",
   "checkedDate": "2026-10-30",
-  "note": "DOJ gallery alt text: \"Deputy Assistant Attorney General Michael E. Gates delivers remarks at a podium\" (May 2025). Event photo, 900px wide; crop to face.",
-  "photoWidth": 900
+  "verified": "200 image/png (GET, 2026-10-30 ~02:30 CT); 838x742",
+  "cropNote": "localFile is the original cropped to (205,20,685,620) -> 480x600, front-facing head and shoulders (arms crossed, lower edge at forearms)",
+  "note": "Replaces a May 2025 DOJ gallery photo at a podium. Photo year not stated.",
+  "replacedPhoto": {
+   "photoUrl": "https://www.justice.gov/sites/default/files/2025-05/250507-crt-anti-semitism_08_0.jpg",
+   "pageUrl": "https://www.justice.gov/opa/gallery/civil-rights-division-hosts-union-orthodox-jewish-congregations-america-justice",
+   "attribution": "Photo: U.S. Department of Justice",
+   "photoYear": 2025,
+   "reason": "QA7 photo parity: replaced with a front-facing head-and-shoulders photo from the candidate's own campaign site"
+  },
+  "parity": "head-and-shoulders, front-facing (QA7)"
  },
  "malia-m-cohen": {
   "name": "Malia M. Cohen",
@@ -1534,24 +1638,33 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1168,
   "photoWidth": 500,
-  "fileTitle": "File:Ben Allen, 2021.jpg"
+  "fileTitle": "File:Ben Allen, 2021.jpg",
+  "parity": "ca-insurance: formal portrait; comparable with the new Jane Kim headshot"
  },
  "jane-kim": {
   "name": "Jane Kim",
   "raceId": "ca-insurance",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Trans_March_San_Francisco_20170623-6632.jpg/500px-Trans_March_San_Francisco_20170623-6632.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Trans_March_San_Francisco_20170623-6632.jpg",
-  "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Pax Ahimsa Gethen",
-  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Pax Ahimsa Gethen. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Trans_March_San_Francisco_20170623-6632.jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
+  "photoUrl": "https://run.imgix.net/86daf947-8fea-4921-83be-74f03c8a9ad0/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e.jpg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C0%2C3000%2C2001&w=1500&s=ce67458ce7dd216d01060919696bd02a",
+  "localFile": "/workspace/townhall/civic/photos_local/jane-kim.jpg",
+  "pageUrl": "https://www.janekim.org/MeetJane",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Jane Kim campaign site",
+  "photoYear": null,
+  "identityEvidence": "Studio headshot on the \"Meet Jane\" page of her campaign site janekim.org; viewed: same person as the 2017 Commons event photo previously used",
   "checkedDate": "2026-10-30",
-  "photoYear": 2017,
-  "photoYearBasis": "file page date 2017-06-23",
-  "originalWidth": 2430,
-  "photoWidth": 500,
-  "fileTitle": "File:Trans March San Francisco 20170623-6632.jpg",
-  "note": "Swapped 2026-10-30 for photo-age fairness: the 2017 photo replaces the 2014 official portrait (7 yrs older than Ben Allen 2021). Event photo; crop to her face (upper left) to drop the person behind her."
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~02:30 CT); 1500x1001 (signed imgix URL)",
+  "cropNote": "localFile is the original cropped to (330,0,1130,1001) -> 800x1001, front-facing head and shoulders on white",
+  "urlNote": "Signed imgix URL (the s= signature is required; unsigned URLs return 403). A local copy is saved at localFile for Engineering to host.",
+  "note": "Replaces a 2017 event photo (speaking at a march) that did not match Ben Allen's formal portrait. Photo year not stated.",
+  "replacedPhoto": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Trans_March_San_Francisco_20170623-6632.jpg/500px-Trans_March_San_Francisco_20170623-6632.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Trans_March_San_Francisco_20170623-6632.jpg",
+   "attribution": "Photo: Pax Ahimsa Gethen",
+   "photoYear": 2017,
+   "reason": "QA7 photo parity: replaced with a front-facing head-and-shoulders photo from the candidate's own campaign site"
+  },
+  "parity": "head-and-shoulders, front-facing (QA7)"
  },
  "shirley-n-weber": {
   "name": "Shirley N. Weber",
@@ -1652,23 +1765,33 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 2400,
   "photoWidth": 500,
-  "fileTitle": "File:HHS Xavier Becerra.jpg"
+  "fileTitle": "File:HHS Xavier Becerra.jpg",
+  "cropNote": "Already a formal front-facing portrait (HHS, 2021) but framed to mid-chest; crop to head and shoulders: keep the top ~75% of the frame, centred on the face, to match Hilton's localFile.",
+  "parity": "ca-gov: formal portrait; comparable after cropNote"
  },
  "steve-hilton": {
   "name": "Steve Hilton",
   "raceId": "ca-gov",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg",
-  "license": "CC BY 2.0",
-  "attribution": "Photo: Gage Skidmore",
-  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Gage Skidmore. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
+  "photoUrl": "https://stevehiltonforgovernor.com/photos/portrait-street.jpg",
+  "localFile": "/workspace/townhall/civic/photos_local/steve-hilton.jpg",
+  "pageUrl": "https://stevehiltonforgovernor.com/meet-steve",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Steve Hilton campaign site",
+  "photoYear": null,
+  "identityEvidence": "\"Meet Steve\" page image on his campaign site (site bundle: meetSteve:{image:'/photos/portrait-street.jpg', heading:'Meet Steve'}); viewed: same person as the 2024 Gage Skidmore photo previously used",
   "checkedDate": "2026-10-30",
-  "photoYear": 2024,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 2645,
-  "photoWidth": 500,
-  "fileTitle": "File:Steve Hilton (54233445987 crop).jpg"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~02:30 CT); original 1800x1200",
+  "cropNote": "localFile is the original cropped to (468,0,1368,1125) of 1800x1200 -> 900x1125, front-facing head and shoulders; no further crop needed",
+  "note": "Posed portrait (navy blazer, outdoors). Photo year not stated. stevehilton.com is not his campaign site; stevehiltonforgovernor.com is.",
+  "replacedPhoto": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg",
+   "attribution": "Photo: Gage Skidmore",
+   "photoYear": 2024,
+   "reason": "QA7 photo parity: replaced with a front-facing head-and-shoulders photo from the candidate's own campaign site"
+  },
+  "parity": "head-and-shoulders, front-facing (QA7)"
  },
  "fiona-ma": {
   "name": "Fiona Ma",
@@ -2423,7 +2546,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
   "license": "CC0",
-  "attribution": "Photo: AidansStuff",
+  "attribution": "Photo: Wikimedia Commons user AidansStuff",
   "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: AidansStuff. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -2431,7 +2554,8 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 347,
   "photoWidth": 347,
-  "fileTitle": "File:Caroline Shinkle Selfie (cropped).jpg"
+  "fileTitle": "File:Caroline Shinkle Selfie (cropped).jpg",
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; description \"Selfie photo with caroline shinkle\" does not name the photographer, so the username is kept"
  },
  "wilneida-negron": {
   "name": "Wilneida Negron",
@@ -2471,7 +2595,9 @@
   "originalWidth": 1160,
   "photoWidth": 500,
   "fileTitle": "File:World_Cup_Transportation_and_Safety_(cropped).jpg",
-  "note": "Ticket entry: photo shows gubernatorial candidate Kathy Hochul only (Commons category \"Kathy Hochul in 2026\"). Running mate Adrienne Adams also has a verified Commons photo if the site wants both: https://commons.wikimedia.org/wiki/File:Adrienne_Adams,_2022.jpg (CC BY 3.0, NYC Mayor's Office, 727px)."
+  "note": "Ticket entry: photo shows gubernatorial candidate Kathy Hochul only (Commons category \"Kathy Hochul in 2026\"). Running mate Adrienne Adams also has a verified Commons photo if the site wants both: https://commons.wikimedia.org/wiki/File:Adrienne_Adams,_2022.jpg (CC BY 3.0, NYC Mayor's Office, 727px).",
+  "parity": "UNRESOLVED (QA7): ny-governor: the formal official portrait on Commons is from 2011 (US Congress); using it would put the race outside the 6-year photo-age rule (Blakeman 2022) and switch the race to initials. governor.ny.gov returned 403. Keep the 2026 MTA photo; crop to head and shoulders.",
+  "cropNote": "event photo: crop to head and shoulders, centred on the face"
  },
  "bruce-a-blakeman-todd-hood": {
   "name": "Bruce A. Blakeman / Todd Hood",
@@ -2532,7 +2658,8 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 995,
   "photoWidth": 500,
-  "fileTitle": "File:TPD's Headshot (cropped).jpg"
+  "fileTitle": "File:TPD's Headshot (cropped).jpg",
+  "creditBasis": "Credit kept as \"Office of NYS Comptroller\": the Commons description reads \"Tom DiNapoli's official headshot. Source: OSC\" and the credit links osc.state.ny.us (an organization stated on the page, not a username)."
  },
  "joseph-hernandez": {
   "name": "Joseph Hernandez",
@@ -2592,7 +2719,9 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1200,
   "photoWidth": 500,
-  "fileTitle": "File:(03-04-19) NY State Senator Liz Krueger during Senate Session at the NY State Capitol, Albany NY (cropped).jpg"
+  "fileTitle": "File:(03-04-19) NY State Senator Liz Krueger during Senate Session at the NY State Capitol, Albany NY (cropped).jpg",
+  "parity": "UNRESOLVED (QA7): ny-sd-28: official nysenate.gov page returned 403 to scripted requests; Commons alternatives are older (2009 event) or event photos. Crop the 2019 session photo to head and shoulders.",
+  "cropNote": "event photo: crop to head and shoulders, centred on the face"
  },
  "alina-bonsell": {
   "name": "Alina Bonsell",

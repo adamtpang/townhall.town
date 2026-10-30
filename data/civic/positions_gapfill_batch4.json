@@ -10,16 +10,18 @@
    {
     "issue": "infrastructure",
     "override": true,
-    "summary": "A cut-everything budget line gives no infrastructure-specific direction. A retag to taxes would duplicate his existing taxes -5 (\"Taxes are always too high...\"), so no retag is made. If the infrastructure entry is removed, set it to {value:null,status:\"unsure\"}.",
+    "summary": "Calls for cuts across the whole federal budget; says nothing specific about infrastructure spending.",
     "quote": "This has to involve massive cuts in the federal budget in every single program and department.",
-    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)",
+    "editorNote": "A cut-everything budget line gives no infrastructure-specific direction. A retag to taxes would duplicate his existing taxes -5 (\"Taxes are always too high...\"), so no retag is made. If the infrastructure entry is removed, set it to {value:null,status:\"unsure\"}."
    },
    {
     "issue": "wages",
     "override": true,
-    "summary": "This is general free-market philosophy, so a wage direction would be inferred, not stated. Under the same standard, Don Huffines wages -4 is also changed (see below).",
+    "summary": "States a general free-market view; takes no position on wage levels or the minimum wage.",
     "quote": "I believe in the free market, where people freely trade with each other without government regulations and controls.",
-    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)"
+    "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)",
+    "editorNote": "This is general free-market philosophy, so a wage direction would be inferred, not stated. Under the same standard, Don Huffines wages -4 is also changed (see below)."
    }
   ]
  },
@@ -42,9 +44,10 @@
    {
     "issue": "taxes",
     "override": true,
-    "summary": "The quote names no tax level. The same source also points the other way (she lowered property taxes), so the direction is ambiguous.",
+    "summary": "Names no tax level, and the same source notes she has also lowered property taxes, so the direction is unclear.",
     "quote": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools.",
-    "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt"
+    "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt",
+    "editorNote": "The quote names no tax level. The same source also points the other way (she lowered property taxes), so the direction is ambiguous."
    }
   ]
  },
@@ -55,9 +58,10 @@
    {
     "issue": "safety",
     "override": true,
-    "summary": "Student discipline is not the public-safety axis (enforcement vs treatment/prevention in public-safety funding). The quote also pairs accountability with \"receive support at home\", so it is mixed.",
+    "summary": "About student discipline in schools, pairing accountability with support at home; not a position on public-safety policy.",
     "quote": "Working closely with Supt. Enfield, we aimed to support staff and hold students accountable for their actions while navigating state-level challenges on suspensions and expulsions",
-    "sourceUrl": "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html"
+    "sourceUrl": "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
+    "editorNote": "Student discipline is not the public-safety axis (enforcement vs treatment/prevention in public-safety funding). The quote also pairs accountability with \"receive support at home\", so it is mixed."
    }
   ]
  },
@@ -68,9 +72,10 @@
    {
     "issue": "taxes",
     "override": true,
-    "summary": "This defends a program. It names no tax or tax level, and the future ballot measure is not identified as a tax. Compare Monroe Lace taxes +3, which explicitly calls for a \"successor CCSF parcel-tax measure\" (growsf.org, re-checked). Scoring LaCroix would mean inferring a tax.",
+    "summary": "Supports Free City and the grant program and opposes cuts; does not name a tax or tax level.",
     "quote": "I fully support Free City and the grant program, and strongly oppose any cuts or reductions to the program.",
-    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html"
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html",
+    "editorNote": "This defends a program. It names no tax or tax level, and the future ballot measure is not identified as a tax. Compare Monroe Lace taxes +3, which explicitly calls for a \"successor CCSF parcel-tax measure\" (growsf.org, re-checked). Scoring LaCroix would mean inferring a tax."
    }
   ]
  },
@@ -81,9 +86,10 @@
    {
     "issue": "taxes",
     "override": true,
-    "summary": "Her funding ideas are enrollment, partnerships and grants. None of them is a tax, so there is no tax-level direction. This is the same standard as LaCroix.",
+    "summary": "Proposes funding through enrollment, partnerships and grants; does not name a tax or tax level.",
     "quote": "Free City is crucial and must not be a political bargaining chip.",
-    "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html"
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html",
+    "editorNote": "Her funding ideas are enrollment, partnerships and grants. None of them is a tax, so there is no tax-level direction. This is the same standard as LaCroix."
    }
   ]
  },
@@ -111,9 +117,10 @@
    {
     "issue": "wages",
     "override": true,
-    "summary": "Precedent: public-employer pay statements have not been scored on wages. Alida Fisher (\"Living Wage for Educators Act\") has wages = \"No public statement found\" (her statement was scored only under taxes, for the parcel tax). Vikki Goodwin's \"teacher pay increases\" is not in her wages score (her wages +4 is the $15 minimum wage). The wages axis statement is \"Employers and workers, not government, should decide wage levels\". A trustee paying the college's own staff more is an employer decision, not wage policy for others.",
+    "summary": "Supports livable wages for the college's own child-care staff and educators. That is public-employee pay, not a position on wage policy for other employers.",
     "quote": "I think we should pay our childcare and educators liveable wages",
-    "sourceUrl": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/"
+    "sourceUrl": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/",
+    "editorNote": "Precedent: public-employer pay statements have not been scored on wages. Alida Fisher (\"Living Wage for Educators Act\") has wages = \"No public statement found\" (her statement was scored only under taxes, for the parcel tax). Vikki Goodwin's \"teacher pay increases\" is not in her wages score (her wages +4 is the $15 minimum wage). The wages axis statement is \"Employers and workers, not government, should decide wage levels\". A trustee paying the college's own staff more is an employer decision, not wage policy for others."
    }
   ]
  },
@@ -124,9 +131,10 @@
    {
     "issue": "wages",
     "override": true,
-    "summary": "Same rule as Rome Moses Jones: this is a record item about public-employer pay (ACC staff), not wage policy. Dana Walker goes back to 0 sourced issues.",
+    "summary": "Cites raising wages for the college's own employees. That is public-employee pay, not a position on wage policy for other employers.",
     "quote": "Raised wages for ACC employees",
-    "sourceUrl": "https://danawalkerforacc.com/"
+    "sourceUrl": "https://danawalkerforacc.com/",
+    "editorNote": "Same rule as Rome Moses Jones: this is a record item about public-employer pay (ACC staff), not wage policy. Dana Walker goes back to 0 sourced issues."
    }
   ]
  },
@@ -137,9 +145,10 @@
    {
     "issue": "wages",
     "override": true,
-    "summary": "This is not one of the listed suspects. It is found by applying the Ted Brown wages standard to every candidate: general anti-regulation text with no wage-setting or minimum-wage position. It is also written in the third person (campaign/Ballotpedia text, not his own first-person words). Engineering can drop this item if they prefer to limit fixes to the listed suspects. Eligibility is unaffected either way (tx-comptroller is not eligible).",
+    "summary": "Campaign text opposes regulation in general; takes no position on wage levels or the minimum wage.",
     "quote": "Don Huffines believes government is the number one barrier to job creation and income growth. As Comptroller, he’ll fight to cut taxes and eliminate job-killing regulations that hold back Texas businesses and drive up the cost of living.",
-    "sourceUrl": "https://ballotpedia.org/Don_Huffines"
+    "sourceUrl": "https://ballotpedia.org/Don_Huffines",
+    "editorNote": "This is not one of the listed suspects. It is found by applying the Ted Brown wages standard to every candidate: general anti-regulation text with no wage-setting or minimum-wage position. It is also written in the third person (campaign/Ballotpedia text, not his own first-person words). Engineering can drop this item if they prefer to limit fixes to the listed suspects. Eligibility is unaffected either way (tx-comptroller is not eligible)."
    }
   ]
  }

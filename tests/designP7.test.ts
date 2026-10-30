@@ -42,12 +42,12 @@ describe("Design p7 (4c21a5c)", () => {
     expect(html).toContain("rounded-none"); expect(html).toContain("bg-black/10"); expect(html).toMatch(/class="h-full bg-black /);
     expect(html).not.toMatch(/rounded-full|bg-slate-600|bg-slate-200/);
   });
-  it("4. 44px pseudo hit areas on How, Early voting source, photo credits and news links", () => {
-    expect(HIT).toBe("relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']");
+  it("4. pseudo hit areas on How, Early voting source, photo credits and news links (round 0222: 28px, sized so neighbours never overlap; design p12 tap test)", () => {
+    expect(HIT).toBe("relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']");
     const end = src("app/EndScreen.tsx");
     expect(end).toMatch(/className=\{`\$\{HIT\} text-\[#3760F2\]`\} data-how-register>How ↗/);
-    expect(end).toMatch(/after:-inset-y-4 after:content-\[''\]" data-early-source>Early voting source/);
-    expect(end).not.toMatch(/after:-inset-y-1[^>]*>Early voting source/);
+    expect(end).toMatch(/after:-inset-y-1 after:content-\[''\]" data-early-source>Early voting source/);
+    expect(end).not.toMatch(/after:-inset-y-4|after:-inset-x-3/);
     // Oct 29 11:42 PM CT: attribution is always visible, small and muted (was a blue link in a collapsed list).
     // Design p10 supersedes: credit is 12/16 weight 450 black/60, author linked to the file page, license to its deed.
     expect(src("components/Portrait.tsx")).toMatch(/CREDIT = "max-w-\[60ch\] text-\[12px\] leading-4 font-\[450\] text-black\/60/);

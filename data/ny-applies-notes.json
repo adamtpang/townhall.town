@@ -2,10 +2,10 @@
  "note": "Civic qa_fixes4 appliesNotes.byRace (Oct 30, 2026), verbatim minus Civic's 'Keep the existing SPLIT text' instruction. Shown on screen and in the API; the TENTATIVE label stays.",
  "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
  "byRace": {
-  "ny-surrogate-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Surrogate - New York', 1 to be elected.",
-  "ny-civil-county-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Judge of the Civil Court - County - New York', 3 to be elected.",
-  "ny-civil-3md-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: Judge of the Civil Court, 3rd Municipal Court District, 1 to be elected.",
-  "ny-civil-9md-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: Judge of the Civil Court, 9th Municipal Court District, 2 to be elected.",
-  "nyc-council-3": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Member of the City Council - 3rd Council District', 1 to be elected."
+  "ny-surrogate-ny": "Source: NYC Board of Elections contest list (vote.nyc), printed 9/11/2026 and still marked TENTATIVE. No final list as of Oct 30. Contest: Surrogate, New York County, 1 seat.",
+  "ny-civil-county-ny": "Source: NYC Board of Elections contest list (vote.nyc), printed 9/11/2026 and still marked TENTATIVE. No final list as of Oct 30. Contest: Civil Court, New York County, 3 seats.",
+  "ny-civil-3md-ny": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 3rd Municipal Court District, 1 seat.",
+  "ny-civil-9md-ny": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 9th Municipal Court District, 2 seats.",
+  "nyc-council-3": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: 1 seat; unclear if a special election."
  }
 }

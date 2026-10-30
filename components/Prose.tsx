@@ -10,7 +10,7 @@ export function Inline({ text }: { text: string }) {
     if (m.index > last) out.push(text.slice(last, m.index));
     const external = /^https?:/.test(m[2]) && !m[2].startsWith("https://townhall.town");
     out.push(
-      <a key={m.index} href={m[2]} className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']" {...(external ? { target: "_blank", rel: "noreferrer" } : {})}>
+      <a key={m.index} href={m[2]} className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']" {...(external ? { target: "_blank", rel: "noreferrer" } : {})}>
         {m[1]}
       </a>
     );

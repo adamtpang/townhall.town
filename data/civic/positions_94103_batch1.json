@@ -736,12 +736,8 @@
     "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 54 (California Values Act, limits state/local cooperation with federal immigration enforcement), Sep 15, 2017"
    },
    "infrastructure": {
-    "value": 4,
-    "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
-    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
-    "verifiedBy": "civic",
-    "verifiedDate": "2026-10-29",
-    "note": "Recorded vote (CA Legislature, via CalMatters Digital Democracy). Pre-2024; no newer statement found on this issue: Assembly floor vote FOR SB 1 (Road Repair and Accountability Act, ~$5B/yr transportation funding), Apr 6, 2017"
+    "value": null,
+    "status": "No public statement found"
    }
   },
   "donald-p-wagner": {

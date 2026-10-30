@@ -23,6 +23,8 @@ for f in files:
             e = {'value': x['score'], 'quote': x.get('quote') or '', 'sourceUrl': x['sourceUrl']}
             if not x.get('quote') and x.get('summary'): e['summary'] = x['summary']
             if str(x.get('date', ''))[:4].isdigit(): e['year'] = int(str(x['date'])[:4])
+            for k in ('voteRecord', 'bill'):  # recorded votes stay votes (qa_fixes6 #3), never become quotes on a re-run
+                if x.get(k): e[k] = x[k]
             if rec.get(iss) != e: added += 1
             rec[iss] = e
         for x in v.get('unsure', []):

@@ -61,7 +61,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     const s = src("components/CandidateRow.tsx");
     expect(s).toMatch(/\{overlapLabel\(c\.name, o\)\}\{grade \? <> · <span[^>]*data-grade-slot>\{grade\}/);
     // QA fb66b9b P1: the grade caption reads at 13/18 (black/60) beside the grade.
-    expect(s).toMatch(/text-\[13px\] leading-\[18px\] font-\[450\] text-black\/60 \[word-break:break-word\]" data-grade=\{grade\}>\{gradeLabel\(/);
+    expect(s).toMatch(/text-\[12px\] leading-4 font-\[450\] text-black\/60 \[word-break:break-word\]" data-grade=\{grade\}>\{gradeLabel\(/);
   });
   it("'Who lines up': only answered issues show, the rest sits behind 'Show all positions'; date unsure is a title", () => {
     const s = src("components/CandidateRow.tsx");

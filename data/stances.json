@@ -563,7 +563,7 @@
       "taxes": {
         "value": null,
         "status": "unsure",
-        "summary": "The quote names no tax level. The same source also points the other way (she lowered property taxes), so the direction is ambiguous.",
+        "summary": "Names no tax level, and the same source notes she has also lowered property taxes, so the direction is unclear.",
         "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt",
         "quote": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools."
       },
@@ -776,14 +776,14 @@
       "infrastructure": {
         "value": null,
         "status": "unsure",
-        "summary": "A cut-everything budget line gives no infrastructure-specific direction. A retag to taxes would duplicate his existing taxes -5 (\"Taxes are always too high...\"), so no retag is made. If the infrastructure entry is removed, set it to {value:null,status:\"unsure\"}.",
+        "summary": "Calls for cuts across the whole federal budget; says nothing specific about infrastructure spending.",
         "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)",
         "quote": "This has to involve massive cuts in the federal budget in every single program and department."
       },
       "wages": {
         "value": null,
         "status": "unsure",
-        "summary": "This is general free-market philosophy, so a wage direction would be inferred, not stated. Under the same standard, Don Huffines wages -4 is also changed (see below).",
+        "summary": "States a general free-market view; takes no position on wage levels or the minimum wage.",
         "sourceUrl": "https://ballotpedia.org/Ted_Brown_(Texas)",
         "quote": "I believe in the free market, where people freely trade with each other without government regulations and controls."
       },
@@ -929,7 +929,7 @@
       "wages": {
         "value": null,
         "status": "unsure",
-        "summary": "This is not one of the listed suspects. It is found by applying the Ted Brown wages standard to every candidate: general anti-regulation text with no wage-setting or minimum-wage position. It is also written in the third person (campaign/Ballotpedia text, not his own first-person words). Engineering can drop this item if they prefer to limit fixes to the listed suspects. Eligibility is unaffected either way (tx-comptroller is not eligible).",
+        "summary": "Campaign text opposes regulation in general; takes no position on wage levels or the minimum wage.",
         "sourceUrl": "https://ballotpedia.org/Don_Huffines",
         "quote": "Don Huffines believes government is the number one barrier to job creation and income growth. As Comptroller, he’ll fight to cut taxes and eliminate job-killing regulations that hold back Texas businesses and drive up the cost of living."
       },
@@ -2038,7 +2038,7 @@
       "healthcare": {
         "value": null,
         "status": "unsure",
-        "summary": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored.",
+        "summary": "Refers to the state staying out of personal health decisions, not to the government's role in paying for care.",
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
         "quote": "The state should have no involvement in decisions about our personal health."
       },
@@ -2487,8 +2487,10 @@
       },
       "energy": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Campaign site lists a heading on data centers with no position text under it, so the direction on energy is unclear.",
+        "sourceUrl": "https://www.kellyfortx.com/issuessolutions",
+        "quote": "Data Centers: Build on Your Own Dime, Don't Harm Your Neighbors"
       },
       "immigration": {
         "value": null,
@@ -2728,7 +2730,7 @@
       "education": {
         "value": null,
         "status": "unsure",
-        "summary": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored.",
+        "summary": "Campaign site focuses on academic excellence, workforce programs and parents' rights; no position on public money for private schools.",
         "sourceUrl": "https://jessicaforhd51.com/"
       },
       "energy": {
@@ -2761,8 +2763,9 @@
       },
       "wages": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Supports higher teacher pay. That is public-employee pay, not a position on wage policy for other employers.",
+        "sourceUrl": "https://www.allisonfortx.com/"
       },
       "taxes": {
         "value": null,
@@ -2775,7 +2778,9 @@
         "sourceUrl": null
       },
       "education": {
-        "value": -3,
+        "value": null,
+        "status": "unsure",
+        "summary": "Opposes unlimited charter-school expansion; charter schools are public schools, so this isn't scored on the private-school-funding question.",
         "quote": "I oppose the unlimited expansion of charter schools that diverts resources from our neighborhood public schools.",
         "sourceUrl": "https://www.allisonfortx.com/"
       },
@@ -2814,8 +2819,10 @@
       },
       "taxes": {
         "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Wants every tax dollar focused on students rather than bureaucracy; no position on tax levels.",
+        "sourceUrl": "https://micatx.com/",
+        "quote": "Every tax dollar should be focused on students and classrooms—not wasted on unnecessary bureaucracy."
       },
       "safety": {
         "value": null,
@@ -2938,7 +2945,7 @@
       "infrastructure": {
         "value": null,
         "status": "unsure",
-        "summary": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored.",
+        "summary": "Would cancel Project Connect light rail and consider a monorail, and opposes highway expansions; mixed on overall spending.",
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
         "quote": "Cancel Project Connect light rail; consider monorail for commuter routes. No highway expansions."
       }
@@ -2980,7 +2987,7 @@
       "energy": {
         "value": null,
         "status": "unsure",
-        "summary": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored.",
+        "summary": "Opposes new data centers that use large amounts of water and power, framed around resources and residents' bills rather than environment vs. development.",
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
         "quote": "I have publicly opposed new data centers that consume enormous amounts of those resources"
       },
@@ -3016,13 +3023,13 @@
       "taxes": {
         "value": null,
         "status": "unsure",
-        "summary": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored.",
+        "summary": "Criticizes \"irresponsible city spending\" but takes no position on tax levels.",
         "sourceUrl": "https://daveforaustintx.com/"
       },
       "safety": {
         "value": null,
         "status": "unsure",
-        "summary": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored.",
+        "summary": "Campaign site supports \"a proactive police presence\"; a League of Women Voters guide answer says \"rework police presence\". The direction is unclear.",
         "sourceUrl": "https://daveforaustintx.com/",
         "quote": "a proactive police presence, as they are the most effective tools for protecting personal freedoms and delivering a safe and walkable city"
       },
@@ -3096,7 +3103,7 @@
       "infrastructure": {
         "value": null,
         "status": "unsure",
-        "summary": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored.",
+        "summary": "Wants a cost review and budget cap for light rail, but also \"better buses, signals and sidewalks now\"; mixed on spending.",
         "sourceUrl": "https://kai4atx.com/"
       }
     },
@@ -3226,7 +3233,7 @@
       "education": {
         "value": null,
         "status": "unsure",
-        "summary": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored.",
+        "summary": "Proposes moving all AISD students to charter schools; charter schools are public schools, so this isn't scored on the private-school-funding question.",
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
         "quote": "Moving all students to charter schools will free up the $1.5B AISD M&O tax"
       },
@@ -3261,16 +3268,16 @@
       "wages": {
         "value": null,
         "status": "unsure",
-        "summary": "Same rule as Rome Moses Jones: this is a record item about public-employer pay (ACC staff), not wage policy. Dana Walker goes back to 0 sourced issues.",
-        "sourceUrl": "https://danawalkerforacc.com/",
-        "quote": "Raised wages for ACC employees"
+        "summary": "Wants college workforce partnerships that lead to living-wage local jobs; not a position on government wage policy.",
+        "sourceUrl": "https://danawalkerforacc.com/#priorities",
+        "quote": "expanding partnerships with local employers so programs lead directly to local jobs that pay living wages"
       },
       "taxes": {
         "value": null,
         "status": "unsure",
-        "summary": "'protecting taxpayers' money' gives no tax-level direction. Not scored.",
-        "sourceUrl": "https://danawalkerforacc.com/",
-        "quote": "protecting taxpayers' money"
+        "summary": "Wants free tuition expanded once finances are stable, and notes college money comes from students and taxpayers; no position on tax levels.",
+        "sourceUrl": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "quote": "I would love it if we could expand it to more than just high school seniors, but I think first we need to be stable financially with what we have"
       },
       "safety": {
         "value": null,
@@ -3368,9 +3375,9 @@
       "taxes": {
         "value": null,
         "status": "unsure",
-        "summary": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" Ambiguous; not scored.",
-        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
-        "quote": "There are a plethora of equally abhorrent external answers including raising property taxes. If we want good things, we need to pay for them."
+        "summary": "Likes the idea of free tuition but doubts it works; no position on tax levels.",
+        "sourceUrl": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "quote": "I love the idea of free tuition, but it doesn't necessarily work."
       },
       "safety": {
         "value": null,
@@ -3417,8 +3424,10 @@
       },
       "taxes": {
         "value": null,
-        "status": "Still being sourced",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Says the state should earmark money for community colleges; no position on local tax levels.",
+        "sourceUrl": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "quote": "I do believe the money's out there and should be earmarked for community colleges from the state"
       },
       "safety": {
         "value": null,
@@ -3465,8 +3474,10 @@
       },
       "taxes": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Speaks generally about using taxpayer resources responsibly; no position on tax levels.",
+        "sourceUrl": "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+        "quote": "I believe public policy should create meaningful opportunities while ensuring taxpayer resources are used responsibly."
       },
       "safety": {
         "value": null,
@@ -3512,9 +3523,10 @@
         "sourceUrl": null
       },
       "taxes": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": -3,
+        "quote": "trying to make sure people knew it was a permanent tax increase. That's a big part about why I want to do this",
+        "sourceUrl": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+        "year": 2026
       },
       "safety": {
         "value": null,
@@ -3942,12 +3954,8 @@
         "year": 2017
       },
       "infrastructure": {
-        "value": 4,
-        "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
-        "voteRecord": "Voted Yes (Apr 6, 2017)",
-        "bill": "SB 1",
-        "year": 2017
+        "value": null,
+        "status": "No public statement found"
       }
     },
     "donald-p-don-wagner": {
@@ -4224,7 +4232,7 @@
       "safety": {
         "value": null,
         "status": "unsure",
-        "summary": "Student discipline is not the public-safety axis (enforcement vs treatment/prevention in public-safety funding). The quote also pairs accountability with \"receive support at home\", so it is mixed.",
+        "summary": "About student discipline in schools, pairing accountability with support at home; not a position on public-safety policy.",
         "sourceUrl": "https://www.championnewspapers.com/news/article_ce9fce92-bc92-11ee-a42b-9733f253a0c4.html",
         "quote": "Working closely with Supt. Enfield, we aimed to support staff and hold students accountable for their actions while navigating state-level challenges on suspensions and expulsions"
       },
@@ -4460,8 +4468,10 @@
       },
       "taxes": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "\"Every property owner should pay their fair share\" is about collecting what is already owed, not about tax levels.",
+        "sourceUrl": "https://joaquintorressf.com/",
+        "quote": "Every property owner should pay their fair share."
       },
       "safety": {
         "value": null,
@@ -5070,7 +5080,7 @@
       "housing": {
         "value": null,
         "status": "unsure",
-        "summary": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored.",
+        "summary": "A KQED voter-guide paraphrase includes the words \"not housing\" without clear context; the direction is unclear.",
         "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district"
       },
       "healthcare": {
@@ -5081,7 +5091,7 @@
       "wages": {
         "value": null,
         "status": "unsure",
-        "summary": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored.",
+        "summary": "A KQED voter-guide paraphrase says he favors higher teacher wages; these are not his own words.",
         "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district"
       },
       "taxes": {
@@ -5188,7 +5198,7 @@
       "safety": {
         "value": null,
         "status": "unsure",
-        "summary": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored.",
+        "summary": "Stresses community-led violence reduction and criticizes police taking credit; no position on police funding vs. prevention.",
         "sourceUrl": "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/"
       },
       "education": {
@@ -5338,8 +5348,10 @@
       },
       "education": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Wants families to \"choose public school on purpose\"; no position on public money for private schools.",
+        "sourceUrl": "https://www.autumnforschoolboard.com/priorities",
+        "quote": "San Francisco can be a city where families stay, raise their kids, and choose public school on purpose."
       },
       "energy": {
         "value": null,
@@ -5525,8 +5537,10 @@
       },
       "safety": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Supports more training and coordination for school security staff; not a position on public-safety policy.",
+        "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/phil-kim/",
+        "quote": "I am interested in partnering with the Superintendent and Board to make sure that we have central supports and site-based strategies that support our T-10s."
       },
       "education": {
         "value": null,
@@ -5757,7 +5771,7 @@
       "wages": {
         "value": null,
         "status": "unsure",
-        "summary": "Precedent: public-employer pay statements have not been scored on wages. Alida Fisher (\"Living Wage for Educators Act\") has wages = \"No public statement found\" (her statement was scored only under taxes, for the parcel tax). Vikki Goodwin's \"teacher pay increases\" is not in her wages score (her wages +4 is the $15 minimum wage). The wages axis statement is \"Employers and workers, not government, should decide wage levels\". A trustee paying the college's own staff more is an employer decision, not wage policy for others.",
+        "summary": "Supports livable wages for the college's own child-care staff and educators. That is public-employee pay, not a position on wage policy for other employers.",
         "sourceUrl": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/",
         "quote": "I think we should pay our childcare and educators liveable wages"
       },
@@ -5860,7 +5874,7 @@
       "taxes": {
         "value": null,
         "status": "unsure",
-        "summary": "This defends a program. It names no tax or tax level, and the future ballot measure is not identified as a tax. Compare Monroe Lace taxes +3, which explicitly calls for a \"successor CCSF parcel-tax measure\" (growsf.org, re-checked). Scoring LaCroix would mean inferring a tax.",
+        "summary": "Supports Free City and the grant program and opposes cuts; does not name a tax or tax level.",
         "sourceUrl": "https://sfgreens.org/questionnaires/2026/lacroix_ccb.html",
         "quote": "I fully support Free City and the grant program, and strongly oppose any cuts or reductions to the program."
       },
@@ -5958,7 +5972,7 @@
       "taxes": {
         "value": null,
         "status": "unsure",
-        "summary": "Her funding ideas are enrollment, partnerships and grants. None of them is a tax, so there is no tax-level direction. This is the same standard as LaCroix.",
+        "summary": "Proposes funding through enrollment, partnerships and grants; does not name a tax or tax level.",
         "sourceUrl": "https://sfgreens.org/questionnaires/2026/mcfadden_ccb.html",
         "quote": "Free City is crucial and must not be a political bargaining chip."
       },
@@ -6032,8 +6046,10 @@
       },
       "infrastructure": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Opposes selling the college's Downtown Center; about keeping a property, not spending levels.",
+        "sourceUrl": "https://www.theguardsman.com/trustee-candidate-erwin-tam-is-ready-to-crunch-the-numbers/",
+        "quote": "it would not be in the public's interest or the college's interest or San Francisco's interest to sell this property."
       }
     },
     "lisa-wynn": {
@@ -6150,13 +6166,13 @@
         "value": -2,
         "quote": "",
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
-        "summary": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection.",
+        "summary": "Favors market approaches: selling insurance across state lines, more health savings accounts and fewer regulations, while protecting patients with preexisting conditions.",
         "year": 2026
       },
       "immigration": {
         "value": null,
         "status": "unsure",
-        "summary": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored.",
+        "summary": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\"; mixed direction.",
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
       }
     },
@@ -6167,13 +6183,45 @@
       "name": "Dolores Ortega Carter"
     },
     "gabriel-padilla": {
-      "name": "Gabriel Padilla"
+      "name": "Gabriel Padilla",
+      "safety": {
+        "value": null,
+        "status": "unsure",
+        "summary": "Focuses on trust and transparency between law enforcement and residents; no position on prevention vs. enforcement.",
+        "sourceUrl": "https://www.gabeforconstable.com/#priorities",
+        "quote": "Putting people first by fostering trust, transparency, and communication between law enforcement and residents."
+      }
     },
     "skyler-a-korgel": {
-      "name": "Skyler A. Korgel"
+      "name": "Skyler A. Korgel",
+      "taxes": {
+        "value": 3,
+        "quote": "Personally, I am passionate about equitable taxation policy that fairly distributes tax burdens such that everyone is paying their fair share to support our schools, governments, public lands, and public services.",
+        "sourceUrl": "https://ballotpedia.org/Skyler_Korgel",
+        "year": 2026
+      },
+      "housing": {
+        "value": 2,
+        "quote": "When Tesla, Oracle, Samsung etc pay the property taxes instead of getting huge discounts via underappraisal, then housing affordability improves for both owners AND renters",
+        "sourceUrl": "https://ballotpedia.org/Skyler_Korgel",
+        "year": 2026
+      },
+      "infrastructure": {
+        "value": 2,
+        "quote": "expanding public transportation options and reducing car dependency",
+        "sourceUrl": "https://ballotpedia.org/Skyler_Korgel",
+        "year": 2026
+      }
     },
     "brian-pena": {
-      "name": "Brian Peña"
+      "name": "Brian Peña",
+      "taxes": {
+        "value": null,
+        "status": "unsure",
+        "summary": "Promises responsible stewardship of tax dollars and accurate commercial appraisals; no position on tax levels.",
+        "sourceUrl": "https://www.demsfortcad.com/",
+        "quote": "He is committed to being a responsible steward of tax dollars, holding large commercial properties accountable through accurate appraisals"
+      }
     },
     "dyana-limon-mercado": {
       "name": "Dyana Limon-Mercado"
@@ -6187,6 +6235,30 @@
         "summary": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
         "year": 2026,
         "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)"
+      },
+      "healthcare": {
+        "value": 3,
+        "quote": "George is committed to working with Travis County leaders and community partners to expand access to health care and mental health services. He'll prioritize resources for the uninsured",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "year": 2026
+      },
+      "housing": {
+        "value": 3,
+        "quote": "He will champion affordable house, and affordable home ownership, so that generations of families can stay rooted in the neighborhoods they love.",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "year": 2026
+      },
+      "infrastructure": {
+        "value": 3,
+        "quote": "From fixing roads to improving public transit, George will advocate for smart infrastructure investment in areas that need it most.",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "year": 2026
+      },
+      "safety": {
+        "value": -2,
+        "quote": "push for smart investments in the Travis County Diversion Center to support community members in crisis.",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "year": 2026
       }
     },
     "gigi-edwards-bryant": {

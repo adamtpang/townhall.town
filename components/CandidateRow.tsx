@@ -2,7 +2,7 @@
 // One candidate row, shared by /card and the Who section (Adam, Oct 29 11:28 PM CT): photo (or initials), every sourced
 // position with its source link, the site link, and, for candidates with no sourced position, the neutral line
 // "No public position found yet. Sources checked:" with the sources our researchers recorded. Never a guess.
-import { Portrait, PhotoCredit, CREDIT, type Photo } from "./Portrait";
+import { Portrait, CREDIT, type Photo } from "./Portrait";
 import { stancesFor, sourceLabel, ISSUES } from "../lib/issues";
 import { overlapLabel } from "../lib/overlapCore.mjs";
 import { gradeLabel } from "../lib/grades.mjs";
@@ -40,7 +40,9 @@ function voteLine(st: { voteRecord?: string; quote?: string; bill?: string }) {
 }
 
 /** League of Women Voters guide links read as one plain label (design p10). */
-const checkedLabel = (x: Checked) => (/lwv|league of women voters|vote411/i.test(`${x.url} ${x.title ?? ""}`) ? "League of Women Voters guide" : (x.title || host(x.url)).replace(/\s*\((via|direct fetch|search snippet)[^)]*\)\s*/gi, " ").trim());
+/** Design p12 #4: a recorded search ("Web search, local news (query URL)") reads as the plain query it ran. */
+const searchQuery = (x: Checked) => { if (!/\(query URL\)/i.test(x.title ?? "")) return null; try { const q = new URL(x.url).searchParams.get("q"); return q ? `Web search: ${q}` : null; } catch { return null; } };
+export const checkedLabel = (x: Checked) => (/lwv|league of women voters|vote411/i.test(`${x.url} ${x.title ?? ""}`) ? "League of Women Voters guide" : searchQuery(x) ?? (x.title || host(x.url)).replace(/\s*\((via|direct fetch|search snippet)[^)]*\)\s*/gi, " ").trim());
 /** Drop internal notes and keep one link per domain (design p10 P2). */
 /** Design p11 #5 + QA fb66b9b P2: dead links hidden; one entry per host and per visible label (so the League of
  *  Women Voters guide shows once even when Civic recorded lwvsf.org and vote411.org); a combined "Mission Local/SF
@@ -91,7 +93,7 @@ export default function CandidateRow({ c, o, grade, ids, answeredYesNo = true, a
             {overlapLabel(c.name, o)}{grade ? <> · <span className="font-[530] text-black" data-grade-slot>{grade}</span></> : null}
           </p>
         ) : null}
-        {grade ? <p className="mt-0.5 max-w-[60ch] text-[13px] leading-[18px] font-[450] text-black/60 [word-break:break-word]" data-grade={grade}>{gradeLabel(o.agree, o.n)}</p> : null}
+        {grade ? <p className="mt-0.5 max-w-[60ch] text-[12px] leading-4 font-[450] text-black/60 [word-break:break-word]" data-grade={grade}>{gradeLabel(o.agree, o.n)}</p> : null}
         {o.status === "answer" && answeredYesNo ? <p className="text-sm text-black/60">Answer Yes or No on more of their issues to compare (Neutral isn&rsquo;t compared).</p> : null}
         {asked.length > 0 ? (
           <p className="mt-1 text-sm leading-5 text-black/80" data-answered-n={asked.length}>
@@ -143,7 +145,7 @@ export default function CandidateRow({ c, o, grade, ids, answeredYesNo = true, a
             ) : null}
           </details>
         ) : null}
-        {c.photo?.url ? <PhotoCredit photo={c.photo} name={c.name} /> : null}
+        {/* Design p12 #1: no per-candidate "Photo:" line; the race credits all its photos in one line under the list. */}
       </div>
     </li>
   );

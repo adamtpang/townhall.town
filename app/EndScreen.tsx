@@ -7,11 +7,12 @@ import { stancesFor, type Answers } from "../lib/issues";
 import { overlapStatus, METHOD } from "../lib/overlapCore.mjs";
 import TownyResearch from "./TownyResearch";
 import WhoRaces from "../components/WhoRaces";
+import RaceFooter from "../components/RaceFooter";
 import { cardPath } from "../lib/card.mjs";
 import { gradesForRace, GRADE_RULE } from "../lib/grades.mjs";
 import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
-import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl } from "../lib/endscreen.mjs";
+import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl, earlySingleDay } from "../lib/endscreen.mjs";
 
 type Cand = RowCand & { ballotpedia?: string | null };
 type RaceLite = { id: string; title?: string; level?: string; judicial?: "ny" | "tx" | "ca" | boolean; candidates: Cand[] };
@@ -64,7 +65,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               {(() => {
                 const st = judicial.some((r) => r.judicial === "ny") ? "ny" : judicial.some((r) => r.judicial === "ca") ? "ca" : "tx";
                 const J = JUDICIAL_RULES[st];
-                return <>{J[0]} (<a href={J[1]} title={J[2]} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{judicialShort(J[2])} ↗{ext}</a>), so no overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>;
+                return <>{J[0]} (<a href={J[1]} title={J[2]} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{judicialShort(J[2])} ↗{ext}</a>), so no overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>;
               })()}
             </p>
           )}
@@ -73,7 +74,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
           ) : (
             <div className="mt-6 space-y-8">
               {yesNo === 0 ? <p className="text-base text-black/60" data-neutral-only>You answered Neutral on all {answered} issues. Neutral answers aren&rsquo;t compared, so there&rsquo;s no overlap to show. Answer Yes or No on an issue to compare.</p> : null}
-              <WhoRaces races={rowsByRace.map(({ race: r, rows }) => ({
+              <WhoRaces races={rowsByRace.map(({ race: r, rows, gradesHidden }) => ({
                 id: r.id,
                 title: r.title || r.id,
                 lines: rows.map(({ c, o, grade }) => ({ name: c.name, sourced: o.sourced, agree: o.agree, n: o.n, grade })),
@@ -81,7 +82,8 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                   <>
                     <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
                       {rows.map(({ c, o, grade }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers} answeredYesNo={yesNo > 0} grade={grade} />)}
-                    </ul></PhotoGroup>
+                    </ul>
+                    <RaceFooter cands={rows.map(({ c }) => c)} gradesHidden={gradesHidden} /></PhotoGroup>
                     {/* QA P2: the live research button on every non-judicial race. */}
                     <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
                   </>
@@ -103,18 +105,18 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-maps-url={mapsUrl(site.address)}>
                 Directions ↗{ext}
               </Button>
-              <p className="mt-2 text-sm leading-5 text-black/60">{site.proximity ? `${site.proximity}. ` : ""}<a href={site.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-[#3760F2]">Official site list ↗{ext}</a></p>
+              <p className="mt-2 text-sm leading-5 text-black/60">{site.proximity ? `${site.proximity}. ` : ""}<a href={site.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-[#3760F2]">Official site list ↗{ext}</a></p>
               {where.sites.length > 1 && (
                 <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Other sourced sites ({Math.min(where.sites.length - 1, 4)})</summary>
                   <ul className="space-y-1 pb-2">
                     {where.sites.slice(1, 5).map((s: { name: string; address: string }) => (
-                      <li key={s.name} className="text-sm"><a href={mapsUrl(s.address)} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-[#3760F2]">{s.name} ↗{ext}</a><span className="block text-black/60">{s.address}</span></li>
+                      <li key={s.name} className="text-sm"><a href={mapsUrl(s.address)} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-[#3760F2]">{s.name} ↗{ext}</a><span className="block text-black/60">{s.address}</span></li>
                     ))}
                   </ul>
                 </details>
               )}
               {where.dependsOnAddress && where.lookupUrl && (
-                <p className="text-sm"><a href={where.lookupUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-[#3760F2]">Find your assigned polling place ↗{ext}</a></p>
+                <p className="text-sm"><a href={where.lookupUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-[#3760F2]">Find your assigned polling place ↗{ext}</a></p>
               )}
             </>
           ) : where.lookupUrl ? (
@@ -134,7 +136,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
           <p className="text-sm font-[530] text-black/60">When</p>
           <h3 className={`mt-2 ${H3}`}>When to go</h3>
           <ul className="mt-4 space-y-3">
-            {early && (<li data-early><p className="text-sm font-[530]">Early voting, {fmt(early.start)} to {fmt(early.end)}</p>
+            {early && (<li data-early><p className="text-sm font-[530]" data-early-heading>{earlySingleDay(early, today) ?? <>Early voting, {fmt(early.start)} to {fmt(early.end)}</>}</p>
               {early.daily?.length ? (
                 <ul className="mt-1 space-y-1" data-daily-hours>
                   {early.daily.map((d: { label: string; hours: string; appliesTo: string | null }, i: number) => (
@@ -142,10 +144,10 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                   ))}
                 </ul>
               ) : early.hours ? <p className="text-base text-black/80">{early.hours}</p> : <p className="text-base text-black/80">Hours vary by day</p>}
-              <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-sm leading-5 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']" data-early-source>Early voting source ↗{ext}</a></li>)}
+              <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-sm leading-5 text-[#3760F2] after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']" data-early-source>Early voting source ↗{ext}</a></li>)}
             {ed && (<li><p className="text-sm font-[530]">Election Day, {fmt(ed.start)}</p><p className="text-base text-black/80">{ed.hours ? `Polls open ${ed.hours}` : "Poll hours not found in an official source"}</p></li>)}
             {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`} data-how-register>How ↗{ext}</a></p></li>)}
-            {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-sm leading-5 text-[#3760F2]">Source ↗</a></p></li>)}
+            {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-sm leading-5 text-[#3760F2]">Source ↗</a></p></li>)}
             {when.missing.map((m: string) => <li key={m} className="text-sm text-black/60">{m}: not found in an official source yet.</li>)}
           </ul>
           {ed && (

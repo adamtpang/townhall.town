@@ -10,6 +10,7 @@ import { eligibleSet, raceGradesEligible, gradeFor, gradeLabel, letterFor, MIN_T
 import ELIG from "../lib/gradesEligibility.gen.mjs";
 import { overlapStatus } from "../lib/overlapCore.mjs";
 import { stancesFor, ISSUES } from "../lib/issues";
+import RaceFooter from "../components/RaceFooter";
 import CandidateRow, { NO_POSITION, sourcesChecked } from "../components/CandidateRow";
 import EndScreen from "../app/EndScreen";
 import BallotCard from "../app/card/BallotCard";
@@ -89,11 +90,14 @@ describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by d
       expect(fs.existsSync(`public/portraits/${id}.avif`), id).toBe(false);
     }
   });
-  it("attribution is visible (not collapsed) wherever a photo appears (design p10: 12/16 weight 450 black/60)", () => {
-    const html = renderToStaticMarkup(h(CandidateRow, { c: { name: "Rob Bonta", photo: (withLicensedPhoto({ name: "Rob Bonta" } as never) as { photo: unknown }).photo as never }, o: overlapStatus({}, stancesFor("Rob Bonta"), ids), grade: null, ids }));
-    expect(html).toMatch(/data-credit-line[^>]*>Photo: <a href="https:\/\/commons\.wikimedia\.org\/[^"]+"[^>]*data-photo-credit[^>]*>[^<]+<\/a>/i);
+  it("attribution is visible (not collapsed) wherever a photo appears: one credit line per race (design p12 #1, 12/16 weight 450 black/60)", () => {
+    const photo = (withLicensedPhoto({ name: "Rob Bonta" } as never) as { photo: unknown }).photo as never;
+    const row = renderToStaticMarkup(h(CandidateRow, { c: { name: "Rob Bonta", photo }, o: overlapStatus({}, stancesFor("Rob Bonta"), ids), grade: null, ids }));
+    expect(row).not.toMatch(/data-credit-line|>Photo: /); // no per-candidate line in Who or the card
+    const foot = renderToStaticMarkup(h(RaceFooter, { cands: [{ name: "Rob Bonta", photo }], gradesHidden: null }));
+    expect(foot).toMatch(/data-photo-credits[^>]*>.*Photo:.*<a href="https:\/\/commons\.wikimedia\.org\/[^"]+"[^>]*data-photo-credit[^>]*>[^<]+<\/a>/i);
     expect(src("components/PortraitRow.tsx")).not.toMatch(/<details[^>]*data-photo-credits/);
-    expect(src("components/PortraitRow.tsx")).toMatch(/\$\{CREDIT\}`\} aria-label="Photo credits" data-photo-credits/);
+    expect(src("components/Portrait.tsx")).toMatch(/\$\{CREDIT\}`\} aria-label="Photo credits" data-photo-credits/);
   });
   it("never a generated image: no image-generation code paths", () => {
     for (const f of ["scripts/ingest-photos.mjs", "lib/photos.ts", "components/PortraitRow.tsx", "components/CandidateRow.tsx"]) expect(src(f)).not.toMatch(/openai|dall-?e|stable-?diffusion|generateImage/i);
@@ -236,6 +240,6 @@ describe("design p9 / QA 4e15da7 items", () => {
     const s = src("components/PortraitRow.tsx");
     expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[40px\] md:max-w-\[48px\] lg:max-w-\[56px\]/);
     expect(s).toMatch(/flex flex-nowrap gap-2 md:gap-3/);
-    expect(s).toMatch(/truncate text-sm font-\[530\] leading-5" title=\{c.name\}/);
+    expect(s).toMatch(/line-clamp-2 text-sm font-\[530\] leading-5" title=\{c\.name\}/); // round 0222: two-line labels at 384
   });
 });

@@ -29,18 +29,27 @@ export const FOCUS = {
   "elijah-ball": [0.49, 0.21, 2], "erwin-tam": [0.59, 0.27, 2], "laurance-lee": [0.34, 0.33, 2.6], "virginia-cheung": [0.26, 0.3, 1.6],
   "chris-gober": [0.51, 0.33, 2.6], "bo-french": [0.3, 0.18, 2], "kai-huang": [0.47, 0.35, 1.3],
   "john-messinger": [0.36, 0.37, 2.2], "benjamin-flores": [0.51, 0.43, 3], "jessica-martinez": [0.5, 0.45, 4], "mike-trouble-lin": [0.61, 0.38, 1.4],
-  // Design p11 #4: head-and-shoulders crops (viewed).
-  "gina-hinojosa": [0.5, 0.18, 1.5], "steve-hilton": [0.52, 0.15, 1.2],
+  // Civic qa_fixes7 cropNote (Hilton and Hinojosa now ship Civic's own head-and-shoulders localFiles, so no focus):
+  // Becerra framed to mid-chest -> head and shoulders; Abbott -> tighter so the person behind him at top right drops out.
+  // Simulated in PIL and viewed (2:50 AM CT).
+  "xavier-becerra": [0.5, 0.3, 1.3], "greg-abbott": [0.5, 0.3, 1.15],
   // qa_fixes6: Meyer file is already cut above the banner (CROP); keep the top of the head in the square tile.
   "marc-m-meyer": [0.45, 0.3, 1.1],
+  // Civic tx_courts_changes (1:20 AM): two-person campaign photo; zoom on Justice Field (right, in the robe). Simulated and viewed.
+  "scott-k-field": [0.66, 0.081, 3.4],
+  // Tall portrait with flags: head and shoulders in the square tile (simulated and viewed).
+  "tom-baker": [0.5, 0.32, 1.8],
 };
 // Older face crops on licensed event photos: [left, top, width, height] as fractions of the source (pixels cut, not edited).
 const CROP = {
-  "michael-e-gates": [0.27, 0.03, 0.3, 0.56],
+  // michael-e-gates: crop retired (qa_fixes7 ships his campaign headshot as a localFile).
   // Civic cropNote (qa_fixes6): campaign graphic; keep head and shoulders above the "MARC MEYER (D)" banner (starts ~80% down),
   // so no party label ships in the file. Viewed by eye.
   "marc-m-meyer": [0.1, 0, 0.8, 0.75],
 };
+// Engineering's saved copy of a campaign-site photo whose host answers hotlinks with a bot challenge (202 sgcaptcha),
+// so visitors' browsers would never get the image. Same source and credit as Civic's photoUrl; self-hosted like a localFile.
+const LOCAL = { "tom-baker": "data/photo-local/tom-baker.png" };
 const UA = { "User-Agent": "townhall/1.0 (https://townhall.town; civic data)" };
 const out = {}; const hot = {}; const mates = {}; const failed = []; const excluded = [];
 const incomplete = new Set();
@@ -52,10 +61,11 @@ for (const [id, p] of Object.entries(batch)) {
   if (EXCLUDE(id, p)) { excluded.push(id); continue; }
   let rec = null;
   try {
+    if (!p.localFile && LOCAL[id]) p.localFile = LOCAL[id];
     if (p.localFile && fs.existsSync(p.localFile)) {
       const file = `/portraits/${id}.webp`;
       let img = sharp(fs.readFileSync(p.localFile)); const meta = await img.metadata();
-      if (CROP[id]) { const [l, t, w, h] = CROP[id]; img = img.extract({ left: Math.round(l * meta.width), top: Math.round(t * meta.height), width: Math.round(w * meta.width), height: Math.round(h * meta.height) }); }
+      if (CROP[id]) { const [l, t, w, h] = CROP[id]; img = img.extract({ left: Math.round(l * meta.width), top: Math.round(t * meta.height), width: Math.round(w * meta.width), height: Math.round(h * meta.height) }); meta.width = Math.round(w * meta.width); meta.height = Math.round(h * meta.height); } // stored size = the cropped file's, not the source's
       await img.resize({ width: 400, withoutEnlargement: true }).webp({ quality: 72 }).toFile(`public${file}`);
       rec = { kind: "self", v: { name: id, file, sourceUrl: p.photoUrl ?? null, credit: credit(p), license: p.license ?? null, page: p.pageUrl ?? null, via: p.sourceType ?? null, width: meta.width, height: meta.height, ...focusOf(id) } };
     } else if (isLicensed(p)) {
@@ -63,7 +73,7 @@ for (const [id, p] of Object.entries(batch)) {
       const r = await fetch(p.photoUrl, { headers: UA });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       let img = sharp(Buffer.from(await r.arrayBuffer())); const meta = await img.metadata();
-      if (CROP[id]) { const [l, t, w, h] = CROP[id]; img = img.extract({ left: Math.round(l * meta.width), top: Math.round(t * meta.height), width: Math.round(w * meta.width), height: Math.round(h * meta.height) }); }
+      if (CROP[id]) { const [l, t, w, h] = CROP[id]; img = img.extract({ left: Math.round(l * meta.width), top: Math.round(t * meta.height), width: Math.round(w * meta.width), height: Math.round(h * meta.height) }); meta.width = Math.round(w * meta.width); meta.height = Math.round(h * meta.height); } // stored size = the cropped file's, not the source's
       await img.resize({ width: 400, withoutEnlargement: true }).avif({ quality: 50 }).toFile(`public${file}`);
       rec = { kind: "self", v: { name: id, file, sourceUrl: p.photoUrl, credit: credit(p), license: p.license, page: p.pageUrl ?? null, via: p.sourceType ?? null, width: meta.width, height: meta.height, ...focusOf(id) } };
       await new Promise((r) => setTimeout(r, 150));

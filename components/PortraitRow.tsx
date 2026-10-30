@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { CreditBody, CREDIT, PhotoGroup, TileImage, usePhotoFallback, usePhotoOff, type Photo } from "./Portrait";
+import { RaceCredits, PhotoGroup, TileImage, usePhotoFallback, usePhotoOff, type Photo } from "./Portrait";
 
 type C = { name: string; party?: string | null; photo?: Photo };
 
@@ -43,8 +43,8 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eage
           <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} onFail={() => setBroken(true)} />
         ) : null}
       </div>
-      <p className="mt-1 w-full text-center group-data-[dense=true]/row:max-md:sr-only truncate text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
-      {mate ? <p className="w-full truncate text-center text-sm group-data-[dense=true]/row:max-md:sr-only leading-5 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
+      <p className="mt-1 w-full text-center group-data-[dense=true]/row:max-md:sr-only line-clamp-2 text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
+      {mate ? <p className="w-full line-clamp-2 text-center text-sm leading-5 group-data-[dense=true]/row:max-md:sr-only text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
     </li>
   );
 }
@@ -60,7 +60,7 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   // visible label goes sr-only (the name stays in aria-label/title and on the card).
   // Design p11 #1: the item (label width) is separate from the tile. Item max 56px (64px at 1024+); tile max 40px
   // (48px at 768+, 56px at 1024+), centred; label full item width, centred, truncated.
-  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[56px] lg:max-w-[64px]";
+  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[80px] lg:max-w-[96px]";
   const tileMax = size === "mini" ? "" : "max-w-[40px] md:max-w-[48px] lg:max-w-[56px]";
   const dense = size === "row" && cands.length > 6;
   return (
@@ -74,14 +74,9 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
 }
 export const PortraitRow = CandidatePortraitRow;
 
-/** Design p10: one credit line under the row, credits joined by " · " (always visible wherever a photo appears).
- *  Credits follow the fallback: a race (or, in candidate mode, a candidate) that reverted to initials drops its credit. */
+/** Design p12 #1: one credit line per race under the row (shared with Who and the ballot card). Credits follow the
+ *  fallback: a race (or, in candidate mode, a candidate) that reverted to initials drops its credit. */
 function RowCredits({ cands }: { cands: C[] }) {
-  const isOff = usePhotoOff();
-  const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
-  if (!keep.length) return null;
-  const L = labels(keep.map((c) => c.name));
-  return <p className={`-mt-1 mb-2 ${CREDIT}`} aria-label="Photo credits" data-photo-credits>{keep.length === 1 ? "Photo: " : "Photos: "}{keep.map((c, i) => (
-    <span key={c.name}>{i ? " · " : ""}{keep.length > 1 ? `${L[i].label}, ` : ""}<CreditBody photo={c.photo!} /></span>
-  ))}</p>;
+  const L = labels(cands.map((c) => c.name));
+  return <div className="-mt-1 mb-2"><RaceCredits cands={cands} label={(n) => L[cands.findIndex((c) => c.name === n)].label} /></div>;
 }
