@@ -45,11 +45,11 @@ const ballotOk = {
     "application/x-ndjson": {
       schema: { $ref: "#/components/schemas/AgentEvent" },
       "x-ndjson-item-schema": { $ref: "#/components/schemas/AgentEvent" },
-      example: { type: "unsupported", zip: "90210", message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." },
+      example: { type: "unsupported", zip: "90210", message: "Austin, SF and NYC for now." },
     },
     "application/json": {
       schema: { $ref: "#/components/schemas/AgentFinalEvent" },
-      example: { type: "unsupported", zip: "90210", message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." },
+      example: { type: "unsupported", zip: "90210", message: "Austin, SF and NYC for now." },
     },
   },
 };

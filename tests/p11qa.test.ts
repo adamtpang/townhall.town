@@ -76,7 +76,7 @@ describe("p11 + QA fb66b9b", () => {
     expect(correctedIssue("Steve Hilton", "housing", "Into housing, back into their life. Now, some of the people on our streets actually should be reunited with their families in other states")).toBeNull();
   });
   it("QA P2 carry-over notice agrees with the counter", () => {
-    expect(carryText(2, "94103", "10001", 3)).toMatch(/^2 of your 3 answers/);
-    expect(carryText(2, "94103", "10001", 2)).toMatch(/^Your 2 saved answers came from another ZIP \(10001\)/);
+    // QA 10:48 AM CT Oct 30: plain wording, no ZIP (answers are issue preferences, not tied to a place).
+    expect(carryText(2, "94103", "10001", 3)).toBe("Using your saved answers.");
   });
 });

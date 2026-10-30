@@ -195,11 +195,10 @@ describe("Spanish visible, no serif", () => {
 });
 
 describe("QA 9dfe90d P2 + design p8", () => {
-  it("carry-over notice is body text and names the other ZIP", () => {
-    expect(carryText(3, "94103", "78701")).toBe("Your 3 saved answers came from another ZIP (78701) and are filled in below. Change any of them, or use Reset my answers.");
-    expect(carryText(1, "94103", "94103")).toMatch(/^Your 1 saved answer from your last visit for 94103 is filled in below/);
-    expect(carryText(2, "94103", null)).toMatch(/earlier visit in this browser, possibly for another ZIP/);
-    expect(src("app/TownyInterview.tsx")).toMatch(/className="mb-3 text-base leading-6 text-black" data-carryover/);
+  it("carry-over notice is body text, plain, never names a ZIP, with a 44px Reset (QA 10:48 AM CT Oct 30)", () => {
+    for (const [a, b] of [["94103", "78701"], ["94103", "94103"], ["94103", null]] as const) expect(carryText(3, a, b)).toBe("Using your saved answers.");
+    expect(src("app/TownyInterview.tsx")).toMatch(/text-base leading-6 text-black" data-carryover/);
+    expect(src("app/TownyInterview.tsx")).toMatch(/min-h-11 min-w-11[^"]*" data-carry-reset/);
   });
   it("every research quote has a source label (own site or the outlet that quoted them)", () => {
     expect(sourceLabel({ url: "https://www.cbsnews.com/sanfrancisco/news/x", ownSite: false })).toBe("(quoted on cbsnews.com)");

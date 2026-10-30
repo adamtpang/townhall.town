@@ -73,3 +73,17 @@ body {
   #print-sheet li { display: flex; justify-content: space-between; gap: 8pt; border-top: 0.5pt solid #bbb; padding: 3pt 0; break-inside: avoid; }
   #print-sheet li b { font-weight: 530; text-align: right; }
 }
+
+/* QA 10:48 + 10:50 AM CT Oct 30, phones (<768px) */
+@media (max-width: 767px) {
+  /* P1: the round floating menu button is Vercel's preview toolbar (injected on preview deployments only, never in our
+     code or on production). It sat over the -2..+2 row, the overlap line and the Measures chevron, so on phones it is
+     hidden; desktop keeps it. (The project-level switch is a Vercel setting we don't change.) */
+  vercel-live-feedback { display: none !important; }
+  /* P2: every link's tap target is at least 44px tall without moving any text: a transparent 44px hit area centred
+     on the link. Links that are already 44px+ boxes (min-h-11, h-11, h-12, h-14) keep their own box. */
+  a[href]:not([class*="min-h-11"]):not([class*="h-11"]):not([class*="h-12"]):not([class*="h-14"]) { position: relative; }
+  a[href]:not([class*="min-h-11"]):not([class*="h-11"]):not([class*="h-12"]):not([class*="h-14"])::after {
+    content: ""; position: absolute; left: -4px; right: -4px; top: 50%; bottom: auto; height: 44px; min-height: 100%; transform: translateY(-50%);
+  }
+}

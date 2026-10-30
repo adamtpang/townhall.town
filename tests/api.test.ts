@@ -37,7 +37,7 @@ describe("/api/agent ZIP validation (exactly 5 digits, no trimming or slicing)",
     expect(res.status).toBe(200);
     expect(res.headers.get("content-type")).toBe("application/x-ndjson; charset=utf-8");
     const last = JSON.parse((await res.text()).trim().split("\n").pop()!);
-    expect(last).toEqual({ type: "unsupported", zip: "90210", message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." });
+    expect(last).toEqual({ type: "unsupported", zip: "90210", message: "Austin, SF and NYC for now." });
   });
   it.each(["PUT", "PATCH", "DELETE"] as const)("%s is 405 with Allow", async (m) => {
     const res = await expectError(await (agent as any)[m](new Request(`${B}/api/agent`, { method: m })), 405, "method_not_allowed");
@@ -124,7 +124,7 @@ describe("race labels", () => {
 });
 
 describe("Only 78701, 94103 and 10001 are served (cache and live paths)", () => {
-  const MSG = "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now.";
+  const MSG = "Austin, SF and NYC for now.";
   // 78130 and 90012 have cached ballots in data/ballots.json; 78702 and 75201 hit the statewide Texas ZIP path; 00000 and 90210 have nothing.
   it.each(["78130", "90012", "78702", "75201", "00000", "90210"])("GET and POST zip=%s end with the unsupported line and no ballot", async (z) => {
     for (const res of [await agent.GET(new Request(`${B}/api/agent?zip=${z}`)), await agent.POST(post(JSON.stringify({ zip: z })))]) {

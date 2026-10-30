@@ -18,11 +18,14 @@ export type WhoLine = { name: string; sourced: number; agree: number; n: number;
 export type WhoRace = { id: string; title: string; lines: WhoLine[]; content: ReactNode; gradesHidden?: string | null };
 
 export const NO_POSITION_LINE = "No public position found yet";
+export const overlapLine = (agree: number, n: number) => `Issue overlap with your answers: ${agree} of ${n} issues`;
 export const OPEN_BY_DEFAULT = 3;
 export function lineText(l: WhoLine): string {
-  if (l.sourced === 0) return `${l.name} · ${NO_POSITION_LINE}`;
-  if (l.n === 0) return `${l.name} · No stated position yet`;
-  return `${l.name} · ${l.agree} of ${l.n} issue${l.n === 1 ? "" : "s"}${l.grade ? ` · ${l.grade}` : ""}`;
+  // QA 10:50 AM CT Oct 30: one empty-state wording, and the overlap line only with 2+ shared issues (same rule and
+  // wording as the card; Adam: overlap is labeled as overlap, never a match or a recommendation).
+  if (l.sourced === 0 || l.n === 0) return `${l.name} · ${NO_POSITION_LINE}`;
+  if (l.n < 2) return l.name;
+  return `${l.name} · ${overlapLine(l.agree, l.n)}${l.grade ? ` · ${l.grade}` : ""}`;
 }
 
 export default function WhoRaces({ races }: { races: WhoRace[] }) {

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useT } from "../lib/i18n";
 
 export type Fill = { issue: string; choice: "yes" | "neutral" | "no"; words: string };
 type Msg = { from: "towny" | "you"; text: string; links?: { label: string; url: string }[] };
@@ -7,7 +8,8 @@ const LABEL = { yes: "Yes", neutral: "Neutral", no: "No" } as const;
 
 /** Chat interview: Towny asks one open question, turns the reply into Yes/Neutral/No answers,
  *  and the voter checks them in the buttons below. Buttons stay the fallback. Nothing is stored on a server. */
-export default function TownyInterview({ zip, city, issues, onFill, answered = 0, carried = 0, savedZip = null }: { zip: string; city: string; issues: { id: string; label: string }[]; onFill: (f: Fill[]) => void; answered?: number; carried?: number; savedZip?: string | null }) {
+export default function TownyInterview({ zip, city, issues, onFill, answered = 0, carried = 0, savedZip = null, onReset }: { zip: string; city: string; issues: { id: string; label: string }[]; onFill: (f: Fill[]) => void; answered?: number; carried?: number; savedZip?: string | null; onReset?: () => void }) {
+  const tc = useT();
   const [open, setOpen] = useState(false);
   const ask = `What do you care about in ${city}? Say it in your own words, like “rents are too high” or “I'm unsure about the tax.”`;
   // Answers are saved once per browser and carry across ZIPs, so say so instead of starting over silently.
@@ -54,7 +56,9 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
   // QA P2 (9dfe90d): normal body text, and it says when the answers came from another ZIP.
   // Design p9: only answers that were saved before this page load (carried), never ones given in this session.
   const carry = carried > 0
-    ? <p className="mb-3 text-base leading-6 text-black" data-carryover>{carryText(carried, zip, savedZip, answered)}</p>
+    // QA 10:48 AM CT Oct 30 (P1): answers are issue preferences, not tied to a place, so they carry over without naming a ZIP.
+    ? <p className="mb-3 flex flex-wrap items-center gap-x-3 text-base leading-6 text-black" data-carryover>{tc(carryText(carried, zip, savedZip, answered))}
+        {onReset ? <button type="button" onClick={onReset} className="inline-flex min-h-11 min-w-11 items-center underline underline-offset-2" data-carry-reset>{tc("Reset")}</button> : null}</p>
     : null;
   if (!open) return (
     <div className="mt-6" data-interview>
@@ -96,12 +100,8 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
   );
 }
 
-/** The carry-over notice: where the saved answers came from. */
+/** The carry-over notice. QA 10:48 AM CT Oct 30: plain wording, no ZIP; Reset sits right after it. */
 export function carryText(n: number, zip: string, savedZip: string | null, total = n): string {
-  const a = total > n ? `${n} of your ${total} answers (saved earlier)` : `Your ${n} saved answer${n === 1 ? "" : "s"}`;
-  const are = n === 1 ? "is" : "are";
-  const tail = "Change any of them, or use Reset my answers.";
-  if (savedZip && savedZip !== zip) return `${a} came from another ZIP (${savedZip}) and ${are} filled in below. ${tail}`;
-  if (savedZip === zip) return `${a} from your last visit for ${zip} ${are} filled in below. ${tail}`;
-  return `${a} came from an earlier visit in this browser, possibly for another ZIP, and ${are} filled in below. ${tail}`;
+  void n; void zip; void savedZip; void total;
+  return "Using your saved answers.";
 }

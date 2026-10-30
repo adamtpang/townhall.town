@@ -145,7 +145,7 @@ describe("JSON mode (Accept: application/json)", () => {
     expect(res.status).toBe(200);
     expect(res.headers.get("content-type")).toMatch(/^application\/json/);
     expect(res.headers.get("vary")).toBe("Accept");
-    expect(await res.json()).toEqual({ type: "unsupported", zip: "90210", message: "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." });
+    expect(await res.json()).toEqual({ type: "unsupported", zip: "90210", message: "Austin, SF and NYC for now." });
   });
   it("defaults to the NDJSON stream", async () => {
     const res = await agentV1.POST(post("/api/v1/agent", '{"zip":"90210"}'));

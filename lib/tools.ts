@@ -101,7 +101,7 @@ export function ballotFor(zip: string): Ballot | null {
   return b ? enrich(b) : null;
 }
 
-/** Adam's scope for the Hack Fair build: only fully sourced ZIPs. Other ZIPs get "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now." */
+/** Adam's scope for the Hack Fair build: only fully sourced ZIPs. Other ZIPs get "Austin, SF and NYC for now." */
 export const SCOPE = new Set(["78701", "94103", "10001"]);
 
 function baseBallot(zip: string): Ballot | null {

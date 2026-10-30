@@ -45,9 +45,9 @@ describe("p13 #2: recorded searches read as plain labels", () => {
 describe("p13 #3 and #5: closed Who rows", () => {
   const race = (gradesHidden: string | null) => ({ id: "r", title: "Travis County Clerk", gradesHidden, content: null,
     lines: [{ name: "V. Alonzo Echavarria-Garza", sourced: 0, agree: 0, n: 0, grade: null }, { name: "Jane Doe", sourced: 3, agree: 0, n: 0, grade: null }] });
-  it("keeps Adam's wording, and 'No stated position yet' only for the old 'no stated position on the issues you answered' case", () => {
+  it("keeps Adam's wording; every empty state is 'No public position found yet' (QA 10:50 AM CT)", () => {
     expect(lineText(race(null).lines[0])).toBe("V. Alonzo Echavarria-Garza · No public position found yet");
-    expect(lineText(race(null).lines[1])).toBe("Jane Doe · No stated position yet");
+    expect(lineText(race(null).lines[1])).toBe("Jane Doe · No public position found yet");
   });
   it("lines wrap between words, never truncate", () => {
     const html = renderToStaticMarkup(h(WhoRaces, { races: [race(null)] }));

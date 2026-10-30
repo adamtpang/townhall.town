@@ -8,5 +8,5 @@ test("narration: tool syntax replaced with deterministic text", () => {
   }
   assert.equal(cleanNarration("Plain sentence.", "78701", 1, 0), "Plain sentence.");
   assert.match(cleanNarration("", "10001", 13, 5), /13 races and 5 measures/);
-  assert.equal(UNSUPPORTED, "We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now.");
+  assert.equal(UNSUPPORTED, "Austin, SF and NYC for now.");
 });

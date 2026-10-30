@@ -11,6 +11,7 @@ import CHECKED from "../data/sources-checked.json";
 import { liveUrl } from "../lib/links";
 import { SHOW_ACCOUNTABILITY } from "../lib/flags";
 import { pointsFor, NO_RECORD_LINE } from "../lib/mainPoints";
+import { useT } from "../lib/i18n";
 
 export type RowCand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; officialSite?: string | null };
 type O = { status: string; agree: number; n: number; sourced: number; sourcedIds: string[]; pct?: number | null; enough?: boolean };
@@ -28,7 +29,7 @@ export function sourcesChecked(name: string): Checked[] {
   // Dead links hidden (lib/links.ts); sites Civic marked down stay as plain text with the note (data/link-notes.json).
   return raw.flatMap((x) => { if (x.down) return [x]; const url = liveUrl(x.url); return url ? [{ ...x, url }] : []; });
 }
-/** Issues where Civic recorded no usable position. Design p9: one wording, "No record found". */
+/** Issues where Civic recorded no usable position. QA 10:48 AM CT Oct 30: one wording, "No public position found yet". */
 export function noRecordIssues(name: string, ids: string[]) {
   const st = stancesFor(name);
   return ids.filter((id) => st[id] && st[id].value === null && st[id].status && /no public statement|still being sourced|no record/i.test(String(st[id].status)));
@@ -91,6 +92,8 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   // Fit: shown only when 2+ issues overlap (both sides non-zero); a 0 answer never counts.
   const fitLine = o.n >= 2 ? `Issue overlap with your answers: ${o.agree} of ${o.n} issues` : null;
   void answeredYesNo;
+  const tr = useT();
+  const fitShown = o.n >= 2 ? `${tr("Issue overlap with your answers")}: ${o.agree} ${tr("of")} ${o.n} ${tr("issues")}` : null;
   const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
   return (
     <li className="flex gap-3 py-3" data-overlap={c.name} data-status={o.status} data-photo-state={c.photo?.url ? "img" : "placeholder"}>
@@ -99,13 +102,14 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
         <p className="text-base font-[530] text-black">{c.name}</p>
         {/* Adam 9:58 AM CT Oct 30 + design 10:14 AM CT card order: name, fit line (only with 2+ shared issues), up to 3
             sourced main points (never padded), the accountability line (flagged), then the race's one credit line. */}
-        {fitLine ? <p className="text-base leading-6 text-black/60" data-fit={fitLine}>{fitLine}</p> : null}
+        {fitLine ? <p className="text-base leading-6 text-black/60" data-fit={fitLine}>{fitShown}</p> : null}
         {main.length > 0 ? (
           <ul className="mt-1" aria-label="Main points" data-main-points={main.length} data-mp-id={mp?.id}>
             {main.map((x, k) => (
-              <li key={k} className="flex min-w-0 items-baseline gap-2 text-base leading-6 text-black" data-main-point={x.i}>
-                <span className="min-w-0 truncate" data-main-text>{x.t}</span>
-                <a href={x.u} target="_blank" rel="noreferrer" className="relative shrink-0 text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
+              <li key={k} className="min-w-0 text-base leading-6 text-black [overflow-wrap:anywhere]" data-main-point={x.i}>
+                {/* QA 10:48 AM CT Oct 30 (P1): main points wrap to their full text (<= 120 chars), never an ellipsis; the source follows the point. */}
+                <span data-main-text>{x.t}</span>{" "}
+                <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
               </li>
             ))}
           </ul>
@@ -148,7 +152,7 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
                 {unsure.map((id) => <li key={id} className="text-sm leading-5 text-black/60" data-unsure={id}><span className="font-[530]">{issueLabel(id)}: unclear, not compared.</span> {st[id].summary}{st[id].sourceUrl ? <>{" "}<a href={st[id].sourceUrl!} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`}>{sourceLabel(st[id].sourceUrl)} ↗{ext}</a></> : null}</li>)}
               </ul>
             ) : null}
-            {o.sourced >= 2 && noRec.length > 0 ? <p className="mt-1 text-sm text-black/60" data-null-status>No record found: {noRec.map(issueLabel).join(", ")}</p> : null}
+            {o.sourced >= 2 && noRec.length > 0 ? <p className="mt-1 text-sm text-black/60" data-null-status>No public position found yet: {noRec.map(issueLabel).join(", ")}</p> : null}
             {checked.length > 0 ? (
               <div className="mt-1 text-sm leading-5 text-black/80" data-sources-checked>
                 {o.sourcedIds.length > 0 ? <p>Sources checked:</p> : null}

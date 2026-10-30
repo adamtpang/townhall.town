@@ -162,7 +162,7 @@ ok(/^"agent";q=10;w=60$/.test(rl.get("ratelimit-policy") || "") && /^"agent";r=\
 const jm = await get("/api/v1/agent?zip=90210", { accept: "application/json" });
 ok(jm.status === 200 && /^application\/json/.test(jm.type) && JSON.parse(jm.body).type === "unsupported", "v1 agent JSON mode", `${jm.status} ${jm.type}`);
 const un = await get("/api/agent?zip=90210");
-ok(un.status === 200 && un.type.startsWith("application/x-ndjson") && un.body.includes('"type":"unsupported"') && un.body.includes("We only cover 78701 (Austin), 94103 (San Francisco) and 10001 (New York) for now."), "agent uncovered ZIP -> unsupported line", `${un.status} ${un.type}`);
+ok(un.status === 200 && un.type.startsWith("application/x-ndjson") && un.body.includes('"type":"unsupported"') && un.body.includes("Austin, SF and NYC for now."), "agent uncovered ZIP -> unsupported line", `${un.status} ${un.type}`);
 const loc = await get("/api/locate", { method: "POST", type: "application/json", body: '{"lat":30.2672,"lon":-97.7431}' });
 ok(loc.status === 200 && /"zip":"\d{5}"/.test(loc.body), "locate Austin", loc.body.slice(0, 80));
 
