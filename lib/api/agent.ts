@@ -13,6 +13,7 @@ import { getElectionDates, longDateIn } from "../logistics";
 import { townyPrompt } from "../townyPrompt";
 import { townyTools } from "../townyTools";
 import { UNSUPPORTED_MESSAGE } from "../site";
+import { measuresFor } from "../measures";
 
 
 const STEP_LABEL: Record<string, string> = {
@@ -100,6 +101,53 @@ export function trimNarration(t: string): string {
   return head ? `${head}\n\nThe full list of races and measures, with sources, is in the ballot data.` : "";
 }
 
+/** Analysis step: after retrieval, the model reads the compact results and writes up to 3 neutral, sourced-data-only insights. */
+async function analyze(zip: string, results: Record<string, any>, emit: Emit): Promise<{ text: string; model: string } | null> {
+  const odds = Object.entries((results.getMarketOdds ?? {}) as Record<string, any>)
+    .filter(([, v]) => v?.status === "live" && v.quotes?.[0]?.outcomes?.length)
+    .map(([id, v]) => ({ id, leader: v.quotes[0].outcomes[0].name, prob: Math.round(v.quotes[0].outcomes[0].prob * 100) }))
+    .sort((a, b) => Math.abs(a.prob - 50) - Math.abs(b.prob - 50))
+    .slice(0, 4);
+  const titles = new Map(((results.getRaces?.races ?? []) as any[]).concat(results.getRaces?.measures ?? []).map((r: any) => [r.id, r.title]));
+  const facts = {
+    contestsByMarket: odds.map((o) => ({ contest: titles.get(o.id) ?? o.id, leader: o.leader, marketPricePct: o.prob, competitive: o.prob >= 35 && o.prob <= 65 })),
+    measuresWithCost: measuresFor(zip).filter((m) => m.cost?.value && !/^unsure/i.test(m.cost.value)).slice(0, 6).map((m) => ({ measure: m.title, cost: m.cost.value, whoPays: m.whoPays?.text })),
+    // The gap is computed here, not by the model, so the "differs most" claim is always arithmetic-true.
+    localProblemFurthestFromState: ((results.getLocalProblems?.problems ?? []) as any[])
+      .filter((p) => p.stateValue != null)
+      .map((p) => ({ problem: p.label, value: p.value, state: p.stateValue, gap: Math.abs((Number(p.numeric ?? parseFloat(p.value)) || 0) - Number(p.stateValue)) }))
+      .sort((a, b) => b.gap - a.gap)
+      .map(({ gap, ...rest }) => rest)[0] ?? null,
+  };
+  emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "running", input: { zip } });
+  const t0 = Date.now();
+  for (const { label: m, model: lm } of modelLadder()) {
+    try {
+      const res = await generateText({
+        model: lm,
+        maxRetries: 0,
+        temperature: 0,
+        providerOptions: GATEWAY_FALLBACKS,
+        system: "You are a strictly nonpartisan ballot analyst. Use only the JSON facts given. Never recommend a candidate or a vote. Market prices are what traders pay, not predictions of truth.",
+        prompt: `Facts for ZIP ${zip} (Nov 3, 2026):
+${JSON.stringify(facts)}
+
+Write at most 3 bullets, each under 35 words, starting with "- ". Bullet 1: if any contest has competitive=true, name the closest one and its market price; otherwise say no contest is close and name the most lopsided leader with its price. Bullet 2: one measure that changes what voters pay, quoting its cost text verbatim, including any "per $100,000 homestead" or similar qualifier. Bullet 3: localProblemFurthestFromState, with its value and the state figure. If the facts for a bullet are empty or null, leave that bullet out entirely and never say that something is missing. No preamble, no advice.`,
+        maxOutputTokens: 220,
+        abortSignal: AbortSignal.timeout(8000),
+      });
+      const text = res.text.trim();
+      if (!text) continue;
+      emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: `${text.split(/\n/).filter(Boolean).length} insights from ${m.replace(/ \(AI Gateway\)$/, "")}` });
+      return { text, model: m };
+    } catch {
+      /* try the next model */
+    }
+  }
+  emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: "No model available; showing the plain summary" });
+  return null;
+}
+
 async function run(zip: string, emit: Emit) {
   const results: Record<string, unknown> = {};
   let mode: "live" | "fallback" = "fallback";
@@ -144,6 +192,8 @@ async function run(zip: string, emit: Emit) {
     const tools = makeTools(zip, emit, results) as any;
     for (const n of missing) await tools[n].execute({ zip }, { toolCallId: n, messages: [] });
   }
+  const insight = await analyze(zip, results as Record<string, any>, emit);
+  if (insight) narration = insight.text;
   emit({
     type: "result",
     mode,

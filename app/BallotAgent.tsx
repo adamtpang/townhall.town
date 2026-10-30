@@ -8,6 +8,7 @@ import type { Politician, Race } from "../lib/types";
 import type { Ballot, MarketQuote } from "../lib/tools";
 import type { PolyQuote } from "../lib/marketLine";
 import { useT } from "../lib/i18n";
+import AgentTrace from "./AgentTrace";
 import type { TurnoutDetail } from "../lib/turnout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
@@ -313,6 +314,7 @@ export default function BallotAgent() {
           <p className="text-sm text-black/60">
             {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Check your exact district by address</a></>}
           </p>
+          {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} model={result.model} mode={result.mode} narration={result.narration} seconds={elapsed} />}
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} />
           <IssueMatch zip={b.zip} state={b.state} races={b.races} />
         </div>
