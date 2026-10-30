@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { SITE } from "../lib/site";
 
-export function SiteHeader({ extra }: { extra?: React.ReactNode } = {}) {
+// Merge of batch1 03c9b97: batch1's 56/64px header for every page; `compact` (card) is kept as a no-op prop.
+export function SiteHeader({ extra }: { extra?: React.ReactNode; compact?: boolean } = {}) {
   return (
     <header className="mx-auto flex h-14 items-center justify-between lg:h-16 max-w-[1280px] px-5 md:px-10" data-site-header>
       <Link href="/" className="inline-flex min-h-11 items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">

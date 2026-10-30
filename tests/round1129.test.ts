@@ -194,6 +194,9 @@ describe("positions: sources, no-position line, gap-fill batch 2", () => {
           const o = overlapStatus({}, stancesFor(c.name), ids);
           if (o.sourced >= 2) continue;
           const row = rowOf(html, c.name);
+          // Design hard cut C3 (Oct 30 ~3:10 PM CT, /card only): "No public position found yet on other issues." is
+          // dropped where a sourced point already sits above it; the line stays where it is the only statement.
+          if (o.sourced > 0 || /data-point-type="office"/.test(row)) { expect(row, c.name).not.toMatch(/No public position found yet on other issues/); if (sourcesChecked(c.name).length) expect(row).toMatch(/data-checked-source/); shown++; continue; }
           expect(row, c.name).toMatch(/data-no-position/);
           expect(row).toMatch(/No public position found yet/);
           if (sourcesChecked(c.name).length) expect(row).toMatch(/data-checked-source/);

@@ -97,13 +97,73 @@ body {
 @media print {
   @page { margin: 14mm; }
   html, body { background: #fff !important; }
-  body > *:not(#print-sheet) { display: none !important; }
+  body > *:not(#print-sheet):not([data-print-root]) { display: none !important; }
   #print-sheet { display: block !important; color: #000; font-size: 11pt; line-height: 1.35; }
   #print-sheet h1 { font-family: var(--font-grotesk), sans-serif; font-weight: 530; font-size: 28pt; line-height: 1; margin: 6pt 0 12pt; }
   #print-sheet .ps-head, #print-sheet .ps-foot { font-size: 9pt; color: #444; }
   #print-sheet ol { list-style: none; padding: 0; margin: 0 0 10pt; columns: 2; column-gap: 18pt; }
   #print-sheet li { display: flex; justify-content: space-between; gap: 8pt; border-top: 0.5pt solid #bbb; padding: 3pt 0; break-inside: avoid; }
   #print-sheet li b { font-weight: 530; text-align: right; }
+}
+
+/* Printed ballot on /card (app/card/PrintBallot.tsx; Design spec 4.2 + addendum Oct 30; Design fixes 2:58 PM CT): US Letter,
+   0.5in margins. Masthead, trust line, one-line facts, then the races in 3 columns (12pt gap between columns,
+   12pt empty boxes per spec 4.2; candidate gap 3pt and measures in 4 columns since Oct 30 4:07 PM CT so 78701 fits 3 pages), then Rules and numbered notes. Grayscale-safe, no serif (round1029 guard). Every printed
+   size is at least 10pt. The wordmark and the masthead rule are the only color (brand-700 / brand-600). No race splits
+   across pages. Long URLs may break anywhere only inside the numbered notes (.pb-notes). */
+@media print {
+  @page { size: Letter; margin: 0.5in; }
+  [data-print-root] { background: #fff; }
+  vercel-live-feedback, nextjs-portal, nav, footer, button, video, [data-towny], [data-agent-trace] { display: none !important; }
+  #ballot-print { display: block !important; color: #010101; background: #fff; font-family: var(--font-public-sans), Arial, sans-serif; font-size: 10pt; line-height: 1.3; font-weight: 400; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #ballot-print * { color: #010101 !important; }
+  #ballot-print p { margin: 0; }
+  #ballot-print a { text-decoration: none; }
+  #ballot-print .pb-mast { display: flex; justify-content: space-between; align-items: flex-end; gap: 12pt; padding-bottom: 5pt; border-bottom: 1.5pt solid #862F9F; }
+  #ballot-print .pb-wm { font-family: var(--font-grotesk), Arial, sans-serif; font-weight: 530; font-size: 14pt; color: #6B2489 !important; letter-spacing: -0.01em; }
+  #ballot-print .pb-ttl { text-align: right; font-size: 10pt; }
+  #ballot-print .pb-h1 { font-family: var(--font-grotesk), Arial, sans-serif; font-weight: 530; font-size: 16pt; line-height: 1.1; letter-spacing: -0.02em; }
+  #ballot-print .pb-ne { font-size: 10pt; margin: 5pt 0 6pt; }
+  #ballot-print .pb-facts { border: 1pt solid #010101; padding: 4pt 8pt; margin-bottom: 6pt; display: grid; grid-template-columns: 1fr 1fr; column-gap: 12pt; row-gap: 2pt; }
+  #ballot-print .pb-facts b { font-weight: 600; }
+  #ballot-print .pb-facts { grid-template-columns: auto 1.25fr 1fr; }
+  #ballot-print .pb-facts-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; column-gap: 12pt; margin-top: 2pt; }
+  #ballot-print .pb-label { white-space: nowrap; }
+  #ballot-print .pb-h2 { font-family: var(--font-grotesk), Arial, sans-serif; font-weight: 530; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 2pt; break-after: avoid; }
+  #ballot-print .pb-section { font-size: 11pt; border-top: 1.5pt solid #010101; padding-top: 5pt; margin-top: 2pt; }
+  #ballot-print .pb-rule { font-size: 10pt; line-height: 1.2; }
+  #ballot-print .pb-rule-h { font-weight: 600; margin-top: 3pt; break-after: avoid; }
+  #ballot-print .pb-rules { columns: 2; column-gap: 12pt; }
+  #ballot-print .pb-rules > div, #ballot-print .pb-rules > p { break-inside: avoid; }
+  #ballot-print .pb-rules > div:first-child .pb-rule-h { margin-top: 0; }
+  #ballot-print .pb-src { font-style: italic; }
+  #ballot-print .pb-strong { font-weight: 600; }
+  #ballot-print .pb-gap { margin-top: 5pt; }
+  #ballot-print .pb-muted { font-size: 10pt; margin: 0 0 4pt; }
+  #ballot-print .pb-order { font-size: 10pt; line-height: 1.2; margin-bottom: 2pt; }
+  #ballot-print .pb-cite { font-size: 10pt; font-weight: 400; font-style: normal; white-space: nowrap; }
+  #ballot-print .pb-dagger { vertical-align: super; font-size: 10pt; line-height: 1; font-weight: 400; margin-left: 1pt; position: static; top: auto; }
+  #ballot-print ol, #ballot-print ul { list-style: none; margin: 0; padding: 0; }
+  #ballot-print .pb-races { columns: 3; column-gap: 12pt; margin-bottom: 6pt; }
+  #ballot-print .pb-race { break-inside: avoid; page-break-inside: avoid; border-top: 0.75pt solid #010101; padding: 2pt 0 3pt; }
+  #ballot-print .pb-measures { columns: 4; column-gap: 12pt; margin-bottom: 4pt; }
+  #ballot-print .pb-measures li { break-inside: avoid; font-weight: 600; font-size: 10pt; line-height: 1.2; padding: 1pt 0 3pt; }
+  #ballot-print .pb-split-group { break-inside: avoid; page-break-inside: avoid; }
+  #ballot-print .pb-split { font-size: 10pt; font-weight: 400; line-height: 1.2; color: rgba(1, 1, 1, 0.7); border-top: 0.5pt solid #010101; margin-top: 4pt; padding: 2pt 0; }
+  #ballot-print .pb-race-title { font-weight: 600; font-size: 10.5pt; line-height: 1.2; margin-bottom: 1pt; }
+  #ballot-print .pb-race ul { display: flex; flex-direction: column; gap: 3pt; }
+  #ballot-print .pb-cand { display: flex; align-items: flex-start; gap: 5pt; font-size: 10pt; line-height: 1.2; }
+  #ballot-print .pb-box-mark { flex: none; width: 12pt; height: 12pt; border: 1pt solid #010101; background: #fff; }
+  #ballot-print .pb-name { font-weight: 400; }
+  #ballot-print .pb-box-on { background: #010101 !important; }
+  #ballot-print .pb-cand-ret { flex-direction: column; gap: 3pt; }
+  #ballot-print .pb-choices { display: flex; gap: 12pt; }
+  #ballot-print .pb-choice { display: inline-flex; align-items: center; gap: 4pt; }
+  #ballot-print .pb-sourcesline { margin: 2pt 0 4pt; font-size: 10pt; }
+  #ballot-print .pb-notes { margin-top: 2pt; font-size: 10pt; line-height: 1.2; }
+  #ballot-print .pb-notes li { break-inside: avoid; margin-bottom: 1pt; }
+  #ballot-print .pb-url { font-size: 10pt; overflow-wrap: anywhere; word-break: break-all; }
+  #ballot-print .pb-foot { margin-top: 2pt; break-before: avoid; padding-top: 3pt; border-top: 0.75pt solid #010101; font-size: 10pt; }
 }
 
 /* QA 10:48 + 10:50 AM CT Oct 30, phones (<768px) */

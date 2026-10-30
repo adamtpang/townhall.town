@@ -1,4 +1,5 @@
 "use client";
+import PrintButton from "../components/PrintButton";
 import { H2, H3, HIT } from "../lib/typeScale";
 import { JUDICIAL_RULES, judicialShort } from "../lib/judicial";
 import { useMemo } from "react";
@@ -10,6 +11,7 @@ import TownyResearch from "./TownyResearch";
 import WhoRaces from "../components/WhoRaces";
 import RaceFooter from "../components/RaceFooter";
 import { cardPath } from "../lib/card.mjs";
+import { PRINT_CTA } from "../lib/printText";
 import { gradesForRace } from "../lib/grades.mjs";
 import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
@@ -60,12 +62,15 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
   });
   // QA P2: Neutral is a real answer but is never compared, so say that instead of asking for answers again.
   const yesNo = ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length;
+  const printPath = cardPath(zip, answers, ids).replace("#", "&print=1#");
 
   return (
     <section id="end" className="border-t border-black py-12 lg:py-16" data-end-screen>
       <p className="nds-caption-upper text-black/60">03</p>
       <h2 className={`mt-3 ${H2}`}>Your plan</h2>
-      <a href={cardPath(zip, answers, ids)} className="mt-6 inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black [@media(hover:hover)]:hover:bg-brand-50" data-card-link>One-page ballot card</a>
+      {/* Design addendum Oct 30 (label approved by Adam): replaces the old one-page card link. The printable sheet
+          lives on /card; print=1 makes /card call window.print() once it has rendered (Save as PDF from the dialog). */}
+      <PrintButton href={printPath} className="mt-6 sm:w-auto" data-end-print data-print-href={printPath} />
       <div className="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-5">
         {/* WHO */}
         <div className="lg:col-span-6" data-end="who">

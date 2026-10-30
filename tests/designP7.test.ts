@@ -22,7 +22,8 @@ describe("Design p7 (4c21a5c)", () => {
     }
     expect(src("app/EndScreen.tsx").match(/<h3 className=\{H3\}>/g)).toHaveLength(3);
     expect(src("app/page.tsx")).toMatch(/<h1 className=\{`\$\{H1\}/);
-    expect(src("app/card/BallotCard.tsx")).toMatch(/<h1 className=\{`mt-3 \$\{H1\}`\}>/);
+    // card-www-spec (Oct 30, 3:04 PM CT): /card opens on the Who/When/Where tiles; its H1 stays for screen readers only.
+    expect(src("app/card/BallotCard.tsx")).toMatch(/<h1 className="sr-only">Your ballot card<\/h1>/);
     expect(src("app/card/BallotCard.tsx")).not.toMatch(/text-5xl tracking-tight/);
     expect(src("tailwind.config.ts")).toContain("./lib/typeScale.ts"); // classes in the token file must be generated
   });
