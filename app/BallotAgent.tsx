@@ -53,7 +53,7 @@ const TOPIC_LABEL: Record<string, string> = { housing: "Housing costs", healthca
 
 type Step = { tool: string; status: "running" | "done"; summary?: string; ms?: number };
 type Markets = Record<string, { quotes: MarketQuote[]; status: string }>;
-type Result = { mode: "live" | "fallback"; model: string | null; modelError: string | null; toolsRunByModel: string[]; narration: string; ballot: Ballot; markets: Markets; generatedAt: string };
+type Result = { mode: "live" | "fallback"; model: string | null; modelError: string | null; toolsRunByModel: string[]; narration: string; summaryBullets?: import("./AgentTrace").SummaryBullet[]; ballot: Ballot; markets: Markets; generatedAt: string };
 type Pol = Politician & { campaignSite?: string | null; incumbentNote?: string; incumbentSource?: string; hasThemes?: boolean; positions?: (NonNullable<Politician["positions"]>[number] & { match?: string })[] };
 type R = Race & { officeSource?: string };
 type Problem = { id: string; label: string; value: string; year: string; topic?: string; stateValue?: number; source: { label: string; url: string } };
@@ -319,7 +319,7 @@ export default function BallotAgent() {
           <p className="text-sm text-black/60">
             {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Check your exact district by address</a></>}
           </p>
-          {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} model={result.model} mode={result.mode} narration={result.narration} seconds={elapsed} />}
+          {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} narration={result.narration} bullets={result.summaryBullets} seconds={elapsed} />}
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} zip={b.zip} />
           <IssueMatch zip={b.zip} state={b.state} races={b.races} market={(id) => marketFor(markets, id)} />
           {SHOW_NEWS && <LocalNews zip={b.zip} />}
