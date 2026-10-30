@@ -1,0 +1,1352 @@
+{
+ "_meta": {
+  "asOf": "2026-10-30",
+  "batch": "positions_gapfill_batch8civic (Civic, Oct 30 2026 pass 8)",
+  "baseline": "civic/main_points16/work/stances_merged.json (feat2 stances + civic batches 3, 5, 6, 7)",
+  "scope": "28 candidates (24 at first pass + Ball, LaCroix, Lee, McFadden added for the Oct 30 SF CCB review): 78701 and 94103 non-judges with 0 main points, and the trailing candidates in 6 unbalanced races (tx-ag, tx-agcomm, ca-ad-17, sf-supervisor-10, sf-board-of-education, sf-community-college-board). tx-comptroller is covered via Echavarria-Garza.",
+  "scale": "-5..+5 on the feat2/lib/issues.ts axes; score null + status \"unsure\" means ambiguous and not scored.",
+  "fairness": "Same protocol for every candidate: (1) official guide (LWV Austin PDF for 78701; SF VIP PDF plus the CA SOS guide index for 94103), (2) Ballotpedia page (HTTP 202 retry built in), (3) the campaign site when Ballotpedia, the guide or ballots.json lists one, (4) one questionnaire source: ATPE for SBOE, GrowSF Nov 2026 for SF, Texas Tribune race guide for TX statewide. Fetched 12:09-12:15 PM CT, about 55 requests.",
+  "rulesApplied": [
+   "candidate own words only; no news paraphrase as a stance; no paid services",
+   "slogans stay unsure",
+   "charter-only statements not scored on education",
+   "public-employee pay not scored on wages",
+   "one sentence counts toward one issue",
+   "administrative offices only (clerk, treasurer, constable, appraisal district, ACC; extended to sf-community-college-board at the Oct 30 review, not to any other office and not to sf-community-college-board-partial): a concrete stated priority on the office's own work is stored as an unscored officePriorities item (issue \"office priorities\"); build shows at most 1 per candidate so a race does not go from 1-vs-1 to 3-vs-1"
+  ],
+  "officePriorityOffices": [
+   "travis-district-clerk",
+   "travis-county-clerk",
+   "travis-county-treasurer",
+   "travis-constable-4-unexpired",
+   "travis-cad-place-1",
+   "travis-cad-place-2",
+   "travis-cad-place-3",
+   "acc-trustee-place-1",
+   "acc-trustee-place-2",
+   "acc-trustee-place-3",
+   "sf-community-college-board"
+  ],
+  "flags": [
+   "No new scored stances: every new line found was a slogan, off-axis, charter-only, public-employee pay, or mixed.",
+   "LaShawn Nash (write-in, County Clerk) is in the LWV guide p.23 but not in ballots.json; none of the 9 write-ins the LWV guide lists (US Senate, US House, AG, County Clerk, Williamson Pct. 4) is in ballots.json, so not added (see .md).",
+   "Review (Oct 30): office-priority rule extended to sf-community-college-board only, same sources (SF VIP, campaign site, GrowSF, Ballotpedia), max 1 shown point, concrete priorities only. sf-community-college-board-partial (Ruth Ferguson) is not included.",
+   "velvaprice.com and votedyana.com failed again (HTTP 000/500), as in batch 3.",
+   "LWV lists Trevor Hale's campaign website as en.wikipedia.org/wiki/Trevor_Hale; not used.",
+   "VIP lists Lisa Wynn as \"Lisa Palagi Wynn II\".",
+   "Peña's and Muñoz's campaign site is the joint demsfortcad.com (third-person copy); Ballotpedia lists it as Muñoz's campaign website.",
+   "Review (Oct 30): Padilla's training/accountability line dropped as a slogan."
+  ]
+ },
+ "v-alonzo-echavarria-garza": {
+  "zip": "78701",
+  "name": "V. Alonzo Echavarria-Garza",
+  "race": "Texas Comptroller of Public Accounts",
+  "raceId": "tx-comptroller",
+  "party": "Libertarian",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed with \"No response received\"."
+   },
+   {
+    "url": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+    "title": "Ballotpedia: V. Alonzo Echavarria-Garza",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:36 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him. Did not complete the 2022 survey."
+   },
+   {
+    "url": "https://www.texastribune.org/2026/09/29/texas-comptroller-2026-election-huffines-eckhardt/",
+    "title": "Texas Tribune comptroller race guide (Sep 29 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:13:55 CT. Biography and finance only; no policy stances from the candidate. News, so not usable as a stance."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   }
+  ],
+  "note": "no record found",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "tom-oxford": {
+  "zip": "78701",
+  "name": "Tom Oxford",
+  "race": "Attorney General of Texas",
+  "raceId": "tx-ag",
+  "party": "Libertarian",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Answered. Immigration already scored (batch 6). Elections answer (more polling locations, secure mail-in voting) and ethics answer are not on an axis. Litigation answer (\"The state should have no involvement in decisions about our personal health\") is about abortion lawsuits; not scored on healthcare, which stays unsure."
+   },
+   {
+    "url": "https://ballotpedia.org/Tom_Oxford",
+    "title": "Ballotpedia: Tom Oxford",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:04 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://www.texastribune.org/2026/10/05/texas-attorney-general-election-2026-candidates-mayes-middleton-nathan-johnson-tom-oxford/",
+    "title": "Texas Tribune attorney general race guide (Oct 5 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:13:55 CT. Says the Tribune \"did not find public information about Oxford's policy stances\"."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   }
+  ],
+  "note": "no new scorable position; stays at 1 point",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "austin-r-kelly": {
+  "zip": "78701",
+  "name": "Austin R. Kelly",
+  "race": "Texas Commissioner of Agriculture",
+  "raceId": "tx-agcomm",
+  "party": "Libertarian",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed with \"No response received\"."
+   },
+   {
+    "url": "https://ballotpedia.org/Austin_Kelly",
+    "title": "Ballotpedia: Austin Kelly",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:05 CT. Completed survey; taxes already scored from it (batch 6). Nothing new on another axis."
+   },
+   {
+    "url": "https://www.kellyfortx.com/issuessolutions",
+    "title": "Austin R. Kelly for TX Ag Commissioner: Issues/Solutions",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:56 CT. Deregulation, property rights, TDA audit and fee cuts (taxes already scored), water-science review, biosecurity. \"Prevention at the border\" is about invasive species, not immigration. Data-centers section (#7) has a heading but no text, so energy stays unsure."
+   },
+   {
+    "url": "https://www.texastribune.org/2026/09/24/texas-agriculture-commissioner-2026-guide-nate-sheets-clayton-tucker/",
+    "title": "Texas Tribune agriculture commissioner guide (Sep 24 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:13:55 CT. Paraphrases his site; news, not used."
+   }
+  ],
+  "note": "no new scorable position; stays at 1 point",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "mica-arellano": {
+  "zip": "78701",
+  "name": "Mica Arellano",
+  "race": "State Board of Education District 5",
+  "raceId": "tx-sboe-5",
+  "party": "Republican",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed with \"No response received\"."
+   },
+   {
+    "url": "https://ballotpedia.org/Mica_Arellano",
+    "title": "Ballotpedia: Mica Arellano",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:38 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her."
+   },
+   {
+    "url": "https://micatx.com/",
+    "title": "micatx.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:49 CT. \"Five-Star Education Standard\" lines are slogans (\"Every tax dollar should be focused on students and classrooms\"; \"secure, structured environment\"). Taxes and safety stay unsure."
+   },
+   {
+    "url": "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+    "title": "ATPE Teach the Vote: Mica Arellano",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:01 CT. \"HAS NOT RESPONDED TO THE 2026 ATPE CANDIDATE SURVEY.\""
+   }
+  ],
+  "note": "no record found (SBOE is not an administrative office, so no office-priority point)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "allison-bush": {
+  "zip": "78701",
+  "name": "Allison Bush",
+  "race": "State Board of Education District 5",
+  "raceId": "tx-sboe-5",
+  "party": "Democratic",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Answered on teacher support, AI, civics and reading lists; none on an axis."
+   },
+   {
+    "url": "https://ballotpedia.org/Allison_Bush",
+    "title": "Ballotpedia: Allison Bush",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:40 CT. No new 2026 survey text on an axis."
+   },
+   {
+    "url": "https://www.allisonfortx.com/",
+    "title": "allisonfortx.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:50 CT. Charter oversight and \"clear guidelines for how funds are distributed, including vouchers\" without a stated position on vouchers: charter-only/vague, so education stays unsure. Teacher pay is public-employee pay, not wages."
+   },
+   {
+    "url": "https://teachthevote.atpe.org/Candidates/Allison-Bush",
+    "title": "ATPE Teach the Vote: Allison Bush",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:02 CT. Answered 11 questions; charter question is charter-only (not scored on education). Nothing else on an axis."
+   }
+  ],
+  "note": "no record found",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "velva-l-price": {
+  "zip": "78701",
+  "name": "Velva L. Price",
+  "race": "District Clerk",
+  "raceId": "travis-district-clerk",
+  "party": "Democratic",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed as unopposed with no answers."
+   },
+   {
+    "url": "https://ballotpedia.org/Velva_Price",
+    "title": "Ballotpedia: Velva Price",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:42 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her. Did not complete the 2022 survey."
+   },
+   {
+    "url": "https://www.velvaprice.com/",
+    "title": "velvaprice.com (https)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 000 at 12:11:51 CT. No response (HTTP 000)."
+   },
+   {
+    "url": "http://velvaprice.com/",
+    "title": "velvaprice.com (http)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 500 at 12:13:55 CT. HTTP 500, empty body."
+   }
+  ],
+  "note": "no record found",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "dyana-limon-mercado": {
+  "zip": "78701",
+  "name": "Dyana Limon-Mercado",
+  "race": "County Clerk",
+  "raceId": "travis-county-clerk",
+  "party": "Democratic",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says her office is buying a tool so residents can monitor documents filed under their name or address",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "LWV Austin Area 2026 Voters Guide, p.23, County Clerk (Record Keeping answer)",
+    "date": "2026-10",
+    "quote": "We're procuring a notification tool so residents can monitor documents filed under their name or address, helping prevent property deed fraud.",
+    "sourceType": "voter guide answer"
+   },
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says her office added two satellite locations for recording services",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "LWV Austin Area 2026 Voters Guide, p.23, County Clerk",
+    "date": "2026-10",
+    "quote": "To improve access, our office has expanded to two additional satellite locations for Recording services beyond main office.",
+    "sourceType": "voter guide answer"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Answered (p.23). Office priorities: a notification tool so residents can monitor documents filed under their name or address; two added satellite recording locations; online tools for historical records; defending vote-by-mail in LULAC v. Executive Office."
+   },
+   {
+    "url": "https://ballotpedia.org/Dyana_Limon-Mercado",
+    "title": "Ballotpedia: Dyana Limon-Mercado",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:44 CT. Has not completed the 2026 Candidate Connection survey."
+   },
+   {
+    "url": "https://www.votedyana.com/",
+    "title": "votedyana.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 000 at 12:11:52 CT. No response (HTTP 000), also on retry (cs_limon2)."
+   }
+  ],
+  "note": "found: office priority (LWV)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "dolores-ortega-carter": {
+  "zip": "78701",
+  "name": "Dolores Ortega Carter",
+  "race": "County Treasurer",
+  "raceId": "travis-county-treasurer",
+  "party": "Democratic",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed as unopposed with no answers."
+   },
+   {
+    "url": "https://ballotpedia.org/Dolores_Ortega_Carter",
+    "title": "Ballotpedia: Dolores Ortega Carter",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:46 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her. Did not complete the 2022 survey."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   }
+  ],
+  "note": "no record found",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "gabriel-padilla": {
+  "zip": "78701",
+  "name": "Gabriel Padilla",
+  "race": "County Constable, Precinct 4 - Unexpired Term",
+  "raceId": "travis-constable-4-unexpired",
+  "party": "Democratic",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed as unopposed with no answers."
+   },
+   {
+    "url": "https://ballotpedia.org/Gabriel_Padilla",
+    "title": "Ballotpedia: Gabriel Padilla",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:48 CT. No survey; quotes his campaign site (Jun 8 2026) with four priorities."
+   },
+   {
+    "url": "https://www.gabeforconstable.com/",
+    "title": "gabeforconstable.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:12 CT. Same four priorities: community trust, \"Supporting ongoing training, strong leadership, and clear accountability\", civil process and court security, partnerships. All slogan-level (review decision, Oct 30 2026: the training/accountability line is a slogan), so no office-priority point."
+   }
+  ],
+  "note": "no record found (campaign priorities are slogans; stays unsure, shown as \"No public position found yet\")",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "brian-pena": {
+  "zip": "78701",
+  "name": "Brian Peña",
+  "race": "Travis Central Appraisal District Board of Directors, Place 2",
+  "raceId": "travis-cad-place-2",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says he will seek accurate appraisals of large commercial properties and teach residents about tax exemptions",
+    "sourceUrl": "https://www.demsfortcad.com/",
+    "sourceTitle": "Democrats for TCAD (joint campaign site; Ballotpedia lists it as the Place 3 slate campaign site)",
+    "date": null,
+    "quote": "He is committed to being a responsible steward of tax dollars, holding large commercial properties accountable through accurate appraisals, and helping educate the community about the work of TCAD and the property tax exemptions available to them.",
+    "sourceType": "campaign site"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed as unopposed with no answers."
+   },
+   {
+    "url": "https://ballotpedia.org/Brian_Pe%C3%B1a",
+    "title": "Ballotpedia: Brian Peña",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:50 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://www.demsfortcad.com/",
+    "title": "Democrats for TCAD (demsfortcad.com), joint site for Peña, Muñoz and Korgel",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:00 CT. Third-person campaign copy: committed to \"holding large commercial properties accountable through accurate appraisals, and helping educate the community about the work of TCAD and the property tax exemptions available to them.\""
+   }
+  ],
+  "note": "found: office priority (joint campaign site)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "yvonne-munoz": {
+  "zip": "78701",
+  "name": "Yvonne Muñoz",
+  "race": "Travis Central Appraisal District Board of Directors, Place 3",
+  "raceId": "travis-cad-place-3",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says TCAD needs the staff, technology and resources to set values from accurate data and consistent methods",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "LWV Austin Area 2026 Voters Guide, p.25, TCAD Place 3 (Criteria answer)",
+    "date": "2026-10",
+    "quote": "Property values should be based on accurate data, widely accepted appraisal methods, and consistent treatment of comparable properties. ... That requires ensuring TCAD has the staff, technology and resources needed to do its work successfully.",
+    "sourceType": "voter guide answer"
+   },
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says she would make TCAD's reports on operations, spending and results easier for the public to read",
+    "sourceUrl": "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+    "sourceTitle": "Ballotpedia Candidate Connection survey, 2026",
+    "date": "2026",
+    "quote": "On the Board, I'd build on TCAD's existing performance reporting to help make information about its operations, spending, and results more accessible and understandable to the public.",
+    "sourceType": "candidate questionnaire"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Answered (p.25). Criteria: values based on accurate data and consistent methods; TCAD needs staff, technology and resources. Taxpayer Liaison: knowledge of the tax system and clear communication."
+   },
+   {
+    "url": "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+    "title": "Ballotpedia: Yvonne Muñoz",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:52 CT. Completed the 2026 survey: wants TCAD \"accurate and accountable on the inside, and accessible and understandable on the outside\"; would build on performance reporting to make operations, spending and results easier to read. No tax-level position, so taxes stays unsure."
+   },
+   {
+    "url": "https://www.demsfortcad.com/",
+    "title": "demsfortcad.com (her campaign site per Ballotpedia)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:00 CT. \"strong oversight, responsible stewardship of public resources, and an appraisal process that is accurate, consistent, and understandable\" (slogan-level)."
+   }
+  ],
+  "note": "found: office priority (LWV)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "dana-walker": {
+  "zip": "78701",
+  "name": "Dana Walker",
+  "race": "Austin Community College Board of Trustees, Place 1",
+  "raceId": "acc-trustee-place-1",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says she will keep a balanced budget while working to expand free tuition",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "LWV Austin Area 2026 Voters Guide, p.45, ACC Place 1 (Student Success answer)",
+    "date": "2026-10",
+    "quote": "I will maintain a balanced budget while working to expand free tuition.",
+    "sourceType": "voter guide answer"
+   },
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says she will finish delivering wraparound student services at every ACC campus",
+    "sourceUrl": "https://danawalkerforacc.com/",
+    "sourceTitle": "Dana Walker for ACC (campaign site, next-term focus)",
+    "date": null,
+    "quote": "Finish delivering wraparound services at every campus, so a flat tire, a child-care gap, or a tough semester doesn't end a student's education.",
+    "sourceType": "campaign site"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Answered (p.45): balanced budget while expanding free tuition; find cost cuts and new revenue; whole-student supports."
+   },
+   {
+    "url": "https://ballotpedia.org/Dana_Walker",
+    "title": "Ballotpedia: Dana Walker",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:54 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her. Quotes her campaign site (Oct 4 2026)."
+   },
+   {
+    "url": "https://danawalkerforacc.com/",
+    "title": "danawalkerforacc.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:53 CT. Next-term focus includes wraparound services at every campus; record items include affordability and veteran services. \"Raised wages for ACC employees\" is public-employee pay (not wages). No tax-level position; taxes and wages stay unsure."
+   }
+  ],
+  "note": "found: office priority (LWV)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "gigi-edwards-bryant": {
+  "zip": "78701",
+  "name": "Gigi Edwards Bryant",
+  "race": "Austin Community College Board of Trustees, Place 2",
+  "raceId": "acc-trustee-place-2",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed as unopposed with no answers."
+   },
+   {
+    "url": "https://ballotpedia.org/Gigi_Edwards_Bryant",
+    "title": "Ballotpedia: Gigi Edwards Bryant",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:55 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   }
+  ],
+  "note": "no record found",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "trevor-hale": {
+  "zip": "78701",
+  "name": "Trevor Hale",
+  "race": "Austin Community College Board of Trustees, Place 3",
+  "raceId": "acc-trustee-place-3",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says he will propose resolutions to set term limits for ACC trustees",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "LWV Austin Area 2026 Voters Guide, p.45, ACC Place 3 (Other Issues answer)",
+    "date": "2026-10",
+    "quote": "Term limits for trustees. If elected, I will propose resolutions, garner support, and make motions to make it so.",
+    "sourceType": "voter guide answer"
+   },
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says career placement should be front and center at ACC",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "LWV Austin Area 2026 Voters Guide, p.45, ACC Place 3 (Skilled Workforce answer)",
+    "date": "2026-10",
+    "quote": "Where I see a need at ACC is in career placement. This should be front and center at any higher education institution and ACC is no different.",
+    "sourceType": "voter guide answer"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Answered (p.45): term limits for trustees; career placement \"should be front and center\"; budget answer weighs tuition, class size and property taxes and ends \"If we want good things, we need to pay for them\" (mixed; taxes stays unsure)."
+   },
+   {
+    "url": "https://ballotpedia.org/Trevor_Hale",
+    "title": "Ballotpedia: Trevor Hale",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:57 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Trevor_Hale",
+    "title": "Campaign website as printed in the LWV guide (\"en.wikipedia.org/wiki/Trevor_ Hale\")",
+    "dateChecked": "2026-10-30",
+    "result": "Not fetched: a Wikipedia article is not a campaign site."
+   }
+  ],
+  "note": "found: office priority (LWV)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "nan-mcraven": {
+  "zip": "78701",
+  "name": "Nan McRaven",
+  "race": "Austin Community College Board of Trustees, Place 3",
+  "raceId": "acc-trustee-place-3",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says she will continue free tuition and make enrollment, financial aid and transfers easier to navigate",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "sourceTitle": "LWV Austin Area 2026 Voters Guide, p.45, ACC Place 3 (Student Success answer)",
+    "date": "2026-10",
+    "quote": "To continue our free tuition program and to align our systems to make navigating enrollment, financial aide, and transferring easier for our students.",
+    "sourceType": "voter guide answer"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Answered (p.45): continue free tuition; easier enrollment, financial aid and transfer; raise scholarship funds; more Pell and state grants. \"we approved a 2% raise\" is public-employee pay (not wages). No tax-level position."
+   },
+   {
+    "url": "https://ballotpedia.org/Nan_McRaven",
+    "title": "Ballotpedia: Nan McRaven",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:58 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   }
+  ],
+  "note": "found: office priority (LWV)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "autumn-brown-garibay": {
+  "zip": "94103",
+  "name": "Autumn Brown Garibay",
+  "race": "Board of Education (choose up to 3)",
+  "raceId": "sf-board-of-education",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Statement: \"Every child in SFUSD should be reading by third grade and doing grade-level math by eighth\". Not on an axis."
+   },
+   {
+    "url": "https://ballotpedia.org/Autumn_Brown_Garibay",
+    "title": "Ballotpedia: Autumn Brown Garibay",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:00 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her. Quotes her priorities page (outcomes, enrollment, equity)."
+   },
+   {
+    "url": "https://autumnforschoolboard.com/",
+    "title": "autumnforschoolboard.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:55 CT. Priorities: district families choose, student outcomes, transparency. Not on an axis."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+    "title": "GrowSF questionnaire, Nov 2026",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:04 CT. \"Affordability is not just a housing issue\" and a lifetime-learning idea; nothing specific on an axis."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "no record found (SF school board is not on the administrative-office list)",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "phil-kim": {
+  "zip": "94103",
+  "name": "Phil Kim",
+  "race": "Board of Education (choose up to 3)",
+  "raceId": "sf-board-of-education",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "General support for teachers and students; not on an axis."
+   },
+   {
+    "url": "https://ballotpedia.org/Phil_Kim",
+    "title": "Ballotpedia: Phil Kim",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:13 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him. Did not complete 2022 or 2026 special."
+   },
+   {
+    "url": "https://www.philkim.org/",
+    "title": "philkim.org",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:57 CT. Biography and record (deficit reduction, curriculum). Not on an axis."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/phil-kim/",
+    "title": "GrowSF questionnaire (guessed URL)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 404 at 12:12:06 CT. No questionnaire: 404, and the candidate is not in the GrowSF Nov 2026 questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "no new scorable position; stays at 1 point",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "lisa-wynn": {
+  "zip": "94103",
+  "name": "Lisa Wynn",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Listed as \"Lisa Palagi Wynn II\". Qualifications only (Behavioral Health Commissioner, \"Develop and pass Prop 2\"). Not on an axis."
+   },
+   {
+    "url": "https://ballotpedia.org/Lisa_Wynn_(California)",
+    "title": "Ballotpedia: Lisa Wynn",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:02 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for her."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/lisa-wynn/",
+    "title": "GrowSF questionnaire (guessed URL)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 404 at 12:12:05 CT. No questionnaire: 404, and the candidate is not in the GrowSF Nov 2026 questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "no record found; SF CCB office-priority rule applied (Oct 30 review): no concrete priority stated in any of the four sources, so no office point",
+  "sourcedIssuesBefore": 0,
+  "sourcedIssuesAfter": 0,
+  "mainPointsBefore": 0
+ },
+ "rome-moses-jones": {
+  "zip": "94103",
+  "name": "Rome Moses Jones",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "General statement; not on an axis."
+   },
+   {
+    "url": "https://ballotpedia.org/Rome_Moses_Jones",
+    "title": "Ballotpedia: Rome Moses Jones",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:15 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/rome-moses-jones/",
+    "title": "GrowSF questionnaire (guessed URL)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 404 at 12:12:08 CT. No questionnaire: 404, and the candidate is not in the GrowSF Nov 2026 questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "no new scorable position; SF CCB office-priority rule applied (Oct 30 review): VIP statement is general (\"committed to strengthening CCSF, expanding opportunity\"), no other source, so no office point; stays at 1 point",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "monroe-lace": {
+  "zip": "94103",
+  "name": "Monroe Lace",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says his Board priority is the SFUSD-to-CCSF pipeline, through dual enrollment and career technical education",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/",
+    "sourceTitle": "GrowSF candidate questionnaire, Nov 2026: Monroe Lace",
+    "date": "2026",
+    "quote": "My Board priority as trustee is to strengthen the SFUSD-to-CCSF pipeline through (1) dual enrollment and (2) career technical education.",
+    "sourceType": "candidate questionnaire"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "\"balance the budget, increase enrollment, and put student success first\" (vague, no tax level)."
+   },
+   {
+    "url": "https://ballotpedia.org/Monroe_Lace",
+    "title": "Ballotpedia: Monroe Lace",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:16 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://monroelace.org/",
+    "title": "monroelace.org",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:11:58 CT. Biography and endorsements. Not on an axis; no stated priority."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/",
+    "title": "GrowSF questionnaire, Nov 2026",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:09 CT. Taxes already scored (parcel-tax renewal, batch 6). States a Board priority: SFUSD-to-CCSF pipeline via dual enrollment and career technical education (used as office priority). Also expanding Bridge to Success; restoring SAT/ACT (state universities, not CCSF). Nothing else on an axis."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "found: office priority (GrowSF), SF CCB rule",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "erwin-tam": {
+  "zip": "94103",
+  "name": "Erwin Tam",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says he would work to reform CCSF's budget reserve policy, which a state audit said may be too low for emergencies",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+    "sourceTitle": "GrowSF candidate questionnaire, Nov 2026: Erwin Tam",
+    "date": "2026",
+    "quote": "As a GFOA member, and if elected as a member of the Board, I would want to reform this policy in alignment with the entire Board, the Chancellor, and in alignment with the State Chancellor’s Office.",
+    "sourceType": "candidate questionnaire"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "\"Faculty and staff deserve good benefits and stable wages\" is public-employee pay (not wages). Otherwise board and finance background."
+   },
+   {
+    "url": "https://ballotpedia.org/Erwin_Tam",
+    "title": "Ballotpedia: Erwin Tam",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:19 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+    "title": "GrowSF questionnaire, Nov 2026",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:10 CT. Reserve-policy reform (BP8.01, 5%-9% reserve; cites the Aug 2026 State Auditor report that the maximum may be too low), deficit transparency, SFUSD alignment, retiree health promises (public-employee benefits, not healthcare). Reserve reform used as office priority. Infrastructure stays unsure."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "found: office priority (GrowSF), SF CCB rule",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "elijah-ball": {
+  "zip": "94103",
+  "name": "Elijah Ball",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says he would explore public-private partnerships for the closed Downtown Campus to raise revenue and serve students",
+    "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+    "sourceTitle": "GrowSF candidate questionnaire, Nov 2026: Elijah Ball",
+    "date": "2026",
+    "quote": "Create a new future for the Downtown Campus that closed this year: I would encourage the exploration of public - private partnerships that could generate revenue, support students, and reconnect the campus with the surrounding community.",
+    "sourceType": "candidate questionnaire"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "\"with a vision and a plan, we can make City College one of the best community colleges\" (general; no concrete priority)."
+   },
+   {
+    "url": "https://ballotpedia.org/Elijah_Ball",
+    "title": "Ballotpedia: Elijah Ball",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:19:42 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://www.elijahforcitycollege.com/",
+    "title": "elijahforcitycollege.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:19:48 CT. Biography, campus-planning experience, endorsements; enrollment and finances \"are solvable\" (general)."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/elijah-ball/",
+    "title": "GrowSF questionnaire, Nov 2026",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:19:47 CT. Concrete priorities: track the 2024 Strategic Enrollment Management Plan; public-private partnerships for the closed Downtown Campus (used as office priority); review the Master Plan; change the state funding formula (state policy, not scored)."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "found: office priority (GrowSF), SF CCB rule; goes from 2 to 3 shown points",
+  "sourcedIssuesBefore": 2,
+  "sourcedIssuesAfter": 2,
+  "mainPointsBefore": 2
+ },
+ "leah-lacroix": {
+  "zip": "94103",
+  "name": "Leah LaCroix",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says she would make sure the courses students need are offered, citing over 1,000 students on waitlists",
+    "sourceUrl": "https://ballotpedia.org/Leah_LaCroix",
+    "sourceTitle": "Ballotpedia Candidate Connection survey, 2026: Leah LaCroix",
+    "date": "2026",
+    "quote": "Re-establish trust in the college by ensuring the courses students need are offered ... With over 1000 students on the waitlist for essential courses, we leave revenue and enrollment growth on the table when students have to fight each other for spots in entry classes.",
+    "sourceType": "candidate questionnaire"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Lists \"Re-establish trust in the college by ensuring the courses\" students need are offered, and \"Grow enrollment strategically and sustainably\"."
+   },
+   {
+    "url": "https://ballotpedia.org/Leah_LaCroix",
+    "title": "Ballotpedia: Leah LaCroix",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:19:44 CT. Completed the 2026 Candidate Connection survey: same key goals as the VIP, plus the 1000-student waitlist for essential courses (used as office priority)."
+   },
+   {
+    "url": "https://www.ourcitycollege.com/",
+    "title": "ourcitycollege.com (joint slate site for LaCroix, Lee and McFadden)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:20:05 CT. Slate copy: protect Free City, invest for long-term growth (general)."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/",
+    "title": "GrowSF questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)",
+    "dateChecked": "2026-10-30",
+    "result": "LaCroix is not in the Nov 2026 questionnaire list; no questionnaire."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "found: office priority (Ballotpedia survey), SF CCB rule; goes from 2 to 3 shown points",
+  "sourcedIssuesBefore": 2,
+  "sourcedIssuesAfter": 2,
+  "mainPointsBefore": 2
+ },
+ "jeremy-lee": {
+  "zip": "94103",
+  "name": "Jeremy Lee",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [
+   {
+    "issue": "office priorities",
+    "score": null,
+    "text": "Says he would protect and strengthen CCSF's Cantonese program, which he says is overenrolled",
+    "sourceUrl": "https://ballotpedia.org/Jeremy_Lee_(California)",
+    "sourceTitle": "Ballotpedia Candidate Connection survey, 2026: Jeremy Lee",
+    "date": "2026",
+    "quote": "Protect and strengthen the Cantonese program at City College. ... Classes are consistently overenrolled",
+    "sourceType": "candidate questionnaire"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "Priorities: \"Strengthen CCSF’s Cantonese program\", secure finances, grow CCSF as an economic engine, protect Free City."
+   },
+   {
+    "url": "https://ballotpedia.org/Jeremy_Lee",
+    "title": "Ballotpedia: Jeremy Lee",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:19:45 CT. Disambiguation page; correct page fetched as bp_lee_ca."
+   },
+   {
+    "url": "https://ballotpedia.org/Jeremy_Lee_(California)",
+    "title": "Ballotpedia: Jeremy Lee (California)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:20:04 CT. Completed the 2026 survey: Cantonese program, finances ($72M reserve), waitlists and enrollment growth."
+   },
+   {
+    "url": "https://www.jeremyleesf.com/",
+    "title": "jeremyleesf.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:21:36 CT. Supports expanding high-demand classes, noncredit-to-credit pathway, Cantonese instruction, noncredit ESL."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/",
+    "title": "GrowSF questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)",
+    "dateChecked": "2026-10-30",
+    "result": "Lee is not in the Nov 2026 questionnaire list; no questionnaire."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "concrete office priority found but not shown: already has 3 scored main points",
+  "sourcedIssuesBefore": 4,
+  "sourcedIssuesAfter": 4,
+  "mainPointsBefore": 3
+ },
+ "bunny-mcfadden": {
+  "zip": "94103",
+  "name": "Bunny McFadden",
+  "race": "Community College Board (choose up to 3)",
+  "raceId": "sf-community-college-board",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "General statement; no concrete priority."
+   },
+   {
+    "url": "https://ballotpedia.org/Bunny_McFadden",
+    "title": "Ballotpedia: Bunny McFadden",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:19:46 CT. Completed the 2026 survey: \"Protecting & growing Free City College\", San Francisco values, student leadership (slogan-level)."
+   },
+   {
+    "url": "https://www.bunny4thepeople.com/",
+    "title": "bunny4thepeople.com",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:20:06 CT. \"I’ll prioritize decisions that increase enrollment\" and budget-process values (general)."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/",
+    "title": "GrowSF questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)",
+    "dateChecked": "2026-10-30",
+    "result": "McFadden is not in the Nov 2026 questionnaire list; no questionnaire."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "no concrete office priority; already has 3 scored main points",
+  "sourcedIssuesBefore": 3,
+  "sourcedIssuesAfter": 3,
+  "mainPointsBefore": 3
+ },
+ "manuel-noris-barrera": {
+  "zip": "94103",
+  "name": "Manuel Noris-Barrera",
+  "race": "State Assembly Member District 17",
+  "raceId": "ca-ad-17",
+  "party": "Republican",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "No candidate statement. He appears only in a party endorsement list."
+   },
+   {
+    "url": "https://ballotpedia.org/Manuel_Noris-Barrera",
+    "title": "Ballotpedia: Manuel Noris-Barrera",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:07 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him. Did not complete 2024."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/manuel-noris-barrera/",
+    "title": "GrowSF questionnaire (guessed URL)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 404 at 12:12:14 CT. No questionnaire: 404, and the candidate is not in the GrowSF Nov 2026 questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   }
+  ],
+  "note": "no new scorable position; stays at 1 point",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "ellsworth-ell-m-jennison-jr": {
+  "zip": "94103",
+  "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
+  "race": "Board of Supervisors, District 10",
+  "raceId": "sf-supervisor-10",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "\"KEEP EXISTING OPEN SPACE OPEN\"; Pier 68 toxicity testing; PG&E site to park. Matches the existing energy +2; nothing new."
+   },
+   {
+    "url": "https://ballotpedia.org/Ellsworth_Jennison_Jr.",
+    "title": "Ballotpedia: Ellsworth Jennison Jr.",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:10 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/ellsworth-jennison/",
+    "title": "GrowSF questionnaire (guessed URL)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 404 at 12:12:12 CT. No questionnaire: 404, and the candidate is not in the GrowSF Nov 2026 questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "no new scorable position; stays at 1 point",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ },
+ "jamo-muhammad": {
+  "zip": "94103",
+  "name": "Jamo Muhammad",
+  "race": "Board of Supervisors, District 10",
+  "raceId": "sf-supervisor-10",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "officePriorities": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "San Francisco Voter Information Pamphlet, Nov 3 2026 (PDF, fetched 12:09 CT, HTTP 200)",
+    "dateChecked": "2026-10-30",
+    "result": "No candidate statement."
+   },
+   {
+    "url": "https://ballotpedia.org/Jamo_Muhammad",
+    "title": "Ballotpedia: Jamo Muhammad",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:12:12 CT. Has not completed the 2026 Candidate Connection survey; no campaign-themes text for him."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/jamo-muhammad/",
+    "title": "GrowSF questionnaire (guessed URL)",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 404 at 12:12:13 CT. No questionnaire: 404, and the candidate is not in the GrowSF Nov 2026 questionnaire index (growsf.org/voter-guide/questionnaires/, HTTP 200 at 12:14:06 CT)."
+   },
+   {
+    "url": null,
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site listed on Ballotpedia, in the official guide, or in ballots.json; none checked."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/",
+    "title": "California SOS Official Voter Information Guide, candidates page",
+    "dateChecked": "2026-10-30",
+    "result": "HTTP 200 at 12:15:13 CT. Covers statewide offices only; no Assembly, school board or supervisor statements."
+   }
+  ],
+  "note": "no new scorable position; stays at 1 point",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1,
+  "mainPointsBefore": 1
+ }
+}

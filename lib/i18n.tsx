@@ -35,6 +35,7 @@ const ES: Record<string, string> = {
   issues: "temas",
   "Using your saved answers.": "Usando sus respuestas guardadas.",
   Reset: "Borrar",
+  "Office priority": "Prioridad del cargo",
   "Couldn't load your ballot right now. Please try again.": "No pudimos cargar su boleta electoral. Inténtelo de nuevo.",
   "Something went wrong talking to the agent. Please try again.": "Algo falló al hablar con el agente. Inténtelo de nuevo.",
   "Location isn't available in this browser. Type your ZIP instead.": "La ubicación no está disponible en este navegador. Escriba su código postal.",

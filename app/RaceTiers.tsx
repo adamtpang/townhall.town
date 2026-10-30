@@ -116,7 +116,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
-                    {/* Civic main_points16 (Oct 30): judges get only a factual role line from their official profile when one
+                    {/* Civic main_points17 (Oct 30): judges (pointType "role") get only a factual role line from their official profile when one
                         exists (8 in Texas), else the plain empty text. Rendered as given; never a stance. */}
                     {isJudicial(r) && r.candidates?.length ? (
                       <ul className="max-w-[60ch] space-y-1 text-sm leading-5 text-black/80" data-judge-points>

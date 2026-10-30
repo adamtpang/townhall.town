@@ -82,7 +82,7 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   const unsure = ids.filter((id) => st[id]?.status === "unsure" && st[id].value === null);
   const noRec = noRecordIssues(c.name, ids);
   const rec = recordFor(st, ids);
-  // Civic 10:19 AM CT Oct 30: main_points16.json is the ONLY source for main points and the record line (matched by
+  // Civic 10:19 AM CT Oct 30 (now main_points17.json): the ONLY source for main points and the record line (matched by
   // race + candidate id or name). Only sourced points; never padded to 3.
   const mp = pointsFor(raceId, c.name);
   const main = (mp?.p ?? []).filter((x) => !!x.u).slice(0, 3);
@@ -106,8 +106,10 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
         {main.length > 0 ? (
           <ul className="mt-1" aria-label="Main points" data-main-points={main.length} data-mp-id={mp?.id}>
             {main.map((x, k) => (
-              <li key={k} className="min-w-0 text-base leading-6 text-black [overflow-wrap:anywhere]" data-main-point={x.i}>
+              <li key={k} className="min-w-0 text-base leading-6 text-black [overflow-wrap:anywhere]" data-main-point={x.i} data-point-type={x.k}>
                 {/* QA 10:48 AM CT Oct 30 (P1): main points wrap to their full text (<= 120 chars), never an ellipsis; the source follows the point. */}
+                {/* main_points17: an unscored office priority gets a small muted text prefix; issue points look as before. */}
+                {x.k === "office" ? <><span className="text-sm leading-6 text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
                 <span data-main-text>{x.t}</span>{" "}
                 <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
               </li>

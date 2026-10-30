@@ -11,13 +11,13 @@ import EndScreen from "../app/EndScreen";
 const ids = ISSUES.map((i) => i.id);
 const ZIPS = ["78701", "94103", "10001"];
 const yesAll = Object.fromEntries(ids.map((i) => [i, 2]));
-const MP = JSON.parse(fs.readFileSync("data/civic/main_points16.json", "utf8"));
+const MP = JSON.parse(fs.readFileSync("data/civic/main_points17.json", "utf8"));
 const end = (z: string) => renderToStaticMarkup(h(EndScreen, { zip: z, races: ballotFor(z)!.races as never, answers: yesAll, ids, answered: ids.length }));
 const rowOf = (html: string, n: string) => html.split(`data-overlap="${n.replace(/"/g, "&quot;")}"`)[1]?.split(/data-overlap="|data-card-race=/)[0] ?? "";
 const dec = (s: string) => s.replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&");
 type R = { races: { id: string; judicial?: boolean; candidates?: { name: string }[] }[] };
 
-describe("main_points16 (Civic, Oct 30)", () => {
+describe("main_points17 (Civic, Oct 30; was main_points16)", () => {
   it("every candidate on all 3 ballots resolves to exactly one Civic entry (no silent misses)", () => {
     for (const z of ZIPS) for (const r of (ballotFor(z) as unknown as R).races) for (const c of r.candidates ?? []) {
       if (!MP.races[r.id]) continue; // ballot measures are not in the file
