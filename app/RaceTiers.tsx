@@ -2,9 +2,11 @@
 import { useState } from "react";
 import { Portrait, type Photo } from "../components/Portrait";
 import { useT } from "../lib/i18n";
-import CandidateDetails, { type CandidateFull } from "./CandidateDetails";
+import type { Politician } from "../lib/types";
 type Avg = { name: string; prob: number }[];
-type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string; candidates?: (Omit<CandidateFull, "photo"> & { photo?: Photo })[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string; candidates?: (Omit<Politician, "photo"> & { photo?: Photo })[] };
+const usd = (n: number) =>
+  n >= 1e6 ? `$${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `$${Math.round(n / 1e3)}K` : `$${Math.round(n)}`;
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
 
 /**
@@ -40,7 +42,6 @@ export function tierFor(r: RaceLite, mk: Mk, t: (s: string) => string = (s) => s
 export default function RaceTiers({ races, market }: { races: RaceLite[]; market: (id: string) => Mk }) {
   const t = useT();
   const [failed, setFailed] = useState<Record<string, boolean>>({});
-  const [open, setOpen] = useState<Record<string, string | null>>({}); // race id -> open candidate name
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id), t), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
   const tiers = ["S", "A", "B", "C"] as const;
   return (
@@ -66,28 +67,27 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                     {r.candidates?.length ? (
                       <div className="my-3 flex gap-3 overflow-x-auto pb-1">
                         {/* One failed or missing photo switches the whole race to initials, so tiles stay consistent. */}
-                        {r.candidates.map((c) => {
-                          const isOpen = open[r.id] === c.name;
-                          return (
-                            <button key={c.name} type="button" aria-expanded={isOpen} aria-controls={`details-${r.id}`}
-                              onClick={() => setOpen((o) => ({ ...o, [r.id]: isOpen ? null : c.name }))}
-                              className={`w-28 shrink-0 text-left md:w-40 ${isOpen ? "outline outline-2 outline-offset-2 outline-black" : "hover:opacity-80"}`}>
-                              <Portrait name={c.name} photo={c.photo} credit={false} boxClassName="h-[140px] md:h-52" forceInitials={failed[r.id] || r.candidates!.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
-                              <p className="mt-1 text-sm font-medium leading-tight text-black/80">{c.name}</p>
-                              <p className="text-xs leading-tight text-black/60">{c.party || t("Party: unsure")}{c.incumbent === true ? ` · ${t("Incumbent")}` : ""}</p>
-                            </button>
-                          );
-                        })}
+                        {r.candidates.map((c) => (
+                          <div key={c.name} className="w-28 shrink-0 md:w-40">
+                            <Portrait name={c.name} photo={c.photo} credit={false} boxClassName="h-[140px] md:h-52" forceInitials={failed[r.id] || r.candidates!.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
+                            <p className="mt-1 text-sm font-medium leading-tight text-black/80">{c.name}</p>
+                            <p className="text-xs leading-tight text-black/60">{c.party || t("Party: unsure")}{c.incumbent === true ? ` · ${t("Incumbent")}` : ""}</p>
+                            {c.money && (
+                              <p className="mt-1 text-xs leading-tight text-black/80">
+                                {t("Raised")} <span className="font-medium tabular-nums">{usd(c.money.raised)}</span>
+                                <span className="block text-black/60">{t("Cash on hand")} <span className="tabular-nums">{usd(c.money.cashOnHand)}</span></span>
+                              </p>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     ) : null}
-                    {r.candidates?.length ? (() => {
-                      const sel = r.candidates.find((c) => c.name === open[r.id]);
-                      return sel ? (
-                        <CandidateDetails c={sel as CandidateFull} id={`details-${r.id}`} onClose={() => setOpen((o) => ({ ...o, [r.id]: null }))} />
-                      ) : (
-                        <p className="mb-2 text-xs text-black/50">{t("Tap a candidate for their issues, money and links.")}</p>
-                      );
-                    })() : null}
+                    {r.candidates?.some((c) => c.money) && (
+                      <p className="mb-2 text-xs text-black/50">
+                        {t("Campaign money from FEC filings")}
+                        {(() => { const d = r.candidates!.find((c) => c.money)?.money?.coverageThrough; return d ? `, ${t("through")} ${new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : ""; })()}.
+                      </p>
+                    )}
                     <p className="text-sm text-black/60">
                       {why}{" "}
                       {r.source && <a href={r.source} target="_blank" rel="noreferrer">{t("race source")}</a>}
