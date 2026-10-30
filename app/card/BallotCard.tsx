@@ -8,7 +8,7 @@ import { PhotoGroup } from "../../components/Portrait";
 import RaceFooter from "../../components/RaceFooter";
 import CandidateRow, { type RowCand } from "../../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../../lib/endscreen.mjs";
-import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
+import { decodeAnswers, cardPath } from "../../lib/card.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
 import { Button } from "../../components/ui/button";
 
@@ -45,12 +45,12 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   }
   async function share() {
-    const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
+    const url = `${location.origin}${cardPath(zip, answers || {}, ids)}`;
     try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
   }
   const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link underline-offset-2 hover:underline print:text-black";
   return (
-    <main className="mx-auto max-w-[720px] px-5 py-12 text-black print:px-0 print:py-0" data-ballot-card>
+    <main id="main" tabIndex={-1} className="scroll-mt-16 mx-auto max-w-[720px] px-5 py-12 text-black print:px-0 print:py-0" data-ballot-card>
       <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>
       <h1 className={`mt-3 ${H1}`}>Your ballot card</h1>
       {ed ? <p className="mt-4 text-xl leading-7 font-[530]" data-card-date>Election Day: {fmt(ed.start)}{ed.hours ? `, ${ed.hours}` : ""}</p> : null}
@@ -77,7 +77,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
             <ul className="mt-3 space-y-6">
               {rows.map(({ r, list, gradesHidden }) => (
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
-                  <p className="text-base font-[530]">{r.title || r.id}</p>
+                  <h3 className="text-base font-[530]" data-race-title>{r.title || r.id}</h3>
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
                     {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} />)}
                   </ul>

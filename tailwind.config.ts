@@ -35,6 +35,8 @@ export default {
         serif: ["var(--font-grotesk)", "var(--font-public-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       fontSize: {
+        // Audit 3:05 PM CT (Oct 30): nothing on screen under 14px. text-xs is floored at 14/20.
+        xs: ["14px", { lineHeight: "20px" }],
         // Fluid 6xl so section headings stay below the page title on phones (40px at 375px wide, 60px on desktop).
         "6xl": ["clamp(2.5rem, 8vw, 3.75rem)", { lineHeight: "1" }],
         "nds-display": ["clamp(50px, 9.375vw, 180px)", { lineHeight: "0.95", letterSpacing: "-0.02em", fontWeight: "530" }],

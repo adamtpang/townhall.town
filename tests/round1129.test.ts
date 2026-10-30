@@ -254,7 +254,7 @@ describe("design p9 / QA 4e15da7 items", () => {
   });
   it("P1 tiles (superseded by design p10 P0): flex 1 1 0, min-w-0, max 40/48/56px, one row", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[40px\] md:max-w-\[48px\] lg:max-w-\[56px\]/);
+    expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[120px\] lg:max-w-\[160px\]/); // grid spec #4 (Oct 30)
     expect(s).toMatch(/flex flex-nowrap gap-2 md:gap-3/);
     expect(s).toMatch(/line-clamp-3 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // QA 94cf301: wrap, up to 3 lines; round 0222: two-line labels at 384
   });

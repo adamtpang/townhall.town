@@ -44,7 +44,7 @@ export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNul
   // Design p14: self-hosted 112/160px squares (tiles are 40-56px, so 112 covers 2x screens and 160 covers 3x), with
   // width/height set; lazy and async below the fold (eager only for the first tiers).
   // Design p15 #3: the image sizes attribute is 40px under 1024px wide, 56px from 1024 up.
-  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w`, sizes: "(max-width: 1023px) 40px, 56px" } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
+  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w`, sizes: "(max-width: 1023px) 120px, 160px" } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
   return (
     <span className="absolute inset-0 flex overflow-hidden" data-photo-img>
       <span className={cn("relative h-full overflow-hidden", m ? "w-1/2" : "w-full")}>
@@ -62,7 +62,7 @@ export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNul
 }
 
 /** Design p10 credit type: 12/16, weight 450, black/60, at most 60ch. The one place 12px text is allowed. */
-export const CREDIT = "max-w-[60ch] text-[12px] leading-4 font-[450] text-black/60 [word-break:break-word]";
+export const CREDIT = "max-w-[60ch] text-sm leading-5 font-[450] text-black/60 [word-break:break-word]";
 // Design p11 #2, superseded by Design 3:34 AM CT (Oct 30): credit links reach 44px through spacing (TAP below), never a
 // vertical pseudo-element. Kept identical to TAP so the per-candidate 'Photo:' credit follows the same rule.
 const CLINK = "relative flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:inline-flex md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']";

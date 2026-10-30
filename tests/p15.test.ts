@@ -35,7 +35,7 @@ describe("p15 #2: Papari cropped to his head", () => {
 
 describe("p15 #3: sizes attribute", () => {
   it("40px under 1024px, 56px from 1024 up", () => {
-    expect(P).toContain('sizes: "(max-width: 1023px) 40px, 56px"');
+    expect(P).toContain('sizes: "(max-width: 1023px) 120px, 160px"');
     expect(P).not.toContain('sizes: "56px"');
   });
 });

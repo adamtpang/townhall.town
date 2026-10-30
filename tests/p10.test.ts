@@ -38,7 +38,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       expect(ph.page).toMatch(/^https:\/\//);
     }
     expect(n).toBeGreaterThan(25);
-    expect(src("components/Portrait.tsx")).toMatch(/max-w-\[60ch\] text-\[12px\] leading-4 font-\[450\] text-black\/60/);
+    expect(src("components/Portrait.tsx")).toMatch(/max-w-\[60ch\] text-sm leading-5 font-\[450\] text-black\/60/);
   });
   it("every portrait is a square tile with a center-20% crop", () => {
     // Both tiles render through TileImage (Portrait.tsx), which carries the crop and Civic's cropNote focus.
@@ -52,7 +52,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
   it("multi-seat rows never wrap: flex 1 1 0, min-w-0, max 40/56px, truncated label, sr-only when dense under 768", () => {
     const s = src("components/PortraitRow.tsx");
     expect(s).toMatch(/flex: ?"1 1 0"/);
-    expect(s).toMatch(/max-w-\[40px\][^"]*lg:max-w-\[56px\]/);
+    expect(s).toMatch(/max-w-\[120px\] lg:max-w-\[160px\]/); // grid spec #4 (Oct 30): bigger tiles
     expect(s).toMatch(/flex flex-nowrap/);
     expect(s).toMatch(/group-data-\[dense=true\]\/row:max-md:sr-only/);
     expect(s).toMatch(/truncate/);

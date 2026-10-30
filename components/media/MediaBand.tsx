@@ -47,6 +47,8 @@ export default function MediaBand() {
   const [playable, setPlayable] = useState(false);
   const [paused, setPaused] = useState(false);
   const userPaused = useRef(false);
+  // The <video> poster matches the <picture> (phone or desktop, same cached file), set on mount so SSR never picks one.
+  const [poster, setPoster] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const el = v.current;
@@ -55,16 +57,11 @@ export default function MediaBand() {
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     if (!motionAllowed(reduceMq.matches, saveData)) return; // poster only: never attach or load the video
     const mobile = window.matchMedia(MOBILE).matches;
+    setPoster(mobile ? "/media/band-mobile-poster.jpg" : "/media/band-desktop-poster.jpg");
     let attached = false;
-    let visible = false;
-    const io = new IntersectionObserver(([e]) => {
-      visible = e.isIntersecting;
-      if (!attached) return;
-      if (!visible) el.pause();
-      else if (!userPaused.current) el.play().catch(() => {});
-    });
-    io.observe(el);
-    const stopIdle = onIdleOrScroll(window, () => {
+    // Skills audit P0 (Oct 30): nothing loads until the band is within 200px of the viewport (it sits below the fold).
+    // Then the sources attach and it plays; it pauses whenever it leaves view.
+    const attach = () => {
       if (attached || reduceMq.matches) return;
       for (const s of bandSources(mobile)) {
         const node = document.createElement("source");
@@ -76,11 +73,16 @@ export default function MediaBand() {
       el.load();
       attached = true;
       setPlayable(true);
-      if (visible && !userPaused.current) el.play().catch(() => {});
-    });
+    };
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) { if (attached) el.pause(); return; }
+      attach();
+      if (attached && !userPaused.current) el.play().catch(() => {});
+    }, { rootMargin: "200px" });
+    io.observe(el);
     const onReduce = () => { if (reduceMq.matches && attached) { el.pause(); setPaused(true); userPaused.current = true; } };
     reduceMq.addEventListener?.("change", onReduce);
-    return () => { stopIdle(); io.disconnect(); reduceMq.removeEventListener?.("change", onReduce); };
+    return () => { io.disconnect(); reduceMq.removeEventListener?.("change", onReduce); };
   }, []);
 
   function toggle() {
@@ -91,15 +93,15 @@ export default function MediaBand() {
   }
 
   return (
-    <figure className="ml-[calc(50%-50vw)] mt-16 w-screen lg:mt-24" data-media-band>
+    <figure className="ml-[calc(50%-50vw)] w-screen" data-media-band>
       <div className="duo aspect-[4/5] md:aspect-[12/5]">
         <picture>
-          <source media="(min-width: 768px)" srcSet="/media/band-desktop-poster.jpg" />
-          <img src="/media/band-mobile-poster.jpg" alt="" decoding="async" data-band-poster />
+          <source media="(min-width: 768px)" srcSet="/media/band-desktop-poster.jpg" width={1280} height={720} />
+          <img src="/media/band-mobile-poster.jpg" alt="" width={576} height={324} loading="lazy" decoding="async" data-band-poster />
         </picture>
-        <video ref={v} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />
+        <video ref={v} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} poster={poster} />
       </div>
-      <figcaption className="mx-auto mt-3 flex max-w-site items-start gap-3 px-6 text-sm leading-5 text-ink/60 lg:px-10">
+      <figcaption className="mx-auto mt-3 flex max-w-[1280px] items-start gap-3 px-5 text-sm leading-5 text-ink/60 md:px-10">
         <span className="flex flex-1 flex-col md:flex-row md:justify-between md:gap-5">
           <span><b className="font-[530] text-ink">Early voting.</b> Berkeley County, S.C., Oct 2016</span>
           <span>Voice of America · Public domain</span>

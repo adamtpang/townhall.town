@@ -7,7 +7,7 @@ import { m, useReducedMotion } from "framer-motion";
 import { accordion } from "../lib/motion";
 
 export function Chev() {
-  return <svg aria-hidden data-chev viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 shrink-0 text-black/60"><path d="m6 9 6 6 6-6" /></svg>;
+  return <svg aria-hidden data-chev viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 shrink-0 text-black/60"><path d="m6 9 6 6 6-6" /></svg>;
 }
 
 type Data = Record<`data-${string}`, string | boolean | undefined>;
@@ -36,7 +36,7 @@ export function Fold({ summary, children, open = false, className = "", summaryC
   const a = accordion(expanded, reduce);
   return (
     <details ref={ref} id={id} open={shown} data-expanded={expanded ? "true" : "false"} className={className} {...data}>
-      <summary onClick={click} className={`cursor-pointer list-none [&::-webkit-details-marker]:hidden ${summaryClassName}`}>{summary}</summary>
+      <summary onClick={click} aria-expanded={expanded} className={`cursor-pointer list-none [&::-webkit-details-marker]:hidden ${summaryClassName}`}>{summary}</summary>
       <m.div initial={false} animate={a.animate} transition={a.transition} style={{ overflow: "hidden" }}
         data-fold-body>
         <div className={bodyClassName}>{children}</div>

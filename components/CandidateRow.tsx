@@ -116,13 +116,13 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
                 {/* main_points17: an unscored office priority gets a small muted text prefix; issue points look as before. */}
                 {x.k === "office" ? <><span className="text-base leading-6 font-[450] text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
                 <span data-main-text>{x.t}</span>{" "}
-                <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
+                <a href={x.u} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center whitespace-nowrap text-sm leading-5 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
               </li>
             ))}
           </ul>
         ) : mp?.none && o.sourced !== 0 ? <p className="mt-1 text-base leading-6 text-black/60" data-no-main-points>{mp.none}</p> : null}
         {SHOW_ACCOUNTABILITY ? (
-          <div className="mt-1 flex min-w-0 items-baseline gap-2 text-xs leading-4 text-black/60" data-record={rec.x} data-record-n={rec.n} data-record-id={mp?.id}>
+          <div className="mt-1 flex min-w-0 items-baseline gap-2 text-sm leading-5 text-black/60" data-record={rec.x} data-record-n={rec.n} data-record-id={mp?.id}>
             <p className="line-clamp-2 min-w-0" title={`Record: ${recLine}`} data-record-line>Record: {recLine}</p>
             {recUrl ? <a href={recUrl} target="_blank" rel="noreferrer" className="relative shrink-0 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-record-source>{sourceLabel(recUrl)}{ext}</a> : null}
           </div>

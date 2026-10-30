@@ -68,13 +68,22 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false, credi
   // visible label goes sr-only (the name stays in aria-label/title and on the card).
   // Design p11 #1: the item (label width) is separate from the tile. Item max 56px (64px at 1024+); tile max 40px
   // (48px at 768+, 56px at 1024+), centred; label full item width, centred, truncated.
-  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[80px] lg:max-w-[96px]";
-  const tileMax = size === "mini" ? "" : "max-w-[40px] md:max-w-[48px] lg:max-w-[56px]";
-  const dense = size === "row" && cands.length > 6;
+  // Adam 2:58 PM CT "images should be bigger" + Design grid spec #4: the tile is the item, flex 1 1 0, square, max 120px
+  // on phones and 160px from 1024 up; still one row, never wraps, never scrolls.
+  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[120px] lg:max-w-[160px]";
+  const tileMax = size === "mini" ? "" : "max-w-[120px] lg:max-w-[160px]";
+  // Design 3:07 PM CT (Oct 30) P1: a ticket (governor + running mate) is two full tiles, never two half photos in one.
+  const tiles: C[] = size === "mini" ? cands : cands.flatMap((c) => {
+    const mate = c.photo?.mate;
+    if (!mate || !c.photo) return [c];
+    const { mate: _m, ...lead } = c.photo;
+    return [{ name: split(c.name).lead, party: c.party, photo: lead }, { name: mate.name, party: c.party, photo: mate }];
+  });
+  const dense = size === "row" && tiles.length > 6;
   return (
     <PhotoGroup>
     <ul role="list" aria-label="Candidates" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
-      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
+      {(() => { const L = labels(tiles.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return tiles.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
     {size === "row" && credits ? <RowCredits cands={cands} /> : null}{/* credits={false}: the race folder shows them in its own "Photo credits (N)" item. */}
     </PhotoGroup>

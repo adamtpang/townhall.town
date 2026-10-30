@@ -55,7 +55,7 @@ export default function ResultsNav() {
   const v = reduce ? reduced : enter;
   return (
     <>
-      <m.nav ref={nav} aria-label="Jump to" className="mt-4 grid grid-cols-3 border-y border-black/15" data-results-nav
+      <m.nav ref={nav} aria-label="Jump to section" className="mt-4 grid grid-cols-3 border-y border-black/15" data-results-nav
         initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: reduce ? {} : stagger } }}>
         {TILES.map((t) => (
           <m.a key={t.id} href={`#${t.id}`} onClick={tap(t.id)} aria-current={active === t.id ? "location" : undefined} data-nav-tile={t.id}
@@ -65,11 +65,11 @@ export default function ResultsNav() {
           </m.a>
         ))}
       </m.nav>
-      <nav aria-label="Jump to" aria-hidden={!pinned} data-cta-bar
-        className={`glass glass-bar-bottom fixed inset-x-0 bottom-0 z-40 grid motion-safe:transition-[transform,opacity] motion-safe:duration-[220ms] motion-safe:ease-[cubic-bezier(.215,.61,.355,1)] grid-cols-3 pb-[env(safe-area-inset-bottom)] md:hidden ${pinned ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-full opacity-0"}`}>
+      <nav aria-label="Jump to section, pinned bar" aria-hidden={!pinned} data-cta-bar
+        className={`glass glass-bar-bottom bg-white/90 fixed inset-x-0 bottom-0 z-40 grid motion-safe:transition-[transform,opacity] motion-safe:duration-[220ms] motion-safe:ease-[cubic-bezier(.215,.61,.355,1)] grid-cols-3 pb-[env(safe-area-inset-bottom)] md:hidden ${pinned ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-full opacity-0"}`}>
         {TILES.map((t) => (
           <a key={t.id} href={`#${t.id}`} onClick={tap(t.id)} tabIndex={pinned ? undefined : -1} data-bar-tile={t.id}
-            className={`flex h-14 items-center justify-center border-b-2 px-1 text-center text-sm font-[530] leading-4 text-black ${active === t.id ? "border-brand-600" : "border-transparent"}`}>
+            className={`flex h-14 items-center justify-center border-b-2 px-3 text-center text-sm font-[530] leading-4 text-black ${active === t.id ? "border-brand-600" : "border-transparent"}`}>
             {t.label}
           </a>
         ))}

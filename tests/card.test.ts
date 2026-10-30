@@ -7,6 +7,7 @@ describe("ballot card URL state", () => {
     expect(encodeAnswers(a, ids)).toBe("yxn-");
     expect(decodeAnswers("yxn-", ids)).toEqual(a);
     expect(cardPath("78701", a, ids)).toBe("/card?zip=78701#a=yxn-");
+    expect(cardPath("78701", {}, ids)).toBe("/card?zip=78701"); // no picks: clean URL (audit, Oct 30)
   });
   it("ignores junk", () => { expect(decodeAnswers("zz", ids)).toEqual({ housing: null, taxes: null, safety: null, energy: null }); });
 });

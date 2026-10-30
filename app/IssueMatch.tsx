@@ -1,5 +1,6 @@
 "use client";
 import { ToggleGroup } from "../components/ui/toggle-group";
+import { Chev, Fold } from "../components/Fold";
 import { plain } from "../lib/plain";
 import { H2 } from "../lib/typeScale";
 import { useEffect, useState } from "react";
@@ -79,7 +80,8 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
     <>
       <section className="border-t border-black py-24" id="what-matters">
         <p className="nds-caption-upper text-black/60">02</p>
-        <h2 className={`mt-3 ${H2}`}>Who lines up with you</h2>
+        {/* Design 2:59 PM CT (Oct 30): the quiz is closed by default under its own heading (pure hide; every line stays in the page). */}
+        <Fold data-quiz-fold summaryClassName="flex min-h-11 items-end gap-2" summary={<><h2 className={`mt-3 ${H2}`}>Who lines up with you</h2><Chev /></>}>
         <p className="mt-4 text-base leading-6 text-black" data-issue-intro>{ISSUE_INTRO}</p>
         <p className="mt-2 text-sm font-[530] tabular-nums text-brand-700" aria-live="polite" data-progress>{answered} of {ids.length} answered</p>
 
@@ -101,7 +103,7 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
                   className="mt-4 flex w-full divide-x divide-black/45 border border-black/45 md:w-fit"
                   itemClassName="flex h-14 min-w-11 flex-[1_1_0] items-center justify-center text-base leading-6 font-[530] tabular-nums outline-none focus-visible:relative focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white md:h-12 md:w-24 md:flex-none [touch-action:manipulation] motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-out data-[state=on]:bg-brand-700 data-[state=on]:text-white data-[state=off]:bg-white data-[state=off]:text-black [@media(hover:hover)]:data-[state=off]:hover:bg-brand-50"
                   items={BUCKETS.map((c) => ({ value: String(c.b), label: c.text, ariaLabel: t(c.label), "data-choice": c.b, "data-bucket": c.b }))} />
-                <div aria-hidden className="mt-2 flex w-full justify-between text-xs leading-4 text-black/60 md:w-[482px]" data-bucket-ends><span>{t("Strong no")}</span><span>{t("Strong yes")}</span></div>
+                <div aria-hidden className="mt-2 flex w-full justify-between text-sm leading-5 text-black/60 md:w-[482px]" data-bucket-ends><span>{t("Strong no")}</span><span>{t("Strong yes")}</span></div>
                 {fromChat[i.id] ? <p className="mt-2 text-sm text-black/60" data-from-chat>Filled from what you wrote: “{fromChat[i.id]}”. Change it if that&apos;s wrong.</p> : null}
               </li>
             );
@@ -116,11 +118,12 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
             <button type="button" onClick={() => setConfirm(true)} data-reset className="inline-flex h-12 items-center border border-black/45 px-5 text-base text-black hover:border-black [@media(hover:hover)]:hover:bg-brand-50">Reset my answers</button>
           ) : (
             <span role="alertdialog" aria-live="assertive" aria-label="Confirm reset" className="inline-flex min-h-12 flex-wrap items-center gap-3 text-base text-black" data-reset-confirm>{/* QA phone pass Oct 30: inline row, ink text, outline buttons, no cream panel. */}Clear all answers saved on this device?
-              <button type="button" autoFocus onClick={reset} className="inline-flex h-11 items-center border border-black px-4 font-[530] text-black [@media(hover:hover)]:hover:bg-brand-50">Yes, clear</button>
-              <button type="button" onClick={() => setConfirm(false)} className="inline-flex h-11 items-center border border-black/45 px-4 text-black hover:border-black [@media(hover:hover)]:hover:bg-brand-50">Cancel</button>
+              <button type="button" onClick={reset} className="inline-flex h-11 items-center border border-black px-4 font-[530] text-black [@media(hover:hover)]:hover:bg-brand-50">Yes, clear</button>
+              <button type="button" autoFocus onClick={() => setConfirm(false)} className="inline-flex h-11 items-center border border-black/45 px-4 text-black hover:border-black [@media(hover:hover)]:hover:bg-brand-50">Cancel</button>
             </span>
           )}
         </div>
+        </Fold>
       </section>
       <EndScreen zip={zip} races={races} answers={answers} ids={ids} answered={answered} market={market} />
     </>

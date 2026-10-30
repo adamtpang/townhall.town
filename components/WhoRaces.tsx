@@ -28,6 +28,7 @@ export function lineText(l: WhoLine): string {
   return `${l.name} · ${overlapLine(l.agree, l.n)}${l.grade ? ` · ${l.grade}` : ""}`;
 }
 
+// Hard cut R1 (Design, Oct 30 ~3:09 PM CT): closed rows drop the repeated "· No public position found yet"; the race body keeps its own line.
 export default function WhoRaces({ races }: { races: WhoRace[] }) {
   // Phones (<768px) start with every race closed (Oct 30 sign-off); 768px and up open the first 3 (design p12 #3).
   const [open, setOpen] = useState<string[]>([]);
@@ -45,7 +46,7 @@ export default function WhoRaces({ races }: { races: WhoRace[] }) {
                 <span className="min-w-0">{r.title}</span>
                 {!isOpen ? (
                   <span className="mt-1 flex min-w-0 flex-col text-sm font-[450] leading-5 text-black/80" data-fold-lines>
-                    {r.lines.map((l) => <span key={l.name} className="block whitespace-normal [overflow-wrap:normal] [word-break:normal] hyphens-none" data-fold-line>{lineText(l)}</span>)}
+                    {r.lines.map((l) => <span key={l.name} className="block whitespace-normal [overflow-wrap:normal] [word-break:normal] hyphens-none" data-fold-line>{l.sourced === 0 || l.n === 0 ? l.name : lineText(l)}</span>)}
                     {r.gradesHidden ? <span className="mt-1 block whitespace-normal text-xs font-[450] leading-4 text-black/60" data-fold-grades-absent={r.gradesHidden}>{gradesAbsentLine(r.gradesHidden)}</span> : null}
                   </span>
                 ) : null}

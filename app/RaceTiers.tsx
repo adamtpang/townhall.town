@@ -143,7 +143,8 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
     return (
                   <li key={r.id} className="border-t border-black/15 font-[450] first:border-t-0">
                     <Fold data-race-folder={r.id} summaryClassName="block py-2" bodyClassName="pb-4" summary={<>
-                        <span className="flex min-h-11 items-center justify-between gap-4">
+                        {/* QA cea33e0 P1: the 20px chevron sits right after the title, so a closed row reads as a control. */}
+                        <span className="flex min-h-11 items-center gap-2">
                           <h3 className={H3} data-race-title>{r.title}</h3>
                           <Chev />
                         </span>
@@ -156,13 +157,15 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                     <div className="mt-2 divide-y divide-black/10 border-y border-black/10" data-race-items>
                     {/* Civic main_points17 (Oct 30): judges (pointType "role") get only a factual role line from their official profile when one
                         exists (8 in Texas), else the plain empty text. Rendered as given; never a stance. */}
-                    {isJudicial(r) && r.candidates?.length ? (
-                      <FoldItem label="Positions" data-fold="positions">
-                      <ul className="max-w-[60ch] space-y-1 text-sm leading-5 text-black/80" data-judge-points>
-                        {r.candidates.map((c) => { const e = pointsFor(r.id, c.name); const x = e?.p[0]; return (
-                          <li key={c.name} className="min-w-0" data-judge={c.name}>
+                    {r.candidates?.length ? (
+                      // Design p22 P1-1 (Oct 30): Positions is the folder's first item, before Money. Judges keep their role line;
+                      // everyone else lists their sourced main points (up to 3), each with its source, or the locked empty line.
+                      <FoldItem label="Positions" data-fold="positions" data-all-positions>
+                      <ul className="max-w-[60ch] space-y-2 text-sm leading-5 text-black/80" data-judge-points={isJudicial(r) ? "" : undefined} data-race-positions>
+                        {r.candidates.map((c) => { const e = pointsFor(r.id, c.name); const ps = isJudicial(r) ? (e?.p ?? []).slice(0, 1) : (e?.p ?? []).slice(0, 3); return (
+                          <li key={c.name} className="min-w-0" data-judge={isJudicial(r) ? c.name : undefined} data-position-cand={c.name}>
                             <span className="font-[530]">{c.name}:</span>{" "}
-                            {x ? <>{x.t} <a href={x.u} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-judge-source>{new URL(x.u).hostname.replace(/^www\./, "")}<span className="sr-only"> (opens in a new tab)</span></a></> : <span className="text-black/60">{e?.none ?? "No public position found yet"}</span>}
+                            {ps.length ? ps.map((x, k) => <span key={k} className="[overflow-wrap:anywhere]">{k ? " · " : ""}{x.t} <a href={x.u} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-judge-source={isJudicial(r) ? "" : undefined}>{host(x.u)}<span className="sr-only"> (opens in a new tab)</span></a></span>) : <span className="text-black/60">{e?.none ?? "No public position found yet"}</span>}
                           </li>
                         ); })}
                       </ul>
@@ -276,12 +279,12 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
                 <span className="min-w-0">
                   <h3 className="text-base font-[530]" data-measure-title>{m.title}</h3>
                   {/* Design part 1 C: title plus one line (the sourced "If yes" text, cut to one line); the rest opens below. */}
-                  {said((m.ifYes ?? m.whatChanges).text) !== "No official estimate" ? <span className="mt-0.5 block truncate text-sm text-black/60" data-measure-line>{said((m.ifYes ?? m.whatChanges).text)}</span> : null}
+                  {/* Hard cut R3 (Design, Oct 30 ~3:09 PM CT): no preview line in the closed measure summary; the same text is in the body. */}
                 </span>
                 <Chev />
               </>}>
               <div className="pb-3"><MarketLine line={leaderLine(market(m.id))} /></div>
-              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
+              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-black/60">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
 {(() => {
                 const all = [["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", (m.ifYes ?? m.whatChanges).text, (m.ifYes ?? m.whatChanges).sourceUrl], ["If no", m.ifNo?.text, m.ifNo?.sourceUrl]] as const;
                 const none = (v?: string | null) => said(v) === "No official estimate";
@@ -294,7 +297,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
                       <dl className="grid gap-4 sm:grid-cols-2">
                         {rows.map(([k, v, u]) => (
                           <div key={k}>
-                            <dt className="text-sm uppercase tracking-wide text-black/50">{k}</dt>
+                            <dt className="text-sm uppercase tracking-wide text-black/60">{k}</dt>
                             <dd className="mt-1 text-sm">
                               {said(v)}{" "}
                               {u && <a href={u} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(u)} ↗</a>}

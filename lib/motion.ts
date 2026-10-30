@@ -1,5 +1,6 @@
 // Design premium spec §2.1 (Oct 30 2026): the only place motion durations and curves live.
-export const ease = { out: [0.215, 0.61, 0.355, 1] as const, inOut: [0.65, 0, 0.35, 1] as const }; // ease.out = --ease-out-nd
+// Design 2:59 PM CT: the locked token is [0.2,0,0,1], 220ms, 8px rise, everywhere (supersedes spec.md ease.out).
+export const ease = { out: [0.2, 0, 0, 1] as const, inOut: [0.2, 0, 0, 1] as const };
 export const dur = { fast: 0.15, base: 0.22, slow: 0.32 }; // seconds
 export const spring = {
   layout: { type: "spring", stiffness: 420, damping: 40, mass: 0.9 } as const, // ~250ms settle, no overshoot

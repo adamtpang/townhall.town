@@ -3,6 +3,7 @@ import { H1, H3 } from "../lib/typeScale";
 import { SectionBody } from "../components/Prose";
 import MediaBand from "../components/media/MediaBand";
 import CityCards from "../components/media/CityCards";
+import HomeTiles from "../components/media/HomeTiles";
 import { NumberedSection } from "../components/media/SectionHeader";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { HOME_SECTIONS } from "../lib/content";
@@ -22,7 +23,9 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
-      <main className="mx-auto max-w-site px-6 lg:px-10">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-[1280px] scroll-mt-16 px-5 outline-none md:px-10">
+        {/* Reserved slot for the Polymarket strip (built on its own branch): directly under the nav, above the H1. Empty = 0px. */}
+        <div id="market-strip-slot" data-market-strip-slot />
         {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
         <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
           <h1 className={`${H1} [text-wrap:balance]`}>
@@ -35,12 +38,16 @@ export default function Home() {
           <div id="hero-stat" />
         </section>
         <BallotAgent />
-        {/* ndstudio-structure spec (Oct 30): hero → band → 01 Your city → 02 How it works (copy approved Oct 30) → 03 Sources. */}
-        <MediaBand />
-        <NumberedSection n="01" label="Your city" id="your-city">
+        {/* Design grid spec #3 (Oct 30, 2:58 PM CT): hero, ZIP, 01 Your city, the full-bleed band, Who/What/Where tiles,
+            02 How it works (copy approved Oct 30), 03 Sources. */}
+        <NumberedSection n="01" label="Your city" id="your-city" wide first>
           <CityCards />
         </NumberedSection>
-        <NumberedSection n="02" label="How it works" id="how-it-works">
+        <MediaBand />
+        <nav aria-label="Who, what and where" className="py-16 lg:py-24" data-home-tiles-nav>
+          <HomeTiles />
+        </nav>
+        <NumberedSection n="02" label="How it works" id="how-it-works" fold>
           <ol className="grid gap-8 md:grid-cols-3 md:gap-5" data-how-steps>
             {HOW_STEPS.map(([title, line], i) => (
               <li key={title}>
@@ -52,7 +59,7 @@ export default function Home() {
           </ol>
         </NumberedSection>
         {HOME_SECTIONS.map((s) => (
-          <NumberedSection key={s.heading} n="03" label={s.heading} id={s.heading.toLowerCase()}>
+          <NumberedSection key={s.heading} n="03" label={s.heading} id={s.heading.toLowerCase()} fold>
             <SectionBody s={s} />
           </NumberedSection>
         ))}

@@ -15,7 +15,8 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
   it("home order: hero, ZIP, band, 01 Your city, 02 How it works, 03 Sources; locked H1 and tagline unchanged", () => {
     const p = src("app/page.tsx");
     const at = (s: string) => { const i = p.indexOf(s); expect(i, s).toBeGreaterThan(-1); return i; };
-    const order = [at("Know your ballot in 2 minutes."), at("<BallotAgent />"), at("<MediaBand />"), at('n="01" label="Your city"'), at('n="02" label="How it works"'), at('n="03"')];
+    // Design grid spec #3 (Oct 30, 2:58 PM CT): cities above the band, then the Who/What/Where tiles.
+    const order = [at("Know your ballot in 2 minutes."), at("<BallotAgent />"), at('n="01" label="Your city"'), at("<MediaBand />"), at("<HomeTiles />"), at('n="02" label="How it works"'), at('n="03"')];
     expect([...order].sort((a, b) => a - b)).toEqual(order);
     expect(p).toContain("<span>Get your person in office. </span>");
     expect(p).toContain("<T>Your vote matters.</T>");
@@ -28,7 +29,7 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
   });
   it("numbered section: hairline rule, 96/64 rhythm, brand-700 tabular number, 14/20 label at 530", () => {
     const html = renderToStaticMarkup(createElement(NumberedSection, { n: "01", label: "Your city", id: "x", children: "c" }));
-    for (const c of ["border-t border-ink/15", "pt-16", "lg:pt-24", "mt-16", "lg:mt-24", "md:col-span-4", "md:col-span-8", "text-brand-700", "tabular-nums", "text-sm leading-5 font-[530]"]) expect(html).toContain(c);
+    for (const c of ["border-t border-ink/15", "py-16", "lg:py-24", "md:col-span-4", "md:col-span-8", "text-brand-700", "tabular-nums", "text-sm leading-5 font-[530]"]) expect(html).toContain(c);
   });
   it("03 Sources keeps its content and links purple", () => {
     const s = HOME_SECTIONS.find((x) => x.heading === "Sources")!;
@@ -44,8 +45,9 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(html).toContain("Photo: Daderot, CC0");
     expect(html).toContain("Photo: Bernard Spragg. NZ, CC0");
     expect(html).toMatch(/Photo: Jim Henderson, <a href="https:\/\/creativecommons.org\/licenses\/by\/4.0\/"[^>]*>CC BY 4.0.*<\/a>, modified \(duotone\)/);
-    expect(html).toContain("flex-[0_0_72%] snap-start");
-    expect(html).toContain("snap-x snap-mandatory");
+    // Design grid spec #3 (Oct 30, 2:58 PM CT): 3 across at every width, 4:5 on phones, 16:9 col-span-4 from lg.
+    expect(html).toContain("grid grid-cols-3 gap-2 lg:grid-cols-12 lg:gap-6");
+    expect(html).toContain("aspect-[4/5] bg-brand-50 lg:aspect-video");
     expect(html).not.toMatch(/src="https?:/); // self-hosted only
     expect(src("app/BallotAgent.tsx")).toContain('"townhall:zip"');
   });
@@ -56,12 +58,13 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(bandSources(true).map((s) => s.src)).toEqual(["/media/band-mobile.webm", "/media/band-mobile.mp4"]);
     expect(bandSources(false).map((s) => s.src)).toEqual(["/media/band-desktop.mp4"]);
     const band = src("components/media/MediaBand.tsx");
-    expect(band).not.toContain("rootMargin");
+    expect(band).toContain('rootMargin: "200px"'); // skills audit P0 (Oct 30): sources attach only near view, not on idle
     expect(band).toMatch(/if \(!motionAllowed\(reduceMq\.matches, saveData\)\) return;/);
     expect(band).toContain('srcSet="/media/band-desktop-poster.jpg"');
     expect(band).toContain('src="/media/band-mobile-poster.jpg"');
     expect(band).toContain("h-11 w-11");
     expect(band).toMatch(/<video ref=\{v\} muted loop playsInline preload="none" aria-hidden="true"/);
+    expect(band).toMatch(/width=\{576\} height=\{324\} loading="lazy" decoding="async"/);
     expect(band).not.toMatch(/<video[^>]*controls/);
   });
   it("media is self-hosted, budgeted, no image over 200 KB, no Vercel image optimizer", () => {
