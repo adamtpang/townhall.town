@@ -270,6 +270,18 @@
    "width": 500,
    "height": 578
   },
+  "bunny-mcfadden": {
+   "name": "bunny-mcfadden",
+   "file": "/portraits/bunny-mcfadden-160.webp",
+   "file112": "/portraits/bunny-mcfadden-112.webp",
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a962a969b639a4190930b78/ab11e977-ab73-40f3-a58b-b8131626ad91/DSC09407.jpg?format=750w",
+   "credit": "Bunny McFadden campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.ourcitycollege.com/bunny-mcfadden",
+   "via": "campaign site",
+   "width": 562,
+   "height": 562
+  },
   "caitlin-rourk": {
    "name": "caitlin-rourk",
    "file": "/portraits/caitlin-rourk-160.webp",
@@ -1727,6 +1739,18 @@
    "width": 512,
    "height": 768
   },
+  "pearci-pj-bastiany-iii": {
+   "name": "pearci-pj-bastiany-iii",
+   "file": "/portraits/pearci-pj-bastiany-iii-160.webp",
+   "file112": "/portraits/pearci-pj-bastiany-iii-112.webp",
+   "sourceUrl": "https://bastiany-campaign-site.replit.app/assets/pj-sf-event-C4sI-O8G.webp",
+   "credit": "PJ Bastiany campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://bastiany-campaign-site.replit.app/",
+   "via": "campaign site",
+   "width": 200,
+   "height": 200
+  },
   "phil-kim": {
    "name": "phil-kim",
    "file": "/portraits/phil-kim-160.webp",
@@ -2300,14 +2324,8 @@
   "tx-ltgov"
  ],
  "selfHostedNote": "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json; sources and sha256 in data/portraits-manifest.json. Cropped and resized only. Never generated.",
- "initialsOnly": {
-  "bunny-mcfadden": "Illustration, not a photo (Design p15): initials only.",
-  "pearci-pj-bastiany-iii": "'VOTE' campaign poster, not a photo (Design p15): initials only."
- },
+ "initialsOnly": {},
  "leftOut": [],
- "excluded": [
-  "bunny-mcfadden",
-  "pearci-pj-bastiany-iii"
- ],
+ "excluded": [],
  "sameAsCourtPortrait": []
 }

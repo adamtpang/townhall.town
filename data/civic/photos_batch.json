@@ -2216,13 +2216,27 @@
  "pearci-pj-bastiany-iii": {
   "name": "Pearci \"PJ\" Bastiany III",
   "raceId": "sf-supervisor-10",
-  "photoUrl": "https://bastiany-campaign-site.replit.app/assets/pj-portrait-Ddne3iA1.webp",
+  "photoUrl": "https://bastiany-campaign-site.replit.app/assets/pj-sf-event-C4sI-O8G.webp",
+  "localFile": "/workspace/townhall/civic/photos_local/pearci-pj-bastiany-iii.jpg",
   "pageUrl": "https://bastiany-campaign-site.replit.app/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
   "attribution": "Photo: PJ Bastiany campaign site",
-  "verified": "200 image/webp 960x1200; file named pj-portrait in the campaign site bundle",
-  "note": "A campaign flyer with his name on it; the front-facing photo of him takes up the lower right. Alternative: /assets/pj-sf-event-C4sI-O8G.webp (full-length event photo).",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "img alt \"PJ Bastiany overlooking San Francisco\" on his campaign site (footer \"Paid for by Pearci Bastiany III for Supervisor 2026. FPPC ID #1481624\"); he is the only person in it",
+  "verified": "200 image/webp 960x1280 (GET, 2026-10-30 ~05:50 CT)",
+  "urlNote": "content-hashed build asset (-C4sI-O8G): the name can change when the site is redeployed, so a local copy is saved at localFile (JPEG re-encode of the same image, 960x1280)",
+  "cropNote": "full-length photo (grey suit, Bay Bridge behind); he is small in the frame. Crop to head and shoulders around pixels x 390-590, y 400-600 of 960x1280 (200 px square, so the result is lower resolution)",
+  "replaced": {
+   "photoUrl": "https://bastiany-campaign-site.replit.app/assets/pj-portrait-Ddne3iA1.webp",
+   "pageUrl": "https://bastiany-campaign-site.replit.app/",
+   "attribution": "Photo: PJ Bastiany campaign site",
+   "sourceType": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "photoYear": null,
+   "why": "Design rule QA11: a \"VOTE\" campaign flyer/poster, not a photo"
+  },
   "checkedDate": "2026-10-30"
  },
  "dionjay-dj-brookter": {
@@ -2546,14 +2560,26 @@
  "bunny-mcfadden": {
   "name": "Bunny McFadden",
   "raceId": "sf-community-college-board",
-  "photoUrl": "https://images.squarespace-cdn.com/content/v1/6a851174471db85a387960bd/14782535-0691-4552-9c5a-476ce79029f2/headshot2025a.JPG?format=750w",
-  "pageUrl": "https://www.bunny4thepeople.com/",
+  "photoUrl": "https://images.squarespace-cdn.com/content/v1/6a962a969b639a4190930b78/ab11e977-ab73-40f3-a58b-b8131626ad91/DSC09407.jpg?format=750w",
+  "pageUrl": "https://www.ourcitycollege.com/bunny-mcfadden",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Bunny McFadden for City College Board of Trustees campaign site",
-  "photoYear": 2025,
-  "verified": "200 image/webp 750x1125; file named headshot2025a on her campaign home page",
-  "note": "A real photo set against a graphic color-block background; the subject is small in the frame. A cleaner solo portrait is on the slate campaign site: https://images.squarespace-cdn.com/content/v1/6a962a969b639a4190930b78/ab11e977-ab73-40f3-a58b-b8131626ad91/DSC09407.jpg?format=750w (page https://www.ourcitycollege.com/bunny-mcfadden, 200 image/webp 750x1125).",
+  "attribution": "Photo: Bunny McFadden campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "only photo of a person on the \"Dr. Bunny McFadden\" page of ourcitycollege.com; she is the only person in it",
+  "verified": "200 image/webp 750x1125 (GET, 2026-10-30 ~05:50 CT)",
+  "urlNote": "ourcitycollege.com is her own (joint) campaign site: footer \"Paid for by Bunny McFadden for City College Board 2026\" (with the LaCroix and Lee committees), and her own site bunny4thepeople.com calls it \"our slate website\" and links it. Squarespace CDN URL, not signed or expiring.",
+  "cropNote": "real solo photograph outdoors (red floral dress, glasses): crop to head and shoulders from the top third",
+  "replaced": {
+   "photoUrl": "https://images.squarespace-cdn.com/content/v1/6a851174471db85a387960bd/14782535-0691-4552-9c5a-476ce79029f2/headshot2025a.JPG?format=750w",
+   "pageUrl": "https://www.bunny4thepeople.com/",
+   "attribution": "Photo: Bunny McFadden for City College Board of Trustees campaign site",
+   "sourceType": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "photoYear": 2025,
+   "why": "Design rule QA11: an illustration, not a photo (small photo inside a graphic color-block design)"
+  },
   "checkedDate": "2026-10-30"
  },
  "erwin-tam": {

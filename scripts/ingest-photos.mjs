@@ -63,6 +63,12 @@ const CROP = {
   // Design p15 #2: Papari's 1200x800 campaign photo is a wide Capitol shot with him in the right third. Square on his head
   // (hat to collar): 340px at (715, 330). Simulated and viewed by eye (5:40 AM CT).
   "arshia-papari": [715 / 1200, 330 / 800, 340 / 1200, 340 / 800],
+  // Civic qa11 cropNote: McFadden's 750x1125 solo photo; head and shoulders from the top third: 562px square at (47, 150).
+  // Simulated and viewed by eye (5:58 AM CT).
+  "bunny-mcfadden": [47 / 750, 150 / 1125, 562 / 750, 562 / 1125],
+  // Civic qa11 cropNote: Bastiany's full-length 960x1280 photo (localFile); head and shoulders at x 390-590, y 400-600.
+  // Viewed by eye at 160px: sharp enough to ship.
+  "pearci-pj-bastiany-iii": [390 / 960, 400 / 1280, 200 / 960, 200 / 1280],
 };
 // Engineering's saved copy of a campaign-site photo whose host answers hotlinks with a bot challenge (202 sgcaptcha),
 // so visitors' browsers would never get the image. Same source and credit as Civic's photoUrl; self-hosted like a localFile.

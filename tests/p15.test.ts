@@ -4,7 +4,7 @@ import { describe, it, expect } from "vitest";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { NOT_A_PHOTO, EXCLUDE } from "../scripts/photo-rules.mjs";
-import { withLicensedPhoto, INITIALS_ONLY } from "../lib/photos";
+import { INITIALS_ONLY } from "../lib/photos";
 
 const ph = JSON.parse(fs.readFileSync("data/photos.json", "utf8"));
 const man = JSON.parse(fs.readFileSync("data/portraits-manifest.json", "utf8"));
@@ -12,28 +12,13 @@ const batch = JSON.parse(fs.readFileSync("data/civic/photos_batch.json", "utf8")
 const P = fs.readFileSync("components/Portrait.tsx", "utf8");
 const IDS = ["bunny-mcfadden", "pearci-pj-bastiany-iii"];
 
-describe("p15 #1: non-photos are initials only, with a reason, across re-ingests", () => {
-  it("the rule lives in photo-rules (not the Civic batch) and excludes both even though Civic still lists a URL", () => {
-    for (const id of IDS) {
-      expect(String(NOT_A_PHOTO[id as keyof typeof NOT_A_PHOTO])).toMatch(/not a photo/i);
-      expect(batch[id].photoUrl).toMatch(/^https:/);
-      expect(EXCLUDE(id, batch[id])).toBe(true);
-    }
-  });
-  it("photos.json and the manifest record the reason; no files or records ship", () => {
-    for (const id of IDS) {
-      expect(ph.initialsOnly[id]).toBe(NOT_A_PHOTO[id as keyof typeof NOT_A_PHOTO]);
-      expect(man.initialsOnly[id]).toBe(NOT_A_PHOTO[id as keyof typeof NOT_A_PHOTO]);
-      expect(ph.selfHosted[id]).toBeUndefined();
-      expect(man.portraits[id]).toBeUndefined();
-      expect(ph.excluded).toContain(id);
-      for (const n of [112, 160]) expect(fs.existsSync(`public/portraits/${id}-${n}.webp`)).toBe(false);
-    }
-  });
-  it("the app gives both initials even if a record came back", () => {
-    expect([...INITIALS_ONLY].sort()).toEqual(IDS);
-    expect((withLicensedPhoto({ name: "Bunny McFadden" } as never) as { photo?: unknown }).photo).toBeNull();
-    expect((withLicensedPhoto({ name: 'Pearci "PJ" Bastiany III' } as never) as { photo?: unknown }).photo).toBeNull();
+describe("p15 #1: the initials-only mechanism (list emptied by Civic qa11; see tests/p16.test.ts)", () => {
+  it("NOT_A_PHOTO is empty, EXCLUDE honours it, and the empty list still ships in both data files", () => {
+    expect(NOT_A_PHOTO).toEqual({});
+    for (const id of IDS) expect(EXCLUDE(id, batch[id])).toBe(false);
+    expect(ph.initialsOnly).toEqual({});
+    expect(man.initialsOnly).toEqual({});
+    expect(INITIALS_ONLY.size).toBe(0);
   });
 });
 

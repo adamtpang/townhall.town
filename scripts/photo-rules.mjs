@@ -22,10 +22,9 @@ export const isAgencyPhoto = (p) =>
 export const isFisherVideo = (id, p) => id === "alida-fisher" && /\.webm|sfgovtv|wikimedia/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""} ${p.attribution ?? ""}`);
 // Design p15 #1 (Oct 30, 5:34 AM CT): images that are not photos of the candidate fall back to initials. Kept here (not in
 // Civic's batch) so the rule holds across re-ingests; the reason ships in data/photos.json and data/portraits-manifest.json.
-export const NOT_A_PHOTO = {
-  "bunny-mcfadden": "Illustration, not a photo (Design p15): initials only.",
-  "pearci-pj-bastiany-iii": "'VOTE' campaign poster, not a photo (Design p15): initials only.",
-};
+// Civic qa11 (Oct 30, 5:50 AM CT): McFadden and Bastiany now have solo campaign photographs, so both are off the list.
+// Add an id with its reason here to make a candidate initials-only again.
+export const NOT_A_PHOTO = {};
 export const EXCLUDE = (id, p) => id in NOT_A_PHOTO ||
   /txcourts\.gov/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""}`) /* image or its page, not notes that mention a search */ || isFisherVideo(id, p) || isAgencyPhoto(p) ||
   /news|press agency|getty|associated press|\bAP\b|reuters/i.test(String(p.sourceType ?? "")) || // never news photos (Adam 12:16 AM)

@@ -4,10 +4,7 @@
   112,
   160
  ],
- "initialsOnly": {
-  "bunny-mcfadden": "Illustration, not a photo (Design p15): initials only.",
-  "pearci-pj-bastiany-iii": "'VOTE' campaign poster, not a photo (Design p15): initials only."
- },
+ "initialsOnly": {},
  "portraits": {
   "adrienne-e-adams": {
    "sourceUrl": "https://pbs.twimg.com/profile_images/2031800195806035968/gNOMSlSL_400x400.jpg",
@@ -760,6 +757,46 @@
      "file": "/portraits/bruce-a-blakeman-todd-hood-160.webp",
      "bytes": 2454,
      "sha256": "fc40e87ca34fa9f784d2cb91dfa20f66b5a5011ebe63f7ae3b6b14ec02542ca7"
+    }
+   }
+  },
+  "bunny-mcfadden": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a962a969b639a4190930b78/ab11e977-ab73-40f3-a58b-b8131626ad91/DSC09407.jpg?format=750w",
+   "localFile": null,
+   "page": "https://www.ourcitycollege.com/bunny-mcfadden",
+   "sourceSha256": "d2e3f2885fd06d1499f5ffcf33d07dd19396d0a4f667111a481ba3366baefff9",
+   "sourceBytes": 102676,
+   "sourceSize": [
+    562,
+    562
+   ],
+   "precrop": {
+    "left": 47,
+    "top": 150,
+    "width": 562,
+    "height": 562
+   },
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 562,
+    "height": 562
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/bunny-mcfadden-112.webp",
+     "bytes": 2202,
+     "sha256": "82ef46824e46b6b7b3de91b369277f068c48b50375dd6ed717d82e657e6866ae"
+    },
+    "160": {
+     "file": "/portraits/bunny-mcfadden-160.webp",
+     "bytes": 3608,
+     "sha256": "8fc313c38ccb8ae135130b3093bf85a14d0bb3858c2a92ea4d393400624262e1"
     }
    }
   },
@@ -4710,6 +4747,46 @@
      "file": "/portraits/pat-dixon-160.webp",
      "bytes": 3276,
      "sha256": "a6052cf7be6a688f567e4cf6b50990bfb4664124afe7ec0eda3772af2d78bc0c"
+    }
+   }
+  },
+  "pearci-pj-bastiany-iii": {
+   "sourceUrl": "https://bastiany-campaign-site.replit.app/assets/pj-sf-event-C4sI-O8G.webp",
+   "localFile": "/workspace/townhall/civic/photos_local/pearci-pj-bastiany-iii.jpg",
+   "page": "https://bastiany-campaign-site.replit.app/",
+   "sourceSha256": "26a255fb982534ff7e986606b176656d03c516e8c05f0aab79db804e724d96a4",
+   "sourceBytes": 271388,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "precrop": {
+    "left": 390,
+    "top": 400,
+    "width": 200,
+    "height": 200
+   },
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/pearci-pj-bastiany-iii-112.webp",
+     "bytes": 1182,
+     "sha256": "4612256aa0e92c4c10eb5a35212df865d8d0d1746af969cb5076defeda7adf17"
+    },
+    "160": {
+     "file": "/portraits/pearci-pj-bastiany-iii-160.webp",
+     "bytes": 1882,
+     "sha256": "bb8dbee8938dba6bce227753bd26f93c116af6922f08f61cddee81213c2b0654"
     }
    }
   },
