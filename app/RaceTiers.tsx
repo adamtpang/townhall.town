@@ -216,7 +216,13 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60" data-tier-intro><span className="block">Races, ranked by how much the office does and how close the race is.</span><span className="block">Never candidates.</span></p>
-      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings (Cook Political Report, Sabato&rsquo;s Crystal Ball, Inside Elections; linked on each race) call it a toss-up or tilt, or when its live Polymarket market has the top outcome between 35% and 65%. Polymarket can move a race up, never down. Races with no rating and no Polymarket market are ranked on the office alone and get no market line. Market prices are not forecasts or recommendations.</p>
+      {/* QA phone pass Oct 30: the legend is short lines, each term with a one-line plain explanation (same facts as before). */}
+      <dl className="mt-4 max-w-2xl space-y-2 text-sm leading-5 text-black/60" data-tier-legend>
+        <div data-legend="most"><dt className="inline font-[530] text-black">Most at stake:</dt> <dd className="inline">the biggest offices in the closest races. Then High, Moderate and Lower stakes.</dd></div>
+        <div data-legend="competitive"><dt className="inline font-[530] text-black">Competitive (race ratings):</dt> <dd className="inline">published race ratings (Cook Political Report, Sabato&rsquo;s Crystal Ball, Inside Elections; linked on each race) call it a toss-up or tilt.</dd></div>
+        <div data-legend="market"><dt className="inline font-[530] text-black">Polymarket / market prices:</dt> <dd className="inline">a live Polymarket market with the top outcome between 35% and 65% also counts as Competitive. Polymarket can move a race up, never down.</dd></div>
+      </dl>
+      <p className="mt-2 max-w-2xl text-sm leading-5 text-black/60" data-legend="note">Races with no rating and no Polymarket market are ranked on the office alone and show no market line. Market prices are not forecasts or recommendations.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
