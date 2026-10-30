@@ -16,6 +16,7 @@ import IssueMatch from "./IssueMatch";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
+import { useT } from "../lib/i18n";
 import MeasureMath from "./MeasureMath";
 import measureData from "../data/measures.json";
 const MEASURE_ZIPS = new Set((measureData as { measures: { zips: string[] }[] }).measures.flatMap((m) => m.zips));
@@ -233,6 +234,7 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
 }
 
 export default function BallotAgent() {
+  const t = useT();
   const [zip, setZip] = useState("");
   const [busy, setBusy] = useState(false);
   const [locating, setLocating] = useState(false);
@@ -318,7 +320,7 @@ export default function BallotAgent() {
   const races = (b?.races || []) as R[];
   const problems = (b?.problems || []) as Problem[];
   const markets = result?.markets || {};
-  const doneCount = TOOLS.filter((t) => steps[t]?.status === "done").length;
+  const doneCount = TOOLS.filter((x) => steps[x]?.status === "done").length;
   const picked = problems.filter((p) => care[p.topic || p.id]);
   const marketRaces = useMemo(() => races.filter((r) => marketFor(markets, r.id)), [races, markets]);
 
@@ -334,40 +336,40 @@ export default function BallotAgent() {
         <Input
           inputMode="numeric"
           autoComplete="postal-code"
-          aria-label="ZIP code"
-          placeholder="Enter your ZIP"
+          aria-label={t("ZIP code")}
+          placeholder={t("Enter your ZIP")}
           value={zip}
           onChange={(e) => setZip(e.target.value)}
           className="h-16 text-3xl sm:text-4xl"
         />
-        <Button type="submit" size="lg" disabled={busy}>{busy ? "Reading…" : "Go"}</Button>
+        <Button type="submit" size="lg" disabled={busy}>{busy ? t("Reading…") : t("Go")}</Button>
       </form>
       <div className="mt-6 flex flex-wrap gap-2">
         {DEMO.map((d) => (
           <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)}>
-            {d.label}
+            {t(d.label)}
           </Button>
         ))}
       </div>
-      {notice && <p className="mt-6 text-base text-black">{notice}</p>}
+      {notice && <p className="mt-6 text-base text-black">{t(notice)}</p>}
       {(busy || (result && !b)) && (
         <div className="mt-10 max-w-2xl">
           <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
-          <p className="mt-2 text-sm text-black/50">{busy ? (TOOLS.map((t) => steps[t]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((t) => steps[t]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
+          <p className="mt-2 text-sm text-black/50">{busy ? (TOOLS.map((x) => steps[x]).filter((s) => s?.status !== "done").length ? t(TOOL_LABEL[TOOLS.find((x) => steps[x]?.status !== "done") || TOOLS[0]]) : t("Writing your ballot")) + "…" : ""}</p>
         </div>
       )}
 
       {b && (
         <div id="ballot" className="mt-32">
           <p className="text-sm text-black/60">
-            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP spans two House districts. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">Check which is yours</a></>}{problems.length === 0 ? " · No local problem data for this ZIP yet." : null}
+            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <>{t(" · Your ZIP spans two House districts. ")}<a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer">{t("Check which is yours")}</a></>}{problems.length === 0 ? t(" · No local problem data for this ZIP yet.") : null}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
           <MeasureMath zip={b.zip} n="03" />
           <section id="plan" className="border-t border-black py-24">
             <p className="text-sm text-black/50">{MEASURE_ZIPS.has(b.zip) ? "04" : "03"}</p>
-            <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">Your plan</h2>
+            <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">{t("Your plan")}</h2>
             <Plan state={b.state} />
           </section>
         </div>
@@ -494,6 +496,7 @@ function TurnoutSection({ t }: { t: TurnoutDetail }) {
 
 
 function Plan({ state }: { state: "TX" | "CA" | "NY" }) {
+  const t = useT();
   const rows =
     state === "TX"
       ? [
@@ -519,10 +522,10 @@ function Plan({ state }: { state: "TX" | "CA" | "NY" }) {
     <dl className="mt-16">
       {rows.map((r) => (
         <div key={r.k} className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
-          <dt className="font-serif text-5xl leading-none sm:col-span-4 sm:text-6xl">{r.k}</dt>
+          <dt className="font-serif text-5xl leading-none sm:col-span-4 sm:text-6xl">{t(r.k)}</dt>
           <dd className="sm:col-span-8">
-            <p className="text-xl">{r.v}</p>
-            <a className="mt-1 inline-block text-sm" href={r.src} target="_blank" rel="noreferrer">{r.s} ↗</a>
+            <p className="text-xl">{t(r.v)}</p>
+            <a className="mt-1 inline-block text-sm" href={r.src} target="_blank" rel="noreferrer">{t(r.s)} ↗</a>
           </dd>
         </div>
       ))}
