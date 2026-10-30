@@ -84,7 +84,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                 content: (
                   <>
                     <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                      {rows.map(({ c, o, grade }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers} answeredYesNo={yesNo > 0} grade={grade} />)}
+                      {rows.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers} answeredYesNo={yesNo > 0} grade={grade} />)}
                     </ul>
                     <RaceFooter cands={rows.map(({ c }) => c)} gradesHidden={gradesHidden} /></PhotoGroup>
                     {/* QA P2: the live research button on every non-judicial race. */}

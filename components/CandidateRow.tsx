@@ -10,6 +10,7 @@ import { HIT } from "../lib/typeScale";
 import CHECKED from "../data/sources-checked.json";
 import { liveUrl } from "../lib/links";
 import { SHOW_ACCOUNTABILITY } from "../lib/flags";
+import { pointsFor, NO_RECORD_LINE } from "../lib/mainPoints";
 
 export type RowCand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; officialSite?: string | null };
 type O = { status: string; agree: number; n: number; sourced: number; sourcedIds: string[]; pct?: number | null; enough?: boolean };
@@ -67,20 +68,12 @@ export function cleanChecked(list: Checked[]): Checked[] {
     hosts.add(h); labels.add(l); return true;
   });
 }
-const RECORD_TIP = "Record = issues with a sourced stance or recorded vote, out of the issues asked for your ZIP. It measures what is on the record, not whether a position is right.";
-const clip = (t: string, n = 110) => (t.length > n ? `${t.slice(0, n).replace(/\s+\S*$/, "")}…` : t);
-function shortText(s: { voteRecord?: string; quote?: string; summary?: string; bill?: string }) {
-  const v = voteLine(s);
-  if (v) return v;
-  if (s.quote) return <>&ldquo;{clip(s.quote)}&rdquo;</>;
-  return s.summary ? clip(s.summary) : null;
-}
 const issueLabel = (id: string) => ISSUES.find((i) => i.id === id)?.label ?? id;
 
 /** Design p10 P1: visible = name, grade, the issues the voter answered Yes/No (each linked to its source) and the
  *  photo credit. Everything else (all quotes, unclear items, "No record found", sources checked) sits behind one
  *  disclosure per candidate. Nothing is removed, only folded. */
-export default function CandidateRow({ c, o, ids, answeredYesNo = true, answers = {} }: { c: RowCand; o: O; grade?: string | null; ids: string[]; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined> }) {
+export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, answers = {} }: { c: RowCand; o: O; grade?: string | null; ids: string[]; raceId?: string; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined> }) {
   const st = stancesFor(c.name);
   const site = liveUrl(c.campaignSite) || liveUrl(c.officialSite) || null;
   const checked = o.sourced < 2 ? cleanChecked(sourcesChecked(c.name)) : [];
@@ -88,8 +81,12 @@ export default function CandidateRow({ c, o, ids, answeredYesNo = true, answers 
   const unsure = ids.filter((id) => st[id]?.status === "unsure" && st[id].value === null);
   const noRec = noRecordIssues(c.name, ids);
   const rec = recordFor(st, ids);
-  // Only points with a source link; never padded to 3.
-  const main = rec.ids.filter((id: string) => !!st[id]?.sourceUrl).slice(0, 3);
+  // Civic 10:19 AM CT Oct 30: main_points16.json is the ONLY source for main points and the record line (matched by
+  // race + candidate id or name). Only sourced points; never padded to 3.
+  const mp = pointsFor(raceId, c.name);
+  const main = (mp?.p ?? []).filter((x) => !!x.u).slice(0, 3);
+  const recLine = mp?.r?.t || NO_RECORD_LINE;
+  const recUrl = mp?.r?.u ?? null;
   // Fit: shown only when 2+ issues overlap (both sides non-zero); a 0 answer never counts.
   const fitLine = o.n >= 2 ? `Matches you on ${o.agree} of ${o.n} issues` : null;
   void answeredYesNo;
@@ -103,19 +100,20 @@ export default function CandidateRow({ c, o, ids, answeredYesNo = true, answers 
             sourced main points (never padded), the accountability line (flagged), then the race's one credit line. */}
         {fitLine ? <p className="text-base leading-6 text-black/60" data-fit={fitLine}>{fitLine}</p> : null}
         {main.length > 0 ? (
-          <ul className="mt-1" aria-label="Main points" data-main-points={main.length}>
-            {main.map((id: string) => { const s = st[id]; return (
-              <li key={id} className="flex min-w-0 items-baseline gap-2 text-base leading-6 text-black" data-main-point={id}>
-                <span className="min-w-0 truncate"><span className="font-[530]">{issueLabel(id)}:</span> {shortText(s)}</span>
-                <a href={s.sourceUrl!} target="_blank" rel="noreferrer" className="relative shrink-0 text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(s.sourceUrl)}{ext}</a>
+          <ul className="mt-1" aria-label="Main points" data-main-points={main.length} data-mp-id={mp?.id}>
+            {main.map((x, k) => (
+              <li key={k} className="flex min-w-0 items-baseline gap-2 text-base leading-6 text-black" data-main-point={x.i}>
+                <span className="min-w-0 truncate" data-main-text>{x.t}</span>
+                <a href={x.u} target="_blank" rel="noreferrer" className="relative shrink-0 text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
               </li>
-            ); })}
+            ))}
           </ul>
-        ) : null}
+        ) : mp?.none && o.sourced !== 0 ? <p className="mt-1 text-base leading-6 text-black/60" data-no-main-points>{mp.none}</p> : null}
         {SHOW_ACCOUNTABILITY ? (
-          <p className="mt-1 text-xs leading-4 text-black/60" data-record={rec.x} data-record-n={rec.n} title={RECORD_TIP}>
-            Record: {rec.x} of {rec.n} issue{rec.n === 1 ? "" : "s"} {rec.x === 1 ? "has" : "have"} a sourced stance or vote
-          </p>
+          <div className="mt-1 flex min-w-0 items-baseline gap-2 text-xs leading-4 text-black/60" data-record={rec.x} data-record-n={rec.n} data-record-id={mp?.id}>
+            <p className="line-clamp-2 min-w-0" title={`Record: ${recLine}`} data-record-line>Record: {recLine}</p>
+            {recUrl ? <a href={recUrl} target="_blank" rel="noreferrer" className="relative shrink-0 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-record-source>{sourceLabel(recUrl)}{ext}</a> : null}
+          </div>
         ) : null}
         {o.sourced < 2 ? (
           // QA 7391b20 P2: never an empty source list. With nothing recorded as checked, point to their own site and

@@ -1,5 +1,6 @@
 "use client";
 import { judicialShort } from "../lib/judicial";
+import { pointsFor } from "../lib/mainPoints";
 import { plain, printedDate } from "../lib/plain";
 import { H2, H3, HIT } from "../lib/typeScale";
 const listOf = (xs: string[]) => (xs.length < 3 ? xs.join(" and ") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
@@ -115,6 +116,18 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
+                    {/* Civic main_points16 (Oct 30): judges get only a factual role line from their official profile when one
+                        exists (8 in Texas), else the plain empty text. Rendered as given; never a stance. */}
+                    {isJudicial(r) && r.candidates?.length ? (
+                      <ul className="max-w-[60ch] space-y-1 text-sm leading-5 text-black/80" data-judge-points>
+                        {r.candidates.map((c) => { const e = pointsFor(r.id, c.name); const x = e?.p[0]; return (
+                          <li key={c.name} className="min-w-0" data-judge={c.name}>
+                            <span className="font-[530]">{c.name}:</span>{" "}
+                            {x ? <>{x.t} <a href={x.u} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-judge-source>{new URL(x.u).hostname.replace(/^www\./, "")}<span className="sr-only"> (opens in a new tab)</span></a></> : <span className="text-black/60">{e?.none ?? "No public position found yet"}</span>}
+                          </li>
+                        ); })}
+                      </ul>
+                    ) : null}
                     <p className="max-w-[45ch] text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No rating" ? <> <span data-closeness>{r.meta.closeness} (race ratings).</span></> : null}{mk ? <> <span data-closeness-market>{polymarketCloseness(mk)} on Polymarket.</span></> : null}{r.meta?.contest ? <> {r.meta.contest.replace(/\.+$/, "")}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
                     <MarketLine line={leaderLine(mk)} />
                     {r.judicialNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" title={r.judicialNoteSource.label} className={`${HIT} break-words text-[#3760F2]`} data-judicial-source>{judicialShort(r.judicialNoteSource.label)} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}

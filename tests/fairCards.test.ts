@@ -29,8 +29,8 @@ describe("fair cards (Adam 9:58 AM CT Oct 30)", () => {
     expect(src("lib/flags.ts")).toMatch(/DEFAULT_SHOW_ACCOUNTABILITY = true/);
     const c = src("components/CandidateRow.tsx");
     expect(c).toMatch(/SHOW_ACCOUNTABILITY \?/);
-    expect(c).toMatch(/Record: \{rec\.x\} of \{rec\.n\} issue/);
-    expect(c).toMatch(/a sourced stance or vote/);
+    expect(c).toMatch(/Record: \{recLine\}/);
+    expect(c).toMatch(/line-clamp-2/); expect(c).toMatch(/pointsFor\(raceId, c\.name\)/);
     expect(c).toMatch(/Matches you on \$\{o\.agree\} of \$\{o\.n\} issues/);
     expect(c).toMatch(/o\.n >= 2 \?/);
   });

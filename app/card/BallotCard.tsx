@@ -74,7 +74,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
                   <p className="text-base font-[530]">{r.title || r.id}</p>
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} />)}
+                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} />)}
                   </ul>
                   <RaceFooter cands={list.map(({ c }) => c)} gradesHidden={null} /></PhotoGroup>
                 </li>

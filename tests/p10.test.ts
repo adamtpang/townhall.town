@@ -61,7 +61,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     const s = src("components/CandidateRow.tsx");
     expect(s).not.toMatch(/data-grade-slot|gradeLabel\(/);
     // Design 10:14 AM CT Oct 30: fit line only with 2+ shared issues; Record line states its method inline.
-    expect(s).toMatch(/a sourced stance or vote/);
+    expect(s).toMatch(/Record: \{recLine\}/);
     expect(s).toMatch(/Matches you on/);
   });
   it("'Who lines up': only answered issues show, the rest sits behind 'Show all positions'; date unsure is a title", () => {

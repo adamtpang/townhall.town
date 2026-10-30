@@ -56,7 +56,7 @@ describe("Civic merge checks", () => {
       expect(rest, z).not.toMatch(/\b(Tier|Grade)\s+[SABC]\b/);
       for (const m of html.matchAll(/data-grade="([SABC])"[^>]*>(.*?)<\/p>/g)) expect(m[2]).toMatch(/^Grade shows how many of your issue picks match this candidate&#x27;s sourced stances \(\d+ of \d+ issues?\)\. It is not an endorsement or a rating of the candidate\.$/);
       // Candidates' own sourced words (quotes, Ballotpedia survey summaries) may say "best"; our copy never does.
-      expect(html.replace(/“[^”]*”/g, "").replace(/data-bp-summary="true">Ballotpedia summary:<\/span>[^<]*/g, ""), z).not.toMatch(/\b(best|vote for)\b/i);
+      expect(html.replace(/“[^”]*”/g, "").replace(/data-bp-summary="true">Ballotpedia summary:<\/span>[^<]*/g, "").replace(/data-main-text="true">[^<]*/g, ""), z).not.toMatch(/\b(best|vote for)\b/i);
       expect(html, z).not.toMatch(/market odds|No market odds yet|\d+% chance|Kalshi|Leader on Polymarket|data-market-line/i);
       expect(html, z).toMatch(/Most at stake|High/);
     }

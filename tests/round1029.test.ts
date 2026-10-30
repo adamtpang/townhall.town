@@ -150,7 +150,7 @@ describe("CANDIDATE_GRADES (issue overlap, preview only)", () => {
       const b = ballotFor(z)!;
       const html = renderToStaticMarkup(h(EndScreen, { zip: z, races: b.races as never, answers: allYes, ids, answered: ids.length }));
       // Our own words only: candidates' sourced quotes and Ballotpedia survey summaries may say "best".
-      expect(html.replace(/“[^”]*”/g, "").replace(/data-bp-summary="true">Ballotpedia summary:<\/span>[^<]*/g, "")).not.toMatch(/\b(best|vote for)\b/i);
+      expect(html.replace(/“[^”]*”/g, "").replace(/data-bp-summary="true">Ballotpedia summary:<\/span>[^<]*/g, "").replace(/data-main-text="true">[^<]*/g, "")).not.toMatch(/\b(best|vote for)\b/i);
       for (const r of b.races as unknown as { id: string; judicial?: unknown; candidates: { name: string }[] }[]) {
         const block = html.split(`data-race="${r.id}"`)[1]?.split(/data-race="|data-race-none-list/)[0];
         if (!block) continue;
