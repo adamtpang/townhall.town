@@ -14,6 +14,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ z
   if (!zip || !b) redirect("/");
   const ids = issuesFor(zip, b.state).map((i) => i.id);
   // Photo (already all-or-none per race), site link: the same row as the Who section (Adam, Oct 29 11:28 PM CT).
-  const races = b.races.map((r) => ({ id: r.id, title: r.title, level: r.level, judicial: (r as { judicial?: unknown }).judicial ? true : false, candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, photo: c.photo ?? null, campaignSite: (c as { campaignSite?: string | null }).campaignSite ?? null, officialSite: c.officialSite ?? null })) }));
+  const races = b.races.map((r) => ({ id: r.id, title: r.title, level: r.level, judicial: (r as { judicial?: unknown }).judicial ? true : false, meta: (r as { meta?: unknown }).meta ?? null, candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, photo: c.photo ?? null, campaignSite: (c as { campaignSite?: string | null }).campaignSite ?? null, officialSite: c.officialSite ?? null })) }));
   return <BallotCard zip={zip} place={b.place} ids={ids} races={races} />;
 }

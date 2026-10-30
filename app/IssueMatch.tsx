@@ -10,6 +10,8 @@ import { type Answers } from "../lib/issues";
 import { issuesFor, ISSUE_INTRO } from "../lib/issueOrder";
 import { migrateAnswers, press, press5, bucketOf, BUCKETS, normalizeAnswers } from "../lib/overlapCore.mjs";
 import EndScreen from "./EndScreen";
+import { CITY } from "../lib/gcal";
+import type { Mk } from "./RaceTiers";
 import { useT } from "../lib/i18n";
 
 type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null; officialSite?: string | null; finance?: { label?: string; url?: string } | null };
@@ -32,9 +34,8 @@ function load(): Answers {
 }
 
 
-const CITY: Record<string, string> = { "78701": "Austin", "94103": "San Francisco", "10001": "New York" };
 
-export default function IssueMatch({ zip, state, races }: { zip: string; state: "TX" | "CA" | "NY"; races: RaceLite[] }) {
+export default function IssueMatch({ zip, state, races, market }: { zip: string; state: "TX" | "CA" | "NY"; races: RaceLite[]; market?: (id: string) => Mk }) {
   const issues = issuesFor(zip, state);
   const t = useT();
   const ids = issues.map((i) => i.id);
@@ -121,7 +122,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
           )}
         </div>
       </section>
-      <EndScreen zip={zip} races={races} answers={answers} ids={ids} answered={answered} />
+      <EndScreen zip={zip} races={races} answers={answers} ids={ids} answered={answered} market={market} />
     </>
   );
 }

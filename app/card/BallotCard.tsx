@@ -9,11 +9,13 @@ import RaceFooter from "../../components/RaceFooter";
 import CandidateRow, { type RowCand } from "../../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../../lib/endscreen.mjs";
 import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
+import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
+import { Button } from "../../components/ui/button";
 
 const ANSWERS_KEY = "th-answers-v1";
 const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
 const fmt = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
-type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; candidates: RowCand[] };
+type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; meta?: unknown; candidates: RowCand[] };
 
 /** One printable page: overlap lines (not a recommendation), where, when, calendar. State is the URL hash or this device only. */
 export default function BallotCard({ zip, place, ids, races }: { zip: string; place: string; ids: string[]; races: RaceLite[] }) {
@@ -30,12 +32,15 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
   const site = where.sites[0];
   const ed = when.events.find((e: { kind: string }) => e.kind === "election");
   const early = when.events.find((e: { kind: string }) => e.kind === "early");
+  // Google Calendar (primary): race names from the tier list (sourced ratings; no live market on this page), no answers.
+  const edWhere = useMemo(() => whereFor(zip, ed?.start ?? today), [zip, ed, today]);
+  const gcalEd = useMemo(() => (ed ? planEventUrl({ e: ed, zip, site: edWhere.sites[0], lookupUrl: edWhere.lookupUrl, dependsOnAddress: edWhere.dependsOnAddress, topRaces: topRaceTitles(races as never) }) : null), [ed, zip, edWhere, races]);
   const answered = answers ? ids.filter((id) => typeof answers[id] === "number").length : 0;
   const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => { const l0 = r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })); const g = gradesForRace(r, l0.map((x) => x.o), answered, zip); return { r, gradesHidden: g.hidden, list: l0.map((x, i) => ({ ...x, grade: g.grades[i] })) }; }); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in ballot order (Adam, 11:28 PM: photos and sources on every row)
   const yesNo = answers ? ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length : 0;
 
   function ics() {
-    const blob = new Blob([buildIcs(when.events, site ? site.address : "")], { type: "text/calendar;charset=utf-8" });
+    const blob = new Blob([buildIcs(electionFirst(when.events), site ? site.address : "")], { type: "text/calendar;charset=utf-8" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "townhall-dates.ics";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   }
@@ -86,7 +91,8 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
       <div className="mt-10 flex flex-wrap gap-3 print:hidden">
         <button type="button" onClick={() => window.print()} className="h-12 bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80" data-card-print>Print</button>
         <button type="button" onClick={share} className="h-12 border border-black px-6 text-base font-[530]" data-card-share>{copied ? "Link copied" : "Share link"}</button>
-        {ed ? <button type="button" onClick={ics} className="h-12 border border-black/30 px-6 text-base hover:border-black" data-card-ics>Add to calendar (.ics)</button> : null}
+        {gcalEd ? <Button onClick={() => window.open(gcalEd, "_blank", "noopener")} className="h-12 rounded-none border border-black bg-transparent px-6 text-base font-[530] text-black hover:bg-transparent hover:border-black hover:text-black" data-card-gcal={gcalEd}>Add to Google Calendar ↗<span className="sr-only"> (opens in a new tab)</span></Button> : null}
+        {ed ? <button type="button" onClick={ics} className="inline-flex min-h-12 items-center px-2 text-sm text-black/60 underline decoration-black/20 underline-offset-2 hover:text-black" data-card-ics>or download .ics</button> : null}
         <a href="/" className="inline-flex h-12 items-center px-2 text-base text-[#3760F2]">Back to the full ballot</a>
       </div>
       <p className="mt-6 text-sm leading-5 text-black/60">Your answers stay on this device and in this link. townhall.town stores nothing on a server. <a href={ed?.sourceUrl} className={link} target="_blank" rel="noreferrer">Dates source ↗</a></p>
