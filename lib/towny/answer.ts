@@ -3,8 +3,8 @@
 // floating Towny panel give the same answers. Unknown questions get a helpful reply with suggestion chips, never a dead end.
 import { ballotFor } from "../tools";
 import { townyFact, todayCT } from "../townyFacts";
-import { faqFor, WHO_LINE, OFFICES } from "./faq";
-import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost } from "../townyChat";
+import { faqFor, WHO_LINE, OFFICES, SF_DOE } from "./faq";
+import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace } from "../townyChat";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
 
@@ -40,19 +40,24 @@ function scope(q: string, titles: { title: string }[]) {
   if (/\b(u\.?s\.?|federal|congress\w*|house)\b/i.test(q) || /^\s*(the\s+)?(representatives?|rep)\s*$/i.test(q)) return titles.filter((r) => FEDERAL.test(r.title) || !/representative|assembly/i.test(r.title));
   return titles;
 }
+// Adam, Oct 30 2:08 PM CT (Civic's choice): 94103's office link in the ballot-order and who's-running replies is the SF
+// Department of Elections page on sf.gov. Checked with curl at 2:10 PM CT: it answers 200 after one sf.gov redirect.
+// Other replies (when/where) keep OFFICES as they are.
+export { SF_DOE };
+const officeFor = (zip: string) => (zip === "94103" ? SF_DOE : OFFICES[zip]);
 export const UNSURE_ORDER = "Unsure: we couldn't confirm the ballot order in a cited source.";
 type Race = { title: string; level?: string; source?: string; candidates?: { name: string }[] };
 
 /** "Who is running for <office>?": the ballot data's candidates for each matching race. Civic, Oct 30 1:37 PM CT: the order
  *  is not yet checked against each office's sample ballot, so the reply says so (UNSURE_ORDER) and links the official
  *  election office first; the race's own source (e.g. Ballotpedia) stays as the second link, for who is running. */
-export function runningFor(zip: string, text: string): Curated | null {
+export function runningFor(zip: string, text: string, only?: (r: Race) => boolean): Curated | null {
   const m = ASKS_RUNNING.exec(String(text || "").trim());
   if (!m) return null;
   const b = ballotFor(zip);
   if (!b) return null;
-  const office = OFFICES[zip];
-  const races = (b.races as Race[]).filter((r) => r.level !== "measure");
+  const office = officeFor(zip);
+  const races = (b.races as Race[]).filter((r) => r.level !== "measure" && (!only || only(r)));
   const qText = m[1];
   const alias = ALIASES.filter((a) => a.q.test(qText));
   // "Lieutenant governor" must not also pull in the governor alias.
@@ -92,8 +97,28 @@ export const BALLOT_ORDER_LINE = "Ballot order: Unsure, we haven't confirmed it 
 export const ASKS_ORDER = /\bballot order\b|\border\b[^?]*\b(candidates?|names?|listed|appear\w*)\b|\b(candidates?|names?|listed|appear\w*)\b[^?]*\border\b|\b(what|which) order\b[^?]*\bballot\b|\border (on|of) (the|my|our) ballot\b|\blisted first\b|\b(first|top|last) on (the|my|our) ballot\b|\bposition (on|of) (the|my|our) ballot\b|\bballot position\b/i;
 export const asksOrder = (text: string) => ASKS_ORDER.test(String(text || "").replace(/\bin order to\b/gi, " "));
 export function ballotOrder(zip: string): Curated | null {
-  const office = OFFICES[zip];
+  const office = officeFor(zip);
   return office ? { intent: "ballot-order", reply: BALLOT_ORDER_LINE, links: [office] } : null;
+}
+
+// Civic, Oct 30 2:10 PM CT: a race that is the same on every ballot in the covered city. Statewide and U.S. Senate races are;
+// anything drawn by district, division or county is not. San Francisco is one city and county, so its citywide offices are.
+const CITYWIDE: Record<string, RegExp> = { "94103": /^(assessor-recorder|public defender|board of education|community college board)\b/i };
+export const onEveryBallot = (zip: string) => (r: Race) =>
+  ((r.level === "federal" || r.level === "state") && !/\bdistrict\b|\bdivision\b|\bU\.S\. House\b|\bassembly\b|\brepresentative\b|^3rd court/i.test(r.title))
+  || !!CITYWIDE[zip]?.test(r.title);
+/** Another part of a covered city: the same-city line. When the question names a race that is on every ballot there, the
+ *  answer from the covered ZIP's data comes first and the same-city line follows as a note. */
+export function sameCityReply(text: string): Curated | null {
+  const city = sameCity(text);
+  if (!city) return null;
+  const line = SAME_CITY[city];
+  const q = stripPlace(text, city);
+  const all = runningFor(city, q);
+  const every = runningFor(city, q, onEveryBallot(city));
+  if (all?.intent === "running" && every?.intent === "running" && all.reply === every.reply)
+    return { intent: "same-city-running", reply: `${every.reply} ${line.reply}`, links: dedupeByHost([...every.links, ...line.links]) };
+  return { intent: "same-city", reply: line.reply, links: [...line.links] };
 }
 
 /** Everything Towny answers without a model, in this order. null = let the interview model read it for issue answers. */
@@ -102,6 +127,8 @@ export function curated(zip: string, text: string, today: string = todayCT()): C
   // QA pre-pass 6b2ae5c P1-2: another state, a city outside the 3, or registering elsewhere: Civic's exact line, vote.gov.
   if (outOfScope(t)) return { intent: "out-of-scope", reply: OUT_OF_SCOPE, links: [...OUT_OF_SCOPE_LINKS] };
   if (ASKS_WHO.test(t)) return { intent: "who", reply: WHO_LINE, links: [], chips: [WHO_CHIP] };
+  const same = sameCityReply(t);
+  if (same) return same;
   if (asksOrder(t)) { const o = ballotOrder(zip); if (o) return o; }
   const run = runningFor(zip, t);
   if (run) return { ...run, links: dedupeByHost(run.links) };

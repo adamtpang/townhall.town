@@ -9,7 +9,7 @@ import { TownyMark } from "./TownyMark";
 import { Button } from "../ui/button";
 import {
   TOWNY_LABEL, TOWNY_OPENER, TOWNY_CAPTION, TOWNY_SUGGESTIONS, WHO_TO_VOTE_REPLY, WHO_CHIP, OUT_OF_SCOPE, ASK_ZIP, THINKING,
-  PLACEHOLDER, NO_MATCH, FAILED, routeTurn, STATE_OF, host, dedupeByHost,
+  PLACEHOLDER, NO_MATCH, FAILED, routeTurn, sameCity, STATE_OF, host, dedupeByHost,
 } from "../../lib/townyChat";
 import { FAQS, faqFor } from "../../lib/towny/faq";
 import { issuesFor } from "../../lib/issueOrder";
@@ -138,7 +138,8 @@ export default function TownyFab({ zip: pageOwnZip }: { zip?: string } = {}) {
     const z = r.kind === "fixed" ? r.zip ?? zip : r.zip;
     if (r.kind !== "fixed" || r.zip) setZip2(z ?? null);
     if (r.kind === "fixed" && (r.reply === OUT_OF_SCOPE || r.reply === WHO_TO_VOTE_REPLY)) return say({ text: r.reply, chips: r.chips, links: r.links });
-    const faq = faqFor(t, z ?? null);
+    // Another part of a covered city goes to the server for the same-city line, never the covered ZIP's FAQ answer.
+    const faq = sameCity(t) ? null : faqFor(t, z ?? null);
     if (faq) return say({ text: faq.a, links: faq.links, chips: faq.id === "who" ? [WHO_CHIP] : undefined });
     if (r.kind === "fixed") {
       if (r.reply === ASK_ZIP) { setPending(t); return say({ text: ASK_ZIP }); }
@@ -171,10 +172,16 @@ export default function TownyFab({ zip: pageOwnZip }: { zip?: string } = {}) {
     setBusy(false);
   }
 
+  // Adam, Oct 30 2:08 PM CT: on /card the overlap chip goes to the card's own "Who lines up with you" race list
+  // ([data-card-overlap]). A page with its own ZIP never says "Enter your ZIP on the page first"; with no overlap
+  // section to go to, the chip is hidden there instead.
+  const whoTarget = () => (typeof document === "undefined" ? null : document.getElementById("what-matters") ?? document.querySelector<HTMLElement>("[data-card-overlap]"));
+  const showChip = (c: string) => c !== WHO_CHIP || !pageOwnZip || !!whoTarget();
   function chip(c: string) {
     if (c === WHO_CHIP) {
-      const el = document.getElementById("what-matters");
+      const el = whoTarget();
       if (el) { setOpen(false); el.scrollIntoView({ block: "start" }); (el.querySelector<HTMLElement>("h2") ?? el).focus?.(); return; }
+      if (pageOwnZip) return;
       return say({ text: "Enter your ZIP on the page first. Then answer the questions in Who lines up with you to see the overlap." });
     }
     send(c);
@@ -216,9 +223,9 @@ export default function TownyFab({ zip: pageOwnZip }: { zip?: string } = {}) {
                         {m.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" title={l.label} className="inline-flex min-h-11 items-center whitespace-nowrap text-sm text-primary underline underline-offset-4" data-towny-source>{host(l.url)} ↗<span className="sr-only"> (opens in a new tab)</span></a>)}
                       </span>
                     ) : null}
-                    {m.chips?.length ? (
+                    {m.chips?.filter(showChip).length ? (
                       <span className="mt-3 flex flex-wrap gap-2" data-towny-chips>
-                        {m.chips.map((c) => <Button key={c} type="button" variant="outline" onClick={() => chip(c)} className="h-auto min-h-11 whitespace-normal rounded-none border-input py-2 text-left text-base font-[450]" data-towny-chip>{c}</Button>)}
+                        {m.chips.filter(showChip).map((c) => <Button key={c} type="button" variant="outline" onClick={() => chip(c)} className="h-auto min-h-11 whitespace-normal rounded-none border-input py-2 text-left text-base font-[450]" data-towny-chip>{c}</Button>)}
                       </span>
                     ) : null}
                   </li>

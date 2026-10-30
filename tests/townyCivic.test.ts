@@ -13,6 +13,8 @@ const root = new URL("..", import.meta.url).pathname;
 const src = (f: string) => readFileSync(root + f, "utf8");
 const ZIPS = ["78701", "94103", "10001"] as const;
 const OFFICE = { "78701": "https://votetravis.gov", "94103": "https://sfelections.org", "10001": "https://vote.nyc" } as const;
+// Adam, Oct 30 2:08 PM CT: who's-running and ballot-order replies link 94103's SF Department of Elections page on sf.gov.
+const RUN_OFFICE = { ...OFFICE, "94103": "https://www.sf.gov/departments/department-elections" } as const;
 const host = (u: string) => new URL(u).hostname.replace(/^www\./, "");
 const ask = (zip: string, office: string) => runningFor(zip, `Who is running for ${office}?`);
 
@@ -59,7 +61,7 @@ describe("Civic 2 + QA P1: who is running, by office name, on all 3 ZIPs", () =>
       expect(c.reply.endsWith(` ${UNSURE_ORDER}`)).toBe(true);
       expect(UNSURE_ORDER).toBe("Unsure: we couldn't confirm the ballot order in a cited source.");
       expect(c.reply).not.toMatch(/Listed in ballot order/);
-      expect(c.links[0].url).toBe(OFFICE[z]);
+      expect(c.links[0].url).toBe(RUN_OFFICE[z]);
       expect(c.links.slice(1).some((l) => host(l.url) === "ballotpedia.org")).toBe(true);
       expect(c.links.findIndex((l) => host(l.url) === "ballotpedia.org")).toBeGreaterThan(0);
     }

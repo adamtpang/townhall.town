@@ -68,8 +68,8 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
         ) : <p className="mt-2 text-base text-black/60">No sourced polling place for this ZIP yet.</p>}
       </section>
 
-      <section className="mt-10 border-t border-black/15 pt-6">
-        <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
+      <section className="mt-10 border-t border-black/15 pt-6" id="card-overlap" data-card-overlap>
+        <h2 className="text-sm font-[530] text-black/60" tabIndex={-1}>Who lines up with you</h2>
         <p className="mt-1 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation. Court races are not compared.</p>
         
         <>

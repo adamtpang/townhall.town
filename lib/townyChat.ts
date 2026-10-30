@@ -34,9 +34,10 @@ const OTHER_STATES = ["alabama", "alaska", "arizona", "arkansas", "colorado", "c
   "north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", "south dakota",
   "tennessee", "utah", "vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming", "puerto rico", "guam",
   "district of columbia"];
-const OTHER_CITIES = ["houston", "dallas", "san antonio", "fort worth", "el paso", "corpus christi", "lubbock", "plano", "round rock",
+// Brooklyn, Queens, the Bronx, Staten Island and Round Rock moved to SAME_CITY_PLACES below (Civic, Oct 30 2:10 PM CT).
+const OTHER_CITIES = ["houston", "dallas", "san antonio", "fort worth", "el paso", "corpus christi", "lubbock", "plano",
   "pflugerville", "cedar park", "san marcos", "los angeles", "oakland", "berkeley", "san jose", "sacramento", "san diego", "fresno",
-  "long beach", "palo alto", "brooklyn", "queens", "bronx", "staten island", "buffalo", "rochester", "albany", "yonkers", "syracuse",
+  "long beach", "palo alto", "buffalo", "rochester", "albany", "yonkers", "syracuse",
   "chicago", "miami", "seattle", "boston", "atlanta", "denver", "phoenix", "philadelphia", "pittsburgh", "detroit", "las vegas",
   "nashville", "memphis", "baltimore", "milwaukee", "minneapolis", "new orleans", "salt lake city", "portland", "cincinnati",
   "cleveland", "indianapolis", "kansas city", "st\\.? louis", "saint louis", "tampa", "orlando", "jacksonville", "raleigh",
@@ -50,6 +51,54 @@ export const outOfScope = (text: string) => { const t = String(text || ""); retu
 
 export const zipsIn = (text: string) => (String(text).match(/\b\d{5}\b/g) || []);
 
+// Civic, Oct 30 2:10 PM CT: another part of a covered city is not out of scope. It gets that city's same-city line, which
+// says which ZIP Towny shows and where to look up the voter's own ballot. Same pattern for all 3 cities.
+import { OFFICES, SF_DOE, type FaqLink } from "./towny/faq";
+export const SAME_CITY: Record<"78701" | "94103" | "10001", { reply: string; links: FaqLink[] }> = {
+  "10001": { reply: "Towny shows the ballot for ZIP 10001 in Manhattan. Other parts of New York City have different races on their ballots. For yours, check vote.nyc.", links: [{ label: "vote.nyc", url: OFFICES["10001"].url }] },
+  "78701": { reply: "Towny shows the ballot for ZIP 78701 in downtown Austin. Other parts of Austin have different races on their ballots, and some are in Williamson or Hays County. For yours, check your county election office or vote.gov.", links: [VOTE_GOV] },
+  "94103": { reply: "Towny shows the ballot for ZIP 94103 in San Francisco. Other parts of the city have different district races on their ballots. For yours, check the SF Department of Elections.", links: [SF_DOE] },
+};
+// Named parts of each city. Kept to names that aren't also a street, a US state or another city's place (no "Mission",
+// "Richmond" or "Chinatown" alone). Round Rock is its own city in Williamson County; Civic listed it as an Austin case.
+const SAME_CITY_PLACES: Record<keyof typeof SAME_CITY, string[]> = {
+  "10001": ["brooklyn", "queens", "the bronx", "bronx", "staten island", "harlem", "east harlem", "upper east side", "upper west side",
+    "lower east side", "east village", "west village", "greenwich village", "tribeca", "soho", "financial district", "battery park city",
+    "washington heights", "inwood", "williamsburg", "bushwick", "park slope", "bed[- ]stuy", "bedford[- ]stuyvesant", "astoria",
+    "flushing", "long island city", "jackson heights", "other boroughs?", "another borough", "outer boroughs?"],
+  "78701": ["round rock", "east austin", "south austin", "north austin", "west austin", "northwest austin", "hyde park", "zilker",
+    "mueller", "barton hills", "bouldin creek", "travis heights", "tarrytown", "allandale", "crestview", "cherrywood", "windsor park",
+    "circle c", "other parts? of austin", "another part of austin"],
+  "94103": ["mission district", "the mission", "sunset district", "inner sunset", "outer sunset", "the sunset", "richmond district",
+    "inner richmond", "outer richmond", "noe valley", "the castro", "castro district", "haight[- ]ashbury", "the haight", "the marina",
+    "marina district", "pacific heights", "nob hill", "russian hill", "north beach", "tenderloin", "bayview", "hunters point",
+    "excelsior", "potrero hill", "dogpatch", "glen park", "bernal heights", "twin peaks", "visitacion valley", "presidio",
+    "other parts? of (?:sf|san francisco)", "another part of (?:sf|san francisco)"],
+};
+const SAME_CITY_RE = Object.fromEntries(Object.entries(SAME_CITY_PLACES).map(([z, names]) =>
+  [z, new RegExp(`\\b(?:${[...names].sort((a, b) => b.length - a.length).join("|")})\\b(?![ ,]+(?:street|st\\b|st\\.|avenue|ave\\b|ave\\.|blvd|boulevard|road|rd\\b|bridge|expressway|zoo))`, "i")])) as Record<keyof typeof SAME_CITY, RegExp>;
+/** Which covered city a ZIP belongs to, when it's not the covered ZIP itself: NYC (Manhattan, Staten Island, Bronx, Brooklyn,
+ *  Queens ranges), Austin 787xx (plus Round Rock's 78664, 78665, 78681), San Francisco 941xx. */
+export function cityOfZip(z: string): keyof typeof SAME_CITY | null {
+  if (COVERED_ZIPS.includes(z)) return null;
+  if (/^(?:10[0-4]\d\d|11[1-46]\d\d|1100[45])$/.test(z)) return "10001";
+  if (/^(?:787\d\d|78664|78665|78681)$/.test(z)) return "78701";
+  if (/^941\d\d$/.test(z)) return "94103";
+  return null;
+}
+/** The covered city a question points at (another ZIP or a named part of that city), or null. */
+export function sameCity(text: string): keyof typeof SAME_CITY | null {
+  const t = String(text || "");
+  for (const z of zipsIn(t)) { const c = cityOfZip(z); if (c) return c; }
+  for (const z of Object.keys(SAME_CITY_RE) as (keyof typeof SAME_CITY)[]) if (SAME_CITY_RE[z].test(t)) return z;
+  return null;
+}
+/** The question with the place taken out, so "Who's running for governor in Brooklyn?" asks about the governor's race. */
+export function stripPlace(text: string, city: keyof typeof SAME_CITY): string {
+  const re = new RegExp(`\\s*(?:\\b(?:in|for|from|at|around|near)\\s+)?(?:zip\\s*(?:code\\s*)?)?(?:the\\s+)?(?:${SAME_CITY_RE[city].source.replace(/\(\?!.*$/, "")}|\\b\\d{5}\\b)`, "gi");
+  return String(text || "").replace(re, "").replace(/\s+([?.!,])/g, "$1").trim();
+}
+
 export type Route =
   | { kind: "fixed"; reply: string; chips?: string[]; zip?: string; links?: { label: string; url: string }[] }
   | { kind: "think"; zip: string | null }
@@ -59,10 +108,14 @@ export type Route =
 export function routeTurn(text: string, zip: string | null): Route {
   const t = String(text || "").trim();
   const zs = zipsIn(t);
-  const bad = zs.find((z) => !COVERED_ZIPS.includes(z));
+  const bad = zs.find((z) => !COVERED_ZIPS.includes(z) && !cityOfZip(z));
   if (bad) return { kind: "fixed", reply: OUT_OF_SCOPE, links: OUT_OF_SCOPE_LINKS };
   if (!zs.length && outOfScope(t)) return { kind: "fixed", reply: OUT_OF_SCOPE, links: OUT_OF_SCOPE_LINKS };
-  const z = zs[0] ?? zip;
+  // Civic, Oct 30 2:10 PM CT: another part of a covered city goes to the server, which answers with the same-city line
+  // (and, for a race on every ballot in that city, the answer first). The page's own ZIP is kept.
+  const city = sameCity(t);
+  if (city && !ASKS_WHO.test(t)) return { kind: "ask", zip: zip && COVERED_ZIPS.includes(zip) ? zip : city };
+  const z = zs.find((x) => COVERED_ZIPS.includes(x)) ?? zip;
   const known = z && COVERED_ZIPS.includes(z) ? z : null;
   if (ASKS_WHO.test(t)) return { kind: "fixed", reply: WHO_TO_VOTE_REPLY, chips: [WHO_CHIP], zip: known ?? undefined };
   if (ASKS_THINK.test(t)) return { kind: "think", zip: known };

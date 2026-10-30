@@ -13,6 +13,8 @@ export const OFFICES: Record<string, FaqLink> = {
   "94103": { label: "sfelections.org", url: "https://sfelections.org" }, // chip label per Civic, Oct 30 1:37 PM CT
   "10001": { label: "NYC Board of Elections", url: "https://vote.nyc" },
 };
+// Adam, Oct 30 2:08 PM CT (Civic's choice): 94103's office link in the ballot-order, who's-running and same-city replies.
+export const SF_DOE: FaqLink = { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" };
 export const VOTE_GOV: FaqLink = { label: "vote.gov", url: "https://vote.gov" };
 const ABOUT = { label: "About townhall.town", url: "https://townhall.town/about" };
 const GITHUB = { label: "GitHub", url: "https://github.com/adamtpang/townhall.town" };

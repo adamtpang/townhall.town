@@ -22,9 +22,10 @@ describe("P1-1 ballot order", () => {
       expect(c.intent, `${z} ${q}`).toBe("ballot-order");
       expect(c.reply.split("\n")[0]).toBe(BALLOT_ORDER_LINE);
       expect(c.reply).toBe(BALLOT_ORDER_LINE);
-      expect(c.links).toEqual([OFFICES[z]]);
+      // 94103: SF Department of Elections on sf.gov (Adam, Oct 30 2:08 PM CT); the others reuse OFFICES.
+      expect(c.links).toEqual([z === "94103" ? { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" } : OFFICES[z]]);
     }
-    expect(curated("94103", "What order are candidates on my ballot?")!.links[0].url).toBe("https://sfelections.org");
+    expect(curated("94103", "What order are candidates on my ballot?")!.links[0].url).toBe("https://www.sf.gov/departments/department-elections");
     expect(curated("78701", "ballot order")!.links[0].url).toBe("https://votetravis.gov");
     expect(curated("10001", "ballot order")!.links[0].url).toBe("https://vote.nyc");
   });
