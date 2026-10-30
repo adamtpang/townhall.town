@@ -92,7 +92,7 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-black [&::-webkit-details-marker]:hidden">News coverage ({items.length})<span aria-hidden className="ml-2 inline-block group-open/n:rotate-180">↓</span></summary>
       <ul className="max-w-2xl space-y-1 pb-2">
         {items.map((n) => (
-          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className={`${HIT} text-black underline-offset-2 hover:underline`} data-news-link>{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
+          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className={`${HIT} text-brand-700 underline-offset-2 hover:underline`} data-news-link>{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
         ))}
       </ul>
     </details>
@@ -186,9 +186,9 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.sourceNote ? <div className="max-w-[60ch] text-sm leading-5 text-black/60" data-tentative>{/* QA fb66b9b P2: short lines; TENTATIVE (draft) stays visible first. */}<p className="font-[530] text-black/80">TENTATIVE: draft contest list. Check your sample ballot.</p><ul className="mt-1 space-y-1" data-note-lines>{r.sourceNote.split(/(?<=\.)\s+(?=[A-Z])/).map((l) => <li key={l}>{l}</li>)}</ul></div> : r.tentative ? <p className="text-sm text-black/60" data-tentative>TENTATIVE: from the NYC Board of Elections&rsquo; contest list{printedDate(r.appliesNote) ? `, printed ${printedDate(r.appliesNote)}` : ""}. Check your sample ballot.</p> : null}
                     {(r.source || r.verify || (r.meta?.closenessBasis.length ?? 0) > 0) && (
-                      <p className="flex flex-wrap items-center gap-x-1 text-sm leading-5 text-black/60" data-race-links>
-                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
-                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{x.label} rating ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
+                      <p className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm leading-5 text-black/60" data-race-links>
+                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
+                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="inline-flex min-h-11 items-center">{x.label} rating ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
                         {r.verify && <><span aria-hidden>·</span><span>{r.verify}</span></>}
                       </p>
                     )}
@@ -216,13 +216,7 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60" data-tier-intro><span className="block">Races, ranked by how much the office does and how close the race is.</span><span className="block">Never candidates.</span></p>
-      {/* QA phone pass Oct 30: the legend is short lines, each term with a one-line plain explanation (same facts as before). */}
-      <dl className="mt-4 max-w-2xl space-y-2 text-sm leading-5 text-black/60" data-tier-legend>
-        <div data-legend="most"><dt className="inline font-[530] text-black">Most at stake:</dt> <dd className="inline">the biggest offices in the closest races. Then High, Moderate and Lower stakes.</dd></div>
-        <div data-legend="competitive"><dt className="inline font-[530] text-black">Competitive (race ratings):</dt> <dd className="inline">published race ratings (Cook Political Report, Sabato&rsquo;s Crystal Ball, Inside Elections; linked on each race) call it a toss-up or tilt.</dd></div>
-        <div data-legend="market"><dt className="inline font-[530] text-black">Polymarket / market prices:</dt> <dd className="inline">a live market with the top outcome between 35% and 65% also counts as Competitive. Polymarket can move a race up, never down.</dd></div>
-        <p data-legend="note">Races with no rating and no Polymarket market are ranked on the office alone. Market prices are not forecasts or recommendations.</p>
-      </dl>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings (Cook Political Report, Sabato&rsquo;s Crystal Ball, Inside Elections; linked on each race) call it a toss-up or tilt, or when its live Polymarket market has the top outcome between 35% and 65%. Polymarket can move a race up, never down. Races with no rating and no Polymarket market are ranked on the office alone and get no market line. Market prices are not forecasts or recommendations.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>

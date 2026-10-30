@@ -116,6 +116,7 @@ describe("QA 4c21a5c P2: chat carry-over and 300% zoom", () => {
     const s = src("app/page.tsx");
     // Design p8: pt-12 lg:pt-20; purple spec P1-3 adds 160px only when the viewport is also >= 800px tall.
     expect(s).toContain('pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero');
-    expect(s).not.toMatch(/ lg:pt-40|sm:pt-/);
+    // QA P2-9: the only pt-40 allowed is the tall-viewport one; no other pt-40/sm:pt- anywhere on the page.
+    expect(s.replace("[@media(min-width:1024px)_and_(min-height:800px)]:pt-40", "")).not.toMatch(/pt-40|sm:pt-/);
   });
 });

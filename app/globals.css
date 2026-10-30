@@ -18,7 +18,7 @@
     --muted: 0 0% 90.2%;
     --muted-foreground: 0 0% 38%;      /* ~ink/60 on #F2F2F2, 5.5:1 */
     --border: 0 0% 85.5%;
-    --input: 0 0% 55%;                 /* ~ink/45, 3.3:1 UI boundary */
+    --input: 0 0% 50%;                 /* ink/50 #808080: 3.5:1 on #F2F2F2, 3.9:1 on white (UI boundary >= 3:1) */
     /* townhall purple, hue ~285 */
     --brand-50: 282 45.5% 95.7%;       /* #F6EFF9 */
     --brand-100: 281 47.8% 91.0%;      /* #ECDDF3 */
@@ -52,6 +52,8 @@
   a { @apply text-brand-700 underline decoration-brand-700/35 underline-offset-[3px] hover:text-brand-900 hover:decoration-current; }
   h1, h2, h3 { letter-spacing: -0.02em; }
   :focus-visible { outline: 2px solid #862F9F; outline-offset: 2px; }
+  /* QA P1-1 (24593cd): brand-600 is 2.90:1 on the ink footer; footer focus uses brand-300 #C9A3DC (9.70:1 on #010101). */
+  [data-site-footer] :focus-visible { outline: 2px solid #C9A3DC; outline-offset: 2px; }
 }
 
 @layer components {
