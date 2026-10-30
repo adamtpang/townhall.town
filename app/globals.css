@@ -77,9 +77,27 @@
   }
 }
 
-/* Flat ground, as on ndstudio.gov (#27): ink on #f2f2f2, no grid or glow. */
+/* Flat ground, as on ndstudio.gov (#27): ink on #f2f2f2, no grid or glow. overflow-x: clip keeps the full-bleed
+   band (100vw) from adding a sideways scroll where a classic scrollbar takes width. */
 body {
   background: #f2f2f2;
+  overflow-x: clip;
+}
+
+/* ndstudio-structure spec §5: purple duotone in CSS (files stay neutral grayscale). Shadows brand-900, highlights brand-100.
+   No mix-blend-mode on the img itself (renders blank in Chrome); the overlays do the work. No text ever sits on media. */
+.duo { position: relative; overflow: hidden; isolation: isolate; background-color: #3A1250; }
+.duo > img, .duo > video { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+.duo::before, .duo::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.duo::before { background: #ECDDF3; mix-blend-mode: multiply; }
+.duo::after { background: #3A1250; mix-blend-mode: screen; }
+@supports not (mix-blend-mode: screen) { .duo::before, .duo::after { display: none; } }
+/* City cards: one link covers the card; hover dims the photo, focus draws the 2px brand-600 ring around the whole card. */
+.th-card a[data-city-zip]:focus-visible { outline: none; }
+.th-card a[data-city-zip]:focus-visible::after { outline: 2px solid #862F9F; outline-offset: 2px; }
+@media (hover: hover) {
+  .th-card .duo > img { transition: opacity 150ms cubic-bezier(.215,.61,.355,1); }
+  .th-card:hover .duo > img { opacity: .85; }
 }
 
 /* Print: only the one-page plan sheet. */
