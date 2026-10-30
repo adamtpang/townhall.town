@@ -136,7 +136,12 @@ Write at most 3 bullets, each under 35 words, starting with "- ". Bullet 1: if a
         maxOutputTokens: 220,
         abortSignal: AbortSignal.timeout(8000),
       });
-      const text = res.text.trim();
+      // The model sometimes writes a bullet saying a fact is missing; drop those instead of showing them.
+      const text = res.text
+        .split(/\n/)
+        .filter((l) => l.trim() && !/\b(no|none)\b[^.]*\b(listed|provided|available|found)\b|\bnot (listed|provided|available)\b/i.test(l))
+        .join("\n")
+        .trim();
       if (!text) continue;
       emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: `${text.split(/\n/).filter(Boolean).length} insights from ${m.replace(/ \(AI Gateway\)$/, "")}` });
       return { text, model: m };
