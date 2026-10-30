@@ -7,7 +7,8 @@ export const BOOTH_LINE = "You may bring this sheet into the voting station";
 export const ORDER_CONFIRMED_LINE = "Listed in the order on the official sample ballot.";
 /** Civic print29 P2 (Oct 30, 3:50 PM CT): the sheet-wide line, used only when every race on the sheet is confirmed. The
  *  stored bedsheet data has no race sequence (page numbers only), so it claims candidate order only. Civic's wording. */
-export const ORDER_CONFIRMED_SHEET_LINE = "Candidates are listed in the order on the official sample ballot.";
+/** Civic, 4:06 PM CT Oct 30 (verbatim): the one sheet-wide confirmed-order line; replaces the per-race lines. */
+export const ORDER_CONFIRMED_SHEET_LINE = "In races without †, candidates are listed in the order on the official sample ballot.";
 /** Civic print29 P2 (f): Towny's wording (Civic approved) for the retention key note on the printed sheet. */
 export const RETENTION_KEY_LINE = "Retention races, a Yes or No vote on one judge each.";
 // The one sources line on the printed sheet (Design option a): the homepage "How it works" step 2 wording, "Read the sources."
@@ -39,6 +40,9 @@ export function displayParty(name: string, party?: string | null): string | null
 // the Who sheet and the PDF say this line with the state's official lookup. Race ids are this repo's ids for TX-10/TX-37,
 // HD 49/51, SF Supervisor D6/D8/D10, NY SD 47/28 and (Civic, 3:37 PM CT) NYC Civil Court 3rd/9th Municipal Court Districts.
 export const SPLIT_LINE = "Depending on your address, you\u2019ll have one of these";
+/** Civic print29 recheck P1 (4:07 PM CT Oct 30, exact): a split group of ONE race (78701 Commissioner Pct 4, Constable
+ *  Pct 4; 10001 Council 3). Same lookup link and dagger; SPLIT_LINE stays for groups of 2 or more. */
+export const SPLIT_LINE_ONE = "Depending on your address, this race may not be on your ballot.";
 /** Adam approved SPLIT_LINE at 3:35 PM CT Oct 30. Set false to show only the lookup link. */
 export const SHOW_SPLIT_LINE = true;
 export const SPLIT_LOOKUP: Record<string, string> = {
@@ -47,15 +51,19 @@ export const SPLIT_LOOKUP: Record<string, string> = {
   "10001": "https://findmypollsite.vote.nyc/",
 };
 export const SPLIT_GROUPS: Record<string, string[][]> = {
-  "78701": [["tx-10", "tx-37"], ["tx-hd-49", "tx-house-51"]],
+  // Civic recheck P2 (b): TX-10/37 now carry dependsOnAddress in ballots.json, so they group from the flag.
+  "78701": [["tx-hd-49", "tx-house-51"]],
   "94103": [["sf-supervisor-6", "sf-supervisor-8", "sf-supervisor-10"]],
   "10001": [["ny-sd-47", "ny-sd-28"], ["ny-civil-3md-ny", "ny-civil-9md-ny"]],
 };
 // Civic NO-GO on 8420c2a (Oct 30, 3:50 PM CT): every race ballots.json flags dependsOnAddress gets the split treatment
 // (line, lookup, dagger, no confirmed-order claim), derived from the flag, not a list. SPLIT_GROUPS above stay as the
-// explicit groups (TX-10/37 has no flag). Other flagged races group with the flagged races next to them for the same office
+// explicit groups. Other flagged races group with the flagged races next to them for the same office
 // in a different precinct or district (JP Pct 5 / JP Pct 4); anything else is a group of one (Commissioner Pct 4).
 export type SplitRace = { id: string; title?: string; addressDependent?: boolean };
+/** Civic recheck P2 (a): a dependsOnAddress flag whose appliesNote says the whole ZIP is only inferred to be inside an
+ *  at-large district (78701 ACC Trustee Places 1-3) is not an address split: dagger + Unsure key, no split line. */
+export const notASplit = (appliesNote?: string | null) => /^unsure: at-large\b/i.test(appliesNote ?? "");
 const officeBase = (t: string) => t.replace(/,?\s*(Precinct|District)\s+\d+\b.*$/i, "").trim();
 export function splitGroupsFor(zip: string, races: SplitRace[]): string[][] {
   const fixed = (SPLIT_GROUPS[zip] || []).map((g) => [...g]);
@@ -68,6 +76,14 @@ export function splitGroupsFor(zip: string, races: SplitRace[]): string[][] {
   }
   return fixed;
 }
+/** The /card + print plan from ballots.json races: split groups (flags minus at-large inferences), the split ids, and the
+ *  at-large races that are daggered through the Unsure key only (Civic recheck P2 a). */
+type FlagRace = { id: string; title?: string; dependsOnAddress?: boolean; appliesNote?: string };
+export function splitPlan(zip: string, races: FlagRace[]) {
+  const atLarge = new Set(races.filter((r) => r.dependsOnAddress === true && notASplit(r.appliesNote)).map((r) => r.id));
+  const groups = splitGroupsFor(zip, races.map((r) => ({ id: r.id, title: r.title, addressDependent: r.dependsOnAddress === true && !atLarge.has(r.id) })));
+  return { groups, inSplit: splitIds(groups), atLarge };
+}
 /** Every race id that belongs to a split group (address-dependent): daggered, never under a confirmed-order line. */
 export const splitIds = (groups: string[][]) => new Set(groups.flat());
 /** The split line and lookup URL when raceId is the first race of a split group listed (of those present), else null.
@@ -78,7 +94,7 @@ export function splitStart(zip: string, raceId: string, present: string[], group
   for (const g of groups) {
     const shown = present.filter((id) => g.includes(id));
     const isFixed = fixed.some((f) => f.length === g.length && f.every((x) => g.includes(x)));
-    if (shown.length > (isFixed ? 1 : 0) && shown[0] === raceId && url) return { line: SHOW_SPLIT_LINE ? SPLIT_LINE : null, url };
+    if (shown.length > (isFixed ? 1 : 0) && shown[0] === raceId && url) return { line: SHOW_SPLIT_LINE ? (g.length === 1 ? SPLIT_LINE_ONE : SPLIT_LINE) : null, url };
   }
   return null;
 }

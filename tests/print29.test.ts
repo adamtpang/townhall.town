@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import PrintBallot, { type PrintData } from "../app/card/PrintBallot";
 import { printRules, officialOrder, orderCite, raceOrder } from "../lib/printRules";
-import { ORDER_CONFIRMED_LINE, ORDER_CONFIRMED_SHEET_LINE, RETENTION_KEY_LINE, SPLIT_LINE, SPLIT_LOOKUP, ballotSlots, splitGroupsFor, splitIds } from "../lib/printText";
+import { ORDER_CONFIRMED_LINE, ORDER_CONFIRMED_SHEET_LINE, RETENTION_KEY_LINE, SPLIT_LINE, SPLIT_LINE_ONE, SPLIT_LOOKUP, ballotSlots, splitPlan } from "../lib/printText";
 import { ballotFor } from "../lib/tools";
 
 const ST = { "78701": "TX", "94103": "CA", "10001": "NY" } as const;
@@ -13,10 +13,9 @@ type Z = keyof typeof ST;
 const flagged = (zip: Z) => ballotFor(zip)!.races.filter((r) => (r as { dependsOnAddress?: boolean }).dependsOnAddress === true).map((r) => r.id);
 function build(zip: Z) {
   const races = raceOrder(zip, ballotFor(zip)!.races);
-  const groups = splitGroupsFor(zip, races.map((r) => ({ id: r.id, title: r.title, addressDependent: (r as { dependsOnAddress?: boolean }).dependsOnAddress === true })));
-  const inSplit = splitIds(groups);
+  const { groups, inSplit, atLarge } = splitPlan(zip, races as never);
   const data: PrintData = { state: ST[zip], verify: null, rules: printRules(ST[zip]), measures: [], orderCite: orderCite(zip), splitGroups: groups,
-    races: races.map((r) => { const o = officialOrder(zip, r.id, r.candidates.map((c) => ({ name: c.name, party: c.party ?? null }))); return { id: r.id, title: r.title, judicial: false, orderConfirmed: o.confirmed && !inSplit.has(r.id), candidates: o.candidates }; }) };
+    races: races.map((r) => { const o = officialOrder(zip, r.id, r.candidates.map((c) => ({ name: c.name, party: c.party ?? null }))); return { id: r.id, title: r.title, judicial: false, orderConfirmed: o.confirmed && !inSplit.has(r.id) && !atLarge.has(r.id), candidates: o.candidates }; }) };
   const html = renderToStaticMarkup(createElement(PrintBallot, { zip, today: "2026-10-30", data, lookupUrl: SPLIT_LOOKUP[zip], dependsOnAddress: true }));
   return { groups, html, data };
 }
@@ -27,7 +26,8 @@ describe("print29 P1: split groups come from the dependsOnAddress flags", () => 
     for (const zip of ["78701", "94103", "10001"] as Z[]) {
       const { groups, html } = build(zip);
       for (const id of flagged(zip)) {
-        expect(groups.flat()).toContain(id);
+        // Civic recheck P2 (a): ACC Trustee 1-3 (at-large, inferred) are daggered but not a split group.
+        if (!id.startsWith("acc-trustee-")) expect(groups.flat()).toContain(id); else expect(groups.flat()).not.toContain(id);
         expect(li(html, id)).toContain('data-order-confirmed="0"');
         expect(li(html, id)).not.toContain(ORDER_CONFIRMED_LINE);
       }
@@ -38,13 +38,17 @@ describe("print29 P1: split groups come from the dependsOnAddress flags", () => 
     expect(groups).toContainEqual(["travis-jp-5", "travis-jp-4"]);
     expect(groups).toContainEqual(["travis-commissioner-4"]);
     expect(groups).toContainEqual(["travis-constable-4-unexpired"]);
+    // Civic recheck P1: a group of one says SPLIT_LINE_ONE; JP 5/4 keeps SPLIT_LINE.
     for (const first of ["travis-commissioner-4", "travis-jp-5", "travis-constable-4-unexpired"]) {
       const m = html.match(new RegExp(`<li class="pb-split-group"[^>]*>(?:(?!<li class="pb-split-group").)*?data-print-race="${first}"`, "s"));
       expect(m, first).toBeTruthy();
-      expect(m![0]).toContain(SPLIT_LINE);
+      expect(m![0]).toContain(first === "travis-jp-5" ? SPLIT_LINE : SPLIT_LINE_ONE);
+      if (first !== "travis-jp-5") expect(m![0]).not.toContain(SPLIT_LINE);
       expect(m![0]).toContain("teamrv-mvp.sos.texas.gov");
     }
-    expect(html).not.toContain('data-print-order-confirmed="sheet"');
+    // Civic 4:06 PM CT: one sheet-wide line instead of per-race lines.
+    expect((html.match(/data-print-order-confirmed="sheet"/g) || []).length).toBe(1);
+    expect(html).not.toContain('data-print-order-confirmed="race"');
   });
   it("Who count: one slot per split group. 78701 58 -> 55, 94103 32 -> 30, 10001 13 -> 11", () => {
     const want = { "78701": [58, 55], "94103": [32, 30], "10001": [13, 11] } as const;
@@ -61,11 +65,24 @@ describe("print29 P1: split groups come from the dependsOnAddress flags", () => 
     expect(groups).toContainEqual(["nyc-council-3"]);
     const m = html.match(/<li class="pb-split-group"(?:(?!<li class="pb-split-group").)*?data-print-race="nyc-council-3"/s);
     expect(m![0]).toContain("findmypollsite.vote.nyc");
+    expect(m![0]).toContain(SPLIT_LINE_ONE); // Civic recheck P1
+  });
+  it("Civic recheck: TX-10/37 flagged in ballots.json (no fixed list); ACC 1-3 daggered with no address line; 94103 has no sheet-wide line", () => {
+    expect(flagged("78701")).toEqual(expect.arrayContaining(["tx-10", "tx-37"]));
+    const a = build("78701");
+    expect(a.groups).toContainEqual(["tx-10", "tx-37"]);
+    for (const id of ["acc-trustee-place-1", "acc-trustee-place-2", "acc-trustee-place-3"]) {
+      expect(li(a.html, id)).toContain('data-order-confirmed="0"');
+      expect(a.html).not.toContain(`data-print-split="${id}"`);
+    }
+    const c = build("94103").html;
+    expect(c).not.toContain(ORDER_CONFIRMED_SHEET_LINE);
+    expect(c).not.toContain("data-print-order-confirmed");
   });
 });
 describe("print29 P2", () => {
   it("(a)(b) the sheet line is Civic's wording with no repeated lowercase label", () => {
-    expect(ORDER_CONFIRMED_SHEET_LINE).toBe("Candidates are listed in the order on the official sample ballot.");
+    expect(ORDER_CONFIRMED_SHEET_LINE).toBe("In races without †, candidates are listed in the order on the official sample ballot.");
     expect(orderCite("78701")!.label).toMatch(/^Official sample \(bedsheet\) ballot/);
     expect(build("78701").html).not.toContain("ballot. official sample");
   });

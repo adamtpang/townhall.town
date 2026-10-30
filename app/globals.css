@@ -107,8 +107,8 @@ body {
 }
 
 /* Printed ballot on /card (app/card/PrintBallot.tsx; Design spec 4.2 + addendum Oct 30; Design fixes 2:58 PM CT): US Letter,
-   0.5in margins. Masthead, trust line, one-line facts, then the races in 3 columns (12pt gap, 6pt between candidates,
-   12pt empty boxes per spec 4.2), then Rules and numbered notes. Grayscale-safe, no serif (round1029 guard). Every printed
+   0.5in margins. Masthead, trust line, one-line facts, then the races in 3 columns (12pt gap between columns,
+   12pt empty boxes per spec 4.2; candidate gap 3pt and measures in 4 columns since Oct 30 4:07 PM CT so 78701 fits 3 pages), then Rules and numbered notes. Grayscale-safe, no serif (round1029 guard). Every printed
    size is at least 10pt. The wordmark and the masthead rule are the only color (brand-700 / brand-600). No race splits
    across pages. Long URLs may break anywhere only inside the numbered notes (.pb-notes). */
 @media print {
@@ -146,12 +146,12 @@ body {
   #ballot-print ol, #ballot-print ul { list-style: none; margin: 0; padding: 0; }
   #ballot-print .pb-races { columns: 3; column-gap: 12pt; margin-bottom: 6pt; }
   #ballot-print .pb-race { break-inside: avoid; page-break-inside: avoid; border-top: 0.75pt solid #010101; padding: 2pt 0 3pt; }
-  #ballot-print .pb-measures { columns: 3; column-gap: 12pt; margin-bottom: 4pt; }
+  #ballot-print .pb-measures { columns: 4; column-gap: 12pt; margin-bottom: 4pt; }
   #ballot-print .pb-measures li { break-inside: avoid; font-weight: 600; font-size: 10pt; line-height: 1.2; padding: 1pt 0 3pt; }
   #ballot-print .pb-split-group { break-inside: avoid; page-break-inside: avoid; }
   #ballot-print .pb-split { font-size: 10pt; font-weight: 400; line-height: 1.2; color: rgba(1, 1, 1, 0.7); border-top: 0.5pt solid #010101; margin-top: 4pt; padding: 2pt 0; }
-  #ballot-print .pb-race-title { font-weight: 600; font-size: 10.5pt; line-height: 1.2; margin-bottom: 2pt; }
-  #ballot-print .pb-race ul { display: flex; flex-direction: column; gap: 4pt; }
+  #ballot-print .pb-race-title { font-weight: 600; font-size: 10.5pt; line-height: 1.2; margin-bottom: 1pt; }
+  #ballot-print .pb-race ul { display: flex; flex-direction: column; gap: 3pt; }
   #ballot-print .pb-cand { display: flex; align-items: flex-start; gap: 5pt; font-size: 10pt; line-height: 1.2; }
   #ballot-print .pb-box-mark { flex: none; width: 12pt; height: 12pt; border: 1pt solid #010101; background: #fff; }
   #ballot-print .pb-name { font-weight: 400; }

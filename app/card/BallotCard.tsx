@@ -153,7 +153,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
           <p className={small}>{pickedLine(pickedSlots, slots.length)}</p>
           {anyUnsure ? <p className={`mt-2 ${small}`} id="www-order-unsure" data-www-unsure>† {ORDER_UNSURE_LINE}</p> : null}
           <ul className="mt-3 divide-y divide-black/10">{pr.map((r) => (
-            <li key={r.id} className="py-3">{splitP(r.id, pr.map((x) => x.id))}<p className="text-sm leading-5 text-black/60"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="www-order-unsure" />{!r.orderConfirmed ? <span className="sr-only"> ({ORDER_UNSURE_LINE})</span> : null}</p>{picks[r.id] ? <p className="text-base leading-6 font-[530]">{picks[r.id]}</p> : null}</li>
+            <li key={r.id} className="py-3">{splitP(r.id, pr.map((x) => x.id))}<p className="text-sm leading-5 text-black/60"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="www-order-unsure" /></p>{picks[r.id] ? <p className="text-base leading-6 font-[530]">{picks[r.id]}</p> : null}</li>
           ))}</ul>
         </div>
       </dialog>

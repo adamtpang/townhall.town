@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import PrintBallot, { type PrintData, retentionChoices } from "../app/card/PrintBallot";
 import { printRules, officialOrder, voterRule, orderCite } from "../lib/printRules";
-import { BOOTH_LINE, ORDER_CONFIRMED_LINE, ORDER_CONFIRMED_SHEET_LINE, ORDER_UNSURE_LINE, PRINT_CTA, SOURCES_LABEL, TX_PHONE_LINE, displayParty } from "../lib/printText";
+import { BOOTH_LINE, ORDER_CONFIRMED_SHEET_LINE, ORDER_UNSURE_LINE, PRINT_CTA, SOURCES_LABEL, TX_PHONE_LINE, displayParty } from "../lib/printText";
 import { whenFor, earlySingleDay } from "../lib/endscreen.mjs";
 import { ballotFor } from "../lib/tools";
 import RULES from "../data/civic/voter_rules.json";
@@ -80,11 +80,12 @@ describe("printed ballot: where, order, names", () => {
       if (n[z]) expect(html).toMatch(/<span class="whitespace-nowrap">[^<\s]+<sup class="pb-dagger" data-print-dagger="true" aria-describedby="pb-order-unsure">†<\/sup><\/span>/);
     }
   });
-  it("official-order lines: 78701 one sheet line, 10001 one per confirmed race (6), 94103 none", () => {
+  it("official-order lines (Civic 4:06 PM CT): one sheet-wide line on 78701 and 10001, no per-race lines, 94103 none", () => {
     const a = sheet("78701").html, b = sheet("10001").html, c = sheet("94103").html;
     expect((a.match(/data-print-order-confirmed="sheet"/g) || []).length).toBe(1);
     expect(a).toContain(ORDER_CONFIRMED_SHEET_LINE); // Civic print29 P2 (a): the sheet-wide line claims candidate order only
-    expect((b.match(/data-print-order-confirmed="race"/g) || []).length).toBe(6);
+    expect((b.match(/data-print-order-confirmed="sheet"/g) || []).length).toBe(1);
+    for (const h of [a, b, c]) expect(h).not.toContain('data-print-order-confirmed="race"');
     expect(b).toContain("Copy of an official NYC Board of Elections ballot (New York County, Assembly District 71), posted on a third-party website, not the Board&#x27;s");
     expect(c).not.toContain("data-print-order-confirmed");
   });

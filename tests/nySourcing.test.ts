@@ -5,14 +5,16 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import PrintBallot, { type PrintData } from "../app/card/PrintBallot";
 import { printRules, officialOrder, orderCite, raceOrder, NY_COPY_LABEL, NY_COPY_RACES, NY_BOE_LOOKUP } from "../lib/printRules";
-import { SPLIT_LINE, SHOW_SPLIT_LINE, splitStart, ORDER_CONFIRMED_LINE } from "../lib/printText";
+import { SPLIT_LINE, SPLIT_LINE_ONE, SHOW_SPLIT_LINE, splitStart, splitPlan, ORDER_CONFIRMED_SHEET_LINE } from "../lib/printText";
 import { ballotFor } from "../lib/tools";
 
 const ST = { "78701": "TX", "94103": "CA", "10001": "NY" } as const;
 function html(zip: keyof typeof ST) {
   const b = ballotFor(zip)!;
-  const data: PrintData = { state: ST[zip], verify: null, rules: printRules(ST[zip]), measures: [], orderCite: orderCite(zip),
-    races: raceOrder(zip, b.races).map((r) => { const o = officialOrder(zip, r.id, r.candidates.map((c) => ({ name: c.name, party: c.party ?? null }))); return { id: r.id, title: r.title, judicial: false, orderConfirmed: o.confirmed, candidates: o.candidates }; }) };
+  const rs = raceOrder(zip, b.races);
+  const { groups, inSplit, atLarge } = splitPlan(zip, rs as never);
+  const data: PrintData = { state: ST[zip], verify: null, rules: printRules(ST[zip]), measures: [], orderCite: orderCite(zip), splitGroups: groups,
+    races: rs.map((r) => { const o = officialOrder(zip, r.id, r.candidates.map((c) => ({ name: c.name, party: c.party ?? null }))); return { id: r.id, title: r.title, judicial: false, orderConfirmed: o.confirmed && !inSplit.has(r.id) && !atLarge.has(r.id), candidates: o.candidates }; }) };
   return renderToStaticMarkup(createElement(PrintBallot, { zip, today: "2026-10-30", data, lookupUrl: "https://findmypollsite.vote.nyc/", dependsOnAddress: true }));
 }
 const raceLi = (h: string, id: string) => { const m = h.match(new RegExp(`<li[^>]*data-print-race="${id}"[\\s\\S]*?</ul>`)); return m ? m[0] : ""; };
@@ -30,7 +32,8 @@ describe("10001 sample-ballot sourcing", () => {
   });
   it("cites the copy only for the 6 Manhattan-wide races, never NY-12, State Senate, AD 75 or Council 3", () => {
     const h = html("10001");
-    const cited = [...h.matchAll(/data-print-race="([^"]+)"[^>]*>(?:(?!<\/ul>)[\s\S])*?data-print-order-confirmed="race"/g)].map((m) => m[1]);
+    // Civic 4:06 PM CT: confirmed races carry no per-race line; they are the races without a dagger (data-order-confirmed="1").
+    const cited = [...h.matchAll(/data-print-race="([^"]+)" data-order-confirmed="1"/g)].map((m) => m[1]);
     expect(cited.sort()).toEqual([...NY_COPY_RACES].sort());
     for (const id of ["ny-12", "ny-sd-47", "ny-sd-28", "ny-ad-75", "nyc-council-3"]) {
       expect(officialOrder("10001", id, [{ name: "x" }]).confirmed).toBe(false);
@@ -41,37 +44,46 @@ describe("10001 sample-ballot sourcing", () => {
 });
 
 describe("split districts", () => {
-  const groups = { "78701": ["tx-10", "tx-hd-49"], "94103": ["sf-supervisor-6"], "10001": ["ny-sd-47", "ny-civil-3md-ny"] } as const;
-  for (const z of Object.keys(groups) as (keyof typeof groups)[]) it(`${z}: one line per split group, with the official lookup`, () => {
+  // Civic recheck P1 (4:07 PM CT): groups of 2+ get SPLIT_LINE, groups of one get SPLIT_LINE_ONE; both keep the lookup.
+  const multi = { "78701": ["tx-10", "tx-hd-49", "travis-jp-5"], "94103": ["sf-supervisor-6"], "10001": ["ny-sd-47", "ny-civil-3md-ny"] } as const;
+  const one = { "78701": ["travis-commissioner-4", "travis-constable-4-unexpired"], "94103": [], "10001": ["nyc-council-3"] } as const;
+  const lookup = { "78701": "teamrv-mvp.sos.texas.gov", "94103": "voterstatus.sos.ca.gov", "10001": "findmypollsite.vote.nyc" } as const;
+  const esc = (t: string) => t; // React renders the curly apostrophe as-is
+  for (const z of Object.keys(multi) as (keyof typeof multi)[]) it(`${z}: one line per split group, with the official lookup`, () => {
     const h = html(z);
     const got = [...h.matchAll(/data-print-split="([^"]+)"/g)].map((m) => m[1]);
-    expect(got).toEqual([...groups[z]]);
-    expect(h.split(SPLIT_LINE.replace("\u2019", "&#x27;")).length + h.split(SPLIT_LINE).length - 2).toBe(groups[z].length);
-    // The approved sentence sits directly above the official lookup link, in the same block.
-    const url = splitStart(z, groups[z][0], got.concat(z === "78701" ? ["tx-37"] : z === "94103" ? ["sf-supervisor-8"] : ["ny-sd-28"]).filter((x) => x !== groups[z][1]))!.url;
-    const host = new URL(url).hostname.replace(/^www\./, "");
-    for (const id of groups[z]) {
+    expect([...got].sort()).toEqual([...multi[z], ...one[z]].sort());
+    for (const id of got) {
       const blk = h.match(new RegExp(`data-print-split="${id}"[\\s\\S]*?</div>`))![0];
-      expect(blk).toMatch(/<p data-print-split-line="true">Depending on your address, you(&#x27;|\u2019)ll have one of these<\/p><p data-print-split-link="true"><span class="pb-label">/);
-      expect(blk).toContain(host);
+      const line = (multi[z] as readonly string[]).includes(id) ? SPLIT_LINE : SPLIT_LINE_ONE;
+      expect(blk).toContain(`<p data-print-split-line="true">${esc(line)}</p><p data-print-split-link="true"><span class="pb-label">`);
+      expect(blk).toContain(lookup[z]);
+    }
+    expect(h.split(esc(SPLIT_LINE)).length - 1).toBe(multi[z].length);
+    expect(h.split(esc(SPLIT_LINE_ONE)).length - 1).toBe(one[z].length);
+    if (z === "78701") for (const id of ["acc-trustee-place-1", "acc-trustee-place-2", "acc-trustee-place-3"]) {
+      expect(got).not.toContain(id); // Civic recheck P2 (a): dagger via the Unsure key, no address line
+      expect(raceLi(h, id)).toContain("data-print-dagger");
     }
   });
   it("each split intro and its races are one group block (Design P1, 3:43 PM CT)", () => {
-    const want = { "78701": ["tx-10 tx-37", "tx-hd-49 tx-house-51"], "94103": ["sf-supervisor-6 sf-supervisor-8 sf-supervisor-10"], "10001": ["ny-sd-47 ny-sd-28", "ny-civil-3md-ny ny-civil-9md-ny"] } as const;
+    const want = { "78701": ["tx-hd-49 tx-house-51", "tx-10 tx-37", "travis-commissioner-4", "travis-jp-5 travis-jp-4", "travis-constable-4-unexpired"], "94103": ["sf-supervisor-6 sf-supervisor-8 sf-supervisor-10"], "10001": ["ny-sd-47 ny-sd-28", "ny-civil-3md-ny ny-civil-9md-ny", "nyc-council-3"] } as const;
     for (const z of Object.keys(want) as (keyof typeof want)[]) {
       const h = html(z);
-      expect([...h.matchAll(/class="pb-split-group" data-print-split-group="([^"]+)"/g)].map((m) => m[1])).toEqual([...want[z]]);
+      expect([...h.matchAll(/class="pb-split-group" data-print-split-group="([^"]+)"/g)].map((m) => m[1]).sort()).toEqual([...want[z]].sort());
       expect(h).not.toMatch(/data-print-split="[^"]+"[^>]*class="[^"]*pb-strong/);
       expect(h).toMatch(/<div class="pb-split" data-print-split="/);
     }
   });
-  it("the sentence is behind one flag, on, word for word", () => {
+  it("the sentences are behind one flag, on, word for word", () => {
     expect(SHOW_SPLIT_LINE).toBe(true);
     expect(SPLIT_LINE).toBe("Depending on your address, you\u2019ll have one of these");
-    expect(splitStart("78701", "tx-10", ["tx-10", "tx-37"])!.line).toBe(SPLIT_LINE);
+    expect(SPLIT_LINE_ONE).toBe("Depending on your address, this race may not be on your ballot.");
+    expect(splitStart("78701", "tx-10", ["tx-10", "tx-37"], [["tx-10", "tx-37"]])!.line).toBe(SPLIT_LINE);
+    expect(splitStart("78701", "travis-commissioner-4", ["travis-commissioner-4"], [["travis-commissioner-4"]])!.line).toBe(SPLIT_LINE_ONE);
   });
   it("lookups are the official ones", () => {
-    expect(splitStart("78701", "tx-10", ["tx-10", "tx-37"])!.url).toBe("https://teamrv-mvp.sos.texas.gov/MVP/mvp.do");
+    expect(splitStart("78701", "tx-10", ["tx-10", "tx-37"], [["tx-10", "tx-37"]])!.url).toBe("https://teamrv-mvp.sos.texas.gov/MVP/mvp.do");
     expect(splitStart("94103", "sf-supervisor-6", ["sf-supervisor-6", "sf-supervisor-8"])!.url).toBe("https://voterstatus.sos.ca.gov/");
     expect(splitStart("10001", "ny-sd-47", ["ny-sd-47", "ny-sd-28"])!.url).toBe("https://findmypollsite.vote.nyc/");
     expect(splitStart("10001", "ny-sd-28", ["ny-sd-47", "ny-sd-28"])).toBeNull();
@@ -104,16 +116,15 @@ describe("10001 race order and the AD 71 footnote (Civic P1/P2, 3:35 PM CT)", ()
     expect(ids.indexOf("ny-supreme-1jd")).toBeLessThan(ids.indexOf("ny-civil-county-ny"));
     expect(raceOrder("78701", [{ id: "a" }, { id: "b" }]).map((r) => r.id)).toEqual(["a", "b"]);
   });
-  it("prints the AD 71 label once, as one footnote, and each of the 6 races gets only the short line", () => {
+  it("prints the AD 71 label once, as one footnote, cited by the one sheet-wide line", () => {
     const h = html("10001");
     const lbl = NY_COPY_LABEL.replace("'", "&#x27;");
     expect(h.split(lbl).length - 1).toBe(1);
     const note = h.match(/<li[^>]*data-print-note="(\d+)"><span class="pb-num">\[\d+\]<\/span> ([^<]*)/g)!.find((x) => x.includes(lbl))!;
     const n = note.match(/data-print-note="(\d+)"/)![1];
-    for (const id of NY_COPY_RACES) {
-      const line = raceLi(h, id).match(/<p class="pb-order" data-print-order-confirmed="race">([\s\S]*?)<\/p>/)![1];
-      expect(line.replace(/<[^>]+>/g, "").replace(/\u00a0/g, " ")).toBe(`${ORDER_CONFIRMED_LINE} [${n}]`);
-    }
+    const line = h.match(/<p class="pb-muted" data-print-order-confirmed="sheet"[^>]*>([\s\S]*?)<\/p>/)![1].replace(/<[^>]+>/g, "").replace(/\u00a0/g, " ");
+    expect(line.startsWith(`${ORDER_CONFIRMED_SHEET_LINE} [${n}]`)).toBe(true);
+    for (const id of NY_COPY_RACES) expect(raceLi(h, id)).not.toContain("data-print-order-confirmed");
     expect(h).toContain(NY_BOE_LOOKUP.label);
   });
 });

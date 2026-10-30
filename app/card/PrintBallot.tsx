@@ -7,7 +7,7 @@
 // Links can't be clicked on paper, so each link prints as a short label with a numbered note, and the full URL is printed
 // once in the numbered list at the end (the only place long URLs may break anywhere). No QR code: no QR library is in the
 // dependencies.
-import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_CONFIRMED_SHEET_LINE, ORDER_UNSURE_LINE, RETENTION_KEY_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, ballotSlots, displayParty, pickedLine, splitStart, SPLIT_GROUPS } from "../../lib/printText";
+import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_SHEET_LINE, ORDER_UNSURE_LINE, RETENTION_KEY_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, ballotSlots, displayParty, pickedLine, splitStart, SPLIT_GROUPS } from "../../lib/printText";
 import type { OrderCite, PrintRules, VoterRule } from "../../lib/printRules";
 import type { St } from "../../lib/plan";
 
@@ -65,13 +65,14 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
   // Adam 3:07 PM CT: the TX phone line, next to the booth line on the TX sheet only. Text only, cited.
   const phoneP = data.state === "TX" && booth ? <p data-print-phone-line>{TX_PHONE_LINE}{cite(TX_PHONE_SOURCES[0].label, TX_PHONE_SOURCES[0].url)}{cite(TX_PHONE_SOURCES[1].label, TX_PHONE_SOURCES[1].url)}</p> : null;
   const ocAlso = (o: OrderCite) => o.also ? <> <span className="pb-src">{o.also.label}</span>{cite(o.also.label, o.also.url)}</> : null;
-  const sheetCite = unconfirmed === 0 && oc ? <>{cite(oc.label, oc.url)}{ocAlso(oc)}</> : null;
+  // Civic (4:06 PM CT, Oct 30): no per-race confirmed lines; one sheet-wide line covers every race without a dagger.
+  const confirmedN = races.length - unconfirmed;
+  const sheetCite = confirmedN > 0 && oc ? <>{cite(oc.label, oc.url)}{ocAlso(oc)}</> : null;
   const hasRetention = races.some((r) => retentionChoices(r.title));
   const raceIds = races.map((r) => r.id);
   const raceItem = (r: PrintRace) => (
         <li key={r.id} className="pb-race" data-print-race={r.id} data-order-confirmed={r.orderConfirmed ? "1" : "0"}>
           <p className="pb-race-title"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="pb-order-unsure" /></p>
-          {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE}{cite(oc.label, oc.url)}</p> : null}
           {!r.orderConfirmed && PER_RACE_UNSURE ? <p className="pb-order" data-print-order-unsure-race>{ORDER_UNSURE_LINE}</p> : null}
           <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); const ch = retentionChoices(r.title); const mark = picks[r.id] === c.name ? " pb-box-on" : "";
             return ch
@@ -105,8 +106,8 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
       </section>
 
       <h2 className="pb-h2 pb-section">Races</h2>
-      {unconfirmed ? <p className="pb-muted" id="pb-order-unsure" data-print-order-unsure={unconfirmed}>† {ORDER_UNSURE_LINE}</p>
-        : oc ? <p className="pb-muted" data-print-order-confirmed="sheet">{ORDER_CONFIRMED_SHEET_LINE}{sheetCite}</p> : null}
+      {confirmedN > 0 && oc ? <p className="pb-muted" data-print-order-confirmed="sheet" data-print-order-confirmed-n={confirmedN}>{ORDER_CONFIRMED_SHEET_LINE}{sheetCite}</p> : null}
+      {unconfirmed ? <p className="pb-muted" id="pb-order-unsure" data-print-order-unsure={unconfirmed}>† {ORDER_UNSURE_LINE}</p> : null}
       {hasRetention ? <p className="pb-muted" data-print-retention-key>{RETENTION_KEY_LINE}</p> : null}
       <ol className="pb-races" data-print-races={races.length}>
         {segs.map((g) => g.sp ? (

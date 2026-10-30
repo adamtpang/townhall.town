@@ -2982,6 +2982,7 @@
     "level": "federal",
     "office": "Writes and votes on federal laws; all federal tax and spending bills must start in the House. Can impeach federal officials. 2-year term; represents one of Texas's 38 districts.",
     "officeSource": "https://www.house.gov/the-house-explained",
+    "dependsOnAddress": true,
     "candidates": [
      {
       "name": "Chris Gober",
@@ -3194,6 +3195,7 @@
     "level": "federal",
     "office": "Writes and votes on federal laws; all federal tax and spending bills must start in the House. Can impeach federal officials. 2-year term; represents one of Texas's 38 districts.",
     "officeSource": "https://www.house.gov/the-house-explained",
+    "dependsOnAddress": true,
     "candidates": [
      {
       "name": "Lauren B. Peña",
