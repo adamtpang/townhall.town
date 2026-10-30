@@ -73,7 +73,9 @@ describe("QA 0e605d9 Towny follow-up", () => {
   });
   it("qa14: starred sites UT Texas Union and Millennium say 10 PM", () => {
     const sites = J("data/polling_locations.json").zips["78701"].earlyVoting;
-    for (const n of [/UT Texas Union|Texas Union/, /Millennium/]) expect(sites.find((s: any) => n.test(s.name)).hours).toBe("7:00 AM-7:00 PM Oct 19-28; 7:00 AM-10:00 PM Thu Oct 29 and Fri Oct 30 (last day). One of 7 extended-hours sites (marked * on the county list).");
+    // qa15: UT Texas Union trimmed (Millennium unchanged).
+    expect(sites.find((s: any) => /Texas Union/.test(s.name)).hours).toBe("7:00 AM-7:00 PM Oct 19-28; 7:00 AM-10:00 PM Thu Oct 29 and Fri Oct 30 (last day)");
+    expect(sites.find((s: any) => /Millennium/.test(s.name)).hours).toBe("7:00 AM-7:00 PM Oct 19-28; 7:00 AM-10:00 PM Thu Oct 29 and Fri Oct 30 (last day). One of 7 extended-hours sites (marked * on the county list).");
     expect(J("data/civic/polling_locations.json")).toEqual(J("data/polling_locations.json"));
   });
 
@@ -82,8 +84,8 @@ describe("QA 0e605d9 Towny follow-up", () => {
 describe("qa14 credits", () => {
   it("render the rebuilt batch attribution as written", () => {
     expect(P.selfHosted["mike-trouble-lin"].credit).toBe("Mike Trouble Lin's own Linktree page");
-    expect(P.selfHosted["sarah-eckhardt"].credit).toBe("Jeffrey Clemmons via Flickr");
-    expect(P.selfHosted["greg-casar"].credit).toBe("Greg Casar's official page");
+    expect(P.selfHosted["sarah-eckhardt"].credit).toBe("Jeffrey Clemmons via Wikimedia Commons"); // qa15
+    expect(P.selfHosted["greg-casar"].credit).toBe("Greg Casar's official House portrait"); // qa15
     expect(B["greg-casar"].officialPageOwner).toBe("U.S. House of Representatives");
   });
 });

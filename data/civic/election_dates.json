@@ -13,7 +13,7 @@
           {"dates": "2026-10-19 to 2026-10-28", "hours": "7:00 AM-7:00 PM", "appliesTo": "all early voting sites"},
           {"dates": "2026-10-29 to 2026-10-30", "hours": "7:00 AM-10:00 PM", "appliesTo": "extended-hours sites only (marked * on the county list): Ben Hur Shrine Center, Lakeway Activity Center, Millennium Youth Entertainment Complex, PfISD Rock Gym, Randalls Brodie, Travis County Clerk (5501 Airport Blvd), UT Texas Union"},
           {"dates": "2026-10-29 to 2026-10-30", "hours": "7:00 AM-7:00 PM", "appliesTo": "all other early voting sites"},
-          {"dates": "2026-10-30", "hours": "unsure (not stated separately)", "appliesTo": "TCC Complex (3614 Bill Price Rd, Del Valle) is an early voting site on Fri Oct 30 only"}
+          {"dates": "2026-10-30", "hours": "unsure (not stated separately)", "appliesTo": "TCC Complex (Lobby, 3614 Bill Price Rd, Del Valle) is open for early voting on Fri Oct 30 only. The county list does not give its hours separately, so check https://votetravis.gov/current-election-information/current-election/ or call (512) 238-8683 before you go."}
         ],
         "anySite": true,
         "anySiteNote": "You may vote at any polling site in Travis County.",
