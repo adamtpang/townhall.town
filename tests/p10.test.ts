@@ -60,10 +60,9 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
   it("no letter grades on the card; record and overlap lines instead (Adam 9:58 AM CT Oct 30)", () => {
     const s = src("components/CandidateRow.tsx");
     expect(s).not.toMatch(/data-grade-slot|gradeLabel\(/);
-    expect(s).toMatch(/issues have a sourced stance or recorded vote/);
-    expect(s).toMatch(/Issue overlap with your answers/);
-    expect(s).toMatch(/Answer the questions to see overlap/);
-    expect(s).toMatch(/no record found/);
+    // Design 10:14 AM CT Oct 30: fit line only with 2+ shared issues; Record line states its method inline.
+    expect(s).toMatch(/a sourced stance or vote/);
+    expect(s).toMatch(/Matches you on/);
   });
   it("'Who lines up': only answered issues show, the rest sits behind 'Show all positions'; date unsure is a title", () => {
     const s = src("components/CandidateRow.tsx");

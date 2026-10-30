@@ -215,7 +215,9 @@ describe("QA 9dfe90d P2 + design p8", () => {
     const s = src("app/RaceTiers.tsx");
     expect(s).toContain("<h3 className={H3} data-race-title>");
     expect(s).toMatch(/<h3 className="[^"]*" data-measure-title>/);
-    for (const f of ["app/RaceTiers.tsx", "app/EndScreen.tsx", "app/TownyResearch.tsx", "app/IssueMatch.tsx", "app/TownyInterview.tsx", "components/PortraitRow.tsx", "app/card/BallotCard.tsx"]) expect(src(f), f).not.toMatch(/\btext-xs\b|text-\[1[0-2]px\]/);
+    // Design 10:14 AM CT Oct 30: the -2..+2 end captions are 12/16 by spec; nothing else in IssueMatch is.
+    expect(src("app/IssueMatch.tsx").replace(/text-xs leading-4 text-black\/60 md:w-\[482px\]" data-bucket-ends/, "")).not.toMatch(/\btext-xs\b|text-\[1[0-2]px\]/);
+    for (const f of ["app/RaceTiers.tsx", "app/EndScreen.tsx", "app/TownyResearch.tsx", "app/TownyInterview.tsx", "components/PortraitRow.tsx", "app/card/BallotCard.tsx"]) expect(src(f), f).not.toMatch(/\btext-xs\b|text-\[1[0-2]px\]/);
     expect(src("tailwind.config.ts")).not.toMatch(/"1[0-2]px"/);
   });
   it("names: wrap up to 3 lines (QA 94cf301), full name in title; tiles equal height", () => {

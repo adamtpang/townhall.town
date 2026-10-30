@@ -242,7 +242,7 @@ describe("design p9 / QA 4e15da7 items", () => {
   it("Who: under 3 answers, the prompt plus the cards (Adam 9:58 AM CT Oct 30: every candidate shows a card)", () => {
     const h0 = end("78701", { housing: 5 });
     expect(h0).toMatch(/Answer the questions to see overlap\./);
-    expect(h0).toMatch(/data-card-scores/);
+    expect(h0).toMatch(/data-record=/);
   });
   it("market line lists the other prices from the same market and never placeholders", () => {
     const q = { source: "Polymarket" as const, title: "T", url: "https://polymarket.com/event/x", fetchedAt: "2026-10-30T03:58:00Z", outcomes: [{ name: "Ann Lee", prob: 0.6 }, { name: "Bo Diaz", prob: 0.3 }, { name: "Person C", prob: 0.1 }] };

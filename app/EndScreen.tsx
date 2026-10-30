@@ -4,6 +4,7 @@ import { JUDICIAL_RULES, judicialShort } from "../lib/judicial";
 import { useMemo } from "react";
 import { Button } from "../components/ui/button";
 import { stancesFor, type Answers } from "../lib/issues";
+import { SHOW_ACCOUNTABILITY } from "../lib/flags";
 import { overlapStatus, METHOD, RECORD_METHOD } from "../lib/overlapCore.mjs";
 import TownyResearch from "./TownyResearch";
 import WhoRaces from "../components/WhoRaces";
@@ -61,7 +62,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
           <p className="text-sm font-[530] text-black/60">Who</p>
           <h3 className={`mt-2 ${H3}`}>Who lines up with you</h3>
           <p className="mt-3 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation. Candidates are in ballot order.</p>
-          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap and record work</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p><p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p></details>
+          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">{SHOW_ACCOUNTABILITY ? "How overlap and record work" : "How overlap works"}</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p>{SHOW_ACCOUNTABILITY ? <p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p> : null}</details>
           {judicial.length > 0 && (
             <p className="mt-4 max-w-[45ch] text-sm text-black/60" data-judicial-note>
               {(() => {

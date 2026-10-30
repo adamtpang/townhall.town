@@ -9,6 +9,7 @@ import { stanceForm } from "../lib/stanceForm";
 import { HIT } from "../lib/typeScale";
 import CHECKED from "../data/sources-checked.json";
 import { liveUrl } from "../lib/links";
+import { SHOW_ACCOUNTABILITY } from "../lib/flags";
 
 export type RowCand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; officialSite?: string | null };
 type O = { status: string; agree: number; n: number; sourced: number; sourcedIds: string[]; pct?: number | null; enough?: boolean };
@@ -66,7 +67,7 @@ export function cleanChecked(list: Checked[]): Checked[] {
     hosts.add(h); labels.add(l); return true;
   });
 }
-const RECORD_TIP = "Record = issues with a sourced stance or recorded vote, out of the issues asked for your ZIP; score = 100 x that share, rounded. It measures what is on the record, not whether a position is right.";
+const RECORD_TIP = "Record = issues with a sourced stance or recorded vote, out of the issues asked for your ZIP. It measures what is on the record, not whether a position is right.";
 const clip = (t: string, n = 110) => (t.length > n ? `${t.slice(0, n).replace(/\s+\S*$/, "")}…` : t);
 function shortText(s: { voteRecord?: string; quote?: string; summary?: string; bill?: string }) {
   const v = voteLine(s);
@@ -75,7 +76,6 @@ function shortText(s: { voteRecord?: string; quote?: string; summary?: string; b
   return s.summary ? clip(s.summary) : null;
 }
 const issueLabel = (id: string) => ISSUES.find((i) => i.id === id)?.label ?? id;
-const side = (v: unknown) => (typeof v === "number" ? Math.sign(v) : 0);
 
 /** Design p10 P1: visible = name, grade, the issues the voter answered Yes/No (each linked to its source) and the
  *  photo credit. Everything else (all quotes, unclear items, "No record found", sources checked) sits behind one
@@ -87,17 +87,11 @@ export default function CandidateRow({ c, o, ids, answeredYesNo = true, answers 
   // Civic "unsure" items: display only, never scored (value stays null).
   const unsure = ids.filter((id) => st[id]?.status === "unsure" && st[id].value === null);
   const noRec = noRecordIssues(c.name, ids);
-  const asked = o.sourcedIds.filter((id) => typeof answers[id] === "number" && answers[id] !== 0);
-  const same = asked.filter((id) => side(answers[id]) === side(st[id].value));
-  const diff = asked.filter((id) => side(answers[id]) !== side(st[id].value));
-  const srcLink = (id: string, text: string) => { const s = st[id]; return s.sourceUrl
-    ? <a key={id} href={s.sourceUrl} target="_blank" rel="noreferrer" title={s.year ? `${sourceLabel(s.sourceUrl)}, ${s.year}` : `${sourceLabel(s.sourceUrl)}, date unsure`} className={`${HIT} text-[#3760F2]`} data-answered-position={id}>{text} ↗{ext}</a>
-    : <span key={id}>{text}</span>; };
-  const join = (xs: string[]) => xs.map((id, i) => <span key={id}>{i ? ", " : ""}{srcLink(id, issueLabel(id))}</span>);
   const rec = recordFor(st, ids);
-  const main = rec.ids.slice(0, 3);
-  const anyAnswer = ids.some((id) => typeof answers[id] === "number");
-  const fit = !anyAnswer ? "Answer the questions to see overlap" : o.enough && typeof o.pct === "number" ? `${o.pct}% (on ${o.n} issues you both have a side on)` : "not enough shared issues yet (needs 2)";
+  // Only points with a source link; never padded to 3.
+  const main = rec.ids.filter((id: string) => !!st[id]?.sourceUrl).slice(0, 3);
+  // Fit: shown only when 2+ issues overlap (both sides non-zero); a 0 answer never counts.
+  const fitLine = o.n >= 2 ? `Matches you on ${o.agree} of ${o.n} issues` : null;
   void answeredYesNo;
   const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
   return (
@@ -105,28 +99,22 @@ export default function CandidateRow({ c, o, ids, answeredYesNo = true, answers 
       <Portrait name={c.name} photo={c.photo} credit={false} className="w-12 shrink-0" boxClassName="[&>span]:text-base" />
       <div className="min-w-0 flex-1">
         <p className="text-base font-[530] text-black">{c.name}</p>
-        {/* Adam 9:58 AM CT Oct 30: every card shows main points, a record score and issue overlap. No letter grades. */}
-        {rec.x > 0 ? (
-          <ul className="mt-1 space-y-1" aria-label="Main points" data-main-points={main.length}>
+        {/* Adam 9:58 AM CT Oct 30 + design 10:14 AM CT card order: name, fit line (only with 2+ shared issues), up to 3
+            sourced main points (never padded), the accountability line (flagged), then the race's one credit line. */}
+        {fitLine ? <p className="text-base leading-6 text-black/60" data-fit={fitLine}>{fitLine}</p> : null}
+        {main.length > 0 ? (
+          <ul className="mt-1" aria-label="Main points" data-main-points={main.length}>
             {main.map((id: string) => { const s = st[id]; return (
-              <li key={id} className="text-sm leading-5 text-black/80" data-main-point={id}>
-                <span className="font-[530]">{issueLabel(id)}:</span> {shortText(s)}{" "}
-                {s.sourceUrl ? <a href={s.sourceUrl} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`} data-main-source>{sourceLabel(s.sourceUrl)} ↗{ext}</a> : null}
+              <li key={id} className="flex min-w-0 items-baseline gap-2 text-base leading-6 text-black" data-main-point={id}>
+                <span className="min-w-0 truncate"><span className="font-[530]">{issueLabel(id)}:</span> {shortText(s)}</span>
+                <a href={s.sourceUrl!} target="_blank" rel="noreferrer" className="relative shrink-0 text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(s.sourceUrl)}{ext}</a>
               </li>
             ); })}
           </ul>
         ) : null}
-        <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 text-sm leading-5" data-card-scores>
-          <dt className="text-black/60">Record</dt>
-          <dd className="text-black" data-record={rec.x} data-record-n={rec.n} title={RECORD_TIP}>{rec.x ? <>{rec.score}/100 <span className="text-black/60">({rec.x} of {rec.n} issues have a sourced stance or recorded vote)</span></> : "no record found"}</dd>
-          <dt className="text-black/60">Issue overlap with your answers</dt>
-          <dd className="text-black" data-fit={fit}>{fit}</dd>
-        </dl>
-        {asked.length > 0 ? (
-          <p className="mt-1 text-sm leading-5 text-black/80" data-answered-n={asked.length}>
-            {same.length ? <><span className="font-[530]">Same as your answer:</span> {join(same)}.</> : null}
-            {same.length && diff.length ? " " : null}
-            {diff.length ? <><span className="font-[530]">Different:</span> {join(diff)}.</> : null}
+        {SHOW_ACCOUNTABILITY ? (
+          <p className="mt-1 text-xs leading-4 text-black/60" data-record={rec.x} data-record-n={rec.n} title={RECORD_TIP}>
+            Record: {rec.x} of {rec.n} issue{rec.n === 1 ? "" : "s"} {rec.x === 1 ? "has" : "have"} a sourced stance or vote
           </p>
         ) : null}
         {o.sourced < 2 ? (

@@ -21,6 +21,10 @@ const ES: Record<string, string> = {
   Neutral: "Neutral",
   No: "No",
   Go: "Ir",
+  // Fair cards (Oct 30)
+  "Strong no": "Totalmente no",
+  "Strong yes": "Totalmente sí",
+  "No photo found": "Sin foto",
   "Reading…": "Leyendo…",
   "New York, coming soon": "Nueva York, muy pronto",
   "New York": "Nueva York",

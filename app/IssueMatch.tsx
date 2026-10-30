@@ -1,4 +1,5 @@
 "use client";
+import { ToggleGroup } from "../components/ui/toggle-group";
 import { plain } from "../lib/plain";
 import { H2 } from "../lib/typeScale";
 import { useEffect, useState } from "react";
@@ -92,20 +93,14 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
                 <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
                 {i.reason ? <p className="mt-1 max-w-[45ch] text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {plain(i.reason)}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Source ↗</a></> : null}</p> : null}
                 {/* Adam 9:58 AM CT Oct 30: 5 buckets, -2 to +2. 44px+ targets; 5 across fit 390px. */}
-                <div role="radiogroup" aria-labelledby={`q-${i.id}`} className="mt-4 grid grid-cols-5 gap-1.5 md:flex md:gap-2">
-                  {BUCKETS.map((c) => {
-                    const on = sel === c.b;
-                    const txt = c.b > 0 ? `+${c.b}` : String(c.b);
-                    return (
-                      <button key={c.b} type="button" role="radio" aria-checked={on} aria-label={t(c.label)} title={t(c.label)} data-choice={c.b} data-bucket={c.b}
-                        onClick={() => choose(i.id, c.b, i.yesMeansPole)}
-                        className={`flex h-14 min-w-11 flex-col items-center justify-center border text-base font-[530] tabular-nums focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3760F2] md:h-12 md:w-[88px] ${on ? "border-black bg-black text-[#F2F2F2]" : "border-black/30 bg-transparent text-black hover:border-black"}`}>
-                        {txt}
-                      </button>
-                    );
-                  })}
-                </div>
-                <div aria-hidden className="mt-1 flex justify-between text-sm leading-5 text-black/60 md:w-[472px]" data-bucket-ends><span>{t("Strongly disagree")}</span><span>{t("Strongly agree")}</span></div>
+                {/* Design 10:14 AM CT: shadcn-style ToggleGroup (single), radiogroup + roving focus; 96x48 segments at
+                    desktop (480px, left-aligned), full-width 56px-tall segments on phones; no gaps, radius 0. */}
+                <ToggleGroup aria-labelledby={`q-${i.id}`} value={sel === null || sel === undefined ? null : String(sel)}
+                  onValueChange={(v) => choose(i.id, Number(v), i.yesMeansPole)}
+                  className="mt-4 flex w-full divide-x divide-black/15 border border-black/15 md:w-fit"
+                  itemClassName="flex h-14 min-w-11 flex-[1_1_0] items-center justify-center text-base leading-6 font-[530] tabular-nums outline-none focus-visible:relative focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-[hsl(var(--accent))] focus-visible:ring-offset-2 md:h-12 md:w-24 md:flex-none data-[state=on]:bg-black data-[state=on]:text-white data-[state=off]:bg-white data-[state=off]:text-black"
+                  items={BUCKETS.map((c) => ({ value: String(c.b), label: c.text, ariaLabel: t(c.label), "data-choice": c.b, "data-bucket": c.b }))} />
+                <div aria-hidden className="mt-2 flex w-full justify-between text-xs leading-4 text-black/60 md:w-[482px]" data-bucket-ends><span>{t("Strong no")}</span><span>{t("Strong yes")}</span></div>
                 {fromChat[i.id] ? <p className="mt-2 text-sm text-black/60" data-from-chat>Filled from what you wrote: “{fromChat[i.id]}”. Change it if that&apos;s wrong.</p> : null}
               </li>
             );
