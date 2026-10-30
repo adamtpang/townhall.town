@@ -9,12 +9,12 @@ const J = (f: string) => JSON.parse(fs.readFileSync(f, "utf8"));
 const P = J("data/photos.json"); const M = J("data/portraits-manifest.json").portraits; const B = J("data/civic/photos_batch.json");
 
 describe("qa12/qa13 photos", () => {
-  it("Krist, Benathen and Bhatti are self-hosted from Civic's localFiles (never regents.nysed.gov fetched)", () => {
-    for (const id of ["brian-j-krist", "steven-benathen", "haris-bhatti"]) {
+  it("Krist and Benathen are self-hosted from Civic's localFiles (never regents.nysed.gov fetched); Bhatti is a takedown (Design 7:37 AM)", () => {
+    for (const id of ["brian-j-krist", "steven-benathen"]) {
       expect(P.selfHosted[id]?.file, id).toBe(`/portraits/${id}-160.webp`);
       expect(M[id].localFile, id).toBe(`/workspace/townhall/civic/photos_local/${id}.jpg`);
     }
-    expect(M["haris-bhatti"].sourceSize).toEqual([270, 340]); // Civic's pre-cropped solo box (330,80)-(600,420)
+    expect(M["haris-bhatti"]).toBeUndefined();
   });
   it("Frankola-Crawford has no image in either mode", () => {
     expect(J("data/photo_takedowns.json")).toContain("jennifer-frankola-crawford");
@@ -85,5 +85,15 @@ describe("qa14 credits", () => {
     expect(P.selfHosted["sarah-eckhardt"].credit).toBe("Jeffrey Clemmons via Flickr");
     expect(P.selfHosted["greg-casar"].credit).toBe("Greg Casar's official page");
     expect(B["greg-casar"].officialPageOwner).toBe("U.S. House of Representatives");
+  });
+});
+
+describe("Design 7:37 AM: Haris Bhatti initials", () => {
+  it("is a takedown, has no shipped file, and Carl Wilson keeps his", () => {
+    expect(J("data/photo_takedowns.json")).toContain("haris-bhatti");
+    expect(P.selfHosted["haris-bhatti"]).toBeUndefined();
+    expect(fs.existsSync("public/portraits/haris-bhatti-160.webp")).toBe(false);
+    expect(P.selfHosted["carl-wilson"]).toBeDefined();
+    for (const id of ["bunny-mcfadden", "pearci-pj-bastiany-iii"]) expect(fs.existsSync(`public/portraits/${id}-160.webp`)).toBe(true);
   });
 });

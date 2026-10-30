@@ -2500,40 +2500,6 @@
     }
    }
   },
-  "haris-bhatti": {
-   "sourceUrl": "https://harisfornewyork.com/wp-content/uploads/elementor/thumbs/home-1b-rtfhkocf5bhfsnfl0ttwbav944fhg4rcjhgrfg7kvi.jpg",
-   "localFile": "/workspace/townhall/civic/photos_local/haris-bhatti.jpg",
-   "page": "https://harisfornewyork.com/about/",
-   "sourceSha256": "dc259a9df706217bc5541f426b18d3ecb0ea43201ece822652be20d4e6158e17",
-   "sourceBytes": 23960,
-   "sourceSize": [
-    270,
-    340
-   ],
-   "crop": {
-    "left": 0,
-    "top": 14,
-    "width": 270,
-    "height": 270
-   },
-   "focus": [
-    0.5,
-    0.2,
-    1
-   ],
-   "files": {
-    "112": {
-     "file": "/portraits/haris-bhatti-112.webp",
-     "bytes": 1350,
-     "sha256": "6419f436c4081de8056c25b9ab39481650a9a7d60e6c8c27743cd84a9fadf26b"
-    },
-    "160": {
-     "file": "/portraits/haris-bhatti-160.webp",
-     "bytes": 2360,
-     "sha256": "b30a31a22637bfe60f9fd2c3236a0e6449ecdd6eaa4d60430a1d845c559f7520"
-    }
-   }
-  },
   "herb-w-morgan": {
    "sourceUrl": "https://static.wixstatic.com/media/b29e09_9b7ced4a2c004a53b4f05357b426c53c~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_85/Herb%20W_%20Morgan%20III%20%20Headshot_outside.jpg",
    "localFile": null,

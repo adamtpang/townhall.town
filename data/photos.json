@@ -907,18 +907,6 @@
    "width": 225,
    "height": 281
   },
-  "haris-bhatti": {
-   "name": "haris-bhatti",
-   "file": "/portraits/haris-bhatti-160.webp",
-   "file112": "/portraits/haris-bhatti-112.webp",
-   "sourceUrl": "https://harisfornewyork.com/wp-content/uploads/elementor/thumbs/home-1b-rtfhkocf5bhfsnfl0ttwbav944fhg4rcjhgrfg7kvi.jpg",
-   "credit": "Haris Bhatti's campaign site",
-   "license": "Not licensed; candidate's own public photo, credited and linked",
-   "page": "https://harisfornewyork.com/about/",
-   "via": "campaign site",
-   "width": 270,
-   "height": 340
-  },
   "herb-w-morgan": {
    "name": "herb-w-morgan",
    "file": "/portraits/herb-w-morgan-160.webp",
@@ -2361,6 +2349,8 @@
  "selfHostedNote": "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json; sources and sha256 in data/portraits-manifest.json. Cropped and resized only. Never generated.",
  "initialsOnly": {},
  "leftOut": [],
- "excluded": [],
+ "excluded": [
+  "haris-bhatti"
+ ],
  "sameAsCourtPortrait": []
 }

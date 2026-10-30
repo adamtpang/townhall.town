@@ -110,8 +110,8 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               {where.sites.length > 1 && (
                 <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Other sourced sites ({Math.min(where.sites.length - 1, 4)})</summary>
                   <ul className="space-y-1 pb-2">
-                    {where.sites.slice(1, 5).map((s: { name: string; address: string }) => (
-                      <li key={s.name} className="text-sm"><a href={mapsUrl(s.address)} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-[#3760F2]">{s.name} ↗{ext}</a><span className="block text-black/60">{s.address}</span></li>
+                    {where.sites.slice(1, 5).map((s: { name: string; address: string; hours?: string }) => (
+                      <li key={s.name} className="text-sm"><a href={mapsUrl(s.address)} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] text-[#3760F2]">{s.name} ↗{ext}</a><span className="block text-black/60">{s.address}</span>{s.hours && /\(last day\)/.test(s.hours) && <span className="block text-black/60" data-site-hours>{s.hours}</span>}</li>
                     ))}
                   </ul>
                 </details>

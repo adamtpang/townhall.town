@@ -20,6 +20,7 @@ import { createHash } from "node:crypto";
 const batch = JSON.parse(fs.readFileSync("data/civic/photos_batch.json", "utf8"));
 // Exclusion rules live in scripts/photo-rules.mjs (unit-tested in tests/qa8.test.ts).
 import { EXCLUDE, NOT_A_PHOTO, dhash, hamming } from "./photo-rules.mjs";
+const TAKEDOWN_IDS = JSON.parse(fs.readFileSync(new URL("../data/photo_takedowns.json", import.meta.url), "utf8"));
 export const isLicensed = (p) => /public domain|\bCC0\b|\bCC BY\b|creative commons/i.test(String(p.license ?? "")) && !/campaign|press photo|official site|not licensed/i.test(String(p.license ?? ""));
 export const isOwnSource = (p) => /campaign|official|own social profile/i.test(String(p.sourceType ?? ""));
 // Civic qa13 (Oct 30, 6:54 AM CT): the batch's attribution text renders as written ("<Name>'s campaign site",
@@ -127,7 +128,7 @@ export const SIZES = [112, 160];
 async function build(id, p) {
   if (/photo ages not comparable/i.test(p.raceNote ?? "") && p.raceId) incomplete.add(p.raceId);
   if (!p.photoUrl && !p.localFile && !LOCAL[id]) return;
-  if (EXCLUDE(id, p)) { excluded.push(id); return; }
+  if (EXCLUDE(id, p) || TAKEDOWN_IDS.includes(id)) { excluded.push(id); return; } // takedowns: no file is shipped either
   const isLocal = !!(p.localFile || LOCAL[id]);
   if (!isLocal && !isLicensed(p) && !(isOwnSource(p) && p.pageUrl)) { failed.push(`${id}: not licensed and not the candidate's own campaign/official/social photo`); return; }
   let src;
