@@ -4,7 +4,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { readFileSync } from "node:fs";
 import { buildStrip, stripIdsFor, STRIP_EVENTS, asOfCT, ROMERO_LINE, STRIP_LABEL, type LiveEvent } from "../lib/polyStrip";
-import { loadStrip, PolyStripView } from "../components/PolyStrip";
+import { loadStrip, PolyStripView, tickerSeconds } from "../components/PolyStrip";
 import { ballotFor } from "../lib/tools";
 
 const NOW = Date.parse("2026-10-30T20:05:00Z"); // 3:05 PM CT
@@ -96,10 +96,9 @@ describe("Polymarket strip", () => {
     expect(out).toMatch(/data-strip-label/);
     expect(out).toContain("text-sm");
     expect(out).toContain("min-h-11");
-    expect(out).toContain("overflow-x-auto");
-    expect(out).toContain("snap-x");
-    // sr-only spans are absolute; the scroller must contain them or the page overflows at 320/390 (found in QA).
-    expect(out).toMatch(/<ul class="relative [^"]*overflow-x-auto/);
+    // Ticker (3:35 PM): the viewport clips (overflow-x-hidden) and contains the absolute sr-only spans, so the page
+    // never overflows at 320/390; reduced motion switches it to overflow-x:auto with snap (globals.css).
+    expect(out).toMatch(/<div class="relative [^"]*overflow-x-hidden[^"]*" data-strip-scroller/);
     // Design 3:06: links are ink with an underline, never the site purple or blue (global a is brand-700).
     for (const a of out.match(/<a [^>]*>/g) || []) expect(a).toContain("text-ink hover:text-ink");
     expect(out).not.toMatch(/(text|bg)-(red|blue|green|rose|sky)-/);
@@ -107,5 +106,41 @@ describe("Polymarket strip", () => {
     expect(STRIP_LABEL).toBe("Polymarket prices (market price, not a poll or forecast)");
     expect(readFileSync("app/globals.css", "utf8")).toMatch(/\[data-poly-strip\] \{ --market-bg: #EEF4FB; --market-border: #D3E2F4; --market-mark: #3B6FB6; \}/);
     expect(asOfCT("2026-10-30T20:05:00Z")).toBe("3:05 PM CT");
+  });
+});
+
+describe("strip ticker (Adam 3:35 PM: sliding like a news banner)", () => {
+  const two = () => buildStrip(["national-senate", "national-house"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]), "national-house": ev("national-house", [[0.4, 0.6], [0.6, 0.4]]) }, null, NOW);
+  it("label stays outside the moving track; the duplicate set is aria-hidden with every control at tabindex -1", () => {
+    const s = two() ?? buildStrip(["national-senate"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]) }, null, NOW);
+    const out = html(s);
+    const track = out.slice(out.indexOf("data-strip-track"));
+    expect(out.indexOf("data-strip-label")).toBeLessThan(out.indexOf("data-strip-track"));
+    expect(track).not.toContain("data-strip-label");
+    const dup = out.match(/<ul[^>]*aria-hidden="true"[^>]*data-strip-dup[^>]*>([\s\S]*?)<\/ul>/);
+    expect(dup).toBeTruthy();
+    const ctrls = dup![1].match(/<(a|button) [^>]*>/g) || [];
+    expect(ctrls.length).toBe(s!.chips.length);
+    for (const c of ctrls) expect(c).toContain('tabindex="-1"');
+    expect(dup![1]).not.toMatch(/popover="auto"|id="pm-/);
+    // the real set stays keyboard-reachable
+    const real = out.match(/<ul[^>]*data-strip-set[^>]*>([\s\S]*?)<\/ul>/)![1];
+    for (const c of real.match(/<(a|button) [^>]*>/g) || []) expect(c).not.toContain("tabindex");
+    expect(out).toMatch(/--ticker-dur:\d+s/);
+  });
+  it("plain CSS loop with pause on hover/focus; reduced motion is static, scrollable and drops the duplicate", () => {
+    const css = readFileSync("app/globals.css", "utf8");
+    expect(css).toMatch(/@keyframes poly-ticker \{ from \{ transform: translateX\(0\); \} to \{ transform: translateX\(-50%\); \} \}/);
+    expect(css).toMatch(/\[data-strip-scroller\]:hover \[data-strip-track\], \[data-strip-scroller\]:focus-within \[data-strip-track\] \{ animation-play-state: paused; \}/);
+    const rm = css.slice(css.indexOf("[data-strip-track] { animation: none"));
+    expect(css).toMatch(/@media \(prefers-reduced-motion: reduce\) \{\n  \[data-strip-track\] \{ animation: none !important; transform: none; \}\n  \[data-strip-dup\] \{ display: none; \}\n  \[data-strip-scroller\] \{ overflow-x: auto;/);
+    expect(rm.length).toBeGreaterThan(0);
+  });
+  it("speed stays readable: ~40-60px/s", () => {
+    const s = two() ?? buildStrip(["national-senate"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]) }, null, NOW);
+    const secs = tickerSeconds(s!.chips);
+    const chars = s!.chips.reduce((n, c) => n + c.title.length + 30, 0);
+    expect(secs).toBeGreaterThanOrEqual(10);
+    expect((chars * 7.6) / secs).toBeLessThan(80);
   });
 });

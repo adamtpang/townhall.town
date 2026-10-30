@@ -123,3 +123,12 @@ body {
 /* Polymarket strip only (Adam 3:04 PM Oct 30: "the polymarket banner should be blue"). The rest of the site keeps its
    no-blue rule; text in the strip stays ink, and both sides of every market use the same neutral ink. */
 [data-poly-strip] { --market-bg: #EEF4FB; --market-border: #D3E2F4; --market-mark: #3B6FB6; }
+/* Strip ticker: plain CSS loop (~50px/s via --ticker-dur), pauses on hover and keyboard focus. */
+@keyframes poly-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+[data-strip-track] { animation: poly-ticker var(--ticker-dur, 40s) linear infinite; will-change: transform; }
+[data-strip-scroller]:hover [data-strip-track], [data-strip-scroller]:focus-within [data-strip-track] { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  [data-strip-track] { animation: none !important; transform: none; }
+  [data-strip-dup] { display: none; }
+  [data-strip-scroller] { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; }
+}

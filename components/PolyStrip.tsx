@@ -1,3 +1,4 @@
+import type React from "react";
 // Polymarket strip: server component, no client JS (panels use the native popover attribute). See lib/polyStrip.ts.
 import { fetchPolymarketEventSides } from "../lib/marketsCore.mjs";
 import { buildStrip, stripIdsFor, stripLabelFull, STRIP_EVENTS, STRIP_LABEL, type LiveEvent, type Strip, type StripChip } from "../lib/polyStrip";
@@ -19,21 +20,27 @@ export async function loadStrip(ballot: BallotArg, now = Date.now()): Promise<St
 
 const sides = (r: StripChip["rows"][number]) => r.sides.map((s) => `${s.outcome} ${s.pct}`).join(" · ");
 
-function Chip({ c, asOfLabel }: { c: StripChip; asOfLabel: string }) {
+function Chip({ c, asOfLabel, dup = false }: { c: StripChip; asOfLabel: string; dup?: boolean }) {
   const chipCls = `inline-flex min-h-11 items-center ${LINK}`;
+  // The ticker's second (duplicate) set is aria-hidden; its controls leave the tab order and it renders no panels.
+  const tab = dup ? { tabIndex: -1 } : {};
   if (c.rows.length === 1) {
     return (
-      <a href={c.url} target="_blank" rel="noopener" className={chipCls} data-strip-chip>
+      <a href={c.url} target="_blank" rel="noopener" className={chipCls} data-strip-chip {...tab}>
         <span className="font-[530]">{c.title}</span>: {sides(c.rows[0])} ↗{NEW_TAB}
       </a>
     );
   }
   const pid = `pm-${c.id}`;
+  const btn = (
+    <button type="button" popoverTarget={pid} className={chipCls} data-strip-chip {...tab}>
+      <span className="font-[530]">{c.title}</span>&nbsp;· {c.rows.length} markets
+    </button>
+  );
+  if (dup) return btn;
   return (
     <>
-      <button type="button" popoverTarget={pid} className={chipCls} data-strip-chip>
-        <span className="font-[530]">{c.title}</span>&nbsp;· {c.rows.length} markets
-      </button>
+      {btn}
       <div id={pid} popover="auto" className="m-auto w-[min(92vw,560px)] max-h-[80vh] overflow-auto whitespace-normal border border-[var(--market-border)] bg-white p-5 text-sm font-[450] text-ink shadow-lg" data-strip-panel>
         <p className="text-base font-[530]"><a href={c.url} target="_blank" rel="noopener" className={`inline-flex min-h-11 items-center ${LINK}`}>{c.title} ↗{NEW_TAB}</a></p>
         <ul className="mt-2 space-y-3">
@@ -52,6 +59,13 @@ function Chip({ c, asOfLabel }: { c: StripChip; asOfLabel: string }) {
   );
 }
 
+/** Loop length for ~50px/s: one set's width estimated from its text (14px Inter ≈ 7.6px/char) plus gaps. */
+export function tickerSeconds(chips: StripChip[]): number {
+  const chars = chips.reduce((n, c) => n + c.title.length + (c.rows.length === 1 ? sides(c.rows[0]).length + 4 : 12), 0);
+  const px = chars * 7.6 + chips.length * 20 + 40;
+  return Math.max(10, Math.round(px / 50));
+}
+
 /** Renders nothing without fresh, complete live data. */
 export function PolyStripView({ strip }: { strip: Strip | null }) {
   if (!strip) return null;
@@ -62,9 +76,18 @@ export function PolyStripView({ strip }: { strip: Strip | null }) {
           <span aria-hidden className="inline-block h-2 w-2 shrink-0 bg-[var(--market-mark)]" />
           <span><a href="https://polymarket.com" target="_blank" rel="noopener" className={LINK}>{STRIP_LABEL}{NEW_TAB}</a><span className="text-ink/60" data-strip-asof>{` · as of ${strip.asOfLabel}`}</span></span>
         </p>
-        <ul className="relative flex min-w-0 flex-1 snap-x snap-mandatory scroll-px-5 items-center gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,#000_calc(100%-28px),transparent)] after:w-6 after:shrink-0 after:content-['']" data-strip-scroller>
-          {strip.chips.map((c) => <li key={c.id} className="shrink-0 snap-start"><Chip c={c} asOfLabel={strip.asOfLabel} /></li>)}
-        </ul>
+        {/* Ticker (Adam 3:35 PM: "sliding like a news banner"): the label above stays put, only the prices move.
+            Two identical sets slide by -50% in a CSS loop; hover/focus pauses; reduced motion = static, scrollable. */}
+        <div className="relative min-w-0 flex-1 overflow-x-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,#000_calc(100%-28px),transparent)]" data-strip-scroller>
+          <div className="flex w-max items-center whitespace-nowrap" data-strip-track style={{ "--ticker-dur": `${tickerSeconds(strip.chips)}s` } as React.CSSProperties}>
+            <ul className="flex shrink-0 items-center gap-5 pr-10" data-strip-set>
+              {strip.chips.map((c) => <li key={c.id} className="shrink-0 snap-start"><Chip c={c} asOfLabel={strip.asOfLabel} /></li>)}
+            </ul>
+            <ul className="flex shrink-0 items-center gap-5 pr-10" aria-hidden="true" data-strip-dup>
+              {strip.chips.map((c) => <li key={c.id} className="shrink-0"><Chip c={c} asOfLabel={strip.asOfLabel} dup /></li>)}
+            </ul>
+          </div>
+        </div>
       </div>
       <script dangerouslySetInnerHTML={{ __html: STALE_GUARD }} />
     </section>
