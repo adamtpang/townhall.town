@@ -41,6 +41,7 @@ export default function AgentTrace({
   bullets,
   seconds,
   running = false,
+  fallback = false,
 }: {
   tools: string[];
   steps: Record<string, Step>;
@@ -49,6 +50,8 @@ export default function AgentTrace({
   bullets?: SummaryBullet[];
   seconds: number | null;
   running?: boolean;
+  /** True when no model ran (every step was filled in by code). Shown as a small tag, so the header stays honest. */
+  fallback?: boolean;
 }) {
   const t = useT();
   const done = tools.filter((k) => steps[k]?.status === "done");
@@ -65,6 +68,7 @@ export default function AgentTrace({
         <span className="tabular-nums">
           {running ? `${t("Working")}: ${done.length} ${t("of")} ${tools.length}` : `${done.length} ${t("tool calls")}`}
           {!running && seconds != null ? ` · ${seconds.toFixed(1)}s` : ""}
+          {!running && fallback ? ` · ${t("no model (fallback)")}` : ""}
         </span>
       </summary>
       <ol className="mt-3 space-y-2 text-sm">
