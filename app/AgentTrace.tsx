@@ -61,20 +61,20 @@ export default function AgentTrace({
           return (
             <li key={k} className="grid grid-cols-1 gap-1 sm:grid-cols-12">
               <span className="text-black sm:col-span-4">
-                <code className="text-xs text-black/60">{k}</code> {t(LABEL[k] ?? k)}
+                <code className="text-sm text-black/60">{k}</code> {t(LABEL[k] ?? k)}
               </span>
               <span className="text-black/70 sm:col-span-6">{s.summary}</span>
-              <span className="text-xs text-black/50 sm:col-span-2 sm:text-right">
+              <span className="text-sm tabular-nums text-muted-foreground sm:col-span-2 sm:text-right">
                 {s.ms != null ? `${s.ms} ms` : ""} · {k === "analyze" ? t("computed from tool results") : chose ? t("model called") : t("auto-completed")}
               </span>
-              <span className="text-xs text-black/50 sm:col-span-12 sm:pl-0">{t("Source")}: {t(SOURCE[k] ?? "")}</span>
+              <span className="text-sm text-black/50 sm:col-span-12 sm:pl-0">{t("Source")}: {t(SOURCE[k] ?? "")}</span>
             </li>
           );
         })}
       </ol>
       {insights?.length ? (
         <div className="mt-4 border-l-2 border-[#3760f2] pl-4">
-          <p className="text-xs text-black/50">{t("Agent summary")}</p>
+          <p className="text-sm text-black/50">{t("Agent summary")}</p>
           <ul className="mt-1 space-y-2 text-base text-black">
             {insights.map((i) => (
               <li key={i.text}>
@@ -86,7 +86,7 @@ export default function AgentTrace({
         </div>
       ) : narration ? (
         <div className="mt-4 border-l-2 border-[#3760f2] pl-4">
-          <p className="text-xs text-black/50">{t("Agent summary")}</p>
+          <p className="text-sm text-black/50">{t("Agent summary")}</p>
           <p className="mt-1 whitespace-pre-line text-base text-black">{narration}</p>
         </div>
       ) : null}
