@@ -348,7 +348,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
           required: ["type", "tool", "label", "status"],
           properties: {
             type: { const: "step" },
-            tool: { type: "string", enum: ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"] },
+            tool: { type: "string", enum: ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems", "getCampaignFinance", "getCountyUnemployment", "analyze"] },
             label: { type: "string" },
             status: { type: "string", enum: ["running", "done"] },
             input: { description: "Tool input, on running events." },

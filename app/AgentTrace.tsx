@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useT } from "../lib/i18n";
 
-type Step = { tool: string; status: "running" | "done"; summary?: string; ms?: number };
+type Step = { tool: string; status: "running" | "done"; summary?: string; ms?: number; checked?: string; source?: { label: string; url: string } | null };
 /** Server-built summary bullet (lib/api/agent.ts SummaryBullet): sourced, two-sided for markets. */
 export type SummaryBullet = { kind: "market" | "measure" | "census"; text: string; sourceUrl: string | null; whatChanges?: string | null; whatChangesSourceUrl?: string | null };
 
@@ -12,6 +12,8 @@ const LABEL: Record<string, string> = {
   getCandidates: "Looked up the candidates",
   getMarketOdds: "Checked live Polymarket prices",
   getLocalProblems: "Pulled local Census data",
+  getCampaignFinance: "Checked campaign finance (live)",
+  getCountyUnemployment: "Checked county unemployment (live)",
   analyze: "Analyzed what matters",
 };
 const SOURCE: Record<string, string> = {
@@ -20,6 +22,8 @@ const SOURCE: Record<string, string> = {
   getCandidates: "Ballotpedia, FEC, state ethics filings",
   getMarketOdds: "Polymarket live API",
   getLocalProblems: "Census ACS 5-year",
+  getCampaignFinance: "OpenFEC API",
+  getCountyUnemployment: "BLS LAUS API",
   analyze: "the tool results above, plus official measure costs",
 };
 const SOURCE_LINK: Record<SummaryBullet["kind"], string> = { market: "Polymarket", measure: "Official cost", census: "Census table" };
@@ -76,7 +80,7 @@ export default function AgentTrace({
         </span>
       </summary>
       {!running && (
-        <p className="mt-2 text-sm text-black/60">{model ? `${t("Planned by")} ${model}` : t("No model ran; every step was filled in by code.")}</p>
+        <p className="mt-2 text-sm text-black/60">{model ? `${t("Planned by")} ${model} · ${t("called")} ${byModel.length} ${t("of")} ${tools.length - 1} ${t("lookups")}` : t("No model ran; every step was filled in by code.")}</p>
       )}
       <ol className="mt-3 space-y-2 text-sm">
         {shown.map((k, idx) => {
@@ -88,9 +92,12 @@ export default function AgentTrace({
               </span>
               <span className="min-w-0 break-words text-black/70 sm:col-span-6">{s.status === "done" ? s.summary : `${t("Running")}…`}</span>
               <span className="text-sm tabular-nums text-muted-foreground sm:col-span-2 sm:text-right">
-                {s.ms != null ? `${s.ms} ms` : ""}{s.status === "done" ? " · " : ""}{s.status !== "done" ? "" : k === "analyze" ? t("computed from tool results") : byModel.includes(k) ? t("model called") : t("auto-completed")}
+                {s.ms != null ? `${s.ms} ms` : ""}
               </span>
-              <span className="text-sm text-black/60 sm:col-span-12">{t("Source")}: {t(SOURCE[k] ?? "")}</span>
+              {s.checked ? <span className="text-sm text-black/60 sm:col-span-12">{t("Checked")}: {s.checked}</span> : null}
+              <span className="text-sm text-black/60 sm:col-span-12">
+                {t("Source")}: {s.source ? <a href={s.source.url} target="_blank" rel="noreferrer">{s.source.label} ↗</a> : t(SOURCE[k] ?? "")}
+              </span>
             </li>
           );
         })}
