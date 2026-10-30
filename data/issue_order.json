@@ -1,0 +1,297 @@
+{
+ "asOf": "2026-10-29",
+ "intro": "Your answers stay private on your device and are never shared or sold.",
+ "scale": {
+  "buttons": {
+   "Yes": 5,
+   "Neutral": 0,
+   "No": -5
+  },
+  "conversion": "candidateButtonValue = stance.value * yesMeansPole (stance.value is -5..+5 on the stances.json axis; -5 = first pole, +5 = second pole)"
+ },
+ "method": "Issues ranked per ZIP by local relevance: ZIP-level Census ACS 2024 5-year data (via Census Reporter, since the Census API now requires a key), official city/police/state data, and what this ZIP's ballot offices and measures decide (ballots.json, ballots_additions.json, measures_math.json). Ranking is a judgment from those numbers, not a poll. Statement wording is shared across all three ZIPs; only rank and reason differ. Yes maps to the +5 pole for 5 issues and to the -5 pole for 4, so Yes is not always the same side.",
+ "statements": {
+  "housing": {
+   "statement": "Government should take direct action to lower housing costs.",
+   "yesMeansPole": 1,
+   "poles": {
+    "-5": "Government stays out of housing",
+    "+5": "Government acts to lower housing costs"
+   }
+  },
+  "healthcare": {
+   "statement": "Government should play a smaller role in paying for health care.",
+   "yesMeansPole": -1,
+   "poles": {
+    "-5": "Smaller government role in health care",
+    "+5": "Government expands access to health care"
+   }
+  },
+  "wages": {
+   "statement": "Employers and workers, not government, should decide wage levels.",
+   "yesMeansPole": -1,
+   "poles": {
+    "-5": "Market sets wages",
+    "+5": "Government raises wages"
+   }
+  },
+  "taxes": {
+   "statement": "Paying higher taxes is worth it to get more public services.",
+   "yesMeansPole": 1,
+   "poles": {
+    "-5": "Lower taxes, fewer services",
+    "+5": "Higher taxes, more services"
+   }
+  },
+  "safety": {
+   "statement": "Public safety funding should shift toward treatment and prevention programs rather than arrests.",
+   "yesMeansPole": -1,
+   "poles": {
+    "-5": "Diversion (treatment and prevention)",
+    "+5": "Enforcement (policing and prosecution)"
+   }
+  },
+  "education": {
+   "statement": "Public education money should be able to follow students to private schools.",
+   "yesMeansPole": 1,
+   "poles": {
+    "-5": "Public money stays in public schools",
+    "+5": "Public money follows students to private schools"
+   }
+  },
+  "energy": {
+   "statement": "Energy policy should prioritize oil and gas production over renewable energy.",
+   "yesMeansPole": -1,
+   "poles": {
+    "-5": "Oil and gas",
+    "+5": "Environment and renewables"
+   }
+  },
+  "immigration": {
+   "statement": "Government should increase immigration enforcement.",
+   "yesMeansPole": 1,
+   "poles": {
+    "-5": "Less immigration enforcement",
+    "+5": "More immigration enforcement"
+   }
+  },
+  "infrastructure": {
+   "statement": "Government should spend more on roads, transit, and public works.",
+   "yesMeansPole": 1,
+   "poles": {
+    "-5": "Less infrastructure spending",
+    "+5": "More infrastructure spending"
+   }
+  }
+ },
+ "zips": {
+  "78701": {
+   "place": "Austin, TX",
+   "order": [
+    "taxes",
+    "infrastructure",
+    "housing",
+    "safety",
+    "education",
+    "energy",
+    "healthcare",
+    "immigration",
+    "wages"
+   ],
+   "issues": [
+    {
+     "issue": "taxes",
+     "rank": 1,
+     "reason": "City Props A and B are labeled tax increases: $295M in bonds, about $514M with interest over 20 years.",
+     "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=482565"
+    },
+    {
+     "issue": "infrastructure",
+     "rank": 2
+    },
+    {
+     "issue": "housing",
+     "rank": 3,
+     "reason": "Median gross rent is $2,759; 30.3% of renters spend 30%+ of income on rent (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US78701"
+    },
+    {
+     "issue": "safety",
+     "rank": 4,
+     "reason": "APD logged 14,317 crime reports in Council District 9 (all of 78701) in 2025, up 4% from 13,743 in 2024.",
+     "sourceUrl": "https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu"
+    },
+    {
+     "issue": "education",
+     "rank": 5,
+     "reason": "State Board of Education, Austin ISD and ACC seats are on the ballot; 274,000+ students applied for Texas's new school-choice accounts.",
+     "sourceUrl": "https://comptroller.texas.gov/about/media-center/news/20260402-texas-comptrollers-office-releases-comprehensive-overview-of-texas-education-freedom-account-applications-1775142014682"
+    },
+    {
+     "issue": "energy",
+     "rank": 6,
+     "reason": "A Railroad Commission seat (oil and gas regulator) is on the ballot; Texas average retail power price is 9.79 cents/kWh (EIA).",
+     "sourceUrl": "https://www.eia.gov/electricity/state/texas/"
+    },
+    {
+     "issue": "healthcare",
+     "rank": 7,
+     "reason": "5.1% of 78701 residents have no health insurance (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US78701"
+    },
+    {
+     "issue": "immigration",
+     "rank": 8,
+     "reason": "13.5% of residents are foreign-born; Governor and Attorney General, on this ballot, shape state enforcement (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B05002&geo_ids=86000US78701"
+    },
+    {
+     "issue": "wages",
+     "rank": 9,
+     "reason": "Median household income is $162,168 and 9.7% of residents live below the poverty line (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B19013&geo_ids=86000US78701"
+    }
+   ]
+  },
+  "94103": {
+   "place": "San Francisco, CA",
+   "order": [
+    "housing",
+    "taxes",
+    "infrastructure",
+    "safety",
+    "wages",
+    "healthcare",
+    "education",
+    "immigration",
+    "energy"
+   ],
+   "issues": [
+    {
+     "issue": "housing",
+     "rank": 1,
+     "reason": "80.3% of households rent and 38.8% of renters spend 30%+ of income on rent; Props 1, 37, C and I address housing (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US94103"
+    },
+    {
+     "issue": "taxes",
+     "rank": 2,
+     "reason": "Nine tax-related measures are on this ballot, including Prop 3 ($5B-$15B a year) and SF Prop H (about $177M a year).",
+     "sourceUrl": "https://voterguide.sos.ca.gov/propositions/3/analysis.htm"
+    },
+    {
+     "issue": "infrastructure",
+     "rank": 3,
+     "reason": "The Regional Transit Measure would raise about $980M a year for 14 years; 24.7% of 94103 workers commute by transit.",
+     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=54"
+    },
+    {
+     "issue": "safety",
+     "rank": 4,
+     "reason": "SFPD reported 27,945 Part I crimes citywide in 2025, down 24% from 36,964 in 2024; Public Defender is on the ballot.",
+     "sourceUrl": "https://www.sanfranciscopolice.org/sites/default/files/2026-02/SFPD%20Crime%20Report%20December%202025.pdf"
+    },
+    {
+     "issue": "wages",
+     "rank": 5,
+     "reason": "19.7% of 94103 residents live below the poverty line; San Francisco's minimum wage is $19.61 an hour as of July 1, 2026.",
+     "sourceUrl": "https://www.sf.gov/information--minimum-wage-ordinance"
+    },
+    {
+     "issue": "healthcare",
+     "rank": 6,
+     "reason": "Prop 38 would issue $8.4B in medical research bonds and Prop 44 sets clinic spending rules; 4.9% of residents are uninsured.",
+     "sourceUrl": "https://voterguide.sos.ca.gov/propositions/38/analysis.htm"
+    },
+    {
+     "issue": "education",
+     "rank": 7,
+     "reason": "Superintendent of Public Instruction, SF Board of Education (3 seats) and Community College Board are on the ballot; 8.6% of residents are under 18.",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B09001&geo_ids=86000US94103"
+    },
+    {
+     "issue": "immigration",
+     "rank": 8,
+     "reason": "38.8% of 94103 residents are foreign-born; the Attorney General on this ballot sets state legal positions (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B05002&geo_ids=86000US94103"
+    },
+    {
+     "issue": "energy",
+     "rank": 9,
+     "reason": "California's average retail power price is 27.04 cents/kWh (EIA); Prop 45 changes environmental review for some projects.",
+     "sourceUrl": "https://www.eia.gov/electricity/state/california/"
+    }
+   ]
+  },
+  "10001": {
+   "place": "New York, NY",
+   "order": [
+    "housing",
+    "safety",
+    "infrastructure",
+    "taxes",
+    "immigration",
+    "wages",
+    "healthcare",
+    "energy",
+    "education"
+   ],
+   "issues": [
+    {
+     "issue": "housing",
+     "rank": 1,
+     "reason": "75.9% of households rent; median gross rent is $3,361 and 40.3% of renters spend 30%+ of income on rent (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US10001"
+    },
+    {
+     "issue": "safety",
+     "rank": 2,
+     "reason": "Midtown South Precinct major felonies are 2,262 year-to-date in 2026, down 12% from 2,569 in 2025 (NYPD CompStat).",
+     "sourceUrl": "https://www.nyc.gov/assets/nypd/downloads/pdf/crime_statistics/cs-en-us-014pct.pdf"
+    },
+    {
+     "issue": "infrastructure",
+     "rank": 3,
+     "reason": "35.6% of 10001 workers commute by transit; NYC Proposals 1, 3 and 4 change street, property and permit approvals.",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B08301&geo_ids=86000US10001"
+    },
+    {
+     "issue": "taxes",
+     "rank": 4,
+     "reason": "NYC Proposal 5 would set a reserve target of at least 12% of prior-year tax revenue; the State Comptroller is also on the ballot.",
+     "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-ballot-proposals"
+    },
+    {
+     "issue": "immigration",
+     "rank": 5,
+     "reason": "29.8% of 10001 residents are foreign-born; Governor and Attorney General, on this ballot, shape state policy (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B05002&geo_ids=86000US10001"
+    },
+    {
+     "issue": "wages",
+     "rank": 6,
+     "reason": "15.1% of residents live below the poverty line; New York City's minimum wage is $17.00 an hour (NY Dept. of Labor).",
+     "sourceUrl": "https://dol.ny.gov/minimum-wage-0"
+    },
+    {
+     "issue": "healthcare",
+     "rank": 7,
+     "reason": "3.3% of 10001 residents have no health insurance (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter); state health spending runs through the Governor and Legislature.",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US10001"
+    },
+    {
+     "issue": "energy",
+     "rank": 8,
+     "reason": "New York's average retail power price is 19.66 cents/kWh (EIA); state energy policy is set by the Governor and Legislature.",
+     "sourceUrl": "https://www.eia.gov/electricity/state/newyork/"
+    },
+    {
+     "issue": "education",
+     "rank": 9,
+     "reason": "11.0% of 10001 residents are under 18; no school board or school measure is on this ballot (ACS 2024 5-year (2020-2024), ZCTA level, via Census Reporter).",
+     "sourceUrl": "https://censusreporter.org/data/table/?table=B09001&geo_ids=86000US10001"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,731 @@
+{
+ "stances": {
+  "sarah-eckhardt": {
+   "name": "Sarah Eckhardt",
+   "energy": {
+    "value": 5,
+    "quote": "Eckhardt advocates for increases in renewable energy generation, decreases in per capita energy and water consumption",
+    "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt"
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools.",
+    "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt"
+   },
+   "education": {
+    "value": -4,
+    "quote": "I will also show how publicly subsidizing exclusive private schools is gutting public schools, which must accept any Texas child and are closing at an alarming rate due to underfunding and overregulation.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "SB 8: Agreements between sheriffs and the United States Immigration and Customs Enforcement to enforce federal immigration law",
+    "sourceUrl": "https://capitollens.org/texas/votes/89r-senate-0531-sb8/",
+    "voteRecord": "Voted Nay (Senate conference committee report, May 31, 2025; passed 20-11)"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Sarah_Eckhardt",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Sarah_Eckhardt",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+    ]
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "Texas has massive water infrastructure needs, with a $154B gap. We must use the $28B Rainy Day Fund to bridge this divide.",
+    "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt"
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "Eckhardt advocates for an expansion of Medicaid to insure 1M more Texans and help rural hospitals stay open to serve them",
+    "sourceUrl": "https://ballotpedia.org/Sarah_Eckhardt"
+   }
+  },
+  "don-huffines": {
+   "name": "Don Huffines",
+   "housing": {
+    "value": -3,
+    "quote": "Huffines knows that government is the number one driver of housing costs, from sky-high property taxes to California-style regulation and red tape.",
+    "sourceUrl": "https://donhuffines.com/"
+   },
+   "education": {
+    "value": 5,
+    "quote": "As Comptroller, Don Huffines will manage the new Texas Education Savings Account program, which allows parents to choose the best school for their child. He will ensure it is transparent and empowers parents with no strings attached.",
+    "sourceUrl": "https://donhuffines.com/"
+   },
+   "energy": {
+    "value": -4,
+    "quote": "He'll oppose tax breaks for woke, out-of-state corporations and green energy subsidies that hurt Texas oil, gas, and small businesses.",
+    "sourceUrl": "https://donhuffines.com/"
+   },
+   "wages": {
+    "value": -4,
+    "quote": "Don Huffines believes government is the number one barrier to job creation and income growth. As Comptroller, he’ll fight to cut taxes and eliminate job-killing regulations that hold back Texas businesses and drive up the cost of living.",
+    "sourceUrl": "https://ballotpedia.org/Don_Huffines"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Don_Huffines",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://donhuffines.com/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Don_Huffines",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://donhuffines.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Don_Huffines",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://donhuffines.com/"
+    ]
+   }
+  },
+  "vikki-goodwin": {
+   "name": "Vikki Goodwin",
+   "education": {
+    "value": -5,
+    "quote": "As Lt Governor, my priority will be to put an end to private school vouchers or any program that diverts public dollars to private schools.",
+    "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin"
+   },
+   "energy": {
+    "value": 5,
+    "quote": "We need to address climate change now, working towards a carbon neutral world with clean air and water.",
+    "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin"
+   },
+   "safety": {
+    "value": -2,
+    "quote": "I believe Texas needs a sensible regulatory framework for THC rather than outright prohibition.",
+    "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin"
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "Under current leadership, the state government is carrying out the ruthless and often illegal detention of people who call Texas home. State and local law enforcement collaboration with federal immigration agencies is eroding the trust Texans have in their government.",
+    "sourceUrl": "https://goodwin4texas.com/issues/"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "Vikki supports wise use of the state's surplus through initiatives like Texas Cares and the Fair Rent Incentive Act, while prioritizing teacher pay increases, childcare center tax exemptions, and infrastructure investments that create opportunities for all Texans.",
+    "sourceUrl": "https://goodwin4texas.com/issues/"
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Vikki_Goodwin",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://goodwin4texas.com/"
+    ]
+   }
+  },
+  "dan-patrick": {
+   "name": "Dan Patrick",
+   "education": {
+    "value": 5,
+    "quote": "I support SB 2 because I strongly believe that parents deserve choice in their child's education. SB 2 is a universal school choice bill",
+    "sourceUrl": "https://www.ltgov.texas.gov/2025/02/05/lt-gov-dan-patrick-statement-on-the-passage-of-senate-bill-2-providing-school-choice/"
+   },
+   "infrastructure": {
+    "value": 4,
+    "quote": "Over the coming years, our state must meet the increased demand for water, so it is imperative to invest in the sustainable expansion of our water supply and related infrastructure.",
+    "sourceUrl": "https://www.ltgov.texas.gov/2025/04/02/lt-gov-dan-patrick-statement-on-the-unanimous-passage-of-senate-bill-7-increasing-investments-in-texas-water-supply/"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Dan_Patrick",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.danpatrick.org/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Dan_Patrick",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.danpatrick.org/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Dan_Patrick",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.danpatrick.org/"
+    ]
+   }
+  },
+  "kevin-mccormick": {
+   "name": "Kevin McCormick",
+   "healthcare": {
+    "value": 4,
+    "quote": "I favor expansion of FQHC clinics, taking full advantage of Medicaid, and expanding access.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "education": {
+    "value": -4,
+    "quote": "The voucher program is a threat to public education funding and should be repealed or at least means tested.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I also propose increasing the county road and bridge fund and allowing bicycle paths to be built with these funds.",
+    "sourceUrl": "https://ballotpedia.org/Kevin_McCormick_(Texas)"
+   },
+   "energy": {
+    "value": 4,
+    "quote": "As EV’s and renewable energy reduce fossil fuel dependence worldwide, the fossil fuel industry will continue to decline and its intimate connection to Texas transportation will drag the state down unless we take effective measures to disentangle our systems from fossil fuel dependence.",
+    "sourceUrl": "https://ballotpedia.org/Kevin_McCormick_(Texas)"
+   },
+   "safety": {
+    "value": -4,
+    "quote": "Opposite to preventing drug use, the war on drugs promotes addiction, gang violence, and social decay.",
+    "sourceUrl": "https://ballotpedia.org/Kevin_McCormick_(Texas)"
+   }
+  },
+  "tom-oxford": {
+   "name": "Tom Oxford",
+   "immigration": {
+    "value": -2,
+    "quote": "Due process applies to all of our neighbors, regardless of their legal status. It is a fundamental right recognized and protected by both the U.S. and Texas Constitutions. We can protect our borders without walking away from our founding principles.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Tom_Oxford",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/"
+    ]
+   }
+  },
+  "shehla-faizi": {
+   "name": "Shehla Faizi",
+   "housing": {
+    "value": 3,
+    "quote": "I support using the budget surplus for programs that serve Texans, like public schools, healthcare, and affordable housing.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "healthcare": {
+    "value": 3,
+    "quote": "I support using the budget surplus for programs that serve Texans, like public schools, healthcare, and affordable housing.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Shehla_Faizi",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Shehla_Faizi",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Shehla_Faizi",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Shehla_Faizi",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Shehla_Faizi",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+    ]
+   },
+   "immigration": {
+    "value": -4,
+    "quote": "ICE tears our communities apart, and we’ve seen too many examples of racial profiling of US Citizens and ICE agents panicking and attacking bystanders.",
+    "sourceUrl": "https://ballotpedia.org/Shehla_Faizi"
+   },
+   "education": {
+    "value": -5,
+    "quote": "We must end school vouchers and reinvest in Texas public schools.",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/"
+   }
+  },
+  "mayes-middleton": {
+   "name": "Mayes Middleton",
+   "education": {
+    "value": 4,
+    "quote": "Mayes has championed border security and law enforcement, the ban on taxpayer-funded lobbying, parental choice in education, and fighting back against the radical left’s woke agenda.",
+    "sourceUrl": "https://mayesmiddleton.com/"
+   },
+   "taxes": {
+    "value": -2,
+    "quote": "Champion taxpayer rights and make sure your dollars aren’t being wasted",
+    "sourceUrl": "https://mayesmiddleton.com/"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Mayes_Middleton",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+     "https://mayesmiddleton.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Mayes_Middleton",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+     "https://mayesmiddleton.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Mayes_Middleton",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+     "https://mayesmiddleton.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Mayes_Middleton",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+     "https://mayesmiddleton.com/"
+    ]
+   }
+  },
+  "nathan-johnson": {
+   "name": "Nathan Johnson",
+   "education": {
+    "value": -4,
+    "quote": "If you haven’t yet seen Senator Johnson’s statements during last week’s debate in the Texas Senate over Senate Bill 2, the school voucher bill — it’s a must watch. Senator Johnson stood up for all Texas families, public education, and the responsible use of taxpayer dollars, making it clear that our state deserves policy solutions that truly serve its communities, not risky gambles and political gamesmanship.",
+    "sourceUrl": "https://senatornathanjohnson.com/posts/listening-in-hmwhc"
+   },
+   "safety": {
+    "value": 2,
+    "quote": "As Attorney General for this state, I’ll bring the powers of the office to bear on public safety by working with our district attorneys to keep Texans and their property safe.",
+    "sourceUrl": "https://nathanfortexas.com/priorities/"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "why even more elected officials should be prioritizing investments in our state’s physical and social infrastructure",
+    "sourceUrl": "https://senatornathanjohnson.com/posts/listening-in-hmwhc"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nathan_Johnson_(Texas)\n",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+     "https://nathanfortexas.com/",
+     "https://senatornathanjohnson.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nathan_Johnson_(Texas)\n",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+     "https://nathanfortexas.com/",
+     "https://senatornathanjohnson.com/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Nathan_Johnson_(Texas)\n",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+     "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+     "https://nathanfortexas.com/",
+     "https://senatornathanjohnson.com/"
+    ]
+   },
+   "energy": {
+    "value": 2,
+    "quote": "I have passed 135 bills, including legislation to increase penalties on polluters",
+    "sourceUrl": "https://ballotpedia.org/Nathan_Johnson_(Texas)"
+   },
+   "immigration": {
+    "value": -2,
+    "quote": "we should reject “shock and awe” border policy and tactics that violate the U.S. Constitution.",
+    "sourceUrl": "https://ballotpedia.org/Nathan_Johnson_(Texas)"
+   }
+  },
+  "anthony-cristo": {
+   "name": "Anthony Cristo",
+   "education": {
+    "value": -2,
+    "quote": "We must fund all public schools properly.",
+    "sourceUrl": "https://ballotpedia.org/Anthony_Cristo"
+   },
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Anthony_Cristo",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.anthonycristo.com/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Anthony_Cristo",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.anthonycristo.com/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Anthony_Cristo",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.anthonycristo.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Anthony_Cristo",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.anthonycristo.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Anthony_Cristo",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.anthonycristo.com/"
+    ]
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "We need to lead the nation in immigration reform by allowing these hard working individuals into our country to work and allowing them to return to their native country afterwards.",
+    "sourceUrl": "https://ballotpedia.org/Anthony_Cristo"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "there are some people currently in office who want to maintain a steady flow of people through our prison system by creating or maintaining laws for victimless crimes.",
+    "sourceUrl": "https://ballotpedia.org/Anthony_Cristo"
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "If we want real tax relief, we have to shrink government.",
+    "sourceUrl": "https://www.anthonycristo.com/"
+   }
+  },
+  "v-alonzo-echavarria-garza": {
+   "name": "V. Alonzo Echavarria-Garza",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+     "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz"
+    ]
+   }
+  }
+ }
+}

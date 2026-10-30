@@ -1,0 +1,953 @@
+{
+ "note": "Year for each sourced quote, from the source's own date. python3 scripts/quote_years.py -> data/quote_years.json\nBasis, in order: a date in the source URL path; the page's published-date metadata (article:published_time,\ndatePublished, <time datetime>); on Ballotpedia, the nearest heading above the quote that names a year\n(e.g. \"2022 campaign themes\"; Ballotpedia often refuses automated fetches, so those stay undated); an official .gov\nrelease dateline (home pages are never dated this way); Civic's batch notes. No basis found = no year shown (the UI says 'date unsure').",
+ "years": {
+  "james-talarico.immigration": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "james-talarico.energy": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "james-talarico.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "james-talarico.infrastructure": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "eleni-kounalakis.immigration": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "richard-barrera.immigration": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "nathan-johnson.education": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "nathan-johnson.safety": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "nathan-johnson.infrastructure": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "greg-casar.housing": {
+   "year": 2023,
+   "basis": "page published date"
+  },
+  "greg-casar.taxes": {
+   "year": 2023,
+   "basis": "page published date"
+  },
+  "greg-casar.wages": {
+   "year": 2023,
+   "basis": "page published date"
+  },
+  "greg-casar.energy": {
+   "year": 2023,
+   "basis": "page published date"
+  },
+  "greg-casar.education": {
+   "year": 2023,
+   "basis": "page published date"
+  },
+  "greg-casar.infrastructure": {
+   "year": 2024,
+   "basis": "page published date"
+  },
+  "jane-kim.housing": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "steve-hilton.wages": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "dan-patrick.education": {
+   "year": 2025,
+   "basis": "date in source URL"
+  },
+  "dan-patrick.infrastructure": {
+   "year": 2025,
+   "basis": "date in source URL"
+  },
+  "sarah-eckhardt.immigration": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "greg-abbott.safety": {
+   "year": 2025,
+   "basis": "press release dateline"
+  },
+  "greg-abbott.education": {
+   "year": 2025,
+   "basis": "press release dateline"
+  },
+  "greg-abbott.infrastructure": {
+   "year": 2025,
+   "basis": "press release dateline"
+  },
+  "greg-abbott.energy": {
+   "year": 2023,
+   "basis": "press release dateline"
+  },
+  "greg-abbott.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "greg-abbott.housing": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "greg-abbott.healthcare": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "greg-abbott.immigration": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "ken-paxton.housing": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "ken-paxton.education": {
+   "year": 2025,
+   "basis": "press release dateline"
+  },
+  "ken-paxton.safety": {
+   "year": 2024,
+   "basis": "press release dateline"
+  },
+  "ken-paxton.healthcare": {
+   "year": 2018,
+   "basis": "press release dateline"
+  },
+  "ted-brown.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "dawn-buckingham.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "dawn-buckingham.healthcare": {
+   "year": 2016,
+   "basis": "Civic: 2016 campaign site, via Ballotpedia"
+  },
+  "bo-french.immigration": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "bo-french.education": {
+   "year": 2016,
+   "basis": "Civic: 2016 campaign site, via Ballotpedia"
+  },
+  "kathy-c-hochul-adrienne-e-adams.safety": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "kathy-c-hochul-adrienne-e-adams.infrastructure": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "kathy-c-hochul-adrienne-e-adams.taxes": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "kathy-c-hochul-adrienne-e-adams.housing": {
+   "year": 2026,
+   "basis": "press release dateline"
+  },
+  "kathy-c-hochul-adrienne-e-adams.healthcare": {
+   "year": 2026,
+   "basis": "press release dateline"
+  },
+  "kathy-c-hochul-adrienne-e-adams.immigration": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "kathy-c-hochul-adrienne-e-adams.wages": {
+   "year": 2025,
+   "basis": "press release dateline"
+  },
+  "kathy-c-hochul-adrienne-e-adams.energy": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "bruce-a-blakeman-todd-hood.housing": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "bruce-a-blakeman-todd-hood.energy": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "bruce-a-blakeman-todd-hood.healthcare": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "bruce-a-blakeman-todd-hood.wages": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "bruce-a-blakeman-todd-hood.education": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "letitia-a-james.immigration": {
+   "year": 2023,
+   "basis": "page published date"
+  },
+  "letitia-a-james.wages": {
+   "year": 2023,
+   "basis": "page published date"
+  },
+  "letitia-a-james.healthcare": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "letitia-a-james.energy": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "saritha-komatireddy.safety": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "saritha-komatireddy.healthcare": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "saritha-komatireddy.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "saritha-komatireddy.energy": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "thomas-p-dinapoli.energy": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "thomas-p-dinapoli.infrastructure": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "joseph-hernandez.healthcare": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "joseph-hernandez.energy": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "micah-c-lasher.healthcare": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "micah-c-lasher.wages": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "micah-c-lasher.housing": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "micah-c-lasher.taxes": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "micah-c-lasher.energy": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "micah-c-lasher.infrastructure": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "erik-d-bottcher.immigration": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "erik-d-bottcher.safety": {
+   "year": 2024,
+   "basis": "page published date"
+  },
+  "erik-d-bottcher.energy": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "tony-simone.immigration": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "tony-simone.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "carl-wilson.infrastructure": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "gina-hinojosa.energy": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "gina-hinojosa.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "gina-hinojosa.housing": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "gina-hinojosa.taxes": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "pat-dixon.safety": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "pat-dixon.education": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "pat-dixon.immigration": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "shehla-faizi.education": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "benjamin-flores.immigration": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "jon-rosenthal.taxes": {
+   "year": 2021,
+   "basis": "page published date"
+  },
+  "jon-rosenthal.infrastructure": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "jon-rosenthal.immigration": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "nate-sheets.infrastructure": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "montserrat-garibay.wages": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "rich-heyman.housing": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "rich-heyman.wages": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "rich-heyman.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "katie-kam.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "kai-huang.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "kirk-becker.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "connie-chan.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "connie-chan.taxes": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "scott-wiener.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "xavier-becerra.housing": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "xavier-becerra.healthcare": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "xavier-becerra.wages": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "xavier-becerra.taxes": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "xavier-becerra.safety": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "xavier-becerra.education": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "xavier-becerra.energy": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "xavier-becerra.immigration": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "xavier-becerra.infrastructure": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "rob-bonta.housing": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "rob-bonta.healthcare": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "rob-bonta.wages": {
+   "year": 2016,
+   "basis": "page published date"
+  },
+  "rob-bonta.taxes": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "rob-bonta.energy": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "rob-bonta.immigration": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "rob-bonta.infrastructure": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "michael-e-gates.immigration": {
+   "year": 2025,
+   "basis": "page published date"
+  },
+  "shirley-n-weber.housing": {
+   "year": 2019,
+   "basis": "page published date"
+  },
+  "shirley-n-weber.wages": {
+   "year": 2016,
+   "basis": "page published date"
+  },
+  "shirley-n-weber.taxes": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "shirley-n-weber.immigration": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "donald-p-don-wagner.wages": {
+   "year": 2016,
+   "basis": "page published date"
+  },
+  "donald-p-don-wagner.safety": {
+   "year": 2024,
+   "basis": "date in source URL"
+  },
+  "herb-w-morgan.taxes": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "herb-w-morgan.infrastructure": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "ben-allen.healthcare": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "ben-allen.wages": {
+   "year": 2016,
+   "basis": "page published date"
+  },
+  "ben-allen.taxes": {
+   "year": 2017,
+   "basis": "page published date"
+  },
+  "sonja-shaw.safety": {
+   "year": 2024,
+   "basis": "page published date"
+  },
+  "sonja-shaw.education": {
+   "year": 2026,
+   "basis": "page published date"
+  },
+  "matt-haney.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "matt-haney.healthcare": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "matt-haney.immigration": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "sally-j-lieber.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "john-pimentel.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "john-pimentel.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "john-pimentel.energy": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "john-pimentel.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "joaquin-torres.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "manohar-raju.healthcare": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "manohar-raju.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "alex-behrend.housing": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "alex-behrend.wages": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "matt-dorsey.housing": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "matt-dorsey.healthcare": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "matt-dorsey.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "matt-dorsey.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "gary-mccoy.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "gary-mccoy.healthcare": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "gary-mccoy.taxes": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "gary-mccoy.safety": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "gary-mccoy.immigration": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "gary-mccoy.infrastructure": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "michael-t-nguyen.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "michael-t-nguyen.healthcare": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "michael-t-nguyen.wages": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "michael-t-nguyen.taxes": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "michael-t-nguyen.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "michael-t-nguyen.energy": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "michael-t-nguyen.immigration": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "michael-t-nguyen.infrastructure": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "darshini-patel.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "darshini-patel.healthcare": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "darshini-patel.taxes": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "darshini-patel.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "darshini-patel.energy": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "darshini-patel.immigration": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "darshini-patel.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "emanuel-manny-yekutiel.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "emanuel-manny-yekutiel.taxes": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "emanuel-manny-yekutiel.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "emanuel-manny-yekutiel.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "pearci-pj-bastiany-iii.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "pearci-pj-bastiany-iii.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "pearci-pj-bastiany-iii.energy": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "pearci-pj-bastiany-iii.immigration": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "pearci-pj-bastiany-iii.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "dionjay-dj-brookter.housing": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "dionjay-dj-brookter.safety": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "dionjay-dj-brookter.energy": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "deandra-bryant.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "deandra-bryant.healthcare": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "deandra-bryant.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "theo-ellington.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "theo-ellington.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "theo-ellington.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "theo-ellington.energy": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "theo-ellington.immigration": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "theo-ellington.infrastructure": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "j-r-eppler.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "j-r-eppler.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "j-r-eppler.safety": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "j-r-eppler.energy": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "j-r-eppler.immigration": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "j-r-eppler.infrastructure": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "ellsworth-ell-m-jennison-jr.energy": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "mike-trouble-lin.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "mike-trouble-lin.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "mike-trouble-lin.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "mike-trouble-lin.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "jessica-pessecow.housing": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "jessica-pessecow.healthcare": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "jessica-pessecow.infrastructure": {
+   "year": 2026,
+   "basis": "SF Voter Information Pamphlet edition in URL"
+  },
+  "shawn-m-richard.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "shawn-m-richard.healthcare": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "shawn-m-richard.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "shawn-m-richard.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "virginia-cheung.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "virginia-cheung.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "virginia-cheung.education": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "alida-fisher.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "alida-fisher.healthcare": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "alida-fisher.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "alida-fisher.education": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "ryan-hazelton.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "ryan-hazelton.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "ryan-hazelton.education": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "phil-kim.housing": {
+   "year": 2026,
+   "basis": "date in source URL"
+  },
+  "laurance-lee.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "laurance-lee.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "laurance-lee.education": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "reina-tello.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "reina-tello.healthcare": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "reina-tello.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "tim-tung.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "tim-tung.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "monroe-lace.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "leah-lacroix.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "leah-lacroix.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "leah-lacroix.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "jeremy-lee.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "jeremy-lee.education": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "jeremy-lee.immigration": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "jeremy-lee.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "bunny-mcfadden.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "bunny-mcfadden.safety": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "bunny-mcfadden.energy": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "bunny-mcfadden.infrastructure": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "ruth-ferguson.housing": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  },
+  "ruth-ferguson.taxes": {
+   "year": 2026,
+   "basis": "questionnaire year in URL"
+  }
+ }
+}

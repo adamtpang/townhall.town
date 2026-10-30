@@ -1,0 +1,322 @@
+{
+  "asOf": "2026-10-29",
+  "method": "Batch 2: official government/court bio pages only; each imageUrl checked with curl -sIL (200 + image/*).",
+  "photos": [
+    {
+      "slug": "cliff-brown",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/brown.png",
+      "sourcePage": "https://www.traviscountytx.gov/courts/criminal/district/147",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/png"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-147th"
+    },
+    {
+      "slug": "amy-clark-meachum",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/042624_IMG_5941_1.jpeg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/civil/district/201",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-201st"
+    },
+    {
+      "slug": "daniella-deseta-lyttle",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/daniella_deseta_lyttle.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/civil/district/261",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-261st"
+    },
+    {
+      "slug": "karen-r-sage",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/sage.png",
+      "sourcePage": "https://www.traviscountytx.gov/courts/criminal/district/299",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/png"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-299th"
+    },
+    {
+      "slug": "chantal-melissa-eldridge",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/331.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/criminal/district/331",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-331st"
+    },
+    {
+      "slug": "catherine-a-mauzy",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/mauzy.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/civil/district/419",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-419th"
+    },
+    {
+      "slug": "laurie-eiserloh",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/20250924-laurieeiserloh2.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/civil/district/455th-civil-district-court",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-455th"
+    },
+    {
+      "slug": "maya-guerra-gamble",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/2025_Gamble.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/civil/district/459",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-judge-459th"
+    },
+    {
+      "slug": "todd-wong",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/judge-wong.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/civil/county/cc1",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-ccl-1"
+    },
+    {
+      "slug": "dimple-malhotra",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/malhotra.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/criminal/county/cc4",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-ccl-4"
+    },
+    {
+      "slug": "mary-ann-espiritu",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/Mary_Ann_Espiritu_CC5.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/criminal/county/cc5",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-ccl-5"
+    },
+    {
+      "slug": "denise-hernandez",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/JudgeD1.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/courts/criminal/county/cc6",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-ccl-6"
+    },
+    {
+      "slug": "elisabeth-earle",
+      "imageUrl": "https://www.traviscountytx.gov/images/courts/earle.png",
+      "sourcePage": "https://www.traviscountytx.gov/courts/criminal/county/cc7",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/png"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-ccl-7"
+    },
+    {
+      "slug": "guy-herman",
+      "imageUrl": "https://www.traviscountytx.gov/images/probate/Judges_Pics/Herman_HON_Guy_Resized.JPG",
+      "sourcePage": "https://www.traviscountytx.gov/probate",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-probate-1"
+    },
+    {
+      "slug": "velva-l-price",
+      "imageUrl": "https://www.traviscountytx.gov/images/VelvaPrince-sm.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/district-clerk",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-district-clerk"
+    },
+    {
+      "slug": "dolores-ortega-carter",
+      "imageUrl": "https://www.traviscountytx.gov/images/county_treasurer/ortega-carter.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/treasurer",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-county-treasurer"
+    },
+    {
+      "slug": "george-morales-iii",
+      "imageUrl": "https://www.traviscountytx.gov/images/commissioners_court/Gmoralesheadshot.jpeg",
+      "sourcePage": "https://www.traviscountytx.gov/commissioners-court/precinct-four",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-commissioner-4"
+    },
+    {
+      "slug": "raul-arturo-gonzalez",
+      "imageUrl": "https://www.traviscountytx.gov/images/justices_of_peace/Ra%C3%BAl_Arturo_Gonz%C3%A1lez.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/justices-of-peace/jp4",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-jp-4"
+    },
+    {
+      "slug": "tanisa-jeffers",
+      "imageUrl": "https://www.traviscountytx.gov/images/justices_of_peace/Doc/JP5/tanisa-jeffers-jp5.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/justices-of-peace/jp5",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-jp-5"
+    },
+    {
+      "slug": "gabriel-padilla",
+      "imageUrl": "https://www.traviscountytx.gov/images/constables/pct4/chief_gabe-padilla.jpg",
+      "sourcePage": "https://www.traviscountytx.gov/constables/4",
+      "license": "Travis County official headshot (county government work); no reuse license stated on the page",
+      "credit": "Travis County, Texas",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "travis-constable-4-unexpired",
+      "note": "Image filename on the Constable Pct. 4 page reads \"chief_gabe-padilla\"; page names Padilla. Candidate is running for the unexpired Constable Pct. 4 term — verify current title."
+    },
+    {
+      "slug": "maria-luisa-lulu-flores",
+      "imageUrl": "https://house.texas.gov/images/members/4150.jpg?v=1",
+      "sourcePage": "https://house.texas.gov/members/51",
+      "license": "Texas House of Representatives official member photo (state government work); no reuse license stated on the page",
+      "credit": "Texas House of Representatives",
+      "via": "Official .gov bio",
+      "check": {
+        "status": 200,
+        "contentType": "image/jpeg"
+      },
+      "zip": "78701",
+      "party": "Democratic",
+      "race": "tx-house-51"
+    }
+  ]
+}

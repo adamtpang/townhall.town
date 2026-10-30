@@ -1,0 +1,309 @@
+{
+ "stances": {
+  "micah-lasher": {
+   "name": "Micah C. Lasher",
+   "race": "ny-12",
+   "party": "Democratic",
+   "healthcare": {
+    "value": 5,
+    "quote": "Push to pass Medicare for All, or a similar plan that ensures universal care.",
+    "sourceUrl": "https://micahlasher.com/platform-and-policies/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": 5,
+    "quote": "Raise the minimum wage across the nation and index it to inflation.",
+    "sourceUrl": "https://micahlasher.com/platform-and-policies/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": 4,
+    "quote": "Expand housing tax credits and increase funding and eligibility for rental assistance.",
+    "sourceUrl": "https://micahlasher.com/platform-and-policies/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "Repeal Trump’s tax breaks to the rich and restore devastating cuts to the social safety net.",
+    "sourceUrl": "https://micahlasher.com/platform-and-policies/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "In Congress, I'll fight to abolish ICE, hold rogue agents who broke the law accountable, and streamline pathways to citizenship.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Micah+C.+Lasher&boroughCode=&candidateId=V1319&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "replaces round2 -4 (past-legislation quote); abolish ICE is a listed top-3 issue"
+   },
+   "energy": {
+    "value": 4,
+    "quote": "Micah Lasher believes few priorities are as urgent as the battle against climate change.",
+    "sourceUrl": "https://micahlasher.com/platform-and-policies/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "Invest in climate-resilient infrastructure and protect our waterfront and subway system.",
+    "sourceUrl": "https://micahlasher.com/platform-and-policies/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 2,
+    "quote": "I will continue to focus on public safety concerns—from cracking down on reckless e-bikers, to ensuring safer streets and subways.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Micah+C.+Lasher&boroughCode=&candidateId=V1319&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "mild"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://micahlasher.com/platform-and-policies/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Micah+C.+Lasher&boroughCode=&candidateId=V1319&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   }
+  },
+  "caroline-shinkle": {
+   "name": "Caroline Shinkle",
+   "race": "ny-12",
+   "party": "Republican, Conservative",
+   "taxes": {
+    "value": -4,
+    "quote": "allow people to keep more of what they earn by reducing the federal income tax on W-2 wages",
+    "sourceUrl": "https://carolinefornewyork.com/priorities",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": -3,
+    "quote": "through increasing energy production and promoting an all-energy-options-on-the-table approach and common-sense, strategic deregulation",
+    "sourceUrl": "https://carolinefornewyork.com/priorities",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "through a pro-safety, pro-community law enforcement agenda",
+    "sourceUrl": "https://carolinefornewyork.com/priorities",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": 2,
+    "quote": "Reduce housing costs and increase opportunity for ownership by increasing the supply of high-quality, affordable housing.",
+    "sourceUrl": "https://carolinefornewyork.com/priorities",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": 3,
+    "quote": "Empower parents with school choice and greater curriculum transparency",
+    "sourceUrl": "https://carolinefornewyork.com/priorities",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": 3,
+    "quote": "Deport illegal criminals, starting with violent & repeat offenders. Support & streamline legal immigration process. No benefits to illegal adult migrants.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Caroline+Shinkle&boroughCode=&candidateId=V1648&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "healthcare": {
+    "value": -2,
+    "quote": "Reintroduce competition in the healthcare marketplace, enhance price transparency to ensure the system works for patients/providers, not just insurance companies.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Caroline+Shinkle&boroughCode=&candidateId=V1648&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "market-oriented, mild"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://carolinefornewyork.com/priorities",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Caroline+Shinkle&boroughCode=&candidateId=V1648&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://carolinefornewyork.com/priorities",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Caroline+Shinkle&boroughCode=&candidateId=V1648&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   }
+  },
+  "wilneida-negron": {
+   "name": "Wilneida Negron",
+   "race": "ny-12",
+   "party": "For All of Us",
+   "healthcare": {
+    "value": 4,
+    "quote": "Build toward universal coverage through automatic enrollment in a public baseline plan, with the ability to keep employer coverage",
+    "sourceUrl": "https://www.wilneidany12.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": -3,
+    "quote": "Narrow ICE to genuine serious-threat cases; move routine civil cases to supervised legal processing instead of mass detention",
+    "sourceUrl": "https://www.wilneidany12.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "Fund mental health first-response programs that dispatch trained clinicians alongside or instead of police for mental health crises",
+    "sourceUrl": "https://www.wilneidany12.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": 3,
+    "quote": "Strengthen rental assistance for seniors, families, and middle-class residents being priced out",
+    "sourceUrl": "https://www.wilneidany12.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": 3,
+    "quote": "Condition business tax credits and public subsidies on demonstrable commitments to fair wages, local hiring, and cost-of-living adjustments",
+    "sourceUrl": "https://wilneidany12.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "Real inflation relief means antitrust enforcement, closing corporate tax loopholes, and making sure wages grow faster than prices.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Wilneida+Negron&boroughCode=&candidateId=V1770&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "mild"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.wilneidany12.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Wilneida+Negron&boroughCode=&candidateId=V1770&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.wilneidany12.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Wilneida+Negron&boroughCode=&candidateId=V1770&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.wilneidany12.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Wilneida+Negron&boroughCode=&candidateId=V1770&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   }
+  },
+  "karen-ortiz": {
+   "name": "Karen Ortiz",
+   "race": "ny-12",
+   "party": "Karen Ortiz (independent line)",
+   "healthcare": {
+    "value": 5,
+    "quote": "We need Medicare for All to ensure that everyone has access to truly affordable, quality healthcare",
+    "sourceUrl": "https://ko4congress.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "ICE cannot be rehabilitated. It simply must be dismantled and abolished.",
+    "sourceUrl": "https://ko4congress.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": 4,
+    "quote": "I will fight for robust funding of the Department of Housing and Urban Development (HUD) to support the residents of NYCHA campuses.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "education": {
+    "value": -4,
+    "quote": "I oppose new federal funding to privately run charter schools and oppose steps to facilitate the expansion of charter schools.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "My focus will be on allocating funding for housing, healthcare, and programs such as SNAP.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29",
+    "sourceType": "NYC Votes official 2026 general election voter guide (candidate-submitted profile)",
+    "note": "answer to the Crime question; prevention over enforcement"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ko4congress.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ko4congress.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ko4congress.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ko4congress.com/",
+     "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+    ]
+   }
+  }
+ }
+}

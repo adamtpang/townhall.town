@@ -1,0 +1,4128 @@
+{
+ "_meta": {
+  "asOf": "2026-10-30T02:21:35-05:00",
+  "data": "feat2 data/stances.json at df0cb76 + positions_gapfill_batch3civic.json scored stances. Sourced = numeric nonzero value (lib/overlapCore.mjs).",
+  "rule": "gradesEligible only if: every candidate has 3+ sourced issues; 3+ issues sourced for every candidate; smallest count >= half of largest. Judicial (race.judicial), measures, unopposed always false.",
+  "raceIdSource": "race.id / measure.id from data/ballots.json (78701, 94103) and data/ny.json (10001) at df0cb76.",
+  "previous": "grades_eligibility.pre_b3.json / grade_races.pre_b3.json",
+  "changesVsPrevious": [
+   {
+    "raceId": "travis-commissioner-4",
+    "zip": "78701",
+    "title": "Travis County Commissioner, Precinct 4",
+    "eligibleBefore": false,
+    "eligibleAfter": false,
+    "countsBefore": {
+     "george-morales-iii": 1
+    },
+    "countsAfter": {
+     "george-morales-iii": 5
+    },
+    "reasonAfter": "Unopposed (fewer than 2 candidates): grades never shown."
+   },
+   {
+    "raceId": "travis-cad-place-1",
+    "zip": "78701",
+    "title": "Travis Central Appraisal District Board of Directors, Place 1",
+    "eligibleBefore": false,
+    "eligibleAfter": false,
+    "countsBefore": {
+     "skyler-a-korgel": 0
+    },
+    "countsAfter": {
+     "skyler-a-korgel": 3
+    },
+    "reasonAfter": "Unopposed (fewer than 2 candidates): grades never shown."
+   },
+   {
+    "raceId": "travis-cad-place-3",
+    "zip": "78701",
+    "title": "Travis Central Appraisal District Board of Directors, Place 3",
+    "eligibleBefore": false,
+    "eligibleAfter": false,
+    "countsBefore": {
+     "yvonne-munoz": 0,
+     "phil-gorman": 0
+    },
+    "countsAfter": {
+     "yvonne-munoz": 0,
+     "phil-gorman": 1
+    },
+    "reasonAfter": "Not eligible: under 3 sourced issues: Yvonne Muñoz (0), Phil Gorman (1); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 1)."
+   }
+  ],
+  "b7": "gradesEligible flags set from civic/b7/elig_b7.json (22 races, batch 7 stances landed; ca-ltgov QA-verified Oct 30)"
+ },
+ "races": {
+  "tx-10": {
+   "zip": "78701",
+   "raceId": "tx-10",
+   "title": "U.S. House Texas District 10",
+   "level": "federal",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "caitlin-rourk",
+     "name": "Caitlin Rourk",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "infrastructure",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 7
+    },
+    {
+     "id": "chris-gober",
+     "name": "Chris Gober",
+     "party": "Republican",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "housing",
+    "infrastructure",
+    "taxes"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (6-7); 4 shared (healthcare, housing, infrastructure, taxes); min is at least half of max."
+  },
+  "tx-37": {
+   "zip": "78701",
+   "raceId": "tx-37",
+   "title": "U.S. House Texas District 37",
+   "level": "federal",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "greg-casar",
+     "name": "Greg Casar",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 9
+    },
+    {
+     "id": "lauren-b-pena",
+     "name": "Lauren B. Peña",
+     "party": "Republican",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "housing",
+    "taxes"
+   ],
+   "gradesEligible": true,
+   "reason": "Not eligible: uneven records (min 3 < half of max 9)."
+  },
+  "us-senate-tx": {
+   "zip": "78701",
+   "raceId": "us-senate-tx",
+   "title": "U.S. Senate Texas",
+   "level": "federal",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "james-talarico",
+     "name": "James Talarico",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 9
+    },
+    {
+     "id": "ken-paxton",
+     "name": "Ken Paxton",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 7
+    },
+    {
+     "id": "ted-brown",
+     "name": "Ted Brown",
+     "party": "Libertarian",
+     "sourcedIssues": [
+      "education",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    }
+   ],
+   "sharedIssues": [
+    "education",
+    "healthcare",
+    "housing",
+    "immigration",
+    "safety",
+    "taxes"
+   ],
+   "gradesEligible": true,
+   "reason": "All 3 candidates have 3+ sourced issues (6-9); 6 shared (education, healthcare, housing, immigration, safety, taxes); min is at least half of max."
+  },
+  "tx-gov": {
+   "zip": "78701",
+   "raceId": "tx-gov",
+   "title": "Governor of Texas",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "greg-abbott",
+     "name": "Greg Abbott",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 8
+    },
+    {
+     "id": "gina-hinojosa",
+     "name": "Gina Hinojosa",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 7
+    },
+    {
+     "id": "pat-dixon",
+     "name": "Pat Dixon",
+     "party": "Libertarian",
+     "sourcedIssues": [
+      "education",
+      "healthcare",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    }
+   ],
+   "sharedIssues": [
+    "education",
+    "healthcare",
+    "immigration",
+    "safety",
+    "taxes"
+   ],
+   "gradesEligible": true,
+   "reason": "All 3 candidates have 3+ sourced issues (5-8); 5 shared (education, healthcare, immigration, safety, taxes); min is at least half of max."
+  },
+  "tx-ltgov": {
+   "zip": "78701",
+   "raceId": "tx-ltgov",
+   "title": "Lieutenant Governor of Texas",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "dan-patrick",
+     "name": "Dan Patrick",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "vikki-goodwin",
+     "name": "Vikki Goodwin",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "wages"
+     ],
+     "sourcedIssueCount": 8
+    },
+    {
+     "id": "kevin-mccormick",
+     "name": "Kevin McCormick",
+     "party": "Green",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "anthony-cristo",
+     "name": "Anthony Cristo",
+     "party": "Libertarian",
+     "sourcedIssues": [
+      "education",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "education",
+    "safety"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: only 2 issue(s) sourced for every candidate."
+  },
+  "tx-ag": {
+   "zip": "78701",
+   "raceId": "tx-ag",
+   "title": "Attorney General of Texas",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "nathan-johnson",
+     "name": "Nathan Johnson",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "mayes-middleton",
+     "name": "Mayes Middleton",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "tom-oxford",
+     "name": "Tom Oxford",
+     "party": "Libertarian",
+     "sourcedIssues": [
+      "immigration"
+     ],
+     "sourcedIssueCount": 1
+    }
+   ],
+   "sharedIssues": [
+    "immigration"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Tom Oxford (1); only 1 issue(s) sourced for every candidate; uneven records (min 1 < half of max 6)."
+  },
+  "tx-comptroller": {
+   "zip": "78701",
+   "raceId": "tx-comptroller",
+   "title": "Texas Comptroller of Public Accounts",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "don-huffines",
+     "name": "Don Huffines",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "housing",
+      "immigration",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "sarah-eckhardt",
+     "name": "Sarah Eckhardt",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "shehla-faizi",
+     "name": "Shehla Faizi",
+     "party": "Green",
+     "sourcedIssues": [
+      "education",
+      "healthcare",
+      "housing",
+      "immigration"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "v-alonzo-echavarria-garza",
+     "name": "V. Alonzo Echavarria-Garza",
+     "party": "Libertarian",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: V. Alonzo Echavarria-Garza (0); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 6)."
+  },
+  "tx-land": {
+   "zip": "78701",
+   "raceId": "tx-land",
+   "title": "Texas Land Commissioner",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "dawn-buckingham",
+     "name": "Dawn Buckingham",
+     "party": "Republican",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "benjamin-flores",
+     "name": "Benjamin Flores",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "immigration",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "neill-snider",
+     "name": "Neill Snider",
+     "party": "Libertarian",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    }
+   ],
+   "sharedIssues": [
+    "energy"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: only 1 issue(s) sourced for every candidate."
+  },
+  "tx-agcomm": {
+   "zip": "78701",
+   "raceId": "tx-agcomm",
+   "title": "Texas Commissioner of Agriculture",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "clayton-tucker",
+     "name": "Clayton Tucker",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "nate-sheets",
+     "name": "Nate Sheets",
+     "party": "Republican",
+     "sourcedIssues": [
+      "immigration",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "austin-r-kelly",
+     "name": "Austin R. Kelly",
+     "party": "Libertarian",
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Austin R. Kelly (1); only 0 issue(s) sourced for every candidate; uneven records (min 1 < half of max 4)."
+  },
+  "tx-rrc": {
+   "zip": "78701",
+   "raceId": "tx-rrc",
+   "title": "Texas Railroad Commission",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "jon-rosenthal",
+     "name": "Jon Rosenthal",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "bo-french",
+     "name": "Bo French",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "immigration"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "arthur-dibianca",
+     "name": "Arthur DiBianca",
+     "party": "Libertarian",
+     "sourcedIssues": [
+      "energy",
+      "taxes"
+     ],
+     "sourcedIssueCount": 2
+    }
+   ],
+   "sharedIssues": [
+    "energy"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Arthur DiBianca (2); only 1 issue(s) sourced for every candidate; uneven records (min 2 < half of max 6)."
+  },
+  "tx-supreme-court-place-1-chief-justice": {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-1-chief-justice",
+   "title": "Texas Supreme Court Chief Justice",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "jimmy-blacklock",
+     "name": "Jimmy Blacklock",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "maggie-ellis",
+     "name": "Maggie Ellis",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-supreme-court-place-2": {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-2",
+   "title": "Texas Supreme Court Place 2 (Unexpired Term)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "james-p-sullivan",
+     "name": "James P. Sullivan",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "chari-kelly",
+     "name": "Chari Kelly",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-supreme-court-place-7": {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-7",
+   "title": "Texas Supreme Court Place 7",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "kyle-hawkins",
+     "name": "Kyle Hawkins",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "kristen-hawkins",
+     "name": "Kristen Hawkins",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-supreme-court-place-8": {
+   "zip": "78701",
+   "raceId": "tx-supreme-court-place-8",
+   "title": "Texas Supreme Court Place 8",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "brett-busby",
+     "name": "Brett Busby",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "gisela-d-triana",
+     "name": "Gisela D. Triana",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-court-of-criminal-appeals-place-3": {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-3",
+   "title": "Texas Court of Criminal Appeals Place 3",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "okey-anyiam",
+     "name": "Okey Anyiam",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "thomas-smith",
+     "name": "Thomas Smith",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "mark-ash",
+     "name": "Mark Ash",
+     "party": "Libertarian",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-court-of-criminal-appeals-place-4": {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-4",
+   "title": "Texas Court of Criminal Appeals Place 4",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "kevin-patrick-yeary",
+     "name": "Kevin Patrick Yeary",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "audra-riley",
+     "name": "Audra Riley",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-court-of-criminal-appeals-place-9": {
+   "zip": "78701",
+   "raceId": "tx-court-of-criminal-appeals-place-9",
+   "title": "Texas Court of Criminal Appeals Place 9",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "holly-taylor",
+     "name": "Holly Taylor",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "john-messinger",
+     "name": "John Messinger",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-15th-coa-chief-justice": {
+   "zip": "78701",
+   "raceId": "tx-15th-coa-chief-justice",
+   "title": "15th Court of Appeals Chief Justice",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "scott-brister",
+     "name": "Scott Brister",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "jerry-zimmerer",
+     "name": "Jerry Zimmerer",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-15th-coa-place-2": {
+   "zip": "78701",
+   "raceId": "tx-15th-coa-place-2",
+   "title": "15th Court of Appeals Place 2",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "scott-k-field",
+     "name": "Scott K. Field",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "tom-baker",
+     "name": "Tom Baker",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-15th-coa-place-3": {
+   "zip": "78701",
+   "raceId": "tx-15th-coa-place-3",
+   "title": "15th Court of Appeals Place 3",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "april-farris",
+     "name": "April Farris",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "marc-m-meyer",
+     "name": "Marc M. Meyer",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-3rd-coa-chief-justice": {
+   "zip": "78701",
+   "raceId": "tx-3rd-coa-chief-justice",
+   "title": "3rd Court of Appeals Chief Justice",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "cory-liu",
+     "name": "Cory Liu",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "darlene-byrne",
+     "name": "Darlene Byrne",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "tx-sboe-5": {
+   "zip": "78701",
+   "raceId": "tx-sboe-5",
+   "title": "State Board of Education District 5",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "mica-arellano",
+     "name": "Mica Arellano",
+     "party": "Republican",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "allison-bush",
+     "name": "Allison Bush",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education"
+     ],
+     "sourcedIssueCount": 1
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Mica Arellano (0), Allison Bush (1); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 1)."
+  },
+  "tx-hd-49": {
+   "zip": "78701",
+   "raceId": "tx-hd-49",
+   "title": "Texas House District 49",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "montserrat-garibay",
+     "name": "Montserrat Garibay",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "infrastructure",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "arshia-papari",
+     "name": "Arshia Papari",
+     "party": "Green",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 5
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare",
+    "infrastructure"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (5-5); 3 shared (energy, healthcare, infrastructure); min is at least half of max."
+  },
+  "tx-house-51": {
+   "zip": "78701",
+   "raceId": "tx-house-51",
+   "title": "State Representative, District 51",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "jessica-martinez",
+     "name": "Jessica Martinez",
+     "party": "Republican",
+     "sourcedIssues": [
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "maria-luisa-lulu-flores",
+     "name": "Maria Luisa “Lulu” Flores",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 7
+    }
+   ],
+   "sharedIssues": [
+    "infrastructure",
+    "safety",
+    "taxes"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: uneven records (min 3 < half of max 7)."
+  },
+  "travis-district-judge-147th": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-147th",
+   "title": "District Judge, 147th Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "cliff-brown",
+     "name": "Cliff Brown",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-201st": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-201st",
+   "title": "District Judge, 201st Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "amy-clark-meachum",
+     "name": "Amy Clark Meachum",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-250th": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-250th",
+   "title": "District Judge, 250th Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "kennon-lily-wooten",
+     "name": "Kennon Lily Wooten",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-261st": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-261st",
+   "title": "District Judge, 261st Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "daniella-deseta-lyttle",
+     "name": "Daniella Deseta Lyttle",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-299th": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-299th",
+   "title": "District Judge, 299th Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "karen-r-sage",
+     "name": "Karen R. Sage",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-331st": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-331st",
+   "title": "District Judge, 331st Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "chantal-melissa-eldridge",
+     "name": "Chantal Melissa Eldridge",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-403rd": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-403rd",
+   "title": "District Judge, 403rd Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "brandy-mueller",
+     "name": "Brandy Mueller",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-419th": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-419th",
+   "title": "District Judge, 419th Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "catherine-a-mauzy",
+     "name": "Catherine A. Mauzy",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-455th": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-455th",
+   "title": "District Judge, 455th Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "laurie-eiserloh",
+     "name": "Laurie Eiserloh",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-judge-459th": {
+   "zip": "78701",
+   "raceId": "travis-district-judge-459th",
+   "title": "District Judge, 459th Judicial District",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "maya-guerra-gamble",
+     "name": "Maya Guerra Gamble",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-county-judge": {
+   "zip": "78701",
+   "raceId": "travis-county-judge",
+   "title": "County Judge",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "andy-brown",
+     "name": "Andy Brown",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "housing",
+    "infrastructure",
+    "safety",
+    "taxes"
+   ],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-ccl-1": {
+   "zip": "78701",
+   "raceId": "travis-ccl-1",
+   "title": "Judge, County Court at Law No. 1",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "todd-wong",
+     "name": "Todd Wong",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-ccl-2": {
+   "zip": "78701",
+   "raceId": "travis-ccl-2",
+   "title": "Judge, County Court at Law No. 2",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "leslie-dippel",
+     "name": "Leslie Dippel",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-ccl-3": {
+   "zip": "78701",
+   "raceId": "travis-ccl-3",
+   "title": "Judge, County Court at Law No. 3",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "bianca-garcia",
+     "name": "Bianca Garcia",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-ccl-4": {
+   "zip": "78701",
+   "raceId": "travis-ccl-4",
+   "title": "Judge, County Court at Law No. 4",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "dimple-malhotra",
+     "name": "Dimple Malhotra",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-ccl-5": {
+   "zip": "78701",
+   "raceId": "travis-ccl-5",
+   "title": "Judge, County Court at Law No. 5",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "mary-ann-espiritu",
+     "name": "Mary Ann Espiritu",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-ccl-6": {
+   "zip": "78701",
+   "raceId": "travis-ccl-6",
+   "title": "Judge, County Court at Law No. 6",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "denise-hernandez",
+     "name": "Denise Hernández",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-ccl-7": {
+   "zip": "78701",
+   "raceId": "travis-ccl-7",
+   "title": "Judge, County Court at Law No. 7",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "elisabeth-earle",
+     "name": "Elisabeth Earle",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-probate-1": {
+   "zip": "78701",
+   "raceId": "travis-probate-1",
+   "title": "Judge, Probate Court No. 1",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "guy-herman",
+     "name": "Guy Herman",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-district-clerk": {
+   "zip": "78701",
+   "raceId": "travis-district-clerk",
+   "title": "District Clerk",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "velva-l-price",
+     "name": "Velva L. Price",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-county-clerk": {
+   "zip": "78701",
+   "raceId": "travis-county-clerk",
+   "title": "County Clerk",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "dyana-limon-mercado",
+     "name": "Dyana Limon-Mercado",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-county-treasurer": {
+   "zip": "78701",
+   "raceId": "travis-county-treasurer",
+   "title": "County Treasurer",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "dolores-ortega-carter",
+     "name": "Dolores Ortega Carter",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-commissioner-4": {
+   "zip": "78701",
+   "raceId": "travis-commissioner-4",
+   "title": "Travis County Commissioner, Precinct 4",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "george-morales-iii",
+     "name": "George Morales III",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "housing",
+    "infrastructure",
+    "safety",
+    "taxes"
+   ],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-jp-5": {
+   "zip": "78701",
+   "raceId": "travis-jp-5",
+   "title": "Justice of the Peace, Precinct 5",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "tanisa-jeffers",
+     "name": "Tanisa Jeffers",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-jp-4": {
+   "zip": "78701",
+   "raceId": "travis-jp-4",
+   "title": "Justice of the Peace, Precinct 4",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "raul-arturo-gonzalez",
+     "name": "Raul Arturo Gonzalez",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "travis-constable-4-unexpired": {
+   "zip": "78701",
+   "raceId": "travis-constable-4-unexpired",
+   "title": "County Constable, Precinct 4 - Unexpired Term",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "gabriel-padilla",
+     "name": "Gabriel Padilla",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-cad-place-1": {
+   "zip": "78701",
+   "raceId": "travis-cad-place-1",
+   "title": "Travis Central Appraisal District Board of Directors, Place 1",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "skyler-a-korgel",
+     "name": "Skyler A. Korgel",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    }
+   ],
+   "sharedIssues": [
+    "housing",
+    "infrastructure",
+    "taxes"
+   ],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-cad-place-2": {
+   "zip": "78701",
+   "raceId": "travis-cad-place-2",
+   "title": "Travis Central Appraisal District Board of Directors, Place 2",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "brian-pena",
+     "name": "Brian Peña",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "travis-cad-place-3": {
+   "zip": "78701",
+   "raceId": "travis-cad-place-3",
+   "title": "Travis Central Appraisal District Board of Directors, Place 3",
+   "level": "county",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "yvonne-munoz",
+     "name": "Yvonne Muñoz",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "phil-gorman",
+     "name": "Phil Gorman",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Yvonne Muñoz (0), Phil Gorman (1); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 1)."
+  },
+  "austin-council-9": {
+   "zip": "78701",
+   "raceId": "austin-council-9",
+   "title": "Austin City Council, District 9",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "rich-heyman",
+     "name": "Rich Heyman",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "katie-kam",
+     "name": "Katie Kam",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "zohaib-zo-qadri",
+     "name": "Zohaib “Zo” Qadri",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "dave-thadani",
+     "name": "Dave Thadani",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "kai-huang",
+     "name": "Kai Huang",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    }
+   ],
+   "sharedIssues": [
+    "housing"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: only 1 issue(s) sourced for every candidate."
+  },
+  "aisd-at-large-9": {
+   "zip": "78701",
+   "raceId": "aisd-at-large-9",
+   "title": "Austin ISD Board of Trustees, At-Large Position 9",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "cynthia-soliz",
+     "name": "Cynthia Soliz",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "housing"
+     ],
+     "sourcedIssueCount": 2
+    },
+    {
+     "id": "kirk-becker",
+     "name": "Kirk Becker",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
+    },
+    {
+     "id": "pamela-mathai",
+     "name": "Pamela Mathai",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "housing"
+     ],
+     "sourcedIssueCount": 2
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Cynthia Soliz (2), Kirk Becker (1), Pamela Mathai (2); only 0 issue(s) sourced for every candidate."
+  },
+  "acc-trustee-place-1": {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-1",
+   "title": "Austin Community College Board of Trustees, Place 1",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "dana-walker",
+     "name": "Dana Walker",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "gloria-gonzales-dholakia",
+     "name": "Gloria Gonzales-Dholakia",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Dana Walker (0), Gloria Gonzales-Dholakia (1); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 1)."
+  },
+  "acc-trustee-place-2": {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-2",
+   "title": "Austin Community College Board of Trustees, Place 2",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "gigi-edwards-bryant",
+     "name": "Gigi Edwards Bryant",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "acc-trustee-place-3": {
+   "zip": "78701",
+   "raceId": "acc-trustee-place-3",
+   "title": "Austin Community College Board of Trustees, Place 3",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "trevor-hale",
+     "name": "Trevor Hale",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "nan-mcraven",
+     "name": "Nan McRaven",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Trevor Hale (0), Nan McRaven (0); only 0 issue(s) sourced for every candidate."
+  },
+  "austin-prop-a": {
+   "zip": "78701",
+   "raceId": "austin-prop-a",
+   "title": "City of Austin Proposition A: Parks, recreation, aquatic and open space bonds",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-b": {
+   "zip": "78701",
+   "raceId": "austin-prop-b",
+   "title": "City of Austin Proposition B: Library facility bonds",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-c": {
+   "zip": "78701",
+   "raceId": "austin-prop-c",
+   "title": "City of Austin Proposition C: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-d": {
+   "zip": "78701",
+   "raceId": "austin-prop-d",
+   "title": "City of Austin Proposition D: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-e": {
+   "zip": "78701",
+   "raceId": "austin-prop-e",
+   "title": "City of Austin Proposition E: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-f": {
+   "zip": "78701",
+   "raceId": "austin-prop-f",
+   "title": "City of Austin Proposition F: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-g": {
+   "zip": "78701",
+   "raceId": "austin-prop-g",
+   "title": "City of Austin Proposition G: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-h": {
+   "zip": "78701",
+   "raceId": "austin-prop-h",
+   "title": "City of Austin Proposition H: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-i": {
+   "zip": "78701",
+   "raceId": "austin-prop-i",
+   "title": "City of Austin Proposition I: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "austin-prop-j": {
+   "zip": "78701",
+   "raceId": "austin-prop-j",
+   "title": "City of Austin Proposition J: Charter amendment",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-11": {
+   "zip": "94103",
+   "raceId": "ca-11",
+   "title": "U.S. House California District 11",
+   "level": "federal",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "connie-chan",
+     "name": "Connie Chan",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "immigration",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "scott-wiener",
+     "name": "Scott Wiener",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "housing",
+    "immigration"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-5); 3 shared (healthcare, housing, immigration); min is at least half of max."
+  },
+  "ca-ag": {
+   "zip": "94103",
+   "raceId": "ca-ag",
+   "title": "Attorney General of California",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "rob-bonta",
+     "name": "Rob Bonta",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 7
+    },
+    {
+     "id": "michael-e-gates",
+     "name": "Michael E. Gates",
+     "party": "Republican",
+     "sourcedIssues": [
+      "housing",
+      "immigration",
+      "safety"
+     ],
+     "sourcedIssueCount": 3
+    }
+   ],
+   "sharedIssues": [
+    "housing",
+    "immigration"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: only 2 issue(s) sourced for every candidate; uneven records (min 3 < half of max 7)."
+  },
+  "ca-controller": {
+   "zip": "94103",
+   "raceId": "ca-controller",
+   "title": "California Controller",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "malia-m-cohen",
+     "name": "Malia M. Cohen",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "herb-w-morgan",
+     "name": "Herb W Morgan",
+     "party": "Republican",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 7
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare"
+   ],
+   "gradesEligible": true,
+   "reason": "Not eligible: only 2 issue(s) sourced for every candidate; uneven records (min 3 < half of max 7)."
+  },
+  "ca-insurance": {
+   "zip": "94103",
+   "raceId": "ca-insurance",
+   "title": "California Commissioner of Insurance",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "ben-allen",
+     "name": "Ben Allen",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "infrastructure",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "jane-kim",
+     "name": "Jane Kim",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare",
+    "infrastructure"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-5); 3 shared (energy, healthcare, infrastructure); min is at least half of max."
+  },
+  "ca-sos": {
+   "zip": "94103",
+   "raceId": "ca-sos",
+   "title": "California Secretary of State",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "shirley-n-weber",
+     "name": "Shirley N. Weber",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "housing",
+      "immigration",
+      "infrastructure",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "donald-p-don-wagner",
+     "name": "Donald P. (Don) Wagner",
+     "party": "Republican",
+     "sourcedIssues": [
+      "immigration",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "immigration",
+    "taxes",
+    "wages"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-5); 3 shared (immigration, taxes, wages); min is at least half of max."
+  },
+  "ca-spi": {
+   "zip": "94103",
+   "raceId": "ca-spi",
+   "title": "California Superintendent of Public Instruction",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "richard-barrera",
+     "name": "Richard Barrera",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "healthcare",
+      "housing",
+      "immigration",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "sonja-shaw",
+     "name": "Sonja Shaw",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "taxes"
+     ],
+     "sourcedIssueCount": 2
+    }
+   ],
+   "sharedIssues": [
+    "education",
+    "taxes"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Sonja Shaw (2); only 2 issue(s) sourced for every candidate; uneven records (min 2 < half of max 6)."
+  },
+  "ca-treasurer": {
+   "zip": "94103",
+   "raceId": "ca-treasurer",
+   "title": "California Treasurer",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "eleni-kounalakis",
+     "name": "Eleni Kounalakis",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "jennifer-hawks",
+     "name": "Jennifer Hawks",
+     "party": "Republican",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "wages"
+     ],
+     "sourcedIssueCount": 6
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare",
+    "immigration"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-6); 3 shared (energy, healthcare, immigration); min is at least half of max."
+  },
+  "ca-gov": {
+   "zip": "94103",
+   "raceId": "ca-gov",
+   "title": "Governor of California",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "xavier-becerra",
+     "name": "Xavier Becerra",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 9
+    },
+    {
+     "id": "steve-hilton",
+     "name": "Steve Hilton",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 9
+    }
+   ],
+   "sharedIssues": [
+    "education",
+    "energy",
+    "healthcare",
+    "housing",
+    "immigration",
+    "infrastructure",
+    "safety",
+    "taxes",
+    "wages"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (9-9); 9 shared (education, energy, healthcare, housing, immigration, infrastructure, safety, taxes, wages); min is at least half of max."
+  },
+  "ca-ltgov": {
+   "zip": "94103",
+   "raceId": "ca-ltgov",
+   "title": "Lieutenant Governor of California",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "fiona-ma",
+     "name": "Fiona Ma",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "immigration"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "gloria-romero",
+     "name": "Gloria Romero",
+     "party": "Republican",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "housing",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "housing"
+   ],
+   "gradesEligible": true,
+   "reason": "Not eligible: only 2 issue(s) sourced for every candidate."
+  },
+  "ca-ad-17": {
+   "zip": "94103",
+   "raceId": "ca-ad-17",
+   "title": "State Assembly Member District 17",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "matt-haney",
+     "name": "Matt Haney",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "immigration"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "manuel-noris-barrera",
+     "name": "Manuel Noris-Barrera",
+     "party": "Republican",
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Manuel Noris-Barrera (1); only 0 issue(s) sourced for every candidate; uneven records (min 1 < half of max 3)."
+  },
+  "ca-boe-2": {
+   "zip": "94103",
+   "raceId": "ca-boe-2",
+   "title": "Board of Equalization Member District 2",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "sally-j-lieber",
+     "name": "Sally J. Lieber",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "john-pimentel",
+     "name": "John Pimentel",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "housing",
+    "taxes"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-4); 3 shared (energy, housing, taxes); min is at least half of max."
+  },
+  "ca-supreme-evans": {
+   "zip": "94103",
+   "raceId": "ca-supreme-evans",
+   "title": "Associate Justice of the Supreme Court (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "kelli-m-evans",
+     "name": "Kelli M. Evans",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-supreme-groban": {
+   "zip": "94103",
+   "raceId": "ca-supreme-groban",
+   "title": "Associate Justice of the Supreme Court (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "joshua-groban",
+     "name": "Joshua Groban",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-1": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-1",
+   "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "charles-a-smiley",
+     "name": "Charles A. Smiley",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-1b": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-1b",
+   "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "kathleen-m-banke",
+     "name": "Kathleen M. Banke",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-1c": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-1c",
+   "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "monique-langhorne-wilson",
+     "name": "Monique Langhorne Wilson",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-2pj": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-2pj",
+   "title": "Presiding Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "therese-m-stewart",
+     "name": "Therese M. Stewart",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-2": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-2",
+   "title": "Associate Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "tara-m-desautels",
+     "name": "Tara M. Desautels",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-3": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-3",
+   "title": "Associate Justice, Court of Appeal, First District, Division Three (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "ioana-petrou",
+     "name": "Ioana Petrou",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-3b": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-3b",
+   "title": "Associate Justice, Court of Appeal, First District, Division Three (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "victor-a-rodriguez",
+     "name": "Victor A. Rodriguez",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-4pj": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-4pj",
+   "title": "Presiding Justice, Court of Appeal, First District, Division Four (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "tracie-l-brown",
+     "name": "Tracie L. Brown",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-5": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-5",
+   "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "mark-simons",
+     "name": "Mark Simons",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-5b": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-5b",
+   "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "danny-y-chou",
+     "name": "Danny Y. Chou",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ca-coa-1-5c": {
+   "zip": "94103",
+   "raceId": "ca-coa-1-5c",
+   "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "gordon-burns",
+     "name": "Gordon Burns",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "sf-assessor-recorder": {
+   "zip": "94103",
+   "raceId": "sf-assessor-recorder",
+   "title": "Assessor-Recorder",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "joaquin-torres",
+     "name": "Joaquin Torres",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing"
+     ],
+     "sourcedIssueCount": 1
+    }
+   ],
+   "sharedIssues": [
+    "housing"
+   ],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "sf-public-defender": {
+   "zip": "94103",
+   "raceId": "sf-public-defender",
+   "title": "Public Defender",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "manohar-raju",
+     "name": "Manohar Raju",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "healthcare",
+      "safety"
+     ],
+     "sourcedIssueCount": 2
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "safety"
+   ],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "sf-supervisor-6": {
+   "zip": "94103",
+   "raceId": "sf-supervisor-6",
+   "title": "Board of Supervisors, District 6",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "alex-behrend",
+     "name": "Alex Behrend",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "matt-dorsey",
+     "name": "Matt Dorsey",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "housing",
+    "infrastructure",
+    "safety"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-5); 3 shared (housing, infrastructure, safety); min is at least half of max."
+  },
+  "sf-supervisor-8": {
+   "zip": "94103",
+   "raceId": "sf-supervisor-8",
+   "title": "Board of Supervisors, District 8",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "gary-mccoy",
+     "name": "Gary McCoy",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "michael-t-nguyen",
+     "name": "Michael T. Nguyen",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 8
+    },
+    {
+     "id": "darshini-patel",
+     "name": "Darshini Patel",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 7
+    },
+    {
+     "id": "emanuel-manny-yekutiel",
+     "name": "Emanuel \"Manny\" Yekutiel",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "housing",
+    "infrastructure",
+    "safety",
+    "taxes"
+   ],
+   "gradesEligible": true,
+   "reason": "All 4 candidates have 3+ sourced issues (4-8); 4 shared (housing, infrastructure, safety, taxes); min is at least half of max."
+  },
+  "sf-supervisor-10": {
+   "zip": "94103",
+   "raceId": "sf-supervisor-10",
+   "title": "Board of Supervisors, District 10",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "pearci-pj-bastiany-iii",
+     "name": "Pearci \"PJ\" Bastiany III",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "dionjay-dj-brookter",
+     "name": "Dionjay (DJ) Brookter",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "safety"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "deandra-bryant",
+     "name": "Deandra Bryant",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "safety"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "theo-ellington",
+     "name": "Theo Ellington",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "j-r-eppler",
+     "name": "J.R. Eppler",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "ellsworth-ell-m-jennison-jr",
+     "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy"
+     ],
+     "sourcedIssueCount": 1
+    },
+    {
+     "id": "mike-trouble-lin",
+     "name": "Mike Trouble Lin",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "jamo-muhammad",
+     "name": "Jamo Muhammad",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy"
+     ],
+     "sourcedIssueCount": 1
+    },
+    {
+     "id": "jessica-pessecow",
+     "name": "Jessica Pessecow",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "shawn-m-richard",
+     "name": "Shawn M. Richard",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Ellsworth \"Ell\" M. Jennison, Jr. (1), Jamo Muhammad (1); only 0 issue(s) sourced for every candidate; uneven records (min 1 < half of max 6)."
+  },
+  "sf-board-of-education": {
+   "zip": "94103",
+   "raceId": "sf-board-of-education",
+   "title": "Board of Education (choose up to 3)",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "autumn-brown-garibay",
+     "name": "Autumn Brown Garibay",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "virginia-cheung",
+     "name": "Virginia Cheung",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "housing",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "alida-fisher",
+     "name": "Alida Fisher",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "healthcare",
+      "housing",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "ryan-hazelton",
+     "name": "Ryan Hazelton",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "housing",
+      "safety"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "phil-kim",
+     "name": "Phil Kim",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing"
+     ],
+     "sourcedIssueCount": 1
+    },
+    {
+     "id": "laurance-lee",
+     "name": "Laurance Lee",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "reina-tello",
+     "name": "Reina Tello",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "safety"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "tim-tung",
+     "name": "Tim Tung",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "safety"
+     ],
+     "sourcedIssueCount": 2
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Autumn Brown Garibay (0), Phil Kim (1), Tim Tung (2); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 4)."
+  },
+  "sf-community-college-board": {
+   "zip": "94103",
+   "raceId": "sf-community-college-board",
+   "title": "Community College Board (choose up to 3)",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "elijah-ball",
+     "name": "Elijah Ball",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "taxes"
+     ],
+     "sourcedIssueCount": 2
+    },
+    {
+     "id": "rome-moses-jones",
+     "name": "Rome Moses Jones",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing"
+     ],
+     "sourcedIssueCount": 1
+    },
+    {
+     "id": "monroe-lace",
+     "name": "Monroe Lace",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
+    },
+    {
+     "id": "leah-lacroix",
+     "name": "Leah LaCroix",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 2
+    },
+    {
+     "id": "jeremy-lee",
+     "name": "Jeremy Lee",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "education",
+      "immigration",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "bunny-mcfadden",
+     "name": "Bunny McFadden",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "energy",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 3
+    },
+    {
+     "id": "erwin-tam",
+     "name": "Erwin Tam",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
+    },
+    {
+     "id": "lisa-wynn",
+     "name": "Lisa Wynn",
+     "party": "Nonpartisan",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Elijah Ball (2), Rome Moses Jones (1), Monroe Lace (1), Leah LaCroix (2), Erwin Tam (1), Lisa Wynn (0); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 4)."
+  },
+  "sf-community-college-board-partial": {
+   "zip": "94103",
+   "raceId": "sf-community-college-board-partial",
+   "title": "Community College Board Partial Term",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "ruth-ferguson",
+     "name": "Ruth Ferguson",
+     "party": "Nonpartisan",
+     "sourcedIssues": [
+      "housing",
+      "taxes"
+     ],
+     "sourcedIssueCount": 2
+    }
+   ],
+   "sharedIssues": [
+    "housing",
+    "taxes"
+   ],
+   "gradesEligible": false,
+   "reason": "Unopposed (fewer than 2 candidates): grades never shown."
+  },
+  "ca-prop-1": {
+   "zip": "94103",
+   "raceId": "ca-prop-1",
+   "title": "Proposition 1 (Housing, Bonds)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-2": {
+   "zip": "94103",
+   "raceId": "ca-prop-2",
+   "title": "Proposition 2 (Budget stabilization)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-3": {
+   "zip": "94103",
+   "raceId": "ca-prop-3",
+   "title": "Proposition 3 (Higher education funding, Public education funding, Income taxes)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-4": {
+   "zip": "94103",
+   "raceId": "ca-prop-4",
+   "title": "Proposition 4 (Election administration, Campaign finance)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-5": {
+   "zip": "94103",
+   "raceId": "ca-prop-5",
+   "title": "Proposition 5 (State executive structure, Recall)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-37": {
+   "zip": "94103",
+   "raceId": "ca-prop-37",
+   "title": "Proposition 37 (Housing)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-38": {
+   "zip": "94103",
+   "raceId": "ca-prop-38",
+   "title": "Proposition 38 (Healthcare facility, Healthcare governance, Bonds, Vaccinations and disease)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-39": {
+   "zip": "94103",
+   "raceId": "ca-prop-39",
+   "title": "Proposition 39 (Election administration, Voter ID)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-40": {
+   "zip": "94103",
+   "raceId": "ca-prop-40",
+   "title": "Proposition 40 (Income taxes, Public health insurance)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-41": {
+   "zip": "94103",
+   "raceId": "ca-prop-41",
+   "title": "Proposition 41 (Tax administration, Revenue and spending limits)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-42": {
+   "zip": "94103",
+   "raceId": "ca-prop-42",
+   "title": "Proposition 42 (Income taxes)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-43": {
+   "zip": "94103",
+   "raceId": "ca-prop-43",
+   "title": "Proposition 43 (Supermajority, Local government)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-44": {
+   "zip": "94103",
+   "raceId": "ca-prop-44",
+   "title": "Proposition 44 (Business, Healthcare governance)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ca-prop-45": {
+   "zip": "94103",
+   "raceId": "ca-prop-45",
+   "title": "Proposition 45 (Administrative powers, Land use)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-rtm": {
+   "zip": "94103",
+   "raceId": "sf-rtm",
+   "title": "Regional Measure RTM: Regional Transit Measure",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-a": {
+   "zip": "94103",
+   "raceId": "sf-prop-a",
+   "title": "SF Proposition A: Charter Changes Affecting Various City Departments and Commissions",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-b": {
+   "zip": "94103",
+   "raceId": "sf-prop-b",
+   "title": "SF Proposition B: Establishing a Municipal Finance Corporation and a Public Bank",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-c": {
+   "zip": "94103",
+   "raceId": "sf-prop-c",
+   "title": "SF Proposition C: Contributions to the Housing Trust Fund",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-d": {
+   "zip": "94103",
+   "raceId": "sf-prop-d",
+   "title": "SF Proposition D: Changes to Ballot Measure Process",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-e": {
+   "zip": "94103",
+   "raceId": "sf-prop-e",
+   "title": "SF Proposition E: City Administrator's Authority and Changes to City Contracting",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-f": {
+   "zip": "94103",
+   "raceId": "sf-prop-f",
+   "title": "SF Proposition F: Changes to Executive Branch Management",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-g": {
+   "zip": "94103",
+   "raceId": "sf-prop-g",
+   "title": "SF Proposition G: Allowing Private Vehicles on the Upper Great Highway in Sunset Dunes Park",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-h": {
+   "zip": "94103",
+   "raceId": "sf-prop-h",
+   "title": "SF Proposition H: Parcel Tax to Fund Muni Operations",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-i": {
+   "zip": "94103",
+   "raceId": "sf-prop-i",
+   "title": "SF Proposition I: Changes to Real Property Transfer Tax",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "sf-prop-j": {
+   "zip": "94103",
+   "raceId": "sf-prop-j",
+   "title": "SF Proposition J: Removal of Foreclosure Exemption for Real Property Transfer Tax",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "ny-12": {
+   "zip": "10001",
+   "raceId": "ny-12",
+   "title": "U.S. House New York District 12",
+   "level": "federal",
+   "type": "candidate",
+   "inOfficesJson": false,
+   "candidates": [
+    {
+     "id": "micah-c-lasher",
+     "name": "Micah C. Lasher",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 8
+    },
+    {
+     "id": "caroline-shinkle",
+     "name": "Caroline Shinkle",
+     "party": "Republican / Conservative Party",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 7
+    },
+    {
+     "id": "wilneida-negron",
+     "name": "Wilneida Negron",
+     "party": "For All of Us Party",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "karen-ortiz",
+     "name": "Karen Ortiz",
+     "party": "Karen Ortiz (independent line)",
+     "sourcedIssues": [
+      "education",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety"
+     ],
+     "sourcedIssueCount": 5
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "housing",
+    "immigration",
+    "safety"
+   ],
+   "gradesEligible": true,
+   "reason": "All 4 candidates have 3+ sourced issues (5-8); 4 shared (healthcare, housing, immigration, safety); min is at least half of max."
+  },
+  "ny-governor": {
+   "zip": "10001",
+   "raceId": "ny-governor",
+   "title": "Governor and Lieutenant Governor",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": false,
+   "candidates": [
+    {
+     "id": "kathy-c-hochul-adrienne-e-adams",
+     "name": "Kathy C. Hochul / Adrienne E. Adams",
+     "party": "Democratic / Working Families",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 8
+    },
+    {
+     "id": "bruce-a-blakeman-todd-hood",
+     "name": "Bruce A. Blakeman / Todd Hood",
+     "party": "Republican / Conservative / Vote Affordable",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety",
+      "taxes",
+      "wages"
+     ],
+     "sourcedIssueCount": 9
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare",
+    "housing",
+    "immigration",
+    "infrastructure",
+    "safety",
+    "taxes",
+    "wages"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (8-9); 8 shared (energy, healthcare, housing, immigration, infrastructure, safety, taxes, wages); min is at least half of max."
+  },
+  "ny-attorney-general": {
+   "zip": "10001",
+   "raceId": "ny-attorney-general",
+   "title": "Attorney General of New York",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": false,
+   "candidates": [
+    {
+     "id": "letitia-a-james",
+     "name": "Letitia A. James",
+     "party": "Democratic / Working Families Party",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "immigration",
+      "safety",
+      "wages"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "saritha-komatireddy",
+     "name": "Saritha Komatireddy",
+     "party": "Republican / Conservative Party",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare",
+    "immigration",
+    "safety"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (5-5); 4 shared (energy, healthcare, immigration, safety); min is at least half of max."
+  },
+  "ny-comptroller": {
+   "zip": "10001",
+   "raceId": "ny-comptroller",
+   "title": "New York State Comptroller",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": false,
+   "candidates": [
+    {
+     "id": "thomas-p-dinapoli",
+     "name": "Thomas P. DiNapoli",
+     "party": "Democratic / Working Families Party",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "immigration",
+      "infrastructure"
+     ],
+     "sourcedIssueCount": 4
+    },
+    {
+     "id": "joseph-hernandez",
+     "name": "Joseph Hernandez",
+     "party": "Republican / Conservative Party",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare",
+    "immigration"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-6); 3 shared (energy, healthcare, immigration); min is at least half of max."
+  },
+  "ny-sd-47": {
+   "zip": "10001",
+   "raceId": "ny-sd-47",
+   "title": "State Senator, District 47",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "erik-d-bottcher",
+     "name": "Erik D. Bottcher",
+     "party": "Democratic / Working Families Party",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "charlotte-friedman",
+     "name": "Charlotte Friedman",
+     "party": "Republican",
+     "sourcedIssues": [
+      "immigration",
+      "safety"
+     ],
+     "sourcedIssueCount": 2
+    }
+   ],
+   "sharedIssues": [
+    "immigration",
+    "safety"
+   ],
+   "gradesEligible": false,
+   "reason": "Not eligible: under 3 sourced issues: Charlotte Friedman (2); only 2 issue(s) sourced for every candidate; uneven records (min 2 < half of max 5)."
+  },
+  "ny-sd-28": {
+   "zip": "10001",
+   "raceId": "ny-sd-28",
+   "title": "State Senator, District 28",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "liz-krueger",
+     "name": "Liz Krueger",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 6
+    },
+    {
+     "id": "alina-bonsell",
+     "name": "Alina Bonsell",
+     "party": "Republican / Block Mamdani Party",
+     "sourcedIssues": [
+      "education",
+      "energy",
+      "healthcare",
+      "housing",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 6
+    }
+   ],
+   "sharedIssues": [
+    "energy",
+    "healthcare",
+    "housing",
+    "safety"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (6-6); 4 shared (energy, healthcare, housing, safety); min is at least half of max."
+  },
+  "ny-ad-75": {
+   "zip": "10001",
+   "raceId": "ny-ad-75",
+   "title": "Member of Assembly, District 75",
+   "level": "state",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "tony-simone",
+     "name": "Tony Simone",
+     "party": "Democratic / Working Families Party",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "taxes"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "cristina-fontanelli",
+     "name": "Cristina Fontanelli",
+     "party": "Republican / Save NYC Party",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "safety",
+      "taxes"
+     ],
+     "sourcedIssueCount": 4
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "housing",
+    "taxes"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (4-5); 3 shared (healthcare, housing, taxes); min is at least half of max."
+  },
+  "ny-supreme-1jd": {
+   "zip": "10001",
+   "raceId": "ny-supreme-1jd",
+   "title": "Justice of the Supreme Court, 1st Judicial District (choose up to 6)",
+   "level": "state",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "saliann-scarpulla",
+     "name": "Saliann Scarpulla",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "kathleen-waterman-marshall",
+     "name": "Kathleen Waterman-Marshall",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "shlomo-s-hagler",
+     "name": "Shlomo S. Hagler",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "manuel-j-mendez",
+     "name": "Manuel J. Mendez",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "hasa-a-kingo",
+     "name": "Hasa A. Kingo",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "christopher-chin",
+     "name": "Christopher Chin",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "amy-s-taylor",
+     "name": "Amy S. Taylor",
+     "party": "Working Families Party",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "joshua-e-goldfein",
+     "name": "Joshua E. Goldfein",
+     "party": "Working Families Party",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "sienna-m-fontaine",
+     "name": "Sienna M. Fontaine",
+     "party": "Working Families Party",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "bob-cohen",
+     "name": "Bob Cohen",
+     "party": "Working Families Party",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "jeffrey-w-rizzo",
+     "name": "Jeffrey W. Rizzo",
+     "party": "Working Families Party",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ny-surrogate-ny": {
+   "zip": "10001",
+   "raceId": "ny-surrogate-ny",
+   "title": "Surrogate, New York County",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "rita-mella",
+     "name": "Rita Mella",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ny-civil-county-ny": {
+   "zip": "10001",
+   "raceId": "ny-civil-county-ny",
+   "title": "Judge of the Civil Court, County, New York (choose up to 3)",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "josh-e-hanshaft",
+     "name": "Josh E. Hanshaft",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "emily-morales-minerva",
+     "name": "Emily Morales-Minerva",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "vlad-frants",
+     "name": "Vlad Frants",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ny-civil-3md-ny": {
+   "zip": "10001",
+   "raceId": "ny-civil-3md-ny",
+   "title": "Judge of the Civil Court, District, 3rd Municipal Court District, New York",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "steven-benathen",
+     "name": "Steven Benathen",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "ny-civil-9md-ny": {
+   "zip": "10001",
+   "raceId": "ny-civil-9md-ny",
+   "title": "Judge of the Civil Court, District, 9th Municipal Court District, New York (choose up to 2)",
+   "level": "county",
+   "type": "judicial",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "jennifer-frankola-crawford",
+     "name": "Jennifer Frankola-Crawford",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    },
+    {
+     "id": "brian-j-krist",
+     "name": "Brian J. Krist",
+     "party": "Democratic",
+     "sourcedIssues": [],
+     "sourcedIssueCount": 0
+    }
+   ],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Judicial race: grades never shown."
+  },
+  "nyc-council-3": {
+   "zip": "10001",
+   "raceId": "nyc-council-3",
+   "title": "Member of the City Council, 3rd Council District",
+   "level": "local",
+   "type": "candidate",
+   "inOfficesJson": true,
+   "candidates": [
+    {
+     "id": "carl-wilson",
+     "name": "Carl Wilson",
+     "party": "Democratic",
+     "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "immigration",
+      "infrastructure",
+      "safety"
+     ],
+     "sourcedIssueCount": 5
+    },
+    {
+     "id": "haris-bhatti",
+     "name": "Haris Bhatti",
+     "party": "Haris Bhatti Party",
+     "sourcedIssues": [
+      "energy",
+      "healthcare",
+      "housing",
+      "immigration",
+      "safety"
+     ],
+     "sourcedIssueCount": 5
+    }
+   ],
+   "sharedIssues": [
+    "healthcare",
+    "housing",
+    "immigration",
+    "safety"
+   ],
+   "gradesEligible": true,
+   "reason": "All 2 candidates have 3+ sourced issues (5-5); 4 shared (healthcare, housing, immigration, safety); min is at least half of max."
+  },
+  "NYC Proposal 1": {
+   "zip": "10001",
+   "raceId": "NYC Proposal 1",
+   "title": "NYC Proposal 1 (Public space consents)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "NYC Proposal 2": {
+   "zip": "10001",
+   "raceId": "NYC Proposal 2",
+   "title": "NYC Proposal 2 (Contractor paperwork)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "NYC Proposal 3": {
+   "zip": "10001",
+   "raceId": "NYC Proposal 3",
+   "title": "NYC Proposal 3 (Street safety, city property, leasing)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "NYC Proposal 4": {
+   "zip": "10001",
+   "raceId": "NYC Proposal 4",
+   "title": "NYC Proposal 4 (Building permits)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  },
+  "NYC Proposal 5": {
+   "zip": "10001",
+   "raceId": "NYC Proposal 5",
+   "title": "NYC Proposal 5 (Rainy day fund)",
+   "level": "measure",
+   "type": "measure",
+   "inOfficesJson": false,
+   "candidates": [],
+   "sharedIssues": [],
+   "gradesEligible": false,
+   "reason": "Ballot measure: grades never shown."
+  }
+ }
+}

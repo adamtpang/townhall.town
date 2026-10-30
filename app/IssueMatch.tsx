@@ -1,131 +1,127 @@
 "use client";
+import { ToggleGroup } from "../components/ui/toggle-group";
+import { plain } from "../lib/plain";
+import { H2 } from "../lib/typeScale";
 import { useEffect, useState } from "react";
-import { Slider } from "../components/ui/slider";
-import { Checkbox } from "../components/ui/checkbox";
-import { Portrait, type Photo } from "../components/Portrait";
-import { ISSUES, overlap, stancesFor, type Answers } from "../lib/issues";
+import TownyInterview, { type Fill } from "./TownyInterview";
+import { type Photo } from "../components/Portrait";
+import { Button } from "../components/ui/button";
+import { type Answers } from "../lib/issues";
+import { issuesFor, ISSUE_INTRO } from "../lib/issueOrder";
+import { migrateAnswers, press, press5, bucketOf, BUCKETS, normalizeAnswers } from "../lib/overlapCore.mjs";
+import EndScreen from "./EndScreen";
 import { useT } from "../lib/i18n";
 
-type Cand = { name: string; party?: string | null; photo?: Photo; causes?: { id: string; label: string; quote: string; source: { label: string; url: string } }[] };
+type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null; officialSite?: string | null; finance?: { label?: string; url?: string } | null };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
-const KEY = "townhall.issueAnswers.v2";
-// Candidate tier within a race, from overlap % only (needs 2+ sourced stances on issues you answered).
-const tierOf = (pct: number) => (pct >= 85 ? "S" : pct >= 70 ? "A" : pct >= 50 ? "B" : "C");
+export const ANSWERS_KEY = "th-answers-v1";
+/** QA P2 (9dfe90d): the ZIP the saved answers were last given for, so the carry-over notice can say "from another ZIP". */
+export const ANSWERS_ZIP_KEY = "th-answers-zip-v1";
+const OLD_KEYS = ["townhall.issueAnswers.v2", "townhall.issueAnswers.v1"];
 
-export default function IssueMatch({ state, races }: { state: "TX" | "CA" | "NY"; races: RaceLite[] }) {
+function load(): Answers {
+  try {
+    const raw = localStorage.getItem(ANSWERS_KEY);
+    if (raw) { const a = normalizeAnswers(JSON.parse(raw) || {}) as Answers; localStorage.setItem(ANSWERS_KEY, JSON.stringify(a)); return a; }
+    for (const k of OLD_KEYS) {
+      const old = localStorage.getItem(k);
+      if (old) { const m = migrateAnswers(JSON.parse(old)) as Answers; localStorage.setItem(ANSWERS_KEY, JSON.stringify(m)); return m; }
+    }
+  } catch { /* ignore */ }
+  return {};
+}
+
+
+const CITY: Record<string, string> = { "78701": "Austin", "94103": "San Francisco", "10001": "New York" };
+
+export default function IssueMatch({ zip, state, races }: { zip: string; state: "TX" | "CA" | "NY"; races: RaceLite[] }) {
+  const issues = issuesFor(zip, state);
   const t = useT();
-  const issues = ISSUES.filter((i) => !i.caOnly || state === "CA");
   const ids = issues.map((i) => i.id);
   const [answers, setAnswers] = useState<Answers>({});
-  const [failed, setFailed] = useState<Record<string, boolean>>({});
-  useEffect(() => {
-    try { const raw = localStorage.getItem(KEY); if (raw) setAnswers(JSON.parse(raw) || {}); } catch { /* ignore */ }
-  }, []);
-  function set(id: string, v: number | null) {
-    const next = { ...answers, [id]: v };
+  const [confirm, setConfirm] = useState(false);
+  const [savedZip, setSavedZip] = useState<string | null>(null);
+  // Design p9: the carry-over notice only when th-answers-v1 already held answers BEFORE this page load (fresh browser: none).
+  const [carriedIds, setCarriedIds] = useState<string[]>([]);
+  useEffect(() => { const a = load(); setAnswers(a); setCarriedIds(ids.filter((id) => a[id] !== null && a[id] !== undefined)); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
+  const markZip = () => { try { localStorage.setItem(ANSWERS_ZIP_KEY, zip); } catch { /* ignore */ } };
+  function choose(id: string, b: number, pole: "high" | "low" = "high") {
+    const next = press5(answers, id, b, pole) as Answers;
     setAnswers(next);
-    try { localStorage.setItem(KEY, JSON.stringify(next)); } catch { /* ignore */ }
+    setFromChat((w) => { const n = { ...w }; delete n[id]; return n; });
+    try { localStorage.setItem(ANSWERS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+    markZip();
   }
-  const answeredCount = ids.filter((id) => typeof answers[id] === "number").length;
-  const withCands = races.filter((r) => r.candidates?.length);
+  const [fromChat, setFromChat] = useState<Record<string, string>>({});
+  function fill(fs: Fill[]) {
+    const next = { ...answers } as Answers;
+    const words = { ...fromChat };
+    for (const f of fs) {
+      const i = issues.find((x) => x.id === f.issue); if (!i) continue;
+      const v = press({}, f.issue, f.choice, i.yesMeansPole) as Answers;
+      next[f.issue] = v[f.issue]; words[f.issue] = f.words;
+    }
+    setAnswers(next); setFromChat(words);
+    try { localStorage.setItem(ANSWERS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+    markZip();
+  }
+  function reset() {
+    try { for (const k of Object.keys(localStorage)) if (k.startsWith("townhall.") || k.startsWith("th-")) localStorage.removeItem(k); } catch { /* ignore */ }
+    setAnswers({}); setFromChat({}); setConfirm(false); setCarriedIds([]);
+    window.dispatchEvent(new Event("townhall:reset"));
+  }
+  const answered = ids.filter((id) => answers[id] !== null && answers[id] !== undefined).length;
+  // QA fb66b9b P2: the carry-over notice and the "x of y answered" counter agree: carried answers still set, out of all.
+  const carried = carriedIds.filter((id) => answers[id] !== null && answers[id] !== undefined).length;
 
   return (
-    <section className="border-t border-black py-24" id="what-matters">
-      <p className="nds-caption-upper text-black/60">02</p>
-      <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">{t("Who lines up with you")}</h2>
-      <h3 className="mt-8 text-2xl font-medium tracking-tight">{t("What matters to you?")}</h3>
-            <p className="mt-2 text-sm text-black/50">{t("Your answers stay on this device. No sign-in, nothing sent to a server.")}</p>
-      <a href="#overlap" className="mt-4 inline-block text-sm">{t("See your issue overlap ↓")}</a>
+    <>
+      <section className="border-t border-black py-24" id="what-matters">
+        <p className="nds-caption-upper text-black/60">02</p>
+        <h2 className={`mt-3 ${H2}`}>Who lines up with you</h2>
+        <p className="mt-4 text-base leading-6 text-black" data-issue-intro>{ISSUE_INTRO}</p>
+        <p className="mt-2 text-sm text-black/60" aria-live="polite" data-progress>{answered} of {ids.length} answered</p>
 
-      <div className="mt-6 grid grid-cols-1 gap-0">
-        {issues.map((i) => {
-          const v = answers[i.id];
-          const skipped = typeof v !== "number";
-          return (
-            <div key={i.id} className="border-t border-black/15 py-4" data-issue={i.id}>
-              <div className="flex items-center justify-between gap-2">
-                <p className="font-semibold text-navy">{t(i.label)}</p>
-                <label className="-mr-2 flex min-h-11 cursor-pointer items-center gap-1.5 px-2 text-sm text-slate-600">
-                  <Checkbox checked={skipped} onCheckedChange={(c) => set(i.id, c === true ? null : 0)} aria-label={`${t("Skip")} ${t(i.label)}`} /> {t("Skip")}
-                </label>
-              </div>
-              <Slider className={`mt-4 ${skipped ? "opacity-40" : ""}`} min={-5} max={5} step={1} value={[skipped ? 0 : (v as number)]}
-                onValueChange={([x]) => set(i.id, x)} aria-label={t(i.label)} />
-              <div className="mt-2 flex justify-between gap-4 text-xs text-slate-500">
-                <span className="max-w-[45%]"><b className="block text-black">-5</b>{t(i.low)}</span>
-                <span className="text-base font-medium text-black">{skipped ? t("Skipped") : (v as number) > 0 ? `+${v}` : v}</span>
-                <span className="max-w-[45%] text-right"><b className="block text-black">+5</b>{t(i.high)}</span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+        <TownyInterview zip={zip} city={CITY[zip] || "your area"} issues={issues.map((i) => ({ id: i.id, label: i.label }))} onFill={fill} answered={answered} carried={carried} savedZip={savedZip} onReset={() => setConfirm(true)} />
 
-      <div className="mt-10" id="overlap">
-        <h3 className="text-2xl font-medium tracking-tight">{t("Issue overlap")}</h3>
-        <p className="mt-1 border-l-2 border-[#3760f2] pl-4 text-sm text-black/70">
-          <strong>{t("Issue overlap, not a recommendation.")}</strong> {t("It compares your answers with positions candidates have stated in sourced material, only where both exist. Most candidates have few or no sourced positions, so a missing score says nothing about them. Candidates are shown in ballot order.")}
-        </p>
-        {answeredCount === 0 ? (
-          <p className="mt-4 text-slate-600">{t("Answer at least one issue above to see overlap and candidate tiers. With no answers, nothing is tiered.")}</p>
-        ) : (
-          <div className="mt-8 space-y-16">
-            {withCands.map((r) => {
-              const rows = r.candidates.map((c) => { const st = stancesFor(c.name); return { c, st, o: overlap(answers, st, ids) }; });
-              const compare = rows.filter((x) => x.o.n >= 2).length >= 2;
-              return (
-              <div key={r.id} data-race={r.id}>
-                <p className="font-serif text-3xl leading-tight text-black">{r.title || r.id}</p>
-                {!compare && <p className="mt-1 text-sm text-slate-500">{t("Not enough sourced positions to compare candidates in this race yet.")}</p>}
-                <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3">
-                  {rows.map(({ c, st, o }) => {
-                    const agree = o.shared.filter((id) => { const a = answers[id] as number; const v = st[id].value; return a * v > 0 || Math.abs(a - v) <= 1; }).length;
-                    return (
-                      <li key={c.name} className="text-sm" data-overlap={c.name}>
-                        <Portrait name={c.name} photo={c.photo} forceInitials={failed[r.id] || r.candidates.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
-                        <p className="mt-3 text-base font-medium text-black">{c.name}{c.party ? <span className="font-normal text-slate-500"> · {c.party}</span> : null}</p>
-                        {c.causes?.length ? (
-                          <p className="mt-1 text-xs text-black/60">{t("Talks about")}{" "}
-                            {c.causes.slice(0, 3).map((k, j) => (
-                              <span key={k.id}>{j ? " · " : ""}<a href={k.source.url} target="_blank" rel="noreferrer" title={`“${k.quote}” (keyword match in ${k.source.label})`}>{k.label}</a></span>
-                            ))}
-                          </p>
-                        ) : null}
-                        {o.n === 0 ? (
-                          <p className="mt-1 text-slate-500">{t("No sourced positions on your issues.")}</p>
-                        ) : (
-                          <>
-                            {compare && o.n >= 2 && o.pct !== null ? (
-                              <>
-                                <p className="mt-1 text-slate-800"><span className="mr-3 inline-block min-w-[2rem] font-serif text-5xl leading-none">{tierOf(o.pct)}</span>{t("Lines up on")} {agree} {t("of")} {o.n} {t("compared issues")}</p>
-                                <p className="text-xs text-slate-500">{t("Tier based on your answers and sourced records.")}</p>
-                              </>
-                            ) : (
-                              <p className="mt-1 text-xs text-slate-500">{o.n} {t(o.n === 1 ? "sourced position on your issues. Not tiered." : "sourced positions on your issues. Not tiered.")}</p>
-                            )}
-                            <details className="mt-1" open>
-                              <summary className="flex min-h-11 cursor-pointer items-center text-xs text-navy-700">{t("Sourced positions")}</summary>
-                              <ul className="space-y-2">
-                                {o.shared.map((id) => (
-                                  <li key={id} className="text-xs text-slate-600">
-                                    <span className="font-medium">{t(ISSUES.find((i) => i.id === id)?.label ?? id)}:</span> “{st[id].quote}”{" "}
-                                    <a href={st[id].sourceUrl} target="_blank" rel="noreferrer">{t("source")}</a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </details>
-                          </>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              );
-            })}
-          </div>
-        )}
-      </div>
-    </section>
+        <ol className="mt-6">
+          {issues.map((i) => {
+            const sel = bucketOf(answers[i.id], i.yesMeansPole);
+            return (
+              <li key={i.id} className="border-t border-black/15 py-6" data-issue={i.id}>
+                <p className="text-sm font-[530] text-black/60">{i.label}</p>
+                <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
+                {i.reason ? <p className="mt-1 max-w-[45ch] text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {plain(i.reason)}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Source ↗</a></> : null}</p> : null}
+                {/* Adam 9:58 AM CT Oct 30: 5 buckets, -2 to +2. 44px+ targets; 5 across fit 390px. */}
+                {/* Design 10:14 AM CT: shadcn-style ToggleGroup (single), radiogroup + roving focus; 96x48 segments at
+                    desktop (480px, left-aligned), full-width 56px-tall segments on phones; no gaps, radius 0. */}
+                <ToggleGroup aria-labelledby={`q-${i.id}`} value={sel === null || sel === undefined ? null : String(sel)}
+                  onValueChange={(v) => choose(i.id, Number(v), i.yesMeansPole)}
+                  className="mt-4 flex w-full divide-x divide-black/15 border border-black/15 md:w-fit"
+                  itemClassName="flex h-14 min-w-11 flex-[1_1_0] items-center justify-center text-base leading-6 font-[530] tabular-nums outline-none focus-visible:relative focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white md:h-12 md:w-24 md:flex-none data-[state=on]:bg-black data-[state=on]:text-white data-[state=off]:bg-white data-[state=off]:text-black"
+                  items={BUCKETS.map((c) => ({ value: String(c.b), label: c.text, ariaLabel: t(c.label), "data-choice": c.b, "data-bucket": c.b }))} />
+                <div aria-hidden className="mt-2 flex w-full justify-between text-xs leading-4 text-black/60 md:w-[482px]" data-bucket-ends><span>{t("Strong no")}</span><span>{t("Strong yes")}</span></div>
+                {fromChat[i.id] ? <p className="mt-2 text-sm text-black/60" data-from-chat>Filled from what you wrote: “{fromChat[i.id]}”. Change it if that&apos;s wrong.</p> : null}
+              </li>
+            );
+          })}
+        </ol>
+        
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Button onClick={() => document.getElementById("end")?.scrollIntoView({ behavior: "smooth" })} className="h-12 rounded-none px-6 text-base bg-black text-[#F2F2F2] hover:bg-black/80" data-see-results>
+            See who, where and when
+          </Button>
+          {!confirm ? (
+            <button type="button" onClick={() => setConfirm(true)} data-reset className="inline-flex h-12 items-center border border-black/30 px-5 text-base text-black hover:border-black">Reset my answers</button>
+          ) : (
+            <span role="alertdialog" aria-live="assertive" aria-label="Confirm reset" className="inline-flex min-h-12 flex-wrap items-center gap-3 border border-black bg-[#FFF4D6] px-4 py-2 text-base text-black" data-reset-confirm>Clear all answers saved on this device?
+              <button type="button" autoFocus onClick={reset} className="inline-flex h-11 items-center bg-black px-4 font-[530] text-[#F2F2F2] hover:bg-black/80">Yes, clear</button>
+              <button type="button" onClick={() => setConfirm(false)} className="inline-flex h-11 items-center border border-black/30 px-4 text-black hover:border-black">Cancel</button>
+            </span>
+          )}
+        </div>
+      </section>
+      <EndScreen zip={zip} races={races} answers={answers} ids={ids} answered={answered} />
+    </>
   );
 }

@@ -1,0 +1,44 @@
+{
+ "note": "Civic qa_fixes4 (Oct 30, 2026): candidate sites that are down. Shown as plain text with the note, plus Civic's alternative sources.",
+ "down": {
+  "https://kirk4aisd.com/": {
+   "note": "site down as of Oct 30, 2026",
+   "alternatives": [
+    {
+     "url": "https://www.kut.org/education/2026-10-28/aisd-school-board-trustees-2026-election-candidates-austin-tx-isd",
+     "title": "KUT, Oct 28, 2026"
+    },
+    {
+     "url": "https://austincurrent.org/2026/10/19/austin-austinisd-candidates-election-board-2/",
+     "title": "Austin Current, Oct 19, 2026"
+    }
+   ]
+  },
+  "https://www.tonysimone.com/": {
+   "note": "site down as of Oct 30, 2026",
+   "alternatives": [
+    {
+     "url": "https://voterguide.abundanceny.org/questionnaires/tony-simone",
+     "title": "Abundance NY questionnaire"
+    },
+    {
+     "url": "https://nyassembly.gov/mem/Tony-Simone",
+     "title": "NY Assembly member page"
+    }
+   ]
+  },
+  "https://www.votedyana.com/": {
+   "note": "site down as of Oct 30, 2026",
+   "alternatives": [
+    {
+     "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "title": "League of Women Voters guide"
+    },
+    {
+     "url": "https://countyclerk.traviscountytx.gov/",
+     "title": "Travis County Clerk (official office site)"
+    }
+   ]
+  }
+ }
+}

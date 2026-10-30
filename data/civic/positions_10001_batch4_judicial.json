@@ -1,0 +1,1448 @@
+{
+  "note": "Judicial races on the 10001 ballot. NOT included in the coverage denominator. Under NY's judicial conduct rule 22 NYCRR 100.5(A)(4)(d), judicial candidates may not make pledges, promises, or commitments on issues likely to come before the court, so the 9 policy issues don't apply. No stances were mapped and none were invented. Suggest showing the bio, qualifications, or bar-association ratings instead of issue stances.",
+  "ruleSource": "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5",
+  "verifiedBy": "civic",
+  "verifiedDate": "2026-10-29",
+  "stances": {
+    "saliann-scarpulla": {
+      "name": "Saliann Scarpulla",
+      "party": "Democratic",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "kathleen-waterman-marshall": {
+      "name": "Kathleen Waterman-Marshall",
+      "party": "Democratic",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "shlomo-s-hagler": {
+      "name": "Shlomo S. Hagler",
+      "party": "Democratic",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "manuel-j-mendez": {
+      "name": "Manuel J. Mendez",
+      "party": "Democratic",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "hasa-a-kingo": {
+      "name": "Hasa A. Kingo",
+      "party": "Democratic",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "christopher-chin": {
+      "name": "Christopher Chin",
+      "party": "Democratic",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "amy-s-taylor": {
+      "name": "Amy S. Taylor",
+      "party": "Working Families Party",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "joshua-e-goldfein": {
+      "name": "Joshua E. Goldfein",
+      "party": "Working Families Party",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "sienna-m-fontaine": {
+      "name": "Sienna M. Fontaine",
+      "party": "Working Families Party",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "bob-cohen": {
+      "name": "Bob Cohen",
+      "party": "Working Families Party",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "jeffrey-w-rizzo": {
+      "name": "Jeffrey W. Rizzo",
+      "party": "Working Families Party",
+      "race": "ny-supreme-1jd",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "rita-mella": {
+      "name": "Rita Mella",
+      "party": "Democratic",
+      "race": "ny-surrogate-ny",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "josh-e-hanshaft": {
+      "name": "Josh E. Hanshaft",
+      "party": "Democratic",
+      "race": "ny-civil-county-ny",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "emily-morales-minerva": {
+      "name": "Emily Morales-Minerva",
+      "party": "Democratic",
+      "race": "ny-civil-county-ny",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "vlad-frants": {
+      "name": "Vlad Frants",
+      "party": "Democratic",
+      "race": "ny-civil-county-ny",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "steven-benathen": {
+      "name": "Steven Benathen",
+      "party": "Democratic",
+      "race": "ny-civil-3md-ny",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "jennifer-frankola-crawford": {
+      "name": "Jennifer Frankola-Crawford",
+      "party": "Democratic",
+      "race": "ny-civil-9md-ny",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    },
+    "brian-j-krist": {
+      "name": "Brian J. Krist",
+      "party": "Democratic",
+      "race": "ny-civil-9md-ny",
+      "verifiedBy": "civic",
+      "verifiedDate": "2026-10-29",
+      "judicial": true,
+      "housing": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "healthcare": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "wages": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "taxes": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "safety": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "education": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "energy": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "immigration": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      },
+      "infrastructure": {
+        "value": null,
+        "status": "Not applicable: judicial candidate (22 NYCRR 100.5(A)(4)(d) bars issue commitments)",
+        "checkedDate": "2026-10-29",
+        "searched": [
+          "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5"
+        ]
+      }
+    }
+  }
+}

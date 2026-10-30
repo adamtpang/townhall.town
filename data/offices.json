@@ -1,0 +1,884 @@
+{
+  "offices": {
+    "tx-10": {
+      "office": "U.S. House Texas District 10",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Writes and votes on federal laws; all federal tax and spending bills start in the House, which can impeach federal officials. 2-year term.",
+      "sourceUrl": "https://www.house.gov/the-house-explained"
+    },
+    "tx-37": {
+      "office": "U.S. House Texas District 37",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Writes and votes on federal laws; all federal tax and spending bills start in the House, which can impeach federal officials. 2-year term.",
+      "sourceUrl": "https://www.house.gov/the-house-explained"
+    },
+    "us-senate-tx": {
+      "office": "U.S. Senate Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Writes federal laws, approves the federal budget with the House, confirms judges, cabinet members and ambassadors, and ratifies treaties. 6-year term; Texas has 2 senators.",
+      "sourceUrl": "https://www.senate.gov/about/origins-foundations/senate-and-constitution/constitution.htm"
+    },
+    "tx-gov": {
+      "office": "Governor of Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Signs or vetoes bills (including line-item budget vetoes), calls special legislative sessions, appoints many state board members, and commands state military forces. 4-year term.",
+      "sourceUrl": "https://ballotpedia.org/Governor_of_Texas"
+    },
+    "tx-ltgov": {
+      "office": "Lieutenant Governor of Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Presides over the Texas Senate, appoints Senate committees, controls which bills reach the floor, and co-chairs the Legislative Budget Board. 4-year term.",
+      "sourceUrl": "https://ballotpedia.org/Lieutenant_Governor_of_Texas"
+    },
+    "tx-ag": {
+      "office": "Attorney General of Texas",
+      "zip": [
+        "78701"
+      ],
+      "learn": "The state's lawyer: represents Texas in court, issues legal opinions to state officials, and runs child-support enforcement and consumer-protection divisions. 4-year term.",
+      "sourceUrl": "https://www.texasattorneygeneral.gov/about-office"
+    },
+    "tx-comptroller": {
+      "office": "Texas Comptroller of Public Accounts",
+      "zip": [
+        "78701"
+      ],
+      "learn": "The state's chief tax collector, accountant and revenue estimator; certifies that the state budget fits within estimated revenue and manages state funds. 4-year term.",
+      "sourceUrl": "https://comptroller.texas.gov/about/"
+    },
+    "tx-land": {
+      "office": "Texas Land Commissioner",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Runs the General Land Office: state-owned land and mineral rights supporting the Permanent School Fund, the Gulf coast, the Alamo, and veterans' land programs. 4-year term.",
+      "sourceUrl": "https://www.glo.texas.gov/about-glo"
+    },
+    "tx-agcomm": {
+      "office": "Texas Commissioner of Agriculture",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Runs the Texas Department of Agriculture: farm and ranch programs, school-lunch programs, pesticide regulation, and inspection of gas pumps and scales. 4-year term.",
+      "sourceUrl": "https://texasagriculture.gov/About"
+    },
+    "tx-rrc": {
+      "office": "Texas Railroad Commission",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Regulates Texas oil and natural gas (drilling permits, pipelines, gas utilities) and surface coal and uranium mining, not railroads. 3 commissioners, 6-year staggered terms.",
+      "sourceUrl": "https://www.rrc.texas.gov/about-us/"
+    },
+    "tx-supreme-court-place-1-chief-justice": {
+      "office": "Chief Justice, Texas Supreme Court",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Texas's court of last resort for civil matters; justices run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+    },
+    "tx-supreme-court-place-7": {
+      "office": "Texas Supreme Court Place 7",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Texas's court of last resort for civil matters; justices run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+    },
+    "tx-supreme-court-place-8": {
+      "office": "Texas Supreme Court Place 8",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Texas's court of last resort for civil matters; justices run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+    },
+    "tx-supreme-court-place-2": {
+      "office": "Texas Supreme Court Place 2 (unexpired term)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Texas's court of last resort for civil matters: chief justice and eight justices, elected statewide to staggered six-year terms. Vacancies are filled by governor appointment until the next general election. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/"
+    },
+    "tx-court-of-criminal-appeals-place-3": {
+      "office": "Texas Court of Criminal Appeals Place 3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/cca/about-the-court/"
+    },
+    "tx-court-of-criminal-appeals-place-4": {
+      "office": "Texas Court of Criminal Appeals Place 4",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/cca/about-the-court/"
+    },
+    "tx-court-of-criminal-appeals-place-9": {
+      "office": "Texas Court of Criminal Appeals Place 9",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+      "sourceUrl": "https://www.txcourts.gov/cca/about-the-court/"
+    },
+    "ca-11": {
+      "office": "U.S. House California District 11",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Writes and votes on federal laws; all federal tax and spending bills start in the House, which can impeach federal officials. 2-year term.",
+      "sourceUrl": "https://www.house.gov/the-house-explained"
+    },
+    "ca-ag": {
+      "office": "Attorney General of California",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Chief law officer: heads the state Department of Justice, represents California in court, and oversees law enforcement statewide. 4-year term.",
+      "sourceUrl": "https://oag.ca.gov/about"
+    },
+    "ca-controller": {
+      "office": "California Controller",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Chief fiscal officer: pays state bills and payroll, audits state and local spending, and sits on the CalPERS and CalSTRS pension boards. 4-year term.",
+      "sourceUrl": "https://www.sco.ca.gov/eo_about.html"
+    },
+    "ca-insurance": {
+      "office": "California Commissioner of Insurance",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Runs the Department of Insurance: approves or rejects home, auto and health insurance rate changes and enforces insurance law. 4-year term.",
+      "sourceUrl": "https://www.insurance.ca.gov/0500-about-us/"
+    },
+    "ca-sos": {
+      "office": "California Secretary of State",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Chief elections officer who certifies ballot measures and results, and keeper of business filings. 4-year term.",
+      "sourceUrl": "https://www.sos.ca.gov/"
+    },
+    "ca-spi": {
+      "office": "California Superintendent of Public Instruction",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Nonpartisan head of the state Department of Education; administers K-12 programs and is executive officer of the State Board of Education. 4-year term.",
+      "sourceUrl": "https://www.cde.ca.gov/eo/"
+    },
+    "ca-treasurer": {
+      "office": "California Treasurer",
+      "zip": [
+        "94103"
+      ],
+      "learn": "The state's banker: sells state bonds, invests state money, and manages state cash. 4-year term.",
+      "sourceUrl": "https://www.treasurer.ca.gov/"
+    },
+    "ca-gov": {
+      "office": "Governor of California",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Signs or vetoes bills (with line-item veto on spending), proposes the state budget each January, appoints judges and agency heads, and can grant pardons. 4-year term.",
+      "sourceUrl": "https://ballotpedia.org/Governor_of_California"
+    },
+    "ca-ltgov": {
+      "office": "Lieutenant Governor of California",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Acting governor when the governor is absent, President of the State Senate with a tie-breaking vote, and member of UC Regents and CSU Trustees. 4-year term.",
+      "sourceUrl": "https://ltg.ca.gov/"
+    },
+    "ca-boe-2": {
+      "office": "California Board of Equalization District 2",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of five members (four elected plus the Controller) overseeing property tax assessment, the alcoholic beverage tax and the tax on insurers. 4-year term.",
+      "sourceUrl": "https://www.boe.ca.gov/info/about.htm"
+    },
+    "sf-assessor-recorder": {
+      "office": "San Francisco Assessor-Recorder",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Determines which San Francisco properties are subject to property tax and assesses their value. 4-year term; current salary $267,488.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-public-defender": {
+      "office": "San Francisco Public Defender",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Provides legal representation to San Franciscans charged with crimes who cannot afford an attorney. 4-year term; current salary $307,892.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-supervisor-d6": {
+      "office": "San Francisco Board of Supervisors District 6",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of 11 members of the city's legislative branch, which enacts local laws and adopts the annual budget. 4-year term; current salary $180,102.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-board-of-education": {
+      "office": "San Francisco Board of Education",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Seven-member board governing the San Francisco Unified School District (K-12). 4-year terms; $6,000 annual stipend; three seats on this ballot.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-community-college-board": {
+      "office": "San Francisco Community College Board",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Seven-member board governing City College and other adult learning centers. 4-year terms; $6,000 stipend; three full-term seats plus one unexpired term on this ballot.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "austin-isd-trustees": {
+      "office": "Austin ISD Board of Trustees (Districts 1, 4, 6, 7 and At-Large 9)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Nine-member elected board that sets the direction of Austin ISD educational programs and services. 4-year terms, filled on a rotating basis.",
+      "sourceUrl": "https://www.austinisd.org/board"
+    },
+    "tx-15th-coa-chief-justice": {
+      "office": "Chief Justice, 15th Court of Appeals",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Leads Texas's statewide three-justice 15th Court of Appeals, which hears civil appeals by or against the state and its agencies, plus all Texas Business Court appeals. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/15thcoa/"
+    },
+    "tx-15th-coa-place-2": {
+      "office": "15th Court of Appeals Place 2",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of three justices on Texas's statewide 15th Court of Appeals, which hears civil appeals involving the state and its agencies, plus all Texas Business Court appeals. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/15thcoa/"
+    },
+    "tx-15th-coa-place-3": {
+      "office": "15th Court of Appeals Place 3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of three justices on Texas's statewide 15th Court of Appeals, which hears civil appeals involving the state and its agencies, plus all Texas Business Court appeals. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/15thcoa/"
+    },
+    "tx-3rd-coa-chief-justice": {
+      "office": "Chief Justice, 3rd Court of Appeals",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Leads the six-justice Third Court of Appeals in Austin, which hears civil and criminal appeals from trial courts in 24 Central Texas counties, including Travis. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/3rdcoa/"
+    },
+    "tx-sboe-5": {
+      "office": "Texas State Board of Education District 5",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of 15 elected State Board of Education members. The board sets curriculum standards for Texas public schools, adopts instructional materials and sets graduation requirements.",
+      "sourceUrl": "https://sboe.texas.gov/"
+    },
+    "tx-hd-49": {
+      "office": "Texas House District 49",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of 150 Texas House members, elected to a two-year term. Votes on state laws; bills raising taxes must start in the House. Regular sessions: 140 days, odd-numbered years.",
+      "sourceUrl": "https://www.house.texas.gov/about"
+    },
+    "travis-district-judges": {
+      "office": "Travis County District Judges (147th, 201st, 250th, 261st, 299th, 331st, 403rd, 419th, 455th, 459th)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-county-courts-at-law": {
+      "office": "Travis County Courts at Law 1-7",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-probate-1": {
+      "office": "Travis County Probate Court No. 1",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Judge of Travis County Probate Court No. 1, which handles wills, estates, guardianships, mental health commitments and estate-related lawsuits. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/departments"
+    },
+    "travis-county-judge": {
+      "office": "Travis County Judge",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Presides over and votes on the Commissioners Court, which sets county tax rates and budgets; in Travis this is an administrative job, not a courtroom judgeship. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/commissioners-court/county-judge/frequently-asked-questions"
+    },
+    "travis-county-clerk": {
+      "office": "Travis County Clerk",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Runs Travis County elections, records real-property documents, marriage licenses and business names, and keeps court records for county civil, probate and misdemeanor cases.",
+      "sourceUrl": "https://countyclerk.traviscountytx.gov/about-us/"
+    },
+    "travis-district-clerk": {
+      "office": "Travis County District Clerk",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Keeps all filings for Travis County's district courts, collects filing fees, holds funds in litigation, coordinates jury panel selection and processes passport applications. Elected every four years.",
+      "sourceUrl": "https://www.traviscountytx.gov/district-clerk"
+    },
+    "travis-county-treasurer": {
+      "office": "Travis County Treasurer",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Chief custodian of Travis County's money: receives, accounts for and pays out all county funds, serves as paying agent for county bonds, and processes cash bail bonds and juror payments.",
+      "sourceUrl": "https://www.traviscountytx.gov/treasurer/about"
+    },
+    "travis-commissioner": {
+      "office": "Travis County Commissioner, Precinct 4",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-jp": {
+      "office": "Travis County Justice of the Peace (precinct for 78701 to verify)",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "austin-council-d9": {
+      "office": "Austin City Council District 9",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "acc-trustees": {
+      "office": "Austin Community College Trustees, Places 1-3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "ca-ad17": {
+      "office": "California State Assembly District 17",
+      "zip": [
+        "94103"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "ca-supreme-court-retention": {
+      "office": "California Supreme Court Associate Justices (retention)",
+      "zip": [
+        "94103"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "ca-court-of-appeal-retention": {
+      "office": "California Court of Appeal, First District Justices (retention)",
+      "zip": [
+        "94103"
+      ],
+      "learn": "unsure",
+      "sourceUrl": null
+    },
+    "travis-district-judge-147th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 147th Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-201st": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 201st Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-250th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 250th Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-261st": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 261st Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-299th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 299th Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-331st": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 331st Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-403rd": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 403rd Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-419th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 419th Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-455th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 455th Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-district-judge-459th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf",
+      "office": "District Judge, 459th Judicial District",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-ccl-1": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf",
+      "office": "Judge, County Court at Law No. 1",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-ccl-2": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf",
+      "office": "Judge, County Court at Law No. 2",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-ccl-3": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf",
+      "office": "Judge, County Court at Law No. 3",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-ccl-4": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf",
+      "office": "Judge, County Court at Law No. 4",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-ccl-5": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf",
+      "office": "Judge, County Court at Law No. 5",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-ccl-6": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf",
+      "office": "Judge, County Court at Law No. 6",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-ccl-7": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf",
+      "office": "Judge, County Court at Law No. 7",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-commissioner-4": {
+      "learn": "One of four precinct commissioners who, with the County Judge, form the Commissioners Court: it sets the county tax rate and budget, maintains county roads, and approves contracts.",
+      "sourceUrl": "https://www.traviscountytx.gov/commissioners-court/county-judge/frequently-asked-questions",
+      "office": "Travis County Commissioner, Precinct 4",
+      "zip": [
+        "78701"
+      ]
+    },
+    "ca-supreme-evans": {
+      "learn": "Yes-or-no vote on keeping a justice of California's highest court, which chooses which appeals to review and must review death sentences. No opponent; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice of the Supreme Court: Kelli M. Evans (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-supreme-groban": {
+      "learn": "Yes-or-no vote on keeping a justice of California's highest court, which chooses which appeals to review and must review death sentences. No opponent; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice of the Supreme Court: Joshua Groban (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-1": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division One: Charles A. Smiley (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-1b": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division One: Kathleen M. Banke (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-1c": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division One: Monique Langhorne Wilson (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-2pj": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Presiding Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-2": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-3": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division Three: Ioana Petrou (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-3b": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division Three: Victor A. Rodriguez (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-4pj": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Presiding Justice, Court of Appeal, First District, Division Four (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-5": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division Five: Mark Simons (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-5b": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division Five: Danny Y. Chou (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ca-coa-1-5c": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections",
+      "office": "Associate Justice, Court of Appeal, First District, Division Five: Gordon Burns (retention: Yes/No)",
+      "zip": [
+        "94103"
+      ]
+    },
+    "ny-supreme-1jd": {
+      "learn": "Elects a Justice of New York State Supreme Court for Manhattan (1st Judicial District), the state's general trial court for major civil and criminal cases. 14-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=77",
+      "office": "Justice of the Supreme Court, 1st Judicial District (choose up to 6)",
+      "zip": [
+        "10001"
+      ]
+    },
+    "ny-surrogate-ny": {
+      "learn": "Elects a New York County (Manhattan) Surrogate, the judge who handles wills, probate and administration of estates of people who have died. 14-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=334",
+      "office": "Surrogate, New York County",
+      "zip": [
+        "10001"
+      ]
+    },
+    "ny-civil-county-ny": {
+      "learn": "Elects a New York City Civil Court judge, who hears civil lawsuits seeking up to $50,000 and small claims up to $10,000. Ten-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=106",
+      "office": "Judge of the Civil Court, County, New York (choose up to 3)",
+      "zip": [
+        "10001"
+      ]
+    },
+    "ny-civil-3md-ny": {
+      "learn": "Elects a New York City Civil Court judge, who hears civil lawsuits seeking up to $50,000 and small claims up to $10,000. Ten-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=106",
+      "office": "Judge of the Civil Court, District, 3rd Municipal Court District, New York",
+      "zip": [
+        "10001"
+      ]
+    },
+    "ny-civil-9md-ny": {
+      "learn": "Elects a New York City Civil Court judge, who hears civil lawsuits seeking up to $50,000 and small claims up to $10,000. Ten-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=106",
+      "office": "Judge of the Civil Court, District, 9th Municipal Court District, New York (choose up to 2)",
+      "zip": [
+        "10001"
+      ]
+    },
+    "travis-jp-5": {
+      "office": "Justice of the Peace, Precinct 5",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Judge of a Travis County justice court: hears small claims, debt claims, evictions, car-accident, towing and property cases, plus Class C misdemeanors such as traffic tickets.",
+      "sourceUrl": "https://www.traviscountytx.gov/justices-of-peace"
+    },
+    "travis-jp-4": {
+      "office": "Justice of the Peace, Precinct 4",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Judge of a Travis County justice court: hears small claims, debt claims, evictions, car-accident, towing and property cases, plus Class C misdemeanors such as traffic tickets.",
+      "sourceUrl": "https://www.traviscountytx.gov/justices-of-peace"
+    },
+    "travis-cad-place-1": {
+      "office": "Travis Central Appraisal District Board of Directors, Place 1",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Seat on the Travis Central Appraisal District board, which hires the chief appraiser, approves the district's budget and contracts and sets policy. It does not appraise property or review values.",
+      "sourceUrl": "https://traviscad.org/board-of-directors/"
+    },
+    "travis-cad-place-2": {
+      "office": "Travis Central Appraisal District Board of Directors, Place 2",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Seat on the Travis Central Appraisal District board, which hires the chief appraiser, approves the district's budget and contracts and sets policy. It does not appraise property or review values.",
+      "sourceUrl": "https://traviscad.org/board-of-directors/"
+    },
+    "travis-cad-place-3": {
+      "office": "Travis Central Appraisal District Board of Directors, Place 3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "Seat on the Travis Central Appraisal District board, which hires the chief appraiser, approves the district's budget and contracts and sets policy. It does not appraise property or review values.",
+      "sourceUrl": "https://traviscad.org/board-of-directors/"
+    },
+    "austin-council-9": {
+      "office": "Austin City Council, District 9",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of 10 district council members, alongside a mayor elected citywide. The council passes city laws, adopts budgets, sets policy and appoints the city manager. Four-year staggered terms.",
+      "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=428106"
+    },
+    "acc-trustee-place-1": {
+      "office": "Austin Community College Board of Trustees, Place 1",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of nine Austin Community College trustees, who set the policies governing ACC's educational programs. Trustees are elected at large, across the whole college district, to six-year terms.",
+      "sourceUrl": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/"
+    },
+    "acc-trustee-place-2": {
+      "office": "Austin Community College Board of Trustees, Place 2",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of nine Austin Community College trustees, who set the policies governing ACC's educational programs. Trustees are elected at large, across the whole college district, to six-year terms.",
+      "sourceUrl": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/"
+    },
+    "acc-trustee-place-3": {
+      "office": "Austin Community College Board of Trustees, Place 3",
+      "zip": [
+        "78701"
+      ],
+      "learn": "One of nine Austin Community College trustees, who set the policies governing ACC's educational programs. Trustees are elected at large, across the whole college district, to six-year terms.",
+      "sourceUrl": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/"
+    },
+    "ca-ad-17": {
+      "office": "State Assembly Member District 17",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of 80 California Assembly members, elected to a two-year term; reviews and votes on state bills. Under term limits, members may serve 12 years total in the Legislature.",
+      "sourceUrl": "https://clerk.assembly.ca.gov/legislative-information/elected-officials"
+    },
+    "sf-supervisor-6": {
+      "office": "Board of Supervisors, District 6",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of 11 members of the Board of Supervisors, San Francisco's legislative branch, which enacts local laws and adopts the City's annual budget. Four-year term; current salary $180,102.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-supervisor-8": {
+      "office": "Board of Supervisors, District 8",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of 11 members of the Board of Supervisors, San Francisco's legislative branch, which enacts local laws and adopts the City's annual budget. Four-year term; current salary $180,102.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "sf-supervisor-10": {
+      "office": "Board of Supervisors, District 10",
+      "zip": [
+        "94103"
+      ],
+      "learn": "One of 11 members of the Board of Supervisors, San Francisco's legislative branch, which enacts local laws and adopts the City's annual budget. Four-year term; current salary $180,102.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "aisd-at-large-9": {
+      "office": "Austin ISD Board of Trustees, At-Large Position 9",
+      "zip": [
+        "78701"
+      ],
+      "learn": "At-Large Position 9 on the nine-member Austin ISD Board of Trustees, which hires the superintendent, approves the budget, sets the tax rate and sets district policy. Four-year term.",
+      "sourceUrl": "https://www.austinisd.org/board"
+    },
+    "sf-community-college-board-partial": {
+      "office": "Community College Board Partial Term",
+      "zip": [
+        "94103"
+      ],
+      "learn": "Seat on the seven-member board governing the San Francisco Community College District, which oversees City College and adult learning centers. Fills the rest of a term ending January 8, 2029.",
+      "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=25"
+    },
+    "tx-house-51": {
+      "learn": "One of 150 Texas House members, elected to a two-year term. Votes on state laws; bills raising taxes must start in the House. Regular sessions: 140 days, odd-numbered years.",
+      "sourceUrl": "https://www.house.texas.gov/about",
+      "office": "State Representative, District 51",
+      "zip": [
+        "78701"
+      ]
+    },
+    "travis-constable-4-unexpired": {
+      "learn": "Law enforcement officer with countywide civil and criminal jurisdiction: serves civil process from the courts, including eviction writs, citations and executions, and executes justice-court traffic and hot-check warrants.",
+      "sourceUrl": "https://www.traviscountytx.gov/constables",
+      "office": "County Constable, Precinct 4 - Unexpired Term",
+      "zip": [
+        "78701"
+      ]
+    },
+    "ny-sd-47": {
+      "learn": "One of 63 New York State Senators. The Senate and the 150-member Assembly make up the State Legislature, which votes on bills to become state law. Elected every two years.",
+      "sourceUrl": "https://www2.nyassembly.gov/write/upload/req/legislative_process.pdf",
+      "office": "State Senator, District 47",
+      "zip": [
+        "10001"
+      ]
+    },
+    "ny-sd-28": {
+      "learn": "One of 63 New York State Senators. The Senate and the 150-member Assembly make up the State Legislature, which votes on bills to become state law. Elected every two years.",
+      "sourceUrl": "https://www2.nyassembly.gov/write/upload/req/legislative_process.pdf",
+      "office": "State Senator, District 28",
+      "zip": [
+        "10001"
+      ]
+    },
+    "ny-ad-75": {
+      "learn": "One of 150 New York State Assembly members. With the 63-member Senate, the Assembly makes up the State Legislature, which votes on bills to become law. Elected every two years.",
+      "sourceUrl": "https://www2.nyassembly.gov/write/upload/req/legislative_process.pdf",
+      "office": "Member of Assembly, District 75",
+      "zip": [
+        "10001"
+      ]
+    },
+    "nyc-council-3": {
+      "learn": "Represents one of 51 Council districts on New York City's legislative body, which votes on local laws, negotiates and approves the City budget, oversees City agencies and reviews land use.",
+      "sourceUrl": "https://council.nyc.gov/about/",
+      "office": "Member of the City Council, 3rd Council District",
+      "zip": [
+        "10001"
+      ]
+    }
+  }
+}

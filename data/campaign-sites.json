@@ -1,0 +1,15 @@
+{
+ "note": "Campaign sites found by web search on Oct 29 2026 for candidates whose ballot record had none. Applied in lib/tools.ts only where campaignSite is empty.",
+ "bySlug": {
+  "katie-kam": "https://www.katiekamforaustin.com/",
+  "kai-huang": "https://kai4atx.com/",
+  "rich-heyman": "https://www.richforaustin.org/",
+  "dave-thadani": "https://www.daveforaustintx.com/",
+  "arshia-papari": "https://arshiafortexas.org/",
+  "jessica-martinez": "https://jessicaforhd51.com/",
+  "ted-brown": "https://tedbrown.org/",
+  "shehla-faizi": "https://faizifortexas.com/",
+  "bo-french": "https://bofrench.com/",
+  "herb-w-morgan": "https://www.herbmorgan.com/"
+ }
+}

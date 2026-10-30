@@ -1,0 +1,1732 @@
+{
+  "_meta": {
+    "generated": "2026-10-29T17:06:34-05:00",
+    "scope": "All races in competitiveness.json (78701, 94103, 10001, incl. ballots_additions.json races).",
+    "fields": "title = verbatim headline (article JSON-LD headline, else og:title, with trailing site-name suffix removed); outlet; date = publication date (YYYY-MM-DD, publisher metadata or byline); url; topic = neutral one-line description written by us.",
+    "rules": "Factual reporting/voter guides only (no op-eds or endorsements); dated 2026-09-01..2026-10-31; no article text stored; no AP/Reuters excerpts; each URL checked to resolve (HTTP 200) on 2026-10-29.",
+    "linkCounts": {
+      "tx-10": 4,
+      "tx-37": 1,
+      "us-senate-tx": 4,
+      "tx-gov": 3,
+      "tx-ltgov": 3,
+      "tx-ag": 2,
+      "tx-comptroller": 2,
+      "tx-land": 2,
+      "tx-agcomm": 3,
+      "tx-rrc": 3,
+      "tx-supreme-court-place-1-chief-justice": 2,
+      "tx-supreme-court-place-7": 2,
+      "tx-supreme-court-place-8": 2,
+      "tx-court-of-criminal-appeals-place-3": 4,
+      "tx-court-of-criminal-appeals-place-4": 4,
+      "tx-court-of-criminal-appeals-place-9": 4,
+      "ca-11": 2,
+      "ca-ag": 3,
+      "ca-controller": 2,
+      "ca-insurance": 3,
+      "ca-sos": 2,
+      "ca-spi": 4,
+      "ca-treasurer": 2,
+      "ca-gov": 3,
+      "ca-ltgov": 2,
+      "ny-governor": 4,
+      "ny-attorney-general": 2,
+      "ny-comptroller": 3,
+      "ny-12": 2,
+      "ny-sd-47": 1,
+      "ny-sd-28": 1,
+      "ny-ad-75": 2,
+      "tx-supreme-court-place-2-unexpired": 2,
+      "tx-sboe-5": 1,
+      "tx-house-49": 1,
+      "tx-house-51": 0,
+      "tx-15coa-chief": 1,
+      "tx-15coa-place-2": 1,
+      "tx-15coa-place-3": 1,
+      "tx-3coa-chief": 0,
+      "travis-district-judge-147th": 0,
+      "travis-district-judge-201st": 0,
+      "travis-district-judge-250th": 0,
+      "travis-district-judge-261st": 0,
+      "travis-district-judge-299th": 0,
+      "travis-district-judge-331st": 0,
+      "travis-district-judge-403rd": 0,
+      "travis-district-judge-419th": 0,
+      "travis-district-judge-455th": 0,
+      "travis-district-judge-459th": 0,
+      "travis-county-judge": 0,
+      "travis-ccl-1": 0,
+      "travis-ccl-2": 0,
+      "travis-ccl-3": 0,
+      "travis-ccl-4": 0,
+      "travis-ccl-5": 0,
+      "travis-ccl-6": 0,
+      "travis-ccl-7": 0,
+      "travis-probate-1": 0,
+      "travis-district-clerk": 0,
+      "travis-county-clerk": 0,
+      "travis-county-treasurer": 0,
+      "travis-commissioner-4": 0,
+      "travis-jp-5": 0,
+      "travis-jp-4": 0,
+      "travis-constable-4-unexpired": 0,
+      "travis-cad-place-1": 0,
+      "travis-cad-place-2": 0,
+      "travis-cad-place-3": 0,
+      "austin-council-9": 4,
+      "aisd-at-large-9": 2,
+      "acc-trustee-place-1": 2,
+      "acc-trustee-place-2": 2,
+      "acc-trustee-place-3": 2,
+      "ca-ad-17": 0,
+      "ca-boe-2": 1,
+      "ca-supreme-evans": 0,
+      "ca-supreme-groban": 0,
+      "ca-coa-1-1": 0,
+      "ca-coa-1-1b": 0,
+      "ca-coa-1-1c": 0,
+      "ca-coa-1-2pj": 0,
+      "ca-coa-1-2": 0,
+      "ca-coa-1-3": 0,
+      "ca-coa-1-3b": 0,
+      "ca-coa-1-4pj": 0,
+      "ca-coa-1-5": 0,
+      "ca-coa-1-5b": 0,
+      "ca-coa-1-5c": 0,
+      "sf-assessor-recorder": 0,
+      "sf-public-defender": 0,
+      "sf-supervisor-6": 2,
+      "sf-supervisor-8": 2,
+      "sf-supervisor-10": 1,
+      "sf-board-of-education": 1,
+      "sf-community-college-board": 0,
+      "sf-community-college-board-partial": 0,
+      "ny-supreme-1jd": 1,
+      "ny-surrogate-ny": 0,
+      "ny-civil-county-ny": 0,
+      "ny-civil-3md-ny": 0,
+      "ny-civil-9md-ny": 0,
+      "nyc-council-3": 0
+    },
+    "racesWithLinks": 49,
+    "racesWith2Plus": 37,
+    "totalLinkPlacements": 110,
+    "uniqueUrls": 88
+  },
+  "races": [
+    {
+      "zip": "78701",
+      "raceId": "tx-10",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Gober, Rourk compete for seat in U.S. House of Representatives",
+          "outlet": "The Eagle (Bryan-College Station)",
+          "date": "2026-10-16",
+          "url": "https://theeagle.com/news/local/government-politics/elections/article_319b22e5-4507-440d-8c3f-20bfc1e2b6ad.html",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "New FEC filings reveal campaign cash gap in Texas’s 10th Congressional District race",
+          "outlet": "KBTX",
+          "date": "2026-10-23",
+          "url": "https://www.kbtx.com/2026/10/23/new-fec-filings-reveal-campaign-cash-gap-texass-10th-congressional-district-race/",
+          "topic": "Campaign finance filings",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Rourk, Gober trade attacks in final days of 10th District race",
+          "outlet": "The Huntsville Item",
+          "date": "2026-10-29",
+          "url": "https://www.itemonline.com/news/rourk-gober-trade-attacks-in-final-days-of-10th-district-race/article_e150f7a9-9d73-441f-985f-a692208a1a38.html",
+          "topic": "Final-week campaign",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Q&A: Meet the candidates for US House District 10",
+          "outlet": "Community Impact",
+          "date": "2026-09-16",
+          "url": "https://communityimpact.com/lake-travis-westlake/election/q-a-meet-the-candidates-for-us-house-district-10/",
+          "topic": "Candidate Q&A",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-37",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Rep. Greg Casar faces first-time Republican candidate Lauren Peña in U.S. House District 37 race",
+          "outlet": "KUT",
+          "date": "2026-10-20",
+          "url": "https://www.kut.org/austin/2026-10-20/austin-tx-us-house-district-37-race-greg-casar-lauren-pena",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "us-senate-tx",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "On the issues: A Q&A with U.S. Senate candidates James Talarico, Ken Paxton and Ted Brown",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-13",
+          "url": "https://www.texastribune.org/2026/10/13/talarico-paxton-texas-us-senate-2026-election-q-and-a/",
+          "topic": "Candidate Q&A on issues",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "In Senate race, Paxton and Talarico each promise relief from rising energy costs in Texas",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-18",
+          "url": "https://www.texastribune.org/2026/10/18/paxton-talarico-energy-prices-senate-race-texas/",
+          "topic": "Candidates' energy-cost proposals",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Elon Musk fuels record-breaking spending in Texas Senate race",
+          "outlet": "The Dallas Morning News",
+          "date": "2026-10-28",
+          "url": "https://www.dallasnews.com/news/politics/article/elon-musk-fuels-record-breaking-spending-texas-22494961.php",
+          "topic": "Campaign spending",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "JD Vance, GOP Leaders Join Final Paxton Push as Talarico Rallies in Dallas",
+          "outlet": "Newsweek",
+          "date": "2026-10-29",
+          "url": "https://www.newsweek.com/jd-vance-gop-leaders-final-paxton-push-talarico-rallies-dallas-12635714",
+          "topic": "Final-week campaign events",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-gov",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Why Greg Abbott says he will not debate Gina Hinojosa",
+          "outlet": "Houston Chronicle",
+          "date": "2026-10-15",
+          "url": "https://www.houstonchronicle.com/politics/texas/article/greg-abbott-hinojosa-debate-22478616.php",
+          "topic": "Debate dispute",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Hinojosa brings podiums to Governor's Mansion to challenge Abbott to debate",
+          "outlet": "CBS Austin",
+          "date": "2026-10-15",
+          "url": "https://cbsaustin.com/news/local/hinojosa-brings-podiums-to-governors-mansion-to-challenge-abbott-to-debate",
+          "topic": "Debate dispute",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Hinojosa shows up for proposed debate. Abbott is more than 200 miles away",
+          "outlet": "USA Today",
+          "date": "2026-10-15",
+          "url": "https://www.usatoday.com/story/news/state/texas/2026/10/15/gina-hinojosa-greg-abbott-texas-governor-debate-polls/92265263007/",
+          "topic": "Debate dispute; campaign schedules",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-ltgov",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Outspent and unknown, Democrat Vikki Goodwin gives Lt. Gov. Dan Patrick his toughest race yet",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-15",
+          "url": "https://www.texastribune.org/2026/10/15/texas-lieutenant-governor-election-vikki-goodwin-dan-patrick/",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Lt. Gov. Dan Patrick, who rose from sportscaster to Texas political powerhouse, seeks 4th term",
+          "outlet": "KUT",
+          "date": "2026-10-26",
+          "url": "https://www.kut.org/politics/2026-10-26/dan-patrick-texas-lieutenant-governor-race-election-2026",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Can Democrat Vikki Goodwin upset Dan Patrick in lt. governor race?",
+          "outlet": "Austin American-Statesman",
+          "date": "2026-10-26",
+          "url": "https://www.statesman.com/news/politics/state/article/dan-patrick-vikki-goodwin-22480634.php",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-ag",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "What to know about the candidates vying to replace Ken Paxton as Texas attorney general",
+          "outlet": "Houston Public Media",
+          "date": "2026-10-27",
+          "url": "https://www.houstonpublicmedia.org/articles/news/2026/10/27/565409/what-to-know-about-the-candidates-vying-to-replace-ken-paxton-as-texas-attorney-general/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "2026 Texas attorney general race: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-05",
+          "url": "https://www.texastribune.org/2026/10/05/texas-attorney-general-election-2026-candidates-mayes-middleton-nathan-johnson-tom-oxford/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-comptroller",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas comptroller 2026: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-09-29",
+          "url": "https://www.texastribune.org/2026/09/29/texas-comptroller-2026-election-huffines-eckhardt/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Texas’ next comptroller will control $1 billion school voucher fund – and it could double",
+          "outlet": "KERA",
+          "date": "2026-10-29",
+          "url": "https://www.kera.org/2026/10/29/texas-comptroller-election-school-voucher-fund-candidates/",
+          "topic": "Candidates on school voucher fund oversight",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-land",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas land commissioner 2026: Who is running and what you need to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-09-18",
+          "url": "https://www.texastribune.org/2026/09/18/texas-land-commissioner-glo-2026-buckingham/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Texas General Land Office race is among the statewide races to tighten",
+          "outlet": "Texas Public Radio",
+          "date": "2026-10-27",
+          "url": "https://www.tpr.org/government-politics/2026-10-27/texas-general-land-office-race-is-among-the-statewide-races-to-tighten",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-agcomm",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "In race to lead Texas agriculture department, Sheets and Tucker clash on data centers, credentials",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-15",
+          "url": "https://www.texastribune.org/2026/10/15/texas-election-2026-agriculture-commissioner-nate-sheets-clayton-tucker/",
+          "topic": "Candidates on data centers and qualifications",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Texas ag commissioner candidates trade charges that the other isn’t legally qualified to serve",
+          "outlet": "Houston Public Media",
+          "date": "2026-09-30",
+          "url": "https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/09/30/563123/texas-ag-commissioner-race-qualification-alligations/",
+          "topic": "Eligibility disputes between candidates",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Texas ag commissioner candidates trade eligibility barbs",
+          "outlet": "Texas Standard",
+          "date": "2026-10-19",
+          "url": "https://texasstandard.org/stories/texas-agriculture-commissioner-race-sheets-tucker-eligibility/",
+          "topic": "Eligibility disputes between candidates",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-rrc",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Bo French, Jon Rosenthal battle over culture, job duties in bid to regulate the oil and gas industry",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-17",
+          "url": "https://www.texastribune.org/2026/10/17/jon-rosenthal-bo-french-texas-railroad-commission-election/",
+          "topic": "Candidates on the agency's duties",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Texas Railroad Commission race pits GOP activist against oil field engineer",
+          "outlet": "Texas Public Radio",
+          "date": "2026-10-12",
+          "url": "https://www.tpr.org/podcast/the-source/2026-10-12/texas-railroad-commission-race-pits-gop-activist-against-oil-field-engineer",
+          "topic": "Candidate backgrounds",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Bo French, Jon Rosenthal raise more than $1M combined in second-highest fundraising haul",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-27",
+          "url": "https://www.texastribune.org/2026/10/27/bo-french-jon-rosenthal-fundraising-railroad-commission/",
+          "topic": "Campaign fundraising",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-supreme-court-place-1-chief-justice",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas Supreme Court 2026 election: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-01",
+          "url": "https://www.texastribune.org/2026/10/01/2026-texas-supreme-court-elections-guide/",
+          "topic": "Guide to all four Supreme Court seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Abbott Appointees Stock State Supreme Court Ballot for the First Time Ever",
+          "outlet": "The Texan",
+          "date": "2026-10-12",
+          "url": "https://thetexan.news/elections/2026/abbott-appointees-stock-state-supreme-court-ballot-for-the-first-time-ever/article_55599f87-e323-4172-b175-28235a17dce3.html",
+          "topic": "Appointed justices on the ballot",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-supreme-court-place-7",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas Supreme Court 2026 election: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-01",
+          "url": "https://www.texastribune.org/2026/10/01/2026-texas-supreme-court-elections-guide/",
+          "topic": "Guide to all four Supreme Court seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Abbott Appointees Stock State Supreme Court Ballot for the First Time Ever",
+          "outlet": "The Texan",
+          "date": "2026-10-12",
+          "url": "https://thetexan.news/elections/2026/abbott-appointees-stock-state-supreme-court-ballot-for-the-first-time-ever/article_55599f87-e323-4172-b175-28235a17dce3.html",
+          "topic": "Appointed justices on the ballot",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-supreme-court-place-8",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas Supreme Court 2026 election: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-01",
+          "url": "https://www.texastribune.org/2026/10/01/2026-texas-supreme-court-elections-guide/",
+          "topic": "Guide to all four Supreme Court seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Abbott Appointees Stock State Supreme Court Ballot for the First Time Ever",
+          "outlet": "The Texan",
+          "date": "2026-10-12",
+          "url": "https://thetexan.news/elections/2026/abbott-appointees-stock-state-supreme-court-ballot-for-the-first-time-ever/article_55599f87-e323-4172-b175-28235a17dce3.html",
+          "topic": "Appointed justices on the ballot",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-court-of-criminal-appeals-place-3",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas Court of Criminal Appeals 2026 election: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-09-29",
+          "url": "https://www.texastribune.org/2026/09/29/texas-court-of-criminal-appeals-2026-election/",
+          "topic": "Guide to all three seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "3 Candidates Run for Judge of Texas Court of Criminal Appeals",
+          "outlet": "Texas Lawyer (Law.com)",
+          "date": "2026-10-19",
+          "url": "https://www.law.com/texaslawyer/2026/10/19/3-candidates-run-for-judge-of-texas-court-of-criminal-appeals/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Here’s Who’s Running for the Texas Court of Criminal Appeals",
+          "outlet": "The Texan",
+          "date": "2026-10-22",
+          "url": "https://thetexan.news/elections/2026/here-s-who-s-running-for-the-texas-court-of-criminal-appeals/article_4577ddfc-2efb-4755-b473-05f35cf5d9e9.html",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Three seats on the ballot for highest criminal court, Texas Court of Criminal Appeals",
+          "outlet": "The Center Square",
+          "date": "2026-10-23",
+          "url": "https://www.thecentersquare.com/texas/article_89edee5d-2e8d-4c89-8866-b9a7bfc0fc44.html",
+          "topic": "Overview of the three seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-court-of-criminal-appeals-place-4",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas Court of Criminal Appeals 2026 election: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-09-29",
+          "url": "https://www.texastribune.org/2026/09/29/texas-court-of-criminal-appeals-2026-election/",
+          "topic": "Guide to all three seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "3 Candidates Run for Judge of Texas Court of Criminal Appeals",
+          "outlet": "Texas Lawyer (Law.com)",
+          "date": "2026-10-19",
+          "url": "https://www.law.com/texaslawyer/2026/10/19/3-candidates-run-for-judge-of-texas-court-of-criminal-appeals/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Here’s Who’s Running for the Texas Court of Criminal Appeals",
+          "outlet": "The Texan",
+          "date": "2026-10-22",
+          "url": "https://thetexan.news/elections/2026/here-s-who-s-running-for-the-texas-court-of-criminal-appeals/article_4577ddfc-2efb-4755-b473-05f35cf5d9e9.html",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Three seats on the ballot for highest criminal court, Texas Court of Criminal Appeals",
+          "outlet": "The Center Square",
+          "date": "2026-10-23",
+          "url": "https://www.thecentersquare.com/texas/article_89edee5d-2e8d-4c89-8866-b9a7bfc0fc44.html",
+          "topic": "Overview of the three seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-court-of-criminal-appeals-place-9",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas Court of Criminal Appeals 2026 election: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-09-29",
+          "url": "https://www.texastribune.org/2026/09/29/texas-court-of-criminal-appeals-2026-election/",
+          "topic": "Guide to all three seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "3 Candidates Run for Judge of Texas Court of Criminal Appeals",
+          "outlet": "Texas Lawyer (Law.com)",
+          "date": "2026-10-19",
+          "url": "https://www.law.com/texaslawyer/2026/10/19/3-candidates-run-for-judge-of-texas-court-of-criminal-appeals/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Here’s Who’s Running for the Texas Court of Criminal Appeals",
+          "outlet": "The Texan",
+          "date": "2026-10-22",
+          "url": "https://thetexan.news/elections/2026/here-s-who-s-running-for-the-texas-court-of-criminal-appeals/article_4577ddfc-2efb-4755-b473-05f35cf5d9e9.html",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Three seats on the ballot for highest criminal court, Texas Court of Criminal Appeals",
+          "outlet": "The Center Square",
+          "date": "2026-10-23",
+          "url": "https://www.thecentersquare.com/texas/article_89edee5d-2e8d-4c89-8866-b9a7bfc0fc44.html",
+          "topic": "Overview of the three seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-11",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Key Moments from the Wiener-Chan Debate",
+          "outlet": "KQED",
+          "date": "2026-10-02",
+          "url": "https://www.kqed.org/news/12102625/key-moments-from-the-wiener-chan-debate",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Watch: Scott Wiener vs. Connie Chan on AI, Iran, housing and the Valkyries",
+          "outlet": "Mission Local",
+          "date": "2026-10-14",
+          "url": "https://missionlocal.org/2026/10/san-francisco-2026-congressional-debate-scott-wiener-connie-chan/",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-ag",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Your guide to the California attorney general race: Bonta vs. Gates",
+          "outlet": "Los Angeles Times",
+          "date": "2026-10-01",
+          "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Attorney General",
+          "outlet": "CalMatters",
+          "date": "2026-09-29",
+          "url": "https://calmatters.org/california-voter-guide-2026/attorney-general/",
+          "topic": "Voter guide entry",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "California attorney general",
+          "outlet": "LAist",
+          "date": "2026-10-04",
+          "url": "https://laist.com/news/politics/voter-guides/2026-election-california-general-attorney-general",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-controller",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Your guide to the California controller race: Incumbent Cohen vs. challenger Morgan",
+          "outlet": "Los Angeles Times",
+          "date": "2026-10-01",
+          "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-controller-cohen-morgan-voter-guide",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "California controller",
+          "outlet": "LAist",
+          "date": "2026-10-04",
+          "url": "https://laist.com/news/politics/voter-guides/2026-election-california-general-state-controller",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-insurance",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Your guide to the California insurance commissioner race: Allen vs. Kim",
+          "outlet": "Los Angeles Times",
+          "date": "2026-10-01",
+          "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-insurance-commissioner-allen-kim-voter-guide",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Who’s spending money on the California insurance commissioner race",
+          "outlet": "CalMatters",
+          "date": "2026-10-26",
+          "url": "https://calmatters.org/politics/2026/10/insurance-commissioner-campaign-funding/",
+          "topic": "Campaign funding",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "California insurance commissioner candidates pitch rival plans to lower rates in Bakersfield",
+          "outlet": "KERO 23 ABC (Bakersfield)",
+          "date": "2026-10-29",
+          "url": "https://www.turnto23.com/news/in-your-neighborhood/bakersfield/california-insurance-commissioner-candidates-pitch-rival-plans-to-lower-rates-in-bakersfield",
+          "topic": "Candidates' insurance-rate plans",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-sos",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Secretary of State",
+          "outlet": "CalMatters",
+          "date": "2026-09-29",
+          "url": "https://calmatters.org/california-voter-guide-2026/secretary-of-state/",
+          "topic": "Voter guide entry",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Your guide to the California secretary of state race: Weber vs. Wagner",
+          "outlet": "Los Angeles Times",
+          "date": "2026-10-01",
+          "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-secretary-of-state-weber-wagner-voter-guide",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-spi",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Shaw and Barrera clash over parental rights, Trump and SAT in California state superintendent debate",
+          "outlet": "EdSource",
+          "date": "2026-10-08",
+          "url": "https://edsource.org/2026/california-superintendent-candidates-debate/767704",
+          "topic": "Candidate debate",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        },
+        {
+          "title": "California Superintendent Candidates Clash Over Everything but School Funding",
+          "outlet": "LA School Report",
+          "date": "2026-10-29",
+          "url": "https://www.laschoolreport.com/california-superintendent-candidates-clash-over-everything-but-school-funding/",
+          "topic": "Candidates on school funding formula",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        },
+        {
+          "title": "Your guide to the California state schools superintendent race: Barrera vs. Shaw",
+          "outlet": "Los Angeles Times",
+          "date": "2026-10-01",
+          "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-state-superintendent-public-instruction-shaw-barrera-voter-guide",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "California superintendent of public instruction",
+          "outlet": "LAist",
+          "date": "2026-10-03",
+          "url": "https://laist.com/news/politics/voter-guides/2026-election-california-general-superintendent-of-public-instruction",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-treasurer",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Your guide to the California treasurer race: Kounalakis vs. Hawks",
+          "outlet": "Los Angeles Times",
+          "date": "2026-10-01",
+          "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-treasurer-kounalakis-hawks-voter-guide",
+          "topic": "Voter guide",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Treasurer",
+          "outlet": "CalMatters",
+          "date": "2026-09-29",
+          "url": "https://calmatters.org/california-voter-guide-2026/treasurer/",
+          "topic": "Voter guide entry",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-gov",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "In Becerra and Hilton’s Only Scheduled Debate, Trump Was the Main Character",
+          "outlet": "KQED",
+          "date": "2026-10-01",
+          "url": "https://www.kqed.org/news/12102300/in-becerra-and-hiltons-only-scheduled-debate-trump-was-the-main-character",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "How would Xavier Becerra and Steve Hilton manage California’s most precious resource, water?",
+          "outlet": "CalMatters",
+          "date": "2026-10-10",
+          "url": "https://calmatters.org/politics/elections/2026/10/becerra-hilton-governor-candidates-california-water/",
+          "topic": "Candidates on water policy",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "The final stretch: Catch up on what’s happened in the California governor’s race so far",
+          "outlet": "CalMatters",
+          "date": "2026-10-27",
+          "url": "https://calmatters.org/politics/2026/10/california-governor-race-final-stretch/",
+          "topic": "Race recap",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-ltgov",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Lieutenant Governor",
+          "outlet": "CalMatters",
+          "date": "2026-09-29",
+          "url": "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+          "topic": "Voter guide entry",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Who are the candidates running to be California's next Lieutenant Governor?",
+          "outlet": "CBS 8 San Diego",
+          "date": "2026-10-21",
+          "url": "https://www.cbs8.com/article/news/politics/elections/candidates/candidates-california-lieutenant-governor/509-c78fe53c-f081-4cad-a70a-e945b64b537a",
+          "topic": "Candidate overview",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        }
+      ]
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-governor",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "NY Gov. Kathy Hochul, Bruce Blakeman spar over immigration, cost of living in debate",
+          "outlet": "Gothamist (WNYC)",
+          "date": "2026-10-14",
+          "url": "https://gothamist.com/news/ny-gov-kathy-hochul-bruce-blakeman-spar-over-immigration-cost-of-living-in-debate",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Hochul, Blakeman clash over immigration, economy in New York governor's race debate",
+          "outlet": "CBS News New York",
+          "date": "2026-10-13",
+          "url": "https://www.cbsnews.com/newyork/news/hochul-blakeman-immigration-economy-new-york-governors-debate/",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Hochul, Blakeman square off in only NY gov debate: Who won and who lost",
+          "outlet": "New York Post",
+          "date": "2026-10-14",
+          "url": "https://nypost.com/2026/10/14/us-news/hochul-blakeman-square-off-in-only-ny-gov-debate-who-won-and-who-lost/",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Mayor Mamdani emerges as flashpoint in Hochul-Blakeman gubernatorial debate",
+          "outlet": "ABC7 New York",
+          "date": "2026-10-14",
+          "url": "https://abc7ny.com/post/ny-governors-race-hochul-blakeman-spar-debate-mamdani-takes-spotlight/19938879/",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-attorney-general",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Attorney general candidates trade blows in fiery NY1 debate",
+          "outlet": "NY1",
+          "date": "2026-10-08",
+          "url": "https://ny1.com/nyc/all-boroughs/politics/2026/10/09/attorney-general-candidates-trade-blows-in-fiery-ny1-debate-letitia-james-saritha-komatireddy",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "New York state attorney general candidates have different views on job",
+          "outlet": "Times Union",
+          "date": "2026-10-20",
+          "url": "https://www.timesunion.com/capitol/article/new-york-state-attorney-general-candidates-22475469.php",
+          "topic": "Candidates' views of the office",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-comptroller",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Hernandez hopes to end DiNapoli’s long winning streak as state comptroller",
+          "outlet": "NY1",
+          "date": "2026-10-27",
+          "url": "https://ny1.com/nyc/all-boroughs/politics/2026/10/27/hernandez-hopes-to-end-dinapolis-long-winning-streak-as-state-comptroller",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "New York state comptroller race: The Republican taking on DiNapoli",
+          "outlet": "FOX 5 New York",
+          "date": "2026-10-23",
+          "url": "https://www.fox5ny.com/news/nys-comptroller-election-2026-midterms-dinapoli-hernandez-vote-new-york",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Campaign 2026: DiNapoli, Hernandez on Medicaid, auditing, municipalities, State spending",
+          "outlet": "CBS6 Albany (WRGB)",
+          "date": "2026-10-09",
+          "url": "https://cbs6albany.com/news/power-and-politics/campaign-2026dinapoli-hernandez-on-medicaid-auditing-municipalities-state-spending",
+          "topic": "Candidate interviews",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-12",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "NY-12 Election Preview: Who's On The Ballot",
+          "outlet": "Patch",
+          "date": "2026-10-29",
+          "url": "https://patch.com/new-york/upper-west-side-nyc/ny-12-election-preview-whos-ballot",
+          "topic": "Overview of all four candidates",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        },
+        {
+          "title": "GOP lawyer seeks dissatisfied Dems in liberal House district",
+          "outlet": "NY1",
+          "date": "2026-10-07",
+          "url": "https://ny1.com/nyc/all-boroughs/politics/2026/10/07/ny12-micah-lasher-caroline-shinkle",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-sd-47",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "The Complete Midtown Guide To The 2026 Election",
+          "outlet": "Patch",
+          "date": "2026-10-23",
+          "url": "https://patch.com/new-york/midtown-nyc/complete-midtown-guide-2026-election",
+          "topic": "Local ballot guide listing the candidates",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-sd-28",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "The Complete Midtown Guide To The 2026 Election",
+          "outlet": "Patch",
+          "date": "2026-10-23",
+          "url": "https://patch.com/new-york/midtown-nyc/complete-midtown-guide-2026-election",
+          "topic": "Local ballot guide listing the candidates",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-ad-75",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "State Assembly District 75 Election: Fontanelli v. Simone",
+          "outlet": "Chelsea News (Straus News)",
+          "date": "2026-10-26",
+          "url": "https://www.chelseanewsny.com/news/state-assembly-district-75-election-fontanelli-v-simone-FB6322733",
+          "topic": "Race overview",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        },
+        {
+          "title": "The Complete Midtown Guide To The 2026 Election",
+          "outlet": "Patch",
+          "date": "2026-10-23",
+          "url": "https://patch.com/new-york/midtown-nyc/complete-midtown-guide-2026-election",
+          "topic": "Local ballot guide listing the candidates",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-supreme-court-place-2-unexpired",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Texas Supreme Court 2026 election: Who is running and what to know",
+          "outlet": "The Texas Tribune",
+          "date": "2026-10-01",
+          "url": "https://www.texastribune.org/2026/10/01/2026-texas-supreme-court-elections-guide/",
+          "topic": "Guide to all four Supreme Court seats",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Abbott Appointees Stock State Supreme Court Ballot for the First Time Ever",
+          "outlet": "The Texan",
+          "date": "2026-10-12",
+          "url": "https://thetexan.news/elections/2026/abbott-appointees-stock-state-supreme-court-ballot-for-the-first-time-ever/article_55599f87-e323-4172-b175-28235a17dce3.html",
+          "topic": "Appointed justices on the ballot",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-sboe-5",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "These are the candidates running to fill an Austin-area State Board of Education seat",
+          "outlet": "KUT",
+          "date": "2026-10-15",
+          "url": "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-house-49",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Longtime education advocate faces UT Austin student in bid for Texas House District 49 seat",
+          "outlet": "KUT",
+          "date": "2026-10-19",
+          "url": "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-house-51",
+      "contestStatus": "contested",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-15coa-chief",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Republican 15th Court of Appeals Incumbents Seek Re-Election for the First Time",
+          "outlet": "The Texan",
+          "date": "2026-10-20",
+          "url": "https://thetexan.news/elections/2026/republican-15th-court-of-appeals-incumbents-seek-re-election-for-the-first-time/article_d22fbf0c-74ee-445d-8c0a-57de5e614fc8.html",
+          "topic": "Overview of the 15th Court of Appeals races",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-15coa-place-2",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Republican 15th Court of Appeals Incumbents Seek Re-Election for the First Time",
+          "outlet": "The Texan",
+          "date": "2026-10-20",
+          "url": "https://thetexan.news/elections/2026/republican-15th-court-of-appeals-incumbents-seek-re-election-for-the-first-time/article_d22fbf0c-74ee-445d-8c0a-57de5e614fc8.html",
+          "topic": "Overview of the 15th Court of Appeals races",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-15coa-place-3",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Republican 15th Court of Appeals Incumbents Seek Re-Election for the First Time",
+          "outlet": "The Texan",
+          "date": "2026-10-20",
+          "url": "https://thetexan.news/elections/2026/republican-15th-court-of-appeals-incumbents-seek-re-election-for-the-first-time/article_d22fbf0c-74ee-445d-8c0a-57de5e614fc8.html",
+          "topic": "Overview of the 15th Court of Appeals races",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "tx-3coa-chief",
+      "contestStatus": "contested",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-147th",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-201st",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-250th",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-261st",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-299th",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-331st",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-403rd",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-419th",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-455th",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-judge-459th",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-county-judge",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-ccl-1",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-ccl-2",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-ccl-3",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-ccl-4",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-ccl-5",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-ccl-6",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-ccl-7",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-probate-1",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-district-clerk",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-county-clerk",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-county-treasurer",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-commissioner-4",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-jp-5",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-jp-4",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-constable-4-unexpired",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-cad-place-1",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-cad-place-2",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "travis-cad-place-3",
+      "contestStatus": "contested",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "78701",
+      "raceId": "austin-council-9",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Candidates for Austin City Council District 9 discuss affordability, public safety and homelessness",
+          "outlet": "KUT",
+          "date": "2026-10-19",
+          "url": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+          "topic": "Candidates on affordability, safety, homelessness",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Meet the candidates running for Austin City Council District 9",
+          "outlet": "Community Impact",
+          "date": "2026-09-16",
+          "url": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+          "topic": "Candidate Q&A",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Austin elections: District 9 candidates debate housing, safety",
+          "outlet": "Austin American-Statesman",
+          "date": "2026-10-12",
+          "url": "https://www.statesman.com/news/local/article/austin-election-district-9-housing-safety-economy-22464713.php",
+          "topic": "Candidate debate",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "2026 Election: Meet the candidates for Austin City Council District 9",
+          "outlet": "FOX 7 Austin",
+          "date": "2026-10-26",
+          "url": "https://www.fox7austin.com/news/2026-election-meet-candidates-austin-city-council-district-9",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "aisd-at-large-9",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "13 candidates are running for Austin ISD's board. Here's what they would do if the state takes over",
+          "outlet": "KUT",
+          "date": "2026-10-28",
+          "url": "https://www.kut.org/education/2026-10-28/aisd-school-board-trustees-2026-election-candidates-austin-tx-isd",
+          "topic": "Board candidates on a possible state takeover",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Austin ISD’s District 9 race puts three different visions on the ballot",
+          "outlet": "Austin Current",
+          "date": "2026-10-20",
+          "url": "https://austincurrent.org/2026/10/19/austin-austinisd-candidates-election-board-2/",
+          "topic": "At-Large 9 candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "acc-trustee-place-1",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Meet the candidates running for the Austin Community College board",
+          "outlet": "KUT",
+          "date": "2026-10-16",
+          "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+          "topic": "Board candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Meet who is running for the Austin Community College board on Nov. 3",
+          "outlet": "Austin American-Statesman",
+          "date": "2026-09-02",
+          "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+          "topic": "Board candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "acc-trustee-place-2",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [
+        {
+          "title": "Meet the candidates running for the Austin Community College board",
+          "outlet": "KUT",
+          "date": "2026-10-16",
+          "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+          "topic": "Board candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Meet who is running for the Austin Community College board on Nov. 3",
+          "outlet": "Austin American-Statesman",
+          "date": "2026-09-02",
+          "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+          "topic": "Board candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "78701",
+      "raceId": "acc-trustee-place-3",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Meet the candidates running for the Austin Community College board",
+          "outlet": "KUT",
+          "date": "2026-10-16",
+          "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+          "topic": "Board candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Meet who is running for the Austin Community College board on Nov. 3",
+          "outlet": "Austin American-Statesman",
+          "date": "2026-09-02",
+          "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+          "topic": "Board candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-ad-17",
+      "contestStatus": "contested",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-boe-2",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Board of Equalization",
+          "outlet": "CalMatters",
+          "date": "2026-09-29",
+          "url": "https://calmatters.org/california-voter-guide-2026/board-of-equalization/",
+          "topic": "Voter guide entry",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-supreme-evans",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-supreme-groban",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-1",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-1b",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-1c",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-2pj",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-2",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-3",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-3b",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-4pj",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-5",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-5b",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "ca-coa-1-5c",
+      "contestStatus": "retention (Yes/No vote on one judge)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-assessor-recorder",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-public-defender",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-supervisor-6",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "Meet the District 6 candidates: Should S.F. give the mayor more authority?",
+          "outlet": "Mission Local",
+          "date": "2026-10-27",
+          "url": "https://missionlocal.org/2026/10/meet-the-district-6-candidates-should-sf-give-mayor-more-power/",
+          "topic": "Candidate overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Why does Matt Dorsey have no competitive challenger? Start with the D6 map.",
+          "outlet": "Mission Local",
+          "date": "2026-09-09",
+          "url": "https://missionlocal.org/2026/09/matt-dorsey-no-competitive-challenger-d6/",
+          "topic": "District map and field",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-supervisor-8",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "SF District 8 supervisor candidates clash over public safety",
+          "outlet": "San Francisco Chronicle",
+          "date": "2026-10-21",
+          "url": "https://www.sfchronicle.com/bayarea/article/sf-district-8-supervisors-election-forum-22486476.php",
+          "topic": "Candidate forum",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        },
+        {
+          "title": "Affordability drives SF District 8 race: Candidates debate housing",
+          "outlet": "AsAmNews",
+          "date": "2026-10-28",
+          "url": "https://asamnews.com/2026/10/28/san-francisco-district-8-supervisor-race-housing-affordability/",
+          "topic": "Candidates on housing",
+          "verifiedVia": "WebFetch (curl blocked or missing metadata)"
+        }
+      ]
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-supervisor-10",
+      "contestStatus": "contested",
+      "links": [
+        {
+          "title": "As election looms, the race for District 10 heats up, and gets complicated",
+          "outlet": "Mission Local",
+          "date": "2026-10-27",
+          "url": "https://missionlocal.org/2026/10/san-francisco-district-10-chris-larsen-pac-ellington-brookter-eppler/",
+          "topic": "Race overview",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-board-of-education",
+      "contestStatus": "multi-seat (vote for 3)",
+      "links": [
+        {
+          "title": "2026 San Francisco School Board Race",
+          "outlet": "Mission Local",
+          "date": "2026-09-15",
+          "url": "https://missionlocal.org/2026-san-francisco-school-board-race/",
+          "topic": "Race overview page",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-community-college-board",
+      "contestStatus": "multi-seat (vote for 3)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "94103",
+      "raceId": "sf-community-college-board-partial",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-supreme-1jd",
+      "contestStatus": "multi-seat (vote for 6)",
+      "links": [
+        {
+          "title": "2026 ELECTION: Six Democratic judicial candidates on ballot against procedural placeholders for Manhattan",
+          "outlet": "amNewYork",
+          "date": "2026-10-21",
+          "url": "https://www.amny.com/law/democratic-judicial-candidates-manhattan-supreme-court-2026/",
+          "topic": "Candidates on the ballot",
+          "verifiedVia": "curl HTTP 200 + page metadata"
+        }
+      ],
+      "gap": "fewer than 2 verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-surrogate-ny",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-civil-county-ny",
+      "contestStatus": "multi-seat (vote for 3)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-civil-3md-ny",
+      "contestStatus": "uncontested (one candidate on the ballot)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "ny-civil-9md-ny",
+      "contestStatus": "multi-seat (vote for 2)",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    },
+    {
+      "zip": "10001",
+      "raceId": "nyc-council-3",
+      "contestStatus": "contested",
+      "links": [],
+      "gap": "no verified Sep–Oct 2026 factual links found"
+    }
+  ]
+}

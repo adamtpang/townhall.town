@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "node scripts/check.mjs && node --test tests/*.node.mjs && vitest run",
+    "verify:http": "node scripts/verify-agentic.mjs",
+    "ingest:civic": "node scripts/ingest-civic.mjs"
   },
   "dependencies": {
     "@ai-sdk/xai": "^2.0.100",
@@ -33,6 +36,7 @@
     "autoprefixer": "^10.6.2",
     "postcss": "^8.5.32",
     "tailwindcss": "^3.4.19",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
   }
 }

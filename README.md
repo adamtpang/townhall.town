@@ -1,6 +1,6 @@
 # townhall.town
 
-**Your ballot, explained in seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Scope: **Austin (78701), San Francisco (94103), New York (10001)**; 78130 and 90012 also work, other ZIPs get "Austin, San Francisco, and New York 10001 for now." Enter a ZIP and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
+**Your ballot, explained in seconds.** A nonpartisan ballot agent built for AITX (Oct 29, 2026). Scope: **Austin (78701), San Francisco (94103), New York (10001)**; every other ZIP (including 78130 and 90012, which still have data files) gets "Austin, SF and NYC for now." Enter a ZIP and an AI agent calls sourced data tools to explain every race in plain words, show who is running, what each candidate has said about the problems you care about, what prediction markets say, and how to vote.
 
 Live: https://townhall.town
 
@@ -13,8 +13,8 @@ cp .env.example .env.local   # optional: without a key the app runs in fallback 
 npm run dev                  # http://localhost:3000
 npm run build
 ```
-Try the demo ZIPs: 78701 (Austin), 94103 (San Francisco), and 10001 (New York); 78130 (New Braunfels) and 90012 (Los Angeles) also work.
-API: `GET /api/agent?zip=78701` streams NDJSON (`status`, `step`, `result`). `GET /api/locate?lat=..&lon=..` maps coordinates to a ZIP via the Census geocoder.
+Try the covered ZIPs: 78701 (Austin), 94103 (San Francisco), and 10001 (New York). No other ZIP is served (lib/site.ts COVERED_ZIPS).
+API: `GET /api/agent?zip=78701` streams NDJSON (`status`, `step`, `result`). `POST /api/locate` with `{"lat":..,"lon":..}` maps coordinates to a ZIP via the Census geocoder.
 
 ## Open source: contribute
 
@@ -29,10 +29,10 @@ flowchart LR
   U[ZIP or geolocation] --> A[/api/agent/]
   A -->|AI SDK generateText + tools| M{Model via AI Gateway}
   M --> T1[getDistricts] & T2[getRaces] & T3[getCandidates] & T4[getMarketOdds] & T5[getLocalProblems]
-  M -.optional.-> T6[getTurnout] & T7[getAccountability]
+  M -.optional.-> T6[getTurnout]
   A -->|model unavailable| F[Deterministic fallback: same tools, no model]
   T1 & T2 & T3 --> D[(data/ballots.json, data/tx.json)]
-  T4 --> P[Polymarket / Kalshi live, cached snapshot fallback]
+  T4 --> P[Polymarket live only, no cache]
   T5 --> C[(ACS 2024 5-yr)]
   A --> UI[Ballot UI: elections, candidates, problems, alignment, markets, turnout, game plan]
 ```
@@ -48,13 +48,12 @@ One request, one bounded tool loop, streamed back to the browser as NDJSON (`app
 | `getDistricts` | U.S. House district(s), state, county for the ZIP | Census 2024 ZCTA centroids in PLANC2333 (TX) |
 | `getRaces` | Every race and statewide measure on the Nov 3, 2026 ballot, with what each office controls | `data/ballots.json`, `data/tx.json` |
 | `getCandidates` | General-election candidates: name, party, incumbent | Ballotpedia, FEC |
-| `getMarketOdds` | Live Polymarket / Kalshi prices per contest, or "no market found" | Polymarket, Kalshi (cached snapshot fallback) |
+| `getMarketOdds` | Live Polymarket prices per contest, or "no market found" / "unavailable" with no numbers | Polymarket Gamma API (data/markets-map.json), live only |
 | `getLocalProblems` | 3 local problems: rent burden, uninsured rate, unemployment | Census ACS 2024 5-year |
 | `getTurnout` | County turnout, eligible non-voters, what one ballot counts for (demo ZIPs) | Texas and California Secretary of State, Census Reporter |
-| `getAccountability` | Said vs. did for 7 incumbents, both sides sourced, plus a kept rate | Official records (clerk.house.gov, state offices) and news coverage |
 
 **Loop steps**
-1. The ZIP is normalized to 5 digits. If it isn't covered, the stream returns `unsupported` and stops.
+1. The ZIP must be exactly 5 digits (`/^\d{5}$/`, no trimming or slicing); anything else gets a JSON 400 `{"error":{"code":"invalid","message":"..."}}`. If a valid ZIP isn't covered, the stream returns `unsupported` and stops.
 2. The model gets a strict nonpartisan system prompt and is told to call the five core tools in parallel in its first step.
 3. `generateText` runs with `stopWhen: stepCountIs(3)` and a 25-second timeout. Each tool call streams a `step` event (running, then done with a one-line summary), which is the live "Agent steps" panel.
 4. The model writes a 2 to 3 sentence neutral summary from tool results only. It may not recommend a candidate.
@@ -69,19 +68,22 @@ See `.env.example` (placeholders only, never commit real values):
 - `XAI_API_KEY`: optional direct xAI fallback.
 - `FEC_API_KEY`, `CONGRESS_API_KEY`: optional api.data.gov keys for OpenFEC and Congress.gov. Without them the tools use `DEMO_KEY` (low hourly limit).
 - `CENSUS_API_KEY`: optional. Without it `getZipIncomeRent` returns `unavailable`.
-- `OPENSTATES_API_KEY`, `GOOGLE_CIVIC_API_KEY`: optional. Without them `getStateLegislators` and `getVoterInfo` return `unavailable`.
 
 ### Live data tools (`lib/dataTools.ts`)
 Optional tools the model can call, each returning a source URL, or `{ status: "unavailable", reason }` when a key is missing or the call fails:
 - `getCampaignFinance`: OpenFEC receipts, spending and cash on hand for a federal candidate.
 - `getSponsoredBills`: the current U.S. House member for a state and district, with recent sponsored bills (Congress.gov).
 - `getCountyUnemployment`: latest monthly county unemployment rate (BLS LAUS). A county figure, so it differs from the ZIP-level ACS 5-year number.
-- `getStateLegislators`: state legislators for a point (Open States).
-- `getVoterInfo`: polling place and early-vote sites for an address (Google Civic voterinfo).
-- `getZipIncomeRent`: median household income and median gross rent for a ZIP (Census ACS 5-year). Needs `CENSUS_API_KEY`; without it returns `unavailable`.
+- `getZipIncomeRent`: median household income (B19013) and median gross rent (B25064) for a ZIP Code Tabulation Area (geo ID prefix 860Z200US), Census ACS 5-year, with margins of error. Needs `CENSUS_API_KEY`; without it returns `unavailable`.
+
+## API
+Public, no key. OpenAPI 3.1 spec at [/openapi.json](https://townhall.town/openapi.json), docs with curl examples at [/developers](https://townhall.town/developers), RFC 9727 catalog at `/.well-known/api-catalog`.
+- `GET /api/agent?zip=78701` or `POST /api/agent` `{"zip":"78701"}`: NDJSON stream ending in one `result` (or `unsupported`) line.
+- `POST /api/locate` `{"lat":30.2672,"lon":-97.7431}`: `{"zip","source"}` from the Census Geocoder. Coordinates go in the body, never the URL; `GET` is 405.
+- Every API error is `application/json` `{"error":{"code","message"}}`: 400 `invalid`, 404 `not_found` (also any unknown `/api/*`), 405 `method_not_allowed` (with `Allow`), 502 `upstream_unavailable`.
 
 ## Shared data contract
-`lib/types.ts` is the shared contract; plug-ins only add optional fields. `lib/accountability.ts` adds `politician.accountability` ("said vs. did", every record has both source links) and `lib/turnout.ts` adds jurisdiction `turnout` (county turnout, eligible non-voters, 2026 registration, all sourced). Both are also exposed to the model as tools via `lib/civicTools.ts`.
+`lib/types.ts` is the shared contract; plug-ins only add optional fields. `lib/turnout.ts` adds jurisdiction `turnout` (county turnout, eligible non-voters, 2026 registration, all sourced), also exposed to the model as a tool via `lib/civicTools.ts`.
 
 ## Data
 
@@ -99,15 +101,23 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 | `california/statewide_races.json` | 8 statewide races (no U.S. Senate seat in 2026) | Ballotpedia |
 | `california/us_house_races_demo.json` | CA-11, CA-34 only (demo ZIPs) | Ballotpedia |
 | `california/ballot_measures.json` | 14 propositions incl. **Prop 40 one-time 5% billionaire wealth tax** (verified on Ballotpedia) | Ballotpedia California_2026_ballot_propositions |
-| `markets/snapshot.json` | Polymarket + Kalshi prices, each with `fetched_at_utc` | gamma-api.polymarket.com, api.elections.kalshi.com |
+| `markets/snapshot.json` | Archived research snapshot (not used by the app; the app reads Polymarket live only) | gamma-api.polymarket.com |
 | `markets/endpoints.json` | How to refresh live + display rule | — |
 | `metrics/zip_metrics.json` | For 78130, 78701, 94103, 90012: income, poverty, uninsured, renter cost burden, unemployment, education, rent, home value — vs county, state, US; BLS Sept 2026 county unemployment | ACS 2024 5-yr via Census Reporter; BLS LAUS |
 | `demo_zips.json` | Pre-joined bundle for the 4 cached ZIPs | above |
 
+## Candidate photos
+
+- Source: Civic's `data/civic/photos_batch.json` (one entry per candidate id with `photoUrl`, `pageUrl`, `sourceType`, `license`, `attribution`). Run `node scripts/ingest-photos.mjs` after it changes.
+- Licensed photos (public domain, CC0, CC BY, CC BY-SA) are resized and self-hosted in `public/portraits`. A candidate's own public campaign or official headshot is allowed even when it is not licensed for reuse; those are hotlinked from their source URL, never copied. No news photos, and never a generated image.
+- Every photo carries a small credit, "Photo: {attribution}", linked to its source page.
+- `NEXT_PUBLIC_PHOTO_GATE` (build time): `race` (default) shows photos only when every candidate in the race has one; `candidate` shows each candidate's photo where one exists and initials otherwise. To flip without an env var, change `DEFAULT` in `lib/photoGate.ts` (the only switch). A photo that fails to load falls back to initials (per candidate, or per race in race mode).
+- **Takedowns:** add the candidate id (e.g. `"rob-bonta"`, the slug of the ballot name) to `data/photo_takedowns.json`, a JSON array. Any id there shows initials everywhere, with no credit. Requests come through /contact (linked from the footer).
+
 ## Limitations
 - **ZIP ≠ district.** ZIP→district uses the ZIP's center point; ZIPs on a boundary may be wrong. Always say "verify by address" and link VoteTexas / CA voter status. CA ZIP→district (94103→CA-11, 90012→CA-34) is **unverified** under the Prop 50 map.
 - **Federal + statewide only.** No state legislature, State Board of Education, county, city, school board, or local measures yet.
-- **Incumbent flags** come from Ballotpedia's bold-name convention (Comptroller Donald Huffines flagged — verify).
+- **Incumbent flags** come from Ballotpedia's bold-name convention (Comptroller Don Huffines flagged — verify).
 - **FEC matches** are name+district string matches (86/87); verify the ID before showing finance.
 - **Positions** are verbatim Ballotpedia excerpts, sometimes including survey boilerplate; many candidates have none. The app must not paraphrase into new claims; "problem ↔ position" links should quote and mark "unsure" when the match is inferred.
 - **Market odds** are trader prices, not forecasts or endorsements; thin markets swing. Snapshot is from Oct 29, 2026 ~2:50 PM CT; refresh live.
@@ -115,28 +125,27 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 - Scraped Oct 29, 2026; candidates can withdraw. Not affiliated with any source.
 
 ## Next steps
-1. **World elections expansion:** same schema (race → office explainer → candidates → sources → market odds) for other countries; Polymarket/Kalshi already list many non-US elections. Start with upcoming national elections that have markets, plus Wikipedia/official electoral-commission candidate lists.
-2. **Promise tracking after Nov 3:** freeze each winner's stated positions (the verbatim excerpts here, timestamped) and track votes/bills/actions against them (Congress.gov API, Texas Legislature Online, CA leginfo), with each item linked to the record — "said → did" with no editorializing.
-3. Address-level district lookup (Google Civic Divisions API → OCD-ID, or Census geocoder), down-ballot local races, TEC/FEC finance summaries, Spanish translation.
+1. **World elections expansion:** same schema (race → office explainer → candidates → sources → market odds) for other countries; Polymarket already lists many non-US elections. Start with upcoming national elections that have markets, plus Wikipedia/official electoral-commission candidate lists.
+2. Address-level district lookup (Google Civic Divisions API → OCD-ID, or Census geocoder), down-ballot local races, TEC/FEC finance summaries, Spanish translation.
 
-- Accountability records cover 7 politicians only; turnout covers the 4 demo counties only.
-- **Comptroller:** Donald Huffines is shown as the incumbent. Gov. Abbott appointed him after Kelly Hancock resigned; Hancock had lost the March 3 GOP primary to Huffines (Ballotpedia Texas_Comptroller_election,_2026; comptroller.texas.gov lists Huffines).
+- Turnout covers the 4 demo counties only.
+- **Comptroller:** Don Huffines is shown as the incumbent. Gov. Abbott appointed him after Kelly Hancock resigned; Hancock had lost the March 3 GOP primary to Huffines (Ballotpedia Texas_Comptroller_election,_2026; comptroller.texas.gov lists Huffines).
 
 ## Disclaimer
 Independent and nonpartisan; not a government website. Always confirm your ballot with official sources: [VoteTexas.gov](https://www.votetexas.gov/), [California Secretary of State](https://www.sos.ca.gov/elections), [CA early voting](https://caearlyvoting.sos.ca.gov/).
 
-## Race tiers (S/A/B/C)
+## Race labels
 
 
 "What matters on your ballot" ranks races, never candidates. Score = office impact × competitiveness.
 
 - Office impact: 3 = President, U.S. Senate, Governor; 2 = ballot measure, U.S. House, other statewide executive office; 1.5 = state legislature; 1 = judicial and local.
-- Competitiveness: 1 + (1 − |p_leader − 0.5| × 2), where p_leader is the leading prediction-market probability for the race; 1 when no market exists.
-- Tiers: S ≥ 4.5, A ≥ 3, B ≥ 2, otherwise C. Each race shows a one-line reason plus its race source and market link.
+- Competitiveness: 2 when the published race ratings (Cook Political Report, Sabato's Crystal Ball, Inside Elections, from data/civic/competitiveness.json, each linked on the race) call it a toss-up or tilt, OR when the live Polymarket top contract is between 0.35 and 0.65; otherwise 1. Polymarket can raise a race, never lower a sourced rating; ratings that rested only on another prediction market are dropped. A candidate-race market is shown only if every candidate on the ballot appears in it (`marketCoversBallot`), so a primary-field market (e.g. CA Lieutenant Governor) is hidden. Each race with a shown market gets "Leader on Polymarket: <name> at N%", the market link and the fetch time (CT). No market, no line; nothing cached or estimated.
+- Labels: "Most at stake" ≥ 4.5, "High" ≥ 3, "Moderate" ≥ 2, otherwise "Lower", with a one-line legend under the heading. Each race shows a one-line reason plus its race source and market link. Labels apply to races only, never candidates.
 
 Candidate overlap ("Who lines up with you") uses only your slider answers (−5..+5, stored in localStorage) and verbatim sourced stances in data/stances.json. Overlap = (cosine + 1) / 2 on shared issues; hidden below 2 sourced stances ("Not enough record"). It is issue overlap, not a recommendation.
 
-### Questionnaire and candidate tiers
+### Questionnaire
 - 10 issues (CA adds Prop 40), each a -5..+5 integer slider, one per row with neutral policy-direction labels at both ends; every issue can be skipped.
-- Candidate tier within a race, "based on your answers and sourced records": S ≥ 85% overlap, A ≥ 70%, B ≥ 50%, otherwise C. Requires at least 2 sourced stances on your issues, else "Not enough record to tier". No answers, no tiers. Ballot order is kept; nothing is labeled "best".
+- Issue-overlap grades (S/A/B/C) are behind `CANDIDATE_GRADES` in lib/grades.mjs (on for this preview): computed only from your Yes/No answers vs sourced positions, never for judicial candidates or without sourced positions, never sorted, and never in the API. Otherwise: With at least 2 sourced stances on your answered issues, a candidate shows "Lines up on N of M compared issues"; otherwise only the count of sourced positions. No answers, no overlap. Ballot order is kept; nothing is labeled "best".
 - **Answers stay on your device** (localStorage key `townhall.issueAnswers.v2`). No sign-in, nothing is sent to a server.

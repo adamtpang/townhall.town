@@ -85,60 +85,27 @@ export async function getCountyUnemployment(input: { zip?: string; countyFips?: 
   }
 }
 
-/** Open States: state legislators for a point. Needs OPENSTATES_API_KEY. */
-export async function getStateLegislators(input: { lat: number; lng: number }) {
-  const key = process.env.OPENSTATES_API_KEY;
-  if (!key) return unavailable("OPENSTATES_API_KEY is not set.", "https://open.pluralpolicy.com/");
-  try {
-    const r = await getJson(`https://v3.openstates.org/people.geo?lat=${input.lat}&lng=${input.lng}`, { "X-API-KEY": key });
-    return {
-      legislators: (r.results ?? []).map((p: any) => ({ name: p.name, party: p.party, chamber: p.current_role?.org_classification, district: p.current_role?.district, url: p.openstates_url })),
-      source: "https://open.pluralpolicy.com/",
-    };
-  } catch (e: any) {
-    return unavailable(`Open States: ${e?.message || e}`, "https://open.pluralpolicy.com/");
-  }
-}
-
-/** Google Civic voterinfo: polling place and early-vote sites for an address. Needs GOOGLE_CIVIC_API_KEY. */
-export async function getVoterInfo(input: { address: string; electionId?: string }) {
-  const key = process.env.GOOGLE_CIVIC_API_KEY;
-  if (!key) return unavailable("GOOGLE_CIVIC_API_KEY is not set.", "https://developers.google.com/civic-information");
-  const q = new URLSearchParams({ key, address: input.address });
-  if (input.electionId) q.set("electionId", input.electionId);
-  try {
-    const r = await getJson(`https://www.googleapis.com/civicinfo/v2/voterinfo?${q}`);
-    const site = (s: any) => ({ name: s.address?.locationName ?? null, address: [s.address?.line1, s.address?.city, s.address?.state, s.address?.zip].filter(Boolean).join(", "), hours: s.pollingHours ?? null });
-    return {
-      election: r.election?.name ?? null,
-      pollingLocations: (r.pollingLocations ?? []).slice(0, 3).map(site),
-      earlyVoteSites: (r.earlyVoteSites ?? []).slice(0, 3).map(site),
-      officialInfo: r.state?.[0]?.electionAdministrationBody?.electionInfoUrl ?? null,
-      source: "https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery",
-    };
-  } catch (e: any) {
-    return unavailable(`Google Civic: ${e?.message || e}`, "https://developers.google.com/civic-information");
-  }
-}
-
 /** Census ACS 5-year: median household income and median gross rent for a ZIP (ZCTA), with 90% margins of error. Needs CENSUS_API_KEY. */
 export async function getZipIncomeRent(input: { zip: string; year?: number }) {
   const key = process.env.CENSUS_API_KEY;
   const year = input.year ?? 2024;
   const zip = input.zip.replace(/\D/g, "").slice(0, 5);
   // 860Z200US is the canonical 2020 ZCTA geo ID the Census returns.
-  const source = `https://data.census.gov/table/ACSDT5Y${year}.B19013?g=860Z200US${zip}`;
+  const geo = `860Z200US${zip}`;
+  const source = `https://data.census.gov/table/ACSDT5Y${year}.B19013?g=${geo}`; // income (B19013)
+  const rentSource = `https://data.census.gov/table/ACSDT5Y${year}.B25064?g=${geo}`; // gross rent (B25064)
   if (!key) return unavailable("CENSUS_API_KEY is not set.", "https://api.census.gov/data/key_signup.html");
   if (zip.length !== 5) return { status: "no record found", reason: "Pass a 5-digit ZIP." };
   const q = new URLSearchParams({ get: "NAME,B19013_001E,B19013_001M,B25064_001E,B25064_001M", for: `zip code tabulation area:${zip}`, key });
   try {
     const rows = await getJson(`https://api.census.gov/data/${year}/acs/acs5?${q}`);
     const row = rows?.[1];
-    if (!row) return { zip, status: "no record found", source };
+    if (!row) return { zip, geoId: geo, status: "no record found", source, rentSource };
     // The Census API uses large negative sentinels (e.g. -666666666) for suppressed values.
     const num = (v: string) => (Number(v) >= 0 ? Number(v) : null);
     return {
       zip,
+      geoId: geo,
       year: `ACS ${year} 5-year`,
       medianHouseholdIncome: num(row[1]),
       medianHouseholdIncomeMoe: num(row[2]),
@@ -147,6 +114,11 @@ export async function getZipIncomeRent(input: { zip: string; year?: number }) {
       unit: "USD",
       note: "Moe values are the Census 90% margin of error (plus or minus). Small ZIPs can have wide margins.",
       source,
+      rentSource,
+      citations: [
+        { table: "B19013", label: "Median household income", url: source },
+        { table: "B25064", label: "Median gross rent", url: rentSource },
+      ],
     };
   } catch (e: any) {
     // Never echo the request URL: it carries the key.
@@ -174,15 +146,5 @@ export const dataTools = {
     description: "Latest monthly county unemployment rate from BLS LAUS, for a ZIP we cover or a 5-digit county FIPS code.",
     inputSchema: z.object({ zip: z.string().optional(), countyFips: z.string().optional() }),
     execute: async (i) => getCountyUnemployment(i),
-  }),
-  getStateLegislators: tool({
-    description: "State legislators (state senate and house/assembly) for a latitude and longitude, from Open States. Returns unavailable if no key is configured.",
-    inputSchema: z.object({ lat: z.number(), lng: z.number() }),
-    execute: async (i) => getStateLegislators(i),
-  }),
-  getVoterInfo: tool({
-    description: "Polling place and early-vote sites for a street address, from the Google Civic Information voterinfo API. Returns unavailable if no key is configured.",
-    inputSchema: z.object({ address: z.string(), electionId: z.string().optional() }),
-    execute: async (i) => getVoterInfo(i),
   }),
 };

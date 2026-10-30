@@ -21,7 +21,7 @@
       "state": "TX",
       "elections": [
         { "election": "2024 General", "date": "2024-11-05", "registered": 925858, "ballotsCast": 587090, "turnoutPct": 63.41,
-          "sources": ["https://lagovistatexas.gov/DocumentCenter/View/6656/24-11-18-01-Canvassing-General-Election-PDF", "https://www.sos.state.tx.us/elections/historical/nov2024.shtml"] },
+          "sources": ["https://votetravis.gov/wp-content/uploads/G24-Final-Reconciliation_Updated.pdf", "https://www.sos.state.tx.us/elections/historical/nov2024.shtml"] },
         { "election": "2022 General", "date": "2022-11-08", "registered": 886480, "ballotsCast": 460899, "turnoutPct": 51.99,
           "sources": ["https://www.sos.texas.gov/elections/historical/travis.shtml"] }
       ],

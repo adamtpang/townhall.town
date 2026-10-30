@@ -1,28 +1,38 @@
 import BallotAgent from "./BallotAgent";
+import { H1 } from "../lib/typeScale";
+import { SectionBlock } from "../components/Prose";
+import { SiteFooter, SiteHeader } from "../components/SiteChrome";
+import { HOME_SECTIONS } from "../lib/content";
+import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 import { LangProvider, LangToggle, T } from "../lib/i18n";
 
 export default function Home() {
   return (
+    // Spanish toggle is visible by default (Adam, Oct 29 2026); NEXT_PUBLIC_SPANISH=0 hides it. Untranslated strings: notes/spanish-untranslated.md.
     <LangProvider>
-      <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8">
-        <span className="flex items-center gap-3 text-base font-medium tracking-tight">
-          <span aria-hidden className="inline-block h-3 w-3 bg-[#3760f2]" />
-          townhall.town
-        </span>
-        <span className="flex items-center gap-6">
-          <LangToggle />
-          <span className="text-sm text-black/50"><T>Nov 3, 2026</T></span>
-        </span>
-      </header>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
+      <SiteHeader extra={<LangToggle />} />
       <main className="mx-auto max-w-site px-6">
-        <section className="pb-16 pt-24 sm:pt-40">
-          <h1 className="max-w-5xl font-serif text-[clamp(3.5rem,10vw,9rem)] leading-[0.9] tracking-[-0.02em] text-black"><T>Your ballot, explained.</T></h1>
+        <section className="pb-10 pt-12 lg:pt-20" data-hero>
+          <p className="mb-6 text-sm font-[530] text-black/60">Nov 3, 2026 · Austin · San Francisco · New York</p>
+          <h1 className={`${H1} [text-wrap:balance]`}>
+            <T>Know your ballot in 2 minutes.</T>
+          </h1>
+          <p className="mt-6 max-w-[32ch] text-xl leading-7 font-[530] text-black md:text-2xl md:leading-8" data-tagline>
+            <span>Get your person in office. </span>
+            <span className="max-sm:block"><T>Your vote matters.</T></span>
+          </p>
+          <p className="mt-3 max-w-[36ch] text-base leading-6 font-[450] text-black/60"><T>{"Who\u2019s running, when to vote, where to go. Sourced and nonpartisan."}</T></p>
+          <div id="hero-stat" />
         </section>
         <BallotAgent />
+        <div className="mt-32">
+          {HOME_SECTIONS.map((s) => (
+            <SectionBlock key={s.heading} s={s} level={3} />
+          ))}
+        </div>
       </main>
-      <footer className="mx-auto mt-40 max-w-site border-t border-black/15 px-6 py-10 text-sm text-black/50">
-        <T>Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.</T>
-      </footer>
+      <SiteFooter />
     </LangProvider>
   );
 }

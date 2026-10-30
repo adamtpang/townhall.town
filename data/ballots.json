@@ -372,7 +372,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/James_Talarico",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=50",
+      "officialSite": "https://house.texas.gov/members/50",
       "campaignSite": "https://jamestalarico.com/",
       "x": "https://x.com/jamestalarico",
       "photo": {
@@ -566,8 +566,8 @@
        "license": "see Ballotpedia page"
       },
       "finance": {
-       "label": "FEC: S6TX00594 (name match, verify)",
-       "url": "https://www.fec.gov/data/candidate/S6TX00594/"
+       "label": "FEC: S4TX00888 (committee C00857623)",
+       "url": "https://www.fec.gov/data/candidate/S4TX00888/"
       },
       "positions": [],
       "causes": [
@@ -667,7 +667,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=49",
+      "officialSite": "https://house.texas.gov/members/49",
       "campaignSite": "https://ginafortexas.com/",
       "x": "https://x.com/GinaHinojosaTX",
       "photo": {
@@ -832,7 +832,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=47",
+      "officialSite": "https://house.texas.gov/members/47",
       "campaignSite": "https://www.vikkigoodwin.com/",
       "x": "https://x.com/VikkiGoodwinTX",
       "photo": {
@@ -1914,7 +1914,7 @@
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Nate_Sheets",
       "officialSite": null,
-      "campaignSite": "http://www.NateSheets.com",
+      "campaignSite": "https://www.natesheets.com",
       "x": "https://x.com/natesheetsforTX",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nate_Sheets.png",
@@ -2098,7 +2098,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Jon_Rosenthal",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=135",
+      "officialSite": "https://house.texas.gov/members/135",
       "campaignSite": "https://jonrosenthaltx.com/",
       "x": "https://x.com/Jon_RosenthalTX",
       "photo": {
@@ -2305,9 +2305,9 @@
    },
    {
     "id": "tx-supreme-court-place-1-chief-justice",
-    "title": "Texas Supreme Court Place 1 Chief Justice",
+    "title": "Texas Supreme Court Chief Justice",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -2382,22 +2382,22 @@
    },
    {
     "id": "tx-supreme-court-place-2",
-    "title": "Texas Supreme Court Place 2 (special election, unexpired term)",
+    "title": "Texas Supreme Court Place 2 (Unexpired Term)",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
-    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "office": "Texas's court of last resort for civil matters: chief justice and eight justices, elected statewide to staggered six-year terms. Vacancies are filled by governor appointment until the next general election. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
+    "officeSource": "https://www.txcourts.gov/supreme/",
     "candidates": [
      {
       "name": "James P. Sullivan",
       "party": "Republican",
       "incumbent": true,
-      "incumbentSource": "Ballotpedia race page lists him as the incumbent",
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
       "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
-      "officialSite": null,
-      "campaignSite": null,
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "campaignSite": "https://www.judgesully.com/",
       "x": null,
       "photo": {
-       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/James_Sullivan_SCOTX.jpg",
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/James_Sullivan_SCOTX.jpg",
        "credit": "Photo via Ballotpedia",
        "license": "see Ballotpedia page"
       },
@@ -2413,13 +2413,13 @@
       "name": "Chari Kelly",
       "party": "Democratic",
       "incumbent": false,
-      "incumbentSource": "Ballotpedia race page",
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
       "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
-      "officialSite": null,
-      "campaignSite": null,
+      "officialSite": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-chari-l-kelly/",
+      "campaignSite": "https://charikelly.com/",
       "x": null,
       "photo": {
-       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
        "credit": "Photo via Ballotpedia",
        "license": "see Ballotpedia page"
       },
@@ -2429,16 +2429,17 @@
       },
       "positions": [],
       "causes": [],
-      "hasThemes": false
+      "hasThemes": true
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://www.sos.texas.gov/elections/forms/2026-ballot-cert.pdf",
+    "judicial": "tx"
    },
    {
     "id": "tx-supreme-court-place-7",
     "title": "Texas Supreme Court Place 7",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -2491,7 +2492,7 @@
     "id": "tx-supreme-court-place-8",
     "title": "Texas Supreme Court Place 8",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -2910,19 +2911,69 @@
    {
     "id": "tx-10",
     "label": "TX-10 (U.S. House)",
-    "note": "ZIP centroid falls inside District 10 on PLANC2333"
+    "note": "SPLIT: ~85.0% of 78701 residents (TIGERweb 120th Congress layer)"
    },
    {
     "id": "tx-37",
     "label": "TX-37 (U.S. House)",
-    "note": "ZIP also borders/overlaps District 37 (centroid ~0.4 km away)"
+    "note": "SPLIT: ~15.0% of 78701 residents"
+   },
+   {
+    "id": "tx-sd-14",
+    "label": "Texas Senate District 14",
+    "note": "100%. No State Senate race for SD14 in 2026 (SD21 is on the county ballot but does not cover 78701)"
+   },
+   {
+    "id": "tx-hd-49",
+    "label": "Texas House District 49",
+    "note": "SPLIT: ~79.2%"
+   },
+   {
+    "id": "tx-hd-51",
+    "label": "Texas House District 51",
+    "note": "SPLIT: ~20.8%"
+   },
+   {
+    "id": "tx-sboe-5",
+    "label": "State Board of Education District 5",
+    "note": "100% (TLC PLANE2106)"
+   },
+   {
+    "id": "travis-comm-3",
+    "label": "Travis County Commissioner Precinct 3",
+    "note": "SPLIT: ~79.2%. Not up in 2026"
+   },
+   {
+    "id": "travis-comm-4",
+    "label": "Travis County Commissioner Precinct 4",
+    "note": "SPLIT: ~20.8%. Travis's ZIP layer also marks 78701 as In_Multiple_Precincts = YES (Pct 3 and Pct 4)"
+   },
+   {
+    "id": "travis-jp-5",
+    "label": "Justice of the Peace / Constable Precinct 5",
+    "note": "SPLIT: ~79.2%"
+   },
+   {
+    "id": "travis-jp-4",
+    "label": "Justice of the Peace / Constable Precinct 4",
+    "note": "SPLIT: ~20.8%"
+   },
+   {
+    "id": "austin-council-9",
+    "label": "Austin City Council District 9",
+    "note": "100%"
+   },
+   {
+    "id": "aisd-5",
+    "label": "Austin ISD Trustee District 5",
+    "note": "100% (AISD 2022 trustee boundaries). Not up in 2026"
    }
   ],
   "districtSource": {
-   "label": "Texas Legislative Council PLANC2333 shapefile (2025 congressional map) + Census 2024 ZCTA Gazetteer centroid",
-   "url": "https://data.capitol.texas.gov/dataset/planc2333"
+   "label": "Census TIGERweb (120th CD, 2026 SLD), TLC PLANE2106 (SBOE), Travis County GIS (Commissioner and JP/Constable precincts, ZIP codes), City of Austin council districts, AISD trustee boundaries. Population shares use 2020 Census block populations (TIGERweb tigerWMS_Census2020 layer 10, POP100) with block interior points inside the Travis County USPS ZIP polygon for 78701 (total 11,998 people). The HD51, Commissioner Pct 4 and JP Pct 4 shares are the same 2,501-person slice",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer"
   },
-  "splitWarning": "This ZIP spans more than one U.S. House district. Your exact district depends on your street address.",
+  "splitWarning": "78701 spans more than one district for U.S. House (TX-10/TX-37), Texas House (HD49/HD51), County Commissioner (Pct 3/Pct 4) and Justice of the Peace/Constable (Pct 5/Pct 4). Your exact ballot depends on your street address.",
   "electionDate": "2026-11-03",
   "races": [
    {
@@ -3251,7 +3302,7 @@
       "hasThemes": true
      },
      {
-      "name": "Lauren Peña",
+      "name": "Lauren B. Peña",
       "party": "Republican",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -3269,7 +3320,9 @@
       },
       "positions": [],
       "causes": [],
-      "hasThemes": false
+      "hasThemes": false,
+      "aka": "Lauren Peña",
+      "nameSource": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
      }
     ],
     "source": "https://ballotpedia.org/Texas%27_37th_Congressional_District_election,_2026"
@@ -3287,7 +3340,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/James_Talarico",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=50",
+      "officialSite": "https://house.texas.gov/members/50",
       "campaignSite": "https://jamestalarico.com/",
       "x": "https://x.com/jamestalarico",
       "photo": {
@@ -3481,8 +3534,8 @@
        "license": "see Ballotpedia page"
       },
       "finance": {
-       "label": "FEC: S6TX00594 (name match, verify)",
-       "url": "https://www.fec.gov/data/candidate/S6TX00594/"
+       "label": "FEC: S4TX00888 (committee C00857623)",
+       "url": "https://www.fec.gov/data/candidate/S4TX00888/"
       },
       "positions": [],
       "causes": [
@@ -3582,7 +3635,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=49",
+      "officialSite": "https://house.texas.gov/members/49",
       "campaignSite": "https://ginafortexas.com/",
       "x": "https://x.com/GinaHinojosaTX",
       "photo": {
@@ -3747,7 +3800,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=47",
+      "officialSite": "https://house.texas.gov/members/47",
       "campaignSite": "https://www.vikkigoodwin.com/",
       "x": "https://x.com/VikkiGoodwinTX",
       "photo": {
@@ -4337,7 +4390,9 @@
        }
       ],
       "hasThemes": true,
-      "incumbentNote": "Sitting Comptroller: Gov. Abbott appointed Huffines after Kelly Hancock (R) resigned; Hancock had lost the Mar 3 GOP primary to Huffines (Ballotpedia; comptroller.texas.gov lists Huffines)."
+      "incumbentNote": "Sitting Comptroller: Gov. Abbott appointed Huffines after Kelly Hancock (R) resigned; Hancock had lost the Mar 3 GOP primary to Huffines (Ballotpedia; comptroller.texas.gov lists Huffines).",
+      "aka": "Don Huffines",
+      "nameSource": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
      },
      {
       "name": "Sarah Eckhardt",
@@ -4829,7 +4884,7 @@
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Nate_Sheets",
       "officialSite": null,
-      "campaignSite": "http://www.NateSheets.com",
+      "campaignSite": "https://www.natesheets.com",
       "x": "https://x.com/natesheetsforTX",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nate_Sheets.png",
@@ -4995,7 +5050,9 @@
         }
        }
       ],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Austin R. Kelly",
+      "nameSource": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
      }
     ],
     "source": "https://ballotpedia.org/Texas_Agriculture_Commissioner_election,_2026"
@@ -5013,7 +5070,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Jon_Rosenthal",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=135",
+      "officialSite": "https://house.texas.gov/members/135",
       "campaignSite": "https://jonrosenthaltx.com/",
       "x": "https://x.com/Jon_RosenthalTX",
       "photo": {
@@ -5220,9 +5277,9 @@
    },
    {
     "id": "tx-supreme-court-place-1-chief-justice",
-    "title": "Texas Supreme Court Place 1 Chief Justice",
+    "title": "Texas Supreme Court Chief Justice",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -5293,26 +5350,27 @@
       "hasThemes": true
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
+    "judicial": "tx"
    },
    {
     "id": "tx-supreme-court-place-2",
-    "title": "Texas Supreme Court Place 2 (special election, unexpired term)",
+    "title": "Texas Supreme Court Place 2 (Unexpired Term)",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
-    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "office": "Texas's court of last resort for civil matters: chief justice and eight justices, elected statewide to staggered six-year terms. Vacancies are filled by governor appointment until the next general election. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
+    "officeSource": "https://www.txcourts.gov/supreme/",
     "candidates": [
      {
       "name": "James P. Sullivan",
       "party": "Republican",
       "incumbent": true,
-      "incumbentSource": "Ballotpedia race page lists him as the incumbent",
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
       "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
-      "officialSite": null,
-      "campaignSite": null,
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "campaignSite": "https://www.judgesully.com/",
       "x": null,
       "photo": {
-       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/James_Sullivan_SCOTX.jpg",
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/James_Sullivan_SCOTX.jpg",
        "credit": "Photo via Ballotpedia",
        "license": "see Ballotpedia page"
       },
@@ -5328,13 +5386,13 @@
       "name": "Chari Kelly",
       "party": "Democratic",
       "incumbent": false,
-      "incumbentSource": "Ballotpedia race page",
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
       "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
-      "officialSite": null,
-      "campaignSite": null,
+      "officialSite": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-chari-l-kelly/",
+      "campaignSite": "https://charikelly.com/",
       "x": null,
       "photo": {
-       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
        "credit": "Photo via Ballotpedia",
        "license": "see Ballotpedia page"
       },
@@ -5344,16 +5402,17 @@
       },
       "positions": [],
       "causes": [],
-      "hasThemes": false
+      "hasThemes": true
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://www.sos.texas.gov/elections/forms/2026-ballot-cert.pdf",
+    "judicial": "tx"
    },
    {
     "id": "tx-supreme-court-place-7",
     "title": "Texas Supreme Court Place 7",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -5400,13 +5459,14 @@
       "hasThemes": false
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
+    "judicial": "tx"
    },
    {
     "id": "tx-supreme-court-place-8",
     "title": "Texas Supreme Court Place 8",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -5451,10 +5511,13 @@
       },
       "positions": [],
       "causes": [],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Gisela D. Triana",
+      "nameSource": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
+    "judicial": "tx"
    },
    {
     "id": "tx-court-of-criminal-appeals-place-3",
@@ -5530,7 +5593,8 @@
       "hasThemes": false
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
+    "judicial": "tx"
    },
    {
     "id": "tx-court-of-criminal-appeals-place-4",
@@ -5584,7 +5648,8 @@
       "hasThemes": true
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
+    "judicial": "tx"
    },
    {
     "id": "tx-court-of-criminal-appeals-place-9",
@@ -5749,11 +5814,1397 @@
       "hasThemes": true
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
+    "judicial": "tx"
+   },
+   {
+    "id": "tx-15th-coa-chief-justice",
+    "title": "15th Court of Appeals Chief Justice",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/15thcoa/",
+    "candidates": [
+     {
+      "name": "Scott Brister",
+      "party": "Republican",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Jerry Zimmerer",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=1",
+    "judicial": "tx"
+   },
+   {
+    "id": "tx-15th-coa-place-2",
+    "title": "15th Court of Appeals Place 2",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/15thcoa/",
+    "candidates": [
+     {
+      "name": "Scott K. Field",
+      "party": "Republican",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Tom Baker",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=1",
+    "judicial": "tx"
+   },
+   {
+    "id": "tx-15th-coa-place-3",
+    "title": "15th Court of Appeals Place 3",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/15thcoa/",
+    "candidates": [
+     {
+      "name": "April Farris",
+      "party": "Republican",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Marc M. Meyer",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=1",
+    "judicial": "tx"
+   },
+   {
+    "id": "tx-3rd-coa-chief-justice",
+    "title": "3rd Court of Appeals Chief Justice",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://www.txcourts.gov/3rdcoa/",
+    "candidates": [
+     {
+      "name": "Cory Liu",
+      "party": "Republican",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Darlene Byrne",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=1",
+    "judicial": "tx"
+   },
+   {
+    "id": "tx-sboe-5",
+    "title": "State Board of Education District 5",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://sboe.texas.gov/state-board-of-education/sboe-board-members/sboe-members",
+    "candidates": [
+     {
+      "name": "Mica Arellano",
+      "party": "Republican",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Allison Bush",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=1",
+    "verify": "Check that District 5 is yours by address.",
+    "appliesNote": "78701 is 100% in SBOE District 5"
+   },
+   {
+    "id": "tx-hd-49",
+    "title": "Texas House District 49",
+    "level": "state",
+    "office": "unsure",
+    "officeSource": "https://house.texas.gov/",
+    "candidates": [
+     {
+      "name": "Montserrat Garibay",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Arshia Papari",
+      "party": "Green",
+      "incumbent": "unsure",
+      "incumbentSource": "not checked",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=1",
+    "verify": "Check that District 49 is yours by address.",
+    "appliesNote": "SPLIT: ~79.2% of 78701 residents are in HD49; the rest are in HD51",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "tx-house-51",
+    "title": "State Representative, District 51",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Jessica Martinez",
+      "party": "Republican",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Maria Luisa “Lulu” Flores",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "SPLIT: ~20.8% of 78701 residents are in HD51",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "travis-district-judge-147th",
+    "title": "District Judge, 147th Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Cliff Brown",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-201st",
+    "title": "District Judge, 201st Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Amy Clark Meachum",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-250th",
+    "title": "District Judge, 250th Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Kennon Lily Wooten",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-261st",
+    "title": "District Judge, 261st Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Daniella Deseta Lyttle",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-299th",
+    "title": "District Judge, 299th Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Karen R. Sage",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-331st",
+    "title": "District Judge, 331st Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Chantal Melissa Eldridge",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-403rd",
+    "title": "District Judge, 403rd Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Brandy Mueller",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-419th",
+    "title": "District Judge, 419th Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Catherine A. Mauzy",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-455th",
+    "title": "District Judge, 455th Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Laurie Eiserloh",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-judge-459th",
+    "title": "District Judge, 459th Judicial District",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Maya Guerra Gamble",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Only one candidate listed on the ballot",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-county-judge",
+    "title": "County Judge",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Andy Brown",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   {
+    "id": "travis-ccl-1",
+    "title": "Judge, County Court at Law No. 1",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Todd Wong",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-ccl-2",
+    "title": "Judge, County Court at Law No. 2",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Leslie Dippel",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-ccl-3",
+    "title": "Judge, County Court at Law No. 3",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Bianca Garcia",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-ccl-4",
+    "title": "Judge, County Court at Law No. 4",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Dimple Malhotra",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-ccl-5",
+    "title": "Judge, County Court at Law No. 5",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Mary Ann Espiritu",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-ccl-6",
+    "title": "Judge, County Court at Law No. 6",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Denise Hernández",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-ccl-7",
+    "title": "Judge, County Court at Law No. 7",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Elisabeth Earle",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-probate-1",
+    "title": "Judge, Probate Court No. 1",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Guy Herman",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-district-clerk",
+    "title": "District Clerk",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Velva L. Price",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   {
+    "id": "travis-county-clerk",
+    "title": "County Clerk",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Dyana Limon-Mercado",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Ballot also shows a write-in line for this contest"
+   },
+   {
+    "id": "travis-county-treasurer",
+    "title": "County Treasurer",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Dolores Ortega Carter",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   {
+    "id": "travis-commissioner-4",
+    "title": "Travis County Commissioner, Precinct 4",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "George Morales III",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "SPLIT: ~20.8% of 78701 residents are in Commissioner Precinct 4; the ~79.2% in Precinct 3 have no commissioner race in 2026",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "travis-jp-5",
+    "title": "Justice of the Peace, Precinct 5",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Tanisa Jeffers",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "SPLIT: ~79.2% of 78701 residents are in JP Precinct 5",
+    "dependsOnAddress": true,
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-jp-4",
+    "title": "Justice of the Peace, Precinct 4",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Raul Arturo Gonzalez",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "SPLIT: ~20.8% of 78701 residents are in JP Precinct 4",
+    "dependsOnAddress": true,
+    "judicial": "tx"
+   },
+   {
+    "id": "travis-constable-4-unexpired",
+    "title": "County Constable, Precinct 4 - Unexpired Term",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Gabriel Padilla",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "unsure: applies to the JP/Constable Precinct 4 part of 78701 (~20.8%). This is an inference: Travis publishes one combined 'Judge and Constable Precincts' layer, so constable precincts are assumed to match JP precincts",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "travis-cad-place-1",
+    "title": "Travis Central Appraisal District Board of Directors, Place 1",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Skyler A. Korgel",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Countywide; no party on ballot"
+   },
+   {
+    "id": "travis-cad-place-2",
+    "title": "Travis Central Appraisal District Board of Directors, Place 2",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Brian Peña",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Countywide; no party on ballot"
+   },
+   {
+    "id": "travis-cad-place-3",
+    "title": "Travis Central Appraisal District Board of Directors, Place 3",
+    "level": "county",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Yvonne Muñoz",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Phil Gorman",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "Countywide; no party on ballot"
+   },
+   {
+    "id": "austin-council-9",
+    "title": "Austin City Council, District 9",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Rich Heyman",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Katie Kam",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Zohaib “Zo” Qadri",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Dave Thadani",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Kai Huang",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "78701 is 100% in Council District 9. Districts 1, 3, 5 and 8 are also on the ballot but do not cover 78701"
+   },
+   {
+    "id": "aisd-at-large-9",
+    "title": "Austin ISD Board of Trustees, At-Large Position 9",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Cynthia Soliz",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Kirk Becker",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Pamela Mathai",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "78701 is 100% in AISD single-member District 5, which is not up in 2026. Only At-Large Position 9 applies"
+   },
+   {
+    "id": "acc-trustee-place-1",
+    "title": "Austin Community College Board of Trustees, Place 1",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Dana Walker",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Gloria Gonzales-Dholakia",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "unsure: at-large ACC seat. That 78701 is inside the ACC district is inferred, not mapped",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "acc-trustee-place-2",
+    "title": "Austin Community College Board of Trustees, Place 2",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Gigi Edwards Bryant",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "unsure: at-large ACC seat. That 78701 is inside the ACC district is inferred, not mapped",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "acc-trustee-place-3",
+    "title": "Austin Community College Board of Trustees, Place 3",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Trevor Hale",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Nan McRaven",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "appliesNote": "unsure: at-large ACC seat. That 78701 is inside the ACC district is inferred, not mapped",
+    "dependsOnAddress": true
    }
   ],
-  "measures": [],
-  "measuresNote": "No statewide Texas propositions found for Nov 3, 2026 in our sources (Texas constitutional amendments are usually voted in odd years). Local measures: unsure, check your county.",
+  "measures": [
+   {
+    "id": "austin-prop-a",
+    "title": "City of Austin Proposition A: Parks, recreation, aquatic and open space bonds",
+    "summary": "The City could issue $260,000,000 in bonds for park, recreation, aquatic and open space improvements and levy taxes to repay them. Ballot language states: THIS IS A TAX INCREASE.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-b",
+    "title": "City of Austin Proposition B: Library facility bonds",
+    "summary": "The City could issue $35,000,000 in bonds for library facilities and levy taxes to repay them. Ballot language states: THIS IS A TAX INCREASE.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-c",
+    "title": "City of Austin Proposition C: Charter amendment",
+    "summary": "The City Charter would be amended to clarify that the Independent Citizens Redistricting Commission is independent of City Council control, allow it to review districts after boundary changes, create exceptions for student members, set an effective date for its plan, increase potential appointees, clarify vacancy filling, and allow staff communication consistent with the Texas Open Meetings Act.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-d",
+    "title": "City of Austin Proposition D: Charter amendment",
+    "summary": "The City Charter would be amended to delete language requiring the City Council to meet at least once each week.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-e",
+    "title": "City of Austin Proposition E: Charter amendment",
+    "summary": "The City Charter would be amended to delete language requiring the City Council to determine its rules and order of business by ordinance.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-f",
+    "title": "City of Austin Proposition F: Charter amendment",
+    "summary": "The City Charter would be amended to clarify the meaning of the term 'election' and have campaign contribution and expenditure limits adjusted each January 1 instead of with budget adoption.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   {
+    "id": "austin-prop-g",
+    "title": "City of Austin Proposition G: Charter amendment",
+    "summary": "The City Charter would be amended to require initiative and petitioned charter amendment elections to be held on the next available even-year November election date that allows time to meet legal requirements.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   },
+   {
+    "id": "austin-prop-h",
+    "title": "City of Austin Proposition H: Charter amendment",
+    "summary": "The City Charter would be amended to provide that the City Council appoints and removes the City Attorney.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   },
+   {
+    "id": "austin-prop-i",
+    "title": "City of Austin Proposition I: Charter amendment",
+    "summary": "The City Charter would be amended to require an Independent Affordability and Efficiency Initiative on a regular basis and before any tax rate increase election, with the contractor required to identify annual and multi-year savings exceeding the cost of its service.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   },
+   {
+    "id": "austin-prop-j",
+    "title": "City of Austin Proposition J: Charter amendment",
+    "summary": "The City Charter would be amended to make non-substantive corrections and change or remove language that is moot or unenforceable because of state law or a final court order.",
+    "type": "local",
+    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   }
+  ],
+  "measuresNote": "No statewide Texas constitutional amendments are on this ballot. City of Austin Propositions A–J are on the ballot: A–B are bonds, C–J are charter amendments. Austin ISD has no measure. ACC Proposition A (Pflugerville ISD territory annexation) is on the county ballot but does not apply to 78701.",
   "problems": [
    {
     "year": "ACS 2024 5-year (2020-2024)",
@@ -5811,7 +7262,47 @@
    "label": "VoteTexas.gov (official)",
    "url": "https://www.votetexas.gov/"
   },
-  "builtAt": "2026-10-29T19:48:44+00:00"
+  "builtAt": "2026-10-29T19:48:44+00:00",
+  "districtSourceUrls": [
+   "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer",
+   "https://data.capitol.texas.gov/dataset/plane2106",
+   "https://gis.traviscountytx.gov/server1/rest/services/Boundaries_and_Jurisdictions/Travis_County_Commissioner_Precincts/FeatureServer/0",
+   "https://gis.traviscountytx.gov/server1/rest/services/Boundaries_and_Jurisdictions/Travis_County_Judge_and_Constable_Precincts/FeatureServer/0",
+   "https://gis.traviscountytx.gov/server1/rest/services/Boundaries_and_Jurisdictions/ZIP_Codes/MapServer/0",
+   "https://maps.austintexas.gov/arcgis/rest/services/ContactCouncilMember/contactcouncilmember/MapServer/1",
+   "https://www.austinisd.org/sites/default/files/dept/planning-asset-management/gis/Trustee%20Boundaries.zip"
+  ],
+  "multiDistrictFlags": [
+   {
+    "type": "U.S. House",
+    "districts": [
+     "TX-10 ~85.0%",
+     "TX-37 ~15.0%"
+    ]
+   },
+   {
+    "type": "Texas House",
+    "districts": [
+     "HD49 ~79.2%",
+     "HD51 ~20.8%"
+    ]
+   },
+   {
+    "type": "Travis County Commissioner",
+    "districts": [
+     "Pct 3 ~79.2% (no race)",
+     "Pct 4 ~20.8%"
+    ]
+   },
+   {
+    "type": "Justice of the Peace / Constable",
+    "districts": [
+     "Pct 5 ~79.2%",
+     "Pct 4 ~20.8%"
+    ]
+   }
+  ],
+  "partyNote": "The ballot uses REP/DEM/LIB/GRN, and its legend reads 'Democrat = (DEM)'. This file maps them to the repo's 'Republican'/'Democratic'/'Libertarian'/'Green'. Nonpartisan local races use 'Nonpartisan'."
  },
  "94103": {
   "zip": "94103",
@@ -5825,14 +7316,54 @@
    {
     "id": "ca-11",
     "label": "CA-11 (U.S. House)",
-    "note": "District assignment: unsure, verify with your county; based on Ballotpedia district coverage of San Francisco"
+    "note": "100% of 94103 (ZCTA) population (TIGERweb 120th Congress layer, 2020 blocks)"
+   },
+   {
+    "id": "ca-sd-11",
+    "label": "California Senate District 11",
+    "note": "100%. No State Senate race for SD11 in 2026 (none on the CA SOS certified list)"
+   },
+   {
+    "id": "ca-ad-17",
+    "label": "California Assembly District 17",
+    "note": "100% (2020 blocks)"
+   },
+   {
+    "id": "ca-boe-2",
+    "label": "Board of Equalization District 2",
+    "note": "All of San Francisco"
+   },
+   {
+    "id": "sf-sup-6",
+    "label": "SF Supervisor District 6",
+    "note": "SPLIT: ~70.3%"
+   },
+   {
+    "id": "sf-sup-9",
+    "label": "SF Supervisor District 9",
+    "note": "SPLIT: ~20.3%. Not up in 2026"
+   },
+   {
+    "id": "sf-sup-8",
+    "label": "SF Supervisor District 8",
+    "note": "SPLIT: ~9.0%"
+   },
+   {
+    "id": "sf-sup-10",
+    "label": "SF Supervisor District 10",
+    "note": "SPLIT (sliver): ~0.4%, about 163 people. Possible edge artifact"
+   },
+   {
+    "id": "bart-9",
+    "label": "BART Board District 9",
+    "note": "100%. Only BART District 8 is up, so 94103 voters have no BART race"
    }
   ],
   "districtSource": {
-   "label": "Ballotpedia: California's 11th Congressional District election, 2026",
-   "url": "https://ballotpedia.org/California%27s_11th_Congressional_District_election,_2026"
+   "label": "Census TIGERweb (120th CD, 2026 SLD), DataSF Supervisor Districts (2022) f2zs-jevy, BART Board of Directors District 2022 layer; population-weighted with 2020 Census blocks inside the Census ZCTA 94103 (total 37,843). ZCTA approximates the USPS ZIP",
+   "url": "https://data.sfgov.org/resource/f2zs-jevy.geojson"
   },
-  "splitWarning": null,
+  "splitWarning": "94103 spans several San Francisco Supervisor districts (6, 9, 8 and a sliver of 10). Your Supervisor contest, if any, depends on your street address.",
   "electionDate": "2026-11-03",
   "races": [
    {
@@ -5919,7 +7450,7 @@
       "hasThemes": true
      },
      {
-      "name": "Michael Gates",
+      "name": "Michael E. Gates",
       "party": "Republican",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -5983,7 +7514,9 @@
         }
        }
       ],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Michael Gates",
+      "nameSource": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
      }
     ],
     "source": "https://ballotpedia.org/California_Attorney_General_election,_2026"
@@ -5996,7 +7529,7 @@
     "officeSource": "https://www.sco.ca.gov/eo_about.html",
     "candidates": [
      {
-      "name": "Malia Cohen",
+      "name": "Malia M. Cohen",
       "party": "Democratic",
       "incumbent": true,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -6099,10 +7632,12 @@
         }
        }
       ],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Malia Cohen",
+      "nameSource": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
      },
      {
-      "name": "Herb Morgan",
+      "name": "Herb W Morgan",
       "party": "Republican",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -6121,7 +7656,9 @@
       },
       "positions": [],
       "causes": [],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Herb Morgan",
+      "nameSource": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
      }
     ],
     "source": "https://ballotpedia.org/California_Controller_election,_2026"
@@ -6347,7 +7884,7 @@
     "officeSource": "https://www.sos.ca.gov/",
     "candidates": [
      {
-      "name": "Shirley Weber",
+      "name": "Shirley N. Weber",
       "party": "Democratic",
       "incumbent": true,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -6399,10 +7936,12 @@
         }
        }
       ],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Shirley Weber",
+      "nameSource": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
      },
      {
-      "name": "Donald P. Wagner",
+      "name": "Donald P. (Don) Wagner",
       "party": "Republican",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -6487,7 +8026,9 @@
         }
        }
       ],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Donald P. Wagner",
+      "nameSource": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
      }
     ],
     "source": "https://ballotpedia.org/California_Secretary_of_State_election,_2026"
@@ -7162,7 +8703,7 @@
       "hasThemes": true
      },
      {
-      "name": "Gloria J. Romero",
+      "name": "Gloria Romero",
       "party": "Republican",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -7237,113 +8778,1228 @@
         }
        }
       ],
-      "hasThemes": true
+      "hasThemes": true,
+      "aka": "Gloria J. Romero",
+      "nameSource": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
      }
     ],
     "source": "https://ballotpedia.org/California_lieutenant_gubernatorial_election,_2026"
+   },
+   {
+    "id": "ca-ad-17",
+    "title": "State Assembly Member District 17",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Matt Haney",
+      "party": "Democratic",
+      "incumbent": true,
+      "incumbentSource": "Marked * Incumbent on the CA SOS certified list",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Manuel Noris-Barrera",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Not marked incumbent on the CA SOS certified list",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "appliesNote": "94103 is 100% in AD17"
+   },
+   {
+    "id": "ca-boe-2",
+    "title": "Board of Equalization Member District 2",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Sally J. Lieber",
+      "party": "Democratic",
+      "incumbent": true,
+      "incumbentSource": "Marked * Incumbent on the CA SOS certified list",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "John Pimentel",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Not marked incumbent on the CA SOS certified list",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "appliesNote": "All of San Francisco is in BOE District 2 (per the SF VIP contest list)"
+   },
+   {
+    "id": "ca-supreme-evans",
+    "title": "Associate Justice of the Supreme Court (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Kelli M. Evans",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-supreme-groban",
+    "title": "Associate Justice of the Supreme Court (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Joshua Groban",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-1",
+    "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Charles A. Smiley",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-1b",
+    "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Kathleen M. Banke",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-1c",
+    "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Monique Langhorne Wilson",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-2pj",
+    "title": "Presiding Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Therese M. Stewart",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-2",
+    "title": "Associate Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Tara M. Desautels",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-3",
+    "title": "Associate Justice, Court of Appeal, First District, Division Three (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Ioana Petrou",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-3b",
+    "title": "Associate Justice, Court of Appeal, First District, Division Three (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Victor A. Rodriguez",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-4pj",
+    "title": "Presiding Justice, Court of Appeal, First District, Division Four (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Tracie L. Brown",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-5",
+    "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Mark Simons",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-5b",
+    "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Danny Y. Chou",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "ca-coa-1-5c",
+    "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+    "level": "state",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Gordon Burns",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+    "judicial": "ca"
+   },
+   {
+    "id": "sf-assessor-recorder",
+    "title": "Assessor-Recorder",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Joaquin Torres",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election"
+   },
+   {
+    "id": "sf-public-defender",
+    "title": "Public Defender",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Manohar Raju",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election"
+   },
+   {
+    "id": "sf-supervisor-6",
+    "title": "Board of Supervisors, District 6",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Alex Behrend",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Matt Dorsey",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "appliesNote": "SPLIT: ~70.3% of 94103 (ZCTA) residents are in Supervisor District 6",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "sf-supervisor-8",
+    "title": "Board of Supervisors, District 8",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Gary McCoy",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Michael T. Nguyen",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Darshini Patel",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Emanuel \"Manny\" Yekutiel",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "appliesNote": "SPLIT: ~9.0% of 94103 (ZCTA) residents are in Supervisor District 8",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "sf-supervisor-10",
+    "title": "Board of Supervisors, District 10",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Pearci \"PJ\" Bastiany III",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Dionjay (DJ) Brookter",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Deandra Bryant",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Theo Ellington",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "J.R. Eppler",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Mike Trouble Lin",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Jamo Muhammad",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Jessica Pessecow",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Shawn M. Richard",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "appliesNote": "SPLIT (sliver): ~0.4% of 94103 (ZCTA) residents, about 163 people, fall in District 10. This may be an edge artifact of using the ZCTA instead of the USPS ZIP; verify by address",
+    "dependsOnAddress": true
+   },
+   {
+    "id": "sf-board-of-education",
+    "title": "Board of Education (choose up to 3)",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Autumn Brown Garibay",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Virginia Cheung",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Alida Fisher",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Ryan Hazelton",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Phil Kim",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Laurance Lee",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Reina Tello",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Tim Tung",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "appliesNote": "Citywide. Some non-citizen SF residents may vote in this contest. The sf.gov page says these 8 'have filed for candidacy' rather than 'qualified'"
+   },
+   {
+    "id": "sf-community-college-board",
+    "title": "Community College Board (choose up to 3)",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Elijah Ball",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Rome Moses Jones",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Monroe Lace",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Leah LaCroix",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Jeremy Lee",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Bunny McFadden",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Erwin Tam",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Lisa Wynn",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "appliesNote": "Citywide"
+   },
+   {
+    "id": "sf-community-college-board-partial",
+    "title": "Community College Board Partial Term",
+    "level": "local",
+    "office": "",
+    "officeSource": null,
+    "candidates": [
+     {
+      "name": "Ruth Ferguson",
+      "party": "Nonpartisan",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "appliesNote": "Citywide"
    }
   ],
   "measures": [
    {
-    "id": "Proposition 1",
+    "id": "ca-prop-1",
     "title": "Proposition 1 (Housing, Bonds)",
     "summary": "Issue $11.25 billion in bonds to fund Multifamily Housing Program, CalVet Home Loan Program, and youth housing",
     "type": "BI",
     "source": "https://ballotpedia.org/California_Proposition_1,_Veteran_and_Housing_Assistance_Programs_Bond_Measure_(2026)"
    },
    {
-    "id": "Proposition 2",
+    "id": "ca-prop-2",
     "title": "Proposition 2 (Budget stabilization)",
     "summary": "Increase the Budget Stabilization Account (BSA) cap from 10% of general fund revenue to 20% and excluding deposits into the BSA from the Gann Limit",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_2,_Budget_Stabilization_Account_Cap_Increase_and_Gann_Limit_Changes_Amendment_(2026)"
    },
    {
-    "id": "Proposition 3",
+    "id": "ca-prop-3",
     "title": "Proposition 3 (Higher education funding, Public education funding, Income taxes)",
     "summary": "Renew the additional income taxes enacted with the approval of Proposition 30 in 2012 that fund education and early childhood programs.",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 4",
+    "id": "ca-prop-4",
     "title": "Proposition 4 (Election administration, Campaign finance)",
     "summary": "Allow the state and local governments to create programs that provide candidates with public funds under spending limits and eligibility rules",
     "type": "LRSS",
     "source": "https://ballotpedia.org/California_Proposition_4,_Allow_Public_Financing_of_Election_Campaigns_Measure_(2026)"
    },
    {
-    "id": "Proposition 5",
+    "id": "ca-prop-5",
     "title": "Proposition 5 (State executive structure, Recall)",
     "summary": "Eliminate the successor election when a state officer is recalled, thereby leaving the office vacant until it is filled according to state law",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_5,_Eliminate_State_Officer_Recall_Successor_Elections_Amendment_(2026)"
    },
    {
-    "id": "Proposition 37",
+    "id": "ca-prop-37",
     "title": "Proposition 37 (Housing)",
     "summary": "Establish a second mortgage homebuyer program for qualified homebuyers on qualifying homes and issue $25 billion in bonds to fund the program",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_37,_Second_Mortgage_Homebuyer_Program_and_Revenue_Bond_Initiative_(2026)"
    },
    {
-    "id": "Proposition 38",
+    "id": "ca-prop-38",
     "title": "Proposition 38 (Healthcare facility, Healthcare governance, Bonds, Vaccinations and disease)",
     "summary": "Issue $8.4 billion in general obligation bonds to fund immunology and immunotherapy research",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_38,_Immunology_and_Immunotherapy_Research_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 39",
+    "id": "ca-prop-39",
     "title": "Proposition 39 (Election administration, Voter ID)",
     "summary": "Require voters to present government-issued identification when casting ballots and require election officials to use government data to confirm voter citizenship and report verification rates",
     "type": "CICA",
-    "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)"
+    "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)",
+    "officialTitle": "PROHIBITS CITIZENS FROM VOTING UNLESS THEY PRESENT GOVERNMENT-ISSUED IDENTIFICATION. INITIATIVE CONSTITUTIONAL AMENDMENT.",
+    "officialTitleSource": "https://voterguide.sos.ca.gov/propositions/39/title-summary.htm"
    },
    {
-    "id": "Proposition 40",
+    "id": "ca-prop-40",
     "title": "Proposition 40 (Income taxes, Public health insurance)",
     "summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
     "type": "CICA/SS",
     "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)"
    },
    {
-    "id": "Proposition 41",
+    "id": "ca-prop-41",
     "title": "Proposition 41 (Tax administration, Revenue and spending limits)",
     "summary": "Require state laws or ballot initiatives levying a new special tax enacted after January 1, 2026 to require the government entities or departments receiving revenue from the new tax to eliminate their lowest-performing programs and reinvest those savings in higher-performing programs",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)"
    },
    {
-    "id": "Proposition 42",
+    "id": "ca-prop-42",
     "title": "Proposition 42 (Income taxes)",
     "summary": "Prohibit the enactment of new taxes after January 1, 2026 on ownership or accumulation of retirement holdings, individually-owned assets, and other forms of personal savings",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)"
    },
    {
-    "id": "Proposition 43",
+    "id": "ca-prop-43",
     "title": "Proposition 43 (Supermajority, Local government)",
     "summary": "Require two-thirds vote by electorate to enact, extend, or increase local special tax initiatives and prohibit local governments and ballot initiatives from enacting ad valorem property taxes except those authorized elsewhere in the state constitution",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_43,_Two-Thirds_Vote_Requirement_for_Local_Special_Tax_Initiatives_and_Property_Tax_Initiative_Prohibition_Amendment_(2026)"
    },
    {
-    "id": "Proposition 44",
+    "id": "ca-prop-44",
     "title": "Proposition 44 (Business, Healthcare governance)",
     "summary": "Prohibit healthcare clinics, specifically federally-qualified health centers and related organizations, from spending less than 90% of their annual revenue on mission-related purposes",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_44,_Spending_Requirements_for_Federally_Qualified_Health_Centers_Initiative_(2026)"
    },
    {
-    "id": "Proposition 45",
+    "id": "ca-prop-45",
     "title": "Proposition 45 (Administrative powers, Land use)",
     "summary": "Establish timelines for local and state agencies to review plans and solicit public comment for essential projects, such as housing, improvements to water supply, transportation, energy, and facilities for health and public safety",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_45,_Changes_to_Environmental_Review_Process_for_Certain_Projects_Initiative_(2026)"
+   },
+   {
+    "id": "sf-rtm",
+    "title": "Regional Measure RTM: Regional Transit Measure",
+    "summary": "A 1.0% (SF) / 0.5% (other four counties) sales tax would be imposed for 14 years, with revenue distributed to BART, Muni, Caltrain, AC Transit, VTA and other agencies. Requires 50%+1 of votes across all five counties combined.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=54"
+   },
+   {
+    "id": "sf-prop-a",
+    "title": "SF Proposition A: Charter Changes Affecting Various City Departments and Commissions",
+    "summary": "The Charter would be amended to change certain processes and eliminate or reorganize some commissions.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=66"
+   },
+   {
+    "id": "sf-prop-b",
+    "title": "SF Proposition B: Establishing a Municipal Finance Corporation and a Public Bank",
+    "summary": "The City would be authorized to establish a municipal finance corporation and a public bank.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=72"
+   },
+   {
+    "id": "sf-prop-c",
+    "title": "SF Proposition C: Contributions to the Housing Trust Fund",
+    "summary": "The City's required contributions to the Housing Trust Fund would increase and be extended to 2058, with conditions allowing freezes or reductions in deficit years.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=80"
+   },
+   {
+    "id": "sf-prop-d",
+    "title": "SF Proposition D: Changes to Ballot Measure Process",
+    "summary": "Signature thresholds for initiatives would rise from 2% to 8% (about 10,600 to 42,500 signatures), the Mayor and four Supervisors could no longer place measures directly, and special elections would require 10% of registered voters.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=86"
+   },
+   {
+    "id": "sf-prop-e",
+    "title": "SF Proposition E: City Administrator's Authority and Changes to City Contracting",
+    "summary": "Board of Supervisors approval thresholds would rise from $1 million to $4.5 million (revenue contracts) and $10 million to $25 million (expenditure contracts); the City Administrator term would go from 5 to 10 years.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=96"
+   },
+   {
+    "id": "sf-prop-f",
+    "title": "SF Proposition F: Changes to Executive Branch Management",
+    "summary": "The Charter would be amended to change the structure of the City's executive branch as described in the measure.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=102"
+   },
+   {
+    "id": "sf-prop-g",
+    "title": "SF Proposition G: Allowing Private Vehicles on the Upper Great Highway in Sunset Dunes Park",
+    "summary": "The Upper Great Highway park would close and the road would reopen to private vehicles from Monday 4 a.m. to Friday 6 p.m., except holidays.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=110"
+   },
+   {
+    "id": "sf-prop-h",
+    "title": "SF Proposition H: Parcel Tax to Fund Muni Operations",
+    "summary": "A parcel tax would fund Muni service from July 1, 2027 to June 30, 2042.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=126"
+   },
+   {
+    "id": "sf-prop-i",
+    "title": "SF Proposition I: Changes to Real Property Transfer Tax",
+    "summary": "Part of the existing transfer tax would be dedicated to specific affordable housing programs instead of the General Fund.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=134"
+   },
+   {
+    "id": "sf-prop-j",
+    "title": "SF Proposition J: Removal of Foreclosure Exemption for Real Property Transfer Tax",
+    "summary": "The transfer tax exemption for these foreclosure transfers would end for the covered property types.",
+    "type": "local",
+    "source": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=146"
    }
   ],
-  "measuresNote": "Statewide propositions from Ballotpedia, as of Oct 28, 2026. Local measures not included.",
+  "measuresNote": "Statewide propositions from the existing data. San Francisco also has the Regional Transit Measure (RTM) and local Propositions A–J; the question texts are from the SF Voter Information Pamphlet.",
   "problems": [
    {
     "year": "ACS 2024 5-year (2020-2024)",
@@ -7401,7 +10057,24 @@
    "label": "California Secretary of State (official)",
    "url": "https://www.sos.ca.gov/elections"
   },
-  "builtAt": "2026-10-29T19:48:44+00:00"
+  "builtAt": "2026-10-29T19:48:44+00:00",
+  "districtSourceUrls": [
+   "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer",
+   "https://data.sfgov.org/resource/f2zs-jevy.geojson",
+   "https://services.arcgis.com/sqS7RNuF1BQinj5N/ArcGIS/rest/services/Board_of_Directors_District_Boundary_Viewer_Base_Data_WFL1/FeatureServer/2"
+  ],
+  "multiDistrictFlags": [
+   {
+    "type": "SF Board of Supervisors",
+    "districts": [
+     "D6 ~70.3%",
+     "D9 ~20.3% (no race)",
+     "D8 ~9.0%",
+     "D10 ~0.4% (sliver)"
+    ]
+   }
+  ],
+  "partyNote": "CA party preference is as printed on the SOS certified list. SF local offices and judicial retention contests are 'Nonpartisan'. AD19 and CA-15 are on the SF ballot but do not cover 94103."
  },
  "90012": {
   "zip": "90012",
@@ -8835,98 +11508,98 @@
   ],
   "measures": [
    {
-    "id": "Proposition 1",
+    "id": "ca-prop-1",
     "title": "Proposition 1 (Housing, Bonds)",
     "summary": "Issue $11.25 billion in bonds to fund Multifamily Housing Program, CalVet Home Loan Program, and youth housing",
     "type": "BI",
     "source": "https://ballotpedia.org/California_Proposition_1,_Veteran_and_Housing_Assistance_Programs_Bond_Measure_(2026)"
    },
    {
-    "id": "Proposition 2",
+    "id": "ca-prop-2",
     "title": "Proposition 2 (Budget stabilization)",
     "summary": "Increase the Budget Stabilization Account (BSA) cap from 10% of general fund revenue to 20% and excluding deposits into the BSA from the Gann Limit",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_2,_Budget_Stabilization_Account_Cap_Increase_and_Gann_Limit_Changes_Amendment_(2026)"
    },
    {
-    "id": "Proposition 3",
+    "id": "ca-prop-3",
     "title": "Proposition 3 (Higher education funding, Public education funding, Income taxes)",
     "summary": "Renew the additional income taxes enacted with the approval of Proposition 30 in 2012 that fund education and early childhood programs.",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 4",
+    "id": "ca-prop-4",
     "title": "Proposition 4 (Election administration, Campaign finance)",
     "summary": "Allow the state and local governments to create programs that provide candidates with public funds under spending limits and eligibility rules",
     "type": "LRSS",
     "source": "https://ballotpedia.org/California_Proposition_4,_Allow_Public_Financing_of_Election_Campaigns_Measure_(2026)"
    },
    {
-    "id": "Proposition 5",
+    "id": "ca-prop-5",
     "title": "Proposition 5 (State executive structure, Recall)",
     "summary": "Eliminate the successor election when a state officer is recalled, thereby leaving the office vacant until it is filled according to state law",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_5,_Eliminate_State_Officer_Recall_Successor_Elections_Amendment_(2026)"
    },
    {
-    "id": "Proposition 37",
+    "id": "ca-prop-37",
     "title": "Proposition 37 (Housing)",
     "summary": "Establish a second mortgage homebuyer program for qualified homebuyers on qualifying homes and issue $25 billion in bonds to fund the program",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_37,_Second_Mortgage_Homebuyer_Program_and_Revenue_Bond_Initiative_(2026)"
    },
    {
-    "id": "Proposition 38",
+    "id": "ca-prop-38",
     "title": "Proposition 38 (Healthcare facility, Healthcare governance, Bonds, Vaccinations and disease)",
     "summary": "Issue $8.4 billion in general obligation bonds to fund immunology and immunotherapy research",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_38,_Immunology_and_Immunotherapy_Research_Funding_Initiative_(2026)"
    },
    {
-    "id": "Proposition 39",
+    "id": "ca-prop-39",
     "title": "Proposition 39 (Election administration, Voter ID)",
     "summary": "Require voters to present government-issued identification when casting ballots and require election officials to use government data to confirm voter citizenship and report verification rates",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)"
    },
    {
-    "id": "Proposition 40",
+    "id": "ca-prop-40",
     "title": "Proposition 40 (Income taxes, Public health insurance)",
     "summary": "Levy a one-time 5% tax on the accumulated wealth of taxpayers and trusts with covered assets valued over $1 billion to fund state health care programs, food assistance programs, and public education",
     "type": "CICA/SS",
     "source": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)"
    },
    {
-    "id": "Proposition 41",
+    "id": "ca-prop-41",
     "title": "Proposition 41 (Tax administration, Revenue and spending limits)",
     "summary": "Require state laws or ballot initiatives levying a new special tax enacted after January 1, 2026 to require the government entities or departments receiving revenue from the new tax to eliminate their lowest-performing programs and reinvest those savings in higher-performing programs",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)"
    },
    {
-    "id": "Proposition 42",
+    "id": "ca-prop-42",
     "title": "Proposition 42 (Income taxes)",
     "summary": "Prohibit the enactment of new taxes after January 1, 2026 on ownership or accumulation of retirement holdings, individually-owned assets, and other forms of personal savings",
     "type": "CICA",
     "source": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)"
    },
    {
-    "id": "Proposition 43",
+    "id": "ca-prop-43",
     "title": "Proposition 43 (Supermajority, Local government)",
     "summary": "Require two-thirds vote by electorate to enact, extend, or increase local special tax initiatives and prohibit local governments and ballot initiatives from enacting ad valorem property taxes except those authorized elsewhere in the state constitution",
     "type": "LRCA",
     "source": "https://ballotpedia.org/California_Proposition_43,_Two-Thirds_Vote_Requirement_for_Local_Special_Tax_Initiatives_and_Property_Tax_Initiative_Prohibition_Amendment_(2026)"
    },
    {
-    "id": "Proposition 44",
+    "id": "ca-prop-44",
     "title": "Proposition 44 (Business, Healthcare governance)",
     "summary": "Prohibit healthcare clinics, specifically federally-qualified health centers and related organizations, from spending less than 90% of their annual revenue on mission-related purposes",
     "type": "CISS",
     "source": "https://ballotpedia.org/California_Proposition_44,_Spending_Requirements_for_Federally_Qualified_Health_Centers_Initiative_(2026)"
    },
    {
-    "id": "Proposition 45",
+    "id": "ca-prop-45",
     "title": "Proposition 45 (Administrative powers, Land use)",
     "summary": "Establish timelines for local and state agencies to review plans and solicit public comment for essential projects, such as housing, improvements to water supply, transportation, energy, and facilities for health and public safety",
     "type": "CISS",
@@ -9162,7 +11835,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/James_Talarico",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=50",
+      "officialSite": "https://house.texas.gov/members/50",
       "campaignSite": "https://jamestalarico.com/",
       "x": "https://x.com/jamestalarico",
       "photo": {
@@ -9356,8 +12029,8 @@
        "license": "see Ballotpedia page"
       },
       "finance": {
-       "label": "FEC: S6TX00594 (name match, verify)",
-       "url": "https://www.fec.gov/data/candidate/S6TX00594/"
+       "label": "FEC: S4TX00888 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/S4TX00888/"
       },
       "positions": [],
       "causes": [
@@ -9457,7 +12130,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=49",
+      "officialSite": "https://house.texas.gov/members/49",
       "campaignSite": "https://ginafortexas.com/",
       "x": "https://x.com/GinaHinojosaTX",
       "photo": {
@@ -9622,7 +12295,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=47",
+      "officialSite": "https://house.texas.gov/members/47",
       "campaignSite": "https://www.vikkigoodwin.com/",
       "x": "https://x.com/VikkiGoodwinTX",
       "photo": {
@@ -10704,7 +13377,7 @@
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Nate_Sheets",
       "officialSite": null,
-      "campaignSite": "http://www.NateSheets.com",
+      "campaignSite": "https://natesheets.com/",
       "x": "https://x.com/natesheetsforTX",
       "photo": {
        "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nate_Sheets.png",
@@ -10888,7 +13561,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Jon_Rosenthal",
-      "officialSite": "https://house.texas.gov/members/member-page/?district=135",
+      "officialSite": "https://house.texas.gov/members/135",
       "campaignSite": "https://jonrosenthaltx.com/",
       "x": "https://x.com/Jon_RosenthalTX",
       "photo": {
@@ -11097,7 +13770,7 @@
     "id": "tx-supreme-court-place-1-chief-justice",
     "title": "Texas Supreme Court Place 1 Chief Justice",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -11172,22 +13845,22 @@
    },
    {
     "id": "tx-supreme-court-place-2",
-    "title": "Texas Supreme Court Place 2 (special election, unexpired term)",
+    "title": "Texas Supreme Court Place 2 (Unexpired Term)",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
-    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "office": "Texas's court of last resort for civil matters: chief justice and eight justices, elected statewide to staggered six-year terms. Vacancies are filled by governor appointment until the next general election. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
+    "officeSource": "https://www.txcourts.gov/supreme/",
     "candidates": [
      {
       "name": "James P. Sullivan",
       "party": "Republican",
       "incumbent": true,
-      "incumbentSource": "Ballotpedia race page lists him as the incumbent",
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
       "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
-      "officialSite": null,
-      "campaignSite": null,
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "campaignSite": "https://www.judgesully.com/",
       "x": null,
       "photo": {
-       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/James_Sullivan_SCOTX.jpg",
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/James_Sullivan_SCOTX.jpg",
        "credit": "Photo via Ballotpedia",
        "license": "see Ballotpedia page"
       },
@@ -11203,13 +13876,13 @@
       "name": "Chari Kelly",
       "party": "Democratic",
       "incumbent": false,
-      "incumbentSource": "Ballotpedia race page",
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
       "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
-      "officialSite": null,
-      "campaignSite": null,
+      "officialSite": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-chari-l-kelly/",
+      "campaignSite": "https://charikelly.com/",
       "x": null,
       "photo": {
-       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
        "credit": "Photo via Ballotpedia",
        "license": "see Ballotpedia page"
       },
@@ -11219,16 +13892,17 @@
       },
       "positions": [],
       "causes": [],
-      "hasThemes": false
+      "hasThemes": true
      }
     ],
-    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+    "source": "https://www.sos.texas.gov/elections/forms/2026-ballot-cert.pdf",
+    "judicial": "tx"
    },
    {
     "id": "tx-supreme-court-place-7",
     "title": "Texas Supreme Court Place 7",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {
@@ -11281,7 +13955,7 @@
     "id": "tx-supreme-court-place-8",
     "title": "Texas Supreme Court Place 8",
     "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "office": "Texas's court of last resort for civil matters; judges run in partisan elections for 6-year terms.",
     "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
     "candidates": [
      {

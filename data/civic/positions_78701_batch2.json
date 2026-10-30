@@ -1,0 +1,180 @@
+{
+ "stances": {
+  "caitlin-rourk": {
+   "name": "Caitlin Rourk",
+   "infrastructure": {
+    "value": 4,
+    "quote": "I'll fight to bring federal dollars back to our district through smart investments, public-private partnerships, and funding for critical infrastructure like water, roads, broadband, and clean energy.",
+    "sourceUrl": "https://ballotpedia.org/Caitlin_Rourk"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "Too often, economic policy favors the wealthy and well-connected; in Congress, I'll hold corporations accountable and ensure they pay their fair share.",
+    "sourceUrl": "https://ballotpedia.org/Caitlin_Rourk"
+   },
+   "education": {
+    "value": -3,
+    "quote": "Every child deserves a great public education and a safe, supportive community. In Congress, I'll fight for public schools and programs like IDEA",
+    "sourceUrl": "https://www.caitlinrourk.com/issues"
+   },
+   "immigration": {
+    "value": 0,
+    "quote": "I'll work for a system that is secure, orderly, and humane: securing the border, investing in technology and ports of entry, adding asylum officers and judges, expanding legal pathways,",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "energy": {
+    "value": 2,
+    "quote": "I’ll fight to bring federal dollars back to our district through smart investments, public-private partnerships, and funding for critical infrastructure like water, roads, broadband, and clean energy.",
+    "sourceUrl": "https://ballotpedia.org/Caitlin_Rourk"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Caitlin_Rourk",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.caitlinrourk.com/"
+    ]
+   }
+  },
+  "chris-gober": {
+   "name": "Chris Gober",
+   "infrastructure": {
+    "value": 2,
+    "quote": "ensuring rural Texas has the roads, water, and resources needed to thrive alongside our cities",
+    "sourceUrl": "https://ballotpedia.org/Chris_Gober"
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "I'll attack the waste and fraud that has exploded our debt and made us vulnerable to our adversaries.",
+    "sourceUrl": "https://ballotpedia.org/Chris_Gober"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "Crush the cartels by helping President Trump secure our border and empowering Texas law enforcement to halt the invasion of drugs, violence, and gangs into our community.",
+    "sourceUrl": "https://ballotpedia.org/Chris_Gober"
+   },
+   "housing": {
+    "value": 2,
+    "quote": "Cut the cost of buying a first home with new tax deductions for first-time buyers and for down payments on a new primary residence.",
+    "sourceUrl": "https://chrisgober.com/campaign-overview"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Chris_Gober",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://chrisgober.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Chris_Gober",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://chrisgober.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Chris_Gober",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://chrisgober.com/"
+    ]
+   }
+  },
+  "greg-casar": {
+   "name": "Greg Casar",
+   "housing": {
+    "value": 5,
+    "quote": "I support legislation to address skyrocketing rent and mortgage rates, end discriminatory policies that prevent Texans from becoming homeowners, and expand public housing.",
+    "sourceUrl": "https://casar.house.gov/issues/economy"
+   },
+   "taxes": {
+    "value": 4,
+    "quote": "Congress must ensure that the ultra rich pay their fair share in taxes and contribute to the schools, roads, and community services that we all use.",
+    "sourceUrl": "https://casar.house.gov/issues/economy"
+   },
+   "wages": {
+    "value": 5,
+    "quote": "I also support legislation to raise the minimum wage to $17 per hour.",
+    "sourceUrl": "https://casar.house.gov/issues/worker-rights"
+   },
+   "energy": {
+    "value": 5,
+    "quote": "I'm a proud co-sponsor of the Green New Deal and similar legislation to create good union jobs in clean energy and protect communities harmed by pollution and natural disasters.",
+    "sourceUrl": "https://casar.house.gov/issues/climate"
+   },
+   "immigration": {
+    "value": -5,
+    "quote": "In Congress, Congressman Casar is a co-leader of the New Way Forward Act, which would roll back harmful anti-immigrant laws – including Greg Abbott's militarization of the border.",
+    "sourceUrl": "https://www.casarforcongress.com/issues"
+   },
+   "education": {
+    "value": -4,
+    "quote": "Furthermore, top Texas officials are advocating for a school voucher scam that would make matters worse for students and teachers.",
+    "sourceUrl": "https://casar.house.gov/media/press-releases/news-congressman-greg-casar-calls-reduced-school-closures-more-time-save-san"
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "This new federal funding will help ensure there are more gates at the airport, which means there will be more direct flights, fewer delays, and lower costs for traveling,",
+    "sourceUrl": "https://casar.house.gov/media/press-releases/news-congressman-greg-casar-celebrates-39m-federal-grant-austin-airport"
+   }
+  },
+  "lauren-pena": {
+   "name": "Lauren Peña",
+   "housing": {
+    "value": -2,
+    "quote": "expand housing supply by cutting federal barriers",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "healthcare": {
+    "value": -2,
+    "quote": "Lauren will fight to expand competition by allowing health insurance to be sold across state lines, giving families more affordable choices. We should strengthen price transparency, expand health savings accounts, reduce unnecessary regulations",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+   },
+   "safety": {
+    "value": 4,
+    "quote": "Lauren will restore full law enforcement funding and make Austin safe again.",
+    "sourceUrl": "https://lauren4congress.com/"
+   },
+   "education": {
+    "value": 4,
+    "quote": "Faith, family, and freedom are not negotiable. Lauren will defend parental rights, school choice, and the values that built Texas.",
+    "sourceUrl": "https://lauren4congress.com/"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Lauren_Pe%C3%B1a",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://lauren4congress.com/",
+     "https://www.ballotready.org/",
+     "https://www.thelobbynews.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://ballotpedia.org/Lauren_Pe%C3%B1a",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://lauren4congress.com/",
+     "https://www.ballotready.org/",
+     "https://www.thelobbynews.com/"
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,1287 @@
+{
+  "_meta": {
+    "asOf": "2026-10-30",
+    "batch": "positions_gapfill_batch3civic (civic team; distinct from Engineering data/civic/positions_gapfill_batch3.json = \"QA fixes 4\")",
+    "baseline": "townhall feat2 @df0cb76 data/stances.json (includes batch2 + QA fixes 4-6); ids via candidateId(name).",
+    "scope": "Every non-judicial candidate in 78701 and 94103 under 2 sourced issues at df0cb76 (30 candidates). 10001 already 18/18.",
+    "scale": "-5..+5 per data/issue_order.json axes; verification_rule.md bar. score null + status \"unsure\" = ambiguous, not scored.",
+    "rulesApplied": [
+      "public-employee pay raises not scored on wages",
+      "homelessness-only quotes not tagged housing",
+      "recorded votes go in voteRecord, never quotes",
+      "statements 2024+ by the candidate (own campaign site counts); endorsements do not count"
+    ],
+    "sourcesCheckedNote": "Every source checked this pass is listed, including dead/unreachable ones (result says so). If no scorable stance, the site can show \"No public statement found as of Oct 30, 2026\".",
+    "judicialSkipped": true,
+    "editorNoteRule": "editorNote is internal reasoning for editors. Do not render it and do not copy it into data/stances.json (merge_gapfill.py copies only score/quote/summary/sourceUrl/date/voteRecord/bill, so it is already excluded)."
+  },
+  "tom-oxford": {
+    "zip": "78701",
+    "name": "Tom Oxford",
+    "race": "Attorney General of Texas",
+    "party": "Libertarian",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://digital.houstonvotersguide.org/2026-midterms/14/",
+        "title": "LWV Houston 2026 Midterms Voters Guide, p.14",
+        "dateChecked": "2026-10-30",
+        "result": "Answers repeat his LWV Austin responses; the elections answer is not on a tracked axis. Nothing new."
+      },
+      {
+        "url": "https://ballotpedia.org/Tom_Oxford",
+        "title": "Ballotpedia: Tom Oxford",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://communityimpact.com/central-austin/election/qa-get-to-know-the-candidates-running-for-texas-attorney-general/",
+        "title": "Community Impact: Q&A Texas attorney general candidates",
+        "dateChecked": "2026-10-30",
+        "result": "Oxford did not respond."
+      },
+      {
+        "url": "https://www.ktalnews.com/news/election/your-local-election-hq/tom-oxford-texas-attorney-general/",
+        "title": "KTAL: What voters need to know about Tom Oxford and the libertarian platform",
+        "dateChecked": "2026-10-30",
+        "result": "Says his campaign lists no priorities; describes the LP platform only (not the candidate's words). Not used."
+      },
+      {
+        "url": "https://www.texastribune.org/2026/10/05/texas-attorney-general-election-2026-candidates-mayes-middleton-nathan-johnson-tom-oxford/",
+        "title": "Texas Tribune: What to know about the 2026 Texas attorney general race (Oct 5, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "No policy positions for Oxford; LP platform paraphrase only."
+      },
+      {
+        "url": "https://www.houstonpublicmedia.org/articles/news/2026/10/27/565409/what-to-know-about-the-candidates-vying-to-replace-ken-paxton-as-texas-attorney-general/",
+        "title": "Houston Public Media (Oct 27, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "No Oxford quotes; says he did not respond to questionnaires."
+      },
+      {
+        "url": "https://www.lptexas.org/candidates",
+        "title": "Libertarian Party of Texas: candidates",
+        "dateChecked": "2026-10-30",
+        "result": "Name/photo only."
+      }
+    ],
+    "note": "No new axis. Still 1 sourced issue (immigration).",
+    "sourcedIssuesBefore": [
+      "immigration"
+    ],
+    "sourcedIssuesAfter": [
+      "immigration"
+    ]
+  },
+  "v-alonzo-echavarria-garza": {
+    "zip": "78701",
+    "name": "V. Alonzo Echavarria-Garza",
+    "race": "Texas Comptroller of Public Accounts",
+    "party": "Libertarian",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://digital.houstonvotersguide.org/2026-midterms/14/",
+        "title": "LWV Houston 2026 Midterms Voters Guide, p.14",
+        "dateChecked": "2026-10-30",
+        "result": "\"NO RESPONSE RECEIVED\"."
+      },
+      {
+        "url": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+        "title": "Ballotpedia: V. Alonzo Echavarria-Garza",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://www.branch.vote/",
+        "title": "branch.vote Comptroller race page",
+        "dateChecked": "2026-10-30",
+        "result": "No website listed (as of Sept 11, 2026)."
+      },
+      {
+        "url": "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz",
+        "title": "Allen Record: Echavarria-Garza seeks Texas comptroller as Libertarian (Oct 8, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "No questionnaire response; no candidate quotes on axes."
+      },
+      {
+        "url": "https://www.lptexas.org/candidates",
+        "title": "Libertarian Party of Texas: candidates",
+        "dateChecked": "2026-10-30",
+        "result": "Name only."
+      },
+      {
+        "url": "https://texasscorecard.com/",
+        "title": "Texas Scorecard candidate contact list",
+        "dateChecked": "2026-10-30",
+        "result": "Website listed as lptexas.org (party site, no candidate positions)."
+      }
+    ],
+    "note": "No public record of policy positions found as of Oct 30, 2026. Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "austin-r-kelly": {
+    "zip": "78701",
+    "name": "Austin R. Kelly",
+    "race": "Texas Commissioner of Agriculture",
+    "party": "Libertarian",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "energy",
+        "score": null,
+        "status": "unsure",
+        "summary": "Campaign site lists a heading on data centers with no position text under it, so the direction on energy is unclear.",
+        "sourceUrl": "https://www.kellyfortx.com/issuessolutions",
+        "sourceTitle": "Austin Kelly campaign site: Issues/Solutions",
+        "date": "2026-10-30",
+        "quote": "Data Centers: Build on Your Own Dime, Don't Harm Your Neighbors",
+        "editorNote": "Campaign site has a section heading on data centers, but the section body is empty in the page HTML; direction on energy cannot be determined. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Austin_Kelly",
+        "title": "Ballotpedia: Austin Kelly (2026 Candidate Connection survey)",
+        "dateChecked": "2026-10-30",
+        "result": "Completed. \"I advocate for ending corporate subsidies...\" maps to taxes (already scored). Deregulation, property rights and water stewardship are not tracked axes."
+      },
+      {
+        "url": "https://www.kellyfortx.com/",
+        "title": "Austin Kelly campaign site (home)",
+        "dateChecked": "2026-10-30",
+        "result": "No new axis."
+      },
+      {
+        "url": "https://www.kellyfortx.com/issuessolutions",
+        "title": "Austin Kelly campaign site: Issues/Solutions",
+        "dateChecked": "2026-10-30",
+        "result": "Data-centers section is a heading only (body empty); logged as energy unsure."
+      },
+      {
+        "url": null,
+        "title": "Allen Record: Kelly Libertarian profile (exact URL not retained)",
+        "dateChecked": "2026-10-30",
+        "result": "Secondary profile; no new candidate quote on an axis."
+      },
+      {
+        "url": null,
+        "title": "plaindocket candidate summary (secondary)",
+        "dateChecked": "2026-10-30",
+        "result": "Secondary summary only; not a candidate source."
+      }
+    ],
+    "note": "No new axis; still 1 (taxes). Data-center section body could not be read.",
+    "sourcedIssuesBefore": [
+      "taxes"
+    ],
+    "sourcedIssuesAfter": [
+      "taxes"
+    ]
+  },
+  "allison-bush": {
+    "zip": "78701",
+    "name": "Allison Bush",
+    "race": "State Board of Education District 5",
+    "party": "Democratic",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "wages",
+        "score": null,
+        "status": "unsure",
+        "summary": "Supports higher teacher pay. That is public-employee pay, not a position on wage policy for other employers.",
+        "sourceUrl": "https://www.allisonfortx.com/",
+        "sourceTitle": "Allison Bush campaign site",
+        "date": "2026-10-30",
+        "editorNote": "Supports higher teacher pay; under the standing rule, raising public employees' pay is not scored on wages."
+      },
+      {
+        "issue": "education",
+        "score": null,
+        "status": "unsure",
+        "override": true,
+        "summary": "Opposes unlimited charter-school expansion; charter schools are public schools, so this isn't scored on the private-school-funding question.",
+        "quote": "I oppose the unlimited expansion of charter schools that diverts resources from our neighborhood public schools.",
+        "sourceUrl": "https://www.allisonfortx.com/",
+        "sourceTitle": "Allison Bush campaign site",
+        "date": "2026-10-30",
+        "editorNote": "Replaces education -3. Texas charter schools are public schools, so opposing charter expansion is not a position on public money for private schools; same standard as Kirk Becker's all-charter proposal (unsure). Engineering already hand-set this in data/stances.json; this override item keeps it on a merge_gapfill.py re-run."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Allison_Bush",
+        "title": "Ballotpedia: Allison Bush (2026 survey)",
+        "dateChecked": "2026-10-30",
+        "result": "Vouchers/charters answers support the existing education score; nothing on other axes."
+      },
+      {
+        "url": "https://www.allisonfortx.com/",
+        "title": "Allison Bush campaign site",
+        "dateChecked": "2026-10-30",
+        "result": "No new axis."
+      }
+    ],
+    "note": "No new axis; still 1 (education).",
+    "sourcedIssuesBefore": [
+      "education"
+    ],
+    "sourcedIssuesAfter": [
+      "education"
+    ]
+  },
+  "mica-arellano": {
+    "zip": "78701",
+    "name": "Mica Arellano",
+    "race": "State Board of Education District 5",
+    "party": "Republican",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "Wants every tax dollar focused on students rather than bureaucracy; no position on tax levels.",
+        "sourceUrl": "https://micatx.com/",
+        "sourceTitle": "Mica Arellano campaign site (micatx.com)",
+        "date": "2026-10-30",
+        "quote": "Every tax dollar should be focused on students and classrooms—not wasted on unnecessary bureaucracy.",
+        "editorNote": "Says tax dollars should go to students rather than bureaucracy: spending efficiency, not a position on tax levels. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://micatx.com/",
+        "title": "Mica Arellano campaign site (new; earlier passes found no site)",
+        "dateChecked": "2026-10-30",
+        "result": "Five planks: safe schools, academics, teachers, parents, spending. None maps to a tracked axis except the taxes-unsure line."
+      },
+      {
+        "url": "https://micatx.com/priorities",
+        "title": "micatx.com/priorities",
+        "dateChecked": "2026-10-30",
+        "result": "HTTP 404."
+      },
+      {
+        "url": "https://micatx.com/about",
+        "title": "micatx.com/about",
+        "dateChecked": "2026-10-30",
+        "result": "HTTP 404."
+      },
+      {
+        "url": "https://ballotpedia.org/Mica_Arellano",
+        "title": "Ballotpedia: Mica Arellano",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      }
+    ],
+    "note": "Campaign site found this pass but has no scorable axis statement. Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "dyana-limon-mercado": {
+    "zip": "78701",
+    "name": "Dyana Limon-Mercado",
+    "race": "County Clerk",
+    "party": "Democratic",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Dyana_Limon-Mercado",
+        "title": "Ballotpedia: Dyana Limon-Mercado",
+        "dateChecked": "2026-10-30",
+        "result": "2026 survey not completed; 2022 survey predates the Jan 1, 2024 cutoff (and its voting-access answers are not on a tracked axis)."
+      },
+      {
+        "url": "https://www.votedyana.com/",
+        "title": "Dyana for County Clerk (votedyana.com)",
+        "dateChecked": "2026-10-30",
+        "result": "Connection failed from the box (HTTP 000) on Oct 30, 2026. Search snippet lists elections/court-records priorities only (not tracked axes)."
+      }
+    ],
+    "note": "Unopposed. No tracked-axis statement found.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "velva-l-price": {
+    "zip": "78701",
+    "name": "Velva L. Price",
+    "race": "District Clerk",
+    "party": "Democratic",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Velva_Price",
+        "title": "Ballotpedia: Velva Price",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://www.velvaprice.com/",
+        "title": "Velva Price campaign site",
+        "dateChecked": "2026-10-30",
+        "result": "Connection failed from the box (HTTP 000) on Oct 30, 2026; search snippet shows primary-era \"Vote March 4\" page."
+      },
+      {
+        "url": "https://www.voteyourviews.org/candidates/velvaprice/",
+        "title": "VoteYourViews: Velva Price",
+        "dateChecked": "2026-10-30",
+        "result": "All issues \"Unknown\"."
+      }
+    ],
+    "note": "Unopposed. No tracked-axis statement found.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "dolores-ortega-carter": {
+    "zip": "78701",
+    "name": "Dolores Ortega Carter",
+    "race": "County Treasurer",
+    "party": "Democratic",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Dolores_Ortega_Carter",
+        "title": "Ballotpedia: Dolores Ortega Carter",
+        "dateChecked": "2026-10-30",
+        "result": "No 2026 survey; no campaign website listed."
+      },
+      {
+        "url": "https://www.traviscountytx.gov/treasurer",
+        "title": "Travis County Treasurer office page",
+        "dateChecked": "2026-10-30",
+        "result": "Official office page; no campaign statements."
+      }
+    ],
+    "note": "Unopposed. No campaign site or statements found.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "george-morales-iii": {
+    "zip": "78701",
+    "name": "George Morales III",
+    "race": "Travis County Commissioner, Precinct 4",
+    "party": "Democratic",
+    "stances": [
+      {
+        "issue": "healthcare",
+        "score": 3,
+        "summary": "Commits to expanding access to health care and mental health services and prioritizing resources for the uninsured.",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "sourceTitle": "George Morales III campaign site (georgeforcommissioner.com)",
+        "date": "2026-03-14",
+        "quote": "George is committed to working with Travis County leaders and community partners to expand access to health care and mental health services. He'll prioritize resources for the uninsured",
+        "sourceType": "campaign site"
+      },
+      {
+        "issue": "housing",
+        "score": 3,
+        "summary": "Will champion affordable housing and affordable home ownership so families can stay in their neighborhoods.",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "sourceTitle": "George Morales III campaign site (georgeforcommissioner.com)",
+        "date": "2026-03-14",
+        "quote": "He will champion affordable house, and affordable home ownership, so that generations of families can stay rooted in the neighborhoods they love.",
+        "sourceType": "campaign site"
+      },
+      {
+        "issue": "infrastructure",
+        "score": 3,
+        "summary": "Advocates infrastructure investment, from fixing roads to improving public transit.",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "sourceTitle": "George Morales III campaign site (georgeforcommissioner.com)",
+        "date": "2026-03-14",
+        "quote": "From fixing roads to improving public transit, George will advocate for smart infrastructure investment in areas that need it most.",
+        "sourceType": "campaign site"
+      },
+      {
+        "issue": "safety",
+        "score": -2,
+        "summary": "Pushes for investment in the Travis County Diversion Center for people in crisis (diversion-leaning; qualified, so mild).",
+        "sourceUrl": "https://www.georgeforcommissioner.com/",
+        "sourceTitle": "George Morales III campaign site (georgeforcommissioner.com)",
+        "date": "2026-03-14",
+        "quote": "push for smart investments in the Travis County Diversion Center to support community members in crisis.",
+        "sourceType": "campaign site"
+      }
+    ],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://www.georgeforcommissioner.com/",
+        "title": "George Morales III campaign site (georgeforcommissioner.com)",
+        "dateChecked": "2026-10-30",
+        "result": "Live 200 on Oct 30, 2026 (banner still reads \"RUNOFF MAY 26\"). Text matches Ballotpedia's quote of the site dated March 14, 2026. Quotes used above."
+      },
+      {
+        "url": "https://ballotpedia.org/George_Morales_III",
+        "title": "Ballotpedia: George Morales III",
+        "dateChecked": "2026-10-30",
+        "result": "Campaign-website quote section (March 14, 2026) confirms the same text. No survey."
+      }
+    ],
+    "note": "1 -> 5. Taxes remains the existing voteRecord. Campaign-site text is written in third person by the campaign; counted as the candidate's own site per verification_rule.md. Unopposed in November, so no grade effect.",
+    "sourcedIssuesBefore": [
+      "taxes"
+    ],
+    "sourcedIssuesAfter": [
+      "healthcare",
+      "housing",
+      "infrastructure",
+      "safety",
+      "taxes"
+    ]
+  },
+  "gabriel-padilla": {
+    "zip": "78701",
+    "name": "Gabriel Padilla",
+    "race": "County Constable, Precinct 4 - Unexpired Term",
+    "party": "Democratic",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "safety",
+        "score": null,
+        "status": "unsure",
+        "summary": "Focuses on trust and transparency between law enforcement and residents; no position on prevention vs. enforcement.",
+        "sourceUrl": "https://www.gabeforconstable.com/#priorities",
+        "sourceTitle": "Gabriel Padilla campaign site (quoted by Ballotpedia, June 8, 2026)",
+        "date": "2026-06-08",
+        "quote": "Putting people first by fostering trust, transparency, and communication between law enforcement and residents.",
+        "editorNote": "\"Community first public safety\" focused on trust and transparency with residents; no direction on diversion vs enforcement. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Gabriel_Padilla",
+        "title": "Ballotpedia: Gabriel Padilla",
+        "dateChecked": "2026-10-30",
+        "result": "No survey. Campaign-website quote section (June 8, 2026): safety language only, ambiguous."
+      }
+    ],
+    "note": "Unopposed. Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "skyler-a-korgel": {
+    "zip": "78701",
+    "name": "Skyler A. Korgel",
+    "race": "Travis Central Appraisal District Board of Directors, Place 1",
+    "party": "Nonpartisan",
+    "stances": [
+      {
+        "issue": "taxes",
+        "score": 3,
+        "summary": "Wants large corporations to pay their full share of property taxes to support schools and public services.",
+        "sourceUrl": "https://ballotpedia.org/Skyler_Korgel",
+        "sourceTitle": "Ballotpedia: Skyler Korgel, 2026 Candidate Connection survey",
+        "date": "2026",
+        "quote": "Personally, I am passionate about equitable taxation policy that fairly distributes tax burdens such that everyone is paying their fair share to support our schools, governments, public lands, and public services.",
+        "sourceType": "questionnaire"
+      },
+      {
+        "issue": "housing",
+        "score": 2,
+        "summary": "Argues that ending corporate under-appraisal improves housing affordability for owners and renters (indirect, so mild).",
+        "sourceUrl": "https://ballotpedia.org/Skyler_Korgel",
+        "sourceTitle": "Ballotpedia: Skyler Korgel, 2026 Candidate Connection survey",
+        "date": "2026",
+        "quote": "When Tesla, Oracle, Samsung etc pay the property taxes instead of getting huge discounts via underappraisal, then housing affordability improves for both owners AND renters",
+        "sourceType": "questionnaire"
+      },
+      {
+        "issue": "infrastructure",
+        "score": 2,
+        "summary": "Lists expanding public transportation and reducing car dependency among his policy passions (mild).",
+        "sourceUrl": "https://ballotpedia.org/Skyler_Korgel",
+        "sourceTitle": "Ballotpedia: Skyler Korgel, 2026 Candidate Connection survey",
+        "date": "2026",
+        "quote": "expanding public transportation options and reducing car dependency",
+        "sourceType": "questionnaire"
+      }
+    ],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Skyler_Korgel",
+        "title": "Ballotpedia: Skyler Korgel (2026 survey completed)",
+        "dateChecked": "2026-10-30",
+        "result": "Quotes used above."
+      },
+      {
+        "url": "https://www.demsfortcad.com/",
+        "title": "Democrats for TCAD slate site (demsfortcad.com)",
+        "dateChecked": "2026-10-30",
+        "result": "Supporting; consistent with survey (\"make large corporations pay their owed share of property taxes\")."
+      },
+      {
+        "url": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+        "title": "The Austin Bulldog: Four candidates running for TCAD board (Aug 24, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Homestead-exemption quote supports existing taxes direction; nothing new. (Direct curl 403; read via fetch tool.)"
+      }
+    ],
+    "note": "0 -> 3. Unopposed, so no grade effect.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": [
+      "housing",
+      "infrastructure",
+      "taxes"
+    ]
+  },
+  "brian-pena": {
+    "zip": "78701",
+    "name": "Brian Peña",
+    "race": "Travis Central Appraisal District Board of Directors, Place 2",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "Promises responsible stewardship of tax dollars and accurate commercial appraisals; no position on tax levels.",
+        "sourceUrl": "https://www.demsfortcad.com/",
+        "sourceTitle": "Democrats for TCAD slate site (demsfortcad.com)",
+        "date": "2026-10-30",
+        "quote": "He is committed to being a responsible steward of tax dollars, holding large commercial properties accountable through accurate appraisals",
+        "editorNote": "Promises responsible stewardship of tax dollars and accurate commercial appraisals; no position on tax levels. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Brian_Pe%C3%B1a",
+        "title": "Ballotpedia: Brian Peña",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://www.demsfortcad.com/",
+        "title": "Democrats for TCAD slate site",
+        "dateChecked": "2026-10-30",
+        "result": "Taxes line only (unsure)."
+      },
+      {
+        "url": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+        "title": "The Austin Bulldog: Four candidates running for TCAD board (Aug 24, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Renter-representation quote; not on a tracked axis."
+      }
+    ],
+    "note": "Unopposed. Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "yvonne-munoz": {
+    "zip": "78701",
+    "name": "Yvonne Muñoz",
+    "race": "Travis Central Appraisal District Board of Directors, Place 3",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "Speaks generally about using taxpayer resources responsibly; no position on tax levels.",
+        "sourceUrl": "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+        "sourceTitle": "Ballotpedia: Yvonne Muñoz, 2026 Candidate Connection survey",
+        "date": "2026",
+        "quote": "I believe public policy should create meaningful opportunities while ensuring taxpayer resources are used responsibly.",
+        "editorNote": "General statement about responsible use of taxpayer resources; no direction on tax levels. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+        "title": "Ballotpedia: Yvonne Muñoz (2026 survey completed)",
+        "dateChecked": "2026-10-30",
+        "result": "Only the taxes-unsure line touches a tracked axis."
+      },
+      {
+        "url": "https://www.demsfortcad.com/",
+        "title": "Democrats for TCAD slate site",
+        "dateChecked": "2026-10-30",
+        "result": "No scorable axis statement."
+      },
+      {
+        "url": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+        "title": "The Austin Bulldog: Four candidates running for TCAD board (Aug 24, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Quotes on information access and homestead exemptions; not scorable."
+      }
+    ],
+    "note": "Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "phil-gorman": {
+    "zip": "78701",
+    "name": "Phil Gorman",
+    "race": "Travis Central Appraisal District Board of Directors, Place 3",
+    "party": "Nonpartisan",
+    "stances": [
+      {
+        "issue": "taxes",
+        "score": -3,
+        "summary": "Campaigned against Austin's Proposition Q property-tax increase and says that is a big part of why he is running.",
+        "sourceUrl": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+        "sourceTitle": "The Austin Bulldog: Four candidates running for TCAD board (Aug 24, 2026)",
+        "date": "2026-08-24",
+        "quote": "trying to make sure people knew it was a permanent tax increase. That's a big part about why I want to do this",
+        "sourceType": "news interview"
+      }
+    ],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+        "title": "The Austin Bulldog: Four candidates running for TCAD board (Aug 24, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Direct quotes from Gorman (interview). Used for taxes. Direct curl returned 403; read via fetch tool."
+      },
+      {
+        "url": "https://ballotpedia.org/Phil_Gorman",
+        "title": "Ballotpedia: Phil Gorman",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://theballotbrief.com/state/texas/travis-county/central-appraisal-district-director-place-3",
+        "title": "The Ballot Brief: Muñoz vs. Gorman (search result)",
+        "dateChecked": "2026-10-30",
+        "result": "Aggregator; not used."
+      }
+    ],
+    "note": "0 -> 1. Bulldog (Aug 24, 2026) reports none of the four TCAD candidates had a campaign website at that time.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": [
+      "taxes"
+    ]
+  },
+  "kirk-becker": {
+    "zip": "78701",
+    "name": "Kirk Becker",
+    "race": "Austin ISD Board of Trustees, At-Large Position 9",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "education",
+        "score": null,
+        "status": "unsure",
+        "summary": "Proposes moving all AISD students to charter schools; charter schools are public schools, so this isn't scored on the private-school-funding question.",
+        "sourceUrl": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/",
+        "sourceTitle": "Community Impact: Q&A Austin ISD At-Large Position 9 (Aug 29, 2026)",
+        "date": "2026-08-29",
+        "quote": "No students, no state funding, no need for an AISD tax. This would free up funding to support charter schools, albeit voluntarily.",
+        "editorNote": "Proposes converting all AISD schools to charter schools. Batch2 left this unscored because Texas charters are public schools. NOTE: Allison Bush's education -3 rests on opposing charter expansion, so the two are treated asymmetrically; flagged for an editorial decision rather than changed here. Resolved in QA7: Allison Bush's education item is now also unsure (override), so both charter statements get the same treatment."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Kirk_Becker_(Austin_Independent_School_District,_Texas)",
+        "title": "Ballotpedia: Kirk Becker (AISD)",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/",
+        "title": "Community Impact AISD Pos. 9 Q&A",
+        "dateChecked": "2026-10-30",
+        "result": "Taxes already scored from this source; charter plan logged as education unsure."
+      },
+      {
+        "url": "https://www.kut.org/education/2026-10-28/aisd-school-board-trustees-2026-election-candidates-austin-tx-isd",
+        "title": "KUT: Meet the candidates running for Austin ISD's board (Oct 28, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Charter-district plan (paraphrase + quote about kids leaving); no new axis."
+      }
+    ],
+    "note": "Still 1 (taxes). See education asymmetry note.",
+    "sourcedIssuesBefore": [
+      "taxes"
+    ],
+    "sourcedIssuesAfter": [
+      "taxes"
+    ]
+  },
+  "dana-walker": {
+    "zip": "78701",
+    "name": "Dana Walker",
+    "race": "Austin Community College Board of Trustees, Place 1",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "Wants free tuition expanded once finances are stable, and notes college money comes from students and taxpayers; no position on tax levels.",
+        "sourceUrl": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "sourceTitle": "KUT: Austin Community College board candidates (Oct 16, 2026)",
+        "date": "2026-10-16",
+        "quote": "I would love it if we could expand it to more than just high school seniors, but I think first we need to be stable financially with what we have",
+        "editorNote": "Wants free tuition expanded but only after financial stability; and says every ACC dollar comes from students and taxpayers. No direction on tax levels. Not scored."
+      },
+      {
+        "issue": "wages",
+        "score": null,
+        "status": "unsure",
+        "summary": "Wants college workforce partnerships that lead to living-wage local jobs; not a position on government wage policy.",
+        "sourceUrl": "https://danawalkerforacc.com/#priorities",
+        "sourceTitle": "Dana Walker campaign site (quoted by Ballotpedia, Oct 4, 2026)",
+        "date": "2026-10-04",
+        "quote": "expanding partnerships with local employers so programs lead directly to local jobs that pay living wages",
+        "editorNote": "Workforce partnerships leading to \"local jobs that pay living wages\": employer programs, not government wage policy. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Dana_Walker",
+        "title": "Ballotpedia: Dana Walker",
+        "dateChecked": "2026-10-30",
+        "result": "No survey. Campaign-website quote section (Oct 4, 2026): technology, affordability, financial responsibility, student support, veterans. No tracked-axis stance."
+      },
+      {
+        "url": "https://danawalkerforacc.com/",
+        "title": "Dana Walker campaign site (via Ballotpedia snapshot)",
+        "dateChecked": "2026-10-30",
+        "result": "As above."
+      },
+      {
+        "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "title": "KUT: Austin Community College board candidates (Oct 16, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Free-tuition quote; logged unsure."
+      },
+      {
+        "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+        "title": "Austin American-Statesman: Meet who is running for the ACC board (Sep 2, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Budget-trimming quote about operations; paraphrase otherwise. Not scorable."
+      },
+      {
+        "url": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/candidates-for-the-acc-board-of-trustees-2026-election/",
+        "title": "ACC official candidate list",
+        "dateChecked": "2026-10-30",
+        "result": "Names and finance reports only."
+      }
+    ],
+    "note": "Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "gloria-gonzales-dholakia": {
+    "zip": "78701",
+    "name": "Gloria Gonzales-Dholakia",
+    "race": "Austin Community College Board of Trustees, Place 1",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "\"Ensure responsible stewardship of precious taxpayer investments\": no position on tax levels.",
+        "sourceUrl": "https://www.gloriaforacc.com/priorities",
+        "sourceTitle": "Gloria Gonzales-Dholakia campaign site (quoted by Ballotpedia, Oct 4, 2026)",
+        "date": "2026-10-04",
+        "quote": "Ensure responsible stewardship of precious taxpayer investments",
+        "editorNote": "\"Ensure responsible stewardship of precious taxpayer investments\": no direction on tax levels. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Gloria_Gonzales-Dholakia",
+        "title": "Ballotpedia: Gloria Gonzales-Dholakia",
+        "dateChecked": "2026-10-30",
+        "result": "No survey. Campaign-website quote section (Oct 4, 2026): pathways, completion supports (childcare, mental-health resources for students), governance. Nothing new on tracked axes."
+      },
+      {
+        "url": "https://www.gloriaforacc.com/priorities",
+        "title": "Campaign site priorities (via Ballotpedia snapshot)",
+        "dateChecked": "2026-10-30",
+        "result": "As above."
+      },
+      {
+        "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "title": "KUT: Austin Community College board candidates (Oct 16, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Paraphrase only on axis topics."
+      },
+      {
+        "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+        "title": "Austin American-Statesman: Meet who is running for the ACC board (Sep 2, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Quotes on pathways and community governance; not on axes."
+      }
+    ],
+    "note": "Still 1 (taxes).",
+    "sourcedIssuesBefore": [
+      "taxes"
+    ],
+    "sourcedIssuesAfter": [
+      "taxes"
+    ]
+  },
+  "gigi-edwards-bryant": {
+    "zip": "78701",
+    "name": "Gigi Edwards Bryant",
+    "race": "Austin Community College Board of Trustees, Place 2",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Gigi_Edwards_Bryant",
+        "title": "Ballotpedia: Gigi Edwards Bryant",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+        "title": "Austin American-Statesman: Meet who is running for the ACC board (Sep 2, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Mentioned as unopposed; no quotes."
+      }
+    ],
+    "note": "Unopposed. Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "trevor-hale": {
+    "zip": "78701",
+    "name": "Trevor Hale",
+    "race": "Austin Community College Board of Trustees, Place 3",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "Likes the idea of free tuition but doubts it works; no position on tax levels.",
+        "sourceUrl": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "sourceTitle": "KUT: Austin Community College board candidates (Oct 16, 2026)",
+        "date": "2026-10-16",
+        "quote": "I love the idea of free tuition, but it doesn't necessarily work.",
+        "editorNote": "On free tuition: likes the idea but doubts it works. Not a tax-level position; not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Trevor_Hale",
+        "title": "Ballotpedia: Trevor Hale",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "title": "KUT: Austin Community College board candidates (Oct 16, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Free-tuition quote; unsure."
+      },
+      {
+        "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+        "title": "Austin American-Statesman: Meet who is running for the ACC board (Sep 2, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Career center, term limits, rebranding (paraphrase); not on axes."
+      }
+    ],
+    "note": "Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "nan-mcraven": {
+    "zip": "78701",
+    "name": "Nan McRaven",
+    "race": "Austin Community College Board of Trustees, Place 3",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "Says the state should earmark money for community colleges; no position on local tax levels.",
+        "sourceUrl": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "sourceTitle": "KUT: Austin Community College board candidates (Oct 16, 2026)",
+        "date": "2026-10-16",
+        "quote": "I do believe the money's out there and should be earmarked for community colleges from the state",
+        "editorNote": "Says state money should be earmarked for community colleges: a funding-source view, not a local tax-level position. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Nan_McRaven",
+        "title": "Ballotpedia: Nan McRaven",
+        "dateChecked": "2026-10-30",
+        "result": "2026 Candidate Connection survey not completed; no campaign-website quote section."
+      },
+      {
+        "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+        "title": "KUT: Austin Community College board candidates (Oct 16, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "State-funding quote; unsure."
+      },
+      {
+        "url": "https://www.statesman.com/news/education/article/austin-community-college-november-2026-election-22401645.php",
+        "title": "Austin American-Statesman: Meet who is running for the ACC board (Sep 2, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Reporter says she kept \"tuition and taxes flat\" (paraphrase, not her words); not scored."
+      }
+    ],
+    "note": "Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "manuel-noris-barrera": {
+    "zip": "94103",
+    "name": "Manuel Noris-Barrera",
+    "race": "State Assembly Member District 17",
+    "party": "Republican",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Manuel_Noris-Barrera",
+        "title": "Ballotpedia: Manuel Noris-Barrera",
+        "dateChecked": "2026-10-30",
+        "result": "Fetched (200) this pass: no 2026 survey, no campaign-website quote section."
+      },
+      {
+        "url": "https://thebayareabrief.com/articles/assembly-district-17-haney-noris-barrera-write-in-468-votes-top-two-explained",
+        "title": "The Bay Area Brief: AD17 Haney vs. Noris-Barrera",
+        "dateChecked": "2026-10-30",
+        "result": "Explains write-in advance; no candidate quotes."
+      },
+      {
+        "url": "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/state-assemblymember-district-17/",
+        "title": "GrowSF AD17 contest page (search result)",
+        "dateChecked": "2026-10-30",
+        "result": "No Noris-Barrera questionnaire listed."
+      }
+    ],
+    "note": "No new axis. Still 1 (taxes).",
+    "sourcedIssuesBefore": [
+      "taxes"
+    ],
+    "sourcedIssuesAfter": [
+      "taxes"
+    ]
+  },
+  "joaquin-torres": {
+    "zip": "94103",
+    "name": "Joaquin Torres",
+    "race": "Assessor-Recorder",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "\"Every property owner should pay their fair share\" is about collecting what is already owed, not about tax levels.",
+        "sourceUrl": "https://joaquintorressf.com/",
+        "sourceTitle": "Joaquín Torres campaign site",
+        "date": "2026-10-30",
+        "quote": "Every property owner should pay their fair share.",
+        "editorNote": "\"Every property owner should pay their fair share\": about enforcing existing assessments, not tax levels. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://joaquintorressf.com/",
+        "title": "Joaquín Torres campaign site (home)",
+        "dateChecked": "2026-10-30",
+        "result": "Reviewed this pass: office-modernization themes; taxes-unsure line only."
+      },
+      {
+        "url": "https://joaquintorressf.com/about-joaquin-torres",
+        "title": "Campaign site: About",
+        "dateChecked": "2026-10-30",
+        "result": "Biography/record (public housing rehab as past commission president is record, not a campaign stance). No new axis."
+      },
+      {
+        "url": "https://joaquintorressf.com/about",
+        "title": "joaquintorressf.com/about",
+        "dateChecked": "2026-10-30",
+        "result": "HTTP 404 (guessed URL)."
+      },
+      {
+        "url": "https://ballotpedia.org/Joaqu%C3%ADn_Torres",
+        "title": "Ballotpedia: Joaquín Torres",
+        "dateChecked": "2026-10-30",
+        "result": "No 2026 survey; website link points to the Assessor office bio."
+      }
+    ],
+    "note": "Still 1 (housing).",
+    "sourcedIssuesBefore": [
+      "housing"
+    ],
+    "sourcedIssuesAfter": [
+      "housing"
+    ]
+  },
+  "ellsworth-ell-m-jennison-jr": {
+    "zip": "94103",
+    "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
+    "race": "Board of Supervisors, District 10",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Ellsworth_Jennison",
+        "title": "Ballotpedia: Ellsworth Jennison",
+        "dateChecked": "2026-10-30",
+        "result": "HTTP 404 at this slug (page reportedly exists at Ellsworth_Jennison_Jr.; earlier fetch was 403)."
+      }
+    ],
+    "note": "Still 1 (energy). No campaign site exists per earlier passes.",
+    "sourcedIssuesBefore": [
+      "energy"
+    ],
+    "sourcedIssuesAfter": [
+      "energy"
+    ]
+  },
+  "jamo-muhammad": {
+    "zip": "94103",
+    "name": "Jamo Muhammad",
+    "race": "Board of Supervisors, District 10",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Jamo_Muhammad",
+        "title": "Ballotpedia: Jamo Muhammad",
+        "dateChecked": "2026-10-30",
+        "result": "Fetched (200): no 2026 survey, no campaign-website quote section."
+      }
+    ],
+    "note": "Still 1 (energy).",
+    "sourcedIssuesBefore": [
+      "energy"
+    ],
+    "sourcedIssuesAfter": [
+      "energy"
+    ]
+  },
+  "autumn-brown-garibay": {
+    "zip": "94103",
+    "name": "Autumn Brown Garibay",
+    "race": "Board of Education (choose up to 3)",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "education",
+        "score": null,
+        "status": "unsure",
+        "summary": "Wants families to \"choose public school on purpose\"; no position on public money for private schools.",
+        "sourceUrl": "https://www.autumnforschoolboard.com/priorities",
+        "sourceTitle": "Autumn Brown Garibay campaign site (quoted by Ballotpedia, Aug 15, 2026)",
+        "date": "2026-08-15",
+        "quote": "San Francisco can be a city where families stay, raise their kids, and choose public school on purpose.",
+        "editorNote": "Wants families to \"choose public school on purpose\" and calls public school a values statement, but says nothing about public money for private schools/vouchers. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Autumn_Brown_Garibay",
+        "title": "Ballotpedia: Autumn Brown Garibay",
+        "dateChecked": "2026-10-30",
+        "result": "No survey. Campaign-website quote section (Aug 15, 2026) readable here (the site itself is JS-rendered): outcomes, family choice, equity, accountability, access. No tracked-axis stance."
+      }
+    ],
+    "note": "Stays at 0.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  },
+  "phil-kim": {
+    "zip": "94103",
+    "name": "Phil Kim",
+    "race": "Board of Education (choose up to 3)",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "safety",
+        "score": null,
+        "status": "unsure",
+        "summary": "Supports more training and coordination for school security staff; not a position on public-safety policy.",
+        "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/phil-kim/",
+        "sourceTitle": "GrowSF questionnaire, Phil Kim (June 2026 primary; due Dec 12, 2025)",
+        "date": "2025-12",
+        "quote": "I am interested in partnering with the Superintendent and Board to make sure that we have central supports and site-based strategies that support our T-10s.",
+        "editorNote": "Supports more training/coordination for school T-10 security staff: school-campus staffing, not diversion vs enforcement. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://growsf.org/voter-guide/questionnaires/june-2026/phil-kim/",
+        "title": "GrowSF questionnaire, Phil Kim (June 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Housing line (\"build more housing\") supports existing housing; budget answers are fiscal management, not tax levels; safety logged unsure."
+      },
+      {
+        "url": "https://growsf.org/voter-guide/questionnaires/november-2026/phil-kim/",
+        "title": "GrowSF November 2026 questionnaire URL",
+        "dateChecked": "2026-10-30",
+        "result": "HTTP 404."
+      },
+      {
+        "url": "https://ballotpedia.org/Phil_Kim",
+        "title": "Ballotpedia: Phil Kim",
+        "dateChecked": "2026-10-30",
+        "result": "Fetched (200): no 2026 survey."
+      }
+    ],
+    "note": "Still 1 (housing).",
+    "sourcedIssuesBefore": [
+      "housing"
+    ],
+    "sourcedIssuesAfter": [
+      "housing"
+    ]
+  },
+  "rome-moses-jones": {
+    "zip": "94103",
+    "name": "Rome Moses Jones",
+    "race": "Community College Board (choose up to 3)",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Rome_Moses-Jones",
+        "title": "Ballotpedia: Rome Moses-Jones",
+        "dateChecked": "2026-10-30",
+        "result": "HTTP 404 at this slug."
+      }
+    ],
+    "note": "Still 1 (housing).",
+    "sourcedIssuesBefore": [
+      "housing"
+    ],
+    "sourcedIssuesAfter": [
+      "housing"
+    ]
+  },
+  "monroe-lace": {
+    "zip": "94103",
+    "name": "Monroe Lace",
+    "race": "Community College Board (choose up to 3)",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "taxes",
+        "score": null,
+        "status": "unsure",
+        "summary": "Says the board must prepare for the parcel tax expiring in 2032; does not say whether to renew or raise it.",
+        "sourceUrl": "https://www.theguardsman.com/city-college-needs-to-live-within-their-means-fiscal-watchdog-trustee-candidate-monroe-lace/",
+        "sourceTitle": "The Guardsman: Trustee candidate Monroe Lace pledges to be fiscal watchdog (Sep 22, 2026)",
+        "date": "2026-09-22",
+        "quote": "The board must be more prepared when it comes to the parcel taxes and the upcoming expiration in 2032.",
+        "editorNote": "Says the board must be prepared for the 2032 parcel-tax expiration; does not say whether to renew or raise it. Existing taxes score unchanged. Not scored here."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://www.theguardsman.com/city-college-needs-to-live-within-their-means-fiscal-watchdog-trustee-candidate-monroe-lace/",
+        "title": "The Guardsman: Monroe Lace interview (Sep 22, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Dual enrollment, CTE, balanced budget; no new axis."
+      },
+      {
+        "url": "https://ballotpedia.org/Monroe_Lace",
+        "title": "Ballotpedia: Monroe Lace",
+        "dateChecked": "2026-10-30",
+        "result": "Fetched (200): no 2026 survey."
+      },
+      {
+        "url": "https://www.theguardsman.com/a-network-of-billionaires-is-squaring-off-against-a-powerful-teachers-union-for-control-of-city-colleges-future/",
+        "title": "The Guardsman: endorsements/PAC article (Oct 7, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Endorsement coverage only; not candidate statements."
+      }
+    ],
+    "note": "Still 1 (taxes).",
+    "sourcedIssuesBefore": [
+      "taxes"
+    ],
+    "sourcedIssuesAfter": [
+      "taxes"
+    ]
+  },
+  "erwin-tam": {
+    "zip": "94103",
+    "name": "Erwin Tam",
+    "race": "Community College Board (choose up to 3)",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [
+      {
+        "issue": "infrastructure",
+        "score": null,
+        "status": "unsure",
+        "summary": "Opposes selling the college's Downtown Center; about keeping a property, not spending levels.",
+        "sourceUrl": "https://www.theguardsman.com/trustee-candidate-erwin-tam-is-ready-to-crunch-the-numbers/",
+        "sourceTitle": "The Guardsman: Trustee candidate Erwin Tam is ready to crunch the numbers (Oct 8, 2026)",
+        "date": "2026-10-08",
+        "quote": "it would not be in the public's interest or the college's interest or San Francisco's interest to sell this property.",
+        "editorNote": "Opposes selling the Downtown Center; about keeping an asset, not spending levels. Not scored."
+      }
+    ],
+    "sourcesChecked": [
+      {
+        "url": "https://www.theguardsman.com/trustee-candidate-erwin-tam-is-ready-to-crunch-the-numbers/",
+        "title": "The Guardsman: Erwin Tam profile (Oct 8, 2026)",
+        "dateChecked": "2026-10-30",
+        "result": "Reserves/budget, Free City support, Downtown Center; no new scorable axis. Faculty/staff raises comment is public-employee pay (not scored)."
+      },
+      {
+        "url": "https://ballotpedia.org/Erwin_Tam",
+        "title": "Ballotpedia: Erwin Tam",
+        "dateChecked": "2026-10-30",
+        "result": "Fetched (200): no 2026 survey."
+      }
+    ],
+    "note": "Still 1 (taxes).",
+    "sourcedIssuesBefore": [
+      "taxes"
+    ],
+    "sourcedIssuesAfter": [
+      "taxes"
+    ]
+  },
+  "lisa-wynn": {
+    "zip": "94103",
+    "name": "Lisa Wynn",
+    "race": "Community College Board (choose up to 3)",
+    "party": "Nonpartisan",
+    "stances": [],
+    "unsure": [],
+    "sourcesChecked": [
+      {
+        "url": "https://ballotpedia.org/Lisa_Wynn_(California)",
+        "title": "Ballotpedia: Lisa Wynn (California)",
+        "dateChecked": "2026-10-30",
+        "result": "Fetched (200): no 2026 survey, no website."
+      }
+    ],
+    "note": "Stays at 0. Earlier Guardsman interview has no axis-mappable quote.",
+    "sourcedIssuesBefore": [],
+    "sourcedIssuesAfter": []
+  }
+}

@@ -1,0 +1,1350 @@
+{
+ "asOf": "2026-10-30",
+ "basedOn": "QA /workspace/qa/townhall/preview-df0cb76/REPORT.md; repo feat2 @df0cb76 + Engineering worktree (uncommitted data/stances.json with 35 unsure items)",
+ "rules": [
+  "Every stance cites a real source in the candidate's own words; unsourced = unsure / no record found.",
+  "Same standard and search effort for every candidate and party."
+ ],
+ "items": [
+  {
+   "item": 1,
+   "title": "P1: rewrite voter-visible unsure notes; move internal reasoning to editorNote",
+   "engineeringInstructions": [
+    "For each row: set `summary` = new at every sourcePath (data/civic/positions_gapfill_*.json) and at stancesPath (data/stances.json), or update the source files and re-run scripts/merge_gapfill.py.",
+    "At each sourcePath also add `editorNote` = the old summary of that item. Never render editorNote, and never copy it into data/stances.json (bundled into the client). merge_gapfill.py currently copies only score/quote/summary/sourceUrl/date/voteRecord/bill, so it is excluded already; keep it that way.",
+    "Civic's own file is already updated: copy /workspace/townhall/civic/positions_gapfill_batch3civic.json over data/civic/positions_gapfill_batch3civic.json (backup at civic/positions_gapfill_batch3civic.pre_qa7.json). It also adds allison-bush unsure education with override:true so Engineering's hand edit survives a re-run.",
+    "Rendered text is `{issue}: unclear, not compared. {summary} {source}`; the quote is not shown, so each summary stands alone. 'Not scored' was dropped because the label already says 'not compared'.",
+    "Simulated in /tmp (copy of the repo, all rows applied, merge_gapfill.py re-run): every rendered summary matches `new`, no editorNote in stances.json, unsure count 35."
+   ],
+   "counts": {
+    "renderedNotesRewritten": 36,
+    "of which unsure": 35,
+    "sourcedSummaryRendered": 1,
+    "nonRenderedSourceCopiesCleaned": 8
+   },
+   "knownMergeConflicts": [
+    "dana-walker wages: the worktree shows batch3civic's item, but batch4's item has override:true and wins on a full re-run (quote 'Raised wages for ACC employees'). Each now has a summary matching its own quote. Engineering/Adam should pick one; Civic suggests batch3civic (her own campaign-site words).",
+    "kirk-becker education: a re-run switches the quote/source to batch3civic's Community Impact quote; the summary works for both."
+   ],
+   "rows": [
+    {
+     "id": "sarah-eckhardt",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "The quote names no tax level. The same source also points the other way (she lowered property taxes), so the direction is ambiguous.",
+     "new": "Names no tax level, and the same source notes she has also lowered property taxes, so the direction is unclear.",
+     "editorNote": "The quote names no tax level. The same source also points the other way (she lowered property taxes), so the direction is ambiguous.",
+     "stancesPath": "data/stances.json stances[\"sarah-eckhardt\"][\"taxes\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"sarah-eckhardt\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[0]": "The quote names no tax level. The same source also points the other way (she lowered property taxes), so the direction is ambiguous."
+     }
+    },
+    {
+     "id": "ted-brown",
+     "issue": "infrastructure",
+     "status": "unsure",
+     "rendered": true,
+     "old": "A cut-everything budget line gives no infrastructure-specific direction. A retag to taxes would duplicate his existing taxes -5 (\"Taxes are always too high...\"), so no retag is made. If the infrastructure entry is removed, set it to {value:null,status:\"unsure\"}.",
+     "new": "Calls for cuts across the whole federal budget; says nothing specific about infrastructure spending.",
+     "editorNote": "A cut-everything budget line gives no infrastructure-specific direction. A retag to taxes would duplicate his existing taxes -5 (\"Taxes are always too high...\"), so no retag is made. If the infrastructure entry is removed, set it to {value:null,status:\"unsure\"}.",
+     "stancesPath": "data/stances.json stances[\"ted-brown\"][\"infrastructure\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"ted-brown\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[0]": "A cut-everything budget line gives no infrastructure-specific direction. A retag to taxes would duplicate his existing taxes -5 (\"Taxes are always too high...\"), so no retag is made. If the infrastructure entry is removed, set it to {value:null,status:\"unsure\"}."
+     }
+    },
+    {
+     "id": "ted-brown",
+     "issue": "wages",
+     "status": "unsure",
+     "rendered": true,
+     "old": "This is general free-market philosophy, so a wage direction would be inferred, not stated. Under the same standard, Don Huffines wages -4 is also changed (see below).",
+     "new": "States a general free-market view; takes no position on wage levels or the minimum wage.",
+     "editorNote": "This is general free-market philosophy, so a wage direction would be inferred, not stated. Under the same standard, Don Huffines wages -4 is also changed (see below).",
+     "stancesPath": "data/stances.json stances[\"ted-brown\"][\"wages\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"ted-brown\"][\"unsure\"][1]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[1]": "This is general free-market philosophy, so a wage direction would be inferred, not stated. Under the same standard, Don Huffines wages -4 is also changed (see below)."
+     }
+    },
+    {
+     "id": "don-huffines",
+     "issue": "wages",
+     "status": "unsure",
+     "rendered": true,
+     "old": "This is not one of the listed suspects. It is found by applying the Ted Brown wages standard to every candidate: general anti-regulation text with no wage-setting or minimum-wage position. It is also written in the third person (campaign/Ballotpedia text, not his own first-person words). Engineering can drop this item if they prefer to limit fixes to the listed suspects. Eligibility is unaffected either way (tx-comptroller is not eligible).",
+     "new": "Campaign text opposes regulation in general; takes no position on wage levels or the minimum wage.",
+     "editorNote": "This is not one of the listed suspects. It is found by applying the Ted Brown wages standard to every candidate: general anti-regulation text with no wage-setting or minimum-wage position. It is also written in the third person (campaign/Ballotpedia text, not his own first-person words). Engineering can drop this item if they prefer to limit fixes to the listed suspects. Eligibility is unaffected either way (tx-comptroller is not eligible).",
+     "stancesPath": "data/stances.json stances[\"don-huffines\"][\"wages\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"don-huffines\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[0]": "This is not one of the listed suspects. It is found by applying the Ted Brown wages standard to every candidate: general anti-regulation text with no wage-setting or minimum-wage position. It is also written in the third person (campaign/Ballotpedia text, not his own first-person words). Engineering can drop this item if they prefer to limit fixes to the listed suspects. Eligibility is unaffected either way (tx-comptroller is not eligible)."
+     }
+    },
+    {
+     "id": "tom-oxford",
+     "issue": "healthcare",
+     "status": "unsure",
+     "rendered": true,
+     "old": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored.",
+     "new": "Refers to the state staying out of personal health decisions, not to the government's role in paying for care.",
+     "editorNote": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored.",
+     "stancesPath": "data/stances.json stances[\"tom-oxford\"][\"healthcare\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"tom-oxford\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "\"The state should have no involvement in decisions about our personal health.\" This is about ending state litigation, not about the government's role in paying for care; not scored."
+     }
+    },
+    {
+     "id": "austin-r-kelly",
+     "issue": "energy",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Campaign site has a section heading on data centers, but the section body is empty in the page HTML; direction on energy cannot be determined. Not scored.",
+     "new": "Campaign site lists a heading on data centers with no position text under it, so the direction on energy is unclear.",
+     "editorNote": "Campaign site has a section heading on data centers, but the section body is empty in the page HTML; direction on energy cannot be determined. Not scored.",
+     "stancesPath": "data/stances.json stances[\"austin-r-kelly\"][\"energy\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"austin-r-kelly\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Campaign site has a section heading on data centers, but the section body is empty in the page HTML; direction on energy cannot be determined. Not scored."
+     }
+    },
+    {
+     "id": "jessica-martinez",
+     "issue": "education",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored.",
+     "new": "Campaign site focuses on academic excellence, workforce programs and parents' rights; no position on public money for private schools.",
+     "editorNote": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored.",
+     "stancesPath": "data/stances.json stances[\"jessica-martinez\"][\"education\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"jessica-martinez\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Campaign site: \"Refocus education on academic excellence, expand workforce programs, and defend parents' right to guide their children's education.\" No position on public money for private schools; not scored."
+     }
+    },
+    {
+     "id": "allison-bush",
+     "issue": "wages",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Supports higher teacher pay; under the standing rule, raising public employees' pay is not scored on wages.",
+     "new": "Supports higher teacher pay. That is public-employee pay, not a position on wage policy for other employers.",
+     "editorNote": "Supports higher teacher pay; under the standing rule, raising public employees' pay is not scored on wages.",
+     "stancesPath": "data/stances.json stances[\"allison-bush\"][\"wages\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"allison-bush\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Supports higher teacher pay; under the standing rule, raising public employees' pay is not scored on wages."
+     }
+    },
+    {
+     "id": "allison-bush",
+     "issue": "education",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Opposes unlimited charter expansion; charters are public schools, so this isn't on the public-to-private axis. Not scored.",
+     "new": "Opposes unlimited charter-school expansion; charter schools are public schools, so this isn't scored on the private-school-funding question.",
+     "editorNote": "Opposes unlimited charter expansion; charters are public schools, so this isn't on the public-to-private axis. Not scored.",
+     "stancesPath": "data/stances.json stances[\"allison-bush\"][\"education\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [],
+     "sourceOld": {}
+    },
+    {
+     "id": "mica-arellano",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Says tax dollars should go to students rather than bureaucracy: spending efficiency, not a position on tax levels. Not scored.",
+     "new": "Wants every tax dollar focused on students rather than bureaucracy; no position on tax levels.",
+     "editorNote": "Says tax dollars should go to students rather than bureaucracy: spending efficiency, not a position on tax levels. Not scored.",
+     "stancesPath": "data/stances.json stances[\"mica-arellano\"][\"taxes\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"mica-arellano\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Says tax dollars should go to students rather than bureaucracy: spending efficiency, not a position on tax levels. Not scored."
+     }
+    },
+    {
+     "id": "katie-kam",
+     "issue": "infrastructure",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored.",
+     "new": "Would cancel Project Connect light rail and consider a monorail, and opposes highway expansions; mixed on overall spending.",
+     "editorNote": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored.",
+     "stancesPath": "data/stances.json stances[\"katie-kam\"][\"infrastructure\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"katie-kam\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Would stop the Project Connect light rail and reassess (open to a monorail), and opposes highway expansions. Mixed on overall spending; not scored."
+     }
+    },
+    {
+     "id": "zohaib-zo-qadri",
+     "issue": "energy",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored.",
+     "new": "Opposes new data centers that use large amounts of water and power, framed around resources and residents' bills rather than environment vs. development.",
+     "editorNote": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored.",
+     "stancesPath": "data/stances.json stances[\"zohaib-zo-qadri\"][\"energy\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"zohaib-zo-qadri\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Opposes new data centers that use large amounts of water and power, framed around resource use and residents' bills rather than environment vs. development. Not scored."
+     }
+    },
+    {
+     "id": "dave-thadani",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored.",
+     "new": "Criticizes \"irresponsible city spending\" but takes no position on tax levels.",
+     "editorNote": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored.",
+     "stancesPath": "data/stances.json stances[\"dave-thadani\"][\"taxes\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"dave-thadani\"][\"unsure\"][1]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[1]": "Criticizes \"irresponsible city spending\" but gives no position on tax levels. Not scored."
+     }
+    },
+    {
+     "id": "dave-thadani",
+     "issue": "safety",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored.",
+     "new": "Campaign site supports \"a proactive police presence\"; a League of Women Voters guide answer says \"rework police presence\". The direction is unclear.",
+     "editorNote": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored.",
+     "stancesPath": "data/stances.json stances[\"dave-thadani\"][\"safety\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"dave-thadani\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Campaign site supports \"a proactive police presence\"; the LWV answer says \"rework police presence\". Direction is unclear, so not scored."
+     }
+    },
+    {
+     "id": "kai-huang",
+     "issue": "infrastructure",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored.",
+     "new": "Wants a cost review and budget cap for light rail, but also \"better buses, signals and sidewalks now\"; mixed on spending.",
+     "editorNote": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored.",
+     "stancesPath": "data/stances.json stances[\"kai-huang\"][\"infrastructure\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"kai-huang\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Wants an independent cost review and firm budget cap on light rail but also \"better buses, signals and sidewalks now\". Mixed on spending level; not scored."
+     }
+    },
+    {
+     "id": "kirk-becker",
+     "issue": "education",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored.",
+     "new": "Proposes moving all AISD students to charter schools; charter schools are public schools, so this isn't scored on the private-school-funding question.",
+     "editorNote": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored.",
+     "stancesPath": "data/stances.json stances[\"kirk-becker\"][\"education\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"kirk-becker\"][\"unsure\"][0]",
+      "data/civic/positions_gapfill_batch3civic.json [\"kirk-becker\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Proposes moving all AISD students to charter schools. Texas charters are public schools, so this is not public money for private schools; not scored.",
+      "batch3civic.unsure[0]": "Proposes converting all AISD schools to charter schools. Batch2 left this unscored because Texas charters are public schools. NOTE: Allison Bush's education -3 rests on opposing charter expansion, so the two are treated asymmetrically; flagged for an editorial decision rather than changed here."
+     }
+    },
+    {
+     "id": "dana-walker",
+     "issue": "wages",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Workforce partnerships leading to \"local jobs that pay living wages\": employer programs, not government wage policy. Not scored.",
+     "new": "Wants college workforce partnerships that lead to living-wage local jobs; not a position on government wage policy.",
+     "editorNote": "Workforce partnerships leading to \"local jobs that pay living wages\": employer programs, not government wage policy. Not scored.",
+     "stancesPath": "data/stances.json stances[\"dana-walker\"][\"wages\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"dana-walker\"][\"unsure\"][1]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[1]": "Workforce partnerships leading to \"local jobs that pay living wages\": employer programs, not government wage policy. Not scored."
+     }
+    },
+    {
+     "id": "dana-walker",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Wants free tuition expanded but only after financial stability; and says every ACC dollar comes from students and taxpayers. No direction on tax levels. Not scored.",
+     "new": "Wants free tuition expanded once finances are stable, and notes college money comes from students and taxpayers; no position on tax levels.",
+     "editorNote": "Wants free tuition expanded but only after financial stability; and says every ACC dollar comes from students and taxpayers. No direction on tax levels. Not scored.",
+     "stancesPath": "data/stances.json stances[\"dana-walker\"][\"taxes\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"dana-walker\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Wants free tuition expanded but only after financial stability; and says every ACC dollar comes from students and taxpayers. No direction on tax levels. Not scored."
+     }
+    },
+    {
+     "id": "trevor-hale",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "On free tuition: likes the idea but doubts it works. Not a tax-level position; not scored.",
+     "new": "Likes the idea of free tuition but doubts it works; no position on tax levels.",
+     "editorNote": "On free tuition: likes the idea but doubts it works. Not a tax-level position; not scored.",
+     "stancesPath": "data/stances.json stances[\"trevor-hale\"][\"taxes\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"trevor-hale\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "On free tuition: likes the idea but doubts it works. Not a tax-level position; not scored."
+     }
+    },
+    {
+     "id": "nan-mcraven",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Says state money should be earmarked for community colleges: a funding-source view, not a local tax-level position. Not scored.",
+     "new": "Says the state should earmark money for community colleges; no position on local tax levels.",
+     "editorNote": "Says state money should be earmarked for community colleges: a funding-source view, not a local tax-level position. Not scored.",
+     "stancesPath": "data/stances.json stances[\"nan-mcraven\"][\"taxes\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"nan-mcraven\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Says state money should be earmarked for community colleges: a funding-source view, not a local tax-level position. Not scored."
+     }
+    },
+    {
+     "id": "yvonne-munoz",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "General statement about responsible use of taxpayer resources; no direction on tax levels. Not scored.",
+     "new": "Speaks generally about using taxpayer resources responsibly; no position on tax levels.",
+     "editorNote": "General statement about responsible use of taxpayer resources; no direction on tax levels. Not scored.",
+     "stancesPath": "data/stances.json stances[\"yvonne-munoz\"][\"taxes\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"yvonne-munoz\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "General statement about responsible use of taxpayer resources; no direction on tax levels. Not scored."
+     }
+    },
+    {
+     "id": "sonja-shaw",
+     "issue": "safety",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Student discipline is not the public-safety axis (enforcement vs treatment/prevention in public-safety funding). The quote also pairs accountability with \"receive support at home\", so it is mixed.",
+     "new": "About student discipline in schools, pairing accountability with support at home; not a position on public-safety policy.",
+     "editorNote": "Student discipline is not the public-safety axis (enforcement vs treatment/prevention in public-safety funding). The quote also pairs accountability with \"receive support at home\", so it is mixed.",
+     "stancesPath": "data/stances.json stances[\"sonja-shaw\"][\"safety\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"sonja-shaw\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[0]": "Student discipline is not the public-safety axis (enforcement vs treatment/prevention in public-safety funding). The quote also pairs accountability with \"receive support at home\", so it is mixed."
+     }
+    },
+    {
+     "id": "joaquin-torres",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "\"Every property owner should pay their fair share\": about enforcing existing assessments, not tax levels. Not scored.",
+     "new": "\"Every property owner should pay their fair share\" is about collecting what is already owed, not about tax levels.",
+     "editorNote": "\"Every property owner should pay their fair share\": about enforcing existing assessments, not tax levels. Not scored.",
+     "stancesPath": "data/stances.json stances[\"joaquin-torres\"][\"taxes\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"joaquin-torres\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "\"Every property owner should pay their fair share\": about enforcing existing assessments, not tax levels. Not scored."
+     }
+    },
+    {
+     "id": "ellsworth-ell-m-jennison-jr",
+     "issue": "housing",
+     "status": "unsure",
+     "rendered": true,
+     "old": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored.",
+     "new": "A KQED voter-guide paraphrase includes the words \"not housing\" without clear context; the direction is unclear.",
+     "editorNote": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored.",
+     "stancesPath": "data/stances.json stances[\"ellsworth-ell-m-jennison-jr\"][\"housing\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3.json [\"ellsworth-ell-m-jennison-jr\"][\"unsure\"][1]"
+     ],
+     "sourceOld": {
+      "batch3.unsure[1]": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored."
+     }
+    },
+    {
+     "id": "ellsworth-ell-m-jennison-jr",
+     "issue": "wages",
+     "status": "unsure",
+     "rendered": true,
+     "old": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored.",
+     "new": "A KQED voter-guide paraphrase says he favors higher teacher wages; these are not his own words.",
+     "editorNote": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored.",
+     "stancesPath": "data/stances.json stances[\"ellsworth-ell-m-jennison-jr\"][\"wages\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3.json [\"ellsworth-ell-m-jennison-jr\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3.unsure[0]": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored."
+     }
+    },
+    {
+     "id": "jamo-muhammad",
+     "issue": "safety",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored.",
+     "new": "Stresses community-led violence reduction and criticizes police taking credit; no position on police funding vs. prevention.",
+     "editorNote": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored.",
+     "stancesPath": "data/stances.json stances[\"jamo-muhammad\"][\"safety\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"jamo-muhammad\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Stresses community-led violence reduction and criticizes police credit-taking, but takes no position on police funding vs. prevention; not scored."
+     }
+    },
+    {
+     "id": "autumn-brown-garibay",
+     "issue": "education",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Wants families to \"choose public school on purpose\" and calls public school a values statement, but says nothing about public money for private schools/vouchers. Not scored.",
+     "new": "Wants families to \"choose public school on purpose\"; no position on public money for private schools.",
+     "editorNote": "Wants families to \"choose public school on purpose\" and calls public school a values statement, but says nothing about public money for private schools/vouchers. Not scored.",
+     "stancesPath": "data/stances.json stances[\"autumn-brown-garibay\"][\"education\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"autumn-brown-garibay\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Wants families to \"choose public school on purpose\" and calls public school a values statement, but says nothing about public money for private schools/vouchers. Not scored."
+     }
+    },
+    {
+     "id": "phil-kim",
+     "issue": "safety",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Supports more training/coordination for school T-10 security staff: school-campus staffing, not diversion vs enforcement. Not scored.",
+     "new": "Supports more training and coordination for school security staff; not a position on public-safety policy.",
+     "editorNote": "Supports more training/coordination for school T-10 security staff: school-campus staffing, not diversion vs enforcement. Not scored.",
+     "stancesPath": "data/stances.json stances[\"phil-kim\"][\"safety\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"phil-kim\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Supports more training/coordination for school T-10 security staff: school-campus staffing, not diversion vs enforcement. Not scored."
+     }
+    },
+    {
+     "id": "rome-moses-jones",
+     "issue": "wages",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Precedent: public-employer pay statements have not been scored on wages. Alida Fisher (\"Living Wage for Educators Act\") has wages = \"No public statement found\" (her statement was scored only under taxes, for the parcel tax). Vikki Goodwin's \"teacher pay increases\" is not in her wages score (her wages +4 is the $15 minimum wage). The wages axis statement is \"Employers and workers, not government, should decide wage levels\". A trustee paying the college's own staff more is an employer decision, not wage policy for others.",
+     "new": "Supports livable wages for the college's own child-care staff and educators. That is public-employee pay, not a position on wage policy for other employers.",
+     "editorNote": "Precedent: public-employer pay statements have not been scored on wages. Alida Fisher (\"Living Wage for Educators Act\") has wages = \"No public statement found\" (her statement was scored only under taxes, for the parcel tax). Vikki Goodwin's \"teacher pay increases\" is not in her wages score (her wages +4 is the $15 minimum wage). The wages axis statement is \"Employers and workers, not government, should decide wage levels\". A trustee paying the college's own staff more is an employer decision, not wage policy for others.",
+     "stancesPath": "data/stances.json stances[\"rome-moses-jones\"][\"wages\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"rome-moses-jones\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[0]": "Precedent: public-employer pay statements have not been scored on wages. Alida Fisher (\"Living Wage for Educators Act\") has wages = \"No public statement found\" (her statement was scored only under taxes, for the parcel tax). Vikki Goodwin's \"teacher pay increases\" is not in her wages score (her wages +4 is the $15 minimum wage). The wages axis statement is \"Employers and workers, not government, should decide wage levels\". A trustee paying the college's own staff more is an employer decision, not wage policy for others."
+     }
+    },
+    {
+     "id": "leah-lacroix",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "This defends a program. It names no tax or tax level, and the future ballot measure is not identified as a tax. Compare Monroe Lace taxes +3, which explicitly calls for a \"successor CCSF parcel-tax measure\" (growsf.org, re-checked). Scoring LaCroix would mean inferring a tax.",
+     "new": "Supports Free City and the grant program and opposes cuts; does not name a tax or tax level.",
+     "editorNote": "This defends a program. It names no tax or tax level, and the future ballot measure is not identified as a tax. Compare Monroe Lace taxes +3, which explicitly calls for a \"successor CCSF parcel-tax measure\" (growsf.org, re-checked). Scoring LaCroix would mean inferring a tax.",
+     "stancesPath": "data/stances.json stances[\"leah-lacroix\"][\"taxes\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"leah-lacroix\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[0]": "This defends a program. It names no tax or tax level, and the future ballot measure is not identified as a tax. Compare Monroe Lace taxes +3, which explicitly calls for a \"successor CCSF parcel-tax measure\" (growsf.org, re-checked). Scoring LaCroix would mean inferring a tax."
+     }
+    },
+    {
+     "id": "bunny-mcfadden",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Her funding ideas are enrollment, partnerships and grants. None of them is a tax, so there is no tax-level direction. This is the same standard as LaCroix.",
+     "new": "Proposes funding through enrollment, partnerships and grants; does not name a tax or tax level.",
+     "editorNote": "Her funding ideas are enrollment, partnerships and grants. None of them is a tax, so there is no tax-level direction. This is the same standard as LaCroix.",
+     "stancesPath": "data/stances.json stances[\"bunny-mcfadden\"][\"taxes\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"bunny-mcfadden\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch4.unsure[0]": "Her funding ideas are enrollment, partnerships and grants. None of them is a tax, so there is no tax-level direction. This is the same standard as LaCroix."
+     }
+    },
+    {
+     "id": "erwin-tam",
+     "issue": "infrastructure",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Opposes selling the Downtown Center; about keeping an asset, not spending levels. Not scored.",
+     "new": "Opposes selling the college's Downtown Center; about keeping a property, not spending levels.",
+     "editorNote": "Opposes selling the Downtown Center; about keeping an asset, not spending levels. Not scored.",
+     "stancesPath": "data/stances.json stances[\"erwin-tam\"][\"infrastructure\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"erwin-tam\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Opposes selling the Downtown Center; about keeping an asset, not spending levels. Not scored."
+     }
+    },
+    {
+     "id": "lauren-b-pena",
+     "issue": "immigration",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored.",
+     "new": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\"; mixed direction.",
+     "editorNote": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored.",
+     "stancesPath": "data/stances.json stances[\"lauren-b-pena\"][\"immigration\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"lauren-b-pena\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch2.unsure[0]": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\". Mixed; not scored."
+     }
+    },
+    {
+     "id": "gabriel-padilla",
+     "issue": "safety",
+     "status": "unsure",
+     "rendered": true,
+     "old": "\"Community first public safety\" focused on trust and transparency with residents; no direction on diversion vs enforcement. Not scored.",
+     "new": "Focuses on trust and transparency between law enforcement and residents; no position on prevention vs. enforcement.",
+     "editorNote": "\"Community first public safety\" focused on trust and transparency with residents; no direction on diversion vs enforcement. Not scored.",
+     "stancesPath": "data/stances.json stances[\"gabriel-padilla\"][\"safety\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"gabriel-padilla\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "\"Community first public safety\" focused on trust and transparency with residents; no direction on diversion vs enforcement. Not scored."
+     }
+    },
+    {
+     "id": "brian-pena",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": true,
+     "old": "Promises responsible stewardship of tax dollars and accurate commercial appraisals; no position on tax levels. Not scored.",
+     "new": "Promises responsible stewardship of tax dollars and accurate commercial appraisals; no position on tax levels.",
+     "editorNote": "Promises responsible stewardship of tax dollars and accurate commercial appraisals; no position on tax levels. Not scored.",
+     "stancesPath": "data/stances.json stances[\"brian-pena\"][\"taxes\"].summary",
+     "inDf0cb76": false,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"brian-pena\"][\"unsure\"][0]"
+     ],
+     "sourceOld": {
+      "batch3civic.unsure[0]": "Promises responsible stewardship of tax dollars and accurate commercial appraisals; no position on tax levels. Not scored."
+     }
+    },
+    {
+     "id": "lauren-b-pena",
+     "issue": "healthcare",
+     "status": "sourced",
+     "rendered": true,
+     "old": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection.",
+     "new": "Favors market approaches: selling insurance across state lines, more health savings accounts and fewer regulations, while protecting patients with preexisting conditions.",
+     "editorNote": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection.",
+     "stancesPath": "data/stances.json stances[\"lauren-b-pena\"][\"healthcare\"].summary",
+     "inDf0cb76": true,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"lauren-b-pena\"][\"stances\"][2]"
+     ],
+     "sourceOld": {
+      "batch2.stances[2]": "Favors market approaches: selling insurance across state lines, more health savings accounts, fewer regulations, while protecting patients with preexisting conditions. Mild because of the preexisting-conditions protection."
+     }
+    },
+    {
+     "id": "dana-walker",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": false,
+     "old": "Backs expanding free tuition while saying ACC must \"scrutinize operations and spending\". No tax-level position; not scored.",
+     "new": "Backs expanding free tuition while saying the college must \"scrutinize operations and spending\"; no position on tax levels.",
+     "editorNote": "Backs expanding free tuition while saying ACC must \"scrutinize operations and spending\". No tax-level position; not scored.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"dana-walker\"][\"unsure\"][0]"
+     ],
+     "whyNotRendered": "overridden by a later batch file in merge order"
+    },
+    {
+     "id": "trevor-hale",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": false,
+     "old": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" Ambiguous; not scored.",
+     "new": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" The direction is unclear.",
+     "editorNote": "Calls raising property taxes \"abhorrent\" but adds \"If we want good things, we need to pay for them.\" Ambiguous; not scored.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"trevor-hale\"][\"unsure\"][0]"
+     ],
+     "whyNotRendered": "overridden by a later batch file in merge order"
+    },
+    {
+     "id": "dana-walker",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": false,
+     "old": "'protecting taxpayers' money' gives no tax-level direction. Not scored.",
+     "new": "Talks about protecting taxpayers' money; no position on tax levels.",
+     "editorNote": "'protecting taxpayers' money' gives no tax-level direction. Not scored.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3.json [\"dana-walker\"][\"unsure\"][0]"
+     ],
+     "whyNotRendered": "overridden by a later batch file in merge order"
+    },
+    {
+     "id": "gloria-gonzales-dholakia",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": false,
+     "old": "\"Ensure responsible stewardship of precious taxpayer investments\": no direction on tax levels. Not scored.",
+     "new": "\"Ensure responsible stewardship of precious taxpayer investments\": no position on tax levels.",
+     "editorNote": "\"Ensure responsible stewardship of precious taxpayer investments\": no direction on tax levels. Not scored.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"gloria-gonzales-dholakia\"][\"unsure\"][0]"
+     ],
+     "whyNotRendered": "not merged: a sourced value already exists and the item has no override"
+    },
+    {
+     "id": "monroe-lace",
+     "issue": "taxes",
+     "status": "unsure",
+     "rendered": false,
+     "old": "Says the board must be prepared for the 2032 parcel-tax expiration; does not say whether to renew or raise it. Existing taxes score unchanged. Not scored here.",
+     "new": "Says the board must prepare for the parcel tax expiring in 2032; does not say whether to renew or raise it.",
+     "editorNote": "Says the board must be prepared for the 2032 parcel-tax expiration; does not say whether to renew or raise it. Existing taxes score unchanged. Not scored here.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3civic.json [\"monroe-lace\"][\"unsure\"][0]"
+     ],
+     "whyNotRendered": "not merged: a sourced value already exists and the item has no override"
+    },
+    {
+     "id": "george-morales-iii",
+     "issue": "taxes",
+     "status": "sourced",
+     "rendered": false,
+     "old": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+     "new": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase).",
+     "editorNote": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch2.json [\"george-morales-iii\"][\"stances\"][0]"
+     ],
+     "whyNotRendered": "voteRecord is rendered instead of summary"
+    },
+    {
+     "id": "dana-walker",
+     "issue": "wages",
+     "status": "sourced",
+     "rendered": false,
+     "old": "Same rule as Rome Moses Jones: this is a record item about public-employer pay (ACC staff), not wage policy. Dana Walker goes back to 0 sourced issues.",
+     "new": "Cites raising wages for the college's own employees. That is public-employee pay, not a position on wage policy for other employers.",
+     "editorNote": "Same rule as Rome Moses Jones: this is a record item about public-employer pay (ACC staff), not wage policy. Dana Walker goes back to 0 sourced issues.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch4.json [\"dana-walker\"][\"unsure\"][0]"
+     ],
+     "whyNotRendered": "batch3civic's item is rendered in the current worktree, but batch4 has override:true and wins on a full merge_gapfill.py re-run; it gets its own summary matching its own quote"
+    },
+    {
+     "id": "andy-brown",
+     "issue": "taxes",
+     "status": "sourced",
+     "rendered": false,
+     "old": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+     "new": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase).",
+     "editorNote": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
+     "stancesPath": null,
+     "sourcePaths": [
+      "data/civic/positions_gapfill_batch3.json [\"andy-brown\"][\"stances\"][0]"
+     ],
+     "whyNotRendered": "voteRecord is rendered instead of summary"
+    }
+   ]
+  },
+  {
+   "item": 2,
+   "title": "Remove Weber infrastructure (SB 1 vote reused from taxes) from built-in data",
+   "changes": [
+    {
+     "path": "data/stances.json",
+     "jsonPath": "stances[\"shirley-n-weber\"][\"infrastructure\"]",
+     "old": {
+      "value": 4,
+      "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
+      "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+      "voteRecord": "Voted Yes (Apr 6, 2017)",
+      "bill": "SB 1",
+      "year": 2017
+     },
+     "new": {
+      "value": null,
+      "status": "No public statement found"
+     }
+    },
+    {
+     "path": "data/civic/positions_94103_batch1.json",
+     "jsonPath": "stances[\"shirley-weber\"][\"infrastructure\"]",
+     "old": "{value:4, quote:\"SB 1 Beall Third Reading Urgency By FRAZIER ... For\", sourceUrl:https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1, verifiedBy:civic, verifiedDate:2026-10-29, note:...}",
+     "new": {
+      "value": null,
+      "status": "No public statement found"
+     }
+    },
+    {
+     "path": "data/quote_years.json",
+     "jsonPath": "years[\"shirley-n-weber.infrastructure\"]",
+     "old": {
+      "year": 2017,
+      "basis": "page published date"
+     },
+     "new": "DELETE key"
+    }
+   ],
+   "why": "The same SB 1 roll-call vote is already Weber's taxes entry; one vote, one issue. The API and card already hide it at runtime (QA P2-C1), so removing it changes nothing visible. Also check that data/civic/photos.json, data/accountability.json and data/sources-checked.json don't re-add it (they mention Weber but are not stance sources)."
+  },
+  {
+   "item": 3,
+   "title": "NY TENTATIVE notes ≤200 characters",
+   "engineeringInstructions": [
+    "Replace data/ny-applies-notes.json byRace[raceId] with `new` (keep top-level `source`, the vote.nyc PDF, unchanged).",
+    "Replace appliesNote in data/civic/ballots_additions.json and data/ny.json with `appliesNew` so the SPLIT part lib/tools.ts extracts is shorter. Rendered appliesNote (split + source) is ≤200 for all 5; checked by code.",
+    "TENTATIVE stays in each note and in the UI heading."
+   ],
+   "rows": [
+    {
+     "raceId": "ny-surrogate-ny",
+     "path": "data/ny-applies-notes.json byRace[\"ny-surrogate-ny\"]",
+     "old": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Surrogate - New York', 1 to be elected.",
+     "new": "Source: NYC Board of Elections contest list (vote.nyc), printed 9/11/2026 and still marked TENTATIVE. No final list as of Oct 30. Contest: Surrogate, New York County, 1 seat.",
+     "newLen": 174,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"ny-surrogate-ny\"].appliesNote",
+      "data/ny.json race id=\"ny-surrogate-ny\" appliesNote"
+     ],
+     "appliesOld": "Source is the NYC BOE contest list (marked TENTATIVE, printed 9/11/2026)",
+     "appliesNew": "Source is the NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "renderedSplitNote": null,
+     "renderedAppliesNote": "Source: NYC Board of Elections contest list (vote.nyc), printed 9/11/2026 and still marked TENTATIVE. No final list as of Oct 30. Contest: Surrogate, New York County, 1 seat.",
+     "renderedAppliesNoteLen": 174,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    },
+    {
+     "raceId": "ny-civil-county-ny",
+     "path": "data/ny-applies-notes.json byRace[\"ny-civil-county-ny\"]",
+     "old": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Judge of the Civil Court - County - New York', 3 to be elected.",
+     "new": "Source: NYC Board of Elections contest list (vote.nyc), printed 9/11/2026 and still marked TENTATIVE. No final list as of Oct 30. Contest: Civil Court, New York County, 3 seats.",
+     "newLen": 177,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"ny-civil-county-ny\"].appliesNote",
+      "data/ny.json race id=\"ny-civil-county-ny\" appliesNote"
+     ],
+     "appliesOld": "Source is the NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "appliesNew": "Source is the NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "renderedSplitNote": null,
+     "renderedAppliesNote": "Source: NYC Board of Elections contest list (vote.nyc), printed 9/11/2026 and still marked TENTATIVE. No final list as of Oct 30. Contest: Civil Court, New York County, 3 seats.",
+     "renderedAppliesNoteLen": 177,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    },
+    {
+     "raceId": "ny-civil-3md-ny",
+     "path": "data/ny-applies-notes.json byRace[\"ny-civil-3md-ny\"]",
+     "old": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: Judge of the Civil Court, 3rd Municipal Court District, 1 to be elected.",
+     "new": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 3rd Municipal Court District, 1 seat.",
+     "newLen": 120,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"ny-civil-3md-ny\"].appliesNote",
+      "data/ny.json race id=\"ny-civil-3md-ny\" appliesNote"
+     ],
+     "appliesOld": "SPLIT: ~70.6% of 10001 (ZCTA) residents are in the 3rd Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "appliesNew": "SPLIT: ~70.6% of 10001 (ZCTA) is in the 3rd Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "renderedSplitNote": "SPLIT: ~70.6% of 10001 (ZCTA) is in the 3rd Municipal Court District.",
+     "renderedAppliesNote": "SPLIT: ~70.6% of 10001 (ZCTA) is in the 3rd Municipal Court District. Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 3rd Municipal Court District, 1 seat.",
+     "renderedAppliesNoteLen": 190,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    },
+    {
+     "raceId": "ny-civil-9md-ny",
+     "path": "data/ny-applies-notes.json byRace[\"ny-civil-9md-ny\"]",
+     "old": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: Judge of the Civil Court, 9th Municipal Court District, 2 to be elected.",
+     "new": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 9th Municipal Court District, 2 seats.",
+     "newLen": 121,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"ny-civil-9md-ny\"].appliesNote",
+      "data/ny.json race id=\"ny-civil-9md-ny\" appliesNote"
+     ],
+     "appliesOld": "SPLIT: ~29.4% of 10001 (ZCTA) residents are in the 9th Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "appliesNew": "SPLIT: ~29.4% of 10001 (ZCTA) is in the 9th Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "renderedSplitNote": "SPLIT: ~29.4% of 10001 (ZCTA) is in the 9th Municipal Court District.",
+     "renderedAppliesNote": "SPLIT: ~29.4% of 10001 (ZCTA) is in the 9th Municipal Court District. Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 9th Municipal Court District, 2 seats.",
+     "renderedAppliesNoteLen": 191,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    },
+    {
+     "raceId": "nyc-council-3",
+     "path": "data/ny-applies-notes.json byRace[\"nyc-council-3\"]",
+     "old": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Member of the City Council - 3rd Council District', 1 to be elected.",
+     "new": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: 1 seat; unclear if a special election.",
+     "newLen": 108,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"nyc-council-3\"].appliesNote",
+      "data/ny.json race id=\"nyc-council-3\" appliesNote"
+     ],
+     "appliesOld": "SPLIT: ~95.1% of 10001 (ZCTA) residents are in Council District 3; ~4.9% are in CD4, which has no 2026 race. Whether this is a special election is unsure. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "appliesNew": "SPLIT: ~95.1% of 10001 (ZCTA) is in Council District 3; the rest (CD4) has no 2026 race. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "renderedSplitNote": "SPLIT: ~95.1% of 10001 (ZCTA) is in Council District 3; the rest (CD4) has no 2026 race.",
+     "renderedAppliesNote": "SPLIT: ~95.1% of 10001 (ZCTA) is in Council District 3; the rest (CD4) has no 2026 race. Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: 1 seat; unclear if a special election.",
+     "renderedAppliesNoteLen": 197,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    }
+   ]
+  },
+  {
+   "item": 4,
+   "title": "Photo credits for Commons photos",
+   "policy": "Use a real name only when the Commons file page states it; otherwise 'Photo: Wikimedia Commons user <username>'. Reason in creditBasis per entry.",
+   "file": "data/civic/photos_batch.json ← copy /workspace/townhall/civic/photos_batch.json (backup photos_batch.pre_qa7.json/.md; built by photos_batch_work/build.py → qa7_fixes.py)",
+   "changes": [
+    {
+     "id": "james-talarico",
+     "raceId": "us-senate-tx",
+     "field": "attribution",
+     "old": "Photo: Antonioaesparza",
+     "new": "Photo: Wikimedia Commons user Antonioaesparza",
+     "why": "Commons Author field is only the user link; Credit \"Own work\"; description names no photographer"
+    },
+    {
+     "id": "vikki-goodwin",
+     "raceId": "tx-ltgov",
+     "field": "attribution",
+     "old": "Photo: Cole-Wilson-93",
+     "new": "Photo: Wikimedia Commons user Cole-Wilson-93",
+     "why": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+    },
+    {
+     "id": "kevin-mccormick",
+     "raceId": "tx-ltgov",
+     "field": "attribution",
+     "old": "Photo: WikiBunny2K1",
+     "new": "Photo: Wikimedia Commons user WikiBunny2K1",
+     "why": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+    },
+    {
+     "id": "jon-rosenthal",
+     "raceId": "tx-rrc",
+     "field": "attribution",
+     "old": "Photo: Scriptrix101",
+     "new": "Photo: Wikimedia Commons user Scriptrix101",
+     "why": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+    },
+    {
+     "id": "scott-brister",
+     "raceId": "tx-15th-coa-chief-justice",
+     "field": "attribution",
+     "old": "Photo: AndrewsKurth",
+     "new": "Photo: Wikimedia Commons user AndrewsKurth",
+     "why": "Commons Author field is the user link \"AndrewsKurth\" (reads like a law-firm name, but the page states no person or firm as author); Credit \"Own work\""
+    },
+    {
+     "id": "elisabeth-earle",
+     "raceId": "travis-ccl-7",
+     "field": "attribution",
+     "old": "Photo: DustDevil22039",
+     "new": "Photo: Wikimedia Commons user DustDevil22039",
+     "why": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+    },
+    {
+     "id": "trevor-hale",
+     "raceId": "acc-trustee-place-3",
+     "field": "attribution",
+     "old": "Photo: Bhkdynamo",
+     "new": "Photo: Wikimedia Commons user Bhkdynamo",
+     "why": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+    },
+    {
+     "id": "caroline-shinkle",
+     "raceId": "ny-12",
+     "field": "attribution",
+     "old": "Photo: AidansStuff",
+     "new": "Photo: Wikimedia Commons user AidansStuff",
+     "why": "Commons Author field is only the user link; Credit \"Own work\"; description \"Selfie photo with caroline shinkle\" does not name the photographer, so the username is kept"
+    },
+    {
+     "id": "thomas-p-dinapoli",
+     "raceId": "ny-comptroller",
+     "field": "creditBasis",
+     "old": null,
+     "new": "Credit kept as \"Office of NYS Comptroller\": the Commons description reads \"Tom DiNapoli's official headshot. Source: OSC\" and the credit links osc.state.ny.us (an organization stated on the page, not a username).",
+     "why": "credit kept"
+    }
+   ]
+  },
+  {
+   "item": 5,
+   "title": "Photo parity: head-and-shoulders framing",
+   "engineeringInstructions": [
+    "Use localFile (self-hosted crop) where set; it overrides the photoUrl image. cropNote = how to crop the remote image if no localFile.",
+    "No RACENOTE/photo-gate changes in ca-gov, tx-gov, ca-insurance, ca-ag, tx-agcomm (photoYear null for the new campaign photos, so the 6-year rule doesn't trigger)."
+   ],
+   "changes": [
+    {
+     "id": "steve-hilton",
+     "raceId": "ca-gov",
+     "field": "photo",
+     "old": {
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Steve_Hilton_%2854233445987_crop%29.jpg/500px-Steve_Hilton_%2854233445987_crop%29.jpg",
+      "attribution": "Photo: Gage Skidmore",
+      "photoYear": 2024
+     },
+     "new": {
+      "photoUrl": "https://stevehiltonforgovernor.com/photos/portrait-street.jpg",
+      "localFile": "/workspace/townhall/civic/photos_local/steve-hilton.jpg",
+      "attribution": "Photo: Steve Hilton campaign site",
+      "photoYear": null
+     },
+     "why": "parity"
+    },
+    {
+     "id": "gina-hinojosa",
+     "raceId": "tx-gov",
+     "field": "photo",
+     "old": {
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg/500px-Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
+      "attribution": "Photo: RRC1701",
+      "photoYear": 2024
+     },
+     "new": {
+      "photoUrl": "https://ginafortexas.com/wp-content/uploads/2026/05/GH-Launch-AB-Meta-1200x630-3.png",
+      "localFile": "/workspace/townhall/civic/photos_local/gina-hinojosa.jpg",
+      "attribution": "Photo: Gina Hinojosa campaign site",
+      "photoYear": null
+     },
+     "why": "parity"
+    },
+    {
+     "id": "jane-kim",
+     "raceId": "ca-insurance",
+     "field": "photo",
+     "old": {
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Trans_March_San_Francisco_20170623-6632.jpg/500px-Trans_March_San_Francisco_20170623-6632.jpg",
+      "attribution": "Photo: Pax Ahimsa Gethen",
+      "photoYear": 2017
+     },
+     "new": {
+      "photoUrl": "https://run.imgix.net/86daf947-8fea-4921-83be-74f03c8a9ad0/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e.jpg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C0%2C3000%2C2001&w=1500&s=ce67458ce7dd216d01060919696bd02a",
+      "localFile": "/workspace/townhall/civic/photos_local/jane-kim.jpg",
+      "attribution": "Photo: Jane Kim campaign site",
+      "photoYear": null
+     },
+     "why": "parity"
+    },
+    {
+     "id": "clayton-tucker",
+     "raceId": "tx-agcomm",
+     "field": "photo",
+     "old": {
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Clayton_Tucker_Speech_Cropped_%283x4%29.jpg/500px-Clayton_Tucker_Speech_Cropped_%283x4%29.jpg",
+      "attribution": "Photo: DivaaNut",
+      "photoYear": 2026
+     },
+     "new": {
+      "photoUrl": "https://assets.nationbuilder.com/cht/pages/2030/meta_images/original/default-image-3.jpg?1777483964",
+      "localFile": "/workspace/townhall/civic/photos_local/clayton-tucker.jpg",
+      "attribution": "Photo: Clayton Tucker campaign site",
+      "photoYear": null
+     },
+     "why": "parity"
+    },
+    {
+     "id": "michael-e-gates",
+     "raceId": "ca-ag",
+     "field": "photo",
+     "old": {
+      "photoUrl": "https://www.justice.gov/sites/default/files/2025-05/250507-crt-anti-semitism_08_0.jpg",
+      "attribution": "Photo: U.S. Department of Justice",
+      "photoYear": 2025
+     },
+     "new": {
+      "photoUrl": "https://irp.cdn-website.com/81d43f61/dms3rep/multi/opt/bannerv2-1920w.png",
+      "localFile": "/workspace/townhall/civic/photos_local/michael-e-gates.jpg",
+      "attribution": "Photo: Michael E. Gates campaign site",
+      "photoYear": null
+     },
+     "why": "parity"
+    },
+    {
+     "id": "xavier-becerra",
+     "raceId": "ca-gov",
+     "field": "cropNote,parity",
+     "old": {
+      "cropNote": null,
+      "parity": null
+     },
+     "new": {
+      "cropNote": "Already a formal front-facing portrait (HHS, 2021) but framed to mid-chest; crop to head and shoulders: keep the top ~75% of the frame, centred on the face, to match Hilton's localFile.",
+      "parity": "ca-gov: formal portrait; comparable after cropNote"
+     },
+     "why": "parity (same standard as opponents)"
+    },
+    {
+     "id": "greg-abbott",
+     "raceId": "tx-gov",
+     "field": "cropNote,parity",
+     "old": {
+      "cropNote": null,
+      "parity": null
+     },
+     "new": {
+      "cropNote": "Front-facing head and shoulders (NASA 2024, already cropped); a person is partly visible behind him at top right: crop to the central ~80% width to remove them.",
+      "parity": "tx-gov: head and shoulders; comparable"
+     },
+     "why": "parity (same standard as opponents)"
+    },
+    {
+     "id": "pat-dixon",
+     "raceId": "tx-gov",
+     "field": "parity",
+     "old": {
+      "parity": null
+     },
+     "new": {
+      "parity": "tx-gov: campaign headshot, front-facing head and shoulders; comparable as is"
+     },
+     "why": "parity (same standard as opponents)"
+    },
+    {
+     "id": "ben-allen",
+     "raceId": "ca-insurance",
+     "field": "parity",
+     "old": {
+      "parity": null
+     },
+     "new": {
+      "parity": "ca-insurance: formal portrait; comparable with the new Jane Kim headshot"
+     },
+     "why": "parity (same standard as opponents)"
+    },
+    {
+     "id": "rob-bonta",
+     "raceId": "ca-ag",
+     "field": "parity",
+     "old": {
+      "parity": null
+     },
+     "new": {
+      "parity": "ca-ag: official portrait; comparable with the new Gates photo"
+     },
+     "why": "parity (same standard as opponents)"
+    },
+    {
+     "id": "nate-sheets",
+     "raceId": "tx-agcomm",
+     "field": "localFile,cropNote,parity",
+     "old": {
+      "localFile": null,
+      "cropNote": null,
+      "parity": null
+     },
+     "new": {
+      "localFile": "/workspace/townhall/civic/photos_local/nate-sheets.jpg",
+      "cropNote": "photoUrl is a waist-up photo inside a hexagon mask with white seam lines across the torso; localFile is the PNG version (Nate-Sheets-2.png, 785x796) cropped to (300,112,494,340) -> 194x228, head and shoulders above the seams (low resolution; display at <=190px)",
+      "parity": "tx-agcomm: own campaign photo cropped to head and shoulders; site has no studio headshot (checked the About and home pages: group, podium, family and bus-tour images only)"
+     },
+     "why": "parity (same standard as opponents)"
+    },
+    {
+     "id": "austin-r-kelly",
+     "raceId": "tx-agcomm",
+     "field": "localFile,cropNote,parity",
+     "old": {
+      "localFile": "/workspace/townhall/civic/photos_local/austin-r-kelly.jpg",
+      "cropNote": null,
+      "parity": null
+     },
+     "new": {
+      "localFile": "/workspace/townhall/civic/photos_local/austin-r-kelly-headshoulders.jpg",
+      "cropNote": "localFile is the saved campaign image (1080x1078) cropped to (0,0,490,612): head and shoulders, campaign logo excluded. Original saved copy: photos_local/austin-r-kelly.jpg",
+      "parity": "tx-agcomm: field selfie, front-facing; comparable after crop"
+     },
+     "why": "parity (same standard as opponents)"
+    },
+    {
+     "id": "kai-huang",
+     "raceId": "austin-council-9",
+     "field": "parity",
+     "old": null,
+     "new": "UNRESOLVED (QA7): austin-council-9: kai4atx.com has only kai-hero.jpg (speaking with neighbors) and kai-gameday.jpg (two-person photo); no headshot. Keep cropNote; opponents are headshots.",
+     "why": "no better own source found"
+    },
+    {
+     "id": "liz-krueger",
+     "raceId": "ny-sd-28",
+     "field": "parity",
+     "old": null,
+     "new": "UNRESOLVED (QA7): ny-sd-28: official nysenate.gov page returned 403 to scripted requests; Commons alternatives are older (2009 event) or event photos. Crop the 2019 session photo to head and shoulders.",
+     "why": "no better own source found"
+    },
+    {
+     "id": "kathy-c-hochul-adrienne-e-adams",
+     "raceId": "ny-governor",
+     "field": "parity",
+     "old": null,
+     "new": "UNRESOLVED (QA7): ny-governor: the formal official portrait on Commons is from 2011 (US Congress); using it would put the race outside the 6-year photo-age rule (Blakeman 2022) and switch the race to initials. governor.ny.gov returned 403. Keep the 2026 MTA photo; crop to head and shoulders.",
+     "why": "no better own source found"
+    }
+   ]
+  },
+  {
+   "item": 6,
+   "title": "Texas courts: 16 candidates in the 8 QA races all have a photo",
+   "result": "16/16 have photoUrl or localFile",
+   "races": [
+    {
+     "raceId": "tx-supreme-court-place-1-chief-justice",
+     "candidates": [
+      {
+       "id": "jimmy-blacklock",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/png (GET, 2026-10-30 ~01:20 CT)"
+      },
+      {
+       "id": "maggie-ellis",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/webp (GET, 2026-10-30 ~00:40 CT)"
+      }
+     ]
+    },
+    {
+     "raceId": "tx-supreme-court-place-2",
+     "candidates": [
+      {
+       "id": "james-p-sullivan",
+       "hasPhoto": true,
+       "localFile": "/workspace/townhall/civic/photos_local/james-p-sullivan.jpg",
+       "sourceType": "own social profile",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)"
+      },
+      {
+       "id": "chari-kelly",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT); host sometimes answers scripted requests with a 202 bot challenge, returned 200 image on retry"
+      }
+     ]
+    },
+    {
+     "raceId": "tx-supreme-court-place-7",
+     "candidates": [
+      {
+       "id": "kyle-hawkins",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)"
+      },
+      {
+       "id": "kristen-hawkins",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT); host sometimes answers scripted requests with a 202 bot challenge, returned 200 image on retry"
+      }
+     ]
+    },
+    {
+     "raceId": "tx-supreme-court-place-8",
+     "candidates": [
+      {
+       "id": "brett-busby",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)"
+      },
+      {
+       "id": "gisela-d-triana",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+      }
+     ]
+    },
+    {
+     "raceId": "tx-court-of-criminal-appeals-place-4",
+     "candidates": [
+      {
+       "id": "kevin-patrick-yeary",
+       "hasPhoto": true,
+       "localFile": "/workspace/townhall/civic/photos_local/kevin-patrick-yeary.jpg",
+       "sourceType": "own social profile",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)"
+      },
+      {
+       "id": "audra-riley",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+      }
+     ]
+    },
+    {
+     "raceId": "tx-15th-coa-place-2",
+     "candidates": [
+      {
+       "id": "scott-k-field",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)"
+      },
+      {
+       "id": "tom-baker",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/png (GET, 2026-10-30 ~00:40 CT); host sometimes answers scripted requests with a 202 bot challenge, returned 200 image on retry"
+      }
+     ]
+    },
+    {
+     "raceId": "tx-15th-coa-place-3",
+     "candidates": [
+      {
+       "id": "april-farris",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~01:20 CT)"
+      },
+      {
+       "id": "marc-m-meyer",
+       "hasPhoto": true,
+       "localFile": "/workspace/townhall/civic/photos_local/marc-m-meyer.jpg",
+       "sourceType": "campaign site",
+       "verified": "640x800 JPEG embedded in the page as a base64 data URI (PHOTOS.meyer); no standalone image URL exists, so it is saved to localFile. Page fetched 200 on 2026-10-30 ~03:50 CT."
+      }
+     ]
+    },
+    {
+     "raceId": "tx-3rd-coa-chief-justice",
+     "candidates": [
+      {
+       "id": "cory-liu",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "official page",
+       "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+      },
+      {
+       "id": "darlene-byrne",
+       "hasPhoto": true,
+       "localFile": null,
+       "sourceType": "campaign site",
+       "verified": "200 image/webp (GET, 2026-10-30 ~01:20 CT)"
+      }
+     ]
+    }
+   ],
+   "notes": [
+    "Tom Baker (tx-15th-coa-place-2) is still a hotlink that returned 202 text/html (bot challenge) at ~02:31 CT; no localFile could be saved. Engineering should self-host or retry from a browser.",
+    "Outside the 8: tx-court-of-criminal-appeals-place-3 has no photo for Mark Ash, so the all-or-none gate shows initials there."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "asOf": "2026-10-30",
+ "basedOn": "QA /workspace/qa/townhall/preview-94cf301/REPORT.md; replaces item 3 rows of qa_fixes7.json for these 3 races",
+ "items": [
+  {
+   "item": 4,
+   "title": "NY TENTATIVE notes: restore \"printed 9/11/2026\", each note <=200 characters",
+   "engineeringInstructions": [
+    "Replace data/ny-applies-notes.json byRace[raceId] with `new` (top-level `source`, the vote.nyc PDF, unchanged).",
+    "Replace appliesNote in data/civic/ballots_additions.json and data/ny.json with `appliesNew`.",
+    "Rendered appliesNote (split + source) is <=200 for all 3; checked by code. nyc-council-3 drops the word \"Contest:\" to fit (205 -> 196).",
+    "TENTATIVE stays in each note."
+   ],
+   "rows": [
+    {
+     "raceId": "ny-civil-3md-ny",
+     "path": "data/ny-applies-notes.json byRace[\"ny-civil-3md-ny\"]",
+     "current": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 3rd Municipal Court District, 1 seat.",
+     "new": "Source: NYC BOE list (vote.nyc), printed 9/11/2026, still TENTATIVE. Contest: Civil Court, 3rd Municipal Court District, 1 seat.",
+     "newLen": 128,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"ny-civil-3md-ny\"].appliesNote",
+      "data/ny.json race id=\"ny-civil-3md-ny\" appliesNote"
+     ],
+     "appliesCurrent": "SPLIT: ~70.6% of 10001 (ZCTA) is in the 3rd Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "appliesNew": "SPLIT: ~70.6% of 10001 (ZCTA) is in the 3rd Municipal Court District. Source: NYC BOE contest list (TENTATIVE, printed 9/11/2026)",
+     "appliesNewLen": 129,
+     "renderedSplitNote": "SPLIT: ~70.6% of 10001 (ZCTA) is in the 3rd Municipal Court District.",
+     "renderedAppliesNote": "SPLIT: ~70.6% of 10001 (ZCTA) is in the 3rd Municipal Court District. Source: NYC BOE list (vote.nyc), printed 9/11/2026, still TENTATIVE. Contest: Civil Court, 3rd Municipal Court District, 1 seat.",
+     "renderedAppliesNoteLen": 198,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    },
+    {
+     "raceId": "ny-civil-9md-ny",
+     "path": "data/ny-applies-notes.json byRace[\"ny-civil-9md-ny\"]",
+     "current": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: Civil Court, 9th Municipal Court District, 2 seats.",
+     "new": "Source: NYC BOE list (vote.nyc), printed 9/11/2026, still TENTATIVE. Contest: Civil Court, 9th Municipal Court District, 2 seats.",
+     "newLen": 129,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"ny-civil-9md-ny\"].appliesNote",
+      "data/ny.json race id=\"ny-civil-9md-ny\" appliesNote"
+     ],
+     "appliesCurrent": "SPLIT: ~29.4% of 10001 (ZCTA) is in the 9th Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "appliesNew": "SPLIT: ~29.4% of 10001 (ZCTA) is in the 9th Municipal Court District. Source: NYC BOE contest list (TENTATIVE, printed 9/11/2026)",
+     "appliesNewLen": 129,
+     "renderedSplitNote": "SPLIT: ~29.4% of 10001 (ZCTA) is in the 9th Municipal Court District.",
+     "renderedAppliesNote": "SPLIT: ~29.4% of 10001 (ZCTA) is in the 9th Municipal Court District. Source: NYC BOE list (vote.nyc), printed 9/11/2026, still TENTATIVE. Contest: Civil Court, 9th Municipal Court District, 2 seats.",
+     "renderedAppliesNoteLen": 199,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    },
+    {
+     "raceId": "nyc-council-3",
+     "path": "data/ny-applies-notes.json byRace[\"nyc-council-3\"]",
+     "current": "Source: NYC BOE list (vote.nyc), 9/11/2026, still TENTATIVE. Contest: 1 seat; unclear if a special election.",
+     "new": "Source: NYC BOE list (vote.nyc), printed 9/11/2026, still TENTATIVE. 1 seat; unclear if a special election.",
+     "newLen": 107,
+     "appliesNotePaths": [
+      "data/civic/ballots_additions.json [\"10001\"][\"racesToAdd\"][id=\"nyc-council-3\"].appliesNote",
+      "data/ny.json race id=\"nyc-council-3\" appliesNote"
+     ],
+     "appliesCurrent": "SPLIT: ~95.1% of 10001 (ZCTA) is in Council District 3; the rest (CD4) has no 2026 race. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
+     "appliesNew": "SPLIT: ~95.1% of 10001 (ZCTA) is in Council District 3; the rest (CD4) has no 2026 race. Source: NYC BOE contest list (TENTATIVE, printed 9/11/2026)",
+     "appliesNewLen": 148,
+     "renderedSplitNote": "SPLIT: ~95.1% of 10001 (ZCTA) is in Council District 3; the rest (CD4) has no 2026 race.",
+     "renderedAppliesNote": "SPLIT: ~95.1% of 10001 (ZCTA) is in Council District 3; the rest (CD4) has no 2026 race. Source: NYC BOE list (vote.nyc), printed 9/11/2026, still TENTATIVE. 1 seat; unclear if a special election.",
+     "renderedAppliesNoteLen": 196,
+     "sourceUrlUnchanged": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf"
+    }
+   ]
+  }
+ ]
+}

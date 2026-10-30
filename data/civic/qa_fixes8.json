@@ -1,0 +1,205 @@
+{
+ "_meta": {
+  "asOf": "2026-10-30",
+  "by": "Civic",
+  "branch": "feat/actionable @5063785",
+  "note": "No repo edits. Engineering applies: civic/photos_batch.json (+ photos_local/darlene-byrne.jpg), civic/positions_gapfill_batch5civic.json via scripts/merge_gapfill.py."
+ },
+ "1_letitiaJamesPhoto": {
+  "answer": "Yes, \"Photo: WBLS\" breaks the no-news rule: WBLS is a New York radio station, so it is a media photo even with a CC license. Replaced with her campaign-site photo.",
+  "entry": {
+   "photoUrl": "https://jamesforny.com/wp-content/uploads/2026/03/tish.png",
+   "pageUrl": "https://jamesforny.com/",
+   "sourceType": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "attribution": "Photo: Letitia James campaign site",
+   "photoYear": 2026,
+   "photoYearBasis": "upload date: file is in /wp-content/uploads/2026/03/ (Last-Modified 2026-03-26); the same photo became her verified X @TishJames avatar on 2026-03-26. Taken date not stated (same basis as opponent Komatireddy, uploaded 2026/01).",
+   "cropNote": "transparent-background cutout from a speech at a podium (microphone at lower left): crop to head and shoulders and place on a plain light background",
+   "verified": "200 image/png 631x455 (GET, 2026-10-30 ~04:00 CT)",
+   "identityEvidence": "img alt \"Tish James\" in the intro section of her campaign site jamesforny.com (\"Paid for by James for NY 2026\"); same photo as her verified X avatar"
+  },
+  "localFile": "not needed (stable WordPress upload URL, not signed)",
+  "sixYearCheck": "OK: James 2026 vs Komatireddy 2026 (both by upload year).",
+  "rejected": [
+   "ag.ny.gov official portrait https://ag.ny.gov/sites/default/files/2023-01/LetitiaJames.jpg (page https://ag.ny.gov/about/meet-letitia-james, 200 image/jpeg 1603x1068): EXIF DateTimeOriginal 2019-10-31, 7 years from opponent Komatireddy (2026), fails the 6-year check; kept as fallback only.",
+   "letitiajames.com is NOT her site (page title \"Letitia James - President Donald Trump 47\"; an opposition page). Do not use."
+  ]
+ },
+ "2_charterRule": {
+  "boFrench": {
+   "answer": "Unsure. His source names only charter schools and \"any other system that protects parents' rights\"; it never mentions vouchers, ESAs, or public money for private schools.",
+   "quote": "I support local control of schools including charter schools and any other system that protects parents’ rights to ensure their child gets a great education. We are punishing low-income children by forcing them to stay in underperforming schools.",
+   "voterNote": "He backs local control of schools, including charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+   "editorNote": "Replaces education +3. The quote names charter schools and \"any other system that protects parents' rights\" but never vouchers, ESAs, school choice with public money, or private schools. Same standard as Bush and Becker. Source is Ballotpedia (403 from this box), so the quote was not re-read this pass."
+  },
+  "allCharterOnlySetUnsure": [
+   {
+    "id": "bo-french",
+    "previousScore": 3,
+    "race": "Texas Railroad Commission",
+    "zip": "78701",
+    "voterNote": "He backs local control of schools, including charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "editorNote": "Replaces education +3. The quote names charter schools and \"any other system that protects parents' rights\" but never vouchers, ESAs, school choice with public money, or private schools. Same standard as Bush and Becker. Source is Ballotpedia (403 from this box), so the quote was not re-read this pass.",
+    "sourceUrl": "https://ballotpedia.org/Bo_French"
+   },
+   {
+    "id": "karen-ortiz",
+    "previousScore": -4,
+    "race": "U.S. House New York District 12",
+    "zip": "10001",
+    "voterNote": "She opposes federal money for privately run charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "editorNote": "Replaces education -4. \"Privately run\" refers to charter operators; charters are publicly funded public schools, so this is not a position on public money for private schools.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+   },
+   {
+    "id": "alina-bonsell",
+    "previousScore": 4,
+    "race": "State Senator, District 28",
+    "zip": "10001",
+    "voterNote": "She backs more charter schools and \"more educational choices\" but doesn't say whether public money should go to private schools.",
+    "editorNote": "Replaces education +4. Only explicit content is charter expansion; \"more educational choices\" is too vague to read as vouchers/ESAs (contrast Steve Hilton, kept: \"introducing school choice\" beyond charters).",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH"
+   },
+   {
+    "id": "virginia-cheung",
+    "previousScore": -3,
+    "race": "Board of Education",
+    "zip": "94103",
+    "voterNote": "She says charter schools should play a limited role. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "editorNote": "Replaces education -3. Questionnaire question asks only about charter schools; page has no voucher/private-school text (checked 2026-10-30).",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+   },
+   {
+    "id": "alida-fisher",
+    "previousScore": -3,
+    "race": "Board of Education",
+    "zip": "94103",
+    "voterNote": "She voted against renewing a charter school. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "editorNote": "Replaces education -3. Her answer describes a charter renewal vote (KIPP Bayview); no voucher/private-school text on the page (checked 2026-10-30).",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/fisher_boe.html"
+   },
+   {
+    "id": "ryan-hazelton",
+    "previousScore": -2,
+    "race": "Board of Education",
+    "zip": "94103",
+    "voterNote": "He wants the district, not new charter schools, to meet families' needs. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "editorNote": "Replaces education -2. Charter-only question and answer; no voucher/private-school text on the page (checked 2026-10-30).",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+   },
+   {
+    "id": "laurance-lee",
+    "previousScore": -3,
+    "race": "Board of Education",
+    "zip": "94103",
+    "voterNote": "He says San Francisco doesn't need more charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "editorNote": "Replaces education -3. Charter-only question and answer; no voucher/private-school text on the page (checked 2026-10-30).",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+   }
+  ],
+  "alreadyUnsure": [
+   "allison-bush",
+   "kirk-becker"
+  ],
+  "kept": [
+   {
+    "id": "steve-hilton",
+    "score": 3,
+    "why": "Quote goes beyond charters: \"over time introducing school choice\", consistent with other kept school-choice stances (Pena, Shinkle, Middleton)."
+   }
+  ],
+  "eligibility": {
+   "before": 19,
+   "after": 19,
+   "grades_eligibility.json": 19,
+   "changed": false,
+   "affectedRaces": {
+    "ny-12": {
+     "title": "U.S. House New York District 12",
+     "before": {
+      "eligible": true,
+      "why": "5-8 issues, shared: healthcare, housing, immigration, safety"
+     },
+     "after": {
+      "eligible": true,
+      "why": "4-8 issues, shared: healthcare, housing, immigration, safety"
+     }
+    },
+    "ny-sd-28": {
+     "title": "State Senator, District 28",
+     "before": {
+      "eligible": true,
+      "why": "6-6 issues, shared: energy, healthcare, housing, safety"
+     },
+     "after": {
+      "eligible": true,
+      "why": "5-6 issues, shared: energy, healthcare, housing, safety"
+     }
+    },
+    "sf-board-of-education": {
+     "title": "Board of Education (choose up to 3)",
+     "before": {
+      "eligible": false,
+      "why": "under 3: autumn-brown-garibay (0), phil-kim (1), tim-tung (2); only 0 shared (); uneven (min 0 < half of max 4)"
+     },
+     "after": {
+      "eligible": false,
+      "why": "under 3: autumn-brown-garibay (0), virginia-cheung (2), ryan-hazelton (2), phil-kim (1), laurance-lee (2), tim-tung (2); only 0 shared (); uneven (min 0 < half of max 3)"
+     }
+    },
+    "tx-rrc": {
+     "title": "Texas Railroad Commission",
+     "before": {
+      "eligible": false,
+      "why": "under 3: arthur-dibianca (2); only 1 shared (energy); uneven (min 2 < half of max 6)"
+     },
+     "after": {
+      "eligible": false,
+      "why": "under 3: bo-french (2), arthur-dibianca (2); only 1 shared (energy); uneven (min 2 < half of max 6)"
+     }
+    }
+   },
+   "note": "Count stays 19. ny-12 now 4-8 issues (exactly half, still passes; one more loss on Ortiz would drop it). ny-sd-28 5-6. Education was not a shared issue in either. tx-rrc and sf-board-of-education were already ineligible."
+  }
+ },
+ "3_byrneCopyright": {
+  "answer": "No, the current campaign-site image should not be used. Yes, she can still have a photo: her own Facebook page headshot.",
+  "finding": "FLAG: the campaign-site byrne1.jpg is the txcourts.gov court portrait re-hosted (same file name, same 2430x3441 size, pixel-identical apart from re-encoding, mean difference about 2/255; robes and flags court backdrop). No photographer is named on either page and neither file carries an EXIF credit, so the Mark Matson credit seen on other 2025 txcourts portraits is unverified for this one. Not used.",
+  "photographer": "not named anywhere (campaign page, txcourts page, or image metadata), so nothing to add to attribution",
+  "entry": {
+   "photoUrl": "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-1/484991867_1140442701426562_7557409292458888416_n.jpg?stp=dst-jpg_tt6&cstp=mx2044x2044&ctp=s720x720&_nc_cat=101&ccb=1-7&_nc_sid=3ab345&_nc_ohc=-KTrnxytTLIQ7kNvwERyble&_nc_oc=Adqob1WV4Stq8Zg6mEkdhjzrQn8yYz88dfFvrP7F6w09LKb-MVO5_MMEMy8FK4FmhW3YOm0hv5ZzCyQYl9AY8rzo&_nc_zt=24&_nc_ht=scontent-hou1-1.xx&_nc_gid=ZIruTeDVoS2MDkofgtgNmQ&_nc_ss=7b20f&oh=00_AQSoSTAHpqWXZw4Loh3P1jAjg9U3dEknR2tKLWsP0jUc1A&oe=6AEA2A8B",
+   "localFile": "/workspace/townhall/civic/photos_local/darlene-byrne.jpg",
+   "pageUrl": "https://www.facebook.com/justicedarlenebyrne",
+   "sourceType": "own social profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "attribution": "Photo: Darlene Byrne own social profile",
+   "photoYear": null,
+   "identityEvidence": "profile photo of the Facebook page \"Chief Justice Darlene Byrne\" (page text: running for re-election to Chief Justice of Texas' 3rd Court of Appeals), linked from her campaign site justicedarlenebyrne.com; viewed: same person as her court portrait",
+   "urlNote": "signed Facebook CDN URL (oe= expiry about 2026-11-03); use localFile",
+   "cropNote": "studio headshot on a gray backdrop; square, no crop needed",
+   "verified": "200 image/jpeg 720x720 (GET, 2026-10-30 ~04:00 CT)"
+  },
+  "sixYearCheck": "Byrne year not stated; Cory Liu 2025. Cannot compare; no raceNote."
+ },
+ "4_otherPhotos": {
+  "kai-huang": "QA8 recheck: still no compliant headshot. kai4atx.com has only the candid kai-hero.jpg and a two-person photo, and links no social profile; no own social profile found. Keep the candid with cropNote.",
+  "liz-krueger": "QA8 recheck: still no better compliant headshot. nysenate.gov returns 403 to scripted requests and lizkrueger.com returned 500; her X @LizKrueger avatar (set 2018) is a press-conference shot with news microphones, not better. Keep the 2019 Senate photo cropped. A person in a normal browser could try nysenate.gov/senators/liz-krueger."
+ },
+ "newRules": [
+  "Charter-school positions, and vague \"educational choices\" with no mention of public money for private schools, are not scored on the education axis. Kept only when the source explicitly covers vouchers, ESAs, or school choice beyond charters.",
+  "A campaign-site or social photo that is the same image as a txcourts.gov portrait counts as the court portrait, not a campaign photo; use another own headshot (own social profile).",
+  "Radio/TV station credits (e.g. \"WBLS\") are media photos even when openly licensed on Commons.",
+  "letitiajames.com is an opposition site; her campaign is jamesforny.com."
+ ],
+ "filesChanged": [
+  "civic/photos_batch.json (backup photos_batch.pre_qa8.json): letitia-a-james, darlene-byrne replaced; kai-huang, liz-krueger qa8 note",
+  "civic/photos_batch.md (backup photos_batch.pre_qa8.md): regenerated, QA8 section",
+  "civic/photos_local/darlene-byrne.jpg (new)",
+  "civic/photos_batch_work/qa8_fixes.py (new), build.py (hook; backup build.py.pre_qa8), md_notes.md (QA8 section; backup md_notes.pre_qa8.md)",
+  "civic/positions_gapfill_batch5civic.json (new; 7 override unsure items)",
+  "civic/qa8/stances.qa8.json (copy of feat2 data/stances.json with the 7 changes; matches a merge_gapfill.py run)",
+  "civic/qa8/elig_qa8.json, qa8/qa8_photo_changes.json, qa8/*.py (work files)",
+  "civic/qa_fixes8.json, civic/qa_fixes8.md"
+ ]
+}

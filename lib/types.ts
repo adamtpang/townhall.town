@@ -1,4 +1,4 @@
-// Shared data contract for townhall.town. Plug-in modules (accountability, turnout)
+// Shared data contract for townhall.town. Plug-in modules (turnout)
 // should import these types and add optional fields rather than changing existing ones.
 
 export type Source = { label: string; url: string; retrieved?: string };
@@ -10,25 +10,16 @@ export type Politician = {
   ballotpedia?: string | null;
   officialSite?: string | null;
   x?: string | null;               // X profile URL
-  photo?: { url: string; credit: string; license?: string; page?: string } | null;
+  photo?: { url: string; credit: string; author?: string; license?: string; page?: string; hotlinked?: boolean } | null;
   finance?: Source | null;         // FEC (federal) or TEC (Texas state) link
-  positions?: { issue: string; text: string; source: Source }[]; // stated positions only
+  positions?: { issue: string; text: string; source: Source; form?: "vote" | "summary" | "quote"; year?: string | number }[]; // stated positions only
   causes?: Cause[];                // issues the candidate talks about most, from their own campaign themes
   // Plug-in fields (optional):
-  accountability?: AccountabilityRecord[]; // from lib/accountability.ts
   money?: Money;                   // from lib/money.ts (FEC, federal only)
 };
 
 // A cause pill: keyword match in the candidate's verbatim campaign themes, with the sentence that matched.
 export type Cause = { id: string; label: string; mentions: number; quote: string; match?: string; source: Source };
-
-export type AccountabilityRecord = {
-  promise: string;
-  promiseSource: Source;
-  record: string | "no record found";
-  recordSource?: Source;
-  status: "kept" | "broken" | "in progress" | "unclear" | "no record found";
-};
 
 export type Race = {
   id: string;                       // e.g. "tx-35", "tx-governor", "ca-prop-40"
@@ -37,9 +28,12 @@ export type Race = {
   office: string;                   // plain words: what the office controls
   candidates: Politician[];         // empty for ballot measures
   source: string;
-  market?: { platform: "polymarket" | "kalshi"; odds: Record<string, number>; url: string; fetchedAt: string; matchedByTitle?: boolean } | null;
+  market?: { platform: "polymarket"; odds: Record<string, number>; url: string; fetchedAt: string } | null;
   // Plug-in field (optional):
-  turnout?: TurnoutStats;           // from lib/turnout.ts
+  turnout?: TurnoutStats;
+  judicial?: "tx" | "ca" | "ny" | boolean;
+  judicialNoteSource?: { url: string; label: string }; // official conduct rule behind judicialNote (lib/judicial.ts)
+  judicialNote?: string;            // set on every judicial race (lib/judicial.ts)           // from lib/turnout.ts
 };
 
 export type TurnoutStats = {

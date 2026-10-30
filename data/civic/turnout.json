@@ -1,0 +1,96 @@
+{
+  "zips": {
+    "78701": {
+      "stats": [
+        {
+          "label": "Travis County turnout, Nov 2022 midterm general (464,186 ballots cast of 887,007 registered voters)",
+          "value": 52.33,
+          "unit": "%",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://results.enr.clarityelections.com/TX/Travis/115627/web.307039/"
+        },
+        {
+          "label": "Travis County turnout, Nov 2024 general (587,090 ballots counted of 925,858 registered voters, per the official reconciliation form)",
+          "value": 63.41,
+          "unit": "%",
+          "election": "General election",
+          "year": 2024,
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G24-Final-Reconciliation_Updated.pdf"
+        },
+        {
+          "label": "Texas Supreme Court Chief Justice (statewide), last decided by 933,683 votes (8.49%)",
+          "value": 933683,
+          "unit": "votes",
+          "election": "General election",
+          "year": 2020,
+          "sourceUrl": "https://civictexas.com/elections/results/2020-11-03-general/chief-justice-supreme-court"
+        },
+        {
+          "label": "Texas Attorney General (statewide), last decided by 781,719 votes (9.76%)",
+          "value": 781719,
+          "unit": "votes",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://civictexas.com/elections/results/2022-11-08-general/attorney-general"
+        }
+      ]
+    },
+    "94103": {
+      "stats": [
+        {
+          "label": "San Francisco turnout, Nov 2022 consolidated general (310,071 ballots cast of 497,561 registered voters)",
+          "value": 62.32,
+          "unit": "%",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://www.sfelections.org/results/20221108/data/20221201/N2022_CertificationLetter.pdf"
+        },
+        {
+          "label": "California State Controller (statewide), last decided by 1,147,511 votes (10.7%)",
+          "value": 1147511,
+          "unit": "votes",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://elections.cdn.sos.ca.gov/sov/2022-general/sov/06-summary.pdf"
+        },
+        {
+          "label": "California State Treasurer (statewide), last decided by 1,881,295 votes (17.59%)",
+          "value": 1881295,
+          "unit": "votes",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://elections.cdn.sos.ca.gov/sov/2022-general/sov/06-summary.pdf"
+        }
+      ]
+    },
+    "10001": {
+      "stats": [
+        {
+          "label": "New York County (Manhattan) ballots cast, Nov 2022 midterm general",
+          "value": 459747,
+          "unit": "votes",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://vote.nyc/sites/default/files/pdf/election_results/2022/20221108General%20Election/00100200000New%20York%20Governor%20Lieutenant%20Governor%20Citywide%20Recap.pdf"
+        },
+        {
+          "label": "New York Governor (statewide), last decided by 377,834 votes (6.39%)",
+          "value": 377834,
+          "unit": "votes",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://web.archive.org/web/20230113022048/http://www.elections.ny.gov/NYSBOE/elections/2022/General/2022GovernorResults.xlsx"
+        },
+        {
+          "label": "New York Attorney General (statewide), last decided by 536,955 votes (9.25%)",
+          "value": 536955,
+          "unit": "votes",
+          "election": "General election",
+          "year": 2022,
+          "sourceUrl": "https://web.archive.org/web/20230113022048/http://www.elections.ny.gov/NYSBOE/elections/2022/General/2022AttorneyGenResults.xlsx"
+        }
+      ]
+    }
+  }
+}

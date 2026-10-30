@@ -1,0 +1,2296 @@
+{
+ "_meta": {
+  "title": "QA fixes 4 (Engineering preview 7391b20)",
+  "generated": "2026-10-30",
+  "shape": "Same entry shape as positions_gapfill_batch2.json; keyed by candidate id. Nothing in feat2/ was edited.",
+  "scoreBar": "±5 explicit; ±3–4 clear; ±1–2 mild. Ambiguous = unsure (unscored). No stance from party. Judicial races get no issue stances."
+ },
+ "xavier-becerra": {
+  "zip": "94103",
+  "name": "Xavier Becerra",
+  "race": "ca-gov",
+  "retag": {
+   "stanceId": "research citation (live /api/research tag) on https://www.xavierbecerra2026.com/priorities/ , 'Energy and Utilities' section",
+   "quote": "I believe that by treating clean energy and grid resilience as public investments—and ensuring renters, low-income households, and workers share in the benefits—California can fight climate change, strengthen reliability, and make energy more affordable for everyone.",
+   "oldTag": "wages",
+   "newTag": "energy",
+   "score": 3,
+   "why": "The quote is about clean energy, the grid and climate. 'Workers' is incidental. A clear pro-renewables statement scores +3, which matches the stored stances.json energy +3 ('California’s clean-energy transition is necessary and urgent').",
+   "note": "stances.json is unaffected: Becerra energy +3 and wages +3 (LAist living-wage quote) are already correctly tagged. The mis-tag lives only in the research/model citation layer."
+  },
+  "opponentConsistency": "Steve Hilton is scored on the same kind of evidence (campaign-page statements, e.g. energy −5 from his $3-gas plan page). No other ca-gov candidate scored differently on comparable evidence. Related research-layer suspect: Hilton's CBS quote ('$3 gas, your first $150,000 tax-free, capping vehicle registration…') is tagged housing, but it is mostly taxes/energy (see suspects).",
+  "sourcesChecked": [
+   {
+    "url": "https://www.xavierbecerra2026.com/priorities/",
+    "title": "Becerra 2026, Priorities",
+    "dateChecked": "2026-10-30",
+    "result": "200. Quote verified verbatim in the Energy and Utilities section."
+   }
+  ]
+ },
+ "andy-brown": {
+  "zip": "78701",
+  "name": "Andy Brown",
+  "race": "travis-county-judge (county executive, not judicial; unopposed, D)",
+  "note": "He was missing from batch2 because the batch2 judicial filter matched the word 'judge' in 'County Judge'. The site's own flag (race.judicial) is correct. He is the only candidate affected. Batch2 files were not rewritten; this entry supersedes. Grade unaffected (unopposed).",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": 2,
+    "summary": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase).",
+    "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
+    "sourceTitle": "Travis County Notice of Public Hearing on Tax Increase, 2026",
+    "date": "2026",
+    "quote": "",
+    "sourceType": "official record (vote)",
+    "note": "Same basis and score as George Morales III taxes +2.",
+    "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)",
+    "editorNote": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote."
+   },
+   {
+    "issue": "safety",
+    "score": -3,
+    "summary": "Frames public safety around connecting people to services outside of jail.",
+    "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
+    "sourceTitle": "Travis County Judge Andy Brown, State of the County Address (as prepared for delivery), Travis County",
+    "date": "2024-04-24",
+    "quote": "We can make our community safer and more stable by focusing on connecting people to the services they need outside of a jail.",
+    "sourceType": "official speech"
+   },
+   {
+    "issue": "housing",
+    "score": 3,
+    "summary": "Prioritizes tackling the affordability crisis and expanding affordable and supportive housing.",
+    "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
+    "sourceTitle": "Travis County Judge Andy Brown, State of the County Address (as prepared for delivery), Travis County",
+    "date": "2024-04-24",
+    "quote": "That meant tackling the affordability crisis and making sure more families have access to affordable and supportive quality housing.",
+    "sourceType": "official speech"
+   },
+   {
+    "issue": "infrastructure",
+    "score": 3,
+    "summary": "Backs passenger rail as crucial infrastructure.",
+    "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
+    "sourceTitle": "Travis County Judge Andy Brown, State of the County Address (as prepared for delivery), Travis County",
+    "date": "2024-04-24",
+    "quote": "We know a passenger rail system not only expands our transportation choices, it enhances the infrastructure crucial for improving people’s quality of life.",
+    "sourceType": "official speech"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://voteandy.com/",
+    "title": "Campaign site (voteandy.com), 'A Note from Andy'",
+    "dateChecked": "2026-10-30",
+    "result": "200. Older first-person text: 'We need bold criminal justice reform that keeps us safe by focusing on serious crime, prioritizes restorative justice…' Supports safety −3; not used as the primary quote because it is dated."
+   },
+   {
+    "url": "https://voteandy.com/issues/",
+    "title": "Campaign site issues page",
+    "dateChecked": "2026-10-30",
+    "result": "200. Older content; consistent with the stances above."
+   },
+   {
+    "url": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
+    "title": "Travis County Judge Andy Brown, State of the County Address (as prepared for delivery), Travis County (PDF dated Apr 25, 2024)",
+    "dateChecked": "2026-10-30",
+    "result": "Quotes used for safety, housing and infrastructure. Verified verbatim."
+   },
+   {
+    "url": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
+    "title": "Travis County Notice of Public Hearing on Tax Increase 2026 (PDF)",
+    "dateChecked": "2026-10-30",
+    "result": "Vote record used for taxes +2."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Listed as unopposed; no Q&A responses."
+   },
+   {
+    "url": "https://ballotpedia.org/Andy_Brown_(Texas)",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://cbsaustin.com/news/local/overdose-deaths-down-childcare-expanding-key-takeaways-from-2026-travis-county-address",
+    "title": "CBS Austin, key takeaways from the 2026 Travis County address (Apr 30, 2026); also KVUE childcare coverage",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Consistent; no new verbatim quote beyond the address."
+   },
+   {
+    "url": "https://www.sacurrent.com/news/texas-news/san-antonio-high-speed-rail-andy-brown/",
+    "title": "San Antonio Current, Austin–San Antonio rail article",
+    "dateChecked": "2026-10-30",
+    "result": "Quotes his Threads post: 'A top priority for my office is building a passenger railway between Austin and San Antonio…' Supports infrastructure +3."
+   },
+   {
+    "url": "https://www.branch.vote/",
+    "title": "branch.vote profile",
+    "dateChecked": "2026-10-30",
+    "result": "Summary only."
+   }
+  ]
+ },
+ "ellsworth-ell-m-jennison-jr": {
+  "zip": "94103",
+  "name": "Ellsworth \"Ell\" M. Jennison, Jr.",
+  "race": "sf-supervisor-10",
+  "stances": [],
+  "existing": "energy +2 (VIP: 'HAVE PIER 68 TESTED FOR TOXCITY…'), unchanged.",
+  "unsure": [
+   {
+    "issue": "wages",
+    "score": null,
+    "status": "unsure",
+    "summary": "A KQED voter-guide paraphrase says he favors higher teacher wages; these are not his own words.",
+    "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+    "sourceTitle": "KQED voter guide, SF Supervisor D10",
+    "date": "2026-10",
+    "editorNote": "KQED paraphrases him as favoring increased teacher wages. Reporter paraphrase, not his words; not scored."
+   },
+   {
+    "issue": "housing",
+    "score": null,
+    "status": "unsure",
+    "summary": "A KQED voter-guide paraphrase includes the words \"not housing\" without clear context; the direction is unclear.",
+    "sourceUrl": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+    "sourceTitle": "KQED voter guide, SF Supervisor D10",
+    "date": "2026-10",
+    "editorNote": "KQED paraphrase includes the fragment 'not housing' with no clear direction or context. Not scored."
+   }
+  ],
+  "result": "Still 1 sourced issue. No campaign site, questionnaire or contact exists, so no further own-words source is available.",
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+    "title": "Potrero Hill Dem Club D10 questionnaires",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None exists. PHDC: 'no website'; GrowSF: 'Contact information unavailable'."
+   },
+   {
+    "url": "https://ballotpedia.org/Ellsworth_Jennison_Jr.",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. Page exists per web search."
+   },
+   {
+    "url": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+    "title": "KQED voter guide, SF Supervisor D10",
+    "dateChecked": "2026-10-30",
+    "result": "Reporter paraphrase only (housing, power plant, teacher wages). Not used as quotes; logged as unsure."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/",
+    "title": "GrowSF voter guide (questionnaire)",
+    "dateChecked": "2026-10-30",
+    "result": "No questionnaire on file; 'Contact information unavailable'."
+   },
+   {
+    "url": "https://voteorelse.com/2026/",
+    "title": "voteorelse D10 page",
+    "dateChecked": "2026-10-30",
+    "result": "No committee or forum appearances."
+   },
+   {
+    "url": "https://www.sfexaminer.com/",
+    "title": "SF Examiner D10 fundraising coverage",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. No contributions reported; no quotes."
+   }
+  ]
+ },
+ "tom-oxford": {
+  "zip": "78701",
+  "name": "Tom Oxford",
+  "race": "tx-ag",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Tom_Oxford",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None exists. LP Texas lists no campaign site; branch.vote profile (Sept 2026) shows no website or policy information."
+   },
+   {
+    "url": "https://www.lptexas.org/candidates",
+    "title": "Libertarian Party of Texas, 2026 candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Lists him as AG nominee; no platform text."
+   },
+   {
+    "url": "https://lp.org/candidate/tom-oxford/",
+    "title": "Libertarian Party national candidate page",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403, Cloudflare), not reviewed."
+   },
+   {
+    "url": "https://www.branch.vote/races/2026-texas-general-election-tx-state-attorney-general-tx-state/candidates/tom-oxford",
+    "title": "branch.vote candidate profile",
+    "dateChecked": "2026-10-30",
+    "result": "Search summary: no website or policy information."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "v-alonzo-echavarria-garza": {
+  "zip": "78701",
+  "name": "V. Alonzo Echavarria-Garza",
+  "race": "tx-comptroller",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-texas-comptroller/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://allenrecord.com/articles/echevarria-garza-seeks-texas-comptroller-as-libertarian-muzwpxlz",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found. LP Texas, branch.vote and talkthevote.live list no campaign site."
+   },
+   {
+    "url": "https://www.lptexas.org/candidates",
+    "title": "Libertarian Party of Texas, 2026 candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Lists him as Comptroller nominee; no platform text."
+   },
+   {
+    "url": "https://lp.org/candidate/alonzo-echevarria-garza/",
+    "title": "Libertarian Party national candidate page",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403, Cloudflare), not reviewed."
+   },
+   {
+    "url": "https://texasmuslim.org/voter-guide/2026/candidate/v-alonzo-echavarria-garza",
+    "title": "Texas Muslim voter guide profile",
+    "dateChecked": "2026-10-30",
+    "result": "Search summary: no verified campaign links. No stance text used."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "austin-r-kelly": {
+  "zip": "78701",
+  "name": "Austin R. Kelly",
+  "race": "tx-agcomm",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Austin_Kelly",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/q-a-get-to-know-the-candidates-running-for-texas-agriculture-commissioner/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "No campaign site found in search."
+   },
+   {
+    "url": "https://lp.org/candidate/austin-r-kelly/",
+    "title": "Libertarian Party national candidate page",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403, Cloudflare), not reviewed. Search snippets mention deregulation, food freedom, property rights, lower TDA fees and water stewardship, but there is no verbatim quote to score."
+   },
+   {
+    "url": "https://www.texastribune.org/2026/09/24/texas-agriculture-commissioner-2026-guide-nate-sheets-clayton-tucker/",
+    "title": "Texas Tribune, Agriculture commissioner 2026 guide (Sept 24, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local/state news search. Summary only; no new first-person quote used."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "mica-arellano": {
+  "zip": "78701",
+  "name": "Mica Arellano",
+  "race": "tx-sboe-5",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Mica_Arellano",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.micatx.com/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "allison-bush": {
+  "zip": "78701",
+  "name": "Allison Bush",
+  "race": "tx-sboe-5",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.allisonfortx.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Allison_Bush",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://teachthevote.atpe.org/",
+    "title": "ATPE Teach the Vote (SBOE questionnaire)",
+    "dateChecked": "2026-10-30",
+    "result": "Relevant questionnaire for SBOE; no additional scorable answer found beyond existing."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "velva-l-price": {
+  "zip": "78701",
+  "name": "Velva L. Price",
+  "race": "travis-district-clerk",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://www.traviscountytx.gov/district-clerk/bio",
+    "title": "Travis County District Clerk official bio",
+    "dateChecked": "2026-10-30",
+    "result": "Biographical/office info only; no issue stance."
+   },
+   {
+    "url": "https://ballotpedia.org/Velva_Price",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. Page exists per web search."
+   },
+   {
+    "url": "https://www.google.com/search?q=Velva+Price+district+clerk+2026",
+    "title": "Web search: Statesman/KUT/Austin Monitor (query URL)",
+    "dateChecked": "2026-10-30",
+    "result": "No issue statements found; administrative office, unopposed."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "dyana-limon-mercado": {
+  "zip": "78701",
+  "name": "Dyana Limon-Mercado",
+  "race": "travis-county-clerk",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.votedyana.com/",
+    "title": "Campaign site (votedyana.com)",
+    "dateChecked": "2026-10-30",
+    "result": "Found via search; direct fetch failed through the box proxy, not reviewed.",
+    "down": "site down as of Oct 30, 2026"
+   },
+   {
+    "url": "https://ballotpedia.org/Dyana_Limon-Mercado",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. Page exists per web search."
+   },
+   {
+    "url": "https://www.google.com/search?q=Dyana+Limon-Mercado+county+clerk+2026",
+    "title": "Web search, local news (query URL)",
+    "dateChecked": "2026-10-30",
+    "result": "Election-administration coverage only; no stance on the 9 tracked issues."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "dolores-ortega-carter": {
+  "zip": "78701",
+  "name": "Dolores Ortega Carter",
+  "race": "travis-county-treasurer",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://www.traviscountytx.gov/treasurer",
+    "title": "Travis County Treasurer official page",
+    "dateChecked": "2026-10-30",
+    "result": "Office info only; no issue stance."
+   },
+   {
+    "url": "https://ballotpedia.org/Dolores_Ortega_Carter",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. Page exists per web search."
+   },
+   {
+    "url": "https://theballotbrief.com/",
+    "title": "The Ballot Brief race page",
+    "dateChecked": "2026-10-30",
+    "result": "Summary only; no first-person quote."
+   },
+   {
+    "url": "https://www.google.com/search?q=Dolores+Ortega+Carter+Travis+County+treasurer+2026",
+    "title": "Web search, local news (query URL)",
+    "dateChecked": "2026-10-30",
+    "result": "No issue statements found; administrative office."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "george-morales-iii": {
+  "zip": "78701",
+  "name": "George Morales III",
+  "race": "travis-commissioner-4",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://www.traviscountytx.gov/commissioners-court/precinct-four",
+    "title": "Travis County Precinct 4 commissioner page",
+    "dateChecked": "2026-10-30",
+    "result": "Office info only."
+   },
+   {
+    "url": "https://ballotpedia.org/George_Morales_III",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. Page exists per web search."
+   },
+   {
+    "url": "https://www.google.com/search?q=George+Morales+III+Travis+County+Precinct+4+2026",
+    "title": "Web search, local news: KUT May 26 runoff and Statesman results (query URL)",
+    "dateChecked": "2026-10-30",
+    "result": "Results coverage only; no new quote."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "gabriel-padilla": {
+  "zip": "78701",
+  "name": "Gabriel Padilla",
+  "race": "travis-constable-4-unexpired",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://www.traviscountytx.gov/constables/4",
+    "title": "Travis County Constable Pct. 4 official page",
+    "dateChecked": "2026-10-30",
+    "result": "Office info only."
+   },
+   {
+    "url": "https://ballotpedia.org/Gabriel_Padilla",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. Page exists per web search."
+   },
+   {
+    "url": "https://www.google.com/search?q=Gabriel+Padilla+constable+precinct+4+2026",
+    "title": "Local news search",
+    "dateChecked": "2026-10-30",
+    "result": "No issue statements found."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "skyler-a-korgel": {
+  "zip": "78701",
+  "name": "Skyler A. Korgel",
+  "race": "travis-cad-place-1",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Skyler_Korgel",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://traviscad.org/update/ballot-set-for-2026-board-of-directors-election/",
+    "title": "TCAD: Ballot set for 2026 Board of Directors election",
+    "dateChecked": "2026-10-30",
+    "result": "Ballot order only."
+   },
+   {
+    "url": "https://thedailytexan.com/2026/10/19/the-texan-explains-local-elections-on-ballot/",
+    "title": "Daily Texan, The Texan Explains: Local elections on ballot (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Places 1–2 unopposed; Muñoz vs Gorman for Place 3. No stance quotes."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "brian-pena": {
+  "zip": "78701",
+  "name": "Brian Peña",
+  "race": "travis-cad-place-2",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Brian_Pe%C3%B1a",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://traviscad.org/update/ballot-set-for-2026-board-of-directors-election/",
+    "title": "TCAD: Ballot set for 2026 Board of Directors election",
+    "dateChecked": "2026-10-30",
+    "result": "Ballot order only."
+   },
+   {
+    "url": "https://thedailytexan.com/2026/10/19/the-texan-explains-local-elections-on-ballot/",
+    "title": "Daily Texan, The Texan Explains: Local elections on ballot (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Places 1–2 unopposed; Muñoz vs Gorman for Place 3. No stance quotes."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "yvonne-munoz": {
+  "zip": "78701",
+  "name": "Yvonne Muñoz",
+  "race": "travis-cad-place-3",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://theaustinbulldog.org/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found. Austin Bulldog reported that none of the TCAD candidates had a campaign website as of Aug 24, 2026."
+   },
+   {
+    "url": "https://theballotbrief.com/state/texas/travis-county/central-appraisal-district-director-place-3",
+    "title": "The Ballot Brief: Muñoz vs. Gorman",
+    "dateChecked": "2026-10-30",
+    "result": "Summary only."
+   },
+   {
+    "url": "https://www.austinchronicle.com/news/endorsements/austin-chronicle-endorsements-for-the-november-3-midterm-elections/",
+    "title": "Austin Chronicle endorsements, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Endorses Muñoz (editorial, not her words)."
+   },
+   {
+    "url": "https://traviscad.org/update/ballot-set-for-2026-board-of-directors-election/",
+    "title": "TCAD: Ballot set for 2026 Board of Directors election",
+    "dateChecked": "2026-10-30",
+    "result": "Ballot order only."
+   },
+   {
+    "url": "https://thedailytexan.com/2026/10/19/the-texan-explains-local-elections-on-ballot/",
+    "title": "Daily Texan, The Texan Explains: Local elections on ballot (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Places 1–2 unopposed; Muñoz vs Gorman for Place 3. No stance quotes."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "phil-gorman": {
+  "zip": "78701",
+  "name": "Phil Gorman",
+  "race": "travis-cad-place-3",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://theaustinbulldog.org/four-candidates-running-for-tcad-board/",
+    "title": "Austin Bulldog: TCAD candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None exists per Austin Bulldog (no TCAD candidate had a site as of Aug 24, 2026); none found in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Phil_Gorman",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://goodparty.org/people/philip-gorman-b675d16f",
+    "title": "GoodParty.org profile",
+    "dateChecked": "2026-10-30",
+    "result": "Issues and bio blank."
+   },
+   {
+    "url": "https://theballotbrief.com/state/texas/travis-county/central-appraisal-district-director-place-3",
+    "title": "The Ballot Brief: Muñoz vs. Gorman",
+    "dateChecked": "2026-10-30",
+    "result": "Summary only."
+   },
+   {
+    "url": "https://traviscad.org/update/ballot-set-for-2026-board-of-directors-election/",
+    "title": "TCAD: Ballot set for 2026 Board of Directors election",
+    "dateChecked": "2026-10-30",
+    "result": "Ballot order only."
+   },
+   {
+    "url": "https://thedailytexan.com/2026/10/19/the-texan-explains-local-elections-on-ballot/",
+    "title": "Daily Texan, The Texan Explains: Local elections on ballot (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Places 1–2 unopposed; Muñoz vs Gorman for Place 3. No stance quotes."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "kirk-becker": {
+  "zip": "78701",
+  "name": "Kirk Becker",
+  "race": "aisd-at-large-9",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://kirk4aisd.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Kirk_Becker",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-28/aisd-school-board-trustees-2026-election-candidates-austin-tx-isd",
+    "title": "KUT, AISD trustee candidates (Oct 28, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Reviewed for replacement source; see linkFixes."
+   },
+   {
+    "url": "https://austincurrent.org/2026/10/19/austin-austinisd-candidates-election-board-2/",
+    "title": "Austin Current, AISD candidates (Oct 19, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "dana-walker": {
+  "zip": "78701",
+  "name": "Dana Walker",
+  "race": "acc-trustee-place-1",
+  "sourcedBefore": 0,
+  "stances": [
+   {
+    "issue": "wages",
+    "score": 2,
+    "summary": "Campaign lists raising ACC employee wages as a record item (public-employer wages; mild).",
+    "sourceUrl": "https://danawalkerforacc.com/",
+    "sourceTitle": "Dana Walker campaign site",
+    "date": "2026-10-30",
+    "quote": "Raised wages for ACC employees",
+    "sourceType": "campaign site"
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "taxes",
+    "score": null,
+    "status": "unsure",
+    "summary": "Talks about protecting taxpayers' money; no position on tax levels.",
+    "sourceUrl": "https://danawalkerforacc.com/",
+    "sourceTitle": "Dana Walker campaign site",
+    "date": "2026-10-30",
+    "quote": "protecting taxpayers' money",
+    "editorNote": "'protecting taxpayers' money' gives no tax-level direction. Not scored."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+    "title": "KUT ACC candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://danawalkerforacc.com/",
+    "title": "Campaign site (danawalkerforacc.com)",
+    "dateChecked": "2026-10-30",
+    "result": "200. Reviewed. 'Raised wages for ACC employees' used for wages +2. 'Protecting taxpayers' money' is too vague to score taxes (unsure)."
+   },
+   {
+    "url": "https://ballotpedia.org/Dana_Walker",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/candidates-for-the-acc-board-of-trustees-2026-election/",
+    "title": "ACC: Candidates for the 2026 Board of Trustees election",
+    "dateChecked": "2026-10-30",
+    "result": "Official candidate list."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "gloria-gonzales-dholakia": {
+  "zip": "78701",
+  "name": "Gloria Gonzales-Dholakia",
+  "race": "acc-trustee-place-1",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.gloriaforacc.com/",
+    "title": "Campaign site (gloriaforacc.com)",
+    "dateChecked": "2026-10-30",
+    "result": "200, but JS-rendered; no readable text extracted. Not reviewed."
+   },
+   {
+    "url": "https://ballotpedia.org/Gloria_Gonzales-Dholakia",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://www.austinchronicle.com/news/endorsements/austin-chronicle-endorsements-for-the-november-3-midterm-elections/",
+    "title": "Austin Chronicle endorsements, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Endorses her (editorial)."
+   },
+   {
+    "url": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/candidates-for-the-acc-board-of-trustees-2026-election/",
+    "title": "ACC: Candidates for the 2026 Board of Trustees election",
+    "dateChecked": "2026-10-30",
+    "result": "Official candidate list."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+    "title": "KUT, ACC board candidates (Oct 16, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Summaries only."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "gigi-edwards-bryant": {
+  "zip": "78701",
+  "name": "Gigi Edwards Bryant",
+  "race": "acc-trustee-place-2",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://sites.austincc.edu/newsroom/2026/09/16/acc-approves-new-property-tax-rate-for-fy2026-27/",
+    "title": "ACC newsroom: FY2026-27 tax rate",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search (unopposed)."
+   },
+   {
+    "url": "https://ballotpedia.org/Gigi_Edwards_Bryant",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/candidates-for-the-acc-board-of-trustees-2026-election/",
+    "title": "ACC: Candidates for the 2026 Board of Trustees election",
+    "dateChecked": "2026-10-30",
+    "result": "Official candidate list."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+    "title": "KUT, ACC board candidates (Oct 16, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Summaries only."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "trevor-hale": {
+  "zip": "78701",
+  "name": "Trevor Hale",
+  "race": "acc-trustee-place-3",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Trevor_Hale",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/candidates-for-the-acc-board-of-trustees-2026-election/",
+    "title": "ACC: Candidates for the 2026 Board of Trustees election",
+    "dateChecked": "2026-10-30",
+    "result": "Official candidate list."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+    "title": "KUT, ACC board candidates (Oct 16, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Summaries only."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "nan-mcraven": {
+  "zip": "78701",
+  "name": "Nan McRaven",
+  "race": "acc-trustee-place-3",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters guide",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://sites.austincc.edu/newsroom/2026/09/16/acc-approves-new-property-tax-rate-for-fy2026-27/",
+    "title": "ACC newsroom: FY2026-27 tax rate",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Nan_McRaven",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://www.austinchronicle.com/news/endorsements/austin-chronicle-endorsements-for-the-november-3-midterm-elections/",
+    "title": "Austin Chronicle endorsements, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Endorses McRaven (editorial)."
+   },
+   {
+    "url": "https://offices.austincc.edu/community-and-government-affairs/acc-board-of-trustees-elections/candidates-for-the-acc-board-of-trustees-2026-election/",
+    "title": "ACC: Candidates for the 2026 Board of Trustees election",
+    "dateChecked": "2026-10-30",
+    "result": "Official candidate list."
+   },
+   {
+    "url": "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election",
+    "title": "KUT, ACC board candidates (Oct 16, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Summaries only."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "manuel-noris-barrera": {
+  "zip": "94103",
+  "name": "Manuel Noris-Barrera",
+  "race": "ca-ad-17",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://manuelnoris.com/platform",
+    "title": "Campaign platform (2024 page)",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Manuel_Noris-Barrera",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://voterist.com/candidate/manuel-noris-barrera",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.sf.gov/sites/default/files/2024-09/N24_VIP_EN.pdf",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "https://www.google.com/search?q=Manuel+Noris-Barrera+Assembly+District+17+2026",
+    "title": "Web search, local news: Mission Local/SF Standard (query URL)",
+    "dateChecked": "2026-10-30",
+    "result": "No new first-person quote beyond the existing VIP/platform sources."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "joaquin-torres": {
+  "zip": "94103",
+  "name": "Joaquin Torres",
+  "race": "sf-assessor-recorder",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/joaquin-torres/",
+    "title": "GrowSF questionnaire",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "https://joaquintorressf.com/",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Live (200, title 'Joaquin Torres for Assessor', 2026-10-30). Not yet reviewed for stances."
+   },
+   {
+    "url": "https://ballotpedia.org/Joaqu%C3%ADn_Torres",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Page confirmed by QA (Oct 30, 2026). Not reviewed for stances."
+   },
+   {
+    "url": "https://www.sfchronicle.com/sf/article/assessor-recorder-property-online-portal-22077579.php",
+    "title": "SF Chronicle, Assessor-Recorder online portal",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search. Office operations only; no stance."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "jamo-muhammad": {
+  "zip": "94103",
+  "name": "Jamo Muhammad",
+  "race": "sf-supervisor-10",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://phdemclub.org/2026-d10-supervisor-candidate-questionnaires/",
+    "title": "Potrero Hill Dem Club D10 questionnaires",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kqed.org/voterguide/sanfrancisco/supervisor-10th-district",
+    "title": "KQED voter guide D10",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.davisvanguard.org/2026/07/jamo-muhammad-district-10-supervisor/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://voterdecoder.org/candidates/7837",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://ballotpedia.org/Jamo_Muhammad",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://sfbayview.com/2026/09/d10-candidate-jamo-muhammad-speaks/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/san-francisco-voter-guide-november-2026-election/contests/district-10-supervisor/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search (SF.gov lists a Gmail contact only)."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "autumn-brown-garibay": {
+  "zip": "94103",
+  "name": "Autumn Brown Garibay",
+  "race": "sf-board-of-education",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/autumn-brown-garibay/",
+    "title": "GrowSF questionnaire",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.sfdems.org/2026-november-endorsements-questionaires",
+    "title": "SF Dem Party questionnaires",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://drive.google.com/file/d/1AJmBwr4qbEXe7K038EFHj4PSJ9qKWNFf/view",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "https://www.autumnforschoolboard.com/priorities",
+    "title": "Campaign site priorities",
+    "dateChecked": "2026-10-30",
+    "result": "200, but JS-rendered; no readable text extracted. Search snippet lists outcomes, family choice, equity and fiscal transparency, with no scorable quote."
+   },
+   {
+    "url": "https://ballotpedia.org/Autumn_Brown_Garibay",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://sfstandard.com/2026/10/13/sf-school-board-race-fractures-political-alliances/",
+    "title": "SF Standard, school board race (Oct 13, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Local news search."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "phil-kim": {
+  "zip": "94103",
+  "name": "Phil Kim",
+  "race": "sf-board-of-education",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://missionlocal.org/2026/10/meet-the-candidates-san-francisco-school-board-race/",
+    "title": "Mission Local school board Q&A",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "https://www.philkim.org/",
+    "title": "Campaign site (philkim.org)",
+    "dateChecked": "2026-10-30",
+    "result": "200. Bio and endorsements only; no issue positions on the tracked axes."
+   },
+   {
+    "url": "https://ballotpedia.org/Phil_Kim",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://sfstandard.com/2026/05/27/sfusd-election-phil-kim-brandee-marckmann-virginia-cheung/",
+    "title": "SF Standard, Phil Kim faces election test (May 27, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Quotes on school closures and empty seats. Not on the tracked axes; not scored."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "rome-moses-jones": {
+  "zip": "94103",
+  "name": "Rome Moses Jones",
+  "race": "sf-community-college-board",
+  "sourcedBefore": 0,
+  "stances": [
+   {
+    "issue": "housing",
+    "score": 3,
+    "summary": "Would pursue student and educator housing and explore developer partnerships for affordable housing.",
+    "sourceUrl": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/",
+    "sourceTitle": "The Guardsman, 'Free City Is a Great Opportunity…' interview with Rome Moses Jones",
+    "date": "2026-09-09",
+    "quote": "If providing student housing and educator housing is an option, we need to pursue that option,",
+    "sourceType": "news interview (direct quote)"
+   },
+   {
+    "issue": "wages",
+    "score": 2,
+    "summary": "Says childcare workers and educators should be paid livable wages (as an employer/trustee; mild).",
+    "sourceUrl": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/",
+    "sourceTitle": "The Guardsman, 'Free City Is a Great Opportunity…' interview with Rome Moses Jones",
+    "date": "2026-09-09",
+    "quote": "I think we should pay our childcare and educators liveable wages",
+    "sourceType": "news interview (direct quote)"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+    "title": "KALW City College trustee candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Rome_Moses_Jones",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   },
+   {
+    "url": "https://www.theguardsman.com/bot2026-candidate-romemoses-jones/",
+    "title": "The Guardsman (CCSF student paper) candidate interview (Sept 9, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "200. Direct quotes used for housing +3 and wages +2."
+   }
+  ],
+  "sourcedAfter": 2
+ },
+ "monroe-lace": {
+  "zip": "94103",
+  "name": "Monroe Lace",
+  "race": "sf-community-college-board",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+    "title": "KALW City College trustee candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/monroe-lace/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Linked from GrowSF guide; URL not identified in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Monroe_Lace",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "erwin-tam": {
+  "zip": "94103",
+  "name": "Erwin Tam",
+  "race": "sf-community-college-board",
+  "sourcedBefore": 1,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+    "title": "KALW City College trustee candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://growsf.org/voter-guide/questionnaires/november-2026/erwin-tam/",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.sfdems.org/2026-november-endorsements-questionaires",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://drive.google.com/file/d/1xYGprq8WmOm0PKTOxOSUVbJbfzlAJyDt/view",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "https://www.erwintam.com/",
+    "title": "Campaign site (erwintam.com)",
+    "dateChecked": "2026-10-30",
+    "result": "200. Bio (CalHFA finance) only; no scorable stance."
+   },
+   {
+    "url": "https://ballotpedia.org/Erwin_Tam",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   }
+  ],
+  "sourcedAfter": 1
+ },
+ "lisa-wynn": {
+  "zip": "94103",
+  "name": "Lisa Wynn",
+  "race": "sf-community-college-board",
+  "sourcedBefore": 0,
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Voter Information Pamphlet, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.theguardsman.com/trustee-candidate-lisa-wynn-calls-for-career-pathways-budget-accountability-at-city-college/",
+    "title": "The Guardsman profile (Oct 20, 2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.kalw.org/bay-area-news/2026-09-25/three-seats-eight-candidates-city-college-trustees-face-tough-choices",
+    "title": "",
+    "dateChecked": "2026-10-30",
+    "result": "Checked in an earlier pass; findings already reflected in existing stances/batch files."
+   },
+   {
+    "url": "https://www.vote411.org/california",
+    "title": "VOTE411 (LWV) California",
+    "dateChecked": "2026-10-30",
+    "result": "VOTE411 is address-based and has no per-candidate page for local SF races in this check. No written answers found."
+   },
+   {
+    "url": "https://lwvsf.org/candidate-information",
+    "title": "League of Women Voters of SF, candidate information",
+    "dateChecked": "2026-10-30",
+    "result": "Forum and statement videos only, no written Q&A. Not transcribed."
+   },
+   {
+    "url": "https://www.sf.gov/candidates-november-3-2026-general-election",
+    "title": "SF.gov candidate list, Nov 3 2026",
+    "dateChecked": "2026-10-30",
+    "result": "Qualified candidate list and contact info."
+   },
+   {
+    "url": "(none)",
+    "title": "Campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "None found in search."
+   },
+   {
+    "url": "https://ballotpedia.org/Lisa_Wynn",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+   }
+  ],
+  "sourcedAfter": 0
+ },
+ "_under2": [
+  {
+   "id": "tom-oxford",
+   "zip": "78701",
+   "race": "tx-ag",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "v-alonzo-echavarria-garza",
+   "zip": "78701",
+   "race": "tx-comptroller",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "austin-r-kelly",
+   "zip": "78701",
+   "race": "tx-agcomm",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "mica-arellano",
+   "zip": "78701",
+   "race": "tx-sboe-5",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "allison-bush",
+   "zip": "78701",
+   "race": "tx-sboe-5",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "andy-brown",
+   "zip": "78701",
+   "race": "travis-county-judge",
+   "sourcedBefore": 0,
+   "sourcedAfter": 4,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "velva-l-price",
+   "zip": "78701",
+   "race": "travis-district-clerk",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "dyana-limon-mercado",
+   "zip": "78701",
+   "race": "travis-county-clerk",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "dolores-ortega-carter",
+   "zip": "78701",
+   "race": "travis-county-treasurer",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "george-morales-iii",
+   "zip": "78701",
+   "race": "travis-commissioner-4",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "gabriel-padilla",
+   "zip": "78701",
+   "race": "travis-constable-4-unexpired",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "skyler-a-korgel",
+   "zip": "78701",
+   "race": "travis-cad-place-1",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "brian-pena",
+   "zip": "78701",
+   "race": "travis-cad-place-2",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": true
+  },
+  {
+   "id": "yvonne-munoz",
+   "zip": "78701",
+   "race": "travis-cad-place-3",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "phil-gorman",
+   "zip": "78701",
+   "race": "travis-cad-place-3",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "kirk-becker",
+   "zip": "78701",
+   "race": "aisd-at-large-9",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "dana-walker",
+   "zip": "78701",
+   "race": "acc-trustee-place-1",
+   "sourcedBefore": 0,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "gloria-gonzales-dholakia",
+   "zip": "78701",
+   "race": "acc-trustee-place-1",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "gigi-edwards-bryant",
+   "zip": "78701",
+   "race": "acc-trustee-place-2",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "trevor-hale",
+   "zip": "78701",
+   "race": "acc-trustee-place-3",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "nan-mcraven",
+   "zip": "78701",
+   "race": "acc-trustee-place-3",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "manuel-noris-barrera",
+   "zip": "94103",
+   "race": "ca-ad-17",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "joaquin-torres",
+   "zip": "94103",
+   "race": "sf-assessor-recorder",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "ellsworth-ell-m-jennison-jr",
+   "zip": "94103",
+   "race": "sf-supervisor-10",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "jamo-muhammad",
+   "zip": "94103",
+   "race": "sf-supervisor-10",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "autumn-brown-garibay",
+   "zip": "94103",
+   "race": "sf-board-of-education",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "phil-kim",
+   "zip": "94103",
+   "race": "sf-board-of-education",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "rome-moses-jones",
+   "zip": "94103",
+   "race": "sf-community-college-board",
+   "sourcedBefore": 0,
+   "sourcedAfter": 2,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "monroe-lace",
+   "zip": "94103",
+   "race": "sf-community-college-board",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "erwin-tam",
+   "zip": "94103",
+   "race": "sf-community-college-board",
+   "sourcedBefore": 1,
+   "sourcedAfter": 1,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  },
+  {
+   "id": "lisa-wynn",
+   "zip": "94103",
+   "race": "sf-community-college-board",
+   "sourcedBefore": 0,
+   "sourcedAfter": 0,
+   "sourcesCheckedWasEmptyOrLWVOnly": false
+  }
+ ],
+ "linkFixes": [
+  {
+   "oldUrl": "https://ballotpedia.org/Maria_Luisa_Flores",
+   "newUrl": "https://ballotpedia.org/Lulu_Flores",
+   "occurrences": [
+    "data/civic/positions_78701_batch6.json:176",
+    "data/civic/positions_78701_batch6.json:228",
+    "data/sources-checked.json (bySlug.lulu-flores)"
+   ],
+   "note": "The Ballotpedia page title is 'Lulu Flores' (Maria Luisa Flores, TX HD-51), confirmed via search. Direct fetch is 403 (blocked), so keep 'blocked, not reviewed'."
+  },
+  {
+   "oldUrl": "http://www.carlwilsonnyc.com",
+   "newUrl": "https://www.carlwilsonnyc.com/",
+   "occurrences": [
+    "data/civic/positions_10001_batch3.json:544",
+    "…:554",
+    "…:564",
+    "…:574",
+    "data/sources-checked.json (bySlug.carl-wilson)"
+   ],
+   "note": "The https URL returns 200. The http 500 was a redirect/proxy failure."
+  },
+  {
+   "oldUrl": "http://cams.ocgov.com/Web_Publisher_sam/sam10_08_2024.htm",
+   "newUrl": "https://ocgov.granicus.com/MinutesViewer.php?clip_id=5236&doc_id=557dcbaa-8d79-11ef-ab4b-005056a89546&view_id=8",
+   "occurrences": [
+    "data/civic/positions_94103_batch4.json:368",
+    "…:385",
+    "…:405 (URL appears inside note text)",
+    "…:418",
+    "…:435",
+    "…:452",
+    "data/sources-checked.json (bySlug.donald-p-wagner)"
+   ],
+   "note": "The old CAMS page is dead over both http and https. Replacement: official OC Board of Supervisors minutes for Oct 8, 2024 (item S14H, Reso 24-113, approved as recommended)."
+  },
+  {
+   "oldUrl": "https://kirk4aisd.com/",
+   "newUrl": "(none; mark 'site down as of Oct 30, 2026')",
+   "occurrences": [
+    "data/civic/positions_gapfill_batch2.json:996",
+    "data/sources-checked.json (bySlug.kirk-becker)"
+   ],
+   "note": "Still down. Supporting alternatives: https://www.kut.org/education/2026-10-28/aisd-school-board-trustees-2026-election-candidates-austin-tx-isd and https://austincurrent.org/2026/10/19/austin-austinisd-candidates-election-board-2/ . Keep the stance only if its quote is also in Community Impact/LWV."
+  },
+  {
+   "oldUrl": "https://www.tonysimone.com/",
+   "newUrl": "(none; mark 'site down as of Oct 30, 2026')",
+   "occurrences": [
+    "data/civic/positions_10001_batch3.json:382",
+    "…:392",
+    "…:402",
+    "…:412",
+    "data/sources-checked.json (bySlug.tony-simone)"
+   ],
+   "note": "Still down. Alternatives: https://voterguide.abundanceny.org/questionnaires/tony-simone (Abundance NY questionnaire) and https://nyassembly.gov/mem/Tony-Simone ."
+  }
+ ],
+ "appliesNotes": {
+  "status": "NOT final. Checked Oct 30, 2026: the PDF's Last-Modified is Sept 11, 2026 (14:51 GMT) and its header reads 'TENTATIVE' on every page.",
+  "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
+  "listingPage": "https://www.vote.nyc/page/list-candidates",
+  "where": "data/ny.json lines 610/668/696/740/784, mirrored in data/civic/ballots_additions.json 3222/3278/3304/3345/3386. lib/plain.ts renders TENTATIVE as 'draft'.",
+  "byRace": {
+   "ny-surrogate-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Surrogate - New York', 1 to be elected.",
+   "ny-civil-county-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Judge of the Civil Court - County - New York', 3 to be elected.",
+   "ny-civil-3md-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: Judge of the Civil Court, 3rd Municipal Court District, 1 to be elected. Keep the existing SPLIT text (~70.6%).",
+   "ny-civil-9md-ny": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: Judge of the Civil Court, 9th Municipal Court District, 2 to be elected. Keep the existing SPLIT text (~29.4%).",
+   "nyc-council-3": "Source: NYC Board of Elections General Contest List, printed 9/11/2026. Every page is still marked TENTATIVE, and it is the only list linked at vote.nyc/page/list-candidates as of Oct 30, 2026; no final list has been posted. NYS BOE certification covers state offices only. Contest: 'Member of the City Council - 3rd Council District', 1 to be elected. Keep the existing SPLIT text (~95.1% CD3 / 4.9% CD4)."
+  }
+ },
+ "markets": {
+  "where": "No placeholder names are stored in feat2 data files. data/markets-map.json holds only slugs; outcomes are fetched live from gamma-api.polymarket.com/events?slug=… . The code paths are lib/tools.ts:173,187 and lib/marketLine.ts:21 (the working tree already has uncommitted filtering, comment 'QA 7391b20 P1').",
+  "placeholders": "Inactive (active:false) sub-markets named 'Person A', 'Person B', 'Other', etc. In the NY AG market these inactive placeholders still carry outcomePrices of 0.5, so filtering by price alone does not remove them.",
+  "byMarket": {
+   "tx-10 (tx-10-house-election-winner)": {
+    "real": [
+     [
+      "Chris Gober (R)",
+      0.91
+     ],
+     [
+      "Caitlin Rourk (D)",
+      0.09
+     ]
+    ],
+    "recommend": "keep; filter active===true"
+   },
+   "tx-37 (tx-37-house-election-winner)": {
+    "real": [
+     [
+      "Greg Casar (D)",
+      0.976
+     ],
+     [
+      "Lauren Peña (R)",
+      0.016
+     ]
+    ],
+    "recommend": "keep; filter active===true"
+   },
+   "ca-gov (california-governor-election-2026)": {
+    "real": [
+     [
+      "Xavier Becerra",
+      0.973
+     ],
+     [
+      "Steve Hilton",
+      0.0265
+     ]
+    ],
+    "also": "21 other active named people not on the ballot (Caruso, Padilla, Porter, …) at 0.0005 each",
+    "recommend": "keep; filter active===true AND restrict to ballot names"
+   },
+   "ny-governor (new-york-governor-winner-2026)": {
+    "real": [
+     [
+      "Kathy Hochul (D)",
+      0.9725
+     ],
+     [
+      "Bruce Blakeman (R)",
+      0.028
+     ]
+    ],
+    "recommend": "keep; filter active===true"
+   },
+   "ny-attorney-general (new-york-attorney-general-election-winner-2026)": {
+    "real": [
+     [
+      "Letitia James (D)",
+      0.9555
+     ],
+     [
+      "Saritha Komatireddy (R)",
+      0.0415
+     ]
+    ],
+    "recommend": "keep; filter active===true (placeholders priced 0.5)"
+   }
+  },
+  "pricesAsOf": "2026-10-30, live Gamma API"
+ },
+ "suspects": [
+  {
+   "id": "ted-brown",
+   "issue": "infrastructure",
+   "value": -3,
+   "quote": "This has to involve massive cuts in the federal budget in every single program and department.",
+   "why": "A general spending/tax-cut statement with no infrastructure content. Better as taxes (or drop). Clear mismatch.",
+   "confidence": "high"
+  },
+  {
+   "id": "karen-ortiz",
+   "issue": "safety",
+   "value": -3,
+   "quote": "My focus will be on allocating funding for housing, healthcare, and programs such as SNAP.",
+   "why": "No safety content in the quote. It is valid as diversion only if the NYC Votes question was about public safety (page is JS-rendered, context not verifiable here).",
+   "confidence": "medium"
+  },
+  {
+   "id": "sarah-eckhardt",
+   "issue": "taxes",
+   "value": 2,
+   "quote": "…no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools.",
+   "why": "About services, not taxes. Taxes direction is inferred.",
+   "confidence": "medium"
+  },
+  {
+   "id": "sonja-shaw",
+   "issue": "safety",
+   "value": 2,
+   "quote": "…hold students accountable … suspensions and expulsions…",
+   "why": "School discipline, not policing/prosecution (the safety axis).",
+   "confidence": "medium"
+  },
+  {
+   "id": "leah-lacroix",
+   "issue": "taxes",
+   "value": 3,
+   "quote": "I fully support Free City and the grant program, and strongly oppose any cuts or reductions to the program.",
+   "why": "Program support, not a tax position.",
+   "confidence": "low-medium"
+  },
+  {
+   "id": "bunny-mcfadden",
+   "issue": "taxes",
+   "value": 2,
+   "quote": "Free City is crucial and must not be a political bargaining chip.",
+   "why": "Same as LaCroix.",
+   "confidence": "low-medium"
+  },
+  {
+   "id": "ted-brown",
+   "issue": "wages",
+   "value": -3,
+   "quote": "I believe in the free market, where people freely trade with each other without government regulations and controls.",
+   "why": "Generic free-market statement; does not mention wages. Direction is plausible but inferred.",
+   "confidence": "low"
+  },
+  {
+   "id": "jamo-muhammad",
+   "issue": "energy",
+   "value": 2,
+   "quote": "All need to be held responsible! I believe the data centers will be more of the same.",
+   "why": "Vague; the energy direction depends on surrounding context.",
+   "confidence": "low"
+  },
+  {
+   "id": "gina-hinojosa",
+   "issue": "energy",
+   "value": 3,
+   "quote": "We know that the state needs improved grid reliability…",
+   "why": "Not a tag mismatch: the same quote is +3 in stances.json and +2 in accountability.json. Pick one.",
+   "confidence": "n/a (value inconsistency)"
+  },
+  {
+   "id": "steve-hilton",
+   "issue": "housing (research/model citation layer, not stances.json)",
+   "quote": "$3 gas, your first $150,000 tax-free, capping vehicle registration…",
+   "why": "Mostly taxes/energy content tagged housing.",
+   "confidence": "high"
+  },
+  {
+   "id": "xavier-becerra",
+   "issue": "wages (research/model citation layer)",
+   "why": "See the xavier-becerra entry: should be energy.",
+   "confidence": "high"
+  }
+ ],
+ "suspectsMethod": "Keyword scan of all scored stances.json quotes: flagged a quote when it has no keyword for its tagged issue, or another issue's keywords dominate by 2 or more. 70 + 15 hits, reviewed by hand. Most were fine (e.g. ACA tax credits → healthcare, SB 54 → immigration). Only the entries above were kept. jon-rosenthal energy ('Texas Green New Deal') was checked and is correct. Nothing was changed."
+}

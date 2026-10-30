@@ -1,0 +1,1793 @@
+{
+ "stances": {
+  "montserrat-garibay": {
+   "name": "Montserrat Garibay",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.montserratfortexas.com/"
+    ]
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "We should expand Medicaid and strengthen mental health care.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": 2,
+    "quote": "every worker earns a fair wage",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "We must increase education funding, tie it to inflation, and close corporate tax loopholes.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.montserratfortexas.com/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "Pending: KUT reports she wants added requirements on vouchers; her quoted words are mixed and do not set a clear direction on the axis",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.montserratfortexas.com/"
+    ]
+   },
+   "energy": {
+    "value": 4,
+    "quote": "prioritizing wind, solar, and renewables",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.montserratfortexas.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "We must also invest in water supply and planning, repair aging pipes",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "arshia-papari": {
+   "name": "Arshia Papari",
+   "housing": {
+    "value": 5,
+    "quote": "A rent freeze is needed across the board to help everyday Texans get by.",
+    "sourceUrl": "https://www.arshiafortexas.org/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": 5,
+    "quote": "I will fight for universal healthcare that guarantees every Texan is able to receive quality treatment and care, regardless of their financial status",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.arshiafortexas.org/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.arshiafortexas.org/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.arshiafortexas.org/"
+    ]
+   },
+   "education": {
+    "value": -2,
+    "quote": "I will fight to fully fund our public schools, without compromise or excuses.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": 4,
+    "quote": "I will bring forth a Texas Green New Deal to modernize our energy grid, expand affordable clean energy",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-running-for-texas-house-district-49-in-novembers-election/",
+     "https://www.kut.org/politics/2026-10-19/austin-texas-house-district-49-race-election-candidates-montserrat-garibay-arshia-papari",
+     "https://www.arshiafortexas.org/"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "protect & invest in our water infrastructure",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "maria-luisa-flores": {
+   "name": "Maria Luisa “Lulu” Flores",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.voteluluflores.com/issues/",
+     "https://ballotpedia.org/Lulu_Flores"
+    ]
+   },
+   "healthcare": {
+    "value": 4,
+    "quote": "I support Medicaid expansion",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": 4,
+    "quote": "Raise the minimum wage and end subminimum wage for youth or Texans with disabilities",
+    "sourceUrl": "https://www.voteluluflores.com/issues/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": 3,
+    "quote": "Close corporate tax loopholes and franchise tax exemptions and raise the margins tax",
+    "sourceUrl": "https://www.voteluluflores.com/issues/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": -4,
+    "quote": "Focus on diversion programs; treatment, education, job skills, counseling while incarcerated",
+    "sourceUrl": "https://www.voteluluflores.com/issues/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": -5,
+    "quote": "We should repeal the costly voucher scam",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": 3,
+    "quote": "We should invest in wind, solar, and clean-energy jobs",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.voteluluflores.com/issues/",
+     "https://ballotpedia.org/Lulu_Flores"
+    ]
+   },
+   "infrastructure": {
+    "value": 2,
+    "quote": "repair aging pipes",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "jessica-martinez": {
+   "name": "Jessica Martinez",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.jessicaforhd51.com/",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://ballotpedia.org/Jessica_Martinez_(Texas)"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.jessicaforhd51.com/",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://ballotpedia.org/Jessica_Martinez_(Texas)"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.jessicaforhd51.com/",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://ballotpedia.org/Jessica_Martinez_(Texas)"
+    ]
+   },
+   "taxes": {
+    "value": -4,
+    "quote": "Support legislation to eliminate or cut property taxes and make home ownership possible again for young families.",
+    "sourceUrl": "https://www.jessicaforhd51.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 3,
+    "quote": "Restore funding for law enforcement, ensuring officers have the training and resources they need to keep our community safe.",
+    "sourceUrl": "https://www.jessicaforhd51.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.jessicaforhd51.com/",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://ballotpedia.org/Jessica_Martinez_(Texas)"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.jessicaforhd51.com/",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://ballotpedia.org/Jessica_Martinez_(Texas)"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.jessicaforhd51.com/",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://ballotpedia.org/Jessica_Martinez_(Texas)"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "invest in modern water infrastructure that protects our community's health",
+    "sourceUrl": "https://www.jessicaforhd51.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "allison-bush": {
+   "name": "Allison Bush",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   },
+   "education": {
+    "value": -3,
+    "quote": "I oppose the unlimited expansion of charter schools that diverts resources from our neighborhood public schools.",
+    "sourceUrl": "https://www.allisonfortx.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.allisonfortx.com/",
+     "https://ballotpedia.org/Allison_Bush",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates"
+    ]
+   }
+  },
+  "mica-arellano": {
+   "name": "Mica Arellano",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "Pending: \"Every tax dollar should be focused on students and classrooms—not wasted on unnecessary bureaucracy.\" (micatx.com) is about spending efficiency, not a direction on tax levels",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.micatx.com/",
+     "https://ballotpedia.org/Mica_Arellano",
+     "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (No response received)",
+     "https://www.kut.org/education/2026-10-15/austin-tx-state-board-of-education-sboe-election-candidates (declined interview)"
+    ]
+   }
+  },
+  "rich-heyman": {
+   "name": "Rich Heyman",
+   "housing": {
+    "value": 4,
+    "quote": "We especially need to invest in housing for families making less than $40,000 annually",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.richforaustin.org/"
+    ]
+   },
+   "wages": {
+    "value": 2,
+    "quote": "targeted at small and local businesses that agree to treat their employees well by paying them a living wage",
+    "sourceUrl": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": 2,
+    "quote": "I will fight to stop tax breaks for wealthy companies and sweetheart deals for billionaires that provide few public benefits.",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": -3,
+    "quote": "We need to stop overburdening police with tasks they are not suited for and are more appropriate for EMS or mental health workers.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.richforaustin.org/"
+    ]
+   },
+   "energy": {
+    "value": 2,
+    "quote": "Invest more in the climate equity plan",
+    "sourceUrl": "https://www.richforaustin.org/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.richforaustin.org/"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "freeing up money for new transportation projects, which will also require state and federal support, as well as bond funding",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "katie-kam": {
+   "name": "Katie Kam",
+   "housing": {
+    "value": 3,
+    "quote": "Add affordable housing on underutilized parking lots/garages & city real estate.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026"
+    ]
+   },
+   "taxes": {
+    "value": -3,
+    "quote": "We need to reduce tax and fee burdens.",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": 3,
+    "quote": "the County to prosecute or commit repeat offenders to involuntary psychiatric stays",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026"
+    ]
+   },
+   "energy": {
+    "value": 3,
+    "quote": "need strict requirements for water conservation informed by water plan, 100% renewable energy",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "Pending: statements mix spending and cost-cutting; no clear direction",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026"
+    ]
+   }
+  },
+  "zohaib-qadri": {
+   "name": "Zohaib “Zo” Qadri",
+   "housing": {
+    "value": 4,
+    "quote": "I've fought to build more housing by passing HOME, eliminating costly parking mandates and reforming outdated rules.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.zoforaustin.com/"
+    ]
+   },
+   "wages": {
+    "value": 2,
+    "quote": "updated our Local Filming Incentive Program that requires City of Austin Living Wage to qualify",
+    "sourceUrl": "https://www.zoforaustin.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.zoforaustin.com/"
+    ]
+   },
+   "safety": {
+    "value": -2,
+    "quote": "I was the only Council member to vote against a $218 million police contract that threatened other essential services and weakened oversight.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.zoforaustin.com/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.zoforaustin.com/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://www.zoforaustin.com/"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "I've also fought for I-35 caps and stitches and better transit.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "dave-thadani": {
+   "name": "Dave Thadani",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "Pending: LWV answer is ambiguous on diversion vs enforcement",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://www.daveforaustintx.com/ (JavaScript-only, no text retrievable)",
+     "https://ballotpedia.org/Dave_Thadani",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/ (no response)",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026 (no interview)"
+    ]
+   },
+   "infrastructure": {
+    "value": 3,
+    "quote": "focusing on an expanded drainage system to counteract the flooding caused by impervious cover",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "kai-huang": {
+   "name": "Kai Huang",
+   "housing": {
+    "value": null,
+    "status": "Pending: KUT housing coverage is paraphrase only, no direct quote",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   },
+   "safety": {
+    "value": 3,
+    "quote": "I think we need to be harder on crime, especially around theft,",
+    "sourceUrl": "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/meet-the-candidates-running-for-austin-city-council-district-9/",
+     "https://www.kut.org/politics/2026-10-19/austin-city-council-district-9-candidates-election-2026",
+     "https://ballotpedia.org/Kai_Huang"
+    ]
+   }
+  },
+  "pamela-mathai": {
+   "name": "Pamela Mathai",
+   "housing": {
+    "value": 3,
+    "quote": "Working with the city to expand affordable housing options and revisiting zoning maps",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "education": {
+    "value": -4,
+    "quote": "fight against vouchers that redirect public funds from our schools",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   }
+  },
+  "cynthia-soliz": {
+   "name": "Cynthia Soliz",
+   "housing": {
+    "value": 2,
+    "quote": "I want to see them used to house affordable teacher housing",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "education": {
+    "value": -2,
+    "quote": "Advocating for the full funding of public schools at the state level",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   }
+  },
+  "kirk-becker": {
+   "name": "Kirk Becker",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "taxes": {
+    "value": -5,
+    "quote": "There isn't any practical middle ground between zero and the current tax rates, I'd prioritize $0.",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "Pending: proposes moving students to charter schools; charters are public schools, so this does not map to the public-vs-private axis",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-austin-isd-at-large-position-9-ahead-of-nov-3-election/"
+    ]
+   }
+  },
+  "dana-walker": {
+   "name": "Dana Walker",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "Pending: \"Taxpayer-conscious decision-making\" is too vague for a direction",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   }
+  },
+  "gloria-gonzales-dholakia": {
+   "name": "Gloria Gonzales-Dholakia",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-1-ahead-of-nov-3-election/"
+    ]
+   }
+  },
+  "trevor-hale": {
+   "name": "Trevor Hale",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "Pending: mixed (\"equally abhorrent external answers including raising property taxes. If we want good things, we need to pay for them.\")",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   }
+  },
+  "nan-mcraven": {
+   "name": "Nan McRaven",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "Pending: \"ACC has one of the lowest tuition and tax rates in Texas\" is a record claim, not a stated direction",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 44-45)",
+     "https://communityimpact.com/central-austin/election/qa-meet-the-candidates-for-acc-board-of-trustees-place-3-ahead-of-nov-3-election/"
+    ]
+   }
+  },
+  "yvonne-munoz": {
+   "name": "Yvonne Muñoz",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://ballotpedia.org/Yvonne_Mu%C3%B1oz",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   }
+  },
+  "phil-gorman": {
+   "name": "Phil Gorman",
+   "housing": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "healthcare": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "wages": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "taxes": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "safety": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "education": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "energy": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "immigration": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   },
+   "infrastructure": {
+    "value": null,
+    "status": "No public statement found",
+    "checkedDate": "2026-10-29",
+    "searched": [
+     "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf (pp. 24-25)",
+     "https://theaustinbulldog.org/ (empty response)"
+    ]
+   }
+  },
+  "vikki-goodwin": {
+   "name": "Vikki Goodwin",
+   "healthcare": {
+    "value": 5,
+    "quote": "Vikki Goodwin has proposed a new, state administered health insurance program to cover every Texan.",
+    "sourceUrl": "https://goodwin4texas.com/healthcare",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "housing": {
+    "value": 3,
+    "quote": "Our teachers, nurses, first responders, and veterans deserve affordable housing options. Vikki will work to increase qualification opportunities through specialized programs and financing assistance.",
+    "sourceUrl": "https://goodwin4texas.com/housing",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "wages": {
+    "value": 4,
+    "quote": "Texas has not adjusted the minimum wage in decades, and it still remains at an abysmally low $7.25/hour. We should increase it to $15/hour as the minimum.",
+    "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "energy": {
+    "value": 3,
+    "quote": "Vikki supports comprehensive strategies to address extreme weather impacts and reduce greenhouse gas emissions",
+    "sourceUrl": "https://goodwin4texas.com/issues/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  },
+  "dawn-buckingham": {
+   "name": "Dawn Buckingham",
+   "taxes": {
+    "value": -2,
+    "quote": "Conservative stewardship that grows the fund without raising taxes",
+    "sourceUrl": "https://dawnbuckingham.com/texas-schools/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   },
+   "immigration": {
+    "value": 4,
+    "quote": "Dawn launched the Jocelyn initiative offering any resources at the General Land Office's disposal to detain and deport criminals illegally on our soil.",
+    "sourceUrl": "https://dawnbuckingham.com/",
+    "verifiedBy": "civic",
+    "verifiedDate": "2026-10-29"
+   }
+  }
+ },
+ "_notes": {
+  "dawn-buckingham.taxes": "Replaces heading \"BANNING STATE INCOME TAX\" (a 2022 campaign-site heading, not a statement). Weaker value -2 matches the 2025+ wording.",
+  "dawn-buckingham.immigration": "Replaces heading \"SECURING THE BORDER\". Statement is third-person text on her own campaign site and references post-2024 actions.",
+  "dawn-buckingham.healthcare": "Unchanged. Existing quote is from her 2016 campaign site (Ballotpedia). No 2024+ healthcare statement on dawnbuckingham.com (home, texas-schools, landowners pages) or Ballotpedia 2022/2026. Kept under the rule fallback; parent may choose to null it.",
+  "vikki-goodwin": "Replaced housing/healthcare/wages (stances.json) and energy (2020 survey quote) with 2025 survey or live 2026 campaign-site text. education (-5, 2025 survey) and safety (-2, Jan 2026 campaign site) already 2024+, unchanged.",
+  "ken-paxton.healthcare": "Unchanged, flagged. Only 2024+ candidate found is a Dec 2024 statement quoted by Texas Tribune about ACA coverage for DACA recipients (partial quote, immigration-framed); judged unsure, not substituted. URL: https://www.texastribune.org/2024/12/09/texas-daca-recipients-affordable-care-act/",
+  "bo-french.education": "Unchanged, flagged. Charter quote is from his 2016 campaign site. 2026 survey/site has no education text; Fort Worth Report Jan 2025 has only \"Not all Republicans agree on school choice,\" (no position)."
+ }
+}

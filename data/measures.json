@@ -1,13 +1,247 @@
 {
  "builtAt": "2026-10-29",
- "note": "Official sources only: CA LAO and SoS voter guide, SF Department of Elections voter pamphlet, Travis County Clerk sample ballot and City of Austin election ordinances. 'unsure' where the official text gives no figure.",
+ "note": "Official sources only: CA LAO and SoS voter guide, SF Department of Elections voter pamphlet, Travis County Clerk sample ballot and City of Austin election ordinances. 'unsure' where the official text gives no figure. CA Props 1-5, 37-39 and 41-45 added 2026-10-29 from voterguide.sos.ca.gov. Merged with Civic's validated measures_math.json (data/civic/), preferring a sourced value over 'unsure' field by field; ifYes/ifNo from the official texts. Ids: ca-prop-N, sf-rtm, sf-prop-x, austin-prop-x.",
  "measures": [
+  {
+   "id": "ca-prop-1",
+   "title": "California Proposition 1: Authorizes Bonds for Housing Affordability Programs",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "$11.25 billion in state bonds. Legislative Analyst estimate: state cost of $500 million to $600 million per year for about 25 years to repay.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/1/analysis.htm"
+   },
+   "whoPays": {
+    "text": "$10 billion would be repaid from the state General Fund; $1.25 billion would be repaid by veterans' payments on their home loans.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/1/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "The state could borrow $11.25 billion to support veterans and affordable housing.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/1/"
+   },
+   "ifYes": {
+    "text": "The state could borrow $11.25 billion to support veterans and affordable housing.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/1/"
+   },
+   "ifNo": {
+    "text": "The state could not borrow $11.25 billion to support veterans and affordable housing.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/1/"
+   }
+  },
+  {
+   "id": "ca-prop-2",
+   "title": "California Proposition 2: Increases State’s Rainy Day Fund",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "No dollar figure given. Legislative Analyst: state budget reserves would be higher.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/2/analysis.htm"
+   },
+   "whoPays": {
+    "text": "No new tax in the official summary.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/2/"
+   },
+   "whatChanges": {
+    "text": "Rules for building state budget reserves and paying down extra state debts would change. As a result, state budget reserves would be higher. The state also would be required to make extra debt payments for longer.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/2/"
+   },
+   "ifYes": {
+    "text": "Rules for building state budget reserves and paying down extra state debts would change; reserves would be higher and extra debt payments would continue for longer.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/2/"
+   },
+   "ifNo": {
+    "text": "Rules for building state budget reserves and paying down extra state debts would not change.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/2/"
+   }
+  },
+  {
+   "id": "ca-prop-3",
+   "title": "California Proposition 3: Provides Permanent Funding for Schools and Health Care by Extending Existing Tax on High Incomes",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Legislative Analyst: maintains $5 billion to $15 billion per year in state income tax revenue that would otherwise end in 2031.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/3/analysis.htm"
+   },
+   "whoPays": {
+    "text": "Individuals earning over $371,000 per year (adjusted annually for inflation), who already pay these rates.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/3/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "An income tax increase on high-income earners in place since 2012 would become permanent instead of expiring in 2031.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/3/"
+   },
+   "ifYes": {
+    "text": "An income tax increase on high-income earners in place since 2012 would become permanent instead of expiring in 2031.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/3/"
+   },
+   "ifNo": {
+    "text": "An income tax increase on high-income earners in place since 2012 would expire in 2031.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/3/"
+   }
+  },
+  {
+   "id": "ca-prop-4",
+   "title": "California Proposition 4: Repeals Prohibition Against Public Funding of Election Campaigns",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Legislative Analyst: ongoing state cost of a few hundred thousand dollars per year for the Fair Political Practices Commission.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/4/analysis.htm"
+   },
+   "whoPays": {
+    "text": "The state (Fair Political Practices Commission costs). Costs of any local program would depend on local decisions.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/4/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "State and local governments could create public campaign financing programs for public office candidates, subject to limits on which public funds could be used, how the public funds could be used, and who could receive them.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/4/"
+   },
+   "ifYes": {
+    "text": "State and local governments could create public campaign financing programs for candidates, subject to limits on funding sources and use.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/4/"
+   },
+   "ifNo": {
+    "text": "State and most local governments would remain unable to create public campaign finance programs for candidates.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/4/"
+   }
+  },
+  {
+   "id": "ca-prop-5",
+   "title": "California Proposition 5: Changes Recall Election Process for Statewide Officers",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Legislative Analyst: net fiscal effect unknown; in the event of a recall, savings or costs of millions of dollars depending on the office recalled.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/5/analysis.htm"
+   },
+   "whoPays": {
+    "text": "Election costs are funded by the Legislature, with remaining costs paid from the Secretary of State's and counties' budgets.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/5/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "Recall elections would no longer include a question about who should fill the vacancy. Instead, vacancies typically would be filled through special elections or appointments, depending on the office and timing.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/5/"
+   },
+   "ifYes": {
+    "text": "Recall elections would no longer include a question about who should fill the vacancy; vacancies would be filled by special election or appointment.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/5/"
+   },
+   "ifNo": {
+    "text": "Voters would continue to be asked who should fill the vacancy as part of recall elections.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/5/"
+   }
+  },
+  {
+   "id": "ca-prop-37",
+   "title": "California Proposition 37: Creates Loan Program for Middle-Income Buyers of Qualified New Homes",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Up to $25 billion in state revenue bonds. Legislative Analyst: no direct state or local costs.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/37/analysis.htm"
+   },
+   "whoPays": {
+    "text": "Bonds would be repaid by participating homeowners' payments on their home loans, not the state.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/37/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "The state would create a new homebuying assistance program. The state could sell up to $25 billion in revenue bonds to fund the program. Bonds would be paid back by homeowners’ payments on their home loans.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/37/"
+   },
+   "ifYes": {
+    "text": "The state would create a new homebuying assistance program and could sell up to $25 billion in revenue bonds to fund it.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/37/"
+   },
+   "ifNo": {
+    "text": "The state would not be required to create a new homebuying assistance program.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/37/"
+   }
+  },
+  {
+   "id": "ca-prop-38",
+   "title": "California Proposition 38: Authorizes Bonds for Immunology Medical Research",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "$8.4 billion in state bonds. Legislative Analyst: state cost of $500 million to $600 million per year for about 20 years to repay, with some or all offset if funded research generates revenue.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/38/analysis.htm"
+   },
+   "whoPays": {
+    "text": "General obligation bonds are typically repaid from the state General Fund.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/38/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "The state could borrow $8.4 billion to support medical research in immunology and immunotherapy conducted by California research institutes and universities.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/38/"
+   },
+   "ifYes": {
+    "text": "The state could borrow $8.4 billion to support immunology and immunotherapy research by California research institutes and universities.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/38/"
+   },
+   "ifNo": {
+    "text": "The state could not borrow $8.4 billion for this research.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/38/"
+   }
+  },
+  {
+   "id": "ca-prop-39",
+   "title": "California Proposition 39: Prohibits Citizens from Voting Unless They Present Government-Issued Identification",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Legislative Analyst: state and local costs of tens of millions to low hundreds of millions of dollars per year.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/39/analysis.htm"
+   },
+   "whoPays": {
+    "text": "State and local governments; exact split depends on future decisions by the Legislature, state departments, local governments and voters.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/39/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "Voters would be required to present additional identifying information to elections officials each time they vote.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/39/"
+   },
+   "ifYes": {
+    "text": "Voters would be required to present additional identifying information to elections officials each time they vote.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/39/"
+   },
+   "ifNo": {
+    "text": "A voter's identity would continue to be established with the voter's signature.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/39/"
+   },
+   "officialTitle": "PROHIBITS CITIZENS FROM VOTING UNLESS THEY PRESENT GOVERNMENT-ISSUED IDENTIFICATION. INITIATIVE CONSTITUTIONAL AMENDMENT.",
+   "officialTitleSource": "https://voterguide.sos.ca.gov/propositions/39/title-summary.htm"
+  },
   {
    "id": "ca-prop-40",
    "title": "California Proposition 40: Imposes One-Time Tax on Certain Taxpayers",
    "zips": [
-    "94103",
-    "90012"
+    "90012",
+    "94103"
    ],
    "jurisdiction": "California (statewide)",
    "cost": {
@@ -22,7 +256,160 @@
     "text": "90% of the money must go to health care services; the rest to education, food assistance and administering the tax. Exempt from the constitution's school funding and spending limit rules.",
     "sourceUrl": "https://lao.ca.gov/BallotAnalysis/Proposition?number=40&year=2026"
    },
-   "notes": "Supporters' ~$100 billion figure is a campaign claim, not the LAO estimate. Official voter guide: https://voterguide.sos.ca.gov/propositions/40/"
+   "notes": "Supporters' ~$100 billion figure is a campaign claim, not the LAO estimate. Official voter guide: https://voterguide.sos.ca.gov/propositions/40/",
+   "ifYes": {
+    "text": "The state would collect a one-time tax from billionaires equal to 5 percent of their wealth.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/40/"
+   },
+   "ifNo": {
+    "text": "The state would not collect this one-time tax.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/40/"
+   }
+  },
+  {
+   "id": "ca-prop-41",
+   "title": "California Proposition 41: Prohibits New State Taxes that Exclude Revenues from State Spending Limit",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Legislative Analyst: net fiscal effect unknown; depends on future decisions by voters, the Legislature and other policymakers.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/41/analysis.htm"
+   },
+   "whoPays": {
+    "text": "Audit costs would generally be paid from the related special tax revenue; audits for special taxes that do not reach the ballot or are rejected would be paid from the state General Fund.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/41/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "When special taxes are proposed by voter initiatives, the California State Auditor would review programs funded by the tax before the initiative appears on the ballot. The California State Auditor also would regularly review programs funded by special taxes approved by voters or the Legislature. In addition, the state might not be able to exclude any new special tax spending from its spending limit.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/41/"
+   },
+   "ifYes": {
+    "text": "The State Auditor would review programs funded by proposed and approved special taxes, and the state might not be able to exclude new special tax spending from its spending limit.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/41/"
+   },
+   "ifNo": {
+    "text": "The State Auditor's responsibilities and the state spending limit requirements would not change.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/41/"
+   }
+  },
+  {
+   "id": "ca-prop-42",
+   "title": "California Proposition 42: Prohibits New State Personal Property Taxes and Certain Retroactive State Taxes",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "No dollar figure given. Legislative Analyst: possibility that tax revenues will not go up as much in the future.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/42/analysis.htm"
+   },
+   "whoPays": {
+    "text": "No new tax in the official summary.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/42/"
+   },
+   "whatChanges": {
+    "text": "The state could not establish new taxes on the ownership of financial assets or other personal property.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/42/"
+   },
+   "ifYes": {
+    "text": "The state could not establish new taxes on the ownership of financial assets or other personal property.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/42/"
+   },
+   "ifNo": {
+    "text": "The state would keep the option to establish such taxes.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/42/"
+   }
+  },
+  {
+   "id": "ca-prop-43",
+   "title": "California Proposition 43: Limits Voters’ Ability to Raise Revenues for Local Government Services",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "No dollar figure given. Legislative Analyst: possibility that local tax revenues will not go up as much in the future.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/43/analysis.htm"
+   },
+   "whoPays": {
+    "text": "No new tax in the official summary.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/43/"
+   },
+   "whatChanges": {
+    "text": "Certain local government taxes would require two-thirds approval by voters.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/43/"
+   },
+   "ifYes": {
+    "text": "Certain local government taxes would require two-thirds voter approval, beginning January 1, 2027.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/43/"
+   },
+   "ifNo": {
+    "text": "Certain local government taxes could continue to be approved by a majority vote.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/43/"
+   }
+  },
+  {
+   "id": "ca-prop-44",
+   "title": "California Proposition 44: Requires Community Health Clinics Spend 90% of Revenue on Program Services",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Legislative Analyst: state enforcement costs in the low tens of millions of dollars per year, covered by fees.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/44/analysis.htm"
+   },
+   "whoPays": {
+    "text": "Fees charged to affected clinics would cover state enforcement costs.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/44/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "Certain private nonprofit health care clinics would have to spend at least 90 percent of their revenue each year on providing health care services.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/44/"
+   },
+   "ifYes": {
+    "text": "Certain private nonprofit clinics would have to spend at least 90 percent of revenue each year on health care services.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/44/"
+   },
+   "ifNo": {
+    "text": "The new clinic spending requirement would not go into effect.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/44/"
+   }
+  },
+  {
+   "id": "ca-prop-45",
+   "title": "California Proposition 45: Modifies Environmental Review for Certain Projects",
+   "zips": [
+    "90012",
+    "94103"
+   ],
+   "jurisdiction": "California (statewide)",
+   "cost": {
+    "value": "Legislative Analyst: initial state and local costs likely in the high tens of millions of dollars per year, potentially exceeding $100 million; uncertain longer-term effects in either direction.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/45/analysis.htm"
+   },
+   "whoPays": {
+    "text": "State and local governments, with some costs covered by fees paid by project applicants and people filing lawsuits.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/45/analysis.htm"
+   },
+   "whatChanges": {
+    "text": "Certain public and private projects would be eligible for new project review and court challenge procedures. For example, new procedures would tighten time limits for environmental review and reduce the scope of what courts can consider when reviewing legal challenges.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/45/"
+   },
+   "ifYes": {
+    "text": "Certain public and private projects would use new review and court-challenge procedures with tighter time limits.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/45/"
+   },
+   "ifNo": {
+    "text": "Projects would continue to use existing review and court-challenge procedures.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/propositions/45/"
+   }
   },
   {
    "id": "sf-prop-a",
@@ -42,6 +429,14 @@
    "whatChanges": {
     "text": "Updates the Charter to match how departments operate, changes some processes (e.g. legal settlements approved by resolution instead of ordinance), eliminates or reorganizes some commissions and advisory bodies, and requires a task force every ten years to review commissions.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "The Charter would be amended to change certain processes and eliminate or reorganize some commissions.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=66"
+   },
+   "ifNo": {
+    "text": "No changes would be made.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=66"
    }
   },
   {
@@ -62,6 +457,14 @@
    "whatChanges": {
     "text": "Authorizes the City to create a municipal finance corporation (makes loans, takes no deposits) if funding exists, which may become a public bank (loans and deposits) after three years, for affordable housing, homeownership, small business and environmental projects.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "The City would be authorized to establish a municipal finance corporation and a public bank.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=72"
+   },
+   "ifNo": {
+    "text": "The City would not be authorized to do so.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=72"
    }
   },
   {
@@ -82,6 +485,14 @@
    "whatChanges": {
     "text": "Grows the City's yearly Housing Trust Fund contribution (last year $50.8 million) until it reaches at least $125 million, then caps increases at 3%; contributions can pause during large deficits; extends the fund from 2043 to 2058.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "The City's required contributions to the Housing Trust Fund would increase and be extended to 2058, with conditions allowing freezes or reductions in deficit years.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=80"
+   },
+   "ifNo": {
+    "text": "Current Housing Trust Fund contribution rules would stay in place.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=80"
    }
   },
   {
@@ -102,6 +513,14 @@
    "whatChanges": {
     "text": "Raises initiative signatures from 2% to 8% of registered voters (about 10,600 to about 42,500), requires a Board majority to place ordinances on the ballot, ends the Mayor's direct path, lets proponents withdraw measures, and raises the special-election threshold to 10% of registered voters.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "Signature thresholds for initiatives would rise from 2% to 8% (about 10,600 to 42,500 signatures), the Mayor and four Supervisors could no longer place measures directly, and special elections would require 10% of registered voters.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=86"
+   },
+   "ifNo": {
+    "text": "Current rules for placing measures on the ballot would stay in place.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=86"
    }
   },
   {
@@ -122,6 +541,14 @@
    "whatChanges": {
     "text": "Gives the City Administrator exclusive power to propose contracting rules and set citywide technology policy, extends the term from five to ten years, and raises Board approval thresholds (revenue contracts and leases from $1 million to $4.5 million; spending contracts from $10 million to $25 million).",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "Board of Supervisors approval thresholds would rise from $1 million to $4.5 million (revenue contracts) and $10 million to $25 million (expenditure contracts); the City Administrator term would go from 5 to 10 years.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=96"
+   },
+   "ifNo": {
+    "text": "Current thresholds and the 5-year term would stay in place.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=96"
    }
   },
   {
@@ -142,6 +569,14 @@
    "whatChanges": {
     "text": "Lets the Mayor hire and remove most department heads, remove most commissioners at will, transfer responsibilities between or combine most departments (unless the Board objects), and use deputy mayors.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "The Charter would be amended to change the structure of the City's executive branch as described in the measure.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=102"
+   },
+   "ifNo": {
+    "text": "The current executive branch structure would stay in place.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=102"
    }
   },
   {
@@ -162,6 +597,14 @@
    "whatChanges": {
     "text": "Closes Sunset Dunes Park Monday 4 a.m. to Friday 6 p.m. (except weekday holidays) to reopen the Upper Great Highway to private vehicles, after required permits.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "The Upper Great Highway park would close and the road would reopen to private vehicles from Monday 4 a.m. to Friday 6 p.m., except holidays.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=110"
+   },
+   "ifNo": {
+    "text": "The Upper Great Highway would remain a park.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=110"
    }
   },
   {
@@ -182,6 +625,14 @@
    "whatChanges": {
     "text": "Creates a new annual parcel tax for 15 years, with revenue deposited into the Stronger Muni Fund for Muni transit service operations and administration.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "A parcel tax would fund Muni service from July 1, 2027 to June 30, 2042.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=126"
+   },
+   "ifNo": {
+    "text": "The parcel tax would not be imposed.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=126"
    }
   },
   {
@@ -202,6 +653,14 @@
    "whatChanges": {
     "text": "Dedicates half of the transfer tax on properties over $10 million to affordable housing, including social housing and housing assistance.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "Part of the existing transfer tax would be dedicated to specific affordable housing programs instead of the General Fund.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=134"
+   },
+   "ifNo": {
+    "text": "Transfer tax revenue would remain in the General Fund.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=134"
    }
   },
   {
@@ -222,10 +681,18 @@
    "whatChanges": {
     "text": "Ends the partial foreclosure exemption for those properties and raises the City's spending limit for four years.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "The transfer tax exemption for these foreclosure transfers would end for the covered property types.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=146"
+   },
+   "ifNo": {
+    "text": "The current exemption would stay in place.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=146"
    }
   },
   {
-   "id": "bay-area-rtm",
+   "id": "sf-rtm",
    "title": "Regional Measure RTM: Regional Transit Measure",
    "zips": [
     "94103"
@@ -242,50 +709,74 @@
    "whatChanges": {
     "text": "Funds BART, Muni, Caltrain, AC Transit, VTA, SamTrans and other transit plus targeted road repairs, with financial oversight. Needs 50%+1 of all votes across the five counties.",
     "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+   },
+   "ifYes": {
+    "text": "A 1.0% (SF) / 0.5% (other four counties) sales tax would be imposed for 14 years, with revenue distributed to BART, Muni, Caltrain, AC Transit, VTA and other agencies. Requires 50%+1 of votes across all five counties combined.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=54"
+   },
+   "ifNo": {
+    "text": "The tax would not be imposed.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf#page=54"
    }
   },
   {
-   "id": "atx-prop-a",
+   "id": "austin-prop-a",
    "title": "City of Austin Proposition A: Parks, recreation, aquatic and open space bonds",
    "zips": [
     "78701"
    ],
    "jurisdiction": "City of Austin",
    "cost": {
-    "value": "$260,000,000 in bonds; about $453.4 million with estimated interest at 6%. Estimated maximum tax increase: $8.14 a year on a $100,000 homestead (assumes the $20,000 homestead exemption), per the City's voter information document",
-    "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=480699"
+    "value": "$260,000,000 in bonds (maximum net effective interest rate 6.00%). City estimate: about $193.4 million in interest, $453.4 million total over 20 years; up to $8.14 more per year on a $100,000 homestead (assumes a $20,000 exemption)",
+    "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=482565"
    },
    "whoPays": {
     "text": "City of Austin property taxpayers. The ballot says: THIS IS A TAX INCREASE.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Authorizes bonds for citywide park, recreation, aquatic and open space improvements, with priority projects named in the ordinance (e.g. Gus Garcia Recreation Center, Doris Miller Auditorium, Mayfield Park).",
     "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+   },
+   "ifYes": {
+    "text": "The City could issue $260,000,000 in bonds for park, recreation, aquatic and open space improvements and levy taxes to repay them. Ballot language states: THIS IS A TAX INCREASE.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   "ifNo": {
+    "text": "The City could not issue these bonds.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
    }
   },
   {
-   "id": "atx-prop-b",
+   "id": "austin-prop-b",
    "title": "City of Austin Proposition B: Library facility bonds",
    "zips": [
     "78701"
    ],
    "jurisdiction": "City of Austin",
    "cost": {
-    "value": "$35,000,000 in bonds; about $61.0 million with estimated interest at 6%. Estimated maximum tax increase: $1.10 a year on a $100,000 homestead (assumes the $20,000 homestead exemption), per the City's voter information document",
-    "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=480699"
+    "value": "$35,000,000 in bonds (maximum net effective interest rate 6.00%). City estimate: about $26.0 million in interest, $61.0 million total over 20 years; up to $1.10 more per year on a $100,000 homestead (assumes a $20,000 exemption)",
+    "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=482565"
    },
    "whoPays": {
     "text": "City of Austin property taxpayers. The ballot says: THIS IS A TAX INCREASE.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Authorizes bonds for library facilities.",
     "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+   },
+   "ifYes": {
+    "text": "The City could issue $35,000,000 in bonds for library facilities and levy taxes to repay them. Ballot language states: THIS IS A TAX INCREASE.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   "ifNo": {
+    "text": "The City could not issue these bonds.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
    }
   },
   {
-   "id": "atx-prop-c",
+   "id": "austin-prop-c",
    "title": "City of Austin Proposition C: Charter amendment",
    "zips": [
     "78701"
@@ -293,19 +784,27 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Clarifies that the Independent Citizens Redistricting Commission is independent of Council, lets it review districts after boundary changes, adds exceptions for student members, sets when its plan takes effect, and changes appointment and vacancy rules.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to clarify that the Independent Citizens Redistricting Commission is independent of City Council control, allow it to review districts after boundary changes, create exceptions for student members, set an effective date for its plan, increase potential appointees, clarify vacancy filling, and allow staff communication consistent with the Texas Open Meetings Act.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
    }
   },
   {
-   "id": "atx-prop-d",
+   "id": "austin-prop-d",
    "title": "City of Austin Proposition D: Charter amendment",
    "zips": [
     "78701"
@@ -313,19 +812,27 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Deletes the Charter rule that Council must meet at least once a week.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to delete language requiring the City Council to meet at least once each week.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
    }
   },
   {
-   "id": "atx-prop-e",
+   "id": "austin-prop-e",
    "title": "City of Austin Proposition E: Charter amendment",
    "zips": [
     "78701"
@@ -333,19 +840,27 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Deletes the rule that Council sets its rules and order of business by ordinance.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to delete language requiring the City Council to determine its rules and order of business by ordinance.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
    }
   },
   {
-   "id": "atx-prop-f",
+   "id": "austin-prop-f",
    "title": "City of Austin Proposition F: Charter amendment",
    "zips": [
     "78701"
@@ -353,19 +868,27 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Clarifies the meaning of 'election' and updates campaign contribution and spending limits each January 1 instead of with the budget.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to clarify the meaning of the term 'election' and have campaign contribution and expenditure limits adjusted each January 1 instead of with budget adoption.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
    }
   },
   {
-   "id": "atx-prop-g",
+   "id": "austin-prop-g",
    "title": "City of Austin Proposition G: Charter amendment",
    "zips": [
     "78701"
@@ -373,19 +896,27 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Holds citizen-initiated and petitioned charter elections on the next available even-year November date.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to require initiative and petitioned charter amendment elections to be held on the next available even-year November election date that allows time to meet legal requirements.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=3"
    }
   },
   {
-   "id": "atx-prop-h",
+   "id": "austin-prop-h",
    "title": "City of Austin Proposition H: Charter amendment",
    "zips": [
     "78701"
@@ -393,19 +924,27 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Has the City Council appoint and remove the City Attorney.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to provide that the City Council appoints and removes the City Attorney.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
    }
   },
   {
-   "id": "atx-prop-i",
+   "id": "austin-prop-i",
    "title": "City of Austin Proposition I: Charter amendment",
    "zips": [
     "78701"
@@ -413,19 +952,27 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Requires a regular Independent Affordability and Efficiency Initiative, including before any tax rate election, with the contractor required to find savings above its own cost.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to require an Independent Affordability and Efficiency Initiative on a regular basis and before any tax rate increase election, with the contractor required to identify annual and multi-year savings exceeding the cost of its service.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
    }
   },
   {
-   "id": "atx-prop-j",
+   "id": "austin-prop-j",
    "title": "City of Austin Proposition J: Charter amendment",
    "zips": [
     "78701"
@@ -433,15 +980,163 @@
    "jurisdiction": "City of Austin",
    "cost": {
     "value": "unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whoPays": {
     "text": "unsure (no fiscal estimate found; the ballot does not label it a tax increase)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
    },
    "whatChanges": {
     "text": "Makes non-substantive fixes (typos, punctuation) and removes language superseded by state law or court order.",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf"
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
+   },
+   "ifYes": {
+    "text": "The City Charter would be amended to make non-substantive corrections and change or remove language that is moot or unenforceable because of state law or a final court order.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   },
+   "ifNo": {
+    "text": "The City Charter would not be amended on this point.",
+    "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf#page=4"
+   }
+  },
+  {
+   "id": "nyc-prop-1",
+   "title": "NYC Proposal 1 (Public space consents)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whoPays": {
+    "text": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whatChanges": {
+    "text": "Speed up approval of revocable consents to use public space (ramps, cafes, benches): public hearings become optional and the Council can no longer reject sidewalk cafe permits",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/"
+   },
+   "ifYes": {
+    "text": "Speeds up the process to use public space while keeping community input.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/"
+   },
+   "ifNo": {
+    "text": "Keeps the longer process, with a mandatory public hearing to use public space and Council review of sidewalk cafes.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/"
+   }
+  },
+  {
+   "id": "nyc-prop-2",
+   "title": "NYC Proposal 2 (Contractor paperwork)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whoPays": {
+    "text": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whatChanges": {
+    "text": "Let the Procurement Policy Board simplify contractor questionnaires and require it to meet at least quarterly",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/"
+   },
+   "ifYes": {
+    "text": "Changes Procurement Policy Board authority, including simplifying the contractor questionnaire, and lets the Mayor delegate certain contract approvals.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/"
+   },
+   "ifNo": {
+    "text": "Leaves the law unchanged; the Mayor and Comptroller keep the longer questionnaire.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/"
+   }
+  },
+  {
+   "id": "nyc-prop-3",
+   "title": "NYC Proposal 3 (Street safety, city property, leasing)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whoPays": {
+    "text": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whatChanges": {
+    "text": "Streamline approvals for street safety projects, sale or lease of certain city property, and office leases for city workers",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/"
+   },
+   "ifYes": {
+    "text": "Simplifies approval of street projects, sales or leases of City property, and City office leasing.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/"
+   },
+   "ifNo": {
+    "text": "Keeps interagency consultation for road projects, Council approval of City property dispositions, and Council power to disapprove office leases.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/"
+   }
+  },
+  {
+   "id": "nyc-prop-4",
+   "title": "NYC Proposal 4 (Building permits)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whoPays": {
+    "text": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whatChanges": {
+    "text": "Create a central construction permit system and move waterfront permitting from Small Business Services to the Department of Buildings",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/"
+   },
+   "ifYes": {
+    "text": "Creates a centralized construction permit hub, moves waterfront permitting from Small Business Services to the Department of Buildings, and lets more DOB officials approve construction.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/"
+   },
+   "ifNo": {
+    "text": "Leaves the law unchanged.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/"
+   }
+  },
+  {
+   "id": "nyc-prop-5",
+   "title": "NYC Proposal 5 (Rainy day fund)",
+   "zips": [
+    "10001"
+   ],
+   "jurisdiction": "New York City (Charter amendment)",
+   "cost": {
+    "value": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whoPays": {
+    "text": "unsure",
+    "sourceUrl": "https://www.nyc.gov/assets/charter/html/coge-adopted-final-report-2026.html"
+   },
+   "whatChanges": {
+    "text": "Set a reserve target of at least 12% of the prior year's tax revenue and require a published deposit plan",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/"
+   },
+   "ifYes": {
+    "text": "Sets a reserve target of 12% of the prior year's City tax revenue and requires a deposit methodology; deposits still need approval in the City budget.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/"
+   },
+   "ifNo": {
+    "text": "Leaves the law unchanged, with no reserves target.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/"
    }
   }
  ]
