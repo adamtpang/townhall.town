@@ -144,3 +144,34 @@ describe("strip ticker (Adam 3:35 PM: sliding like a news banner)", () => {
     expect((chars * 7.6) / secs).toBeLessThan(80);
   });
 });
+
+describe("ticker pause control (WCAG 2.2.2, Design 3:43 PM)", () => {
+  it("icon-only toggle: aria-label Pause/Play prices with aria-pressed, 44x44, state on the strip", async () => {
+    const { tickerToggleProps, applyPaused } = await import("../components/TickerToggle");
+    expect(tickerToggleProps(false)).toEqual({ "aria-label": "Pause prices", "aria-pressed": false });
+    expect(tickerToggleProps(true)).toEqual({ "aria-label": "Play prices", "aria-pressed": true });
+    const s = buildStrip(["national-senate"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]) }, null, NOW);
+    const out = html(s);
+    const btn = out.match(/<button[^>]*data-strip-toggle[^>]*>([\s\S]*?)<\/button>/);
+    expect(btn).toBeTruthy();
+    expect(btn![0]).toContain('aria-label="Pause prices"');
+    expect(btn![0]).toContain('aria-pressed="false"');
+    expect(btn![0]).toMatch(/h-11 w-11/);
+    expect(btn![1].replace(/<[^>]+>/g, "").trim()).toBe(""); // no visible text
+    // toggling sets/clears data-strip-paused on the strip element
+    const attrs = new Set<string>();
+    const strip = { setAttribute: (k: string) => attrs.add(k), removeAttribute: (k: string) => attrs.delete(k) };
+    const el = { closest: (sel: string) => (sel === "[data-poly-strip]" ? strip : null) } as unknown as Element;
+    applyPaused(el, true); expect(attrs.has("data-strip-paused")).toBe(true);
+    applyPaused(el, false); expect(attrs.has("data-strip-paused")).toBe(false);
+    const css = readFileSync("app/globals.css", "utf8");
+    expect(css).toContain("[data-strip-paused] [data-strip-track] { animation-play-state: paused; }");
+  });
+  it("toggle hidden under reduced motion; left fade ~24px at the label edge", () => {
+    const css = readFileSync("app/globals.css", "utf8");
+    const rm = css.slice(css.indexOf("@media (prefers-reduced-motion: reduce) {\n  [data-strip-track]"));
+    expect(rm.slice(0, rm.indexOf("}\n}") + 3)).toContain("[data-strip-toggle] { display: none; }");
+    const s = buildStrip(["national-senate"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]) }, null, NOW);
+    expect(html(s)).toContain("mask-image:linear-gradient(to_right,transparent,#000_24px,");
+  });
+});

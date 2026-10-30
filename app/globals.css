@@ -127,8 +127,10 @@ body {
 @keyframes poly-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 [data-strip-track] { animation: poly-ticker var(--ticker-dur, 40s) linear infinite; will-change: transform; }
 [data-strip-scroller]:hover [data-strip-track], [data-strip-scroller]:focus-within [data-strip-track] { animation-play-state: paused; }
+[data-strip-paused] [data-strip-track] { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
   [data-strip-track] { animation: none !important; transform: none; }
   [data-strip-dup] { display: none; }
   [data-strip-scroller] { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; }
+  [data-strip-toggle] { display: none; }
 }

@@ -1,6 +1,7 @@
 import type React from "react";
 // Polymarket strip: server component, no client JS (panels use the native popover attribute). See lib/polyStrip.ts.
 import { fetchPolymarketEventSides } from "../lib/marketsCore.mjs";
+import TickerToggle from "./TickerToggle";
 import { buildStrip, stripIdsFor, stripLabelFull, STRIP_EVENTS, STRIP_LABEL, type LiveEvent, type Strip, type StripChip } from "../lib/polyStrip";
 
 type BallotArg = Parameters<typeof stripIdsFor>[0];
@@ -78,7 +79,8 @@ export function PolyStripView({ strip }: { strip: Strip | null }) {
         </p>
         {/* Ticker (Adam 3:35 PM: "sliding like a news banner"): the label above stays put, only the prices move.
             Two identical sets slide by -50% in a CSS loop; hover/focus pauses; reduced motion = static, scrollable. */}
-        <div className="relative min-w-0 flex-1 overflow-x-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,#000_calc(100%-28px),transparent)]" data-strip-scroller>
+        <div className="flex min-w-0 flex-1 items-center gap-1">
+        <div className="relative min-w-0 flex-1 overflow-x-hidden pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,transparent,#000_24px,#000_calc(100%-28px),transparent)]" data-strip-scroller>
           <div className="flex w-max items-center whitespace-nowrap" data-strip-track style={{ "--ticker-dur": `${tickerSeconds(strip.chips)}s` } as React.CSSProperties}>
             <ul className="flex shrink-0 items-center gap-5 pr-10" data-strip-set>
               {strip.chips.map((c) => <li key={c.id} className="shrink-0 snap-start"><Chip c={c} asOfLabel={strip.asOfLabel} /></li>)}
@@ -87,6 +89,8 @@ export function PolyStripView({ strip }: { strip: Strip | null }) {
               {strip.chips.map((c) => <li key={c.id} className="shrink-0"><Chip c={c} asOfLabel={strip.asOfLabel} dup /></li>)}
             </ul>
           </div>
+        </div>
+        <TickerToggle />
         </div>
       </div>
       <script dangerouslySetInnerHTML={{ __html: STALE_GUARD }} />
