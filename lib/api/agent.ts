@@ -102,73 +102,48 @@ export function trimNarration(t: string): string {
   return head ? `${head}\n\nThe full list of races and measures, with sources, is in the ballot data.` : "";
 }
 
-/** Analysis step: after retrieval, the model reads the compact results and writes up to 3 neutral, sourced-data-only insights. */
-async function analyze(zip: string, results: Record<string, any>, emit: Emit): Promise<{ text: string; model: string } | null> {
-  const odds = Object.entries((results.getMarketOdds ?? {}) as Record<string, any>)
-    .filter(([, v]) => v?.status === "live" && v.quotes?.[0]?.outcomes?.length)
-    .map(([id, v]) => ({ id, leader: v.quotes[0].outcomes[0].name, prob: Math.round(v.quotes[0].outcomes[0].prob * 100) }))
-    .sort((a, b) => Math.abs(a.prob - 50) - Math.abs(b.prob - 50))
-    .slice(0, 4);
-  const titles = new Map(((results.getRaces?.races ?? []) as any[]).concat(results.getRaces?.measures ?? []).map((r: any) => [r.id, r.title]));
-  const facts = {
-    contestsByMarket: odds.map((o) => ({ contest: titles.get(o.id) ?? o.id, leader: o.leader, marketPricePct: o.prob, competitive: o.prob >= 35 && o.prob <= 65 })),
-    measuresWithCost: measuresFor(zip).filter((m) => m.cost?.value && !/^unsure/i.test(m.cost.value)).slice(0, 6).map((m) => ({ measure: m.title, cost: m.cost.value, whoPays: m.whoPays?.text })),
-    // The gap is computed here, not by the model, so the "differs most" claim is always arithmetic-true.
-    localProblemFurthestFromState: ((results.getLocalProblems?.problems ?? []) as any[])
-      .filter((p) => p.stateValue != null)
-      .map((p) => ({ problem: p.label, value: p.value, state: p.stateValue, gap: Math.abs((Number(p.numeric ?? parseFloat(p.value)) || 0) - Number(p.stateValue)) }))
-      .sort((a, b) => b.gap - a.gap)
-      .map(({ gap, ...rest }) => rest)[0] ?? null,
-  };
+export type Insight = { text: string; sourceLabel: string; sourceUrl: string | null };
+
+/** Analysis step: three sourced, nonpartisan insights computed in code from the tool results (no model prose, so
+ *  nothing can drift or read as partisan). Market prices always show both sides and are labeled as prices. */
+function analyze(zip: string, results: Record<string, any>, emit: Emit): Insight[] {
   emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "running", input: { zip } });
   const t0 = Date.now();
-  for (const { label: m, model: lm } of modelLadder().slice(0, 1)) {
-    try {
-      const res = await generateText({
-        model: lm,
-        maxRetries: 0,
-        temperature: 0,
-        providerOptions: GATEWAY_FALLBACKS,
-        system: "You are a strictly nonpartisan ballot analyst. Use only the JSON facts given. Never recommend a candidate or a vote. Market prices are what traders pay, not predictions of truth.",
-        prompt: `Facts for ZIP ${zip} (Nov 3, 2026):
-${JSON.stringify(facts)}
+  const titles = new Map(((results.getRaces?.races ?? []) as any[]).concat(results.getRaces?.measures ?? []).map((r: any) => [r.id, r.title]));
+  const out: Insight[] = [];
 
-Write at most 3 bullets, each under 35 words, starting with "- ". Bullet 1: if any contest has competitive=true, name the closest one and its price, written as "a X% Polymarket market price"; otherwise say no contest is close and name the most lopsided leader with its price written the same way. A market price is what traders pay, not a poll and not a prediction from us. Bullet 2: one measure that changes what voters pay, quoting its cost text verbatim, including any "per $100,000 homestead" or similar qualifier. Bullet 3: localProblemFurthestFromState, with its value and the state figure. If the facts for a bullet are empty or null, leave that bullet out entirely and never say that something is missing. No preamble, no advice.`,
-        maxOutputTokens: 220,
-        abortSignal: AbortSignal.timeout(8000),
-      });
-      // The model sometimes writes a bullet saying a fact is missing; drop those instead of showing them.
-      const text = res.text
-        .split(/\n/)
-        .filter((l) => l.trim() && !/\b(no|none)\b[^.]*\b(listed|provided|available|found)\b|\bnot (listed|provided|available)\b/i.test(l))
-        .join("\n")
-        .trim();
-      if (!text) continue;
-      emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: `${text.split(/\n/).filter(Boolean).length} insights from ${m.replace(/ \(AI Gateway\)$/, "")}` });
-      return { text, model: m };
-    } catch {
-      /* try the next model */
-    }
+  // 1) Closest contest by market price (or, if none is within 35 to 65%, the most lopsided), both sides shown.
+  const priced = Object.entries((results.getMarketOdds ?? {}) as Record<string, any>)
+    .map(([id, v]) => ({ id, q: v?.status === "live" ? v.quotes?.[0] : null }))
+    .filter((x) => x.q?.outcomes?.length)
+    .map((x) => {
+      const o = [...x.q.outcomes].sort((a: any, b: any) => b.prob - a.prob);
+      return { id: x.id, url: x.q.url as string, lead: o[0], next: o[1] ?? null, lp: Math.round(o[0].prob * 100) };
+    });
+  const close = priced.filter((x) => x.lp >= 35 && x.lp <= 65).sort((a, b) => Math.abs(a.lp - 50) - Math.abs(b.lp - 50))[0];
+  const pick = close ?? priced.sort((a, b) => b.lp - a.lp)[0];
+  if (pick) {
+    const sides = pick.next ? `${pick.lead.name} ${pick.lp}% vs ${pick.next.name} ${Math.round(pick.next.prob * 100)}%` : `${pick.lead.name} ${pick.lp}%`;
+    out.push({
+      text: `${close ? "Closest contest by market price" : "No contest is close by market price; most lopsided"}: ${titles.get(pick.id) ?? pick.id}, ${sides}. These are Polymarket market prices (what traders pay), not polls or predictions.`,
+      sourceLabel: "Polymarket",
+      sourceUrl: pick.url ?? null,
+    });
   }
-  const text = factBullets(facts);
-  emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: text ? `${text.split(/\n/).length} insights computed from the data (model busy)` : "No insights for this ZIP" });
-  return text ? { text, model: "computed" } : null;
-}
 
-/** The same three insights, written from the computed facts, for when no model is available. */
-function factBullets(f: { contestsByMarket: any[]; measuresWithCost: any[]; localProblemFurthestFromState: any }): string {
-  const out: string[] = [];
-  const close = f.contestsByMarket.find((c) => c.competitive);
-  if (close) out.push(`- Closest contest: ${close.contest}, with ${close.leader} at a ${close.marketPricePct}% Polymarket market price (what traders pay, not a poll).`);
-  else if (f.contestsByMarket.length) {
-    const top = [...f.contestsByMarket].sort((a, b) => b.marketPricePct - a.marketPricePct)[0];
-    out.push(`- No contest is close on Polymarket; the most lopsided is ${top.contest}, with ${top.leader} at a ${top.marketPricePct}% Polymarket market price (what traders pay, not a poll).`);
-  }
-  const m = f.measuresWithCost[0];
-  if (m) out.push(`- ${m.measure}: ${m.cost}`);
-  const p = f.localProblemFurthestFromState;
-  if (p) out.push(`- ${p.problem}: ${p.value} here vs ${p.state}% statewide.`);
-  return out.join("\n");
+  // 2) A measure that changes what voters pay, official cost text verbatim.
+  const m = measuresFor(zip).find((x) => x.cost?.value && !/^unsure/i.test(x.cost.value));
+  if (m) out.push({ text: `${m.title}: ${m.cost.value}`, sourceLabel: "Official cost source", sourceUrl: m.cost.sourceUrl ?? null });
+
+  // 3) The local problem furthest from its state figure (gap computed here).
+  const p = ((results.getLocalProblems?.problems ?? []) as any[])
+    .filter((x) => x.stateValue != null)
+    .map((x) => ({ x, gap: Math.abs((Number(x.numeric ?? parseFloat(x.value)) || 0) - Number(x.stateValue)) }))
+    .sort((a, b) => b.gap - a.gap)[0]?.x;
+  if (p) out.push({ text: `${p.label}: ${p.value} here vs ${p.stateValue}% statewide.`, sourceLabel: p.source?.label ?? "Census ACS", sourceUrl: p.source?.url ?? null });
+
+  emit({ type: "step", tool: "analyze", label: "Analyzing what matters", status: "done", ms: Date.now() - t0, summary: out.length ? `${out.length} sourced insights computed from the tool results` : "No insights for this ZIP" });
+  return out;
 }
 
 async function run(zip: string, emit: Emit) {
@@ -222,14 +197,15 @@ async function run(zip: string, emit: Emit) {
     const tools = makeTools(zip, emit, results) as any;
     for (const n of missing) await tools[n].execute({ zip }, { toolCallId: n, messages: [] });
   }
-  const insight = await analyze(zip, results as Record<string, any>, emit);
-  if (insight) narration = insight.text;
+  const insights = analyze(zip, results as Record<string, any>, emit);
+  if (insights.length) narration = insights.map((i) => `- ${i.text}`).join("\n");
   emit({
     type: "result",
     mode,
     model,
     modelError: mode === "fallback" ? error : null,
     toolsRunByModel: mode === "live" ? order.filter((n) => !missing.includes(n)) : [],
+    insights,
     narration: (() => { const b = ballotFor(zip) as any; return cleanNarration(narration, zip, b?.races?.length ?? 0, b?.measures?.length ?? 0); })(),
     ballot: ballotFor(zip),
     markets: results.getMarketOdds ?? {},
