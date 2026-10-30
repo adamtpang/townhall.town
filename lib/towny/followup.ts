@@ -19,9 +19,10 @@ import { GATEWAY_FALLBACKS, modelLadder } from "../models";
 import { isCoveredZip } from "../site";
 // @ts-ignore plain ESM helper
 import { overlapFor, MIN_ISSUES } from "../overlapCore.mjs";
-import { verifyClaims, withRetry, UNSURE_NOTE, type Claim, type Source, type ToolRun, type VerifiedClaim, type VerifyReport } from "./verify";
+import { verifyClaims, withRetry, type Claim, type Source, type ToolRun, type VerifiedClaim, type VerifyReport } from "./verify";
 import { OFFICES, type Office } from "./offices";
-import { gateStance, countableStances } from "./stanceRules";
+import { gateStance } from "./stanceRules";
+import { orderCheckFor, ORDER_UNSURE_LINE, ORDER_CONFIRMED_LINE } from "./ballotOrder";
 import { getElectionDates } from "../logistics";
 
 export const WHO_LINE = "I don't pick for you. I can show where each candidate's sourced positions overlap with your answers.";
@@ -34,8 +35,7 @@ export const ORDER_LINE = "Towny lists candidates in ballot order and never reor
 /** Civic, Oct 30 1:37 PM CT: why a candidate is first. Cited to the office's sample ballot, never to Ballotpedia. */
 export const STATE_LAW_LINE = "Candidates appear in the order printed on the official sample ballot, which is set under state election law, not by Towny.";
 /** The ballot-order line until a race's order has been checked against the office's sample ballot (none has yet). */
-export const ORDER_UNSURE = UNSURE_NOTE;
-export const ORDER_UNCHECKED = "ballot order not yet checked against the office's sample ballot";
+export { ORDER_UNCHECKED, ORDER_UNSURE_LINE, ORDER_CONFIRMED_LINE } from "./ballotOrder";
 export const OFFER_COMPARE = "Want to compare every candidate's positions?";
 export const officeSourceLine = (o: Office) => `Source: ${o.name} sample ballot [${o.label}]`;
 export const MEASURE_LINE = "Towny doesn't say which way to vote on a measure.";
@@ -158,12 +158,22 @@ async function fetchLive(urls: string[], fetcher: typeof fetch, runs: ToolRun[],
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Tools. Each returns claims (with their curated sources) and fixed, non-factual framing lines.
-type Built = { kind: FollowupResult["kind"]; head?: string; claims: Claim[]; sources: Source[]; tail: string[]; links: { label: string; url: string }[] };
+type Built = { kind: FollowupResult["kind"]; head?: string; claims: Claim[]; sources: Source[]; tail: string[]; links: { label: string; url: string }[]; /** Claim ids whose source is shown on its own "Source:" line, not as a chip. */ noChip?: string[] };
+
+export const CFB_GUIDE = "NYC Campaign Finance Board voter guide";
 
 function measureTool(zip: string, m: MeasureMath, office: string): Built {
   const claims: Claim[] = [];
   const sources: Source[] = [];
-  const add = (id: string, label: string, f: { text?: string; value?: string; sourceUrl: string | null } | undefined, key: string) => {
+  const add = (id: string, label: string, f: { text?: string; value?: string; sourceUrl: string | null; cfbQuote?: string } | undefined, key: string) => {
+    // NYC yes/no lines (Civic #3, Oct 30 1:54 PM CT): when the data holds the CFB voter guide's own sentence (cfbQuote,
+    // from nycvotes.org), quote it verbatim with attribution; otherwise keep the curated line.
+    const cfb = f?.cfbQuote && f.sourceUrl && hostLabel(f.sourceUrl) === "nycvotes.org" ? f.cfbQuote : null;
+    if (cfb) {
+      claims.push({ id, field: "measure", text: `${CFB_GUIDE}: "${cfb}"`, value: cfb, key: `${m.id}.${key}`, office, absentPrefix: label, searched: ["nycvotes.org"] });
+      const s = curated(f!.sourceUrl, cfb); if (s) sources.push(s);
+      return;
+    }
     const v = f ? (f.text ?? f.value ?? "") : "";
     // Every line ends with a period before its chip (Civic #1).
     const text = `${label}: ${v}`.replace(/\s+$/, "");
@@ -180,13 +190,13 @@ function measureTool(zip: string, m: MeasureMath, office: string): Built {
 }
 
 type Pos = { id: string; label: string; quote: string; url: string; chip: string; vote: boolean; unsure: string | null };
-/** Sourced stances, each gated by stanceRules (Ballotpedia kinds, slogans). Unsure ones are kept, flagged, never counted. */
+/** Sourced stances, gated by the shared rule (lib/stanceEligibility.ts, applied in stancesFor). Unsure ones are kept, flagged, never counted. */
 function positionsOf(name: string, campaignSite: string | null, issueIds: string[] | null): Pos[] {
   const st = stancesFor(name);
   return Object.entries(st)
-    .filter(([id, s]) => (!issueIds || issueIds.includes(id)) && s && s.value !== null && s.sourceUrl && (s.quote || s.voteRecord))
+    .filter(([id, s]) => (!issueIds || issueIds.includes(id)) && s && (s.value !== null || !!s.unsureReason) && s.sourceUrl && (s.quote || s.voteRecord))
     .map(([id, s]) => {
-      const g = gateStance(s, campaignSite);
+      const g = gateStance(s, campaignSite, { candidate: name, issueId: id, issueLabel: ISSUES.find((i) => i.id === id)?.label });
       const quote = String(s.voteRecord ? `${s.voteRecord}${s.quote ? `: ${s.quote}` : ""}` : s.quote);
       return { id, label: ISSUES.find((i) => i.id === id)?.label ?? id, quote, url: g.ok ? g.url : String(s.sourceUrl), chip: g.ok ? g.label : hostLabel(String(s.sourceUrl)), vote: !!s.voteRecord, unsure: g.ok ? null : g.reason };
     });
@@ -213,11 +223,18 @@ function positionsTool(c: Cand, issue: string | null): Built {
 function overlapOf(zip: string, b: Ballot, name: string, answers: Answers) {
   const issueIds = issuesFor(zip, b.state).map((i) => i.id);
   const campaignSite = campaignOf(b, name);
-  // Unsure stances (Ballotpedia's own voice, slogans) are set to null first, so they are never counted.
-  const o = overlapFor(answers, countableStances(stancesFor(name), campaignSite), issueIds) as { n: number; agree: number; counted: string[]; enough: boolean };
+  // Same stances and same function as the main site (stancesFor already nulls unsure ones), so the counts always match.
+  const o = overlapFor(answers, stancesFor(name), issueIds) as { n: number; agree: number; counted: string[]; enough: boolean };
   const answered = issueIds.filter((id) => typeof answers[id] === "number");
   const ps = positionsOf(name, campaignSite, answered);
   return { o, ps };
+}
+/** Towny's overlap counts for every candidate in a race (for the site/Towny parity test). */
+export function overlapCountsFor(zip: string, raceId: string, answers: Answers): { name: string; n: number; agree: number }[] {
+  const b = ballotFor(zip);
+  const r = b?.races.find((x) => x.id === raceId);
+  if (!b || !r) return [];
+  return r.candidates.map((c) => { const { o } = overlapOf(zip, b, c.name, answers); return { name: c.name, n: o.n, agree: o.agree }; });
 }
 const overlapSentence = (name: string, o: { n: number; agree: number; enough: boolean }) =>
   o.n >= MIN_ISSUES ? `${name}: issue overlap with your answers: ${o.agree} of ${o.n} issues.` : `${name}: fewer than ${MIN_ISSUES} issues where you answered and ${name} has a sourced position, so no overlap count.`;
@@ -235,15 +252,20 @@ function overlapClaims(name: string, ps: Pos[], counted: string[]) {
   return { claims, sources };
 }
 
-/** The ballot-order block (Civic fixes 2 and 4): unsure until checked against the office's sample ballot, the state-law
- *  line, the office source. Never Ballotpedia, never "Sources differ". */
-function orderBlock(zip: string, r: Ballot["races"][number]): { claim: Claim; tail: string[]; links: { label: string; url: string }[] } {
+/** The ballot-order block (Civic #4/#5, Oct 30 1:54 PM CT): "Ballot order: Unsure, ..." until Civic's
+ *  ballot_order_check.json marks the race confirmed, then "Listed in the order on the official sample ballot.";
+ *  then the state-law line and the office source. Never Ballotpedia, never "Sources differ". */
+function orderBlock(zip: string, r: Ballot["races"][number]): { claim: Claim; source: Source | null; tail: string[]; links: { label: string; url: string }[] } {
   const o = OFFICES[zip];
   const listed = r.candidates.map((c, i) => `${i + 1}. ${c.name}`).join(" ");
+  const chk = orderCheckFor(zip, r);
+  const base = { id: `${r.id}.order`, field: "race" as const, value: `Ballot order: ${listed}` };
   return {
-    claim: { id: `${r.id}.order`, field: "race", text: `${r.title}: ${r.candidates.map((c) => c.name).join(", ")}, in ballot order.`, value: `Ballot order: ${listed}`, forceUnsure: ORDER_UNCHECKED, unsureAs: "note" },
+    claim: chk.confirmed ? { ...base, text: ORDER_CONFIRMED_LINE } : { ...base, text: ORDER_UNSURE_LINE, forceUnsure: chk.reason, unsureAs: "note", unsureText: ORDER_UNSURE_LINE },
+    // Civic's check record: the office's sample ballot lists this order. Its chip is the "Source:" line below.
+    source: chk.confirmed ? { url: chk.url, label: o.label, origin: "curated", text: `Ballot order: ${listed}` } : null,
     tail: [STATE_LAW_LINE, officeSourceLine(o)],
-    links: [{ label: o.label, url: o.sampleBallot }],
+    links: [{ label: o.label, url: chk.confirmed ? chk.url : o.sampleBallot }],
   };
 }
 
@@ -251,7 +273,7 @@ function orderBlock(zip: string, r: Ballot["races"][number]): { claim: Claim; ta
 function orderTool(zip: string, b: Ballot, raceId: string): Built {
   const r = b.races.find((x) => x.id === raceId)!;
   const ob = orderBlock(zip, r);
-  return { kind: "order", claims: [ob.claim], sources: [], tail: [...ob.tail, OFFER_COMPARE], links: ob.links };
+  return { kind: "order", claims: [ob.claim], sources: ob.source ? [ob.source] : [], noChip: [ob.claim.id], tail: [...ob.tail, OFFER_COMPARE], links: ob.links };
 }
 
 function overlapTool(zip: string, b: Ballot, raceId: string, answers: Answers): Built {
@@ -276,12 +298,13 @@ function candidatesTool(zip: string, b: Ballot, raceId: string): Built {
   // Who is running comes from the race record; the order itself is cited only to the office (orderBlock).
   const src = curated(r.source, `${r.title}. Candidates: ${names.join("; ")}`);
   const claims: Claim[] = names.map((n, i) => ({ id: `${r.id}.${i}`, field: "race", text: n, value: n, office: OFFICE[zip] }));
-  return { kind: "candidates", head: `${r.title}:`, claims: [...claims, ob.claim], sources: src ? [src] : [], tail: [...ob.tail, "Ask about any candidate's sourced positions."], links: ob.links };
+  return { kind: "candidates", head: `${r.title}:`, claims: [...claims, ob.claim], sources: [...(src ? [src] : []), ...(ob.source ? [ob.source] : [])], noChip: [ob.claim.id], tail: [...ob.tail, "Ask about any candidate's sourced positions."], links: ob.links };
 }
 
 /** SF early voting (Civic #12): built from data/election_dates.json (the SF Department of Elections' dates, stated on
- *  sf.gov), cited to sfelections.org. Returns null unless the data has exactly the shape the sentence needs. */
+ *  sf.gov), cited to that sf.gov page with the chip "SF Department of Elections". Returns null unless the data has exactly the shape the sentence needs. */
 const shortDay = (iso: string, weekday = false) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", ...(weekday ? { weekday: "short" } : {}), month: "short", day: "numeric" });
+export const SF_ELECTIONS = "SF Department of Elections";
 export function sfEarlyVoting(): { text: string; source: Source } | null {
   const j = getElectionDates("94103");
   const rows = j?.earlyVoting?.dailyHours ?? [];
@@ -291,9 +314,12 @@ export function sfEarlyVoting(): { text: string; source: Source } | null {
   if (!j || !wk || !ed || !edRow || ed.hours !== edRow.hours || j.timezone !== "America/Los_Angeles") return null;
   const [, start, end] = /^(\S+) to (\S+)/.exec(String(wk.dates))!;
   const text = `Early voting at City Hall runs ${shortDay(start)} to ${shortDay(end)}. Election Day is ${shortDay(ed.date, true)}, ${ed.hours} PT at City Hall and all polling places.`;
-  const o = OFFICES["94103"];
+  // Cited to the sf.gov page the saved dates come from (earlyVoting.sourceUrl); Civic #12, Oct 30 1:54 PM CT. The live
+  // check fetches that same URL, so "Couldn't reach sf.gov" appears only when sf.gov itself fails.
+  const url = j.earlyVoting?.sourceUrl;
+  if (!url || !/^https:\/\/(www\.)?sf\.gov\//.test(url)) return null;
   // Curated record text: the same data fields, in the same words.
-  return { text, source: { url: o.home, label: o.label, origin: "curated", text } };
+  return { text, source: { url, label: SF_ELECTIONS, origin: "curated", text } };
 }
 
 function logisticsTool(zip: string, question: string): Built | null {
@@ -447,7 +473,7 @@ export async function answerFollowup(input: FollowupInput, deps: FollowupDeps = 
   calls.push({ tool: "verifyClaims", input: { claims: built.claims.length }, ok: true, ms: Date.now() - t0, summary: v.report.summary });
 
   const body = v.claims.filter((c) => c.status !== "dropped").map((c) => {
-    const src = c.source && c.status !== "unsure" ? ` [${c.source.label}]` : "";
+    const src = c.source && c.status !== "unsure" && !built!.noChip?.includes(c.id) ? ` [${c.source.label}]` : "";
     return c.note ? `${c.display}${src} ${c.note}` : `${c.display}${src}`;
   });
   // Visible fallback: "Couldn't reach X; showing saved data. Verify with <office>." goes in the answer itself, not only the run log.

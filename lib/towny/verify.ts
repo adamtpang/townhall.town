@@ -46,6 +46,8 @@ export type Claim = {
   forceUnsure?: string;
   /** How an unsure claim reads: "suffix" (default) = "<text> (unsure)" + the unsure note; "note" = only the unsure note. */
   unsureAs?: "suffix" | "note";
+  /** With unsureAs "note": the line to show instead of the generic unsure note (e.g. the ballot-order line). */
+  unsureText?: string;
   /** Prefix for a "No record found." line, e.g. "Cost" gives "Cost: No record found. Searched: nyc.gov." */
   absentPrefix?: string;
 };
@@ -173,7 +175,7 @@ function absenceLine(c: Claim): string {
 
 function unsureOf(c: Claim, reason: string): VerifiedClaim {
   return c.unsureAs === "note"
-    ? { id: c.id, field: c.field, status: "unsure", display: UNSURE_NOTE, reason }
+    ? { id: c.id, field: c.field, status: "unsure", display: c.unsureText ?? UNSURE_NOTE, reason }
     : { id: c.id, field: c.field, status: "unsure", display: c.text.replace(/\s*$/, "") + UNSURE_SUFFIX, note: UNSURE_NOTE, reason };
 }
 

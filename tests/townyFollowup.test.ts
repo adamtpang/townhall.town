@@ -1,7 +1,7 @@
 // Item 4: Towny follow-ups (lib/towny/followup.ts, app/api/towny/followup). Offline: no model routing, no live fetches.
 import { describe, it, expect } from "vitest";
 import fs from "node:fs";
-import { answerFollowup, WHO_LINE, OUT_OF_SCOPE, cleanAnswers, OFFER_OTHERS, NOT_A_REC, STATE_LAW_LINE, OFFER_COMPARE, sfEarlyVoting } from "../lib/towny/followup";
+import { answerFollowup, WHO_LINE, OUT_OF_SCOPE, cleanAnswers, OFFER_OTHERS, NOT_A_REC, STATE_LAW_LINE, OFFER_COMPARE, sfEarlyVoting, ORDER_UNSURE_LINE, ORDER_CONFIRMED_LINE } from "../lib/towny/followup";
 import { NO_RECORD, UNSURE_NOTE } from "../lib/towny/verify";
 import { OFFICES } from "../lib/towny/offices";
 import { gateStance, isSlogan, CANDIDATE_CONNECTION } from "../lib/towny/stanceRules";
@@ -61,12 +61,13 @@ describe("tool answers, all through verify.ts", () => {
     for (const [z, q, x, src] of cases) {
       const r = await ask(z, q, x);
       expect(r.kind, q).toBe("order");
-      expect(r.reply.split("\n"), q).toEqual([UNSURE_NOTE, STATE_LAW_LINE, src, OFFER_COMPARE]);
+      expect(ORDER_UNSURE_LINE).toBe("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.");
+      expect(r.reply.split("\n"), q).toEqual([ORDER_UNSURE_LINE, STATE_LAW_LINE, src, OFFER_COMPARE]);
       expect(r.links, q).toEqual([{ label: OFFICES[z].label, url: OFFICES[z].sampleBallot }]);
       // never Ballotpedia, never "Sources differ", no stances or overlap for any single candidate
       expect(r.reply).not.toMatch(/ballotpedia|Sources differ|overlap with your answers| says \(|listed first because/i);
       expect(r.claims).toHaveLength(1);
-      expect(r.claims[0]).toMatchObject({ status: "unsure", display: UNSURE_NOTE });
+      expect(r.claims[0]).toMatchObject({ status: "unsure", display: ORDER_UNSURE_LINE });
       expect(r.claims[0].source).toBeUndefined();
       expect(r.reply).not.toMatch(/\b(she|her|he|his|him)\b/i); // never infers gender
     }
@@ -76,7 +77,7 @@ describe("tool answers, all through verify.ts", () => {
     const r = await ask("78701", "Who is running for Senate?");
     expect(r.kind).toBe("candidates");
     expect(r.reply).not.toContain("in ballot order");
-    expect(r.reply).toContain(UNSURE_NOTE + "\n" + STATE_LAW_LINE + "\nSource: Travis County Elections sample ballot [votetravis.gov]");
+    expect(r.reply).toContain(ORDER_UNSURE_LINE + "\n" + STATE_LAW_LINE + "\nSource: Travis County Elections sample ballot [votetravis.gov]");
     expect(r.claims.find((c) => c.id.endsWith(".order"))).toMatchObject({ status: "unsure" });
   });
 
@@ -130,17 +131,27 @@ describe("tool answers, all through verify.ts", () => {
     }
   });
 
-  it("fix 5: SF early voting, sfelections.org chip, one visible fallback after one retry", async () => {
+  it("#12: SF early voting cites the sf.gov page the dates come from; the fallback names the host that was tried", async () => {
     const TEXT = "Early voting at City Hall runs Oct 5 to Nov 2. Election Day is Tue, Nov 3, 7:00 AM-8:00 PM PT at City Hall and all polling places.";
-    const FALLBACK = "Couldn't reach sfelections.org; showing saved data. Verify with the SF Department of Elections.";
-    expect(sfEarlyVoting()?.text).toBe(TEXT);
+    const URL_ = "https://www.sf.gov/november-3-2026-consolidated-general-election";
+    const FALLBACK = "Couldn't reach sf.gov; showing saved data. Verify with the SF Department of Elections.";
+    expect(sfEarlyVoting()).toMatchObject({ text: TEXT, source: { url: URL_, label: "SF Department of Elections" } });
     const ok = await ask("94103", "When does early voting end?");
-    expect(ok.reply).toBe(`${TEXT} [sfelections.org]`);
+    expect(ok.reply).toBe(`${TEXT} [SF Department of Elections]`);
+    expect(ok.links).toContainEqual({ label: "SF Department of Elections", url: URL_ });
+    // sf.gov answers: no fallback line, and the only URL tried is the cited one.
+    const tried: string[] = [];
+    const up = (async (u: string) => { tried.push(String(u)); return new Response("<html>November 3, 2026 Consolidated General Election</html>", { status: 200 }); }) as unknown as typeof fetch;
+    const live = await answerFollowup({ zip: "94103", question: "When does early voting end?", answers }, { useModel: false, fetcher: up });
+    expect(tried).toEqual([URL_]);
+    expect(live.reply).toBe(`${TEXT} [SF Department of Elections]`);
+    expect(live.report?.fallbacks).toEqual([]);
+    // sf.gov down: one retry, then the visible fallback naming sf.gov.
     let n = 0;
     const down = (async () => { n++; throw new Error("down"); }) as unknown as typeof fetch;
     const r = await answerFollowup({ zip: "94103", question: "When does early voting end?", answers }, { useModel: false, fetcher: down });
     expect(n).toBe(2);
-    expect(r.reply).toBe(`${TEXT} [sfelections.org]\n${FALLBACK}`);
+    expect(r.reply).toBe(`${TEXT} [SF Department of Elections]\n${FALLBACK}`);
     expect(r.report?.fallbacks).toEqual([FALLBACK]);
   });
 

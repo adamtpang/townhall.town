@@ -110,8 +110,11 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       const keys = Object.values(st).filter((s) => s.value !== null && (s.quote || s.summary)).map((s) => String(s.quote || s.summary).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim());
       expect(new Set(keys).size).toBe(keys.length);
     }
-    expect(stancesFor("Caitlin Rourk").infrastructure.value).not.toBeNull();
-    expect(stancesFor("Caitlin Rourk").energy.value).toBeNull();
+    // The best fit (infrastructure) keeps the sentence. Since Oct 30 1:54 PM CT the shared eligibility rule also applies:
+    // this Ballotpedia text isn't marked as Candidate Connection or copied campaign text, so it is unsure (shown, not counted).
+    expect(stancesFor("Caitlin Rourk").infrastructure).toMatchObject({ status: "unsure", unsureReason: "ballotpedia voice" });
+    expect(stancesFor("Caitlin Rourk").infrastructure.quote).toMatch(/critical infrastructure/);
+    expect(stancesFor("Caitlin Rourk").energy).toEqual({ value: null, status: "same sentence as another issue" });
   });
   it("Becerra's clean-energy sentence tagged wages is retagged to energy (Civic qa_fixes4); the LAist wages quote stays", () => {
     const q = "I believe that by treating clean energy and grid resilience as public investments—and ensuring renters, low-income households, and workers share in the benefits—California can fight climate change";

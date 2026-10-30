@@ -5,7 +5,8 @@
 import { ballotFor } from "../tools";
 import { measuresFor } from "../measures";
 import { verifyClaims, type Claim, type Source, type ToolRun, type VerifyOutput } from "./verify";
-import { OFFICE, ORDER_UNCHECKED } from "./followup";
+import { OFFICE } from "./followup";
+import { orderCheckFor } from "./ballotOrder";
 import { OFFICES } from "./offices";
 
 export type NarrationClaim = { id: string; text: string; field: Claim["field"]; value: string | null; subject?: string };
@@ -21,10 +22,13 @@ export function verifyBallotRun(
     const races = b.races.filter((r) => !opts.raceIds || opts.raceIds.includes(r.id));
     for (const r of races) {
       const listed = r.candidates.map((c, i) => `${i + 1}. ${c.name}`).join(" ");
-      // Ballot order is cited to the office's sample ballot, never Ballotpedia (Civic, Oct 30 1:37 PM CT). No race's order
-      // has been checked against it yet, so every order claim stays unsure, with no chip.
+      // Ballot order is cited to the office's sample ballot, never Ballotpedia (Civic, Oct 30 1:37 PM CT). It stays unsure
+      // until Civic's ballot_order_check.json marks the race confirmed (lib/towny/ballotOrder.ts).
       const off = OFFICES[zip];
-      claims.push({ id: `${r.id}.order`, field: "race", text: `${r.title}: ${r.candidates.map((c) => c.name).join(", ") || "no candidates listed"}, in ballot order.`, value: r.candidates.length ? `Ballot order: ${listed}` : null, office: OFFICE[zip], searched: off ? [off.label] : ["ballot data"], ...(r.candidates.length ? { forceUnsure: ORDER_UNCHECKED } : {}) });
+      const chk = orderCheckFor(zip, r);
+      const value = r.candidates.length ? `Ballot order: ${listed}` : null;
+      if (chk.confirmed && value) sources.push({ url: chk.url, label: off.label, origin: "curated", text: value });
+      claims.push({ id: `${r.id}.order`, field: "race", text: `${r.title}: ${r.candidates.map((c) => c.name).join(", ") || "no candidates listed"}, in ballot order.`, value, office: OFFICE[zip], searched: off ? [off.label] : ["ballot data"], ...(r.candidates.length && !chk.confirmed ? { forceUnsure: chk.reason } : {}) });
     }
     const ms = measuresFor(zip).filter((m) => !opts.measureIds || opts.measureIds.includes(m.id));
     for (const m of ms) {

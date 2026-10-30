@@ -1,0 +1,11 @@
+{
+ "built": "scripts/build-civic-checks.mjs",
+ "orderFile": null,
+ "auditFile": null,
+ "ballotOrder": {
+  "byRace": {}
+ },
+ "stanceAudit": {
+  "records": []
+ }
+}
