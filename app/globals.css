@@ -54,6 +54,9 @@
   :focus-visible { outline: 2px solid #862F9F; outline-offset: 2px; }
   /* QA P1-1 (24593cd): brand-600 is 2.90:1 on the ink footer; footer focus uses brand-300 #C9A3DC (9.70:1 on #010101). */
   [data-site-footer] :focus-visible { outline: 2px solid #C9A3DC; outline-offset: 2px; }
+  /* Purple spec P1-2: candidate headshots are monochrome via a CSS filter only (image files untouched); applied to every
+     self-hosted portrait the same way. Lives here, not in Portrait.tsx, so the bigger-photos branch merges cleanly. */
+  img[src^="/portraits/"] { filter: grayscale(1) contrast(1.04); }
 }
 
 @layer components {
