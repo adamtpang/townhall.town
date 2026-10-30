@@ -34,7 +34,7 @@ export function SiteFooter() {
         <span aria-hidden className="mb-6 block h-3 w-3 bg-brand-500" />
         <p>Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.</p>
         <p className="mt-2" data-photo-notice>Candidate photos are from their public campaign or official pages. <a href="/contact" className="text-white/80 underline decoration-white/40 underline-offset-2 hover:text-brand-300 hover:decoration-current">Contact us</a> to remove.</p>
-        <nav aria-label="Site" className="mt-4 flex flex-wrap gap-x-5 gap-y-3">
+        <nav aria-label="Site" className="mt-4 flex flex-wrap gap-x-4 gap-y-3 sm:gap-x-5">
           {NAV.map((n) => (
             <a key={n.href} href={n.href} className="inline-flex min-h-11 items-center text-white/80 no-underline hover:text-brand-300">
               {n.label}
