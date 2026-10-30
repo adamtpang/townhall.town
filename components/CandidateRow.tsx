@@ -12,6 +12,7 @@ import { liveUrl } from "../lib/links";
 import { SHOW_ACCOUNTABILITY } from "../lib/flags";
 import { pointsFor, NO_RECORD_LINE } from "../lib/mainPoints";
 import { useT } from "../lib/i18n";
+import { hostLabel } from "../lib/sourceName";
 
 export type RowCand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; officialSite?: string | null };
 type O = { status: string; agree: number; n: number; sourced: number; sourcedIds: string[]; pct?: number | null; enough?: boolean };
@@ -54,7 +55,7 @@ const searchQuery = (x: Checked) => {
   const outlets = t.replace(/\s*\(query URL\)\s*/i, "").replace(/^web search(?:,\s*local news)?\s*:?\s*/i, "").trim();
   return outlets ? `News search: ${outlets.split("/").map((s) => s.trim()).join(", ")}` : "Local news search";
 };
-export const checkedLabel = (x: Checked) => (/lwv|league of women voters|vote411/i.test(`${x.url} ${x.title ?? ""}`) ? "League of Women Voters guide" : searchQuery(x) ?? (x.title || host(x.url)).replace(/\s*\((via|direct fetch|search snippet)[^)]*\)\s*/gi, " ").trim());
+export const checkedLabel = (x: Checked) => (/lwv|league of women voters|vote411/i.test(`${x.url} ${x.title ?? ""}`) ? "League of Women Voters guide" : searchQuery(x) ?? (x.title || hostLabel(x.url)).replace(/\s*\((via|direct fetch|search snippet)[^)]*\)\s*/gi, " ").trim());
 /** Drop internal notes and keep one link per domain (design p10 P2). */
 /** Design p11 #5 + QA fb66b9b P2: dead links hidden; one entry per host and per visible label (so the League of
  *  Women Voters guide shows once even when Civic recorded lwvsf.org and vote411.org); a combined "Mission Local/SF
@@ -181,7 +182,7 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
               <div className="mt-1 text-sm leading-5 text-black/80" data-sources-checked>
                 {o.sourcedIds.length > 0 ? <p>Sources checked:</p> : null}
                 <ul className="mt-1 flex flex-col gap-y-2">
-                  {checked.map((x) => x.down ? <li key={x.url} className="flex min-h-11 items-center text-black/60" data-site-down>{host(x.url)} ({x.down})</li> : <li key={x.url + checkedLabel(x)}><a href={x.url} target="_blank" rel="noreferrer" className="flex min-h-11 items-center th-link" data-checked-source>{checkedLabel(x)} ↗{ext}</a></li>)}
+                  {checked.map((x) => x.down ? <li key={x.url} className="flex min-h-11 items-center text-black/60" data-site-down>{hostLabel(x.url)} ({x.down})</li> : <li key={x.url + checkedLabel(x)}><a href={x.url} target="_blank" rel="noreferrer" className="flex min-h-11 items-center th-link" data-checked-source>{checkedLabel(x)} ↗{ext}</a></li>)}
                 </ul>
               </div>
             ) : null}

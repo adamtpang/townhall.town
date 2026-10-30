@@ -23,8 +23,9 @@ function walk(dir: string, out: string[] = []): string[] {
 describe("P0-1: no unqualified ballot-order claim anywhere in the app", () => {
   // lib/townyPrompt.ts is a model instruction (not shown to voters) and is owned elsewhere; it is not changed here.
   const files = [...walk("app"), ...walk("components"), ...walk("lib")].filter((f) => !f.endsWith("townyPrompt.ts"));
+  // QA 297e948 P1 (Oct 30, 3:54 PM CT): the negation "Races are not in ballot order." is QA's own wording and allowed.
   it("no 'in ballot order' / 'Candidates are in ballot order' / aria-label claim in code or i18n", () => {
-    const hits = files.filter((f) => /in ballot order|candidates are (shown |listed )?in ballot order|ballot order in our data/i.test(code(src(f))));
+    const hits = files.filter((f) => /(?<!\bnot )in ballot order|candidates are (shown |listed )?in ballot order|ballot order in our data/i.test(code(src(f))));
     expect(hits).toEqual([]);
   });
   it("the dead i18n key is gone", () => {

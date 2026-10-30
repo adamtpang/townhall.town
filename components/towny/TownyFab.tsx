@@ -216,7 +216,7 @@ export default function TownyFab({ zip: pageOwnZip }: { zip?: string } = {}) {
             <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4" data-towny-scroll>
               <ol className="space-y-4" role="log" aria-live="polite" aria-relevant="additions" aria-label="Towny conversation" data-towny-log data-towny-live>
                 {msgs.map((m, i) => (
-                  <li key={i} data-msg={m.from} className={m.from === "you" ? "ml-auto w-fit max-w-[85%] bg-muted px-4 py-3 text-base leading-6" : "text-base leading-6"}>
+                  <li key={i} data-msg={m.from} className={m.from === "you" ? "ml-auto w-fit max-w-[85%] bg-muted px-4 py-3 text-base leading-6" : "whitespace-pre-line text-base leading-6"}>
                     {m.text}
                     {m.links?.length ? (
                       <span className="mt-1 flex flex-wrap gap-x-4" data-towny-links>

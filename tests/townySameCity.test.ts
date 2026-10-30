@@ -53,7 +53,7 @@ describe("other parts of a covered city", () => {
     const r = curated(zip, q)!;
     expect(r.reply).toMatch(starts);
     expect(r.reply.endsWith(` ${note}`)).toBe(true);
-    expect(r.reply).toContain("Unsure: we couldn't confirm the ballot order in a cited source.");
+    expect(r.reply).toContain("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.");
     const hosts = r.links.map((l) => new URL(l.url).hostname);
     expect(new Set(hosts).size).toBe(hosts.length);
     expect(r.links.map((l) => l.url)).toContain(SAME_CITY[zip as keyof typeof SAME_CITY].links[0].url);

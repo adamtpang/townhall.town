@@ -19,6 +19,7 @@ import { leaderLine, type PolyQuote, type LeaderLine } from "../lib/marketLine";
 import { polymarketCloseness } from "../lib/marketsCore.mjs";
 import type { RaceMeta } from "../lib/raceMeta";
 import { ISSUES } from "../lib/issues";
+import { hostLabel } from "../lib/sourceName";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
 type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; splitNote?: string; sourceNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; order?: OrderLine | null; candidates?: { name: string; party?: string | null; photo?: Photo; incumbent?: Politician["incumbent"]; money?: Politician["money"]; finance?: { url?: string | null } | null }[] };
 /** The one live Polymarket quote for a contest, or null. Never cached, never estimated. */
@@ -248,7 +249,7 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                         {r.candidates.map((c) => { const e = pointsFor(r.id, c.name); const x = e?.p[0]; return (
                           <li key={c.name} className="min-w-0" data-judge={c.name}>
                             <span className="font-[530]">{c.name}:</span>{" "}
-                            {x ? <>{x.t} <a href={x.u} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-judge-source>{new URL(x.u).hostname.replace(/^www\./, "")}<span className="sr-only"> (opens in a new tab)</span></a></> : <span className="text-black/60">{e?.none ?? "No public position found yet"}</span>}
+                            {x ? <>{x.t} <a href={x.u} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-judge-source>{hostLabel(x.u)}<span className="sr-only"> (opens in a new tab)</span></a></> : <span className="text-black/60">{e?.none ?? "No public position found yet"}</span>}
                           </li>
                         ); })}
                       </ul>
@@ -354,7 +355,7 @@ function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; 
 
 /** Race links: a 44px row at every width (stacked below sm, inline from sm). */
 const RLINK = "relative z-[1] inline-flex min-h-11 items-center"; // 44px targets at every width (copy-cuts/purple); stacked below sm, inline from sm (bigimg)
-const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
+const host = (u: string) => hostLabel(u, "source");
 
 /** Measures: one compact expandable row per measure. Numbers are quoted from official analyses and each links its source. */
 function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (id: string) => Mk }) {

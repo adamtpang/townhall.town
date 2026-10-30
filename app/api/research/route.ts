@@ -6,6 +6,7 @@ import { findQuotes, findOwnWords, ownIssueLinks, quoteFits, sameSite, textOf } 
 import { ISSUES } from "../../../lib/issues";
 import { correctedIssue } from "../../../lib/oneIssue";
 import { generateText } from "ai";
+import { hostLabel } from "../../../lib/sourceName";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -103,7 +104,7 @@ async function research(req: Request): Promise<Response> {
         emit({ type: "step", name: c.name, url: "search:" + c.name, label: "Searching the web", status: sr.urls.length ? "done" : "failed", detail: sr.status });
         if (sr.status === "web search unavailable") failedAny = true;
         sr.urls.forEach(add);
-        for (const u of urls) emit({ type: "step", name: c.name, url: u, label: `Reading ${host(u)}`, status: "running" });
+        for (const u of urls) emit({ type: "step", name: c.name, url: u, label: `Reading ${hostLabel(u)}`, status: "running" });
         // Pages are read in parallel but scored in a fixed order, so the same page always yields the same quotes.
         const pages = await Promise.all(urls.map((u) => read(u)));
         urls.forEach((u, i) => {
@@ -121,7 +122,7 @@ async function research(req: Request): Promise<Response> {
             : dup ? "same quote as another page"
             : isOwn(u) ? "nothing on these issues" : "no quote attributed to them";
           if (!r.text) failedAny = true;
-          emit({ type: "step", name: c.name, url: u, label: `Reading ${host(u)}`, status: r.text ? "done" : "failed", detail });
+          emit({ type: "step", name: c.name, url: u, label: `Reading ${hostLabel(u)}`, status: r.text ? "done" : "failed", detail });
           // Civic tag corrections (data/civic-exclusions.json): retag to the right issue, or hold out until retagged.
           for (const x of keep) { const fix = correctedIssue(String(c.name), x.issue, x.quote); if (fix === null) continue; emit({ type: "citation", name: c.name, issue: fix ?? x.issue, quote: x.quote, url: u, ownSite: isOwn(u) }); }
         });
