@@ -57,7 +57,7 @@ describe("qa_fixes8 photos", () => {
     // Design p14: downloaded and self-hosted with the focus cut in.
     const j = photos.selfHosted["letitia-a-james"];
     expect(j.sourceUrl).toBe("https://jamesforny.com/wp-content/uploads/2026/03/tish.png");
-    expect(j.credit).toBe("Letitia James campaign site");
+    expect(j.credit).toBe("Letitia James's campaign site");
     expect(j.focus).toEqual([0.5, 0.15, 1.3]);
     expect(photos.hotlinked["letitia-a-james"]).toBeUndefined();
     expect(fs.existsSync("public/portraits/letitia-a-james.avif")).toBe(false);
@@ -65,7 +65,7 @@ describe("qa_fixes8 photos", () => {
   it("Darlene Byrne: her own social-profile headshot, self-hosted; never the court portrait or its re-host", () => {
     const b = photos.selfHosted["darlene-byrne"];
     expect(b.file).toBe("/portraits/darlene-byrne-160.webp");
-    expect(b.credit).toBe("Darlene Byrne own social profile");
+    expect(b.credit).toBe("Darlene Byrne's own Facebook profile");
     expect(fs.existsSync("public/portraits/darlene-byrne-160.webp")).toBe(true);
     expect(JSON.stringify(photos)).not.toMatch(/byrne1\.jpg|txcourts\.gov\/media/);
   });

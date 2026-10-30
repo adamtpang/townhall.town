@@ -218,9 +218,9 @@ describe("QA 9dfe90d P2 + design p8", () => {
     for (const f of ["app/RaceTiers.tsx", "app/EndScreen.tsx", "app/TownyResearch.tsx", "app/IssueMatch.tsx", "app/TownyInterview.tsx", "components/PortraitRow.tsx", "app/card/BallotCard.tsx"]) expect(src(f), f).not.toMatch(/\btext-xs\b|text-\[1[0-2]px\]/);
     expect(src("tailwind.config.ts")).not.toMatch(/"1[0-2]px"/);
   });
-  it("names: one line with ellipsis, full name in title; tiles equal height", () => {
+  it("names: wrap up to 3 lines (QA 94cf301), full name in title; tiles equal height", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toMatch(/line-clamp-2 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // round 0222: two-line labels at 384
+    expect(s).toMatch(/line-clamp-3 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // QA 94cf301: names wrap, no ellipsis
     expect(s).toContain("data-tile-mate-spacer");
     expect(s).toContain("flex-nowrap");
   });

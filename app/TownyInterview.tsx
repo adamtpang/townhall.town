@@ -38,8 +38,8 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
       if (fills.length) onFill(fills);
       const left = issues.filter((i) => !nextFilled[i.id]);
       const lines = fresh.map((f) => `${issues.find((i) => i.id === f.issue)?.label}: ${LABEL[f.choice]}`);
-      reply = (lines.length ? `I filled in ${lines.join("; ")}. Check them below and change any that are wrong.` : "I couldn't match that to a question yet.")
-        + (left.length ? ` Anything on ${left.slice(0, 3).map((i) => i.label.toLowerCase()).join(", ")}?` : " That covers every question.");
+      reply = typeof j.reply === "string" && !fills.length ? j.reply : ((lines.length ? `I filled in ${lines.join("; ")}. Check them below and change any that are wrong.` : "I couldn't match that to a question yet.")
+        + (left.length ? ` Anything on ${left.slice(0, 3).map((i) => i.label.toLowerCase()).join(", ")}?` : " That covers every question."));
     } catch {
       reply = "I couldn't read that just now. Use the Yes, Neutral and No buttons below.";
     }

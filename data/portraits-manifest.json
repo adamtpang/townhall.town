@@ -692,6 +692,40 @@
     }
    }
   },
+  "brian-j-krist": {
+   "sourceUrl": "https://www.regents.nysed.gov/sites/regents/files/Krist%20Headshot_0.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/brian-j-krist.jpg",
+   "page": "https://www.regents.nysed.gov/member/krist-brian",
+   "sourceSha256": "4de3654db1f9121bc50e0ecdcc9e8b4a8227181a3872b2b840644bcc2649bafc",
+   "sourceBytes": 98088,
+   "sourceSize": [
+    1200,
+    927
+   ],
+   "crop": {
+    "left": 137,
+    "top": 0,
+    "width": 927,
+    "height": 927
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/brian-j-krist-112.webp",
+     "bytes": 1042,
+     "sha256": "41c765cb94aee44bdcb123c61f017454baf139b6a59b3915ee94639792df2cf2"
+    },
+    "160": {
+     "file": "/portraits/brian-j-krist-160.webp",
+     "bytes": 1550,
+     "sha256": "87aec8be9af29be41835147f4aa59a4aee84ce14a433ea701cfc466d6a0e46d0"
+    }
+   }
+  },
   "brian-pena": {
    "sourceUrl": "https://static.wixstatic.com/media/f2367f_1fad9e6bd5c249868f1baa3976b22e14~mv2.png",
    "localFile": null,
@@ -869,20 +903,20 @@
    }
   },
   "caroline-shinkle": {
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
+   "sourceUrl": "https://cdn.prod.website-files.com/6a3ac1a81836929a238139ea/6a79e5b334907a0c77761114_Caroline%20Shinkle%20-%20headshot.jpg",
    "localFile": null,
-   "page": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
-   "sourceSha256": "008b81d36895247983b9d3faa27a7b9882069eee6641432e5fe85d8e79956668",
-   "sourceBytes": 39582,
+   "page": "https://carolinefornewyork.com/meet-caroline",
+   "sourceSha256": "128a43949dd87b347bd0ee01d77f09167d2ce06a29e64eb511f85226e396a3a5",
+   "sourceBytes": 1912584,
    "sourceSize": [
-    347,
-    463
+    3350,
+    3944
    ],
    "crop": {
     "left": 0,
-    "top": 23,
-    "width": 347,
-    "height": 347
+    "top": 119,
+    "width": 3350,
+    "height": 3350
    },
    "focus": [
     0.5,
@@ -892,13 +926,13 @@
    "files": {
     "112": {
      "file": "/portraits/caroline-shinkle-112.webp",
-     "bytes": 2034,
-     "sha256": "23ef911a1525171f1c3e61f5f448233a2364607c83d93bd839ec1f219d80d31b"
+     "bytes": 1666,
+     "sha256": "f71322bc1fde0e34cfd046d902623279d83bf2b3f0a21bcc1efd344c484fb458"
     },
     "160": {
      "file": "/portraits/caroline-shinkle-160.webp",
-     "bytes": 3312,
-     "sha256": "2252dd1559cd409dc5b41722a694723ecd5f083b03f59f769bf9b06f997e4de2"
+     "bytes": 2670,
+     "sha256": "4f715850b371cc08e893da10620cbd7baac50cb2ba3286b7daf0f8c46259fdc0"
     }
    }
   },
@@ -1889,20 +1923,20 @@
    }
   },
   "elisabeth-earle": {
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/5x7Elisabeth_IMG_013.jpg/500px-5x7Elisabeth_IMG_013.jpg",
+   "sourceUrl": "https://elisabethearle.org/wp-content/uploads/2025/09/EE-1-819x1024.jpeg",
    "localFile": null,
-   "page": "https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg",
-   "sourceSha256": "6edd5a8d90c378e39a8f83be12b3e76f12a273870222c4b85b57c1993bfe794b",
-   "sourceBytes": 70367,
+   "page": "https://elisabethearle.org/aboutelisabeth/",
+   "sourceSha256": "93f3a4eb8138c39ba1f9e656e454d347b18c4da8c6e0402f9f08ed4f6c7c970b",
+   "sourceBytes": 110651,
    "sourceSize": [
-    500,
-    700
+    819,
+    1024
    ],
    "crop": {
     "left": 0,
-    "top": 40,
-    "width": 500,
-    "height": 500
+    "top": 41,
+    "width": 819,
+    "height": 819
    },
    "focus": [
     0.5,
@@ -1912,13 +1946,13 @@
    "files": {
     "112": {
      "file": "/portraits/elisabeth-earle-112.webp",
-     "bytes": 1988,
-     "sha256": "1448007c4626962cd005ffb0a427ac41e40572778cf6142bcade0c58f8a96a81"
+     "bytes": 1792,
+     "sha256": "0b469a55bacd9ebd8d88ea256a32b3d3b9ea95e2767fe0aabe667a2d075f3b3d"
     },
     "160": {
      "file": "/portraits/elisabeth-earle-160.webp",
-     "bytes": 3306,
-     "sha256": "375ad9100a25bc08511000fa68c2b7b6e2fdc2e8810800e6cf02ebb9cd5ef57e"
+     "bytes": 2768,
+     "sha256": "089bed801469531ca5fdf33265b09fb753e2f339464973ee25d9127876908504"
     }
    }
   },
@@ -2463,6 +2497,40 @@
      "file": "/portraits/guy-herman-160.webp",
      "bytes": 1632,
      "sha256": "c42e138eaff5b0575316924439e1eb7a6f9137630ce2e7814bb92c25cd65a8f5"
+    }
+   }
+  },
+  "haris-bhatti": {
+   "sourceUrl": "https://harisfornewyork.com/wp-content/uploads/elementor/thumbs/home-1b-rtfhkocf5bhfsnfl0ttwbav944fhg4rcjhgrfg7kvi.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/haris-bhatti.jpg",
+   "page": "https://harisfornewyork.com/about/",
+   "sourceSha256": "dc259a9df706217bc5541f426b18d3ecb0ea43201ece822652be20d4e6158e17",
+   "sourceBytes": 23960,
+   "sourceSize": [
+    270,
+    340
+   ],
+   "crop": {
+    "left": 0,
+    "top": 14,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/haris-bhatti-112.webp",
+     "bytes": 1350,
+     "sha256": "6419f436c4081de8056c25b9ab39481650a9a7d60e6c8c27743cd84a9fadf26b"
+    },
+    "160": {
+     "file": "/portraits/haris-bhatti-160.webp",
+     "bytes": 2360,
+     "sha256": "b30a31a22637bfe60f9fd2c3236a0e6449ecdd6eaa4d60430a1d845c559f7520"
     }
    }
   },
@@ -5199,20 +5267,20 @@
    }
   },
   "scott-brister": {
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
+   "sourceUrl": "https://justicescottbrister.com/wp-content/uploads/2025/06/ScottBrister-22.jpg",
    "localFile": null,
-   "page": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
-   "sourceSha256": "3b0a2cd47f69670715375ce2e9530337bacf0c0c932f96dd59aa0702a38a39be",
-   "sourceBytes": 69882,
+   "page": "https://justicescottbrister.com/",
+   "sourceSha256": "a0597ac86ef5803ef3ffe9c95be4a70dd81883fefa75eb26e6b48cea43d9e321",
+   "sourceBytes": 1164800,
    "sourceSize": [
-    500,
-    625
+    2048,
+    1480
    ],
    "crop": {
-    "left": 0,
-    "top": 25,
-    "width": 500,
-    "height": 500
+    "left": 284,
+    "top": 0,
+    "width": 1480,
+    "height": 1480
    },
    "focus": [
     0.5,
@@ -5222,13 +5290,13 @@
    "files": {
     "112": {
      "file": "/portraits/scott-brister-112.webp",
-     "bytes": 1358,
-     "sha256": "33fdb3fa178d46001abf6f759de4cdeb292e306cb4dc46d06c5cbb1f26c2149d"
+     "bytes": 1594,
+     "sha256": "46c498ae73618bb195eed31f8735e029cd9d427049c8fc9818372d1658804f01"
     },
     "160": {
      "file": "/portraits/scott-brister-160.webp",
-     "bytes": 2198,
-     "sha256": "7337806c1c6128a2ef6029ac49eac5422845f5cf0bbba5d85294e37cc472d0b7"
+     "bytes": 2504,
+     "sha256": "df79143e3c526c15c79ff4e87d7fcc5cc89dfea4da59effd6079822248cd7969"
     }
    }
   },
@@ -5501,6 +5569,40 @@
      "file": "/portraits/steve-hilton-160.webp",
      "bytes": 2394,
      "sha256": "575f435252e245636ad8ab258396918ebedd6b26eb20a2829a0f307fe72f2b3a"
+    }
+   }
+  },
+  "steven-benathen": {
+   "sourceUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEDu5tO7Pd9DQ/profile-displayphoto-scale_200_200/B4EZt_INjRKMAg-/0/1767364423177?e=2147483647&v=beta&t=rEK6G9_N6wT7BU97JfQ66iyB-qGFPftcjQEZUzlQDUM",
+   "localFile": "/workspace/townhall/civic/photos_local/steven-benathen.jpg",
+   "page": "https://www.linkedin.com/in/steve-benathen-9b5765242",
+   "sourceSha256": "67dd1499ff17d78cb2f96649d977a5df1c0d39895fe20615129d8e786363a01b",
+   "sourceBytes": 21355,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/steven-benathen-112.webp",
+     "bytes": 2468,
+     "sha256": "c330201ada1241604b93449a96c9d12db7ce133937c94bef9d667bc279a8762b"
+    },
+    "160": {
+     "file": "/portraits/steven-benathen-160.webp",
+     "bytes": 4522,
+     "sha256": "dd15cbad856d96a3540d2020e45678cfe4087e87f85479344c8cb7c9000c78b2"
     }
    }
   },
@@ -6049,20 +6151,26 @@
    }
   },
   "vikki-goodwin": {
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/58df094546c3c418500a66ec/74c473f0-25b2-41c2-b4c2-f1661d894473/Goodwin+home+page+banner+-+2.3.jpg",
    "localFile": null,
-   "page": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
-   "sourceSha256": "cc6df0e7e57bbd850673e5269d4b8f6ae6a847178a1cf4134079c478a257fbe0",
-   "sourceBytes": 46635,
+   "page": "https://www.vikkigoodwin.com/",
+   "sourceSha256": "25514bdb54c1e2e5ae05e4f8766daba59127f91222165a77e4ee25b82c190c44",
+   "sourceBytes": 54086,
    "sourceSize": [
-    500,
-    667
+    660,
+    660
    ],
+   "precrop": {
+    "left": 100,
+    "top": 60,
+    "width": 660,
+    "height": 660
+   },
    "crop": {
     "left": 0,
-    "top": 33,
-    "width": 500,
-    "height": 500
+    "top": 0,
+    "width": 660,
+    "height": 660
    },
    "focus": [
     0.5,
@@ -6072,13 +6180,13 @@
    "files": {
     "112": {
      "file": "/portraits/vikki-goodwin-112.webp",
-     "bytes": 1448,
-     "sha256": "f50f2a963e9aa271d8509130cb505b2929bfb09fe77e438b4fb22eda47ab8cad"
+     "bytes": 1122,
+     "sha256": "1f7c410741419faa62a412e41203a354b10d38bbaea682608c4cbbbc46b04afb"
     },
     "160": {
      "file": "/portraits/vikki-goodwin-160.webp",
-     "bytes": 2230,
-     "sha256": "687b3150e8502b47c443eb92be1270f6e14dd3c79e3bf6d0f7321f600d869a40"
+     "bytes": 1704,
+     "sha256": "a005db7b9b0febb6d8e3b585fa58bcc8bff6808cff472c1b5a082e773debc09e"
     }
    }
   },

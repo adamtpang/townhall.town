@@ -64,7 +64,7 @@ describe("p11 + QA fb66b9b", () => {
     const ph = P as unknown as { selfHosted: Record<string, { credit: string; file: string; height: number }>; hotlinked: Record<string, { credit: string }> };
     const all = { ...ph.selfHosted, ...ph.hotlinked };
     for (const v of Object.values(all)) expect(v.credit).not.toMatch(/^(Travis County|Supreme Court|First District|Fifteenth|Madison County)[^]* official page$/);
-    expect(all["andy-brown"].credit).toBe("Andy Brown official page");
+    expect(all["andy-brown"].credit).toBe("Andy Brown's official page"); // Civic qa13 wording
     expect(ph.selfHosted["marc-m-meyer"].file).toBe("/portraits/marc-m-meyer-160.webp");
     expect(fs.existsSync("public/portraits/marc-m-meyer-160.webp")).toBe(true);
     expect(src("scripts/ingest-photos.mjs")).toContain('"marc-m-meyer": [0.1, 0, 0.8, 0.75]');

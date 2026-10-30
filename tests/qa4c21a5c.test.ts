@@ -107,10 +107,10 @@ describe("QA 4c21a5c P2: chat carry-over and 300% zoom", () => {
     expect(s).toContain("data-carryover");
     expect(s.match(/\{carry\}/g)?.length).toBe(2);
   });
-  it("candidate names: one line with an ellipsis and the full name in title (design p8 overrides the wrap fix)", () => {
+  it("candidate names wrap with the full name in title (QA 94cf301 replaces design p8's ellipsis)", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toMatch(/line-clamp-2[^`]*`\} title=\{c\.name\} aria-label=\{c\.name\}/);
-    expect(s).not.toMatch(/overflow-wrap:anywhere|break-words|break-all/);
+    expect(s).toMatch(/line-clamp-3[^`]*`\} title=\{c\.name\} aria-label=\{c\.name\}/);
+    expect(s).not.toMatch(/text-ellipsis|break-all/);
   });
   it("hero top padding only grows on tall viewports (no ~300px band at 300% zoom)", () => {
     const s = src("app/page.tsx");

@@ -5,6 +5,7 @@ import { rateLimited, INTERVIEW_POLICY } from "../../../lib/rateLimit";
 import { apiError, methodNotAllowed, withHeaders, API_VERSION_HEADERS } from "../../../lib/apiError";
 import { issuesFor } from "../../../lib/issueOrder";
 import { ballotFor } from "../../../lib/tools";
+import { townyFact } from "../../../lib/townyFacts";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -29,6 +30,9 @@ async function interview(req: Request): Promise<Response> {
   if (!zip || !b) return apiError(400, "invalid", "zip must be one of the covered 5-digit ZIPs: 78701, 94103 or 10001.");
   const msgs = (Array.isArray(body.messages) ? body.messages : []).filter((m: any) => typeof m?.text === "string").slice(-6).map((m: any) => String(m.text).slice(0, 600));
   if (!msgs.length) return Response.json({ answers: [] });
+  // QA 94cf301 #4: "What's on my ballot?" / "When does early voting end?" answered from shipped data only, no model.
+  const fact = townyFact(zip, msgs[msgs.length - 1]);
+  if (fact) return Response.json({ answers: [], ...fact }, { headers: { "cache-control": "no-store" } });
   const issues = issuesFor(zip, b.state);
   const list = issues.map((i) => `- ${i.id} (${(i as { label?: string }).label ?? i.id}): "${i.question}"`).join("\n");
   const said = msgs.join("\n");

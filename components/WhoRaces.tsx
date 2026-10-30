@@ -12,7 +12,7 @@
 // GRADES_ABSENT_LINE in the closed row, one 12/16 black/60 line under the summary lines.
 import { useEffect, useState, type ReactNode } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { GRADES_ABSENT_LINE } from "../lib/grades.mjs";
+import { gradesAbsentLine } from "../lib/grades.mjs";
 
 export type WhoLine = { name: string; sourced: number; agree: number; n: number; grade: string | null };
 export type WhoRace = { id: string; title: string; lines: WhoLine[]; content: ReactNode; gradesHidden?: string | null };
@@ -43,7 +43,7 @@ export default function WhoRaces({ races }: { races: WhoRace[] }) {
                 {!isOpen ? (
                   <span className="mt-1 flex min-w-0 flex-col text-sm font-[450] leading-5 text-black/80" data-fold-lines>
                     {r.lines.map((l) => <span key={l.name} className="block whitespace-normal [overflow-wrap:normal] [word-break:normal] hyphens-none" data-fold-line>{lineText(l)}</span>)}
-                    {r.gradesHidden ? <span className="mt-1 block whitespace-normal text-xs font-[450] leading-4 text-black/60" data-fold-grades-absent={r.gradesHidden}>{GRADES_ABSENT_LINE}</span> : null}
+                    {r.gradesHidden ? <span className="mt-1 block whitespace-normal text-xs font-[450] leading-4 text-black/60" data-fold-grades-absent={r.gradesHidden}>{gradesAbsentLine(r.gradesHidden)}</span> : null}
                   </span>
                 ) : null}
               </span>

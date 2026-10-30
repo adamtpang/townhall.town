@@ -21,12 +21,12 @@ export function labels(names: string[]) {
   });
 }
 
-/** Round 0334 (Design): tile names break only between words. Each word (a hyphenated surname is one word) is its own
- *  nowrap inline-block, so a line can end only at a space; a single word wider than the tile ends in an ellipsis
- *  (the full name stays in title/aria-label) and is never split. */
-const NOBREAK = "[overflow-wrap:normal] [word-break:normal] hyphens-none";
+/** QA 94cf301 (Oct 30, 6:53 AM CT; replaces round 0334's ellipsis): tile names wrap, never truncate. Lines break at
+ *  spaces first, then after a hyphen ("Echavarria-" / "Garza"), and only a single word still wider than the tile breaks
+ *  inside the word (overflow-wrap:anywhere). No ellipsis; the full name stays in title/aria-label. Up to 3 lines. */
+const NOBREAK = "[overflow-wrap:anywhere] [word-break:normal] hyphens-none";
 function Words({ text }: { text: string }) {
-  return <>{text.split(/\s+/).filter(Boolean).map((w, i) => <span key={i}>{i ? " " : ""}<span className="inline-block max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-top" data-word>{w}</span></span>)}</>;
+  return <>{text.split(/\s+/).filter(Boolean).map((w, i) => <span key={i}>{i ? " " : ""}<span data-word>{w}</span></span>)}</>;
 }
 
 function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string; tileMax: string }) {
@@ -51,7 +51,7 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eage
           <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} onFail={() => setBroken(true)} />
         ) : null}
       </div>
-      <p className={`mt-1 w-full flex-1 text-center group-data-[dense=true]/row:max-md:sr-only ${NOBREAK} line-clamp-2 text-sm font-[530] leading-5`} title={c.name} aria-label={c.name} data-tile-label><Words text={label} /></p>
+      <p className={`mt-1 w-full flex-1 text-center group-data-[dense=true]/row:max-md:sr-only ${NOBREAK} line-clamp-3 text-sm font-[530] leading-5`} title={c.name} aria-label={c.name} data-tile-label><Words text={label} /></p>
       {mate ? <p className={`w-full ${NOBREAK} line-clamp-2 text-center text-sm leading-5 group-data-[dense=true]/row:max-md:sr-only text-black/60`} title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate><Words text={`w/ ${mate}`} /></p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
     </li>
   );

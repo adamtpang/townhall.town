@@ -22,11 +22,9 @@ const batch = JSON.parse(fs.readFileSync("data/civic/photos_batch.json", "utf8")
 import { EXCLUDE, NOT_A_PHOTO, dhash, hamming } from "./photo-rules.mjs";
 export const isLicensed = (p) => /public domain|\bCC0\b|\bCC BY\b|creative commons/i.test(String(p.license ?? "")) && !/campaign|press photo|official site|not licensed/i.test(String(p.license ?? ""));
 export const isOwnSource = (p) => /campaign|official|own social profile/i.test(String(p.sourceType ?? ""));
-// Office-named official-page credits read "<candidate name> official page" (Adam, qa_fixes6 #5, 1:02 AM CT).
-const credit = (p) => {
-  const c = String(p.attribution ?? "").replace(/^photo:\s*/i, "").trim();
-  return / official page$/i.test(c) && p.name ? `${p.name} official page` : c;
-};
+// Civic qa13 (Oct 30, 6:54 AM CT): the batch's attribution text renders as written ("<Name>'s campaign site",
+// "<Name>'s official page", "<Name>'s own X profile"). Office names moved to officialPageOwner; no rewrite here.
+const credit = (p) => String(p.attribution ?? "").replace(/^photo:\s*/i, "").trim();
 // Civic cropNote -> focus [x, y, scale]: the face point (fractions of the image) for object-position and transform-origin,
 // and how far to zoom in. Read off each source image by eye (Oct 30, 12:45 AM CT); no pixel is edited.
 export const FOCUS = {
@@ -69,6 +67,9 @@ const CROP = {
   // Civic qa11 cropNote: Bastiany's full-length 960x1280 photo (localFile); head and shoulders at x 390-590, y 400-600.
   // Viewed by eye at 160px: sharp enough to ship.
   "pearci-pj-bastiany-iii": [390 / 960, 400 / 1280, 200 / 960, 200 / 1280],
+  // Civic qa13 cropNote: Goodwin's 1920x1080 home-page banner; solo, head and shoulders from the left half.
+  // 660px square at (100, 60). Viewed by eye (6:58 AM CT).
+  "vikki-goodwin": [100 / 1920, 60 / 1080, 660 / 1920, 660 / 1080],
 };
 // Engineering's saved copy of a campaign-site photo whose host answers hotlinks with a bot challenge (202 sgcaptcha),
 // so visitors' browsers would never get the image. Same source and credit as Civic's photoUrl; self-hosted like a localFile.

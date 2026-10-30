@@ -49,12 +49,13 @@ describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by d
   });
   it("race mode (Civic headshot pass, Oct 30 12:40 AM): incomplete races and the 4 'photo ages not comparable' races show initials", () => {
     const race = (z: string, id: string) => (ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { photo?: unknown }[] }).candidates;
-    for (const [z, id] of [["78701", "tx-ltgov"], ["78701", "tx-ag"], ["94103", "ca-ltgov"], ["94103", "sf-supervisor-10"], ["10001", "ny-supreme-1jd"]])
+    for (const [z, id] of [["78701", "tx-ag"], ["94103", "ca-ltgov"], ["94103", "sf-supervisor-10"], ["10001", "ny-supreme-1jd"]])
       expect(race(z, id).every((c) => !c.photo), id).toBe(true);
-    // tx-ltgov has a photo for all 4 candidates, but Civic marks it incomplete: still initials in race mode, photos in candidate mode.
+    // Civic qa13: tx-ltgov's "photo ages not comparable" note is gone (only McCormick's 2026 is known), so the race is complete.
+    expect(race("78701", "tx-ltgov").every((c) => c.photo), "tx-ltgov").toBe(true);
     const raw = (ballotFor("78701")!.races.find((r) => r.id === "tx-ltgov") as unknown as { candidates: { name: string }[] }).candidates.map((c) => withLicensedPhoto({ ...c, photo: undefined } as never) as { photo?: unknown });
     expect(raw.every((c) => c.photo)).toBe(true);
-    expect(gatePhotos(raw, "race", "tx-ltgov").every((c) => !c.photo)).toBe(true);
+    expect(gatePhotos(raw, "race", "tx-ltgov").every((c) => c.photo)).toBe(true);
     expect(gatePhotos(raw, "candidate", "tx-ltgov").every((c) => c.photo)).toBe(true);
     // Civic qa10: Fisher's campaign-site photo completes sf-board-of-education.
     for (const [z, id] of [["94103", "ca-ag"], ["78701", "austin-council-9"], ["10001", "ny-governor"], ["94103", "sf-board-of-education"]]) expect(race(z, id).every((c) => c.photo), id).toBe(true);
@@ -76,7 +77,7 @@ describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by d
     for (const [id, x] of Object.entries(hosted)) {
       expect(PB[id]?.photoUrl ?? null, id).toBe(x.sourceUrl);
       const c = String(PB[id].attribution).replace(/^photo:\s*/i, "");
-      expect(x.credit, id).toBe(/ official page$/i.test(c) ? `${PB[id].name} official page` : c);
+      expect(x.credit, id).toBe(c); // Civic qa13: the batch attribution renders as written
       expect(x.license, id).toBeTruthy();
       expect(fs.existsSync(`public${x.file}`), id).toBe(true);
       expect(String(x.sourceUrl)).not.toMatch(/txcourts\.gov/i);
@@ -249,6 +250,6 @@ describe("design p9 / QA 4e15da7 items", () => {
     const s = src("components/PortraitRow.tsx");
     expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[40px\] md:max-w-\[48px\] lg:max-w-\[56px\]/);
     expect(s).toMatch(/flex flex-nowrap gap-2 md:gap-3/);
-    expect(s).toMatch(/line-clamp-2 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // round 0222: two-line labels at 384
+    expect(s).toMatch(/line-clamp-3 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // QA 94cf301: wrap, up to 3 lines; round 0222: two-line labels at 384
   });
 });

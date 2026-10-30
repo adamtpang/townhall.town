@@ -33,18 +33,19 @@ describe("credit links: 44px tall through spacing, never a vertical tap area", (
   });
 });
 
-describe("tile names break only between words", () => {
+describe("tile names wrap, never truncate (QA 94cf301, Oct 30 6:53 AM CT; replaces round 0334's ellipsis)", () => {
   const S = src("components/PortraitRow.tsx");
-  it("overflow-wrap normal, hyphens none, no break-all or break-words, every word nowrap", () => {
-    expect(S).toContain('const NOBREAK = "[overflow-wrap:normal] [word-break:normal] hyphens-none"');
-    expect(S).not.toMatch(/break-all|break-words|overflow-wrap:anywhere|hyphens-auto/);
-    expect(S).toMatch(/\$\{NOBREAK\} line-clamp-2 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/);
+  it("break at spaces, then hyphens, then anywhere only if a word is still too wide; no ellipsis, no break-all", () => {
+    expect(S).toContain('const NOBREAK = "[overflow-wrap:anywhere] [word-break:normal] hyphens-none"');
+    expect(S).not.toMatch(/break-all|text-ellipsis|hyphens-auto/);
+    expect(S).toMatch(/\$\{NOBREAK\} line-clamp-3 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/);
   });
-  it("a hyphenated surname is one unbreakable word that truncates with the full name in title", () => {
+  it("a hyphenated surname renders whole, without nowrap or ellipsis, full name in title", () => {
     const html = renderToStaticMarkup(h(CandidatePortraitRow, { cands: [{ name: "V. Alonzo Echavarria-Garza" }, { name: "Lisa Gonzales-Dholakia" }, { name: "Jo Day" }] }));
-    expect(html).toMatch(/title="V\. Alonzo Echavarria-Garza"[^>]*data-tile-label[^>]*><span><span class="[^"]*whitespace-nowrap[^"]*text-ellipsis|title="V\. Alonzo Echavarria-Garza"[^>]*data-tile-label[^>]*><span><span class="[^"]*text-ellipsis[^"]*whitespace-nowrap/);
+    expect(html).toMatch(/title="V\. Alonzo Echavarria-Garza"[^>]*data-tile-label/);
     expect(html).toContain(">Echavarria-Garza</span>");
     expect(html).toContain(">Gonzales-Dholakia</span>");
+    expect(html).not.toMatch(/whitespace-nowrap[^"]*"[^>]*data-word|text-ellipsis/);
   });
   it("tiles in a row stay level: items stretch, label block grows to the row's tallest label", () => {
     expect(S).toContain("<li className={`flex min-w-0 flex-col ${max}`}");

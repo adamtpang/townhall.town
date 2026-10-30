@@ -6,7 +6,7 @@
   "pageUrl": "https://tedbrown.org/website/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Ted Brown campaign site",
+  "attribution": "Photo: Ted Brown's campaign site",
   "photoYear": 2026,
   "identityEvidence": "img alt \"Ted Brown\"; filename ted-headshot-2026",
   "checkedDate": "2026-10-30",
@@ -19,7 +19,7 @@
   "pageUrl": "https://patdixon.org/about-pat-dixon/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Pat Dixon campaign site",
+  "attribution": "Photo: Pat Dixon's campaign site",
   "photoYear": 2026,
   "identityEvidence": "headshot on \"About Pat Dixon\" page; filename pjd_headshot",
   "checkedDate": "2026-10-30",
@@ -33,7 +33,7 @@
   "pageUrl": "https://www.caitlinrourk.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Caitlin Rourk campaign site",
+  "attribution": "Photo: Caitlin Rourk's campaign site",
   "photoYear": null,
   "identityEvidence": "hero portrait on caitlinrourk.com (her campaign site)",
   "checkedDate": "2026-10-30",
@@ -48,7 +48,7 @@
   "pageUrl": "https://chrisgober.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Chris Gober campaign site",
+  "attribution": "Photo: Chris Gober's campaign site",
   "photoYear": null,
   "identityEvidence": "hero portrait on chrisgober.com (his campaign site)",
   "checkedDate": "2026-10-30",
@@ -78,7 +78,7 @@
   "pageUrl": "https://lauren4congress.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Lauren B. Peña campaign site",
+  "attribution": "Photo: Lauren B. Peña's campaign site",
   "photoYear": null,
   "identityEvidence": "og:image (share image) of lauren4congress.com",
   "checkedDate": "2026-10-30",
@@ -99,7 +99,8 @@
   "originalWidth": 634,
   "photoWidth": 500,
   "fileTitle": "File:James Talarico Press Conference (cropped).jpg",
-  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; description names no photographer"
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; description names no photographer",
+  "qa13": "QA13 2026-10-30: Commons photo kept. jamestalarico.com (Meet James page and home page) has only event or group photos (swearing-in, podium with an \"Access to Insulin\" sign, classroom) and a text share image; none is a solo headshot. Commons Author field is only the username, so the credit stays as the username."
  },
  "ken-paxton": {
   "name": "Ken Paxton",
@@ -124,7 +125,7 @@
   "pageUrl": "https://gov.texas.gov/governor-abbott",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Office of the Texas Governor official page",
+  "attribution": "Photo: Greg Abbott's official page",
   "photoYear": 2024,
   "photoYearBasis": "file name \"2024-GovernorAbbott-Portrait\" (Last-Modified 2023-12-19)",
   "identityEvidence": "img alt \"Texas Governor Gregg Abbott\" [sic] on the About Gov. Abbott page of gov.texas.gov",
@@ -144,7 +145,8 @@
    "photoYear": 2024,
    "why": "NASA agency press photo"
   },
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "Office of the Texas Governor"
  },
  "gina-hinojosa": {
   "name": "Gina Hinojosa",
@@ -154,7 +156,7 @@
   "pageUrl": "https://ginafortexas.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Gina Hinojosa campaign site",
+  "attribution": "Photo: Gina Hinojosa's campaign site",
   "photoYear": null,
   "identityEvidence": "og:image of her campaign site ginafortexas.com (headshot left, \"Gina for Texas\" logo right); viewed: same person as the 2024 Commons photo previously used",
   "checkedDate": "2026-10-30",
@@ -177,7 +179,7 @@
   "pageUrl": "https://x.com/DanPatrick",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Dan Patrick own social profile",
+  "attribution": "Photo: Dan Patrick's own X profile",
   "photoYear": null,
   "photoYearBasis": "not stated (avatar set 2021-10-26, per its id)",
   "identityEvidence": "avatar of X @DanPatrick, \"Dan Patrick\", bio \"Lieutenant Governor of Texas\"",
@@ -196,26 +198,31 @@
    "photoYear": 2025,
    "why": "Maryland governor's office Flickr (agency press)"
   },
-  "checkedDate": "2026-10-30",
-  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
+  "checkedDate": "2026-10-30"
  },
  "vikki-goodwin": {
   "name": "Vikki Goodwin",
   "raceId": "tx-ltgov",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
-  "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Wikimedia Commons user Cole-Wilson-93",
-  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: Cole-Wilson-93. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2019,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1800,
-  "photoWidth": 500,
-  "fileTitle": "File:HiRes-Vikki Goodwin-6381-red (cropped).jpg",
-  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated",
-  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
+  "photoUrl": "https://images.squarespace-cdn.com/content/v1/58df094546c3c418500a66ec/74c473f0-25b2-41c2-b4c2-f1661d894473/Goodwin+home+page+banner+-+2.3.jpg",
+  "pageUrl": "https://www.vikkigoodwin.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Vikki Goodwin's campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "home-page banner of her campaign site vikkigoodwin.com; the other site photos are group photos",
+  "verified": "200 image/webp 1920x1080 (Squarespace CDN serves WebP for this .jpg URL) (GET, 2026-10-30 ~06:50 CT)",
+  "cropNote": "real solo photo used as the home-page banner; the right half fades to a blue gradient with no text. Crop to head and shoulders from the left half (about x 0-660)",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
+   "attribution": "Photo: Wikimedia Commons user Cole-Wilson-93",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "photoYear": 2019,
+   "why": "QA13: 2019 Commons photo credited only to a username replaced by her campaign-site photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "kevin-mccormick": {
   "name": "Kevin McCormick",
@@ -233,7 +240,7 @@
   "photoWidth": 500,
   "fileTitle": "File:Kevin McCormick (Texas politician).jpg",
   "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated",
-  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
+  "qa13": "QA13 2026-10-30: 2026 Commons photo kept (credit stays as the username, because the Commons Author field is only WikiBunny2K1). Campaign-site option on file but not used because it is older and smaller: https://kmm2026.org/images/user/Kevin-McCormick.jpg (About page https://kmm2026.org/about; real solo head-and-shoulders photo, 200 image/jpeg, 240x300, EXIF DateTimeOriginal 2016-04-10)."
  },
  "anthony-cristo": {
   "name": "Anthony Cristo",
@@ -242,14 +249,13 @@
   "pageUrl": "https://www.anthonycristo.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Anthony Cristo campaign site",
+  "attribution": "Photo: Anthony Cristo's campaign site",
   "photoYear": null,
   "identityEvidence": "headshot on his campaign site (Google Sites)",
   "checkedDate": "2026-10-30",
   "urlNote": "Google Sites 'sitesv-images-rt' URL: rotates and expires within minutes to hours (observed 403 on re-check). The site should re-extract it from the campaign page at build time, or show initials. No other own headshot found (no own X account found). Google Sites rotating image URL (expires); a local copy is saved at localFile for Engineering to host.",
   "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT); a repeat GET minutes later returned 403",
-  "localFile": "/workspace/townhall/civic/photos_local/anthony-cristo.jpg",
-  "raceNote": "photo ages not comparable (2019–2026); race shows initials"
+  "localFile": "/workspace/townhall/civic/photos_local/anthony-cristo.jpg"
  },
  "nathan-johnson": {
   "name": "Nathan Johnson",
@@ -258,7 +264,7 @@
   "pageUrl": "https://x.com/NathanForTexas",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Nathan Johnson own social profile",
+  "attribution": "Photo: Nathan Johnson's own X profile",
   "photoYear": null,
   "photoYearBasis": "not stated (avatar set 2025-07-15, per its id)",
   "identityEvidence": "avatar of his campaign X account @NathanForTexas, bio \"Candidate for TX Attorney General. Texas Senator District 16\"",
@@ -349,7 +355,7 @@
   "pageUrl": "https://www.faizifortexas.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Shehla Faizi campaign site",
+  "attribution": "Photo: Shehla Faizi's campaign site",
   "photoYear": 2026,
   "identityEvidence": "filename \"Headshot-Shehla-2026-03\" on her campaign site",
   "checkedDate": "2026-10-30",
@@ -376,7 +382,7 @@
   "pageUrl": "https://dawnbuckingham.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Dawn Buckingham campaign site",
+  "attribution": "Photo: Dawn Buckingham's campaign site",
   "photoYear": null,
   "photoYearBasis": "not stated (uploaded 2025/12)",
   "identityEvidence": "hero image of her campaign site dawnbuckingham.com (\"Dr. Dawn Buckingham\"); viewed: same person as her other photos",
@@ -400,7 +406,7 @@
   "pageUrl": "https://x.com/Flores4LandCom",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Benjamin Flores own social profile",
+  "attribution": "Photo: Benjamin Flores's own X profile",
   "photoYear": null,
   "identityEvidence": "X @Flores4LandCom, name \"Benjamin Flores\", bio \"Democratic Nominee for Texas Land Commissioner 2026\"; linked from letsgowithben.com",
   "checkedDate": "2026-10-30",
@@ -416,7 +422,7 @@
   "pageUrl": "https://www.voteneillsnider.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Neill Snider campaign site",
+  "attribution": "Photo: Neill Snider's campaign site",
   "photoYear": null,
   "identityEvidence": "headshot on his campaign site (Google Sites)",
   "checkedDate": "2026-10-30",
@@ -432,7 +438,7 @@
   "pageUrl": "https://www.claytontuckertx.com/about",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Clayton Tucker campaign site",
+  "attribution": "Photo: Clayton Tucker's campaign site",
   "photoYear": null,
   "identityEvidence": "Campaign share image on claytontuckertx.com (his logo \"Clayton Tucker for Ag Commissioner\" beside the photo); viewed: same person as the 2026 Commons speech photo previously used",
   "checkedDate": "2026-10-30",
@@ -455,7 +461,7 @@
   "pageUrl": "https://natesheets.com/about-nate-sheets/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Nate Sheets campaign site",
+  "attribution": "Photo: Nate Sheets's campaign site",
   "photoYear": 2025,
   "identityEvidence": "filename \"Nate-Sheets-2\" on the About Nate Sheets page",
   "checkedDate": "2026-10-30",
@@ -471,7 +477,7 @@
   "pageUrl": "https://www.kellyfortx.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Austin R. Kelly campaign site",
+  "attribution": "Photo: Austin R. Kelly's campaign site",
   "photoYear": null,
   "identityEvidence": "photo of the candidate on his campaign site (has a logo overlay)",
   "checkedDate": "2026-10-30",
@@ -497,7 +503,8 @@
   "originalWidth": 1365,
   "photoWidth": 500,
   "fileTitle": "File:Photo of Jon Rosenthal.jpg",
-  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated",
+  "qa13": "QA13 2026-10-30: Commons photo kept. jonrosenthaltx.com (home and About pages) has only group or event photos and a share graphic with text (\"ROSENTHAL for Railroad Commissioner\"); none is a solo headshot. Commons Author field is only the username, so the credit stays as the username."
  },
  "bo-french": {
   "name": "Bo French",
@@ -506,7 +513,7 @@
   "pageUrl": "https://bofrench.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Bo French campaign site",
+  "attribution": "Photo: Bo French's campaign site",
   "photoYear": 2025,
   "identityEvidence": "filename \"BoFrench03\" on his campaign site",
   "checkedDate": "2026-10-30",
@@ -520,7 +527,7 @@
   "pageUrl": "https://www.votedibianca.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Arthur DiBianca campaign site",
+  "attribution": "Photo: Arthur DiBianca's campaign site",
   "photoYear": null,
   "identityEvidence": "headshot on his campaign site (Google Sites)",
   "checkedDate": "2026-10-30",
@@ -535,7 +542,7 @@
   "pageUrl": "https://www.jimmyblacklock.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Jimmy Blacklock campaign site",
+  "attribution": "Photo: Jimmy Blacklock's campaign site",
   "photoYear": null,
   "identityEvidence": "Hero portrait (robe) on his campaign site (\"Chief Justice Jimmy Blacklock | TX Supreme Court\", \"Republican ... Vote Tuesday, November 3, 2026\"); viewed: same person as his court portrait",
   "checkedDate": "2026-10-30",
@@ -556,7 +563,7 @@
   "pageUrl": "https://www.maggieforjustice.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Maggie Ellis campaign site",
+  "attribution": "Photo: Maggie Ellis's campaign site",
   "photoYear": null,
   "identityEvidence": "portrait on her campaign site; matches her official court photo",
   "checkedDate": "2026-10-30",
@@ -570,7 +577,7 @@
   "pageUrl": "https://x.com/JudgeSullyTX",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: James P. Sullivan own social profile",
+  "attribution": "Photo: James P. Sullivan's own X profile",
   "photoYear": null,
   "identityEvidence": "X @JudgeSullyTX, name \"Justice James P. Sullivan\", bio \"Texas Supreme Court Justice\"; linked from his campaign site judgesully.com; viewed: same person as his 2025 court portrait",
   "checkedDate": "2026-10-30",
@@ -591,7 +598,7 @@
   "pageUrl": "https://hkt.texasjudges.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Chari Kelly campaign site",
+  "attribution": "Photo: Chari Kelly's campaign site",
   "photoYear": null,
   "identityEvidence": "img alt \"Justice Chari Kelly\" on the joint Hawkins-Kelly-Triana campaign site",
   "checkedDate": "2026-10-30",
@@ -604,7 +611,7 @@
   "pageUrl": "https://justicekylehawkins.com/",
   "sourceType": "campaign site",
   "license": "Campaign press photo (offered for download)",
-  "attribution": "Photo: Kyle Hawkins campaign site",
+  "attribution": "Photo: Kyle Hawkins's campaign site",
   "photoYear": null,
   "identityEvidence": "Campaign site offers it as \"For a downloadable high-resolution image, click here\"; viewed: same person as his court portrait (grey hair, beard, glasses)",
   "checkedDate": "2026-10-30",
@@ -624,7 +631,7 @@
   "pageUrl": "https://hkt.texasjudges.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Kristen Hawkins campaign site",
+  "attribution": "Photo: Kristen Hawkins's campaign site",
   "photoYear": null,
   "identityEvidence": "img alt \"Judge Kristen Hawkins\" on the joint campaign site",
   "checkedDate": "2026-10-30",
@@ -637,7 +644,7 @@
   "pageUrl": "https://brettbusby.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Brett Busby campaign site",
+  "attribution": "Photo: Brett Busby's campaign site",
   "photoYear": null,
   "identityEvidence": "File \"Brett-Busby-Headshot\" on his campaign site (\"Justice Brett Busby ... Supreme Court of Texas, Place 8\"); viewed: same portrait as his court page",
   "checkedDate": "2026-10-30",
@@ -657,7 +664,7 @@
   "pageUrl": "https://www.justicetriana.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Gisela D. Triana campaign site",
+  "attribution": "Photo: Gisela D. Triana's campaign site",
   "photoYear": 2025,
   "identityEvidence": "filename \"Triana-2025\" on her campaign site",
   "checkedDate": "2026-10-30",
@@ -670,7 +677,7 @@
   "pageUrl": "https://okeyanyiamforjudge.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Okey Anyiam campaign site",
+  "attribution": "Photo: Okey Anyiam's campaign site",
   "photoYear": null,
   "identityEvidence": "portrait on his campaign site",
   "checkedDate": "2026-10-30",
@@ -683,7 +690,7 @@
   "pageUrl": "https://x.com/smithfortx",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Thomas Smith own social profile",
+  "attribution": "Photo: Thomas Smith's own X profile",
   "photoYear": null,
   "identityEvidence": "X @smithfortx \"Thomas Smith for Judge\", bio \"Republican nominee for Judge, Texas Court of Criminal Appeals, Place 3\"; campaign site smithfortexas.org has only a banner",
   "checkedDate": "2026-10-30",
@@ -699,7 +706,7 @@
   "pageUrl": "https://www.facebook.com/markashlibertarian",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Mark Ash own social profile",
+  "attribution": "Photo: Mark Ash's own Facebook profile",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "profile photo of the Facebook page \"Mark Ash Libertarian\" (page text: \"Pro Freedom, Pro Liberty Criminal Defense Lawyer in Houston, Texas\"). The CCA Place 3 Libertarian nominee is Mark J. Ash, a Houston criminal-defense attorney (State Bar of Texas listing id 149864; LPTexas candidate list).",
@@ -722,7 +729,7 @@
   "pageUrl": "https://x.com/JudgeYeary",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Kevin Patrick Yeary own social profile",
+  "attribution": "Photo: Kevin Patrick Yeary's own X profile",
   "photoYear": null,
   "identityEvidence": "X @JudgeYeary, name \"Kevin Patrick Yeary\", bio \"Judge on the Texas Court of Criminal Appeals\"; linked from his campaign site judgeyeary.com; viewed: consistent with his court portrait and the campaign-site family photo (casual shirt, glasses, beard)",
   "checkedDate": "2026-10-30",
@@ -743,7 +750,7 @@
   "pageUrl": "https://www.judgeaudrariley.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Audra Riley campaign site",
+  "attribution": "Photo: Audra Riley's campaign site",
   "photoYear": null,
   "identityEvidence": "filename \"JudgeAudra\" on her campaign site",
   "checkedDate": "2026-10-30",
@@ -756,7 +763,7 @@
   "pageUrl": "https://www.hollytforjudge.com",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Holly Taylor campaign site",
+  "attribution": "Photo: Holly Taylor's campaign site",
   "photoYear": 2026,
   "identityEvidence": "filename \"holly-taylor-2026\"",
   "checkedDate": "2026-10-30",
@@ -769,7 +776,7 @@
   "pageUrl": "https://messingerforjustice.com/about-john/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: John Messinger campaign site",
+  "attribution": "Photo: John Messinger's campaign site",
   "photoYear": 2024,
   "identityEvidence": "og:image of the \"About John\" page",
   "checkedDate": "2026-10-30",
@@ -779,19 +786,26 @@
  "scott-brister": {
   "name": "Scott Brister",
   "raceId": "tx-15th-coa-chief-justice",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
-  "license": "CC BY-SA 3.0",
-  "attribution": "Photo: Wikimedia Commons user AndrewsKurth",
-  "licenseDetail": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Author/credit on file page: AndrewsKurth. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2012,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 900,
-  "photoWidth": 500,
-  "fileTitle": "File:Brister Scott hiresRGB 12 2012.jpg",
-  "creditBasis": "Commons Author field is the user link \"AndrewsKurth\" (reads like a law-firm name, but the page states no person or firm as author); Credit \"Own work\""
+  "photoUrl": "https://justicescottbrister.com/wp-content/uploads/2025/06/ScottBrister-22.jpg",
+  "pageUrl": "https://justicescottbrister.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Scott Brister's campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated; WordPress upload path 2025/06, so the file was uploaded in June 2025",
+  "identityEvidence": "og:image (share image) of his campaign site justicescottbrister.com; file name \"ScottBrister-22.jpg\"",
+  "verified": "200 image/jpeg 2048x1480 (GET, 2026-10-30 ~06:50 CT)",
+  "cropNote": "real solo outdoor photo in judicial robe; landscape, crop to head and shoulders from the upper centre",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
+   "attribution": "Photo: Wikimedia Commons user AndrewsKurth",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY-SA 3.0",
+   "photoYear": 2012,
+   "why": "QA13: 2012 Commons photo credited only to a username replaced by his campaign-site photo (txcourts.gov portraits stay out, per the TX courts pass)"
+  },
+  "checkedDate": "2026-10-30"
  },
  "jerry-zimmerer": {
   "name": "Jerry Zimmerer",
@@ -800,7 +814,7 @@
   "pageUrl": "https://jerryzimmerer.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Jerry Zimmerer campaign site",
+  "attribution": "Photo: Jerry Zimmerer's campaign site",
   "photoYear": null,
   "identityEvidence": "img alt \"Justice Jerry Zimmerer in judicial robes\"",
   "checkedDate": "2026-10-30",
@@ -813,7 +827,7 @@
   "pageUrl": "https://justicescottfield.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Scott K. Field campaign site",
+  "attribution": "Photo: Scott K. Field's campaign site",
   "photoYear": null,
   "identityEvidence": "Photo on his campaign site (\"Homepage - Justice Field\"); viewed: the robed man on the right is the same person as his court portrait and the swearing-in photos on the same site",
   "checkedDate": "2026-10-30",
@@ -834,7 +848,7 @@
   "pageUrl": "https://justicetombaker.com/about-thomas-baker/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Tom Baker campaign site",
+  "attribution": "Photo: Tom Baker's campaign site",
   "photoYear": 2026,
   "identityEvidence": "filename \"Tom-Baker-resized\" on \"About Thomas Baker\" page; current robed portrait",
   "checkedDate": "2026-10-30",
@@ -847,7 +861,7 @@
   "pageUrl": "https://justiceaprilfarris.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: April Farris campaign site",
+  "attribution": "Photo: April Farris's campaign site",
   "photoYear": null,
   "identityEvidence": "Portrait (robe) on her campaign site (\"Justice April Farris | Fifteenth Court of Appeals | Texas\"); viewed: same person as her court portrait",
   "checkedDate": "2026-10-30",
@@ -868,7 +882,7 @@
   "pageUrl": "https://flip15courtofappeals.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Marc M. Meyer campaign site",
+  "attribution": "Photo: Marc M. Meyer's campaign site",
   "identityEvidence": "Joint Democratic slate campaign site (Zimmerer, Baker & Meyer); img alt \"Marc Meyer\" in his candidate card (\"Democrat for Justice, Place 3 · Texas 15th Court of Appeals\"); the image itself carries the caption \"MARC MEYER (D)\"",
   "verified": "640x800 JPEG embedded in the page as a base64 data URI (PHOTOS.meyer); no standalone image URL exists, so it is saved to localFile. Page fetched 200 on 2026-10-30 ~03:50 CT.",
   "cropNote": "Campaign graphic: crop to head and shoulders ABOVE the \"MARC MEYER (D)\" banner (bottom ~25% of the frame) so no party label shows; no other tile shows a party.",
@@ -892,11 +906,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/civil/district/250",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Cory Liu's official page",
   "photoYear": 2025,
   "identityEvidence": "filename \"Judge_Liu_headshot\" dated 20250617",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "darlene-byrne": {
   "name": "Darlene Byrne",
@@ -906,7 +921,7 @@
   "pageUrl": "https://www.facebook.com/justicedarlenebyrne",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Darlene Byrne own social profile",
+  "attribution": "Photo: Darlene Byrne's own Facebook profile",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "profile photo of the Facebook page \"Chief Justice Darlene Byrne\" (page text: running for re-election to Chief Justice of Texas' 3rd Court of Appeals), linked from her campaign site justicedarlenebyrne.com; viewed: same person as her court portrait",
@@ -932,7 +947,7 @@
   "pageUrl": "https://micatx.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Mica Arellano campaign site",
+  "attribution": "Photo: Mica Arellano's campaign site",
   "photoYear": null,
   "identityEvidence": "og:image of her campaign site",
   "checkedDate": "2026-10-30",
@@ -945,7 +960,7 @@
   "pageUrl": "https://www.allisonfortx.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Allison Bush campaign site",
+  "attribution": "Photo: Allison Bush's campaign site",
   "photoYear": null,
   "identityEvidence": "img alt names Allison Bush",
   "checkedDate": "2026-10-30",
@@ -958,7 +973,7 @@
   "pageUrl": "https://www.montserratfortexas.com/about",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Montserrat Garibay campaign site",
+  "attribution": "Photo: Montserrat Garibay's campaign site",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "img alt \"Montserrat Garibay, candidate for Texas House District 49, Austin Texas\" on her campaign site About page",
@@ -982,7 +997,7 @@
   "pageUrl": "https://www.arshiafortexas.org/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Arshia Papari campaign site",
+  "attribution": "Photo: Arshia Papari's campaign site",
   "photoYear": null,
   "identityEvidence": "og:image of his campaign site",
   "checkedDate": "2026-10-30",
@@ -995,7 +1010,7 @@
   "pageUrl": "https://x.com/JessicaforHD51",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Jessica Martinez own social profile",
+  "attribution": "Photo: Jessica Martinez's own X profile",
   "photoYear": null,
   "identityEvidence": "X @JessicaforHD51, bio \"Candidate for TX House HD 51\"; campaign site jessicaforhd51.com has no photos",
   "checkedDate": "2026-10-30",
@@ -1011,11 +1026,12 @@
   "pageUrl": "https://house.texas.gov/members/51",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Texas House of Representatives official page",
+  "attribution": "Photo: Maria Luisa “Lulu” Flores's official page",
   "photoYear": null,
   "identityEvidence": "Texas House member page, District 51",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Texas House of Representatives"
  },
  "cliff-brown": {
   "name": "Cliff Brown",
@@ -1024,11 +1040,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/district/147",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Cliff Brown's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/png (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/png (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "amy-clark-meachum": {
   "name": "Amy Clark Meachum",
@@ -1037,11 +1054,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/civil/district/201",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Amy Clark Meachum's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "kennon-lily-wooten": {
   "name": "Kennon Lily Wooten",
@@ -1050,7 +1068,7 @@
   "pageUrl": "https://www.kennonlilywooten.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Kennon Lily Wooten campaign site",
+  "attribution": "Photo: Kennon Lily Wooten's campaign site",
   "photoYear": null,
   "identityEvidence": "img alt \"Kennon Lily Wooten for Judge\"",
   "checkedDate": "2026-10-30",
@@ -1063,11 +1081,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/civil/district/261",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Daniella Deseta Lyttle's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "karen-r-sage": {
   "name": "Karen R. Sage",
@@ -1076,11 +1095,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/district/299",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Karen R. Sage's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/png (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/png (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "chantal-melissa-eldridge": {
   "name": "Chantal Melissa Eldridge",
@@ -1089,11 +1109,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/district/331",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Chantal Melissa Eldridge's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "brandy-mueller": {
   "name": "Brandy Mueller",
@@ -1102,11 +1123,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/district/403",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Brandy Mueller's official page",
   "photoYear": null,
   "identityEvidence": "filename \"Brandy_Mueller_403rd\"",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "catherine-a-mauzy": {
   "name": "Catherine A. Mauzy",
@@ -1115,11 +1137,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/civil/district/419",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Catherine A. Mauzy's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "laurie-eiserloh": {
   "name": "Laurie Eiserloh",
@@ -1128,11 +1151,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/civil/district/455th-civil-district-court",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Laurie Eiserloh's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "maya-guerra-gamble": {
   "name": "Maya Guerra Gamble",
@@ -1141,11 +1165,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/civil/district/459",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Maya Guerra Gamble's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "andy-brown": {
   "name": "Andy Brown",
@@ -1154,11 +1179,12 @@
   "pageUrl": "https://www.traviscountytx.gov/commissioners-court/county-judge",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Andy Brown's official page",
   "photoYear": null,
   "identityEvidence": "filename \"JudgeBrown-headshot\" on the County Judge page",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "todd-wong": {
   "name": "Todd Wong",
@@ -1167,11 +1193,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/civil/county/cc1",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Todd Wong's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "leslie-dippel": {
   "name": "Leslie Dippel",
@@ -1180,7 +1207,7 @@
   "pageUrl": "https://www.lesliedippel.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Leslie Dippel campaign site",
+  "attribution": "Photo: Leslie Dippel's campaign site",
   "photoYear": null,
   "identityEvidence": "portrait on lesliedippel.com (her campaign site)",
   "checkedDate": "2026-10-30",
@@ -1193,11 +1220,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/county/cc3",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Bianca Garcia's official page",
   "photoYear": null,
   "identityEvidence": "filename \"Bianca_Garcia_CC3\"",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "dimple-malhotra": {
   "name": "Dimple Malhotra",
@@ -1206,11 +1234,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/county/cc4",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Dimple Malhotra's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "mary-ann-espiritu": {
   "name": "Mary Ann Espiritu",
@@ -1219,11 +1248,12 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/county/cc5",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Mary Ann Espiritu's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "denise-hernandez": {
   "name": "Denise Hernández",
@@ -1232,29 +1262,36 @@
   "pageUrl": "https://www.traviscountytx.gov/courts/criminal/county/cc6",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Denise Hernández's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "elisabeth-earle": {
   "name": "Elisabeth Earle",
   "raceId": "travis-ccl-7",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/5x7Elisabeth_IMG_013.jpg/500px-5x7Elisabeth_IMG_013.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg",
-  "license": "CC BY-SA 4.0",
-  "attribution": "Photo: Wikimedia Commons user DustDevil22039",
-  "licenseDetail": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Author/credit on file page: DustDevil22039. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2008,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1500,
-  "photoWidth": 500,
-  "fileTitle": "File:5x7Elisabeth IMG 013.jpg",
-  "note": "Commons description: \"Photo of Judge Elisabeth Earle of Austin, Travis County, Texas.\" Used on Wikidata Q111529848.",
-  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+  "photoUrl": "https://elisabethearle.org/wp-content/uploads/2025/09/EE-1-819x1024.jpeg",
+  "pageUrl": "https://elisabethearle.org/aboutelisabeth/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Elisabeth Earle's campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated; WordPress upload path 2025/09, so the file was uploaded in September 2025",
+  "identityEvidence": "first photo on the \"About Elisabeth\" page of her campaign site elisabethearle.org (Elisabeth Earle for Judge)",
+  "verified": "200 image/jpeg 819x1024 (GET, 2026-10-30 ~06:50 CT)",
+  "cropNote": "real solo studio portrait (blue backdrop, dark jacket, scarf); crop to head and shoulders from the top",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/5x7Elisabeth_IMG_013.jpg/500px-5x7Elisabeth_IMG_013.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg",
+   "attribution": "Photo: Wikimedia Commons user DustDevil22039",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY-SA 4.0",
+   "photoYear": 2008,
+   "why": "QA13: 2008 Commons photo credited only to a username replaced by her campaign-site portrait"
+  },
+  "checkedDate": "2026-10-30"
  },
  "guy-herman": {
   "name": "Guy Herman",
@@ -1263,11 +1300,12 @@
   "pageUrl": "https://www.traviscountytx.gov/probate",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Guy Herman's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "velva-l-price": {
   "name": "Velva L. Price",
@@ -1276,11 +1314,12 @@
   "pageUrl": "https://www.traviscountytx.gov/district-clerk",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Velva L. Price's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "dyana-limon-mercado": {
   "name": "Dyana Limon-Mercado",
@@ -1289,11 +1328,12 @@
   "pageUrl": "https://countyclerk.traviscountytx.gov/",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County Clerk official page",
+  "attribution": "Photo: Dyana Limon-Mercado's official page",
   "photoYear": 2023,
   "identityEvidence": "img alt names her; County Clerk site",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County Clerk"
  },
  "dolores-ortega-carter": {
   "name": "Dolores Ortega Carter",
@@ -1302,11 +1342,12 @@
   "pageUrl": "https://www.traviscountytx.gov/treasurer",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Dolores Ortega Carter's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "george-morales-iii": {
   "name": "George Morales III",
@@ -1315,11 +1356,12 @@
   "pageUrl": "https://www.traviscountytx.gov/commissioners-court/precinct-four",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: George Morales III's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "tanisa-jeffers": {
   "name": "Tanisa Jeffers",
@@ -1328,11 +1370,12 @@
   "pageUrl": "https://www.traviscountytx.gov/justices-of-peace/jp5",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Tanisa Jeffers's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "raul-arturo-gonzalez": {
   "name": "Raul Arturo Gonzalez",
@@ -1341,11 +1384,12 @@
   "pageUrl": "https://www.traviscountytx.gov/justices-of-peace/jp4",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Raul Arturo Gonzalez's official page",
   "photoYear": null,
   "identityEvidence": "filename is his full name",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "gabriel-padilla": {
   "name": "Gabriel Padilla",
@@ -1354,11 +1398,12 @@
   "pageUrl": "https://www.traviscountytx.gov/constables/4",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Travis County official page",
+  "attribution": "Photo: Gabriel Padilla's official page",
   "photoYear": null,
   "identityEvidence": "Travis County official page for this office",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Travis County"
  },
  "skyler-a-korgel": {
   "name": "Skyler A. Korgel",
@@ -1367,7 +1412,7 @@
   "pageUrl": "https://demsfortcad.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Skyler A. Korgel campaign site",
+  "attribution": "Photo: Skyler A. Korgel's campaign site",
   "photoYear": null,
   "identityEvidence": "demsfortcad.com slate photo placed with the Korgel bio (identity from page order only; caveat)",
   "checkedDate": "2026-10-30",
@@ -1380,7 +1425,7 @@
   "pageUrl": "https://demsfortcad.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Brian Peña campaign site",
+  "attribution": "Photo: Brian Peña's campaign site",
   "photoYear": null,
   "identityEvidence": "demsfortcad.com slate photo placed with the Peña bio, filename b_edited (identity from page order; caveat)",
   "checkedDate": "2026-10-30",
@@ -1393,7 +1438,7 @@
   "pageUrl": "https://demsfortcad.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Yvonne Muñoz campaign site",
+  "attribution": "Photo: Yvonne Muñoz's campaign site",
   "photoYear": null,
   "identityEvidence": "demsfortcad.com slate photo placed with the Muñoz bio; same person as her own X @YvonneforTCAD avatar",
   "checkedDate": "2026-10-30",
@@ -1418,7 +1463,7 @@
   "pageUrl": "https://www.richforaustin.org/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Rich Heyman campaign site",
+  "attribution": "Photo: Rich Heyman's campaign site",
   "photoYear": null,
   "identityEvidence": "portrait on richforaustin.org (his campaign site)",
   "checkedDate": "2026-10-30",
@@ -1431,7 +1476,7 @@
   "pageUrl": "https://www.katiekamforaustin.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Katie Kam campaign site",
+  "attribution": "Photo: Katie Kam's campaign site",
   "photoYear": null,
   "identityEvidence": "solo portrait on her campaign site",
   "checkedDate": "2026-10-30",
@@ -1444,11 +1489,12 @@
   "pageUrl": "https://www.austintexas.gov/department/district-9",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Austin City Council official page",
+  "attribution": "Photo: Zohaib “Zo” Qadri's official page",
   "photoYear": null,
   "identityEvidence": "img alt \"Headshot of District 9 Council Member Zo…\"",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Austin City Council"
  },
  "dave-thadani": {
   "name": "Dave Thadani",
@@ -1457,7 +1503,7 @@
   "pageUrl": "https://x.com/DaveforAustin",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Dave Thadani own social profile",
+  "attribution": "Photo: Dave Thadani's own X profile",
   "photoYear": null,
   "identityEvidence": "X @DaveforAustin \"Dave Thadani\", bio \"candidate for Austin City Council District 9\"; campaign site blocks automated reads",
   "checkedDate": "2026-10-30",
@@ -1472,7 +1518,7 @@
   "pageUrl": "https://kai4atx.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Kai Huang campaign site",
+  "attribution": "Photo: Kai Huang's campaign site",
   "photoYear": null,
   "identityEvidence": "img alt \"Kai Huang speaking with neighbors\" (not a studio headshot)",
   "checkedDate": "2026-10-30",
@@ -1488,7 +1534,7 @@
   "pageUrl": "https://www.cynthiasolizforaisd.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Cynthia Soliz campaign site",
+  "attribution": "Photo: Cynthia Soliz's campaign site",
   "photoYear": null,
   "identityEvidence": "solo portrait on her campaign site",
   "checkedDate": "2026-10-30",
@@ -1513,7 +1559,7 @@
   "pageUrl": "https://www.pamelaforaisd.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Pamela Mathai campaign site",
+  "attribution": "Photo: Pamela Mathai's campaign site",
   "photoYear": null,
   "identityEvidence": "filename \"MathaiPortraits\"",
   "checkedDate": "2026-10-30",
@@ -1526,11 +1572,12 @@
   "pageUrl": "https://offices.austincc.edu/board-of-trustees/board-members/dana-walker/",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Austin Community College Board of Trustees official page",
+  "attribution": "Photo: Dana Walker's official page",
   "photoYear": 2020,
   "identityEvidence": "img alt \"Dana Walker\"; filename dated 2020",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Austin Community College Board of Trustees"
  },
  "gloria-gonzales-dholakia": {
   "name": "Gloria Gonzales-Dholakia",
@@ -1539,7 +1586,7 @@
   "pageUrl": "https://www.gloriaforacc.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Gloria Gonzales-Dholakia campaign site",
+  "attribution": "Photo: Gloria Gonzales-Dholakia's campaign site",
   "photoYear": null,
   "identityEvidence": "filename \"Dholakia, Gloria\"",
   "checkedDate": "2026-10-30",
@@ -1552,11 +1599,12 @@
   "pageUrl": "https://offices.austincc.edu/board-of-trustees/board-members/gigi-edwards-bryant/",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Austin Community College Board of Trustees official page",
+  "attribution": "Photo: Gigi Edwards Bryant's official page",
   "photoYear": 2025,
   "identityEvidence": "sole portrait on her ACC trustee page",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Austin Community College Board of Trustees"
  },
  "trevor-hale": {
   "name": "Trevor Hale",
@@ -1574,7 +1622,8 @@
   "photoWidth": 500,
   "fileTitle": "File:Trevor Hale (head shot).jpg",
   "note": "Used on en.wikipedia \"Trevor Hale\" (professor, Huston-Tillotson / Texas A&M / UH-Downtown); KUT & Community Impact identify the ACC Place 3 candidate as the same retired professor. Photo dated 2014.",
-  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated"
+  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; no real name stated",
+  "qa13": "QA13 2026-10-30: Commons photo kept. No campaign site or official page with his photo found (ACC candidate list, Community Impact, Statesman); an Instagram account is mentioned in search results but was not confirmed as his. Commons Author field is only the username, so the credit stays as the username."
  },
  "nan-mcraven": {
   "name": "Nan McRaven",
@@ -1583,11 +1632,12 @@
   "pageUrl": "https://offices.austincc.edu/board-of-trustees/board-members/dr-nan-mcraven/",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Austin Community College Board of Trustees official page",
+  "attribution": "Photo: Nan McRaven's official page",
   "photoYear": null,
   "identityEvidence": "img alt \"Dr. Nan McRaven\"",
   "checkedDate": "2026-10-30",
-  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)"
+  "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
+  "officialPageOwner": "Austin Community College Board of Trustees"
  },
  "connie-chan": {
   "name": "Connie Chan",
@@ -1646,7 +1696,7 @@
   "pageUrl": "https://www.gates4ag.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Michael E. Gates campaign site",
+  "attribution": "Photo: Michael E. Gates's campaign site",
   "photoYear": null,
   "identityEvidence": "Posed photo on his campaign site gates4ag.com; viewed: same person as the DOJ podium photo previously used (that photo also appears on his own About page as DOJPodium2.png)",
   "checkedDate": "2026-10-30",
@@ -1685,7 +1735,7 @@
   "pageUrl": "https://www.herbmorgan.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Herb Morgan campaign site",
+  "attribution": "Photo: Herb Morgan's campaign site",
   "verified": "200 image/jpeg 800x1200; alt text \"Herb W. Morgan for California State Controller Headshot\"",
   "checkedDate": "2026-10-30"
  },
@@ -1714,7 +1764,7 @@
   "pageUrl": "https://www.janekim.org/MeetJane",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Jane Kim campaign site",
+  "attribution": "Photo: Jane Kim's campaign site",
   "photoYear": null,
   "identityEvidence": "Studio headshot on the \"Meet Jane\" page of her campaign site janekim.org; viewed: same person as the 2017 Commons event photo previously used",
   "checkedDate": "2026-10-30",
@@ -1769,7 +1819,7 @@
   "photoUrl": "https://images.squarespace-cdn.com/content/v1/67b0f232273eb817e2f7a289/edc7eb84-98dd-425f-9367-3795de9dc8a1/Portrait-24-Edit_pp+%281%29.jpeg?format=500w",
   "pageUrl": "https://www.barreraforedu.com/mediaresources",
   "license": "Campaign press photo (offered for media use)",
-  "attribution": "Photo: Richard Barrera campaign site",
+  "attribution": "Photo: Richard Barrera's campaign site",
   "licenseDetail": "The campaign Media Resources page (barreraforedu.com/mediaresources) offers \"Press Photos — Download All Photos\" with a campaign media contact; criterion (c). No CC license; use as a campaign-supplied press photo with credit.",
   "photoYear": 2025,
   "photoYearBasis": "estimated: campaign site built Feb 2025 (Squarespace content id); 2026 campaign press set",
@@ -1785,7 +1835,7 @@
   "pageUrl": "https://www.shawforca.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Sonja Shaw campaign site",
+  "attribution": "Photo: Sonja Shaw's campaign site",
   "verified": "200 image/jpeg 800x1200; alt \"Sonja Shaw, Candidate for California Superintendent 2026\"",
   "checkedDate": "2026-10-30"
  },
@@ -1812,7 +1862,7 @@
   "pageUrl": "https://hawksforus.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Jennifer Hawks campaign site",
+  "attribution": "Photo: Jennifer Hawks's campaign site",
   "verified": "200 image/jpeg 1272x1908; file named jennifer-hawks-portrait on her campaign site (JS-rendered page)",
   "checkedDate": "2026-10-30"
  },
@@ -1842,7 +1892,7 @@
   "pageUrl": "https://stevehiltonforgovernor.com/meet-steve",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Steve Hilton campaign site",
+  "attribution": "Photo: Steve Hilton's campaign site",
   "photoYear": null,
   "identityEvidence": "\"Meet Steve\" page image on his campaign site (site bundle: meetSteve:{image:'/photos/portrait-street.jpg', heading:'Meet Steve'}); viewed: same person as the 2024 Gage Skidmore photo previously used",
   "checkedDate": "2026-10-30",
@@ -1917,7 +1967,7 @@
   "pageUrl": "https://www.facebook.com/p/Manuel-Noris-Barrera-Assembly-District-17-61552978635595/",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Manuel Noris-Barrera own social profile",
+  "attribution": "Photo: Manuel Noris-Barrera's own Facebook profile",
   "checkedDate": "2026-10-30",
   "note": "Image saved locally because the social-CDN URL is signed and expires; Engineering should host localFile and set photoUrl. Found in the browser pass."
  },
@@ -1944,7 +1994,7 @@
   "pageUrl": "https://johnpimentel.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: John Pimentel campaign site",
+  "attribution": "Photo: John Pimentel's campaign site",
   "verified": "200 image/webp 750x1015; hero photo on his campaign home page, directly above the quote attributed \"—John Pimentel\"",
   "note": "Half-length portrait, front-facing. (The other suit portrait on the page, portrait.png, is endorser Rep. Kevin Mullin, not Pimentel.)",
   "checkedDate": "2026-10-30"
@@ -1956,11 +2006,12 @@
   "pageUrl": "https://supreme.courts.ca.gov/about-court/justices-court/justice-kelli-m-evans",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Supreme Court of California official page",
+  "attribution": "Photo: Kelli M. Evans's official page",
   "photoYear": 2023,
   "verified": "200 image/jpeg 322x480; alt \"Associate Justice Kelli Evans\" on her Supreme Court bio page (uploaded 2023-01)",
   "note": "Retention election; no campaign site. Full-size original: https://supreme.courts.ca.gov/sites/default/files/supremecourt/default/2023-01/Justice%20Kelli%20Evans.png (2018x3009).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "Supreme Court of California"
  },
  "joshua-groban": {
   "name": "Joshua Groban",
@@ -1969,11 +2020,12 @@
   "pageUrl": "https://supreme.courts.ca.gov/about-court/justices-court/associate-justice-joshua-p-groban",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Supreme Court of California official page",
+  "attribution": "Photo: Joshua Groban's official page",
   "photoYear": 2026,
   "verified": "200 image/jpeg 1024x683; alt \"Justice Groban in court\" on his Supreme Court bio page (uploaded 2026-02)",
   "note": "Retention election; no campaign site. Seated on the bench, front-facing, landscape crop (not a tight headshot).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "Supreme Court of California"
  },
  "charles-a-smiley": {
   "name": "Charles A. Smiley",
@@ -1982,10 +2034,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/charles-smiley",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Charles A. Smiley's official page",
   "verified": "200 image/jpeg 2400x2630; alt \"Charles Smiley\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait.",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "kathleen-m-banke": {
   "name": "Kathleen M. Banke",
@@ -1994,10 +2047,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/kathleen-m-banke",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Kathleen M. Banke's official page",
   "verified": "200 image/jpeg 200x200; alt \"kathleen banke\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait. Only a small image is published (200x200 crop of a 150x180 original).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "monique-langhorne-wilson": {
   "name": "Monique Langhorne Wilson",
@@ -2006,10 +2060,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/monique-langhorne-wilson",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Monique Langhorne Wilson's official page",
   "verified": "200 image/jpeg 853x1024; alt \"Justice Langhorne Wilson\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait.",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "therese-m-stewart": {
   "name": "Therese M. Stewart",
@@ -2018,10 +2073,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/therese-m-stewart",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Therese M. Stewart's official page",
   "verified": "200 image/jpeg 200x200; alt \"Therese M. Stewart\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait. Only a small image is published (200x200 crop of a 150x180 original).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "tara-m-desautels": {
   "name": "Tara M. Desautels",
@@ -2030,10 +2086,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/tara-m-desautels",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Tara M. Desautels's official page",
   "verified": "200 image/png 1494x1821; alt \"J. Desautels\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait.",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "ioana-petrou": {
   "name": "Ioana Petrou",
@@ -2042,10 +2099,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/ioana-petrou",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Ioana Petrou's official page",
   "verified": "200 image/jpeg 200x200; alt \"Ioana Petrou\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait. Only a small image is published (200x200 crop of a 150x180 original).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "victor-a-rodriguez": {
   "name": "Victor A. Rodriguez",
@@ -2054,10 +2112,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/victor-rodriguez",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Victor A. Rodriguez's official page",
   "verified": "200 image/jpeg 2400x3000; alt \"Justice Victor Rodriguez\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait.",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "tracie-l-brown": {
   "name": "Tracie L. Brown",
@@ -2066,10 +2125,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/tracie-l-brown",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Tracie L. Brown's official page",
   "verified": "200 image/jpeg 200x200; alt \"Tracie Brown\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait. Only a small image is published (200x200 crop of a 150x180 original).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "mark-simons": {
   "name": "Mark Simons",
@@ -2078,10 +2138,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/mark-b-simons",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Mark Simons's official page",
   "verified": "200 image/jpeg 200x200; alt \"Mark B. Simons\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait. Only a small image is published (200x200 crop of a 150x180 original).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "danny-y-chou": {
   "name": "Danny Y. Chou",
@@ -2090,10 +2151,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/danny-y-chou",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Danny Y. Chou's official page",
   "verified": "200 image/jpeg 1248x1550; alt \"Justice Danny Chou\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait.",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "gordon-burns": {
   "name": "Gordon Burns",
@@ -2102,10 +2164,11 @@
   "pageUrl": "https://appellate.courts.ca.gov/district-courts/1dca/bio/gordon-b-burns",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: First District Court of Appeal official page",
+  "attribution": "Photo: Gordon Burns's official page",
   "verified": "200 image/jpeg 200x200; alt \"Gordan B. Burns\" on the official bio page",
   "note": "Retention election; no campaign site. Official court portrait. Page alt text misspells the name as \"Gordan B. Burns\"; bio page is for Justice Gordon B. Burns. Only a small image is published (200x200 crop of a 150x180 original).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "First District Court of Appeal"
  },
  "joaquin-torres": {
   "name": "Joaquin Torres",
@@ -2114,7 +2177,7 @@
   "pageUrl": "https://www.sf.gov/profile--joaquin-torres",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Joaquin Torres official page",
+  "attribution": "Photo: Joaquin Torres's official page",
   "verified": "200 image/jpeg 2060x1596; front-facing portrait on his SF.gov profile",
   "checkedDate": "2026-10-30"
  },
@@ -2141,7 +2204,7 @@
   "pageUrl": "https://alexforalld6.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Alex for All campaign site",
+  "attribution": "Photo: Alex for All's campaign site",
   "verified": "200 image/png 1800x1500; file named headshot on his campaign home page",
   "note": "Campaign graphic: the headshot has the \"Alex 4 All / D6\" campaign text beside it.",
   "checkedDate": "2026-10-30"
@@ -2169,7 +2232,7 @@
   "pageUrl": "https://www.garymccoysf.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Gary McCoy for District 8 Supervisor campaign site",
+  "attribution": "Photo: Gary McCoy for District 8 Supervisor's campaign site",
   "verified": "200 image/webp 750x1000; hero portrait next to the heading \"Gary McCoy for Supervisor\"",
   "note": "Full-length standing portrait, not a tight headshot.",
   "checkedDate": "2026-10-30"
@@ -2181,7 +2244,7 @@
   "pageUrl": "https://www.michaelnguyen4sf.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Michael Nguyen for SF D8 Supervisor campaign site",
+  "attribution": "Photo: Michael Nguyen for SF D8 Supervisor's campaign site",
   "photoYear": 2023,
   "verified": "200 image/webp 750x500; file named 2023_MichaelJuicyNguyen on his campaign home page",
   "note": "Year comes from the file name.",
@@ -2194,7 +2257,7 @@
   "pageUrl": "https://votedarshini.com/about/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Darshini for District 8 campaign site",
+  "attribution": "Photo: Darshini for District 8's campaign site",
   "verified": "200 image/jpeg 3600x2401; alt \"Darshini Patel\" on her My Story page",
   "note": "Wide photo of her standing on a street; crop needed for a headshot.",
   "checkedDate": "2026-10-30"
@@ -2206,7 +2269,7 @@
   "pageUrl": "https://www.mannyforsf.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Manny Yekutiel for Supervisor campaign site",
+  "attribution": "Photo: Manny Yekutiel for Supervisor's campaign site",
   "verified": "200 image/jpeg 750x490; hero photo on his campaign home page (re-verified; the URL was missing from an earlier save)",
   "note": "Signed imgix URL copied from the page (the signature is required). His campaign was suspended Oct 1, 2026, but his name is still on the ballot.",
   "checkedDate": "2026-10-30",
@@ -2221,7 +2284,7 @@
   "pageUrl": "https://bastiany-campaign-site.replit.app/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: PJ Bastiany campaign site",
+  "attribution": "Photo: PJ Bastiany's campaign site",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "img alt \"PJ Bastiany overlooking San Francisco\" on his campaign site (footer \"Paid for by Pearci Bastiany III for Supervisor 2026. FPPC ID #1481624\"); he is the only person in it",
@@ -2247,7 +2310,7 @@
   "pageUrl": "https://www.facebook.com/dionjay.brookter/",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: DJ Brookter own social profile",
+  "attribution": "Photo: DJ Brookter's own Facebook profile",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "profile photo of the Facebook profile \"Dion-Jay Brookter\", which his campaign site dj4d10.com links in its social links (with Instagram @djlbrookter and LinkedIn djbrookter)",
@@ -2274,7 +2337,8 @@
   ],
   "checkedDate": "2026-10-30",
   "note": "Has a campaign committee (Deandra Bryant for Supervisor 2026) but no campaign website found. Ballotpedia blocks automated fetch.",
-  "qa9": "QA9 recheck: still not found. Web search (GrowSF questionnaire, SF Chronicle, SF Ethics committee, slogan \"From Survivor to Supervisor\"): no campaign site or social profile tied to her. KQED voter guide lists no links (its photo is media, not allowed)."
+  "qa9": "QA9 recheck: still not found. Web search (GrowSF questionnaire, SF Chronicle, SF Ethics committee, slogan \"From Survivor to Supervisor\"): no campaign site or social profile tied to her. KQED voter guide lists no links (its photo is media, not allowed).",
+  "qa12": "QA12 recheck 2026-10-30: still none. Potrero Hill Dem Club lists her as \"no website\" and \"no publicly available contact information\"; her GrowSF and SF-Marin Food Bank questionnaires show no campaign site."
  },
  "theo-ellington": {
   "name": "Theo Ellington",
@@ -2283,7 +2347,7 @@
   "pageUrl": "https://www.theoellington.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Theo Ellington for Supervisor campaign site",
+  "attribution": "Photo: Theo Ellington for Supervisor's campaign site",
   "verified": "200 image/jpeg 2000x1064; front-facing feature photo on his campaign home page (file named Ellington.jpg)",
   "note": "Wide photo with the skyline behind him; crop needed for a headshot.",
   "checkedDate": "2026-10-30"
@@ -2295,7 +2359,7 @@
   "pageUrl": "https://www.jreppler.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: J.R. Eppler for Supervisor campaign site",
+  "attribution": "Photo: J.R. Eppler for Supervisor's campaign site",
   "verified": "200 image/png 800x800; file named \"02 JR Headshot\" on his campaign home page",
   "note": "Wix crop of the original, enlarged. Alternative: the alt=\"J.R. Eppler\" photo on /about (6aa1ed_8d9fbe27e9084c36b5350b45ba850465~mv2.png).",
   "checkedDate": "2026-10-30"
@@ -2314,7 +2378,8 @@
   ],
   "checkedDate": "2026-10-30",
   "note": "No campaign website found.",
-  "qa9": "QA9 recheck: still not found. Web search (Elections Simplified, Potrero Hill Dem Club questionnaires, Sway, Ballot Book): no campaign site, contact or social profile listed."
+  "qa9": "QA9 recheck: still not found. Web search (Elections Simplified, Potrero Hill Dem Club questionnaires, Sway, Ballot Book): no campaign site, contact or social profile listed.",
+  "qa12": "QA12 recheck 2026-10-30: still none (Potrero Hill Dem Club: no website, no public contact; Vote or Else: no committee)."
  },
  "mike-trouble-lin": {
   "name": "Mike Trouble Lin",
@@ -2324,7 +2389,7 @@
   "pageUrl": "https://linktr.ee/votemikelin",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Mike Trouble Lin own social profile",
+  "attribution": "Photo: Mike Trouble Lin's own Linktree profile",
   "checkedDate": "2026-10-30",
   "note": "Image saved locally because the social-CDN URL is signed and expires; Engineering should host localFile and set photoUrl. Found in the browser pass.",
   "cropNote": "Cropped from the Linktree share image"
@@ -2343,7 +2408,8 @@
   ],
   "checkedDate": "2026-10-30",
   "note": "No campaign website found. (Photos in news coverage, such as the Davis Vanguard and SF Bay View, are not allowed sources.)",
-  "qa9": "QA9 recheck: still not found. He says he is \"on Facebook under my name\", but several \"Jamo Muhammad\" Facebook accounts exist and none is tied to the candidate by a page. facebook.com/jmuhammad26 has a cartoon logo (\"Gotta Keep It Lit\"), not a photo; facebook.com/jamo.muhammad has the default avatar. KQED voter guide lists no links."
+  "qa9": "QA9 recheck: still not found. He says he is \"on Facebook under my name\", but several \"Jamo Muhammad\" Facebook accounts exist and none is tied to the candidate by a page. facebook.com/jmuhammad26 has a cartoon logo (\"Gotta Keep It Lit\"), not a photo; facebook.com/jamo.muhammad has the default avatar. KQED voter guide lists no links.",
+  "qa12": "QA12 recheck 2026-10-30: still none (Potrero Hill Dem Club: no website)."
  },
  "jessica-pessecow": {
   "name": "Jessica Pessecow",
@@ -2359,7 +2425,8 @@
   ],
   "checkedDate": "2026-10-30",
   "note": "No campaign website found.",
-  "qa9": "QA9 recheck: still not found. No campaign site (jessicapessecow.com, jessicaford10.com, pessecow.com do not resolve). A Luma profile \"Jessica pessecow\" has the default avatar and links X @SayYesToTheJess (default avatar, no bio) and thisthegame.com (a game, no photo); nothing ties these to the candidate."
+  "qa9": "QA9 recheck: still not found. No campaign site (jessicapessecow.com, jessicaford10.com, pessecow.com do not resolve). A Luma profile \"Jessica pessecow\" has the default avatar and links X @SayYesToTheJess (default avatar, no bio) and thisthegame.com (a game, no photo); nothing ties these to the candidate.",
+  "qa12": "QA12 recheck 2026-10-30: still none (Potrero Hill Dem Club: no website, no public contact)."
  },
  "shawn-m-richard": {
   "name": "Shawn M. Richard",
@@ -2368,7 +2435,7 @@
   "pageUrl": "https://www.shawnmrichard4d10.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Shawn Richard for District 10 Supervisor campaign site",
+  "attribution": "Photo: Shawn Richard for District 10 Supervisor's campaign site",
   "verified": "200 image/jpeg 1284x1027; hero image with alt \"Shawn Richard in the community\" in the campaign site code",
   "note": "Front-facing photo of him outdoors in front of a mural.",
   "checkedDate": "2026-10-30"
@@ -2380,7 +2447,7 @@
   "pageUrl": "https://www.autumnforschoolboard.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Autumn for School Board campaign site",
+  "attribution": "Photo: Autumn for School Board's campaign site",
   "verified": "200 image/webp 750x1294; main portrait on her campaign home page",
   "note": "Full-length seated portrait; crop needed for a headshot.",
   "checkedDate": "2026-10-30"
@@ -2392,7 +2459,7 @@
   "pageUrl": "https://www.virginiacheung.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Virginia Cheung for SF Board of Education campaign site",
+  "attribution": "Photo: Virginia Cheung for SF Board of Education's campaign site",
   "photoYear": 2024,
   "verified": "200 image/jpeg 2048x1365; file named \"240612DixonLi - Virginia Cheung EDITS-40\" on her campaign home page",
   "note": "Campaign portrait shoot dated 2024-06-12 in the file name. Wide frame; crop needed. (The site also has an AI-generated graphic, which was avoided.)",
@@ -2406,7 +2473,7 @@
   "pageUrl": "https://www.alidafisher.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Alida Fisher campaign site",
+  "attribution": "Photo: Alida Fisher's campaign site",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "og:image of her campaign site alidafisher.com (\"Reelect Alida Fisher to SF School Board\"); viewed: same woman as her campaign X avatar",
@@ -2430,7 +2497,7 @@
   "pageUrl": "https://www.ryanforsfschools.com/communitywork",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Ryan Hazelton for SF School Board campaign site",
+  "attribution": "Photo: Ryan Hazelton for SF School Board's campaign site",
   "photoYear": 2022,
   "verified": "200 image/webp 750x1000; alt \"Ryan taking a selfie...\" on his campaign In the Community page",
   "note": "Front-facing selfie holding children's books; the year comes from the file name. The site has no formal headshot.",
@@ -2443,7 +2510,7 @@
   "pageUrl": "https://www.philkim.org/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Phil Kim for School Board campaign site",
+  "attribution": "Photo: Phil Kim for School Board's campaign site",
   "photoYear": 2025,
   "verified": "200 image/webp 750x719; file named PhilKim_Headshot_2025 on his campaign home page",
   "note": "Black-and-white headshot.",
@@ -2456,7 +2523,7 @@
   "pageUrl": "https://www.lauranceleesf.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Laurance Lee for School Board campaign site",
+  "attribution": "Photo: Laurance Lee for School Board's campaign site",
   "verified": "200 image/webp 1200x1648; alt \"Laurance Lee, SFUSD graduate and 2026 San Francisco school board candidate\"",
   "note": "Full-length photo on school steps; crop needed for a headshot.",
   "checkedDate": "2026-10-30",
@@ -2469,7 +2536,7 @@
   "pageUrl": "https://www.reinaforschoolboard.org/about",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Reina Tello for School Board campaign site",
+  "attribution": "Photo: Reina Tello for School Board's campaign site",
   "verified": "200 image/jpeg 1280x1920; alt \"Reina Tello\" on her campaign About page",
   "note": "Front-facing waist-up portrait.",
   "checkedDate": "2026-10-30"
@@ -2481,7 +2548,7 @@
   "pageUrl": "https://www.timtung.com/about",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Tim Tung for School Board campaign site",
+  "attribution": "Photo: Tim Tung for School Board's campaign site",
   "verified": "200 image/jpeg 2455x1652; the page image on his campaign About page",
   "note": "Front-facing headshot. Signed imgix URL, so keep it exact. The box cannot reach timtung.com directly (TLS error); the image was read via fetch.",
   "checkedDate": "2026-10-30",
@@ -2495,7 +2562,7 @@
   "pageUrl": "https://www.elijahforcitycollege.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Elijah Ball for City College Board of Trustees campaign site",
+  "attribution": "Photo: Elijah Ball for City College Board of Trustees's campaign site",
   "photoYear": 2026,
   "verified": "200 image/webp 750x503; main campaign photo on his home page, above Background",
   "note": "Campaign photo of him standing centered, with supporters in the foreground. No solo headshot on the site (the other photos are family childhood pictures). Crop needed. Same photographer shoot as Tam and Lace.",
@@ -2516,7 +2583,8 @@
    "Browser pass 2026-10-30: DuckDuckGo search; Ballotpedia, The Guardsman, KALW, GrowSF, Blue Voter Guide."
   ],
   "checkedDate": "2026-10-30",
-  "note": "Ballotpedia is blocked (403). Third-party guides (Sway, The Guardsman) are not allowed sources. A browser pass on his LinkedIn could find a photo."
+  "note": "Ballotpedia is blocked (403). Third-party guides (Sway, The Guardsman) are not allowed sources. A browser pass on his LinkedIn could find a photo.",
+  "qa12": "QA12 recheck 2026-10-30: still none. linkedin.com/in/romejones98 timed out on two fetches and could not be read; no campaign site (KALW: no Ethics committee filed). The Guardsman image is a media illustration, not allowed."
  },
  "monroe-lace": {
   "name": "Monroe Lace",
@@ -2525,7 +2593,7 @@
   "pageUrl": "https://www.monroelace.org/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Monroe Lace for City College Board of Trustees campaign site",
+  "attribution": "Photo: Monroe Lace for City College Board of Trustees's campaign site",
   "photoYear": 2026,
   "verified": "200 image/webp 750x525; solo campaign photo on her home page (Chinatown street)",
   "note": "Solo, front-facing, waist-up. The same person appears in the site's other campaign photo (0D4A8104).",
@@ -2538,7 +2606,7 @@
   "pageUrl": "https://www.ourcitycollege.com/leah-lacroix",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Leah LaCroix campaign site",
+  "attribution": "Photo: Leah LaCroix's campaign site",
   "photoYear": 2026,
   "verified": "200 image/webp 750x1125; the lead photo on her candidate page on the slate campaign site",
   "note": "Solo, front-facing portrait. No standalone personal campaign site was found; this joint slate campaign site is her campaign page.",
@@ -2551,7 +2619,7 @@
   "pageUrl": "https://jeremyleesf.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Jeremy Lee for City College Board campaign site",
+  "attribution": "Photo: Jeremy Lee for City College Board's campaign site",
   "photoYear": 2026,
   "verified": "200 image/jpeg 1024x683; alt \"Jeremy Lee\"; the og:image on his campaign home page",
   "note": "Solo, front-facing, waist-up. The same shot appears on the Our City College slate site.",
@@ -2564,7 +2632,7 @@
   "pageUrl": "https://www.ourcitycollege.com/bunny-mcfadden",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Bunny McFadden campaign site",
+  "attribution": "Photo: Bunny McFadden's campaign site",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "only photo of a person on the \"Dr. Bunny McFadden\" page of ourcitycollege.com; she is the only person in it",
@@ -2589,7 +2657,7 @@
   "pageUrl": "https://www.erwintam.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Erwin Tam for City College Board of Trustees campaign site",
+  "attribution": "Photo: Erwin Tam for City College Board of Trustees's campaign site",
   "photoYear": 2026,
   "verified": "200 image/webp 750x500; main campaign photo on his home page",
   "note": "Campaign photo of him centered, front-facing, with people in the foreground. No solo headshot on the site. Crop needed.",
@@ -2611,7 +2679,8 @@
    "Browser pass 2026-10-30: DuckDuckGo search; Ballotpedia, GoodParty, Vote or Else, KALW, Sway, Blue Voter Guide."
   ],
   "checkedDate": "2026-10-30",
-  "note": "Ballotpedia is blocked (403). A browser pass on her LinkedIn could find a photo."
+  "note": "Ballotpedia is blocked (403). A browser pass on her LinkedIn could find a photo.",
+  "qa12": "QA12 recheck 2026-10-30: still none. linkedin.com/in/lisa-wynn-2a551193 timed out on two fetches and could not be read; KALW reports no website or social media."
  },
  "ruth-ferguson": {
   "name": "Ruth Ferguson",
@@ -2620,7 +2689,7 @@
   "pageUrl": "https://ruthferguson.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Ruth Ferguson for City College Board campaign site",
+  "attribution": "Photo: Ruth Ferguson for City College Board's campaign site",
   "photoYear": 2024,
   "verified": "200 image/jpeg 683x1024; the main portrait on her campaign home page",
   "note": "Front-facing, smiling, holding a dog; uploaded 2024-05. Her campaign site also shows a 2026 swearing-in photo. The CCSF official directory page has no photo.",
@@ -2633,7 +2702,7 @@
   "pageUrl": "https://micahlasher.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Micah Lasher campaign site",
+  "attribution": "Photo: Micah Lasher's campaign site",
   "photoYear": 2025,
   "photoYearBasis": "file name carries the shoot date code 251104 (2025-11-04); uploaded 2026/01",
   "identityEvidence": "main photo on his campaign site micahlasher.com (\"Micah Lasher for Congress\"); file name Lasher_…",
@@ -2653,19 +2722,26 @@
  "caroline-shinkle": {
   "name": "Caroline Shinkle",
   "raceId": "ny-12",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
-  "license": "CC0",
-  "attribution": "Photo: Wikimedia Commons user AidansStuff",
-  "licenseDetail": "CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Author/credit on file page: AidansStuff. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2026,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 347,
-  "photoWidth": 347,
-  "fileTitle": "File:Caroline Shinkle Selfie (cropped).jpg",
-  "creditBasis": "Commons Author field is only the user link; Credit \"Own work\"; description \"Selfie photo with caroline shinkle\" does not name the photographer, so the username is kept"
+  "photoUrl": "https://cdn.prod.website-files.com/6a3ac1a81836929a238139ea/6a79e5b334907a0c77761114_Caroline%20Shinkle%20-%20headshot.jpg",
+  "pageUrl": "https://carolinefornewyork.com/meet-caroline",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Caroline Shinkle's campaign site",
+  "photoYear": null,
+  "photoYearBasis": "date taken not stated; EXIF DateTime (last edit) 2026-06-08",
+  "identityEvidence": "on the \"Meet Caroline\" page of her campaign site carolinefornewyork.com; file name \"Caroline Shinkle - headshot.jpg\"",
+  "verified": "200 image/jpeg 3350x3944 (GET, 2026-10-30 ~06:50 CT)",
+  "cropNote": "real solo studio headshot (dark blazer, flag pin, white background); crop to head and shoulders from the top centre",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
+   "attribution": "Photo: Wikimedia Commons user AidansStuff",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC0",
+   "photoYear": 2026,
+   "why": "QA13: Commons photo credited only to a username replaced by her campaign-site headshot"
+  },
+  "checkedDate": "2026-10-30"
  },
  "wilneida-negron": {
   "name": "Wilneida Negron",
@@ -2674,7 +2750,7 @@
   "pageUrl": "https://www.wilneidany12.com/about-wilneida",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Wilneida Negrón campaign site",
+  "attribution": "Photo: Wilneida Negrón's campaign site",
   "verified": "200 image/avif 434x430; portrait (alt \"profile\") on her campaign About page titled \"Meet Dr. Wilneida Negrón\"; decorative cut-out frame",
   "note": "AVIF format; the site also has a wider About banner (og:image) but this is the closest to a headshot.",
   "checkedDate": "2026-10-30"
@@ -2686,7 +2762,7 @@
   "pageUrl": "https://ko4congress.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Karen Ortiz campaign site",
+  "attribution": "Photo: Karen Ortiz's campaign site",
   "verified": "200 image/webp 1644x2182; file karen-cropped.jpg on ko4congress.com home page (no alt text); standing three-quarter portrait",
   "checkedDate": "2026-10-30"
  },
@@ -2697,7 +2773,7 @@
   "pageUrl": "https://kathyhochul.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Kathy Hochul campaign site",
+  "attribution": "Photo: Kathy Hochul's campaign site",
   "photoYear": 2025,
   "photoYearBasis": "shown in the photo: a sign behind her reads \"Flip your ballot & vote yes on Props 2, 3, 4 & 5\" with an \"...ember 4th\" date, which matches the New York City ballot proposals 2-5 on November 4, 2025. File uploaded 2026/05 (/wp-content/uploads/2026/05/). 3 years from opponent Blakeman (2022), within the 6-year rule.",
   "identityEvidence": "image (wp-image-16841) on the home page of her campaign site kathyhochul.com; viewed: she is the woman in the centre in a tan coat, matching her other official photos",
@@ -2742,7 +2818,7 @@
   "pageUrl": "https://jamesforny.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Letitia James campaign site",
+  "attribution": "Photo: Letitia James's campaign site",
   "photoYear": 2026,
   "photoYearBasis": "upload date: file is in /wp-content/uploads/2026/03/ (Last-Modified 2026-03-26); the same photo became her verified X @TishJames avatar on 2026-03-26. Taken date not stated (same basis as opponent Komatireddy, uploaded 2026/01).",
   "identityEvidence": "img alt \"Tish James\" in the intro section of her campaign site jamesforny.com (\"Paid for by James for NY 2026\"); same photo as her verified X avatar",
@@ -2767,7 +2843,7 @@
   "pageUrl": "https://sarithafornewyork.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Saritha Komatireddy campaign site",
+  "attribution": "Photo: Saritha Komatireddy's campaign site",
   "photoYear": 2026,
   "verified": "200 image/jpeg 671x895; og:image and bio photo on her campaign home page (uploaded 2026/01)",
   "checkedDate": "2026-10-30"
@@ -2812,7 +2888,7 @@
   "pageUrl": "https://www.erikbottcher.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Erik Bottcher campaign site",
+  "attribution": "Photo: Erik Bottcher's campaign site",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "hero image of his campaign site erikbottcher.com (logo \"Erik Bottcher, Democrat for State Senate, for New York City\"); viewed: same person as his earlier photos",
@@ -2837,7 +2913,7 @@
   "pageUrl": "https://charlotte4nysenate.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Charlotte Friedman campaign site",
+  "attribution": "Photo: Charlotte Friedman's campaign site",
   "photoYear": 2026,
   "verified": "200 image/jpeg 1956x2560; og:image and lead portrait on her campaign home page headed \"Charlotte Friedman: Putting New York First\" (uploaded 2026/03)",
   "checkedDate": "2026-10-30"
@@ -2868,7 +2944,7 @@
   "pageUrl": "https://www.alinabonsell.com/meetalina",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Alina Bonsell campaign site",
+  "attribution": "Photo: Alina Bonsell's campaign site",
   "verified": "200 image/png 800x1120; main portrait on her campaign Meet Alina page, next to \"Why I'm running\"",
   "note": "Wix resize of the 3571x4999 original (~11 MB) 09be39_88cdf523efee45fe9d94ae9a4d44b8a0~mv2.png. Cut-out portrait on a white background.",
   "checkedDate": "2026-10-30"
@@ -2880,7 +2956,7 @@
   "pageUrl": "https://nyassembly.gov/mem/Tony-Simone",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: New York State Assembly official page",
+  "attribution": "Photo: Tony Simone's official page",
   "photoYear": 2023,
   "photoYearBasis": "upload date: Last-Modified 2023-01-01 (hst=1672577505), when his term began; taken date not stated",
   "identityEvidence": "img alt \"Assemblymember Tony Simone\" on his official Assembly member page",
@@ -2898,7 +2974,8 @@
    "photoYear": 2024,
    "why": "MTA agency press photo"
   },
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "New York State Assembly"
  },
  "cristina-fontanelli": {
   "name": "Cristina Fontanelli",
@@ -2907,7 +2984,7 @@
   "pageUrl": "https://www.cristinafontanelli4ny.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Cristina Fontanelli campaign site",
+  "attribution": "Photo: Cristina Fontanelli's campaign site",
   "verified": "200 image/jpeg 800x1100; main portrait on her campaign home page, beside her running statement signed \"- Cristina\"",
   "note": "Wix resize. Skipped another photo on the same page whose file name says \"ny post float\" (possibly a newspaper photo).",
   "checkedDate": "2026-10-30"
@@ -2919,10 +2996,11 @@
   "pageUrl": "https://www.nycourts.gov/courts/AD1/JusticesOfTheCourt/Justice_Scarpulla.shtml",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Appellate Division, First Department official page",
+  "attribution": "Photo: Saliann Scarpulla's official page",
   "verified": "200 image/jpeg via Internet Archive capture 20260110 of the official image; alt \"Justice Scarpulla's photo\" on the official First Department justice bio page",
   "note": "Official image URL https://www.nycourts.gov/courts/AD1/images/judgeScarpulla.jpg returns 403 (Cloudflare bot challenge) to non-browser clients from this server, so photoUrl points to the Internet Archive copy of that same official file; swap in the live URL if it loads in a browser. No campaign website found (Branch/BallotReady list none). Small landscape image (299x169).",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "Appellate Division, First Department"
  },
  "kathleen-waterman-marshall": {
   "name": "Kathleen Waterman-Marshall",
@@ -2961,10 +3039,11 @@
   "pageUrl": "https://www.nycourts.gov/courts/AD1/JusticesOfTheCourt/Justice_Mendez.shtml",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Appellate Division, First Department official page",
+  "attribution": "Photo: Manuel J. Mendez's official page",
   "verified": "200 image/jpeg via Internet Archive capture 20260110 of the official image; alt \"Justice Mendez's photo\" on the official First Department justice bio page",
   "note": "Official image URL https://www.nycourts.gov/courts/AD1/images/mendezphoto.jpg returns 403 (Cloudflare bot challenge) to non-browser clients from this server, so photoUrl points to the Internet Archive copy of that same official file; swap in the live URL if it loads in a browser. No campaign website found (Branch/BallotReady list none). 480x640.",
-  "checkedDate": "2026-10-30"
+  "checkedDate": "2026-10-30",
+  "officialPageOwner": "Appellate Division, First Department"
  },
  "hasa-a-kingo": {
   "name": "Hasa A. Kingo",
@@ -3051,7 +3130,8 @@
    "web search for a campaign site (name + office + 2026)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Working Families Party placeholder nominee; no campaign site. (Employer staff pages are not an allowed source.)"
+  "note": "Working Families Party placeholder nominee; no campaign site. (Employer staff pages are not an allowed source.)",
+  "qa12": "QA12 recheck 2026-10-30: still none. amNY describes him as a Working Families Party placeholder nominee with no campaign; no campaign site or own profile found."
  },
  "jeffrey-w-rizzo": {
   "name": "Jeffrey W. Rizzo",
@@ -3064,7 +3144,8 @@
    "web search for a campaign site (name + office + 2026)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Working Families Party nominee; no campaign site. His law firm bio (newyorkcriminalrecordsealed.com/about-us/jeffrey-rizzo/) may have a photo, but a firm page is not one of the allowed sources, so not used."
+  "note": "Working Families Party nominee; no campaign site. His law firm bio (newyorkcriminalrecordsealed.com/about-us/jeffrey-rizzo/) may have a photo, but a firm page is not one of the allowed sources, so not used.",
+  "qa12": "QA12 recheck 2026-10-30: still none. Working Families Party placeholder nominee (amNY); no campaign site or own profile found. The law firm bio is not an allowed source."
  },
  "rita-mella": {
   "name": "Rita Mella",
@@ -3078,7 +3159,8 @@
    "nycourts.gov New York County Surrogate's Court page (no photo)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Unopposed incumbent; no campaign site found."
+  "note": "Unopposed incumbent; no campaign site found.",
+  "qa12": "QA12 recheck 2026-10-30: still none. Her committee \"Re-Elect Surrogate Mella\" exists, but no campaign site or own social profile was found (guessed domains do not resolve). nycourts.gov blocks scripted requests with a Cloudflare check (403) and the web.archive.org captures of its Surrogate's Court pages show no photo of her."
  },
  "josh-e-hanshaft": {
   "name": "Josh E. Hanshaft",
@@ -3107,7 +3189,8 @@
    "nycourts.gov (no public judge photo page for this court)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "Incumbent; no campaign site found."
+  "note": "Incumbent; no campaign site found.",
+  "qa12": "QA12 recheck 2026-10-30: still none. No campaign site or own profile found; the LinkedIn hits are Dominican Bar Association posts (not hers). nycourts.gov blocks scripted requests (403)."
  },
  "vlad-frants": {
   "name": "Vlad Frants",
@@ -3116,7 +3199,7 @@
   "pageUrl": "https://www.vladfrantsforcivilcourt.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Vlad Frants campaign site",
+  "attribution": "Photo: Vlad Frants's campaign site",
   "verified": "200 image/jpeg 2384x3040; alt \"Vlad Frants\" on his campaign home page",
   "note": "Large file (~1.9 MB).",
   "checkedDate": "2026-10-30"
@@ -3124,17 +3207,29 @@
  "steven-benathen": {
   "name": "Steven Benathen",
   "raceId": "ny-civil-3md-ny",
-  "status": "no headshot found",
-  "sourcesChecked": [
-   "Wikimedia Commons file search (intitle:\"Steven Benathen\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)",
-   "nycourts.gov: https://ww2.nycourts.gov/copyright/index.shtml states content is copyrighted, all rights reserved — official court photos not acceptable",
-   "web search for a campaign site (name + office + 2026)",
-   "nycourts.gov (no public judge photo page for this court)",
-   "LinkedIn profile exists but photo not publicly retrievable"
-  ],
-  "checkedDate": "2026-10-30",
-  "note": "No campaign site found. (University of Illinois faculty profile is not an allowed source.)"
+  "photoUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEDu5tO7Pd9DQ/profile-displayphoto-scale_200_200/B4EZt_INjRKMAg-/0/1767364423177?e=2147483647&v=beta&t=rEK6G9_N6wT7BU97JfQ66iyB-qGFPftcjQEZUzlQDUM",
+  "localFile": "/workspace/townhall/civic/photos_local/steven-benathen.jpg",
+  "pageUrl": "https://www.linkedin.com/in/steve-benathen-9b5765242",
+  "sourceType": "own social profile",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Steven Benathen's own LinkedIn profile",
+  "photoYear": null,
+  "photoYearBasis": "not stated; the LinkedIn image id has an upload time of 2026-01-02 (UTC), so the photo is from then or earlier",
+  "identityEvidence": "LinkedIn profile \"Steve Benathen\", New York State Unified Court System, law clerk to the judge presiding over Bronx County felony cases, University of Illinois College of Law. This matches the candidate's attorney-registration listing",
+  "verified": "200 image/jpeg 200x200 (GET, 2026-10-30 ~06:10 CT)",
+  "urlNote": "signed LinkedIn CDN URL (t= token); it could stop working, so a local copy is saved as localFile",
+  "cropNote": "real solo photo, already head and shoulders (law books behind); 200x200, low resolution",
+  "alsoChecked": "no campaign site found in QA12 searches; guessed domains do not resolve",
+  "replaced": {
+   "photoUrl": null,
+   "pageUrl": null,
+   "attribution": null,
+   "sourceType": null,
+   "license": null,
+   "photoYear": null,
+   "why": "QA12: no photo before; own LinkedIn profile"
+  },
+  "checkedDate": "2026-10-30"
  },
  "jennifer-frankola-crawford": {
   "name": "Jennifer Frankola-Crawford",
@@ -3148,21 +3243,36 @@
    "nycourts.gov (no public judge photo page for this court)"
   ],
   "checkedDate": "2026-10-30",
-  "note": "No campaign site found."
+  "note": "No campaign site found.",
+  "qa12": "QA12 recheck 2026-10-30: no photo used, because her identity is not confirmed: the profile does not mention the campaign. Lead only: own LinkedIn profile linkedin.com/in/jennifer-frankola-crawford-b0a07911 (NYC-area attorney with a distinctive name; solo headshot uploaded 2018-02-04). Also checked: her committee donation page secure.anedot.com/frankola-crawford-for-civil-court/donate has no photo; no campaign site found; guessed domains do not resolve."
  },
  "brian-j-krist": {
   "name": "Brian J. Krist",
   "raceId": "ny-civil-9md-ny",
-  "status": "no headshot found",
-  "sourcesChecked": [
-   "Wikimedia Commons file search (intitle:\"Brian J. Krist\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)",
-   "nycourts.gov: https://ww2.nycourts.gov/copyright/index.shtml states content is copyrighted, all rights reserved — official court photos not acceptable",
-   "web search for a campaign site (name + office + 2026)",
-   "nycourts.gov (no public judge photo page for this court)"
-  ],
+  "photoUrl": "https://www.regents.nysed.gov/sites/regents/files/Krist%20Headshot_0.jpg",
+  "localFile": "/workspace/townhall/civic/photos_local/brian-j-krist.jpg",
+  "pageUrl": "https://www.regents.nysed.gov/member/krist-brian",
+  "sourceType": "official page",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Brian J. Krist's official page",
+  "photoYear": 2025,
+  "photoYearBasis": "EXIF DateTimeOriginal 2025-03-11 in the file",
+  "identityEvidence": "img alt \"Regent Brian Krist\" on his Board of Regents member page. The bio says \"Regent Krist currently serves as a principal court attorney in the New York State Unified Court System\" and that he was \"born and raised on the East Side of Manhattan\". This matches the candidate: his ballot address is 450 E 63 St, and By The People identifies the candidate as a Regent.",
+  "verified": "200 image/jpeg 5921x4575, 1,584,691 bytes (GET, 2026-10-30 ~06:10 CT), certificate checks off (see urlNote); the 150x180 page thumbnail .../styles/bio/public/Krist%20Headshot_0.jpg?itok=iNfUINtS also returned 200 image/jpeg",
+  "urlNote": "regents.nysed.gov does not send its full TLS certificate chain, so strict clients (curl with the default CA bundle) fail to connect, and the GET above was made with certificate checks off. Browsers usually complete the chain. A local copy (resized to 1200x927) is saved as localFile. The original is 1.5 MB.",
+  "cropNote": "real solo studio headshot (navy suit, blue tie, black background); landscape, so crop to head and shoulders from the centre",
+  "alsoChecked": "no campaign site found in QA12 searches",
+  "replaced": {
+   "photoUrl": null,
+   "pageUrl": null,
+   "attribution": null,
+   "sourceType": null,
+   "license": null,
+   "photoYear": null,
+   "why": "QA12: no photo before; official page of his current office (NYS Regent)"
+  },
   "checkedDate": "2026-10-30",
-  "note": "No campaign site found."
+  "officialPageOwner": "NYS Board of Regents"
  },
  "carl-wilson": {
   "name": "Carl Wilson",
@@ -3171,7 +3281,7 @@
   "pageUrl": "https://www.carlwilsonnyc.com/",
   "sourceType": "campaign site",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Carl Wilson campaign site",
+  "attribution": "Photo: Carl Wilson's campaign site",
   "photoYear": null,
   "photoYearBasis": "not stated",
   "identityEvidence": "hero image of his campaign site carlwilsonnyc.com (\"Re-elect Carl Wilson for City Council\"); viewed: same person as the earlier MTA photo",
@@ -3195,16 +3305,28 @@
  "haris-bhatti": {
   "name": "Haris Bhatti",
   "raceId": "nyc-council-3",
-  "status": "no headshot found",
-  "sourcesChecked": [
-   "Wikimedia Commons file search (intitle:\"Haris Bhatti\") and full-text search — no free-licensed photo identifiable as this person",
-   "Wikidata entity search — no matching item with an image (P18)",
-   "web search for a campaign site (name + office + 2026)",
-   "harisfornewyork.com (home and About pages)",
-   "X @harisbhatti and @HarisForNewYork (default avatars)"
-  ],
-  "checkedDate": "2026-10-30",
-  "note": "Campaign site exists but its only photos of him are an older group award photo with Michael Bloomberg and an event photo, not a headshot."
+  "photoUrl": "https://harisfornewyork.com/wp-content/uploads/elementor/thumbs/home-1b-rtfhkocf5bhfsnfl0ttwbav944fhg4rcjhgrfg7kvi.jpg",
+  "localFile": "/workspace/townhall/civic/photos_local/haris-bhatti.jpg",
+  "pageUrl": "https://harisfornewyork.com/about/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Haris Bhatti's campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated. The certificate he holds reads \"2008 Dr. Howard A. Stark College Scholar\", and Michael Bloomberg was mayor until 2013, so the photo is probably from about 2008; not proven, so left out of the age check",
+  "identityEvidence": "award photo on the home and About pages of his campaign site harisfornewyork.com; the certificate he holds reads \"Haris Bhatti\" (The Hundred Year Association of New York). In the full photo he stands between Michael Bloomberg and a woman; the crop shows only him",
+  "verified": "200 image/jpeg 725x875 (uncropped full photo) (GET, 2026-10-30 ~06:50 CT); last-modified 2026-09-15",
+  "cropNote": "CROP REQUIRED: the photoUrl image shows 3+ people. Use the crop box (left 330, top 80, right 600, bottom 420) on the 725x875 image, giving 270x340 px. Checked by eye: only Bhatti (head, collar, tie, shoulders) is in the crop, with no part of the other people. The crop is saved as localFile. Certificate in frame is dated 2008; photo may be ~2008; low resolution (270x340)",
+  "urlNote": "Elementor-generated thumbnail URL; it may change if the site is rebuilt, so the crop is saved as localFile",
+  "replaced": {
+   "photoUrl": null,
+   "pageUrl": null,
+   "attribution": null,
+   "sourceType": null,
+   "license": null,
+   "photoYear": null,
+   "why": "QA13: no photo before; crop of his campaign-site award photo, allowed by QA13 when only he is in the head-and-shoulders frame"
+  },
+  "checkedDate": "2026-10-30"
  },
  "adrienne-e-adams": {
   "name": "Adrienne E. Adams",
@@ -3213,7 +3335,7 @@
   "pageUrl": "https://x.com/AdrienneEAdams",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Adrienne E. Adams own social profile",
+  "attribution": "Photo: Adrienne E. Adams's own X profile",
   "verified": "200 image/jpeg 400x400; profile photo of @AdrienneEAdams (display name \"Adrienne E. Adams\", bio \"Running with @KathyHochul for NYLG\")",
   "note": "Running mate on ticket kathy-c-hochul-adrienne-e-adams (Lt. Governor). Campaign site kathyhochul.com Meet Adrienne section has only candid event photos; her former Council page (council.nyc.gov/adrienne-adams/) returned 504 and District 28 now belongs to her successor; adrienneforthepeople.com is a hijacked gambling domain. Profile photos can change; X profile image URLs rotate when she updates it.",
   "checkedDate": "2026-10-30",
@@ -3229,11 +3351,12 @@
   "pageUrl": "https://www.madisoncounty.ny.gov/1707/About-the-Sheriffs-Office",
   "sourceType": "official page",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Madison County Sheriff official page",
+  "attribution": "Photo: Todd Hood's official page",
   "verified": "200 image/jpeg 1733x2600; alt \"Sheriff Todd Hood\" on the Madison County Sheriff About page",
   "note": "Running mate on ticket bruce-a-blakeman-todd-hood (Lt. Governor). Campaign site (blakemanfornewyork.com) has only a podium/speech photo of him (TODD.avif), not a headshot, so the official sheriff headshot is used. Uniform portrait; year not stated.",
   "checkedDate": "2026-10-30",
   "ticketId": "bruce-a-blakeman-todd-hood",
-  "role": "running mate"
+  "role": "running mate",
+  "officialPageOwner": "Madison County Sheriff"
  }
 }

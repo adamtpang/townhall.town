@@ -117,12 +117,12 @@ describe("Civic qa_fixes7", () => {
     expect((STANCES as any).stances["shirley-n-weber"].infrastructure).toEqual({ value: null, status: "No public statement found" });
     expect((QY as any).years["shirley-n-weber.infrastructure"]).toBeUndefined();
   });
-  it("#3 NY notes stay short (<=197) and keep TENTATIVE", () => {
-    for (const [id, n] of Object.entries((NYN as any).byRace)) { expect((n as string).length, id).toBeLessThanOrEqual(197); expect(n as string).toMatch(/TENTATIVE/); }
+  it("#3 NY notes stay short (<=200, Civic qa13 restores \"printed 9/11/2026\") and keep TENTATIVE", () => {
+    for (const [id, n] of Object.entries((NYN as any).byRace)) { expect((n as string).length, id).toBeLessThanOrEqual(200); expect(n as string).toMatch(/TENTATIVE/); }
     const b = ballotFor("10001")!;
-    for (const r of b.races.filter((r: any) => r.appliesNote)) { expect((r as any).appliesNote.length, r.id).toBeLessThanOrEqual(197); }
+    for (const r of b.races.filter((r: any) => r.appliesNote)) { expect((r as any).appliesNote.length, r.id).toBeLessThanOrEqual(200); }
   });
   it("#4 Commons credits without a named photographer say so", () => {
-    for (const id of ["james-talarico", "trevor-hale", "vikki-goodwin"]) expect(((photos as any).hotlinked[id] ?? (photos as any).selfHosted[id])?.credit, id).toMatch(/^Wikimedia Commons user /);
+    for (const id of ["james-talarico", "trevor-hale", "jon-rosenthal"]) /* qa13: Goodwin now has her campaign headshot */ expect(((photos as any).hotlinked[id] ?? (photos as any).selfHosted[id])?.credit, id).toMatch(/^Wikimedia Commons user /);
   });
 });
