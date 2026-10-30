@@ -13,7 +13,9 @@ import { cardPath } from "../lib/card.mjs";
 import { gradesForRace } from "../lib/grades.mjs";
 import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
-import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl, earlySingleDay } from "../lib/endscreen.mjs";
+import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../lib/endscreen.mjs";
+import { electionFirst, planEventUrl, topRaceTitles } from "../lib/gcal";
+import type { Mk } from "./RaceTiers";
 
 type Cand = RowCand & { ballotpedia?: string | null };
 type RaceLite = { id: string; title?: string; level?: string; judicial?: "ny" | "tx" | "ca" | boolean; candidates: Cand[] };
@@ -23,15 +25,20 @@ const ext = <span className="sr-only"> (opens in a new tab)</span>;
 
 
 /** The 90-second path ends here: Who / Where / When, one primary action each. Data only from sourced files. */
-export default function EndScreen({ zip, races, answers, ids, answered }: { zip: string; races: RaceLite[]; answers: Answers; ids: string[]; answered: number }) {
+export default function EndScreen({ zip, races, answers, ids, answered, market }: { zip: string; races: RaceLite[]; answers: Answers; ids: string[]; answered: number; market?: (id: string) => Mk }) {
   const today = todayCT();
   const when = useMemo(() => whenFor(zip, today), [zip, today]);
   const where = useMemo(() => whereFor(zip, today), [zip, today]);
   const site = where.sites[0];
   const ed = when.events.find((e: { kind: string }) => e.kind === "election");
   const early = when.events.find((e: { kind: string }) => e.kind === "early");
+  // Google Calendar (primary): Election Day uses the Election Day site list, early voting today's list. Race names only.
+  const edWhere = useMemo(() => whereFor(zip, ed?.start ?? today), [zip, ed, today]);
+  const topRaces = useMemo(() => topRaceTitles(races as never, market), [races, market]);
+  const gcalEd = ed ? planEventUrl({ e: ed, zip, site: edWhere.sites[0], lookupUrl: edWhere.lookupUrl, dependsOnAddress: edWhere.dependsOnAddress, topRaces }) : null;
+  const gcalEarly = early ? planEventUrl({ e: early, zip, site, lookupUrl: where.lookupUrl, dependsOnAddress: where.dependsOnAddress, topRaces }) : null;
   function downloadIcs() {
-    const blob = new Blob([buildIcs(when.events, site ? site.address : "")], { type: "text/calendar;charset=utf-8" });
+    const blob = new Blob([buildIcs(electionFirst(when.events), site ? site.address : "")], { type: "text/calendar;charset=utf-8" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob); a.download = "townhall-dates.ics";
     document.body.appendChild(a); a.click(); a.remove();
@@ -155,12 +162,12 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
           </ul>
           {ed && (
             <>
-              <Button onClick={() => window.open(gcalUrl(ed, site ? site.address : ""), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-gcal-url={gcalUrl(ed, site ? site.address : "")}>
+              <Button onClick={() => window.open(gcalEd!, "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-gcal-url={gcalEd}>
                 Add to Google Calendar ↗{ext}
               </Button>
               <div className="mt-2 flex flex-col items-start gap-0 text-sm" data-cal-links>
-                <button type="button" onClick={downloadIcs} className="inline-flex min-h-11 items-center text-[#3760F2] hover:underline" data-ics>Download .ics (Apple, Outlook)</button>
-                {early && <a href={gcalUrl(early, site ? site.address : "")} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2] hover:underline" data-gcal-early>Early voting to Google ↗{ext}</a>}
+                {early && <a href={gcalEarly!} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2] hover:underline" data-gcal-early>Early voting to Google ↗{ext}</a>}
+                <button type="button" onClick={downloadIcs} className="inline-flex min-h-11 items-center text-black/60 underline decoration-black/20 underline-offset-2 hover:text-black" data-ics>or download .ics</button>
                 <a href={ed.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm text-[#3760F2]" data-dates-source>Dates source ↗{ext}</a>
               </div>
             </>
