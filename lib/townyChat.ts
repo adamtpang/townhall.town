@@ -56,6 +56,7 @@ export const zipsIn = (text: string) => (String(text).match(/\b\d{5}\b/g) || [])
 // says which ZIP Towny shows and where to look up the voter's own ballot. Same pattern for all 3 cities.
 // Civic review a853221: the Austin line names ZIPs, not the city, since some 787xx ZIPs (Lakeway, Bee Cave, West Lake Hills) are outside Austin.
 import { OFFICES, SF_DOE, pollingLinks, type FaqLink } from "./towny/faq";
+import { hostLabel } from "./sourceName";
 export const SAME_CITY: Record<"78701" | "94103" | "10001", { reply: string; links: FaqLink[] }> = {
   "10001": { reply: "Towny shows the ballot for ZIP 10001 in Manhattan. Other parts of New York City have different races on their ballots. For yours, check vote.nyc.", links: [{ label: "vote.nyc", url: OFFICES["10001"].url }] },
   "78701": { reply: "Towny shows the ballot for ZIP 78701 in downtown Austin. Ballots in other ZIPs have different races. For yours, check your county election office or vote.gov.", links: [VOTE_GOV] },
@@ -132,7 +133,7 @@ export const host = (u: string) => { try { return new URL(u).hostname.replace(/^
 /** QA 8f78579 P1 (Oct 30, 3:05 PM CT): a source link shows its hostname, unless another link in the same reply has that
  *  host (SF's polling place lookup and Voter Portal share one host). Then each shows its own label from the data. */
 export function linkText(l: { url: string; label: string }, all: { url: string }[]): string {
-  return all.filter((x) => host(x.url) === host(l.url)).length > 1 ? l.label : host(l.url);
+  return all.filter((x) => host(x.url) === host(l.url)).length > 1 ? l.label : hostLabel(l.url);
 }
 
 /** QA pre-pass 6b2ae5c P2: one link per hostname (the first one wins, so the official office link stays first).

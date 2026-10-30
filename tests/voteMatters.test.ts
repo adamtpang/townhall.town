@@ -12,7 +12,8 @@ describe("voteMatters", () => {
   it("78701: registered non-voters from the one official reconciliation, no cross-source number", () => {
     const v = voteMatters("78701")!;
     expect(v.stayedHome).toBe(338768);
-    expect(v.text).toBe("338,768 of 925,858 registered Travis County voters had no ballot counted in Nov 2024.");
+    expect(v.text).toBe("587,090 of 925,858 registered Travis County voters cast a ballot that was counted in Nov 2024 (63.4%).");
+    expect(v.text).not.toMatch(/did not vote|no ballot counted/);
     expect(v.sources[0].title).toBe("925,858 registered minus 587,090 ballots counted (Travis County Clerk, G24 reconciliation)");
     expect(JSON.stringify(v)).not.toMatch(/359,?292|eligible adults|censusreporter/);
     expect(v.sources[0].url).toBe("https://votetravis.gov/wp-content/uploads/G24-Final-Reconciliation_Updated.pdf");

@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="service-doc" type="text/html" href="/developers" />
         <link rel="api-catalog" href="/.well-known/api-catalog" />
       </head>
-      <body className="font-sans text-[#010101] antialiased">{children}</body>
+      <body className="font-sans text-[#010101] antialiased"><a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:min-h-11 focus:px-4 focus:inline-flex focus:items-center bg-ink text-white text-sm"><span className="[:root[lang=es]_&]:hidden">Skip to content</span><span lang="es" className="hidden [:root[lang=es]_&]:inline">Saltar al contenido</span></a>{children}</body>
     </html>
   );
 }

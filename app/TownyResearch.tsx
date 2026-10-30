@@ -1,9 +1,10 @@
 "use client";
 import { useRef, useState } from "react";
+import { hostLabel } from "../lib/sourceName";
 
 type Step = { name: string; url: string; label: string; status: "running" | "done" | "failed"; detail?: string };
 type Cite = { name: string; quote: string; url: string; ownSite?: boolean };
-const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+const host = (u: string) => hostLabel(u);
 /** QA P2 (9dfe90d): every quote says where it came from: the candidate's own site, or the outlet that quoted them. */
 export const sourceLabel = (c: { url: string; ownSite?: boolean }) => (c.ownSite ? "(from their own site)" : `(quoted on ${host(c.url)})`);
 

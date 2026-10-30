@@ -100,7 +100,7 @@ export function whenWhere(zip: string | null, today = todayCT()): { a: string; l
   let early = ` ${UNSURE_DATE}`;
   if (ev?.end) early = ev.end < today ? ` Early voting ended ${longDate(ev.end)}.` : ev.end === today ? ` Early voting ends today, ${longDate(ev.end)}.` : ` Early voting runs through ${longDate(ev.end)}.`;
   const links = [office];
-  if (ev?.sourceUrl && ev.sourceUrl !== office.url) links.push({ label: "Early voting source", url: ev.sourceUrl });
+  if (ev?.sourceUrl && ev.sourceUrl !== office.url) links.push({ label: zip === "94103" ? "SF Department of Elections" : "Early voting source", url: ev.sourceUrl }); // QA 297e948 P2
   return { a: `${ed}${early} For hours and polling places, check ${zip === "94103" ? "the " : ""}${OFFICE_NAMES[zip]}.`, links };
 }
 

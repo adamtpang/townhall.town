@@ -13,7 +13,8 @@
    "page": "https://alexforalld6.com/",
    "via": "campaign site",
    "width": 1800,
-   "height": 1500
+   "height": 1500,
+   "file256": "/portraits/alex-behrend-256.webp"
   },
   "alida-fisher": {
    "name": "alida-fisher",
@@ -42,7 +43,8 @@
    "page": "https://www.alinabonsell.com/meetalina",
    "via": "campaign site",
    "width": 800,
-   "height": 1120
+   "height": 1120,
+   "file256": "/portraits/alina-bonsell-256.webp"
   },
   "allison-bush": {
    "name": "allison-bush",
@@ -54,7 +56,8 @@
    "page": "https://www.allisonfortx.com/",
    "via": "campaign site",
    "width": 1150,
-   "height": 1289
+   "height": 1289,
+   "file256": "/portraits/allison-bush-256.webp"
   },
   "amy-clark-meachum": {
    "name": "amy-clark-meachum",
@@ -66,7 +69,8 @@
    "page": "https://www.traviscountytx.gov/courts/civil/district/201",
    "via": "official page",
    "width": 621,
-   "height": 550
+   "height": 550,
+   "file256": "/portraits/amy-clark-meachum-256.webp"
   },
   "andy-brown": {
    "name": "andy-brown",
@@ -90,7 +94,8 @@
    "page": "https://www.anthonycristo.com/",
    "via": "campaign site",
    "width": 1280,
-   "height": 1894
+   "height": 1894,
+   "file256": "/portraits/anthony-cristo-256.webp"
   },
   "april-farris": {
    "name": "april-farris",
@@ -102,7 +107,8 @@
    "page": "https://justiceaprilfarris.com/",
    "via": "campaign site",
    "width": 1377,
-   "height": 1377
+   "height": 1377,
+   "file256": "/portraits/april-farris-256.webp"
   },
   "arshia-papari": {
    "name": "arshia-papari",
@@ -114,7 +120,8 @@
    "page": "https://www.arshiafortexas.org/",
    "via": "campaign site",
    "width": 340,
-   "height": 340
+   "height": 340,
+   "file256": "/portraits/arshia-papari-256.webp"
   },
   "arthur-dibianca": {
    "name": "arthur-dibianca",
@@ -126,7 +133,8 @@
    "page": "https://www.votedibianca.com/",
    "via": "campaign site",
    "width": 1280,
-   "height": 1894
+   "height": 1894,
+   "file256": "/portraits/arthur-dibianca-256.webp"
   },
   "audra-riley": {
    "name": "audra-riley",
@@ -138,7 +146,8 @@
    "page": "https://www.judgeaudrariley.com/",
    "via": "campaign site",
    "width": 1311,
-   "height": 1696
+   "height": 1696,
+   "file256": "/portraits/audra-riley-256.webp"
   },
   "austin-r-kelly": {
    "name": "austin-r-kelly",
@@ -150,7 +159,8 @@
    "page": "https://www.kellyfortx.com/",
    "via": "campaign site",
    "width": 490,
-   "height": 612
+   "height": 612,
+   "file256": "/portraits/austin-r-kelly-256.webp"
   },
   "autumn-brown-garibay": {
    "name": "autumn-brown-garibay",
@@ -162,7 +172,8 @@
    "page": "https://www.autumnforschoolboard.com/",
    "via": "campaign site",
    "width": 750,
-   "height": 1294
+   "height": 1294,
+   "file256": "/portraits/autumn-brown-garibay-256.webp"
   },
   "ben-allen": {
    "name": "ben-allen",
@@ -174,7 +185,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/ben-allen-256.webp"
   },
   "benjamin-flores": {
    "name": "benjamin-flores",
@@ -203,7 +215,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/county/cc3",
    "via": "official page",
    "width": 618,
-   "height": 892
+   "height": 892,
+   "file256": "/portraits/bianca-garcia-256.webp"
   },
   "bo-french": {
    "name": "bo-french",
@@ -220,7 +233,8 @@
     0.3,
     0.18,
     2
-   ]
+   ],
+   "file256": "/portraits/bo-french-256.webp"
   },
   "brandy-mueller": {
    "name": "brandy-mueller",
@@ -232,7 +246,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/district/403",
    "via": "official page",
    "width": 270,
-   "height": 395
+   "height": 395,
+   "file256": "/portraits/brandy-mueller-256.webp"
   },
   "brett-busby": {
    "name": "brett-busby",
@@ -244,7 +259,8 @@
    "page": "https://brettbusby.com/",
    "via": "campaign site",
    "width": 768,
-   "height": 899
+   "height": 899,
+   "file256": "/portraits/brett-busby-256.webp"
   },
   "brian-j-krist": {
    "name": "brian-j-krist",
@@ -256,7 +272,8 @@
    "page": "https://www.regents.nysed.gov/member/krist-brian",
    "via": "official page",
    "width": 1200,
-   "height": 927
+   "height": 927,
+   "file256": "/portraits/brian-j-krist-256.webp"
   },
   "brian-pena": {
    "name": "brian-pena",
@@ -268,7 +285,8 @@
    "page": "https://demsfortcad.com/",
    "via": "campaign site",
    "width": 1056,
-   "height": 992
+   "height": 992,
+   "file256": "/portraits/brian-pena-256.webp"
   },
   "bruce-a-blakeman-todd-hood": {
    "name": "bruce-a-blakeman-todd-hood",
@@ -280,7 +298,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Blakeman_Profile_Picture.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 578
+   "height": 578,
+   "file256": "/portraits/bruce-a-blakeman-todd-hood-256.webp"
   },
   "bunny-mcfadden": {
    "name": "bunny-mcfadden",
@@ -292,7 +311,8 @@
    "page": "https://www.ourcitycollege.com/bunny-mcfadden",
    "via": "campaign site",
    "width": 562,
-   "height": 562
+   "height": 562,
+   "file256": "/portraits/bunny-mcfadden-256.webp"
   },
   "caitlin-rourk": {
    "name": "caitlin-rourk",
@@ -304,7 +324,8 @@
    "page": "https://www.caitlinrourk.com/",
    "via": "campaign site",
    "width": 2048,
-   "height": 2379
+   "height": 2379,
+   "file256": "/portraits/caitlin-rourk-256.webp"
   },
   "carl-wilson": {
    "name": "carl-wilson",
@@ -316,7 +337,8 @@
    "page": "https://www.carlwilsonnyc.com/",
    "via": "campaign site",
    "width": 874,
-   "height": 1024
+   "height": 1024,
+   "file256": "/portraits/carl-wilson-256.webp"
   },
   "caroline-shinkle": {
    "name": "caroline-shinkle",
@@ -328,7 +350,8 @@
    "page": "https://carolinefornewyork.com/meet-caroline",
    "via": "campaign site",
    "width": 3350,
-   "height": 3944
+   "height": 3944,
+   "file256": "/portraits/caroline-shinkle-256.webp"
   },
   "catherine-a-mauzy": {
    "name": "catherine-a-mauzy",
@@ -340,7 +363,8 @@
    "page": "https://www.traviscountytx.gov/courts/civil/district/419",
    "via": "official page",
    "width": 270,
-   "height": 395
+   "height": 395,
+   "file256": "/portraits/catherine-a-mauzy-256.webp"
   },
   "chantal-melissa-eldridge": {
    "name": "chantal-melissa-eldridge",
@@ -352,7 +376,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/district/331",
    "via": "official page",
    "width": 270,
-   "height": 395
+   "height": 395,
+   "file256": "/portraits/chantal-melissa-eldridge-256.webp"
   },
   "chari-kelly": {
    "name": "chari-kelly",
@@ -364,7 +389,8 @@
    "page": "https://hkt.texasjudges.com/",
    "via": "campaign site",
    "width": 864,
-   "height": 1062
+   "height": 1062,
+   "file256": "/portraits/chari-kelly-256.webp"
   },
   "charles-a-smiley": {
    "name": "charles-a-smiley",
@@ -376,7 +402,8 @@
    "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/charles-smiley",
    "via": "official page",
    "width": 2400,
-   "height": 2630
+   "height": 2630,
+   "file256": "/portraits/charles-a-smiley-256.webp"
   },
   "charlotte-friedman": {
    "name": "charlotte-friedman",
@@ -388,7 +415,8 @@
    "page": "https://charlotte4nysenate.com/",
    "via": "campaign site",
    "width": 1956,
-   "height": 2560
+   "height": 2560,
+   "file256": "/portraits/charlotte-friedman-256.webp"
   },
   "chris-gober": {
    "name": "chris-gober",
@@ -405,7 +433,8 @@
     0.51,
     0.33,
     2.6
-   ]
+   ],
+   "file256": "/portraits/chris-gober-256.webp"
   },
   "clayton-tucker": {
    "name": "clayton-tucker",
@@ -417,7 +446,8 @@
    "page": "https://www.claytontuckertx.com/about",
    "via": "campaign site",
    "width": 520,
-   "height": 650
+   "height": 650,
+   "file256": "/portraits/clayton-tucker-256.webp"
   },
   "cliff-brown": {
    "name": "cliff-brown",
@@ -429,7 +459,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/district/147",
    "via": "official page",
    "width": 270,
-   "height": 395
+   "height": 395,
+   "file256": "/portraits/cliff-brown-256.webp"
   },
   "connie-chan": {
    "name": "connie-chan",
@@ -441,7 +472,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/connie-chan-256.webp"
   },
   "cory-liu": {
    "name": "cory-liu",
@@ -453,7 +485,8 @@
    "page": "https://www.traviscountytx.gov/courts/civil/district/250",
    "via": "official page",
    "width": 1274,
-   "height": 1586
+   "height": 1586,
+   "file256": "/portraits/cory-liu-256.webp"
   },
   "cristina-fontanelli": {
    "name": "cristina-fontanelli",
@@ -465,7 +498,8 @@
    "page": "https://www.cristinafontanelli4ny.com/",
    "via": "campaign site",
    "width": 800,
-   "height": 1100
+   "height": 1100,
+   "file256": "/portraits/cristina-fontanelli-256.webp"
   },
   "cynthia-soliz": {
    "name": "cynthia-soliz",
@@ -477,7 +511,8 @@
    "page": "https://www.cynthiasolizforaisd.com/",
    "via": "campaign site",
    "width": 5152,
-   "height": 7728
+   "height": 7728,
+   "file256": "/portraits/cynthia-soliz-256.webp"
   },
   "dan-patrick": {
    "name": "dan-patrick",
@@ -489,7 +524,8 @@
    "page": "https://x.com/DanPatrick",
    "via": "own social profile",
    "width": 400,
-   "height": 400
+   "height": 400,
+   "file256": "/portraits/dan-patrick-256.webp"
   },
   "dana-walker": {
    "name": "dana-walker",
@@ -501,7 +537,8 @@
    "page": "https://offices.austincc.edu/board-of-trustees/board-members/dana-walker/",
    "via": "official page",
    "width": 325,
-   "height": 487
+   "height": 487,
+   "file256": "/portraits/dana-walker-256.webp"
   },
   "daniella-deseta-lyttle": {
    "name": "daniella-deseta-lyttle",
@@ -513,7 +550,8 @@
    "page": "https://www.traviscountytx.gov/courts/civil/district/261",
    "via": "official page",
    "width": 5304,
-   "height": 6132
+   "height": 6132,
+   "file256": "/portraits/daniella-deseta-lyttle-256.webp"
   },
   "danny-y-chou": {
    "name": "danny-y-chou",
@@ -525,7 +563,8 @@
    "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/danny-y-chou",
    "via": "official page",
    "width": 1248,
-   "height": 1550
+   "height": 1550,
+   "file256": "/portraits/danny-y-chou-256.webp"
   },
   "darlene-byrne": {
    "name": "darlene-byrne",
@@ -537,7 +576,8 @@
    "page": "https://www.facebook.com/justicedarlenebyrne",
    "via": "own social profile",
    "width": 720,
-   "height": 720
+   "height": 720,
+   "file256": "/portraits/darlene-byrne-256.webp"
   },
   "darshini-patel": {
    "name": "darshini-patel",
@@ -549,7 +589,8 @@
    "page": "https://votedarshini.com/about/",
    "via": "campaign site",
    "width": 3600,
-   "height": 2401
+   "height": 2401,
+   "file256": "/portraits/darshini-patel-256.webp"
   },
   "dave-thadani": {
    "name": "dave-thadani",
@@ -561,7 +602,8 @@
    "page": "https://x.com/DaveforAustin",
    "via": "own social profile",
    "width": 400,
-   "height": 400
+   "height": 400,
+   "file256": "/portraits/dave-thadani-256.webp"
   },
   "dawn-buckingham": {
    "name": "dawn-buckingham",
@@ -578,7 +620,8 @@
     0.513,
     0.22,
     2.4
-   ]
+   ],
+   "file256": "/portraits/dawn-buckingham-256.webp"
   },
   "denise-hernandez": {
    "name": "denise-hernandez",
@@ -590,7 +633,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/county/cc6",
    "via": "official page",
    "width": 2160,
-   "height": 3238
+   "height": 3238,
+   "file256": "/portraits/denise-hernandez-256.webp"
   },
   "dimple-malhotra": {
    "name": "dimple-malhotra",
@@ -602,7 +646,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/county/cc4",
    "via": "official page",
    "width": 270,
-   "height": 395
+   "height": 395,
+   "file256": "/portraits/dimple-malhotra-256.webp"
   },
   "dionjay-dj-brookter": {
    "name": "dionjay-dj-brookter",
@@ -614,7 +659,8 @@
    "page": "https://www.facebook.com/dionjay.brookter/",
    "via": "own social profile",
    "width": 720,
-   "height": 720
+   "height": 720,
+   "file256": "/portraits/dionjay-dj-brookter-256.webp"
   },
   "dolores-ortega-carter": {
    "name": "dolores-ortega-carter",
@@ -638,7 +684,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 670
+   "height": 670,
+   "file256": "/portraits/don-huffines-256.webp"
   },
   "donald-p-don-wagner": {
    "name": "donald-p-don-wagner",
@@ -650,7 +697,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg",
    "via": "Wikimedia Commons",
    "width": 460,
-   "height": 710
+   "height": 710,
+   "file256": "/portraits/donald-p-don-wagner-256.webp"
   },
   "dyana-limon-mercado": {
    "name": "dyana-limon-mercado",
@@ -674,7 +722,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/eleni-kounalakis-256.webp"
   },
   "elijah-ball": {
    "name": "elijah-ball",
@@ -703,7 +752,8 @@
    "page": "https://elisabethearle.org/aboutelisabeth/",
    "via": "campaign site",
    "width": 819,
-   "height": 1024
+   "height": 1024,
+   "file256": "/portraits/elisabeth-earle-256.webp"
   },
   "emanuel-manny-yekutiel": {
    "name": "emanuel-manny-yekutiel",
@@ -715,7 +765,8 @@
    "page": "https://www.mannyforsf.com/",
    "via": "campaign site",
    "width": 750,
-   "height": 490
+   "height": 490,
+   "file256": "/portraits/emanuel-manny-yekutiel-256.webp"
   },
   "erik-d-bottcher": {
    "name": "erik-d-bottcher",
@@ -727,7 +778,8 @@
    "page": "https://www.erikbottcher.com/",
    "via": "campaign site",
    "width": 2048,
-   "height": 1624
+   "height": 1624,
+   "file256": "/portraits/erik-d-bottcher-256.webp"
   },
   "erwin-tam": {
    "name": "erwin-tam",
@@ -756,7 +808,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Fiona_Ma_2026_Treasurer_portrait_(cropped).png",
    "via": "Wikimedia Commons",
    "width": 279,
-   "height": 333
+   "height": 333,
+   "file256": "/portraits/fiona-ma-256.webp"
   },
   "gabriel-padilla": {
    "name": "gabriel-padilla",
@@ -768,7 +821,8 @@
    "page": "https://www.traviscountytx.gov/constables/4",
    "via": "official page",
    "width": 629,
-   "height": 943
+   "height": 943,
+   "file256": "/portraits/gabriel-padilla-256.webp"
   },
   "gary-mccoy": {
    "name": "gary-mccoy",
@@ -780,7 +834,8 @@
    "page": "https://www.garymccoysf.com/",
    "via": "campaign site",
    "width": 750,
-   "height": 1000
+   "height": 1000,
+   "file256": "/portraits/gary-mccoy-256.webp"
   },
   "george-morales-iii": {
    "name": "george-morales-iii",
@@ -792,7 +847,8 @@
    "page": "https://www.traviscountytx.gov/commissioners-court/precinct-four",
    "via": "official page",
    "width": 880,
-   "height": 1099
+   "height": 1099,
+   "file256": "/portraits/george-morales-iii-256.webp"
   },
   "gigi-edwards-bryant": {
    "name": "gigi-edwards-bryant",
@@ -804,7 +860,8 @@
    "page": "https://offices.austincc.edu/board-of-trustees/board-members/gigi-edwards-bryant/",
    "via": "official page",
    "width": 1024,
-   "height": 1024
+   "height": 1024,
+   "file256": "/portraits/gigi-edwards-bryant-256.webp"
   },
   "gina-hinojosa": {
    "name": "gina-hinojosa",
@@ -816,7 +873,8 @@
    "page": "https://ginafortexas.com/",
    "via": "campaign site",
    "width": 495,
-   "height": 610
+   "height": 610,
+   "file256": "/portraits/gina-hinojosa-256.webp"
   },
   "gisela-d-triana": {
    "name": "gisela-d-triana",
@@ -828,7 +886,8 @@
    "page": "https://www.justicetriana.com/",
    "via": "campaign site",
    "width": 636,
-   "height": 785
+   "height": 785,
+   "file256": "/portraits/gisela-d-triana-256.webp"
   },
   "gloria-gonzales-dholakia": {
    "name": "gloria-gonzales-dholakia",
@@ -840,7 +899,8 @@
    "page": "https://www.gloriaforacc.com/",
    "via": "campaign site",
    "width": 2500,
-   "height": 1786
+   "height": 1786,
+   "file256": "/portraits/gloria-gonzales-dholakia-256.webp"
   },
   "gloria-romero": {
    "name": "gloria-romero",
@@ -881,7 +941,8 @@
     0.5,
     0.3,
     1.15
-   ]
+   ],
+   "file256": "/portraits/greg-abbott-256.webp"
   },
   "greg-casar": {
    "name": "greg-casar",
@@ -893,7 +954,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 668
+   "height": 668,
+   "file256": "/portraits/greg-casar-256.webp"
   },
   "guy-herman": {
    "name": "guy-herman",
@@ -917,7 +979,8 @@
    "page": "https://www.herbmorgan.com/",
    "via": "campaign site",
    "width": 800,
-   "height": 1200
+   "height": 1200,
+   "file256": "/portraits/herb-w-morgan-256.webp"
   },
   "holly-taylor": {
    "name": "holly-taylor",
@@ -929,7 +992,8 @@
    "page": "https://www.hollytforjudge.com",
    "via": "campaign site",
    "width": 1527,
-   "height": 2100
+   "height": 2100,
+   "file256": "/portraits/holly-taylor-256.webp"
   },
   "ioana-petrou": {
    "name": "ioana-petrou",
@@ -953,7 +1017,8 @@
    "page": "https://www.jreppler.com/",
    "via": "campaign site",
    "width": 800,
-   "height": 800
+   "height": 800,
+   "file256": "/portraits/j-r-eppler-256.webp"
   },
   "james-p-sullivan": {
    "name": "james-p-sullivan",
@@ -965,7 +1030,8 @@
    "page": "https://x.com/JudgeSullyTX",
    "via": "own social profile",
    "width": 400,
-   "height": 400
+   "height": 400,
+   "file256": "/portraits/james-p-sullivan-256.webp"
   },
   "james-talarico": {
    "name": "james-talarico",
@@ -977,7 +1043,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 636
+   "height": 636,
+   "file256": "/portraits/james-talarico-256.webp"
   },
   "jane-kim": {
    "name": "jane-kim",
@@ -989,7 +1056,8 @@
    "page": "https://www.janekim.org/MeetJane",
    "via": "campaign site",
    "width": 800,
-   "height": 1001
+   "height": 1001,
+   "file256": "/portraits/jane-kim-256.webp"
   },
   "jennifer-hawks": {
    "name": "jennifer-hawks",
@@ -1001,7 +1069,8 @@
    "page": "https://hawksforus.com/",
    "via": "campaign site",
    "width": 1272,
-   "height": 1908
+   "height": 1908,
+   "file256": "/portraits/jennifer-hawks-256.webp"
   },
   "jeremy-lee": {
    "name": "jeremy-lee",
@@ -1013,7 +1082,8 @@
    "page": "https://jeremyleesf.com/",
    "via": "campaign site",
    "width": 1024,
-   "height": 683
+   "height": 683,
+   "file256": "/portraits/jeremy-lee-256.webp"
   },
   "jerry-zimmerer": {
    "name": "jerry-zimmerer",
@@ -1025,7 +1095,8 @@
    "page": "https://jerryzimmerer.com/",
    "via": "campaign site",
    "width": 660,
-   "height": 1040
+   "height": 1040,
+   "file256": "/portraits/jerry-zimmerer-256.webp"
   },
   "jessica-martinez": {
    "name": "jessica-martinez",
@@ -1054,7 +1125,8 @@
    "page": "https://www.jimmyblacklock.com/",
    "via": "campaign site",
    "width": 969,
-   "height": 895
+   "height": 895,
+   "file256": "/portraits/jimmy-blacklock-256.webp"
   },
   "joaquin-torres": {
    "name": "joaquin-torres",
@@ -1066,7 +1138,8 @@
    "page": "https://www.sf.gov/profile--joaquin-torres",
    "via": "official page",
    "width": 2060,
-   "height": 1596
+   "height": 1596,
+   "file256": "/portraits/joaquin-torres-256.webp"
   },
   "john-messinger": {
    "name": "john-messinger",
@@ -1083,7 +1156,8 @@
     0.36,
     0.37,
     2.2
-   ]
+   ],
+   "file256": "/portraits/john-messinger-256.webp"
   },
   "john-pimentel": {
    "name": "john-pimentel",
@@ -1095,7 +1169,8 @@
    "page": "https://johnpimentel.com/",
    "via": "campaign site",
    "width": 750,
-   "height": 1015
+   "height": 1015,
+   "file256": "/portraits/john-pimentel-256.webp"
   },
   "jon-rosenthal": {
    "name": "jon-rosenthal",
@@ -1107,7 +1182,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 750
+   "height": 750,
+   "file256": "/portraits/jon-rosenthal-256.webp"
   },
   "joseph-hernandez": {
    "name": "joseph-hernandez",
@@ -1119,7 +1195,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Joseph_Hernandez.png",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 500
+   "height": 500,
+   "file256": "/portraits/joseph-hernandez-256.webp"
   },
   "joshua-groban": {
    "name": "joshua-groban",
@@ -1131,7 +1208,8 @@
    "page": "https://supreme.courts.ca.gov/about-court/justices-court/associate-justice-joshua-p-groban",
    "via": "official page",
    "width": 1024,
-   "height": 683
+   "height": 683,
+   "file256": "/portraits/joshua-groban-256.webp"
   },
   "kai-huang": {
    "name": "kai-huang",
@@ -1148,7 +1226,8 @@
     0.47,
     0.35,
     1.3
-   ]
+   ],
+   "file256": "/portraits/kai-huang-256.webp"
   },
   "karen-ortiz": {
    "name": "karen-ortiz",
@@ -1160,7 +1239,8 @@
    "page": "https://ko4congress.com/",
    "via": "campaign site",
    "width": 1644,
-   "height": 2182
+   "height": 2182,
+   "file256": "/portraits/karen-ortiz-256.webp"
   },
   "karen-r-sage": {
    "name": "karen-r-sage",
@@ -1172,7 +1252,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/district/299",
    "via": "official page",
    "width": 270,
-   "height": 395
+   "height": 395,
+   "file256": "/portraits/karen-r-sage-256.webp"
   },
   "kathleen-m-banke": {
    "name": "kathleen-m-banke",
@@ -1201,7 +1282,8 @@
     0.62,
     0.32,
     2.2
-   ]
+   ],
+   "file256": "/portraits/kathy-c-hochul-adrienne-e-adams-256.webp"
   },
   "katie-kam": {
    "name": "katie-kam",
@@ -1213,7 +1295,8 @@
    "page": "https://www.katiekamforaustin.com/",
    "via": "campaign site",
    "width": 2414,
-   "height": 2282
+   "height": 2282,
+   "file256": "/portraits/katie-kam-256.webp"
   },
   "kelli-m-evans": {
    "name": "kelli-m-evans",
@@ -1225,7 +1308,8 @@
    "page": "https://supreme.courts.ca.gov/about-court/justices-court/justice-kelli-m-evans",
    "via": "official page",
    "width": 322,
-   "height": 480
+   "height": 480,
+   "file256": "/portraits/kelli-m-evans-256.webp"
   },
   "ken-paxton": {
    "name": "ken-paxton",
@@ -1237,7 +1321,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/ken-paxton-256.webp"
   },
   "kennon-lily-wooten": {
    "name": "kennon-lily-wooten",
@@ -1249,7 +1334,8 @@
    "page": "https://www.kennonlilywooten.com/",
    "via": "campaign site",
    "width": 864,
-   "height": 691
+   "height": 691,
+   "file256": "/portraits/kennon-lily-wooten-256.webp"
   },
   "kevin-mccormick": {
    "name": "kevin-mccormick",
@@ -1261,7 +1347,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/kevin-mccormick-256.webp"
   },
   "kevin-patrick-yeary": {
    "name": "kevin-patrick-yeary",
@@ -1273,7 +1360,8 @@
    "page": "https://x.com/JudgeYeary",
    "via": "own social profile",
    "width": 400,
-   "height": 400
+   "height": 400,
+   "file256": "/portraits/kevin-patrick-yeary-256.webp"
   },
   "kristen-hawkins": {
    "name": "kristen-hawkins",
@@ -1285,7 +1373,8 @@
    "page": "https://hkt.texasjudges.com/",
    "via": "campaign site",
    "width": 864,
-   "height": 1062
+   "height": 1062,
+   "file256": "/portraits/kristen-hawkins-256.webp"
   },
   "kyle-hawkins": {
    "name": "kyle-hawkins",
@@ -1297,7 +1386,8 @@
    "page": "https://justicekylehawkins.com/",
    "via": "campaign site",
    "width": 800,
-   "height": 745
+   "height": 745,
+   "file256": "/portraits/kyle-hawkins-256.webp"
   },
   "laurance-lee": {
    "name": "laurance-lee",
@@ -1314,7 +1404,8 @@
     0.34,
     0.33,
     2.6
-   ]
+   ],
+   "file256": "/portraits/laurance-lee-256.webp"
   },
   "lauren-b-pena": {
    "name": "lauren-b-pena",
@@ -1326,7 +1417,8 @@
    "page": "https://lauren4congress.com/",
    "via": "campaign site",
    "width": 1319,
-   "height": 1312
+   "height": 1312,
+   "file256": "/portraits/lauren-b-pena-256.webp"
   },
   "laurie-eiserloh": {
    "name": "laurie-eiserloh",
@@ -1338,7 +1430,8 @@
    "page": "https://www.traviscountytx.gov/courts/civil/district/455th-civil-district-court",
    "via": "official page",
    "width": 1100,
-   "height": 1649
+   "height": 1649,
+   "file256": "/portraits/laurie-eiserloh-256.webp"
   },
   "leah-lacroix": {
    "name": "leah-lacroix",
@@ -1350,7 +1443,8 @@
    "page": "https://www.ourcitycollege.com/leah-lacroix",
    "via": "campaign site",
    "width": 750,
-   "height": 1125
+   "height": 1125,
+   "file256": "/portraits/leah-lacroix-256.webp"
   },
   "leslie-dippel": {
    "name": "leslie-dippel",
@@ -1362,7 +1456,8 @@
    "page": "https://www.lesliedippel.com/",
    "via": "campaign site",
    "width": 2048,
-   "height": 1536
+   "height": 1536,
+   "file256": "/portraits/leslie-dippel-256.webp"
   },
   "letitia-a-james": {
    "name": "letitia-a-james",
@@ -1379,7 +1474,8 @@
     0.5,
     0.15,
     1.3
-   ]
+   ],
+   "file256": "/portraits/letitia-a-james-256.webp"
   },
   "liz-krueger": {
    "name": "liz-krueger",
@@ -1391,7 +1487,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:(03-04-19)_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol,_Albany_NY_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 571
+   "height": 571,
+   "file256": "/portraits/liz-krueger-256.webp"
   },
   "maggie-ellis": {
    "name": "maggie-ellis",
@@ -1403,7 +1500,8 @@
    "page": "https://www.maggieforjustice.com/",
    "via": "campaign site",
    "width": 2500,
-   "height": 2500
+   "height": 2500,
+   "file256": "/portraits/maggie-ellis-256.webp"
   },
   "malia-m-cohen": {
    "name": "malia-m-cohen",
@@ -1415,7 +1513,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg",
    "via": "Wikimedia Commons",
    "width": 280,
-   "height": 280
+   "height": 280,
+   "file256": "/portraits/malia-m-cohen-256.webp"
   },
   "manohar-raju": {
    "name": "manohar-raju",
@@ -1427,7 +1526,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Manohar-Raju-SF-Public-Defender-headshot.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 500
+   "height": 500,
+   "file256": "/portraits/manohar-raju-256.webp"
   },
   "manuel-j-mendez": {
    "name": "manuel-j-mendez",
@@ -1439,7 +1539,8 @@
    "page": "https://www.nycourts.gov/courts/AD1/JusticesOfTheCourt/Justice_Mendez.shtml",
    "via": "official page",
    "width": 480,
-   "height": 640
+   "height": 640,
+   "file256": "/portraits/manuel-j-mendez-256.webp"
   },
   "manuel-noris-barrera": {
    "name": "manuel-noris-barrera",
@@ -1451,7 +1552,8 @@
    "page": "https://www.facebook.com/p/Manuel-Noris-Barrera-Assembly-District-17-61552978635595/",
    "via": "own social profile",
    "width": 720,
-   "height": 720
+   "height": 720,
+   "file256": "/portraits/manuel-noris-barrera-256.webp"
   },
   "marc-m-meyer": {
    "name": "marc-m-meyer",
@@ -1468,7 +1570,8 @@
     0.45,
     0.3,
     1.1
-   ]
+   ],
+   "file256": "/portraits/marc-m-meyer-256.webp"
   },
   "maria-luisa-lulu-flores": {
    "name": "maria-luisa-lulu-flores",
@@ -1492,7 +1595,8 @@
    "page": "https://www.facebook.com/markashlibertarian",
    "via": "own social profile",
    "width": 450,
-   "height": 600
+   "height": 600,
+   "file256": "/portraits/mark-ash-256.webp"
   },
   "mark-simons": {
    "name": "mark-simons",
@@ -1516,7 +1620,8 @@
    "page": "https://www.traviscountytx.gov/courts/criminal/county/cc5",
    "via": "official page",
    "width": 270,
-   "height": 395
+   "height": 395,
+   "file256": "/portraits/mary-ann-espiritu-256.webp"
   },
   "matt-dorsey": {
    "name": "matt-dorsey",
@@ -1528,7 +1633,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Matt_Dorsey,_2022.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/matt-dorsey-256.webp"
   },
   "matt-haney": {
    "name": "matt-haney",
@@ -1540,7 +1646,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Matt_Haney,_2022.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/matt-haney-256.webp"
   },
   "maya-guerra-gamble": {
    "name": "maya-guerra-gamble",
@@ -1552,7 +1659,8 @@
    "page": "https://www.traviscountytx.gov/courts/civil/district/459",
    "via": "official page",
    "width": 640,
-   "height": 960
+   "height": 960,
+   "file256": "/portraits/maya-guerra-gamble-256.webp"
   },
   "mayes-middleton": {
    "name": "mayes-middleton",
@@ -1564,7 +1672,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 679
+   "height": 679,
+   "file256": "/portraits/mayes-middleton-256.webp"
   },
   "mica-arellano": {
    "name": "mica-arellano",
@@ -1576,7 +1685,8 @@
    "page": "https://micatx.com/",
    "via": "campaign site",
    "width": 1399,
-   "height": 1650
+   "height": 1650,
+   "file256": "/portraits/mica-arellano-256.webp"
   },
   "micah-c-lasher": {
    "name": "micah-c-lasher",
@@ -1588,7 +1698,8 @@
    "page": "https://micahlasher.com/",
    "via": "campaign site",
    "width": 1024,
-   "height": 1024
+   "height": 1024,
+   "file256": "/portraits/micah-c-lasher-256.webp"
   },
   "michael-e-gates": {
    "name": "michael-e-gates",
@@ -1600,7 +1711,8 @@
    "page": "https://www.gates4ag.com/",
    "via": "campaign site",
    "width": 480,
-   "height": 600
+   "height": 600,
+   "file256": "/portraits/michael-e-gates-256.webp"
   },
   "michael-t-nguyen": {
    "name": "michael-t-nguyen",
@@ -1612,7 +1724,8 @@
    "page": "https://www.michaelnguyen4sf.com/",
    "via": "campaign site",
    "width": 750,
-   "height": 500
+   "height": 500,
+   "file256": "/portraits/michael-t-nguyen-256.webp"
   },
   "mike-trouble-lin": {
    "name": "mike-trouble-lin",
@@ -1641,7 +1754,8 @@
    "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/monique-langhorne-wilson",
    "via": "official page",
    "width": 853,
-   "height": 1024
+   "height": 1024,
+   "file256": "/portraits/monique-langhorne-wilson-256.webp"
   },
   "monroe-lace": {
    "name": "monroe-lace",
@@ -1653,7 +1767,8 @@
    "page": "https://www.monroelace.org/",
    "via": "campaign site",
    "width": 750,
-   "height": 525
+   "height": 525,
+   "file256": "/portraits/monroe-lace-256.webp"
   },
   "montserrat-garibay": {
    "name": "montserrat-garibay",
@@ -1665,7 +1780,8 @@
    "page": "https://www.montserratfortexas.com/about",
    "via": "campaign site",
    "width": 1163,
-   "height": 1520
+   "height": 1520,
+   "file256": "/portraits/montserrat-garibay-256.webp"
   },
   "nan-mcraven": {
    "name": "nan-mcraven",
@@ -1677,7 +1793,8 @@
    "page": "https://offices.austincc.edu/board-of-trustees/board-members/dr-nan-mcraven/",
    "via": "official page",
    "width": 325,
-   "height": 488
+   "height": 488,
+   "file256": "/portraits/nan-mcraven-256.webp"
   },
   "nate-sheets": {
    "name": "nate-sheets",
@@ -1701,7 +1818,8 @@
    "page": "https://x.com/NathanForTexas",
    "via": "own social profile",
    "width": 400,
-   "height": 400
+   "height": 400,
+   "file256": "/portraits/nathan-johnson-256.webp"
   },
   "neill-snider": {
    "name": "neill-snider",
@@ -1713,7 +1831,8 @@
    "page": "https://www.voteneillsnider.com/",
    "via": "campaign site",
    "width": 433,
-   "height": 640
+   "height": 640,
+   "file256": "/portraits/neill-snider-256.webp"
   },
   "okey-anyiam": {
    "name": "okey-anyiam",
@@ -1725,7 +1844,8 @@
    "page": "https://okeyanyiamforjudge.com/",
    "via": "campaign site",
    "width": 2048,
-   "height": 2560
+   "height": 2560,
+   "file256": "/portraits/okey-anyiam-256.webp"
   },
   "pamela-mathai": {
    "name": "pamela-mathai",
@@ -1737,7 +1857,8 @@
    "page": "https://www.pamelaforaisd.com/",
    "via": "campaign site",
    "width": 2500,
-   "height": 3750
+   "height": 3750,
+   "file256": "/portraits/pamela-mathai-256.webp"
   },
   "pat-dixon": {
    "name": "pat-dixon",
@@ -1749,7 +1870,8 @@
    "page": "https://patdixon.org/about-pat-dixon/",
    "via": "campaign site",
    "width": 512,
-   "height": 768
+   "height": 768,
+   "file256": "/portraits/pat-dixon-256.webp"
   },
   "pearci-pj-bastiany-iii": {
    "name": "pearci-pj-bastiany-iii",
@@ -1773,7 +1895,8 @@
    "page": "https://www.philkim.org/",
    "via": "campaign site",
    "width": 750,
-   "height": 719
+   "height": 719,
+   "file256": "/portraits/phil-kim-256.webp"
   },
   "raul-arturo-gonzalez": {
    "name": "raul-arturo-gonzalez",
@@ -1797,7 +1920,8 @@
    "page": "https://www.reinaforschoolboard.org/about",
    "via": "campaign site",
    "width": 1280,
-   "height": 1920
+   "height": 1920,
+   "file256": "/portraits/reina-tello-256.webp"
   },
   "rich-heyman": {
    "name": "rich-heyman",
@@ -1809,7 +1933,8 @@
    "page": "https://www.richforaustin.org/",
    "via": "campaign site",
    "width": 2500,
-   "height": 2500
+   "height": 2500,
+   "file256": "/portraits/rich-heyman-256.webp"
   },
   "richard-barrera": {
    "name": "richard-barrera",
@@ -1821,7 +1946,8 @@
    "page": "https://www.barreraforedu.com/mediaresources",
    "via": "campaign site",
    "width": 500,
-   "height": 749
+   "height": 749,
+   "file256": "/portraits/richard-barrera-256.webp"
   },
   "rob-bonta": {
    "name": "rob-bonta",
@@ -1833,7 +1959,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 634
+   "height": 634,
+   "file256": "/portraits/rob-bonta-256.webp"
   },
   "ruth-ferguson": {
    "name": "ruth-ferguson",
@@ -1845,7 +1972,8 @@
    "page": "https://ruthferguson.com/",
    "via": "campaign site",
    "width": 683,
-   "height": 1024
+   "height": 1024,
+   "file256": "/portraits/ruth-ferguson-256.webp"
   },
   "ryan-hazelton": {
    "name": "ryan-hazelton",
@@ -1857,7 +1985,8 @@
    "page": "https://www.ryanforsfschools.com/communitywork",
    "via": "campaign site",
    "width": 750,
-   "height": 1000
+   "height": 1000,
+   "file256": "/portraits/ryan-hazelton-256.webp"
   },
   "saliann-scarpulla": {
    "name": "saliann-scarpulla",
@@ -1881,7 +2010,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Sally_Lieber_Square.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 520
+   "height": 520,
+   "file256": "/portraits/sally-j-lieber-256.webp"
   },
   "sarah-eckhardt": {
    "name": "sarah-eckhardt",
@@ -1893,7 +2023,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 502
+   "height": 502,
+   "file256": "/portraits/sarah-eckhardt-256.webp"
   },
   "saritha-komatireddy": {
    "name": "saritha-komatireddy",
@@ -1905,7 +2036,8 @@
    "page": "https://sarithafornewyork.com/",
    "via": "campaign site",
    "width": 671,
-   "height": 895
+   "height": 895,
+   "file256": "/portraits/saritha-komatireddy-256.webp"
   },
   "scott-brister": {
    "name": "scott-brister",
@@ -1917,7 +2049,8 @@
    "page": "https://justicescottbrister.com/",
    "via": "campaign site",
    "width": 2048,
-   "height": 1480
+   "height": 1480,
+   "file256": "/portraits/scott-brister-256.webp"
   },
   "scott-k-field": {
    "name": "scott-k-field",
@@ -1946,7 +2079,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 667
+   "height": 667,
+   "file256": "/portraits/scott-wiener-256.webp"
   },
   "shawn-m-richard": {
    "name": "shawn-m-richard",
@@ -1958,7 +2092,8 @@
    "page": "https://www.shawnmrichard4d10.com/",
    "via": "campaign site",
    "width": 1284,
-   "height": 1027
+   "height": 1027,
+   "file256": "/portraits/shawn-m-richard-256.webp"
   },
   "shehla-faizi": {
    "name": "shehla-faizi",
@@ -1970,7 +2105,8 @@
    "page": "https://www.faizifortexas.com/",
    "via": "campaign site",
    "width": 1536,
-   "height": 2048
+   "height": 2048,
+   "file256": "/portraits/shehla-faizi-256.webp"
   },
   "shirley-n-weber": {
    "name": "shirley-n-weber",
@@ -1982,7 +2118,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 625
+   "height": 625,
+   "file256": "/portraits/shirley-n-weber-256.webp"
   },
   "skyler-a-korgel": {
    "name": "skyler-a-korgel",
@@ -1994,7 +2131,8 @@
    "page": "https://demsfortcad.com/",
    "via": "campaign site",
    "width": 3000,
-   "height": 3000
+   "height": 3000,
+   "file256": "/portraits/skyler-a-korgel-256.webp"
   },
   "sonja-shaw": {
    "name": "sonja-shaw",
@@ -2006,7 +2144,8 @@
    "page": "https://www.shawforca.com/",
    "via": "campaign site",
    "width": 800,
-   "height": 1200
+   "height": 1200,
+   "file256": "/portraits/sonja-shaw-256.webp"
   },
   "steve-hilton": {
    "name": "steve-hilton",
@@ -2018,7 +2157,8 @@
    "page": "https://stevehiltonforgovernor.com/meet-steve",
    "via": "campaign site",
    "width": 900,
-   "height": 1125
+   "height": 1125,
+   "file256": "/portraits/steve-hilton-256.webp"
   },
   "steven-benathen": {
    "name": "steven-benathen",
@@ -2042,7 +2182,8 @@
    "page": "https://www.traviscountytx.gov/justices-of-peace/jp5",
    "via": "official page",
    "width": 4392,
-   "height": 2891
+   "height": 2891,
+   "file256": "/portraits/tanisa-jeffers-256.webp"
   },
   "tara-m-desautels": {
    "name": "tara-m-desautels",
@@ -2054,7 +2195,8 @@
    "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/tara-m-desautels",
    "via": "official page",
    "width": 1494,
-   "height": 1821
+   "height": 1821,
+   "file256": "/portraits/tara-m-desautels-256.webp"
   },
   "ted-brown": {
    "name": "ted-brown",
@@ -2066,7 +2208,8 @@
    "page": "https://tedbrown.org/website/",
    "via": "campaign site",
    "width": 410,
-   "height": 410
+   "height": 410,
+   "file256": "/portraits/ted-brown-256.webp"
   },
   "theo-ellington": {
    "name": "theo-ellington",
@@ -2078,7 +2221,8 @@
    "page": "https://www.theoellington.com/",
    "via": "campaign site",
    "width": 2000,
-   "height": 1064
+   "height": 1064,
+   "file256": "/portraits/theo-ellington-256.webp"
   },
   "therese-m-stewart": {
    "name": "therese-m-stewart",
@@ -2102,7 +2246,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:TPD%27s_Headshot_(cropped).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 603
+   "height": 603,
+   "file256": "/portraits/thomas-p-dinapoli-256.webp"
   },
   "thomas-smith": {
    "name": "thomas-smith",
@@ -2114,7 +2259,8 @@
    "page": "https://x.com/smithfortx",
    "via": "own social profile",
    "width": 400,
-   "height": 400
+   "height": 400,
+   "file256": "/portraits/thomas-smith-256.webp"
   },
   "tim-tung": {
    "name": "tim-tung",
@@ -2126,7 +2272,8 @@
    "page": "https://www.timtung.com/about",
    "via": "campaign site",
    "width": 2455,
-   "height": 1652
+   "height": 1652,
+   "file256": "/portraits/tim-tung-256.webp"
   },
   "todd-wong": {
    "name": "todd-wong",
@@ -2138,7 +2285,8 @@
    "page": "https://www.traviscountytx.gov/courts/civil/county/cc1",
    "via": "official page",
    "width": 270,
-   "height": 405
+   "height": 405,
+   "file256": "/portraits/todd-wong-256.webp"
   },
   "tom-baker": {
    "name": "tom-baker",
@@ -2155,7 +2303,8 @@
     0.5,
     0.32,
     1.8
-   ]
+   ],
+   "file256": "/portraits/tom-baker-256.webp"
   },
   "tony-simone": {
    "name": "tony-simone",
@@ -2167,7 +2316,8 @@
    "page": "https://nyassembly.gov/mem/Tony-Simone",
    "via": "official page",
    "width": 1279,
-   "height": 1790
+   "height": 1790,
+   "file256": "/portraits/tony-simone-256.webp"
   },
   "tracie-l-brown": {
    "name": "tracie-l-brown",
@@ -2191,7 +2341,8 @@
    "page": "https://commons.wikimedia.org/wiki/File:Trevor_Hale_(head_shot).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 625
+   "height": 625,
+   "file256": "/portraits/trevor-hale-256.webp"
   },
   "velva-l-price": {
    "name": "velva-l-price",
@@ -2215,7 +2366,8 @@
    "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/victor-rodriguez",
    "via": "official page",
    "width": 2400,
-   "height": 3000
+   "height": 3000,
+   "file256": "/portraits/victor-a-rodriguez-256.webp"
   },
   "vikki-goodwin": {
    "name": "vikki-goodwin",
@@ -2227,7 +2379,8 @@
    "page": "https://www.vikkigoodwin.com/",
    "via": "campaign site",
    "width": 660,
-   "height": 660
+   "height": 660,
+   "file256": "/portraits/vikki-goodwin-256.webp"
   },
   "virginia-cheung": {
    "name": "virginia-cheung",
@@ -2244,7 +2397,8 @@
     0.26,
     0.3,
     1.6
-   ]
+   ],
+   "file256": "/portraits/virginia-cheung-256.webp"
   },
   "vlad-frants": {
    "name": "vlad-frants",
@@ -2256,7 +2410,8 @@
    "page": "https://www.vladfrantsforcivilcourt.com/",
    "via": "campaign site",
    "width": 2384,
-   "height": 3040
+   "height": 3040,
+   "file256": "/portraits/vlad-frants-256.webp"
   },
   "wilneida-negron": {
    "name": "wilneida-negron",
@@ -2268,7 +2423,8 @@
    "page": "https://www.wilneidany12.com/about-wilneida",
    "via": "campaign site",
    "width": 434,
-   "height": 430
+   "height": 430,
+   "file256": "/portraits/wilneida-negron-256.webp"
   },
   "xavier-becerra": {
    "name": "xavier-becerra",
@@ -2285,7 +2441,8 @@
     0.5,
     0.3,
     1.3
-   ]
+   ],
+   "file256": "/portraits/xavier-becerra-256.webp"
   },
   "yvonne-munoz": {
    "name": "yvonne-munoz",
@@ -2297,7 +2454,8 @@
    "page": "https://demsfortcad.com/",
    "via": "campaign site",
    "width": 3000,
-   "height": 2001
+   "height": 2001,
+   "file256": "/portraits/yvonne-munoz-256.webp"
   },
   "zohaib-zo-qadri": {
    "name": "zohaib-zo-qadri",
@@ -2309,7 +2467,8 @@
    "page": "https://www.austintexas.gov/department/district-9",
    "via": "official page",
    "width": 1312,
-   "height": 1168
+   "height": 1168,
+   "file256": "/portraits/zohaib-zo-qadri-256.webp"
   }
  },
  "hotlinked": {},
@@ -2326,7 +2485,8 @@
    "width": 1733,
    "height": 2600,
    "kind": "self",
-   "mateName": "Todd Hood"
+   "mateName": "Todd Hood",
+   "file256": "/portraits/todd-hood-256.webp"
   },
   "kathy-c-hochul-adrienne-e-adams": {
    "name": "adrienne-e-adams",
@@ -2340,7 +2500,8 @@
    "width": 400,
    "height": 400,
    "kind": "self",
-   "mateName": "Adrienne E. Adams"
+   "mateName": "Adrienne E. Adams",
+   "file256": "/portraits/adrienne-e-adams-256.webp"
   }
  },
  "incompleteRaces": [

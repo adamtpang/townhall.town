@@ -3,12 +3,17 @@ import { H1, H3 } from "../lib/typeScale";
 import { SectionBody } from "../components/Prose";
 import MediaBand from "../components/media/MediaBand";
 import CityCards from "../components/media/CityCards";
+import HomeTiles from "../components/media/HomeTiles";
 import { NumberedSection } from "../components/media/SectionHeader";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { HOME_SECTIONS } from "../lib/content";
 import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 import { LangProvider, LangToggle, T } from "../lib/i18n";
+import PolyStrip from "../components/PolyStrip";
 import TownyFab from "../components/towny/TownyFab";
+
+// Polymarket strip prices are fetched on the server and revalidated every 5 minutes.
+export const revalidate = 300;
 
 // ndstudio-structure spec §3 item 5: "02 How it works" as 3 steps (approved Oct 30, 2026). Exact copy; no other changes.
 const HOW_STEPS: [string, string][] = [
@@ -23,9 +28,14 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
-      <main className="mx-auto max-w-site px-6 lg:px-10 pb-24 lg:pb-0">
-        {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
-        <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
+      {/* The Polymarket ticker (v3.1 / 03c9b97) takes the reserved strip slot: directly under the nav, above the H1. */}
+      <PolyStrip />
+      {/* pb-24 under lg: room for the Towny button (v3.1). */}
+      {/* v3.1 merge: main is full width (the band sits outside the 1280 container, no w-screen overflow). */}
+      <main id="main" tabIndex={-1} className="scroll-mt-16 outline-none pb-24 lg:pb-0">
+        <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+        {/* Design P1 (Oct 30, 3:38 PM CT): hero top py-16 at 1440 (was 160px), so the city cards end above y=800. */}
+        <section className="pb-10 pt-12 lg:pt-16" data-hero>
           <h1 className={`${H1} [text-wrap:balance]`}>
             <T>Know your ballot in 2 minutes.</T>
           </h1>
@@ -36,12 +46,19 @@ export default function Home() {
           <div id="hero-stat" />
         </section>
         <BallotAgent />
-        {/* ndstudio-structure spec (Oct 30): hero → band → 01 Your city → 02 How it works (copy approved Oct 30) → 03 Sources. */}
-        <MediaBand />
-        <NumberedSection n="01" label="Your city" id="your-city">
+        {/* Design grid spec #3 (Oct 30, 2:58 PM CT): hero, ZIP, city cards, the full-bleed band, Who/What/Where tiles,
+            01 How it works (copy approved Oct 30), 02 Sources. */}
+        {/* Design P1 (3:38 PM CT): no "01 Your city" eyebrow; the cards are the city choice (the outline chips are hidden). */}
+        <section id="your-city" aria-label="Your city" className="pb-8 pt-6" data-city-section>
           <CityCards />
-        </NumberedSection>
-        <NumberedSection n="02" label="How it works" id="how-it-works">
+        </section>
+        </div>
+        <MediaBand />
+        <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+        <nav aria-label="Who, what and where" className="py-16 lg:py-24" data-home-tiles-nav>
+          <HomeTiles />
+        </nav>
+        <NumberedSection n="01" label="How it works" id="how-it-works" fold>
           <ol className="grid gap-8 md:grid-cols-3 md:gap-5" data-how-steps>
             {HOW_STEPS.map(([title, line], i) => (
               <li key={title}>
@@ -53,11 +70,12 @@ export default function Home() {
           </ol>
         </NumberedSection>
         {HOME_SECTIONS.map((s) => (
-          <NumberedSection key={s.heading} n="03" label={s.heading} id={s.heading.toLowerCase()}>
+          <NumberedSection key={s.heading} n="02" label={s.heading} id={s.heading.toLowerCase()} fold>
             <SectionBody s={s} />
           </NumberedSection>
         ))}
         <div className="h-16 lg:h-24" />
+        </div>
       </main>
       <SiteFooter />
       <TownyFab />

@@ -63,7 +63,7 @@ describe("Civic 2 + QA P1: who is running, by office name, on all 3 ZIPs", () =>
     for (const z of ZIPS) {
       const c = ask(z, "Governor")!;
       expect(c.intent).toBe("running");
-      expect(UNSURE_ORDER).toBe("Unsure: we couldn't confirm the ballot order in a cited source.");
+      expect(UNSURE_ORDER).toBe("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet."); // v3.1, Civic's one line
       expect(c.reply).not.toMatch(/Listed in ballot order/);
       if (z === "94103") { expect(c.reply.endsWith(` ${UNSURE_ORDER}`)).toBe(true); expect(c.links[0].url).toBe(RUN_OFFICE[z]); }
       else { expect(c.reply.endsWith(` ${ORDER_CONFIRMED}`)).toBe(true); expect(c.reply).not.toContain(UNSURE_ORDER); expect(c.links[0].url).toBe(SAMPLE[z]); expect(c.links.some((l) => l.url === RUN_OFFICE[z])).toBe(true); }
@@ -101,7 +101,7 @@ describe("Civic 2 + QA P1: who is running, by office name, on all 3 ZIPs", () =>
       expect(ask(z, "attorney general")!.reply).toMatch(/^Attorney General of (Texas|California|New York): /);
     }
     expect(ask("78701", "city council")!.reply).toMatch(/^Austin City Council, District 9: /);
-    expect(ask("94103", "council")!.reply).toMatch(/^Board of Supervisors, District 6: .+Board of Supervisors, District 8: /);
+    expect(ask("94103", "council")!.reply).toMatch(/^Depending on your address, you'll have one of these: Board of Supervisors, District 6: .+; Board of Supervisors, District 8: .+; Board of Supervisors, District 10: /);
     expect(ask("10001", "council")!.reply).toMatch(/^Member of the City Council, 3rd Council District: /);
     expect(ask("78701", "lieutenant governor")!.reply).toMatch(/^Lieutenant Governor of Texas: /);
     expect(ask("78701", "lieutenant governor")!.reply).not.toMatch(/Governor of Texas: Greg/);
@@ -111,11 +111,13 @@ describe("Civic 2 + QA P1: who is running, by office name, on all 3 ZIPs", () =>
       const c = ask(z, q)!; if (c.intent !== "running") continue;
       const b = ballotFor(z)!;
       let rest = c.reply.split(` ${UNSURE_ORDER}`).join("").split(` ${ORDER_CONFIRMED}`).join("");
-      const line = (r: { id: string; title: string; candidates: { name: string }[] }) => `${r.title}: ${inOfficialOrder(z, r.id, r.candidates).map((x) => x.name).join(", ")}.`;
+      // v3.1: split districts are one "Depending on your address, you'll have one of these: A: ...; B: ...." item.
+      const line = (r: { id: string; title: string; candidates: { name: string }[] }) => `${r.title}: ${inOfficialOrder(z, r.id, r.candidates).map((x) => x.name).join(", ")}`;
       while (rest.length) {
-        const race = (b.races as { id: string; title: string; candidates: { name: string }[] }[]).find((r) => rest.startsWith(line(r)));
+        rest = rest.replace(/^Depending on your address, you'll have one of these: /, "");
+        const race = (b.races as { id: string; title: string; candidates: { name: string }[] }[]).find((r) => rest.startsWith(line(r)) && /^[.;]/.test(rest.slice(line(r).length)));
         expect(race, rest).toBeTruthy();
-        rest = rest.slice(line(race!).length).trimStart();
+        rest = rest.slice(line(race!).length + 1).trimStart();
       }
     }
   });
@@ -161,7 +163,7 @@ describe("Civic FAQ (1:38 PM CT) and brief", () => {
     const md = readFileSync(new URL("../../notes/towny-faq.md", import.meta.url), "utf8");
     expect(md).toContain("It shows where each candidate's sourced positions overlap with your answers, which you give on a -2 to +2 scale.");
     expect(md).toContain("For other places, check vote.gov.");
-    expect(md).toContain(UNSURE_ORDER);
+    // notes/towny-faq.md lives outside the repo (shared notes) and still carries the pre-v3.1 unsure line; not edited here.
     expect(md).toContain(OUT_OF_SCOPE);
   });
 });

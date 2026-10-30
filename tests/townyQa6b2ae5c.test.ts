@@ -3,7 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { curated, BALLOT_ORDER_LINE, asksOrder } from "../lib/towny/answer";
-import { ORDER_CONFIRMED } from "../lib/ballotOrder";
+import { ORDER_CONFIRMED, orderConfirmedScoped } from "../lib/ballotOrder";
 import { faqFor, OFFICES, pollingLinks } from "../lib/towny/faq";
 import { routeTurn, outOfScope, dedupeByHost, OUT_OF_SCOPE } from "../lib/townyChat";
 
@@ -18,19 +18,23 @@ describe("P1-1 ballot order", () => {
     "What position on the ballot is Talarico?", "In what order do the names appear?", "Who's first on the ballot?"];
   // Civic P1 (Oct 30, 2:58 PM CT): per race. 78701 is fully confirmed against the Travis County sample ballot; 10001 has 6
   // confirmed and 7 unsure races; 94103 stays unsure. Office links below are 94103's (10001 keeps vote.nyc after its sample ballot).
-  it("every phrasing, on all 3 ZIPs: per-race order lines from Civic's check, no names for a ZIP-wide question", () => {
+  // v3.1 (Adam, Oct 30 3:24 PM CT, Civic towny_order_check): ZIP-wide answers now name the candidates, say the races are not
+  // in ballot order, and give the confirmed / unsure line per group.
+  it("every phrasing, on all 3 ZIPs: per-race order lines from Civic's check, with candidates named", () => {
     expect(BALLOT_ORDER_LINE).toBe("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.");
     for (const z of ZIPS) for (const q of QS) {
       const c = curated(z, q, "2026-10-30")!;
       expect(c.intent, `${z} ${q}`).toBe("ballot-order");
-      if (z === "78701") { expect(c.reply).toBe(ORDER_CONFIRMED); expect(c.links[0].url).toMatch(/^https:\/\/votetravis\.gov\/.+Ballot.+\.pdf$/); continue; }
-      if (z === "10001") { expect(c.reply).toContain(ORDER_CONFIRMED); expect(c.reply).toContain(BALLOT_ORDER_LINE); expect(c.reply).not.toMatch(/Hochul|Talarico|Bottcher/); expect(c.links.map((l) => l.url)).toContain(OFFICES["10001"].url); continue; }
-      expect(c.reply.split("\n")[0]).toBe(BALLOT_ORDER_LINE);
-      expect(c.reply).toBe(BALLOT_ORDER_LINE);
-      // 94103: SF Department of Elections on sf.gov (Adam, Oct 30 2:08 PM CT); the others reuse OFFICES.
-      expect(c.links).toEqual([z === "94103" ? { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" } : OFFICES[z]]);
+      // QA 297e948 P1: ZIPs with confirmed races open with the scoped confirmed sentence (Civic NO-GO f2a5046 P1); 94103 keeps the old opener.
+      expect(c.reply).toContain(z === "94103" ? "The races are not listed in the order they appear on the ballot." : orderConfirmedScoped(z === "78701" ? 47 : 6));
+      if (z === "78701") { expect(c.reply).toContain(orderConfirmedScoped(47)); expect(c.reply.indexOf(BALLOT_ORDER_LINE)).toBeGreaterThan(c.reply.indexOf(orderConfirmedScoped(47))); expect(c.reply).toContain("Talarico"); expect(c.links[0].url).toMatch(/^https:\/\/votetravis\.gov\/.+Ballot.+\.pdf$/); continue; }
+      if (z === "10001") { expect(c.reply).toContain(orderConfirmedScoped(6)); expect(c.reply).toContain(BALLOT_ORDER_LINE); expect(c.reply).toMatch(/Hochul/); expect(c.reply).toMatch(/Bottcher/); expect(c.links.map((l) => l.url)).toContain(OFFICES["10001"].url); continue; }
+      expect(c.reply).toContain(BALLOT_ORDER_LINE);
+      expect(c.reply).not.toContain(ORDER_CONFIRMED);
+      expect(c.reply).toContain("Becerra");
+      expect(c.links).toContainEqual({ label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" });
     }
-    expect(curated("94103", "What order are candidates on my ballot?")!.links[0].url).toBe("https://www.sf.gov/departments/department-elections");
+    expect(curated("94103", "What order are candidates on my ballot?")!.links.map((l) => l.url)).toContain("https://www.sf.gov/departments/department-elections");
     expect(host(curated("78701", "ballot order")!.links[0].url)).toBe("votetravis.gov");
     expect(curated("10001", "ballot order")!.links.some((l) => l.url === "https://vote.nyc")).toBe(true);
   });
@@ -99,7 +103,8 @@ describe("P1-3 /card and P2 short viewports", () => {
     const page = src("app/card/page.tsx");
     expect(page).toMatch(/import TownyFab from "\.\.\/\.\.\/components\/towny\/TownyFab"/);
     expect(page).toMatch(/<TownyFab zip=\{zip\} \/>/);
-    expect(page).toMatch(/if \(!zip \|\| !b\) redirect\("\/"\)/);
+    // batch1 (Adam 2:58 C): a hidden ZIP like 77002 goes back to /?zip=77002 for the notice; no ZIP goes to "/".
+    expect(page).toMatch(/if \(!zip \|\| !b\) redirect\(zip \? `\/\?zip=\$\{zip\}` : "\/"\)/);
     const fab = src("components/towny/TownyFab.tsx");
     expect(fab).toMatch(/data-towny-fab[\s\S]*print:hidden/);
   });

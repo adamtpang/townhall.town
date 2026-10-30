@@ -126,7 +126,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
       {carry}
       <ol className="space-y-3" aria-live="polite">
         {msgs.map((m, i) => (
-          <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>
+          <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] whitespace-pre-line bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>
             {m.text}
             {m.steps?.length ? (
               <ol className="mt-2 space-y-1 border-l-2 border-brand-700 pl-3 text-sm text-black/60" data-towny-steps>

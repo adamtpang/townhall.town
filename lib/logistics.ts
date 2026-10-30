@@ -2,6 +2,7 @@
 // data/election_dates.json and data/polling_locations.json (Civic, official sources). No hand-written dates or places.
 import datesFile from "../data/election_dates.json";
 import pollingFile from "../data/polling_locations.json";
+import { hostLabel } from "./sourceName";
 
 type Daily = { date?: string; dates?: string; day?: string; hours: string; appliesTo?: string; sourceUrl?: string };
 export type Jurisdiction = {
@@ -38,13 +39,8 @@ export const fmtRange = (a: string, b: string) => {
   const [, mb, db] = parts(b);
   return ma === mb ? `${MON[ma - 1]} ${da}–${db}` : `${fmtDate(a)}–${fmtDate(b)}`;
 };
-export const host = (u: string) => {
-  try {
-    return new URL(u).hostname.replace(/^www\./, "");
-  } catch {
-    return u;
-  }
-};
+// Display label for a source link (Civic P2: the CA certified list is named, not shown as a bare hostname).
+export const host = (u: string) => hostLabel(u);
 
 export type PlanRow = { k: string; title: string; detail?: string[]; sites?: { label: string; list: Site[] }[]; src: string; s: string; past?: boolean };
 

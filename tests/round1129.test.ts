@@ -89,11 +89,11 @@ describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by d
     expect(hosted["alida-fisher"].sourceUrl).not.toMatch(/webm|wikimedia|sfgovtv/i);
     // Civic localFile copies are self-hosted as resized webp; running mates' files are kept under runningMates.
     const mates = Object.values(JSON.parse(src("data/photos.json")).runningMates ?? {}) as { file?: string }[];
-    for (const f of fs.readdirSync("public/portraits")) expect(hosted[f.replace(/-(112|160)\.webp$/, "")] || mates.some((m) => m.file === `/portraits/${f}` || (m as { file112?: string }).file112 === `/portraits/${f}`), f).toBeTruthy();
+    for (const f of fs.readdirSync("public/portraits")) expect(hosted[f.replace(/-(112|160|256)\.webp$/, "")] || mates.some((m) => m.file === `/portraits/${f}` || (m as { file112?: string }).file112 === `/portraits/${f}` || (m as { file256?: string }).file256 === `/portraits/${f}`), f).toBeTruthy();
     // Design p14: nothing is hotlinked any more; every file is listed in the manifest with its source URL and sha256.
     const hot = (JSON.parse(src("data/photos.json")).hotlinked ?? {}) as Record<string, { url: string; page: string; via: string }>;
     expect(Object.keys(hot)).toEqual([]);
-    expect(fs.readdirSync("public/portraits").every((f) => /-(112|160)\.webp$/.test(f))).toBe(true);
+    expect(fs.readdirSync("public/portraits").every((f) => /-(112|160|256)\.webp$/.test(f))).toBe(true);
     for (const [id, x] of Object.entries(hot)) {
       expect(x.url, id).toBe(PB[id].photoUrl);
       expect(x.url).toMatch(/^https:\/\//);
@@ -194,6 +194,9 @@ describe("positions: sources, no-position line, gap-fill batch 2", () => {
           const o = overlapStatus({}, stancesFor(c.name), ids);
           if (o.sourced >= 2) continue;
           const row = rowOf(html, c.name);
+          // Design hard cut C3 (Oct 30 ~3:10 PM CT, /card only): "No public position found yet on other issues." is
+          // dropped where a sourced point already sits above it; the line stays where it is the only statement.
+          if (o.sourced > 0 || /data-point-type="office"/.test(row)) { expect(row, c.name).not.toMatch(/No public position found yet on other issues/); if (sourcesChecked(c.name).length) expect(row).toMatch(/data-checked-source/); shown++; continue; }
           expect(row, c.name).toMatch(/data-no-position/);
           expect(row).toMatch(/No public position found yet/);
           if (sourcesChecked(c.name).length) expect(row).toMatch(/data-checked-source/);
@@ -252,10 +255,10 @@ describe("design p9 / QA 4e15da7 items", () => {
     expect(isPlaceholder("Option A")).toBe(true);
     expect(leaderLine({ ...q, outcomes: [{ name: "Person A", prob: 0.7 }] } as never)).toBeNull();
   });
-  it("P1 tiles (superseded by design p10 P0): flex 1 1 0, min-w-0, max 40/48/56px, one row", () => {
+  it("P1 tiles (superseded by design p10 P0, then Design p10 (Adam 1:11 PM Oct 30: bigger)): grid of n equal columns, min-w-0, max 72/88/112px, one row", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[40px\] md:max-w-\[48px\] lg:max-w-\[56px\]/);
-    expect(s).toMatch(/flex flex-nowrap gap-2 md:gap-3/);
+    expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[120px\] lg:max-w-\[160px\]/); // grid spec #4 (Oct 30)
+    expect(s).toMatch(/flex flex-nowrap \$\{gap\}/); expect(s).toContain('"gap-2 md:gap-3"'); // v3.1 merge: gaps by row size
     expect(s).toMatch(/line-clamp-3 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // QA 94cf301: wrap, up to 3 lines; round 0222: two-line labels at 384
   });
 });

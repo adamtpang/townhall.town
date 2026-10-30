@@ -4,6 +4,7 @@ import { cleanNarration } from "../narration.mjs";
 import { generateText, tool, stepCountIs } from "ai";
 import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../tools";
+import { withOrderLines } from "../towny/ballotOrder";
 import { civicTools } from "../civicTools";
 import { dataTools, getCampaignFinance, getCountyUnemployment } from "../dataTools";
 import { API_VERSION_HEADERS, apiError, isZip, methodNotAllowed, withHeaders } from "../apiError";
@@ -365,7 +366,7 @@ async function run(zip: string, emit: Emit) {
     toolsRunByModel: mode === "live" ? order.filter((n) => !missing.includes(n)) : [],
     narration: SHOW_AGENT_SUMMARY ? (() => { const b = ballotFor(zip) as any; return cleanNarration(narration, zip, b?.races?.length ?? 0, b?.measures?.length ?? 0); })() : "",
     summaryBullets: insight?.bullets ?? [],
-    ballot: ballotFor(zip),
+    ballot: withOrderLines(zip, ballotFor(zip)),
     markets: results.getMarketOdds ?? {},
     generatedAt: new Date().toISOString(),
   });

@@ -39,7 +39,8 @@ describe("P1: the conversation grows at 300% zoom", () => {
 describe("P2: SF hours answer includes the Election Day row from the data", () => {
   it("94103 on Oct 30", () => {
     const r = townyFact("94103", "Where do I vote and what are the early voting hours?", "2026-10-30")!.reply;
-    expect(r).toContain("Hours: Fri, Oct 30 to Mon, Nov 2 (weekdays): 8:00 AM-5:00 PM PT (City Hall Voting Center);");
+    // Civic GO 73ddcbf P1: one place for every early row is named once (Grove Street note dropped).
+    expect(r).toContain("Hours at City Hall Voting Center: Fri, Oct 30 to Mon, Nov 2 (weekdays): 8:00 AM-5:00 PM PT;");
     expect(r.endsWith(" Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT (City Hall Voting Center and all 501 polling places).")).toBe(true);
     const data = JSON.parse(src("data/election_dates.json"));
     expect(data.jurisdictions["94103"].earlyVoting.dailyHours).toContainEqual({ dates: "2026-11-03", hours: "7:00 AM-8:00 PM", appliesTo: "City Hall Voting Center and all 501 polling places" });

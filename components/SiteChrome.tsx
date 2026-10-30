@@ -1,18 +1,23 @@
 import Link from "next/link";
 import { SITE } from "../lib/site";
 
-export function SiteHeader({ extra }: { extra?: React.ReactNode } = {}) {
+// Merge of batch1 03c9b97: batch1's 56/64px header for every page; `compact` (card) is kept as a no-op prop.
+export function SiteHeader({ extra }: { extra?: React.ReactNode; compact?: boolean } = {}) {
   return (
-    <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8 lg:px-10">
-      <Link href="/" className="flex items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
+    // Design premium §1 (Oct 30 2026): sticky full-bleed glass bar (radius 0), the content scrolls under it. Text on it is
+    // ink or black/60, never lighter (>= 4.5:1 at bg-white/75 over any underlay).
+    <div className="glass glass-bar-top sticky top-0 z-40" data-site-header>
+    <header className="mx-auto flex min-h-14 max-w-[1280px] items-center justify-between px-5 py-1.5 md:px-10">
+      <Link href="/" className="flex min-h-11 items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
         <span aria-hidden className="inline-block h-3 w-3 bg-brand-600" />
         townhall.town
       </Link>
       <span className="flex items-center gap-6">
         {extra}
-        <span className="text-sm font-[450] text-black/50">{SITE.electionLabel}</span>
+        <span className="text-sm font-[450] text-ink/60">{SITE.electionLabel}</span>
       </span>
     </header>
+    </div>
   );
 }
 
@@ -30,10 +35,10 @@ const NAV = [
 export function SiteFooter() {
   return (
     <footer className="mt-40 bg-ink text-sm text-white/60" data-site-footer>
-      <div className="mx-auto max-w-site px-6 pb-10 pt-16 lg:px-10">
+      <div className="mx-auto max-w-[1280px] px-5 md:px-10 pb-10 pt-16">
         <span aria-hidden className="mb-6 block h-3 w-3 bg-brand-500" />
-        <p>Nonpartisan. Not a government site. No endorsements.</p>
-        <p className="mt-2" data-photo-notice>Candidate photos: public campaign or official pages. <a href="/contact" className="text-white/80 underline decoration-white/40 underline-offset-2 hover:text-brand-300 hover:decoration-current">Contact us</a> to remove.</p>
+        <p>Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.</p>
+        <p className="mt-2" data-photo-notice>Candidate photos: public campaign or official pages. <a href="/contact" className="inline-flex min-h-11 items-center text-white/80 underline decoration-white/40 underline-offset-2 hover:text-brand-300 hover:decoration-current">Contact us</a> to remove.</p>
         <nav aria-label="Site" className="mt-4 flex flex-wrap gap-x-4 gap-y-3 sm:gap-x-5">
           {NAV.map((n) => (
             <a key={n.href} href={n.href} className="inline-flex min-h-11 items-center text-white/80 no-underline hover:text-brand-300">
@@ -44,7 +49,12 @@ export function SiteFooter() {
         <a href={SITE.github} target="_blank" rel="noreferrer" className="mt-2 inline-flex min-h-11 items-center text-sm text-white/80 no-underline transition-colors duration-300 ease-out motion-reduce:transition-none hover:text-brand-300">
           Add your city on GitHub
         </a>
-        <p aria-hidden className="mt-24 overflow-hidden whitespace-nowrap border-t border-white/15 pt-8 font-sans font-[530] leading-[.9] tracking-[-0.045em] text-white text-[clamp(40px,14.6vw,236px)] lg:text-[clamp(40px,15.5vw,236px)]" data-wordmark>townhall.town</p>
+        {/* Design 2:56 PM CT (Oct 30): a fitted SVG at w-full, so the wordmark always sits inside the 40px (1440) and 20-24px (390) margins. */}
+        <div aria-hidden className="mt-24 border-t border-white/15 pt-8" data-wordmark>
+          <svg viewBox="0 0 1000 118" className="block h-auto w-full overflow-visible" role="presentation" focusable="false">
+            <text x="0" y="112" textLength="1000" lengthAdjust="spacingAndGlyphs" className="fill-white font-sans font-[530]" style={{ fontSize: 150, letterSpacing: "-0.045em" }}>townhall.town</text>
+          </svg>
+        </div>
       </div>
     </footer>
   );

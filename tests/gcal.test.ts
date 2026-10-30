@@ -102,7 +102,7 @@ describe("UI: Google Calendar is the primary action, .ics a muted secondary link
     const html = renderToStaticMarkup(h(EndScreen, { zip: "78701", races: ballotFor("78701")!.races as never, answers: {}, ids, answered: 0 }));
     const g = /data-gcal-url="([^"]+)"/.exec(html)![1].replace(/&amp;/g, "&");
     expect(g).toMatch(/^https:\/\/calendar\.google\.com\/calendar\/render\?action=TEMPLATE&text=Vote%3A%20Election%20Day%2C%20Austin&/);
-    expect(html).toMatch(/<button[^>]*class="[^"]*h-12[^"]*"[^>]*data-gcal-url=/);
+    expect(html).toMatch(/<a[^>]*class="[^"]*h-12[^"]*"[^>]*data-gcal-url=/); // QA a11y P2 (Oct 30): the calendar control is a real link
     expect(html).toMatch(/class="inline-flex min-h-11 items-center text-black\/60 [^"]*" data-ics="true">or download \.ics<\/button>/);
     expect(html).toMatch(/rel="noopener noreferrer"[^>]*data-gcal-early/);
     expect(html.indexOf("data-gcal-url")).toBeLessThan(html.indexOf("data-ics"));

@@ -65,7 +65,7 @@
         "hours": "Weekdays 8:00 AM-5:00 PM (closed Mon Oct 12 holiday); weekends Oct 24-25 and Oct 31-Nov 1 10:00 AM-4:00 PM; Election Day 7:00 AM-8:00 PM",
         "dailyHours": [
           {"dates": "2026-10-05 to 2026-11-02 (weekdays)", "hours": "8:00 AM-5:00 PM", "appliesTo": "City Hall Voting Center; closed 2026-10-12"},
-          {"dates": "2026-10-24, 2026-10-25, 2026-10-31, 2026-11-01", "hours": "10:00 AM-4:00 PM", "appliesTo": "City Hall Voting Center (weekend entry via Grove Street)"},
+          {"dates": "2026-10-24, 2026-10-25, 2026-10-31, 2026-11-01", "hours": "10:00 AM-4:00 PM", "appliesTo": "City Hall Voting Center"},
           {"dates": "2026-11-03", "hours": "7:00 AM-8:00 PM", "appliesTo": "City Hall Voting Center and all 501 polling places"}
         ],
         "mainLocation": "City Hall Voting Center, ground floor of City Hall in front of Room 48, 1 Dr. Carlton B. Goodlett Place, San Francisco, CA 94102",

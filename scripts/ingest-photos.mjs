@@ -124,7 +124,8 @@ export function squareFor(w, h, [x, y, s] = [0.5, 0.2, 1]) {
   const inner = side / s;
   return { left: Math.round(left + x * (side - inner)), top: Math.round(top + y * (side - inner)), width: Math.max(1, Math.round(inner)), height: Math.max(1, Math.round(inner)) };
 }
-export const SIZES = [112, 160];
+// 256 (Adam 1:11 PM Oct 30, q75) only where the crop is at least 256px; never upscaled. scripts/portraits256.mjs re-exports it offline.
+export const SIZES = [112, 160, 256];
 async function build(id, p) {
   if (/photo ages not comparable/i.test(p.raceNote ?? "") && p.raceId) incomplete.add(p.raceId);
   if (!p.photoUrl && !p.localFile && !LOCAL[id]) return;
@@ -141,19 +142,20 @@ async function build(id, p) {
   const base = await img.extract(sq).flatten({ background: "#f2f2f2" }).toBuffer();
   const files = {};
   for (const n of SIZES) {
+    if (n === 256 && sq.width < 256) continue;
     const f = `/portraits/${id}-${n}.webp`;
-    const b = await sharp(base).resize(n, n, { fit: "cover" }).webp({ quality: 70, effort: 6 }).toBuffer();
+    const b = await sharp(base).resize(n, n, { fit: "cover" }).webp({ quality: n === 256 ? 75 : 70, effort: 6 }).toBuffer();
     fs.writeFileSync(`public${f}`, b); files[n] = { file: f, bytes: b.length, sha256: sha(b) };
   }
   manifest[id] = { sourceUrl: p.photoUrl ?? null, localFile: p.localFile ?? null, page: p.pageUrl ?? null, sourceSha256: sha(src.buf), sourceBytes: src.buf.length, sourceSize: [W, H], ...(precrop ? { precrop } : {}), crop: sq, focus: FOCUS[id] ?? [0.5, 0.2, 1], files };
-  const v = { name: id, file: files[160].file, file112: files[112].file, sourceUrl: p.photoUrl ?? null, credit: credit(p), license: p.license ?? null, page: p.pageUrl ?? null, via: p.sourceType ?? null, width: W, height: H, ...focusOf(id) };
+  const v = { name: id, file: files[160].file, file112: files[112].file, ...(files[256] ? { file256: files[256].file } : {}), sourceUrl: p.photoUrl ?? null, credit: credit(p), license: p.license ?? null, page: p.pageUrl ?? null, via: p.sourceType ?? null, width: W, height: H, ...focusOf(id) };
   if (p.role === "running mate" && p.ticketId) { mates[p.ticketId] = { ...v, kind: "self", mateName: p.name }; return; }
   out[id] = v;
 }
 const focusOf = (id) => (FOCUS[id] ? { focus: FOCUS[id] } : {});
 const entries = Object.entries(batch).filter(([id, p]) => !id.startsWith("_") && p);
 for (let i = 0; i < entries.length; i += 8) await Promise.all(entries.slice(i, i + 8).map(([id, p]) => build(id, p)));
-const keep = new Set([...Object.values(out), ...Object.values(mates)].flatMap((o) => [o.file, o.file112]).map((f) => f.replace("/portraits/", "")));
+const keep = new Set([...Object.values(out), ...Object.values(mates)].flatMap((o) => [o.file, o.file112, o.file256].filter(Boolean)).map((f) => f.replace("/portraits/", "")));
 let removed = 0;
 for (const f of fs.readdirSync("public/portraits")) if (!keep.has(f)) { fs.unlinkSync(`public/portraits/${f}`); removed++; }
 const sorted = (o) => Object.fromEntries(Object.entries(o).sort(([a], [b]) => a.localeCompare(b)));

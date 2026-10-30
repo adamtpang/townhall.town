@@ -3,11 +3,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const button = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 [touch-action:manipulation] motion-reduce:transition-none disabled:pointer-events-none disabled:opacity-40",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-[color,background-color,border-color,transform] duration-150 ease-[cubic-bezier(0.2,0,0,1)] active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 [touch-action:manipulation] disabled:pointer-events-none disabled:opacity-40",
   {
     variants: {
       variant: {
-        default: "bg-brand-700 text-white hover:bg-brand-900 active:bg-brand-900 duration-300 ease-out",
+        default: "bg-brand-700 text-white [@media(hover:hover)]:hover:bg-brand-900 active:bg-brand-900",
         outline: "border border-black/45 bg-transparent text-black hover:border-black [@media(hover:hover)]:hover:bg-brand-50",
         ghost: "bg-transparent text-black hover:text-brand-700",
       },
@@ -28,3 +28,5 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ classN
   <button ref={ref} className={cn(button({ variant, size }), (variant ?? "default") === "default" ? dropLegacyInk(className) : className)} {...p} />
 ));
 Button.displayName = "Button";
+/** Button look for a real link (QA a11y P2: navigation is an <a>, not a button that calls window.open). */
+export const buttonClass = (className?: string, variant: VariantProps<typeof button>["variant"] = "default") => cn(button({ variant }), variant === "default" ? dropLegacyInk(className) : className);
