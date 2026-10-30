@@ -51,8 +51,8 @@ describe("design p12 #1: per-race credit line, no overlapping tap targets", () =
   it("credit links are their own 44px boxes with no pseudo-element hit area", () => {
     const p = src("components/Portrait.tsx");
     const tap = p.match(/const TAP = "([^"]+)"/)![1];
-    expect(tap).toMatch(/inline-flex min-h-11 items-center/);
-    expect(tap).not.toMatch(/after:/);
+    expect(tap).toMatch(/\bflex min-h-11 items-center/);
+    expect(tap.split(" ").filter((c) => c.includes("after:")).every((c) => c.startsWith("md:"))).toBe(true); // none under 768 (superseded: round 0334)
     expect(src("components/CandidateRow.tsx")).not.toMatch(/<PhotoCredit /);
   });
 });
@@ -83,8 +83,8 @@ describe("early voting, one day left (QA df0cb76 #5)", () => {
 
 import { checkedLabel } from "../components/CandidateRow";
 describe("design p12 #4: recorded web searches read as their query", () => {
-  it("'Web search … (query URL)' becomes 'Web search: <query>'", () => {
-    expect(checkedLabel({ url: "https://www.google.com/search?q=Velva+Price+district+clerk+2026", title: "Web search: Statesman/KUT/Austin Monitor (query URL)" } as never)).toBe("Web search: Velva Price district clerk 2026");
+  it("'Web search … (query URL)' becomes a plain label (Design p13 #2)", () => {
+    expect(checkedLabel({ url: "https://www.google.com/search?q=Velva+Price+district+clerk+2026", title: "Web search: Statesman/KUT/Austin Monitor (query URL)" } as never)).toBe("News search: Statesman, KUT, Austin Monitor");
     expect(checkedLabel({ url: "https://www.google.com/search?q=x", title: "Mission Local" } as never)).toBe("Mission Local");
   });
 });

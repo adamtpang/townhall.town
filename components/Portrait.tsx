@@ -1,6 +1,6 @@
 "use client";
 import { initials as initialsOf } from "./PortraitRow";
-import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { PHOTO_GATE } from "../lib/photoGate";
 import { cn } from "../lib/utils";
 
@@ -59,32 +59,67 @@ export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNul
 
 /** Design p10 credit type: 12/16, weight 450, black/60, at most 60ch. The one place 12px text is allowed. */
 export const CREDIT = "max-w-[60ch] text-[12px] leading-4 font-[450] text-black/60 [word-break:break-word]";
-// Design p11 #2: a larger hit area on every credit link (row credits and per-candidate 'Photo:' credits).
-const CLINK = "relative underline decoration-black/20 underline-offset-2 hover:text-black after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']";
+// Design p11 #2, superseded by Design 3:34 AM CT (Oct 30): credit links reach 44px through spacing (TAP below), never a
+// vertical pseudo-element. Kept identical to TAP so the per-candidate 'Photo:' credit follows the same rule.
+const CLINK = "relative flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:inline-flex md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']";
 /** "{author} · {license}" with the author linked to the file page and the license to its deed (no raw URLs). */
 export function CreditBody({ photo }: { photo: NonNullable<Photo> }) {
   // Adam 12:16 AM CT: "Photo: {attribution}", linked to the source page (campaign, official or Commons file page).
   const one = (p: Pic) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a href={p.page} target="_blank" rel="noreferrer" className={CLINK} data-photo-credit>{author}</a> : <span data-photo-credit>{author}</span>; };
   return photo.mate ? <>{one(photo)} · {one(photo.mate)}</> : one(photo);
 }
-/** Design p12 #1: one credit line per race, "Photos: Name · credit, Name · credit". Each link is its own 44px-tall
- *  inline-flex target with no pseudo-element hit area, so neighbouring links (Godwin/Snider, a ticket's two photos)
- *  can't answer for each other; a wrapped line wraps in 44px rows (min-h-11, no stacked neighbours). */
-const TAP = "inline-flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black";
+/** Design p12 #1: one credit line per race, "Photos: Name · credit   Name · credit".
+ *  Design 3:34 AM CT (Oct 30): every credit link is at least 44px tall through spacing, not an invisible tap area.
+ *  Under 768px the credits stack one per line; each link is a 44px flex box with no after: inset, and the lines touch,
+ *  so no two targets overlap. From 768px they sit inline with gap-x-6 in a 44px row; each link gets a horizontal-only
+ *  tap area (after:-inset-x-2, 8px a side, under the 24px gap) and no vertical inset. A ticket's two links are 8px +
+ *  the dot + 8px apart, so their tap areas don't meet either. */
+const TAP = "relative flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']";
 export function RaceCredits({ cands, label }: { cands: { name: string; photo?: Photo }[]; label: (name: string) => string }) {
   const isOff = usePhotoOff();
   const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
   if (!keep.length) return null;
-  const link = (p: Pic, key: string) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} data-photo-credit>{author}</a> : <span key={key} className="inline-flex min-h-11 items-center" data-photo-credit>{author}</span>; };
-  return (
-    <p className={`flex min-h-11 flex-wrap items-center gap-x-1 ${CREDIT}`} aria-label="Photo credits" data-photo-credits>
-      <span className="inline-flex min-h-11 items-center">{keep.length === 1 ? "Photo:" : "Photos:"}</span>
-      {keep.map((c, i) => { const ph = c.photo!; return (
-        <span key={c.name} className="inline-flex min-h-11 flex-wrap items-center gap-x-1" data-race-credit={c.name}>
-          <span>{label(c.name)} ·</span>{link(ph, "a")}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m")}</> : null}{i < keep.length - 1 ? <span aria-hidden>,</span> : null}
+  const link = (p: Pic, key: string) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} data-photo-credit>{author}</a> : <span key={key} className="flex min-h-11 items-center" data-photo-credit>{author}</span>; };
+  return <CreditRow count={keep.length}>{keep.map((c) => { const ph = c.photo!; return (
+        <span key={c.name} className="flex flex-wrap items-center gap-x-1 md:gap-x-2 md:data-[overflow=true]:invisible" data-race-credit={c.name}>
+          <span>{label(c.name)} ·</span>{link(ph, "a")}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m")}</> : null}
         </span>
-      ); })}
-    </p>
+      ); })}</CreditRow>;
+}
+/** Design p13 #4: phones stack one credit per line; at 768px and up the row is inline (gap-x-6, no commas) and, if it
+ *  would wrap past 1 line, is capped at 1 line (44px) with a "more" disclosure. Entries past the first line are made
+ *  invisible while capped, so nothing clipped can take a tap or focus. */
+function CreditRow({ count, children }: { count: number; children: ReactNode }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const [wraps, setWraps] = useState(false);
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    const measure = () => {
+      const items = [...el.querySelectorAll<HTMLElement>("[data-race-credit]")];
+      const top = (el.firstElementChild as HTMLElement | null)?.offsetTop ?? 0;
+      const over = mq.matches && items.some((i) => i.offsetTop > top + 4);
+      setWraps(over);
+      for (const i of items) i.dataset.overflow = String(over && !open && i.offsetTop > top + 4);
+    };
+    measure();
+    const ro = new ResizeObserver(measure); ro.observe(el); mq.addEventListener("change", measure);
+    return () => { ro.disconnect(); mq.removeEventListener("change", measure); };
+  }, [open, count]);
+  const capped = wraps && !open;
+  return (
+    <div className="md:flex md:items-start md:gap-x-6" data-credit-row data-capped={capped ? "true" : "false"}>
+      <p ref={ref} className={`flex min-w-0 flex-col md:min-h-11 md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-x-6 ${capped ? "md:max-h-11 md:overflow-hidden" : ""} ${CREDIT}`} aria-label="Photo credits" data-photo-credits>
+        <span className="pt-2 md:-mr-4 md:flex md:min-h-11 md:items-center md:pt-0">{count === 1 ? "Photo:" : "Photos:"}</span>
+        {children}
+      </p>
+      {wraps ? (
+        <button type="button" aria-expanded={open} onClick={() => setOpen((v) => !v)} className={`hidden min-h-11 shrink-0 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:flex ${CREDIT}`} data-credits-more>
+          {open ? "less" : "more"}
+        </button>
+      ) : null}
+    </div>
   );
 }
 export function PhotoCredit({ photo, name }: { photo: NonNullable<Photo>; name: string }) {

@@ -852,16 +852,23 @@
  "darlene-byrne": {
   "name": "Darlene Byrne",
   "raceId": "tx-3rd-coa-chief-justice",
-  "photoUrl": "https://images.squarespace-cdn.com/content/v1/685c0a648d988d69c40f9f5d/120652e6-b49d-43c6-9754-6981053112ab/byrne1.jpg",
-  "pageUrl": "https://www.justicedarlenebyrne.com/",
-  "sourceType": "campaign site",
+  "photoUrl": "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-1/484991867_1140442701426562_7557409292458888416_n.jpg?stp=dst-jpg_tt6&cstp=mx2044x2044&ctp=s720x720&_nc_cat=101&ccb=1-7&_nc_sid=3ab345&_nc_ohc=-KTrnxytTLIQ7kNvwERyble&_nc_oc=Adqob1WV4Stq8Zg6mEkdhjzrQn8yYz88dfFvrP7F6w09LKb-MVO5_MMEMy8FK4FmhW3YOm0hv5ZzCyQYl9AY8rzo&_nc_zt=24&_nc_ht=scontent-hou1-1.xx&_nc_gid=ZIruTeDVoS2MDkofgtgNmQ&_nc_ss=7b20f&oh=00_AQSoSTAHpqWXZw4Loh3P1jAjg9U3dEknR2tKLWsP0jUc1A&oe=6AEA2A8B",
+  "localFile": "/workspace/townhall/civic/photos_local/darlene-byrne.jpg",
+  "pageUrl": "https://www.facebook.com/justicedarlenebyrne",
+  "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Darlene Byrne campaign site",
+  "attribution": "Photo: Darlene Byrne own social profile",
   "photoYear": null,
-  "identityEvidence": "Portrait on her campaign site (\"Re-Elect Chief Justice Darlene Byrne\"); viewed: same portrait (same filename byrne1.jpg) as her Third Court of Appeals page",
+  "photoYearBasis": "not stated",
+  "identityEvidence": "profile photo of the Facebook page \"Chief Justice Darlene Byrne\" (page text: running for re-election to Chief Justice of Texas' 3rd Court of Appeals), linked from her campaign site justicedarlenebyrne.com; viewed: same person as her court portrait",
+  "verified": "200 image/jpeg 720x720 (GET, 2026-10-30 ~04:00 CT)",
+  "urlNote": "signed Facebook CDN URL (oe= expiry about 2026-11-03); use localFile",
+  "cropNote": "studio headshot on a gray backdrop; square, no crop needed",
+  "replaced": {
+   "photoUrl": "https://images.squarespace-cdn.com/content/v1/685c0a648d988d69c40f9f5d/120652e6-b49d-43c6-9754-6981053112ab/byrne1.jpg",
+   "why": "FLAG: the campaign-site byrne1.jpg is the txcourts.gov court portrait re-hosted (same file name, same 2430x3441 size, pixel-identical apart from re-encoding, mean difference about 2/255; robes and flags court backdrop). No photographer is named on either page and neither file carries an EXIF credit, so the Mark Matson credit seen on other 2025 txcourts portraits is unverified for this one. Not used."
+  },
   "checkedDate": "2026-10-30",
-  "verified": "200 image/webp (GET, 2026-10-30 ~01:20 CT)",
-  "note": "Photo year not stated (court copy last modified Mar 2025).",
   "txcourtsPortrait": {
    "page": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/chief-justice-darlene-byrne/",
    "image": "https://www.txcourts.gov/media/1460167/byrne1.jpg",
@@ -1414,7 +1421,8 @@
   "checkedDate": "2026-10-30",
   "verified": "200 image/jpeg (GET, 2026-10-30 ~00:40 CT)",
   "cropNote": "candid photo speaking with neighbors; crop to the candidate",
-  "parity": "UNRESOLVED (QA7): austin-council-9: kai4atx.com has only kai-hero.jpg (speaking with neighbors) and kai-gameday.jpg (two-person photo); no headshot. Keep cropNote; opponents are headshots."
+  "parity": "UNRESOLVED (QA7): austin-council-9: kai4atx.com has only kai-hero.jpg (speaking with neighbors) and kai-gameday.jpg (two-person photo); no headshot. Keep cropNote; opponents are headshots.",
+  "qa8": "QA8 recheck: still no compliant headshot. kai4atx.com has only the candid kai-hero.jpg and a two-person photo, and links no social profile; no own social profile found. Keep the candid with cropNote."
  },
  "cynthia-soliz": {
   "name": "Cynthia Soliz",
@@ -2619,18 +2627,27 @@
  "letitia-a-james": {
   "name": "Letitia A. James",
   "raceId": "ny-attorney-general",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Letitia_James_Interview_Feb_2020.png",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Letitia_James_Interview_Feb_2020.png",
-  "license": "CC BY 3.0",
-  "attribution": "Photo: WBLS",
-  "licenseDetail": "CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Author/credit on file page: WBLS. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Letitia_James_Interview_Feb_2020.png. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2020,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 337,
-  "photoWidth": 337,
-  "fileTitle": "File:Letitia James Interview Feb 2020.png"
+  "photoUrl": "https://jamesforny.com/wp-content/uploads/2026/03/tish.png",
+  "pageUrl": "https://jamesforny.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Letitia James campaign site",
+  "photoYear": 2026,
+  "photoYearBasis": "upload date: file is in /wp-content/uploads/2026/03/ (Last-Modified 2026-03-26); the same photo became her verified X @TishJames avatar on 2026-03-26. Taken date not stated (same basis as opponent Komatireddy, uploaded 2026/01).",
+  "identityEvidence": "img alt \"Tish James\" in the intro section of her campaign site jamesforny.com (\"Paid for by James for NY 2026\"); same photo as her verified X avatar",
+  "verified": "200 image/png 631x455 (GET, 2026-10-30 ~04:00 CT)",
+  "cropNote": "transparent-background cutout from a speech at a podium (microphone at lower left): crop to head and shoulders and place on a plain light background",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Letitia_James_Interview_Feb_2020.png",
+   "attribution": "Photo: WBLS",
+   "license": "CC BY 3.0",
+   "why": "WBLS is a New York radio station, so this is a media photo; it breaks the no-news/media rule even though the Commons license is open."
+  },
+  "alsoChecked": [
+   "ag.ny.gov official portrait https://ag.ny.gov/sites/default/files/2023-01/LetitiaJames.jpg (page https://ag.ny.gov/about/meet-letitia-james, 200 image/jpeg 1603x1068): EXIF DateTimeOriginal 2019-10-31, 7 years from opponent Komatireddy (2026), fails the 6-year check; kept as fallback only.",
+   "letitiajames.com is NOT her site (page title \"Letitia James - President Donald Trump 47\"; an opposition page). Do not use."
+  ],
+  "checkedDate": "2026-10-30"
  },
  "saritha-komatireddy": {
   "name": "Saritha Komatireddy",
@@ -2721,7 +2738,8 @@
   "photoWidth": 500,
   "fileTitle": "File:(03-04-19) NY State Senator Liz Krueger during Senate Session at the NY State Capitol, Albany NY (cropped).jpg",
   "parity": "UNRESOLVED (QA7): ny-sd-28: official nysenate.gov page returned 403 to scripted requests; Commons alternatives are older (2009 event) or event photos. Crop the 2019 session photo to head and shoulders.",
-  "cropNote": "event photo: crop to head and shoulders, centred on the face"
+  "cropNote": "event photo: crop to head and shoulders, centred on the face",
+  "qa8": "QA8 recheck: still no better compliant headshot. nysenate.gov returns 403 to scripted requests and lizkrueger.com returned 500; her X @LizKrueger avatar (set 2018) is a press-conference shot with news microphones, not better. Keep the 2019 Senate photo cropped. A person in a normal browser could try nysenate.gov/senators/liz-krueger."
  },
  "alina-bonsell": {
   "name": "Alina Bonsell",

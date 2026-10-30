@@ -266,6 +266,28 @@
    "width": 400,
    "height": 400
   },
+  "chari-kelly": {
+   "name": "chari-kelly",
+   "file": "/portraits/chari-kelly.webp",
+   "sourceUrl": "https://hkt.texasjudges.com/img/portrait-2-864.jpg?v=9eddc0a62e",
+   "credit": "Chari Kelly campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://hkt.texasjudges.com/",
+   "via": "campaign site",
+   "width": 864,
+   "height": 1062
+  },
+  "kristen-hawkins": {
+   "name": "kristen-hawkins",
+   "file": "/portraits/kristen-hawkins.webp",
+   "sourceUrl": "https://hkt.texasjudges.com/img/portrait-1-864.jpg?v=bd31d4b46b",
+   "credit": "Kristen Hawkins campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://hkt.texasjudges.com/",
+   "via": "campaign site",
+   "width": 864,
+   "height": 1062
+  },
   "thomas-smith": {
    "name": "thomas-smith",
    "file": "/portraits/thomas-smith.webp",
@@ -330,6 +352,17 @@
     0.3,
     1.1
    ]
+  },
+  "darlene-byrne": {
+   "name": "darlene-byrne",
+   "file": "/portraits/darlene-byrne.webp",
+   "sourceUrl": "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-1/484991867_1140442701426562_7557409292458888416_n.jpg?stp=dst-jpg_tt6&cstp=mx2044x2044&ctp=s720x720&_nc_cat=101&ccb=1-7&_nc_sid=3ab345&_nc_ohc=-KTrnxytTLIQ7kNvwERyble&_nc_oc=Adqob1WV4Stq8Zg6mEkdhjzrQn8yYz88dfFvrP7F6w09LKb-MVO5_MMEMy8FK4FmhW3YOm0hv5ZzCyQYl9AY8rzo&_nc_zt=24&_nc_ht=scontent-hou1-1.xx&_nc_gid=ZIruTeDVoS2MDkofgtgNmQ&_nc_ss=7b20f&oh=00_AQSoSTAHpqWXZw4Loh3P1jAjg9U3dEknR2tKLWsP0jUc1A&oe=6AEA2A8B",
+   "credit": "Darlene Byrne own social profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.facebook.com/justicedarlenebyrne",
+   "via": "own social profile",
+   "width": 720,
+   "height": 720
   },
   "montserrat-garibay": {
    "name": "montserrat-garibay",
@@ -687,17 +720,6 @@
    "width": 500,
    "height": 578
   },
-  "letitia-a-james": {
-   "name": "letitia-a-james",
-   "file": "/portraits/letitia-a-james.avif",
-   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Letitia_James_Interview_Feb_2020.png",
-   "credit": "WBLS",
-   "license": "CC BY 3.0",
-   "page": "https://commons.wikimedia.org/wiki/File:Letitia_James_Interview_Feb_2020.png",
-   "via": "Wikimedia Commons",
-   "width": 337,
-   "height": 407
-  },
   "thomas-p-dinapoli": {
    "name": "thomas-p-dinapoli",
    "file": "/portraits/thomas-p-dinapoli.avif",
@@ -848,15 +870,6 @@
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 2500
   },
-  "chari-kelly": {
-   "name": "chari-kelly",
-   "url": "https://hkt.texasjudges.com/img/portrait-2-864.jpg?v=9eddc0a62e",
-   "credit": "Chari Kelly campaign site",
-   "page": "https://hkt.texasjudges.com/",
-   "via": "campaign site",
-   "license": "Not licensed; candidate's own public photo, credited and linked",
-   "width": 864
-  },
   "kyle-hawkins": {
    "name": "kyle-hawkins",
    "url": "https://justicekylehawkins.com/wp-content/uploads/2025/10/kyle_hawkins.jpg",
@@ -865,15 +878,6 @@
    "via": "campaign site",
    "license": "Campaign press photo (offered for download)",
    "width": 800
-  },
-  "kristen-hawkins": {
-   "name": "kristen-hawkins",
-   "url": "https://hkt.texasjudges.com/img/portrait-1-864.jpg?v=bd31d4b46b",
-   "credit": "Kristen Hawkins campaign site",
-   "page": "https://hkt.texasjudges.com/",
-   "via": "campaign site",
-   "license": "Not licensed; candidate's own public photo, credited and linked",
-   "width": 864
   },
   "brett-busby": {
    "name": "brett-busby",
@@ -974,15 +978,6 @@
    "via": "official page",
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 1274
-  },
-  "darlene-byrne": {
-   "name": "darlene-byrne",
-   "url": "https://images.squarespace-cdn.com/content/v1/685c0a648d988d69c40f9f5d/120652e6-b49d-43c6-9754-6981053112ab/byrne1.jpg",
-   "credit": "Darlene Byrne campaign site",
-   "page": "https://www.justicedarlenebyrne.com/",
-   "via": "campaign site",
-   "license": "Not licensed; candidate's own public photo, credited and linked",
-   "width": 2430
   },
   "mica-arellano": {
    "name": "mica-arellano",
@@ -1765,6 +1760,20 @@
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "width": 1644
   },
+  "letitia-a-james": {
+   "name": "letitia-a-james",
+   "url": "https://jamesforny.com/wp-content/uploads/2026/03/tish.png",
+   "credit": "Letitia James campaign site",
+   "page": "https://jamesforny.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 631,
+   "focus": [
+    0.5,
+    0.15,
+    1.3
+   ]
+  },
   "saritha-komatireddy": {
    "name": "saritha-komatireddy",
    "url": "https://sarithafornewyork.com/wp-content/uploads/2026/01/IMG_0086.jpeg",
@@ -1866,5 +1875,6 @@
  "leftOut": [],
  "excluded": [
   "alida-fisher"
- ]
+ ],
+ "sameAsCourtPortrait": []
 }

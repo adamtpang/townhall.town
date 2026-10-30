@@ -40,8 +40,15 @@ function voteLine(st: { voteRecord?: string; quote?: string; bill?: string }) {
 }
 
 /** League of Women Voters guide links read as one plain label (design p10). */
-/** Design p12 #4: a recorded search ("Web search, local news (query URL)") reads as the plain query it ran. */
-const searchQuery = (x: Checked) => { if (!/\(query URL\)/i.test(x.title ?? "")) return null; try { const q = new URL(x.url).searchParams.get("q"); return q ? `Web search: ${q}` : null; } catch { return null; } };
+/** Design p12 #4 then p13 #2: a recorded search ("Web search, local news (query URL)") reads as a plain label, not the
+ *  raw query: the outlets it searched when Civic named them ("News search: Statesman, KUT, Austin Monitor"), else
+ *  "Local news search". The link still opens the recorded query URL. */
+const searchQuery = (x: Checked) => {
+  const t = x.title ?? "";
+  if (!/\(query URL\)/i.test(t)) return null;
+  const outlets = t.replace(/\s*\(query URL\)\s*/i, "").replace(/^web search(?:,\s*local news)?\s*:?\s*/i, "").trim();
+  return outlets ? `News search: ${outlets.split("/").map((s) => s.trim()).join(", ")}` : "Local news search";
+};
 export const checkedLabel = (x: Checked) => (/lwv|league of women voters|vote411/i.test(`${x.url} ${x.title ?? ""}`) ? "League of Women Voters guide" : searchQuery(x) ?? (x.title || host(x.url)).replace(/\s*\((via|direct fetch|search snippet)[^)]*\)\s*/gi, " ").trim());
 /** Drop internal notes and keep one link per domain (design p10 P2). */
 /** Design p11 #5 + QA fb66b9b P2: dead links hidden; one entry per host and per visible label (so the League of

@@ -16,8 +16,9 @@ describe("p11 + QA fb66b9b", () => {
     expect(s).toMatch(/relative mx-auto aspect-square w-full/);
     expect(s).not.toMatch(/md:text-left/);
   });
-  it("#2 credit links get a larger hit area", () => {
-    expect(src("components/Portrait.tsx")).toContain("after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']");
+  it("#2 credit links: 44px through spacing (Design 3:34 AM CT supersedes the pseudo hit area); horizontal-only tap area from 768", () => {
+    expect(src("components/Portrait.tsx")).toContain("md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']");
+    expect(src("components/Portrait.tsx")).not.toMatch(/after:-inset-y/);
   });
   it("#4 Hinojosa and Hilton are head and shoulders (superseded by Civic qa_fixes7: their own campaign headshots, self-hosted, no zoom)", () => {
     const h = (P as unknown as { selfHosted: Record<string, { focus?: number[]; file?: string }> }).selfHosted;

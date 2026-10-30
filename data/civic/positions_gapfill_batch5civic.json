@@ -1,0 +1,157 @@
+{
+ "_meta": {
+  "asOf": "2026-10-30",
+  "batch": "positions_gapfill_batch5civic (Civic QA8)",
+  "rule": "Charter-school positions are not scored on the education axis (\"Should public school money follow students to private schools?\"); also vague \"educational choices\" with no mention of public money for private schools. Kept: statements that explicitly cover vouchers, ESAs, or school choice beyond charters (e.g. steve-hilton).",
+  "baseline": "feat2 data/stances.json @5063785",
+  "editorNote": "editorNote is internal only; merge_gapfill.py does not copy it."
+ },
+ "bo-french": {
+  "zip": "78701",
+  "name": "Bo French",
+  "race": "Texas Railroad Commission",
+  "party": "Republican",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "override": true,
+    "summary": "He backs local control of schools, including charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "quote": "I support local control of schools including charter schools and any other system that protects parents’ rights to ensure their child gets a great education. We are punishing low-income children by forcing them to stay in underperforming schools.",
+    "sourceUrl": "https://ballotpedia.org/Bo_French",
+    "sourceTitle": "Ballotpedia: Bo French (candidate survey)",
+    "date": "2026-10-30",
+    "editorNote": "Replaces education +3. The quote names charter schools and \"any other system that protects parents' rights\" but never vouchers, ESAs, school choice with public money, or private schools. Same standard as Bush and Becker. Source is Ballotpedia (403 from this box), so the quote was not re-read this pass.",
+    "previousScore": 3
+   }
+  ]
+ },
+ "karen-ortiz": {
+  "zip": "10001",
+  "name": "Karen Ortiz",
+  "race": "U.S. House New York District 12",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "override": true,
+    "summary": "She opposes federal money for privately run charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "quote": "I oppose new federal funding to privately run charter schools and oppose steps to facilitate the expansion of charter schools.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+    "sourceTitle": "NYC Votes 2026 voter guide",
+    "date": "2026-10-30",
+    "editorNote": "Replaces education -4. \"Privately run\" refers to charter operators; charters are publicly funded public schools, so this is not a position on public money for private schools.",
+    "previousScore": -4
+   }
+  ]
+ },
+ "alina-bonsell": {
+  "zip": "10001",
+  "name": "Alina Bonsell",
+  "race": "State Senator, District 28",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "override": true,
+    "summary": "She backs more charter schools and \"more educational choices\" but doesn't say whether public money should go to private schools.",
+    "quote": "I support expanding charter schools, modernizing curriculum, reducing administrative overhead, and giving parents more educational choices.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH",
+    "sourceTitle": "NYC Votes 2026 voter guide",
+    "date": "2026-10-30",
+    "editorNote": "Replaces education +4. Only explicit content is charter expansion; \"more educational choices\" is too vague to read as vouchers/ESAs (contrast Steve Hilton, kept: \"introducing school choice\" beyond charters).",
+    "previousScore": 4
+   }
+  ]
+ },
+ "virginia-cheung": {
+  "zip": "94103",
+  "name": "Virginia Cheung",
+  "race": "Board of Education",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "override": true,
+    "summary": "She says charter schools should play a limited role. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "quote": "Charter schools can play a limited role, but they should not undermine public school funding, equity, or stability.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/cheung_boe.html",
+    "sourceTitle": "SF Green Party 2026 questionnaire",
+    "date": "2026-10-30",
+    "editorNote": "Replaces education -3. Questionnaire question asks only about charter schools; page has no voucher/private-school text (checked 2026-10-30).",
+    "previousScore": -3
+   }
+  ]
+ },
+ "alida-fisher": {
+  "zip": "94103",
+  "name": "Alida Fisher",
+  "race": "Board of Education",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "override": true,
+    "summary": "She voted against renewing a charter school. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "quote": "I was the sole board member to vote against renewing the KIPP Bayview Elementary School charter last year",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/fisher_boe.html",
+    "sourceTitle": "SF Green Party 2026 questionnaire",
+    "date": "2026-10-30",
+    "editorNote": "Replaces education -3. Her answer describes a charter renewal vote (KIPP Bayview); no voucher/private-school text on the page (checked 2026-10-30).",
+    "previousScore": -3
+   }
+  ]
+ },
+ "ryan-hazelton": {
+  "zip": "94103",
+  "name": "Ryan Hazelton",
+  "race": "Board of Education",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "override": true,
+    "summary": "He wants the district, not new charter schools, to meet families' needs. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "quote": "If there's a genuine unmet need mobilizing parents to start a new charter, our district should be the one meeting that need, not ceding the ground.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/hazelton_boe.html",
+    "sourceTitle": "SF Green Party 2026 questionnaire",
+    "date": "2026-10-30",
+    "editorNote": "Replaces education -2. Charter-only question and answer; no voucher/private-school text on the page (checked 2026-10-30).",
+    "previousScore": -2
+   }
+  ]
+ },
+ "laurance-lee": {
+  "zip": "94103",
+  "name": "Laurance Lee",
+  "race": "Board of Education",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "override": true,
+    "summary": "He says San Francisco doesn't need more charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+    "quote": "San Francisco does not need additional charter schools, especially while the number of school-age children is declining.",
+    "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_boe.html",
+    "sourceTitle": "SF Green Party 2026 questionnaire",
+    "date": "2026-10-30",
+    "editorNote": "Replaces education -3. Charter-only question and answer; no voucher/private-school text on the page (checked 2026-10-30).",
+    "previousScore": -3
+   }
+  ]
+ }
+}

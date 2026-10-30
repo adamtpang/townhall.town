@@ -864,9 +864,11 @@
         "sourceUrl": "https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/03/31/railroad-commission-candidate-calls-for-deportation-of-100m"
       },
       "education": {
-        "value": 3,
-        "quote": "I support local control of schools including charter schools and any other system that protects parents’ rights to ensure their child gets a great education. We are punishing low-income children by forcing them to stay in underperforming schools.",
-        "sourceUrl": "https://ballotpedia.org/Bo_French"
+        "value": null,
+        "status": "unsure",
+        "summary": "He backs local control of schools, including charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+        "sourceUrl": "https://ballotpedia.org/Bo_French",
+        "quote": "I support local control of schools including charter schools and any other system that protects parents’ rights to ensure their child gets a great education. We are punishing low-income children by forcing them to stay in underperforming schools."
       },
       "housing": {
         "value": null,
@@ -1457,9 +1459,11 @@
         "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
       },
       "education": {
-        "value": -4,
-        "quote": "I oppose new federal funding to privately run charter schools and oppose steps to facilitate the expansion of charter schools.",
-        "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH"
+        "value": null,
+        "status": "unsure",
+        "summary": "She opposes federal money for privately run charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+        "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/representative-in-congress/profile/?bannerTitle=Karen+Ortiz&boroughCode=&candidateId=V1771&districtID=&electionCycle=2026&geoAreaAbbr=12&officeType=10&officelevel=3&partyId=OTH",
+        "quote": "I oppose new federal funding to privately run charter schools and oppose steps to facilitate the expansion of charter schools."
       },
       "safety": {
         "value": -3,
@@ -1658,9 +1662,11 @@
         "sourceUrl": "https://www.alinabonsell.com/8-point-plan"
       },
       "education": {
-        "value": 4,
-        "quote": "I support expanding charter schools, modernizing curriculum, reducing administrative overhead, and giving parents more educational choices.",
-        "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH"
+        "value": null,
+        "status": "unsure",
+        "summary": "She backs more charter schools and \"more educational choices\" but doesn't say whether public money should go to private schools.",
+        "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/state-senator/profile/?bannerTitle=Alina+Bonsell&boroughCode=&candidateId=V1784&districtID=&electionCycle=2026&geoAreaAbbr=28&officeType=8&officelevel=2&partyId=R%2COTH",
+        "quote": "I support expanding charter schools, modernizing curriculum, reducing administrative overhead, and giving parents more educational choices."
       },
       "wages": {
         "value": null,
@@ -5397,9 +5403,11 @@
         "sourceUrl": null
       },
       "education": {
-        "value": -3,
-        "quote": "Charter schools can play a limited role, but they should not undermine public school funding, equity, or stability.",
-        "sourceUrl": "https://sfgreens.org/questionnaires/2026/cheung_boe.html"
+        "value": null,
+        "status": "unsure",
+        "summary": "She says charter schools should play a limited role. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+        "sourceUrl": "https://sfgreens.org/questionnaires/2026/cheung_boe.html",
+        "quote": "Charter schools can play a limited role, but they should not undermine public school funding, equity, or stability."
       },
       "energy": {
         "value": null,
@@ -5445,9 +5453,11 @@
         "sourceUrl": null
       },
       "education": {
-        "value": -3,
-        "quote": "I was the sole board member to vote against renewing the KIPP Bayview Elementary School charter last year",
-        "sourceUrl": "https://sfgreens.org/questionnaires/2026/fisher_boe.html"
+        "value": null,
+        "status": "unsure",
+        "summary": "She voted against renewing a charter school. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+        "sourceUrl": "https://sfgreens.org/questionnaires/2026/fisher_boe.html",
+        "quote": "I was the sole board member to vote against renewing the KIPP Bayview Elementary School charter last year"
       },
       "energy": {
         "value": null,
@@ -5493,9 +5503,11 @@
         "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/ryan-hazelton/"
       },
       "education": {
-        "value": -2,
-        "quote": "If there's a genuine unmet need mobilizing parents to start a new charter, our district should be the one meeting that need, not ceding the ground.",
-        "sourceUrl": "https://sfgreens.org/questionnaires/2026/hazelton_boe.html"
+        "value": null,
+        "status": "unsure",
+        "summary": "He wants the district, not new charter schools, to meet families' needs. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+        "sourceUrl": "https://sfgreens.org/questionnaires/2026/hazelton_boe.html",
+        "quote": "If there's a genuine unmet need mobilizing parents to start a new charter, our district should be the one meeting that need, not ceding the ground."
       },
       "energy": {
         "value": null,
@@ -5591,9 +5603,11 @@
         "sourceUrl": "https://growsf.org/voter-guide/questionnaires/november-2026/laurance-lee/"
       },
       "education": {
-        "value": -3,
-        "quote": "San Francisco does not need additional charter schools, especially while the number of school-age children is declining.",
-        "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_boe.html"
+        "value": null,
+        "status": "unsure",
+        "summary": "He says San Francisco doesn't need more charter schools. Charter schools are public schools, so this doesn't say whether public money should go to private schools.",
+        "sourceUrl": "https://sfgreens.org/questionnaires/2026/lee_boe.html",
+        "quote": "San Francisco does not need additional charter schools, especially while the number of school-age children is declining."
       },
       "energy": {
         "value": null,

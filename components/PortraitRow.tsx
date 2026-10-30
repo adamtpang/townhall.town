@@ -21,6 +21,14 @@ export function labels(names: string[]) {
   });
 }
 
+/** Round 0334 (Design): tile names break only between words. Each word (a hyphenated surname is one word) is its own
+ *  nowrap inline-block, so a line can end only at a space; a single word wider than the tile ends in an ellipsis
+ *  (the full name stays in title/aria-label) and is never split. */
+const NOBREAK = "[overflow-wrap:normal] [word-break:normal] hyphens-none";
+function Words({ text }: { text: string }) {
+  return <>{text.split(/\s+/).filter(Boolean).map((w, i) => <span key={i}>{i ? " " : ""}<span className="inline-block max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-top" data-word>{w}</span></span>)}</>;
+}
+
 function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string; tileMax: string }) {
   const [broken, fail] = usePhotoFallback(c.name);
   const setBroken = (_: boolean) => fail();
@@ -34,7 +42,7 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eage
   }, [c.photo?.url]);
   const show = !!c.photo?.url && !broken;
   return (
-    <li className={`min-w-0 ${max}`} style={{ flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "initials"}>
+    <li className={`flex min-w-0 flex-col ${max}`} style={{ flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "initials"}>
       <div className={`relative mx-auto aspect-square w-full overflow-hidden bg-black/5 ${tileMax}`}>
         {/* Initials always sit underneath, so a slow, lazy or failed image never leaves a blank tile. */}
         <span role={show ? undefined : "img"} aria-hidden={show ? true : undefined} aria-label={show ? undefined : c.name}
@@ -43,8 +51,8 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eage
           <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} onFail={() => setBroken(true)} />
         ) : null}
       </div>
-      <p className="mt-1 w-full text-center group-data-[dense=true]/row:max-md:sr-only line-clamp-2 text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
-      {mate ? <p className="w-full line-clamp-2 text-center text-sm leading-5 group-data-[dense=true]/row:max-md:sr-only text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
+      <p className={`mt-1 w-full flex-1 text-center group-data-[dense=true]/row:max-md:sr-only ${NOBREAK} line-clamp-2 text-sm font-[530] leading-5`} title={c.name} aria-label={c.name} data-tile-label><Words text={label} /></p>
+      {mate ? <p className={`w-full ${NOBREAK} line-clamp-2 text-center text-sm leading-5 group-data-[dense=true]/row:max-md:sr-only text-black/60`} title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate><Words text={`w/ ${mate}`} /></p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
     </li>
   );
 }

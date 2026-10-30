@@ -77,6 +77,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <WhoRaces races={rowsByRace.map(({ race: r, rows, gradesHidden }) => ({
                 id: r.id,
                 title: r.title || r.id,
+                gradesHidden,
                 lines: rows.map(({ c, o, grade }) => ({ name: c.name, sourced: o.sourced, agree: o.agree, n: o.n, grade })),
                 content: (
                   <>

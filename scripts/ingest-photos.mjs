@@ -12,10 +12,8 @@
 import fs from "node:fs";
 import sharp from "sharp";
 const batch = JSON.parse(fs.readFileSync("data/civic/photos_batch.json", "utf8"));
-// Never shown, even with a URL: txcourts.gov judge portraits (no reuse terms), the Alida Fisher video still (not a portrait).
-export const EXCLUDE = (id, p) =>
-  /txcourts\.gov/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""}`) /* image or its page, not notes that mention a search */ || id === "alida-fisher" ||
-  /news|press agency|getty|associated press|\bAP\b|reuters/i.test(String(p.sourceType ?? "")); // never news photos (Adam 12:16 AM)
+// Exclusion rules live in scripts/photo-rules.mjs (unit-tested in tests/qa8.test.ts).
+import { EXCLUDE, dhash, hamming } from "./photo-rules.mjs";
 export const isLicensed = (p) => /public domain|\bCC0\b|\bCC BY\b|creative commons/i.test(String(p.license ?? "")) && !/campaign|press photo|official site|not licensed/i.test(String(p.license ?? ""));
 export const isOwnSource = (p) => /campaign|official|own social profile/i.test(String(p.sourceType ?? ""));
 // Office-named official-page credits read "<candidate name> official page" (Adam, qa_fixes6 #5, 1:02 AM CT).
@@ -39,6 +37,9 @@ export const FOCUS = {
   "scott-k-field": [0.66, 0.081, 3.4],
   // Tall portrait with flags: head and shoulders in the square tile (simulated and viewed).
   "tom-baker": [0.5, 0.32, 1.8],
+  // Civic qa_fixes8: transparent cutout at a podium, mic at lower left. Head and shoulders, mic out of frame; the tile's
+  // light (black/5 on white) background shows through the transparent area. Rendered in Chrome and viewed (4:05 AM CT).
+  "letitia-a-james": [0.5, 0.15, 1.3],
 };
 // Older face crops on licensed event photos: [left, top, width, height] as fractions of the source (pixels cut, not edited).
 const CROP = {
@@ -49,16 +50,35 @@ const CROP = {
 };
 // Engineering's saved copy of a campaign-site photo whose host answers hotlinks with a bot challenge (202 sgcaptcha),
 // so visitors' browsers would never get the image. Same source and credit as Civic's photoUrl; self-hosted like a localFile.
-const LOCAL = { "tom-baker": "data/photo-local/tom-baker.png" };
+// Engineering copies of own campaign photos whose host is unreliable. hkt.texasjudges.com answers about half of requests
+// with a 210-byte HTTP 202 text/html (Design p13 #1), which blanked TX Supreme Court Places 2 and 7. Fetched 4 AM CT
+// Oct 30 from Civic's photoUrl; checked against the txcourts.gov portraits under rule 2 (Kelly: different photo, dHash
+// distance 39 of 64 from txcourts kelly-1.jpg; Hawkins is a district judge with no txcourts portrait).
+const LOCAL = {
+  "tom-baker": "data/photo-local/tom-baker.png",
+  "chari-kelly": "data/photo-local/chari-kelly.jpg",
+  "kristen-hawkins": "data/photo-local/kristen-hawkins.jpg",
+};
 const UA = { "User-Agent": "townhall/1.0 (https://townhall.town; civic data)" };
 const out = {}; const hot = {}; const mates = {}; const failed = []; const excluded = [];
 const incomplete = new Set();
+const sameAsCourt = [];
+// Rule 2 at ingest: fetch the court portrait only to compare (never stored or shipped). If it can't be fetched, the
+// file-name rule in EXCLUDE still applies.
+async function sameImage(p) {
+  try {
+    const mine = p.localFile && fs.existsSync(p.localFile) ? fs.readFileSync(p.localFile) : p.photoUrl ? Buffer.from(await (await fetch(p.photoUrl, { headers: UA })).arrayBuffer()) : null;
+    const r = await fetch(p.txcourtsPortrait.image, { headers: UA }); if (!mine || !r.ok) return false;
+    return hamming(await dhash(mine), await dhash(Buffer.from(await r.arrayBuffer()))) <= 6;
+  } catch { return false; }
+}
 const focusOf = (id) => (FOCUS[id] ? { focus: FOCUS[id] } : {});
 for (const [id, p] of Object.entries(batch)) {
   if (id.startsWith("_") || !p) continue;
   if (/photo ages not comparable/i.test(p.raceNote ?? "") && p.raceId) incomplete.add(p.raceId);
   if (!p.photoUrl && !p.localFile) continue;
   if (EXCLUDE(id, p)) { excluded.push(id); continue; }
+  if (p.txcourtsPortrait?.image && await sameImage(p)) { excluded.push(id); sameAsCourt.push(id); continue; }
   let rec = null;
   try {
     if (!p.localFile && LOCAL[id]) p.localFile = LOCAL[id];
@@ -104,7 +124,7 @@ const photos = {
   photos: {}, selfHosted: out, hotlinked: hot, runningMates: mates, incompleteRaces: [...incomplete].sort(),
   hotlinkedNote: "Candidates' own public headshots (not licensed for reuse): shown from their source URL, never copied, credited to the source page.",
   selfHostedNote: "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json. Resized only (Civic cropNote applied as CSS focus). Never generated.",
-  leftOut: failed, excluded,
+  leftOut: failed, excluded, sameAsCourtPortrait: sameAsCourt,
 };
 fs.writeFileSync("data/photos.json", JSON.stringify(photos, null, 1) + "\n");
 console.log(`self-hosted ${Object.keys(out).length}, hotlinked ${Object.keys(hot).length}, running mates ${Object.keys(mates).length}, incomplete races ${incomplete.size}, excluded ${excluded.length}, left out ${failed.length}, removed old files ${removed}`);

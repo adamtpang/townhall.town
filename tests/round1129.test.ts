@@ -240,6 +240,6 @@ describe("design p9 / QA 4e15da7 items", () => {
     const s = src("components/PortraitRow.tsx");
     expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[40px\] md:max-w-\[48px\] lg:max-w-\[56px\]/);
     expect(s).toMatch(/flex flex-nowrap gap-2 md:gap-3/);
-    expect(s).toMatch(/line-clamp-2 text-sm font-\[530\] leading-5" title=\{c\.name\}/); // round 0222: two-line labels at 384
+    expect(s).toMatch(/line-clamp-2 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // round 0222: two-line labels at 384
   });
 });

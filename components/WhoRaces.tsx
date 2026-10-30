@@ -7,11 +7,15 @@
 // Design p12 #3 (2:27 AM): the same Accordion at 768px and up too, with the first 3 races open by default (phones stay all closed) and the rest
 // closed (same 56px trigger and chevron). p12 #4: the closed summary lines sit inside the trigger, so tapping one opens
 // the race; desktop uses the phone's line format ("Name · 1 of 3 issues · C", no letter when hidden).
+// Design p13 #3: closed lines wrap between words, never truncate (390px: "V. Alonzo Echavarria-Garza · No public position
+// found yet" stays whole). p13 #5: a race without letters (same gradesHidden rule as RaceFooter) also shows the
+// GRADES_ABSENT_LINE in the closed row, one 12/16 black/60 line under the summary lines.
 import { useEffect, useState, type ReactNode } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
+import { GRADES_ABSENT_LINE } from "../lib/grades.mjs";
 
 export type WhoLine = { name: string; sourced: number; agree: number; n: number; grade: string | null };
-export type WhoRace = { id: string; title: string; lines: WhoLine[]; content: ReactNode };
+export type WhoRace = { id: string; title: string; lines: WhoLine[]; content: ReactNode; gradesHidden?: string | null };
 
 export const NO_POSITION_LINE = "No public position found yet";
 export const OPEN_BY_DEFAULT = 3;
@@ -38,7 +42,8 @@ export default function WhoRaces({ races }: { races: WhoRace[] }) {
                 <span className="min-w-0">{r.title}</span>
                 {!isOpen ? (
                   <span className="mt-1 flex min-w-0 flex-col text-sm font-[450] leading-5 text-black/80" data-fold-lines>
-                    {r.lines.map((l) => <span key={l.name} className="block truncate" data-fold-line>{lineText(l)}</span>)}
+                    {r.lines.map((l) => <span key={l.name} className="block whitespace-normal [overflow-wrap:normal] [word-break:normal] hyphens-none" data-fold-line>{lineText(l)}</span>)}
+                    {r.gradesHidden ? <span className="mt-1 block whitespace-normal text-xs font-[450] leading-4 text-black/60" data-fold-grades-absent={r.gradesHidden}>{GRADES_ABSENT_LINE}</span> : null}
                   </span>
                 ) : null}
               </span>
