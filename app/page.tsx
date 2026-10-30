@@ -1,10 +1,20 @@
 import BallotAgent from "./BallotAgent";
-import { H1 } from "../lib/typeScale";
-import { SectionBlock } from "../components/Prose";
+import { H1, H3 } from "../lib/typeScale";
+import { SectionBody } from "../components/Prose";
+import MediaBand from "../components/media/MediaBand";
+import CityCards from "../components/media/CityCards";
+import { NumberedSection } from "../components/media/SectionHeader";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { HOME_SECTIONS } from "../lib/content";
 import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 import { LangProvider, LangToggle, T } from "../lib/i18n";
+
+// ndstudio-structure spec §3 item 5: "02 How it works" as 3 steps (approved Oct 30, 2026). Exact copy; no other changes.
+const HOW_STEPS: [string, string][] = [
+  ["Enter your ZIP.", "Every race on your ballot."],
+  ["Read the sources.", "Every fact links its record."],
+  ["Go vote.", "When, where, what to bring."],
+];
 
 export default function Home() {
   return (
@@ -25,11 +35,28 @@ export default function Home() {
           <div id="hero-stat" />
         </section>
         <BallotAgent />
-        <div className="mt-32">
-          {HOME_SECTIONS.map((s) => (
-            <SectionBlock key={s.heading} s={s} level={3} />
-          ))}
-        </div>
+        {/* ndstudio-structure spec (Oct 30): hero → band → 01 Your city → 02 How it works (copy approved Oct 30) → 03 Sources. */}
+        <MediaBand />
+        <NumberedSection n="01" label="Your city" id="your-city">
+          <CityCards />
+        </NumberedSection>
+        <NumberedSection n="02" label="How it works" id="how-it-works">
+          <ol className="grid gap-8 md:grid-cols-3 md:gap-5" data-how-steps>
+            {HOW_STEPS.map(([title, line], i) => (
+              <li key={title}>
+                <span className="text-sm leading-5 font-[530] tabular-nums text-brand-600" aria-hidden="true">{`0${i + 1}`}</span>
+                <h3 className={`mt-2 ${H3}`}><T>{title}</T></h3>
+                <p className="mt-1 text-base leading-6 text-ink/60"><T>{line}</T></p>
+              </li>
+            ))}
+          </ol>
+        </NumberedSection>
+        {HOME_SECTIONS.map((s) => (
+          <NumberedSection key={s.heading} n="03" label={s.heading} id={s.heading.toLowerCase()}>
+            <SectionBody s={s} />
+          </NumberedSection>
+        ))}
+        <div className="h-16 lg:h-24" />
       </main>
       <SiteFooter />
     </LangProvider>

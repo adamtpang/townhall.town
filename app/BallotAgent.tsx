@@ -188,6 +188,14 @@ export default function BallotAgent() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // 01 Your city cards (components/media/CityCards.tsx) do what the chips do: load that city's ZIP in place.
+  useEffect(() => {
+    const on = (e: Event) => { const z = (e as CustomEvent<string>).detail; if (typeof z === "string") void run(z); };
+    window.addEventListener("townhall:zip", on);
+    return () => window.removeEventListener("townhall:zip", on);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function run(z: string) {
     const raw = z;
     z = raw;
