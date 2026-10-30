@@ -308,6 +308,7 @@ export default function BallotAgent() {
         <div className="mt-10 max-w-2xl">
           <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
           <p className="mt-2 text-sm text-black/50">{busy ? t(TOOLS.map((k) => steps[k]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((k) => steps[k]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
+          {busy && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={[]} narration="" seconds={null} running />}
         </div>
       )}
 
