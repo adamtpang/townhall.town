@@ -68,6 +68,7 @@ See `.env.example` (placeholders only, never commit real values):
 - `AGENT_MODELS`: optional comma-separated gateway model ladder.
 - `XAI_API_KEY`: optional direct xAI fallback.
 - `FEC_API_KEY`, `CONGRESS_API_KEY`: optional api.data.gov keys for OpenFEC and Congress.gov. Without them the tools use `DEMO_KEY` (low hourly limit).
+- `CENSUS_API_KEY`: optional. Without it `getZipIncomeRent` returns `unavailable`.
 - `OPENSTATES_API_KEY`, `GOOGLE_CIVIC_API_KEY`: optional. Without them `getStateLegislators` and `getVoterInfo` return `unavailable`.
 
 ### Live data tools (`lib/dataTools.ts`)
@@ -77,6 +78,7 @@ Optional tools the model can call, each returning a source URL, or `{ status: "u
 - `getCountyUnemployment`: latest monthly county unemployment rate (BLS LAUS). A county figure, so it differs from the ZIP-level ACS 5-year number.
 - `getStateLegislators`: state legislators for a point (Open States).
 - `getVoterInfo`: polling place and early-vote sites for an address (Google Civic voterinfo).
+- `getZipIncomeRent`: median household income and median gross rent for a ZIP (Census ACS 5-year). Needs `CENSUS_API_KEY`; without it returns `unavailable`.
 
 ## Shared data contract
 `lib/types.ts` is the shared contract; plug-ins only add optional fields. `lib/accountability.ts` adds `politician.accountability` ("said vs. did", every record has both source links) and `lib/turnout.ts` adds jurisdiction `turnout` (county turnout, eligible non-voters, 2026 registration, all sourced). Both are also exposed to the model as tools via `lib/civicTools.ts`.
