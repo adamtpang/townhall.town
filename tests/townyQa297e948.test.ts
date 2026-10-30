@@ -1,6 +1,6 @@
 // QA early look at 297e948 (Adam, Oct 30 2026 3:54 PM CT): P1 copy and P2 link label, on /api/interview and /api/towny-test.
 import { describe, it, expect, vi, beforeAll } from "vitest";
-import { ORDER_CONFIRMED_HEAD, ORDER_UNSURE, SPLIT_LINE } from "../lib/ballotOrder";
+import { ORDER_CONFIRMED_HEAD, ORDER_UNSURE, SPLIT_LINE, orderConfirmedScoped } from "../lib/ballotOrder";
 import { guardReply } from "../lib/towny/orderGuard";
 
 const Q = "What order are candidates on my ballot?";
@@ -30,13 +30,17 @@ describe("P1: confirmed ZIPs get QA's one line instead of the contradictory pair
     for (const z of ["78701", "10001"]) for (const j of [await interview(z, Q), await townyTest(z, Q)]) {
       const lines = j.reply.split("\n");
       expect(lines[0]).toBe("Here are the candidates in each race.");
-      expect(lines[1].startsWith(ORDER_CONFIRMED_HEAD)).toBe(true);
+      // Civic NO-GO f2a5046 P1: the ZIP-wide answer scopes the sentence to its confirmed races (78701: 47, 10001: 6).
+      const n = z === "78701" ? 47 : 6;
+      expect(lines[1].startsWith(`${orderConfirmedScoped(n)} `)).toBe(true);
+      expect(j.reply).not.toContain(ORDER_CONFIRMED_HEAD);
       expect(j.reply).not.toContain(OLD_OPENER);
       expect(j.reply).not.toContain(OLD_HEAD);
-      expect(j.reply.split(ORDER_CONFIRMED_HEAD)).toHaveLength(2);
-      expect(lines.filter((l) => l.startsWith(`${SPLIT_LINE}: `)).length).toBe(2);
-      if (z === "10001") expect(j.reply).toContain(`\n${ORDER_UNSURE} That applies to these races:`);
-      else expect(j.reply).not.toContain(ORDER_UNSURE);
+      expect(j.reply.split(orderConfirmedScoped(n))).toHaveLength(2);
+      expect(lines.filter((l) => l.startsWith(`${SPLIT_LINE}: `)).length).toBe(z === "78701" ? 3 : 2);
+      // Civic NO-GO 4a9f8ea P1: 78701 has no unsplit race first, so no header; each of its lines ends with the Unsure line.
+      if (z === "10001") expect(j.reply).toContain(`\n${ORDER_UNSURE} That applies to these races: `);
+      else { expect(j.reply).not.toContain("That applies to these races"); expect(j.reply).toContain(ORDER_UNSURE); }
     }
   });
   it("94103 (no confirmed races) keeps the old opener on both endpoints", async () => {

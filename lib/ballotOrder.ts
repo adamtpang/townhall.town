@@ -7,6 +7,9 @@ export const ORDER_CONFIRMED = "Listed in the order on the official sample ballo
 /** QA early look at 297e948 P1 (Oct 30, 3:54 PM CT): one line for ZIPs with confirmed races, replacing "The races are not listed
  *  in the order they appear on the ballot." + "Listed in the order ... That is the order of the candidates within each of these races:". */
 export const ORDER_CONFIRMED_HEAD = "Races are not in ballot order. Within each race, candidates are listed in the order on the official sample ballot.";
+/** Civic NO-GO f2a5046 P1 (Oct 30, 4:38 PM CT): the ZIP-wide order answer scopes the confirmed sentence to the races it
+ *  covers, with the real count, so the races after it never read as confirmed. */
+export const orderConfirmedScoped = (n: number) => `Races are not in ballot order. ${n === 1 ? "In this race" : `In these ${n} races`}, candidates are listed in the order on the official sample ballot:`;
 export const ORDER_UNSURE = "Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.";
 
 type Row = { zip: string; raceId: string; title: string; officialOrder: string[]; sourceUrl: string; page: number | null; sourceKind: string };

@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeAll } from "vitest";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { curated } from "../lib/towny/answer";
-import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, SPLIT_LINE, NY_FMPS, orderStatus } from "../lib/ballotOrder";
+import { ORDER_CONFIRMED, orderConfirmedScoped, ORDER_UNSURE, SPLIT_LINE, NY_FMPS, orderStatus } from "../lib/ballotOrder";
 import { ballotFor, getRaces } from "../lib/tools";
 import { guardReply } from "../lib/towny/orderGuard";
 import { TOWNY_BRIEF } from "../lib/towny/brief";
@@ -121,9 +121,9 @@ describe("P2-5 78701: the split group is its own line", () => {
   it("both endpoints", async () => {
     for (const j of [await interview("78701", ORDER_Q), await townyTest("78701", ORDER_Q)]) {
       const lines = j.reply.split("\n");
-      expect(lines[1]).toBe(ORDER_CONFIRMED_HEAD); // QA 297e948 P1
+      expect(lines[1].startsWith(`${orderConfirmedScoped(47)} `)).toBe(true); // Civic NO-GO f2a5046 P1
       const splits = lines.filter((l) => l.includes(SPLIT_LINE));
-      expect(splits).toHaveLength(2);
+      expect(splits).toHaveLength(3); // TX-10/37, HD 49/51, JP 4/5 (splitPlan, same as the print)
       for (const l of splits) expect(l.startsWith(`${SPLIT_LINE}: `)).toBe(true);
       expect(j.reply).not.toMatch(new RegExp(`races: ${SPLIT_LINE}`));
     }
