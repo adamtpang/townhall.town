@@ -16,7 +16,7 @@ export default function LocalNews({ zip }: { zip: string }) {
   if (!items.length) return null;
   const outlets = [...new Set(items.map((i) => i.outlet))];
   return (
-    <section className="border-t border-black py-24" id="news" aria-labelledby="news-h">
+    <section className="border-t border-black py-12 lg:py-16" id="news" aria-labelledby="news-h">
       <p className="nds-caption-upper text-black/60">{t("Local news")}</p>
       <h2 id="news-h" className={`mt-3 ${H2}`}>{t("What local reporters are covering")}</h2>
       <p className="mt-4 max-w-2xl text-black/50">{t("Recent election headlines from")} {outlets.join(", ")}. {t("Links go to each outlet. We don't summarize or endorse.")}</p>

@@ -289,7 +289,7 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                   </li>
   );
   return (
-    <section className="border-t border-black py-24" id="tiers">
+    <section className="border-t border-black py-12 lg:py-16" id="tiers">
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races ranked by office and how close the race is. Never candidates.</p>

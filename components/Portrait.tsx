@@ -63,7 +63,7 @@ export function TileImage({ photo, alt, eager, onFail, imgRef, sizes = "(max-wid
 }
 
 /** Design p10 credit type: 12/16, weight 450, black/60, at most 60ch. The one place 12px text is allowed. */
-export const CREDIT = "max-w-[60ch] text-[12px] leading-4 font-[450] text-black/60 [word-break:break-word]";
+export const CREDIT = "max-w-[60ch] text-sm leading-5 font-[450] text-black/60 [word-break:break-word]";
 // Design p11 #2, superseded by Design 3:34 AM CT (Oct 30): credit links reach 44px through spacing (TAP below), never a
 // vertical pseudo-element. Kept identical to TAP so the per-candidate 'Photo:' credit follows the same rule.
 const CLINK = "relative flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:inline-flex md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']";
@@ -145,7 +145,7 @@ function CreditRow({ count, children }: { count: number; children: ReactNode }) 
       </p>
       {wraps ? (
         // Design p14 #3: a 44x44 hit area (min-h-11 min-w-11, px-2, and after:-inset-x-3 reaching 12px into the 24px gap,
-        // which the last credit's 8px tap area never meets); 12/16 black/60, underlined.
+        // which the last credit's 8px tap area never meets); 14/20 black/60, underlined.
         <button type="button" aria-expanded={open} aria-controls={id} onClick={() => setOpen((v) => !v)} className={`relative hidden min-h-11 min-w-11 shrink-0 items-center justify-center px-2 underline decoration-black/20 underline-offset-2 hover:text-black after:absolute after:inset-y-0 after:-inset-x-3 after:content-[''] md:flex ${CREDIT}`} data-credits-more>
           {open ? "less" : "more"}
         </button>

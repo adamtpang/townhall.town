@@ -62,7 +62,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
   const yesNo = ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length;
 
   return (
-    <section id="end" className="border-t border-black py-24" data-end-screen>
+    <section id="end" className="border-t border-black py-12 lg:py-16" data-end-screen>
       <p className="nds-caption-upper text-black/60">03</p>
       <h2 className={`mt-3 ${H2}`}>Your plan</h2>
       <a href={cardPath(zip, answers, ids)} className="mt-6 inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black [@media(hover:hover)]:hover:bg-brand-50" data-card-link>One-page ballot card</a>

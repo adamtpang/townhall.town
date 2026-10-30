@@ -21,10 +21,10 @@ export function Inline({ text, linkClass = "" }: { text: string; linkClass?: str
 }
 
 /** Home "How it works" / "Sources" blocks use h3 (16px, 530) under the page; info pages keep h2 (design p8). */
-export function SectionBlock({ s, level = 2 }: { s: Section; level?: 2 | 3 }) {
+export function SectionBlock({ s, level = 2, pad = "py-10" }: { s: Section; level?: 2 | 3; pad?: string }) {
   const Hn = level === 3 ? "h3" : "h2";
   return (
-    <section id={s.id} className="grid gap-3 border-t border-black/15 py-10 md:grid-cols-12 md:gap-5">
+    <section id={s.id} className={`grid gap-3 border-t border-black/15 ${pad} md:grid-cols-12 md:gap-5`}>
       <Hn className="text-base font-[530] tracking-tight text-black md:col-span-4">{s.heading}</Hn>
       <div className="max-w-2xl space-y-4 text-base leading-relaxed text-black/70 md:col-span-8">
         {s.paragraphs?.map((p, i) => (

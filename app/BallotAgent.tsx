@@ -27,7 +27,7 @@ import dynamic from "next/dynamic";
 
 // QA P2 bundle trim: everything below the ZIP box (tiers + office text, issues, Towny chat, research, plan)
 // only renders after a ballot loads, so it is fetched then, not on first paint.
-const RaceTiers = dynamic(() => import("./RaceTiers"), { ssr: false, loading: () => <p className="py-24 text-base text-black/60">Loading races…</p> });
+const RaceTiers = dynamic(() => import("./RaceTiers"), { ssr: false, loading: () => <p className="py-12 text-base text-black/60 lg:py-16">Loading races…</p> });
 const IssueMatch = dynamic(() => import("./IssueMatch"), { ssr: false });
 const LocalNews = dynamic(() => import("./LocalNews"), { ssr: false });
 

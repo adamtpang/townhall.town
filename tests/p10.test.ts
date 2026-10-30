@@ -38,7 +38,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       expect(ph.page).toMatch(/^https:\/\//);
     }
     expect(n).toBeGreaterThan(25);
-    expect(src("components/Portrait.tsx")).toMatch(/max-w-\[60ch\] text-\[12px\] leading-4 font-\[450\] text-black\/60/);
+    expect(src("components/Portrait.tsx")).toMatch(/max-w-\[60ch\] text-sm leading-5 font-\[450\] text-black\/60/);
   });
   it("every portrait is a square tile with a center-20% crop", () => {
     // Both tiles render through TileImage (Portrait.tsx), which carries the crop and Civic's cropNote focus.
