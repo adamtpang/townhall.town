@@ -6,7 +6,8 @@ import { townyFact, todayCT, ASKS_EARLY, ASKS_HOURS } from "../townyFacts";
 import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
 import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace, zipsIn, cityOfZip } from "../townyChat";
 import { COVERED_ZIPS } from "../site";
-import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, inOfficialOrder, isRetention, officialOrder, orderSourceLinks, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
+import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, isRetention, officialOrder, orderConfirmedScoped, orderSourceLinks, splitGroups, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
+import { splitPlan, SPLIT_LINE_ONE } from "../printText";
 import { hostLabel } from "../sourceName";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
@@ -49,7 +50,7 @@ export { SF_DOE };
 const officeFor = (zip: string) => OFFICES[zip];
 // Adam, Oct 30 3:24 PM CT: every unconfirmed race gets Civic's one unsure line, on every path.
 export const UNSURE_ORDER = ORDER_UNSURE;
-type Race = { id?: string; title: string; level?: string; source?: string; candidates?: { name: string }[] };
+type Race = { id?: string; title: string; level?: string; source?: string; dependsOnAddress?: boolean; appliesNote?: string; candidates?: { name: string }[] };
 
 /** "Who is running for <office>?": the ballot data's candidates for each matching race. Civic, Oct 30 1:37 PM CT: the order
  *  is not yet checked against each office's sample ballot, so the reply says so (UNSURE_ORDER) and links the official
@@ -114,7 +115,7 @@ export function runningFor(zip: string, text: string, only?: (r: Race) => boolea
 }
 
 /** Races in the order given, with the districts of one split group (2+ present) pulled together at the first one's place. */
-type Seg = { races: Race[]; split: SplitGroup | null };
+type Seg = { races: Race[]; split: SplitGroup | null; one?: boolean };
 function segments(zip: string, races: Race[]): Seg[] {
   const out: Seg[] = [];
   const byGroup = new Map<SplitGroup, Seg>();
@@ -130,13 +131,39 @@ function segments(zip: string, races: Race[]): Seg[] {
   }
   return out;
 }
+/** Civic NO-GO f2a5046 P1 (c): the order answer groups by the shared splitPlan() (lib/printText.ts), the same groups as /card
+ *  and the print: a group of 2+ present is one "Depending on your address" item; a group of one (10001 Council 3, 78701
+ *  Commissioner Pct 4) gets SPLIT_LINE_ONE. Both link the ZIP's lookup. */
+function planSegs(zip: string, races: Race[], groups: string[][]): Seg[] {
+  const lookup = splitGroups(zip)[0]?.lookup ?? null;
+  const out: Seg[] = [];
+  const byGroup = new Map<string[], Seg>();
+  for (const r of races) {
+    const g = groups.find((x) => x.includes(r.id ?? ""));
+    const n = g ? races.filter((x) => g.includes(x.id ?? "")).length : 0;
+    if (g && lookup && (g.length === 1 || n > 1)) {
+      const seg = byGroup.get(g);
+      if (seg) { seg.races.push(r); continue; }
+      const fresh: Seg = { races: [r], split: { raceIds: g, lookup }, one: g.length === 1 };
+      byGroup.set(g, fresh); out.push(fresh);
+    } else out.push({ races: [r], split: null });
+  }
+  return out;
+}
+/** Lines of segments: a run of plain races is one line; each split group is its own line (Civic GO 73ddcbf P2 5). */
+function chunks(zip: string, segs: Seg[]): string[] {
+  const out: string[] = [];
+  segs.forEach((g, i) => { const t = segText(zip, g); if (i > 0 && !g.split && !segs[i - 1].split) out[out.length - 1] += ` ${t}`; else out.push(t); });
+  return out;
+}
 const namesOf = (zip: string, r: Race, own = true) => {
   const c = own ? inOfficialOrder(zip, r.id ?? "", r.candidates || []) : r.candidates || [];
   if (c.length === 1 && r.title.includes(c[0].name)) return ""; // retention rows already name the justice
   return c.length ? c.map((x) => x.name).join(", ") : "no candidates listed";
 };
 const segText = (zip: string, g: Seg, own = true) =>
-  g.split ? `${SPLIT_LINE}: ${g.races.map((r) => item(r.title, namesOf(zip, r, own))).join("; ")}.` : `${item(g.races[0].title, namesOf(zip, g.races[0], own))}.`;
+  g.one ? `${SPLIT_LINE_ONE} ${item(g.races[0].title, namesOf(zip, g.races[0], own))}.`
+    : g.split ? `${SPLIT_LINE}: ${g.races.map((r) => item(r.title, namesOf(zip, r, own))).join("; ")}.` : `${item(g.races[0].title, namesOf(zip, g.races[0], own))}.`;
 const item = (title: string, names: string) => (names ? `${title}: ${names}` : title);
 const splitLinks = (segs: Seg[]) => segs.flatMap((g) => (g.split ? [g.split.lookup] : []));
 const uniq = <T extends { url: string }>(l: T[]) => [...new Map(l.map((x) => [x.url, x])).values()];
@@ -170,21 +197,26 @@ export function ballotOrder(zip: string, text = ""): Curated | null {
   // ORDER_UNSURE. Races are never presented in ballot order. Split districts are one "Depending on your address" item.
   // Civic GO 73ddcbf (Oct 30, 3:37 PM CT): retention races get no order line (P2 4); split groups are their own line (P2 5).
   const pick = named.length ? named : races;
+  // Civic NO-GO f2a5046 P1 (Oct 30, 4:38 PM CT): a race is confirmed only when Civic's check has its order AND it is not in a
+  // split group or an at-large inference (the same rule as the /card print's dagger). Every other race gets the Unsure line;
+  // retention races get none. The confirmed sentence names its real count, so no race after it reads as confirmed.
+  const plan = splitPlan(zip, races.map((r) => ({ id: r.id ?? "", title: r.title, dependsOnAddress: r.dependsOnAddress, appliesNote: r.appliesNote })));
+  const isConf = (r: Race) => !!officialOrder(zip, r.id ?? "") && !plan.inSplit.has(r.id ?? "") && !plan.atLarge.has(r.id ?? "");
   const ret = pick.filter(isRetention), ordered = pick.filter((r) => !isRetention(r));
-  const conf = ordered.map((r) => officialOrder(zip, r.id ?? ""));
+  const conf = ordered.map((r) => (isConf(r) ? officialOrder(zip, r.id ?? "") : null));
   const yes = ordered.filter((_, i) => conf[i]), no = ordered.filter((_, i) => !conf[i]);
-  const segY = segments(zip, yes), segN = segments(zip, no), segR = segments(zip, ret);
+  const segY = planSegs(zip, yes, plan.groups), segN = planSegs(zip, no, plan.groups), segR = planSegs(zip, ret, plan.groups);
   const parts: string[] = [];
-  // QA 297e948 P1 (Oct 30, 3:54 PM CT): with confirmed races the opener and the confirmed header were one contradictory pair;
-  // ORDER_CONFIRMED_HEAD replaces both. ZIPs with no confirmed races (94103) keep the old opener.
   const multi = !(segY.length + segN.length + segR.length === 1 || named.length === 1);
   if (!named.length) parts.push(multi && segY.length ? "Here are the candidates in each race." : "Here are the candidates in each race. The races are not listed in the order they appear on the ballot.");
-  if (segY.length + segN.length + segR.length === 1 || (named.length === 1)) {
+  if (!multi) {
     const g = [...segY, ...segN, ...segR][0];
     parts.push(segR.length && !ordered.length ? segText(zip, g) : `${segText(zip, g)}${g.split ? "\n" : " "}${yes.length ? ORDER_CONFIRMED : ORDER_UNSURE}`);
   } else {
-    if (segY.length) parts.push(lead(ORDER_CONFIRMED_HEAD, zip, segY));
-    if (segN.length) parts.push(lead(`${ORDER_UNSURE} That applies to these races:`, zip, segN));
+    if (segY.length) parts.push(lead(orderConfirmedScoped(yes.length), zip, segY));
+    // The Unsure line heads the first line of unconfirmed races and closes every later line (split groups are their own lines),
+    // so AD75, Council 3 and each split group carry it visibly.
+    chunks(zip, segN).forEach((c, i) => parts.push(i === 0 ? (segN[0].split ? `${ORDER_UNSURE} That applies to these races:\n${c}` : `${ORDER_UNSURE} That applies to these races: ${c}`) : `${c} ${ORDER_UNSURE}`));
     if (segR.length) parts.push(lead("Retention races, a Yes or No vote on one judge each:", zip, segR));
   }
   return { intent: "ballot-order", reply: parts.join("\n"), links: uniq(dedupeByHost([...orderSourceLinks(sourcesOf(conf)), ...splitLinks([...segY, ...segN]), office])) };

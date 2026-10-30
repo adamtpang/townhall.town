@@ -5,7 +5,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync, existsSync } from "node:fs";
 import { curated, runningFor, BALLOT_ORDER_LINE, UNSURE_ORDER } from "../lib/towny/answer";
-import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, officialOrder, isOrderConfirmed, inOfficialOrder } from "../lib/ballotOrder";
+import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, orderConfirmedScoped, officialOrder, isOrderConfirmed, inOfficialOrder } from "../lib/ballotOrder";
 import { ballotFor } from "../lib/tools";
 import data from "../data/ballot_order.json";
 
@@ -75,12 +75,15 @@ describe("Towny answers, per ZIP", () => {
     expect(c.intent).toBe("ballot-order");
     // v3.1: candidates are named; confirmed = candidate order within each race, never the order of the races.
     // QA 297e948 P1: one line (ORDER_CONFIRMED_HEAD) replaces the old opener + confirmed header pair.
-    expect(c.reply).toContain(`\n${ORDER_CONFIRMED_HEAD}`);
+    // Civic NO-GO f2a5046 P1: the confirmed sentence is scoped to its 47 races (split and at-large races are Unsure, like the print).
+    expect(c.reply).toContain(`\n${orderConfirmedScoped(47)} `);
+    expect(c.reply).not.toContain(ORDER_CONFIRMED_HEAD);
     expect(c.reply).not.toContain("The races are not listed in the order they appear on the ballot.");
     expect(c.reply).not.toContain("That is the order of the candidates");
     expect(c.reply).toContain("U.S. Senator: Ken Paxton, James Talarico, Ted Brown.");
     expect(c.links[0]).toEqual({ label: "Travis County sample ballot", url: TX });
-    expect(c.reply).not.toMatch(/Unsure/);
+    // Unsure only on the split and at-large races (Civic NO-GO f2a5046 P1), never before the confirmed sentence.
+    expect(c.reply.indexOf(ORDER_UNSURE)).toBeGreaterThan(c.reply.indexOf(orderConfirmedScoped(47)));
   });
   it("78701 per race: names in official order", () => {
     expect(curated("78701", "Who is listed first for U.S. Senate?", "2026-10-30")!.reply).toBe(`U.S. Senator: Ken Paxton, James Talarico, Ted Brown. ${ORDER_CONFIRMED}`);
@@ -100,7 +103,7 @@ describe("Towny answers, per ZIP", () => {
   it("10001: confirmed for the 6, unsure for the other 7", () => {
     const c = curated("10001", Q, "2026-10-30")!;
     const [ok, no] = [c.reply.slice(0, c.reply.indexOf(ORDER_UNSURE)), c.reply.slice(c.reply.indexOf(ORDER_UNSURE))];
-    expect(ok).toContain(ORDER_CONFIRMED_HEAD);
+    expect(ok).toContain(orderConfirmedScoped(NY_CONFIRMED.length));
     for (const r of races("10001")) {
       if (NY_CONFIRMED.includes(r.id)) { expect(ok, r.title).toContain(r.title); expect(no, r.title).not.toContain(r.title); }
       else { expect(no, r.title).toContain(r.title); }
@@ -120,9 +123,9 @@ describe("Towny answers, per ZIP", () => {
   it("POST /api/interview: one ballot-order question per ZIP", async () => {
     const { POST } = await import("../app/api/interview/route");
     const ask = async (zip: string, ip: string) => (await POST(new Request("https://x/api/interview", { method: "POST", body: JSON.stringify({ zip, messages: [{ text: Q }] }), headers: { "x-forwarded-for": ip, "content-type": "application/json" } }))).json();
-    const tx = (await ask("78701", "203.0.113.71")).reply; expect(tx).toContain(ORDER_CONFIRMED_HEAD); expect(tx).not.toContain(ORDER_UNSURE);
+    const tx = (await ask("78701", "203.0.113.71")).reply; expect(tx).toContain(orderConfirmedScoped(47)); expect(tx).toContain(ORDER_UNSURE);
     const sf = (await ask("94103", "203.0.113.72")).reply; expect(sf).toContain(ORDER_UNSURE); expect(sf).not.toContain(ORDER_CONFIRMED); expect(sf).not.toContain(ORDER_CONFIRMED_HEAD);
     const ny = await ask("10001", "203.0.113.73");
-    expect(ny.reply).toContain(ORDER_CONFIRMED_HEAD); expect(ny.reply).toContain(ORDER_UNSURE);
+    expect(ny.reply).toContain(orderConfirmedScoped(6)); expect(ny.reply).toContain(ORDER_UNSURE); expect(ny.reply).not.toContain(ORDER_CONFIRMED_HEAD);
   });
 });
