@@ -9,7 +9,8 @@ test("78701: Buckingham: batch6 real quotes win over heading-only entries", () =
   for (const iss of ["taxes", "immigration"]) { assert.notEqual(S["dawn-buckingham"][iss].value, null); assert.doesNotMatch(S["dawn-buckingham"][iss].quote, /^[A-Z ]+$/); }
 });
 test("78701: voteRecord kept with its source", () => {
-  for (const k of ["jon-rosenthal", "sarah-eckhardt"]) { const s = S[k].immigration; assert.match(s.voteRecord, /^Voted Nay/); assert.match(s.sourceUrl, /^https:\/\//); assert.match(s.quote, /^SB 8:/); }
+  // Batch 7 (Civic, Oct 30): the bill moved out of the quote into voteRecord/bill ("recorded votes go in voteRecord, never quotes").
+  for (const k of ["jon-rosenthal", "sarah-eckhardt"]) { const s = S[k].immigration; assert.match(s.voteRecord, /^Voted Nay on SB 8, /); assert.equal(s.bill, "SB 8"); assert.match(s.sourceUrl, /^https:\/\//); assert.equal(s.quote ?? "", ""); }
 });
 test("court races are judicial; county judge is not", () => {
   assert.ok(B.races.filter((r) => /court|appeals/i.test(r.title)).every((r) => r.judicial === "tx"));
