@@ -1,3 +1,4 @@
+import { withAcsMoe } from "./acsMoe";
 import NY_NOTES from "../data/ny-applies-notes.json";
 import ballots from "../data/ballots.json";
 import { JUDICIAL_NOTE, judicialSource } from "./judicial";
@@ -66,7 +67,7 @@ function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
   const titleN = new Map<string, number>();
   for (const r of b.races) titleN.set(r.title, (titleN.get(r.title) ?? 0) + 1);
-  return { ...b, turnout, races: b.races.map((r0) => {
+  return { ...b, turnout, problems: b.problems?.map((p) => withAcsMoe(p as never)) as typeof b.problems, races: b.races.map((r0) => {
     // Same-titled single-candidate seats (CA retention races) get the justice's name so each title is distinct.
     const dup = (titleN.get(r0.title) ?? 0) > 1 && r0.candidates.length === 1;
     const t0 = b.state === "TX" ? txTitle(r0.title) : r0.title;

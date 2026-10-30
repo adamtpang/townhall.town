@@ -175,3 +175,25 @@ describe("ticker pause control (WCAG 2.2.2, Design 3:43 PM)", () => {
     expect(html(s)).toContain("mask-image:linear-gradient(to_right,transparent,#000_24px,");
   });
 });
+
+describe("strip QA P2s (3:46 PM): measured speed, focus ring, 400% zoom", () => {
+  it("duration is set from the measured set width at 50px/s", async () => {
+    const { tickerDuration, TICKER_PX_PER_S } = await import("../components/TickerToggle");
+    expect(TICKER_PX_PER_S).toBe(50);
+    expect(tickerDuration(2000)).toBe(40);
+    expect(tickerDuration(100)).toBe(10); // floor for a tiny set
+  });
+  it("chips carry a 2px solid ink ring with 2px offset, and the scroller leaves room so it is not clipped", () => {
+    const s = buildStrip(["national-senate"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]) }, null, NOW);
+    const out = html(s);
+    const chip = out.match(/<(a|button)[^>]*data-strip-chip[^>]*>/)![0];
+    for (const c of ["focus-visible:outline", "focus-visible:outline-2", "focus-visible:outline-offset-2", "focus-visible:outline-ink"]) expect(chip).toContain(c);
+    expect(out).toMatch(/class="relative -my-1 [^"]*py-1[^"]*" data-strip-scroller/);
+  });
+  it("label is clamped to 2 lines (as at 390) and chips stay one row, so 400% zoom adds no strip height", () => {
+    const s = buildStrip(["national-senate"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]) }, null, NOW);
+    const out = html(s);
+    expect(out).toMatch(/<span class="min-w-0 line-clamp-2"><a href="https:\/\/polymarket.com"/);
+    expect(out).toMatch(/class="flex w-max items-center whitespace-nowrap" data-strip-track/);
+  });
+});

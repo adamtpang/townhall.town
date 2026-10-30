@@ -6,6 +6,8 @@ import { buildStrip, stripIdsFor, stripLabelFull, STRIP_EVENTS, STRIP_LABEL, typ
 
 type BallotArg = Parameters<typeof stripIdsFor>[0];
 export const STRIP_REVALIDATE = 300;
+// QA P2 (3:46 PM): bolder focus ring on the chips, 2px solid ink, offset 2px.
+export const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 const LINK = "text-ink hover:text-ink underline decoration-ink/40 decoration-1 underline-offset-4 hover:decoration-ink";
 const NEW_TAB = <span className="sr-only"> (opens in a new tab)</span>;
 // Data older than 1 hour is hidden even when a cached page is served late (inline, ~150 bytes, no fetch).
@@ -22,7 +24,7 @@ export async function loadStrip(ballot: BallotArg, now = Date.now()): Promise<St
 const sides = (r: StripChip["rows"][number]) => r.sides.map((s) => `${s.outcome} ${s.pct}`).join(" · ");
 
 function Chip({ c, asOfLabel, dup = false }: { c: StripChip; asOfLabel: string; dup?: boolean }) {
-  const chipCls = `inline-flex min-h-11 items-center ${LINK}`;
+  const chipCls = `inline-flex min-h-11 items-center ${LINK} ${FOCUS}`;
   // The ticker's second (duplicate) set is aria-hidden; its controls leave the tab order and it renders no panels.
   const tab = dup ? { tabIndex: -1 } : {};
   if (c.rows.length === 1) {
@@ -73,14 +75,14 @@ export function PolyStripView({ strip }: { strip: Strip | null }) {
   return (
     <section aria-label={stripLabelFull(strip.asOfLabel)} data-poly-strip data-asof={strip.asOf} className="border-b border-[var(--market-border)] bg-[var(--market-bg)] text-ink">
       <div className="mx-auto flex max-w-site flex-col px-6 py-1 text-sm font-[450] tabular-nums lg:h-12 lg:flex-row lg:items-center lg:gap-5 lg:px-10 lg:py-0">
-        <p className="relative flex min-h-11 shrink-0 items-center gap-3" data-strip-label>
+        <p className="relative flex min-h-11 min-w-0 shrink-0 items-center gap-3" data-strip-label>
           <span aria-hidden className="inline-block h-2 w-2 shrink-0 bg-[var(--market-mark)]" />
-          <span><a href="https://polymarket.com" target="_blank" rel="noopener" className={LINK}>{STRIP_LABEL}{NEW_TAB}</a><span className="text-ink/60" data-strip-asof>{` · as of ${strip.asOfLabel}`}</span></span>
+          <span className="min-w-0 line-clamp-2"><a href="https://polymarket.com" target="_blank" rel="noopener" className={LINK}>{STRIP_LABEL}{NEW_TAB}</a><span className="text-ink/60" data-strip-asof>{` · as of ${strip.asOfLabel}`}</span></span>
         </p>
         {/* Ticker (Adam 3:35 PM: "sliding like a news banner"): the label above stays put, only the prices move.
             Two identical sets slide by -50% in a CSS loop; hover/focus pauses; reduced motion = static, scrollable. */}
         <div className="flex min-w-0 flex-1 items-center gap-1">
-        <div className="relative min-w-0 flex-1 overflow-x-hidden pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,transparent,#000_24px,#000_calc(100%-28px),transparent)]" data-strip-scroller>
+        <div className="relative -my-1 min-w-0 flex-1 overflow-x-hidden py-1 pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,transparent,#000_24px,#000_calc(100%-28px),transparent)]" data-strip-scroller>
           <div className="flex w-max items-center whitespace-nowrap" data-strip-track style={{ "--ticker-dur": `${tickerSeconds(strip.chips)}s` } as React.CSSProperties}>
             <ul className="flex shrink-0 items-center gap-5 pr-10" data-strip-set>
               {strip.chips.map((c) => <li key={c.id} className="shrink-0 snap-start"><Chip c={c} asOfLabel={strip.asOfLabel} /></li>)}
