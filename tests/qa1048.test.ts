@@ -12,11 +12,14 @@ describe("QA 10:48/10:50 AM CT Oct 30", () => {
     expect(li).not.toMatch(/truncate|text-ellipsis|line-clamp/);
     expect(li).toMatch(/<span data-main-text>\{x\.t\}<\/span>\{" "\}/);
   });
-  it("phones: Vercel's preview toolbar is hidden under 768px, and links get a 44px hit area", () => {
-    const css = src("app/globals.css");
-    const m = css.slice(css.indexOf("@media (max-width: 767px) {\n  /* P1"));
-    expect(m).toMatch(/vercel-live-feedback \{ display: none !important; \}/);
-    expect(m).toMatch(/::after \{\s*content: ""; position: absolute;[^}]*height: 44px/);
+  const phoneCss = () => { const css = src("app/globals.css"); const i = css.indexOf("@media (max-width: 767px) {\n  /* P1"); expect(i).toBeGreaterThan(-1); return css.slice(i); };
+  // <vercel-live-feedback> is injected by Vercel on preview deployments only; it is never in our markup or on production,
+  // so this can only check that our CSS hides it on phones, not that the element exists (a rendered check would find none).
+  it("phones (preview deployments only): Vercel's preview toolbar is hidden under 768px", () => {
+    expect(phoneCss()).toMatch(/vercel-live-feedback \{ display: none !important; \}/);
+  });
+  it("phones: links get a 44px hit area", () => {
+    expect(phoneCss()).toMatch(/::after \{\s*content: ""; position: absolute;[^}]*height: 44px/);
   });
   it("no 'No stated position' or 'No record found' stance copy anywhere in UI code", () => {
     for (const f of ["components/WhoRaces.tsx", "components/CandidateRow.tsx", "app/RaceTiers.tsx", "app/TownyResearch.tsx"]) {
