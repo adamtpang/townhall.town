@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { CreditBody, CREDIT, PhotoGroup, usePhotoFallback, usePhotoOff, type Photo } from "./Portrait";
+import { CreditBody, CREDIT, PhotoGroup, TileImage, usePhotoFallback, usePhotoOff, type Photo } from "./Portrait";
 
 type C = { name: string; party?: string | null; photo?: Photo };
 
@@ -21,7 +21,7 @@ export function labels(names: string[]) {
   });
 }
 
-function Tile({ c, eager, label, mate, reserveMate, max }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string }) {
+function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string; tileMax: string }) {
   const [broken, fail] = usePhotoFallback(c.name);
   const setBroken = (_: boolean) => fail();
   const ref = useRef<HTMLImageElement>(null);
@@ -35,17 +35,16 @@ function Tile({ c, eager, label, mate, reserveMate, max }: { c: C; eager?: boole
   const show = !!c.photo?.url && !broken;
   return (
     <li className={`min-w-0 ${max}`} style={{ flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "initials"}>
-      <div className="relative aspect-square w-full overflow-hidden bg-black/5">
+      <div className={`relative mx-auto aspect-square w-full overflow-hidden bg-black/5 ${tileMax}`}>
         {/* Initials always sit underneath, so a slow, lazy or failed image never leaves a blank tile. */}
         <span role={show ? undefined : "img"} aria-hidden={show ? true : undefined} aria-label={show ? undefined : c.name}
           className="absolute inset-0 flex items-center justify-center font-sans text-sm font-[530] leading-none text-black/60 lg:text-base">{initials(c.name)}</span>
         {show ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img ref={ref} src={c.photo!.url} alt={split(c.name).lead} loading={eager ? "eager" : "lazy"} decoding="async" referrerPolicy="no-referrer" onError={() => setBroken(true)} className="absolute inset-0 h-full w-full object-cover object-[center_20%]" />
+          <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} onFail={() => setBroken(true)} />
         ) : null}
       </div>
-      <p className="mt-1 w-full text-center group-data-[dense=true]/row:max-md:sr-only md:text-left truncate text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
-      {mate ? <p className="w-full truncate text-center text-sm group-data-[dense=true]/row:max-md:sr-only md:text-left leading-5 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
+      <p className="mt-1 w-full text-center group-data-[dense=true]/row:max-md:sr-only truncate text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
+      {mate ? <p className="w-full truncate text-center text-sm group-data-[dense=true]/row:max-md:sr-only leading-5 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
     </li>
   );
 }
@@ -59,12 +58,15 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   // Design p10 P0: every item flex 1 1 0 with min-width 0 and a max width (40 / 48 / 56px), so any number of candidates
   // shares one row in equal tiles: never wraps, never hides or clips a candidate. Over 6 candidates under 768px the
   // visible label goes sr-only (the name stays in aria-label/title and on the card).
-  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[40px] md:max-w-[48px] lg:max-w-[56px]";
+  // Design p11 #1: the item (label width) is separate from the tile. Item max 56px (64px at 1024+); tile max 40px
+  // (48px at 768+, 56px at 1024+), centred; label full item width, centred, truncated.
+  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[56px] lg:max-w-[64px]";
+  const tileMax = size === "mini" ? "" : "max-w-[40px] md:max-w-[48px] lg:max-w-[56px]";
   const dense = size === "row" && cands.length > 6;
   return (
     <PhotoGroup>
     <ul role="list" aria-label="Candidates in ballot order" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
-      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
+      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
     {size === "row" ? <RowCredits cands={cands} /> : null}
     </PhotoGroup>

@@ -1,8 +1,19 @@
 {
  "asOf": "2026-10-30",
- "method": "Civic data/civic/photos_batch.json: licensed photos (self-hosted) plus candidates' own public campaign or official headshots (hotlinked), each credited to its source page. No news photos; never generated.",
+ "method": "Civic data/civic/photos_batch.json (headshot pass, Oct 30 12:40 AM CT): Civic's saved local copies and licensed photos are self-hosted (resized only); candidates' own public campaign, official or social-profile headshots are hotlinked; each is credited to its source page. No news photos; never generated.",
  "photos": {},
  "selfHosted": {
+  "caitlin-rourk": {
+   "name": "caitlin-rourk",
+   "file": "/portraits/caitlin-rourk.webp",
+   "sourceUrl": "https://run.imgix.net/d2032033-f888-404d-91e5-f846bf22a031/5fa90f7c-807c-4275-a4f9-5b51efce70d4/5fa90f7c-807c-4275-a4f9-5b51efce70d4.jpg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C1083%2C5246%2C6095&auto=compress%2Cformat&fit=fillmax&w=2048&q=75&s=9f6127d34d5686e4ecf901f92095eaeb",
+   "credit": "Caitlin Rourk campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.caitlinrourk.com/",
+   "via": "campaign site",
+   "width": 2048,
+   "height": 2379
+  },
   "greg-casar": {
    "name": "greg-casar",
    "file": "/portraits/greg-casar.avif",
@@ -56,7 +67,12 @@
    "page": "https://commons.wikimedia.org/wiki/File:Gina_Hinojosa_at_the_AFL-CIO_COPE_convention_in_2024.jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 597
+   "height": 597,
+   "focus": [
+    0.5,
+    0.18,
+    1.5
+   ]
   },
   "dan-patrick": {
    "name": "dan-patrick",
@@ -90,6 +106,17 @@
    "via": "Wikimedia Commons",
    "width": 500,
    "height": 667
+  },
+  "anthony-cristo": {
+   "name": "anthony-cristo",
+   "file": "/portraits/anthony-cristo.webp",
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sfOdP7iijFykjIOyMVED3VNVEmMafShVF7Gs-gqv5vD3tp99PaX4qNHdHVgDBahaGfEbiRM-uxqXlt9w9O4y0nhyS7ByDQYHihE-rX_Uo-Q3XjY2EU9qGfutnsBDWrCU6o0UzQniBCoKwODor2WJDe9k_qS2S91DJ4KdCIoA_otPK97R6uK-84aWkr86Q9eDT76wiiyXYN7jvI-qjOo_5KV4CWvMQe71kAM0yj=w1280",
+   "credit": "Anthony Cristo campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.anthonycristo.com/",
+   "via": "campaign site",
+   "width": 1280,
+   "height": 1894
   },
   "nathan-johnson": {
    "name": "nathan-johnson",
@@ -146,6 +173,33 @@
    "width": 500,
    "height": 664
   },
+  "benjamin-flores": {
+   "name": "benjamin-flores",
+   "file": "/portraits/benjamin-flores.webp",
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2084755857103851520/rr5yDKRU_400x400.jpg",
+   "credit": "Benjamin Flores X profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://x.com/Flores4LandCom",
+   "via": "own social profile",
+   "width": 400,
+   "height": 400,
+   "focus": [
+    0.51,
+    0.43,
+    3
+   ]
+  },
+  "neill-snider": {
+   "name": "neill-snider",
+   "file": "/portraits/neill-snider.webp",
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tTCr7XDlA0k0TAClNdfABeFsMJ0dJhtj0VydOY6mS2IBh1dFzMrhin3qNDf-5NUhUDOv8vanT9RmurYYX46TMx5HoWinAbF0ENhm8W1w1x33miWNnS2zbhv6236b0wiRqY2FYxQZ6zNLxhWxUm4D0VpmRTuT80yO5oAiso2c8GsUMpMGUQIoXnj4dw46-LQJBCfq2B70yMnxyQmnYQnu3vCr2R_r2XQ1KcbXKe=w1280",
+   "credit": "Neill Snider campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.voteneillsnider.com/",
+   "via": "campaign site",
+   "width": 433,
+   "height": 640
+  },
   "clayton-tucker": {
    "name": "clayton-tucker",
    "file": "/portraits/clayton-tucker.avif",
@@ -157,6 +211,17 @@
    "width": 500,
    "height": 667
   },
+  "austin-r-kelly": {
+   "name": "austin-r-kelly",
+   "file": "/portraits/austin-r-kelly.webp",
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72udP0DdzIaSDJ-Le2ptwCi36uT_Wro1nNUvdLEYEm_PfQZBGsaNWq2k5i9a9ED3OIzmxMGoV5iFfcv6HBX2VaUt_9xRWHSkIR8dgDxAf4WsH0V6eE2ZX03yKMLx7u3uiF9kmS-L1k83VLvNVYQ6r036Q1eE5q9q910ZmO585hc31SLJP6g65FvBOTld0ro_Y9L3x1wNkfP5Ov9xhuTiXQSgM1eR7SFIkkZ7sHp2=w1280",
+   "credit": "Austin R. Kelly campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.kellyfortx.com/",
+   "via": "campaign site",
+   "width": 1080,
+   "height": 1078
+  },
   "jon-rosenthal": {
    "name": "jon-rosenthal",
    "file": "/portraits/jon-rosenthal.avif",
@@ -167,6 +232,28 @@
    "via": "Wikimedia Commons",
    "width": 500,
    "height": 750
+  },
+  "arthur-dibianca": {
+   "name": "arthur-dibianca",
+   "file": "/portraits/arthur-dibianca.webp",
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uCiEAYtd3xuHHpAkz0Vcw_-JQB-sd1CdlxRFLtoHezYyxDkwOZ2OnJ7g3GoKtSKObVjFFm39ASnUHzt5HJSMgKB6iE7qJ4pl3mdrTfIHoU_HqsmJUEWrNY3UO6dkWlhl_6ID9s1Ys2__54AIQ2zqSqqcpSFOaNXgbQnYmsEIGULGHGQ8c9mB0_oBCWlxvWuQriWdJAjrdlfsI1KsXx7kV9-pHvHlxJnD4-UWeulWk=w1280",
+   "credit": "Arthur DiBianca campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.votedibianca.com/",
+   "via": "campaign site",
+   "width": 1280,
+   "height": 1894
+  },
+  "thomas-smith": {
+   "name": "thomas-smith",
+   "file": "/portraits/thomas-smith.webp",
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2001320051584950272/TD3Ozsov_400x400.jpg",
+   "credit": "Thomas Smith X profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://x.com/smithfortx",
+   "via": "own social profile",
+   "width": 400,
+   "height": 400
   },
   "scott-brister": {
    "name": "scott-brister",
@@ -190,6 +277,22 @@
    "width": 500,
    "height": 725
   },
+  "jessica-martinez": {
+   "name": "jessica-martinez",
+   "file": "/portraits/jessica-martinez.webp",
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2042776680083718144/68d-0Sq1_400x400.jpg",
+   "credit": "Jessica Martinez X profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://x.com/JessicaforHD51",
+   "via": "own social profile",
+   "width": 400,
+   "height": 400,
+   "focus": [
+    0.5,
+    0.45,
+    4
+   ]
+  },
   "elisabeth-earle": {
    "name": "elisabeth-earle",
    "file": "/portraits/elisabeth-earle.avif",
@@ -200,6 +303,17 @@
    "via": "Wikimedia Commons",
    "width": 500,
    "height": 700
+  },
+  "dave-thadani": {
+   "name": "dave-thadani",
+   "file": "/portraits/dave-thadani.webp",
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2073953358453354496/pIk_SnRb_400x400.jpg",
+   "credit": "Dave Thadani X profile",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://x.com/DaveforAustin",
+   "via": "own social profile",
+   "width": 400,
+   "height": 400
   },
   "trevor-hale": {
    "name": "trevor-hale",
@@ -342,7 +456,12 @@
    "page": "https://commons.wikimedia.org/wiki/File:Steve_Hilton_(54233445987_crop).jpg",
    "via": "Wikimedia Commons",
    "width": 500,
-   "height": 655
+   "height": 655,
+   "focus": [
+    0.52,
+    0.15,
+    1.2
+   ]
   },
   "fiona-ma": {
    "name": "fiona-ma",
@@ -377,6 +496,17 @@
    "width": 500,
    "height": 667
   },
+  "manuel-noris-barrera": {
+   "name": "manuel-noris-barrera",
+   "file": "/portraits/manuel-noris-barrera.webp",
+   "sourceUrl": null,
+   "credit": "Manuel Noris-Barrera for Assembly District 17 (Facebook)",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.facebook.com/p/Manuel-Noris-Barrera-Assembly-District-17-61552978635595/",
+   "via": "own social profile",
+   "width": 720,
+   "height": 720
+  },
   "sally-j-lieber": {
    "name": "sally-j-lieber",
    "file": "/portraits/sally-j-lieber.avif",
@@ -410,6 +540,44 @@
    "width": 500,
    "height": 667
   },
+  "emanuel-manny-yekutiel": {
+   "name": "emanuel-manny-yekutiel",
+   "file": "/portraits/emanuel-manny-yekutiel.webp",
+   "sourceUrl": "https://run.imgix.net/223e28d5-8ff7-4041-b8f4-9c904757e61d/eb5a0f67-d3aa-42d2-b660-49ada6d9a7fa/eb5a0f67-d3aa-42d2-b660-49ada6d9a7fa.jpeg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=1292%2C396%2C2552%2C1668&auto=compress%2Cformat&fit=fillmax&w=750&q=75&s=dfc4e296c478f2cf6a11d06b024a7a2f",
+   "credit": "Manny Yekutiel for Supervisor campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.mannyforsf.com/",
+   "via": "campaign site",
+   "width": 750,
+   "height": 490
+  },
+  "mike-trouble-lin": {
+   "name": "mike-trouble-lin",
+   "file": "/portraits/mike-trouble-lin.webp",
+   "sourceUrl": null,
+   "credit": "Mike Trouble Lin campaign Linktree",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://linktr.ee/votemikelin",
+   "via": "own social profile",
+   "width": 320,
+   "height": 320,
+   "focus": [
+    0.61,
+    0.38,
+    1.4
+   ]
+  },
+  "tim-tung": {
+   "name": "tim-tung",
+   "file": "/portraits/tim-tung.webp",
+   "sourceUrl": "https://run.imgix.net/bfe43de5-5100-4ad3-a9f8-f06ebc457635/c18cbf0c-e392-4acc-bcd4-3f702b3ad0c5/82c35450-859e-4360-921d-3cc2b728e9a7.webp?ixlib=js-3.8.0&bri=5&con=6&sat=0&high=0&shad=20&usm=0&rect=217%2C2%2C2455%2C1652&s=7075d05894048ec956db8b942e99c07e",
+   "credit": "Tim Tung for School Board campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://www.timtung.com/about",
+   "via": "campaign site",
+   "width": 2455,
+   "height": 1652
+  },
   "micah-c-lasher": {
    "name": "micah-c-lasher",
    "file": "/portraits/micah-c-lasher.avif",
@@ -442,6 +610,17 @@
    "via": "Wikimedia Commons",
    "width": 500,
    "height": 660
+  },
+  "bruce-a-blakeman-todd-hood": {
+   "name": "bruce-a-blakeman-todd-hood",
+   "file": "/portraits/bruce-a-blakeman-todd-hood.avif",
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Blakeman_Profile_Picture.jpg/500px-Blakeman_Profile_Picture.jpg",
+   "credit": "Arthur Raslich, CC BY-SA 4.0",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Blakeman_Profile_Picture.jpg",
+   "via": "Wikimedia Commons",
+   "width": 500,
+   "height": 578
   },
   "letitia-a-james": {
    "name": "letitia-a-james",
@@ -522,6 +701,575 @@
   }
  },
  "hotlinked": {
+  "ted-brown": {
+   "name": "ted-brown",
+   "url": "https://tedbrown.org/website/images/ted-headshot-2026.jpg",
+   "credit": "Ted Brown campaign site",
+   "page": "https://tedbrown.org/website/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 410
+  },
+  "pat-dixon": {
+   "name": "pat-dixon",
+   "url": "https://patdixon.org/wp-content/uploads/2026/07/pjd_headshot_260618.jpg",
+   "credit": "Pat Dixon campaign site",
+   "page": "https://patdixon.org/about-pat-dixon/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 512
+  },
+  "chris-gober": {
+   "name": "chris-gober",
+   "url": "https://framerusercontent.com/images/Ri2sym5Y4jMyhAfaW4foOqNA.jpg",
+   "credit": "Chris Gober campaign site",
+   "page": "https://chrisgober.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 5198,
+   "focus": [
+    0.51,
+    0.33,
+    2.6
+   ]
+  },
+  "lauren-b-pena": {
+   "name": "lauren-b-pena",
+   "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663450394445/BJQRmbhGNXZEirYx.jpg",
+   "credit": "Lauren B. Peña campaign site",
+   "page": "https://lauren4congress.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1319
+  },
+  "shehla-faizi": {
+   "name": "shehla-faizi",
+   "url": "https://images.squarespace-cdn.com/content/v1/6940b3b801659d28f153ab75/1b3c9a4f-f2dd-4797-99a0-acfdb5249425/MomentsbyManar.Headshot-Shehla-2026-03.jpg",
+   "credit": "Shehla Faizi campaign site",
+   "page": "https://www.faizifortexas.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1536
+  },
+  "nate-sheets": {
+   "name": "nate-sheets",
+   "url": "https://natesheets.com/wp-content/uploads/2025/07/Nate-Sheets-2.webp",
+   "credit": "Nate Sheets campaign site",
+   "page": "https://natesheets.com/about-nate-sheets/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 785
+  },
+  "bo-french": {
+   "name": "bo-french",
+   "url": "https://bofrench.com/wp-content/uploads/2025/11/BoFrench03-updated.jpg",
+   "credit": "Bo French campaign site",
+   "page": "https://bofrench.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2500,
+   "focus": [
+    0.3,
+    0.18,
+    2
+   ]
+  },
+  "maggie-ellis": {
+   "name": "maggie-ellis",
+   "url": "https://images.squarespace-cdn.com/content/v1/5ffe1e10830ce5345e720df1/fc9a7df2-b728-43b4-87fb-668b570bf316/ellis1.jpg",
+   "credit": "Maggie Ellis campaign site",
+   "page": "https://www.maggieforjustice.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2500
+  },
+  "chari-kelly": {
+   "name": "chari-kelly",
+   "url": "https://hkt.texasjudges.com/img/portrait-2-864.jpg?v=9eddc0a62e",
+   "credit": "Chari Kelly campaign site",
+   "page": "https://hkt.texasjudges.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 864
+  },
+  "kristen-hawkins": {
+   "name": "kristen-hawkins",
+   "url": "https://hkt.texasjudges.com/img/portrait-1-864.jpg?v=bd31d4b46b",
+   "credit": "Kristen Hawkins campaign site",
+   "page": "https://hkt.texasjudges.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 864
+  },
+  "gisela-d-triana": {
+   "name": "gisela-d-triana",
+   "url": "https://www.justicetriana.com/wp-content/uploads/2025/10/Triana-2025.jpg",
+   "credit": "Gisela D. Triana campaign site",
+   "page": "https://www.justicetriana.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 636
+  },
+  "okey-anyiam": {
+   "name": "okey-anyiam",
+   "url": "https://img1.wsimg.com/isteam/ip/5805d07b-a2a7-4a4b-bb71-1058033e30d6/88d2b5f5-9128-4499-bca5-aca9693120a3.JPG",
+   "credit": "Okey Anyiam campaign site",
+   "page": "https://okeyanyiamforjudge.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2048
+  },
+  "audra-riley": {
+   "name": "audra-riley",
+   "url": "https://www.judgeaudrariley.com/images/JudgeAudraf.jpg",
+   "credit": "Audra Riley campaign site",
+   "page": "https://www.judgeaudrariley.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1311
+  },
+  "holly-taylor": {
+   "name": "holly-taylor",
+   "url": "https://images.squarespace-cdn.com/content/v1/656b914f3b6db119ed7e75b7/fe8d2470-7c1c-4746-abb8-6a20e9ce6c56/holly-taylor-2026-1527x2100.jpg",
+   "credit": "Holly Taylor campaign site",
+   "page": "https://www.hollytforjudge.com",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1527
+  },
+  "john-messinger": {
+   "name": "john-messinger",
+   "url": "https://messingerforjustice.com/wp-content/uploads/2024/04/home.jpg",
+   "credit": "John Messinger campaign site",
+   "page": "https://messingerforjustice.com/about-john/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2048,
+   "focus": [
+    0.36,
+    0.37,
+    2.2
+   ]
+  },
+  "jerry-zimmerer": {
+   "name": "jerry-zimmerer",
+   "url": "https://jerryzimmerer.com/img/portrait-robe.jpg",
+   "credit": "Jerry Zimmerer campaign site",
+   "page": "https://jerryzimmerer.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 660
+  },
+  "tom-baker": {
+   "name": "tom-baker",
+   "url": "https://justicetombaker.com/wp-content/uploads/2026/07/Tom-Baker-resized.png",
+   "credit": "Tom Baker campaign site",
+   "page": "https://justicetombaker.com/about-thomas-baker/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 600
+  },
+  "cory-liu": {
+   "name": "cory-liu",
+   "url": "https://www.traviscountytx.gov/images/courts/civil/20250617-Judge_Liu_headshot_cropped.jpeg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/civil/district/250",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1274
+  },
+  "mica-arellano": {
+   "name": "mica-arellano",
+   "url": "https://assets.cdn.filesafe.space/ggxeWPIAhnIsXRqvLmwz/media/69f62e6652d70cb766a32c0a.jpg",
+   "credit": "Mica Arellano campaign site",
+   "page": "https://micatx.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1399
+  },
+  "allison-bush": {
+   "name": "allison-bush",
+   "url": "https://images.squarespace-cdn.com/content/v1/6855b5e8df6e7f51f6ee6cfd/fedcb696-eea5-49c5-a94c-770ea4c9980f/IMG_8859.jpeg",
+   "credit": "Allison Bush campaign site",
+   "page": "https://www.allisonfortx.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1150
+  },
+  "arshia-papari": {
+   "name": "arshia-papari",
+   "url": "https://images.solidarity.tech/fit-in/1200x0/filters:no_upscale()/us1ovmqljy8uwv9vac0dnv8wfp0y",
+   "credit": "Arshia Papari campaign site",
+   "page": "https://www.arshiafortexas.org/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1200
+  },
+  "maria-luisa-lulu-flores": {
+   "name": "maria-luisa-lulu-flores",
+   "url": "https://house.texas.gov/images/members/4150.jpg",
+   "credit": "Texas House of Representatives official page",
+   "page": "https://house.texas.gov/members/51",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 125
+  },
+  "cliff-brown": {
+   "name": "cliff-brown",
+   "url": "https://www.traviscountytx.gov/images/courts/brown.png",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/147",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "amy-clark-meachum": {
+   "name": "amy-clark-meachum",
+   "url": "https://www.traviscountytx.gov/images/courts/042624_IMG_5941_1.jpeg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/civil/district/201",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 621
+  },
+  "kennon-lily-wooten": {
+   "name": "kennon-lily-wooten",
+   "url": "https://images.squarespace-cdn.com/content/v1/677f0fe5cf6f684b577cdff3/e0b3722b-5130-4949-8e56-3a56f3c26f65/DSC02958.jpg",
+   "credit": "Kennon Lily Wooten campaign site",
+   "page": "https://www.kennonlilywooten.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 864
+  },
+  "daniella-deseta-lyttle": {
+   "name": "daniella-deseta-lyttle",
+   "url": "https://www.traviscountytx.gov/images/courts/daniella_deseta_lyttle.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/civil/district/261",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 5304
+  },
+  "karen-r-sage": {
+   "name": "karen-r-sage",
+   "url": "https://www.traviscountytx.gov/images/courts/sage.png",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/299",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "chantal-melissa-eldridge": {
+   "name": "chantal-melissa-eldridge",
+   "url": "https://www.traviscountytx.gov/images/courts/331.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/331",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "brandy-mueller": {
+   "name": "brandy-mueller",
+   "url": "https://www.traviscountytx.gov/images/courts/Brandy_Mueller_403rd.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/403",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "catherine-a-mauzy": {
+   "name": "catherine-a-mauzy",
+   "url": "https://www.traviscountytx.gov/images/courts/mauzy.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/civil/district/419",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "laurie-eiserloh": {
+   "name": "laurie-eiserloh",
+   "url": "https://www.traviscountytx.gov/images/courts/20250924-laurieeiserloh2.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/civil/district/455th-civil-district-court",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1100
+  },
+  "maya-guerra-gamble": {
+   "name": "maya-guerra-gamble",
+   "url": "https://www.traviscountytx.gov/images/courts/2025_Gamble.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/civil/district/459",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 640
+  },
+  "andy-brown": {
+   "name": "andy-brown",
+   "url": "https://www.traviscountytx.gov/images/commissioners_court/judge/JudgeBrown-headshot.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/commissioners-court/county-judge",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "todd-wong": {
+   "name": "todd-wong",
+   "url": "https://www.traviscountytx.gov/images/courts/judge-wong.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/civil/county/cc1",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "leslie-dippel": {
+   "name": "leslie-dippel",
+   "url": "https://images.squarespace-cdn.com/content/v1/68794d85cb1e4219a9f398b5/866e652a-053b-4dff-85e7-04a46a14d81e/image4.jpeg",
+   "credit": "Leslie Dippel campaign site",
+   "page": "https://www.lesliedippel.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2048
+  },
+  "bianca-garcia": {
+   "name": "bianca-garcia",
+   "url": "https://www.traviscountytx.gov/images/courts/Picture-Bianca_Garcia_CC3_to_webteam.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc3",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 618
+  },
+  "dimple-malhotra": {
+   "name": "dimple-malhotra",
+   "url": "https://www.traviscountytx.gov/images/courts/malhotra.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc4",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "mary-ann-espiritu": {
+   "name": "mary-ann-espiritu",
+   "url": "https://www.traviscountytx.gov/images/courts/Mary_Ann_Espiritu_CC5.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc5",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 270
+  },
+  "denise-hernandez": {
+   "name": "denise-hernandez",
+   "url": "https://www.traviscountytx.gov/images/courts/JudgeD1.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc6",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2160
+  },
+  "guy-herman": {
+   "name": "guy-herman",
+   "url": "https://www.traviscountytx.gov/images/probate/Judges_Pics/Herman_HON_Guy_Resized.JPG",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/probate",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 225
+  },
+  "velva-l-price": {
+   "name": "velva-l-price",
+   "url": "https://www.traviscountytx.gov/images/VelvaPrince-sm.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/district-clerk",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "dyana-limon-mercado": {
+   "name": "dyana-limon-mercado",
+   "url": "https://countyclerk.traviscountytx.gov/wp-content/uploads/2023/01/dlmercado.jpg",
+   "credit": "Travis County Clerk official page",
+   "page": "https://countyclerk.traviscountytx.gov/",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "dolores-ortega-carter": {
+   "name": "dolores-ortega-carter",
+   "url": "https://www.traviscountytx.gov/images/county_treasurer/ortega-carter.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/treasurer",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 160
+  },
+  "george-morales-iii": {
+   "name": "george-morales-iii",
+   "url": "https://www.traviscountytx.gov/images/commissioners_court/Gmoralesheadshot.jpeg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/commissioners-court/precinct-four",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 880
+  },
+  "tanisa-jeffers": {
+   "name": "tanisa-jeffers",
+   "url": "https://www.traviscountytx.gov/images/justices_of_peace/Doc/JP5/tanisa-jeffers-jp5.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/justices-of-peace/jp5",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 4392
+  },
+  "raul-arturo-gonzalez": {
+   "name": "raul-arturo-gonzalez",
+   "url": "https://www.traviscountytx.gov/images/justices_of_peace/Ra%C3%BAl_Arturo_Gonz%C3%A1lez.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/justices-of-peace/jp4",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 250
+  },
+  "gabriel-padilla": {
+   "name": "gabriel-padilla",
+   "url": "https://www.traviscountytx.gov/images/constables/pct4/chief_gabe-padilla.jpg",
+   "credit": "Travis County official page",
+   "page": "https://www.traviscountytx.gov/constables/4",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 629
+  },
+  "skyler-a-korgel": {
+   "name": "skyler-a-korgel",
+   "url": "https://static.wixstatic.com/media/f2367f_769856b65d754522b7ad7acf9e19337f~mv2.png",
+   "credit": "Skyler A. Korgel campaign site",
+   "page": "https://demsfortcad.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 3000
+  },
+  "brian-pena": {
+   "name": "brian-pena",
+   "url": "https://static.wixstatic.com/media/f2367f_1fad9e6bd5c249868f1baa3976b22e14~mv2.png",
+   "credit": "Brian Peña campaign site",
+   "page": "https://demsfortcad.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1056
+  },
+  "yvonne-munoz": {
+   "name": "yvonne-munoz",
+   "url": "https://static.wixstatic.com/media/f2367f_163e62d1ce164e2487093a6fde55d813~mv2.png",
+   "credit": "Yvonne Muñoz campaign site",
+   "page": "https://demsfortcad.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 3000
+  },
+  "rich-heyman": {
+   "name": "rich-heyman",
+   "url": "https://images.squarespace-cdn.com/content/v1/68b0bab4c94ae4036d0fffa5/5fb246aa-06cd-40a1-a324-d310a5598599/IMG_5761+copy.jpg",
+   "credit": "Rich Heyman campaign site",
+   "page": "https://www.richforaustin.org/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2500
+  },
+  "katie-kam": {
+   "name": "katie-kam",
+   "url": "https://static.wixstatic.com/media/fac548_c9b1b83eeeb94e67a3c752b3ac657fe6~mv2.jpg",
+   "credit": "Katie Kam campaign site",
+   "page": "https://www.katiekamforaustin.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2414
+  },
+  "zohaib-zo-qadri": {
+   "name": "zohaib-zo-qadri",
+   "url": "https://austin.widen.net/content/yajrku9cxq/web/Austin%20District%209%20-%20Web_zo-profile-opt.jpg?crop=yes&w=1312&h=1168&itok=xHm0taqR",
+   "credit": "Austin City Council official page",
+   "page": "https://www.austintexas.gov/department/district-9",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1312
+  },
+  "kai-huang": {
+   "name": "kai-huang",
+   "url": "https://kai4atx.com/kai-hero.jpg",
+   "credit": "Kai Huang campaign site",
+   "page": "https://kai4atx.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 880,
+   "focus": [
+    0.47,
+    0.35,
+    1.3
+   ]
+  },
+  "cynthia-soliz": {
+   "name": "cynthia-soliz",
+   "url": "https://static.wixstatic.com/media/0c6aef_ad836d147145410483bfe1045df1527b~mv2.jpeg",
+   "credit": "Cynthia Soliz campaign site",
+   "page": "https://www.cynthiasolizforaisd.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 5152
+  },
+  "pamela-mathai": {
+   "name": "pamela-mathai",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a7cc1df5db956439d04dcd5/2200014e-6097-4adc-b5df-dcb6ec0ff61b/MathaiPortraits-8.jpg",
+   "credit": "Pamela Mathai campaign site",
+   "page": "https://www.pamelaforaisd.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2500
+  },
+  "dana-walker": {
+   "name": "dana-walker",
+   "url": "https://offices.austincc.edu/board-of-trustees/wp-content/uploads/sites/30/2023/11/dana_walker_2020.jpg",
+   "credit": "Austin Community College Board of Trustees official page",
+   "page": "https://offices.austincc.edu/board-of-trustees/board-members/dana-walker/",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 325
+  },
+  "gloria-gonzales-dholakia": {
+   "name": "gloria-gonzales-dholakia",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a70ded10dc13c22a7d4cab1/dd33c219-51eb-4b66-ac91-75744186ed45/Dholakia%2C+Gloria_DSC2418-1.jpg",
+   "credit": "Gloria Gonzales-Dholakia campaign site",
+   "page": "https://www.gloriaforacc.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2500
+  },
+  "gigi-edwards-bryant": {
+   "name": "gigi-edwards-bryant",
+   "url": "https://offices.austincc.edu/board-of-trustees/wp-content/uploads/sites/30/2025/06/gigiheadshop007.jpg",
+   "credit": "Austin Community College Board of Trustees official page",
+   "page": "https://offices.austincc.edu/board-of-trustees/board-members/gigi-edwards-bryant/",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1024
+  },
+  "nan-mcraven": {
+   "name": "nan-mcraven",
+   "url": "https://offices.austincc.edu/board-of-trustees/wp-content/uploads/sites/30/2023/11/mcraven.jpg",
+   "credit": "Austin Community College Board of Trustees official page",
+   "page": "https://offices.austincc.edu/board-of-trustees/board-members/dr-nan-mcraven/",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 325
+  },
+  "herb-w-morgan": {
+   "name": "herb-w-morgan",
+   "url": "https://static.wixstatic.com/media/b29e09_9b7ced4a2c004a53b4f05357b426c53c~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_85/Herb%20W_%20Morgan%20III%20%20Headshot_outside.jpg",
+   "credit": "Herb Morgan campaign site",
+   "page": "https://www.herbmorgan.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 800
+  },
   "richard-barrera": {
    "name": "richard-barrera",
    "url": "https://images.squarespace-cdn.com/content/v1/67b0f232273eb817e2f7a289/edc7eb84-98dd-425f-9367-3795de9dc8a1/Portrait-24-Edit_pp+%281%29.jpeg?format=500w",
@@ -530,8 +1278,495 @@
    "via": "Campaign press/media page",
    "license": "Campaign press photo (offered for media use)",
    "width": 500
+  },
+  "sonja-shaw": {
+   "name": "sonja-shaw",
+   "url": "https://www.shawforca.com/sonja.jpg",
+   "credit": "Sonja Shaw campaign site",
+   "page": "https://www.shawforca.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 800
+  },
+  "jennifer-hawks": {
+   "name": "jennifer-hawks",
+   "url": "https://hawksforus.com/assets/jennifer-hawks-portrait-CopXTkhs.jpg",
+   "credit": "Jennifer Hawks campaign site",
+   "page": "https://hawksforus.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1272
+  },
+  "john-pimentel": {
+   "name": "john-pimentel",
+   "url": "https://images.squarespace-cdn.com/content/v1/695a3cb6044be4572a8258ce/cf8343b4-ec92-4d3b-96ce-156a358baefe/ThePimentels-11_COB-small.png?format=750w",
+   "credit": "John Pimentel campaign site",
+   "page": "https://johnpimentel.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "kelli-m-evans": {
+   "name": "kelli-m-evans",
+   "url": "https://supreme.courts.ca.gov/sites/default/files/supremecourt/default/styles/large/public/2023-01/Justice%20Kelli%20Evans.png?itok=FjJ_04VJ",
+   "credit": "Supreme Court of California official page",
+   "page": "https://supreme.courts.ca.gov/about-court/justices-court/justice-kelli-m-evans",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 322
+  },
+  "joshua-groban": {
+   "name": "joshua-groban",
+   "url": "https://supreme.courts.ca.gov/sites/default/files/supremecourt/default/2026-02/Groban_updated.jpg",
+   "credit": "Supreme Court of California official page",
+   "page": "https://supreme.courts.ca.gov/about-court/justices-court/associate-justice-joshua-p-groban",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1024
+  },
+  "charles-a-smiley": {
+   "name": "charles-a-smiley",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/portrait/utf-8gw_250310_0020-smiley_8x10_0.jpg",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/charles-smiley",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2400
+  },
+  "kathleen-m-banke": {
+   "name": "kathleen-m-banke",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/kathleen-banke-div1jpg.jpg?itok=RSKAqGP0",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/kathleen-m-banke",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "monique-langhorne-wilson": {
+   "name": "monique-langhorne-wilson",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/justice-langhorne-wilson.jpg",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/monique-langhorne-wilson",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 853
+  },
+  "therese-m-stewart": {
+   "name": "therese-m-stewart",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/justice_therese_stewartjpg.jpg?h=607bcefb&itok=gYZN9xkt",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/therese-m-stewart",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "tara-m-desautels": {
+   "name": "tara-m-desautels",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/gw_240814_0070-desautels_pr_bw.png",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/tara-m-desautels",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1494
+  },
+  "ioana-petrou": {
+   "name": "ioana-petrou",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/1dca-petrou-bio-photo-150x180jpg.jpg?h=e8c4feba&itok=l7n3Bth3",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/ioana-petrou",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "victor-a-rodriguez": {
+   "name": "victor-a-rodriguez",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/gw_211206_0013-rodriguez_8x10-bwjpg.jpg",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/victor-rodriguez",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2400
+  },
+  "tracie-l-brown": {
+   "name": "tracie-l-brown",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/1dca-brown-bio-photo-150x180jpg.jpg?h=4eadab8c&itok=jvZn6OYW",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/tracie-l-brown",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "mark-simons": {
+   "name": "mark-simons",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/mark-simons-div5jpg.jpg?h=ab8bb801&itok=HdmDm-a3",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/mark-b-simons",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "danny-y-chou": {
+   "name": "danny-y-chou",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/dannychou.jpg",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/danny-y-chou",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1248
+  },
+  "gordon-burns": {
+   "name": "gordon-burns",
+   "url": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/1dca-burns-bio-photo-150x180jpg.jpg?h=5ee6e345&itok=gnG0992v",
+   "credit": "First District Court of Appeal official page",
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/gordon-b-burns",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 200
+  },
+  "joaquin-torres": {
+   "name": "joaquin-torres",
+   "url": "https://media.api.sf.gov/original_images/Joaquin_Torres_-_spotlight_image.jpeg",
+   "credit": "City and County of San Francisco (SF.gov)",
+   "page": "https://www.sf.gov/profile--joaquin-torres",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2060
+  },
+  "alex-behrend": {
+   "name": "alex-behrend",
+   "url": "https://img1.wsimg.com/isteam/ip/47fa1d63-5c11-4857-95ab-39b68f651f15/headshot2_3_45rounded.png",
+   "credit": "Alex for All campaign site",
+   "page": "https://alexforalld6.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1800
+  },
+  "gary-mccoy": {
+   "name": "gary-mccoy",
+   "url": "https://images.squarespace-cdn.com/content/v1/68a4cdaf1a114e04a466803a/60c68d10-69e2-429e-ad07-682668ad3313/Untitled+design+%283%29.png?format=750w",
+   "credit": "Gary McCoy for District 8 Supervisor campaign site",
+   "page": "https://www.garymccoysf.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "michael-t-nguyen": {
+   "name": "michael-t-nguyen",
+   "url": "https://images.squarespace-cdn.com/content/v1/6733df7075eb3a0a612a33ee/2704dd54-f7cd-4488-accb-fa0c728611b2/2023_MichaelJuicyNguyen_006.jpg?format=750w",
+   "credit": "Michael Nguyen for SF D8 Supervisor campaign site",
+   "page": "https://www.michaelnguyen4sf.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "darshini-patel": {
+   "name": "darshini-patel",
+   "url": "https://votedarshini.com/images/my-story/DarshiniPatel-56.jpg",
+   "credit": "Darshini for District 8 campaign site",
+   "page": "https://votedarshini.com/about/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 3600
+  },
+  "pearci-pj-bastiany-iii": {
+   "name": "pearci-pj-bastiany-iii",
+   "url": "https://bastiany-campaign-site.replit.app/assets/pj-portrait-Ddne3iA1.webp",
+   "credit": "PJ Bastiany campaign site",
+   "page": "https://bastiany-campaign-site.replit.app/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 960
+  },
+  "theo-ellington": {
+   "name": "theo-ellington",
+   "url": "https://assets.nationbuilder.com/theo/pages/10/features/original/Ellington.jpg?1788203604",
+   "credit": "Theo Ellington for Supervisor campaign site",
+   "page": "https://www.theoellington.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2000
+  },
+  "j-r-eppler": {
+   "name": "j-r-eppler",
+   "url": "https://static.wixstatic.com/media/a628aa_9f26e20496e94a2e9289b2952e7442c3~mv2.png/v1/crop/x_0,y_124,w_1512,h_1507/fill/w_800,h_800,al_c,q_85/02-JR-Headshot.png",
+   "credit": "J.R. Eppler for Supervisor campaign site",
+   "page": "https://www.jreppler.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 800
+  },
+  "shawn-m-richard": {
+   "name": "shawn-m-richard",
+   "url": "https://assets.cdn.filesafe.space/qDmtes1xluelbOHtD4yv/media/6a9643a2d931dc07514f2df8.jpg",
+   "credit": "Shawn Richard for District 10 Supervisor campaign site",
+   "page": "https://www.shawnmrichard4d10.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1284
+  },
+  "autumn-brown-garibay": {
+   "name": "autumn-brown-garibay",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a01117755a1000b9f8277a7/beeafa0e-a508-44b2-8d8d-5d93f1c6a05b/Untitled+design+%2834%29.png?format=750w",
+   "credit": "Autumn for School Board campaign site",
+   "page": "https://www.autumnforschoolboard.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "virginia-cheung": {
+   "name": "virginia-cheung",
+   "url": "https://static.wixstatic.com/media/8d4dcf_7a60227a7585425cadc040729ac23497~mv2.jpg",
+   "credit": "Virginia Cheung for SF Board of Education campaign site",
+   "page": "https://www.virginiacheung.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2048,
+   "focus": [
+    0.26,
+    0.3,
+    1.6
+   ]
+  },
+  "ryan-hazelton": {
+   "name": "ryan-hazelton",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a033e5003b9014ef0979f0b/c2224484-8e76-4b02-83be-8a92d1cea87a/20221216_152406.jpg?format=750w",
+   "credit": "Ryan Hazelton for SF School Board campaign site",
+   "page": "https://www.ryanforsfschools.com/communitywork",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "phil-kim": {
+   "name": "phil-kim",
+   "url": "https://images.squarespace-cdn.com/content/v1/697ac61d667289543b1ecfc6/e7d6f85b-c6cb-4f04-8377-6197d6cabe42/PhilKim_Headshot_2025_BW.png?format=750w",
+   "credit": "Phil Kim for School Board campaign site",
+   "page": "https://www.philkim.org/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "laurance-lee": {
+   "name": "laurance-lee",
+   "url": "https://images.squarespace-cdn.com/content/6551d8a73106c7658dc32d23/920aacf6-d33f-4d96-9911-b6084ebeddcd/laurance-lee-hero-D-lincoln-steps-v2-final.jpg",
+   "credit": "Laurance Lee for School Board campaign site",
+   "page": "https://www.lauranceleesf.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1200,
+   "focus": [
+    0.34,
+    0.33,
+    2.6
+   ]
+  },
+  "reina-tello": {
+   "name": "reina-tello",
+   "url": "https://www.reinaforschoolboard.org/photos/DSC_0528-2.jpg",
+   "credit": "Reina Tello for School Board campaign site",
+   "page": "https://www.reinaforschoolboard.org/about",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1280
+  },
+  "elijah-ball": {
+   "name": "elijah-ball",
+   "url": "https://images.squarespace-cdn.com/content/v1/698b74879e5d983b46f09f15/ce005045-fd37-4b84-a217-592624d3068e/0D4A7993.jpg?format=750w",
+   "credit": "Elijah Ball for City College Board of Trustees campaign site",
+   "page": "https://www.elijahforcitycollege.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750,
+   "focus": [
+    0.49,
+    0.21,
+    2
+   ]
+  },
+  "monroe-lace": {
+   "name": "monroe-lace",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a9f8077f112c37940445dd6/d499fb54-e8ea-4f73-be54-5c82fc11da8e/0D4A8714.jpg?format=750w",
+   "credit": "Monroe Lace for City College Board of Trustees campaign site",
+   "page": "https://www.monroelace.org/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "leah-lacroix": {
+   "name": "leah-lacroix",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a962a969b639a4190930b78/fb49249c-19a8-45c3-92d5-57e4d43eb4cd/DSC09602.jpg?format=750w",
+   "credit": "Our City College Slate campaign site (LaCroix / Lee / McFadden)",
+   "page": "https://www.ourcitycollege.com/leah-lacroix",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "jeremy-lee": {
+   "name": "jeremy-lee",
+   "url": "https://jeremyleesf.com/wp-content/uploads/2026/10/DSC09237-1024x683.jpg",
+   "credit": "Jeremy Lee for City College Board campaign site",
+   "page": "https://jeremyleesf.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1024
+  },
+  "bunny-mcfadden": {
+   "name": "bunny-mcfadden",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a851174471db85a387960bd/14782535-0691-4552-9c5a-476ce79029f2/headshot2025a.JPG?format=750w",
+   "credit": "Bunny McFadden for City College Board of Trustees campaign site",
+   "page": "https://www.bunny4thepeople.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750
+  },
+  "erwin-tam": {
+   "name": "erwin-tam",
+   "url": "https://images.squarespace-cdn.com/content/v1/6a9f86cac9472e077d0688c2/daf3b147-e627-41e3-ba30-18f928742832/0D4A8049.jpg?format=750w",
+   "credit": "Erwin Tam for City College Board of Trustees campaign site",
+   "page": "https://www.erwintam.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 750,
+   "focus": [
+    0.59,
+    0.27,
+    2
+   ]
+  },
+  "ruth-ferguson": {
+   "name": "ruth-ferguson",
+   "url": "https://ruthferguson.com/wp-content/uploads/2024/05/DSC_7732-683x1024.jpg",
+   "credit": "Ruth Ferguson for City College Board campaign site",
+   "page": "https://ruthferguson.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 683
+  },
+  "wilneida-negron": {
+   "name": "wilneida-negron",
+   "url": "https://cdn.prod.website-files.com/6a2a35e7bd62ef27be8b230d/6a2aa0c9fa95920a799c0f7a_Frame%202147226689.avif",
+   "credit": "Wilneida Negrón campaign site",
+   "page": "https://www.wilneidany12.com/about-wilneida",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 434
+  },
+  "karen-ortiz": {
+   "name": "karen-ortiz",
+   "url": "https://images.squarespace-cdn.com/content/v1/5e56d672b4c0de1f3af4505f/bbf16e1f-b781-4681-b9ab-9dd8ee694937/karen-cropped.jpg",
+   "credit": "Karen Ortiz campaign site",
+   "page": "https://ko4congress.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1644
+  },
+  "saritha-komatireddy": {
+   "name": "saritha-komatireddy",
+   "url": "https://sarithafornewyork.com/wp-content/uploads/2026/01/IMG_0086.jpeg",
+   "credit": "Saritha Komatireddy campaign site",
+   "page": "https://sarithafornewyork.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 671
+  },
+  "charlotte-friedman": {
+   "name": "charlotte-friedman",
+   "url": "https://charlotte4nysenate.com/wp-content/uploads/2026/03/IMG_1332-3-scaled.jpg",
+   "credit": "Charlotte Friedman campaign site",
+   "page": "https://charlotte4nysenate.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1956
+  },
+  "alina-bonsell": {
+   "name": "alina-bonsell",
+   "url": "https://static.wixstatic.com/media/09be39_88cdf523efee45fe9d94ae9a4d44b8a0~mv2.png/v1/fill/w_800,h_1120,al_c,q_85/09be39_88cdf523efee45fe9d94ae9a4d44b8a0~mv2.png",
+   "credit": "Alina Bonsell campaign site",
+   "page": "https://www.alinabonsell.com/meetalina",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 800
+  },
+  "cristina-fontanelli": {
+   "name": "cristina-fontanelli",
+   "url": "https://static.wixstatic.com/media/44c1f0_502160e14d534c48b04fd77025dd4c22~mv2.jpeg/v1/fill/w_800,h_1100,al_c,q_85/44c1f0_502160e14d534c48b04fd77025dd4c22~mv2.jpeg",
+   "credit": "Cristina Fontanelli campaign site",
+   "page": "https://www.cristinafontanelli4ny.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 800
+  },
+  "saliann-scarpulla": {
+   "name": "saliann-scarpulla",
+   "url": "https://web.archive.org/web/20260110230036im_/https://www.nycourts.gov/courts/AD1/images/judgeScarpulla.jpg",
+   "credit": "Appellate Division, First Department official page",
+   "page": "https://www.nycourts.gov/courts/AD1/JusticesOfTheCourt/Justice_Scarpulla.shtml",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 299
+  },
+  "manuel-j-mendez": {
+   "name": "manuel-j-mendez",
+   "url": "https://web.archive.org/web/20260110175659im_/https://www.nycourts.gov/courts/AD1/images/mendezphoto.jpg",
+   "credit": "Appellate Division, First Department official page",
+   "page": "https://www.nycourts.gov/courts/AD1/JusticesOfTheCourt/Justice_Mendez.shtml",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 480
+  },
+  "vlad-frants": {
+   "name": "vlad-frants",
+   "url": "https://www.vladfrantsforcivilcourt.com/images/headshot.jpg",
+   "credit": "Vlad Frants campaign site",
+   "page": "https://www.vladfrantsforcivilcourt.com/",
+   "via": "campaign site",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 2384
   }
  },
- "hotlinkedNote": "Candidates' own public campaign or official headshots (not licensed for reuse): shown from their source URL, never copied, credited to the source page.",
- "selfHostedNote": "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json. Resized (and face-cropped where Civic noted) only. Never generated."
+ "runningMates": {
+  "kathy-c-hochul-adrienne-e-adams": {
+   "name": "adrienne-e-adams",
+   "file": "/portraits/adrienne-e-adams.webp",
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2031800195806035968/gNOMSlSL_400x400.jpg",
+   "credit": "Adrienne E. Adams on X",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "page": "https://x.com/AdrienneEAdams",
+   "via": "own social profile",
+   "width": 400,
+   "height": 400,
+   "kind": "self",
+   "mateName": "Adrienne E. Adams"
+  },
+  "bruce-a-blakeman-todd-hood": {
+   "name": "todd-hood",
+   "url": "https://www.madisoncounty.ny.gov/ImageRepository/Document?documentID=6023",
+   "credit": "Madison County Sheriff official page",
+   "page": "https://www.madisoncounty.ny.gov/1707/About-the-Sheriffs-Office",
+   "via": "official page",
+   "license": "Not licensed; candidate's own public photo, credited and linked",
+   "width": 1733,
+   "kind": "hot",
+   "mateName": "Todd Hood"
+  }
+ },
+ "incompleteRaces": [
+  "ca-ltgov",
+  "sf-board-of-education",
+  "tx-ag",
+  "tx-ltgov"
+ ],
+ "hotlinkedNote": "Candidates' own public headshots (not licensed for reuse): shown from their source URL, never copied, credited to the source page.",
+ "selfHostedNote": "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json. Resized only (Civic cropNote applied as CSS focus). Never generated.",
+ "leftOut": [],
+ "excluded": [
+  "jimmy-blacklock",
+  "james-p-sullivan",
+  "kyle-hawkins",
+  "brett-busby",
+  "kevin-patrick-yeary",
+  "scott-k-field",
+  "april-farris",
+  "darlene-byrne",
+  "alida-fisher"
+ ]
 }

@@ -46,31 +46,45 @@ describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by d
     expect(allOrNone([{ photo: p }, { photo: null }]).every((c) => c.photo === null)).toBe(true);
     expect(allOrNone([{ photo: p }, { photo: p }]).every((c) => c.photo)).toBe(true);
   });
-  it("race mode: D9, HD49, HD51 and the NY governor ticket show initials; ca-ag shows photos", () => {
-    const race = (z: string, id: string) => ({ candidates: allOrNone((ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { photo?: unknown }[] }).candidates) });
-    for (const [z, id] of [["78701", "austin-council-9"], ["78701", "tx-hd-49"], ["78701", "tx-house-51"], ["10001", "ny-governor"]])
-      expect(race(z, id).candidates.every((c) => !c.photo), id).toBe(true);
-    expect(race("94103", "ca-ag").candidates.every((c) => c.photo)).toBe(true);
+  it("race mode (Civic headshot pass, Oct 30 12:40 AM): incomplete races and the 4 'photo ages not comparable' races show initials", () => {
+    const race = (z: string, id: string) => (ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { photo?: unknown }[] }).candidates;
+    for (const [z, id] of [["78701", "tx-ltgov"], ["78701", "tx-ag"], ["94103", "ca-ltgov"], ["94103", "sf-board-of-education"], ["94103", "sf-supervisor-10"], ["10001", "ny-supreme-1jd"]])
+      expect(race(z, id).every((c) => !c.photo), id).toBe(true);
+    // tx-ltgov has a photo for all 4 candidates, but Civic marks it incomplete: still initials in race mode, photos in candidate mode.
+    const raw = (ballotFor("78701")!.races.find((r) => r.id === "tx-ltgov") as unknown as { candidates: { name: string }[] }).candidates.map((c) => withLicensedPhoto({ ...c, photo: undefined } as never) as { photo?: unknown });
+    expect(raw.every((c) => c.photo)).toBe(true);
+    expect(gatePhotos(raw, "race", "tx-ltgov").every((c) => !c.photo)).toBe(true);
+    expect(gatePhotos(raw, "candidate", "tx-ltgov").every((c) => c.photo)).toBe(true);
+    for (const [z, id] of [["94103", "ca-ag"], ["78701", "austin-council-9"], ["10001", "ny-governor"]]) expect(race(z, id).every((c) => c.photo), id).toBe(true);
+  });
+  it("running mates are attached to their ticket; cropNote focus flows to the photo", () => {
+    const gov = (ballotFor("10001")!.races.find((r) => r.id === "ny-governor") as unknown as { candidates: { name: string; photo?: { mate?: { name: string; url: string } } }[] }).candidates;
+    expect(gov.find((c) => /Hochul/.test(c.name))?.photo?.mate?.name).toBe("Adrienne E. Adams");
+    expect(gov.find((c) => /Blakeman/.test(c.name))?.photo?.mate?.name).toBe("Todd Hood");
+    const sf = ballotFor("94103")!.races.find((r) => r.id === "sf-community-college-board") as unknown as { candidates: { name: string }[] };
+    const ball = withLicensedPhoto({ ...sf.candidates.find((c) => /Ball/.test(c.name))!, photo: undefined } as never) as { photo?: { focus?: number[] } };
+    expect(ball.photo?.focus).toEqual([0.49, 0.21, 2]);
   });
   it("every shown photo is in Civic's licensed file with attribution, self-hosted, never txcourts.gov or the Fisher video still", () => {
     const hosted = JSON.parse(src("data/photos.json")).selfHosted as Record<string, { file: string; credit: string; license: string; sourceUrl: string }>;
     for (const [id, x] of Object.entries(hosted)) {
-      expect(PB[id]?.photoUrl, id).toBe(x.sourceUrl);
+      expect(PB[id]?.photoUrl ?? null, id).toBe(x.sourceUrl);
       expect(x.credit, id).toBe(String(PB[id].attribution).replace(/^photo:\s*/i, ""));
       expect(x.license, id).toBeTruthy();
       expect(fs.existsSync(`public${x.file}`), id).toBe(true);
-      expect(x.sourceUrl).not.toMatch(/txcourts\.gov/i);
+      expect(String(x.sourceUrl)).not.toMatch(/txcourts\.gov/i);
     }
     expect(hosted["alida-fisher"]).toBeUndefined();
-    expect(hosted["bruce-a-blakeman-todd-hood"]).toBeUndefined();
-    for (const f of fs.readdirSync("public/portraits")) expect(hosted[f.replace(/\.avif$/, "")], f).toBeTruthy();
+    // Civic localFile copies are self-hosted as resized webp; running mates' files are kept under runningMates.
+    const mates = Object.values(JSON.parse(src("data/photos.json")).runningMates ?? {}) as { file?: string }[];
+    for (const f of fs.readdirSync("public/portraits")) expect(hosted[f.replace(/\.(avif|webp)$/, "")] || mates.some((m) => m.file === `/portraits/${f}`), f).toBeTruthy();
     // Unlicensed campaign/official headshots are hotlinked (https, from Civic's photoUrl), never copied; never news photos.
     const hot = (JSON.parse(src("data/photos.json")).hotlinked ?? {}) as Record<string, { url: string; page: string; via: string }>;
     for (const [id, x] of Object.entries(hot)) {
       expect(x.url, id).toBe(PB[id].photoUrl);
       expect(x.url).toMatch(/^https:\/\//);
       expect(x.page, id).toBeTruthy();
-      expect(x.via, id).toMatch(/campaign|official/i);
+      expect(x.via, id).toMatch(/campaign|official|own social profile/i);
       expect(x.via, id).not.toMatch(/news/i);
       expect(fs.existsSync(`public/portraits/${id}.avif`), id).toBe(false);
     }

@@ -19,14 +19,33 @@ export function withPhoto<T extends Politician>(p: T): T {
   return found ? { ...p, photo: { url: found.url, credit: `${found.credit} (${found.license})`, license: found.license } } : p;
 }
 
-type Hosted = { name: string; file: string; sourceUrl: string; credit: string; license: string; page: string | null; via: string; width?: number };
-const hosted = ((data as { selfHosted?: Record<string, Hosted> }).selfHosted ?? {}) as Record<string, Hosted>;
+/** Civic cropNote focus: [x, y, scale]. x/y = the face point as fractions of the image (CSS object-position and
+ *  transform-origin), scale = zoom. Display only; the image is not edited. */
+export type Focus = [number, number, number];
+type Hosted = { name: string; file: string; sourceUrl: string | null; credit: string; license: string | null; page: string | null; via: string | null; width?: number; focus?: Focus };
+const hosted = ((data as unknown as { selfHosted?: Record<string, Hosted> }).selfHosted ?? {}) as Record<string, Hosted>;
 export const slug = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 /** Tiles are 56px; at 2x screens a source under 112px wide looks soft (e.g. a 100x125 court photo), so it counts as missing. */
 export const MIN_PHOTO_WIDTH = 112;
 
-type Hot = { name: string; url: string; credit: string; page: string; via: string; width?: number | null };
-const hot = ((data as { hotlinked?: Record<string, Hot> }).hotlinked ?? {}) as Record<string, Hot>;
+type Hot = { name: string; url: string; credit: string; page: string; via: string | null; width?: number | null; focus?: Focus };
+const hot = ((data as unknown as { hotlinked?: Record<string, Hot> }).hotlinked ?? {}) as Record<string, Hot>;
+type Mate = (Hosted | Hot) & { kind: "self" | "hot"; mateName: string };
+/** Running mates (Civic role "running mate"), keyed by their ticket's candidate id; shown beside the ticket's photo. */
+const mates = ((data as unknown as { runningMates?: Record<string, Mate> }).runningMates ?? {}) as Record<string, Mate>;
+/** Races Civic marks incomplete (photo ages not comparable): initials in race mode even when every candidate has a photo. */
+export const INCOMPLETE_RACES = new Set<string>(((data as unknown as { incompleteRaces?: string[] }).incompleteRaces ?? []));
+export type CandPhoto = { url: string; credit: string; author: string; license?: string; attribution?: string; page?: string; hotlinked?: boolean; focus?: Focus; mate?: CandPhoto & { name: string } };
+const toPhoto = (h: Hosted | Hot): CandPhoto | null => {
+  if ((h.width ?? 999) < MIN_PHOTO_WIDTH) return null;
+  const attribution = cleanCredit(h.credit, h.via);
+  // QA fb66b9b P2: author and license are separate fields ("U.S. House of Representatives" + "Public domain"); the
+  // visible credit stays "Photo: {attribution}" (Civic's full text).
+  const lic = (h as { license?: string | null }).license ?? "";
+  const author = /,\s*(?:CC[\s0-9-]|public domain)|\(public domain\)/i.test(attribution) ? creditParts(attribution, lic, h.page).author : attribution;
+  const url = "file" in h ? h.file : h.url;
+  return { url, credit: `Photo: ${attribution}`, author, ...(lic ? { license: lic } : {}), attribution, page: h.page ?? undefined, ...("file" in h ? {} : { hotlinked: true }), ...(h.focus ? { focus: h.focus } : {}) };
+};
 /** data/photo_takedowns.json: candidate ids (slugs, e.g. "rob-bonta") whose photo must never show. They get initials. */
 export const TAKEDOWNS = new Set<string>(TAKEDOWN_IDS as string[]);
 /** Clean credit text: Civic's attribution without "Photo:"; never a raw URL or "Unknown author". */
@@ -42,14 +61,12 @@ export function withLicensedPhoto<T extends Politician & { aka?: string | null }
   const ids = [slug(p.name), ...(p.aka ? [slug(p.aka)] : [])];
   if (ids.some((id) => TAKEDOWNS.has(id))) return { ...p, photo: null };
   const h = ids.map((id) => hosted[id]).find(Boolean);
-  if (h && (h.width ?? 999) >= MIN_PHOTO_WIDTH) {
-    const author = cleanCredit(h.credit, h.via);
-    return { ...p, photo: { url: h.file, credit: `Photo: ${author}`, author, page: h.page ?? undefined } };
-  }
   const x = ids.map((id) => hot[id]).find(Boolean);
-  if (x && (x.width ?? 999) >= MIN_PHOTO_WIDTH) {
-    const author = cleanCredit(x.credit, x.via);
-    return { ...p, photo: { url: x.url, credit: `Photo: ${author}`, author, page: x.page, hotlinked: true } };
+  const main = (h && toPhoto(h)) || (x && toPhoto(x)) || null;
+  if (main) {
+    const m = ids.map((id) => mates[id]).find(Boolean);
+    const mp = m && !TAKEDOWNS.has(slug(m.mateName)) ? toPhoto(m) : null;
+    return { ...p, photo: mp ? { ...main, mate: { ...mp, name: m!.mateName } } : main };
   }
   return { ...p, photo: null };
 }
@@ -72,8 +89,9 @@ export const creditText = (c: { author: string; license: string }) => `Photo: ${
  *  NEXT_PUBLIC_PHOTO_GATE=candidate (a build-time value; no project setting needed), or change the default here. */
 import { PHOTO_GATE, type PhotoGate } from "./photoGate";
 export { PHOTO_GATE, type PhotoGate };
-export function gatePhotos<T extends { photo?: unknown }>(cands: T[], gate: PhotoGate = PHOTO_GATE): T[] {
-  return gate === "candidate" ? cands.map((c) => (c.photo ? c : { ...c, photo: null })) : allOrNone(cands);
+export function gatePhotos<T extends { photo?: unknown }>(cands: T[], gate: PhotoGate = PHOTO_GATE, raceId?: string): T[] {
+  if (gate === "candidate") return cands.map((c) => (c.photo ? c : { ...c, photo: null }));
+  return raceId && INCOMPLETE_RACES.has(raceId) ? cands.map((c) => ({ ...c, photo: null })) : allOrNone(cands);
 }
 
 /** Photo fairness, used by ballotFor (lib/tools.ts) on every race. All-or-none per race: photos only if every candidate in the race has one, otherwise initials for everyone. */

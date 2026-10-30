@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { H1 } from "../../lib/typeScale";
 import { stancesFor, type Answers } from "../../lib/issues";
 import { overlapStatus } from "../../lib/overlapCore.mjs";
-import { gradeFor, GRADE_RULE } from "../../lib/grades.mjs";
+import { gradesForRace, GRADE_RULE } from "../../lib/grades.mjs";
 import { PhotoGroup } from "../../components/Portrait";
 import CandidateRow, { type RowCand } from "../../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl } from "../../lib/endscreen.mjs";
@@ -29,8 +29,8 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
   const site = where.sites[0];
   const ed = when.events.find((e: { kind: string }) => e.kind === "election");
   const early = when.events.find((e: { kind: string }) => e.kind === "early");
-  const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => ({ r, list: r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })) })); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in ballot order (Adam, 11:28 PM: photos and sources on every row)
   const answered = answers ? ids.filter((id) => typeof answers[id] === "number").length : 0;
+  const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => { const l0 = r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })); const g = gradesForRace(r, l0.map((x) => x.o), answered, zip); return { r, list: l0.map((x, i) => ({ ...x, grade: g.grades[i] })) }; }); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in ballot order (Adam, 11:28 PM: photos and sources on every row)
   const yesNo = answers ? ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length : 0;
 
   function ics() {
@@ -73,7 +73,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
                   <p className="text-base font-[530]">{r.title || r.id}</p>
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {list.map(({ c, o }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={gradeFor(o, r.judicial, answered, undefined, r, zip)} />)}
+                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={grade} />)}
                   </ul></PhotoGroup>
                 </li>
               ))}

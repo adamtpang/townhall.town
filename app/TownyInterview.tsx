@@ -51,7 +51,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
   // QA P2 (9dfe90d): normal body text, and it says when the answers came from another ZIP.
   // Design p9: only answers that were saved before this page load (carried), never ones given in this session.
   const carry = carried > 0
-    ? <p className="mb-3 text-base leading-6 text-black" data-carryover>{carryText(carried, zip, savedZip)}</p>
+    ? <p className="mb-3 text-base leading-6 text-black" data-carryover>{carryText(carried, zip, savedZip, answered)}</p>
     : null;
   if (!open) return (
     <div className="mt-6" data-interview>
@@ -87,8 +87,8 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
 }
 
 /** The carry-over notice: where the saved answers came from. */
-export function carryText(n: number, zip: string, savedZip: string | null): string {
-  const a = `Your ${n} saved answer${n === 1 ? "" : "s"}`;
+export function carryText(n: number, zip: string, savedZip: string | null, total = n): string {
+  const a = total > n ? `${n} of your ${total} answers (saved earlier)` : `Your ${n} saved answer${n === 1 ? "" : "s"}`;
   const are = n === 1 ? "is" : "are";
   const tail = "Change any of them, or use Reset my answers.";
   if (savedZip && savedZip !== zip) return `${a} came from another ZIP (${savedZip}) and ${are} filled in below. ${tail}`;

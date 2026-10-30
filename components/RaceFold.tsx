@@ -3,6 +3,7 @@
 // is named, in ballot order); the full rows, grades with their label, sources and the research button open below.
 // At 768px and up the fold starts open, so desktop is unchanged.
 import { useEffect, useState, type ReactNode } from "react";
+import { ChevronDown } from "lucide-react";
 
 export type FoldLine = { name: string; text: string };
 export default function RaceFold({ id, title, lines, children }: { id: string; title: string; lines: FoldLine[]; children: ReactNode }) {
@@ -17,10 +18,11 @@ export default function RaceFold({ id, title, lines, children }: { id: string; t
   return (
     <details open={open} onToggle={(e) => setOpen((e.currentTarget as HTMLDetailsElement).open)} data-race-fold={id}>
       <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-        <span className="flex min-h-11 items-center justify-between gap-3">
-          <span className="text-base font-[530]">{title}</span>
-          <span className="shrink-0 text-sm text-[#3760F2] md:hidden" aria-hidden>{open ? "Hide" : "Details"}</span>
-        </span>
+        {/* Design p11 #5: same affordance as the phone accordion: the H3 left, a 16px chevron right (no "Details" pill). */}
+        <div className="flex min-h-11 items-center justify-between gap-3">
+          <h3 className="text-base font-[530]">{title}</h3>
+          <ChevronDown aria-hidden data-fold-chevron className={`h-4 w-4 shrink-0 text-black/60 transition-transform ${open ? "rotate-180" : ""}`} />
+        </div>
         {!open ? (
           <ul className="pb-1 text-sm leading-6 text-black/80" data-fold-lines>
             {lines.map((l) => <li key={l.name} className="truncate"><span className="font-[530] text-black">{l.name}</span>: {l.text}</li>)}

@@ -91,7 +91,7 @@ function enrich(b: Ballot): Ballot {
       const live = { campaignSite: liveUrl(site), officialSite: liveUrl(c.officialSite), ballotpedia: liveUrl((c as { ballotpedia?: string | null }).ballotpedia) };
       return withMoney(withLicensedPhoto({ ...c, ...live, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
     });
-    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: gatePhotos(cands) /* PHOTO_GATE (lib/photos.ts): race mode by default = if any candidate in a race lacks a real photo, the whole race shows initials (Oct 29 11:34 PM) */ };
+    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: gatePhotos(cands, undefined, r.id) /* PHOTO_GATE (lib/photos.ts): race mode by default = if any candidate in a race lacks a real photo, the whole race shows initials (Oct 29 11:34 PM) */ };
   }) };
 }
 

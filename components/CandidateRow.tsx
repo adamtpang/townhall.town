@@ -42,9 +42,21 @@ function voteLine(st: { voteRecord?: string; quote?: string; bill?: string }) {
 /** League of Women Voters guide links read as one plain label (design p10). */
 const checkedLabel = (x: Checked) => (/lwv|league of women voters|vote411/i.test(`${x.url} ${x.title ?? ""}`) ? "League of Women Voters guide" : (x.title || host(x.url)).replace(/\s*\((via|direct fetch|search snippet)[^)]*\)\s*/gi, " ").trim());
 /** Drop internal notes and keep one link per domain (design p10 P2). */
+/** Design p11 #5 + QA fb66b9b P2: dead links hidden; one entry per host and per visible label (so the League of
+ *  Women Voters guide shows once even when Civic recorded lwvsf.org and vote411.org); a combined "Mission Local/SF
+ *  Standard" search splits into two labels on the same recorded query URL; the Chronicle portal article reads
+ *  "SF Assessor-Recorder". */
+const RENAME: Record<string, string> = { "SF Chronicle, Assessor-Recorder online portal": "SF Assessor-Recorder" };
 export function cleanChecked(list: Checked[]): Checked[] {
-  const seen = new Set<string>();
-  return list.filter((x) => { const h = host(x.url); if (seen.has(h)) return false; seen.add(h); return true; });
+  const split = list.flatMap((x) => /Mission Local\/SF Standard/.test(x.title ?? "")
+    ? [{ ...x, title: "Mission Local" }, { ...x, title: "SF Standard", same: true }]
+    : [{ ...x, title: x.title && RENAME[x.title] ? RENAME[x.title] : x.title }]);
+  const hosts = new Set<string>(), labels = new Set<string>();
+  return split.filter((x) => {
+    const h = host(x.url), l = checkedLabel(x);
+    if (labels.has(l) || (hosts.has(h) && !(x as { same?: boolean }).same)) return false;
+    hosts.add(h); labels.add(l); return true;
+  });
 }
 const issueLabel = (id: string) => ISSUES.find((i) => i.id === id)?.label ?? id;
 const side = (v: unknown) => (typeof v === "number" ? Math.sign(v) : 0);
@@ -79,7 +91,7 @@ export default function CandidateRow({ c, o, grade, ids, answeredYesNo = true, a
             {overlapLabel(c.name, o)}{grade ? <> · <span className="font-[530] text-black" data-grade-slot>{grade}</span></> : null}
           </p>
         ) : null}
-        {grade ? <p className={`mt-0.5 ${CREDIT}`} data-grade={grade}>{gradeLabel(o.agree, o.n)}</p> : null}
+        {grade ? <p className="mt-0.5 max-w-[60ch] text-[13px] leading-[18px] font-[450] text-black/60 [word-break:break-word]" data-grade={grade}>{gradeLabel(o.agree, o.n)}</p> : null}
         {o.status === "answer" && answeredYesNo ? <p className="text-sm text-black/60">Answer Yes or No on more of their issues to compare (Neutral isn&rsquo;t compared).</p> : null}
         {asked.length > 0 ? (
           <p className="mt-1 text-sm leading-5 text-black/80" data-answered-n={asked.length}>
@@ -125,7 +137,7 @@ export default function CandidateRow({ c, o, grade, ids, answeredYesNo = true, a
               <div className="mt-1 text-sm leading-5 text-black/80" data-sources-checked>
                 {o.sourcedIds.length > 0 ? <p>Sources checked:</p> : null}
                 <ul className="mt-1 flex flex-col gap-y-2">
-                  {checked.map((x) => x.down ? <li key={x.url} className="flex min-h-11 items-center text-black/60" data-site-down>{host(x.url)} ({x.down})</li> : <li key={x.url}><a href={x.url} target="_blank" rel="noreferrer" className="flex min-h-11 items-center text-[#3760F2]" data-checked-source>{checkedLabel(x)} ↗{ext}</a></li>)}
+                  {checked.map((x) => x.down ? <li key={x.url} className="flex min-h-11 items-center text-black/60" data-site-down>{host(x.url)} ({x.down})</li> : <li key={x.url + checkedLabel(x)}><a href={x.url} target="_blank" rel="noreferrer" className="flex min-h-11 items-center text-[#3760F2]" data-checked-source>{checkedLabel(x)} ↗{ext}</a></li>)}
                 </ul>
               </div>
             ) : null}

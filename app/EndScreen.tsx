@@ -6,9 +6,9 @@ import { Button } from "../components/ui/button";
 import { stancesFor, type Answers } from "../lib/issues";
 import { overlapStatus, METHOD } from "../lib/overlapCore.mjs";
 import TownyResearch from "./TownyResearch";
-import RaceFold from "../components/RaceFold";
+import WhoRaces from "../components/WhoRaces";
 import { cardPath } from "../lib/card.mjs";
-import { gradeFor, GRADE_RULE } from "../lib/grades.mjs";
+import { gradesForRace, GRADE_RULE } from "../lib/grades.mjs";
 import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
 import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl } from "../lib/endscreen.mjs";
@@ -37,8 +37,12 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
   }
   const judicial = races.filter((r) => r.judicial && r.candidates?.length);
   const rowsByRace = races.filter((r) => r.candidates?.length && !r.judicial).map((race) => {
-    const rows = race.candidates.map((c) => ({ c, o: overlapStatus(answers, stancesFor(c.name), ids) }));
-    return { race, rows };
+    const rows0 = race.candidates.map((c) => ({ c, o: overlapStatus(answers, stancesFor(c.name), ids) }));
+    // Race-level guards (design p11 item 6 as corrected): all letters or none in a race.
+    const g = gradesForRace(race, rows0.map((x) => x.o), answered, zip);
+    if (g.hidden === "scored" && typeof console !== "undefined") console.info(`[grades] hidden in ${race.id}: a candidate has fewer than 3 scored issues`);
+    const rows = rows0.map((x, i) => ({ ...x, grade: g.grades[i] }));
+    return { race, rows, gradesHidden: g.hidden };
   });
   // QA P2: Neutral is a real answer but is never compared, so say that instead of asking for answers again.
   const yesNo = ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length;
@@ -69,17 +73,20 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
           ) : (
             <div className="mt-6 space-y-8">
               {yesNo === 0 ? <p className="text-base text-black/60" data-neutral-only>You answered Neutral on all {answered} issues. Neutral answers aren&rsquo;t compared, so there&rsquo;s no overlap to show. Answer Yes or No on an issue to compare.</p> : null}
-              {rowsByRace.map(({ race: r, rows }) => (
-                <div key={r.id} data-race={r.id}>
-                  <RaceFold id={r.id} title={r.title || r.id} lines={rows.map(({ c, o }) => ({ name: c.name, text: o.sourced === 0 ? "no public position found yet" : o.n > 0 ? `${o.agree} of ${o.n} issues match` : "no stated position on the issues you answered" }))}>
-                  <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {rows.map(({ c, o }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers} answeredYesNo={yesNo > 0} grade={gradeFor(o, !!r.judicial, answered, undefined, r, zip)} />)}
-                  </ul></PhotoGroup>
-                  {/* QA P2: the live research button on every non-judicial race. */}
-                  <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
-                  </RaceFold>
-                </div>
-              ))}
+              <WhoRaces races={rowsByRace.map(({ race: r, rows }) => ({
+                id: r.id,
+                title: r.title || r.id,
+                lines: rows.map(({ c, o, grade }) => ({ name: c.name, sourced: o.sourced, agree: o.agree, n: o.n, grade })),
+                content: (
+                  <>
+                    <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
+                      {rows.map(({ c, o, grade }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers} answeredYesNo={yesNo > 0} grade={grade} />)}
+                    </ul></PhotoGroup>
+                    {/* QA P2: the live research button on every non-judicial race. */}
+                    <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
+                  </>
+                ),
+              }))} />
             </div>
           )}
         </div>

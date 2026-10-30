@@ -42,8 +42,8 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
   const [confirm, setConfirm] = useState(false);
   const [savedZip, setSavedZip] = useState<string | null>(null);
   // Design p9: the carry-over notice only when th-answers-v1 already held answers BEFORE this page load (fresh browser: none).
-  const [carried, setCarried] = useState(0);
-  useEffect(() => { const a = load(); setAnswers(a); setCarried(ids.filter((id) => a[id] !== null && a[id] !== undefined).length); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
+  const [carriedIds, setCarriedIds] = useState<string[]>([]);
+  useEffect(() => { const a = load(); setAnswers(a); setCarriedIds(ids.filter((id) => a[id] !== null && a[id] !== undefined)); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
   const markZip = () => { try { localStorage.setItem(ANSWERS_ZIP_KEY, zip); } catch { /* ignore */ } };
   function choose(id: string, k: "yes" | "neutral" | "no", pole: "high" | "low" = "high") {
     const next = press(answers, id, k, pole) as Answers;
@@ -67,10 +67,12 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
   }
   function reset() {
     try { for (const k of Object.keys(localStorage)) if (k.startsWith("townhall.") || k.startsWith("th-")) localStorage.removeItem(k); } catch { /* ignore */ }
-    setAnswers({}); setFromChat({}); setConfirm(false); setCarried(0);
+    setAnswers({}); setFromChat({}); setConfirm(false); setCarriedIds([]);
     window.dispatchEvent(new Event("townhall:reset"));
   }
   const answered = ids.filter((id) => answers[id] !== null && answers[id] !== undefined).length;
+  // QA fb66b9b P2: the carry-over notice and the "x of y answered" counter agree: carried answers still set, out of all.
+  const carried = carriedIds.filter((id) => answers[id] !== null && answers[id] !== undefined).length;
 
   return (
     <>

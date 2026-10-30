@@ -29,9 +29,11 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
   it("credits: 'Photo: author · license', never a raw URL or Unknown author", () => {
     let n = 0;
     for (const z of ["78701", "94103", "10001"]) for (const r of ballotFor(z)!.races) for (const c of r.candidates) {
-      const ph = (withLicensedPhoto({ ...c } as never) as { photo?: { author?: string; credit: string; page?: string } }).photo;
+      const ph = (withLicensedPhoto({ ...c } as never) as { photo?: { author?: string; attribution?: string; license?: string; credit: string; page?: string } }).photo;
       if (!ph) continue; n++;
-      expect(ph.credit).toBe(`Photo: ${ph.author}`);
+      // QA fb66b9b P2: the visible credit is "Photo: {attribution}"; author is split from the license text.
+      expect(ph.credit).toBe(`Photo: ${ph.attribution}`);
+      expect(ph.author).not.toMatch(/,\s*(CC[\s0-9-]|public domain)/i);
       expect(ph.credit).not.toMatch(/https?:\/\/|Unknown author|undefined/i);
       expect(ph.page).toMatch(/^https:\/\//);
     }
@@ -39,9 +41,11 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     expect(src("components/Portrait.tsx")).toMatch(/max-w-\[60ch\] text-\[12px\] leading-4 font-\[450\] text-black\/60/);
   });
   it("every portrait is a square tile with a center-20% crop", () => {
+    // Both tiles render through TileImage (Portrait.tsx), which carries the crop and Civic's cropNote focus.
+    expect(src("components/Portrait.tsx")).toMatch(/object-cover object-\[center_20%\]/);
+    expect(src("components/PortraitRow.tsx")).toMatch(/<TileImage /);
     for (const f of ["components/Portrait.tsx", "components/PortraitRow.tsx"]) {
       expect(src(f)).toMatch(/aspect-square/);
-      expect(src(f)).toMatch(/object-cover object-\[center_20%\]/);
       expect(src(f)).not.toMatch(/aspect-\[4\/5\]|object-top/);
     }
   });
@@ -56,7 +60,8 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
   it("grade sits inline after its count, Civic's label directly below in caption style", () => {
     const s = src("components/CandidateRow.tsx");
     expect(s).toMatch(/\{overlapLabel\(c\.name, o\)\}\{grade \? <> · <span[^>]*data-grade-slot>\{grade\}/);
-    expect(s).toMatch(/className=\{`mt-0\.5 \$\{CREDIT\}`\} data-grade=\{grade\}>\{gradeLabel\(/);
+    // QA fb66b9b P1: the grade caption reads at 13/18 (black/60) beside the grade.
+    expect(s).toMatch(/text-\[13px\] leading-\[18px\] font-\[450\] text-black\/60 \[word-break:break-word\]" data-grade=\{grade\}>\{gradeLabel\(/);
   });
   it("'Who lines up': only answered issues show, the rest sits behind 'Show all positions'; date unsure is a title", () => {
     const s = src("components/CandidateRow.tsx");
@@ -93,7 +98,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     }
     expect(races.find((x) => x.id === "ny-civil-3md-ny")!.splitNote).toMatch(/^SPLIT: ~70\.6%/);
     expect(races.find((x) => x.id === "nyc-council-3")!.appliesNote).toMatch(/^SPLIT: ~95\.1%.*TENTATIVE/);
-    expect(src("app/RaceTiers.tsx")).toMatch(/data-tentative>\{r\.sourceNote\}/);
+    expect(src("app/RaceTiers.tsx")).toMatch(/TENTATIVE: draft contest list[^]*r\.sourceNote\.split\(/);
   });
   it("one source sentence counts toward one issue only (best fit)", () => {
     const q = "I'll fight for funding for critical infrastructure like water, roads and clean energy.";
@@ -147,7 +152,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     expect(b?.page).toBe("https://www.barreraforedu.com/mediaresources");
     expect(b?.credit).toBe("Photo: Barrera for Superintendent campaign, press photo");
     expect(src("components/SiteChrome.tsx")).toMatch(/Candidate photos are from their public campaign or official pages\. <a href="\/contact"[^>]*>Contact us<\/a> to remove\./);
-    expect(src("components/PortraitRow.tsx")).toMatch(/referrerPolicy="no-referrer"/);
+    expect(src("components/Portrait.tsx")).toMatch(/referrerPolicy="no-referrer"/);
   });
   it("77002 stays unsupported", () => {
     expect(src("lib/site.ts")).not.toMatch(/zip: "77002"/);
