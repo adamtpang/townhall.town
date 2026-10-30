@@ -207,7 +207,7 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
   return (
     <MotionShell>
     <ResultsNav />
-    <section className="border-t border-black py-24" id="tiers">
+    <section className="border-t border-black pb-24 pt-8" id="tiers">{/* Design P1 3:38 PM CT: py-8 gap under the tab row */}
       <span id="who" data-nav-target aria-hidden className="block" />
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>

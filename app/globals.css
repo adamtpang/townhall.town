@@ -177,3 +177,8 @@ h2, h3[data-race-title] { text-wrap: pretty; }
   :where(main, header, footer, nav) :where(a[href], button, summary) { min-height: 44px; min-width: 44px; }
   :where(main, header, footer, nav) :where(a[href]) { display: inline-flex; align-items: center; vertical-align: middle; }
 }
+
+/* Design P1 (Oct 30, 3:38 PM CT): the city cards are the city choice, so the three outline city chips under the ZIP box
+   are gone. They live in BallotAgent (not this branch's file), so they are removed from layout and the a11y tree here;
+   the cards dispatch the same townhall:zip event the chips' run() handles. */
+[data-zip-notice] + div:has(> button[type="button"]) { display: none; }

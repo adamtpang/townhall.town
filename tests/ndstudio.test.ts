@@ -16,7 +16,14 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     const p = src("app/page.tsx");
     const at = (s: string) => { const i = p.indexOf(s); expect(i, s).toBeGreaterThan(-1); return i; };
     // Design grid spec #3 (Oct 30, 2:58 PM CT): cities above the band, then the Who/What/Where tiles.
-    const order = [at("Know your ballot in 2 minutes."), at("<BallotAgent />"), at('n="01" label="Your city"'), at("<MediaBand />"), at("<HomeTiles />"), at('n="02" label="How it works"'), at('n="03"')];
+    const order = [at("Know your ballot in 2 minutes."), at("<BallotAgent />"), at('aria-label="Your city"'), at("<MediaBand />"), at("<HomeTiles />"), at('n="01" label="How it works"'), at('n="02" label={s.heading}')];
+    // Design P1 (Oct 30, 3:38 PM CT): no "01 Your city" eyebrow, no arrow on the cards, chips hidden; hero lg:pt-16.
+    expect(p).not.toContain('n="01" label="Your city"');
+    expect(src("components/media/CityCards.tsx")).not.toContain("↗");
+    expect(src("app/globals.css")).toContain('[data-zip-notice] + div:has(> button[type="button"]) { display: none; }');
+    expect(src("components/media/HomeTiles.tsx")).not.toMatch(/<img|CITIES/);
+    expect(src("app/layout.tsx")).toContain("Saltar al contenido");
+    expect(src("app/RaceTiers.tsx")).toContain('<section className="border-t border-black pb-24 pt-8" id="tiers">');
     expect([...order].sort((a, b) => a - b)).toEqual(order);
     expect(p).toContain("<span>Get your person in office. </span>");
     expect(p).toContain("<T>Your vote matters.</T>");

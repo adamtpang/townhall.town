@@ -61,7 +61,6 @@ export default function CityCards() {
             data-city-zip={c.zip}
           >
             {c.name}
-            <span className="text-brand-700" aria-hidden="true">↗</span>
           </a>
           <p className="text-sm leading-5 text-ink/60">{c.zip}<span className="max-lg:hidden"> · {c.county}</span></p>
         </li>

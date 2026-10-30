@@ -82,7 +82,7 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false, credi
   const dense = size === "row" && tiles.length > 6;
   return (
     <PhotoGroup>
-    <ul role="list" aria-label="Candidates" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
+    <ul role="list" aria-label="Candidates" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3 overflow-x-clip" data-dense={dense ? "true" : "false"} data-photo-row>
       {(() => { const L = labels(tiles.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return tiles.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
     {size === "row" && credits ? <RowCredits cands={cands} /> : null}{/* credits={false}: the race folder shows them in its own "Photo credits (N)" item. */}

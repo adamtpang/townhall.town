@@ -26,8 +26,8 @@ export default function Home() {
       <main id="main" tabIndex={-1} className="mx-auto max-w-[1280px] scroll-mt-16 px-5 outline-none md:px-10">
         {/* Reserved slot for the Polymarket strip (built on its own branch): directly under the nav, above the H1. Empty = 0px. */}
         <div id="market-strip-slot" data-market-strip-slot />
-        {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
-        <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
+        {/* Design P1 (Oct 30, 3:38 PM CT): hero top py-16 at 1440 (was 160px), so the city cards end above y=800. */}
+        <section className="pb-10 pt-12 lg:pt-16" data-hero>
           <h1 className={`${H1} [text-wrap:balance]`}>
             <T>Know your ballot in 2 minutes.</T>
           </h1>
@@ -38,16 +38,17 @@ export default function Home() {
           <div id="hero-stat" />
         </section>
         <BallotAgent />
-        {/* Design grid spec #3 (Oct 30, 2:58 PM CT): hero, ZIP, 01 Your city, the full-bleed band, Who/What/Where tiles,
-            02 How it works (copy approved Oct 30), 03 Sources. */}
-        <NumberedSection n="01" label="Your city" id="your-city" wide first>
+        {/* Design grid spec #3 (Oct 30, 2:58 PM CT): hero, ZIP, city cards, the full-bleed band, Who/What/Where tiles,
+            01 How it works (copy approved Oct 30), 02 Sources. */}
+        {/* Design P1 (3:38 PM CT): no "01 Your city" eyebrow; the cards are the city choice (the outline chips are hidden). */}
+        <section id="your-city" aria-label="Your city" className="pb-8 pt-6" data-city-section>
           <CityCards />
-        </NumberedSection>
+        </section>
         <MediaBand />
         <nav aria-label="Who, what and where" className="py-16 lg:py-24" data-home-tiles-nav>
           <HomeTiles />
         </nav>
-        <NumberedSection n="02" label="How it works" id="how-it-works" fold>
+        <NumberedSection n="01" label="How it works" id="how-it-works" fold>
           <ol className="grid gap-8 md:grid-cols-3 md:gap-5" data-how-steps>
             {HOW_STEPS.map(([title, line], i) => (
               <li key={title}>
@@ -59,7 +60,7 @@ export default function Home() {
           </ol>
         </NumberedSection>
         {HOME_SECTIONS.map((s) => (
-          <NumberedSection key={s.heading} n="03" label={s.heading} id={s.heading.toLowerCase()} fold>
+          <NumberedSection key={s.heading} n="02" label={s.heading} id={s.heading.toLowerCase()} fold>
             <SectionBody s={s} />
           </NumberedSection>
         ))}
