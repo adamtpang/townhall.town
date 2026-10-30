@@ -45,6 +45,8 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
   // Design p9: the carry-over notice only when th-answers-v1 already held answers BEFORE this page load (fresh browser: none).
   const [carriedIds, setCarriedIds] = useState<string[]>([]);
   useEffect(() => { const a = load(); setAnswers(a); setCarriedIds(ids.filter((id) => a[id] !== null && a[id] !== undefined)); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
+  // Towny panel (components/towny/TownyFab.tsx) writes chat answers to th-answers-v1, then fires townhall:answers.
+  useEffect(() => { const r = () => setAnswers(load()); window.addEventListener("townhall:answers", r); return () => window.removeEventListener("townhall:answers", r); }, []);
   const markZip = () => { try { localStorage.setItem(ANSWERS_ZIP_KEY, zip); } catch { /* ignore */ } };
   function choose(id: string, b: number, pole: "high" | "low" = "high") {
     const next = press5(answers, id, b, pole) as Answers;

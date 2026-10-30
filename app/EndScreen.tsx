@@ -131,7 +131,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
                 </details>
               )}
               {where.dependsOnAddress && where.lookupUrl && (
-                <a href={where.lookupUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center th-link" data-end-link="lookup">Find your assigned polling place ↗{ext}</a>
+                <a href={where.lookupUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center th-link" data-end-link="lookup">{where.lookupLabel ?? "Find your assigned polling place"} ↗{ext}</a>
               )}
               </div>
             </>
@@ -139,12 +139,13 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
             <>
               <p className="mt-4 text-base text-black/80">Your polling place is assigned by home address.</p>
               <Button onClick={() => window.open(where.lookupUrl!, "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-lookup-url={where.lookupUrl}>
-                Find your polling place ↗{ext}
+                {where.lookupLabel ?? "Find your polling place"} ↗{ext}
               </Button>
             </>
           ) : (
             <p className="mt-4 text-base text-black/60">No sourced polling place for this ZIP yet.</p>
           )}
+          {where.portalUrl ? <p className="mt-2 text-sm"><a href={where.portalUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link" data-end-portal>Voter Portal ↗{ext}</a></p> : null}
         </div>
 
         {/* WHEN */}

@@ -124,7 +124,7 @@ describe("Design 2:57 PM: 94103 end-screen links", () => {
     const e = src("app/EndScreen.tsx");
     expect(e).toContain('className="mt-2 flex flex-col items-start gap-1 text-sm leading-5" data-end-links>');
     expect(e).toMatch(/className="inline-flex min-h-11 items-center th-link" data-end-link="sites">Official site list ↗/);
-    expect(e).toMatch(/className="inline-flex min-h-11 items-center th-link" data-end-link="lookup">Find your assigned polling place ↗/);
+    expect(e).toMatch(/className="inline-flex min-h-11 items-center th-link" data-end-link="lookup">\{where\.lookupLabel \?\? "Find your assigned polling place"\} ↗/); // Towny v3 label (SF lookup) merged in
     const stack = e.slice(e.indexOf("data-end-links>"), e.indexOf('data-end-link="lookup"'));
     expect(stack).not.toContain("</div>"); // both links live in the same stack
   });
