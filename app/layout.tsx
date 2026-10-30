@@ -1,11 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Public_Sans, Instrument_Serif, Inter_Tight } from "next/font/google";
+import { Public_Sans, Inter_Tight } from "next/font/google";
 
-// Public Sans (USWDS) stays the UI face; Instrument Serif (PR #2) is available as font-serif for display accents.
+// Inter Tight is the single grotesk (ndstudio.gov style); Public Sans is the fallback. No serif.
 const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-public-sans", display: "swap" });
 const grotesk = Inter_Tight({ subsets: ["latin"], variable: "--font-grotesk", display: "swap" });
-const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-serif", display: "swap" });
 
 export const metadata: Metadata = {
   title: "townhall.town: your ballot, explained in seconds",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${publicSans.variable} ${serif.variable} ${grotesk.variable}`}>
+    <html lang="en" className={`${publicSans.variable} ${grotesk.variable}`}>
       <body className="font-sans text-[#010101] antialiased">{children}</body>
     </html>
   );
