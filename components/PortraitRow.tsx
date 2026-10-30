@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { Photo } from "./Portrait";
+import { HIT } from "../lib/typeScale";
 
 type C = { name: string; party?: string | null; photo?: Photo };
 
@@ -43,8 +44,8 @@ function Tile({ c, eager, label, mate }: { c: C; eager?: boolean; label: string;
           <img ref={ref} src={c.photo!.url} alt={split(c.name).lead} loading={eager ? "eager" : "lazy"} decoding="async" onError={() => setBroken(true)} className="absolute inset-0 h-full w-full object-cover object-top" />
         ) : null}
       </div>
-      <p className="mt-1 w-[calc(var(--p)+4px)] truncate text-xs font-[530] leading-4" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
-      {mate ? <p className="truncate text-xs leading-4 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : null}
+      <p className="mt-1 w-[calc(var(--p)+4px)] break-words [overflow-wrap:anywhere] text-xs font-[530] leading-4" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
+      {mate ? <p className="break-words [overflow-wrap:anywhere] text-xs leading-4 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : null}
     </li>
   );
 }
@@ -63,7 +64,7 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
       <details className="-mt-1 mb-2 text-xs leading-4 text-black/60" data-photo-credits>
         <summary className="inline-flex min-h-11 cursor-pointer items-center">Photo credits</summary>
         <ul className="space-y-1">{cands.filter((c) => c.photo?.url).map((c) => (
-          <li key={c.name}>{c.name}: {c.photo!.page ? <a href={c.photo!.page} target="_blank" rel="noreferrer" className="text-[#3760F2]">{c.photo!.credit}</a> : c.photo!.credit}{c.photo!.license && !c.photo!.credit.includes(c.photo!.license) ? ` (${c.photo!.license})` : ""}</li>
+          <li key={c.name}>{c.name}: {c.photo!.page ? <a href={c.photo!.page} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`} data-photo-credit>{c.photo!.credit}</a> : c.photo!.credit}{c.photo!.license && !c.photo!.credit.includes(c.photo!.license) ? ` (${c.photo!.license})` : ""}</li>
         ))}</ul>
       </details>
     ) : null}

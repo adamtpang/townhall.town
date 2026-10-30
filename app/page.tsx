@@ -1,4 +1,5 @@
 import BallotAgent from "./BallotAgent";
+import { H1 } from "../lib/typeScale";
 import { SectionBlock } from "../components/Prose";
 import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { HOME_SECTIONS } from "../lib/content";
@@ -12,9 +13,9 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
       <main className="mx-auto max-w-site px-6">
-        <section className="pb-10 pt-12 sm:pt-40">
+        <section className="pb-10 pt-12 [@media(min-width:640px)_and_(min-height:640px)]:pt-40" data-hero>
           <p className="mb-6 text-sm font-[530] text-black/60">Nov 3, 2026 · Austin · San Francisco · New York</p>
-          <h1 className="font-serif text-[40px] font-[530] leading-none tracking-[-0.02em] text-black [text-wrap:balance] md:text-[56px]">
+          <h1 className={`${H1} [text-wrap:balance]`}>
             Know your ballot in 2 minutes.
           </h1>
           <p className="mt-6 max-w-[32ch] text-xl leading-7 font-[530] text-black md:text-2xl md:leading-8" data-tagline>

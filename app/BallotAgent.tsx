@@ -312,7 +312,7 @@ export default function BallotAgent() {
       )}
 
       {b && (
-        <div id="ballot" className="mt-32">
+        <div id="ballot" className="mt-6">
           <p className="text-sm text-black/60">
             {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Check your exact district by address</a></>}
           </p>

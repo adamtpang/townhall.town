@@ -26,12 +26,12 @@ export function SectionBlock({ s }: { s: Section }) {
       <h2 className="text-base font-medium tracking-tight text-black md:col-span-4">{s.heading}</h2>
       <div className="max-w-2xl space-y-4 text-base leading-relaxed text-black/70 md:col-span-8">
         {s.paragraphs?.map((p, i) => (
-          <p key={i}>
+          <p key={i} className="max-w-[65ch]">
             <Inline text={p} />
           </p>
         ))}
         {s.items?.length ? (
-          <ul className="space-y-2">
+          <ul className="max-w-[65ch] space-y-2">
             {s.items.map((it, i) => (
               <li key={i}>
                 <Inline text={it} />

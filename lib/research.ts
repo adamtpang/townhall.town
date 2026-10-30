@@ -107,3 +107,22 @@ export function findOwnWords(text: string, issueIds: string[], per = 1) {
   }
   return out;
 }
+
+/** Issues a page is about, from its URL path words (e.g. /priorities/health-care/ -> healthcare). Empty when the path names no issue. */
+export function pageTopics(url: string): string[] {
+  let path = ""; try { path = decodeURIComponent(new URL(url).pathname); } catch { return []; }
+  const words = path.replace(/[-_/.]+/g, " ");
+  return Object.keys(ISSUE_WORDS).filter((id) => ISSUE_WORDS[id].test(words));
+}
+/** Endorsements (who backs whom) are not issue positions, even when they mention an issue word (QA P2, 4c21a5c). */
+export const ENDORSEMENT = /\b(endors(e|es|ed|ing|ement|ements)|backed by)\b/i;
+/**
+ * QA P2 (4c21a5c): keep a quote for an issue only when (a) it is not an endorsement and (b) the page it came from is
+ * not about a different issue. A sentence on /priorities/health-care/ that mentions "housing assistance" is not a
+ * housing position. Pages whose path names no issue (home, /priorities/) are judged by the sentence alone.
+ */
+export function quoteFits(q: { issue: string; quote: string }, url: string): boolean {
+  if (ENDORSEMENT.test(q.quote)) return false;
+  const t = pageTopics(url);
+  return !t.length || t.includes(q.issue);
+}

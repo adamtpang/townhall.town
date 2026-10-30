@@ -5,7 +5,7 @@ describe("voteMatters", () => {
     const v = voteMatters("94103")!;
     expect(v.margin).toBe(216323);
     expect(v.stayedHome).toBe(204763);
-    expect(v.text).toBe("216,323 votes decided Prop 32 in 2024; 204,763 adult citizens in SF (Census estimate) didn't vote.");
+    expect(v.text).toBe("216,323 votes decided Prop 32 in 2024; 204,763 adult citizens in SF didn't vote.");
     expect(v.sources.map((s: { label: string }) => s.label)).toEqual(["Prop 32 results", "SF ballots cast", "Census ACS 2024"]);
     expect(v.sources.every((s: { url: string }) => /^https:\/\//.test(s.url))).toBe(true);
   });

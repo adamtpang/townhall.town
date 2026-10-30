@@ -6,7 +6,7 @@ import colors from "tailwindcss/colors";
 const token = (name: string) => `hsl(var(--${name}) / <alpha-value>)`;
 
 export default {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/typeScale.ts"],
   theme: {
     extend: {
       colors: {

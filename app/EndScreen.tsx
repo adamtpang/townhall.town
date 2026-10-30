@@ -1,5 +1,7 @@
 "use client";
 import { stanceForm } from "../lib/stanceForm";
+import { H2, H3, HIT } from "../lib/typeScale";
+import { JUDICIAL_RULES } from "../lib/judicial";
 import { useMemo } from "react";
 import type { Photo } from "../components/Portrait";
 import { Button } from "../components/ui/button";
@@ -55,24 +57,20 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
   return (
     <section id="end" className="border-t border-black py-24" data-end-screen>
       <p className="nds-caption-upper text-black/60">03</p>
-      <h2 className="mt-3 font-serif text-[40px] font-[530] leading-none tracking-[-0.02em] text-black md:text-[56px]">Your plan</h2>
+      <h2 className={`mt-3 ${H2}`}>Your plan</h2>
       <a href={cardPath(zip, answers, ids)} className="mt-6 inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2]" data-card-link>Take it with you: one-page ballot card</a>
       <div className="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-5">
         {/* WHO */}
         <div className="lg:col-span-6" data-end="who">
           <p className="text-sm font-[530] text-black/60">Who</p>
-          <h3 className="mt-2 font-serif text-2xl leading-7 lg:text-[32px] lg:leading-9">Who lines up with you</h3>
+          <h3 className={`mt-2 ${H3}`}>Who lines up with you</h3>
           <p className="mt-3 text-xs leading-4 text-black/60" data-overlap-caption>Overlap, not a recommendation. Candidates are in ballot order.</p>
           <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap is counted</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p></details>
           {judicial.length > 0 && (
-            <p className="mt-4 text-sm text-black/60" data-judicial-note>
+            <p className="mt-4 max-w-[65ch] text-sm text-black/60" data-judicial-note>
               {(() => {
                 const st = judicial.some((r) => r.judicial === "ny") ? "ny" : judicial.some((r) => r.judicial === "ca") ? "ca" : "tx";
-                const J = {
-                  ny: ["Judicial candidates can\u2019t state positions on issues", "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5", "22 NYCRR 100.5(A)(4)(d)"],
-                  tx: ["Texas judicial candidates can\u2019t pledge or promise how they\u2019ll rule on cases or classes of cases", "https://www.txcourts.gov/All_Archived_Documents/SupremeCourt/AdministrativeOrders/miscdocket/02/02916700.pdf", "Code of Judicial Conduct, Canon 5"],
-                  ca: ["California judicial candidates can\u2019t make statements that commit them on issues likely to come before the courts", "https://www.courts.ca.gov/documents/ca_code_judicial_ethics.pdf", "Code of Judicial Ethics, Canon 5"],
-                }[st];
+                const J = JUDICIAL_RULES[st];
                 return <>{J[0]} (<a href={J[1]} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{J[2]} ↗{ext}</a>), so no overlap is shown for {judicial.length} court race{judicial.length === 1 ? "" : "s"}.</>;
               })()}
             </p>
@@ -135,7 +133,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
         {/* WHERE */}
         <div className="lg:col-span-3" data-end="where">
           <p className="text-sm font-[530] text-black/60">Where</p>
-          <h3 className="mt-2 font-serif text-2xl leading-7 lg:text-[32px] lg:leading-9">Where to go</h3>
+          <h3 className={`mt-2 ${H3}`}>Where to go</h3>
           {site ? (
             <>
               <p className="mt-4 text-base font-[530]">{site.name}</p>
@@ -173,7 +171,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
         {/* WHEN */}
         <div className="lg:col-span-3" data-end="when">
           <p className="text-sm font-[530] text-black/60">When</p>
-          <h3 className="mt-2 font-serif text-2xl leading-7 lg:text-[32px] lg:leading-9">When to go</h3>
+          <h3 className={`mt-2 ${H3}`}>When to go</h3>
           <ul className="mt-4 space-y-3">
             {early && (<li data-early><p className="text-sm font-[530]">Early voting, {fmt(early.start)} to {fmt(early.end)}</p>
               {early.daily?.length ? (
@@ -183,9 +181,9 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                   ))}
                 </ul>
               ) : early.hours ? <p className="text-base text-black/80">{early.hours}</p> : <p className="text-base text-black/80">Hours vary by day</p>}
-              <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-['']">Early voting source ↗{ext}</a></li>)}
+              <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']" data-early-source>Early voting source ↗{ext}</a></li>)}
             {ed && (<li><p className="text-sm font-[530]">Election Day, {fmt(ed.start)}</p><p className="text-base text-black/80">{ed.hours ? `Polls open ${ed.hours}` : "Poll hours not found in an official source"}</p></li>)}
-            {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className="text-[#3760F2]">How ↗{ext}</a></p></li>)}
+            {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`} data-how-register>How ↗{ext}</a></p></li>)}
             {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-xs leading-4 text-[#3760F2]">Source ↗</a></p></li>)}
             {when.missing.map((m: string) => <li key={m} className="text-sm text-black/60">{m}: not found in an official source yet.</li>)}
           </ul>

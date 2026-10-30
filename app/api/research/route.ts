@@ -2,7 +2,7 @@ import { validZip } from "../../../lib/zip.mjs";
 import { ballotFor } from "../../../lib/tools";
 import { rateLimited, RESEARCH_POLICY } from "../../../lib/rateLimit";
 import { apiError, methodNotAllowed, withHeaders, API_VERSION_HEADERS } from "../../../lib/apiError";
-import { findQuotes, findOwnWords, ownIssueLinks, sameSite, textOf } from "../../../lib/research";
+import { findQuotes, findOwnWords, ownIssueLinks, quoteFits, sameSite, textOf } from "../../../lib/research";
 import { ISSUES } from "../../../lib/issues";
 import { generateText } from "ai";
 
@@ -97,9 +97,9 @@ async function research(req: Request): Promise<Response> {
           const r = pages[i];
           // Civic rule (b) + QA P1 #1: on the candidate's own site, their own sentences count (exact substring);
           // elsewhere only text in quotation marks with this candidate named as the speaker. Same bar for every candidate.
-          const quotes = !r.text ? [] : isOwn(u)
+          const quotes = (!r.text ? [] : isOwn(u)
             ? [...findQuotes(r.text, ids, 1, String(c.name)), ...findOwnWords(r.text, ids, 1)]
-            : findQuotes(r.text, ids, 1, String(c.name));
+            : findQuotes(r.text, ids, 1, String(c.name))).filter((x) => quoteFits(x, u));
           const fresh = quotes.filter((x) => { const k = x.quote.toLowerCase().replace(/[^a-z0-9]+/g, ""); if (seen.has(k)) return false; seen.add(k); return true; });
           const keep = fresh.slice(0, Math.max(0, 4 - found)); found += keep.length;
           const dup = quotes.length - fresh.length;
@@ -120,7 +120,7 @@ async function research(req: Request): Promise<Response> {
       ctl.close();
     },
   });
-  return new Response(stream, { headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store" } });
+  return new Response(stream, { headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store", "x-research-cache": "miss" } });
 }
 
 export const GET = withHeaders(rateLimited(RESEARCH_POLICY, research), API_VERSION_HEADERS);

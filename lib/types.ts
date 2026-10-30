@@ -32,6 +32,7 @@ export type Race = {
   // Plug-in field (optional):
   turnout?: TurnoutStats;
   judicial?: "tx" | "ca" | "ny" | boolean;
+  judicialNoteSource?: { url: string; label: string }; // official conduct rule behind judicialNote (lib/judicial.ts)
   judicialNote?: string;            // set on every judicial race (lib/judicial.ts)           // from lib/turnout.ts
 };
 

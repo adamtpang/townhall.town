@@ -134,8 +134,8 @@ function researchPath() {
       ],
       responses: {
         "200": {
-          description: "A stream of newline-delimited JSON, one ResearchEvent per line, ending with a done event. Repeat runs may be replayed from cache (x-research-cache: hit).",
-          headers: rlOnly,
+          description: "A stream of newline-delimited JSON, one ResearchEvent per line, ending with a done event. Every response carries x-research-cache: hit when a complete earlier run on the same server instance is replayed, miss otherwise. Caches and rate-limit counters are per server instance, so two calls that land on different instances both read as miss and as the first call of the window.",
+          headers: { ...rlOnly, "x-research-cache": { description: "hit when this response replays a complete earlier run on the same server instance, else miss.", schema: { type: "string", enum: ["hit", "miss"] } } },
           content: { "application/x-ndjson": { schema: { $ref: "#/components/schemas/ResearchEvent" }, "x-ndjson-item-schema": { $ref: "#/components/schemas/ResearchEvent" },
             example: { type: "citation", name: "Xavier Becerra", issue: "housing", quote: "As governor, I will treat housing like the essential infrastructure it is.", url: "https://www.xavierbecerra2026.com/priorities/", ownSite: true } } },
         },
@@ -420,6 +420,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
             candidates: { type: "array", items: { $ref: "#/components/schemas/Candidate" } },
             source: { type: "string" },
             judicialNote: { type: "string", description: "Present on every judicial race: judicial candidates' positions on these issues aren't public." },
+            judicialNoteSource: { type: "object", description: "Present with judicialNote: the state's judicial conduct rule behind it.", properties: { url: { type: "string", format: "uri" }, label: { type: "string" } } },
           },
         },
         Candidate: {

@@ -1,5 +1,5 @@
 import ballots from "../data/ballots.json";
-import { JUDICIAL_NOTE } from "./judicial";
+import { JUDICIAL_NOTE, judicialSource } from "./judicial";
 import ny from "../data/ny.json";
 import tx from "../data/tx.json";
 import marketMap from "../data/markets-map.json";
@@ -80,7 +80,7 @@ function enrich(b: Ballot): Ballot {
       const ps = jud ? [] : kept.length ? kept : publishedPositions(c.name);
       return withMoney(withLicensedPhoto({ ...c, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
     });
-    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: cands /* Design 8:05: initials only where a photo is truly missing */ };
+    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: cands /* Design 8:05: initials only where a photo is truly missing */ };
   }) };
 }
 

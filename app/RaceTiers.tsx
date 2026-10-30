@@ -1,5 +1,6 @@
 "use client";
 import { plain } from "../lib/plain";
+import { H2, HIT } from "../lib/typeScale";
 const listOf = (xs: string[]) => (xs.length < 3 ? xs.join(" and ") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 import { useState } from "react";
 import { type Photo } from "../components/Portrait";
@@ -11,7 +12,7 @@ type Avg = { name: string; prob: number }[];
 import type { RaceMeta } from "../lib/raceMeta";
 import { ISSUES } from "../lib/issues";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
-type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; judicialNote?: string; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
 
 /**
@@ -25,14 +26,20 @@ type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
  */
 export function impactOf(r: RaceLite): { v: number; why: string } {
   const t = r.title.toLowerCase();
-  if (/president|u\.s\. senate|^governor/.test(t)) return { v: 3, why: "top federal or statewide office" };
+  // Rank by race id / level first so certified ballot names ("U.S. Senator", "U.S. Representative, District 10") can't drop a race (QA P1-1).
+  const usSenate = /^us-senate\b/.test(r.id) || /u\.s\. senat(e|or)\b/.test(t);
+  const usHouse = !usSenate && ((r.level === "federal" && /^[a-z]{2}-\d+$/.test(r.id)) || /u\.s\. (house|representative)\b/.test(t));
+  if (usSenate || /president|^governor/.test(t)) return { v: 3, why: "top federal or statewide office" };
+  if (usHouse) return { v: 2, why: "your U.S. House seat" };
   if (r.level === "measure") return { v: 2, why: "statewide ballot measure" };
-  // Statewide boards (SBOE, Railroad Commission) are state offices, not local (QA P2 / Civic rule c).
-  if (/state board of education|railroad commission/.test(t)) return { v: 1, why: "state office" };
+  // Judicial races are judicial seats even when the court is named for a municipal or county district (QA P2, 4c21a5c).
+  if (r.judicial) return { v: 1, why: "judicial seat" };
+  // Statewide boards (SBOE, Railroad Commission, Board of Equalization) are state offices, not local (QA P2 / Civic rule c).
+  if (/state board of education|railroad commission|board of equalization/.test(t)) return { v: 1, why: "state office" };
   // County / city / precinct offices are local even when titled Treasurer or Commissioner (QA P2).
   if (/\bcounty\b|\bcity\b|precinct|municipal|board of/.test(t) && !/court at law|district court|court of|justice/.test(t)) return { v: 1, why: "local office" };
-  if (/u\.s\. house|lieutenant governor|attorney general|comptroller|secretary of state|treasurer|controller|insurance commissioner|superintendent|commissioner/.test(t))
-    return { v: 2, why: /u\.s\. house/.test(t) ? "your U.S. House seat" : "statewide executive office" };
+  if (/lieutenant governor|attorney general|comptroller|secretary of state|treasurer|controller|insurance commissioner|superintendent|commissioner/.test(t))
+    return { v: 2, why: "statewide executive office" };
   if (/court|judge|justice|appeals/.test(t)) return { v: 1, why: "judicial seat" };
   if (/state senate|state house|state representative|assembly|senate district|house district/.test(t)) return { v: 1.5, why: "state legislature" };
   return { v: 1, why: r.level === "local" || r.level === "county" ? "local office" : "lower-profile office" };
@@ -62,7 +69,7 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">News coverage ({items.length})<span aria-hidden className="ml-2 inline-block group-open/n:rotate-180">↓</span></summary>
       <ul className="max-w-2xl space-y-1 pb-2">
         {items.map((n) => (
-          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className="text-black underline-offset-2 hover:underline">{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
+          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className={`${HIT} text-black underline-offset-2 hover:underline`} data-news-link>{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
         ))}
       </ul>
     </details>
@@ -89,7 +96,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                     <p className="text-lg font-[530]" data-race-title>{r.title}</p>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
                     <p className="text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No market data" ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
-                    {r.judicialNote ? <p className="text-sm text-black/60" data-judicial-note>{r.judicialNote}</p> : null}
+                    {r.judicialNote ? <p className="max-w-[65ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap text-[#3760F2]`} data-judicial-source>{r.judicialNoteSource.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {plain(r.appliesNote)}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.tentative ? <p className="text-sm text-black/60" data-tentative>Tentative: from the NYC Board of Elections&rsquo; tentative contest list. Check your sample ballot.</p> : null}
@@ -122,7 +129,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
   return (
     <section className="border-t border-black py-24" id="tiers">
       <p className="nds-caption-upper text-black/60">01</p>
-      <h2 className="mt-3 font-serif text-[40px] font-[530] leading-none tracking-[-0.02em] text-black md:text-[56px]">What matters on your ballot</h2>
+      <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
       <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings or prediction markets call it close; otherwise &ldquo;Not closely contested&rdquo;. Neither says who is ahead.</p>
       <div className="mt-10">

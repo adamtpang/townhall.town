@@ -47,8 +47,13 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
     setBusy(false);
   }
 
+  // QA P2 (4c21a5c): the carry-over is also said on the page, not only inside the chat.
+  const carry = answered > 0
+    ? <p className="mb-3 text-sm text-black/60" data-carryover>{`Your ${answered} saved answer${answered === 1 ? "" : "s"} from this browser ${answered === 1 ? "is" : "are"} filled in below. Change any of them, or use Reset my answers.`}</p>
+    : null;
   if (!open) return (
     <div className="mt-6" data-interview>
+      {carry}
       <button type="button" onClick={() => { setMsgs([{ from: "towny", text: opener(answered) }]); setOpen(true); }} data-interview-start
         className="inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2]">
         Or tell Towny in your own words
@@ -57,6 +62,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
   );
   return (
     <div className="mt-6 max-w-2xl border border-black/15 p-4 md:p-6" data-interview>
+      {carry}
       <ol className="space-y-3" aria-live="polite">
         {msgs.map((m, i) => (
           <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>

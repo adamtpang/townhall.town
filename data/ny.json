@@ -693,7 +693,7 @@
      }
     ],
     "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
-    "appliesNote": "SPLIT: ~70.6% of 10001 (ZCTA) residents are in the 3rd Municipal Court District. Source: TENTATIVE contest list",
+    "appliesNote": "SPLIT: ~70.6% of 10001 (ZCTA) residents are in the 3rd Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
     "dependsOnAddress": true,
     "tentative": true,
     "judicial": "ny"
@@ -737,7 +737,7 @@
      }
     ],
     "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
-    "appliesNote": "SPLIT: ~29.4% of 10001 (ZCTA) residents are in the 9th Municipal Court District. Source: TENTATIVE contest list",
+    "appliesNote": "SPLIT: ~29.4% of 10001 (ZCTA) residents are in the 9th Municipal Court District. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
     "dependsOnAddress": true,
     "tentative": true,
     "judicial": "ny"
@@ -781,7 +781,7 @@
      }
     ],
     "source": "https://www.vote.nyc/sites/default/files/pdf/candidates/2026/9_11_2026%2010_26_11%20AM_General%20Contest%20List%20Web%20Version.pdf",
-    "appliesNote": "SPLIT: ~95.1% of 10001 (ZCTA) residents are in Council District 3; ~4.9% are in CD4, which has no 2026 race. Whether this is a special election is unsure. Source: TENTATIVE contest list",
+    "appliesNote": "SPLIT: ~95.1% of 10001 (ZCTA) residents are in Council District 3; ~4.9% are in CD4, which has no 2026 race. Whether this is a special election is unsure. Source: NYC BOE contest list (TENTATIVE, 9/11/2026)",
     "dependsOnAddress": true,
     "tentative": true
    }
