@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { findQuotes, findOwnWords, ownIssueLinks, sameSite, textOf } from "../lib/research";
+import { findQuotes, findOwnWords, ownIssueLinks, sameSite, textOf, issueHit, withoutProperNouns, isCandidateStatement } from "../lib/research";
 import { limited } from "../lib/rateLimit";
 describe("research", () => {
   // Civic rule (b): own words, in quotation marks, the candidate named as speaker, exact substring of the page text.
@@ -54,3 +54,27 @@ describe("textOf decodes numeric entities so own-words quotes stay exact", () =>
   });
 });
 
+
+describe("QA P1-1 (9dfe90d): venue boilerplate is not the candidate's position", () => {
+  const venue = "Mercado La Paloma is a community marketplace in South Los Angeles operated by Esperanza Community Housing Corporation.\nI will build more housing that working families can afford.";
+  it("an organisation or venue blurb on the candidate's own site never counts, even with an issue word in a proper noun", () => {
+    const q = findOwnWords(venue, ["housing"], 2, "Xavier Becerra");
+    expect(q.map((x) => x.quote)).toEqual(["I will build more housing that working families can afford."]);
+    expect(findOwnWords("Mercado La Paloma is a community marketplace in South Los Angeles operated by Esperanza Community Housing Corporation.", ["housing"], 1, "Xavier Becerra")).toEqual([]);
+  });
+  it("issue words inside proper nouns do not match", () => {
+    expect(issueHit(/\bhousing\b/i, "Esperanza Community Housing Corporation hosted the event today")).toBe(false);
+    expect(issueHit(/\bhousing\b/i, "Housing costs are too high for families")).toBe(true);
+    expect(withoutProperNouns("run by Esperanza Community Housing Corporation now")).not.toMatch(/Housing/);
+  });
+  it("a third-person sentence naming the candidate counts; one naming nobody does not", () => {
+    expect(isCandidateStatement("Becerra will expand rental assistance for working families.", "Xavier Becerra")).toBe(true);
+    expect(isCandidateStatement("The marketplace hosts local vendors and community events every week.", "Xavier Becerra")).toBe(false);
+    expect(isCandidateStatement("Our plan cuts rent for working families.", "")).toBe(true);
+    expect(isCandidateStatement("The US Department of Housing funds this program each year.", "")).toBe(false);
+  });
+  it("quoted speech still needs the candidate as speaker, and its issue word cannot be a proper noun", () => {
+    const news = "“I toured the Esperanza Community Housing Corporation offices with local leaders today,” Becerra said.";
+    expect(findQuotes(news, ["housing"], 1, "Xavier Becerra")).toEqual([]);
+  });
+});

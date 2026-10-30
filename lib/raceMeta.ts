@@ -1,5 +1,5 @@
 // Per-race extras from Civic files, attached server-side (lib/tools.ts enrich):
-// - competitiveness.json: a closeness label only. Never who is ahead; no prices shown.
+// - competitiveness.json: contest status only. Closeness now comes only from live Polymarket (lib/marketLine.ts).
 // - contestStatus in plain words; sf-supervisor-8 is ranked-choice.
 // - news.json: headlines exactly as written, outlet, date, link. No summaries or commentary.
 import comp from "../data/civic/competitiveness.json";
@@ -12,8 +12,6 @@ const C = (comp as unknown as { races: CompRace[] }).races;
 const N = (news as unknown as { races: NewsRace[] }).races;
 
 export type RaceMeta = {
-  closeness: "Competitive" | "Not closely contested" | "No market data";
-  closenessBasis: { label: string; url: string }[];
   contest: string | null; // "Uncontested", "Retention", "Multi-seat (choose up to 3)"
   rankedChoice?: boolean;
   news: { title: string; outlet: string; date: string; url: string }[];
@@ -62,11 +60,7 @@ export function raceMeta(zip: string, raceId: string): RaceMeta | null {
   const n = N.find((r) => r.zip === zip && same(r.raceId, raceId));
   const why = whyFor(raceId);
   if (!c && !n && !why) return null;
-  const closeness: RaceMeta["closeness"] = c?.rating === "competitive" ? "Competitive" : c?.rating === "safe" ? "Not closely contested" : "No market data";
-  const closenessBasis = closeness === "No market data" ? [] : (c?.raters ?? []).map((r) => ({ label: r.rater, url: r.sourceUrl }));
   return {
-    closeness,
-    closenessBasis,
     contest: plainContest(c?.contestStatus || n?.contestStatus),
     rankedChoice: RANKED_CHOICE.has(raceId) ? true : undefined,
     why,

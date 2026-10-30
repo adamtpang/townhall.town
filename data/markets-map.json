@@ -1,35 +1,29 @@
 {
- "us-senate-tx": {
-  "kalshi": "SENATETX-26"
- },
- "tx-gov": {
-  "kalshi": "GOVPARTYTX-26"
- },
- "tx-ltgov": {
-  "kalshi": "KXLTGOVTX-26"
- },
- "tx-ag": {
-  "kalshi": "KXATTYGENTX-26"
- },
- "tx-35": {
-  "kalshi": "KXHOUSETX35-26"
- },
- "ca-gov": {
-  "kalshi": "KXGOVCA-26"
- },
- "ca-insurance": {
-  "kalshi": "KXCAINSCOMGEN-26"
- },
- "Proposition 40": {
-  "kalshi": "KXCAWEALTHTAX-26"
- },
- "Proposition 39": {
-  "kalshi": "KXCAVOTERID-26"
- },
- "ny-governor": {
-  "kalshi": "GOVPARTYNY-26"
- },
- "ny-attorney-general": {
-  "kalshi": "KXATTYGENNY-26"
- }
+ "_meta": "Polymarket event slugs (https://polymarket.com/event/<slug>) per race or measure id. Only markets on the same contest are listed; each was checked against the live Gamma API on Oct 29, 2026. Measures are matched by the Proposition number Polymarket names in the market description. No entry means no matching Polymarket market, so no odds are shown.",
+ "us-senate-tx": { "polymarket": "texas-senate-election-winner" },
+ "tx-10": { "polymarket": "tx-10-house-election-winner" },
+ "tx-37": { "polymarket": "tx-37-house-election-winner" },
+ "tx-gov": { "polymarket": "texas-governor-winner-2026" },
+ "tx-ltgov": { "polymarket": "texas-lieutenant-governor-election-winner-2026" },
+ "tx-ag": { "polymarket": "texas-attorney-general-election-winner-2026" },
+ "tx-rrc": { "polymarket": "texas-railroad-commissioner-election-winner-2026" },
+ "ca-gov": { "polymarket": "california-governor-election-2026" },
+ "ca-ltgov": { "polymarket": "california-lieutenant-governor-election-winner" },
+ "ny-12": { "polymarket": "ny-12-house-election-winner" },
+ "ny-governor": { "polymarket": "new-york-governor-winner-2026" },
+ "ny-attorney-general": { "polymarket": "new-york-attorney-general-election-winner-2026" },
+ "ca-prop-1": { "polymarket": "california-affordable-housing-bond-proposition" },
+ "ca-prop-2": { "polymarket": "california-rainy-day-fund-proposition" },
+ "ca-prop-3": { "polymarket": "california-high-earner-permanent-tax-proposition" },
+ "ca-prop-4": { "polymarket": "california-public-campaign-financing-proposition" },
+ "ca-prop-5": { "polymarket": "california-recall-election-reform-proposition" },
+ "ca-prop-37": { "polymarket": "california-homebuying-loan-program-proposition" },
+ "ca-prop-38": { "polymarket": "california-immunology-research-bond-proposition" },
+ "ca-prop-39": { "polymarket": "california-voter-id-referendum-passes" },
+ "ca-prop-40": { "polymarket": "billionaire-one-time-wealth-tax-passes-in-california-election-2026" },
+ "ca-prop-41": { "polymarket": "california-tax-spend-audit-proposition" },
+ "ca-prop-42": { "polymarket": "california-retroactive-tax-prohibition-proposition" },
+ "ca-prop-43": { "polymarket": "california-higher-local-tax-vote-threshold-proposition" },
+ "ca-prop-44": { "polymarket": "california-clinic-funding-proposition" },
+ "ca-prop-45": { "polymarket": "california-expedited-environmental-review-proposition" }
 }

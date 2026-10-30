@@ -40,7 +40,7 @@
 }
 
 @layer components {
-  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-slate-500; }
+  .eyebrow { @apply text-sm font-semibold uppercase tracking-[0.14em] text-slate-500; }
   .nds-grid { @apply grid grid-cols-2 gap-x-4 px-6 md:grid-cols-12 md:gap-x-5 md:px-5 lg:px-10 mx-auto max-w-grid; }
   .nds-caption-upper { @apply text-nds-micro uppercase tracking-wide text-muted-foreground; }
   .nds-hairline { @apply border-t border-foreground/10; }

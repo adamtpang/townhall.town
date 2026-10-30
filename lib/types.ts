@@ -28,7 +28,7 @@ export type Race = {
   office: string;                   // plain words: what the office controls
   candidates: Politician[];         // empty for ballot measures
   source: string;
-  market?: { platform: "polymarket" | "kalshi"; odds: Record<string, number>; url: string; fetchedAt: string; matchedByTitle?: boolean } | null;
+  market?: { platform: "polymarket"; odds: Record<string, number>; url: string; fetchedAt: string } | null;
   // Plug-in field (optional):
   turnout?: TurnoutStats;
   judicial?: "tx" | "ca" | "ny" | boolean;

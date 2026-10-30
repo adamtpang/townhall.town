@@ -41,20 +41,23 @@ describe("Civic merge checks", () => {
     }
   });
 
-  it("no candidate or race renders a letter grade (S/A/B/C), and no odds", () => {
+  // Adam (Oct 29 2026) overrides the earlier no-letter / no-odds rules: issue-overlap grades sit only in data-grade
+  // rows after an answer, and the only market text is the live-Polymarket leader line (none without a live quote).
+  it("letters appear only as labelled issue-overlap grades; no market text without a live quote", () => {
     const allYes = Object.fromEntries(ISSUES.map((i) => [i.id, 5]));
     for (const z of ZIPS) {
       const b = ballotFor(z)!;
-      const html = [
-        renderToStaticMarkup(h(RaceTiers, { races: b.races as never, market: () => null as never })),
-        renderToStaticMarkup(h(IssueMatch, { zip: z, state: b.state, races: b.races as never })),
-        renderToStaticMarkup(h(EndScreen, { zip: z, races: b.races as never, answers: allYes, ids: ISSUES.map((i) => i.id), answered: ISSUES.length })),
-      ].join("\n");
-      // A grade would be an element whose whole text is one of S/A/B/C, or "Tier X" / "Grade X" text.
-      expect(html, z).not.toMatch(/>\s*[SABC]\s*</);
-      expect(html, z).not.toMatch(/\b(Tier|Grade)\s+[SABC]\b/);
-      expect(html, z).not.toMatch(/market odds|No market odds yet|\d+% chance|Kalshi|Polymarket/i);
-      // Race tiers keep their plain-word labels.
+      const tiers = renderToStaticMarkup(h(RaceTiers, { races: b.races as never, market: () => null as never }));
+      const end = renderToStaticMarkup(h(EndScreen, { zip: z, races: b.races as never, answers: allYes, ids: ISSUES.map((i) => i.id), answered: ISSUES.length }));
+      const html = [tiers, renderToStaticMarkup(h(IssueMatch, { zip: z, state: b.state, races: b.races as never })), end].join("\n");
+      // Strip the grade rows; nothing else may show a bare letter or a "Tier/Grade X".
+      const rest = html.replace(/<p[^>]*data-grade="[SABC]"[^>]*>.*?<\/p>/g, "");
+      expect(rest, z).not.toMatch(/>\s*[SABC]\s*</);
+      expect(rest, z).not.toMatch(/\b(Tier|Grade)\s+[SABC]\b/);
+      for (const m of html.matchAll(/data-grade="([SABC])"[^>]*>(.*?)<\/p>/g)) expect(m[2]).toMatch(/issue overlap, not a recommendation/);
+      // Candidates' own sourced words (quotes, Ballotpedia survey summaries) may say "best"; our copy never does.
+      expect(html.replace(/“[^”]*”/g, "").replace(/data-bp-summary="true">Ballotpedia summary:<\/span>[^<]*/g, ""), z).not.toMatch(/\b(best|vote for)\b/i);
+      expect(html, z).not.toMatch(/market odds|No market odds yet|\d+% chance|Kalshi|Leader on Polymarket|data-market-line/i);
       expect(html, z).toMatch(/Most at stake|High/);
     }
     for (const f of ["app/IssueMatch.tsx", "app/RaceTiers.tsx", "app/EndScreen.tsx", "app/BallotAgent.tsx"])
@@ -72,9 +75,9 @@ describe("Civic merge checks", () => {
     expect(p2.office).toMatch(/unexpired term of Jimmy Blacklock, through December 31, 2030/);
   });
 
-  it("Spanish is flagged off by default and uses usted, with no translated tiers", () => {
-    expect(SPANISH_ENABLED).toBe(false);
-    expect(renderToStaticMarkup(h(LangToggle))).toBe("");
+  it("Spanish toggle is visible by default and uses usted, with no translated tiers", () => {
+    expect(SPANISH_ENABLED).toBe(true);
+    expect(renderToStaticMarkup(h(LangToggle))).toMatch(/Español/);
     const vals = Object.values(ES_FOR_TEST).join(" | ");
     expect(vals).not.toMatch(/\b(tu|tus|te|contigo|Escribe|Revisa|Encuentra|Inténtalo|confírmalo)\b/);
     expect(vals).not.toMatch(/\bNivel\b|Sin nivel|probabilidades de mercado/);

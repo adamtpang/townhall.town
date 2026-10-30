@@ -1,6 +1,6 @@
 "use client";
 import { plain } from "../lib/plain";
-import { H2, HIT } from "../lib/typeScale";
+import { H2, H3, HIT } from "../lib/typeScale";
 const listOf = (xs: string[]) => (xs.length < 3 ? xs.join(" and ") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 import { useState } from "react";
 import { type Photo } from "../components/Portrait";
@@ -8,20 +8,23 @@ import { PortraitRow } from "../components/PortraitRow";
 import type { MeasureMath } from "../lib/measures";
 import officesData from "../data/offices.json";
 const OFFICES = officesData.offices;
-type Avg = { name: string; prob: number }[];
+import { useT } from "../lib/i18n";
+import { leaderLine, type PolyQuote, type LeaderLine } from "../lib/marketLine";
+import { polymarketCloseness } from "../lib/marketsCore.mjs";
 import type { RaceMeta } from "../lib/raceMeta";
 import { ISSUES } from "../lib/issues";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
 type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
-type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
+/** The one live Polymarket quote for a contest, or null. Never cached, never estimated. */
+export type Mk = PolyQuote | null;
 
 /**
  * Tier formula (races only, never candidates):
  *   score = impact x competitiveness
  *   impact: 3 = President, U.S. Senate, Governor; 2 = U.S. House, other statewide executive, ballot measures;
  *           1.5 = state legislature; 1 = judicial and local.
- *   competitiveness (Civic competitiveness.json label): Competitive = 2.0, Not closely contested or no data = 1.0.
- *           Never names who is ahead.
+ *   competitiveness (live Polymarket only, Adam Oct 29 2026): top contract between 35% and 65% = Competitive = 2.0;
+ *           otherwise, or no live market, 1.0. No market means no market line; nothing is estimated.
  *   Most at stake >= 4.5, High stakes >= 3, Moderate stakes >= 2, else Lower stakes.
  */
 export function impactOf(r: RaceLite): { v: number; why: string } {
@@ -46,12 +49,13 @@ export function impactOf(r: RaceLite): { v: number; why: string } {
 }
 export type Group = "most" | "high" | "moderate" | "lower";
 export const TIER_LABELS = ["Most at stake", "High stakes", "Moderate stakes", "Lower stakes"] as const;
-export function tierFor(r: RaceLite, _mk?: Mk) {
+export function tierFor(r: RaceLite, mk?: Mk, tr?: (s: string) => string) {
   const imp = impactOf(r);
-  const comp = r.meta?.closeness === "Competitive" ? 2 : 1;
+  const comp = polymarketCloseness(mk ?? null) === "Competitive" ? 2 : 1;
   const score = imp.v * comp;
   const tier: Group = score >= 4.5 ? "most" : score >= 3 ? "high" : score >= 2 ? "moderate" : "lower";
-  const why = `${imp.why[0].toUpperCase()}${imp.why.slice(1)}.`;
+  const w = tr ? tr(imp.why) : imp.why;
+  const why = `${w[0].toUpperCase()}${w.slice(1)}.`;
   return { tier, score, why };
 }
 
@@ -60,6 +64,18 @@ const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct
 export function newsDate(d: string): string {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d ?? "");
   return m && +m[2] >= 1 && +m[2] <= 12 ? `${MON[+m[2] - 1]} ${+m[3]}, ${m[1]}` : d;
+}
+
+/** "Leader on Polymarket: <name> at N%", with the market link and fetch time. Only for a live quote. */
+export function MarketLine({ line }: { line: LeaderLine | null }) {
+  if (!line) return null;
+  return (
+    <p className="max-w-[45ch] text-sm text-black/60" data-market-line>
+      Leader on Polymarket: <span className="text-black">{line.name}</span> at {line.pct}.{" "}
+      <a href={line.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap text-[#3760F2]`} data-market-link>Polymarket market ↗<span className="sr-only"> (opens in a new tab)</span></a>{" "}
+      <span data-market-fetched>Fetched {line.fetched}.</span> A market price, not a forecast or a recommendation.
+    </p>
+  );
 }
 
 /** Civic news.json only: headline exactly as written, outlet, date, link. No summaries. */
@@ -78,7 +94,8 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
 
 export default function RaceTiers({ races, market, measures = [] }: { races: RaceLite[]; market: (id: string) => Mk; measures?: MeasureMath[] }) {
   const [failed, setFailed] = useState<Record<string, boolean>>({});
-  const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
+  const t = useT();
+  const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id), t), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
   const tiers = ["most", "high", "moderate", "lower"] as const;
   const TIER_NAME = { most: "Most at stake", high: "High stakes", moderate: "Moderate stakes", lower: "Lower stakes" } as const;
   const [showAll, setShowAll] = useState(false);
@@ -91,19 +108,19 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
     ...tiers.filter((t) => t === "most" || t === "high" || showAll).map((t) => ({ key: t as string, name: TIER_NAME[t] as string, list: nonJudicial.filter((x) => x.tier === t), eager: t === "most" || t === "high", open: true })),
   ].filter((g) => g.list.length);
   const judicialGroup = judicial.length ? [{ key: "judicial", name: `Judicial races (${judicial.length})`, list: judicial, eager: false, open: false }] : [];
-  const raceItem = ({ r, why }: { r: RaceLite; why: string }, eager: boolean) => (
+  const raceItem = ({ r, why, mk }: { r: RaceLite; why: string; mk: Mk }, eager: boolean) => (
                   <li key={r.id} className="font-[450]">
-                    <p className="text-lg font-[530]" data-race-title>{r.title}</p>
+                    <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
-                    <p className="text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No market data" ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
-                    {r.judicialNote ? <p className="max-w-[65ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap text-[#3760F2]`} data-judicial-source>{r.judicialNoteSource.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
+                    <p className="max-w-[45ch] text-sm text-black/60" data-why>{why}{mk ? <> <span data-closeness>{polymarketCloseness(mk)}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
+                    <MarketLine line={leaderLine(mk)} />
+                    {r.judicialNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap text-[#3760F2]`} data-judicial-source>{r.judicialNoteSource.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {plain(r.appliesNote)}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
-                    {r.tentative ? <p className="text-sm text-black/60" data-tentative>Tentative: from the NYC Board of Elections&rsquo; tentative contest list. Check your sample ballot.</p> : null}
+                    {r.tentative ? <p className="text-sm text-black/60" data-tentative>Draft: from the NYC Board of Elections&rsquo; draft contest list. Check your sample ballot.</p> : null}
                     {(r.source || r.verify) && (
-                      <p className="flex flex-wrap items-center gap-x-1 text-xs leading-4 text-black/60" data-race-links>
+                      <p className="flex flex-wrap items-center gap-x-1 text-sm leading-5 text-black/60" data-race-links>
                         {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
-                        {r.meta?.closenessBasis.map((x) => <span key={x.url} className="contents"><span aria-hidden>·</span><a href={x.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{x.label} rating ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
                         {r.verify && <><span aria-hidden>·</span><span>{r.verify}</span></>}
                       </p>
                     )}
@@ -131,7 +148,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
-      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings or prediction markets call it close; otherwise &ldquo;Not closely contested&rdquo;. Neither says who is ahead.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when its live Polymarket market has the top outcome between 35% and 65%; otherwise &ldquo;Not closely contested&rdquo;. Races with no Polymarket market get no market line and are ranked on the office alone. Market prices are not forecasts or recommendations.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
@@ -162,7 +179,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
               </ul>
             </details>
         ))}
-        {measures.length > 0 && <MeasureRows measures={measures} />}
+        {measures.length > 0 && <MeasureRows measures={measures} market={market} />}
       </div>
     </section>
   );
@@ -175,7 +192,7 @@ const said = (v?: string | null) => (!v || /^\s*unsure\b/i.test(v) ? "No officia
 function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; sourceUrl: string } }) {
   const o = (OFFICES as Record<string, { learn?: string | null; sourceUrl?: string | null }>)[id];
   const ok = o?.learn && o.sourceUrl && !/^\s*unsure/i.test(o.learn) ? { learn: o.learn, sourceUrl: o.sourceUrl } : fallback;
-  if (!ok) return <p className="text-xs leading-4 text-black/60" data-office-unverified>Office description not yet verified</p>; // No source, no description.
+  if (!ok) return <p className="text-sm leading-5 text-black/60" data-office-unverified>Office description not yet verified</p>; // No source, no description.
   return (
     <details className="group/o" data-office={id}>
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">
@@ -192,7 +209,7 @@ function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; 
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
 
 /** Measures: one compact expandable row per measure. Numbers are quoted from official analyses and each links its source. */
-function MeasureRows({ measures }: { measures: MeasureMath[] }) {
+function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (id: string) => Mk }) {
   return (
     <details className="group border-t border-black/15 py-6" data-tier="measures">
       <summary className="flex min-h-11 cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
@@ -204,10 +221,11 @@ function MeasureRows({ measures }: { measures: MeasureMath[] }) {
           <li key={m.id} className="border-t border-black/10 first:border-t-0">
             <details className="group/m" data-measure={m.id}>
               <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
-                <span className="text-base font-medium">{m.title}</span>
+                <h3 className="text-base font-medium" data-measure-title>{m.title}</h3>
                 <span aria-hidden className="text-sm font-[450] text-black/50 group-open/m:rotate-180">↓</span>
               </summary>
-              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-xs uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
+              <div className="pb-3"><MarketLine line={leaderLine(market(m.id))} /></div>
+              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
 {(() => {
                 const all = [["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", (m.ifYes ?? m.whatChanges).text, (m.ifYes ?? m.whatChanges).sourceUrl], ["If no", m.ifNo?.text, m.ifNo?.sourceUrl]] as const;
                 const none = (v?: string | null) => said(v) === "No official estimate";
@@ -220,7 +238,7 @@ function MeasureRows({ measures }: { measures: MeasureMath[] }) {
                       <dl className="grid gap-4 sm:grid-cols-2">
                         {rows.map(([k, v, u]) => (
                           <div key={k}>
-                            <dt className="text-xs uppercase tracking-wide text-black/50">{k}</dt>
+                            <dt className="text-sm uppercase tracking-wide text-black/50">{k}</dt>
                             <dd className="mt-1 text-sm">
                               {said(v)}{" "}
                               {u && <a href={u} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap">{host(u)} ↗</a>}

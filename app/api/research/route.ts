@@ -66,13 +66,25 @@ async function research(req: Request): Promise<Response> {
   const runKey = `${zip}|${raceId}|${[...ids].sort().join(",")}`;
   const prev = runs.get(runKey);
   if (prev && Date.now() - prev.at < TTL)
-    return new Response(prev.events.map((e) => JSON.stringify(e) + "\n").join(""), { headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store", "x-research-cache": "hit" } });
+    return new Response(prev.events.map((e) => JSON.stringify(e) + "\n").join(""), { headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store", "x-research-cache": "hit", "x-research-cache-layer": "run" } });
+  // QA P2 (9dfe90d): say which cache layer will answer. A run that is not replayed whole can still be served
+  // entirely from the per-search and per-page caches (no new searches or fetches); report that as a hit too.
+  const fresh = (e?: { at: number }) => !!e && Date.now() - e.at < TTL;
+  let need = 0, have = 0;
+  if (!race.judicial) for (const c of race.candidates as any[]) {
+    const s = searches.get(`${c.name}|${race.office || race.title}|${ballot?.place || zip || ""}`);
+    need++; if (fresh(s)) have++;
+    const own = [c.campaignSite, c.officialSite].filter((u): u is string => typeof u === "string" && /^https:\/\//.test(u));
+    const pagesUrls = [c.campaignSite, c.officialSite, c.ballotpedia, ...own.flatMap((o) => cache.get(o)?.links || []), ...(s?.urls || [])].filter((u): u is string => typeof u === "string" && /^https:\/\//.test(u));
+    for (const u of pagesUrls) { need++; if (fresh(cache.get(u))) have++; }
+  }
+  const layer = need && have === need ? "hit" : have ? "partial" : "miss";
   const log: Record<string, unknown>[] = [];
   let failedAny = false;
   const stream = new ReadableStream({
     async start(ctl) {
       const emit = (e: Record<string, unknown>) => { log.push(e); ctl.enqueue(enc.encode(JSON.stringify(e) + "\n")); };
-      if (race.judicial) { emit({ type: "done", judicial: true }); ctl.close(); return; }
+      if (race.judicial) { emit({ type: "done", judicial: true }); runs.set(runKey, { at: Date.now(), events: log }); ctl.close(); return; }
       // Same steps for every candidate, in ballot order.
       for (const c of race.candidates as any[]) {
         const urls: string[] = []; const keys = new Set<string>();
@@ -98,7 +110,7 @@ async function research(req: Request): Promise<Response> {
           // Civic rule (b) + QA P1 #1: on the candidate's own site, their own sentences count (exact substring);
           // elsewhere only text in quotation marks with this candidate named as the speaker. Same bar for every candidate.
           const quotes = (!r.text ? [] : isOwn(u)
-            ? [...findQuotes(r.text, ids, 1, String(c.name)), ...findOwnWords(r.text, ids, 1)]
+            ? [...findQuotes(r.text, ids, 1, String(c.name)), ...findOwnWords(r.text, ids, 1, String(c.name))]
             : findQuotes(r.text, ids, 1, String(c.name))).filter((x) => quoteFits(x, u));
           const fresh = quotes.filter((x) => { const k = x.quote.toLowerCase().replace(/[^a-z0-9]+/g, ""); if (seen.has(k)) return false; seen.add(k); return true; });
           const keep = fresh.slice(0, Math.max(0, 4 - found)); found += keep.length;
@@ -120,7 +132,7 @@ async function research(req: Request): Promise<Response> {
       ctl.close();
     },
   });
-  return new Response(stream, { headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store", "x-research-cache": "miss" } });
+  return new Response(stream, { headers: { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store", "x-research-cache": layer, "x-research-cache-layer": layer === "miss" ? "none" : "search+pages" } });
 }
 
 export const GET = withHeaders(rateLimited(RESEARCH_POLICY, research), API_VERSION_HEADERS);

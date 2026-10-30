@@ -27,7 +27,7 @@ export const HOME_SECTIONS: Section[] = [
       "Campaign finance links: [FEC](https://www.fec.gov), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov) filing pages",
       "Dates, ID rules and polling places: [Travis County Clerk](https://votetravis.gov), [SF Department of Elections](https://www.sf.gov/november-3-2026-consolidated-general-election), [VoteTexas.gov](https://www.votetexas.gov), [California Secretary of State](https://www.sos.ca.gov/elections), [NYC Board of Elections](https://vote.nyc)",
       "Local data and ZIP geography: [U.S. Census Bureau](https://www.census.gov) American Community Survey 2024 5-year",
-      "Market odds: [Polymarket](https://polymarket.com) and [Kalshi](https://kalshi.com) prices, shown as market prices, not forecasts",
+      "Market prices: live [Polymarket](https://polymarket.com) prices, fetched when you look up a ZIP, with a link to the market and the time fetched. Market prices, not forecasts. No market, no number",
     ],
   },
 ];
@@ -50,7 +50,7 @@ export const ABOUT: PageContent = {
       heading: "Nonpartisan by design",
       paragraphs: [
         "townhall.town does not endorse candidates, parties or ballot positions, and it does not rank candidates. Candidates in a race are shown with the same fields in the same layout.",
-        "The AI summary is instructed to stay neutral, to use only facts returned by the data tools, and to never recommend a candidate. Prediction market odds are labeled as market prices, not forecasts.",
+        "The AI summary is instructed to stay neutral, to use only facts returned by the data tools, and to never recommend a candidate. Polymarket prices are labeled as market prices, not forecasts.",
       ],
     },
     {
@@ -130,7 +130,7 @@ export const PRIVACY: PageContent = {
       heading: "Other sites",
       paragraphs: [
         "Candidate photos are served from townhall.town itself, with credit to their source. Source links open other sites with their own policies.",
-        "The server also fetches public data while building a ballot. It sends candidate names or IDs to the FEC and Congress.gov, the county code for your ZIP to the Bureau of Labor Statistics, and market IDs for races to Polymarket and Kalshi. These requests come from our server, so they don't include your IP address, and they never include your answers.",
+        "The server also fetches public data while building a ballot. It sends candidate names or IDs to the FEC and Congress.gov, the county code for your ZIP to the Bureau of Labor Statistics, and market IDs for races to Polymarket. These requests come from our server, so they don't include your IP address, and they never include your answers.",
         "If you use \"Or tell Towny in your own words\", what you type is sent to an AI model through Vercel AI Gateway only to fill in your answers, and is not saved. Towny research sends the candidate's name and office to a web search model and reads public pages. Please leave out names and addresses.",
       ],
     },
@@ -200,7 +200,7 @@ export const DEVELOPERS: PageContent = {
     {
       heading: "Get a ballot",
       paragraphs: [
-        `Covered ZIPs: ${coverageLine}. Each line of the response is one JSON event. Step and status lines arrive while the data tools run. The last line has "type":"result" with the full ballot: districts, races, candidates, measures, market prices and local Census data, each with its source. A 5-digit ZIP that is not covered ends with one "type":"unsupported" line instead.`,
+        `Covered ZIPs: ${coverageLine}. Each line of the response is one JSON event. Step and status lines arrive while the data tools run. The last line has "type":"result" with the full ballot: districts, races, candidates, measures, live Polymarket prices and local Census data, each with its source. A 5-digit ZIP that is not covered ends with one "type":"unsupported" line instead.`,
       ],
       code: [
         `curl -N "${SITE.url}/api/v1/agent?zip=78701"`,

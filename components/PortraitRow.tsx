@@ -22,7 +22,7 @@ export function labels(names: string[]) {
   });
 }
 
-function Tile({ c, eager, label, mate }: { c: C; eager?: boolean; label: string; mate: string | null }) {
+function Tile({ c, eager, label, mate, reserveMate }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean }) {
   const [broken, setBroken] = useState(false);
   const ref = useRef<HTMLImageElement>(null);
   // onError can fire before hydration attaches the handler; re-check once mounted.
@@ -44,13 +44,13 @@ function Tile({ c, eager, label, mate }: { c: C; eager?: boolean; label: string;
           <img ref={ref} src={c.photo!.url} alt={split(c.name).lead} loading={eager ? "eager" : "lazy"} decoding="async" onError={() => setBroken(true)} className="absolute inset-0 h-full w-full object-cover object-top" />
         ) : null}
       </div>
-      <p className="mt-1 w-[calc(var(--p)+4px)] break-words [overflow-wrap:anywhere] text-xs font-[530] leading-4" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
-      {mate ? <p className="break-words [overflow-wrap:anywhere] text-xs leading-4 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : null}
+      <p className="mt-1 w-[calc(var(--p)+4px)] truncate text-sm font-[530] leading-5" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
+      {mate ? <p className="w-[calc(var(--p)+4px)] truncate text-sm leading-5 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : reserveMate ? <p aria-hidden className="h-5" data-tile-mate-spacer /> : null}
     </li>
   );
 }
 
-/** Design portrait spec v2: one flex row, never wraps, never scrolls, ballot order, identical square tiles
+/** Design portrait spec v2 (+ design p8: names one line, truncated with an ellipsis, full name in title/aria-label; every tile the same height): one flex row, never wraps, never scrolls, ballot order, identical square tiles
  *  (56px at 1024+, 48px at 768-1023, 40px below). Broken or missing photos fall back to a same-size initials tile (Adam's rule). */
 export function CandidatePortraitRow({ cands, size = "row", eager = false }: { cands: C[]; size?: "row" | "mini"; eager?: boolean }) {
   if (!cands.length) return null;
@@ -58,10 +58,10 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   return (
     <>
     <ul role="list" aria-label="Candidates in ballot order" className={`my-3 flex flex-nowrap gap-3 overflow-hidden ${vars}`} data-photo-row>
-      {(() => { const L = labels(cands.map((c) => c.name)); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} label={L[i].label} mate={L[i].mate} />); })()}
+      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
     {size === "row" && cands.some((c) => c.photo?.url) ? (
-      <details className="-mt-1 mb-2 text-xs leading-4 text-black/60" data-photo-credits>
+      <details className="-mt-1 mb-2 text-sm leading-5 text-black/60" data-photo-credits>
         <summary className="inline-flex min-h-11 cursor-pointer items-center">Photo credits</summary>
         <ul className="space-y-1">{cands.filter((c) => c.photo?.url).map((c) => (
           <li key={c.name}>{c.name}: {c.photo!.page ? <a href={c.photo!.page} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`} data-photo-credit>{c.photo!.credit}</a> : c.photo!.credit}{c.photo!.license && !c.photo!.credit.includes(c.photo!.license) ? ` (${c.photo!.license})` : ""}</li>

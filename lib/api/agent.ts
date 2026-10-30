@@ -19,7 +19,7 @@ const STEP_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
   getRaces: "Pulling your races",
   getCandidates: "Looking up candidates",
-  getMarketOdds: "Fetching market odds",
+  getMarketOdds: "Fetching Polymarket prices",
   getLocalProblems: "Pulling local problems",
 };
 
@@ -35,7 +35,7 @@ function summarize(name: string, r: any): string {
       return `${r.races.reduce((n: number, x: any) => n + x.candidates.length, 0)} candidates across ${r.races.length} races`;
     case "getMarketOdds": {
       const v = Object.values(r) as any[];
-      return `${v.filter((x) => x.quotes.length).length} of ${v.length} contests have a market (${v.filter((x) => x.status === "live").length} live)`;
+      return `${v.filter((x) => x.quotes.length).length} of ${v.length} contests have a live Polymarket price`;
     }
     case "getLocalProblems":
       return r.problems.map((p: any) => `${p.label}: ${String(p.value).endsWith(p.unit) ? p.value : `${p.value}${p.unit}`}`).join(" · ");
@@ -76,7 +76,7 @@ function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
       toModelOutput: (r: any) => ({ type: "json", value: { zip: r.zip, races: r.races.map((x: any) => ({ id: x.id, title: x.title, candidates: x.candidates.map((c: any) => ({ name: c.name, party: c.party ?? null, incumbent: !!c.incumbent })) })) } }),
     }),
     getMarketOdds: tool({
-      description: "Fetch live prediction-market odds (Polymarket, Kalshi) for race ids / measure ids. Returns 'no market found' when none exists.",
+      description: "Fetch live Polymarket prices for race ids / measure ids. Returns 'no market found' when Polymarket has no market on that contest, and 'unavailable' (no numbers) when the live fetch fails.",
       inputSchema: z.object({ raceIds: z.array(z.string()).optional() }),
       execute: async () => wrap("getMarketOdds", { raceIds: "all" }, () => getMarketOdds(allRaceIds())),
     }),

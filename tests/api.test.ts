@@ -108,7 +108,8 @@ describe("race labels", () => {
   const race = (title: string, level = "federal") => ({ id: title, title, level });
   it("uses plain words, never letters", () => {
     expect(TIER_LABELS).toEqual(["Most at stake", "High stakes", "Moderate stakes", "Lower stakes"]);
-    expect(tierFor({ ...race("U.S. Senate"), meta: { closeness: "Competitive" } } as never).tier).toBe("most");
+    const live = { source: "Polymarket", title: "T", url: "https://polymarket.com/event/x", outcomes: [{ name: "A", prob: 0.55 }, { name: "B", prob: 0.45 }], fetchedAt: "2026-10-30T03:00:00Z" };
+    expect(tierFor(race("U.S. Senate") as never, live as never).tier).toBe("most");
     expect(tierFor(race("U.S. Senate") as never).tier).toBe("high");
     expect(tierFor(race("U.S. House District 35") as never).tier).toBe("moderate");
     expect(tierFor(race("City Council", "local") as never).tier).toBe("lower");

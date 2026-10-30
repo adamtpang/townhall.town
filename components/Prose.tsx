@@ -20,18 +20,20 @@ export function Inline({ text }: { text: string }) {
   return <>{out}</>;
 }
 
-export function SectionBlock({ s }: { s: Section }) {
+/** Home "How it works" / "Sources" blocks use h3 (16px, 530) under the page; info pages keep h2 (design p8). */
+export function SectionBlock({ s, level = 2 }: { s: Section; level?: 2 | 3 }) {
+  const Hn = level === 3 ? "h3" : "h2";
   return (
     <section id={s.id} className="grid gap-3 border-t border-black/15 py-10 md:grid-cols-12 md:gap-5">
-      <h2 className="text-base font-medium tracking-tight text-black md:col-span-4">{s.heading}</h2>
+      <Hn className="text-base font-[530] tracking-tight text-black md:col-span-4">{s.heading}</Hn>
       <div className="max-w-2xl space-y-4 text-base leading-relaxed text-black/70 md:col-span-8">
         {s.paragraphs?.map((p, i) => (
-          <p key={i} className="max-w-[65ch]">
+          <p key={i} className="max-w-[45ch]">
             <Inline text={p} />
           </p>
         ))}
         {s.items?.length ? (
-          <ul className="max-w-[65ch] space-y-2">
+          <ul className="max-w-[45ch] space-y-2">
             {s.items.map((it, i) => (
               <li key={i}>
                 <Inline text={it} />

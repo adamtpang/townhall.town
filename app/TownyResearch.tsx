@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 type Step = { name: string; url: string; label: string; status: "running" | "done" | "failed"; detail?: string };
 type Cite = { name: string; quote: string; url: string; ownSite?: boolean };
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+/** QA P2 (9dfe90d): every quote says where it came from: the candidate's own site, or the outlet that quoted them. */
+export const sourceLabel = (c: { url: string; ownSite?: boolean }) => (c.ownSite ? "(from their own site)" : `(quoted on ${host(c.url)})`);
 
 /** Towny reads each candidate's own listed pages, on screen, and shows only verbatim quotes with the link they came from. */
 export default function TownyResearch({ zip, raceId, title, names, issues }: { zip: string; raceId: string; title: string; names: string[]; issues: string[] }) {
@@ -44,7 +46,7 @@ export default function TownyResearch({ zip, raceId, title, names, issues }: { z
         </button>
       ) : (
         <div className="border-l border-black/15 pl-4" aria-live="polite">
-          <p className="text-xs leading-4 text-black/60">Towny reads each candidate&rsquo;s listed pages and news results the same way, and shows only the candidate&rsquo;s own words, copied exactly, with the link: sentences from their own campaign or official site, or words in quotation marks that another page attributes to them by name. Quotes are not checked by a person and are not counted in overlap.</p>
+          <p className="text-sm leading-5 text-black/60">Towny reads each candidate&rsquo;s listed pages and news results the same way, and shows only the candidate&rsquo;s own words, copied exactly, with the link: sentences from their own campaign or official site, or words in quotation marks that another page attributes to them by name. Quotes are not checked by a person and are not counted in overlap.</p>
           {(() => { const total = steps.length, fin = steps.filter((x) => x.status !== "running").length; const pct = state === "done" ? 100 : total ? Math.round((fin / total) * 100) : 4;
             return <div className="mt-3 h-1 w-full rounded-none bg-black/10" role="progressbar" aria-label="Research progress" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100} data-research-progress><div className="h-1 rounded-none bg-black transition-[width]" style={{ width: `${pct}%` }} /></div>; })()}
           {names.map((n) => {
@@ -54,16 +56,16 @@ export default function TownyResearch({ zip, raceId, title, names, issues }: { z
               <div key={n} className="mt-3" data-research-cand={n}>
                 <p className="text-sm font-[530]">{n}</p>
                 <ul className="mt-1 space-y-0.5">
-                  {st.map((s) => <li key={s.url} className="text-xs leading-4 font-[450] text-black/60" data-research-step={s.status}>{s.status === "running" ? "…" : s.status === "done" ? "✓" : "×"} {s.label}{s.detail ? `: ${s.detail}` : ""}</li>)}
+                  {st.map((s) => <li key={s.url} className="text-sm leading-5 font-[450] text-black/60" data-research-step={s.status}>{s.status === "running" ? "…" : s.status === "done" ? "✓" : "×"} {s.label}{s.detail ? `: ${s.detail}` : ""}</li>)}
                 </ul>
                 {cs.length > 0 && <ul className="mt-2 space-y-2">{cs.map((c, i) => (
-                  <li key={i} className="text-sm text-black/80" data-research-cite>&ldquo;{c.quote}&rdquo;{c.ownSite ? <span className="text-black/60"> (their site)</span> : null} <a href={c.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap text-[#3760F2]">{host(c.url)} ↗</a></li>
+                  <li key={i} className="text-sm text-black/80" data-research-cite>&ldquo;{c.quote}&rdquo; <span className="text-black/60" data-research-source>{sourceLabel(c)}</span> <a href={c.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap text-[#3760F2]">{host(c.url)} ↗</a></li>
                 ))}</ul>}
                 {none[n] && <p className="mt-1 text-sm text-black/60" data-research-none>{none[n]}.</p>}
               </div>
             );
           })}
-          {state === "running" && <p className="mt-3 text-xs leading-4 text-black/60">Reading pages for {title}…</p>}
+          {state === "running" && <p className="mt-3 text-sm leading-5 text-black/60">Reading pages for {title}…</p>}
           {state === "error" && <p className="mt-3 text-sm text-black/60" data-research-error>{err} <button type="button" onClick={run} className="inline-flex min-h-11 items-center underline">Try again</button></p>}
         </div>
       )}

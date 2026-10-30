@@ -26,15 +26,15 @@ describe("Design p7 (4c21a5c)", () => {
     expect(src("app/card/BallotCard.tsx")).not.toMatch(/text-5xl tracking-tight/);
     expect(src("tailwind.config.ts")).toContain("./lib/typeScale.ts"); // classes in the token file must be generated
   });
-  it("2. 65ch line length on reason, judicial note, How it works and Sources", () => {
-    expect(src("app/IssueMatch.tsx")).toMatch(/<p className="mt-1 max-w-\[65ch\] text-sm text-black\/60" data-reason>/);
-    expect(src("app/EndScreen.tsx")).toMatch(/<p className="mt-4 max-w-\[65ch\] text-sm text-black\/60" data-judicial-note>/);
+  it("2. 45ch line length (design p8 narrowed from 65ch) on reason, judicial note, How it works and Sources", () => {
+    expect(src("app/IssueMatch.tsx")).toMatch(/<p className="mt-1 max-w-\[45ch\] text-sm text-black\/60" data-reason>/);
+    expect(src("app/EndScreen.tsx")).toMatch(/<p className="mt-4 max-w-\[45ch\] text-sm text-black\/60" data-judicial-note>/);
     for (const h of ["How it works", "Sources"]) {
       const s = HOME_SECTIONS.find((x) => x.heading === h)!;
       const html = renderToStaticMarkup(createElement(SectionBlock, { s }));
       const blocks = html.match(/<(p|ul)( class="[^"]*")?>/g)!;
       expect(blocks.length).toBeGreaterThan(0);
-      for (const b of blocks) expect(b).toContain("max-w-[65ch]");
+      for (const b of blocks) expect(b).toContain("max-w-[45ch]");
     }
   });
   it("3. progress bar: square black/10 track, black fill", () => {

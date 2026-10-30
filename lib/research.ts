@@ -13,6 +13,33 @@ export const ISSUE_WORDS: Record<string, RegExp> = {
   infrastructure: /\b(infrastructure|water supply|water|roads?|transit|bridges?|flood\w*)\b/i,
 };
 
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/**
+ * QA P1-1 (9dfe90d): issue words must not match inside proper nouns. "Esperanza Community Housing Corporation"
+ * is an organisation's name, not a housing position. Runs of two or more capitalised words (joined by small
+ * words like "of"/"and"/"the") are blanked before the issue test; the shown quote is never changed.
+ */
+const PROPER = /\b[A-Z][\w'’&.-]*(?:\s+(?:(?:of|and|for|the|de|la|del|los|las|&)\s+)?[A-Z][\w'’&.-]*)+/g;
+export function withoutProperNouns(s: string): string {
+  return s.replace(PROPER, (m) => " ".repeat(m.length));
+}
+export function issueHit(re: RegExp, s: string): boolean {
+  return re.test(withoutProperNouns(s));
+}
+/** First-person voice: the candidate speaking about what they or their campaign will do. */
+export const FIRST_PERSON = /\b(I|I['’](?:m|ve|ll|d)|[Mm]y|[Mm]e|[Ww]e|[Ww]e['’](?:re|ll|ve)|[Oo]ur|[Uu]s)\b/;
+/**
+ * QA P1-1: on the candidate's own site a sentence counts only when it is a statement of the candidate's position:
+ * first person ("I will…", "our plan…") or naming the candidate (last name). Venue blurbs and organisation
+ * descriptions ("X is a community marketplace operated by Y") are neither, so they never count.
+ */
+export function isCandidateStatement(s: string, fullName = ""): boolean {
+  if (FIRST_PERSON.test(s)) return true;
+  const parts = fullName.split(/\s+/).filter((w) => w && !/^(jr\.?|sr\.?|ii|iii|iv|[a-z]\.)$/i.test(w));
+  const last = parts[parts.length - 1];
+  return !!last && new RegExp(`\\b${esc(last)}\\b`).test(s);
+}
+
 export function textOf(html: string): string {
   return html
     .replace(/<(script|style|noscript|svg|nav|footer|header|form)[\s\S]*?<\/\1>/gi, " ")
@@ -22,7 +49,6 @@ export function textOf(html: string): string {
     .replace(/[ \t\r\f\v]+/g, " ");
 }
 
-const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const VERB = "(?:said|says|wrote|writes|told|tells|added|adds|stated|states|explained|explains|argued|argues|declared|promised|pledged)";
 
 /**
@@ -51,7 +77,7 @@ export function findQuotes(text: string, issueIds: string[], per = 1, fullName =
     if (!(after.test(post) || before.test(pre.split(/\n/).pop() || ""))) continue;
     if (!/[a-z]/.test(inner) || inner.split(/\s+/).length < 7) continue;
     if (!text.includes(inner)) continue; // exact substring of the fetched text
-    found.push({ quote: inner, issueOk: (re) => re.test(inner) });
+    found.push({ quote: inner, issueOk: (re) => issueHit(re, inner) });
   }
   const out: { issue: string; quote: string }[] = [];
   const used = new Set<string>();
@@ -88,7 +114,7 @@ export function ownIssueLinks(html: string, base: string, max = 2): string[] {
  * is not inside quotation marks (quoted text on their site may be someone else, e.g. an endorser, so it still needs
  * the named-speaker rule via findQuotes). Same rule for every candidate.
  */
-export function findOwnWords(text: string, issueIds: string[], per = 1) {
+export function findOwnWords(text: string, issueIds: string[], per = 1, fullName = "") {
   const quoted: [number, number][] = [];
   for (const m of text.matchAll(/“[^“”]*”|"[^"\n]*"/g)) quoted.push([m.index!, m.index! + m[0].length]);
   const inQuote = (i: number, j: number) => quoted.some(([a, b]) => i < b && j > a);
@@ -98,12 +124,13 @@ export function findOwnWords(text: string, issueIds: string[], per = 1) {
     if (inQuote(i, i + m[0].length)) continue;
     const w = s.split(/\s+/).length; if (w < 7 || w > 60) continue;
     if (!/[a-z]/.test(s) || !text.includes(s)) continue; // exact substring of the fetched text
+    if (!isCandidateStatement(s, fullName)) continue; // QA P1-1: the candidate's own position, not page copy about a venue or group
     if (!found.includes(s)) found.push(s);
   }
   const out: { issue: string; quote: string }[] = []; const used = new Set<string>();
   for (const id of issueIds) {
     const re = ISSUE_WORDS[id]; if (!re) continue; let n = 0;
-    for (const q of found) { if (n >= per) break; if (!used.has(q) && re.test(q)) { out.push({ issue: id, quote: q }); used.add(q); n++; } }
+    for (const q of found) { if (n >= per) break; if (!used.has(q) && issueHit(re, q)) { out.push({ issue: id, quote: q }); used.add(q); n++; } }
   }
   return out;
 }

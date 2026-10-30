@@ -9,6 +9,7 @@ import { stancesFor, sourceLabel, ISSUES, type Answers } from "../lib/issues";
 import { overlapStatus, overlapLabel, METHOD, MIN_ISSUES } from "../lib/overlapCore.mjs";
 import TownyResearch from "./TownyResearch";
 import { cardPath } from "../lib/card.mjs";
+import { gradeFor, GRADE_NOTE } from "../lib/grades.mjs";
 import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl } from "../lib/endscreen.mjs";
 
 type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null };
@@ -64,10 +65,10 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
         <div className="lg:col-span-6" data-end="who">
           <p className="text-sm font-[530] text-black/60">Who</p>
           <h3 className={`mt-2 ${H3}`}>Who lines up with you</h3>
-          <p className="mt-3 text-xs leading-4 text-black/60" data-overlap-caption>Overlap, not a recommendation. Candidates are in ballot order.</p>
+          <p className="mt-3 text-sm leading-5 text-black/60" data-overlap-caption>Overlap, not a recommendation. Candidates are in ballot order.</p>
           <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap is counted</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p></details>
           {judicial.length > 0 && (
-            <p className="mt-4 max-w-[65ch] text-sm text-black/60" data-judicial-note>
+            <p className="mt-4 max-w-[45ch] text-sm text-black/60" data-judicial-note>
               {(() => {
                 const st = judicial.some((r) => r.judicial === "ny") ? "ny" : judicial.some((r) => r.judicial === "ca") ? "ca" : "tx";
                 const J = JUDICIAL_RULES[st];
@@ -90,7 +91,10 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                     {rows.map(({ c, o }) => (
                       <li key={c.name} className="py-2" data-overlap={c.name} data-status={o.status}>
                         {o.status === "ok" ? (
-                          <p className="text-base text-black">{overlapLabel(c.name, o)}</p>
+                          <>
+                            <p className="text-base text-black">{overlapLabel(c.name, o)}</p>
+                            {(() => { const g = gradeFor(o, !!r.judicial, answered); return g ? <p className="text-sm text-black/60" data-grade={g}>Issue-overlap grade: <span className="font-[530] text-black">{g}</span> ({GRADE_NOTE})</p> : null; })()}
+                          </>
                         ) : (
                           <p className="text-base text-black"><span className="font-[530]">{c.name}</span><span className="text-black/60">: {o.status === "few" ? "Not enough sourced positions" : "Answer Yes or No on more of their issues to compare (Neutral isn\u2019t compared)"}</span></p>
                         )}
@@ -142,7 +146,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-maps-url={mapsUrl(site.address)}>
                 Directions ↗{ext}
               </Button>
-              <p className="mt-2 text-xs leading-4 text-black/60">{site.proximity ? `${site.proximity}. ` : ""}<a href={site.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-[#3760F2]">Official site list ↗{ext}</a></p>
+              <p className="mt-2 text-sm leading-5 text-black/60">{site.proximity ? `${site.proximity}. ` : ""}<a href={site.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-[#3760F2]">Official site list ↗{ext}</a></p>
               {where.sites.length > 1 && (
                 <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Other sourced sites ({Math.min(where.sites.length - 1, 4)})</summary>
                   <ul className="space-y-1 pb-2">
@@ -177,14 +181,14 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               {early.daily?.length ? (
                 <ul className="mt-1 space-y-1" data-daily-hours>
                   {early.daily.map((d: { label: string; hours: string; appliesTo: string | null }, i: number) => (
-                    <li key={i} className="text-base text-black/80">{d.label}: {d.hours}{d.appliesTo && early.daily.length > 1 && new Set(early.daily.map((x: { appliesTo: string | null }) => x.appliesTo)).size > 1 ? <span className="block text-xs leading-4 text-black/60">{d.appliesTo}</span> : null}</li>
+                    <li key={i} className="text-base text-black/80">{d.label}: {d.hours}{d.appliesTo && early.daily.length > 1 && new Set(early.daily.map((x: { appliesTo: string | null }) => x.appliesTo)).size > 1 ? <span className="block text-sm leading-5 text-black/60">{d.appliesTo}</span> : null}</li>
                   ))}
                 </ul>
               ) : early.hours ? <p className="text-base text-black/80">{early.hours}</p> : <p className="text-base text-black/80">Hours vary by day</p>}
-              <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']" data-early-source>Early voting source ↗{ext}</a></li>)}
+              <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-sm leading-5 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']" data-early-source>Early voting source ↗{ext}</a></li>)}
             {ed && (<li><p className="text-sm font-[530]">Election Day, {fmt(ed.start)}</p><p className="text-base text-black/80">{ed.hours ? `Polls open ${ed.hours}` : "Poll hours not found in an official source"}</p></li>)}
             {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`} data-how-register>How ↗{ext}</a></p></li>)}
-            {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-xs leading-4 text-[#3760F2]">Source ↗</a></p></li>)}
+            {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-sm leading-5 text-[#3760F2]">Source ↗</a></p></li>)}
             {when.missing.map((m: string) => <li key={m} className="text-sm text-black/60">{m}: not found in an official source yet.</li>)}
           </ul>
           {ed && (
@@ -192,10 +196,10 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <Button onClick={() => window.open(gcalUrl(ed, site ? site.address : ""), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-gcal-url={gcalUrl(ed, site ? site.address : "")}>
                 Add to Google Calendar ↗{ext}
               </Button>
-              <div className="mt-2 flex flex-col items-start gap-2 text-sm" data-cal-links>
-                <button type="button" onClick={downloadIcs} className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-[''] hover:underline" data-ics>Download .ics (Apple, Outlook)</button>
-                {early && <a href={gcalUrl(early, site ? site.address : "")} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-[''] hover:underline" data-gcal-early>Early voting to Google ↗{ext}</a>}
-                <a href={ed.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-['']">Dates source ↗{ext}</a>
+              <div className="mt-2 flex flex-col items-start gap-0 text-sm" data-cal-links>
+                <button type="button" onClick={downloadIcs} className="inline-flex min-h-11 items-center text-[#3760F2] hover:underline" data-ics>Download .ics (Apple, Outlook)</button>
+                {early && <a href={gcalUrl(early, site ? site.address : "")} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2] hover:underline" data-gcal-early>Early voting to Google ↗{ext}</a>}
+                <a href={ed.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm text-[#3760F2]" data-dates-source>Dates source ↗{ext}</a>
               </div>
             </>
           )}

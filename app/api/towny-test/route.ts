@@ -25,7 +25,7 @@ const coreTools = {
     inputSchema: z.object({ zip: z.string(), raceIds: z.array(z.string()).optional() }),
     execute: async ({ zip, raceIds }) => getCandidates(zip, raceIds),
   }),
-  getMarketOdds: tool({ description: "Prediction-market prices for race ids. Only on a direct request for odds; a market price, not a prediction.", inputSchema: z.object({ raceIds: z.array(z.string()) }), execute: async ({ raceIds }) => getMarketOdds(raceIds) }),
+  getMarketOdds: tool({ description: "Live Polymarket prices for race ids (Polymarket only; no market means no price). Only on a direct request; a market price, not a prediction.", inputSchema: z.object({ raceIds: z.array(z.string()) }), execute: async ({ raceIds }) => getMarketOdds(raceIds) }),
 };
 
 export async function POST(req: Request) {

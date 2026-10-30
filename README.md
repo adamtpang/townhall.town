@@ -32,7 +32,7 @@ flowchart LR
   M -.optional.-> T6[getTurnout]
   A -->|model unavailable| F[Deterministic fallback: same tools, no model]
   T1 & T2 & T3 --> D[(data/ballots.json, data/tx.json)]
-  T4 --> P[Polymarket / Kalshi live, cached snapshot fallback]
+  T4 --> P[Polymarket live only, no cache]
   T5 --> C[(ACS 2024 5-yr)]
   A --> UI[Ballot UI: elections, candidates, problems, alignment, markets, turnout, game plan]
 ```
@@ -48,7 +48,7 @@ One request, one bounded tool loop, streamed back to the browser as NDJSON (`app
 | `getDistricts` | U.S. House district(s), state, county for the ZIP | Census 2024 ZCTA centroids in PLANC2333 (TX) |
 | `getRaces` | Every race and statewide measure on the Nov 3, 2026 ballot, with what each office controls | `data/ballots.json`, `data/tx.json` |
 | `getCandidates` | General-election candidates: name, party, incumbent | Ballotpedia, FEC |
-| `getMarketOdds` | Live Polymarket / Kalshi prices per contest, or "no market found" | Polymarket, Kalshi (cached snapshot fallback) |
+| `getMarketOdds` | Live Polymarket prices per contest, or "no market found" / "unavailable" with no numbers | Polymarket Gamma API (data/markets-map.json), live only |
 | `getLocalProblems` | 3 local problems: rent burden, uninsured rate, unemployment | Census ACS 2024 5-year |
 | `getTurnout` | County turnout, eligible non-voters, what one ballot counts for (demo ZIPs) | Texas and California Secretary of State, Census Reporter |
 
@@ -101,7 +101,7 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 | `california/statewide_races.json` | 8 statewide races (no U.S. Senate seat in 2026) | Ballotpedia |
 | `california/us_house_races_demo.json` | CA-11, CA-34 only (demo ZIPs) | Ballotpedia |
 | `california/ballot_measures.json` | 14 propositions incl. **Prop 40 one-time 5% billionaire wealth tax** (verified on Ballotpedia) | Ballotpedia California_2026_ballot_propositions |
-| `markets/snapshot.json` | Polymarket + Kalshi prices, each with `fetched_at_utc` | gamma-api.polymarket.com, api.elections.kalshi.com |
+| `markets/snapshot.json` | Archived research snapshot (not used by the app; the app reads Polymarket live only) | gamma-api.polymarket.com |
 | `markets/endpoints.json` | How to refresh live + display rule | — |
 | `metrics/zip_metrics.json` | For 78130, 78701, 94103, 90012: income, poverty, uninsured, renter cost burden, unemployment, education, rent, home value — vs county, state, US; BLS Sept 2026 county unemployment | ACS 2024 5-yr via Census Reporter; BLS LAUS |
 | `demo_zips.json` | Pre-joined bundle for the 4 cached ZIPs | above |
@@ -117,7 +117,7 @@ Built Oct 29, 2026 (Central Time) for the AITX hackathon. All files under `data/
 - Scraped Oct 29, 2026; candidates can withdraw. Not affiliated with any source.
 
 ## Next steps
-1. **World elections expansion:** same schema (race → office explainer → candidates → sources → market odds) for other countries; Polymarket/Kalshi already list many non-US elections. Start with upcoming national elections that have markets, plus Wikipedia/official electoral-commission candidate lists.
+1. **World elections expansion:** same schema (race → office explainer → candidates → sources → market odds) for other countries; Polymarket already lists many non-US elections. Start with upcoming national elections that have markets, plus Wikipedia/official electoral-commission candidate lists.
 2. Address-level district lookup (Google Civic Divisions API → OCD-ID, or Census geocoder), down-ballot local races, TEC/FEC finance summaries, Spanish translation.
 
 - Turnout covers the 4 demo counties only.
@@ -132,12 +132,12 @@ Independent and nonpartisan; not a government website. Always confirm your ballo
 "What matters on your ballot" ranks races, never candidates. Score = office impact × competitiveness.
 
 - Office impact: 3 = President, U.S. Senate, Governor; 2 = ballot measure, U.S. House, other statewide executive office; 1.5 = state legislature; 1 = judicial and local.
-- Competitiveness: 1 + (1 − |p_leader − 0.5| × 2), where p_leader is the leading prediction-market probability for the race; 1 when no market exists.
+- Competitiveness, from live Polymarket only: 2 when the top Polymarket contract is between 0.35 and 0.65 ("Competitive"), otherwise 1; 1 when Polymarket has no market on the race. Each race with a market shows "Leader on Polymarket: <name> at N%", the market link and the fetch time (CT). No market, no line; nothing cached or estimated.
 - Labels: "Most at stake" ≥ 4.5, "High" ≥ 3, "Moderate" ≥ 2, otherwise "Lower", with a one-line legend under the heading. Each race shows a one-line reason plus its race source and market link. Labels apply to races only, never candidates.
 
 Candidate overlap ("Who lines up with you") uses only your slider answers (−5..+5, stored in localStorage) and verbatim sourced stances in data/stances.json. Overlap = (cosine + 1) / 2 on shared issues; hidden below 2 sourced stances ("Not enough record"). It is issue overlap, not a recommendation.
 
 ### Questionnaire
 - 10 issues (CA adds Prop 40), each a -5..+5 integer slider, one per row with neutral policy-direction labels at both ends; every issue can be skipped.
-- Candidates get no grade or tier. With at least 2 sourced stances on your answered issues, a candidate shows "Lines up on N of M compared issues"; otherwise only the count of sourced positions. No answers, no overlap. Ballot order is kept; nothing is labeled "best".
+- Issue-overlap grades (S/A/B/C) are behind `CANDIDATE_GRADES` in lib/grades.mjs (on for this preview): computed only from your Yes/No answers vs sourced positions, never for judicial candidates or without sourced positions, never sorted, and never in the API. Otherwise: With at least 2 sourced stances on your answered issues, a candidate shows "Lines up on N of M compared issues"; otherwise only the count of sourced positions. No answers, no overlap. Ballot order is kept; nothing is labeled "best".
 - **Answers stay on your device** (localStorage key `townhall.issueAnswers.v2`). No sign-in, nothing is sent to a server.

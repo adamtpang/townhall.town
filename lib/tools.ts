@@ -3,11 +3,10 @@ import { JUDICIAL_NOTE, judicialSource } from "./judicial";
 import ny from "../data/ny.json";
 import tx from "../data/tx.json";
 import marketMap from "../data/markets-map.json";
-import marketCache from "../data/markets-cache.json";
 import type { Jurisdiction, Race, Politician } from "./types";
 import { COVERED_ZIPS, isCoveredZip, UNSUPPORTED_MESSAGE } from "./site";
 // @ts-ignore plain ESM helper shared with scripts/
-import { fetchPolymarket, fetchKalshi } from "./marketsCore.mjs";
+import { fetchPolymarket } from "./marketsCore.mjs";
 import { getTurnout } from "./turnout";
 import { withLicensedPhoto } from "./photos";
 import { withMoney } from "./money";
@@ -144,39 +143,29 @@ export function getCandidates(zip: string, raceIds?: string[]) {
   };
 }
 
-export type MarketQuote = { source: string; title: string; url: string; api: string; outcomes: { name: string; prob: number }[]; fetchedAt: string; cached?: boolean; matchedByTitle?: boolean };
+export type MarketQuote = { source: "Polymarket"; title: string; url: string; api: string; outcomes: { name: string; prob: number }[]; fetchedAt: string };
 
-export async function getMarketOdds(raceIds: string[]) {
-  const map = marketMap as Record<string, { polymarket?: string; kalshi?: string }>;
-  const cache = marketCache as unknown as Record<string, MarketQuote[]>;
-  const out: Record<string, { quotes: MarketQuote[]; status: string }> = {};
+/** Polymarket slug per race or measure id (data/markets-map.json). No entry: no matching Polymarket market. */
+export const MARKET_SLUGS: Record<string, string> = Object.fromEntries(
+  Object.entries(marketMap as Record<string, unknown>).flatMap(([id, v]) => (v && typeof v === "object" && typeof (v as { polymarket?: unknown }).polymarket === "string" ? [[id, (v as { polymarket: string }).polymarket]] : []))
+);
+
+/**
+ * Live Polymarket prices only. No cache, no other market, no estimate: a failed fetch is "unavailable"
+ * with no quote, and a race with no matching market is "no market found".
+ */
+export async function getMarketOdds(raceIds: string[], fetcher: (slug: string, timeoutMs?: number) => Promise<MarketQuote> = fetchPolymarket as never) {
+  const out: Record<string, { quotes: MarketQuote[]; status: "live" | "unavailable" | "no market found" }> = {};
   await Promise.all(
     raceIds.map(async (id) => {
-      const m = map[id];
-      if (!m) {
-        out[id] = { quotes: [], status: "no market found" };
-        return;
+      const slug = MARKET_SLUGS[id];
+      if (!slug) return void (out[id] = { quotes: [], status: "no market found" });
+      try {
+        const q = await fetcher(slug, 3000);
+        out[id] = q && q.outcomes?.length ? { quotes: [q], status: "live" } : { quotes: [], status: "unavailable" };
+      } catch {
+        out[id] = { quotes: [], status: "unavailable" };
       }
-      const quotes: MarketQuote[] = [];
-      const jobs: [string, () => Promise<MarketQuote>][] = [];
-      if (m.polymarket) jobs.push(["Polymarket", () => fetchPolymarket(m.polymarket, 3000)]);
-      if (m.kalshi) jobs.push(["Kalshi", () => fetchKalshi(m.kalshi, 3000)]);
-      let live = 0;
-      await Promise.all(
-        jobs.map(async ([src, fn]) => {
-          try {
-            quotes.push(await fn());
-            live++;
-          } catch {
-            const c = (cache[id] || []).find((q) => q.source === src);
-            if (c) quotes.push({ ...c, cached: true });
-          }
-        })
-      );
-      // Ballot-measure markets are matched to the measure by market title, not by an official ID.
-      if (id.startsWith("Proposition")) quotes.forEach((q) => (q.matchedByTitle = true));
-      quotes.sort((a, b) => a.source.localeCompare(b.source));
-      out[id] = { quotes, status: quotes.length ? (live === quotes.length ? "live" : live ? "partly cached" : "cached") : "no market found" };
     })
   );
   return out;

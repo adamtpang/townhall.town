@@ -99,7 +99,7 @@ function agentPath(alias: boolean) {
       tags: ["ballot"],
       summary: alias ? "Explain the ballot for a ZIP (alias of /api/v1/agent)" : "Explain the ballot for a ZIP",
       description:
-        "Runs the ballot agent for a ZIP: districts, races, candidates, market odds and local Census data, plus a short neutral AI summary written only from those records. Responses are not cached (Cache-Control: no-store). Rate limited per client: see RateLimit headers." +
+        "Runs the ballot agent for a ZIP: districts, races, candidates, live Polymarket prices and local Census data, plus a short neutral AI summary written only from those records. Responses are not cached (Cache-Control: no-store). Rate limited per client: see RateLimit headers." +
         aliasNote,
       parameters: [{ name: "zip", in: "query", required: true, description: "Exactly 5 digits.", schema: { type: "string", pattern: "^\\d{5}$", examples: zips } }, acceptParam],
       responses: { "200": ballotOk, "400": invalidZip, "405": notAllowed("GET, POST"), "429": tooMany(AGENT_POLICY), "500": internal },
@@ -134,8 +134,8 @@ function researchPath() {
       ],
       responses: {
         "200": {
-          description: "A stream of newline-delimited JSON, one ResearchEvent per line, ending with a done event. Every response carries x-research-cache: hit when a complete earlier run on the same server instance is replayed, miss otherwise. Caches and rate-limit counters are per server instance, so two calls that land on different instances both read as miss and as the first call of the window.",
-          headers: { ...rlOnly, "x-research-cache": { description: "hit when this response replays a complete earlier run on the same server instance, else miss.", schema: { type: "string", enum: ["hit", "miss"] } } },
+          description: "A stream of newline-delimited JSON, one ResearchEvent per line, ending with a done event. Every response carries x-research-cache and x-research-cache-layer: hit/run when a complete earlier run on the same server instance is replayed; hit/search+pages when every web search and page for this race is already cached on this instance (no new searches or fetches); partial when some are; miss/none otherwise. Caches and rate-limit counters are per server instance, so two calls that land on different instances both read as miss and as the first call of the window.",
+          headers: { ...rlOnly, "x-research-cache": { description: "hit: answered entirely from this instance's caches (a replayed run, or every search and page already cached). partial: some searches or pages cached. miss: none.", schema: { type: "string", enum: ["hit", "partial", "miss"] } }, "x-research-cache-layer": { description: "Which cache answered: run (whole earlier run replayed), search+pages (per-search and per-page caches), or none.", schema: { type: "string", enum: ["run", "search+pages", "none"] } } },
           content: { "application/x-ndjson": { schema: { $ref: "#/components/schemas/ResearchEvent" }, "x-ndjson-item-schema": { $ref: "#/components/schemas/ResearchEvent" },
             example: { type: "citation", name: "Xavier Becerra", issue: "housing", quote: "As governor, I will treat housing like the essential infrastructure it is.", url: "https://www.xavierbecerra2026.com/priorities/", ownSite: true } } },
         },
@@ -376,8 +376,30 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
             ballot: { $ref: "#/components/schemas/Ballot" },
             markets: {
               type: "object",
-              description: "Prediction market prices keyed by race id. Market prices, not forecasts.",
-              additionalProperties: { type: "object", properties: { status: { type: "string" }, quotes: { type: "array", items: { type: "object" } } } },
+              description: "Live Polymarket prices keyed by race or measure id, fetched at request time from Polymarket's public Gamma API. Polymarket is the only market source. Market prices, not forecasts. No cached or estimated numbers: status 'no market found' (Polymarket has no market on that contest) or 'unavailable' (the live fetch failed) come with an empty quotes array.",
+              additionalProperties: {
+                type: "object",
+                required: ["status", "quotes"],
+                properties: {
+                  status: { type: "string", enum: ["live", "unavailable", "no market found"] },
+                  quotes: {
+                    type: "array",
+                    maxItems: 1,
+                    items: {
+                      type: "object",
+                      required: ["source", "title", "url", "api", "outcomes", "fetchedAt"],
+                      properties: {
+                        source: { const: "Polymarket" },
+                        title: { type: "string" },
+                        url: { type: "string", format: "uri", description: "The Polymarket event page." },
+                        api: { type: "string", format: "uri" },
+                        outcomes: { type: "array", maxItems: 4, items: { type: "object", required: ["name", "prob"], properties: { name: { type: "string" }, prob: { type: "number", minimum: 0, maximum: 1 } } } },
+                        fetchedAt: { type: "string", format: "date-time" },
+                      },
+                    },
+                  },
+                },
+              },
             },
             generatedAt: { type: "string", format: "date-time" },
           },

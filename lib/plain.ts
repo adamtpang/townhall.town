@@ -8,6 +8,8 @@ export function plain(s?: string | null): string {
     .replace(/\s*\(ZCTA\)/g, "")
     .replace(/\.?\s*(This may be an?|Possible) edge artifact[^.;]*(;\s*verify by address)?\.?/gi, ". Check by address.")
     .replace(/\bNYC BOE\b/g, "NYC Board of Elections")
+    // QA P1-2 (9dfe90d): one wording for every NYC note: "(draft, printed 9/11/2026)". The date is the list's print date.
+    .replace(/\((marked )?TENTATIVE,\s*(?:printed\s+)?(\d{1,2}\/\d{1,2}\/\d{4})/g, "(draft, printed $2")
     .replace(/\((marked )?TENTATIVE,\s*/g, "(draft, ")
     .replace(/\bTENTATIVE contest list\b/g, "draft contest list")
     .replace(/\bTENTATIVE\b/g, "draft")

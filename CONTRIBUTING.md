@@ -67,9 +67,9 @@ If you cannot find a source, write `unsure` or `no record found`. That is what `
 
 Do not call a candidate the best. Do not tell the reader who to vote for.
 
-`app/RaceTiers.tsx` ranks races, not candidates, with plain labels: Most at stake, High, Moderate, Lower. The score is office impact times competitiveness. No market means competitiveness 1 and the line "no market, so no competitiveness boost". Do not invent odds.
+`app/RaceTiers.tsx` ranks races, not candidates, with plain labels: Most at stake, High, Moderate, Lower. The score is office impact times competitiveness. Competitiveness comes only from a live Polymarket market (top contract 35–65% = 2, else 1). A race with a live market shows one line, "Leader on Polymarket: <name> at N%", with the market link and the fetch time in CT. No market means no line and competitiveness 1. Do not estimate or invent odds, and do not add other market or rater sources.
 
-`app/IssueMatch.tsx` compares slider answers to sourced stances. The label is overlap ("Lines up on N of M compared issues"), not a recommendation. Candidates get no grade or tier. With fewer than 2 sourced stances on the answered issues, only the count of sourced positions is shown. No answers, no overlap.
+`app/IssueMatch.tsx` compares slider answers to sourced stances. The label is overlap ("Lines up on N of M compared issues"), not a recommendation. Candidates get no tier. Issue-overlap grades (S/A/B/C) sit behind the one-line `CANDIDATE_GRADES` constant in `lib/grades.mjs`: only after at least one Yes/No answer, only from sourced positions, never for judicial candidates, always labelled "issue overlap, not a recommendation", never in the API. Without sourced positions show "Not enough sourced positions", not a grade. With fewer than 2 sourced stances on the answered issues, only the count of sourced positions is shown. No answers, no overlap.
 
 Portraits come from `data/photos.json` (`{ asOf, method, photos }`). `photos` is keyed by ballot name. Each value is `{ url, credit, license, page }`. `lib/photos.ts` applies them. `components/Portrait.tsx` falls back to initials. Do not add generated candidate photos. A missing licensed image stays initials.
 

@@ -74,7 +74,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
       <dl className="mt-16">
         {dates.map((d) => (
           <div key={d.id} className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
-            <dt className="font-serif text-5xl leading-none sm:col-span-4">{fmtDate(d.date).replace(/^\w+, /, "")}</dt>
+            <dt className="font-sans text-5xl leading-none sm:col-span-4">{fmtDate(d.date).replace(/^\w+, /, "")}</dt>
             <dd className="sm:col-span-8">
               <p className="text-xl">{d.label}</p>
               {d.note && <p className="mt-1 text-sm text-black/60">{d.note}</p>}
@@ -86,7 +86,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
           </div>
         ))}
         <div className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
-          <dt className="font-serif text-5xl leading-none sm:col-span-4">Where</dt>
+          <dt className="font-sans text-5xl leading-none sm:col-span-4">Where</dt>
           <dd className="sm:col-span-8">
             <p className="text-xl">Your county sets locations</p>
             <div className="flex flex-wrap gap-x-6">{look.map((l) => <Ext key={l.url} href={l.url}>{l.label}</Ext>)}</div>
@@ -97,11 +97,11 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
                 <Ext href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addr.trim())}`}>Directions in Google Maps</Ext>
               )}
             </div>
-            <p className="mt-2 text-xs text-black/50">Not saved. It only builds the map link.</p>
+            <p className="mt-2 text-sm text-black/50">Not saved. It only builds the map link.</p>
           </dd>
         </div>
         <div className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
-          <dt className="font-serif text-5xl leading-none sm:col-span-4">Bring</dt>
+          <dt className="font-sans text-5xl leading-none sm:col-span-4">Bring</dt>
           <dd className="sm:col-span-8">
             <p className="text-xl">{id.text}</p>
             <Ext href={id.source.url}>{id.source.label}</Ext>
@@ -109,7 +109,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
         </div>
         <div className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12" id="picks">
           <dt className="sm:col-span-4">
-            <span className="font-serif text-5xl leading-none">Your choices</span>
+            <span className="font-sans text-5xl leading-none">Your choices</span>
             <p className="mt-3 text-sm text-black/60">{decided} of {rows.length} decided. Saved on this device only.</p>
           </dt>
           <dd className="sm:col-span-8">

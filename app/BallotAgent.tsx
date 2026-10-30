@@ -6,6 +6,8 @@ import { voteMatters } from "../lib/voteMatters.mjs";
 import { CheckCircle2, CircleDashed, ExternalLink, LocateFixed, Loader2, MapPin, AlertTriangle, Info } from "lucide-react";
 import type { Politician, Race } from "../lib/types";
 import type { Ballot, MarketQuote } from "../lib/tools";
+import type { PolyQuote } from "../lib/marketLine";
+import { useT } from "../lib/i18n";
 import type { TurnoutDetail } from "../lib/turnout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
@@ -40,7 +42,7 @@ const TOOL_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
   getRaces: "Listing every race and measure",
   getCandidates: "Looking up candidates",
-  getMarketOdds: "Checking prediction markets",
+  getMarketOdds: "Checking Polymarket prices",
   getLocalProblems: "Pulling local Census data",
 };
 const TOPIC_LABEL: Record<string, string> = { housing: "Housing costs", healthcare: "Health coverage", jobs: "Jobs" };
@@ -52,8 +54,6 @@ type Pol = Politician & { campaignSite?: string | null; incumbentNote?: string; 
 type R = Race & { officeSource?: string };
 type Problem = { id: string; label: string; value: string; year: string; topic?: string; stateValue?: number; source: { label: string; url: string } };
 
-const ct = (iso: string) =>
-  new Date(iso).toLocaleString("en-US", { timeZone: "America/Chicago", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) + " CT";
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 
 function Section({ n, title, sub, children }: { n: number; title: string; sub?: string; children: React.ReactNode }) {
@@ -81,14 +81,10 @@ function Src({ href, children }: { href?: string | null; children: React.ReactNo
   );
 }
 
-function marketFor(markets: Markets, id: string) {
-  const m = markets[id];
-  if (!m || !m.quotes.length) return null;
-  // Average each outcome's price across sources that list it.
-  const acc: Record<string, number[]> = {};
-  m.quotes.forEach((q) => q.outcomes.forEach((o) => (acc[o.name] ||= []).push(o.prob)));
-  const avg = Object.entries(acc).map(([name, v]) => ({ name, prob: v.reduce((a, b) => a + b, 0) / v.length })).sort((a, b) => b.prob - a.prob);
-  return { ...m, avg };
+/** The single live Polymarket quote for a contest, or null. No averaging, no estimates (Adam, Oct 29 2026). */
+function marketFor(markets: Markets, id: string): PolyQuote | null {
+  const q = markets[id]?.status === "live" ? markets[id].quotes[0] : undefined;
+  return q && q.source === "Polymarket" ? (q as PolyQuote) : null;
 }
 
 const usd = (n: number) =>
@@ -96,10 +92,10 @@ const usd = (n: number) =>
 const titleCase = (s: string) => s.toLowerCase().replace(/\b([a-z])/g, (m) => m.toUpperCase()).replace(/\b(Llc|Inc|Pac|Usa|Llp|Ut)\b/g, (m) => m.toUpperCase());
 
 function Share({ label, value }: { label: string; value: number | null }) {
-  if (value == null) return <p className="text-xs text-slate-400">{label}: unsure</p>;
+  if (value == null) return <p className="text-sm text-slate-400">{label}: unsure</p>;
   return (
     <div>
-      <div className="flex justify-between text-xs text-slate-600"><span>{label}</span><span className="font-semibold tabular-nums text-navy">{pct(value)}</span></div>
+      <div className="flex justify-between text-sm text-slate-600"><span>{label}</span><span className="font-semibold tabular-nums text-navy">{pct(value)}</span></div>
       <Progress value={Math.round(value * 100)} className="mt-1 h-1.5" aria-label={`${label}: ${pct(value)}`} />
     </div>
   );
@@ -114,7 +110,7 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
       <dl className="grid grid-cols-3 gap-2">
         {[["Raised", m.raised], ["Spent", m.spent], ["Cash on hand", m.cashOnHand]].map(([k, v]) => (
           <div key={k as string}>
-            <dt className="text-xs text-slate-500">{k}</dt>
+            <dt className="text-sm text-slate-500">{k}</dt>
             <dd className="text-lg font-bold tabular-nums text-navy">{usd(v as number)}</dd>
           </div>
         ))}
@@ -128,7 +124,7 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
           <summary className="cursor-pointer text-sm font-medium text-navy">Top donors</summary>
           {m.topEmployers?.length ? (
             <div className="mt-2">
-              <p className="text-xs text-slate-500">Employers of individual donors</p>
+              <p className="text-sm text-slate-500">Employers of individual donors</p>
               <ul className="mt-1 space-y-0.5">
                 {m.topEmployers.map((e) => (
                   <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)}</span><span className="tabular-nums text-slate-600">{usd(e.total)}</span></li>
@@ -138,10 +134,10 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
           ) : null}
           {m.topCommittees?.length ? (
             <div className="mt-2">
-              <p className="text-xs text-slate-500">PACs, party and joint fundraising committees</p>
+              <p className="text-sm text-slate-500">PACs, party and joint fundraising committees</p>
               <ul className="mt-1 space-y-0.5">
                 {m.topCommittees.map((e) => (
-                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)} <span className="text-xs text-slate-400">({e.kind})</span></span><span className="tabular-nums text-slate-600">{usd(e.total)}</span></li>
+                  <li key={e.name} className="flex justify-between gap-2"><span className="truncate">{titleCase(e.name)} <span className="text-sm text-slate-400">({e.kind})</span></span><span className="tabular-nums text-slate-600">{usd(e.total)}</span></li>
                 ))}
               </ul>
             </div>
@@ -149,7 +145,7 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
           {m.donorsSource && <p className="mt-2"><Src href={m.donorsSource.url}>All receipts on FEC</Src></p>}
         </details>
       )}
-      <p className="mt-2 text-[11px] text-slate-500">
+      <p className="mt-2 text-sm text-slate-500">
         {m.lastReport ? `${titleCase(m.lastReport)} report, ` : ""}through {through}. <a className="text-slate-500" href={m.source.url} target="_blank" rel="noreferrer">FEC</a>. Individual donors are not named.
       </p>
     </div>
@@ -163,12 +159,13 @@ function HeroStat({ vm }: { vm: { text: string; sources: { label: string; title?
     <div className="mt-12 max-w-2xl border-l-2 border-black pl-4" data-vote-matters>
       <p className="text-sm font-[530] text-black/60">Your vote matters most here</p>
       <p className="mt-1 text-xl leading-7 font-[450] text-black">{vm.text}</p>
-      <p className="mt-1 text-xs leading-4 font-[450]">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} title={s.title} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
+      <p className="mt-1 text-sm leading-5 font-[450]">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} title={s.title} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
     </div>
   );
 }
 
 export default function BallotAgent() {
+  const t = useT();
   const [zip, setZip] = useState("");
   const [busy, setBusy] = useState(false);
   const [locating, setLocating] = useState(false);
@@ -269,7 +266,6 @@ export default function BallotAgent() {
   const markets = result?.markets || {};
   const doneCount = TOOLS.filter((t) => steps[t]?.status === "done").length;
   const picked = problems.filter((p) => care[p.topic || p.id]);
-  const marketRaces = useMemo(() => races.filter((r) => marketFor(markets, r.id)), [races, markets]);
 
   const [heroSlot, setHeroSlot] = useState<HTMLElement | null>(null);
   useEffect(() => setHeroSlot(document.getElementById("hero-stat")), []);
@@ -288,13 +284,13 @@ export default function BallotAgent() {
         <Input
           inputMode="numeric"
           autoComplete="postal-code"
-          aria-label="ZIP code"
-          placeholder="Enter your ZIP"
+          aria-label={t("ZIP code")}
+          placeholder={t("Enter your ZIP")}
           value={zip}
           onChange={(e) => setZip(e.target.value)}
           className="h-16 rounded-none border border-black bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3760f2]"
         />
-        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? "Reading…" : "Go"}</Button>
+        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
       </form>
       <div className="mt-4 flex flex-wrap gap-2">
         {DEMO.map((d) => (
@@ -303,11 +299,11 @@ export default function BallotAgent() {
           </Button>
         ))}
       </div>
-      <p role="status" aria-live="polite" className="mt-6 text-base text-black empty:hidden" data-zip-notice>{notice ?? ""}</p>
+      <p role="status" aria-live="polite" className="mt-6 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
       {(busy || (result && !b)) && (
         <div className="mt-10 max-w-2xl">
           <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
-          <p className="mt-2 text-sm text-black/50">{busy ? (TOOLS.map((t) => steps[t]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((t) => steps[t]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
+          <p className="mt-2 text-sm text-black/50">{busy ? t(TOOLS.map((k) => steps[k]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((k) => steps[k]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
         </div>
       )}
 
@@ -325,26 +321,6 @@ export default function BallotAgent() {
   );
 }
 
-function MarketBlock({ mk }: { mk: { quotes: MarketQuote[]; status: string; avg: { name: string; prob: number }[] } }) {
-  return (
-    <div className="mt-3 space-y-3">
-      {mk.avg.slice(0, 4).map((o) => (
-        <div key={o.name}>
-          <div className="flex justify-between text-sm"><span>{o.name}</span><span className="font-semibold tabular-nums text-navy">{pct(o.prob)}</span></div>
-          <Progress value={o.prob * 100} className="mt-1" />
-        </div>
-      ))}
-      <div className="space-y-1 text-xs text-slate-500">
-        {mk.quotes.map((q) => (
-          <p key={q.source}>
-            <a href={q.url}>{q.source}</a>: “{q.title}” · {q.cached ? "cached" : "fetched"} {ct(q.fetchedAt)}
-            {q.matchedByTitle && " · matched by title"}
-          </p>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 
 function TurnoutSection({ t }: { t: TurnoutDetail }) {

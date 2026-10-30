@@ -13,6 +13,8 @@ import EndScreen from "./EndScreen";
 type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null; officialSite?: string | null; finance?: { label?: string; url?: string } | null };
 type RaceLite = { id: string; office?: string; title?: string; name?: string; candidates: Cand[] };
 export const ANSWERS_KEY = "th-answers-v1";
+/** QA P2 (9dfe90d): the ZIP the saved answers were last given for, so the carry-over notice can say "from another ZIP". */
+export const ANSWERS_ZIP_KEY = "th-answers-zip-v1";
 const OLD_KEYS = ["townhall.issueAnswers.v2", "townhall.issueAnswers.v1"];
 
 function load(): Answers {
@@ -36,12 +38,15 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
   const ids = issues.map((i) => i.id);
   const [answers, setAnswers] = useState<Answers>({});
   const [confirm, setConfirm] = useState(false);
-  useEffect(() => { setAnswers(load()); }, []);
+  const [savedZip, setSavedZip] = useState<string | null>(null);
+  useEffect(() => { setAnswers(load()); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
+  const markZip = () => { try { localStorage.setItem(ANSWERS_ZIP_KEY, zip); } catch { /* ignore */ } };
   function choose(id: string, k: "yes" | "neutral" | "no", pole: "high" | "low" = "high") {
     const next = press(answers, id, k, pole) as Answers;
     setAnswers(next);
     setFromChat((w) => { const n = { ...w }; delete n[id]; return n; });
     try { localStorage.setItem(ANSWERS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+    markZip();
   }
   const [fromChat, setFromChat] = useState<Record<string, string>>({});
   function fill(fs: Fill[]) {
@@ -54,6 +59,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
     }
     setAnswers(next); setFromChat(words);
     try { localStorage.setItem(ANSWERS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+    markZip();
   }
   function reset() {
     try { for (const k of Object.keys(localStorage)) if (k.startsWith("townhall.") || k.startsWith("th-")) localStorage.removeItem(k); } catch { /* ignore */ }
@@ -70,7 +76,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
         <p className="mt-4 text-base leading-6 text-black" data-issue-intro>{ISSUE_INTRO}</p>
         <p className="mt-2 text-sm text-black/60" aria-live="polite" data-progress>{answered} of {ids.length} answered</p>
 
-        <TownyInterview zip={zip} city={CITY[zip] || "your area"} issues={issues.map((i) => ({ id: i.id, label: i.label }))} onFill={fill} answered={answered} />
+        <TownyInterview zip={zip} city={CITY[zip] || "your area"} issues={issues.map((i) => ({ id: i.id, label: i.label }))} onFill={fill} answered={answered} savedZip={savedZip} />
 
         <ol className="mt-6">
           {issues.map((i) => {
@@ -79,7 +85,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
               <li key={i.id} className="border-t border-black/15 py-6" data-issue={i.id}>
                 <p className="text-sm font-[530] text-black/60">{i.label}</p>
                 <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
-                {i.reason ? <p className="mt-1 max-w-[65ch] text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {plain(i.reason)}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Source ↗</a></> : null}</p> : null}
+                {i.reason ? <p className="mt-1 max-w-[45ch] text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {plain(i.reason)}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Source ↗</a></> : null}</p> : null}
                 <div role="radiogroup" aria-labelledby={`q-${i.id}`} className="mt-4 grid grid-cols-3 gap-2 md:flex md:gap-3">
                   {CHOICES.map((c) => {
                     const on = sel === c.k;

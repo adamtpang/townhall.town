@@ -59,7 +59,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
 
       <section className="mt-10 border-t border-black/15 pt-6">
         <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
-        <p className="mt-1 text-xs leading-4 text-black/60" data-overlap-caption>Overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
+        <p className="mt-1 text-sm leading-5 text-black/60" data-overlap-caption>Overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
         {answers === null ? <p className="mt-3 text-base text-black/60">Loading…</p> : rows.length === 0 ? (
           Object.values(answers).some((v) => typeof v === "number") ? (
             <p className="mt-3 text-base text-black/80" data-card-no-overlap>{Object.values(answers).some((v) => typeof v === "number" && v !== 0) ? "No overlap to show: no candidate has enough sourced positions on the issues you answered Yes or No." : "No overlap to show. Neutral answers aren\u2019t compared; answer Yes or No on an issue to compare."} <a href="/" className={link}>Change your answers</a>.</p>
@@ -84,7 +84,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
         {ed ? <button type="button" onClick={ics} className="h-12 border border-black/30 px-6 text-base hover:border-black" data-card-ics>Add to calendar (.ics)</button> : null}
         <a href="/" className="inline-flex h-12 items-center px-2 text-base text-[#3760F2]">Back to the full ballot</a>
       </div>
-      <p className="mt-6 text-xs leading-4 text-black/60">Your answers stay on this device and in this link. townhall.town stores nothing on a server. <a href={ed?.sourceUrl} className={link} target="_blank" rel="noreferrer">Dates source ↗</a></p>
+      <p className="mt-6 text-sm leading-5 text-black/60">Your answers stay on this device and in this link. townhall.town stores nothing on a server. <a href={ed?.sourceUrl} className={link} target="_blank" rel="noreferrer">Dates source ↗</a></p>
     </main>
   );
 }

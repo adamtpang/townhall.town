@@ -11,7 +11,8 @@ const races = (z: string) => (ballotFor(z)!.races as any[]);
 
 describe("QA 4c21a5c P1-1: race ranking keys on id/level, not display title", () => {
   it("pins tier counts per ZIP (most/high/moderate/lower over races)", () => {
-    const want: Record<string, number[]> = { "78701": [2, 1, 7, 48], "94103": [0, 2, 8, 22], "10001": [0, 1, 3, 9] };
+    // Oct 29: closeness now comes only from a live Polymarket quote (raters dropped), so with no market every race ranks on office alone.
+    const want: Record<string, number[]> = { "78701": [0, 2, 7, 49], "94103": [0, 1, 8, 23], "10001": [0, 1, 3, 9] };
     for (const [z, w] of Object.entries(want)) {
       const c = { most: 0, high: 0, moderate: 0, lower: 0 };
       for (const r of races(z)) c[tierFor(r).tier]++;
@@ -52,11 +53,13 @@ describe("QA 4c21a5c P2: research cache header and per-instance rate limit", () 
     expect(a.headers.get("x-research-cache")).toBe("miss");
     expect(a.headers.get("ratelimit-remaining")).toBe("9");
     expect(b.headers.get("ratelimit-remaining")).toBe("8");
-    expect(src("app/api/research/route.ts")).toMatch(/"x-research-cache": "hit"/);
+    expect(b.headers.get("x-research-cache")).toBe("hit");
+    expect(b.headers.get("x-research-cache-layer")).toBe("run");
   });
   it("openapi documents hit/miss and per-instance counters", () => {
     const r = (openApiSpec() as any).paths["/api/research"].get.responses["200"];
-    expect(r.headers["x-research-cache"].schema.enum).toEqual(["hit", "miss"]);
+    expect(r.headers["x-research-cache"].schema.enum).toEqual(["hit", "partial", "miss"]);
+    expect(r.headers["x-research-cache-layer"].schema.enum).toEqual(["run", "search+pages", "none"]);
     expect(r.description).toMatch(/per server instance/);
   });
 });
@@ -101,14 +104,15 @@ describe("QA 4c21a5c P2: chat carry-over and 300% zoom", () => {
     expect(s).toContain("data-carryover");
     expect(s.match(/\{carry\}/g)?.length).toBe(2);
   });
-  it("candidate names wrap instead of truncating", () => {
+  it("candidate names: one line with an ellipsis and the full name in title (design p8 overrides the wrap fix)", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).not.toMatch(/truncate[^"]*" title=\{c\.name\}/);
-    expect(s).toMatch(/break-words \[overflow-wrap:anywhere\][^"]*" title=\{c\.name\}/);
+    expect(s).toMatch(/truncate[^"]*" title=\{c\.name\} aria-label=\{c\.name\}/);
+    expect(s).not.toMatch(/overflow-wrap:anywhere|break-words|break-all/);
   });
   it("hero top padding only grows on tall viewports (no ~300px band at 300% zoom)", () => {
     const s = src("app/page.tsx");
-    expect(s).toContain("[@media(min-width:640px)_and_(min-height:640px)]:pt-40");
-    expect(s).not.toContain("sm:pt-40");
+    // Design p8: capped at pt-12 lg:pt-20.
+    expect(s).toContain('pt-12 lg:pt-20" data-hero');
+    expect(s).not.toMatch(/pt-40|sm:pt-/);
   });
 });

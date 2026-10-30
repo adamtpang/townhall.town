@@ -134,12 +134,21 @@ const ES: Record<string, string> = {
   "state legislature": "legislatura estatal",
   "local office": "cargo local",
   "lower-profile office": "cargo de menor perfil",
+  // Hero and search chrome (wired Oct 29 2026)
+  "Know your ballot in 2 minutes.": "Conozca su boleta electoral en 2 minutos.",
+  "Your vote matters.": "Su voto cuenta.",
+  "Who\u2019s running, when to vote, where to go. Sourced and nonpartisan.": "Quién se postula, cuándo votar y a dónde ir. Con fuentes y no partidista.",
+  "Enter a valid 5-digit ZIP": "Escriba un código postal válido de 5 dígitos",
+  "Checking Polymarket prices": "Consultando precios de Polymarket",
+  "Too many lookups in the last minute. Please wait a moment and try again.": "Demasiadas búsquedas en el último minuto. Espere un momento e inténtelo de nuevo.",
 };
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({ lang: "en", setLang: () => {} });
 
-/** Spanish stays hidden until a native-speaker review (Civic/Design). Off unless NEXT_PUBLIC_SPANISH=1 at build time. */
-export const SPANISH_ENABLED = process.env.NEXT_PUBLIC_SPANISH === "1";
+/** Spanish toggle is visible by default (Adam, Oct 29 2026; overrides the earlier Civic "hidden until native review" rule).
+ *  NEXT_PUBLIC_SPANISH=0 at build time hides it again. Strings without a translation stay in English:
+ *  see notes/spanish-untranslated.md. Candidate facts and sourced text are never translated. */
+export const SPANISH_ENABLED = process.env.NEXT_PUBLIC_SPANISH !== "0";
 
 export function LangProvider({ children }: { children: ReactNode }) {
   // English on every fresh load: the choice is kept in memory only.
