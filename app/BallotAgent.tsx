@@ -20,6 +20,7 @@ import { Tip, TooltipProvider } from "../components/ui/tooltip";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { COVERED_ZIPS, UNSUPPORTED_MESSAGE as UNSUPPORTED } from "../lib/site";
+import { SHOW_NEWS } from "../lib/flags";
 import { measuresFor } from "../lib/measures";
 import dynamic from "next/dynamic";
 
@@ -27,6 +28,7 @@ import dynamic from "next/dynamic";
 // only renders after a ballot loads, so it is fetched then, not on first paint.
 const RaceTiers = dynamic(() => import("./RaceTiers"), { ssr: false, loading: () => <p className="py-24 text-base text-black/60">Loading races…</p> });
 const IssueMatch = dynamic(() => import("./IssueMatch"), { ssr: false });
+const LocalNews = dynamic(() => import("./LocalNews"), { ssr: false });
 
 const NYC_READY = true;
 const DEMO = [
@@ -315,6 +317,7 @@ export default function BallotAgent() {
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} />
           <IssueMatch zip={b.zip} state={b.state} races={b.races} />
+          {SHOW_NEWS && <LocalNews zip={b.zip} />}
         </div>
       )}
 
