@@ -129,3 +129,9 @@ body {
     content: ""; position: absolute; left: -4px; right: -4px; top: 50%; bottom: auto; height: 44px; min-height: 100%; transform: translateY(-50%);
   }
 }
+
+/* QA pre-pass 6b2ae5c P2 (Oct 30, 2:00 PM CT): at 300% zoom or on short viewports the Towny panel is capped at 70dvh.
+   Header (close) and composer (send) are shrink-0; only the conversation scrolls, so the last chip is never clipped. */
+@media (max-height: 700px) {
+  [data-towny-panel] { max-height: 70dvh !important; height: 70dvh !important; }
+}

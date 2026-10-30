@@ -22,8 +22,31 @@ export const FAILED = "I couldn't reach Towny just now. Try again in a moment.";
 
 export const ASKS_WHO = /\bwho\b[^?]*\b(should|do|would|to|you)\b[^?]*\b(vote|pick|choose|support|back|recommend)\b|\bwho\b[^?]*\bvote for\b|\bshould i vote for\b|\bwho('?s| is) (the )?best\b|\bwhich candidate\b[^?]*\b(should|best|pick|choose)\b|\btell me who\b/i;
 export const ASKS_THINK = /^help me think through an issue\b/i;
-// Other places we don't cover, named without a ZIP. Houston stays hidden: it only ever gets OUT_OF_SCOPE.
-const OTHER_PLACE = /\b(houston|dallas|san antonio|fort worth|el paso|los angeles|oakland|san diego|brooklyn|queens|bronx|staten island|chicago|miami|seattle|boston|atlanta|denver|phoenix)\b/i;
+// Other places we don't cover, named without a ZIP (outOfScope below). Houston stays hidden: it only ever gets OUT_OF_SCOPE.
+
+// QA pre-pass 6b2ae5c P1-2 (Oct 30, 2:00 PM CT): any question that names another US state, a city outside Austin, SF and
+// NYC, or registering somewhere else gets OUT_OF_SCOPE. Texas, California and New York are in scope and never listed.
+// A state or city name used as a street or landmark (SF's Florida St, Vermont St, Utah St; NYC's Pennsylvania Station,
+// Washington Square; Austin's Colorado River) is not a place, so those words are skipped.
+const OTHER_STATES = ["alabama", "alaska", "arizona", "arkansas", "colorado", "connecticut", "delaware", "florida", "georgia", "hawaii",
+  "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan",
+  "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", "new jersey", "new mexico",
+  "north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", "south dakota",
+  "tennessee", "utah", "vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming", "puerto rico", "guam",
+  "district of columbia"];
+const OTHER_CITIES = ["houston", "dallas", "san antonio", "fort worth", "el paso", "corpus christi", "lubbock", "plano", "round rock",
+  "pflugerville", "cedar park", "san marcos", "los angeles", "oakland", "berkeley", "san jose", "sacramento", "san diego", "fresno",
+  "long beach", "palo alto", "brooklyn", "queens", "bronx", "staten island", "buffalo", "rochester", "albany", "yonkers", "syracuse",
+  "chicago", "miami", "seattle", "boston", "atlanta", "denver", "phoenix", "philadelphia", "pittsburgh", "detroit", "las vegas",
+  "nashville", "memphis", "baltimore", "milwaukee", "minneapolis", "new orleans", "salt lake city", "portland", "cincinnati",
+  "cleveland", "indianapolis", "kansas city", "st\\.? louis", "saint louis", "tampa", "orlando", "jacksonville", "raleigh",
+  "albuquerque", "tucson", "omaha", "tulsa", "honolulu", "anchorage", "newark", "jersey city", "hoboken"];
+const NOT_A_PLACE = "(?![ ,]+(?:street|st\\b|st\\.|avenue|ave\\b|ave\\.|blvd|boulevard|road|rd\\b|drive|dr\\b|place|pl\\b|square|sq\\b|heights|station|plaza|river|bridge|park|hall|irving))";
+const PLACE_RE = new RegExp(`\\b(?:${[...OTHER_STATES, ...OTHER_CITIES].join("|")})\\b${NOT_A_PLACE}`, "i");
+const ELSE = "(?:elsewhere|out[- ]of[- ]state|(?:in|to|from) (?:another|a different|other|a new) (?:state|city|county))";
+const ELSEWHERE_RE = new RegExp(`\\bregist\\w*\\b[^?]*\\b${ELSE}|\\b${ELSE}[^?]*\\bregist|\\bmov(?:e|ed|ing) (?:to )?(?:another|a different|a new) (?:state|city)\\b`, "i");
+/** True when the question is about a place Towny doesn't cover (state, city, or registering elsewhere). */
+export const outOfScope = (text: string) => { const t = String(text || ""); return PLACE_RE.test(t) || ELSEWHERE_RE.test(t); };
 
 export const zipsIn = (text: string) => (String(text).match(/\b\d{5}\b/g) || []);
 
@@ -38,7 +61,7 @@ export function routeTurn(text: string, zip: string | null): Route {
   const zs = zipsIn(t);
   const bad = zs.find((z) => !COVERED_ZIPS.includes(z));
   if (bad) return { kind: "fixed", reply: OUT_OF_SCOPE, links: OUT_OF_SCOPE_LINKS };
-  if (!zs.length && OTHER_PLACE.test(t)) return { kind: "fixed", reply: OUT_OF_SCOPE, links: OUT_OF_SCOPE_LINKS };
+  if (!zs.length && outOfScope(t)) return { kind: "fixed", reply: OUT_OF_SCOPE, links: OUT_OF_SCOPE_LINKS };
   const z = zs[0] ?? zip;
   const known = z && COVERED_ZIPS.includes(z) ? z : null;
   if (ASKS_WHO.test(t)) return { kind: "fixed", reply: WHO_TO_VOTE_REPLY, chips: [WHO_CHIP], zip: known ?? undefined };
@@ -51,3 +74,9 @@ export function routeTurn(text: string, zip: string | null): Route {
 
 export const STATE_OF: Record<string, "TX" | "CA" | "NY"> = { "78701": "TX", "94103": "CA", "10001": "NY" };
 export const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+
+/** QA pre-pass 6b2ae5c P2: one link per hostname (the first one wins, so the official office link stays first). */
+export function dedupeByHost<T extends { url: string }>(links: T[] | undefined): T[] {
+  const seen = new Set<string>();
+  return (links ?? []).filter((l) => { const h = host(l.url); if (seen.has(h)) return false; seen.add(h); return true; });
+}

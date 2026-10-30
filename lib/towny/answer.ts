@@ -4,7 +4,7 @@
 import { ballotFor } from "../tools";
 import { townyFact, todayCT } from "../townyFacts";
 import { faqFor, WHO_LINE, OFFICES } from "./faq";
-import { ASKS_WHO, WHO_CHIP } from "../townyChat";
+import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost } from "../townyChat";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
 
@@ -85,16 +85,30 @@ export function runningFor(zip: string, text: string): Curated | null {
   return { intent: "running", reply: `${lines.join(" ")} ${UNSURE_ORDER}`, links: [office, ...lists.filter((l) => host(l.url) !== host(office.url))] };
 }
 
+// QA pre-pass 6b2ae5c P1-1 (Oct 30, 2:00 PM CT): "What order are candidates on my ballot?" used to get the race count.
+// The order is not yet checked against any official sample ballot, so Towny says exactly that and links the office.
+// Never an order of names.
+export const BALLOT_ORDER_LINE = "Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.";
+export const ASKS_ORDER = /\bballot order\b|\border\b[^?]*\b(candidates?|names?|listed|appear\w*)\b|\b(candidates?|names?|listed|appear\w*)\b[^?]*\border\b|\b(what|which) order\b[^?]*\bballot\b|\border (on|of) (the|my|our) ballot\b|\blisted first\b|\b(first|top|last) on (the|my|our) ballot\b|\bposition (on|of) (the|my|our) ballot\b|\bballot position\b/i;
+export const asksOrder = (text: string) => ASKS_ORDER.test(String(text || "").replace(/\bin order to\b/gi, " "));
+export function ballotOrder(zip: string): Curated | null {
+  const office = OFFICES[zip];
+  return office ? { intent: "ballot-order", reply: BALLOT_ORDER_LINE, links: [office] } : null;
+}
+
 /** Everything Towny answers without a model, in this order. null = let the interview model read it for issue answers. */
 export function curated(zip: string, text: string, today: string = todayCT()): Curated | null {
   const t = String(text || "");
+  // QA pre-pass 6b2ae5c P1-2: another state, a city outside the 3, or registering elsewhere: Civic's exact line, vote.gov.
+  if (outOfScope(t)) return { intent: "out-of-scope", reply: OUT_OF_SCOPE, links: [...OUT_OF_SCOPE_LINKS] };
   if (ASKS_WHO.test(t)) return { intent: "who", reply: WHO_LINE, links: [], chips: [WHO_CHIP] };
+  if (asksOrder(t)) { const o = ballotOrder(zip); if (o) return o; }
   const run = runningFor(zip, t);
-  if (run) return run;
+  if (run) return { ...run, links: dedupeByHost(run.links) };
   const fact = townyFact(zip, t, today);
-  if (fact) return { intent: "fact", ...fact };
+  if (fact) return { intent: "fact", ...fact, links: dedupeByHost(fact.links) };
   const faq = faqFor(t, zip, today);
-  if (faq) return { intent: `faq-${faq.id}`, reply: faq.a, links: faq.links };
+  if (faq) return { intent: `faq-${faq.id}`, reply: faq.a, links: dedupeByHost(faq.links) };
   return null;
 }
 

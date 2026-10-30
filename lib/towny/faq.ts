@@ -63,6 +63,7 @@ export const FAQS: Faq[] = [
   },
 ];
 
+const oneHost = (links: FaqLink[]) => { const seen = new Set<string>(); return links.filter((l) => { let h = l.url; try { h = new URL(l.url).hostname.replace(/^www\./, ""); } catch { /* keep */ } return seen.has(h) ? false : (seen.add(h), true); }); };
 const longDate = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
 export const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
 
@@ -92,6 +93,7 @@ export function faqFor(text: string, zip: string | null, today?: string): { id: 
   const order = ["who", "when", "city", "zips", "match", "partisan", "sources"];
   const f = exact ?? order.map((id) => FAQS.find((x) => x.id === id)!).find((x) => x.match.test(t));
   if (!f) return null;
-  if (f.id === "when") return { id: f.id, ...whenWhere(zip, today) };
+  // QA pre-pass 6b2ae5c P2: one link per hostname (votetravis.gov and vote.nyc were each listed twice).
+  if (f.id === "when") { const w = whenWhere(zip, today); return { id: f.id, a: w.a, links: oneHost(w.links) }; }
   return { id: f.id, a: f.a, links: f.links };
 }

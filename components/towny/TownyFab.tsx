@@ -9,7 +9,7 @@ import { TownyMark } from "./TownyMark";
 import { Button } from "../ui/button";
 import {
   TOWNY_LABEL, TOWNY_OPENER, TOWNY_CAPTION, TOWNY_SUGGESTIONS, WHO_TO_VOTE_REPLY, WHO_CHIP, OUT_OF_SCOPE, ASK_ZIP, THINKING,
-  PLACEHOLDER, NO_MATCH, FAILED, routeTurn, STATE_OF, host,
+  PLACEHOLDER, NO_MATCH, FAILED, routeTurn, STATE_OF, host, dedupeByHost,
 } from "../../lib/townyChat";
 import { FAQS, faqFor } from "../../lib/towny/faq";
 import { issuesFor } from "../../lib/issueOrder";
@@ -32,7 +32,8 @@ function pageZip(): string | null {
   try { const s = localStorage.getItem(ANSWERS_ZIP_KEY); return s && COVERED_ZIPS.includes(s) ? s : null; } catch { return null; }
 }
 
-export default function TownyFab() {
+/** `zip`: the page's own ZIP when it has no ZIP box (e.g. /card?zip=, the ballot results page). */
+export default function TownyFab({ zip: pageOwnZip }: { zip?: string } = {}) {
   const [open, setOpen] = useState(false);
   const [msgs, setMsgs] = useState<Msg[]>([{ from: "towny", text: TOWNY_OPENER, chips: [...TOWNY_SUGGESTIONS] }]);
   const [text, setText] = useState("");
@@ -68,7 +69,7 @@ export default function TownyFab() {
   }, []);
 
   const close = useCallback(() => { setOpen(false); requestAnimationFrame(() => fab.current?.focus()); }, []);
-  useEffect(() => { if (open) { setZip((z) => z ?? pageZip()); requestAnimationFrame(() => input.current?.focus()); } }, [open]);
+  useEffect(() => { if (open) { setZip((z) => z ?? (pageOwnZip && COVERED_ZIPS.includes(pageOwnZip) ? pageOwnZip : pageZip())); requestAnimationFrame(() => input.current?.focus()); } }, [open]);
   // Design, Oct 30 1:38 PM CT: while the phone sheet is open the page behind it does not scroll. Desktop (lg) keeps the page live.
   useEffect(() => {
     if (!open || window.matchMedia("(min-width: 1024px)").matches) return;
@@ -91,7 +92,8 @@ export default function TownyFab() {
 
   // QA pre-pass 1ee5f9c P2-2: each reply renders once. The message log itself is the polite live region (role=log), so
   // there is no second, duplicate copy of the text for screen readers.
-  const say = (m: Omit<Msg, "from">) => { setMsgs((x) => [...x, { from: "towny", ...m }]); };
+  // QA pre-pass 6b2ae5c P2: one source link per hostname, whatever path the reply came from.
+  const say = (m: Omit<Msg, "from">) => { setMsgs((x) => [...x, { from: "towny", ...m, links: m.links ? dedupeByHost(m.links) : undefined }]); };
 
   function applyFills(z: string, fills: { issue: string; choice: "yes" | "neutral" | "no" }[]) {
     const issues = issuesFor(z, STATE_OF[z]);
@@ -187,15 +189,15 @@ export default function TownyFab() {
     <>
       <button ref={fab} type="button" aria-label={TOWNY_LABEL} aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(true)} data-towny-fab
         style={{ ["--k" as string]: "hsl(var(--primary))", ["--towny-face" as string]: "hsl(var(--primary))" }}
-        className={`fixed right-4 z-40 flex h-14 w-14 items-center justify-center rounded-none bg-primary text-primary-foreground lg:right-6 ${pos} ${zipFocused ? "max-lg:hidden" : ""} ${open ? "max-lg:hidden" : ""}`}>
+        className={`fixed right-4 z-40 flex print:hidden h-14 w-14 items-center justify-center rounded-none bg-primary text-primary-foreground lg:right-6 ${pos} ${zipFocused ? "max-lg:hidden" : ""} ${open ? "max-lg:hidden" : ""}`}>
         <TownyMark size={36} />
       </button>
       {open ? (
         <>
-          <div className="fixed inset-0 z-50 bg-black/40 lg:hidden" aria-hidden onClick={close} data-towny-overlay />
+          <div className="fixed inset-0 z-50 bg-black/40 lg:hidden print:hidden" aria-hidden onClick={close} data-towny-overlay />
           <div ref={panel} role="dialog" aria-modal="true" aria-label="Towny chat" onKeyDown={onKeyDown} data-towny-panel
             style={{ ["--k" as string]: "hsl(var(--background))" }}
-            className="fixed inset-x-0 bottom-0 z-50 flex h-[85dvh] flex-col rounded-none border-t border-border bg-background text-foreground lg:inset-x-auto lg:bottom-6 lg:right-6 lg:h-[640px] lg:max-h-[calc(100dvh-48px)] lg:w-[400px] lg:border lg:shadow-lg">
+            className="fixed inset-x-0 bottom-0 z-50 flex h-[85dvh] print:hidden flex-col rounded-none border-t border-border bg-background text-foreground lg:inset-x-auto lg:bottom-6 lg:right-6 lg:h-[640px] lg:max-h-[calc(100dvh-48px)] lg:w-[400px] lg:border lg:shadow-lg">
             <header className="flex h-16 shrink-0 items-center gap-3 border-b border-border pl-4 pr-1">
               <TownyMark size={40} className="shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
