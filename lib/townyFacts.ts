@@ -50,7 +50,9 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
       const early = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => (String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []).every((x) => x <= ev.end));
       const rows = dailyRows(early, d, ev.sourceUrl, j.timezone) as { label: string; hours: string; appliesTo: string | null }[];
       const many = new Set(rows.map((x) => x.appliesTo)).size > 1;
-      if (rows.length) hours = ` Hours: ${rows.map((x) => `${x.label}: ${x.hours}${many && x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`;
+      // Civic GO 73ddcbf P1 (Oct 30, 3:37 PM CT): one place for every row (SF: City Hall Voting Center) is named once.
+      const one = !many && rows[0]?.appliesTo ? ` at ${rows[0].appliesTo}` : "";
+      if (rows.length) hours = ` Hours${one}: ${rows.map((x) => `${x.label}: ${x.hours}${many && x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`;
       // QA 8f78579 P2 (Oct 30, 3:05 PM CT): the Election Day row in the same data (SF: 2026-11-03, 7:00 AM-8:00 PM, City Hall
       // Voting Center and all 501 polling places) follows as its own sentence, formatted the same way, never as early voting.
       const after = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => { const iso = String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []; return iso.length > 0 && iso.every((x) => x > ev.end); });

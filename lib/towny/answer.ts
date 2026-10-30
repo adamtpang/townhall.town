@@ -6,7 +6,7 @@ import { townyFact, todayCT, ASKS_EARLY, ASKS_HOURS } from "../townyFacts";
 import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
 import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace, zipsIn, cityOfZip } from "../townyChat";
 import { COVERED_ZIPS } from "../site";
-import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, officialOrder, orderSourceLinks, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
+import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, isRetention, officialOrder, orderSourceLinks, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
 
@@ -96,16 +96,19 @@ export function runningFor(zip: string, text: string, only?: (r: Race) => boolea
   // Civic P1 (Oct 30, 2:58 PM CT): races confirmed against the official sample ballot (data/ballot_order.json) are listed in
   // that order and say so, with the sample ballot linked; every other race keeps the unsure line. Mixed answers say it per race.
   // Civic towny_order_check P0 (3:25 PM CT): districts a ZIP spans are one "Depending on your address" item with the lookup linked.
-  const conf = pick.map((r) => (ownBallot ? officialOrder(zip, r.id ?? "") : null));
+  // Civic GO 73ddcbf P2 (Oct 30, 3:37 PM CT): retention races (one judge, Yes or No) get no order line.
+  const ordered = pick.filter((r) => !isRetention(r));
+  const conf = ordered.map((r) => (ownBallot ? officialOrder(zip, r.id ?? "") : null));
   const all = conf.every(Boolean), none = conf.every((c) => !c);
   const segs = segments(ownBallot ? zip : "", pick);
   const lines = segs.map((g) => {
-    const tail = all || none ? "" : ` ${officialOrder(zip, g.races[0].id ?? "") && ownBallot ? ORDER_CONFIRMED : UNSURE_ORDER}`;
-    return `${segText(zip, g, ownBallot)}${tail}`;
+    const tail = all || none || g.races.every(isRetention) ? "" : ` ${officialOrder(zip, g.races[0].id ?? "") && ownBallot ? ORDER_CONFIRMED : UNSURE_ORDER}`;
+    return { text: `${segText(zip, g, ownBallot)}${tail}`, split: !!g.split };
   });
   const sample = orderSourceLinks(sourcesOf(conf));
   const lists = [...new Map(pick.map((r) => r.source).filter(Boolean).map((u) => [u as string, { label: host(u as string), url: u as string }])).values()];
-  const reply = all ? `${lines.join(" ")} ${ORDER_CONFIRMED}` : none ? `${lines.join(" ")} ${UNSURE_ORDER}` : lines.join(" ");
+  const body = joinLines(lines);
+  const reply = !ordered.length ? body : all ? `${body} ${ORDER_CONFIRMED}` : none ? `${body} ${UNSURE_ORDER}` : body;
   return { intent: "running", reply, links: uniq([...sample, ...splitLinks(segs), office, ...lists.filter((l) => host(l.url) !== host(office.url))]) };
 }
 
@@ -136,6 +139,15 @@ const segText = (zip: string, g: Seg, own = true) =>
 const item = (title: string, names: string) => (names ? `${title}: ${names}` : title);
 const splitLinks = (segs: Seg[]) => segs.flatMap((g) => (g.split ? [g.split.lookup] : []));
 const uniq = <T extends { url: string }>(l: T[]) => [...new Map(l.map((x) => [x.url, x])).values()];
+/** Civic GO 73ddcbf P2 (Oct 30, 3:37 PM CT): a "Depending on your address" group is its own line, never run on after other text. */
+function joinLines(items: { text: string; split: boolean }[]): string {
+  let out = "";
+  items.forEach((x, i) => { out += i === 0 ? x.text : x.split || items[i - 1].split ? `\n${x.text}` : ` ${x.text}`; });
+  return out;
+}
+const segLines = (zip: string, segs: Seg[]) => segs.map((g) => ({ text: segText(zip, g), split: !!g.split }));
+/** "<lead> <segments>", with the lead on its own line when the first segment is a split group. */
+const lead = (head: string, zip: string, segs: Seg[]) => { const j = joinLines(segLines(zip, segs)); return segs[0]?.split ? `${head}\n${j}` : `${head} ${j}`; };
 
 // QA pre-pass 6b2ae5c P1-1 (Oct 30, 2:00 PM CT): "What order are candidates on my ballot?" used to get the race count.
 // Civic P1 (Oct 30, 2:58 PM CT): per race, from data/ballot_order.json. A race confirmed against the official sample ballot
@@ -155,19 +167,23 @@ export function ballotOrder(zip: string, text = ""): Curated | null {
   // Adam, Oct 30 3:24 PM CT (Civic towny_order_check): every answer names the candidates. Confirmed races say ORDER_CONFIRMED with
   // the official source (78701: candidate order within each race, 58/58, never the order of the races); every other race says
   // ORDER_UNSURE. Races are never presented in ballot order. Split districts are one "Depending on your address" item.
+  // Civic GO 73ddcbf (Oct 30, 3:37 PM CT): retention races get no order line (P2 4); split groups are their own line (P2 5).
   const pick = named.length ? named : races;
-  const conf = pick.map((r) => officialOrder(zip, r.id ?? ""));
-  const yes = pick.filter((_, i) => conf[i]), no = pick.filter((_, i) => !conf[i]);
-  const segY = segments(zip, yes), segN = segments(zip, no);
-  const one = named.length === 1 || (segY.length + segN.length === 1);
+  const ret = pick.filter(isRetention), ordered = pick.filter((r) => !isRetention(r));
+  const conf = ordered.map((r) => officialOrder(zip, r.id ?? ""));
+  const yes = ordered.filter((_, i) => conf[i]), no = ordered.filter((_, i) => !conf[i]);
+  const segY = segments(zip, yes), segN = segments(zip, no), segR = segments(zip, ret);
   const parts: string[] = [];
   if (!named.length) parts.push("Here are the candidates in each race. The races are not listed in the order they appear on the ballot.");
-  if (one) parts.push(`${segText(zip, [...segY, ...segN][0])} ${yes.length ? ORDER_CONFIRMED : ORDER_UNSURE}`);
-  else {
-    if (segY.length) parts.push(`${ORDER_CONFIRMED} That is the order of the candidates within each of these races: ${segY.map((g) => segText(zip, g)).join(" ")}`);
-    if (segN.length) parts.push(`${ORDER_UNSURE} That applies to these races: ${segN.map((g) => segText(zip, g)).join(" ")}`);
+  if (segY.length + segN.length + segR.length === 1 || (named.length === 1)) {
+    const g = [...segY, ...segN, ...segR][0];
+    parts.push(segR.length && !ordered.length ? segText(zip, g) : `${segText(zip, g)}${g.split ? "\n" : " "}${yes.length ? ORDER_CONFIRMED : ORDER_UNSURE}`);
+  } else {
+    if (segY.length) parts.push(lead(`${ORDER_CONFIRMED} That is the order of the candidates within each of these races:`, zip, segY));
+    if (segN.length) parts.push(lead(`${ORDER_UNSURE} That applies to these races:`, zip, segN));
+    if (segR.length) parts.push(lead("Retention races, a Yes or No vote on one judge each:", zip, segR));
   }
-  return { intent: "ballot-order", reply: parts.join(" "), links: uniq(dedupeByHost([...orderSourceLinks(sourcesOf(conf)), ...splitLinks([...segY, ...segN]), office])) };
+  return { intent: "ballot-order", reply: parts.join("\n"), links: uniq(dedupeByHost([...orderSourceLinks(sourcesOf(conf)), ...splitLinks([...segY, ...segN]), office])) };
 }
 
 // Civic, Oct 30 2:10 PM CT: a race that is the same on every ballot in the covered city. Statewide and U.S. Senate races are;
@@ -206,7 +222,10 @@ export function curated(zip: string, text: string, today: string = todayCT()): C
   // "Where can I vote early and what are the hours?": the where answer (office, lookup, portal), then the hours with Election Day.
   if (ASKS_HOURS.test(t) && /\bwhere\b/i.test(t)) {
     const w = faqFor(t, zip, today), h = townyFact(zip, t, today);
-    if (w?.id === "when" && h && !w.a.includes(h.reply)) return { intent: "faq-when", reply: `${w.a} ${h.reply}`, links: withPolling(zip, [...w.links, ...h.links]) };
+    // Civic GO 73ddcbf P2 (Oct 30, 3:37 PM CT): the hours follow, so "For hours and polling places, check X." goes; the where
+    // part keeps naming the office ("For your polling place, check X.") with its lookup linked.
+    const wa = w?.a.replace(/\s*For hours and polling places, check ([^.]*)\.\s*$/, " For your polling place, check $1.") ?? "";
+    if (w?.id === "when" && h && !w.a.includes(h.reply)) return { intent: "faq-when", reply: `${wa} ${h.reply}`, links: withPolling(zip, [...w.links, ...h.links]) };
   }
   const fact = townyFact(zip, t, today);
   if (fact) return { intent: "fact", ...fact, links: ASKS_EARLY.test(t) || ASKS_HOURS.test(t) ? withPolling(zip, fact.links) : dedupeByHost(fact.links) };

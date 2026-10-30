@@ -11,7 +11,7 @@ const EV7 = "https://vote.nyc/election/general-election-early-voting-day-7";
 const NY_CONFIRMED = ["ny-governor", "ny-comptroller", "ny-attorney-general", "ny-supreme-1jd", "ny-surrogate-ny", "ny-civil-county-ny"];
 const NY_NEVER = ["ny-12", "ny-sd-47", "ny-sd-28", "ny-ad-75", "nyc-council-3"];
 const LOOKUP = { "78701": "https://teamrv-mvp.sos.texas.gov/MVP/mvp.do", "94103": "https://voterstatus.sos.ca.gov/", "10001": "https://findmypollsite.vote.nyc/" } as const;
-const SPLITS = { "78701": [["tx-10", "tx-37"], ["tx-hd-49", "tx-house-51"]], "94103": [["sf-supervisor-6", "sf-supervisor-8", "sf-supervisor-10"]], "10001": [["ny-sd-47", "ny-sd-28"]] } as const;
+const SPLITS = { "78701": [["tx-10", "tx-37"], ["tx-hd-49", "tx-house-51"]], "94103": [["sf-supervisor-6", "sf-supervisor-8", "sf-supervisor-10"]], "10001": [["ny-sd-47", "ny-sd-28"], ["ny-civil-3md-ny", "ny-civil-9md-ny"]] } as const;
 const ZIPS = ["78701", "94103", "10001"] as const;
 const ORDER_Q = "What order are candidates on my ballot?";
 
@@ -20,7 +20,9 @@ describe("P0-1 tools carry a per-race orderStatus", () => {
     for (const z of ZIPS) {
       const r = getRaces(z)!, c = getCandidates(z)!;
       expect(r.raceListOrder).toMatch(/not ballot order/);
-      for (const list of [r.races, c.races]) for (const x of list as { id: string; orderStatus: { status: string; sourceUrl: string | null; say: string } }[]) {
+      for (const list of [r.races, c.races]) for (const x of list as { id: string; title: string; orderStatus: { status: string; sourceUrl: string | null; say: string } }[]) {
+        // Civic GO 73ddcbf P2: retention races carry no order line.
+        if (/\(retention\b/.test(x.title)) { expect(x.orderStatus.status, `${z} ${x.id}`).toBe("retention"); expect(x.orderStatus.say).toBe(""); continue; }
         const want = z === "78701" || (z === "10001" && NY_CONFIRMED.includes(x.id));
         expect(x.orderStatus.status, `${z} ${x.id}`).toBe(want ? "confirmed" : "unsure");
         expect(x.orderStatus.say).toBe(want ? ORDER_CONFIRMED : ORDER_UNSURE);

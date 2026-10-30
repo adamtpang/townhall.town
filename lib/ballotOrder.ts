@@ -49,8 +49,13 @@ export function orderSourceLinks(sources: OrderSource[]): OrderSource[] {
 
 /** Per-race order status for the model's tools (getRaces/getCandidates). "confirmed" covers the order of candidates within
  *  that race only (78701: 58/58 races checked against the bedsheet), never the order of the races. */
-export type OrderStatus = { status: "confirmed" | "unsure"; sourceUrl: string | null; sourceLabel: string | null; say: string };
-export function orderStatus(zip: string, raceId: string): OrderStatus {
+export type OrderStatus = { status: "confirmed" | "unsure" | "retention"; sourceUrl: string | null; sourceLabel: string | null; say: string };
+// Civic GO 73ddcbf P2 (Oct 30, 3:37 PM CT): a retention race (one judge, a Yes or No vote) has no candidate order, so it gets no
+// order line at all. 94103 has 13 of them (titles end "(retention: Yes/No)").
+export const isRetention = (r: { title: string }) => /\(retention\b/i.test(r.title);
+export const RETENTION_ORDER: OrderStatus = { status: "retention", sourceUrl: null, sourceLabel: null, say: "" };
+export function orderStatus(zip: string, raceId: string, title = ""): OrderStatus {
+  if (title && isRetention({ title })) return RETENTION_ORDER;
   const o = officialOrder(zip, raceId);
   return o ? { status: "confirmed", sourceUrl: o.source.url, sourceLabel: o.source.label, say: ORDER_CONFIRMED } : { status: "unsure", sourceUrl: null, sourceLabel: null, say: ORDER_UNSURE };
 }
@@ -63,7 +68,8 @@ const CA_LOOKUP = { label: "California Secretary of State, voter status lookup",
 const SPLITS: Record<string, SplitGroup[]> = {
   "78701": [{ raceIds: ["tx-10", "tx-37"], lookup: TX_LOOKUP }, { raceIds: ["tx-hd-49", "tx-house-51"], lookup: TX_LOOKUP }],
   "94103": [{ raceIds: ["sf-supervisor-6", "sf-supervisor-8", "sf-supervisor-10"], lookup: CA_LOOKUP }],
-  "10001": [{ raceIds: ["ny-sd-47", "ny-sd-28"], lookup: NY_FMPS }],
+  // Civic GO 73ddcbf P1 (Oct 30, 3:37 PM CT): the two Civil Court municipal districts are a split too (both stay unsure).
+  "10001": [{ raceIds: ["ny-sd-47", "ny-sd-28"], lookup: NY_FMPS }, { raceIds: ["ny-civil-3md-ny", "ny-civil-9md-ny"], lookup: NY_FMPS }],
 };
 export const splitGroups = (zip: string): SplitGroup[] => SPLITS[zip] ?? [];
 export const splitOf = (zip: string, raceId: string): SplitGroup | null => splitGroups(zip).find((g) => g.raceIds.includes(raceId)) ?? null;

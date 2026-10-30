@@ -156,7 +156,7 @@ export function getRaces(zip: string) {
     // Civic order check (Oct 30, 3:25 PM CT): this list is in data order, never ballot order. Each race carries its own
     // orderStatus (confirmed = candidate order within that race only) and, where a ZIP spans districts, dependsOnAddress.
     raceListOrder: RACE_LIST_NOTE,
-    races: b.races.map((r) => ({ id: r.id, title: r.title, office: r.office, source: r.source, orderStatus: orderStatus(zip, r.id), ...splitFor(zip, r.id) })),
+    races: b.races.map((r) => ({ id: r.id, title: r.title, office: r.office, source: r.source, orderStatus: orderStatus(zip, r.id, r.title), ...splitFor(zip, r.id) })),
     measures: b.measures.map((m) => ({ id: m.id, title: m.title, source: m.source })),
     measuresNote: b.measuresNote,
   };
@@ -169,7 +169,7 @@ export function getCandidates(zip: string, raceIds?: string[]) {
   return {
     zip,
     raceListOrder: RACE_LIST_NOTE,
-    races: races.map((r) => ({ id: r.id, title: r.title, orderStatus: orderStatus(zip, r.id), ...splitFor(zip, r.id), candidates: r.candidates.map((c: Politician) => ({ name: c.name, party: c.party, incumbent: c.incumbent })) })),
+    races: races.map((r) => ({ id: r.id, title: r.title, orderStatus: orderStatus(zip, r.id, r.title), ...splitFor(zip, r.id), candidates: r.candidates.map((c: Politician) => ({ name: c.name, party: c.party, incumbent: c.incumbent })) })),
   };
 }
 
