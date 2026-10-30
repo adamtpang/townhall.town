@@ -1,6 +1,7 @@
 // Towny FAQ (Adam 1:18 PM CT Oct 30; facts from Civic, each checked against the code at 4954f93).
 // Every answer carries its source links as data. No grades, no picks, no dates promised for new cities.
-import { getElectionDates } from "../logistics";
+import { getElectionDates, getPollingLocations } from "../logistics";
+import { whereFor } from "../endscreen.mjs";
 
 export type FaqLink = { label: string; url: string };
 export type Faq = { id: string; q: string; match: RegExp; a: string; links: FaqLink[] };
@@ -66,6 +67,21 @@ export const FAQS: Faq[] = [
   },
 ];
 
+/** QA P1 (Oct 30): SF early-voting/where replies also link the polling place lookup and the Voter Portal, both read from
+ *  data/polling_locations.json (lookupUrl, portalUrl), with the lookup label the page already uses (lib/endscreen.mjs).
+ *  Only a ZIP whose lookup has that label (94103); never a hardcoded URL. */
+export function pollingLinks(zip: string | null): FaqLink[] {
+  if (!zip) return [];
+  const w = whereFor(zip, "") as { lookupUrl: string | null; lookupLabel: string | null };
+  if (!w.lookupUrl || !w.lookupLabel) return [];
+  const portal = getPollingLocations(zip)?.portalUrl;
+  return [{ label: w.lookupLabel, url: w.lookupUrl }, ...(portal && portal !== w.lookupUrl ? [{ label: "Voter Portal", url: portal }] : [])];
+}
+/** One link per hostname for the office and source links, then the ZIP's polling links (two pages on one host, kept). */
+export const withPolling = (zip: string | null, links: FaqLink[]): FaqLink[] => {
+  const poll = pollingLinks(zip);
+  return [...oneHost(links.filter((l) => !poll.some((p) => p.url === l.url))), ...poll];
+};
 const oneHost = (links: FaqLink[]) => { const seen = new Set<string>(); return links.filter((l) => { let h = l.url; try { h = new URL(l.url).hostname.replace(/^www\./, ""); } catch { /* keep */ } return seen.has(h) ? false : (seen.add(h), true); }); };
 const longDate = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
 export const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
@@ -97,6 +113,6 @@ export function faqFor(text: string, zip: string | null, today?: string): { id: 
   const f = exact ?? order.map((id) => FAQS.find((x) => x.id === id)!).find((x) => x.match.test(t));
   if (!f) return null;
   // QA pre-pass 6b2ae5c P2: one link per hostname (votetravis.gov and vote.nyc were each listed twice).
-  if (f.id === "when") { const w = whenWhere(zip, today); return { id: f.id, a: w.a, links: oneHost(w.links) }; }
+  if (f.id === "when") { const w = whenWhere(zip, today); return { id: f.id, a: w.a, links: withPolling(zip, w.links) }; }
   return { id: f.id, a: f.a, links: f.links };
 }

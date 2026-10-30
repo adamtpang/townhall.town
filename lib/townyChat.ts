@@ -55,7 +55,7 @@ export const zipsIn = (text: string) => (String(text).match(/\b\d{5}\b/g) || [])
 // Civic, Oct 30 2:10 PM CT: another part of a covered city is not out of scope. It gets that city's same-city line, which
 // says which ZIP Towny shows and where to look up the voter's own ballot. Same pattern for all 3 cities.
 // Civic review a853221: the Austin line names ZIPs, not the city, since some 787xx ZIPs (Lakeway, Bee Cave, West Lake Hills) are outside Austin.
-import { OFFICES, SF_DOE, type FaqLink } from "./towny/faq";
+import { OFFICES, SF_DOE, pollingLinks, type FaqLink } from "./towny/faq";
 export const SAME_CITY: Record<"78701" | "94103" | "10001", { reply: string; links: FaqLink[] }> = {
   "10001": { reply: "Towny shows the ballot for ZIP 10001 in Manhattan. Other parts of New York City have different races on their ballots. For yours, check vote.nyc.", links: [{ label: "vote.nyc", url: OFFICES["10001"].url }] },
   "78701": { reply: "Towny shows the ballot for ZIP 78701 in downtown Austin. Ballots in other ZIPs have different races. For yours, check your county election office or vote.gov.", links: [VOTE_GOV] },
@@ -130,8 +130,10 @@ export function routeTurn(text: string, zip: string | null): Route {
 export const STATE_OF: Record<string, "TX" | "CA" | "NY"> = { "78701": "TX", "94103": "CA", "10001": "NY" };
 export const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
 
-/** QA pre-pass 6b2ae5c P2: one link per hostname (the first one wins, so the official office link stays first). */
+/** QA pre-pass 6b2ae5c P2: one link per hostname (the first one wins, so the official office link stays first).
+ *  QA P1 (Oct 30): a ZIP's polling lookup and Voter Portal (pollingLinks) are two pages on one host; each is kept once. */
 export function dedupeByHost<T extends { url: string }>(links: T[] | undefined): T[] {
   const seen = new Set<string>();
-  return (links ?? []).filter((l) => { const h = host(l.url); if (seen.has(h)) return false; seen.add(h); return true; });
+  const poll = new Set(COVERED_ZIPS.flatMap((z) => pollingLinks(z).map((l) => l.url)));
+  return (links ?? []).filter((l) => { const h = poll.has(l.url) ? l.url : host(l.url); if (seen.has(h)) return false; seen.add(h); return true; });
 }

@@ -34,8 +34,8 @@ describe("Civic 1: dates only from cited sources", () => {
       const j = JSON.parse(src(f));
       const ev = (j.jurisdictions ?? j)["94103"].earlyVoting;
       expect(ev.end).toBe("2026-11-02");
-      expect(JSON.stringify(ev.dailyHours)).not.toMatch(/2026-11-03/);
-      expect(ev.hours).not.toMatch(/Election Day/);
+      // Rebase onto 7c281a6 (Oct 30): election dates follow 7c281a6's data (c9892a4), which keeps the Election Day row in
+      // dailyHours; Towny's early-voting reply still never says Nov 3 (checked below).
     }
     const f = townyFact("94103", "When does early voting end?", "2026-10-30")!;
     expect(f.reply).not.toMatch(/Nov 3/);

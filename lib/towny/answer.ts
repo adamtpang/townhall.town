@@ -2,8 +2,8 @@
 // before (and instead of) any model. Server-side (uses ballotFor). Used by /api/interview, so the page's Towny chat and the
 // floating Towny panel give the same answers. Unknown questions get a helpful reply with suggestion chips, never a dead end.
 import { ballotFor } from "../tools";
-import { townyFact, todayCT } from "../townyFacts";
-import { faqFor, WHO_LINE, OFFICES, SF_DOE } from "./faq";
+import { townyFact, todayCT, ASKS_EARLY } from "../townyFacts";
+import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
 import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace } from "../townyChat";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
@@ -132,9 +132,9 @@ export function curated(zip: string, text: string, today: string = todayCT()): C
   const run = runningFor(zip, t);
   if (run) return { ...run, links: dedupeByHost(run.links) };
   const fact = townyFact(zip, t, today);
-  if (fact) return { intent: "fact", ...fact, links: dedupeByHost(fact.links) };
+  if (fact) return { intent: "fact", ...fact, links: ASKS_EARLY.test(t) ? withPolling(zip, fact.links) : dedupeByHost(fact.links) };
   const faq = faqFor(t, zip, today);
-  if (faq) return { intent: `faq-${faq.id}`, reply: faq.a, links: dedupeByHost(faq.links) };
+  if (faq) return { intent: `faq-${faq.id}`, reply: faq.a, links: faq.id === "when" ? withPolling(zip, faq.links) : dedupeByHost(faq.links) };
   return null;
 }
 

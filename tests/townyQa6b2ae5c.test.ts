@@ -3,7 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { curated, BALLOT_ORDER_LINE, asksOrder } from "../lib/towny/answer";
-import { faqFor, OFFICES } from "../lib/towny/faq";
+import { faqFor, OFFICES, pollingLinks } from "../lib/towny/faq";
 import { routeTurn, outOfScope, dedupeByHost, OUT_OF_SCOPE } from "../lib/townyChat";
 
 const root = new URL("..", import.meta.url).pathname;
@@ -74,7 +74,9 @@ describe("P2 Searched hosts: one link per hostname", () => {
     const cases: [string, string][] = [["78701", "When is early voting?"], ["78701", "When does early voting end?"], ["10001", "Where do I vote?"], ["94103", "Where do I vote?"]];
     for (const [z, q] of cases) {
       for (const links of [curated(z, q, "2026-10-30")!.links, faqFor(q, z, "2026-10-30")?.links ?? []]) {
-        const hosts = links.map((l) => host(l.url));
+        // QA P1 (Oct 30): 94103's polling lookup and Voter Portal are two pages on one host; each is listed once.
+        const poll = new Set(pollingLinks(z).map((l) => l.url));
+        const hosts = links.map((l) => (poll.has(l.url) ? l.url : host(l.url)));
         expect(new Set(hosts).size, `${z} ${q}`).toBe(hosts.length);
       }
       expect(host(curated(z, q, "2026-10-30")!.links[0].url)).toBe(host(OFFICES[z].url));
