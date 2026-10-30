@@ -113,8 +113,8 @@
    "license": "Not licensed; candidate's own public photo, credited and linked",
    "page": "https://www.arshiafortexas.org/",
    "via": "campaign site",
-   "width": 1200,
-   "height": 800
+   "width": 340,
+   "height": 340
   },
   "arthur-dibianca": {
    "name": "arthur-dibianca",
@@ -269,18 +269,6 @@
    "via": "Wikimedia Commons",
    "width": 500,
    "height": 578
-  },
-  "bunny-mcfadden": {
-   "name": "bunny-mcfadden",
-   "file": "/portraits/bunny-mcfadden-160.webp",
-   "file112": "/portraits/bunny-mcfadden-112.webp",
-   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a851174471db85a387960bd/14782535-0691-4552-9c5a-476ce79029f2/headshot2025a.JPG?format=750w",
-   "credit": "Bunny McFadden for City College Board of Trustees campaign site",
-   "license": "Not licensed; candidate's own public photo, credited and linked",
-   "page": "https://www.bunny4thepeople.com/",
-   "via": "campaign site",
-   "width": 750,
-   "height": 1125
   },
   "caitlin-rourk": {
    "name": "caitlin-rourk",
@@ -1739,18 +1727,6 @@
    "width": 512,
    "height": 768
   },
-  "pearci-pj-bastiany-iii": {
-   "name": "pearci-pj-bastiany-iii",
-   "file": "/portraits/pearci-pj-bastiany-iii-160.webp",
-   "file112": "/portraits/pearci-pj-bastiany-iii-112.webp",
-   "sourceUrl": "https://bastiany-campaign-site.replit.app/assets/pj-portrait-Ddne3iA1.webp",
-   "credit": "PJ Bastiany campaign site",
-   "license": "Not licensed; candidate's own public photo, credited and linked",
-   "page": "https://bastiany-campaign-site.replit.app/",
-   "via": "campaign site",
-   "width": 960,
-   "height": 1200
-  },
   "phil-kim": {
    "name": "phil-kim",
    "file": "/portraits/phil-kim-160.webp",
@@ -2324,7 +2300,14 @@
   "tx-ltgov"
  ],
  "selfHostedNote": "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json; sources and sha256 in data/portraits-manifest.json. Cropped and resized only. Never generated.",
+ "initialsOnly": {
+  "bunny-mcfadden": "Illustration, not a photo (Design p15): initials only.",
+  "pearci-pj-bastiany-iii": "'VOTE' campaign poster, not a photo (Design p15): initials only."
+ },
  "leftOut": [],
- "excluded": [],
+ "excluded": [
+  "bunny-mcfadden",
+  "pearci-pj-bastiany-iii"
+ ],
  "sameAsCourtPortrait": []
 }

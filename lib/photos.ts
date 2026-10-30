@@ -50,6 +50,8 @@ const toPhoto = (h: Hosted | Hot): CandPhoto | null => {
 };
 /** data/photo_takedowns.json: candidate ids (slugs, e.g. "rob-bonta") whose photo must never show. They get initials. */
 export const TAKEDOWNS = new Set<string>(TAKEDOWN_IDS as string[]);
+/** Design p15: images that are not photos (an illustration, a campaign poster) get initials; ids and reasons in data/photos.json. */
+export const INITIALS_ONLY = new Set<string>(Object.keys((data as unknown as { initialsOnly?: Record<string, string> }).initialsOnly ?? {}));
 /** Clean credit text: Civic's attribution without "Photo:"; never a raw URL or "Unknown author". */
 export const cleanCredit = (a: string, via?: string | null) => {
   const t = String(a || "").replace(/^photo:\s*/i, "").trim();
@@ -61,7 +63,7 @@ export const cleanCredit = (a: string, via?: string | null) => {
  *  linked to the source page. Never news photos, never generated. Takedowns (data/photo_takedowns.json) get initials. */
 export function withLicensedPhoto<T extends Politician & { aka?: string | null }>(p: T): T {
   const ids = [slug(p.name), ...(p.aka ? [slug(p.aka)] : [])];
-  if (ids.some((id) => TAKEDOWNS.has(id))) return { ...p, photo: null };
+  if (ids.some((id) => TAKEDOWNS.has(id) || INITIALS_ONLY.has(id))) return { ...p, photo: null };
   const h = ids.map((id) => hosted[id]).find(Boolean);
   const x = ids.map((id) => hot[id]).find(Boolean);
   const main = (h && toPhoto(h)) || (x && toPhoto(x)) || null;

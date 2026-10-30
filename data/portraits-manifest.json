@@ -4,6 +4,10 @@
   112,
   160
  ],
+ "initialsOnly": {
+  "bunny-mcfadden": "Illustration, not a photo (Design p15): initials only.",
+  "pearci-pj-bastiany-iii": "'VOTE' campaign poster, not a photo (Design p15): initials only."
+ },
  "portraits": {
   "adrienne-e-adams": {
    "sourceUrl": "https://pbs.twimg.com/profile_images/2031800195806035968/gNOMSlSL_400x400.jpg",
@@ -318,14 +322,20 @@
    "sourceSha256": "efb52599f5f2ad9640b746bd07b42edfde8e546f66ec8873bc8bfdcd57fc25e7",
    "sourceBytes": 150426,
    "sourceSize": [
-    1200,
-    800
+    340,
+    340
    ],
+   "precrop": {
+    "left": 715,
+    "top": 330,
+    "width": 340,
+    "height": 340
+   },
    "crop": {
-    "left": 200,
+    "left": 0,
     "top": 0,
-    "width": 800,
-    "height": 800
+    "width": 340,
+    "height": 340
    },
    "focus": [
     0.5,
@@ -335,13 +345,13 @@
    "files": {
     "112": {
      "file": "/portraits/arshia-papari-112.webp",
-     "bytes": 2810,
-     "sha256": "dcb1eadf9fa561e573bef6bcd501dcd9d4fd10add3b29753d6d4e7cd62897430"
+     "bytes": 2738,
+     "sha256": "79d6a4b996d9f05f6cc23eb09b0021806ae46109b9adb923a3bdb959c022c568"
     },
     "160": {
      "file": "/portraits/arshia-papari-160.webp",
-     "bytes": 4792,
-     "sha256": "e8ec61f8f4c0a3c1e1c5f7b2c01a67d35098f1dea1ae52fafe2951439929d26c"
+     "bytes": 4500,
+     "sha256": "94d6c53cdcce579ae10b40151f686d46a1fa6fcdf2619c9898b7f24cf649b54b"
     }
    }
   },
@@ -750,40 +760,6 @@
      "file": "/portraits/bruce-a-blakeman-todd-hood-160.webp",
      "bytes": 2454,
      "sha256": "fc40e87ca34fa9f784d2cb91dfa20f66b5a5011ebe63f7ae3b6b14ec02542ca7"
-    }
-   }
-  },
-  "bunny-mcfadden": {
-   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a851174471db85a387960bd/14782535-0691-4552-9c5a-476ce79029f2/headshot2025a.JPG?format=750w",
-   "localFile": null,
-   "page": "https://www.bunny4thepeople.com/",
-   "sourceSha256": "1ea5b614ab88e4c920000748011f306df570b4ce80ee09369e2f8a92b9e2ad27",
-   "sourceBytes": 24612,
-   "sourceSize": [
-    750,
-    1125
-   ],
-   "crop": {
-    "left": 0,
-    "top": 75,
-    "width": 750,
-    "height": 750
-   },
-   "focus": [
-    0.5,
-    0.2,
-    1
-   ],
-   "files": {
-    "112": {
-     "file": "/portraits/bunny-mcfadden-112.webp",
-     "bytes": 1042,
-     "sha256": "60664b18f0f91aa6f9d492f092ffa1b43147b6438456035486ae1e2af021edc7"
-    },
-    "160": {
-     "file": "/portraits/bunny-mcfadden-160.webp",
-     "bytes": 1536,
-     "sha256": "9bf2f175e95b6149f2ced705e86cc7777040eb0cb9d3795f4758f7cacbf0914b"
     }
    }
   },
@@ -3925,6 +3901,12 @@
     512,
     600
    ],
+   "precrop": {
+    "left": 64,
+    "top": 0,
+    "width": 512,
+    "height": 600
+   },
    "crop": {
     "left": 21,
     "top": 40,
@@ -4728,40 +4710,6 @@
      "file": "/portraits/pat-dixon-160.webp",
      "bytes": 3276,
      "sha256": "a6052cf7be6a688f567e4cf6b50990bfb4664124afe7ec0eda3772af2d78bc0c"
-    }
-   }
-  },
-  "pearci-pj-bastiany-iii": {
-   "sourceUrl": "https://bastiany-campaign-site.replit.app/assets/pj-portrait-Ddne3iA1.webp",
-   "localFile": null,
-   "page": "https://bastiany-campaign-site.replit.app/",
-   "sourceSha256": "d762b8cb58756d769d83ae441960d01648c0575bbd6fbbfa50d92dd2a3320b36",
-   "sourceBytes": 95788,
-   "sourceSize": [
-    960,
-    1200
-   ],
-   "crop": {
-    "left": 0,
-    "top": 48,
-    "width": 960,
-    "height": 960
-   },
-   "focus": [
-    0.5,
-    0.2,
-    1
-   ],
-   "files": {
-    "112": {
-     "file": "/portraits/pearci-pj-bastiany-iii-112.webp",
-     "bytes": 2912,
-     "sha256": "9b0cb6ac64065bfcd496991f7b70351cb5f80406fb3bb595df76bd83249680cc"
-    },
-    "160": {
-     "file": "/portraits/pearci-pj-bastiany-iii-160.webp",
-     "bytes": 5098,
-     "sha256": "e606f6c84f26512ae716c23d7a60fb041351d032c04d7d9f8661f45bf4bc63ad"
     }
    }
   },

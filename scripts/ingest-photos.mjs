@@ -19,7 +19,7 @@ import sharp from "sharp";
 import { createHash } from "node:crypto";
 const batch = JSON.parse(fs.readFileSync("data/civic/photos_batch.json", "utf8"));
 // Exclusion rules live in scripts/photo-rules.mjs (unit-tested in tests/qa8.test.ts).
-import { EXCLUDE, dhash, hamming } from "./photo-rules.mjs";
+import { EXCLUDE, NOT_A_PHOTO, dhash, hamming } from "./photo-rules.mjs";
 export const isLicensed = (p) => /public domain|\bCC0\b|\bCC BY\b|creative commons/i.test(String(p.license ?? "")) && !/campaign|press photo|official site|not licensed/i.test(String(p.license ?? ""));
 export const isOwnSource = (p) => /campaign|official|own social profile/i.test(String(p.sourceType ?? ""));
 // Office-named official-page credits read "<candidate name> official page" (Adam, qa_fixes6 #5, 1:02 AM CT).
@@ -60,6 +60,9 @@ const CROP = {
   // Civic cropNote (qa_fixes6): campaign graphic; keep head and shoulders above the "MARC MEYER (D)" banner (starts ~80% down),
   // so no party label ships in the file. Viewed by eye.
   "marc-m-meyer": [0.1, 0, 0.8, 0.75],
+  // Design p15 #2: Papari's 1200x800 campaign photo is a wide Capitol shot with him in the right third. Square on his head
+  // (hat to collar): 340px at (715, 330). Simulated and viewed by eye (5:40 AM CT).
+  "arshia-papari": [715 / 1200, 330 / 800, 340 / 1200, 340 / 800],
 };
 // Engineering's saved copy of a campaign-site photo whose host answers hotlinks with a bot challenge (202 sgcaptcha),
 // so visitors' browsers would never get the image. Same source and credit as Civic's photoUrl; self-hosted like a localFile.
@@ -124,8 +127,8 @@ async function build(id, p) {
   try { src = await source(id, p); } catch (e) { failed.push(`${id}: ${String(e.message ?? e)} (${p.photoUrl})`); return; }
   if (p.txcourtsPortrait?.image && await sameImage(p, src.buf)) { excluded.push(id); sameAsCourt.push(id); return; }
   let img = sharp(src.buf).rotate(); const meta = await sharp(src.buf).rotate().metadata();
-  let W = meta.autoOrient?.width ?? meta.width, H = meta.autoOrient?.height ?? meta.height;
-  if (CROP[id]) { const [l, t, w, h] = CROP[id]; const e = { left: Math.round(l * W), top: Math.round(t * H), width: Math.round(w * W), height: Math.round(h * H) }; img = sharp(await img.extract(e).toBuffer()); W = e.width; H = e.height; }
+  let W = meta.autoOrient?.width ?? meta.width, H = meta.autoOrient?.height ?? meta.height; let precrop = null;
+  if (CROP[id]) { const [l, t, w, h] = CROP[id]; const e = precrop = { left: Math.round(l * W), top: Math.round(t * H), width: Math.round(w * W), height: Math.round(h * H) }; img = sharp(await img.extract(e).toBuffer()); W = e.width; H = e.height; }
   const sq = squareFor(W, H, FOCUS[id]);
   const base = await img.extract(sq).flatten({ background: "#f2f2f2" }).toBuffer();
   const files = {};
@@ -134,7 +137,7 @@ async function build(id, p) {
     const b = await sharp(base).resize(n, n, { fit: "cover" }).webp({ quality: 70, effort: 6 }).toBuffer();
     fs.writeFileSync(`public${f}`, b); files[n] = { file: f, bytes: b.length, sha256: sha(b) };
   }
-  manifest[id] = { sourceUrl: p.photoUrl ?? null, localFile: p.localFile ?? null, page: p.pageUrl ?? null, sourceSha256: sha(src.buf), sourceBytes: src.buf.length, sourceSize: [W, H], crop: sq, focus: FOCUS[id] ?? [0.5, 0.2, 1], files };
+  manifest[id] = { sourceUrl: p.photoUrl ?? null, localFile: p.localFile ?? null, page: p.pageUrl ?? null, sourceSha256: sha(src.buf), sourceBytes: src.buf.length, sourceSize: [W, H], ...(precrop ? { precrop } : {}), crop: sq, focus: FOCUS[id] ?? [0.5, 0.2, 1], files };
   const v = { name: id, file: files[160].file, file112: files[112].file, sourceUrl: p.photoUrl ?? null, credit: credit(p), license: p.license ?? null, page: p.pageUrl ?? null, via: p.sourceType ?? null, width: W, height: H, ...focusOf(id) };
   if (p.role === "running mate" && p.ticketId) { mates[p.ticketId] = { ...v, kind: "self", mateName: p.name }; return; }
   out[id] = v;
@@ -151,10 +154,11 @@ const photos = {
   method: "Civic data/civic/photos_batch.json (headshot pass, Oct 30 12:40 AM CT; qa10 4:34 AM CT). Design p14: every portrait (Civic's saved local copies, licensed photos and candidates' own public campaign, official or social-profile headshots) is downloaded at build time and self-hosted as 112px and 160px square webp, cropped at the per-photo focus or 50% 20%; each is credited and linked to its source page. No news, media or agency photos; never generated.",
   photos: {}, selfHosted: sorted(out), hotlinked: {}, runningMates: sorted(mates), incompleteRaces: [...incomplete].sort(),
   selfHostedNote: "Built by scripts/ingest-photos.mjs from data/civic/photos_batch.json; sources and sha256 in data/portraits-manifest.json. Cropped and resized only. Never generated.",
+  initialsOnly: NOT_A_PHOTO,
   leftOut: failed.sort(), excluded: excluded.sort(), sameAsCourtPortrait: sameAsCourt.sort(),
 };
 fs.writeFileSync("data/photos.json", JSON.stringify(photos, null, 1) + "\n");
-fs.writeFileSync("data/portraits-manifest.json", JSON.stringify({ builtBy: "scripts/ingest-photos.mjs", sizes: SIZES, portraits: sorted(manifest) }, null, 1) + "\n");
+fs.writeFileSync("data/portraits-manifest.json", JSON.stringify({ builtBy: "scripts/ingest-photos.mjs", sizes: SIZES, initialsOnly: NOT_A_PHOTO, portraits: sorted(manifest) }, null, 1) + "\n");
 console.log(`self-hosted ${Object.keys(out).length}, running mates ${Object.keys(mates).length}, incomplete races ${incomplete.size}, excluded ${excluded.length}, left out ${failed.length}, removed old files ${removed}`);
 for (const f of failed) console.log("  left out:", f);
 for (const f of excluded) console.log("  excluded:", f);

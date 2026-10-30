@@ -20,7 +20,13 @@ export const isAgencyPhoto = (p) =>
     .test(`${p.attribution ?? ""} ${p.photoUrl ?? ""} ${p.pageUrl ?? ""} ${p.sourceType ?? ""}`);
 // The Alida Fisher SFGovTV video still stays excluded (a .webm poster frame); her own campaign-site photo (Civic qa10) is allowed.
 export const isFisherVideo = (id, p) => id === "alida-fisher" && /\.webm|sfgovtv|wikimedia/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""} ${p.attribution ?? ""}`);
-export const EXCLUDE = (id, p) =>
+// Design p15 #1 (Oct 30, 5:34 AM CT): images that are not photos of the candidate fall back to initials. Kept here (not in
+// Civic's batch) so the rule holds across re-ingests; the reason ships in data/photos.json and data/portraits-manifest.json.
+export const NOT_A_PHOTO = {
+  "bunny-mcfadden": "Illustration, not a photo (Design p15): initials only.",
+  "pearci-pj-bastiany-iii": "'VOTE' campaign poster, not a photo (Design p15): initials only.",
+};
+export const EXCLUDE = (id, p) => id in NOT_A_PHOTO ||
   /txcourts\.gov/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""}`) /* image or its page, not notes that mention a search */ || isFisherVideo(id, p) || isAgencyPhoto(p) ||
   /news|press agency|getty|associated press|\bAP\b|reuters/i.test(String(p.sourceType ?? "")) || // never news photos (Adam 12:16 AM)
   isMediaCredit(p) || sameFileAsCourtPortrait(p);

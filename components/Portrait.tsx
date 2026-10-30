@@ -43,7 +43,8 @@ export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNul
   const cls = "h-full w-full object-cover object-[center_20%]";
   // Design p14: self-hosted 112/160px squares (tiles are 40-56px, so 112 covers 2x screens and 160 covers 3x), with
   // width/height set; lazy and async below the fold (eager only for the first tiers).
-  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w`, sizes: "56px" } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
+  // Design p15 #3: the image sizes attribute is 40px under 1024px wide, 56px from 1024 up.
+  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w`, sizes: "(max-width: 1023px) 40px, 56px" } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
   return (
     <span className="absolute inset-0 flex overflow-hidden" data-photo-img>
       <span className={cn("relative h-full overflow-hidden", m ? "w-1/2" : "w-full")}>
