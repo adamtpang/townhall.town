@@ -31,7 +31,7 @@ export const OUT_OF_SCOPE = "Towny covers Austin (78701), San Francisco (94103) 
 export const VOTE_GOV = { label: "vote.gov", url: "https://vote.gov" };
 export const OFFER_OTHERS = "Want to see the other candidates in this race?";
 export const NOT_A_REC = "Issue overlap is not a recommendation, and a missing statement says nothing about a candidate.";
-export const ORDER_LINE = "Towny lists candidates in ballot order and never reorders them by overlap, party or odds.";
+export const ORDER_LINE = "Towny keeps candidates in the order of our ballot data and never reorders them by overlap, party or odds.";
 /** Civic, Oct 30 1:37 PM CT: why a candidate is first. Cited to the office's sample ballot, never to Ballotpedia. */
 export const STATE_LAW_LINE = "Candidates appear in the order printed on the official sample ballot, which is set under state election law, not by Towny.";
 /** The ballot-order line until a race's order has been checked against the office's sample ballot (none has yet). */
@@ -452,7 +452,7 @@ export async function answerFollowup(input: FollowupInput, deps: FollowupDeps = 
     case "overlap": {
       const raceId = route.raceId ?? raceIdFor(route.candidate);
       if (raceId) {
-        call("getCandidates", { raceId }, () => b.races.find((x) => x.id === raceId)!.candidates.length, (n) => `${n} candidates in ballot order`);
+        call("getCandidates", { raceId }, () => b.races.find((x) => x.id === raceId)!.candidates.length, (n) => `${n} candidates`);
         built = call("computeOverlap", { raceId }, () => overlapTool(zip, b, raceId, answers), (x) => `${x.claims.length} sourced positions counted`);
       }
       break;

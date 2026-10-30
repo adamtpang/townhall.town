@@ -119,7 +119,7 @@ describe("tool answers, all through verify.ts", () => {
     expect(gateStance({ quote: "Expand housing tax credits", sourceUrl: "https://micahlasher.com/issues" })).toMatchObject({ ok: true, via: "own" });
   });
 
-  it("overlap for a whole race stays in ballot order", async () => {
+  it("overlap for a whole race keeps the ballot data order", async () => {
     const r = await ask("10001", "How do the House candidates overlap with my answers?");
     expect(r.kind).toBe("overlap");
     const names = ["Micah C. Lasher", "Caroline Shinkle", "Wilneida Negron", "Karen Ortiz"];

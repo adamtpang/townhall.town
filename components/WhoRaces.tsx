@@ -1,7 +1,7 @@
 "use client";
 // "Who lines up" race list. Design sign-off (Oct 30, 12:39 AM): under 768px a shadcn Accordion (type "multiple"),
 // every race closed by default; each trigger is a full-width row of at least 56px with the race H3 left and a 16px
-// chevron right; under it, while closed, one 14/20 weight-450 line per candidate in ballot order:
+// chevron right; under it, while closed, one 14/20 weight-450 line per candidate in ballot-data order:
 // "Name · 4 of 7 issues · B" (grade inline, same colour, only where the race is grade-eligible) or
 // "Name · No public position found yet". Races are split by a 1px black/15 divider, radius 0, no open-state shading.
 // Design p12 #3 (2:27 AM): the same Accordion at 768px and up too, with the first 3 races open by default (phones stay all closed) and the rest

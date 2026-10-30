@@ -1,5 +1,5 @@
 // Standalone entry point for the agent timeline (owned by the agent-trace work; this module does not touch lib/api/agent.ts).
-// verifyBallotRun(zip, opts) builds claims from the ballot the agent just showed (race titles, candidates in ballot order,
+// verifyBallotRun(zip, opts) builds claims from the ballot the agent just showed (race titles, candidates in ballot-data order,
 // measure facts) plus any narration sentences, checks them with verifyClaims, and returns { claims, report } for <VerifyStep/>.
 // Pure and synchronous (< 5 ms on the full 78701 ballot). Never reads or returns the voter's answers.
 import { ballotFor } from "../tools";
@@ -29,7 +29,7 @@ export function verifyBallotRun(
       const value = r.candidates.length ? `Ballot order: ${listed}` : null;
       if (!chk.confirmed && chk.single) continue; // one-choice contest: no order claim (Civic MATCH_SINGLE)
       if (chk.confirmed && value) sources.push({ url: chk.url, label: chk.source.chip, origin: "curated", text: value });
-      claims.push({ id: `${r.id}.order`, field: "race", text: `${r.title}: ${r.candidates.map((c) => c.name).join(", ") || "no candidates listed"}, in ballot order.`, value, office: OFFICE[zip], searched: off ? [off.label] : ["ballot data"], ...(r.candidates.length && !chk.confirmed ? { forceUnsure: chk.reason } : {}) });
+      claims.push({ id: `${r.id}.order`, field: "race", text: `${r.title}: ${r.candidates.map((c) => c.name).join(", ") || "no candidates listed"}, in the order of our ballot data.`, value, office: OFFICE[zip], searched: off ? [off.label] : ["ballot data"], ...(r.candidates.length && !chk.confirmed ? { forceUnsure: chk.reason } : {}) });
     }
     const ms = measuresFor(zip).filter((m) => !opts.measureIds || opts.measureIds.includes(m.id));
     for (const m of ms) {
