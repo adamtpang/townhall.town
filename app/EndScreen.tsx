@@ -112,7 +112,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
               <p className="mt-4 text-base font-[530]">{site.name}</p>
               <p className="text-base text-black/80">{site.address}</p>
               {/* Civic qa14: final-days site lines (they name the last day) show as written. */}{site.hours && (!/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d/.test(site.hours) || /\(last day\)/.test(site.hours)) && <p data-site-hours className="mt-1 text-sm text-black/60">{where.phase === "early" ? "Early voting: " : "Election Day: "}{site.hours}</p>}
-              <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none px-6 text-base lg:w-auto" data-maps-url={mapsUrl(site.address)}>
+              <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-maps-url={mapsUrl(site.address)}>
                 Directions ↗{ext}
               </Button>
               <p className="mt-2 text-sm leading-5 text-black/60">{site.proximity ? `${site.proximity}. ` : ""}<a href={site.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link">Official site list ↗{ext}</a></p>
@@ -132,7 +132,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
           ) : where.lookupUrl ? (
             <>
               <p className="mt-4 text-base text-black/80">Your polling place is assigned by home address.</p>
-              <Button onClick={() => window.open(where.lookupUrl!, "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none px-6 text-base lg:w-auto" data-lookup-url={where.lookupUrl}>
+              <Button onClick={() => window.open(where.lookupUrl!, "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-lookup-url={where.lookupUrl}>
                 Find your polling place ↗{ext}
               </Button>
             </>

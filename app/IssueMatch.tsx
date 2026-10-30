@@ -109,7 +109,7 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
         </ol>
         
         <div className="mt-6 flex flex-wrap items-center gap-4">
-          <Button onClick={() => document.getElementById("end")?.scrollIntoView({ behavior: "smooth" })} className="h-12 rounded-none px-6 text-base" data-see-results>
+          <Button onClick={() => document.getElementById("end")?.scrollIntoView({ behavior: "smooth" })} className="h-12 rounded-none px-6 text-base bg-black text-[#F2F2F2] hover:bg-black/80" data-see-results>
             See who, where and when
           </Button>
           {!confirm ? (

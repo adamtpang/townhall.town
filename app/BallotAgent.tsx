@@ -296,13 +296,13 @@ export default function BallotAgent() {
           onChange={(e) => setZip(e.target.value)}
           className="h-16 rounded-none border border-black bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
         />
-        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none px-8 text-base font-[530]">{busy ? t("Reading…") : t("Go")}</Button>
+        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
       </form>
       {/* QA phone pass (Oct 30): the unsupported-ZIP notice sits right under the input so it is visible above the keyboard. */}
       <p role="status" aria-live="polite" className="mt-3 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {DEMO.map((d) => (
-          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530] [@media(hover:hover)]:hover:bg-brand-50">
+          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530]">
             {d.label}
           </Button>
         ))}

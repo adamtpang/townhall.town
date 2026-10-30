@@ -17,8 +17,14 @@ const button = cva(
   }
 );
 
+// Purple palette (Design Oct 30): the brand colours live here, not in call sites. Older call sites pass the
+// pre-purple ink overrides (bg-black, hover:bg-black/80, text-[#f2f2f2]); on the default variant those are dropped
+// so the variant's brand-700 fill wins without touching each feature file (keeps rebases on feature branches clean).
+const LEGACY_INK = /^(?:(?:hover|active):)?bg-black(?:\/\d+)?$|^text-\[#f2f2f2\]$/i;
+const dropLegacyInk = (c?: string) => c?.split(/\s+/).filter((t) => !LEGACY_INK.test(t)).join(" ");
+
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof button> {}
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, ...p }, ref) => (
-  <button ref={ref} className={cn(button({ variant, size }), className)} {...p} />
+  <button ref={ref} className={cn(button({ variant, size }), (variant ?? "default") === "default" ? dropLegacyInk(className) : className)} {...p} />
 ));
 Button.displayName = "Button";
