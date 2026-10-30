@@ -208,7 +208,10 @@ async function run(zip: string, emit: Emit) {
   let narration = "";
   let error: string | null = null;
 
-  for (const { label: m, model: lm } of modelLadder()) {
+  const ladder = modelLadder();
+  // QA P1: retry the first model once before moving down the ladder (a single bad tool call is usually transient).
+  const attempts = ladder.length ? [ladder[0], ...ladder] : ladder;
+  for (const { label: m, model: lm } of attempts) {
     try {
       emit({ type: "status", message: `Asking ${m} to plan tool calls…` });
       const res = await generateText({
@@ -220,6 +223,11 @@ async function run(zip: string, emit: Emit) {
         // From Engineering's patch 75e762f: name the five lookups so the required tool steps cover them.
         prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}. First look it up with your tools: districts, races, candidates, market odds and local problems for ZIP ${zip}. Call several tools at once when you can. Then write.`,
         tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools, ...townyTools },
+        experimental_repairToolCall: async ({ toolCall, tools: available }) => {
+          const norm = (n: string) => n.split(/[.:/]/).pop()!.replace(/[^a-z0-9]/gi, "").toLowerCase();
+          const fixed = Object.keys(available).find((k) => norm(k) === norm(toolCall.toolName));
+          return fixed ? { ...toolCall, toolName: fixed } : null;
+        },
         prepareStep: ({ stepNumber }) => {
           const unrun = CORE_TOOLS.filter((n) => !(n in results));
           if (stepNumber < 2 && unrun.length) return { toolChoice: "required" as const, activeTools: [...unrun] as any };
@@ -239,7 +247,13 @@ async function run(zip: string, emit: Emit) {
     } catch (e: any) {
       error = String(e?.message || e).slice(0, 200);
       emit({ type: "status", message: `Model ${m} unavailable (${error.slice(0, 80)}).` });
-      if (Object.keys(results).length) break; // partial run: finish deterministically below
+      if (Object.keys(results).length) {
+        // Partial run: the model really called these tools, so the run stays live; the planner finishes the rest.
+        mode = "live";
+        model = m;
+        error = null;
+        break;
+      }
     }
   }
 
@@ -250,7 +264,7 @@ async function run(zip: string, emit: Emit) {
     if (mode === "live") emit({ type: "status", message: "Planner: running remaining lookups" });
     else emit({ type: "status", message: "Running the same tools: fallback mode (no model)." });
     const tools = makeTools(zip, emit, results) as any;
-    for (const n of missing) await tools[n].execute({ zip }, { toolCallId: n, messages: [] });
+    await Promise.all(missing.map((n) => tools[n].execute({ zip }, { toolCallId: n, messages: [] })));
   }
   // Agent summary is behind SHOW_AGENT_SUMMARY (lib/flags.ts, off by default): off means no analyze step,
   // no narration and no summaryBullets, so the trace panel shows no summary block or heading.
