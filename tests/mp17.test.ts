@@ -128,4 +128,28 @@ describe("office label and empty states", () => {
     expect(wynn).not.toContain("data-main-text");
     expect(wynn).toContain("No public position found yet");
   });
+  it("QA P1-1: an office point is never followed by a bare 'No public position found yet.'; office-only rows reuse Gorman's 'on other issues.' line", async () => {
+    const { NO_POSITION_OTHER, NO_POSITION, NO_POSITION_UNCHECKED } = await import("../components/CandidateRow");
+    expect(NO_POSITION_OTHER).toBe("No public position found yet on other issues.");
+    const noPos = (row: string) => dec(row.match(/data-no-position="true">([^<]*)</)?.[1] ?? "");
+    const html = { "78701": await endHtml("78701"), "94103": await endHtml("94103") };
+    // Phil Gorman (1 sourced issue) already used this exact wording; it is reused, not new copy.
+    expect(noPos(rowOf(html["78701"], "Phil Gorman"))).toBe(NO_POSITION_OTHER);
+    expect(OFFICE.length).toBe(10);
+    let officeOnly = 0;
+    for (const e of OFFICE) {
+      const row = rowOf(html[e.rid.startsWith("sf-") ? "94103" : "78701"], e.name);
+      expect(row, e.name).toContain('data-point-type="office"');
+      const t = noPos(row);
+      expect([NO_POSITION, NO_POSITION_UNCHECKED], e.name).not.toContain(t);
+      if (!e.p.some((x) => x.k === "issue") && sourcedCount(stancesFor(e.name), ids) === 0) { officeOnly++; expect(t, e.name).toBe(NO_POSITION_OTHER); }
+    }
+    expect(officeOnly).toBeGreaterThanOrEqual(4);
+    // No points at all: the plain wording stays.
+    for (const [z, n] of [["78701", "Gabriel Padilla"], ["94103", "Lisa Wynn"]] as const) {
+      const t = noPos(rowOf(html[z], n));
+      expect(t, n).toMatch(/^No public position found yet\. /);
+      expect(t, n).not.toContain("other issues");
+    }
+  });
 });

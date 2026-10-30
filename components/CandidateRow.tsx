@@ -19,6 +19,9 @@ type Checked = { url: string; title?: string | null; note?: string | null; down?
 const slug = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 export const NO_POSITION = "No public position found yet. Sources checked:";
 export const NO_POSITION_UNCHECKED = "No public position found yet. Where to look:";
+/** Existing wording (Phil Gorman's card, one sourced issue). QA P1-1 on 559d5b7: also used when a candidate has an
+ *  office priority but no sourced issue position, so the line never reads as contradicting the point above it. */
+export const NO_POSITION_OTHER = "No public position found yet on other issues.";
 /** VOTE411 is the League of Women Voters' own voter guide (enter an address to see the ballot). */
 export const LWV_GUIDE = "https://www.vote411.org/ballot";
 const ext = <span className="sr-only"> (opens in a new tab)</span>;
@@ -94,6 +97,8 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   void answeredYesNo;
   const tr = useT();
   const fitShown = o.n >= 2 ? `${tr("Issue overlap with your answers")}: ${o.agree} ${tr("of")} ${o.n} ${tr("issues")}` : null;
+  // Office points are display-only and never scored; they only change which "no position" wording is shown.
+  const officeOnly = o.sourced === 0 && main.some((x) => x.k === "office");
   const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
   return (
     <li className="flex gap-3 py-3" data-overlap={c.name} data-status={o.status} data-photo-state={c.photo?.url ? "img" : "placeholder"}>
@@ -125,7 +130,7 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
         {o.sourced < 2 ? (
           // QA 7391b20 P2: never an empty source list. With nothing recorded as checked, point to their own site and
           // the League of Women Voters guide instead (we don't claim either was checked).
-          <p className="mt-1 text-sm leading-5 text-black/80" data-no-position>{o.sourced === 0 ? (checked.length ? NO_POSITION : NO_POSITION_UNCHECKED) : "No public position found yet on other issues."}</p>
+          <p className="mt-1 text-sm leading-5 text-black/80" data-no-position>{o.sourced === 0 && !officeOnly ? (checked.length ? NO_POSITION : NO_POSITION_UNCHECKED) : NO_POSITION_OTHER}</p>
         ) : null}
         {o.sourced === 0 && checked.length === 0 ? (
           <ul className="mt-1 flex flex-col gap-y-2 text-sm" data-no-position-links>
