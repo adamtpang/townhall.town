@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export type Fill = { issue: string; choice: "yes" | "neutral" | "no"; words: string };
-type Msg = { from: "towny" | "you"; text: string };
+type Msg = { from: "towny" | "you"; text: string; links?: { label: string; url: string }[] };
 const LABEL = { yes: "Yes", neutral: "Neutral", no: "No" } as const;
 
 /** Chat interview: Towny asks one open question, turns the reply into Yes/Neutral/No answers,
@@ -27,6 +27,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
     setSaid(all); setText(""); setBusy(true);
     setMsgs((m) => [...m, { from: "you", text: t }]);
     let reply: string;
+    let links: { label: string; url: string }[] = [];
     try {
       const r = await fetch("/api/interview", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ zip, messages: all.map((x) => ({ text: x })) }) });
       const j = await r.json();
@@ -38,12 +39,14 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
       if (fills.length) onFill(fills);
       const left = issues.filter((i) => !nextFilled[i.id]);
       const lines = fresh.map((f) => `${issues.find((i) => i.id === f.issue)?.label}: ${LABEL[f.choice]}`);
+      // QA 0e605d9: fact replies carry their sources as data; shown as real links under the reply.
+      if (typeof j.reply === "string" && !fills.length && Array.isArray(j.links)) links = j.links.filter((l: { url?: unknown }) => typeof l?.url === "string" && /^https:\/\//.test(l.url as string));
       reply = typeof j.reply === "string" && !fills.length ? j.reply : ((lines.length ? `I filled in ${lines.join("; ")}. Check them below and change any that are wrong.` : "I couldn't match that to a question yet.")
         + (left.length ? ` Anything on ${left.slice(0, 3).map((i) => i.label.toLowerCase()).join(", ")}?` : " That covers every question."));
     } catch {
       reply = "I couldn't read that just now. Use the Yes, Neutral and No buttons below.";
     }
-    setMsgs((m) => [...m, { from: "towny", text: reply }]);
+    setMsgs((m) => [...m, { from: "towny", text: reply, links }]);
     setBusy(false);
   }
 
@@ -69,6 +72,13 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
         {msgs.map((m, i) => (
           <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>
             {m.text}
+            {m.links?.length ? (
+              <span className="mt-1 flex flex-wrap gap-x-4" data-towny-links>
+                {m.links.map((l) => (
+                  <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm text-[#3760F2] underline-offset-2 hover:underline" data-towny-source>{l.label} ↗</a>
+                ))}
+              </span>
+            ) : null}
           </li>
         ))}
         {busy ? <li className="text-sm text-black/60">Reading what you wrote…</li> : null}

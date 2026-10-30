@@ -8,7 +8,7 @@
       "earlyVoting": {
         "start": "2026-10-19",
         "end": "2026-10-30",
-        "hours": "7:00 AM-7:00 PM daily (Monday-Sunday), Oct 19-30; select sites extended to 7:00 AM-10:00 PM on Thu Oct 29 and Fri Oct 30",
+        "hours": "7:00 AM-7:00 PM daily (Monday-Sunday), Mon Oct 19-Fri Oct 30 (last day). On Thu Oct 29 and Fri Oct 30 only, 7 sites stay open to 10:00 PM: Ben Hur Shrine Center, Lakeway Activity Center, Millennium Youth Entertainment Complex, PfISD Rock Gym, Randalls Brodie, Travis County Clerk (5501 Airport Blvd), UT Texas Union. All other sites close at 7:00 PM.",
         "dailyHours": [
           {"dates": "2026-10-19 to 2026-10-28", "hours": "7:00 AM-7:00 PM", "appliesTo": "all early voting sites"},
           {"dates": "2026-10-29 to 2026-10-30", "hours": "7:00 AM-10:00 PM", "appliesTo": "extended-hours sites only (marked * on the county list): Ben Hur Shrine Center, Lakeway Activity Center, Millennium Youth Entertainment Complex, PfISD Rock Gym, Randalls Brodie, Travis County Clerk (5501 Airport Blvd), UT Texas Union"},

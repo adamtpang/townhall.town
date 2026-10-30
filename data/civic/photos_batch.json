@@ -61,7 +61,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg/500px-Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg",
   "license": "Public domain",
-  "attribution": "Photo: U.S. House of Representatives",
+  "attribution": "Photo: Greg Casar's official page",
   "licenseDetail": "Public domain. Author/credit on file page: U.S. House of Representatives. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -69,7 +69,9 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1437,
   "photoWidth": 500,
-  "fileTitle": "File:Rep. Greg Casar - 118th Congress (3x4 cropped).jpg"
+  "fileTitle": "File:Rep. Greg Casar - 118th Congress (3x4 cropped).jpg",
+  "officialPageOwner": "U.S. House of Representatives",
+  "qa14": "QA14 2026-10-30: credit was \"Photo: U.S. House of Representatives\". Commons file page lists Author \"U.S. House of Representatives\" and links his House site casar.house.gov as a source (official 118th Congress portrait, public domain). pageUrl is still the Commons file page"
  },
  "lauren-b-pena": {
   "name": "Lauren B. Peña",
@@ -338,7 +340,7 @@
   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sarah_Eckhardt_%28cropped%29.jpg/500px-Sarah_Eckhardt_%28cropped%29.jpg",
   "pageUrl": "https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg",
   "license": "CC BY 4.0",
-  "attribution": "Photo: Jeffrey Clemmons",
+  "attribution": "Photo: Jeffrey Clemmons via Flickr",
   "licenseDetail": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Author/credit on file page: Jeffrey Clemmons. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg. Attribution required; keep the license link.",
   "sourceType": "Wikimedia Commons",
   "checkedDate": "2026-10-30",
@@ -346,7 +348,8 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 3988,
   "photoWidth": 500,
-  "fileTitle": "File:Sarah Eckhardt (cropped).jpg"
+  "fileTitle": "File:Sarah Eckhardt (cropped).jpg",
+  "qa14": "QA14 2026-10-30: credit was the bare \"Photo: Jeffrey Clemmons\". He is the photographer named on the Commons file page (Author \"Jeffrey Clemmons\", CC BY 4.0, Credit https://www.flickr.com/photos/204664397@N08/55278845244/), and that Flickr account is his own (realname \"Jeffrey Clemmons\", username jeffreylmclemmons). He is not shown as working for any outlet or campaign, so \"for <source>\" would be wrong; the credit says \"via Flickr\" instead"
  },
  "shehla-faizi": {
   "name": "Shehla Faizi",
@@ -2389,7 +2392,7 @@
   "pageUrl": "https://linktr.ee/votemikelin",
   "sourceType": "own social profile",
   "license": "Not licensed; candidate's own public photo, credited and linked",
-  "attribution": "Photo: Mike Trouble Lin's own Linktree profile",
+  "attribution": "Photo: Mike Trouble Lin's own Linktree page",
   "checkedDate": "2026-10-30",
   "note": "Image saved locally because the social-CDN URL is signed and expires; Engineering should host localFile and set photoUrl. Found in the browser pass.",
   "cropNote": "Cropped from the Linktree share image"

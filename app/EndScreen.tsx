@@ -102,7 +102,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
             <>
               <p className="mt-4 text-base font-[530]">{site.name}</p>
               <p className="text-base text-black/80">{site.address}</p>
-              {site.hours && !/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d/.test(site.hours) && <p className="mt-1 text-sm text-black/60">{where.phase === "early" ? "Early voting: " : "Election Day: "}{site.hours}</p>}
+              {/* Civic qa14: final-days site lines (they name the last day) show as written. */}{site.hours && (!/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d/.test(site.hours) || /\(last day\)/.test(site.hours)) && <p data-site-hours className="mt-1 text-sm text-black/60">{where.phase === "early" ? "Early voting: " : "Election Day: "}{site.hours}</p>}
               <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-maps-url={mapsUrl(site.address)}>
                 Directions ↗{ext}
               </Button>
