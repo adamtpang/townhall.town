@@ -93,7 +93,10 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false, raceI
   // under the row instead (the hidden label, made visible); a second tap on the same tile hides it.
   const [picked, setPicked] = useState<string | null>(null);
   const onPick = (name: string, handled: boolean) => setPicked((cur) => (handled || cur === name ? null : name));
-  const rowClass = `group/row my-3 grid justify-start ${crowded ? "gap-1" : "gap-2"} [--tile-max:72px] md:gap-3 md:[--tile-max:88px] lg:gap-4 lg:[--tile-max:112px]`;
+  // Design 2:10 PM Oct 30 (narrow phones): below 360px every row over 6 candidates also uses gap-1 (an 8-candidate row is
+  // ~30.5px tiles at 320). Still one row, equal tiles, every candidate visible, no sideways scroll. 360px and up unchanged.
+  const narrowTight = grid && n > 6 && !crowded;
+  const rowClass = `group/row my-3 grid justify-start ${crowded ? "gap-1" : narrowTight ? "gap-2 max-[359px]:gap-1" : "gap-2"} [--tile-max:72px] md:gap-3 md:[--tile-max:88px] lg:gap-4 lg:[--tile-max:112px]`;
   return (
     <PhotoGroup>
     <ul role="list" aria-label="Candidates" className={grid ? rowClass : "group/row my-3 flex flex-nowrap gap-2 md:gap-3"} style={grid ? { gridTemplateColumns: `repeat(${n}, minmax(0, var(--tile-max)))` } : undefined} data-dense={dense ? "true" : "false"} data-crowded={crowded ? "true" : "false"} data-densedesk={denseDesk ? "true" : "false"} data-photo-row>

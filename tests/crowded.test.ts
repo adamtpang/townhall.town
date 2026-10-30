@@ -33,10 +33,21 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
     expect(readFileSync("components/PortraitRow.tsx", "utf8")).toContain("cancelable: true");
     expect(row(8)).not.toContain("data-tile-picked");
   });
-  it("8 or fewer: keep gap-2 and no tile control", () => {
+  it("below 360px: every row over 6 uses gap-1 (8 at 320 is ~30.5px tiles); 360px and up keep gap-2; still one equal row", () => {
+    for (const n of [7, 8]) {
+      const u = ul(row(n));
+      expect(u).toContain("grid justify-start gap-2 max-[359px]:gap-1 [--tile-max:72px] md:gap-3");
+      expect(u).toContain(`grid-template-columns:repeat(${n}, minmax(0, var(--tile-max)))`);
+      expect(u).not.toMatch(/overflow-x|overflow-auto|overflow-scroll|snap-|flex-wrap(?!-)/);
+    }
+    for (const n of [2, 6]) expect(ul(row(n))).not.toContain("max-[359px]");
+    // 320 viewport, 272px content: 8 x 30.5 + 7 x 4 = 272.
+    expect(8 * 30.5 + 7 * 4).toBe(272);
+  });
+  it("8 or fewer: keep gap-2 (from 360px) and no tile control", () => {
     for (const n of [2, 6, 8]) {
       const h = row(n);
-      expect(ul(h)).toContain("grid justify-start gap-2 [--tile-max:72px]");
+      expect(ul(h)).toMatch(/grid justify-start gap-2 (max-\[359px\]:gap-1 )?\[--tile-max:72px\]/);
       expect(ul(h)).toContain('data-crowded="false"');
       expect(h).not.toContain("data-tile-open");
     }
