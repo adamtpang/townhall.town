@@ -1,0 +1,87 @@
+"use client";
+import { useEffect, useMemo, useState } from "react";
+import { stancesFor, type Answers } from "../../lib/issues";
+import { overlapStatus, overlapLabel } from "../../lib/overlapCore.mjs";
+import { whenFor, whereFor, buildIcs, mapsUrl } from "../../lib/endscreen.mjs";
+import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
+
+const ANSWERS_KEY = "th-answers-v1";
+const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
+const fmt = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
+type RaceLite = { id: string; title?: string; judicial: boolean; candidates: { name: string }[] };
+
+/** One printable page: overlap lines (not a recommendation), where, when, calendar. State is the URL hash or this device only. */
+export default function BallotCard({ zip, place, ids, races }: { zip: string; place: string; ids: string[]; races: RaceLite[] }) {
+  const [answers, setAnswers] = useState<Answers | null>(null);
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    const h = /(?:^|[#&])a=([yxn-]+)/.exec(window.location.hash)?.[1];
+    if (h) { setAnswers(decodeAnswers(h, ids) as Answers); return; }
+    try { setAnswers(JSON.parse(localStorage.getItem(ANSWERS_KEY) || "{}")); } catch { setAnswers({}); }
+  }, [ids]);
+  const today = todayCT();
+  const when = useMemo(() => whenFor(zip, today), [zip, today]);
+  const where = useMemo(() => whereFor(zip, today), [zip, today]);
+  const site = where.sites[0];
+  const ed = when.events.find((e: { kind: string }) => e.kind === "election");
+  const early = when.events.find((e: { kind: string }) => e.kind === "early");
+  const rows = (answers ? races.filter((r) => !r.judicial && r.candidates.length) : []).map((r) => ({ r, list: r.candidates.map((c) => ({ c, o: overlapStatus(answers!, stancesFor(c.name), ids) })) })).filter((x) => x.list.some((y) => y.o.status === "ok"));
+
+  function ics() {
+    const blob = new Blob([buildIcs(when.events, site ? site.address : "")], { type: "text/calendar;charset=utf-8" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "townhall-dates.ics";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+  async function share() {
+    const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
+    try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
+  }
+  const link = "text-[#3760F2] underline-offset-2 hover:underline print:text-black";
+  return (
+    <main className="mx-auto max-w-[720px] px-5 py-12 text-black print:px-0 print:py-0" data-ballot-card>
+      <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>
+      <h1 className="mt-3 font-serif text-5xl leading-none tracking-tight">Your ballot card</h1>
+      {ed ? <p className="mt-4 text-xl leading-7 font-[530]" data-card-date>Election Day: {fmt(ed.start)}{ed.hours ? `, ${ed.hours}` : ""}</p> : null}
+      {early ? <p className="mt-1 text-base text-black/80">Early voting {fmt(early.start).replace(/, \d{4}$/, "")} to {fmt(early.end)}. <a href={early.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
+      {when.mail ? <p className="mt-1 text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
+
+      <section className="mt-10 border-t border-black pt-6">
+        <h2 className="text-sm font-[530] text-black/60">Where</h2>
+        {site ? (<>
+          <p className="mt-2 text-base font-[530]">{site.name}</p><p className="text-base text-black/80">{site.address}</p>
+          <p className="mt-1 text-sm"><a href={mapsUrl(site.address)} className={link} target="_blank" rel="noreferrer" data-card-map>Map and directions ↗</a> · <a href={site.sourceUrl} className={link} target="_blank" rel="noreferrer">Official site list ↗</a></p>
+          {where.dependsOnAddress && where.lookupUrl ? <p className="mt-1 text-sm"><a href={where.lookupUrl} className={link} target="_blank" rel="noreferrer">Find your assigned polling place ↗</a></p> : null}
+        </>) : where.lookupUrl ? (
+          <p className="mt-2 text-base">Your polling place is assigned by home address. <a href={where.lookupUrl} className={link} target="_blank" rel="noreferrer" data-card-map>Find it ↗</a></p>
+        ) : <p className="mt-2 text-base text-black/60">No sourced polling place for this ZIP yet.</p>}
+      </section>
+
+      <section className="mt-10 border-t border-black pt-6">
+        <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
+        <p className="mt-1 text-xs leading-4 text-black/60" data-overlap-caption>Overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
+        {answers === null ? <p className="mt-3 text-base text-black/60">Loading…</p> : rows.length === 0 ? (
+          <p className="mt-3 text-base text-black/80">No overlap to show yet. <a href="/" className={link}>Answer a few questions</a>.</p>
+        ) : (
+          <ul className="mt-3 space-y-4">
+            {rows.map(({ r, list }) => (
+              <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
+                <p className="text-base font-[530]">{r.title || r.id}</p>
+                <ul className="mt-1 border-t border-black/15">
+                  {list.map(({ c, o }) => <li key={c.name} className="border-b border-black/15 py-1.5 text-base">{o.status === "ok" ? overlapLabel(c.name, o) : <>{c.name}<span className="text-black/60">: not enough sourced positions</span></>}</li>)}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <div className="mt-10 flex flex-wrap gap-3 print:hidden">
+        <button type="button" onClick={() => window.print()} className="h-12 bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80" data-card-print>Print</button>
+        <button type="button" onClick={share} className="h-12 border border-black px-6 text-base font-[530]" data-card-share>{copied ? "Link copied" : "Share link"}</button>
+        {ed ? <button type="button" onClick={ics} className="h-12 border border-black/30 px-6 text-base hover:border-black" data-card-ics>Add to calendar (.ics)</button> : null}
+        <a href="/" className="inline-flex h-12 items-center px-2 text-base text-[#3760F2]">Back to the full ballot</a>
+      </div>
+      <p className="mt-6 text-xs leading-4 text-black/60">Your answers stay on this device and in this link. townhall.town stores nothing on a server. <a href={ed?.sourceUrl} className={link} target="_blank" rel="noreferrer">Dates source ↗</a></p>
+    </main>
+  );
+}
