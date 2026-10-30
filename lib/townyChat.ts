@@ -54,10 +54,11 @@ export const zipsIn = (text: string) => (String(text).match(/\b\d{5}\b/g) || [])
 
 // Civic, Oct 30 2:10 PM CT: another part of a covered city is not out of scope. It gets that city's same-city line, which
 // says which ZIP Towny shows and where to look up the voter's own ballot. Same pattern for all 3 cities.
+// Civic review a853221: the Austin line names ZIPs, not the city, since some 787xx ZIPs (Lakeway, Bee Cave, West Lake Hills) are outside Austin.
 import { OFFICES, SF_DOE, type FaqLink } from "./towny/faq";
 export const SAME_CITY: Record<"78701" | "94103" | "10001", { reply: string; links: FaqLink[] }> = {
   "10001": { reply: "Towny shows the ballot for ZIP 10001 in Manhattan. Other parts of New York City have different races on their ballots. For yours, check vote.nyc.", links: [{ label: "vote.nyc", url: OFFICES["10001"].url }] },
-  "78701": { reply: "Towny shows the ballot for ZIP 78701 in downtown Austin. Other parts of Austin have different races on their ballots, and some are in Williamson or Hays County. For yours, check your county election office or vote.gov.", links: [VOTE_GOV] },
+  "78701": { reply: "Towny shows the ballot for ZIP 78701 in downtown Austin. Ballots in other ZIPs have different races. For yours, check your county election office or vote.gov.", links: [VOTE_GOV] },
   "94103": { reply: "Towny shows the ballot for ZIP 94103 in San Francisco. Other parts of the city have different district races on their ballots. For yours, check the SF Department of Elections.", links: [SF_DOE] },
 };
 // Named parts of each city. Kept to names that aren't also a street, a US state or another city's place (no "Mission",

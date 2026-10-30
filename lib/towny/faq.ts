@@ -85,7 +85,7 @@ export function whenWhere(zip: string | null, today = todayCT()): { a: string; l
   if (ev?.end) early = ev.end < today ? ` Early voting ended ${longDate(ev.end)}.` : ev.end === today ? ` Early voting ends today, ${longDate(ev.end)}.` : ` Early voting runs through ${longDate(ev.end)}.`;
   const links = [office];
   if (ev?.sourceUrl && ev.sourceUrl !== office.url) links.push({ label: "Early voting source", url: ev.sourceUrl });
-  return { a: `${ed}${early} For hours and polling places, check ${OFFICE_NAMES[zip]}.`, links };
+  return { a: `${ed}${early} For hours and polling places, check ${zip === "94103" ? "the " : ""}${OFFICE_NAMES[zip]}.`, links };
 }
 
 /** The FAQ entry for a question, or null. */

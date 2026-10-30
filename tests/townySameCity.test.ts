@@ -6,7 +6,7 @@ import { curated, SF_DOE } from "../lib/towny/answer";
 import { routeTurn, sameCity, cityOfZip, outOfScope, OUT_OF_SCOPE, SAME_CITY } from "../lib/townyChat";
 
 const NYC = "Towny shows the ballot for ZIP 10001 in Manhattan. Other parts of New York City have different races on their ballots. For yours, check vote.nyc.";
-const ATX = "Towny shows the ballot for ZIP 78701 in downtown Austin. Other parts of Austin have different races on their ballots, and some are in Williamson or Hays County. For yours, check your county election office or vote.gov.";
+const ATX = "Towny shows the ballot for ZIP 78701 in downtown Austin. Ballots in other ZIPs have different races. For yours, check your county election office or vote.gov.";
 const SF = "Towny shows the ballot for ZIP 94103 in San Francisco. Other parts of the city have different district races on their ballots. For yours, check the SF Department of Elections.";
 const src = (f: string) => readFileSync(new URL("..", import.meta.url).pathname + f, "utf8");
 
