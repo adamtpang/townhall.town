@@ -61,7 +61,13 @@ export async function GET(req: Request) {
         emit({ type: "step", name: c.name, url: "search:" + c.name, label: "Searching the web", status: sr.urls.length ? "done" : "failed", detail: sr.status });
         const last = String(c.name).split(/\s+/).filter((w: string) => !/^(jr\.?|sr\.?|ii|iii|iv)$/i.test(w)).pop() || c.name;
         const own = new Set(urls);
-        for (const u of sr.urls) if (!own.has(u)) urls.push(u);
+        // A search result on the candidate's own campaign domain (e.g. micatx.com) counts as their own page.
+        const nameBits = String(c.name).toLowerCase().split(/[^a-z]+/).filter((w: string) => w.length >= 4);
+        for (const u of sr.urls) if (!own.has(u)) {
+          urls.push(u);
+          const h = host(u).toLowerCase();
+          if (!/ballotpedia|vote411|ivoterguide|votetheperson|votetexasvalues|wikipedia|facebook|twitter|x\.com|instagram|linkedin|kut\.org|texastribune|statesman/.test(h) && nameBits.some((w: string) => h.includes(w))) own.add(u);
+        }
         for (const u of urls) emit({ type: "step", name: c.name, url: u, label: `Reading ${host(u)}`, status: "running" });
         await Promise.all(urls.map(async (u) => {
           const r = await read(u);

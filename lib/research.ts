@@ -24,7 +24,7 @@ export function textOf(html: string): string {
 
 /** Up to `per` verbatim sentences per issue that mention it, 40–280 chars, first-person or plan-like text only. */
 export function findQuotes(text: string, issueIds: string[], per = 1, mustName?: string) {
-  const sentences = text.split(/\n+|(?<=[.!?])\s+(?=[A-Z"“])/).map((s) => s.trim()).filter((s) => s.length >= 40 && s.length <= 280 && /[a-z]/.test(s) && !/cookie|subscribe|donate|privacy policy|javascript|copyright|©|sign up|newsletter/i.test(s) && (!mustName || new RegExp(`\\b${mustName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(s)));
+  const sentences = text.split(/\n+|(?<=[.!?])\s+(?=[A-Z"“])/).map((s) => s.trim()).filter((s) => s.length >= 40 && s.length <= 280 && /[a-z]/.test(s) && /[.!?]["”’']?$/.test(s) && !/\s[|–—]\s/.test(s) && !/cookie|subscribe|donate|privacy policy|javascript|copyright|©|sign up|newsletter/i.test(s) && (!mustName || new RegExp(`\\b${mustName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(s)));
   const out: { issue: string; quote: string }[] = [];
   const used = new Set<string>();
   for (const id of issueIds) {
