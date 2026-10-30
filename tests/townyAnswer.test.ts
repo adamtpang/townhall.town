@@ -62,7 +62,9 @@ describe("Towny never dead-ends (P1-2) and queues (P2)", () => {
     const s = readFileSync(join(root, "app/api/interview/route.ts"), "utf8");
     expect(s).toContain("curated(zip, msgs[msgs.length - 1])");
     expect(s).toContain("[MODELS[0], MODELS[1] ?? MODELS[0]]");
-    expect(s).toMatch(/return help\(\);\s*}\s*$/m);
+    // Towny agent (lib/towny/agent.ts) answers what nothing else did; with no model it still ends in the helpful curated reply.
+    expect(s).toMatch(/return respond\(req, ask\);\s*}\s*$/m);
+    expect(s).toContain(": helpObj();");
     expect(s).not.toContain("upstream_unavailable");
     // curated replies never call the model, so they are answered ahead of the per-client limit; model calls stay limited
     expect(s).toContain("(await curatedFirst(req)) ?? limited(req)");
