@@ -7,7 +7,7 @@
 // Links can't be clicked on paper, so each link prints as a short label with a numbered note, and the full URL is printed
 // once in the numbered list at the end (the only place long URLs may break anywhere). No QR code: no QR library is in the
 // dependencies.
-import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_UNSURE_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, displayParty, pickedLine } from "../../lib/printText";
+import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_UNSURE_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, displayParty, pickedLine, splitStart } from "../../lib/printText";
 import type { OrderCite, PrintRules, VoterRule } from "../../lib/printRules";
 import type { St } from "../../lib/plan";
 
@@ -58,7 +58,9 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
   const boothP = booth ? <p className="pb-strong" data-print-booth-line>{BOOTH_LINE}.</p> : null;
   // Adam 3:07 PM CT: the TX phone line, next to the booth line on the TX sheet only. Text only, cited.
   const phoneP = data.state === "TX" && booth ? <p data-print-phone-line>{TX_PHONE_LINE}{cite(TX_PHONE_SOURCES[0].label, TX_PHONE_SOURCES[0].url)}{cite(TX_PHONE_SOURCES[1].label, TX_PHONE_SOURCES[1].url)}</p> : null;
-  const sheetCite = unconfirmed === 0 && oc ? cite(oc.label, oc.url) : null;
+  const ocAlso = (o: OrderCite) => o.also ? <> <span className="pb-src">{o.also.label}</span>{cite(o.also.label, o.also.url)}</> : null;
+  const sheetCite = unconfirmed === 0 && oc ? <>{cite(oc.label, oc.url)}{ocAlso(oc)}</> : null;
+  const raceIds = races.map((r) => r.id);
   return (
     <div id="ballot-print" className="hidden print:block" aria-hidden data-print-ballot>
       <header className="pb-mast">
@@ -80,8 +82,9 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
       <ol className="pb-races" data-print-races={races.length}>
         {races.map((r) => (
           <li key={r.id} className="pb-race" data-print-race={r.id} data-order-confirmed={r.orderConfirmed ? "1" : "0"}>
+            {(() => { const sp = splitStart(zip, r.id, raceIds); return sp ? <p className="pb-order pb-strong" data-print-split={r.id}>{sp.line}: <span className="pb-label">{host(sp.url)}</span>{cite("Official lookup", sp.url)}</p> : null; })()}
             <p className="pb-race-title"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="pb-order-unsure" /></p>
-            {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE} <span className="pb-src">{oc.label}</span>{cite(oc.label, oc.url)}</p> : null}
+            {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE} <span className="pb-src">{oc.label}</span>{cite(oc.label, oc.url)}{ocAlso(oc)}</p> : null}
             <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); const ch = retentionChoices(r.title); const mark = picks[r.id] === c.name ? " pb-box-on" : "";
               return ch
                 ? <li key={c.name} className="pb-cand pb-cand-ret" data-print-retention={ch.join("/")}><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span><span className="pb-choices">{ch.map((w) => <span key={w} className="pb-choice"><span className="pb-box-mark" aria-hidden />{w}</span>)}</span></li>

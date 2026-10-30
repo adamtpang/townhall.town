@@ -134,7 +134,7 @@ body {
   #ballot-print .pb-ttl { text-align: right; font-size: 10pt; }
   #ballot-print .pb-h1 { font-family: var(--font-grotesk), Arial, sans-serif; font-weight: 530; font-size: 16pt; line-height: 1.1; letter-spacing: -0.02em; }
   #ballot-print .pb-ne { font-size: 10pt; margin: 5pt 0 6pt; }
-  #ballot-print .pb-facts { border: 1pt solid #010101; padding: 5pt 8pt; margin-bottom: 8pt; display: grid; grid-template-columns: 1fr 1fr; column-gap: 12pt; row-gap: 2pt; }
+  #ballot-print .pb-facts { border: 1pt solid #010101; padding: 4pt 8pt; margin-bottom: 6pt; display: grid; grid-template-columns: 1fr 1fr; column-gap: 12pt; row-gap: 2pt; }
   #ballot-print .pb-facts b { font-weight: 600; }
   #ballot-print .pb-facts { grid-template-columns: auto 1.25fr 1fr; }
   #ballot-print .pb-facts-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; column-gap: 12pt; margin-top: 2pt; }
@@ -159,7 +159,7 @@ body {
   #ballot-print .pb-measures { columns: 3; column-gap: 12pt; margin-bottom: 4pt; }
   #ballot-print .pb-measures li { break-inside: avoid; font-weight: 600; font-size: 10pt; line-height: 1.2; padding: 1pt 0 3pt; }
   #ballot-print .pb-race-title { font-weight: 600; font-size: 10.5pt; line-height: 1.2; margin-bottom: 2pt; }
-  #ballot-print .pb-race ul { display: flex; flex-direction: column; gap: 6pt; }
+  #ballot-print .pb-race ul { display: flex; flex-direction: column; gap: 4pt; }
   #ballot-print .pb-cand { display: flex; align-items: flex-start; gap: 5pt; font-size: 10pt; line-height: 1.2; }
   #ballot-print .pb-box-mark { flex: none; width: 12pt; height: 12pt; border: 1pt solid #010101; background: #fff; }
   #ballot-print .pb-name { font-weight: 400; }
@@ -167,11 +167,11 @@ body {
   #ballot-print .pb-cand-ret { flex-direction: column; gap: 3pt; }
   #ballot-print .pb-choices { display: flex; gap: 12pt; }
   #ballot-print .pb-choice { display: inline-flex; align-items: center; gap: 4pt; }
-  #ballot-print .pb-sourcesline { margin: 4pt 0 6pt; font-size: 10pt; }
-  #ballot-print .pb-notes { margin-top: 4pt; font-size: 10pt; line-height: 1.2; }
+  #ballot-print .pb-sourcesline { margin: 2pt 0 4pt; font-size: 10pt; }
+  #ballot-print .pb-notes { margin-top: 2pt; font-size: 10pt; line-height: 1.2; }
   #ballot-print .pb-notes li { break-inside: avoid; margin-bottom: 1pt; }
   #ballot-print .pb-url { font-size: 10pt; overflow-wrap: anywhere; word-break: break-all; }
-  #ballot-print .pb-foot { margin-top: 4pt; padding-top: 3pt; border-top: 0.75pt solid #010101; font-size: 10pt; }
+  #ballot-print .pb-foot { margin-top: 2pt; break-before: avoid; padding-top: 3pt; border-top: 0.75pt solid #010101; font-size: 10pt; }
 }
 
 /* QA 10:48 + 10:50 AM CT Oct 30, phones (<768px) */

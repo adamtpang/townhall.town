@@ -12,10 +12,11 @@ import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
 import { Button } from "../../components/ui/button";
 import PrintBallot, { type PrintData } from "./PrintBallot";
-import { ORDER_UNSURE_LINE, TX_PHONE_LINE, TX_PHONE_SOURCES, pickedLine } from "../../lib/printText";
+import { ORDER_UNSURE_LINE, TX_PHONE_LINE, TX_PHONE_SOURCES, pickedLine, splitStart } from "../../lib/printText";
 import PrintButton from "../../components/PrintButton";
 import { SiteHeader } from "../../components/SiteChrome";
 import { LangProvider, LangToggle, useT } from "../../lib/i18n";
+import { ChevronDown } from "lucide-react";
 import { FOLD_LABEL, FOLD_LINKS, WAIT_LINK, linkHost } from "../../lib/cardLinks";
 import { DaggerTitle } from "./PrintBallot";
 
@@ -31,7 +32,7 @@ export default function BallotCard(props: { zip: string; place: string; county?:
   return <LangProvider><Card {...props} /></LangProvider>;
 }
 
-const tileBox = "border border-black/10 bg-white lg:col-span-4";
+const tileBox = "rounded-none border border-black/10 bg-white lg:col-span-4";
 const tile = `${tileBox} p-5`;
 const tileH = "text-xl leading-7 font-[530] text-black";
 const small = "text-sm leading-5 text-black/60";
@@ -87,6 +88,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
     const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
     try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
   }
+  const splitP = (id: string, present: string[]) => { const sp = splitStart(zip, id, present); return sp ? <p className="mb-1 text-sm leading-5 text-black/80" data-card-split={id}>{sp.line}: <a href={sp.url} className="inline-flex min-h-11 items-center th-link underline-offset-2 hover:underline" target="_blank" rel="noreferrer">{linkHost(sp.url)} ↗{ext}</a></p> : null; };
   const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link underline-offset-2 hover:underline print:text-black";
   return (
     <>
@@ -129,8 +131,8 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
         ) : null}
         {print ? <PrintButton data-card-print /> : null}
         {fold.length ? (
-          <details className="mt-1 border-b border-black/10" data-card-fold>
-            <summary className="flex min-h-11 cursor-pointer items-center text-base font-[530]">{FOLD_LABEL}</summary>
+          <details className="group mt-1 border-b border-black/10" data-card-fold>
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-base font-[530] [&::-webkit-details-marker]:hidden">{FOLD_LABEL}<ChevronDown aria-hidden className="h-4 w-4 text-black/60 transition-transform group-open:rotate-180" data-fold-chevron /></summary>
             <ul className="pb-2">{fold.map((x) => <li key={x.url}><a href={x.url} className={`${extLink} text-sm`} target="_blank" rel="noreferrer" data-fold-link>{x.label}: {linkHost(x.url)} ↗{ext}</a></li>)}</ul>
           </details>
         ) : null}
@@ -144,7 +146,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
           <p className={small}>{pickedLine(pickedRaces.length, pr.length)}</p>
           {anyUnsure ? <p className={`mt-2 ${small}`} id="www-order-unsure" data-www-unsure>† {ORDER_UNSURE_LINE}</p> : null}
           <ul className="mt-3 divide-y divide-black/10">{pr.map((r) => (
-            <li key={r.id} className="py-3"><p className="text-sm leading-5 text-black/60"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="www-order-unsure" />{!r.orderConfirmed ? <span className="sr-only"> ({ORDER_UNSURE_LINE})</span> : null}</p>{picks[r.id] ? <p className="text-base leading-6 font-[530]">{picks[r.id]}</p> : null}</li>
+            <li key={r.id} className="py-3">{splitP(r.id, pr.map((x) => x.id))}<p className="text-sm leading-5 text-black/60"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="www-order-unsure" />{!r.orderConfirmed ? <span className="sr-only"> ({ORDER_UNSURE_LINE})</span> : null}</p>{picks[r.id] ? <p className="text-base leading-6 font-[530]">{picks[r.id]}</p> : null}</li>
           ))}</ul>
         </div>
       </dialog>
@@ -159,6 +161,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
             <ul className="mt-3 space-y-6">
               {rows.map(({ r, list, gradesHidden }) => (
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
+                  {splitP(r.id, rows.map((x) => x.r.id))}
                   <p className="text-base font-[530]">{r.title || r.id}</p>
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
                     {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} cut />)}

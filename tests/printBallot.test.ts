@@ -85,7 +85,7 @@ describe("printed ballot: where, order, names", () => {
     expect((a.match(/data-print-order-confirmed="sheet"/g) || []).length).toBe(1);
     expect(a).toContain(ORDER_CONFIRMED_LINE);
     expect((b.match(/data-print-order-confirmed="race"/g) || []).length).toBe(6);
-    expect(b).toContain("NYC Board of Elections sample ballot (New York County)");
+    expect(b).toContain("Copy of an official NYC Board of Elections ballot (New York County, Assembly District 71), posted on a third-party website, not the Board&#x27;s");
     expect(c).not.toContain("data-print-order-confirmed");
   });
   it("page order: facts, races, sources line, then Rules last; early voting before Election Day, no 'today'", () => {

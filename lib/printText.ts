@@ -29,3 +29,27 @@ export function displayParty(name: string, party?: string | null): string | null
   const norm = (s: string) => s.replace(/\s*\([^)]*\)\s*$/, "").replace(/\s+party$/i, "").trim().toLowerCase();
   return norm(party) === norm(name) ? null : party;
 }
+
+// Civic P1, Oct 30 3:26 PM CT: races where a ZIP spans several districts. Before the first race of each group, the card,
+// the Who sheet and the PDF say this line with the state's official lookup. Race ids are this repo's ids for TX-10/TX-37,
+// HD 49/51, SF Supervisor D6/D8/D10 and NY SD 47/28.
+export const SPLIT_LINE = "Depending on your address, you\u2019ll have one of these";
+export const SPLIT_LOOKUP: Record<string, string> = {
+  "78701": "https://teamrv-mvp.sos.texas.gov/MVP/mvp.do",
+  "94103": "https://voterstatus.sos.ca.gov/",
+  "10001": "https://findmypollsite.vote.nyc/",
+};
+export const SPLIT_GROUPS: Record<string, string[][]> = {
+  "78701": [["tx-10", "tx-37"], ["tx-hd-49", "tx-house-51"]],
+  "94103": [["sf-supervisor-6", "sf-supervisor-8", "sf-supervisor-10"]],
+  "10001": [["ny-sd-47", "ny-sd-28"]],
+};
+/** The split line and lookup URL when raceId is the first race of a split group listed (of those present), else null. */
+export function splitStart(zip: string, raceId: string, present: string[]): { line: string; url: string } | null {
+  const url = SPLIT_LOOKUP[zip];
+  for (const g of SPLIT_GROUPS[zip] || []) {
+    const shown = present.filter((id) => g.includes(id));
+    if (shown.length > 1 && shown[0] === raceId && url) return { line: SPLIT_LINE, url };
+  }
+  return null;
+}

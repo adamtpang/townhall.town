@@ -10,17 +10,23 @@ export type VoterRule = { topic: string; text: string; sourceName: string; sourc
 export type PrintRules = { booth: VoterRule | null; devices: VoterRule | null; id: VoterRule | null; hours: VoterRule | null };
 type Raw = { state: string; topic: string; rule_text_verbatim?: string; source_name?: string; source_url?: string; status?: string };
 type OrderRow = { zip: string; race_id: string; official_order: string[] | null; status: string; source_url?: string; source_kind?: string };
-export type OrderCite = { label: string; url: string };
+export type OrderCite = { label: string; url: string; also?: { label: string; url: string } | null };
 
 // The cite for "Listed in the order on the official sample ballot." per ZIP (Civic, Oct 30 2:58 PM CT). 78701 uses the
 // Travis County bedsheet row's source_kind verbatim; 10001 uses Civic's label for the NYC BOE New York County sample ballot.
 // 94103 has no official sample ballot in bp22 (its order is unconfirmed), so no cite.
-const ORDER_LABEL: Record<string, string | null> = { "78701": null, "10001": "NYC Board of Elections sample ballot (New York County)" };
+// Civic P1, Oct 30 3:26 PM CT: no BOE-hosted 10001 sample ballot exists; the img1.wsimg.com PDF is a third-party copy of an
+// AD 71 ballot. Relabel it exactly, add the BOE lookup next to it, and cite it only for the 6 Manhattan-wide races.
+export const NY_COPY_LABEL = "Copy of an official NYC Board of Elections ballot (New York County, Assembly District 71), posted on a third-party website, not the Board's";
+export const NY_BOE_LOOKUP = { label: "Find My Poll Site / View Sample Ballot, NYC Board of Elections", url: "https://findmypollsite.vote.nyc/" };
+/** 10001 races the AD 71 copy may confirm: Manhattan-wide only. Never NY-12, the State Senate, AD 75 or Council 3. */
+export const NY_COPY_RACES = ["ny-governor", "ny-comptroller", "ny-attorney-general", "ny-supreme-1jd", "ny-surrogate-ny", "ny-civil-county-ny"];
+const ORDER_LABEL: Record<string, string | null> = { "78701": null, "10001": NY_COPY_LABEL };
 export function orderCite(zip: string): OrderCite | null {
   if (!(zip in ORDER_LABEL)) return null;
   const row = (ORDER as OrderRow[]).find((x) => x.zip === zip && x.official_order?.length && /^https?:\/\//.test(x.source_url || ""));
   if (!row) return null;
-  return { label: ORDER_LABEL[zip] ?? row.source_kind ?? "", url: row.source_url! };
+  return { label: ORDER_LABEL[zip] ?? row.source_kind ?? "", url: row.source_url!, also: zip === "10001" ? NY_BOE_LOOKUP : null };
 }
 
 const urlsOf = (s?: string) => (s || "").split(/\s*;\s*/).map((u) => u.trim()).filter((u) => /^https?:\/\//.test(u));
@@ -61,6 +67,7 @@ const bare = (n: string) => n.replace(/\s*\([^)]*\)\s*$/, "").trim();
 /** Candidates in the official order when Civic confirmed it for this race; otherwise the data order, flagged unconfirmed. */
 export function officialOrder<C extends { name: string }>(zip: string, raceId: string, cands: C[]): { candidates: C[]; confirmed: boolean } {
   const row = (ORDER as OrderRow[]).find((x) => x.zip === zip && x.race_id === raceId);
+  if (zip === "10001" && !NY_COPY_RACES.includes(raceId)) return { candidates: cands, confirmed: false };
   const off = row?.official_order?.map(bare);
   if (!off || off.length !== cands.length || !cands.every((c) => off.includes(c.name))) return { candidates: cands, confirmed: false };
   return { candidates: [...cands].sort((a, b) => off.indexOf(a.name) - off.indexOf(b.name)), confirmed: true };
