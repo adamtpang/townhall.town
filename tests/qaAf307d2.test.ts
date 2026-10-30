@@ -7,7 +7,7 @@ import { RaceCredits, PhoneCredits, PhotoCredit, creditLabel } from "../componen
 import { SiteFooter } from "../components/SiteChrome";
 import { SectionBody } from "../components/Prose";
 import { HOME_SECTIONS } from "../lib/content";
-import CityCards, { canScrollRight } from "../components/media/CityCards";
+import CityCards from "../components/media/CityCards";
 
 const src = (p: string) => fs.readFileSync(p, "utf8");
 const pic = (page: string, attribution: string) => ({ url: "/portraits/x-256.webp", credit: "Photo: " + attribution, attribution, page });
@@ -50,15 +50,19 @@ describe("QA af307d2 P2: band credit source", () => {
 });
 
 describe("QA af307d2 P1: city cards at 320px", () => {
-  it("Design 2:56 PM: 72% snap cards with scroll-pl-5 (peek stays, never width-fit); right fade only while it can scroll right", () => {
+  it("Adam 2:56 PM: 3 cards across at every width (gap-2 phones, col-span-4 at md+), 4:5 on phones, 16:9 at md+, 16px/24px names, min-h-11", () => {
     const html = renderToStaticMarkup(h(CityCards));
-    const ul = html.match(/<ul [^>]*class="([^"]+)"[^>]*data-city-cards/)![1].split(" ");
-    for (const c of ["flex", "snap-x", "snap-mandatory", "scroll-pl-5", "overflow-x-auto", "data-[more=true]:[mask-image:linear-gradient(to_right,black_85%,transparent)]"]) expect(ul).toContain(c);
-    expect(html.match(/<li class="([^"]+)"/g)!.every((li) => li.includes("w-[72%]") && li.includes("shrink-0"))).toBe(true);
-    expect(canScrollRight({ scrollLeft: 0, clientWidth: 296, scrollWidth: 700 })).toBe(true);
-    expect(canScrollRight({ scrollLeft: 404, clientWidth: 296, scrollWidth: 700 })).toBe(false);
-    expect(canScrollRight({ scrollLeft: 0, clientWidth: 1000, scrollWidth: 1000 })).toBe(false);
-    expect(src("components/media/CityCards.tsx")).not.toMatch(/←|→|aria-label="(Next|Previous)/);
+    expect(html).toContain('<ul class="grid grid-cols-3 gap-2 md:grid-cols-12 md:gap-5" data-city-cards="true">');
+    expect(html.match(/<li class="th-card relative min-w-0 md:col-span-4">/g)).toHaveLength(3);
+    expect(html.match(/media-frame aspect-\[4\/5\] bg-brand-50 md:aspect-video/g)).toHaveLength(3);
+    expect(html.match(/min-h-11 items-center gap-1 text-base leading-5[^"]*md:text-2xl/g)).toHaveLength(3);
+    expect(html).not.toMatch(/overflow-x-auto|mask-image/);
+  });
+  it("home order: hero, ZIP, city cards, band, How it works, Sources", () => {
+    const p = src("app/page.tsx");
+    const at = (k: string) => { const i = p.indexOf(k); expect(i, k).toBeGreaterThan(-1); return i; };
+    const seq = ["data-hero", "<BallotAgent />", "<CityCards />", "<MediaBand />", 'label="How it works"', "HOME_SECTIONS.map"].map(at);
+    expect([...seq].sort((a, b) => a - b)).toEqual(seq);
   });
   it("credits wrap, never clip (Jim Henderson shown in full)", () => {
     const html = renderToStaticMarkup(h(CityCards));
@@ -92,5 +96,32 @@ describe("Design 2:56 PM: footer wordmark fits its margins", () => {
     expect(wm).toContain('lengthAdjust="spacingAndGlyphs"');
     expect(wm).toContain(">townhall.town</text>");
     expect(src("components/SiteChrome.tsx")).not.toMatch(/text-\[clamp\(40px/);
+  });
+});
+
+describe("Adam 2:57 PM: photos are colored, never grayed out", () => {
+  const BAD = /grayscale|desaturate|saturate-0|saturate\(0|mix-blend|opacity-\d|filter:/;
+  it("no CSS rule filters, blends or dims a photo (img, picture, video or their frame)", () => {
+    const css = src("app/globals.css");
+    expect(css).not.toMatch(/grayscale|desaturate|mix-blend|saturate\(/);
+    expect(css).not.toMatch(/\.duo\b/);
+    expect(css).not.toMatch(/img[^{]*\{[^}]*(filter|opacity)/);
+  });
+  it("no img/picture, and no ancestor of one, carries a grayscale, desaturate or mix-blend class or filter", () => {
+    const pages = [renderToStaticMarkup(h(CityCards)), renderToStaticMarkup(h(PhotoCredit, { name: "x", photo: pic("https://a.example/", "a") })),
+      ...["components/Portrait.tsx", "components/PortraitRow.tsx", "components/media/MediaBand.tsx", "components/media/CityCards.tsx", "app/card/BallotCard.tsx", "app/RaceTiers.tsx", "app/EndScreen.tsx"].map(src)];
+    for (const t of pages) { expect(t).not.toMatch(/grayscale|desaturate|saturate-0|mix-blend/); expect(t).not.toMatch(/\bduo\b(?!tone)/); }
+    void BAD;
+  });
+});
+
+describe("Design 2:57 PM: 94103 end-screen links", () => {
+  it("'Official site list' and 'Find your assigned polling place' are 44px rows in a flex-col gap-1 stack", () => {
+    const e = src("app/EndScreen.tsx");
+    expect(e).toContain('className="mt-2 flex flex-col items-start gap-1 text-sm leading-5" data-end-links>');
+    expect(e).toMatch(/className="inline-flex min-h-11 items-center th-link" data-end-link="sites">Official site list ↗/);
+    expect(e).toMatch(/className="inline-flex min-h-11 items-center th-link" data-end-link="lookup">Find your assigned polling place ↗/);
+    const stack = e.slice(e.indexOf("data-end-links>"), e.indexOf('data-end-link="lookup"'));
+    expect(stack).not.toContain("</div>"); // both links live in the same stack
   });
 });

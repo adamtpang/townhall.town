@@ -15,7 +15,7 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
   it("over 8: gap-1 under md, same md/lg gaps, one equal column per candidate, no scroll container", () => {
     for (const n of [9, 10, 11]) {
       const u = ul(row(n));
-      expect(u).toContain("grid justify-start gap-1 [--tile-max:72px] md:gap-3");
+      expect(u).toContain("grid justify-start gap-1 [--tile-max:120px] md:gap-3");
       expect(u).toContain(`grid-template-columns:repeat(${n}, minmax(0, var(--tile-max)))`);
       expect(u).toContain('data-crowded="true"');
       expect(u).not.toMatch(/overflow-x|overflow-auto|overflow-scroll|snap-|flex-wrap(?!-)/);
@@ -36,7 +36,7 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
   it("below 360px: every row over 6 uses gap-1 (8 at 320 is ~30.5px tiles); 360px and up keep gap-2; still one equal row", () => {
     for (const n of [7, 8]) {
       const u = ul(row(n));
-      expect(u).toContain("grid justify-start gap-2 max-[359px]:gap-1 [--tile-max:72px] md:gap-3");
+      expect(u).toContain("grid justify-start gap-2 max-[359px]:gap-1 [--tile-max:120px] md:gap-3");
       expect(u).toContain(`grid-template-columns:repeat(${n}, minmax(0, var(--tile-max)))`);
       expect(u).not.toMatch(/overflow-x|overflow-auto|overflow-scroll|snap-|flex-wrap(?!-)/);
     }
@@ -47,7 +47,7 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
   it("8 or fewer: keep gap-2 (from 360px) and no tile control", () => {
     for (const n of [2, 6, 8]) {
       const h = row(n);
-      expect(ul(h)).toMatch(/grid justify-start gap-2 (max-\[359px\]:gap-1 )?\[--tile-max:72px\]/);
+      expect(ul(h)).toMatch(/grid justify-start gap-2 (max-\[359px\]:gap-1 )?\[--tile-max:120px\]/);
       expect(ul(h)).toContain('data-crowded="false"');
       expect(h).not.toContain("data-tile-open");
     }

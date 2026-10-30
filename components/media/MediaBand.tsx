@@ -33,14 +33,30 @@ export function onIdleOrScroll(w: IdleWin, run: () => void) {
   const fire = () => { if (done) return; done = true; cleanup(); run(); };
   const cleanup = () => {
     w.removeEventListener("scroll", fire);
+    w.removeEventListener("pointerdown", fire);
     if (idleId !== undefined) w.cancelIdleCallback?.(idleId);
     if (timer !== undefined) clearTimeout(timer);
   };
   w.addEventListener("scroll", fire, { passive: true, once: true });
+  w.addEventListener("pointerdown", fire, { passive: true, once: true });
   if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(fire);
   else timer = setTimeout(fire, IDLE_FALLBACK_MS);
   return () => { done = true; cleanup(); };
 }
+
+type LoadWin = IdleWin & { document: { readyState: string } };
+/** Design 2:57 PM CT (Oct 30): the video is off the first load. `run` fires once window 'load' has fired AND then
+ *  idle (or the first scroll/pointer) has passed. Returns a cleanup. */
+export function afterLoadThenIdle(w: LoadWin, run: () => void) {
+  let stop: (() => void) | undefined;
+  let gone = false;
+  const go = () => { if (!gone) stop = onIdleOrScroll(w, run); };
+  if (w.document.readyState === "complete") go();
+  else w.addEventListener("load", go, { once: true });
+  return () => { gone = true; w.removeEventListener("load", go); stop?.(); };
+}
+/** IntersectionObserver options for "the band is within one viewport". */
+export const NEAR_VIEWPORT = { rootMargin: "100% 0px" };
 
 export default function MediaBand() {
   const v = useRef<HTMLVideoElement>(null);
@@ -57,15 +73,10 @@ export default function MediaBand() {
     const mobile = window.matchMedia(MOBILE).matches;
     let attached = false;
     let visible = false;
-    const io = new IntersectionObserver(([e]) => {
-      visible = e.isIntersecting;
-      if (!attached) return;
-      if (!visible) el.pause();
-      else if (!userPaused.current) el.play().catch(() => {});
-    });
-    io.observe(el);
-    const stopIdle = onIdleOrScroll(window, () => {
-      if (attached || reduceMq.matches) return;
+    let ready = false; // window load + idle (or first scroll/pointer)
+    let near = false; // band within one viewport
+    const attach = () => {
+      if (attached || !ready || !near || reduceMq.matches) return;
       for (const s of bandSources(mobile)) {
         const node = document.createElement("source");
         node.src = s.src;
@@ -77,10 +88,20 @@ export default function MediaBand() {
       attached = true;
       setPlayable(true);
       if (visible && !userPaused.current) el.play().catch(() => {});
+    };
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (!attached) return;
+      if (!visible) el.pause();
+      else if (!userPaused.current) el.play().catch(() => {});
     });
+    io.observe(el);
+    const nearIo = new IntersectionObserver(([e]) => { if (e.isIntersecting) { near = true; nearIo.disconnect(); attach(); } }, NEAR_VIEWPORT);
+    nearIo.observe(el);
+    const stopIdle = afterLoadThenIdle(window, () => { ready = true; attach(); });
     const onReduce = () => { if (reduceMq.matches && attached) { el.pause(); setPaused(true); userPaused.current = true; } };
     reduceMq.addEventListener?.("change", onReduce);
-    return () => { stopIdle(); io.disconnect(); reduceMq.removeEventListener?.("change", onReduce); };
+    return () => { stopIdle(); io.disconnect(); nearIo.disconnect(); reduceMq.removeEventListener?.("change", onReduce); };
   }, []);
 
   function toggle() {
@@ -92,7 +113,7 @@ export default function MediaBand() {
 
   return (
     <figure className="ml-[calc(50%-50vw)] mt-16 w-screen lg:mt-24" data-media-band>
-      <div className="duo aspect-[4/5] md:aspect-[12/5]">
+      <div className="media-frame aspect-[4/5] md:aspect-[12/5]">
         <picture>
           <source media="(min-width: 768px)" srcSet="/media/band-desktop-poster.jpg" />
           <img src="/media/band-mobile-poster.jpg" alt="" decoding="async" data-band-poster />

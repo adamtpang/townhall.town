@@ -35,11 +35,16 @@ export default function Home() {
           <div id="hero-stat" />
         </section>
         <BallotAgent />
-        {/* ndstudio-structure spec (Oct 30): hero → band → 01 Your city → 02 How it works (copy approved Oct 30) → 03 Sources. */}
-        <MediaBand />
-        <NumberedSection n="01" label="Your city" id="your-city">
+        {/* Adam 2:56 PM CT (Oct 30): hero → ZIP → city cards → band → How it works → Sources. The city row sits right
+            under the ZIP box (ends above y=700 at 390 and y=800 at 1440). */}
+        <section id="your-city" aria-labelledby="your-city-label" className="mt-8" data-city-row>
+          <h2 id="your-city-label" className="mb-3 flex gap-3 text-sm leading-5 font-[530] tracking-normal text-ink">
+            <span className="tabular-nums text-brand-700">01</span>
+            <span>Your city</span>
+          </h2>
           <CityCards />
-        </NumberedSection>
+        </section>
+        <MediaBand />
         <NumberedSection n="02" label="How it works" id="how-it-works">
           <ol className="grid gap-8 md:grid-cols-3 md:gap-5" data-how-steps>
             {HOW_STEPS.map(([title, line], i) => (
