@@ -10,6 +10,7 @@ import TownyResearch from "./TownyResearch";
 import WhoRaces from "../components/WhoRaces";
 import RaceFooter from "../components/RaceFooter";
 import { cardPath } from "../lib/card.mjs";
+import { PRINT_CTA } from "../lib/printText";
 import { gradesForRace } from "../lib/grades.mjs";
 import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
@@ -59,14 +60,15 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
   });
   // QA P2: Neutral is a real answer but is never compared, so say that instead of asking for answers again.
   const yesNo = ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length;
+  const printPath = cardPath(zip, answers, ids).replace("#", "&print=1#");
 
   return (
     <section id="end" className="border-t border-black py-24" data-end-screen>
       <p className="nds-caption-upper text-black/60">03</p>
       <h2 className={`mt-3 ${H2}`}>Your plan</h2>
-      <a href={cardPath(zip, answers, ids)} className="mt-6 inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black [@media(hover:hover)]:hover:bg-brand-50" data-card-link>One-page ballot card</a>
-      {/* Adam 2:28 PM CT Oct 30: the printable ballot lives on /card; print=1 opens the print dialog there (Save as PDF). */}
-      <a href={cardPath(zip, answers, ids).replace("#", "&print=1#")} className="mt-6 inline-flex min-h-12 items-center bg-black px-5 text-base font-[530] text-[#F2F2F2] hover:bg-black/80 sm:ml-3" data-end-pdf>Download PDF ballot</a>
+      {/* Design addendum Oct 30 (label approved by Adam): replaces the old one-page card link. The printable sheet
+          lives on /card; print=1 makes /card call window.print() once it has rendered (Save as PDF from the dialog). */}
+      <button type="button" onClick={() => { window.location.href = printPath; }} className="mt-6 inline-flex min-h-12 w-full items-center justify-center bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80 sm:w-auto" data-end-print data-print-href={printPath}>{PRINT_CTA}</button>
       <div className="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-5">
         {/* WHO */}
         <div className="lg:col-span-6" data-end="who">
@@ -141,6 +143,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
           ) : (
             <p className="mt-4 text-base text-black/60">No sourced polling place for this ZIP yet.</p>
           )}
+          <button type="button" onClick={() => { window.location.href = printPath; }} className="mt-4 inline-flex min-h-12 w-full items-center justify-center border border-black px-6 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2] lg:w-auto" data-end-print-where>{PRINT_CTA}</button>
         </div>
 
         {/* WHEN */}

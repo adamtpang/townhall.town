@@ -1,0 +1,123 @@
+[
+  {
+    "state": "TX",
+    "topic": "written_notes_in_booth",
+    "rule_text_verbatim": "Voters are allowed to bring written materials into voting stations to assist them in casting their ballot. However, it is important to remember that the prohibition on electioneering within 100 feet of the polling place and 20 feet of designated curbside voting parking spaces does apply to written materials. Election judges and early voting clerks may use their discretion in determining if a voter is electioneering for or against any candidate, measure or political party through the use of written materials.",
+    "plain_summary": "Paper notes / a marked sample ballot are allowed in the voting station. Don't display campaign material; judges can treat visible campaign literature as electioneering.",
+    "source_name": "Texas Secretary of State, Election Advisory No. 2026-26 'Certain Activities in Vicinity of Polling Places' (Christina Adkins, Director of Elections)",
+    "source_url": "https://www.sos.state.tx.us/elections/laws/advisory2026-26.shtml",
+    "section_or_page": "Section 'Written Materials' (advisory dated October 4, 2026; listed on https://www.sos.state.tx.us/elections/laws/election-division-advisories.shtml)",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "TX",
+    "topic": "written_notes_in_booth_statute",
+    "rule_text_verbatim": "Sec. 61.011. REMOVING WRITTEN COMMUNICATIONS FOUND IN POLLING PLACE. (a) An election officer shall periodically check each voting station and other areas of the polling place for sample ballots or other written communications used by voters that were left or discarded in the polling place. (b) An election officer shall remove from the sight of the voters any written communication found under Subsection (a).",
+    "plain_summary": "Statute assumes voters use sample ballots/written notes; officers remove any left behind. Take your sheet with you.",
+    "source_name": "Texas Election Code (Texas Legislature, statutes.capitol.texas.gov)",
+    "source_url": "https://statutes.capitol.texas.gov/Docs/EL/htm/EL.61.htm",
+    "section_or_page": "Tex. Elec. Code Sec. 61.011 (Added by Acts 1997, 75th Leg., ch. 112, Sec. 1, eff. Sept. 1, 1997)",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "TX",
+    "topic": "wireless_devices_ban",
+    "rule_text_verbatim": "Sec. 61.014. USE OF CERTAIN DEVICES. (a) Except as permitted by Sections 61.012 and 61.013, a person may not use a wireless communication device within a room in which voting is taking place. (b) A person may not use any mechanical or electronic means of recording images or sound within 100 feet of a voting station. (c) The presiding judge may require a person who violates this section to turn off the device or to leave the polling place.",
+    "plain_summary": "No phones/tablets/laptops in use in the voting room, and no recording within 100 ft of a voting station — so print your choices on paper.",
+    "source_name": "Texas Election Code (statutes.capitol.texas.gov); also SOS Advisory 2026-26",
+    "source_url": "https://statutes.capitol.texas.gov/Docs/EL/htm/EL.61.htm",
+    "section_or_page": "Tex. Elec. Code Sec. 61.014(a)-(c). Advisory 2026-26, section 'Cell Phones and Other Wireless Communication Devices...': \"House Bill 3909 (89th Leg., R.S., effective September 1, 2025) amended Section 61.014 of the Code to prohibit the use of wireless communication devices such as cell phones, tablets, or laptop computers within a room in which voting is taking place.\"",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "CA",
+    "topic": "written_notes_in_booth",
+    "rule_text_verbatim": "State and federal law do not prohibit voters from bringing the Secretary of State's Voter Information Guide, a county voter information guide, a sample ballot, a copy of the Voter Bill of Rights, or other similar explanatory materials into the voting booth. However, the law does preclude voters from bringing electioneering materials (see Section 3, Electioneering) into the voting booth or within 100 feet of the polling place. (§ 18370)",
+    "plain_summary": "Sample ballots and similar explanatory notes are allowed in the booth; electioneering materials are not. CA also allows electronic devices if use doesn't violate other Elections Code sections (§ 2302).",
+    "source_name": "California Secretary of State, 2026 Poll Worker Training Standards, Section 2 – Ensuring and Protecting the Rights of Every Voter",
+    "source_url": "https://www.sos.ca.gov/elections/voting-resources/voting-california/help-strengthen-our-democracy/poll-worker-training-standards/section-two",
+    "section_or_page": "Section 2.A, 'Materials in the Polling Place and Voting Booth' (2026 standards; same text in PDF https://elections.cdn.sos.ca.gov/poll-worker-training-standards/poll-worker-training-standards.pdf, page not verified)",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "NY",
+    "topic": "written_notes_in_booth",
+    "rule_text_verbatim": "no record found (no explicit rule located in NYC BOE or NYS BOE pages retrieved, or in NY Election Law sections retrieved). Related NYC BOE text (Voter's Bill of Rights): \"Instruction in Voting: You can view a sample ballot in this polling place prior to voting, and before entering or approaching a privacy booth, scanner or ballot marking device, you may request help in how to mark and/or cast your ballot.\" Supplementary, NOT from the allowed source list — NYC Civic Engagement Commission 'Know Your Rights' 2026 PDF, p.1: \"Bring materials about candidates and ballot questions with you, such as the CFB Voter Guide. (Please take these materials away with you when you finish voting.)\"",
+    "plain_summary": "Unsure. No explicit NY statute/BOE rule found allowing or banning notes in the booth. A NYC city agency (Civic Engagement Commission) tells voters they may bring candidate/ballot materials and take them away afterward. Suggested print wording: 'NYC guidance says you may bring materials about candidates; take them with you when done.'",
+    "source_name": "NYC Board of Elections – New York State Voter's Bill of Rights; supplementary: NYC Civic Engagement Commission Know Your Rights 2026",
+    "source_url": "https://www.vote.nyc/page/voters-rights ; https://www.nyc.gov/assets/civicengagement/downloads/pdf/know_your_rights_2026.pdf",
+    "section_or_page": "vote.nyc Voter's Bill of Rights ('Instruction in Voting'); CEC PDF page 1 (PDF created May 7, 2026)",
+    "retrieved_at": "2026-10-30",
+    "status": "unsure"
+  },
+  {
+    "state": "CA",
+    "topic": "voter_id",
+    "rule_text_verbatim": "In most cases, a California voter is not required to show identification to a polling place worker before casting a ballot. However, if you are voting for the first time after registering to vote by mail and did not provide your driver license number, California identification number or the last four digits of your social security number on your registration form, you may be asked to show a form of identification when you go to the polls.",
+    "plain_summary": "No ID needed in most cases. Exception: first-time voter who registered by mail without a CA DL/ID number or SSN last 4 may be asked for ID (photo or non-photo, e.g., utility bill, sample ballot booklet); if none, a provisional ballot is offered.",
+    "source_name": "California Secretary of State – What to Bring to Your Polling Place",
+    "source_url": "https://www.sos.ca.gov/elections/voting-resources/voting-california/what-bring",
+    "section_or_page": "Page body (undated web page). Legal basis per CA SOS Poll Worker Training Standards Sec. 2.A: \"Under federal law, first-time voters who registered by mail may be required to show identification to vote in a federal election... (Section 303 of the Help America Vote Act of 2002 (HAVA),52 United States Code (U.S.C.) § 21083(b); Cal. Code of Regs., tit. 2 § 20107)\" and \"Poll workers must not ask a voter to provide their identification unless the voter list clearly states identification is required.\"",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "TX",
+    "topic": "polling_hours",
+    "rule_text_verbatim": "Sec. 41.031. VOTING HOURS. (a) Except as provided by Section 41.033, the polls shall be opened at 7 a.m. for voting and shall be closed at 7 p.m. ... Sec. 41.032. VOTING AFTER POLLS CLOSE. (a) A voter who has not voted before the time for closing the polls is entitled to vote after that time if the voter is inside or waiting to enter the polling place at 7 p.m.",
+    "plain_summary": "Election Day polls open 7 AM–7 PM; anyone in line at 7 PM can vote. Travis County Clerk lists Election Day Tue Nov 3, 2026 (7am-7pm).",
+    "source_name": "Texas Election Code; Travis County Clerk Elections Division (votetravis.gov)",
+    "source_url": "https://statutes.capitol.texas.gov/Docs/EL/htm/EL.41.htm ; https://votetravis.gov/current-election-information/current-election/",
+    "section_or_page": "Tex. Elec. Code Secs. 41.031(a), 41.032(a). votetravis.gov 'Election Day Locations': \"Date and Time:Tuesday, November 3, 2026 (7am-7pm)\"",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "NY",
+    "topic": "polling_hours",
+    "rule_text_verbatim": "Election Day is Tuesday, November 3, 2026. Polls are open from 6am to 9pm. [NY Election Law § 8-100(2): \"Polls shall be open for voting during the following hours: ... the general election from six o'clock in the morning until nine o'clock in the evening\"]",
+    "plain_summary": "Election Day polls open 6 AM–9 PM.",
+    "source_name": "NYC Board of Elections – Election Dates and Deadlines; NY Election Law § 8-100",
+    "source_url": "https://www.vote.nyc/all-important-dates ; statute: https://www.nysenate.gov/legislation/laws/ELN/8-100",
+    "section_or_page": "vote.nyc Nov 03 entry. § 8-100(2) text read from law.justia.com mirror (2025 NY Laws) because nysenate.gov timed out/403 — official statute page not directly verified.",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "CA",
+    "topic": "polling_hours",
+    "rule_text_verbatim": "The polls shall be open at 7 a.m. of the day of any election, and shall be kept open until 8 p.m. of the same day, when the polls shall be closed, except as provided in Sections 4005 and 14401.",
+    "plain_summary": "Election Day polls open 7 AM–8 PM; voters in line at 8 PM may vote (§ 14401).",
+    "source_name": "California Elections Code (leginfo.legislature.ca.gov); also CA SOS Elections Officers Digest",
+    "source_url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=ELEC&sectionNum=14212.",
+    "section_or_page": "Cal. Elec. Code § 14212 (Amended by Stats. 2023, Ch. 479, Sec. 10 (AB 1762), eff. Jan. 1, 2024). Text read via search-index copy of the leginfo page; matches CA SOS Digest https://www.sos.ca.gov/elections/publications-and-resources/elections-officers-digest/election-day",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "TX",
+    "topic": "voter_id",
+    "rule_text_verbatim": "Under Texas law, voters who possess one of the seven acceptable forms of photo ID must present that ID at the polls when voting in person. Voters who do not possess and cannot reasonably obtain one of the seven approved forms of photo ID may fill out a Reasonable Impediment Declaration (RID) (PDF) at the polls and present an alternative form of ID, such as a utility bill, bank statement, government check, or a voter registration certificate. Here is a list of the acceptable forms of photo ID: Texas Driver License issued by the Texas Department of Public Safety (DPS); Texas Election Identification Certificate issued by DPS; Texas Personal Identification Card issued by DPS; Texas Handgun License issued by DPS; United States Military Identification Card containing the person's photograph; United States Citizenship Certificate containing the person's photograph; United States Passport (book or card). With the exception of the U.S. Citizenship Certificate, which does not expire, for voters aged 18-69, the acceptable form of photo identification may be expired no more than four years before being presented for voter qualification at the polling place. For voters aged 70 or older, the acceptable form of photo identification may be expired for any length of time if the identification is otherwise valid.",
+    "plain_summary": "Bring one of 7 photo IDs (TX DL, TX EIC, TX ID card, TX handgun license, US military ID w/ photo, US citizenship cert w/ photo, US passport book/card); may be expired up to 4 yrs (any length if 70+). Without one and can't reasonably get one: supporting ID + Reasonable Impediment Declaration.",
+    "source_name": "Texas Secretary of State – VoteTexas.gov 'Texas Voter ID Requirements'",
+    "source_url": "https://www.votetexas.gov/voting/need-id.html",
+    "section_or_page": "'Identification Requirements for Voting' (undated web page)",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  },
+  {
+    "state": "NY",
+    "topic": "voter_id",
+    "rule_text_verbatim": "Registered voters do not need to show ID to vote, unless they did not provide identification with their registration. First time voters must provide identification either on or with their voter registration application. If you have not provided ID by Election Day, you are still allowed to vote by affidavit ballot, but not using the poll site scanner.",
+    "plain_summary": "Generally no ID needed. First-time voters who didn't give a DL/non-driver ID number or SSN last 4 (or a copy of ID) when registering may be asked for ID; without it they vote by affidavit ballot.",
+    "source_name": "NYC Board of Elections – Voter ID",
+    "source_url": "https://vote.nyc/page/voter-id",
+    "section_or_page": "Page body (undated). Statute (NY Election Law § 8-302) not retrieved — nysenate.gov timed out.",
+    "retrieved_at": "2026-10-30",
+    "status": "confirmed"
+  }
+]

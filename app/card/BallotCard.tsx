@@ -12,6 +12,7 @@ import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
 import { Button } from "../../components/ui/button";
 import PrintBallot, { type PrintData } from "./PrintBallot";
+import { PRINT_CTA } from "../../lib/printText";
 
 const ANSWERS_KEY = "th-answers-v1";
 const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
@@ -27,7 +28,7 @@ export default function BallotCard({ zip, place, ids, races, print }: { zip: str
     if (h) { setAnswers(decodeAnswers(h, ids) as Answers); return; }
     try { setAnswers(JSON.parse(localStorage.getItem(ANSWERS_KEY) || "{}")); } catch { setAnswers({}); }
   }, [ids]);
-  // The end screen's "Download PDF ballot" opens /card?zip=…&print=1: open the print dialog once the card has rendered.
+  // The end screen's "Print or download your ballot" opens /card?zip=…&print=1: open the print dialog once the card has rendered.
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("print") !== "1") return;
     const t = setTimeout(() => window.print(), 600);
@@ -43,7 +44,7 @@ export default function BallotCard({ zip, place, ids, races, print }: { zip: str
   const edWhere = useMemo(() => whereFor(zip, ed?.start ?? today), [zip, ed, today]);
   const gcalEd = useMemo(() => (ed ? planEventUrl({ e: ed, zip, site: edWhere.sites[0], lookupUrl: edWhere.lookupUrl, dependsOnAddress: edWhere.dependsOnAddress, topRaces: topRaceTitles(races as never) }) : null), [ed, zip, edWhere, races]);
   const answered = answers ? ids.filter((id) => typeof answers[id] === "number").length : 0;
-  const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => { const l0 = r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })); const g = gradesForRace(r, l0.map((x) => x.o), answered, zip); return { r, gradesHidden: g.hidden, list: l0.map((x, i) => ({ ...x, grade: g.grades[i] })) }; }); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in ballot order (Adam, 11:28 PM: photos and sources on every row)
+  const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => { const l0 = r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })); const g = gradesForRace(r, l0.map((x) => x.o), answered, zip); return { r, gradesHidden: g.hidden, list: l0.map((x, i) => ({ ...x, grade: g.grades[i] })) }; }); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in data order (Adam, 11:28 PM: photos and sources on every row)
   const yesNo = answers ? ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length : 0;
 
   function ics() {
@@ -58,7 +59,7 @@ export default function BallotCard({ zip, place, ids, races, print }: { zip: str
   const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link underline-offset-2 hover:underline print:text-black";
   return (
     <main className="mx-auto max-w-[720px] px-5 py-12 text-black print:max-w-none print:px-0 print:py-0" data-ballot-card>
-      {print ? <PrintBallot zip={zip} place={place} today={today} ed={ed} early={early} earlyLine={early ? earlySingleDay(early, today) ?? `Early voting runs through ${fmt(early.end)}` : null} mail={when.mail} site={site} lookupUrl={where.lookupUrl} dependsOnAddress={where.dependsOnAddress} data={print} /> : null}
+      {print ? <PrintBallot zip={zip} today={today} ed={ed} early={early} earlyLine={early ? earlySingleDay(early, today) ?? `Early voting runs through ${fmt(early.end)}` : null} lookupUrl={edWhere.lookupUrl} dependsOnAddress={edWhere.dependsOnAddress} jurisdiction={edWhere.jurisdiction ?? where.jurisdiction ?? null} data={print} /> : null}
       <div className={print ? "print:hidden" : undefined}>
       <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>
       <h1 className={`mt-3 ${H1}`}>Your ballot card</h1>
@@ -75,6 +76,8 @@ export default function BallotCard({ zip, place, ids, races, print }: { zip: str
         </>) : where.lookupUrl ? (
           <p className="mt-2 text-base">Your polling place is assigned by home address. <a href={where.lookupUrl} className={link} target="_blank" rel="noreferrer" data-card-map>Find it ↗</a></p>
         ) : <p className="mt-2 text-base text-black/60">No sourced polling place for this ZIP yet.</p>}
+        {/* Design addendum Oct 30: the primary action under the polling info, above the race list so it isn't buried at 390px. */}
+        {print ? <button type="button" onClick={() => window.print()} className="mt-4 inline-flex min-h-12 w-full items-center justify-center bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80 sm:w-auto print:hidden" data-card-print-where>{PRINT_CTA}</button> : null}
       </section>
 
       <section className="mt-10 border-t border-black/15 pt-6">
@@ -98,7 +101,7 @@ export default function BallotCard({ zip, place, ids, races, print }: { zip: str
       </section>
 
       <div className="mt-10 flex flex-wrap gap-3 print:hidden">
-        <button type="button" onClick={() => window.print()} className="min-h-12 bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80" data-card-print>Download PDF ballot</button>
+        <button type="button" onClick={() => window.print()} className="min-h-12 bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80" data-card-print>{PRINT_CTA}</button>
         <button type="button" onClick={share} className="h-12 border border-black px-6 text-base font-[530]" data-card-share>{copied ? "Link copied" : "Share link"}</button>
         {gcalEd ? <Button onClick={() => window.open(gcalEd, "_blank", "noopener")} className="h-12 rounded-none border border-black bg-transparent px-6 text-base font-[530] text-black hover:border-black hover:text-black [@media(hover:hover)]:hover:bg-brand-50" data-card-gcal={gcalEd}>Add to Google Calendar ↗<span className="sr-only"> (opens in a new tab)</span></Button> : null}
         {ed ? <button type="button" onClick={ics} className="inline-flex min-h-12 items-center px-2 text-sm text-black/60 underline decoration-black/20 underline-offset-2 hover:text-black" data-card-ics>or download .ics</button> : null}
