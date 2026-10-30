@@ -8,6 +8,10 @@ import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { HOME_SECTIONS } from "../lib/content";
 import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 import { LangProvider, LangToggle, T } from "../lib/i18n";
+import PolyStrip from "../components/PolyStrip";
+
+// Polymarket strip prices are fetched on the server and revalidated every 5 minutes.
+export const revalidate = 300;
 
 // ndstudio-structure spec §3 item 5: "02 How it works" as 3 steps (approved Oct 30, 2026). Exact copy; no other changes.
 const HOW_STEPS: [string, string][] = [
@@ -22,6 +26,7 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
+      <PolyStrip />
       <main>
         <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <section className="pb-6 pt-6 lg:pb-8 lg:pt-16" data-hero>
