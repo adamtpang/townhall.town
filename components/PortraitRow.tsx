@@ -30,7 +30,7 @@ function Words({ text }: { text: string }) {
   return <>{text.split(/\s+/).filter(Boolean).map((w, i) => <span key={i}>{i ? " " : ""}<span data-word>{w}</span></span>)}</>;
 }
 
-function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string; tileMax: string }) {
+function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string; tileMax: string; grid?: boolean }) {
   const [broken, fail] = usePhotoFallback(c.name);
   const setBroken = (_: boolean) => fail();
   const ref = useRef<HTMLImageElement>(null);
@@ -43,16 +43,16 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eage
   }, [c.photo?.url]);
   const show = !!c.photo?.url && !broken;
   return (
-    <li className={`flex min-w-0 flex-col ${max}`} style={{ flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "placeholder"}>
+    <li className={`flex min-w-0 flex-col ${max}`} style={grid ? undefined : { flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "placeholder"}>
       <div className={`relative mx-auto aspect-square w-full overflow-hidden bg-black/5 ${tileMax}`}>
         {/* The placeholder always sits underneath, so a slow, lazy or failed image never leaves a blank tile. */}
         {show ? null : <AvatarPlaceholder />}
         {show ? (
-          <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} onFail={() => setBroken(true)} />
+          <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} sizes={grid ? ROW_SIZES : undefined} onFail={() => setBroken(true)} />
         ) : null}
       </div>
-      <p className={`mt-1 w-full flex-1 text-center group-data-[dense=true]/row:max-md:sr-only ${NOBREAK} line-clamp-3 text-sm font-[530] leading-5`} title={c.name} aria-label={c.name} data-tile-label><Words text={label} /></p>
-      {mate ? <p className={`w-full ${NOBREAK} line-clamp-2 text-center text-sm leading-5 group-data-[dense=true]/row:max-md:sr-only text-black/60`} title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate><Words text={`w/ ${mate}`} /></p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden" data-tile-mate-spacer /> : null}
+      <p className={`mt-1 w-full flex-1 text-center group-data-[dense=true]/row:max-md:sr-only group-data-[densedesk=true]/row:md:sr-only ${NOBREAK} line-clamp-3 text-sm font-[530] leading-5`} title={c.name} aria-label={c.name} data-tile-label><Words text={label} /></p>
+      {mate ? <p className={`w-full ${NOBREAK} line-clamp-2 text-center text-sm leading-5 group-data-[dense=true]/row:max-md:sr-only group-data-[densedesk=true]/row:md:sr-only text-black/60`} title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate><Words text={`w/ ${mate}`} /></p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden group-data-[densedesk=true]/row:md:hidden" data-tile-mate-spacer /> : null}
     </li>
   );
 }
@@ -68,19 +68,29 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   // visible label goes sr-only (the name stays in aria-label/title and on the card).
   // Design p11 #1: the item (label width) is separate from the tile. Item max 56px (64px at 1024+); tile max 40px
   // (48px at 768+, 56px at 1024+), centred; label full item width, centred, truncated.
-  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[80px] lg:max-w-[96px]";
-  const tileMax = size === "mini" ? "" : "max-w-[40px] md:max-w-[48px] lg:max-w-[56px]";
-  const dense = size === "row" && cands.length > 6;
+  // Design big photos (Adam 1:11 PM Oct 30: bigger): row size is a CSS grid, one column per candidate,
+  // repeat(n, minmax(0, var(--tile-max))) with justify-content start, so every candidate shares one line in equal
+  // square tiles that shrink to fit (never wrap, never scroll). --tile-max 72px / gap 8px below 768, 88px / 12px at
+  // md, 112px / 16px at lg. The item is the tile; the 14px label (never 12px) is the tile's width, centred. Placeholders
+  // fill the same square. Over 6 candidates under 768px, or over 8 from 768 up, the label goes sr-only.
+  const grid = size === "row";
+  const max = grid ? "" : "max-w-[24px] md:max-w-[32px]";
+  const tileMax = "";
+  const dense = grid && cands.length > 6;
+  const denseDesk = grid && cands.length > 8;
+  const n = cands.length;
   return (
     <PhotoGroup>
-    <ul role="list" aria-label="Candidates" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
-      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
+    <ul role="list" aria-label="Candidates" className={grid ? "group/row my-3 grid justify-start gap-2 [--tile-max:72px] md:gap-3 md:[--tile-max:88px] lg:gap-4 lg:[--tile-max:112px]" : "group/row my-3 flex flex-nowrap gap-2 md:gap-3"} style={grid ? { gridTemplateColumns: `repeat(${n}, minmax(0, var(--tile-max)))` } : undefined} data-dense={dense ? "true" : "false"} data-densedesk={denseDesk ? "true" : "false"} data-photo-row>
+      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} grid={grid} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
     {size === "row" ? <RowCredits cands={cands} /> : null}
     </PhotoGroup>
   );
 }
 export const PortraitRow = CandidatePortraitRow;
+/** Image sizes for row tiles (matches --tile-max): 72px under 768, 88px to 1023, 112px from 1024. */
+export const ROW_SIZES = "(max-width: 767px) 72px, (max-width: 1023px) 88px, 112px";
 
 /** Design p12 #1: one credit line per race under the row (shared with Who and the ballot card). Credits follow the
  *  fallback: a race (or, in candidate mode, a candidate) that reverted to initials drops its credit. */

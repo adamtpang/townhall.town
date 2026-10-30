@@ -77,7 +77,7 @@ const issueLabel = (id: string) => ISSUES.find((i) => i.id === id)?.label ?? id;
 /** Design p10 P1: visible = name, grade, the issues the voter answered Yes/No (each linked to its source) and the
  *  photo credit. Everything else (all quotes, unclear items, "No record found", sources checked) sits behind one
  *  disclosure per candidate. Nothing is removed, only folded. */
-export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, answers = {} }: { c: RowCand; o: O; grade?: string | null; ids: string[]; raceId?: string; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined> }) {
+export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, answers = {}, avatar }: { c: RowCand; o: O; grade?: string | null; ids: string[]; raceId?: string; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined>; avatar?: "lg" }) {
   const st = stancesFor(c.name);
   const site = liveUrl(c.campaignSite) || liveUrl(c.officialSite) || null;
   const checked = o.sourced < 2 ? cleanChecked(sourcesChecked(c.name)) : [];
@@ -102,7 +102,8 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
   return (
     <li className="flex gap-3 py-3" data-overlap={c.name} data-status={o.status} data-photo-state={c.photo?.url ? "img" : "placeholder"}>
-      <Portrait name={c.name} photo={c.photo} credit={false} className="w-12 shrink-0" boxClassName="[&>span]:text-base" />
+      {/* Adam 1:11 PM Oct 30 (bigger): the /card avatar is a 96px square below 1024 and 128px from lg, radius 0. */}
+      <Portrait name={c.name} photo={c.photo} credit={false} className={avatar === "lg" ? "w-24 shrink-0 lg:w-32" : "w-12 shrink-0"} boxClassName="[&>span]:text-base" sizes={avatar === "lg" ? "(max-width: 1023px) 96px, 128px" : undefined} />
       <div className="min-w-0 flex-1">
         <p className="text-base font-[530] text-black">{c.name}</p>
         {/* Adam 9:58 AM CT Oct 30 + design 10:14 AM CT card order: name, fit line (only with 2+ shared issues), up to 3

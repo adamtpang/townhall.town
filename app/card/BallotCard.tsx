@@ -81,7 +81,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
                   <p className="text-base font-[530]">{r.title || r.id}</p>
                   {r.order ? <p className="max-w-[60ch] mt-1 text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} />)}
+                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} avatar="lg" />)}
                   </ul>
                   <RaceFooter cands={list.map(({ c }) => c)} gradesHidden={null} /></PhotoGroup>
                 </li>

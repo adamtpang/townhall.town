@@ -49,11 +49,15 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       expect(src(f)).not.toMatch(/aspect-\[4\/5\]|object-top/);
     }
   });
-  it("multi-seat rows never wrap: flex 1 1 0, min-w-0, max 40/56px, truncated label, sr-only when dense under 768", () => {
+  it("multi-seat rows never wrap: equal grid columns, min-w-0, max 72/112px, sr-only when dense under 768 (and over 8 from 768)", () => {
+    // Design p10 rationale updated (Adam 1:11 PM Oct 30: bigger): row tiles are grid columns minmax(0, --tile-max),
+    // 72px below 768 and 112px at lg, so they shrink to fit and never wrap; mini rows keep flex 1 1 0.
     const s = src("components/PortraitRow.tsx");
     expect(s).toMatch(/flex: ?"1 1 0"/);
-    expect(s).toMatch(/max-w-\[40px\][^"]*lg:max-w-\[56px\]/);
+    expect(s).toMatch(/\[--tile-max:72px\][^"]*lg:\[--tile-max:112px\]/);
+    expect(s).toContain("minmax(0, var(--tile-max))");
     expect(s).toMatch(/flex flex-nowrap/);
+    expect(s).toMatch(/group-data-\[densedesk=true\]\/row:md:sr-only/);
     expect(s).toMatch(/group-data-\[dense=true\]\/row:max-md:sr-only/);
     expect(s).toMatch(/truncate/);
   });

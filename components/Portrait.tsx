@@ -27,7 +27,7 @@ export function usePhotoOff() {
 }
 
 type Focus = [number, number, number];
-type Pic = { url: string; url112?: string; credit: string; author?: string; attribution?: string; license?: string; licenseUrl?: string | null; page?: string; hotlinked?: boolean; focus?: Focus };
+type Pic = { url: string; url112?: string; url256?: string; credit: string; author?: string; attribution?: string; license?: string; licenseUrl?: string | null; page?: string; hotlinked?: boolean; focus?: Focus };
 /** mate: the running mate's photo on a ticket (Civic role "running mate"), shown in the right half of the tile. */
 export type Photo = (Pic & { mate?: Pic & { name: string } }) | null | undefined;
 
@@ -37,14 +37,15 @@ export const focusStyle = (f?: Focus): React.CSSProperties | undefined =>
 
 /** The tile's image(s): one photo, or a ticket's two photos side by side (lead left, running mate right).
  *  A running mate's photo that fails to load just drops out; the lead's failure is the tile's failure. */
-export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNullable<Photo>; alt: string; eager?: boolean; onFail: () => void; imgRef?: React.Ref<HTMLImageElement> }) {
+export function TileImage({ photo, alt, eager, onFail, imgRef, sizes = "(max-width: 1023px) 40px, 56px" }: { photo: NonNullable<Photo>; alt: string; eager?: boolean; onFail: () => void; imgRef?: React.Ref<HTMLImageElement>; sizes?: string }) {
   const [mateOff, setMateOff] = useState(false);
   const m = photo.mate && !mateOff ? photo.mate : null;
   const cls = "h-full w-full object-cover object-[center_20%]";
-  // Design p14: self-hosted 112/160px squares (tiles are 40-56px, so 112 covers 2x screens and 160 covers 3x), with
-  // width/height set; lazy and async below the fold (eager only for the first tiers).
-  // Design p15 #3: the image sizes attribute is 40px under 1024px wide, 56px from 1024 up.
-  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w`, sizes: "(max-width: 1023px) 40px, 56px" } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
+  // Design p14: self-hosted 112/160px squares with width/height set; lazy and async below the fold (eager only for
+  // the first tiers). Adam 1:11 PM Oct 30 (bigger): a 256px square (q75, same original and crop) joins the srcset where
+  // the original crop is at least 256px; callers pass sizes for their tile (row tiles 72/88/112px, card avatar 96/128px).
+  // Design p15 #3 default: 40px under 1024px wide, 56px from 1024 up.
+  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w${p.url256 ? `, ${p.url256} 256w` : ""}`, sizes } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
   return (
     <span className="absolute inset-0 flex overflow-hidden" data-photo-img>
       <span className={cn("relative h-full overflow-hidden", m ? "w-1/2" : "w-full")}>
@@ -138,7 +139,7 @@ export function PhotoCredit({ photo, name }: { photo: NonNullable<Photo>; name: 
 }
 
 /** Licensed or Ballotpedia portrait with its credit. Falls back to initials; never a generated image. */
-export function Portrait({ name, photo, className, boxClassName, credit = true, forceInitials = false, onFail }: { name: string; photo: Photo; className?: string; boxClassName?: string; credit?: boolean; forceInitials?: boolean; onFail?: () => void }) {
+export function Portrait({ name, photo, className, boxClassName, credit = true, forceInitials = false, onFail, sizes }: { name: string; photo: Photo; className?: string; boxClassName?: string; credit?: boolean; forceInitials?: boolean; onFail?: () => void; sizes?: string }) {
   const [broken, fail] = usePhotoFallback(name);
   const setBroken = (_: boolean) => fail();
   const show = photo?.url && !broken && !forceInitials;
@@ -146,7 +147,7 @@ export function Portrait({ name, photo, className, boxClassName, credit = true, 
     <figure className={cn("m-0", className)}>
       <div className={cn("relative aspect-square w-full overflow-hidden bg-[#e4e4e4]", boxClassName)}>
         {show ? (
-          <TileImage photo={photo!} alt={name} onFail={() => { setBroken(true); onFail?.(); }} />
+          <TileImage photo={photo!} alt={name} sizes={sizes} onFail={() => { setBroken(true); onFail?.(); }} />
         ) : (
           <AvatarPlaceholder />
         )}
