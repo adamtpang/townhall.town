@@ -11,7 +11,7 @@ import { fmtDay, ES_FOR_TEST } from "../lib/i18n";
 import RaceTiers, { FinanceRow, showFinanceFor } from "../app/RaceTiers";
 import { SHOW_FINANCE } from "../lib/flags";
 
-const CIVIC = JSON.parse(fs.readFileSync("/workspace/townhall/civic/fec18/finance_fixes18.json", "utf8").toString()) as never as never[];
+const CIVIC = JSON.parse(fs.readFileSync(new URL("./fixtures/finance_fixes18.json", import.meta.url), "utf8").toString()) as never as never[];
 type Row = { raised: number; cashOnHand: number; coverageThrough: string; lastReport: string; note?: string; verified?: string; source: { url: string } };
 const C = (finance as unknown as { candidates: Record<string, Row> }).candidates;
 
