@@ -160,6 +160,41 @@ describe("FinanceRow per candidate (QA P1s)", () => {
     // Who lines up has no photo row above the money, so it keeps the two-up grid.
     expect(renderToStaticMarkup(h(FinanceRow, { r: federal("78701")[0] as never }))).toContain('data-finance-align="grid"');
   });
+  it("below sm: race-list money is a full-width divide-y list, one line per candidate in portrait order; columns from sm", () => {
+    for (const zip of ZIPS) {
+      const out = html(zip);
+      for (const part of out.split(/<h3 /).slice(1)) {
+        if (!part.includes("data-finance")) continue;
+        const before = part.split("data-money-list")[0];
+        const tiles = [...before.matchAll(/aria-label="([^"]+)" data-tile-label/g)].map((x) => x[1]);
+        const list = part.match(/<div class="my-2 sm:hidden" data-money-list="true">[\s\S]*?<\/ul>/)![0];
+        expect(list).toContain("divide-y");
+        const lines = [...list.matchAll(/data-money-line="([^"]+)"/g)].map((x) => x[1]);
+        expect(lines.length).toBeGreaterThan(0);
+        expect(lines).toEqual(tiles);
+        expect(list).not.toMatch(/text-xs|text-\[1[0-3]px\]/);
+        expect((list.match(/data-line-fec/g) ?? []).length).toBe(lines.length);
+        expect(list).toMatch(/tabular-nums/);
+        const cols = part.match(/<ul[^>]*data-finance-align="[^"]+"[^>]*>/)![0];
+        expect(cols).toContain("hidden sm:grid");
+      }
+    }
+  });
+  it("money list: order matches the portraits; amount is the FEC link; through date and report label reachable", () => {
+    const r = federal("10001").find((x) => x.id === "ny-12")!;
+    const out = renderToStaticMarkup(h(FinanceRow, { r: r as never, align: true }));
+    const lines = [...out.matchAll(/data-money-line="([^"]+)"/g)].map((x) => x[1]);
+    expect(lines).toEqual(r.candidates!.map((c: { name: string }) => c.name.replace(/&/g, "&amp;")));
+    expect(out).toMatch(/data-line-fec[^>]*>|href="https:\/\/www\.fec\.gov\/data\/candidate\//);
+    // differing dates show on the line; shared one in the caption
+    expect(out).toContain("through Sep 30, 2026");
+    expect(out).toContain("through Jun 30, 2026");
+    expect(out).toMatch(/data-money-list-caption="true">Raised · through Oct 14, 2026/);
+    expect(out).toContain("(opens in a new tab)");
+    expect(out).toContain("data-money-note-line");
+    // Who lines up (no align) has no list
+    expect(renderToStaticMarkup(h(FinanceRow, { r: r as never }))).not.toContain("data-money-list");
+  });
   it("NY-12: four candidates, four dates (Lasher/Shinkle Oct 14, Negron Sep 30, Ortiz Jun 30 + note)", () => {
     const r = federal("10001").find((x) => x.id === "ny-12")!;
     const out = renderToStaticMarkup(h(FinanceRow, { r: r as never }));

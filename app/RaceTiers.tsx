@@ -99,6 +99,47 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
   );
 }
 
+type MoneyCand = NonNullable<RaceLite["candidates"]>[number];
+/** Design 2:10 PM Oct 30 (money below sm): no per-column alignment under the portraits on phones. The race list shows
+ *  money as one full-width list under the photo row, one line per candidate in portrait (ballot) order: name left,
+ *  amount raised right (tabular-nums, text-sm, divide-y hairlines). The amount is the FEC link; its accessible name and
+ *  title carry raised, cash on hand, through date and report label. The through date / report shows once under the list
+ *  when every line shares it, otherwise after the name of each line that differs. Notes follow as footnotes. Hidden at
+ *  sm and up, where the under-portrait columns stay. Never smaller than 14px. */
+function MoneyList({ cands }: { cands: MoneyCand[] }) {
+  const t = useT();
+  const day = useDay();
+  const when = (c: MoneyCand) => c.money ? [c.money.coverageThrough ? `${t("through")} ${day(c.money.coverageThrough)}` : "", reportLabel(c.money.lastReport) ? t(reportLabel(c.money.lastReport)!) : ""].filter(Boolean).join(" · ") : "";
+  const ws = cands.filter((c) => c.money).map(when);
+  const counts = new Map<string, number>(); for (const w of ws) counts.set(w, (counts.get(w) ?? 0) + 1);
+  const common = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "";
+  const notes = cands.filter((c) => c.money?.note);
+  return (
+    <div className="my-2 sm:hidden" data-money-list>
+      <ul className="divide-y divide-black/10 border-y border-black/10" aria-label={t("Raised")}>
+        {cands.map((c) => {
+          const id = fecIdOf(c);
+          const m = c.money;
+          const w = when(c);
+          const extra = m && w && w !== common ? w : "";
+          const desc = m ? `${c.name}: ${t("Raised")} ${usd(m.raised)}, ${t("Cash on hand")} ${usdCash(m.cashOnHand)}${w ? `, ${w}` : ""}` : `${c.name}: ${t("No FEC filing found")}`;
+          return (
+            <li key={c.name} className="flex min-w-0 items-center justify-between gap-3 text-sm leading-5" data-money-line={c.name}>
+              <span className="min-w-0 break-words py-2 font-[530] text-black/80">{c.name}{extra ? <span className="font-normal text-black/60" data-line-through> · {extra}</span> : null}</span>
+              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" title={`${desc}. FEC page`} className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap tabular-nums text-[#3760F2]" data-line-fec>
+                {m ? <span className="font-medium" data-line-amount>{usd(m.raised)}</span> : <span className="text-black/60" data-line-none>{t("No FEC filing found")}</span>}{"\u00a0"}↗
+                <span className="sr-only"> {desc}. FEC page (opens in a new tab)</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-1 text-sm leading-5 text-black/60" data-money-list-caption>{t("Raised")}{common ? ` · ${common}` : ""}</p>
+      {notes.map((c) => <p key={c.name} className="text-sm leading-5 text-black/60" data-money-note-line>{c.name}: {c.money!.note}</p>)}
+    </div>
+  );
+}
+
 /** PR #32 (Sai): party, incumbent and FEC money under each candidate. Federal races in the 3 ZIPs only.
  *  Fixes from QA main-bbcc940: per-candidate "through" date and fec.gov link (P1-1/P1-2), "No FEC filing found" instead of a
  *  blank (P1-4), party from the ballot data only (never FEC codes), $1.0M / -$3,004 formatting (P2-1), dates via i18n (P2-2),
@@ -113,7 +154,8 @@ export function FinanceRow({ r, align = false }: { r: RaceLite; align?: boolean 
       {/* Adam 1:52 PM Oct 30: in the race list the money sits under each portrait, so the columns use the photo row's
           tracks and gaps (components/PortraitRow: repeat(n, minmax(0, var(--tile-max))), 72/88/112px, gap 8/12/16px).
           Rows over 4 (none of the federal races today) keep the two-up / auto-fill grid. */}
-      <ul className={align && cands.length <= 4 ? "my-2 grid justify-start gap-x-2 gap-y-2 [--tile-max:72px] md:gap-x-3 md:[--tile-max:88px] lg:gap-x-4 lg:[--tile-max:112px]" : "my-2 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]"}
+      {align ? <MoneyList cands={cands} /> : null}
+      <ul className={align && cands.length <= 4 ? "my-2 hidden sm:grid justify-start gap-x-2 gap-y-2 [--tile-max:72px] md:gap-x-3 md:[--tile-max:88px] lg:gap-x-4 lg:[--tile-max:112px]" : align ? "my-2 hidden sm:grid gap-x-4 gap-y-2 sm:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]" : "my-2 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]"}
         style={align && cands.length <= 4 ? { gridTemplateColumns: `repeat(${cands.length}, minmax(0, var(--tile-max)))` } : undefined} data-finance-align={align && cands.length <= 4 ? "portraits" : "grid"}>
         {cands.map((c) => {
           const id = fecIdOf(c);
