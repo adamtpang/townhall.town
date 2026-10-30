@@ -93,10 +93,10 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   const recUrl = mp?.r?.u ?? null;
   // Adam 10:34 AM CT Oct 30: overlap is labeled as overlap, never a match or a recommendation.
   // Fit: shown only when 2+ issues overlap (both sides non-zero); a 0 answer never counts.
-  const fitLine = o.n >= 2 ? `Issue overlap with your answers: ${o.agree} of ${o.n} issues` : null;
+  const fitLine = o.n >= 2 ? `Issue overlap: ${o.agree} of ${o.n}` : null;
   void answeredYesNo;
   const tr = useT();
-  const fitShown = o.n >= 2 ? `${tr("Issue overlap with your answers")}: ${o.agree} ${tr("of")} ${o.n} ${tr("issues")}` : null;
+  const fitShown = o.n >= 2 ? `${tr("Issue overlap")}: ${o.agree} ${tr("of")} ${o.n}` : null;
   // Office points are display-only and never scored; they only change which "no position" wording is shown.
   const officeOnly = o.sourced === 0 && main.some((x) => x.k === "office");
   const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
@@ -114,7 +114,7 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
               <li key={k} className="min-w-0 text-base leading-6 text-black [overflow-wrap:anywhere]" data-main-point={x.i} data-point-type={x.k}>
                 {/* QA 10:48 AM CT Oct 30 (P1): main points wrap to their full text (<= 120 chars), never an ellipsis; the source follows the point. */}
                 {/* main_points17: an unscored office priority gets a small muted text prefix; issue points look as before. */}
-                {x.k === "office" ? <><span className="text-sm leading-6 text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
+                {x.k === "office" ? <><span className="text-base leading-6 font-[450] text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
                 <span data-main-text>{x.t}</span>{" "}
                 <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
               </li>
@@ -134,14 +134,14 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
         ) : null}
         {o.sourced === 0 && checked.length === 0 ? (
           <ul className="mt-1 flex flex-col gap-y-2 text-sm" data-no-position-links>
-            {site ? <li><a href={site} target="_blank" rel="noreferrer" className="flex min-h-11 items-center text-[#3760F2]" data-site-link>{liveUrl(c.campaignSite) ? "Campaign site" : "Official site"} ↗{ext}</a></li> : null}
-            <li><a href={LWV_GUIDE} target="_blank" rel="noreferrer" className="flex min-h-11 items-center text-[#3760F2]" data-lwv-link>League of Women Voters guide ↗{ext}</a></li>
+            {site ? <li><a href={site} target="_blank" rel="noreferrer" className="flex min-h-11 items-center th-link" data-site-link>{liveUrl(c.campaignSite) ? "Campaign site" : "Official site"} ↗{ext}</a></li> : null}
+            <li><a href={LWV_GUIDE} target="_blank" rel="noreferrer" className="flex min-h-11 items-center th-link" data-lwv-link>League of Women Voters guide ↗{ext}</a></li>
           </ul>
         ) : null}
-        {site && !(o.sourced === 0 && checked.length === 0) ? <p className="mt-1 text-sm"><a href={site} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`} data-site-link>{liveUrl(c.campaignSite) ? "Campaign site" : "Official site"} ↗{ext}</a></p> : null}
+        {site && !(o.sourced === 0 && checked.length === 0) ? <p className="mt-1 text-sm"><a href={site} target="_blank" rel="noreferrer" className={`${HIT} th-link`} data-site-link>{liveUrl(c.campaignSite) ? "Campaign site" : "Official site"} ↗{ext}</a></p> : null}
         {hasMore ? (
           <details className="mt-1" data-all-positions>
-            <summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-[#3760F2]">{o.sourcedIds.length > 0 ? "Show all positions" : `Show ${checked.length} source${checked.length === 1 ? "" : "s"}`}</summary>
+            <summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black underline decoration-black/30 underline-offset-[3px]">{o.sourcedIds.length > 0 ? "Show all positions" : `Show ${checked.length} source${checked.length === 1 ? "" : "s"}`}</summary>
             {o.sourcedIds.length > 0 ? (
               <ul className="space-y-1" data-sourced-n={o.sourcedIds.length}>
                 {o.sourcedIds.map((id) => { const s = st[id]; return (
@@ -149,14 +149,14 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
                     <span className="font-[530]">{issueLabel(id)}:</span>{" "}
                     {voteLine(s) ? <>{voteLine(s)}</> : stanceForm(s) === "summary" ? <><span className="text-black/60" data-bp-summary>Ballotpedia summary:</span> {s.quote}</> : s.quote ? <>&ldquo;{s.quote}&rdquo;</> : s.summary ? <><span className="text-black/60" data-summary>Summary:</span> {s.summary}</> : null}{" "}
                     {s.year ? <><span className="text-black/60" data-quote-year>({s.year})</span>{" "}</> : null}
-                    {s.sourceUrl ? <a href={s.sourceUrl} target="_blank" rel="noreferrer" title={s.year ? undefined : "Date unsure"} className={`${HIT} text-[#3760F2]`} data-own-line>{sourceLabel(s.sourceUrl)} ↗{ext}</a> : null}
+                    {s.sourceUrl ? <a href={s.sourceUrl} target="_blank" rel="noreferrer" title={s.year ? undefined : "Date unsure"} className={`${HIT} th-link`} data-own-line>{sourceLabel(s.sourceUrl)} ↗{ext}</a> : null}
                   </li>
                 ); })}
               </ul>
             ) : null}
             {unsure.length > 0 ? (
               <ul className="mt-1 space-y-1" data-unsure-n={unsure.length}>
-                {unsure.map((id) => <li key={id} className="text-sm leading-5 text-black/60" data-unsure={id}><span className="font-[530]">{issueLabel(id)}: unclear, not compared.</span> {st[id].summary}{st[id].sourceUrl ? <>{" "}<a href={st[id].sourceUrl!} target="_blank" rel="noreferrer" className={`${HIT} text-[#3760F2]`}>{sourceLabel(st[id].sourceUrl)} ↗{ext}</a></> : null}</li>)}
+                {unsure.map((id) => <li key={id} className="text-sm leading-5 text-black/60" data-unsure={id}><span className="font-[530]">{issueLabel(id)}: unclear, not compared.</span> {st[id].summary}{st[id].sourceUrl ? <>{" "}<a href={st[id].sourceUrl!} target="_blank" rel="noreferrer" className={`${HIT} th-link`}>{sourceLabel(st[id].sourceUrl)} ↗{ext}</a></> : null}</li>)}
               </ul>
             ) : null}
             {o.sourced >= 2 && noRec.length > 0 ? <p className="mt-1 text-sm text-black/60" data-null-status>No public position found yet: {noRec.map(issueLabel).join(", ")}</p> : null}
@@ -164,7 +164,7 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
               <div className="mt-1 text-sm leading-5 text-black/80" data-sources-checked>
                 {o.sourcedIds.length > 0 ? <p>Sources checked:</p> : null}
                 <ul className="mt-1 flex flex-col gap-y-2">
-                  {checked.map((x) => x.down ? <li key={x.url} className="flex min-h-11 items-center text-black/60" data-site-down>{host(x.url)} ({x.down})</li> : <li key={x.url + checkedLabel(x)}><a href={x.url} target="_blank" rel="noreferrer" className="flex min-h-11 items-center text-[#3760F2]" data-checked-source>{checkedLabel(x)} ↗{ext}</a></li>)}
+                  {checked.map((x) => x.down ? <li key={x.url} className="flex min-h-11 items-center text-black/60" data-site-down>{host(x.url)} ({x.down})</li> : <li key={x.url + checkedLabel(x)}><a href={x.url} target="_blank" rel="noreferrer" className="flex min-h-11 items-center th-link" data-checked-source>{checkedLabel(x)} ↗{ext}</a></li>)}
                 </ul>
               </div>
             ) : null}

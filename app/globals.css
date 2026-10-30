@@ -3,29 +3,44 @@
 @tailwind utilities;
 
 /* Design tokens modeled on the National Design Studio (ndstudio.gov), from PR #2, layered on top of
-   the existing official navy/white UI. Tokens are opt-in (bg-card, text-muted-foreground, nds-*);
+   the ink-on-#f2f2f2 UI with the townhall purple accent. Tokens are opt-in (bg-card, text-muted-foreground, nds-*);
    the base body/link styles below stay as before so the working UI is unchanged. */
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Design purple palette, Oct 30 2026 (design/townhall/2026-10-30/purple/spec.md section 0). Neutrals per #27. */
+    --background: 0 0% 94.9%;          /* #F2F2F2 surface (page) */
     --foreground: 0 0% 0.4%;           /* #010101 ink */
-    --surface: 0 0% 94.9%;             /* #f2f2f2 */
+    --surface: 0 0% 94.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0.4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0.4%;
     --muted: 0 0% 90.2%;
-    --muted-foreground: 0 0% 42%;      /* #6b6b6b */
+    --muted-foreground: 0 0% 38%;      /* ~ink/60 on #F2F2F2, 5.5:1 */
     --border: 0 0% 85.5%;
-    --input: 0 0% 85.5%;
-    --ring: 216 57% 21%;               /* navy focus ring */
-    --primary: 216 57% 21%;            /* #162e51 navy */
+    --input: 0 0% 50%;                 /* ink/50 #808080: 3.5:1 on #F2F2F2, 3.9:1 on white (UI boundary >= 3:1) */
+    /* townhall purple, hue ~285 */
+    --brand-50: 282 45.5% 95.7%;       /* #F6EFF9 */
+    --brand-100: 281 47.8% 91.0%;      /* #ECDDF3 */
+    --brand-300: 280 44.9% 75.1%;      /* #C9A3DC links on the ink band only */
+    --brand-500: 284 43.0% 51.2%;      /* #9B4DB8 decorative mark on the ink band */
+    --brand-600: 287 54.4% 40.4%;      /* #862F9F logo mark, focus ring, rules */
+    --brand-700: 282 58.4% 33.9%;      /* #6B2489 links, solid buttons, selected answers */
+    --brand-900: 279 63.3% 19.2%;      /* #3A1250 hover / pressed */
+    --primary: var(--brand-700);
     --primary-foreground: 0 0% 100%;
-    --secondary: 217 100% 6.1%;        /* #000c1f navy */
-    --secondary-foreground: 0 0% 100%;
-    --accent: 227 88% 58%;             /* #3760f2 link blue */
+    --secondary: 0 0% 0.4%;
+    --secondary-foreground: 0 0% 94.9%;
+    --accent: var(--brand-600);
     --accent-foreground: 0 0% 100%;
-    --destructive: 355 100% 37.5%;     /* #bf000f */
+    --ring: var(--brand-600);
+    --destructive: 0 0% 0.4%;          /* ink: no red anywhere (P0-8) */
     --destructive-foreground: 0 0% 100%;
-    --radius: 0.375rem;
+    --link: var(--brand-700);
+    --link-hover: var(--brand-900);
+    --stat-rule: var(--brand-600);
+    --radius: 0rem;                    /* #27 square corners */
+    --ease-nd: cubic-bezier(.215,.61,.355,1);
   }
   /* ndstudio.gov (#27): one book weight (450) for all text, 530 as the only emphasis. */
   body { @apply text-[#010101] antialiased; font-weight: 450; }
@@ -34,17 +49,24 @@
   a { font-weight: 450; }
   /* Design: H1/H2 at 530, -0.02em, line-height ~1.0. */
   h1, h2 { font-weight: 530; line-height: 1; }
-  a { @apply text-navy-700 underline decoration-slate-300 underline-offset-2 hover:decoration-navy-700; }
+  a { @apply text-brand-700 underline decoration-brand-700/35 underline-offset-[3px] hover:text-brand-900 hover:decoration-current; }
   h1, h2, h3 { letter-spacing: -0.02em; }
-  :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2; }
+  :focus-visible { outline: 2px solid #862F9F; outline-offset: 2px; }
+  /* QA P1-1 (24593cd): brand-600 is 2.90:1 on the ink footer; footer focus uses brand-300 #C9A3DC (9.70:1 on #010101). */
+  [data-site-footer] :focus-visible { outline: 2px solid #C9A3DC; outline-offset: 2px; }
+  /* Purple spec P1-2: candidate headshots are monochrome via a CSS filter only (image files untouched); applied to every
+     self-hosted portrait the same way. Lives here, not in Portrait.tsx, so the bigger-photos branch merges cleanly. */
+  img[src^="/portraits/"] { filter: grayscale(1) contrast(1.04); }
 }
 
 @layer components {
-  .eyebrow { @apply text-sm font-semibold uppercase tracking-[0.14em] text-slate-500; }
+  .eyebrow { @apply text-sm font-semibold uppercase tracking-[0.14em] text-black/60; }
   .nds-grid { @apply grid grid-cols-2 gap-x-4 px-6 md:grid-cols-12 md:gap-x-5 md:px-5 lg:px-10 mx-auto max-w-grid; }
   .nds-caption-upper { @apply text-nds-micro uppercase tracking-wide text-muted-foreground; }
   .nds-hairline { @apply border-t border-foreground/10; }
   .nds-link-arrow::after { content: " \2197"; }
+  /* P0-3: text links (sources, Source ↗, credits, ratings, Where/When). brand-700 on #F2F2F2 = 8.38:1. */
+  .th-link { @apply text-brand-700 underline decoration-brand-700/35 underline-offset-[3px] hover:text-brand-900 hover:decoration-current; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -55,9 +77,29 @@
   }
 }
 
-/* Flat ground, as on ndstudio.gov (#27): ink on #f2f2f2, no grid or glow. */
+/* Flat ground, as on ndstudio.gov (#27): ink on #f2f2f2, no grid or glow. overflow-x: clip keeps the full-bleed
+   band (100vw) from adding a sideways scroll where a classic scrollbar takes width. */
 body {
   background: #f2f2f2;
+  overflow-x: clip;
+}
+
+/* ndstudio-structure spec §5: purple duotone in CSS (files stay neutral grayscale). Shadows brand-900, highlights brand-100.
+   No mix-blend-mode on the img itself (renders blank in Chrome); the overlays do the work. No text ever sits on media. */
+.duo { position: relative; overflow: hidden; isolation: isolate; background-color: #3A1250; }
+.duo > img, .duo > video, .duo > picture > img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+.duo > picture { position: absolute; inset: 0; }
+.duo > picture + video { position: absolute; inset: 0; }
+.duo::before, .duo::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.duo::before { background: #ECDDF3; mix-blend-mode: multiply; }
+.duo::after { background: #3A1250; mix-blend-mode: screen; }
+@supports not (mix-blend-mode: screen) { .duo::before, .duo::after { display: none; } }
+/* City cards: one link covers the card; hover dims the photo, focus draws the 2px brand-600 ring around the whole card. */
+.th-card a[data-city-zip]:focus-visible { outline: none; }
+.th-card a[data-city-zip]:focus-visible::after { outline: 2px solid #862F9F; outline-offset: 2px; }
+@media (hover: hover) {
+  .th-card .duo > img { transition: opacity 150ms cubic-bezier(.215,.61,.355,1); }
+  .th-card:hover .duo > img { opacity: .85; }
 }
 
 /* Print: only the one-page plan sheet. */

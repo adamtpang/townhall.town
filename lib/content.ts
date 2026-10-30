@@ -12,22 +12,13 @@ const coverageLine = COVERAGE.map((c) => `${c.zip} (${c.place})`).join(", ");
 
 export const HOME_SECTIONS: Section[] = [
   {
-    heading: "How it works",
-    paragraphs: [
-      `Enter a 5-digit ZIP. townhall.town lists the races and measures we have sourced for your ${SITE.electionLabel} ballot, what each office controls, and when and where to vote.`,
-      "For each candidate you see party, links to their filings and pages, and positions taken from public sources, linked on each claim. When a fact cannot be confirmed, it is marked unsure or not shown.",
-      "An AI model writes a short neutral summary from those sourced records only. It does not recommend candidates or positions. Your issue answers stay in your browser, and there is no account.",
-      `Covered ZIPs today: ${coverageLine}.`,
-    ],
-  },
-  {
     heading: "Sources",
     items: [
-      "Candidates and positions: official candidate lists from county and state election offices, [Ballotpedia](https://ballotpedia.org), candidates' own campaign sites, and news reports, linked on each claim",
-      "Campaign finance links: [FEC](https://www.fec.gov), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov) filing pages",
+      "Candidates and positions: election offices, [Ballotpedia](https://ballotpedia.org), campaign sites, news reports",
+      "Campaign finance: [FEC](https://www.fec.gov), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov)",
       "Dates, ID rules and polling places: [Travis County Clerk](https://votetravis.gov), [SF Department of Elections](https://www.sf.gov/november-3-2026-consolidated-general-election), [VoteTexas.gov](https://www.votetexas.gov), [California Secretary of State](https://www.sos.ca.gov/elections), [NYC Board of Elections](https://vote.nyc)",
-      "Local data and ZIP geography: [U.S. Census Bureau](https://www.census.gov) American Community Survey 2024 5-year",
-      "Market prices: live [Polymarket](https://polymarket.com) prices, fetched when you look up a ZIP, with a link to the market and the time fetched. Market prices, not forecasts. No market, no number",
+      "Local data: [U.S. Census Bureau](https://www.census.gov) American Community Survey 2024 5-year",
+      "Market prices: [Polymarket](https://polymarket.com). Not forecasts.",
     ],
   },
 ];
@@ -44,36 +35,36 @@ export const ABOUT: PageContent = {
   path: "/about",
   title: "About townhall.town",
   description: "What townhall.town is, how it stays nonpartisan, and who builds it.",
-  lead: `townhall.town is a free ballot guide for the ${SITE.electionLabel} U.S. general election. Enter a ZIP and it lists every race and statewide measure on that ballot, the candidates, and what each office controls.`,
+  lead: `A free ballot guide for the ${SITE.electionLabel} U.S. general election.`,
   sections: [
     {
       heading: "Nonpartisan by design",
       paragraphs: [
-        "townhall.town does not endorse candidates, parties or ballot positions, and it does not rank candidates. Candidates in a race are shown with the same fields in the same layout.",
-        "The AI summary is instructed to stay neutral, to use only facts returned by the data tools, and to never recommend a candidate. Polymarket prices are labeled as market prices, not forecasts.",
+        "townhall.town does not endorse candidates, parties or ballot positions, and it does not rank candidates.",
+        "The AI summary is instructed to stay neutral, to use only facts returned by the data tools, and to never recommend a candidate.",
       ],
     },
     {
       heading: "Every claim is sourced or marked unsure",
       paragraphs: [
-        "Each fact links the record it came from, such as Ballotpedia, the FEC, state ethics filings, Secretary of State pages or Census data. When a fact cannot be confirmed from a source, the page says unsure instead of guessing.",
+        "Each fact links the record it came from. When a fact cannot be confirmed, the page says unsure.",
         "If you find an error, please [open an issue](" + SITE.issues + ") with the source that shows the correct fact.",
       ],
     },
     {
       heading: "Coverage",
-      paragraphs: [`Covered ZIPs today: ${coverageLine}. More places are added as their ballots are researched and sourced.`],
+      paragraphs: [`Covered ZIPs today: ${coverageLine}.`],
     },
     {
       heading: "Open source",
       paragraphs: [
-        `The code and ballot data are public on [GitHub](${SITE.github}) under the MIT license. Anyone can read how the data is built, check a claim, or suggest a fix.`,
+        `The code and ballot data are public on [GitHub](${SITE.github}) under the MIT license.`,
       ],
     },
     {
       heading: "Who builds it",
       paragraphs: [
-        `townhall.town is built by ${SITE.author}. It is an independent project, not a government site and not affiliated with any campaign or party. Always confirm dates, ID rules and polling places with your state or county election office.`,
+        `townhall.town is built by ${SITE.author}.`,
       ],
     },
   ],
@@ -92,7 +83,7 @@ export const PRIVACY: PageContent = {
     {
       heading: "The short version",
       paragraphs: [
-        "We don't sell or share your information. There are no ads, no data brokers, and nothing goes to campaigns or parties. The site only needs your ZIP code. Your issue answers stay on your device. We show what candidates said, with a link to where they said it, and we never recommend a candidate.",
+        "We don't sell or share your information. There are no ads, no data brokers, and nothing goes to campaigns or parties. The site only needs your ZIP code. Your issue answers stay on your device.",
       ],
     },
     {
@@ -137,7 +128,7 @@ export const PRIVACY: PageContent = {
     {
       heading: "Messages",
       paragraphs: [
-        "townhall.town does not run a texting, WhatsApp or email service yet, so it holds no phone numbers, email addresses or messages. This page will be updated before any messaging starts.",
+        "townhall.town does not run a texting, WhatsApp or email service yet, so it holds no phone numbers, email addresses or messages.",
       ],
     },
     {
@@ -153,30 +144,30 @@ export const CONTACT: PageContent = {
   path: "/contact",
   title: "Contact",
   description: "How to report an error, request a ZIP, or ask a question about townhall.town.",
-  lead: `The way to reach townhall.town is a GitHub issue at [github.com/adamtpang/townhall.town/issues](${SITE.issues}). Issues are public, so please do not include personal details.`,
+  lead: `Open a GitHub issue at [github.com/adamtpang/townhall.town/issues](${SITE.issues}). Issues are public, so do not include personal details.`,
   sections: [
     {
       heading: "Report a factual error",
       paragraphs: [
-        "Include the ZIP, the race or candidate, the fact that looks wrong, and a link to a source that shows the correct fact. Corrections are checked against the source, then fixed or marked unsure.",
+        "Include the ZIP, the race or candidate, the fact that looks wrong, and a source that shows the correct fact.",
       ],
     },
     {
       heading: "Request a ZIP or report a bug",
       paragraphs: [
-        "To ask for a new place, open an issue with the ZIP and city. To report a bug, describe what you did, what you expected, and what happened, with your browser and device if you can.",
+        "To ask for a new place, open an issue with the ZIP and city. To report a bug, describe what you did and what happened.",
       ],
     },
     {
       heading: "Security",
       paragraphs: [
-        "If you find a security problem, open an issue asking for a private channel and leave the details out of the public issue.",
+        "Open an issue asking for a private channel; leave the details out of the public issue.",
       ],
     },
     {
       heading: "Election questions",
       paragraphs: [
-        "townhall.town is not a government site. For registration, polling places and official ballots, contact your election office: [VoteTexas.gov](https://www.votetexas.gov), the [California Secretary of State](https://www.sos.ca.gov/elections), or the [NYC Board of Elections](https://vote.nyc).",
+        "For registration, polling places and official ballots, contact your election office: [VoteTexas.gov](https://www.votetexas.gov), the [California Secretary of State](https://www.sos.ca.gov/elections), or the [NYC Board of Elections](https://vote.nyc).",
       ],
     },
   ],

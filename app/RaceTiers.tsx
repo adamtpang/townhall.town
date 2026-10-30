@@ -79,8 +79,8 @@ export function MarketLine({ line }: { line: LeaderLine | null }) {
     <p className="max-w-[45ch] text-sm text-black/60" data-market-line>
       Leader on Polymarket: <span className="text-black">{line.name}</span> at {line.pct}.{" "}
       {line.others?.length ? <span data-market-others>Same market: {line.others.map((o) => `${o.name} at ${o.pct}`).join(", ")}.{" "}</span> : null}
-      <a href={line.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap text-[#3760F2]`} data-market-link>Polymarket market ↗<span className="sr-only"> (opens in a new tab)</span></a>{" "}
-      <span data-market-fetched>Fetched {line.fetched}.</span> A market price, not a forecast or a recommendation.
+      <a href={line.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap th-link`} data-market-link>Polymarket market ↗<span className="sr-only"> (opens in a new tab)</span></a>{" "}
+      <span data-market-fetched>Fetched {line.fetched}.</span>
     </p>
   );
 }
@@ -89,10 +89,10 @@ export function MarketLine({ line }: { line: LeaderLine | null }) {
 function NewsList({ items }: { items: RaceMeta["news"] }) {
   return (
     <details className="group/n" data-news>
-      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">News coverage ({items.length})<span aria-hidden className="ml-2 inline-block group-open/n:rotate-180">↓</span></summary>
+      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-black [&::-webkit-details-marker]:hidden">News ({items.length})<span aria-hidden className="ml-2 inline-block group-open/n:rotate-180">↓</span></summary>
       <ul className="max-w-2xl space-y-1 pb-2">
         {items.map((n) => (
-          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className={`${HIT} text-black underline-offset-2 hover:underline`} data-news-link>{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
+          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className={`${HIT} text-brand-700 underline-offset-2 hover:underline`} data-news-link>{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
         ))}
       </ul>
     </details>
@@ -130,7 +130,7 @@ export function FinanceRow({ r }: { r: RaceLite }) {
               ) : (
                 <p className="mt-1 text-sm leading-5 text-black/60" data-no-fec>{t("No FEC filing found")}</p>
               )}
-              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm text-[#3760F2]" data-fec-link title={`FEC: ${c.name}`}>
+              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm th-link" data-fec-link title={`FEC: ${c.name}`}>
                 {t("FEC page")} ↗<span className="sr-only"> {c.name} (opens in a new tab)</span>
               </a>
             </li>
@@ -162,7 +162,14 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
     ...tiers.filter((t) => t === "most" || t === "high" || showAll).map((t) => ({ key: t as string, name: TIER_NAME[t] as string, list: nonJudicial.filter((x) => x.tier === t), eager: t === "most" || t === "high", open: true })),
   ].filter((g) => g.list.length);
   const judicialGroup = judicial.length ? [{ key: "judicial", name: `Judicial races (${judicial.length})`, list: judicial, eager: false, open: false }] : [];
-  const raceItem = ({ r, why, mk }: { r: RaceLite; why: string; mk: Mk }, eager: boolean) => (
+  // Copy cuts (Oct 30): repeated explainers and stats show once, on the first race that has them, in render order.
+  const shown = [...groups.flatMap((g) => g.list), ...judicial].map((x) => x.r);
+  const firstNote = shown.find((r) => r.judicialNote)?.id;
+  const firstPlace = shown.find((r) => /\bPlace \d+/.test(r.title))?.id;
+  const statKey = (p: { label: string; geography: string; year: unknown }) => `${p.label}|${p.geography}|${p.year}`;
+  const statsFor = new Map<string, NonNullable<NonNullable<RaceLite["meta"]>["why"]>["problems"]>();
+  { const seen = new Set<string>(); for (const r of shown) { const ps = (r.meta?.why?.problems ?? []).filter((p) => !seen.has(statKey(p))); ps.forEach((p) => seen.add(statKey(p))); statsFor.set(r.id, ps); } }
+  const raceItem = ({ r, mk }: { r: RaceLite; why: string; mk: Mk }, eager: boolean) => (
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
@@ -179,25 +186,24 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                         ); })}
                       </ul>
                     ) : null}
-                    <p className="max-w-[45ch] text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No rating" ? <> <span data-closeness>{r.meta.closeness} (race ratings).</span></> : null}{mk ? <> <span data-closeness-market>{polymarketCloseness(mk)} on Polymarket.</span></> : null}{r.meta?.contest ? <> {r.meta.contest.replace(/\.+$/, "")}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
+                    {r.meta?.contest || r.meta?.rankedChoice ? <p className="max-w-[45ch] text-sm text-black/60" data-why>{r.meta?.contest ? <>{r.meta.contest.replace(/\.+$/, "")}.</> : null}{r.meta?.rankedChoice ? <>{r.meta?.contest ? " " : ""}Ranked-choice: you can rank candidates in order.</> : null}</p> : null}
                     <MarketLine line={leaderLine(mk)} />
-                    {r.judicialNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" title={r.judicialNoteSource.label} className={`${HIT} break-words text-[#3760F2]`} data-judicial-source>{judicialShort(r.judicialNoteSource.label)} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
+                    {r.judicialNote && r.id === firstNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" title={r.judicialNoteSource.label} className={`${HIT} break-words th-link`} data-judicial-source>{judicialShort(r.judicialNoteSource.label)} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{(r.sourceNote ? r.splitNote : r.appliesNote) ? <span className="text-black/60"> {plain(r.sourceNote ? r.splitNote : r.appliesNote)}</span> : null}</p> : null}
-                    {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
+                    {r.id === firstPlace ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.sourceNote ? <div className="max-w-[60ch] text-sm leading-5 text-black/60" data-tentative>{/* QA fb66b9b P2: short lines; TENTATIVE (draft) stays visible first. */}<p className="font-[530] text-black/80">TENTATIVE: draft contest list. Check your sample ballot.</p><ul className="mt-1 space-y-1" data-note-lines>{r.sourceNote.split(/(?<=\.)\s+(?=[A-Z])/).map((l) => <li key={l}>{l}</li>)}</ul></div> : r.tentative ? <p className="text-sm text-black/60" data-tentative>TENTATIVE: from the NYC Board of Elections&rsquo; contest list{printedDate(r.appliesNote) ? `, printed ${printedDate(r.appliesNote)}` : ""}. Check your sample ballot.</p> : null}
                     {(r.source || r.verify || (r.meta?.closenessBasis.length ?? 0) > 0) && (
-                      <p className="flex flex-wrap items-center gap-x-1 text-sm leading-5 text-black/60" data-race-links>
-                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
-                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{x.label} rating ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
-                        {r.verify && <><span aria-hidden>·</span><span>{r.verify}</span></>}
+                      <p className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm leading-5 text-black/60" data-race-links>
+                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative z-[1] inline-flex min-h-11 items-center">Source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
+                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="relative z-[1] inline-flex min-h-11 items-center">{x.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
+                        {r.verify && <><span aria-hidden>·</span><span>{r.verify.replace(/^Check that (.+) is yours by address\.$/, "Check $1 by address.")}</span></>}
                       </p>
                     )}
                     {r.meta?.why ? (
                       <details className="group/w" data-why-matters>
-                        <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">Why this race matters<span aria-hidden className="ml-2 inline-block group-open/w:rotate-180">↓</span></summary>
-                        <div className="max-w-2xl pb-2 text-sm">
-                          <p className="text-base">{r.meta.why.summary}</p>
-                          {r.meta.why.problems.length > 0 && <ul className="mt-2 space-y-1">{r.meta.why.problems.map((p) => <li key={p.label + p.geography}>{plain(p.label)}: {p.value}{p.unit === "%" ? "%" : ` ${p.unit}`} ({plain(p.geography)}, {plain(String(p.year))}) <a href={p.sourceUrl} title={`${p.label} (${p.geography}, ${p.year})`} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center whitespace-nowrap">{host(p.sourceUrl)} ↗</a></li>)}</ul>}
+                        <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-black [&::-webkit-details-marker]:hidden">Why this race matters<span aria-hidden className="ml-2 inline-block group-open/w:rotate-180">↓</span></summary>
+                        <div className="max-w-2xl border-l-2 border-brand-600 pb-2 pl-3 text-sm tabular-nums">
+                          {(statsFor.get(r.id) ?? []).length > 0 && <ul className="space-y-1">{(statsFor.get(r.id) ?? []).map((p) => <li key={p.label + p.geography}>{plain(p.label)}: {p.value}{p.unit === "%" ? "%" : ` ${p.unit}`} ({plain(p.geography)}, {plain(String(p.year))}) <a href={p.sourceUrl} title={`${p.label} (${p.geography}, ${p.year})`} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center whitespace-nowrap">{host(p.sourceUrl)} ↗</a></li>)}</ul>}
                           {r.meta.why.authority.length > 0 && (
                             <div className="mt-2" data-authority>
                               <p className="text-black/60">What this office does on each issue</p>
@@ -215,8 +221,8 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
     <section className="border-t border-black py-24" id="tiers">
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
-      <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
-      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings (Cook Political Report, Sabato&rsquo;s Crystal Ball, Inside Elections; linked on each race) call it a toss-up or tilt, or when its live Polymarket market has the top outcome between 35% and 65%. Polymarket can move a race up, never down. Races with no rating and no Polymarket market are ranked on the office alone and get no market line. Market prices are not forecasts or recommendations.</p>
+      <p className="mt-4 max-w-2xl text-black/60">Races ranked by office and how close the race is. Never candidates.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Competitive: Cook Political Report, Sabato&rsquo;s Crystal Ball or Inside Elections call it a toss-up or tilt. Polymarket: top outcome between 35% and 65% also counts as Competitive. Market prices are not forecasts or recommendations.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
@@ -225,14 +231,13 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                 <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
                 <span aria-hidden className="inline-block text-sm text-black/60 group-open:rotate-180">↓</span>
               </summary>
-              {key === "most" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
               <ul className="mt-6 space-y-10">
                 {list.map((x) => raceItem(x, eager))}
               </ul>
             </details>
         ))}
         {hiddenCount > 0 && !showAll && (
-          <button type="button" onClick={() => setShowAll(true)} data-show-all className="mt-6 inline-flex min-h-11 items-center border border-black/30 px-5 text-base text-black hover:border-black">Show all {nonJudicial.length} races</button>
+          <button type="button" onClick={() => setShowAll(true)} data-show-all className="mt-6 inline-flex min-h-11 items-center border border-black/45 px-5 text-base text-black hover:border-black [@media(hover:hover)]:hover:bg-brand-50">Show all {nonJudicial.length} races</button>
         )}
         {judicialGroup.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
@@ -241,7 +246,6 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                 <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
                 <span aria-hidden className="inline-block text-sm text-black/60 group-open:rotate-180">↓</span>
               </summary>
-              {key === "most" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
               <ul className="mt-6 space-y-10">
                 {list.map((x) => raceItem(x, eager))}
               </ul>
@@ -263,7 +267,7 @@ function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; 
   if (!ok) return <p className="text-sm leading-5 text-black/60" data-office-unverified>Office description not yet verified</p>; // No source, no description.
   return (
     <details className="group/o" data-office={id}>
-      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">
+      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-black [&::-webkit-details-marker]:hidden">
         What this office does<span aria-hidden className="ml-2 inline-block group-open/o:rotate-180">↓</span>
       </summary>
       <p className="max-w-2xl pb-2 text-base">

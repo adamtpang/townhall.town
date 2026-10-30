@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Public_Sans, Inter_Tight } from "next/font/google";
 import { SITE } from "../lib/site";
 
@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: SITE.name, locale: "en_US", url: "/", title: SITE.title, description: SITE.description },
   twitter: { card: "summary_large_image", title: SITE.title, description: SITE.description },
 };
+
+// Purple palette (Design Oct 30): browser chrome matches the #F2F2F2 surface.
+export const viewport: Viewport = { themeColor: "#F2F2F2" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

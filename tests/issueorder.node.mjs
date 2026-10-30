@@ -6,7 +6,7 @@ import { buttonValue, poleName, press, choiceOf, overlapFor } from "../lib/overl
 const order = JSON.parse(fs.readFileSync(new URL("../data/issue_order.json", import.meta.url)));
 
 test("issue_order has intro, one statement per issue, numeric poles, and ranked ZIP rows with sources", () => {
-  assert.equal(order.intro, "Your answers stay private on your device and are never shared or sold.");
+  assert.equal(order.intro, "Your answers stay on your device.");
   for (const [k, s] of Object.entries(order.statements)) {
     assert.ok(s.statement && typeof s.statement === "string", k);
     assert.ok(s.yesMeansPole === 1 || s.yesMeansPole === -1, k);

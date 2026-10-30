@@ -5,8 +5,8 @@ import { lineText, NO_POSITION_LINE, OPEN_BY_DEFAULT } from "../components/WhoRa
 const src = (f: string) => fs.readFileSync(f, "utf8");
 describe("Who lines up: mobile accordion", () => {
   it("candidate line reads 'Name · 4 of 7 issues · B'; grade only where given; never 'No record found'", () => {
-    expect(lineText({ name: "Ana Ruiz", sourced: 5, agree: 4, n: 7, grade: "B" })).toBe("Ana Ruiz · Issue overlap with your answers: 4 of 7 issues · B");
-    expect(lineText({ name: "Ana Ruiz", sourced: 5, agree: 4, n: 7, grade: null })).toBe("Ana Ruiz · Issue overlap with your answers: 4 of 7 issues");
+    expect(lineText({ name: "Ana Ruiz", sourced: 5, agree: 4, n: 7, grade: "B" })).toBe("Ana Ruiz · Issue overlap: 4 of 7 · B");
+    expect(lineText({ name: "Ana Ruiz", sourced: 5, agree: 4, n: 7, grade: null })).toBe("Ana Ruiz · Issue overlap: 4 of 7");
     expect(lineText({ name: "Ana Ruiz", sourced: 5, agree: 1, n: 1, grade: null })).toBe("Ana Ruiz"); // QA 10:50 AM CT: N >= 2 rule, never "1 of 1"
     expect(lineText({ name: "Bo Li", sourced: 0, agree: 0, n: 0, grade: "C" })).toBe(`Bo Li · ${NO_POSITION_LINE}`);
     expect(NO_POSITION_LINE).toBe("No public position found yet");

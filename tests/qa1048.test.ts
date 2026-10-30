@@ -29,7 +29,7 @@ describe("QA 10:48/10:50 AM CT Oct 30", () => {
   });
   it("collapsed Who rows use the card's overlap wording and N >= 2", () => {
     expect(lineText({ name: "Sarah Eckhardt", sourced: 3, agree: 1, n: 1, grade: null })).toBe("Sarah Eckhardt");
-    expect(lineText({ name: "Sarah Eckhardt", sourced: 3, agree: 1, n: 2, grade: null })).toBe("Sarah Eckhardt · Issue overlap with your answers: 1 of 2 issues");
+    expect(lineText({ name: "Sarah Eckhardt", sourced: 3, agree: 1, n: 2, grade: null })).toBe("Sarah Eckhardt · Issue overlap: 1 of 2");
   });
   it("unsupported ZIP notice is exactly Adam's wording, with Spanish", () => {
     expect(UNSUPPORTED_MESSAGE).toBe("Austin, SF and NYC for now.");

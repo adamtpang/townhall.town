@@ -66,10 +66,12 @@ export const CREDIT = "max-w-[60ch] text-[12px] leading-4 font-[450] text-black/
 // Design p11 #2, superseded by Design 3:34 AM CT (Oct 30): credit links reach 44px through spacing (TAP below), never a
 // vertical pseudo-element. Kept identical to TAP so the per-candidate 'Photo:' credit follows the same rule.
 const CLINK = "relative flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:inline-flex md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']";
+/** Copy cuts (Oct 30): the candidate's name already labels the credit, so "Name's campaign site" reads "campaign site". */
+const shortCredit = (a: string) => a.replace(/^[^·]+?['\u2019]s (?:own )?(?=campaign site|official |X profile|Facebook profile|Linktree page|LinkedIn profile)/, "");
 /** "{author} · {license}" with the author linked to the file page and the license to its deed (no raw URLs). */
 export function CreditBody({ photo }: { photo: NonNullable<Photo> }) {
   // Adam 12:16 AM CT: "Photo: {attribution}", linked to the source page (campaign, official or Commons file page).
-  const one = (p: Pic) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a href={p.page} target="_blank" rel="noreferrer" className={CLINK} data-photo-credit>{author}</a> : <span data-photo-credit>{author}</span>; };
+  const one = (p: Pic) => { const author = shortCredit(p.attribution ?? p.credit.replace(/^Photo:\s*/i, "")); return p.page ? <a href={p.page} target="_blank" rel="noreferrer" className={CLINK} data-photo-credit>{author}</a> : <span data-photo-credit>{author}</span>; };
   return photo.mate ? <>{one(photo)} · {one(photo.mate)}</> : one(photo);
 }
 /** Design p12 #1: one credit line per race, "Photos: Name · credit   Name · credit".
@@ -83,7 +85,7 @@ export function RaceCredits({ cands, label }: { cands: { name: string; photo?: P
   const isOff = usePhotoOff();
   const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
   if (!keep.length) return null;
-  const link = (p: Pic, key: string) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} data-photo-credit>{author}</a> : <span key={key} className="flex min-h-11 items-center" data-photo-credit>{author}</span>; };
+  const link = (p: Pic, key: string) => { const author = shortCredit(p.attribution ?? p.credit.replace(/^Photo:\s*/i, "")); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} data-photo-credit>{author}</a> : <span key={key} className="flex min-h-11 items-center" data-photo-credit>{author}</span>; };
   return <CreditRow count={keep.length}>{keep.map((c) => { const ph = c.photo!; return (
         <span key={c.name} className="flex flex-wrap items-center gap-x-1 md:gap-x-2 md:data-[overflow=true]:invisible" data-race-credit={c.name}>
           <span>{label(c.name)} ·</span>{link(ph, "a")}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m")}</> : null}

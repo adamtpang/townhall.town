@@ -106,7 +106,7 @@ describe("office label and empty states", () => {
   it("office points get the muted 'Office priority:' prefix; issue points do not", async () => {
     const html = await endHtml("78701");
     const pena = dec(rowOf(html, "Brian Peña"));
-    expect(pena).toMatch(/data-point-type="office"><span class="text-sm leading-6 text-black\/60" data-office-label="true">Office priority:<\/span> <span data-main-text="true">Says he will seek accurate appraisals/);
+    expect(pena).toMatch(/data-point-type="office"><span class="text-base leading-6 font-\[450\] text-black\/60" data-office-label="true">Office priority:<\/span> <span data-main-text="true">Says he will seek accurate appraisals/);
     const eck = rowOf(html, "Sarah Eckhardt");
     expect(eck).not.toContain("data-office-label");
     expect(eck.match(/data-point-type="issue"/g)?.length).toBe(3);
