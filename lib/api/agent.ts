@@ -25,6 +25,7 @@ const STEP_LABEL: Record<string, string> = {
 };
 
 type Emit = (e: Record<string, unknown>) => void;
+const CORE_TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"] as const;
 
 function summarize(name: string, r: any): string {
   switch (name) {
@@ -132,7 +133,7 @@ async function analyze(zip: string, results: Record<string, any>, emit: Emit): P
         prompt: `Facts for ZIP ${zip} (Nov 3, 2026):
 ${JSON.stringify(facts)}
 
-Write at most 3 bullets, each under 35 words, starting with "- ". Bullet 1: if any contest has competitive=true, name the closest one and its market price; otherwise say no contest is close and name the most lopsided leader with its price. Bullet 2: one measure that changes what voters pay, quoting its cost text verbatim, including any "per $100,000 homestead" or similar qualifier. Bullet 3: localProblemFurthestFromState, with its value and the state figure. If the facts for a bullet are empty or null, leave that bullet out entirely and never say that something is missing. No preamble, no advice.`,
+Write at most 3 bullets, each under 35 words, starting with "- ". Bullet 1: if any contest has competitive=true, name the closest one and its price, written as "a X% Polymarket market price"; otherwise say no contest is close and name the most lopsided leader with its price written the same way. A market price is what traders pay, not a poll and not a prediction from us. Bullet 2: one measure that changes what voters pay, quoting its cost text verbatim, including any "per $100,000 homestead" or similar qualifier. Bullet 3: localProblemFurthestFromState, with its value and the state figure. If the facts for a bullet are empty or null, leave that bullet out entirely and never say that something is missing. No preamble, no advice.`,
         maxOutputTokens: 220,
         abortSignal: AbortSignal.timeout(8000),
       });
@@ -158,10 +159,10 @@ Write at most 3 bullets, each under 35 words, starting with "- ". Bullet 1: if a
 function factBullets(f: { contestsByMarket: any[]; measuresWithCost: any[]; localProblemFurthestFromState: any }): string {
   const out: string[] = [];
   const close = f.contestsByMarket.find((c) => c.competitive);
-  if (close) out.push(`- Closest contest: ${close.contest}, with ${close.leader} at ${close.marketPricePct}% on Polymarket.`);
+  if (close) out.push(`- Closest contest: ${close.contest}, with ${close.leader} at a ${close.marketPricePct}% Polymarket market price (what traders pay, not a poll).`);
   else if (f.contestsByMarket.length) {
     const top = [...f.contestsByMarket].sort((a, b) => b.marketPricePct - a.marketPricePct)[0];
-    out.push(`- No contest is close on Polymarket; the most lopsided is ${top.contest}, with ${top.leader} at ${top.marketPricePct}%.`);
+    out.push(`- No contest is close on Polymarket; the most lopsided is ${top.contest}, with ${top.leader} at a ${top.marketPricePct}% Polymarket market price (what traders pay, not a poll).`);
   }
   const m = f.measuresWithCost[0];
   if (m) out.push(`- ${m.measure}: ${m.cost}`);
@@ -186,9 +187,16 @@ async function run(zip: string, emit: Emit) {
         temperature: 0,
         providerOptions: GATEWAY_FALLBACKS,
         system: systemFor(zip),
-        prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}.`,
+        // From Engineering's patch 75e762f: name the five lookups so the required tool steps cover them.
+        prompt: `Explain the Nov 3, 2026 ballot for ZIP ${zip}. First look it up with your tools: districts, races, candidates, market odds and local problems for ZIP ${zip}. Call several tools at once when you can. Then write.`,
         tools: { ...makeTools(zip, emit, results), ...civicTools, ...dataTools, ...townyTools },
-        stopWhen: stepCountIs(3),
+        prepareStep: ({ stepNumber }) => {
+          const unrun = CORE_TOOLS.filter((n) => !(n in results));
+          if (stepNumber < 2 && unrun.length) return { toolChoice: "required" as const, activeTools: [...unrun] as any };
+          return { toolChoice: "none" as const, activeTools: [] as any };
+        },
+        // Stop after the two tool steps: the analysis step below writes the summary, so a third (writing) step is wasted time.
+        stopWhen: stepCountIs(2),
         // Keeps the ballot response fast on long ballots (78701 has 58 races); the full list is in result.ballot.
         maxOutputTokens: NARRATION_TOKENS,
         abortSignal: AbortSignal.timeout(25000),
@@ -209,7 +217,7 @@ async function run(zip: string, emit: Emit) {
   const order = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"] as const;
   const missing = order.filter((n) => !(n in results));
   if (missing.length) {
-    if (mode === "live") emit({ type: "status", message: `Model skipped ${missing.join(", ")}; running them deterministically.` });
+    if (mode === "live") emit({ type: "status", message: "Planner: running remaining lookups" });
     else emit({ type: "status", message: "Running the same tools deterministically: fallback mode (no model)." });
     const tools = makeTools(zip, emit, results) as any;
     for (const n of missing) await tools[n].execute({ zip }, { toolCallId: n, messages: [] });
