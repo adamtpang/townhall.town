@@ -252,8 +252,8 @@
    ],
    "jurisdiction": "City of Austin",
    "cost": {
-    "value": "$260,000,000 in bonds, plus interest (maximum net effective interest rate 6.00%). Per-home tax impact: unsure (not in the documents we found)",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+    "value": "$260,000,000 in bonds; about $453.4 million with estimated interest at 6%. Estimated maximum tax increase: $8.14 a year on a $100,000 homestead (assumes the $20,000 homestead exemption), per the City's voter information document",
+    "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=480699"
    },
    "whoPays": {
     "text": "City of Austin property taxpayers. The ballot says: THIS IS A TAX INCREASE.",
@@ -272,8 +272,8 @@
    ],
    "jurisdiction": "City of Austin",
    "cost": {
-    "value": "$35,000,000 in bonds, plus interest (maximum net effective interest rate 6.00%). Per-home tax impact: unsure",
-    "sourceUrl": "https://votetravis.gov/wp-content/uploads/City-of-Austin-Orders.pdf"
+    "value": "$35,000,000 in bonds; about $61.0 million with estimated interest at 6%. Estimated maximum tax increase: $1.10 a year on a $100,000 homestead (assumes the $20,000 homestead exemption), per the City's voter information document",
+    "sourceUrl": "https://services.austintexas.gov/edims/document.cfm?id=480699"
    },
    "whoPays": {
     "text": "City of Austin property taxpayers. The ballot says: THIS IS A TAX INCREASE.",
