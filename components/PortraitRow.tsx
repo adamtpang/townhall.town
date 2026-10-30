@@ -59,7 +59,7 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eage
 
 /** Design portrait spec v2 (+ design p8: names one line, truncated with an ellipsis, full name in title/aria-label; every tile the same height): one flex row, never wraps, never scrolls, ballot order, identical square tiles
  *  (56px at 1024+, 48px at 768-1023, 40px below). Broken or missing photos fall back to a same-size initials tile (Adam's rule). */
-export function CandidatePortraitRow({ cands, size = "row", eager = false }: { cands: C[]; size?: "row" | "mini"; eager?: boolean }) {
+export function CandidatePortraitRow({ cands, size = "row", eager = false, credits = true }: { cands: C[]; size?: "row" | "mini"; eager?: boolean; credits?: boolean }) {
   if (!cands.length) return null;
   // Design p9 (<768): each item 56px wide (label w-14) with a centered 40px tile and gap-2, so 5 items fit 342px;
   // rows with more than 5 items fall back to 44px items. From 768 up the item is the tile (48 / 56px), gap-3.
@@ -76,7 +76,7 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
     <ul role="list" aria-label="Candidates" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
       {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
-    {size === "row" ? <RowCredits cands={cands} /> : null}
+    {size === "row" && credits ? <RowCredits cands={cands} /> : null}{/* credits={false}: the race folder shows them in its own "Photo credits (N)" item. */}
     </PhotoGroup>
   );
 }
@@ -84,7 +84,7 @@ export const PortraitRow = CandidatePortraitRow;
 
 /** Design p12 #1: one credit line per race under the row (shared with Who and the ballot card). Credits follow the
  *  fallback: a race (or, in candidate mode, a candidate) that reverted to initials drops its credit. */
-function RowCredits({ cands }: { cands: C[] }) {
+export function RowCredits({ cands }: { cands: C[] }) {
   const L = labels(cands.map((c) => c.name));
   return <div className="-mt-1 mb-2"><RaceCredits cands={cands} label={(n) => L[cands.findIndex((c) => c.name === n)].label} /></div>;
 }

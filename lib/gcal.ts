@@ -2,7 +2,8 @@
 // Event text is nonpartisan: race names only (from the stakes tier list), no candidate names, answers, fit or
 // recommendations. Dates and hours come from the same sourced events as the .ics (whenFor); nothing is invented.
 import { gcalDates, mapsUrl } from "./endscreen.mjs";
-import { tierFor, type Mk } from "../app/RaceTiers";
+import { tierFor } from "./tiers";
+import type { Mk } from "../app/RaceTiers";
 
 export const CARD_BASE = "https://townhall.town/card?zip=";
 /** City shown in titles (the three ZIPs we cover). */

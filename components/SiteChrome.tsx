@@ -3,16 +3,20 @@ import { SITE } from "../lib/site";
 
 export function SiteHeader({ extra }: { extra?: React.ReactNode } = {}) {
   return (
-    <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8 lg:px-10">
+    // Design premium §1 (Oct 30 2026): sticky full-bleed glass bar (radius 0), the content scrolls under it. Text on it is
+    // ink or black/60, never lighter (>= 4.5:1 at bg-white/75 over any underlay).
+    <div className="glass glass-bar-top sticky top-0 z-40" data-site-header>
+    <header className="mx-auto flex min-h-14 max-w-site items-center justify-between px-6 py-2 lg:px-10">
       <Link href="/" className="flex items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
         <span aria-hidden className="inline-block h-3 w-3 bg-brand-600" />
         townhall.town
       </Link>
       <span className="flex items-center gap-6">
         {extra}
-        <span className="text-sm font-[450] text-black/50">{SITE.electionLabel}</span>
+        <span className="text-sm font-[450] text-black/60">{SITE.electionLabel}</span>
       </span>
     </header>
+    </div>
   );
 }
 

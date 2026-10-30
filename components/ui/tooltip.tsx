@@ -7,9 +7,9 @@ export function Tip({ label, children }: { label: string; children: React.ReactN
     <T.Root delayDuration={150}>
       <T.Trigger asChild>{children}</T.Trigger>
       <T.Portal>
-        <T.Content sideOffset={6} className="z-50 max-w-xs rounded bg-navy px-3 py-2 text-xs leading-snug text-white shadow-lg">
+        <T.Content sideOffset={6} className="glass z-50 max-w-xs rounded-xl px-3 py-2 text-sm leading-5 text-black">{/* Premium §1: popovers are glass, rounded-xl (the one radius on the site), 14px ink. */}
           {label}
-          <T.Arrow className="fill-navy" />
+          <T.Arrow className="fill-white/75" />
         </T.Content>
       </T.Portal>
     </T.Root>

@@ -105,7 +105,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
         </div>
 
         {/* WHERE */}
-        <div className="lg:col-span-3" data-end="where">
+        <div id="where" data-nav-target className="lg:col-span-3" data-end="where">
           <h3 className={H3}>Where to go</h3>
           {site ? (
             <>
