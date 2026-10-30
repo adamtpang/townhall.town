@@ -6,7 +6,7 @@ import fs from "node:fs";
 import finance from "../data/finance.json";
 import { ballotFor } from "../lib/tools";
 import { VERIFIED_FEC_IDS, withMoney } from "../lib/money";
-import { usd, usdCash, fecIdOf, isFederalRace } from "../lib/fec";
+import { usd, usdCash, reportLabel, fecIdOf, isFederalRace } from "../lib/fec";
 import { fmtDay, ES_FOR_TEST } from "../lib/i18n";
 import RaceTiers, { FinanceRow, showFinanceFor } from "../app/RaceTiers";
 import { SHOW_FINANCE } from "../lib/flags";
@@ -132,6 +132,21 @@ describe("FinanceRow per candidate (QA P1s)", () => {
     expect(row("78701", "us-senate-tx")).toContain('data-coh="true">$1,288<');
     expect(row("10001", "ny-12")).toContain('data-coh="true">$6,087<');
     expect(row("10001", "ny-12")).toContain('data-coh="true">$23K<');
+  });
+  it("the FEC report label (lastReport) shows under the through date when the data has it", () => {
+    expect(reportLabel("PRE-GENERAL")).toBe("Pre-general report");
+    expect(reportLabel("OCTOBER QUARTERLY")).toBe("October quarterly report");
+    expect(reportLabel("JULY QUARTERLY")).toBe("July quarterly report");
+    expect(reportLabel("YEAR-END")).toBe("Year-end report");
+    expect(reportLabel(null)).toBeNull();
+    const ny = renderToStaticMarkup(h(FinanceRow, { r: federal("10001").find((x) => x.id === "ny-12") as never }));
+    expect(ny).toContain('data-last-report="PRE-GENERAL">Pre-general report<');
+    expect(ny).toContain('data-last-report="OCTOBER QUARTERLY">October quarterly report<');
+    expect(ny).toContain('data-last-report="JULY QUARTERLY">July quarterly report<');
+    for (const zip of ZIPS) for (const r of federal(zip)) {
+      const out = renderToStaticMarkup(h(FinanceRow, { r: r as never }));
+      expect((out.match(/data-last-report=/g) ?? []).length, r.id).toBe((r.candidates as { money?: Row }[]).filter((c) => c.money?.lastReport).length);
+    }
   });
   it("NY-12: four candidates, four dates (Lasher/Shinkle Oct 14, Negron Sep 30, Ortiz Jun 30 + note)", () => {
     const r = federal("10001").find((x) => x.id === "ny-12")!;

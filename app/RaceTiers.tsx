@@ -13,7 +13,7 @@ const OFFICES = officesData.offices;
 import { useDay, useT } from "../lib/i18n";
 import type { OrderLine, Politician } from "../lib/types";
 import { SHOW_FINANCE } from "../lib/flags";
-import { FINANCE_ZIPS, fecCandidateUrl, fecIdOf, fecSearchUrl, isFederalRace, usd, usdCash } from "../lib/fec";
+import { FINANCE_ZIPS, fecCandidateUrl, fecIdOf, fecSearchUrl, isFederalRace, usd, usdCash, reportLabel } from "../lib/fec";
 import { leaderLine, type PolyQuote, type LeaderLine } from "../lib/marketLine";
 import { polymarketCloseness } from "../lib/marketsCore.mjs";
 import type { RaceMeta } from "../lib/raceMeta";
@@ -125,6 +125,7 @@ export function FinanceRow({ r }: { r: RaceLite }) {
                   <p>{t("Raised")} <span className="font-medium tabular-nums" data-raised>{usd(m.raised)}</span></p>
                   <p className="text-black/60">{t("Cash on hand")} <span className="tabular-nums" data-coh>{usdCash(m.cashOnHand)}</span></p>
                   {m.coverageThrough ? <p className="text-black/60" data-through={m.coverageThrough}>{t("through")} {day(m.coverageThrough)}</p> : null}
+                  {reportLabel(m.lastReport) ? <p className="text-black/60" data-last-report={m.lastReport!}>{t(reportLabel(m.lastReport)!)}</p> : null}
                   {m.note ? <p className="text-sm text-black/60" data-money-note>{m.note}</p> : null}
                 </div>
               ) : (
