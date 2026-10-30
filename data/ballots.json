@@ -2381,6 +2381,60 @@
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
    },
    {
+    "id": "tx-supreme-court-place-2",
+    "title": "Texas Supreme Court Place 2 (special election, unexpired term)",
+    "level": "state",
+    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
+    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "candidates": [
+     {
+      "name": "James Sullivan",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia race page lists him as the incumbent",
+      "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/James_Sullivan_SCOTX.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Chari Kelly",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page",
+      "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
     "id": "tx-supreme-court-place-7",
     "title": "Texas Supreme Court Place 7",
     "level": "state",
@@ -5237,6 +5291,60 @@
        }
       ],
       "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-supreme-court-place-2",
+    "title": "Texas Supreme Court Place 2 (special election, unexpired term)",
+    "level": "state",
+    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
+    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "candidates": [
+     {
+      "name": "James Sullivan",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia race page lists him as the incumbent",
+      "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/James_Sullivan_SCOTX.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Chari Kelly",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page",
+      "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
@@ -11058,6 +11166,60 @@
        }
       ],
       "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-supreme-court-place-2",
+    "title": "Texas Supreme Court Place 2 (special election, unexpired term)",
+    "level": "state",
+    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections. This special election fills the unexpired term of Jimmy Blacklock, through December 31, 2030.",
+    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "candidates": [
+     {
+      "name": "James Sullivan",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia race page lists him as the incumbent",
+      "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/James_Sullivan_SCOTX.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Chari Kelly",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia race page",
+      "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/100/100/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
