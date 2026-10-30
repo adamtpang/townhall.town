@@ -11,11 +11,12 @@ import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../../lib/
 import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
 import { Button } from "../../components/ui/button";
+import type { OrderLine } from "../../lib/types";
 
 const ANSWERS_KEY = "th-answers-v1";
 const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
 const fmt = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
-type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; meta?: unknown; candidates: RowCand[] };
+type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; meta?: unknown; order?: OrderLine | null; candidates: RowCand[] };
 
 /** One printable page: overlap lines (not a recommendation), where, when, calendar. State is the URL hash or this device only. */
 export default function BallotCard({ zip, place, ids, races }: { zip: string; place: string; ids: string[]; races: RaceLite[] }) {
@@ -36,7 +37,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
   const edWhere = useMemo(() => whereFor(zip, ed?.start ?? today), [zip, ed, today]);
   const gcalEd = useMemo(() => (ed ? planEventUrl({ e: ed, zip, site: edWhere.sites[0], lookupUrl: edWhere.lookupUrl, dependsOnAddress: edWhere.dependsOnAddress, topRaces: topRaceTitles(races as never) }) : null), [ed, zip, edWhere, races]);
   const answered = answers ? ids.filter((id) => typeof answers[id] === "number").length : 0;
-  const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => { const l0 = r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })); const g = gradesForRace(r, l0.map((x) => x.o), answered, zip); return { r, gradesHidden: g.hidden, list: l0.map((x, i) => ({ ...x, grade: g.grades[i] })) }; }); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in ballot order (Adam, 11:28 PM: photos and sources on every row)
+  const rows = races.filter((r) => !r.judicial && r.candidates.length).map((r) => { const l0 = r.candidates.map((c) => ({ c, o: overlapStatus(answers ?? {}, stancesFor(c.name), ids) })); const g = gradesForRace(r, l0.map((x) => x.o), answered, zip); return { r, gradesHidden: g.hidden, list: l0.map((x, i) => ({ ...x, grade: g.grades[i] })) }; }); // rendered on the server too: no 3s "Loading…" (QA 4e15da7) // every non-judicial race, in ballot-data order (Adam, 11:28 PM: photos and sources on every row)
   const yesNo = answers ? ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length : 0;
 
   function ics() {
@@ -79,8 +80,9 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
               {rows.map(({ r, list, gradesHidden }) => (
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
                   <p className="text-base font-[530]">{r.title || r.id}</p>
+                  {r.order ? <p className="max-w-[60ch] mt-1 text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} />)}
+                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} avatar="lg" />)}
                   </ul>
                   <RaceFooter cands={list.map(({ c }) => c)} gradesHidden={null} /></PhotoGroup>
                 </li>

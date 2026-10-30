@@ -57,7 +57,8 @@ describe("the data", () => {
 describe("official order is applied", () => {
   it("inOfficialOrder reorders confirmed races only", () => {
     const tx10 = races("78701").find((r) => r.id === "tx-10")!;
-    expect(tx10.candidates.map((c) => c.name)).toEqual(["Caitlin Rourk", "Chris Gober"]); // data order (9229c66)
+    // batch1 already stores Civic's official order in the data (Gober, then Rourk); inOfficialOrder is idempotent on it.
+    expect(tx10.candidates.map((c) => c.name)).toEqual(["Chris Gober", "Caitlin Rourk"]);
     expect(inOfficialOrder("78701", "tx-10", tx10.candidates).map((c) => c.name)).toEqual(["Chris Gober", "Caitlin Rourk"]);
     for (const r of races("94103")) expect(inOfficialOrder("94103", r.id, r.candidates)).toBe(r.candidates);
   });

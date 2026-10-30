@@ -61,7 +61,7 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
     const measures = b.races.filter((r) => r.level === "measure").length;
     const races = b.races.length - measures;
     const n = (k: number, w: string) => `${k} ${w}${k === 1 ? "" : "s"}`;
-    return { reply: `Your ${zip} ballot has ${n(races, "race")}${measures ? ` and ${n(measures, "ballot measure")}` : ""}. Each one is listed on this page, with sources.`,
+    return { reply: `Your ${zip} ballot has ${n(races, "race")}${measures ? ` and ${n(measures, "ballot measure")}` : ""}. Each one is listed on this page with sources, and each race says whether its candidate order is confirmed against the official sample ballot.`,
       // The ballot's existing official source (ballotFor().verify, the same link the NY header shows); none if absent.
       links: b.verify?.url ? [{ label: b.verify.label, url: b.verify.url }] : [] };
   }

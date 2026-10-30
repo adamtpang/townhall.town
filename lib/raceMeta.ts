@@ -1,3 +1,4 @@
+import { withAcsMoe } from "./acsMoe";
 // Per-race extras from Civic files, attached server-side (lib/tools.ts enrich):
 // - competitiveness.json: contest status, plus a closeness label from the sourced race ratings (Cook Political Report,
 //   Sabato's Crystal Ball, Inside Elections) with their links. Kalshi is never used: a rating whose only basis was a
@@ -31,7 +32,7 @@ function whyFor(raceId: string): RaceMeta["why"] {
   if (!t?.authoritySummary) return null;
   const seen = new Set<string>();
   const problems = (t.problems ?? []).filter((p) => p.sourceUrl && !seen.has(p.id) && seen.add(p.id)).slice(0, 3)
-    .map(({ label, value, unit, geography, year, sourceUrl }) => ({ label, value, unit, geography, year, sourceUrl }));
+    .map(({ label, value, unit, geography, year, sourceUrl }) => withAcsMoe({ label, value, unit, geography, year, sourceUrl }));
   // QA P2: one line per power and source, listing every issue it covers (not "signs or vetoes state bills" six times).
   const groups = new Map<string, { issue: string; issues: string[]; role: string; cite: string; sourceUrl: string }>();
   for (const a of (t.authorityIssues ?? []).filter((a) => a.sourceUrl && ROLE[a.role])) {

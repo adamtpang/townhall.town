@@ -1,3 +1,4 @@
+import { reasonWithAcsMoe } from "./acsMoe";
 import order from "../data/issue_order.json";
 import { ISSUES, type Issue } from "./issues";
 import { poleName } from "./overlapCore.mjs";
@@ -23,7 +24,7 @@ export function issuesFor(zip: string, state: "TX" | "CA" | "NY"): Issue[] {
     if (!i) continue;
     const st = F.statements[id];
     const r = rows.find((x) => x.issue === id);
-    out.push({ ...i, question: st?.statement || i.question, poles: st?.poles, reason: r?.reason, reasonUrl: r?.sourceUrl, yesMeansPole: poleName(st?.yesMeansPole ?? 1) });
+    out.push({ ...i, question: st?.statement || i.question, poles: st?.poles, reason: reasonWithAcsMoe(r?.reason), reasonUrl: r?.sourceUrl, yesMeansPole: poleName(st?.yesMeansPole ?? 1) });
   }
   return out.length ? out : base.map((i) => ({ ...i, yesMeansPole: "high" }));
 }

@@ -1,7 +1,7 @@
 "use client";
 // "Who lines up" race list. Design sign-off (Oct 30, 12:39 AM): under 768px a shadcn Accordion (type "multiple"),
 // every race closed by default; each trigger is a full-width row of at least 56px with the race H3 left and a 16px
-// chevron right; under it, while closed, one 14/20 weight-450 line per candidate in ballot order:
+// chevron right; under it, while closed, one 14/20 weight-450 line per candidate in ballot-data order:
 // "Name · 4 of 7 issues · B" (grade inline, same colour, only where the race is grade-eligible) or
 // "Name · No public position found yet". Races are split by a 1px black/15 divider, radius 0, no open-state shading.
 // Design p12 #3 (2:27 AM): the same Accordion at 768px and up too, with the first 3 races open by default (phones stay all closed) and the rest
@@ -13,6 +13,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { gradesAbsentLine } from "../lib/grades.mjs";
+import { OPEN_CANDIDATE } from "./PortraitRow";
 
 export type WhoLine = { name: string; sourced: number; agree: number; n: number; grade: string | null };
 export type WhoRace = { id: string; title: string; lines: WhoLine[]; content: ReactNode; gradesHidden?: string | null };
@@ -33,6 +34,25 @@ export default function WhoRaces({ races }: { races: WhoRace[] }) {
   const [open, setOpen] = useState<string[]>([]);
   useEffect(() => {
     if (window.matchMedia("(min-width: 768px)").matches) setOpen((cur) => (cur.length ? cur : races.slice(0, OPEN_BY_DEFAULT).map((r) => r.id)));
+  }, [races]);
+  // A tap on a crowded photo-row tile (names hidden) opens that race here and brings the candidate into view.
+  useEffect(() => {
+    const on = (e: Event) => {
+      const { raceId, name } = (e as CustomEvent<{ raceId: string; name: string }>).detail ?? {};
+      if (!raceId || !races.some((r) => r.id === raceId)) return;
+      e.preventDefault(); // handled: the tile doesn't fall back to showing the name under the row
+      setOpen((cur) => (cur.includes(raceId) ? cur : [...cur, raceId]));
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const item = document.querySelector(`[data-who-accordion] [data-race="${CSS.escape(raceId)}"]`);
+        const row = [...(item?.querySelectorAll<HTMLElement>("[data-overlap]") ?? [])].find((x) => x.dataset.overlap === name) ?? (item as HTMLElement | null);
+        if (!row) return;
+        row.scrollIntoView({ block: "start", behavior: "smooth" });
+        if (!row.hasAttribute("tabindex")) row.setAttribute("tabindex", "-1");
+        row.focus({ preventScroll: true });
+      }));
+    };
+    window.addEventListener(OPEN_CANDIDATE, on);
+    return () => window.removeEventListener(OPEN_CANDIDATE, on);
   }, [races]);
   return (
     <Accordion type="multiple" value={open} onValueChange={setOpen} className="border-t border-black/15" data-who-accordion>

@@ -171,6 +171,29 @@ function interviewPath() {
     },
   };
 }
+function followupPath() {
+  return {
+    post: {
+      operationId: "townyFollowup",
+      tags: ["research"],
+      summary: "Answer a Towny follow-up question with sourced, self-checked facts",
+      description:
+        "Routes a follow-up (a measure, why a candidate is listed first, a candidate's sourced positions, issue overlap, dates) to tools, then checks every factual sentence against curated data or sources fetched in the run. Unconfirmed sentences come back marked unsure. The ZIP and answers are sent by the client each time and are never stored or logged. Rate limited per client: see RateLimit headers.",
+      requestBody: {
+        required: true,
+        content: { "application/json": { schema: { $ref: "#/components/schemas/TownyFollowupRequest" }, example: { zip: "78701", question: "What about Prop A?" } } },
+      },
+      responses: {
+        "200": { description: "The answer, its verified claims and the self-check report.", headers: rlOnly, content: { "application/json": { schema: { $ref: "#/components/schemas/TownyFollowupResult" }, example: { kind: "who", reply: "I don't pick for you. I can show where each candidate's sourced positions overlap with your answers.", claims: [], report: null, links: [], toolCalls: [] } } } },
+        "400": errRl("The body is not JSON, or the question is missing.", { code: "invalid", message: "question is required." }),
+        "405": notAllowed("POST"),
+        "429": tooManyRl(INTERVIEW_POLICY),
+        "500": internal,
+        "502": errRl("A tool failed.", { code: "upstream_unavailable", message: "Towny couldn't check that right now. Try again." }),
+      },
+    },
+  };
+}
 function locatePath(alias: boolean) {
   return {
     post: {
@@ -249,6 +272,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
       "/api/locate": locatePath(true),
       "/api/research": researchPath(),
       "/api/interview": interviewPath(),
+      "/api/towny/followup": followupPath(),
     },
     components: {
       headers: {
@@ -306,6 +330,8 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
             messages: { type: "array", maxItems: 6, description: "The voter's messages, newest last. Only the last 6 are read, each up to 600 characters.", items: { type: "object", required: ["text"], properties: { text: { type: "string", maxLength: 600 } } } },
           },
         },
+        TownyFollowupRequest: { type: "object", required: ["zip", "question"], properties: { zip: { type: "string" }, question: { type: "string" }, answers: { type: "object", additionalProperties: { type: ["number", "null"] } }, races: { type: "array", items: { type: "string" } }, focus: { type: "object", properties: { raceId: { type: "string" }, candidate: { type: "string" }, measureId: { type: "string" } } } } },
+        TownyFollowupResult: { type: "object", required: ["kind", "reply"], properties: { kind: { type: "string" }, reply: { type: "string" }, claims: { type: "array", items: { type: "object" } }, report: { type: ["object", "null"] }, links: { type: "array", items: { type: "object" } }, toolCalls: { type: "array", items: { type: "object" } } } },
         InterviewResult: {
           type: "object",
           required: ["answers"],

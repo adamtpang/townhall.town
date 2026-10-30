@@ -38,7 +38,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       expect(ph.page).toMatch(/^https:\/\//);
     }
     expect(n).toBeGreaterThan(25);
-    expect(src("components/Portrait.tsx")).toMatch(/max-w-\[60ch\] text-\[12px\] leading-4 font-\[450\] text-black\/60/);
+    expect(src("components/Portrait.tsx")).toMatch(/max-w-\[60ch\] text-sm leading-5 font-\[450\] text-black\/60/);
   });
   it("every portrait is a square tile with a center-20% crop", () => {
     // Both tiles render through TileImage (Portrait.tsx), which carries the crop and Civic's cropNote focus.
@@ -49,11 +49,15 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       expect(src(f)).not.toMatch(/aspect-\[4\/5\]|object-top/);
     }
   });
-  it("multi-seat rows never wrap: flex 1 1 0, min-w-0, max 40/56px, truncated label, sr-only when dense under 768", () => {
+  it("multi-seat rows never wrap: equal grid columns, min-w-0, max 72/112px, sr-only when dense under 768 (and over 8 from 768)", () => {
+    // Design p10 rationale updated (Adam 1:11 PM Oct 30: bigger): row tiles are grid columns minmax(0, --tile-max),
+    // 72px below 768 and 112px at lg, so they shrink to fit and never wrap; mini rows keep flex 1 1 0.
     const s = src("components/PortraitRow.tsx");
     expect(s).toMatch(/flex: ?"1 1 0"/);
-    expect(s).toMatch(/max-w-\[40px\][^"]*lg:max-w-\[56px\]/);
+    expect(s).toMatch(/\[--tile-max:120px\][^"]*lg:\[--tile-max:160px\]/);
+    expect(s).toContain("minmax(0, var(--tile-max))");
     expect(s).toMatch(/flex flex-nowrap/);
+    expect(s).toMatch(/group-data-\[densedesk=true\]\/row:md:sr-only/);
     expect(s).toMatch(/group-data-\[dense=true\]\/row:max-md:sr-only/);
     expect(s).toMatch(/truncate/);
   });
@@ -110,8 +114,11 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       const keys = Object.values(st).filter((s) => s.value !== null && (s.quote || s.summary)).map((s) => String(s.quote || s.summary).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim());
       expect(new Set(keys).size).toBe(keys.length);
     }
-    expect(stancesFor("Caitlin Rourk").infrastructure.value).not.toBeNull();
-    expect(stancesFor("Caitlin Rourk").energy.value).toBeNull();
+    // The best fit (infrastructure) keeps the sentence. Since Oct 30 1:54 PM CT the shared eligibility rule also applies:
+    // Civic's Ballotpedia audit (keep_final true for this exact sentence) keeps it, with the audit's chip label and citation.
+    expect(stancesFor("Caitlin Rourk").infrastructure).toMatchObject({ value: 4, chip: "Ballotpedia Candidate Connection survey (2026)", chipUrl: "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes" });
+    expect(stancesFor("Caitlin Rourk").infrastructure.quote).toMatch(/critical infrastructure/);
+    expect(stancesFor("Caitlin Rourk").energy).toEqual({ value: null, status: "same sentence as another issue" });
   });
   it("Becerra's clean-energy sentence tagged wages is retagged to energy (Civic qa_fixes4); the LAist wages quote stays", () => {
     const q = "I believe that by treating clean energy and grid resilience as public investments—and ensuring renters, low-income households, and workers share in the benefits—California can fight climate change";
