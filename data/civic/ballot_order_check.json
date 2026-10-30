@@ -1,0 +1,1809 @@
+[
+ {
+  "zip": "78701",
+  "race_id": "tx-10",
+  "title": "U.S. House Texas District 10",
+  "official_order": [
+   "Chris Gober (REP)",
+   "Caitlin Rourk (DEM)"
+  ],
+  "data_order": [
+   "Caitlin Rourk",
+   "Chris Gober"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-37",
+  "title": "U.S. House Texas District 37",
+  "official_order": [
+   "Lauren B. Peña (REP)",
+   "Greg Casar (DEM)"
+  ],
+  "data_order": [
+   "Greg Casar",
+   "Lauren B. Peña"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "us-senate-tx",
+  "title": "U.S. Senate Texas",
+  "official_order": [
+   "Ken Paxton (REP)",
+   "James Talarico (DEM)",
+   "Ted Brown (LIB)"
+  ],
+  "data_order": [
+   "James Talarico",
+   "Ken Paxton",
+   "Ted Brown"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "note": "Read manually from pdftotext -bbox-layout page 1 y-coords (Paxton y315, Talarico y347, Brown y379.5); auto block parser missed wider spacing.",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-gov",
+  "title": "Governor of Texas",
+  "official_order": [
+   "Greg Abbott (REP)",
+   "Gina Hinojosa (DEM)",
+   "Pat Dixon (LIB)"
+  ],
+  "data_order": [
+   "Greg Abbott",
+   "Gina Hinojosa",
+   "Pat Dixon"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "note": "Read manually from page 1 bbox coordinates (auto parser missed wider spacing).",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-ltgov",
+  "title": "Lieutenant Governor of Texas",
+  "official_order": [
+   "Dan Patrick (REP)",
+   "Vikki Goodwin (DEM)",
+   "Anthony Cristo (LIB)",
+   "Kevin McCormick (GRN)"
+  ],
+  "data_order": [
+   "Dan Patrick",
+   "Vikki Goodwin",
+   "Kevin McCormick",
+   "Anthony Cristo"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-ag",
+  "title": "Attorney General of Texas",
+  "official_order": [
+   "Mayes Middleton (REP)",
+   "Nathan Johnson (DEM)",
+   "Tom Oxford (LIB)"
+  ],
+  "data_order": [
+   "Nathan Johnson",
+   "Mayes Middleton",
+   "Tom Oxford"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-comptroller",
+  "title": "Texas Comptroller of Public Accounts",
+  "official_order": [
+   "Don Huffines (REP)",
+   "Sarah Eckhardt (DEM)",
+   "V. Alonzo Echavarria-Garza (LIB)",
+   "Shehla Faizi (GRN)"
+  ],
+  "data_order": [
+   "Don Huffines",
+   "Sarah Eckhardt",
+   "Shehla Faizi",
+   "V. Alonzo Echavarria-Garza"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-land",
+  "title": "Texas Land Commissioner",
+  "official_order": [
+   "Dawn Buckingham (REP)",
+   "Benjamin Flores (DEM)",
+   "Neill Snider (LIB)"
+  ],
+  "data_order": [
+   "Dawn Buckingham",
+   "Benjamin Flores",
+   "Neill Snider"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-agcomm",
+  "title": "Texas Commissioner of Agriculture",
+  "official_order": [
+   "Nate Sheets (REP)",
+   "Clayton Tucker (DEM)",
+   "Austin R. Kelly (LIB)"
+  ],
+  "data_order": [
+   "Clayton Tucker",
+   "Nate Sheets",
+   "Austin R. Kelly"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-rrc",
+  "title": "Texas Railroad Commission",
+  "official_order": [
+   "Bo French (REP)",
+   "Jon Rosenthal (DEM)",
+   "Arthur DiBianca (LIB)"
+  ],
+  "data_order": [
+   "Jon Rosenthal",
+   "Bo French",
+   "Arthur DiBianca"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-supreme-court-place-1-chief-justice",
+  "title": "Texas Supreme Court Chief Justice",
+  "official_order": [
+   "Jimmy Blacklock (REP)",
+   "Maggie Ellis (DEM)"
+  ],
+  "data_order": [
+   "Jimmy Blacklock",
+   "Maggie Ellis"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-supreme-court-place-2",
+  "title": "Texas Supreme Court Place 2 (Unexpired Term)",
+  "official_order": [
+   "James P. Sullivan (REP)",
+   "Chari Kelly (DEM)"
+  ],
+  "data_order": [
+   "James P. Sullivan",
+   "Chari Kelly"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-supreme-court-place-7",
+  "title": "Texas Supreme Court Place 7",
+  "official_order": [
+   "Kyle Hawkins (REP)",
+   "Kristen Hawkins (DEM)"
+  ],
+  "data_order": [
+   "Kyle Hawkins",
+   "Kristen Hawkins"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-supreme-court-place-8",
+  "title": "Texas Supreme Court Place 8",
+  "official_order": [
+   "Brett Busby (REP)",
+   "Gisela D. Triana (DEM)"
+  ],
+  "data_order": [
+   "Brett Busby",
+   "Gisela D. Triana"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-court-of-criminal-appeals-place-3",
+  "title": "Texas Court of Criminal Appeals Place 3",
+  "official_order": [
+   "Thomas Smith (REP)",
+   "Okey Anyiam (DEM)",
+   "Mark Ash (LIB)"
+  ],
+  "data_order": [
+   "Okey Anyiam",
+   "Thomas Smith",
+   "Mark Ash"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-court-of-criminal-appeals-place-4",
+  "title": "Texas Court of Criminal Appeals Place 4",
+  "official_order": [
+   "Kevin Patrick Yeary (REP)",
+   "Audra Riley (DEM)"
+  ],
+  "data_order": [
+   "Kevin Patrick Yeary",
+   "Audra Riley"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-court-of-criminal-appeals-place-9",
+  "title": "Texas Court of Criminal Appeals Place 9",
+  "official_order": [
+   "John Messinger (REP)",
+   "Holly Taylor (DEM)"
+  ],
+  "data_order": [
+   "Holly Taylor",
+   "John Messinger"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": false,
+  "status": "MISMATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-15th-coa-chief-justice",
+  "title": "15th Court of Appeals Chief Justice",
+  "official_order": [
+   "Scott Brister (REP)",
+   "Jerry Zimmerer (DEM)"
+  ],
+  "data_order": [
+   "Scott Brister",
+   "Jerry Zimmerer"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-15th-coa-place-2",
+  "title": "15th Court of Appeals Place 2",
+  "official_order": [
+   "Scott K. Field (REP)",
+   "Tom Baker (DEM)"
+  ],
+  "data_order": [
+   "Scott K. Field",
+   "Tom Baker"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-15th-coa-place-3",
+  "title": "15th Court of Appeals Place 3",
+  "official_order": [
+   "April Farris (REP)",
+   "Marc M. Meyer (DEM)"
+  ],
+  "data_order": [
+   "April Farris",
+   "Marc M. Meyer"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-3rd-coa-chief-justice",
+  "title": "3rd Court of Appeals Chief Justice",
+  "official_order": [
+   "Cory Liu (REP)",
+   "Darlene Byrne (DEM)"
+  ],
+  "data_order": [
+   "Cory Liu",
+   "Darlene Byrne"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-sboe-5",
+  "title": "State Board of Education District 5",
+  "official_order": [
+   "Mica Arellano (REP)",
+   "Allison Bush (DEM)"
+  ],
+  "data_order": [
+   "Mica Arellano",
+   "Allison Bush"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-hd-49",
+  "title": "Texas House District 49",
+  "official_order": [
+   "Montserrat Garibay (DEM)",
+   "Arshia Papari (GRN)"
+  ],
+  "data_order": [
+   "Montserrat Garibay",
+   "Arshia Papari"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "tx-house-51",
+  "title": "State Representative, District 51",
+  "official_order": [
+   "Jessica Martinez (REP)",
+   "Maria Luisa “Lulu” Flores (DEM)"
+  ],
+  "data_order": [
+   "Jessica Martinez",
+   "Maria Luisa “Lulu” Flores"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 1,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-147th",
+  "title": "District Judge, 147th Judicial District",
+  "official_order": [
+   "Cliff Brown (DEM)"
+  ],
+  "data_order": [
+   "Cliff Brown"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-201st",
+  "title": "District Judge, 201st Judicial District",
+  "official_order": [
+   "Amy Clark Meachum (DEM)"
+  ],
+  "data_order": [
+   "Amy Clark Meachum"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-250th",
+  "title": "District Judge, 250th Judicial District",
+  "official_order": [
+   "Kennon Lily Wooten (DEM)"
+  ],
+  "data_order": [
+   "Kennon Lily Wooten"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-261st",
+  "title": "District Judge, 261st Judicial District",
+  "official_order": [
+   "Daniella Deseta Lyttle (DEM)"
+  ],
+  "data_order": [
+   "Daniella Deseta Lyttle"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-299th",
+  "title": "District Judge, 299th Judicial District",
+  "official_order": [
+   "Karen R. Sage (DEM)"
+  ],
+  "data_order": [
+   "Karen R. Sage"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-331st",
+  "title": "District Judge, 331st Judicial District",
+  "official_order": [
+   "Chantal Melissa Eldridge (DEM)"
+  ],
+  "data_order": [
+   "Chantal Melissa Eldridge"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-403rd",
+  "title": "District Judge, 403rd Judicial District",
+  "official_order": [
+   "Brandy Mueller (DEM)"
+  ],
+  "data_order": [
+   "Brandy Mueller"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-419th",
+  "title": "District Judge, 419th Judicial District",
+  "official_order": [
+   "Catherine A. Mauzy (DEM)"
+  ],
+  "data_order": [
+   "Catherine A. Mauzy"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-455th",
+  "title": "District Judge, 455th Judicial District",
+  "official_order": [
+   "Laurie Eiserloh (DEM)"
+  ],
+  "data_order": [
+   "Laurie Eiserloh"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-judge-459th",
+  "title": "District Judge, 459th Judicial District",
+  "official_order": [
+   "Maya Guerra Gamble (DEM)"
+  ],
+  "data_order": [
+   "Maya Guerra Gamble"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-county-judge",
+  "title": "County Judge",
+  "official_order": [
+   "Andy Brown (DEM)"
+  ],
+  "data_order": [
+   "Andy Brown"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-ccl-1",
+  "title": "Judge, County Court at Law No. 1",
+  "official_order": [
+   "Todd Wong (DEM)"
+  ],
+  "data_order": [
+   "Todd Wong"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-ccl-2",
+  "title": "Judge, County Court at Law No. 2",
+  "official_order": [
+   "Leslie Dippel (DEM)"
+  ],
+  "data_order": [
+   "Leslie Dippel"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-ccl-3",
+  "title": "Judge, County Court at Law No. 3",
+  "official_order": [
+   "Bianca Garcia (DEM)"
+  ],
+  "data_order": [
+   "Bianca Garcia"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-ccl-4",
+  "title": "Judge, County Court at Law No. 4",
+  "official_order": [
+   "Dimple Malhotra (DEM)"
+  ],
+  "data_order": [
+   "Dimple Malhotra"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-ccl-5",
+  "title": "Judge, County Court at Law No. 5",
+  "official_order": [
+   "Mary Ann Espiritu (DEM)"
+  ],
+  "data_order": [
+   "Mary Ann Espiritu"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-ccl-6",
+  "title": "Judge, County Court at Law No. 6",
+  "official_order": [
+   "Denise Hernández (DEM)"
+  ],
+  "data_order": [
+   "Denise Hernández"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-ccl-7",
+  "title": "Judge, County Court at Law No. 7",
+  "official_order": [
+   "Elisabeth Earle (DEM)"
+  ],
+  "data_order": [
+   "Elisabeth Earle"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-probate-1",
+  "title": "Judge, Probate Court No. 1",
+  "official_order": [
+   "Guy Herman (DEM)"
+  ],
+  "data_order": [
+   "Guy Herman"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-district-clerk",
+  "title": "District Clerk",
+  "official_order": [
+   "Velva L. Price (DEM)"
+  ],
+  "data_order": [
+   "Velva L. Price"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-county-clerk",
+  "title": "County Clerk",
+  "official_order": [
+   "Dyana Limon-Mercado (DEM)"
+  ],
+  "data_order": [
+   "Dyana Limon-Mercado"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-county-treasurer",
+  "title": "County Treasurer",
+  "official_order": [
+   "Dolores Ortega Carter (DEM)"
+  ],
+  "data_order": [
+   "Dolores Ortega Carter"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-commissioner-4",
+  "title": "Travis County Commissioner, Precinct 4",
+  "official_order": [
+   "George Morales III (DEM)"
+  ],
+  "data_order": [
+   "George Morales III"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-jp-5",
+  "title": "Justice of the Peace, Precinct 5",
+  "official_order": [
+   "Tanisa Jeffers (DEM)"
+  ],
+  "data_order": [
+   "Tanisa Jeffers"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-jp-4",
+  "title": "Justice of the Peace, Precinct 4",
+  "official_order": [
+   "Raul Arturo Gonzalez (DEM)"
+  ],
+  "data_order": [
+   "Raul Arturo Gonzalez"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-constable-4-unexpired",
+  "title": "County Constable, Precinct 4 - Unexpired Term",
+  "official_order": [
+   "Gabriel Padilla (DEM)"
+  ],
+  "data_order": [
+   "Gabriel Padilla"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-cad-place-1",
+  "title": "Travis Central Appraisal District Board of Directors, Place 1",
+  "official_order": [
+   "Skyler A. Korgel"
+  ],
+  "data_order": [
+   "Skyler A. Korgel"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-cad-place-2",
+  "title": "Travis Central Appraisal District Board of Directors, Place 2",
+  "official_order": [
+   "Brian Peña"
+  ],
+  "data_order": [
+   "Brian Peña"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "travis-cad-place-3",
+  "title": "Travis Central Appraisal District Board of Directors, Place 3",
+  "official_order": [
+   "Yvonne Muñoz",
+   "Phil Gorman"
+  ],
+  "data_order": [
+   "Yvonne Muñoz",
+   "Phil Gorman"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 2,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "austin-council-9",
+  "title": "Austin City Council, District 9",
+  "official_order": [
+   "Rich Heyman",
+   "Katie Kam",
+   "Zohaib “Zo” Qadri",
+   "Dave Thadani",
+   "Kai Huang"
+  ],
+  "data_order": [
+   "Rich Heyman",
+   "Katie Kam",
+   "Zohaib “Zo” Qadri",
+   "Dave Thadani",
+   "Kai Huang"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 3,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "aisd-at-large-9",
+  "title": "Austin ISD Board of Trustees, At-Large Position 9",
+  "official_order": [
+   "Cynthia Soliz",
+   "Kirk Becker",
+   "Pamela Mathai"
+  ],
+  "data_order": [
+   "Cynthia Soliz",
+   "Kirk Becker",
+   "Pamela Mathai"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 7,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "acc-trustee-place-1",
+  "title": "Austin Community College Board of Trustees, Place 1",
+  "official_order": [
+   "Dana Walker",
+   "Gloria Gonzales-Dholakia"
+  ],
+  "data_order": [
+   "Dana Walker",
+   "Gloria Gonzales-Dholakia"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 7,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "acc-trustee-place-2",
+  "title": "Austin Community College Board of Trustees, Place 2",
+  "official_order": [
+   "Gigi Edwards Bryant"
+  ],
+  "data_order": [
+   "Gigi Edwards Bryant"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 7,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "78701",
+  "race_id": "acc-trustee-place-3",
+  "title": "Austin Community College Board of Trustees, Place 3",
+  "official_order": [
+   "Trevor Hale",
+   "Nan McRaven"
+  ],
+  "data_order": [
+   "Trevor Hale",
+   "Nan McRaven"
+  ],
+  "source_url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+  "page": 7,
+  "source_kind": "official sample (bedsheet) ballot, Travis County Elections",
+  "match": true,
+  "status": "MATCH"
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-11",
+  "title": "U.S. House California District 11",
+  "data_order": [
+   "Connie Chan",
+   "Scott Wiener"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-ag",
+  "title": "Attorney General of California",
+  "data_order": [
+   "Rob Bonta",
+   "Michael E. Gates"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-controller",
+  "title": "California Controller",
+  "data_order": [
+   "Malia M. Cohen",
+   "Herb W Morgan"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-insurance",
+  "title": "California Commissioner of Insurance",
+  "data_order": [
+   "Ben Allen",
+   "Jane Kim"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-sos",
+  "title": "California Secretary of State",
+  "data_order": [
+   "Shirley N. Weber",
+   "Donald P. (Don) Wagner"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-spi",
+  "title": "California Superintendent of Public Instruction",
+  "data_order": [
+   "Richard Barrera",
+   "Sonja Shaw"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-treasurer",
+  "title": "California Treasurer",
+  "data_order": [
+   "Eleni Kounalakis",
+   "Jennifer Hawks"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-gov",
+  "title": "Governor of California",
+  "data_order": [
+   "Xavier Becerra",
+   "Steve Hilton"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-ltgov",
+  "title": "Lieutenant Governor of California",
+  "data_order": [
+   "Fiona Ma",
+   "Gloria Romero"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-ad-17",
+  "title": "State Assembly Member District 17",
+  "data_order": [
+   "Matt Haney",
+   "Manuel Noris-Barrera"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-boe-2",
+  "title": "Board of Equalization Member District 2",
+  "data_order": [
+   "Sally J. Lieber",
+   "John Pimentel"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-supreme-evans",
+  "title": "Associate Justice of the Supreme Court (retention: Yes/No)",
+  "data_order": [
+   "Kelli M. Evans"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Kelli M. Evans"
+  ],
+  "page": 248,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-supreme-groban",
+  "title": "Associate Justice of the Supreme Court (retention: Yes/No)",
+  "data_order": [
+   "Joshua Groban"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Joshua Groban"
+  ],
+  "page": 248,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-1",
+  "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+  "data_order": [
+   "Charles A. Smiley"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Charles A. Smiley"
+  ],
+  "page": 248,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-1b",
+  "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+  "data_order": [
+   "Kathleen M. Banke"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Kathleen M. Banke"
+  ],
+  "page": 248,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-1c",
+  "title": "Associate Justice, Court of Appeal, First District, Division One (retention: Yes/No)",
+  "data_order": [
+   "Monique Langhorne Wilson"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Monique Langhorne Wilson"
+  ],
+  "page": 248,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-2pj",
+  "title": "Presiding Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+  "data_order": [
+   "Therese M. Stewart"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Therese M. Stewart"
+  ],
+  "page": 248,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-2",
+  "title": "Associate Justice, Court of Appeal, First District, Division Two (retention: Yes/No)",
+  "data_order": [
+   "Tara M. Desautels"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Tara M. Desautels"
+  ],
+  "page": 249,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-3",
+  "title": "Associate Justice, Court of Appeal, First District, Division Three (retention: Yes/No)",
+  "data_order": [
+   "Ioana Petrou"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Ioana Petrou"
+  ],
+  "page": 249,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-3b",
+  "title": "Associate Justice, Court of Appeal, First District, Division Three (retention: Yes/No)",
+  "data_order": [
+   "Victor A. Rodriguez"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Victor A. Rodriguez"
+  ],
+  "page": 249,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-4pj",
+  "title": "Presiding Justice, Court of Appeal, First District, Division Four (retention: Yes/No)",
+  "data_order": [
+   "Tracie L. Brown"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Tracie L. Brown"
+  ],
+  "page": 249,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-5",
+  "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+  "data_order": [
+   "Mark Simons"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Mark Simons"
+  ],
+  "page": 249,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-5b",
+  "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+  "data_order": [
+   "Danny Y. Chou"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Danny Y. Chou"
+  ],
+  "page": 249,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "ca-coa-1-5c",
+  "title": "Associate Justice, Court of Appeal, First District, Division Five (retention: Yes/No)",
+  "data_order": [
+   "Gordon Burns"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": [
+   "Gordon Burns"
+  ],
+  "page": 249,
+  "match": true,
+  "status": "MATCH_SINGLE",
+  "source_kind": "SF Dept of Elections Voter Information Pamphlet, Ballot Worksheet (retention question names the justice)",
+  "note": "Single-name yes/no retention contest; name appears in the official ballot worksheet. Order is trivial."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-assessor-recorder",
+  "title": "Assessor-Recorder",
+  "data_order": [
+   "Joaquin Torres"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-public-defender",
+  "title": "Public Defender",
+  "data_order": [
+   "Manohar Raju"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-supervisor-6",
+  "title": "Board of Supervisors, District 6",
+  "data_order": [
+   "Alex Behrend",
+   "Matt Dorsey"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-supervisor-8",
+  "title": "Board of Supervisors, District 8",
+  "data_order": [
+   "Gary McCoy",
+   "Michael T. Nguyen",
+   "Darshini Patel",
+   "Emanuel \"Manny\" Yekutiel"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-supervisor-10",
+  "title": "Board of Supervisors, District 10",
+  "data_order": [
+   "Pearci \"PJ\" Bastiany III",
+   "Dionjay (DJ) Brookter",
+   "Deandra Bryant",
+   "Theo Ellington",
+   "J.R. Eppler",
+   "Ellsworth \"Ell\" M. Jennison, Jr.",
+   "Mike Trouble Lin",
+   "Jamo Muhammad",
+   "Jessica Pessecow",
+   "Shawn M. Richard"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-board-of-education",
+  "title": "Board of Education (choose up to 3)",
+  "data_order": [
+   "Autumn Brown Garibay",
+   "Virginia Cheung",
+   "Alida Fisher",
+   "Ryan Hazelton",
+   "Phil Kim",
+   "Laurance Lee",
+   "Reina Tello",
+   "Tim Tung"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-community-college-board",
+  "title": "Community College Board (choose up to 3)",
+  "data_order": [
+   "Elijah Ball",
+   "Rome Moses Jones",
+   "Monroe Lace",
+   "Leah LaCroix",
+   "Jeremy Lee",
+   "Bunny McFadden",
+   "Erwin Tam",
+   "Lisa Wynn"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "94103",
+  "race_id": "sf-community-college-board-partial",
+  "title": "Community College Board Partial Term",
+  "data_order": [
+   "Ruth Ferguson"
+  ],
+  "source_url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+  "official_order": null,
+  "page": 24,
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none: no public sample ballot found",
+  "note": "unsure. The posted VIP PDF (252 pp) has no sample-ballot candidate list; p.24 says \"For a complete list of candidates for each contest, please refer to your Sample Ballot\", and the worksheet (p.248) points to the printed pamphlet or sfelections.gov/voterportal (personal lookup). sf.gov/voter-information-and-resources links only the VIP PDFs. Single-candidate city races (assessor, public defender) also left unconfirmed because no document lists the full candidate field."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-12",
+  "title": "U.S. House New York District 12",
+  "data_order": [
+   "Micah C. Lasher",
+   "Caroline Shinkle",
+   "Wilneida Negron",
+   "Karen Ortiz"
+  ],
+  "official_order": null,
+  "page": null,
+  "source_url": "https://findmypollsite.vote.nyc/",
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none",
+  "note": "unsure. vote.nyc sample ballots are only via findmypollsite.vote.nyc address lookup; its address API returned \"You are not authorized to perform this request\" to a direct request and the page is JS-only (psl2.vote.nyc returned 403/525). No AD75 sample-ballot PDF found. The AD71 ballot used for county-wide races has different district contests (NY-13, SD-30, AD-71)."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-governor",
+  "title": "Governor and Lieutenant Governor",
+  "data_order": [
+   "Kathy C. Hochul / Adrienne E. Adams",
+   "Bruce A. Blakeman / Todd Hood"
+  ],
+  "official_order": [
+   "Kathy C. Hochul / Adrienne E. Adams (A Democratic, D Working Families)",
+   "Bruce A. Blakeman / Todd Hood (B Republican, C Conservative, K Vote Affordable)"
+  ],
+  "page": 1,
+  "source_url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+  "match": true,
+  "status": "MATCH",
+  "source_kind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot.",
+  "note": "NY ballots are a party-column grid (A Democratic, B Republican, C Conservative, D Working Families, ...). Order = column order, then top-to-bottom within a column."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-attorney-general",
+  "title": "Attorney General of New York",
+  "data_order": [
+   "Letitia A. James",
+   "Saritha Komatireddy"
+  ],
+  "official_order": [
+   "Letitia A. James (A Democratic, D Working Families)",
+   "Saritha Komatireddy (B Republican, C Conservative)"
+  ],
+  "page": 1,
+  "source_url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+  "match": true,
+  "status": "MATCH",
+  "source_kind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot.",
+  "note": "NY ballots are a party-column grid (A Democratic, B Republican, C Conservative, D Working Families, ...). Order = column order, then top-to-bottom within a column."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-comptroller",
+  "title": "New York State Comptroller",
+  "data_order": [
+   "Thomas P. DiNapoli",
+   "Joseph Hernandez"
+  ],
+  "official_order": [
+   "Thomas P. DiNapoli (A Democratic, D Working Families)",
+   "Joseph Hernandez (B Republican, C Conservative)"
+  ],
+  "page": 1,
+  "source_url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+  "match": true,
+  "status": "MATCH",
+  "source_kind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot.",
+  "note": "NY ballots are a party-column grid (A Democratic, B Republican, C Conservative, D Working Families, ...). Order = column order, then top-to-bottom within a column."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-sd-47",
+  "title": "State Senator, District 47",
+  "data_order": [
+   "Erik D. Bottcher",
+   "Charlotte Friedman"
+  ],
+  "official_order": null,
+  "page": null,
+  "source_url": "https://findmypollsite.vote.nyc/",
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none",
+  "note": "unsure. vote.nyc sample ballots are only via findmypollsite.vote.nyc address lookup; its address API returned \"You are not authorized to perform this request\" to a direct request and the page is JS-only (psl2.vote.nyc returned 403/525). No AD75 sample-ballot PDF found. The AD71 ballot used for county-wide races has different district contests (NY-13, SD-30, AD-71)."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-sd-28",
+  "title": "State Senator, District 28",
+  "data_order": [
+   "Liz Krueger",
+   "Alina Bonsell"
+  ],
+  "official_order": null,
+  "page": null,
+  "source_url": "https://findmypollsite.vote.nyc/",
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none",
+  "note": "unsure. vote.nyc sample ballots are only via findmypollsite.vote.nyc address lookup; its address API returned \"You are not authorized to perform this request\" to a direct request and the page is JS-only (psl2.vote.nyc returned 403/525). No AD75 sample-ballot PDF found. The AD71 ballot used for county-wide races has different district contests (NY-13, SD-30, AD-71)."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-ad-75",
+  "title": "Member of Assembly, District 75",
+  "data_order": [
+   "Tony Simone",
+   "Cristina Fontanelli"
+  ],
+  "official_order": null,
+  "page": null,
+  "source_url": "https://findmypollsite.vote.nyc/",
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none",
+  "note": "unsure. vote.nyc sample ballots are only via findmypollsite.vote.nyc address lookup; its address API returned \"You are not authorized to perform this request\" to a direct request and the page is JS-only (psl2.vote.nyc returned 403/525). No AD75 sample-ballot PDF found. The AD71 ballot used for county-wide races has different district contests (NY-13, SD-30, AD-71)."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-supreme-1jd",
+  "title": "Justice of the Supreme Court, 1st Judicial District (choose up to 6)",
+  "data_order": [
+   "Saliann Scarpulla",
+   "Kathleen Waterman-Marshall",
+   "Shlomo S. Hagler",
+   "Manuel J. Mendez",
+   "Hasa A. Kingo",
+   "Christopher Chin",
+   "Amy S. Taylor",
+   "Joshua E. Goldfein",
+   "Sienna M. Fontaine",
+   "Bob Cohen",
+   "Jeffrey W. Rizzo"
+  ],
+  "official_order": [
+   "Shlomo S. Hagler (A Dem)",
+   "Manuel J. Mendez (A Dem)",
+   "Saliann Scarpulla (A Dem)",
+   "Hasa A. Kingo (A Dem)",
+   "Kathleen Waterman-Marshall (A Dem)",
+   "Christopher Chin (A Dem)",
+   "Amy S. Taylor (D WFP)",
+   "Joshua E. Goldfein (D WFP)",
+   "Sienna M. Fontaine (D WFP)",
+   "Bob Cohen (D WFP)",
+   "Jeffrey W. Rizzo (D WFP)"
+  ],
+  "page": 3,
+  "source_url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+  "match": false,
+  "status": "MISMATCH",
+  "source_kind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot.",
+  "note": "NY ballots are a party-column grid (A Democratic, B Republican, C Conservative, D Working Families, ...). Order = column order, then top-to-bottom within a column. Democratic column top-to-bottom on p.3: Hagler, Mendez, Scarpulla, Kingo, Waterman-Marshall, Chin; data lists Scarpulla, Waterman-Marshall, Hagler, Mendez, Kingo, Chin. WFP column order matches."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-surrogate-ny",
+  "title": "Surrogate, New York County",
+  "data_order": [
+   "Rita Mella"
+  ],
+  "official_order": [
+   "Rita Mella (A Democratic)"
+  ],
+  "page": 3,
+  "source_url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+  "match": true,
+  "status": "MATCH",
+  "source_kind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot.",
+  "note": "NY ballots are a party-column grid (A Democratic, B Republican, C Conservative, D Working Families, ...). Order = column order, then top-to-bottom within a column."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-civil-county-ny",
+  "title": "Judge of the Civil Court, County, New York (choose up to 3)",
+  "data_order": [
+   "Josh E. Hanshaft",
+   "Emily Morales-Minerva",
+   "Vlad Frants"
+  ],
+  "official_order": [
+   "Josh E. Hanshaft (A Dem)",
+   "Emily Morales-Minerva (A Dem)",
+   "Vlad Frants (A Dem)"
+  ],
+  "page": 3,
+  "source_url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+  "match": true,
+  "status": "MATCH",
+  "source_kind": "Official NYC BOE ballot PDF (New York County, 71st AD, styles 0315/0879, stamped 2026-09-21) - hosted on a third-party site (img1.wsimg.com), not on vote.nyc. Used only for county-wide/1st-JD contests that are identical on every New York County ballot.",
+  "note": "NY ballots are a party-column grid (A Democratic, B Republican, C Conservative, D Working Families, ...). Order = column order, then top-to-bottom within a column."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-civil-3md-ny",
+  "title": "Judge of the Civil Court, District, 3rd Municipal Court District, New York",
+  "data_order": [
+   "Steven Benathen"
+  ],
+  "official_order": null,
+  "page": null,
+  "source_url": "https://findmypollsite.vote.nyc/",
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none",
+  "note": "unsure. vote.nyc sample ballots are only via findmypollsite.vote.nyc address lookup; its address API returned \"You are not authorized to perform this request\" to a direct request and the page is JS-only (psl2.vote.nyc returned 403/525). No AD75 sample-ballot PDF found. The AD71 ballot used for county-wide races has different district contests (NY-13, SD-30, AD-71)."
+ },
+ {
+  "zip": "10001",
+  "race_id": "ny-civil-9md-ny",
+  "title": "Judge of the Civil Court, District, 9th Municipal Court District, New York (choose up to 2)",
+  "data_order": [
+   "Jennifer Frankola-Crawford",
+   "Brian J. Krist"
+  ],
+  "official_order": null,
+  "page": null,
+  "source_url": "https://findmypollsite.vote.nyc/",
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none",
+  "note": "unsure. vote.nyc sample ballots are only via findmypollsite.vote.nyc address lookup; its address API returned \"You are not authorized to perform this request\" to a direct request and the page is JS-only (psl2.vote.nyc returned 403/525). No AD75 sample-ballot PDF found. The AD71 ballot used for county-wide races has different district contests (NY-13, SD-30, AD-71)."
+ },
+ {
+  "zip": "10001",
+  "race_id": "nyc-council-3",
+  "title": "Member of the City Council, 3rd Council District",
+  "data_order": [
+   "Carl Wilson",
+   "Haris Bhatti"
+  ],
+  "official_order": null,
+  "page": null,
+  "source_url": "https://findmypollsite.vote.nyc/",
+  "match": null,
+  "status": "UNCONFIRMED",
+  "source_kind": "none",
+  "note": "unsure. vote.nyc sample ballots are only via findmypollsite.vote.nyc address lookup; its address API returned \"You are not authorized to perform this request\" to a direct request and the page is JS-only (psl2.vote.nyc returned 403/525). No AD75 sample-ballot PDF found. The AD71 ballot used for county-wide races has different district contests (NY-13, SD-30, AD-71)."
+ }
+]

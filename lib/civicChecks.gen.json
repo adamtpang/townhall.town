@@ -1,11 +1,1754 @@
 {
  "built": "scripts/build-civic-checks.mjs",
- "orderFile": null,
- "auditFile": null,
+ "orderFile": "data/civic/ballot_order_check.json",
+ "auditFile": "data/civic/bp22/ballotpedia_stance_audit.json",
  "ballotOrder": {
-  "byRace": {}
+  "byRace": {
+   "tx-10": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Chris Gober",
+     "Caitlin Rourk"
+    ]
+   },
+   "tx-37": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Lauren B. Peña",
+     "Greg Casar"
+    ]
+   },
+   "us-senate-tx": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Ken Paxton",
+     "James Talarico",
+     "Ted Brown"
+    ]
+   },
+   "tx-gov": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Greg Abbott",
+     "Gina Hinojosa",
+     "Pat Dixon"
+    ]
+   },
+   "tx-ltgov": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Dan Patrick",
+     "Vikki Goodwin",
+     "Anthony Cristo",
+     "Kevin McCormick"
+    ]
+   },
+   "tx-ag": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Mayes Middleton",
+     "Nathan Johnson",
+     "Tom Oxford"
+    ]
+   },
+   "tx-comptroller": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Don Huffines",
+     "Sarah Eckhardt",
+     "V. Alonzo Echavarria-Garza",
+     "Shehla Faizi"
+    ]
+   },
+   "tx-land": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Dawn Buckingham",
+     "Benjamin Flores",
+     "Neill Snider"
+    ]
+   },
+   "tx-agcomm": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Nate Sheets",
+     "Clayton Tucker",
+     "Austin R. Kelly"
+    ]
+   },
+   "tx-rrc": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Bo French",
+     "Jon Rosenthal",
+     "Arthur DiBianca"
+    ]
+   },
+   "tx-supreme-court-place-1-chief-justice": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Jimmy Blacklock",
+     "Maggie Ellis"
+    ]
+   },
+   "tx-supreme-court-place-2": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "James P. Sullivan",
+     "Chari Kelly"
+    ]
+   },
+   "tx-supreme-court-place-7": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Kyle Hawkins",
+     "Kristen Hawkins"
+    ]
+   },
+   "tx-supreme-court-place-8": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Brett Busby",
+     "Gisela D. Triana"
+    ]
+   },
+   "tx-court-of-criminal-appeals-place-3": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Thomas Smith",
+     "Okey Anyiam",
+     "Mark Ash"
+    ]
+   },
+   "tx-court-of-criminal-appeals-place-4": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Kevin Patrick Yeary",
+     "Audra Riley"
+    ]
+   },
+   "tx-court-of-criminal-appeals-place-9": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "John Messinger",
+     "Holly Taylor"
+    ]
+   },
+   "tx-15th-coa-chief-justice": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Scott Brister",
+     "Jerry Zimmerer"
+    ]
+   },
+   "tx-15th-coa-place-2": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Scott K. Field",
+     "Tom Baker"
+    ]
+   },
+   "tx-15th-coa-place-3": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "April Farris",
+     "Marc M. Meyer"
+    ]
+   },
+   "tx-3rd-coa-chief-justice": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Cory Liu",
+     "Darlene Byrne"
+    ]
+   },
+   "tx-sboe-5": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Mica Arellano",
+     "Allison Bush"
+    ]
+   },
+   "tx-hd-49": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Montserrat Garibay",
+     "Arshia Papari"
+    ]
+   },
+   "tx-house-51": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Jessica Martinez",
+     "Maria Luisa “Lulu” Flores"
+    ]
+   },
+   "travis-district-judge-147th": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Cliff Brown"
+    ]
+   },
+   "travis-district-judge-201st": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Amy Clark Meachum"
+    ]
+   },
+   "travis-district-judge-250th": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Kennon Lily Wooten"
+    ]
+   },
+   "travis-district-judge-261st": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Daniella Deseta Lyttle"
+    ]
+   },
+   "travis-district-judge-299th": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Karen R. Sage"
+    ]
+   },
+   "travis-district-judge-331st": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Chantal Melissa Eldridge"
+    ]
+   },
+   "travis-district-judge-403rd": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Brandy Mueller"
+    ]
+   },
+   "travis-district-judge-419th": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Catherine A. Mauzy"
+    ]
+   },
+   "travis-district-judge-455th": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Laurie Eiserloh"
+    ]
+   },
+   "travis-district-judge-459th": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Maya Guerra Gamble"
+    ]
+   },
+   "travis-county-judge": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Andy Brown"
+    ]
+   },
+   "travis-ccl-1": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Todd Wong"
+    ]
+   },
+   "travis-ccl-2": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Leslie Dippel"
+    ]
+   },
+   "travis-ccl-3": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Bianca Garcia"
+    ]
+   },
+   "travis-ccl-4": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Dimple Malhotra"
+    ]
+   },
+   "travis-ccl-5": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Mary Ann Espiritu"
+    ]
+   },
+   "travis-ccl-6": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Denise Hernández"
+    ]
+   },
+   "travis-ccl-7": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Elisabeth Earle"
+    ]
+   },
+   "travis-probate-1": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Guy Herman"
+    ]
+   },
+   "travis-district-clerk": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Velva L. Price"
+    ]
+   },
+   "travis-county-clerk": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Dyana Limon-Mercado"
+    ]
+   },
+   "travis-county-treasurer": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Dolores Ortega Carter"
+    ]
+   },
+   "travis-commissioner-4": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "George Morales III"
+    ]
+   },
+   "travis-jp-5": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Tanisa Jeffers"
+    ]
+   },
+   "travis-jp-4": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Raul Arturo Gonzalez"
+    ]
+   },
+   "travis-constable-4-unexpired": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Gabriel Padilla"
+    ]
+   },
+   "travis-cad-place-1": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Skyler A. Korgel"
+    ]
+   },
+   "travis-cad-place-2": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Brian Peña"
+    ]
+   },
+   "travis-cad-place-3": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Yvonne Muñoz",
+     "Phil Gorman"
+    ]
+   },
+   "austin-council-9": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Rich Heyman",
+     "Katie Kam",
+     "Zohaib “Zo” Qadri",
+     "Dave Thadani",
+     "Kai Huang"
+    ]
+   },
+   "aisd-at-large-9": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Cynthia Soliz",
+     "Kirk Becker",
+     "Pamela Mathai"
+    ]
+   },
+   "acc-trustee-place-1": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Dana Walker",
+     "Gloria Gonzales-Dholakia"
+    ]
+   },
+   "acc-trustee-place-2": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Gigi Edwards Bryant"
+    ]
+   },
+   "acc-trustee-place-3": {
+    "status": "confirmed",
+    "zip": "78701",
+    "url": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
+    "order": [
+     "Trevor Hale",
+     "Nan McRaven"
+    ]
+   },
+   "ca-11": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-ag": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-controller": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-insurance": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-sos": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-spi": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-treasurer": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-gov": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-ltgov": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-ad-17": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-boe-2": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ca-supreme-evans": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Kelli M. Evans"
+    ]
+   },
+   "ca-supreme-groban": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Joshua Groban"
+    ]
+   },
+   "ca-coa-1-1": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Charles A. Smiley"
+    ]
+   },
+   "ca-coa-1-1b": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Kathleen M. Banke"
+    ]
+   },
+   "ca-coa-1-1c": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Monique Langhorne Wilson"
+    ]
+   },
+   "ca-coa-1-2pj": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Therese M. Stewart"
+    ]
+   },
+   "ca-coa-1-2": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Tara M. Desautels"
+    ]
+   },
+   "ca-coa-1-3": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Ioana Petrou"
+    ]
+   },
+   "ca-coa-1-3b": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Victor A. Rodriguez"
+    ]
+   },
+   "ca-coa-1-4pj": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Tracie L. Brown"
+    ]
+   },
+   "ca-coa-1-5": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Mark Simons"
+    ]
+   },
+   "ca-coa-1-5b": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Danny Y. Chou"
+    ]
+   },
+   "ca-coa-1-5c": {
+    "status": "single",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": [
+     "Gordon Burns"
+    ]
+   },
+   "sf-assessor-recorder": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "sf-public-defender": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "sf-supervisor-6": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "sf-supervisor-8": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "sf-supervisor-10": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "sf-board-of-education": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "sf-community-college-board": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "sf-community-college-board-partial": {
+    "status": "unconfirmed",
+    "zip": "94103",
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "order": null
+   },
+   "ny-12": {
+    "status": "unconfirmed",
+    "zip": "10001",
+    "url": "https://findmypollsite.vote.nyc/",
+    "order": null
+   },
+   "ny-governor": {
+    "status": "confirmed",
+    "zip": "10001",
+    "url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+    "order": [
+     "Kathy C. Hochul / Adrienne E. Adams",
+     "Bruce A. Blakeman / Todd Hood"
+    ]
+   },
+   "ny-attorney-general": {
+    "status": "confirmed",
+    "zip": "10001",
+    "url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+    "order": [
+     "Letitia A. James",
+     "Saritha Komatireddy"
+    ]
+   },
+   "ny-comptroller": {
+    "status": "confirmed",
+    "zip": "10001",
+    "url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+    "order": [
+     "Thomas P. DiNapoli",
+     "Joseph Hernandez"
+    ]
+   },
+   "ny-sd-47": {
+    "status": "unconfirmed",
+    "zip": "10001",
+    "url": "https://findmypollsite.vote.nyc/",
+    "order": null
+   },
+   "ny-sd-28": {
+    "status": "unconfirmed",
+    "zip": "10001",
+    "url": "https://findmypollsite.vote.nyc/",
+    "order": null
+   },
+   "ny-ad-75": {
+    "status": "unconfirmed",
+    "zip": "10001",
+    "url": "https://findmypollsite.vote.nyc/",
+    "order": null
+   },
+   "ny-supreme-1jd": {
+    "status": "confirmed",
+    "zip": "10001",
+    "url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+    "order": [
+     "Shlomo S. Hagler",
+     "Manuel J. Mendez",
+     "Saliann Scarpulla",
+     "Hasa A. Kingo",
+     "Kathleen Waterman-Marshall",
+     "Christopher Chin",
+     "Amy S. Taylor",
+     "Joshua E. Goldfein",
+     "Sienna M. Fontaine",
+     "Bob Cohen",
+     "Jeffrey W. Rizzo"
+    ]
+   },
+   "ny-surrogate-ny": {
+    "status": "confirmed",
+    "zip": "10001",
+    "url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+    "order": [
+     "Rita Mella"
+    ]
+   },
+   "ny-civil-county-ny": {
+    "status": "confirmed",
+    "zip": "10001",
+    "url": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf",
+    "order": [
+     "Josh E. Hanshaft",
+     "Emily Morales-Minerva",
+     "Vlad Frants"
+    ]
+   },
+   "ny-civil-3md-ny": {
+    "status": "unconfirmed",
+    "zip": "10001",
+    "url": "https://findmypollsite.vote.nyc/",
+    "order": null
+   },
+   "ny-civil-9md-ny": {
+    "status": "unconfirmed",
+    "zip": "10001",
+    "url": "https://findmypollsite.vote.nyc/",
+    "order": null
+   },
+   "nyc-council-3": {
+    "status": "unconfirmed",
+    "zip": "10001",
+    "url": "https://findmypollsite.vote.nyc/",
+    "order": null
+   }
+  }
  },
  "stanceAudit": {
-  "records": []
+  "records": [
+   {
+    "candidate": "james-talarico",
+    "issue": "housing",
+    "quote": "i ll continue lowering costs by cutting red tape so we can build more homes",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+    "reason": "keep",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "james-talarico",
+    "issue": "healthcare",
+    "quote": "restore the aca tax credits",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+    "reason": "keep",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "james-talarico",
+    "issue": "taxes",
+    "quote": "i am proposing a cost of living tax cut",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+    "reason": "keep",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "james-talarico",
+    "issue": "education",
+    "quote": "i m committed to strengthening our schools and fighting back against a national voucher scam that will defund schools to subsidize private education for the wealthiest",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+    "reason": "keep",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "james-talarico",
+    "issue": "wages",
+    "quote": "one that increases the state minimum wage and ensures equal pay for equal work for all texans",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2022)",
+    "url": "https://ballotpedia.org/James_Talarico#Campaign_themes",
+    "reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "vikki-goodwin",
+    "issue": "wages",
+    "quote": "texas has not adjusted the minimum wage in decades and it still remains at an abysmally low 7 25 hour we should increase it to 15 hour as the minimum",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "vikki-goodwin",
+    "issue": "education",
+    "quote": "as lt governor my priority will be to put an end to private school vouchers or any program that diverts public dollars to private schools",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "vikki-goodwin",
+    "issue": "safety",
+    "quote": "i believe texas needs a sensible regulatory framework for thc rather than outright prohibition",
+    "keep": true,
+    "label": "Campaign website (vikkigoodwin.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.vikkigoodwin.com/issues",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "caitlin-rourk",
+    "issue": "housing",
+    "quote": "real solutions to rising housing costs",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "caitlin-rourk",
+    "issue": "healthcare",
+    "quote": "affordable accessible health care",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "caitlin-rourk",
+    "issue": "wages",
+    "quote": "a living minimum wage",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "caitlin-rourk",
+    "issue": "infrastructure",
+    "quote": "i ll fight to bring federal dollars back to our district through smart investments public private partnerships and funding for critical infrastructure like water roads broadband and clean energy",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "caitlin-rourk",
+    "issue": "taxes",
+    "quote": "too often economic policy favors the wealthy and well connected in congress i ll hold corporations accountable and ensure they pay their fair share",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "caitlin-rourk",
+    "issue": "energy",
+    "quote": "i ll fight to bring federal dollars back to our district through smart investments public private partnerships and funding for critical infrastructure like water roads broadband and clean energy",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "eleni-kounalakis",
+    "issue": "housing",
+    "quote": "fight to build more affordable homes",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2018)",
+    "url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+    "reason": "stale: quote is from 2018, before the 2026 campaign; unsure per stale rule",
+    "race": "ca-treasurer"
+   },
+   {
+    "candidate": "eleni-kounalakis",
+    "issue": "energy",
+    "quote": "we need to create more good paying jobs while also protecting our environment",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2018)",
+    "url": "https://ballotpedia.org/Eleni_Kounalakis#Campaign_themes",
+    "reason": "stale: quote is from 2018, before the 2026 campaign; unsure per stale rule",
+    "race": "ca-treasurer"
+   },
+   {
+    "candidate": "richard-barrera",
+    "issue": "housing",
+    "quote": "we are building affordable housing for school employees on district land",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Richard_Barrera#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-spi"
+   },
+   {
+    "candidate": "richard-barrera",
+    "issue": "wages",
+    "quote": "i led the campaign that won a higher minimum wage and paid sick days for 200 000 workers",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Richard_Barrera#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-spi"
+   },
+   {
+    "candidate": "nathan-johnson",
+    "issue": "healthcare",
+    "quote": "i have been the lead voice in advocating for medicaid expansion in texas",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ag"
+   },
+   {
+    "candidate": "nathan-johnson",
+    "issue": "energy",
+    "quote": "i have passed 135 bills including legislation to increase penalties on polluters",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ag"
+   },
+   {
+    "candidate": "nathan-johnson",
+    "issue": "immigration",
+    "quote": "we should reject shock and awe border policy and tactics that violate the u s constitution",
+    "keep": true,
+    "label": "Campaign website (nathanfortexas.com, 2026; quoted by Ballotpedia)",
+    "url": "https://nathanfortexas.com/priorities/",
+    "reason": "keep",
+    "race": "tx-ag"
+   },
+   {
+    "candidate": "chris-gober",
+    "issue": "healthcare",
+    "quote": "strengthen rural healthcare so families don t have to drive hours for treatment",
+    "keep": true,
+    "label": "Campaign website (chrisgober.com, 2026; quoted by Ballotpedia)",
+    "url": "https://chrisgober.com/",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "chris-gober",
+    "issue": "immigration",
+    "quote": "i will work with president trump to secure our border and crush the cartels on day one by fully enforcing immigration laws",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "chris-gober",
+    "issue": "infrastructure",
+    "quote": "ensuring rural texas has the roads water and resources needed to thrive alongside our cities",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "chris-gober",
+    "issue": "taxes",
+    "quote": "i ll attack the waste and fraud that has exploded our debt and made us vulnerable to our adversaries",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Chris_Gober#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "chris-gober",
+    "issue": "safety",
+    "quote": "crush the cartels by helping president trump secure our border and empowering texas law enforcement to halt the invasion of drugs violence and gangs into our community",
+    "keep": true,
+    "label": "Campaign website (chrisgober.com, 2026; quoted by Ballotpedia)",
+    "url": "https://chrisgober.com/",
+    "reason": "keep",
+    "race": "tx-10"
+   },
+   {
+    "candidate": "greg-casar",
+    "issue": "healthcare",
+    "quote": "funding mental health care",
+    "keep": false,
+    "label": "Campaign website (casarforcouncil.com, 2014; quoted by Ballotpedia)",
+    "url": "http://www.casarforcouncil.com/vision/",
+    "reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule",
+    "race": "tx-37"
+   },
+   {
+    "candidate": "greg-casar",
+    "issue": "safety",
+    "quote": "i m for effective criminal diversion programs",
+    "keep": false,
+    "label": "Campaign website (casarforcouncil.com, 2014; quoted by Ballotpedia)",
+    "url": "http://www.casarforcouncil.com/vision/",
+    "reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule",
+    "race": "tx-37"
+   },
+   {
+    "candidate": "jane-kim",
+    "issue": "healthcare",
+    "quote": "i will create a plan to guarantee healthcare for every child in california by establishing medicare for kids",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-insurance"
+   },
+   {
+    "candidate": "jane-kim",
+    "issue": "infrastructure",
+    "quote": "investing a share of this revenue in community resiliency and infrastructure",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Jane_Kim#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-insurance"
+   },
+   {
+    "candidate": "steve-hilton",
+    "issue": "taxes",
+    "quote": "driven by the highest taxes in america",
+    "keep": true,
+    "label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+    "url": "https://stevehiltonforgovernor.com/#vision",
+    "reason": "keep",
+    "race": "ca-gov"
+   },
+   {
+    "candidate": "steve-hilton",
+    "issue": "housing",
+    "quote": "we have plenty of space to build the homes people want and i will work to sweep away the ridiculous bureaucratic obstacles to getting it done",
+    "keep": true,
+    "label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+    "url": "https://stevehiltonforgovernor.com/#vision",
+    "reason": "keep",
+    "race": "ca-gov"
+   },
+   {
+    "candidate": "steve-hilton",
+    "issue": "safety",
+    "quote": "people need to know that if they commit a crime they will be caught prosecuted and convicted",
+    "keep": true,
+    "label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+    "url": "https://stevehiltonforgovernor.com/#vision",
+    "reason": "keep",
+    "race": "ca-gov"
+   },
+   {
+    "candidate": "steve-hilton",
+    "issue": "education",
+    "quote": "protecting and where parents want them expanding charter schools and over time introducing school choice",
+    "keep": true,
+    "label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+    "url": "https://stevehiltonforgovernor.com/#vision",
+    "reason": "keep",
+    "race": "ca-gov"
+   },
+   {
+    "candidate": "steve-hilton",
+    "issue": "immigration",
+    "quote": "we need to get back to the basic principle that we should enforce the law whether it s on homelessness open air drug markets shoplifting illegal immigration or violent crime",
+    "keep": true,
+    "label": "Campaign website (stevehiltonforgovernor.com, 2026; quoted by Ballotpedia)",
+    "url": "https://stevehiltonforgovernor.com/#vision",
+    "reason": "keep",
+    "race": "ca-gov"
+   },
+   {
+    "candidate": "sarah-eckhardt",
+    "issue": "safety",
+    "quote": "instituting jail and arrest diversion",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2022)",
+    "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+    "reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule",
+    "race": "tx-comptroller"
+   },
+   {
+    "candidate": "sarah-eckhardt",
+    "issue": "energy",
+    "quote": "eckhardt advocates for increases in renewable energy generation decreases in per capita energy and water consumption",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2022)",
+    "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+    "reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule",
+    "race": "tx-comptroller"
+   },
+   {
+    "candidate": "sarah-eckhardt",
+    "issue": "infrastructure",
+    "quote": "texas has massive water infrastructure needs with a 154b gap we must use the 28b rainy day fund to bridge this divide",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-comptroller"
+   },
+   {
+    "candidate": "sarah-eckhardt",
+    "issue": "healthcare",
+    "quote": "eckhardt advocates for an expansion of medicaid to insure 1m more texans and help rural hospitals stay open to serve them",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2022)",
+    "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes",
+    "reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule",
+    "race": "tx-comptroller"
+   },
+   {
+    "candidate": "mayes-middleton",
+    "issue": "energy",
+    "quote": "protect oil and gas jobs",
+    "keep": true,
+    "label": "Campaign website (mayesmiddleton.com, 2026; quoted by Ballotpedia)",
+    "url": "https://mayesmiddleton.com/",
+    "reason": "keep",
+    "race": "tx-ag"
+   },
+   {
+    "candidate": "mayes-middleton",
+    "issue": "immigration",
+    "quote": "aggressively enforce president trump s border security agenda and deportation orders",
+    "keep": true,
+    "label": "Campaign website (mayesmiddleton.com, 2026; quoted by Ballotpedia)",
+    "url": "https://mayesmiddleton.com/",
+    "reason": "keep",
+    "race": "tx-ag"
+   },
+   {
+    "candidate": "mayes-middleton",
+    "issue": "safety",
+    "quote": "support zero tolerance policies for violent crime and stronger bonds for dangerous offenders to keep criminals off our streets",
+    "keep": true,
+    "label": "Campaign website (mayesmiddleton.com, 2026; quoted by Ballotpedia)",
+    "url": "https://mayesmiddleton.com/",
+    "reason": "keep",
+    "race": "tx-ag"
+   },
+   {
+    "candidate": "ken-paxton",
+    "issue": "taxes",
+    "quote": "ken paxton will champion president trump s legislative priorities including cutting taxes",
+    "keep": true,
+    "label": "Campaign website (kenpaxton.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.kenpaxton.com/issues",
+    "reason": "keep",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "ken-paxton",
+    "issue": "immigration",
+    "quote": "securing the border and deporting illegal aliens",
+    "keep": true,
+    "label": "Campaign website (kenpaxton.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.kenpaxton.com/issues",
+    "reason": "keep",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "ken-paxton",
+    "issue": "energy",
+    "quote": "remove harmful regulations designed to hurt our energy companies",
+    "keep": true,
+    "label": "Campaign website (kenpaxton.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.kenpaxton.com/issues",
+    "reason": "keep",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "ted-brown",
+    "issue": "immigration",
+    "quote": "immigration is good for this country and should be encouraged",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2024)",
+    "url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+    "reason": "stale: quote is from 2024, before the 2026 campaign; unsure per stale rule",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "ted-brown",
+    "issue": "housing",
+    "quote": "eliminate roadblocks to starting new businesses or building more housing",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2022)",
+    "url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes",
+    "reason": "stale: quote is from 2022, before the 2026 campaign; unsure per stale rule",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "ted-brown",
+    "issue": "taxes",
+    "quote": "taxes are always too high at the federal state and local levels elected officials are thirsty for more of our money to finance their programs and big plans or more accurately boondoggles and to pay off their big campaign contributors i will never vote to raise taxes",
+    "keep": false,
+    "label": "Campaign website (tedbrown.org, 2024; quoted by Ballotpedia)",
+    "url": "https://tedbrown.org/platform",
+    "reason": "stale: quote is from 2024, before the 2026 campaign; unsure per stale rule",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "ted-brown",
+    "issue": "healthcare",
+    "quote": "health care is not a right or a privilege it s a service and like other goods and services it should be provided by free market competition",
+    "keep": false,
+    "label": "Campaign website (tedbrown.org, 2024; quoted by Ballotpedia)",
+    "url": "https://tedbrown.org/platform",
+    "reason": "stale: quote is from 2024, before the 2026 campaign; unsure per stale rule",
+    "race": "us-senate-tx"
+   },
+   {
+    "candidate": "dawn-buckingham",
+    "issue": "healthcare",
+    "quote": "simply put we need to get rid of the meddling that comes between a doctor and her patient and restore the balance of power between patients and the doctors they employ",
+    "keep": false,
+    "label": "Campaign website (dawnbuckingham.com, 2016; quoted by Ballotpedia)",
+    "url": "http://dawnbuckingham.com/issues/",
+    "reason": "stale: quote is from 2016, before the 2026 campaign; unsure per stale rule",
+    "race": "tx-land"
+   },
+   {
+    "candidate": "bo-french",
+    "issue": "energy",
+    "quote": "chairman french will put the texas oil and gas industry first by prioritizing the operators who keep the texas economy running",
+    "keep": true,
+    "label": "Campaign website (bofrench.com, 2026; quoted by Ballotpedia)",
+    "url": "https://bofrench.com/issues/",
+    "reason": "keep",
+    "race": "tx-rrc"
+   },
+   {
+    "candidate": "don-huffines",
+    "issue": "taxes",
+    "quote": "i am passionate about shrinking the size of government defending liberty and protecting taxpayers",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-comptroller"
+   },
+   {
+    "candidate": "don-huffines",
+    "issue": "immigration",
+    "quote": "i will stand with president trump to secure the border enforce our immigration laws and expose the true cost of illegal immigration",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-comptroller"
+   },
+   {
+    "candidate": "gina-hinojosa",
+    "issue": "education",
+    "quote": "every child deserves a strong neighborhood public school but greg abbott s elite donors want to suck the money out of them to turn a profit",
+    "keep": true,
+    "label": "Campaign website (ginafortexas.com, 2026; quoted by Ballotpedia)",
+    "url": "https://ginafortexas.com/priorities/",
+    "reason": "keep",
+    "race": "tx-gov"
+   },
+   {
+    "candidate": "gina-hinojosa",
+    "issue": "healthcare",
+    "quote": "we need to reign in these out of control profiteers who are making healthcare more expensive and making texans sicker",
+    "keep": true,
+    "label": "Campaign website (ginafortexas.com, 2026; quoted by Ballotpedia)",
+    "url": "https://ginafortexas.com/priorities/",
+    "reason": "keep",
+    "race": "tx-gov"
+   },
+   {
+    "candidate": "pat-dixon",
+    "issue": "taxes",
+    "quote": "i am a libertarian and i want to eliminate government functions that are bad for taxpayers which will reduce spending and taxation",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-gov"
+   },
+   {
+    "candidate": "kevin-mccormick",
+    "issue": "infrastructure",
+    "quote": "i also propose increasing the county road and bridge fund and allowing bicycle paths to be built with these funds",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "kevin-mccormick",
+    "issue": "energy",
+    "quote": "as ev s and renewable energy reduce fossil fuel dependence worldwide the fossil fuel industry will continue to decline and its intimate connection to texas transportation will drag the state down unless we take effective measures to disentangle our systems from fossil fuel dependence",
+    "keep": true,
+    "label": "Campaign website (kmm2026.org, 2026; quoted by Ballotpedia)",
+    "url": "https://kmm2026.org/issues2026",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "kevin-mccormick",
+    "issue": "safety",
+    "quote": "opposite to preventing drug use the war on drugs promotes addiction gang violence and social decay",
+    "keep": true,
+    "label": "Campaign website (kmm2026.org, 2026; quoted by Ballotpedia)",
+    "url": "https://kmm2026.org/issues2026",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "shehla-faizi",
+    "issue": "immigration",
+    "quote": "ice tears our communities apart and we ve seen too many examples of racial profiling of us citizens and ice agents panicking and attacking bystanders",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-comptroller"
+   },
+   {
+    "candidate": "anthony-cristo",
+    "issue": "education",
+    "quote": "we must fund all public schools properly",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "anthony-cristo",
+    "issue": "immigration",
+    "quote": "we need to lead the nation in immigration reform by allowing these hard working individuals into our country to work and allowing them to return to their native country afterwards",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "anthony-cristo",
+    "issue": "safety",
+    "quote": "there are some people currently in office who want to maintain a steady flow of people through our prison system by creating or maintaining laws for victimless crimes",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-ltgov"
+   },
+   {
+    "candidate": "benjamin-flores",
+    "issue": "energy",
+    "quote": "that means embracing innovation welcoming renewable energy producers alongside oil and gas and running tighter operations",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-land"
+   },
+   {
+    "candidate": "benjamin-flores",
+    "issue": "infrastructure",
+    "quote": "i ll strengthen the glo s storm protection programs and fix the disaster recovery system so help reaches the people who need it most quickly and fairly",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-land"
+   },
+   {
+    "candidate": "clayton-tucker",
+    "issue": "healthcare",
+    "quote": "we need a government that fights to increase access to affordable timely healthcare for all texans",
+    "keep": true,
+    "label": "Campaign website (claytontuckertx.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.claytontuckertx.com/issues",
+    "reason": "keep",
+    "race": "tx-agcomm"
+   },
+   {
+    "candidate": "clayton-tucker",
+    "issue": "infrastructure",
+    "quote": "we need significant investments in rural infrastructure healthcare broadband connectivity and other incentives to attract jobs back to rural texas",
+    "keep": true,
+    "label": "Campaign website (claytontuckertx.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.claytontuckertx.com/issues",
+    "reason": "keep",
+    "race": "tx-agcomm"
+   },
+   {
+    "candidate": "jon-rosenthal",
+    "issue": "education",
+    "quote": "public schools first because this is our future we must provide the best education possible to all of our kids and that also means taking care of our teachers",
+    "keep": false,
+    "label": "Ballotpedia Candidate Connection survey (2018)",
+    "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+    "reason": "stale: quote is from 2018, before the 2026 campaign; unsure per stale rule",
+    "race": "tx-rrc"
+   },
+   {
+    "candidate": "jon-rosenthal",
+    "issue": "energy",
+    "quote": "promoting an all of the above approach to energy production and striking a sensible balance between environmental concerns and industry activity",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-rrc"
+   },
+   {
+    "candidate": "jon-rosenthal",
+    "issue": "healthcare",
+    "quote": "it would be good for texas as we would have certain items like medicaid expansion and marijuana legalization in law by now",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-rrc"
+   },
+   {
+    "candidate": "nate-sheets",
+    "issue": "taxes",
+    "quote": "fiscal responsibility doge audit agency to cut unnecessary taxes fees and regulations",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-agcomm"
+   },
+   {
+    "candidate": "nate-sheets",
+    "issue": "immigration",
+    "quote": "nate supports requiring federal e verify for all legal employment in texas and will vigorously advocate for passing state legislature to ensure that anyone who works in texas has had their citizenship verified ending the economic magnet once and for all",
+    "keep": true,
+    "label": "Campaign website (natesheets.com, 2026; quoted by Ballotpedia)",
+    "url": "https://natesheets.com/nate-sheets-on-the-issues/",
+    "reason": "keep",
+    "race": "tx-agcomm"
+   },
+   {
+    "candidate": "austin-r-kelly",
+    "issue": "taxes",
+    "quote": "i am committed to shrinking the size of the state bureaucracy and cutting wasteful spending within the department of agriculture",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-agcomm"
+   },
+   {
+    "candidate": "arthur-dibianca",
+    "issue": "energy",
+    "quote": "a restitution based system is better than trying to constrain oil and gas companies in advance",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Arthur_DiBianca#Campaign_themes",
+    "reason": "keep",
+    "race": "tx-rrc"
+   },
+   {
+    "candidate": "connie-chan",
+    "issue": "healthcare",
+    "quote": "connie chan supports medicare for all which guarantees that every american has a right to health care everyone is covered and the health care system is no longer driven by insurance companies",
+    "keep": true,
+    "label": "Campaign website (conniechansf.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.conniechansf.com/issues",
+    "reason": "keep",
+    "race": "ca-11"
+   },
+   {
+    "candidate": "connie-chan",
+    "issue": "wages",
+    "quote": "work in solidarity with organized labor to raise the national minimum wage and secure fair wages for all workers",
+    "keep": true,
+    "label": "Campaign website (conniechansf.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.conniechansf.com/issues",
+    "reason": "keep",
+    "race": "ca-11"
+   },
+   {
+    "candidate": "connie-chan",
+    "issue": "immigration",
+    "quote": "supports creating a pathway to citizenship protecting and reaffirming birthright citizenship and protecting san francisco as a sanctuary city",
+    "keep": true,
+    "label": "Campaign website (conniechansf.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.conniechansf.com/issues",
+    "reason": "keep",
+    "race": "ca-11"
+   },
+   {
+    "candidate": "scott-wiener",
+    "issue": "healthcare",
+    "quote": "scott is a leader in expanding access to health care including creation of a medicare for all single payer system of universal coverage",
+    "keep": true,
+    "label": "Campaign website (scottwiener.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.scottwiener.com/platform",
+    "reason": "keep",
+    "race": "ca-11"
+   },
+   {
+    "candidate": "scott-wiener",
+    "issue": "immigration",
+    "quote": "ice has become a terror organization we must abolish ice and hold officials and agents accountable for lawless behavior",
+    "keep": true,
+    "label": "Campaign website (scottwiener.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.scottwiener.com/platform",
+    "reason": "keep",
+    "race": "ca-11"
+   },
+   {
+    "candidate": "scott-wiener",
+    "issue": "infrastructure",
+    "quote": "increase federal investment in public transit",
+    "keep": true,
+    "label": "Campaign website (scottwiener.com, 2026; quoted by Ballotpedia)",
+    "url": "https://www.scottwiener.com/platform",
+    "reason": "keep",
+    "race": "ca-11"
+   },
+   {
+    "candidate": "fiona-ma",
+    "issue": "energy",
+    "quote": "i am also focused on protecting california s coast and environment from pollution and long term damage so future generations inherit a healthy state",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-ltgov"
+   },
+   {
+    "candidate": "fiona-ma",
+    "issue": "immigration",
+    "quote": "i am dedicated to protecting immigrant communities from fear and discrimination and ensuring dignity and fairness",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Fiona_Ma#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-ltgov"
+   },
+   {
+    "candidate": "gloria-j-romero",
+    "issue": "housing",
+    "quote": "i will work with our governor to review the necessity of many of our laws and regulations which have created hardships in homebuilding driving up the cost of living and decreasing homeownership rates",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Gloria_J._Romero#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-ltgov"
+   },
+   {
+    "candidate": "michael-gates",
+    "issue": "safety",
+    "quote": "as attorney general he will prosecute violent criminals combat fentanyl trafficking and organized retail theft and ensure laws are enforced fairly and consistently",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Michael_Gates_(California)#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-ag"
+   },
+   {
+    "candidate": "donald-p-wagner",
+    "issue": "taxes",
+    "quote": "the liberal tax and spend crowd in sacramento needs to understand that no society has ever taxed its way to prosperity",
+    "keep": false,
+    "label": "Campaign website (wagnerforassembly.com (archived), 2014; quoted by Ballotpedia)",
+    "url": "https://web.archive.org/web/20141021023505/http://www.wagnerforassembly.com/issues/",
+    "reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule",
+    "race": "ca-sos"
+   },
+   {
+    "candidate": "donald-p-wagner",
+    "issue": "immigration",
+    "quote": "i ll fight for our communities by working to put a stop to illegal immigration",
+    "keep": false,
+    "label": "Campaign website (wagnerforassembly.com (archived), 2014; quoted by Ballotpedia)",
+    "url": "https://web.archive.org/web/20141021023505/http://www.wagnerforassembly.com/issues/",
+    "reason": "stale: quote is from 2014, before the 2026 campaign; unsure per stale rule",
+    "race": "ca-sos"
+   },
+   {
+    "candidate": "jennifer-hawks",
+    "issue": "infrastructure",
+    "quote": "we already have more than 70 billion dollars in bond debt we can t let sacramento spend even more on its unfinished projects",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Jennifer_Hawks#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-treasurer"
+   },
+   {
+    "candidate": "ben-allen",
+    "issue": "energy",
+    "quote": "i m passionate about tackling climate change especially because of what it means for my kids and the kind of future they re going to inherit",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Ben_Allen#Campaign_themes",
+    "reason": "keep",
+    "race": "ca-insurance"
+   },
+   {
+    "candidate": "skyler-a-korgel",
+    "issue": "taxes",
+    "quote": "personally i am passionate about equitable taxation policy that fairly distributes tax burdens such that everyone is paying their fair share to support our schools governments public lands and public services",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+    "reason": "keep",
+    "race": "travis-cad-place-1"
+   },
+   {
+    "candidate": "skyler-a-korgel",
+    "issue": "housing",
+    "quote": "when tesla oracle samsung etc pay the property taxes instead of getting huge discounts via underappraisal then housing affordability improves for both owners and renters",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+    "reason": "keep",
+    "race": "travis-cad-place-1"
+   },
+   {
+    "candidate": "skyler-a-korgel",
+    "issue": "infrastructure",
+    "quote": "expanding public transportation options and reducing car dependency",
+    "keep": true,
+    "label": "Ballotpedia Candidate Connection survey (2026)",
+    "url": "https://ballotpedia.org/Skyler_Korgel#Campaign_themes",
+    "reason": "keep",
+    "race": "travis-cad-place-1"
+   }
+  ]
  }
 }

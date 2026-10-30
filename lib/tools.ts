@@ -40,7 +40,7 @@ function publishedPositions(name: string) {
     .filter(([, st]) => st && st.value !== null && st.value !== undefined && st.sourceUrl && (st.quote || (st as { voteRecord?: string }).voteRecord))
     .map(([id, st]) => {
       const vr = (st as { voteRecord?: string }).voteRecord;
-      return { issue: ISSUES.find((i) => i.id === id)?.label ?? id, text: vr ? `${vr}${st.quote ? `: ${st.quote}` : ""}` : String(st.quote), form: stanceForm(st as { voteRecord?: string; sourceUrl?: string }), ...(st.year ? { year: st.year } : {}), source: { label: apiSourceLabel(String(st.sourceUrl)), url: String(st.sourceUrl) } };
+      return { issue: ISSUES.find((i) => i.id === id)?.label ?? id, text: vr ? `${vr}${st.quote ? `: ${st.quote}` : ""}` : String(st.quote), form: stanceForm(st as { voteRecord?: string; sourceUrl?: string }), ...(st.year ? { year: st.year } : {}), source: st.chipUrl && st.chip && st.chip !== "source" ? { label: st.chip, url: st.chipUrl } : { label: apiSourceLabel(String(st.sourceUrl)), url: String(st.sourceUrl) } };
     });
 }
 

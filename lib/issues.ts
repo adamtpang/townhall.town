@@ -20,7 +20,7 @@ export const ISSUES: Issue[] = [
 ];
 
 /** value null = no usable position (status says why, shown verbatim); never counted. */
-export type Stance = { value: number | null; quote?: string; summary?: string; sourceUrl?: string | null; status?: string; voteRecord?: string; bill?: string; year?: number; /** Why the shared eligibility rule made this unsure (lib/stanceEligibility.ts). */ unsureReason?: string };
+export type Stance = { value: number | null; quote?: string; summary?: string; sourceUrl?: string | null; status?: string; voteRecord?: string; bill?: string; year?: number; /** Why the shared eligibility rule made this unsure (lib/stanceEligibility.ts). */ unsureReason?: string; /** Chip label and citation from the shared rule (Civic's audit for Ballotpedia records). */ chip?: string; chipUrl?: string; /** Our own label for the source, when the URL alone would mislabel it. */ sourceTitle?: string };
 // Year of each quote, from the source's own date (scripts/quote_years.py). Missing = 'date unsure'.
 const YEARS = (quoteYears as unknown as { years: Record<string, { year: number }> }).years;
 /** Questionnaires are labeled as such, never as endorsements. */
@@ -44,13 +44,13 @@ export function stancesFor(name: string): Record<string, Stance> {
   // Dropped duplicates (and quotes held for a Civic retag) become value null, so they are neither shown nor counted.
   for (const [id] of duplicateSentenceIds(out, ISSUES.map((i) => i.id))) out[id] = { value: null, status: "same sentence as another issue" };
   for (const id of Object.keys(out)) if (out[id].value !== null && isExcluded(name, id, out[id].quote ?? out[id].summary)) out[id] = { value: null, status: "held for a Civic retag" }; // retagged quotes already sit under their new issue in stances.json
-  // One eligibility rule for the site and Towny (lib/stanceEligibility.ts, Civic Oct 30 1:54 PM CT): slogans, Ballotpedia's
-  // own voice, and audit drops become unsure (display only, value null, never counted). The quote stays for display.
+  // One eligibility rule for the site and Towny (lib/stanceEligibility.ts, Civic Oct 30 1:54 PM CT): slogans and
+  // Ballotpedia records the audit drops (stale) or doesn't list become unsure (display only, value null, never counted). The quote stays for display.
   const label = (id: string) => ISSUES.find((i) => i.id === id)?.label;
   for (const [id, s] of Object.entries(out)) {
     if (s.value === null || !s.sourceUrl) continue;
     const g = stanceEligibility(s, null, { candidate: name, issueId: id, issueLabel: label(id) });
-    if (!g.ok) out[id] = { ...s, value: null, status: "unsure", unsureReason: g.reason };
+    out[id] = g.ok ? { ...s, chip: g.label, chipUrl: g.url } : { ...s, value: null, status: "unsure", unsureReason: g.reason };
   }
   return out;
 }

@@ -24,6 +24,8 @@ export type Cause = { id: string; label: string; mentions: number; quote: string
 export type Race = {
   id: string;                       // e.g. "tx-35", "tx-governor", "ca-prop-40"
   title: string;
+  /** Ballot order line (lib/towny/ballotOrder.ts withOrderLines), added server-side; absent for one-choice contests. */
+  order?: OrderLine | null;
   level: "federal" | "state" | "county" | "local" | "measure";
   office: string;                   // plain words: what the office controls
   candidates: Politician[];         // empty for ballot measures
@@ -79,3 +81,6 @@ export type Money = {
   donorsSource?: Source;
   fetchedAt: string;
 };
+
+/** "Listed in the order on the official sample ballot." or the unsure line, with the source it points at. */
+export type OrderLine = { text: string; confirmed: boolean; url: string | null; label: string | null };

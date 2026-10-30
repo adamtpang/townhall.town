@@ -53,22 +53,28 @@ describe("tool answers, all through verify.ts", () => {
 
   it("fixes 2 + 4: 'why first' returns only the order line, the state-law line, the office source and the offer", async () => {
     expect(STATE_LAW_LINE).toBe("Candidates appear in the order printed on the official sample ballot, which is set under state election law, not by Towny.");
-    const cases: [string, string, Record<string, unknown>, string][] = [
-      ["94103", "Why is she ranked first?", { focus: { raceId: "ca-11" } }, "Source: SF Department of Elections sample ballot [sfelections.org]"],
-      ["78701", "Why is Talarico listed first in the Senate race?", {}, "Source: Travis County Elections sample ballot [votetravis.gov]"],
-      ["10001", "Why is Lasher listed first?", {}, "Source: NYC Board of Elections sample ballot [vote.nyc]"],
+    expect(ORDER_UNSURE_LINE).toBe("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.");
+    expect(ORDER_CONFIRMED_LINE).toBe("Listed in the order on the official sample ballot.");
+    const TRAVIS = "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf";
+    const SF = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf";
+    // Civic's ballot_order_check (Oct 30): every 78701 race confirmed against Travis County's sample ballot; SF unsure
+    // (source: SF Department of Elections, the VIP PDF); ny-12 isn't one of the six confirmed NYC contests.
+    const cases: [string, string, Record<string, unknown>, boolean, string, { label: string; url: string }][] = [
+      ["94103", "Why is she ranked first?", { focus: { raceId: "ca-11" } }, false, "Source: SF Department of Elections", { label: "SF Department of Elections", url: SF }],
+      ["78701", "Why is Paxton listed first in the Senate race?", {}, true, "Source: Travis County Elections sample ballot [votetravis.gov]", { label: "votetravis.gov", url: TRAVIS }],
+      ["10001", "Why is Lasher listed first?", {}, false, "Source: NYC Board of Elections sample ballot [vote.nyc]", { label: OFFICES["10001"].label, url: OFFICES["10001"].sampleBallot }],
     ];
-    for (const [z, q, x, src] of cases) {
+    for (const [z, q, x, confirmed, src, link] of cases) {
       const r = await ask(z, q, x);
       expect(r.kind, q).toBe("order");
-      expect(ORDER_UNSURE_LINE).toBe("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.");
-      expect(r.reply.split("\n"), q).toEqual([ORDER_UNSURE_LINE, STATE_LAW_LINE, src, OFFER_COMPARE]);
-      expect(r.links, q).toEqual([{ label: OFFICES[z].label, url: OFFICES[z].sampleBallot }]);
+      const line = confirmed ? ORDER_CONFIRMED_LINE : ORDER_UNSURE_LINE;
+      expect(r.reply.split("\n"), q).toEqual([line, STATE_LAW_LINE, src, OFFER_COMPARE]);
+      expect(r.links, q).toEqual([link]);
       // never Ballotpedia, never "Sources differ", no stances or overlap for any single candidate
       expect(r.reply).not.toMatch(/ballotpedia|Sources differ|overlap with your answers| says \(|listed first because/i);
       expect(r.claims).toHaveLength(1);
-      expect(r.claims[0]).toMatchObject({ status: "unsure", display: ORDER_UNSURE_LINE });
-      expect(r.claims[0].source).toBeUndefined();
+      if (confirmed) { expect(r.claims[0]).toMatchObject({ status: "confirmed" }); expect(r.claims[0].source?.url).toBe(TRAVIS); }
+      else { expect(r.claims[0]).toMatchObject({ status: "unsure", display: ORDER_UNSURE_LINE }); expect(r.claims[0].source).toBeUndefined(); }
       expect(r.reply).not.toMatch(/\b(she|her|he|his|him)\b/i); // never infers gender
     }
   });
@@ -77,8 +83,12 @@ describe("tool answers, all through verify.ts", () => {
     const r = await ask("78701", "Who is running for Senate?");
     expect(r.kind).toBe("candidates");
     expect(r.reply).not.toContain("in ballot order");
-    expect(r.reply).toContain(ORDER_UNSURE_LINE + "\n" + STATE_LAW_LINE + "\nSource: Travis County Elections sample ballot [votetravis.gov]");
-    expect(r.claims.find((c) => c.id.endsWith(".order"))).toMatchObject({ status: "unsure" });
+    // Official sample ballot order (Texas: REP, DEM, LIB): Paxton, Talarico, Brown.
+    expect(r.reply).toMatch(/Ken Paxton[^\n]*\nJames Talarico[^\n]*\nTed Brown/);
+    expect(r.reply).toContain(ORDER_CONFIRMED_LINE + "\n" + STATE_LAW_LINE + "\nSource: Travis County Elections sample ballot [votetravis.gov]");
+    expect(r.claims.find((c) => c.id.endsWith(".order"))).toMatchObject({ status: "confirmed" });
+    const sf = await ask("94103", "Who is running for Congress?");
+    expect(sf.reply).toContain(ORDER_UNSURE_LINE + "\n" + STATE_LAW_LINE + "\nSource: SF Department of Elections");
   });
 
   it("fix 6: slogans are unsure and never counted, for everyone", async () => {
@@ -95,11 +105,17 @@ describe("tool answers, all through verify.ts", () => {
     expect(r.claims.find((c) => c.id === "micah-c-lasher.energy")?.source).toBeUndefined();
   });
 
-  it("fix 3: Ballotpedia only for Candidate Connection or copied campaign-site text", () => {
+  it("fix 3: Ballotpedia stances are decided only by Civic's audit (keep_final), with its chip label and citation", () => {
     const bp = "https://ballotpedia.org/X";
-    expect(gateStance({ quote: "Connie Chan supports Medicare for All which guarantees that every American has a right to health care", sourceUrl: bp })).toEqual({ ok: false, reason: "ballotpedia voice" });
-    expect(gateStance({ quote: "I led the campaign that won a higher minimum wage and paid sick days for 200,000 workers", sourceUrl: bp })).toMatchObject({ ok: true, label: CANDIDATE_CONNECTION });
-    expect(gateStance({ quote: "We need to get back to the basic principle that we should enforce the law — whether it’s on homelessness, open air drug markets, shoplifting, illegal immigration or violent crime.", sourceUrl: bp }, "https://stevehiltonforgovernor.com/")).toEqual({ ok: true, url: "https://stevehiltonforgovernor.com/", label: "stevehiltonforgovernor.com", via: "campaign" });
+    // Not in the audit: unsure (conservative).
+    expect(gateStance({ quote: "Connie Chan supports Medicare for All which guarantees that every American has a right to health care", sourceUrl: bp })).toEqual({ ok: false, reason: "not audited" });
+    // keep_final false, final_reason stale: unsure, never counted.
+    const raw = JSON.parse(fs.readFileSync("data/stances.json", "utf8")).stances;
+    expect(gateStance(raw["james-talarico"].wages, null, { candidate: "James Talarico", issueId: "wages", issueLabel: "Wages" })).toMatchObject({ ok: false, reason: "stale" });
+    expect(stancesFor("James Talarico").wages).toMatchObject({ value: null, status: "unsure", unsureReason: "stale" });
+    // keep_final true: counted, chip and URL from recommended_chip_label / recommended_citation_url.
+    expect(stancesFor("Caitlin Rourk").infrastructure).toMatchObject({ value: 4, chip: "Ballotpedia Candidate Connection survey (2026)", chipUrl: "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes" });
+    expect(typeof CANDIDATE_CONNECTION).toBe("string");
     expect(gateStance({ quote: "Expand housing tax credits", sourceUrl: "https://micahlasher.com/issues" })).toMatchObject({ ok: true, via: "own" });
   });
 

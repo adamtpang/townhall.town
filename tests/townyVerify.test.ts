@@ -102,21 +102,24 @@ describe("withRetry: retry once, then visible fallback", () => {
 });
 
 describe("verifyBallotRun (standalone interface for the agent timeline)", () => {
-  it("checks every race on all 3 ballots; ballot order stays unsure until checked against the office's sample ballot", () => {
+  it("checks every race on all 3 ballots; ballot order is unsure unless Civic confirmed it against the office's sample ballot", () => {
     for (const z of ["78701", "94103", "10001"]) {
       const v = verifyBallotRun(z);
       expect(v.report.checked).toBeGreaterThan(10);
       const order = v.claims.filter((c) => c.id.endsWith(".order") && c.status !== "no_record");
       expect(order.length, z).toBeGreaterThan(0);
-      expect(order.every((c) => c.status === "unsure" && !c.source), z).toBe(true); // never cited to Ballotpedia
-      expect(v.report.unsure, z).toBe(order.length); // everything else is confirmed by curated data
+      const unsure = order.filter((c) => c.status !== "confirmed");
+      expect(unsure.every((c) => c.status === "unsure" && !c.source), z).toBe(true); // never cited to Ballotpedia
+      for (const c of order.filter((c) => c.status === "confirmed")) expect(c.source?.url, c.id).not.toMatch(/ballotpedia/i);
+      expect(order.length - unsure.length, z).toBe({ "78701": 58, "94103": 0, "10001": 6 }[z]);
+      expect(v.report.unsure, z).toBe(unsure.length); // everything else is confirmed by curated data
       expect(v.claims.every((c) => c.status !== "confirmed" || c.source)).toBe(true);
     }
   });
   it("narration the sources don't state comes back unsure", () => {
     const v = verifyBallotRun("78701", { raceIds: ["us-senate-tx"], measureIds: [], narration: [{ id: "n1", field: "stance", text: "Ted Brown wants a flat tax.", value: "flat tax", subject: "Ted Brown" }] });
     expect(v.claims.find((c) => c.id === "n1")?.status).toBe("unsure");
-    expect(v.report.summary).toBe("Checked 2 claims, 2 marked unsure"); // the order claim (unchecked) + the narration
+    expect(v.report.summary).toBe("Checked 2 claims, 1 marked unsure"); // the order claim is confirmed (Travis sample ballot); the narration is unsure
   });
 });
 

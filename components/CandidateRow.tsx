@@ -149,14 +149,14 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
                     <span className="font-[530]">{issueLabel(id)}:</span>{" "}
                     {voteLine(s) ? <>{voteLine(s)}</> : stanceForm(s) === "summary" ? <><span className="text-black/60" data-bp-summary>Ballotpedia summary:</span> {s.quote}</> : s.quote ? <>&ldquo;{s.quote}&rdquo;</> : s.summary ? <><span className="text-black/60" data-summary>Summary:</span> {s.summary}</> : null}{" "}
                     {s.year ? <><span className="text-black/60" data-quote-year>({s.year})</span>{" "}</> : null}
-                    {s.sourceUrl ? <a href={s.sourceUrl} target="_blank" rel="noreferrer" title={s.year ? undefined : "Date unsure"} className={`${HIT} th-link`} data-own-line>{sourceLabel(s.sourceUrl)} ↗{ext}</a> : null}
+                    {s.sourceUrl ? <a href={s.chipUrl ?? s.sourceUrl} target="_blank" rel="noreferrer" title={s.year ? undefined : "Date unsure"} className={`${HIT} th-link`} data-own-line>{s.chipUrl && s.chip && s.chip !== "source" ? s.chip : sourceLabel(s.sourceUrl)} ↗{ext}</a> : null}
                   </li>
                 ); })}
               </ul>
             ) : null}
             {unsure.length > 0 ? (
               <ul className="mt-1 space-y-1" data-unsure-n={unsure.length}>
-                {unsure.map((id) => <li key={id} className="text-sm leading-5 text-black/60" data-unsure={id}><span className="font-[530]">{issueLabel(id)}: unclear, not compared.</span> {st[id].summary}{st[id].sourceUrl ? <>{" "}<a href={st[id].sourceUrl!} target="_blank" rel="noreferrer" className={`${HIT} th-link`}>{sourceLabel(st[id].sourceUrl)} ↗{ext}</a></> : null}</li>)}
+                {unsure.map((id) => <li key={id} className="text-sm leading-5 text-black/60" data-unsure={id}><span className="font-[530]">{issueLabel(id)}: unclear, not compared.</span> {st[id].summary}{st[id].sourceUrl ? <>{" "}<a href={st[id].sourceUrl!} target="_blank" rel="noreferrer" className={`${HIT} th-link`}>{st[id].sourceTitle ?? sourceLabel(st[id].sourceUrl)} ↗{ext}</a></> : null}</li>)}
               </ul>
             ) : null}
             {o.sourced >= 2 && noRec.length > 0 ? <p className="mt-1 text-sm text-black/60" data-null-status>No public position found yet: {noRec.map(issueLabel).join(", ")}</p> : null}

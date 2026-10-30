@@ -3,7 +3,7 @@
 // measure facts) plus any narration sentences, checks them with verifyClaims, and returns { claims, report } for <VerifyStep/>.
 // Pure and synchronous (< 5 ms on the full 78701 ballot). Never reads or returns the voter's answers.
 import { ballotFor } from "../tools";
-import { measuresFor } from "../measures";
+import { measuresFor, measureSide } from "../measures";
 import { verifyClaims, type Claim, type Source, type ToolRun, type VerifyOutput } from "./verify";
 import { OFFICE } from "./followup";
 import { orderCheckFor } from "./ballotOrder";
@@ -27,12 +27,13 @@ export function verifyBallotRun(
       const off = OFFICES[zip];
       const chk = orderCheckFor(zip, r);
       const value = r.candidates.length ? `Ballot order: ${listed}` : null;
-      if (chk.confirmed && value) sources.push({ url: chk.url, label: off.label, origin: "curated", text: value });
+      if (!chk.confirmed && chk.single) continue; // one-choice contest: no order claim (Civic MATCH_SINGLE)
+      if (chk.confirmed && value) sources.push({ url: chk.url, label: chk.source.chip, origin: "curated", text: value });
       claims.push({ id: `${r.id}.order`, field: "race", text: `${r.title}: ${r.candidates.map((c) => c.name).join(", ") || "no candidates listed"}, in ballot order.`, value, office: OFFICE[zip], searched: off ? [off.label] : ["ballot data"], ...(r.candidates.length && !chk.confirmed ? { forceUnsure: chk.reason } : {}) });
     }
     const ms = measuresFor(zip).filter((m) => !opts.measureIds || opts.measureIds.includes(m.id));
     for (const m of ms) {
-      for (const [k, f] of [["whatChanges", m.whatChanges], ["ifYes", m.ifYes], ["ifNo", m.ifNo]] as const) {
+      for (const [k, f] of [["whatChanges", m.whatChanges], ["ifYes", measureSide(m, "ifYes")], ["ifNo", measureSide(m, "ifNo")]] as const) {
         if (f?.sourceUrl) sources.push({ url: f.sourceUrl, label: hostOf(f.sourceUrl), origin: "curated", text: f.text });
         claims.push({ id: `${m.id}.${k}`, field: "measure", text: `${m.title}: ${f?.text ?? ""}`, value: f?.text ?? null, key: `${m.id}.${k}`, office: OFFICE[zip], searched: f?.sourceUrl ? [hostOf(f.sourceUrl)] : ["measure data"] });
       }

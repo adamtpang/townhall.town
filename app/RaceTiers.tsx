@@ -7,11 +7,11 @@ const listOf = (xs: string[]) => (xs.length < 3 ? xs.join(" and ") : `${xs.slice
 import { useState } from "react";
 import { type Photo } from "../components/Portrait";
 import { PortraitRow } from "../components/PortraitRow";
-import type { MeasureMath } from "../lib/measures";
+import { measureSide, type MeasureMath } from "../lib/measures";
 import officesData from "../data/offices.json";
 const OFFICES = officesData.offices;
 import { useDay, useT } from "../lib/i18n";
-import type { Politician } from "../lib/types";
+import type { OrderLine, Politician } from "../lib/types";
 import { SHOW_FINANCE } from "../lib/flags";
 import { FINANCE_ZIPS, fecCandidateUrl, fecIdOf, fecSearchUrl, isFederalRace, usd } from "../lib/fec";
 import { leaderLine, type PolyQuote, type LeaderLine } from "../lib/marketLine";
@@ -19,7 +19,7 @@ import { polymarketCloseness } from "../lib/marketsCore.mjs";
 import type { RaceMeta } from "../lib/raceMeta";
 import { ISSUES } from "../lib/issues";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
-type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; splitNote?: string; sourceNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo; incumbent?: Politician["incumbent"]; money?: Politician["money"]; finance?: { url?: string | null } | null }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; splitNote?: string; sourceNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; order?: OrderLine | null; candidates?: { name: string; party?: string | null; photo?: Photo; incumbent?: Politician["incumbent"]; money?: Politician["money"]; finance?: { url?: string | null } | null }[] };
 /** The one live Polymarket quote for a contest, or null. Never cached, never estimated. */
 export type Mk = PolyQuote | null;
 
@@ -173,6 +173,7 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
+                    {r.order ? <p className="max-w-[60ch] text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {showFinanceFor(r, zip) ? <FinanceRow r={r} /> : null}
                     {/* Civic main_points17 (Oct 30): judges (pointType "role") get only a factual role line from their official profile when one
                         exists (8 in Texas), else the plain empty text. Rendered as given; never a stance. */}
@@ -299,7 +300,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
               <div className="pb-3"><MarketLine line={leaderLine(market(m.id))} /></div>
               {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
 {(() => {
-                const all = [["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", (m.ifYes ?? m.whatChanges).text, (m.ifYes ?? m.whatChanges).sourceUrl], ["If no", m.ifNo?.text, m.ifNo?.sourceUrl]] as const;
+                const all = [["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", measureSide(m, "ifYes")?.text, measureSide(m, "ifYes")?.sourceUrl ?? null], ["If no", measureSide(m, "ifNo")?.text, measureSide(m, "ifNo")?.sourceUrl ?? null]] as const; // NYC: the CFB voter guide's own pair, quoted, or our summary (lib/measures.ts measureSide)
                 const none = (v?: string | null) => said(v) === "No official estimate";
                 const rows = all.filter(([, v]) => !none(v));
                 const src = m.officialTitleSource || all.find(([, , u]) => u)?.[2];

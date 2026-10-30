@@ -111,8 +111,8 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
       expect(new Set(keys).size).toBe(keys.length);
     }
     // The best fit (infrastructure) keeps the sentence. Since Oct 30 1:54 PM CT the shared eligibility rule also applies:
-    // this Ballotpedia text isn't marked as Candidate Connection or copied campaign text, so it is unsure (shown, not counted).
-    expect(stancesFor("Caitlin Rourk").infrastructure).toMatchObject({ status: "unsure", unsureReason: "ballotpedia voice" });
+    // Civic's Ballotpedia audit (keep_final true for this exact sentence) keeps it, with the audit's chip label and citation.
+    expect(stancesFor("Caitlin Rourk").infrastructure).toMatchObject({ value: 4, chip: "Ballotpedia Candidate Connection survey (2026)", chipUrl: "https://ballotpedia.org/Caitlin_Rourk#Campaign_themes" });
     expect(stancesFor("Caitlin Rourk").infrastructure.quote).toMatch(/critical infrastructure/);
     expect(stancesFor("Caitlin Rourk").energy).toEqual({ value: null, status: "same sentence as another issue" });
   });
