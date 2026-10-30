@@ -3,6 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { curated, BALLOT_ORDER_LINE, asksOrder } from "../lib/towny/answer";
+import { ORDER_CONFIRMED } from "../lib/ballotOrder";
 import { faqFor, OFFICES, pollingLinks } from "../lib/towny/faq";
 import { routeTurn, outOfScope, dedupeByHost, OUT_OF_SCOPE } from "../lib/townyChat";
 
@@ -15,19 +16,23 @@ const OOS = "Towny covers Austin (78701), San Francisco (94103) and New York Cit
 describe("P1-1 ballot order", () => {
   const QS = ["What order are candidates on my ballot?", "What's the ballot order?", "Who is listed first?", "Who is listed first on my ballot?",
     "What position on the ballot is Talarico?", "In what order do the names appear?", "Who's first on the ballot?"];
-  it("every phrasing, on all 3 ZIPs: the exact unsure line and the official office link, no names", () => {
+  // Civic P1 (Oct 30, 2:58 PM CT): per race. 78701 is fully confirmed against the Travis County sample ballot; 10001 has 6
+  // confirmed and 7 unsure races; 94103 stays unsure. Office links below are 94103's (10001 keeps vote.nyc after its sample ballot).
+  it("every phrasing, on all 3 ZIPs: per-race order lines from Civic's check, no names for a ZIP-wide question", () => {
     expect(BALLOT_ORDER_LINE).toBe("Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.");
     for (const z of ZIPS) for (const q of QS) {
       const c = curated(z, q, "2026-10-30")!;
       expect(c.intent, `${z} ${q}`).toBe("ballot-order");
+      if (z === "78701") { expect(c.reply).toBe(ORDER_CONFIRMED); expect(c.links[0].url).toMatch(/^https:\/\/votetravis\.gov\/.+Ballot.+\.pdf$/); continue; }
+      if (z === "10001") { expect(c.reply).toContain(ORDER_CONFIRMED); expect(c.reply).toContain(BALLOT_ORDER_LINE); expect(c.reply).not.toMatch(/Hochul|Talarico|Bottcher/); expect(c.links.map((l) => l.url)).toContain(OFFICES["10001"].url); continue; }
       expect(c.reply.split("\n")[0]).toBe(BALLOT_ORDER_LINE);
       expect(c.reply).toBe(BALLOT_ORDER_LINE);
       // 94103: SF Department of Elections on sf.gov (Adam, Oct 30 2:08 PM CT); the others reuse OFFICES.
       expect(c.links).toEqual([z === "94103" ? { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" } : OFFICES[z]]);
     }
     expect(curated("94103", "What order are candidates on my ballot?")!.links[0].url).toBe("https://www.sf.gov/departments/department-elections");
-    expect(curated("78701", "ballot order")!.links[0].url).toBe("https://votetravis.gov");
-    expect(curated("10001", "ballot order")!.links[0].url).toBe("https://vote.nyc");
+    expect(host(curated("78701", "ballot order")!.links[0].url)).toBe("votetravis.gov");
+    expect(curated("10001", "ballot order")!.links.some((l) => l.url === "https://vote.nyc")).toBe(true);
   });
   it("does not fire on other questions", () => {
     for (const q of ["What's on my ballot?", "What do I need in order to vote?", "Who is running for Senate?", "Where do I vote?", "How do I order a mail ballot?"]) expect(asksOrder(q), q).toBe(false);

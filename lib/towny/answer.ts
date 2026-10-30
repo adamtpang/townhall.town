@@ -6,6 +6,7 @@ import { townyFact, todayCT, ASKS_EARLY } from "../townyFacts";
 import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
 import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace, zipsIn, cityOfZip } from "../townyChat";
 import { COVERED_ZIPS } from "../site";
+import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, officialOrder, type OrderSource } from "../ballotOrder";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
 
@@ -46,19 +47,13 @@ function scope(q: string, titles: { title: string }[]) {
 export { SF_DOE };
 const officeFor = (zip: string) => OFFICES[zip];
 export const UNSURE_ORDER = "Unsure: we couldn't confirm the ballot order in a cited source.";
-type Race = { title: string; level?: string; source?: string; candidates?: { name: string }[] };
+type Race = { id?: string; title: string; level?: string; source?: string; candidates?: { name: string }[] };
 
 /** "Who is running for <office>?": the ballot data's candidates for each matching race. Civic, Oct 30 1:37 PM CT: the order
  *  is not yet checked against each office's sample ballot, so the reply says so (UNSURE_ORDER) and links the official
  *  election office first; the race's own source (e.g. Ballotpedia) stays as the second link, for who is running. */
-export function runningFor(zip: string, text: string, only?: (r: Race) => boolean): Curated | null {
-  const m = ASKS_RUNNING.exec(String(text || "").trim());
-  if (!m) return null;
-  const b = ballotFor(zip);
-  if (!b) return null;
-  const office = officeFor(zip);
-  const races = (b.races as Race[]).filter((r) => r.level !== "measure" && (!only || only(r)));
-  const qText = m[1];
+/** Races a question names: office aliases first, else every title word. null = the question names nothing usable. */
+function pickRaces(races: Race[], qText: string): Race[] | null {
   const alias = ALIASES.filter((a) => a.q.test(qText));
   // "Lieutenant governor" must not also pull in the governor alias.
   const use = alias.some((a) => a.title.source.startsWith("lieutenant")) ? alias.filter((a) => !a.title.source.startsWith("^governor")) : alias;
@@ -73,6 +68,21 @@ export function runningFor(zip: string, text: string, only?: (r: Race) => boolea
     const best = hits.length ? Math.min(...hits.map(extra)) : 0;
     pick = hits.filter((r) => extra(r) === best || q.length >= 3);
   }
+  return pick.slice(0, 6);
+}
+
+/** `ownBallot` = false for another part of a covered city (same-city replies): Civic's order check is for the covered
+ *  ZIP's own sample ballot, so those answers keep data order and the unsure line. */
+export function runningFor(zip: string, text: string, only?: (r: Race) => boolean, ownBallot = true): Curated | null {
+  const m = ASKS_RUNNING.exec(String(text || "").trim());
+  if (!m) return null;
+  const b = ballotFor(zip);
+  if (!b) return null;
+  const office = officeFor(zip);
+  const races = (b.races as Race[]).filter((r) => r.level !== "measure" && (!only || only(r)));
+  const qText = m[1];
+  let pick = pickRaces(races, qText);
+  if (pick === null) return null;
   pick = pick.slice(0, 6);
   if (!pick.length) {
     // QA P2-1: every host named in "Searched:" is also a link.
@@ -82,23 +92,49 @@ export function runningFor(zip: string, text: string, only?: (r: Race) => boolea
     return { intent: "running-none", reply: `${NO_RECORD} Searched: the ${zip} ballot from ${[...byHost.keys()].join(", ")}.`,
       links: [...byHost].map(([h, url]) => ({ label: h, url })), chips: ["What's on my ballot?"] };
   }
-  const lines = pick.map((r) => {
-    const names = (r.candidates || []).map((c) => c.name);
-    return `${r.title}: ${names.length ? names.join(", ") : "no candidates listed"}.`;
+  // Civic P1 (Oct 30, 2:58 PM CT): races confirmed against the official sample ballot (data/ballot_order.json) are listed in
+  // that order and say so, with the sample ballot linked; every other race keeps the unsure line. Mixed answers say it per race.
+  const conf = pick.map((r) => (ownBallot ? officialOrder(zip, r.id ?? "") : null));
+  const all = conf.every(Boolean), none = conf.every((c) => !c);
+  const lines = pick.map((r, i) => {
+    const names = (ownBallot ? inOfficialOrder(zip, r.id ?? "", r.candidates || []) : r.candidates || []).map((c) => c.name);
+    const tail = all || none ? "" : ` ${conf[i] ? ORDER_CONFIRMED : UNSURE_ORDER}`;
+    return `${r.title}: ${names.length ? names.join(", ") : "no candidates listed"}.${tail}`;
   });
+  const sample = sourcesOf(conf);
   const lists = [...new Map(pick.map((r) => r.source).filter(Boolean).map((u) => [u as string, { label: host(u as string), url: u as string }])).values()];
-  return { intent: "running", reply: `${lines.join(" ")} ${UNSURE_ORDER}`, links: [office, ...lists.filter((l) => host(l.url) !== host(office.url))] };
+  const reply = all ? `${lines.join(" ")} ${ORDER_CONFIRMED}` : none ? `${lines.join(" ")} ${UNSURE_ORDER}` : lines.join(" ");
+  return { intent: "running", reply, links: [...sample, office, ...lists.filter((l) => host(l.url) !== host(office.url))] };
 }
 
 // QA pre-pass 6b2ae5c P1-1 (Oct 30, 2:00 PM CT): "What order are candidates on my ballot?" used to get the race count.
-// The order is not yet checked against any official sample ballot, so Towny says exactly that and links the office.
-// Never an order of names.
-export const BALLOT_ORDER_LINE = "Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.";
+// Civic P1 (Oct 30, 2:58 PM CT): per race, from data/ballot_order.json. A race confirmed against the official sample ballot
+// (all of 78701; 6 races in 10001) gets ORDER_CONFIRMED with that sample ballot linked; every other race (all of 94103, the
+// 7 unconfirmed 10001 races) gets the unsure line. Never an order that isn't in that file.
+export const BALLOT_ORDER_LINE = ORDER_UNSURE;
+const sourcesOf = (c: ({ source: OrderSource } | null)[]) => [...new Map(c.filter(Boolean).map((x) => [x!.source.url, x!.source])).values()];
+const ORDER_WORDS = /\b(ballot|order|orders|candidates?|names?|listed|list|appears?|appearing|first|top|last|position|what|which|who|whose|is|are|was|on|my|our|the|in|of|for|how|do|does|get|race|races|name)\b/gi;
 export const ASKS_ORDER = /\bballot order\b|\border\b[^?]*\b(candidates?|names?|listed|appear\w*)\b|\b(candidates?|names?|listed|appear\w*)\b[^?]*\border\b|\b(what|which) order\b[^?]*\bballot\b|\border (on|of) (the|my|our) ballot\b|\blisted first\b|\b(first|top|last) on (the|my|our) ballot\b|\bposition (on|of) (the|my|our) ballot\b|\bballot position\b/i;
 export const asksOrder = (text: string) => ASKS_ORDER.test(String(text || "").replace(/\bin order to\b/gi, " "));
-export function ballotOrder(zip: string): Curated | null {
+export function ballotOrder(zip: string, text = ""): Curated | null {
   const office = officeFor(zip);
-  return office ? { intent: "ballot-order", reply: BALLOT_ORDER_LINE, links: [office] } : null;
+  if (!office) return null;
+  const b = ballotFor(zip);
+  const races = ((b?.races ?? []) as Race[]).filter((r) => r.level !== "measure" && (r.candidates?.length ?? 0) > 0);
+  const named = pickRaces(races, String(text || "").replace(/\bin order to\b/gi, " ").replace(/['’]s\b/gi, " ").replace(ORDER_WORDS, " ")) ?? [];
+  if (named.length) {
+    // The question names races: one line each.
+    const conf = named.map((r) => officialOrder(zip, r.id ?? ""));
+    const lines = named.flatMap((r, i) => conf[i] ? [`${r.title}: ${inOfficialOrder(zip, r.id ?? "", r.candidates || []).map((c) => c.name).join(", ")}. ${ORDER_CONFIRMED}`] : []);
+    const unsure = named.filter((_, i) => !conf[i]).map((r) => r.title);
+    if (unsure.length) lines.push(`${unsure.join("; ")}: ${ORDER_UNSURE}`);
+    return { intent: "ballot-order", reply: lines.join(" "), links: dedupeByHost([...sourcesOf(conf), office]) };
+  }
+  const conf = races.map((r) => officialOrder(zip, r.id ?? ""));
+  if (races.length && conf.every(Boolean)) return { intent: "ballot-order", reply: ORDER_CONFIRMED, links: dedupeByHost([...sourcesOf(conf), office]) };
+  if (conf.every((c) => !c)) return { intent: "ballot-order", reply: BALLOT_ORDER_LINE, links: [office] };
+  const yes = races.filter((_, i) => conf[i]).map((r) => r.title), no = races.filter((_, i) => !conf[i]).map((r) => r.title);
+  return { intent: "ballot-order", reply: `${yes.join("; ")}: ${ORDER_CONFIRMED} ${no.join("; ")}: ${ORDER_UNSURE}`, links: dedupeByHost([...sourcesOf(conf), office]) };
 }
 
 // Civic, Oct 30 2:10 PM CT: a race that is the same on every ballot in the covered city. Statewide and U.S. Senate races are;
@@ -114,8 +150,8 @@ export function sameCityReply(text: string): Curated | null {
   if (!city) return null;
   const line = SAME_CITY[city];
   const q = stripPlace(text, city);
-  const all = runningFor(city, q);
-  const every = runningFor(city, q, onEveryBallot(city));
+  const all = runningFor(city, q, undefined, false);
+  const every = runningFor(city, q, onEveryBallot(city), false);
   if (all?.intent === "running" && every?.intent === "running" && all.reply === every.reply)
     return { intent: "same-city-running", reply: `${every.reply} ${line.reply}`, links: dedupeByHost([...every.links, ...line.links]) };
   return { intent: "same-city", reply: line.reply, links: [...line.links] };
@@ -131,7 +167,7 @@ export function curated(zip: string, text: string, today: string = todayCT()): C
   if (ASKS_WHO.test(t)) return { intent: "who", reply: WHO_LINE, links: [], chips: [WHO_CHIP] };
   const same = sameCityReply(t);
   if (same) return same;
-  if (asksOrder(t)) { const o = ballotOrder(zip); if (o) return o; }
+  if (asksOrder(t)) { const o = ballotOrder(zip, t); if (o) return o; }
   const run = runningFor(zip, t);
   if (run) return { ...run, links: dedupeByHost(run.links) };
   const fact = townyFact(zip, t, today);

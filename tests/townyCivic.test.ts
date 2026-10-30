@@ -2,6 +2,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { curated, runningFor, UNSURE_ORDER } from "../lib/towny/answer";
+import { ORDER_CONFIRMED, inOfficialOrder } from "../lib/ballotOrder";
 import { faqFor, whenWhere, UNSURE_DATE, OFFICES } from "../lib/towny/faq";
 import { routeTurn, OUT_OF_SCOPE } from "../lib/townyChat";
 import { UNSUPPORTED_MESSAGE } from "../lib/site";
@@ -54,14 +55,17 @@ describe("Civic 1: dates only from cited sources", () => {
 });
 
 describe("Civic 2 + QA P1: who is running, by office name, on all 3 ZIPs", () => {
-  it("ballot order is never claimed: exact unsure line, office link first, Ballotpedia only second", () => {
+  // Civic P1 (Oct 30, 2:58 PM CT): Governor is confirmed against the official sample ballot in 78701 and 10001 (sample ballot
+  // linked first); 94103 keeps the exact unsure line with the office first. Ballotpedia is never first.
+  it("ballot order: confirmed line + sample ballot where Civic confirmed it, else the exact unsure line; Ballotpedia only after", () => {
+    const SAMPLE: Record<string, string> = { "78701": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf", "10001": "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf" };
     for (const z of ZIPS) {
       const c = ask(z, "Governor")!;
       expect(c.intent).toBe("running");
-      expect(c.reply.endsWith(` ${UNSURE_ORDER}`)).toBe(true);
       expect(UNSURE_ORDER).toBe("Unsure: we couldn't confirm the ballot order in a cited source.");
       expect(c.reply).not.toMatch(/Listed in ballot order/);
-      expect(c.links[0].url).toBe(RUN_OFFICE[z]);
+      if (z === "94103") { expect(c.reply.endsWith(` ${UNSURE_ORDER}`)).toBe(true); expect(c.links[0].url).toBe(RUN_OFFICE[z]); }
+      else { expect(c.reply.endsWith(` ${ORDER_CONFIRMED}`)).toBe(true); expect(c.reply).not.toContain(UNSURE_ORDER); expect(c.links[0].url).toBe(SAMPLE[z]); expect(c.links.some((l) => l.url === RUN_OFFICE[z])).toBe(true); }
       expect(c.links.slice(1).some((l) => host(l.url) === "ballotpedia.org")).toBe(true);
       expect(c.links.findIndex((l) => host(l.url) === "ballotpedia.org")).toBeGreaterThan(0);
     }
@@ -72,10 +76,10 @@ describe("Civic 2 + QA P1: who is running, by office name, on all 3 ZIPs", () =>
     expect(ask("94103", "Governor")!.reply).toMatch(/^Governor of California: /);
     expect(ask("10001", "governor")!.reply).toMatch(/^Governor and Lieutenant Governor: /);
   });
-  it("'Senate' and 'senator' -> U.S. Senator on 78701 (Talarico, Paxton, Brown); state senate races on 10001", () => {
+  it("'Senate' and 'senator' -> U.S. Senator on 78701 (official sample-ballot order: Paxton, Talarico, Brown); state senate races on 10001", () => {
     for (const q of ["Senate", "senator", "the senate"]) {
       const c = ask("78701", q)!;
-      expect(c.reply).toMatch(/^U\.S\. Senator: James Talarico, Ken Paxton, Ted Brown\. /);
+      expect(c.reply).toMatch(/^U\.S\. Senator: Ken Paxton, James Talarico, Ted Brown\. /);
     }
     const ny = ask("10001", "Senate")!.reply;
     expect(ny).toMatch(/State Senator, District 47: /); expect(ny).toMatch(/State Senator, District 28: /);
@@ -105,11 +109,12 @@ describe("Civic 2 + QA P1: who is running, by office name, on all 3 ZIPs", () =>
     for (const z of ZIPS) for (const q of ["Senate", "Governor", "Congress", "council", "attorney general"]) {
       const c = ask(z, q)!; if (c.intent !== "running") continue;
       const b = ballotFor(z)!;
-      let rest = c.reply.replace(` ${UNSURE_ORDER}`, "");
+      let rest = c.reply.split(` ${UNSURE_ORDER}`).join("").split(` ${ORDER_CONFIRMED}`).join("");
+      const line = (r: { id: string; title: string; candidates: { name: string }[] }) => `${r.title}: ${inOfficialOrder(z, r.id, r.candidates).map((x) => x.name).join(", ")}.`;
       while (rest.length) {
-        const race = (b.races as { title: string; candidates: { name: string }[] }[]).find((r) => rest.startsWith(`${r.title}: ${r.candidates.map((x) => x.name).join(", ")}.`));
+        const race = (b.races as { id: string; title: string; candidates: { name: string }[] }[]).find((r) => rest.startsWith(line(r)));
         expect(race, rest).toBeTruthy();
-        rest = rest.slice(`${race!.title}: ${race!.candidates.map((x) => x.name).join(", ")}.`.length).trimStart();
+        rest = rest.slice(line(race!).length).trimStart();
       }
     }
   });

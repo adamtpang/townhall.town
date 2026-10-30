@@ -21,8 +21,9 @@ describe("94103 office link", () => {
     expect(r.links.some((l) => /sfelections\.org/.test(l.url))).toBe(false);
   });
   it("other ZIPs keep their offices", () => {
-    expect(curated("78701", "What order are candidates on my ballot?")!.links).toEqual([OFFICES["78701"]]);
-    expect(curated("10001", "What order are candidates on my ballot?")!.links).toEqual([OFFICES["10001"]]);
+    // Civic P1 (Oct 30, 2:58 PM CT): the confirmed sample ballot comes first (78701's is on votetravis.gov, one link per host).
+    expect(curated("78701", "What order are candidates on my ballot?")!.links).toEqual([{ label: "Travis County sample ballot", url: "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf" }]);
+    expect(curated("10001", "What order are candidates on my ballot?")!.links).toEqual([{ label: "NYC Board of Elections sample ballot, New York County", url: "https://img1.wsimg.com/isteam/ip/eb67ae7b-312c-407d-a59a-c4b41353c238/71AD_SampleBallot_Nov2026.pdf" }, OFFICES["10001"]]);
   });
 });
 
