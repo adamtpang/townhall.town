@@ -28,7 +28,8 @@ const DEMO = [
   { zip: "10001", label: NYC_READY ? "New York" : "New York, coming soon", ready: NYC_READY },
 ];
 // Advertised: Austin, SF, NYC. 78130 and 90012 stay working but are not advertised.
-const SUPPORTED = new Set(["78701", "94103", "78130", "90012", "77002", ...(NYC_READY ? ["10001"] : [])]);
+// 77002 (Houston) stays cached in data/ballots.json but is hidden until after the Oct 30 Hack Fair (Adam).
+const SUPPORTED = new Set(["78701", "94103", "78130", "90012", ...(NYC_READY ? ["10001"] : [])]);
 const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
 const TOOL_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
