@@ -216,7 +216,9 @@ export function ballotOrder(zip: string, text = ""): Curated | null {
     if (segY.length) parts.push(lead(orderConfirmedScoped(yes.length), zip, segY));
     // The Unsure line heads the first line of unconfirmed races and closes every later line (split groups are their own lines),
     // so AD75, Council 3 and each split group carry it visibly.
-    chunks(zip, segN).forEach((c, i) => parts.push(i === 0 ? (segN[0].split ? `${ORDER_UNSURE} That applies to these races:\n${c}` : `${ORDER_UNSURE} That applies to these races: ${c}`) : `${c} ${ORDER_UNSURE}`));
+    // Civic NO-GO 4a9f8ea P1 (Oct 30, 4:47 PM CT): the header only when unsplit races follow it on its own line; otherwise
+    // (e.g. 78701, whose first unconfirmed item is the TX-10/37 group) no header, and every line ends with the Unsure line.
+    chunks(zip, segN).forEach((c, i) => parts.push(i === 0 && !segN[0].split ? `${ORDER_UNSURE} That applies to these races: ${c}` : `${c} ${ORDER_UNSURE}`));
     if (segR.length) parts.push(lead("Retention races, a Yes or No vote on one judge each:", zip, segR));
   }
   return { intent: "ballot-order", reply: parts.join("\n"), links: uniq(dedupeByHost([...orderSourceLinks(sourcesOf(conf)), ...splitLinks([...segY, ...segN]), office])) };

@@ -2,7 +2,7 @@
 // covers only the races it names (real count from the data), every other race carries the Unsure line, retention races need
 // none, and 10001 Council 3 gets the single-race split line with the Find My Poll Site lookup, the same as the print.
 import { describe, it, expect, vi, beforeAll } from "vitest";
-import { ORDER_CONFIRMED_HEAD, ORDER_UNSURE, NY_PDF_LABEL, isRetention, officialOrder } from "../lib/ballotOrder";
+import { ORDER_CONFIRMED_HEAD, ORDER_UNSURE, SPLIT_LINE, NY_PDF_LABEL, isRetention, officialOrder } from "../lib/ballotOrder";
 import { splitPlan, SPLIT_LINE_ONE } from "../lib/printText";
 import { ballotFor } from "../lib/tools";
 import { curated } from "../lib/towny/answer";
@@ -90,5 +90,25 @@ describe("Civic's named races", () => {
     const lines = j.reply.split("\n");
     for (const s of ["Board of Supervisors, District 6:", "Board of Education", "Community College Board"]) expect(lines.find((l) => l.includes(s)), s).toContain(ORDER_UNSURE);
     expect(lines.find((l) => l.startsWith(RET_LEAD))).not.toContain(ORDER_UNSURE);
+  });
+});
+
+// Civic NO-GO on 4a9f8ea (Adam, Oct 30 2026 4:47 PM CT): 78701 had a bare "That applies to these races:" header with the
+// TX-10/37 group under it and no Unsure line of its own.
+describe("Civic NO-GO 4a9f8ea P1: no empty header; every split group line carries an order status", () => {
+  for (const zip of ZIPS) it(zip, async () => {
+    for (const j of [curated(zip, Q, "2026-10-30")!, await interview(zip, Q)]) {
+      const lines = j.reply.split("\n");
+      for (const l of lines) expect(l.trimEnd().endsWith("these races:"), l.slice(0, 120)).toBe(false);
+      const splits = lines.filter((l) => l.startsWith(`${SPLIT_LINE}: `) || l.startsWith(`${SPLIT_LINE_ONE} `));
+      expect(splits.length, zip).toBeGreaterThan(0);
+      // Split races are never confirmed (the print's dagger rule), so every split line must end with the Unsure line.
+      for (const l of splits) expect(l.endsWith(` ${ORDER_UNSURE}`), l.slice(0, 120)).toBe(true);
+    }
+  });
+  it("78701: the TX-10/37 group is the first unconfirmed line and ends with the Unsure line", async () => {
+    const lines = (await interview("78701", Q)).reply.split("\n");
+    expect(lines[2].startsWith(`${SPLIT_LINE}: U.S. Representative, District 10: `)).toBe(true);
+    expect(lines[2].endsWith(` ${ORDER_UNSURE}`)).toBe(true);
   });
 });

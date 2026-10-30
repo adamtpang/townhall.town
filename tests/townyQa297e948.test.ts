@@ -38,7 +38,9 @@ describe("P1: confirmed ZIPs get QA's one line instead of the contradictory pair
       expect(j.reply).not.toContain(OLD_HEAD);
       expect(j.reply.split(orderConfirmedScoped(n))).toHaveLength(2);
       expect(lines.filter((l) => l.startsWith(`${SPLIT_LINE}: `)).length).toBe(z === "78701" ? 3 : 2);
-      expect(j.reply).toContain(`\n${ORDER_UNSURE} That applies to these races:`);
+      // Civic NO-GO 4a9f8ea P1: 78701 has no unsplit race first, so no header; each of its lines ends with the Unsure line.
+      if (z === "10001") expect(j.reply).toContain(`\n${ORDER_UNSURE} That applies to these races: `);
+      else { expect(j.reply).not.toContain("That applies to these races"); expect(j.reply).toContain(ORDER_UNSURE); }
     }
   });
   it("94103 (no confirmed races) keeps the old opener on both endpoints", async () => {
