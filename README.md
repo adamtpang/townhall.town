@@ -52,14 +52,16 @@ One request, one bounded tool loop, streamed back to the browser as NDJSON (`app
 | `getLocalProblems` | 3 local problems: rent burden, uninsured rate, unemployment | Census ACS 2024 5-year |
 | `getTurnout` | County turnout, eligible non-voters, what one ballot counts for (demo ZIPs) | Texas and California Secretary of State, Census Reporter |
 
-**Loop steps**
+**Loop steps** (`lib/api/agent.ts`)
 1. The ZIP must be exactly 5 digits (`/^\d{5}$/`, no trimming or slicing); anything else gets a JSON 400 `{"error":{"code":"invalid","message":"..."}}`. If a valid ZIP isn't covered, the stream returns `unsupported` and stops.
-2. The model gets a strict nonpartisan system prompt and is told to call the five core tools in parallel in its first step.
-3. `generateText` runs with `stopWhen: stepCountIs(3)` and a 25-second timeout. Each tool call streams a `step` event (running, then done with a one-line summary), which is the live "Agent steps" panel.
-4. The model writes a 2 to 3 sentence neutral summary from tool results only. It may not recommend a candidate.
+2. The model gets Civic's nonpartisan system prompt (`lib/townyPrompt.ts`) and a plan prompt that names the five lookups: districts, races, candidates, market odds and local problems.
+3. **Forced tool use.** `prepareStep` sets `toolChoice: "required"` for steps 0 and 1, with `activeTools` limited to core tools not yet run, so the model itself must choose and call the lookups. The loop then stops (`stopWhen: stepCountIs(2)`), with a 25-second timeout. Each tool call streams a `step` event (running, then done with a one-line summary and server-measured ms).
+4. **Planner fallback.** Any core tool the model did not reach is run by code ("Planner: running remaining lookups"), so the ballot is always complete. With no model at all, every tool runs this way and the result says `fallback`.
 5. If a model fails, the next one in the ladder is tried (`AGENT_MODELS`, default `google/gemini-2.5-flash-lite`, `openai/gpt-4.1-mini`, `openai/gpt-5-nano`, with direct xAI first when `XAI_API_KEY` is set).
-6. Any core tool the model skipped is run deterministically, so the ballot is always complete. With no model at all, every tool runs this way and the badge says fallback.
-7. A final `result` event carries the mode, model, which tools the model chose to call, the narration, the full ballot and market odds. The UI renders from that.
+6. **Analysis step.** An `analyze` step turns the tool results into a short summary of up to three sourced insights: the closest contest by Polymarket price (both sides shown, labeled as market prices, not polls), a measure's official cost, and the local problem furthest from its state figure. It never recommends a candidate or a vote.
+7. A final `result` event carries the mode, model, `toolsRunByModel` (the tools the model actually called), the summary, the full ballot and market odds.
+
+**The trace the user sees** (`app/AgentTrace.tsx`): "How the agent built this" lists every step with its result, server time and source, and marks each one **model called** (the model chose that tool), **auto-completed** (the planner filled it in) or **computed from tool results** (the analysis step). Measured on a local dev server with the live model: 78701 in 3.5s, 94103 in 2.8s, 10001 in 3.6s, with the model making 5 of 5 tool calls.
 
 ## Environment variables
 See `.env.example` (placeholders only, never commit real values):
