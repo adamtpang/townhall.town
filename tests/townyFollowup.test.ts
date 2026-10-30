@@ -47,7 +47,7 @@ describe("tool answers, all through verify.ts", () => {
     expect(n.reply).not.toContain("keeping community input"); // fix 7: not verbatim in the official abstract or CFB text
     // fix 8: every measure line ends with a period before its chip
     for (const l of a.reply.split("\n").filter((x) => / \[[^\]]+\]$/.test(x))) expect(l, l).toMatch(/[.!?]["”)]? \[[^\]]+\]$/);
-    expect(a.reply).toMatch(/\(assumes a \$20,000 exemption\)\. \[/);
+    expect(a.reply).toMatch(/homestead exemption of \$20,000\. \[/); // 284139d: cost is the official ballot language (Civic summary23 P0)
     for (const r of [a, s, n]) expect(r.reply).toContain("Towny doesn't say which way to vote on a measure.");
   });
 
