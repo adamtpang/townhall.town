@@ -12,7 +12,7 @@ import { ballotFor } from "../lib/tools";
 const root = new URL("..", import.meta.url).pathname;
 const src = (f: string) => readFileSync(root + f, "utf8");
 const ZIPS = ["78701", "94103", "10001"] as const;
-const OFFICE = { "78701": "https://votetravis.gov", "94103": "https://sfelections.org", "10001": "https://vote.nyc" } as const;
+const OFFICE = { "78701": "https://votetravis.gov", "94103": "https://www.sf.gov/departments/department-elections", "10001": "https://vote.nyc" } as const;
 // Adam, Oct 30 2:08 PM CT: who's-running and ballot-order replies link 94103's SF Department of Elections page on sf.gov.
 const RUN_OFFICE = { ...OFFICE, "94103": "https://www.sf.gov/departments/department-elections" } as const;
 const host = (u: string) => new URL(u).hostname.replace(/^www\./, "");
@@ -27,7 +27,7 @@ describe("Civic 1: dates only from cited sources", () => {
     expect(whenWhere("94103", "2026-11-02").a).toMatch(/Early voting ends today, Monday, November 2, 2026\./);
     expect(whenWhere("94103", "2026-11-03").a).toMatch(/Early voting ended Monday, November 2, 2026\./);
     const links = whenWhere("94103", "2026-10-30").links;
-    expect(links[0]).toEqual({ label: "sfelections.org", url: "https://sfelections.org" });
+    expect(links[0]).toEqual({ label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" });
   });
   it("election_dates.json: the 94103 early-voting end is 2026-11-02 and no Nov 3 row sits under early voting", () => {
     for (const f of ["data/election_dates.json", "data/civic/election_dates.json"]) {
@@ -49,7 +49,7 @@ describe("Civic 1: dates only from cited sources", () => {
   it("the unsure line is exact, and the office link comes first on every ZIP", () => {
     expect(UNSURE_DATE).toBe("Unsure: we couldn't confirm this in a cited source.");
     for (const z of ZIPS) expect(whenWhere(z, "2026-10-30").links[0].url).toBe(OFFICE[z]);
-    expect(OFFICES["94103"].label).toBe("sfelections.org");
+    expect(OFFICES["94103"].label).toBe("SF Department of Elections");
   });
 });
 

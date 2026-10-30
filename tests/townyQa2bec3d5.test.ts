@@ -39,3 +39,17 @@ describe("/card overlap chip", () => {
     expect(fab).toMatch(/m\.chips\.filter\(showChip\)\.map/);
   });
 });
+
+describe("SF uses one source everywhere in Towny (Adam, Oct 30 2:17 PM CT)", () => {
+  it("when/where, the office table and the brief all use the SF Department of Elections on sf.gov", async () => {
+    const { whenWhere, SF_DOE: doe } = await import("../lib/towny/faq");
+    expect(OFFICES["94103"]).toEqual({ label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" });
+    expect(OFFICES["94103"]).toBe(doe);
+    const ww = whenWhere("94103", "2026-10-30");
+    expect(ww.links[0]).toEqual(doe);
+    expect(ww.a).toContain("SF Department of Elections");
+    for (const f of ["lib/towny/faq.ts", "lib/towny/brief.ts", "lib/towny/answer.ts", "lib/townyChat.ts", "lib/townyFacts.ts", "components/towny/TownyFab.tsx"])
+      expect(src(f)).not.toMatch(/sfelections\.org/);
+    expect(src("lib/towny/brief.ts")).toContain("https://www.sf.gov/departments/department-elections");
+  });
+});

@@ -8,13 +8,14 @@ export type Faq = { id: string; q: string; match: RegExp; a: string; links: FaqL
 export const UNSURE_DATE = "Unsure: we couldn't confirm this in a cited source.";
 export const WHO_LINE = "I don't pick for you. I can show where each candidate's sourced positions overlap with your answers.";
 export const OFFICE_NAMES: Record<string, string> = { "78701": "Travis County Elections", "94103": "SF Department of Elections", "10001": "NYC Board of Elections" };
+// Adam, Oct 30 2:08 PM CT (Civic's choice), and 2:17 PM CT: SF uses this one source everywhere in Towny (when/where,
+// ballot order, who's running, same-city).
+export const SF_DOE: FaqLink = { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" };
 export const OFFICES: Record<string, FaqLink> = {
   "78701": { label: "Travis County Elections", url: "https://votetravis.gov" },
-  "94103": { label: "sfelections.org", url: "https://sfelections.org" }, // chip label per Civic, Oct 30 1:37 PM CT
+  "94103": SF_DOE,
   "10001": { label: "NYC Board of Elections", url: "https://vote.nyc" },
 };
-// Adam, Oct 30 2:08 PM CT (Civic's choice): 94103's office link in the ballot-order, who's-running and same-city replies.
-export const SF_DOE: FaqLink = { label: "SF Department of Elections", url: "https://www.sf.gov/departments/department-elections" };
 export const VOTE_GOV: FaqLink = { label: "vote.gov", url: "https://vote.gov" };
 const ABOUT = { label: "About townhall.town", url: "https://townhall.town/about" };
 const GITHUB = { label: "GitHub", url: "https://github.com/adamtpang/townhall.town" };

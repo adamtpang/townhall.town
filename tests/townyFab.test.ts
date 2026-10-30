@@ -70,7 +70,7 @@ describe("Towny FAQ and brief", () => {
     expect(tx.a).toMatch(/Tuesday, November 3, 2026/); expect(tx.a).toMatch(/today/i);
     expect(tx.links.map((l) => l.url)).toContain("https://votetravis.gov");
     expect(whenWhere("78701", "2026-10-31").a).toMatch(/ended/);
-    expect(whenWhere("94103", "2026-10-30").links.map((l) => l.url)).toContain("https://sfelections.org");
+    expect(whenWhere("94103", "2026-10-30").links.map((l) => l.url)).toContain("https://www.sf.gov/departments/department-elections");
     expect(whenWhere("10001", "2026-10-30").links.map((l) => l.url)).toContain("https://vote.nyc");
     expect(tx.a).not.toMatch(/\d{1,2}(:\d\d)? ?(a\.?m|p\.?m)/i);
   });

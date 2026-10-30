@@ -8,7 +8,7 @@ import { WHO_CHIP } from "../lib/townyChat";
 import { ballotFor } from "../lib/tools";
 
 const ZIPS = ["78701", "94103", "10001"] as const;
-const OFFICE = { "78701": "https://votetravis.gov", "94103": "https://sfelections.org", "10001": "https://vote.nyc" };
+const OFFICE = { "78701": "https://votetravis.gov", "94103": "https://www.sf.gov/departments/department-elections", "10001": "https://vote.nyc" };
 const root = new URL("..", import.meta.url).pathname;
 const walk = (d: string): string[] => readdirSync(d).flatMap((f) => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
 

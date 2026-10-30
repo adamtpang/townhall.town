@@ -26,9 +26,8 @@ describe("other parts of a covered city", () => {
     ["10001", "I'm in Staten Island", NYC, "https://vote.nyc"],
     ["10001", "What's on my ballot in 11201?", NYC, "https://vote.nyc"],
     ["10001", "Who is running for state senate in Queens?", NYC, "https://vote.nyc"],
-    ["78701", "Round Rock", ATX, "https://vote.gov"],
     ["78701", "78759", ATX, "https://vote.gov"],
-    ["78701", "What's on the ballot in Round Rock?", ATX, "https://vote.gov"],
+    ["78701", "What's on my ballot in 78759?", ATX, "https://vote.gov"],
     ["78701", "Who's running for city council in east Austin?", ATX, "https://vote.gov"],
     ["94103", "What's on the ballot in the Sunset?", SF, SF_DOE.url],
     ["94103", "94110", SF, SF_DOE.url],
@@ -45,7 +44,7 @@ describe("other parts of a covered city", () => {
 
   const race: [string, string, RegExp, string][] = [
     ["10001", "Who's running for governor in Brooklyn?", /^Governor and Lieutenant Governor: /, NYC],
-    ["78701", "Who is running for Senate in Round Rock?", /^U\.S\. Senator: /, ATX],
+    ["78701", "Who is running for Senate in east Austin?", /^U\.S\. Senator: /, ATX],
     ["78701", "Who's running for governor in 78759?", /^Governor of Texas: /, ATX],
     ["94103", "Who is running for governor in 94110?", /^Governor of California: /, SF],
     ["94103", "Who is running for Public Defender in the Mission District?", /^Public Defender: /, SF],
@@ -66,9 +65,9 @@ describe("other parts of a covered city", () => {
 
   it("ZIP ranges", () => {
     for (const z of ["10002", "10469", "10301", "11201", "11375", "11691"]) expect(cityOfZip(z)).toBe("10001");
-    for (const z of ["78702", "78759", "78664"]) expect(cityOfZip(z)).toBe("78701");
+    for (const z of ["78702", "78759", "78799"]) expect(cityOfZip(z)).toBe("78701");
     for (const z of ["94110", "94122", "94158"]) expect(cityOfZip(z)).toBe("94103");
-    for (const z of ["10001", "78701", "94103", "77002", "90012", "94301", "11550"]) expect(cityOfZip(z)).toBeNull();
+    for (const z of ["10001", "78701", "94103", "77002", "90012", "94301", "11550", "78664", "78665", "78681", "78613", "78660"]) expect(cityOfZip(z)).toBeNull();
   });
 
   it("streets named like places are not a place", () => {
@@ -78,12 +77,18 @@ describe("other parts of a covered city", () => {
 });
 
 describe("other cities and states keep OUT_OF_SCOPE", () => {
-  for (const q of ["What's on the ballot in Chicago?", "Where do I vote in Ohio?", "Pflugerville", "77002", "90210", "Houston"]) it(q, () => {
+  for (const q of ["What's on the ballot in Chicago?", "Where do I vote in Ohio?", "Pflugerville", "Cedar Park", "Round Rock",
+    "What's on the ballot in Round Rock?", "Who is running for Senate in Round Rock?", "78664", "78681", "77002", "90210", "Houston"]) it(q, () => {
     expect(curated("10001", q)?.reply ?? routeTurn(q, "10001").kind).not.toMatch(/^Towny shows the ballot/);
     expect(routeTurn(q, "10001")).toMatchObject({ kind: "fixed", reply: OUT_OF_SCOPE });
   });
-  it("boroughs and Round Rock are no longer out of scope", () => {
-    for (const q of ["Brooklyn", "Queens", "the Bronx", "Staten Island", "Round Rock"]) expect(outOfScope(q)).toBe(false);
+  it("boroughs are no longer out of scope; Round Rock is its own city (Adam, 2:17 PM CT)", () => {
+    for (const q of ["Brooklyn", "Queens", "the Bronx", "Staten Island"]) expect(outOfScope(q)).toBe(false);
+    expect(outOfScope("Round Rock")).toBe(true);
+    expect(sameCity("Round Rock")).toBeNull();
+    const r = curated("78701", "Round Rock")!;
+    expect(r.reply).toBe(OUT_OF_SCOPE);
+    expect(r.links.map((l) => l.url)).toEqual(["https://vote.gov"]);
   });
 });
 

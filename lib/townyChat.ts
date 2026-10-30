@@ -34,8 +34,9 @@ const OTHER_STATES = ["alabama", "alaska", "arizona", "arkansas", "colorado", "c
   "north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", "south dakota",
   "tennessee", "utah", "vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming", "puerto rico", "guam",
   "district of columbia"];
-// Brooklyn, Queens, the Bronx, Staten Island and Round Rock moved to SAME_CITY_PLACES below (Civic, Oct 30 2:10 PM CT).
-const OTHER_CITIES = ["houston", "dallas", "san antonio", "fort worth", "el paso", "corpus christi", "lubbock", "plano",
+// Brooklyn, Queens, the Bronx and Staten Island moved to SAME_CITY_PLACES below (Civic, Oct 30 2:10 PM CT). Round Rock
+// is its own city, so it stays here like Pflugerville and Cedar Park (Adam, 2:17 PM CT).
+const OTHER_CITIES = ["houston", "dallas", "san antonio", "fort worth", "el paso", "corpus christi", "lubbock", "plano", "round rock",
   "pflugerville", "cedar park", "san marcos", "los angeles", "oakland", "berkeley", "san jose", "sacramento", "san diego", "fresno",
   "long beach", "palo alto", "buffalo", "rochester", "albany", "yonkers", "syracuse",
   "chicago", "miami", "seattle", "boston", "atlanta", "denver", "phoenix", "philadelphia", "pittsburgh", "detroit", "las vegas",
@@ -60,13 +61,13 @@ export const SAME_CITY: Record<"78701" | "94103" | "10001", { reply: string; lin
   "94103": { reply: "Towny shows the ballot for ZIP 94103 in San Francisco. Other parts of the city have different district races on their ballots. For yours, check the SF Department of Elections.", links: [SF_DOE] },
 };
 // Named parts of each city. Kept to names that aren't also a street, a US state or another city's place (no "Mission",
-// "Richmond" or "Chinatown" alone). Round Rock is its own city in Williamson County; Civic listed it as an Austin case.
+// "Richmond" or "Chinatown" alone).
 const SAME_CITY_PLACES: Record<keyof typeof SAME_CITY, string[]> = {
   "10001": ["brooklyn", "queens", "the bronx", "bronx", "staten island", "harlem", "east harlem", "upper east side", "upper west side",
     "lower east side", "east village", "west village", "greenwich village", "tribeca", "soho", "financial district", "battery park city",
     "washington heights", "inwood", "williamsburg", "bushwick", "park slope", "bed[- ]stuy", "bedford[- ]stuyvesant", "astoria",
     "flushing", "long island city", "jackson heights", "other boroughs?", "another borough", "outer boroughs?"],
-  "78701": ["round rock", "east austin", "south austin", "north austin", "west austin", "northwest austin", "hyde park", "zilker",
+  "78701": ["east austin", "south austin", "north austin", "west austin", "northwest austin", "hyde park", "zilker",
     "mueller", "barton hills", "bouldin creek", "travis heights", "tarrytown", "allandale", "crestview", "cherrywood", "windsor park",
     "circle c", "other parts? of austin", "another part of austin"],
   "94103": ["mission district", "the mission", "sunset district", "inner sunset", "outer sunset", "the sunset", "richmond district",
@@ -78,11 +79,11 @@ const SAME_CITY_PLACES: Record<keyof typeof SAME_CITY, string[]> = {
 const SAME_CITY_RE = Object.fromEntries(Object.entries(SAME_CITY_PLACES).map(([z, names]) =>
   [z, new RegExp(`\\b(?:${[...names].sort((a, b) => b.length - a.length).join("|")})\\b(?![ ,]+(?:street|st\\b|st\\.|avenue|ave\\b|ave\\.|blvd|boulevard|road|rd\\b|bridge|expressway|zoo))`, "i")])) as Record<keyof typeof SAME_CITY, RegExp>;
 /** Which covered city a ZIP belongs to, when it's not the covered ZIP itself: NYC (Manhattan, Staten Island, Bronx, Brooklyn,
- *  Queens ranges), Austin 787xx (plus Round Rock's 78664, 78665, 78681), San Francisco 941xx. */
+ *  Queens ranges), Austin 787xx only, San Francisco 941xx. */
 export function cityOfZip(z: string): keyof typeof SAME_CITY | null {
   if (COVERED_ZIPS.includes(z)) return null;
   if (/^(?:10[0-4]\d\d|11[1-46]\d\d|1100[45])$/.test(z)) return "10001";
-  if (/^(?:787\d\d|78664|78665|78681)$/.test(z)) return "78701";
+  if (/^787\d\d$/.test(z)) return "78701";
   if (/^941\d\d$/.test(z)) return "94103";
   return null;
 }

@@ -40,11 +40,10 @@ function scope(q: string, titles: { title: string }[]) {
   if (/\b(u\.?s\.?|federal|congress\w*|house)\b/i.test(q) || /^\s*(the\s+)?(representatives?|rep)\s*$/i.test(q)) return titles.filter((r) => FEDERAL.test(r.title) || !/representative|assembly/i.test(r.title));
   return titles;
 }
-// Adam, Oct 30 2:08 PM CT (Civic's choice): 94103's office link in the ballot-order and who's-running replies is the SF
-// Department of Elections page on sf.gov. Checked with curl at 2:10 PM CT: it answers 200 after one sf.gov redirect.
-// Other replies (when/where) keep OFFICES as they are.
+// Adam, Oct 30 2:08 PM CT (Civic's choice): 94103's office link is the SF Department of Elections page on sf.gov
+// (OFFICES["94103"] = SF_DOE). Checked with curl at 2:10 PM CT: it answers 200 after one sf.gov redirect.
 export { SF_DOE };
-const officeFor = (zip: string) => (zip === "94103" ? SF_DOE : OFFICES[zip]);
+const officeFor = (zip: string) => OFFICES[zip];
 export const UNSURE_ORDER = "Unsure: we couldn't confirm the ballot order in a cited source.";
 type Race = { title: string; level?: string; source?: string; candidates?: { name: string }[] };
 
