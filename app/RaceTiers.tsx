@@ -172,7 +172,7 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
   const raceItem = ({ r, mk }: { r: RaceLite; why: string; mk: Mk }, eager: boolean) => (
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
-                    {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
+                    {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} raceId={r.id} /> : null}
                     {r.order ? <p className="max-w-[60ch] text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {showFinanceFor(r, zip) ? <FinanceRow r={r} /> : null}
                     {/* Civic main_points17 (Oct 30): judges (pointType "role") get only a factual role line from their official profile when one

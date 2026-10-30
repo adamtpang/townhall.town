@@ -30,7 +30,7 @@ function Words({ text }: { text: string }) {
   return <>{text.split(/\s+/).filter(Boolean).map((w, i) => <span key={i}>{i ? " " : ""}<span data-word>{w}</span></span>)}</>;
 }
 
-function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string; tileMax: string; grid?: boolean }) {
+function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid, raceId, tap, onPick, picked }: { c: C; eager?: boolean; label: string; mate: string | null; reserveMate?: boolean; max: string; tileMax: string; grid?: boolean; raceId?: string; tap?: boolean; onPick?: (name: string, handled: boolean) => void; picked?: boolean }) {
   const [broken, fail] = usePhotoFallback(c.name);
   const setBroken = (_: boolean) => fail();
   const ref = useRef<HTMLImageElement>(null);
@@ -50,6 +50,12 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid }: { c: C
         {show ? (
           <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} sizes={grid ? ROW_SIZES : undefined} onFail={() => setBroken(true)} />
         ) : null}
+        {/* Crowded rows (over 8): names are hidden, so the tile itself is the control: its aria-label is the name and a tap
+            opens that candidate in "Who lines up" (components/WhoRaces.tsx listens for OPEN_CANDIDATE). */}
+        {tap && raceId ? (
+          <button type="button" aria-label={c.name} title={c.name} data-tile-open className="absolute inset-0 h-full w-full cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            onClick={() => { const handled = !window.dispatchEvent(new CustomEvent(OPEN_CANDIDATE, { detail: { raceId, name: c.name }, cancelable: true })); onPick?.(c.name, handled); }} aria-pressed={picked ? true : undefined} />
+        ) : null}
       </div>
       <p className={`mt-1 w-full flex-1 text-center group-data-[dense=true]/row:max-md:sr-only group-data-[densedesk=true]/row:md:sr-only ${NOBREAK} line-clamp-3 text-sm font-[530] leading-5`} title={c.name} aria-label={c.name} data-tile-label><Words text={label} /></p>
       {mate ? <p className={`w-full ${NOBREAK} line-clamp-2 text-center text-sm leading-5 group-data-[dense=true]/row:max-md:sr-only group-data-[densedesk=true]/row:md:sr-only text-black/60`} title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate><Words text={`w/ ${mate}`} /></p> : reserveMate ? <p aria-hidden className="h-5 group-data-[dense=true]/row:max-md:hidden group-data-[densedesk=true]/row:md:hidden" data-tile-mate-spacer /> : null}
@@ -59,7 +65,7 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid }: { c: C
 
 /** Design portrait spec v2 (+ design p8: names one line, truncated with an ellipsis, full name in title/aria-label; every tile the same height): one flex row, never wraps, never scrolls, ballot order, identical square tiles
  *  (56px at 1024+, 48px at 768-1023, 40px below). Broken or missing photos fall back to a same-size initials tile (Adam's rule). */
-export function CandidatePortraitRow({ cands, size = "row", eager = false }: { cands: C[]; size?: "row" | "mini"; eager?: boolean }) {
+export function CandidatePortraitRow({ cands, size = "row", eager = false, raceId }: { cands: C[]; size?: "row" | "mini"; eager?: boolean; raceId?: string }) {
   if (!cands.length) return null;
   // Design p9 (<768): each item 56px wide (label w-14) with a centered 40px tile and gap-2, so 5 items fit 342px;
   // rows with more than 5 items fall back to 44px items. From 768 up the item is the tile (48 / 56px), gap-3.
@@ -79,16 +85,28 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   const dense = grid && cands.length > 6;
   const denseDesk = grid && cands.length > 8;
   const n = cands.length;
+  // Design 1:54 PM Oct 30 (crowded rows): over 8 candidates, phones use gap-1 (4px) and the tiles flex down to fit, so
+  // an 11-candidate row is ~27px tiles at 390 (11 x 27 + 10 x 4 = 337 <= 342). Every candidate stays visible at equal
+  // size on one row: no wrap, no sideways scroll. Rows of 8 or fewer keep gap-2. md/lg gaps are unchanged.
+  const crowded = grid && n > 8;
+  // A race that "Who lines up" doesn't list (court races) has nowhere to open, so the tap shows that candidate's full name
+  // under the row instead (the hidden label, made visible); a second tap on the same tile hides it.
+  const [picked, setPicked] = useState<string | null>(null);
+  const onPick = (name: string, handled: boolean) => setPicked((cur) => (handled || cur === name ? null : name));
+  const rowClass = `group/row my-3 grid justify-start ${crowded ? "gap-1" : "gap-2"} [--tile-max:72px] md:gap-3 md:[--tile-max:88px] lg:gap-4 lg:[--tile-max:112px]`;
   return (
     <PhotoGroup>
-    <ul role="list" aria-label="Candidates" className={grid ? "group/row my-3 grid justify-start gap-2 [--tile-max:72px] md:gap-3 md:[--tile-max:88px] lg:gap-4 lg:[--tile-max:112px]" : "group/row my-3 flex flex-nowrap gap-2 md:gap-3"} style={grid ? { gridTemplateColumns: `repeat(${n}, minmax(0, var(--tile-max)))` } : undefined} data-dense={dense ? "true" : "false"} data-densedesk={denseDesk ? "true" : "false"} data-photo-row>
-      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} grid={grid} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
+    <ul role="list" aria-label="Candidates" className={grid ? rowClass : "group/row my-3 flex flex-nowrap gap-2 md:gap-3"} style={grid ? { gridTemplateColumns: `repeat(${n}, minmax(0, var(--tile-max)))` } : undefined} data-dense={dense ? "true" : "false"} data-crowded={crowded ? "true" : "false"} data-densedesk={denseDesk ? "true" : "false"} data-photo-row>
+      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} grid={grid} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} raceId={raceId} tap={crowded} onPick={onPick} picked={picked === c.name} />); })()}
     </ul>
+    {crowded ? <p className={`${picked ? "-mt-1 mb-2" : ""} text-sm font-[530] leading-5 text-black`} aria-live="polite" data-tile-picked>{picked ?? ""}</p> : null}
     {size === "row" ? <RowCredits cands={cands} /> : null}
     </PhotoGroup>
   );
 }
 export const PortraitRow = CandidatePortraitRow;
+/** Window event a crowded-row tile fires to open that candidate in "Who lines up": detail { raceId, name }. */
+export const OPEN_CANDIDATE = "townhall:open-candidate";
 /** Image sizes for row tiles (matches --tile-max): 72px under 768, 88px to 1023, 112px from 1024. */
 export const ROW_SIZES = "(max-width: 767px) 72px, (max-width: 1023px) 88px, 112px";
 

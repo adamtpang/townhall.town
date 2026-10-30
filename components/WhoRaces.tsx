@@ -13,6 +13,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { gradesAbsentLine } from "../lib/grades.mjs";
+import { OPEN_CANDIDATE } from "./PortraitRow";
 
 export type WhoLine = { name: string; sourced: number; agree: number; n: number; grade: string | null };
 export type WhoRace = { id: string; title: string; lines: WhoLine[]; content: ReactNode; gradesHidden?: string | null };
@@ -33,6 +34,25 @@ export default function WhoRaces({ races }: { races: WhoRace[] }) {
   const [open, setOpen] = useState<string[]>([]);
   useEffect(() => {
     if (window.matchMedia("(min-width: 768px)").matches) setOpen((cur) => (cur.length ? cur : races.slice(0, OPEN_BY_DEFAULT).map((r) => r.id)));
+  }, [races]);
+  // A tap on a crowded photo-row tile (names hidden) opens that race here and brings the candidate into view.
+  useEffect(() => {
+    const on = (e: Event) => {
+      const { raceId, name } = (e as CustomEvent<{ raceId: string; name: string }>).detail ?? {};
+      if (!raceId || !races.some((r) => r.id === raceId)) return;
+      e.preventDefault(); // handled: the tile doesn't fall back to showing the name under the row
+      setOpen((cur) => (cur.includes(raceId) ? cur : [...cur, raceId]));
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const item = document.querySelector(`[data-who-accordion] [data-race="${CSS.escape(raceId)}"]`);
+        const row = [...(item?.querySelectorAll<HTMLElement>("[data-overlap]") ?? [])].find((x) => x.dataset.overlap === name) ?? (item as HTMLElement | null);
+        if (!row) return;
+        row.scrollIntoView({ block: "start", behavior: "smooth" });
+        if (!row.hasAttribute("tabindex")) row.setAttribute("tabindex", "-1");
+        row.focus({ preventScroll: true });
+      }));
+    };
+    window.addEventListener(OPEN_CANDIDATE, on);
+    return () => window.removeEventListener(OPEN_CANDIDATE, on);
   }, [races]);
   return (
     <Accordion type="multiple" value={open} onValueChange={setOpen} className="border-t border-black/15" data-who-accordion>
