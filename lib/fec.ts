@@ -29,3 +29,7 @@ export function usd(n: number): string {
   if (n >= 1e3) return `$${Math.round(n / 1e3)}K`;
   return `$${Math.round(n)}`;
 }
+/** Cash on hand (Adam 1:52 PM Oct 30): under $10K to the dollar ($4,454, not $4K); $10K and up as usd(). */
+export function usdCash(n: number): string {
+  return n >= 0 && n < 10_000 ? `$${Math.round(n).toLocaleString("en-US")}` : usd(n);
+}

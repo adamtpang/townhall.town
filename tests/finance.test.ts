@@ -6,7 +6,7 @@ import fs from "node:fs";
 import finance from "../data/finance.json";
 import { ballotFor } from "../lib/tools";
 import { VERIFIED_FEC_IDS, withMoney } from "../lib/money";
-import { usd, fecIdOf, isFederalRace } from "../lib/fec";
+import { usd, usdCash, fecIdOf, isFederalRace } from "../lib/fec";
 import { fmtDay, ES_FOR_TEST } from "../lib/i18n";
 import RaceTiers, { FinanceRow, showFinanceFor } from "../app/RaceTiers";
 import { SHOW_FINANCE } from "../lib/flags";
@@ -126,6 +126,13 @@ describe("FinanceRow per candidate (QA P1s)", () => {
       expect(out).not.toMatch(/REPUBLICAN PARTY|DEMOCRATIC PARTY|LIBERTARIAN PARTY|\bIDP\b|\bIND\b/);
     }
   });
+  it("cash on hand under $10K renders to the dollar (Peña $4,454, Ted Brown $1,288, Negron $6,087)", () => {
+    const row = (zip: string, id: string) => renderToStaticMarkup(h(FinanceRow, { r: federal(zip).find((x) => x.id === id) as never }));
+    expect(row("78701", "tx-37")).toContain('data-coh="true">$4,454<');
+    expect(row("78701", "us-senate-tx")).toContain('data-coh="true">$1,288<');
+    expect(row("10001", "ny-12")).toContain('data-coh="true">$6,087<');
+    expect(row("10001", "ny-12")).toContain('data-coh="true">$23K<');
+  });
   it("NY-12: four candidates, four dates (Lasher/Shinkle Oct 14, Negron Sep 30, Ortiz Jun 30 + note)", () => {
     const r = federal("10001").find((x) => x.id === "ny-12")!;
     const out = renderToStaticMarkup(h(FinanceRow, { r: r as never }));
@@ -175,6 +182,15 @@ describe("formatting (QA P2-1, P2-2)", () => {
     expect(usd(9_960_000)).toBe("$10M");
     expect(usd(1288.35)).toBe("$1K");
     expect(usd(812)).toBe("$812");
+    // Adam 1:52 PM Oct 30: cash on hand under $10K to the dollar.
+    expect(usdCash(4453.73)).toBe("$4,454");
+    expect(usdCash(1288.35)).toBe("$1,288");
+    expect(usdCash(6086.87)).toBe("$6,087");
+    expect(usdCash(9_999.4)).toBe("$9,999");
+    expect(usdCash(10_000)).toBe("$10K");
+    expect(usdCash(23468.52)).toBe("$23K");
+    expect(usdCash(9922857.4)).toBe("$9.9M");
+    expect(usdCash(-3003.52)).toBe("-$3,004");
   });
   it("dates go through i18n", () => {
     expect(fmtDay("2026-10-14", "en")).toBe("Oct 14, 2026");
