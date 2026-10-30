@@ -109,6 +109,9 @@ export const MONEY_MARKS = ["*", "\u2020", "\u2021"] as const;
  *  filings through <shared date>." plus "* Through <date>." footnotes and any data notes, e.g. Ortiz). Dates come from
  *  the data only. The amount is the FEC link; its title and aria-label carry raised, cash on hand, through date, report
  *  label and "opens in a new tab". Hidden at sm and up, where the under-portrait columns stay. Never smaller than 14px. */
+// "A newer filing (Oct 30) is not yet processed by FEC." reads "newer Oct 30 filing not yet processed by FEC." on the
+// phone footnote line (same fact, Civic's data text unchanged); any other note is shown as given.
+const shortNote = (n: string) => n.replace(/^A newer filing \(([A-Z][a-z]{2} \d{1,2})\) is not yet processed by FEC\.$/, "newer $1 filing not yet processed by FEC.");
 function MoneyList({ cands }: { cands: MoneyCand[] }) {
   const t = useT();
   const day = useDay();
@@ -136,18 +139,20 @@ function MoneyList({ cands }: { cands: MoneyCand[] }) {
           return (
             <li key={c.name} className="flex min-h-11 min-w-0 items-center justify-between gap-3 text-sm leading-5" data-money-line={c.name}>
               <span className="min-w-0 truncate font-[530] text-black/80" title={c.name}>{c.name}</span>
-              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" title={label} aria-label={label} className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap tabular-nums text-[#3760F2]" data-line-fec>
+              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" title={label} aria-label={label} className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap tabular-nums th-link" data-line-fec>
                 <span>{m ? <span className="font-medium" data-line-amount>{usd(m.raised)}</span> : <span className="text-black/60" data-line-none>{t("No FEC filing found")}</span>}{mk ? <span aria-hidden className="align-super text-sm leading-none" data-line-mark={m!.coverageThrough!}>{mk}</span> : null}</span>{"\u00a0"}<span aria-hidden>↗</span>
               </a>
             </li>
           );
         })}
       </ul>
-      <p className="mt-1 text-sm leading-5 text-black/60" data-money-list-caption>
-        {common ? `${t("Raised, FEC filings through")} ${day(common)}.` : `${t("Raised, FEC filings")}.`}
-        {differing.map((d) => <span key={d} data-money-footnote={d}> {mark(d)} {t("Through")} {day(d)}.</span>)}
-        {notes.map((c) => <span key={c.name} data-money-note-line> {c.name}: {c.money!.note}</span>)}
-      </p>
+      {/* Design polish (Oct 30): caption, then one line per footnote (marker, through date, and the note of any candidate
+          filed through that date), then any other notes, in a space-y-1 block. Note wording shortened for the line only. */}
+      <div className="mt-1 space-y-1 text-sm leading-5 text-black/60" data-money-list-caption>
+        <p>{common ? `${t("Raised, FEC filings through")} ${day(common)}.` : `${t("Raised, FEC filings")}.`}</p>
+        {differing.map((d) => <p key={d} data-money-footnote={d}>{mark(d)} {t("Through")} {day(d)}.{notes.filter((c) => c.money!.coverageThrough === d).map((c) => <span key={c.name} data-money-note-line> {c.name}: {shortNote(c.money!.note!)}</span>)}</p>)}
+        {notes.filter((c) => !differing.includes(c.money!.coverageThrough ?? "")).map((c) => <p key={c.name} data-money-note-line>{c.name}: {shortNote(c.money!.note!)}</p>)}
+      </div>
     </div>
   );
 }
@@ -344,8 +349,8 @@ function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; 
   );
 }
 
-/** Race links: a 44px block row below sm; from sm the original inline link with its small pseudo hit area. */
-const RLINK = "relative inline-flex min-h-11 items-center sm:inline sm:min-h-0 sm:after:absolute sm:after:-inset-x-1 sm:after:-inset-y-1 sm:after:content-['']";
+/** Race links: a 44px row at every width (stacked below sm, inline from sm). */
+const RLINK = "relative z-[1] inline-flex min-h-11 items-center"; // 44px targets at every width (copy-cuts/purple); stacked below sm, inline from sm (bigimg)
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
 
 /** Measures: one compact expandable row per measure. Numbers are quoted from official analyses and each links its source. */
@@ -358,7 +363,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
       </summary>
       <ul className="mt-6 sm:pl-[7.5rem]">
         {measures.map((m) => (
-const RLINK = "relative z-[1] inline-flex min-h-11 items-center"; // 44px targets at every width (copy-cuts/purple), stacked below sm (bigimg)
+          <li key={m.id} className="border-t border-black/10 first:border-t-0">
             <details className="group/m" data-measure={m.id}>
               <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
                 <h3 className="text-base font-medium" data-measure-title>{m.title}</h3>

@@ -151,7 +151,7 @@ describe("FinanceRow per candidate (QA P1s)", () => {
   it("race list: money columns use the photo row's tracks and gaps so each figure sits under its portrait", () => {
     const out = html("78701");
     const sen = out.split(/<h3 /).find((p) => p.includes("U.S. Senate"))!;
-    const photo = sen.match(/<ul role="list" aria-label="Candidates in ballot order"[^>]*>/)![0];
+    const photo = sen.match(/<ul role="list" aria-label="Candidates"[^>]*>/)![0];
     const money = sen.match(/<ul[^>]*data-finance-align="portraits"[^>]*>/)![0];
     expect(photo).toContain("grid-template-columns:repeat(3, minmax(0, var(--tile-max)))");
     expect(money).toContain("grid-template-columns:repeat(3, minmax(0, var(--tile-max)))");
@@ -199,11 +199,15 @@ describe("FinanceRow per candidate (QA P1s)", () => {
     expect(list).toContain('aria-label="Wilneida Negron: Raised $58K, Cash on hand $6,087, through Sep 30, 2026, October quarterly report. FEC page (opens in a new tab)"');
     expect(list).toContain('title="Karen Ortiz: Raised $46K, Cash on hand $23K, through Jun 30, 2026, July quarterly report. FEC page (opens in a new tab)"');
     expect(list).toContain('title="Micah C. Lasher: Raised $3.5M, Cash on hand $309K, through Oct 14, 2026, Pre-general report. FEC page (opens in a new tab)"');
-    // One caption line: shared date, the footnotes with the real dates, and Ortiz's note.
-    const cap = out.match(/<p class="([^"]+)" data-money-list-caption="true">([\s\S]*?)<\/p>/)!;
-    expect(cap[1]).toBe("mt-1 text-sm leading-5 text-black/60");
-    expect(cap[2].replace(/<[^>]+>/g, "")).toBe("Raised, FEC filings through Oct 14, 2026. * Through Sep 30, 2026. \u2020 Through Jun 30, 2026. Karen Ortiz: A newer filing (Oct 30) is not yet processed by FEC.");
-    expect(out.split("data-money-list-caption")[1]).not.toMatch(/<p[^>]*data-money-note-line/);
+    // Caption block (space-y-1): caption, then one line per footnote; Ortiz's note sits on her (†) line.
+    const cap = out.match(/<div class="([^"]+)" data-money-list-caption="true">([\s\S]*?)<\/div>/)!;
+    expect(cap[1]).toBe("mt-1 space-y-1 text-sm leading-5 text-black/60");
+    const capLines = [...cap[2].matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].map((m) => m[1].replace(/<[^>]+>/g, ""));
+    expect(capLines).toEqual([
+      "Raised, FEC filings through Oct 14, 2026.",
+      "* Through Sep 30, 2026.",
+      "\u2020 Through Jun 30, 2026. Karen Ortiz: newer Oct 30 filing not yet processed by FEC.",
+    ]);
     // The separate "Campaign money from FEC filings." line is sm-up only next to the list.
     expect(out).toMatch(/class="mb-2 text-sm text-black\/60 hidden sm:block" data-finance-caption="true">Campaign money from FEC filings\.</);
     // Who lines up (no align) has no list and keeps its caption at every width.
@@ -215,7 +219,7 @@ describe("FinanceRow per candidate (QA P1s)", () => {
     for (const zip of ["78701", "94103"]) for (const r of federal(zip)) {
       const out = renderToStaticMarkup(h(FinanceRow, { r: r as never, align: true }));
       expect(out, r.id).not.toContain("data-line-mark");
-      expect(out.match(/data-money-list-caption="true">([\s\S]*?)<\/p>/)![1], r.id).toBe("Raised, FEC filings through Oct 14, 2026.");
+      expect(out.match(/data-money-list-caption="true"><p>([\s\S]*?)<\/p>/)![1], r.id).toBe("Raised, FEC filings through Oct 14, 2026.");
     }
   });
   it("race list below sm: links stack as 44px rows; photo credits collapse into one disclosure after the links", () => {
@@ -224,8 +228,8 @@ describe("FinanceRow per candidate (QA P1s)", () => {
     const links = sen.match(/<p class="([^"]+)" data-race-links="true">([\s\S]*?)<\/p>/)!;
     expect(links[1]).toBe("flex flex-col items-start text-sm leading-5 text-black/60 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-1");
     const as = [...links[2].matchAll(/<a [^>]*class="([^"]+)"[^>]*>([^<]+)/g)];
-    expect(as.map((a) => a[2])).toEqual(expect.arrayContaining(["Race source ↗", "Cook Political Report rating ↗", "Inside Elections rating ↗"]));
-    for (const a of as) expect(a[1]).toMatch(/^relative inline-flex min-h-11 items-center sm:inline sm:min-h-0 /);
+    expect(as.map((a) => a[2])).toEqual(expect.arrayContaining(["Source ↗", "Cook Political Report ↗"]));
+    for (const a of as) expect(a[1]).toMatch(/^relative z-\[1\] inline-flex min-h-11 items-center$/);
     expect(links[2]).not.toMatch(/<span aria-hidden="true">·/); // dots are sm-up only
     // Credits: sm-up line unchanged under the photo row; phones get "Photo credits (N)" right after the links.
     expect(sen).toMatch(/<div class="hidden sm:block" data-credits-sm="true"><div class="-mt-1 mb-2"><div class="md:flex/);
