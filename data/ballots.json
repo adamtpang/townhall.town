@@ -8884,5 +8884,2646 @@
    "url": "https://www.sos.ca.gov/elections"
   },
   "builtAt": "2026-10-29T19:48:44+00:00"
+ },
+ "77002": {
+  "zip": "77002",
+  "state": "TX",
+  "place": "Houston, TX (downtown)",
+  "county": "Harris County",
+  "counties": [
+   "05000US48201"
+  ],
+  "districts": [
+   {
+    "id": "tx-18",
+    "label": "TX-18 (U.S. House)",
+    "note": "ZIP centroid falls inside this district on PLANC2333; verify by address"
+   }
+  ],
+  "districtSource": {
+   "label": "ZIP centroid (Census 2024 ZCTA Gazetteer) in PLANC2333 (Texas Legislative Council)",
+   "url": "https://data.capitol.texas.gov/dataset/planc2333"
+  },
+  "splitWarning": "Districts come from the ZIP's center point. If your address is near a boundary, your House race may differ: verify by address.",
+  "electionDate": "2026-11-03",
+  "races": [
+   {
+    "id": "tx-18",
+    "title": "U.S. House Texas District 18",
+    "level": "federal",
+    "office": "Writes and votes on federal laws; all federal tax and spending bills must start in the House. Can impeach federal officials. 2-year term; represents one of Texas's 38 districts.",
+    "officeSource": "https://www.house.gov/the-house-explained",
+    "candidates": [
+     {
+      "name": "Christian Menefee",
+      "party": "Democratic",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Christian_Menefee",
+      "officialSite": "https://menefee.house.gov/",
+      "campaignSite": "https://christianmenefee.com",
+      "x": "https://x.com/CDMenefee",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ChristianMenefee2025.JPG",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: H6TX18232 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/H6TX18232/"
+      },
+      "positions": [
+       {
+        "issue": "housing",
+        "text": "Over the past few decades, the cost of just about everything has gone up: housing, healthcare, childcare, and college.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       },
+       {
+        "issue": "healthcare",
+        "text": "Over the past few decades, the cost of just about everything has gone up: housing, healthcare, childcare, and college.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       },
+       {
+        "issue": "jobs",
+        "text": "At the same time, wages for everyday people have barely moved.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 9,
+        "quote": "Over the past few decades, the cost of just about everything has gone up: housing, healthcare, childcare, and college.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       },
+       {
+        "id": "healthcare",
+        "label": "Health care",
+        "mentions": 8,
+        "quote": "Over the past few decades, the cost of just about everything has gone up: housing, healthcare, childcare, and college.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       },
+       {
+        "id": "abortion",
+        "label": "Abortion",
+        "mentions": 5,
+        "quote": "Texas politicians have stripped away women’s rights, making it harder to access reproductive healthcare.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 4,
+        "quote": "At the same time, wages for everyday people have barely moved.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       },
+       {
+        "id": "democracy",
+        "label": "Elections & voting",
+        "mentions": 4,
+        "quote": "Every American deserves a voice in our democracy, but Republican leaders are working to silence voters and rig the system for themselves.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Christian_Menefee#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Ronald Whitfield",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Ronald_Whitfield",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": "https://x.com/2Paraclete",
+      "photo": null,
+      "finance": {
+       "label": "FEC: H6TX18497 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/H6TX18497/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas%27_18th_Congressional_District_election,_2026"
+   },
+   {
+    "id": "us-senate-tx",
+    "title": "U.S. Senate Texas",
+    "level": "federal",
+    "office": "Writes and votes on federal laws, approves the federal budget with the House, confirms federal judges (incl. Supreme Court), cabinet members and ambassadors, and ratifies treaties. 6-year term; Texas has 2 senators.",
+    "officeSource": "https://www.senate.gov/about/origins-foundations/senate-and-constitution/constitution.htm",
+    "candidates": [
+     {
+      "name": "James Talarico",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/James_Talarico",
+      "officialSite": "https://house.texas.gov/members/member-page/?district=50",
+      "campaignSite": "https://jamestalarico.com/",
+      "x": "https://x.com/jamestalarico",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/James_Talarico_2026-09-02_165820.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: S6TX00479 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/S6TX00479/"
+      },
+      "positions": [
+       {
+        "issue": "housing",
+        "text": "I’ll continue lowering costs by cutting red tape so we can build more homes and get new energy projects off the ground — lowering housing and utility prices.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+        }
+       },
+       {
+        "issue": "healthcare",
+        "text": "I am proposing a cost-of-living tax cut that will expand the Child Tax Credit and Earned Income Tax Credit, restore the ACA Tax Credits, and provide a tariff rebate to Americans who have been paying too much for everything.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 12,
+        "quote": "Public Schools: As a former public school teacher, I know that public schools should serve all of our kids.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 5,
+        "quote": "Affordability: The real fight in this country isn’t Left vs Right; it’s Top vs Bottom.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 5,
+        "quote": "I am proposing a cost-of-living tax cut that will expand the Child Tax Credit and Earned Income Tax Credit, restore the ACA Tax Credits, and provide a tariff rebate to Americans who have been paying too much for everything.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+        }
+       },
+       {
+        "id": "healthcare",
+        "label": "Health care",
+        "mentions": 4,
+        "quote": "I am proposing a cost-of-living tax cut that will expand the Child Tax Credit and Earned Income Tax Credit, restore the ACA Tax Credits, and provide a tariff rebate to Americans who have been paying too much for everything.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+        }
+       },
+       {
+        "id": "housing",
+        "label": "Housing",
+        "mentions": 3,
+        "quote": "I’ll continue lowering costs by cutting red tape so we can build more homes and get new energy projects off the ground — lowering housing and utility prices.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/James_Talarico#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Ken Paxton",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Ken_Paxton",
+      "officialSite": "https://www.texasattorneygeneral.gov/",
+      "campaignSite": "https://www.kenpaxton.com",
+      "x": "https://x.com/KenPaxtonTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Ken-Paxton.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: S6TX00388 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/S6TX00388/"
+      },
+      "positions": [
+       {
+        "issue": "jobs",
+        "text": "He is a staunch ally and supporter of President Trump’s economic agenda and will work tirelessly to revitalize American manufacturing, create American jobs, and restore the American Dream.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "immigration",
+        "label": "Immigration & border",
+        "mentions": 3,
+        "quote": "In Washington, Ken Paxton will champion President Trump’s legislative priorities, including cutting taxes, securing the border and deporting illegal aliens, ending the weaponization of government, and draining the Swamp.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 2,
+        "quote": "In Washington, Ken Paxton will champion President Trump’s legislative priorities, including cutting taxes, securing the border and deporting illegal aliens, ending the weaponization of government, and draining the Swamp.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+        }
+       },
+       {
+        "id": "guns",
+        "label": "Guns",
+        "mentions": 2,
+        "quote": "We’ve seen an unprecedented assault on our Constitutional freedoms— like our 2nd Amendment rights— from “Republicans” and Democrats alike.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 1,
+        "quote": "After four years of Joe Biden causing skyrocketing inflation and declaring war on American energy, Ken Paxton will help bring down costs and remove harmful regulations designed to hurt our energy companies.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 1,
+        "quote": "He is a staunch ally and supporter of President Trump’s economic agenda and will work tirelessly to revitalize American manufacturing, create American jobs, and restore the American Dream.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ken_Paxton#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Ted Brown",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Ted_Brown_(Texas)",
+      "officialSite": null,
+      "campaignSite": "https://tedbrown.org/website/",
+      "x": "https://x.com/TedBrownLiberty",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/TedBrown2024.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "FEC: S6TX00594 (name match, verify)",
+       "url": "https://www.fec.gov/data/candidate/S6TX00594/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "immigration",
+        "label": "Immigration & border",
+        "mentions": 5,
+        "quote": "Immigration is good for this country and should be encouraged.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 5,
+        "quote": "The $35 trillion national debt is unsustainable.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 3,
+        "quote": "If a bill violates peoples' personal freedom or economic freedom (and certainly if it's unconstitutional), I will vote NO.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 2,
+        "quote": "This is why there has been so much inflation.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 2,
+        "quote": "I favor an Ellis Island-style immigration system where immigrants just need to come in officially, sign in, be checked for criminal records and contagious diseases, and then be welcomed in.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Ted_Brown_(Texas)#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026"
+   },
+   {
+    "id": "tx-gov",
+    "title": "Governor of Texas",
+    "level": "state",
+    "office": "Signs or vetoes bills passed by the Legislature (including line-item vetoes on the budget), can call special legislative sessions and set their agenda, appoints many state board members and fills some vacancies, commands the state military forces, and can grant clemency on recommendation of the Board of Pardons and Paroles. 4-year term.",
+    "officeSource": "https://ballotpedia.org/Governor_of_Texas",
+    "candidates": [
+     {
+      "name": "Greg Abbott",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Greg_Abbott",
+      "officialSite": "https://gov.texas.gov/governor-abbott",
+      "campaignSite": "https://www.gregabbott.com",
+      "x": "https://x.com/GovHotWheels_TX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/GregAbbott2015.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     },
+     {
+      "name": "Gina Hinojosa",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
+      "officialSite": "https://house.texas.gov/members/member-page/?district=49",
+      "campaignSite": "https://ginafortexas.com/",
+      "x": "https://x.com/GinaHinojosaTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Gina_Hinojosa_portrait.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 1,
+        "quote": "Every challenge in Texas boils down to tax dollars being spent to pad the pockets of the well-connected, corrupt elite, instead of what Texans need.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Gina_Hinojosa#Campaign_themes"
+        }
+       },
+       {
+        "id": "corruption",
+        "label": "Corruption & ethics",
+        "mentions": 1,
+        "quote": "Every challenge in Texas boils down to tax dollars being spent to pad the pockets of the well-connected, corrupt elite, instead of what Texans need.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Gina_Hinojosa#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Pat Dixon",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Pat_Dixon",
+      "officialSite": null,
+      "campaignSite": "https://patdixon.org/",
+      "x": "https://x.com/PatDixon_org",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/PatDixon2.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "jobs",
+        "text": "It should be a job interview.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 7,
+        "quote": "It should be a job interview.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes"
+        }
+       },
+       {
+        "id": "water",
+        "label": "Water",
+        "mentions": 4,
+        "quote": "Emergency response, such as floods, hurricanes, and violence",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes"
+        }
+       },
+       {
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 2,
+        "quote": "Under current Texas law, the governor's emergency powers are generally intended for situations where immediate executive action is needed to protect public safety or maintain government operations.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes"
+        }
+       },
+       {
+        "id": "corruption",
+        "label": "Corruption & ethics",
+        "mentions": 2,
+        "quote": "Ethics",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 2,
+        "quote": "The Texas governor has line-item veto power, but it is limited to appropriations (budget) bills.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Pat_Dixon#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_gubernatorial_election,_2026"
+   },
+   {
+    "id": "tx-ltgov",
+    "title": "Lieutenant Governor of Texas",
+    "level": "state",
+    "office": "Presides over the Texas Senate and is widely described as one of the most powerful offices in the state: appoints Senate committee chairs and members, controls which bills reach the Senate floor, and co-chairs the Legislative Budget Board. Becomes governor if the office is vacant. 4-year term.",
+    "officeSource": "https://ballotpedia.org/Lieutenant_Governor_of_Texas",
+    "candidates": [
+     {
+      "name": "Dan Patrick",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Dan_Patrick",
+      "officialSite": "https://www.ltgov.texas.gov/about/",
+      "campaignSite": "https://www.danpatrick.org/",
+      "x": "https://x.com/DanPatrick",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Dan_Patrick.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     },
+     {
+      "name": "Vikki Goodwin",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
+      "officialSite": "https://house.texas.gov/members/member-page/?district=47",
+      "campaignSite": "https://www.vikkigoodwin.com/",
+      "x": "https://x.com/VikkiGoodwinTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Vikki_Goodwin_2025.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "housing",
+        "text": "Housing - Increasing supply and addressing the issue of housing affordability.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       },
+       {
+        "issue": "healthcare",
+        "text": "Health care should be affordable and accessible.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       },
+       {
+        "issue": "jobs",
+        "text": "We must work toward affordability, good job opportunities and living wages.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 10,
+        "quote": "To maintain the momentum and prosperity, our public schools require investment and support.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 6,
+        "quote": "Texas has a great economy built upon a well-educated workforce.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       },
+       {
+        "id": "healthcare",
+        "label": "Health care",
+        "mentions": 5,
+        "quote": "Health care should be affordable and accessible.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 3,
+        "quote": "Health care should be affordable and accessible.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       },
+       {
+        "id": "housing",
+        "label": "Housing",
+        "mentions": 1,
+        "quote": "Housing - Increasing supply and addressing the issue of housing affordability.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Vikki_Goodwin#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Kevin McCormick",
+      "party": "Green",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Kevin_McCormick_(Texas)",
+      "officialSite": null,
+      "campaignSite": "https://www.kmm2026.org/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/kevin-mccormick-ballotpedia-1024_20260422_145919_13721.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "jobs",
+        "text": "An effective way to reduce rush hour traffic congestion is to use a commuter bus network, with frequent feeder buses connecting neighborhoods and transit centers where the commuter buses will take passengers to employment centers.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "transportation",
+        "label": "Roads & transportation",
+        "mentions": 18,
+        "quote": "We need to make major improvements in urban public transportation and alternative transportation infrastructure.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 5,
+        "quote": "I have proposed a reform of the property tax system which would change the appraisal method from comparable sales to imputed rental value.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "democracy",
+        "label": "Elections & voting",
+        "mentions": 3,
+        "quote": "I propose that we amend the Texas constitution to require that electoral districts be drawn in a way that prevents gerrymandering.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 2,
+        "quote": "We need to make significant investments in the Texas rural economy.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 2,
+        "quote": "I propose allocating 10% of the state transportation budget to increasing the city bus fleets and to creating cycle tracks in Texas cities.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Kevin_McCormick_(Texas)#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Anthony Cristo",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Anthony_Cristo",
+      "officialSite": null,
+      "campaignSite": "https://www.anthonycristo.com",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ACristo_20260602_014108_39402_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "jobs",
+        "text": "Mexican residents would cross the border during the day to work the fields or other jobs in the United States and then return home at night or at the end of the week.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 19,
+        "quote": "I am a high school teacher in San Antonio teaching at a school less than a mile from where I grew up.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 4,
+        "quote": "Additionally, the revenue generated from legal sales have been an economic boon to every state that has medical and recreational marijuana sales.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes"
+        }
+       },
+       {
+        "id": "immigration",
+        "label": "Immigration & border",
+        "mentions": 4,
+        "quote": "Immigration Reform.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 3,
+        "quote": "There won't even be a need to raise taxes nor to cut spending.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 3,
+        "quote": "Since our state is currently operating at a $24 billion budget surplus, there is no reason why we cannot fund education properly.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Anthony_Cristo#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_lieutenant_gubernatorial_election,_2026"
+   },
+   {
+    "id": "tx-ag",
+    "title": "Attorney General of Texas",
+    "level": "state",
+    "office": "The state's lawyer: represents Texas in court (including lawsuits against the federal government), issues legal opinions to state officials, runs child-support enforcement and consumer-protection divisions. 4-year term.",
+    "officeSource": "https://www.texasattorneygeneral.gov/about-office",
+    "candidates": [
+     {
+      "name": "Nathan Johnson",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Nathan_Johnson_(Texas)",
+      "officialSite": "https://senate.texas.gov/member.php?d=16",
+      "campaignSite": "https://www.nathanfortexas.com",
+      "x": "https://x.com/NathanForTexas",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nathan_Johnson_20230724_022433.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "healthcare",
+        "text": "I have been the lead voice in advocating for Medicaid expansion in Texas.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "corruption",
+        "label": "Corruption & ethics",
+        "mentions": 4,
+        "quote": "It should and must investigate and prosecute corruption instead of participating in it, enforce competition laws in the marketplace, and work with district and county attorneys instead of against them to keep communities safe.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 2,
+        "quote": "I will join Democratic AGs from across the country to take Trump to court to block the MAGA machine’s illegal actions that are harming the economy, tearing apart communities, and eroding the foundations of our democracy.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "healthcare",
+        "label": "Health care",
+        "mentions": 2,
+        "quote": "I have been the lead voice in advocating for Medicaid expansion in Texas.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 1,
+        "quote": "Protect Consumers and Make Life More Affordable",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 1,
+        "quote": "As state senator, I have passed 135 bills, including legislation to increase penalties on polluters, protect consumers from AI scams and invasions of data privacy, throttle corporate scheming of tax breaks.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Mayes Middleton",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Mayes_Middleton",
+      "officialSite": "https://senate.texas.gov/member.php?d=11",
+      "campaignSite": "https://mayesmiddleton.com/",
+      "x": "https://x.com/mayes_middleton",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Mayes_Middleton.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "jobs",
+        "text": "Protect oil and gas jobs, and Texas’ energy independence from far left progressive activists",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 7,
+        "quote": "As your Attorney General, I will lead the charge to secure our border, protect Texas kids, ensure fairness in girls’ and women’s sports, protect Texas taxpayers and consumers, ensure strict election integrity, and root out waste, fraud, and…",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+        }
+       },
+       {
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 5,
+        "quote": "Sue to stop “sanctuary cities” from ignoring the law and harboring illegal criminals",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+        }
+       },
+       {
+        "id": "democracy",
+        "label": "Elections & voting",
+        "mentions": 5,
+        "quote": "As your Attorney General, I will lead the charge to secure our border, protect Texas kids, ensure fairness in girls’ and women’s sports, protect Texas taxpayers and consumers, ensure strict election integrity, and root out waste, fraud, and…",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+        }
+       },
+       {
+        "id": "corruption",
+        "label": "Corruption & ethics",
+        "mentions": 4,
+        "quote": "Enforce our election laws and hold accountable those that refuse to do so",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+        }
+       },
+       {
+        "id": "immigration",
+        "label": "Immigration & border",
+        "mentions": 3,
+        "quote": "As your Attorney General, I will lead the charge to secure our border, protect Texas kids, ensure fairness in girls’ and women’s sports, protect Texas taxpayers and consumers, ensure strict election integrity, and root out waste, fraud, and…",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Mayes_Middleton#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Tom Oxford",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Tom_Oxford",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/tom_oxford_.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Attorney_General_election,_2026"
+   },
+   {
+    "id": "tx-comptroller",
+    "title": "Texas Comptroller of Public Accounts",
+    "level": "state",
+    "office": "The state's chief tax collector, accountant and revenue estimator: collects state taxes, certifies that the state budget fits within estimated revenue, and manages state funds. 4-year term.",
+    "officeSource": "https://comptroller.texas.gov/about/",
+    "candidates": [
+     {
+      "name": "Donald Huffines",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Donald_Huffines",
+      "officialSite": null,
+      "campaignSite": "https://donhuffines.com/",
+      "x": "https://x.com/DonHuffines",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/DonaldHuffines2025.png",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "healthcare",
+        "text": "While in the Senate, I never took a penny of government money: no salary, no pension, no healthcare, no per diem.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+        }
+       },
+       {
+        "issue": "jobs",
+        "text": "My first job was greasing cars at my family’s business, Huffines Motor Company, for $2 an hour.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 11,
+        "quote": "As Comptroller, I will audit government, expose corruption, and put thieves in jail for stealing from taxpayers.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+        }
+       },
+       {
+        "id": "corruption",
+        "label": "Corruption & ethics",
+        "mentions": 9,
+        "quote": "As a Texas State Senator, I uncovered the largest government corruption scandal in modern Texas history.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 7,
+        "quote": "As Comptroller, I will audit government, expose corruption, and put thieves in jail for stealing from taxpayers.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+        }
+       },
+       {
+        "id": "healthcare",
+        "label": "Health care",
+        "mentions": 3,
+        "quote": "While in the Senate, I never took a penny of government money: no salary, no pension, no healthcare, no per diem.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 3,
+        "quote": "As Comptroller, I will eliminate woke DEI programs and stop transgender indoctrination in schools.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Donald_Huffines#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true,
+      "incumbentNote": "Sitting Comptroller: Gov. Abbott appointed Huffines after Kelly Hancock (R) resigned; Hancock had lost the Mar 3 GOP primary to Huffines (Ballotpedia; comptroller.texas.gov lists Huffines)."
+     },
+     {
+      "name": "Sarah Eckhardt",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Sarah_Eckhardt",
+      "officialSite": "https://senate.texas.gov/member.php?d=14",
+      "campaignSite": "https://saraheckhardt.com",
+      "x": "https://x.com/SarahEckhardtTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/SarahEckhardt.jpeg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "healthcare",
+        "text": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+        }
+       },
+       {
+        "issue": "jobs",
+        "text": "for workers, establishing a Travis County Public Defender's Office, and instituting jail and arrest diversion",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "water",
+        "label": "Water",
+        "mentions": 6,
+        "quote": "Texas has massive water infrastructure needs, with a $154B gap.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+        }
+       },
+       {
+        "id": "healthcare",
+        "label": "Health care",
+        "mentions": 5,
+        "quote": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+        }
+       },
+       {
+        "id": "transportation",
+        "label": "Roads & transportation",
+        "mentions": 5,
+        "quote": "Texas has massive water infrastructure needs, with a $154B gap.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 4,
+        "quote": "Broadband is an economic necessity.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 3,
+        "quote": "In the wealthiest country on the planet, and the second wealthiest state in that country, there is no reason we shouldn't be able to meet and exceed the needs of every Texan who wants a home, healthcare, and good public schools.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Sarah_Eckhardt#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Shehla Faizi",
+      "party": "Green",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Shehla_Faizi",
+      "officialSite": null,
+      "campaignSite": "https://faizifortexas.com",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Shehla_Faizi_20260205_113042.png",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "healthcare",
+        "text": "While Israel has universal healthcare and free college, many Texans struggle with the rising cost of living.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes"
+        }
+       },
+       {
+        "issue": "jobs",
+        "text": "Like all big investments in our state, data centers must have a positive cost/benefit analysis, proof of legitimate job creation, and should overall benefit the communities they’re located in.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 6,
+        "quote": "While Israel has universal healthcare and free college, many Texans struggle with the rising cost of living.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 4,
+        "quote": "Texas’ taxpayer money should not be used for any foreign policy agenda.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 3,
+        "quote": "While Israel has universal healthcare and free college, many Texans struggle with the rising cost of living.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes"
+        }
+       },
+       {
+        "id": "healthcare",
+        "label": "Health care",
+        "mentions": 2,
+        "quote": "While Israel has universal healthcare and free college, many Texans struggle with the rising cost of living.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes"
+        }
+       },
+       {
+        "id": "energy",
+        "label": "Energy",
+        "mentions": 2,
+        "quote": "Likewise, as our energy costs skyrocket, data centers and their extreme energy usage must not add to the cost of living for hard working Texans.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Shehla_Faizi#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "V. Alonzo Echavarria-Garza",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/V._Alonzo_Echavarria-Garza",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Comptroller_election,_2026"
+   },
+   {
+    "id": "tx-land",
+    "title": "Texas Land Commissioner",
+    "level": "state",
+    "office": "Runs the General Land Office: manages state-owned land and mineral rights (revenue supports the Permanent School Fund), the Gulf coast and Alamo, veterans' land and home-loan programs, and federal disaster-recovery housing funds. 4-year term.",
+    "officeSource": "https://www.glo.texas.gov/about-glo",
+    "candidates": [
+     {
+      "name": "Dawn Buckingham",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Dawn_Buckingham",
+      "officialSite": "https://www.glo.texas.gov/the-glo/about/commissioner/index.html",
+      "campaignSite": "https://dawnbuckingham.com",
+      "x": "https://x.com/DrBuckinghamTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/_Dawn-Buckingham_.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "healthcare",
+        "text": "Patient-Centered Healthcare :",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 6,
+        "quote": "BANNING STATE INCOME TAX",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+        }
+       },
+       {
+        "id": "immigration",
+        "label": "Immigration & border",
+        "mentions": 5,
+        "quote": "SECURING THE BORDER",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+        }
+       },
+       {
+        "id": "abortion",
+        "label": "Abortion",
+        "mentions": 5,
+        "quote": "PRO-LIFE CHAMPION",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 3,
+        "quote": "Local Education :",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+        }
+       },
+       {
+        "id": "democracy",
+        "label": "Elections & voting",
+        "mentions": 3,
+        "quote": "ELECTION INTEGRITY",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Dawn_Buckingham#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Benjamin Flores",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Benjamin_Flores",
+      "officialSite": null,
+      "campaignSite": "https://letsgowithben.com",
+      "x": "https://x.com/Flores4LandCom",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/BenjaminFlores.png",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "veterans",
+        "label": "Veterans & military",
+        "mentions": 3,
+        "quote": "Texas has 1.7 million veterans, and too many don't know about the Veterans Land Board programs they've earned.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 2,
+        "quote": "The Texas General Land Office generates revenue from state lands that flows into the Permanent School Fund, supporting Texas public schools.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes"
+        }
+       },
+       {
+        "id": "corruption",
+        "label": "Corruption & ethics",
+        "mentions": 2,
+        "quote": "Government accountability is the other area.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 1,
+        "quote": "More revenue for the Permanent School Fund means more money flowing to school districts, which helps them lower your property taxes.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes"
+        }
+       },
+       {
+        "id": "energy",
+        "label": "Energy",
+        "mentions": 1,
+        "quote": "That means embracing innovation, welcoming renewable energy producers alongside oil and gas, and running tighter operations.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Benjamin_Flores#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Neil Snider",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Neil_Snider_(Texas)",
+      "officialSite": null,
+      "campaignSite": "https://www.voteneillsnider.com/",
+      "x": null,
+      "photo": null,
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Public_Lands_Commissioner_election,_2026"
+   },
+   {
+    "id": "tx-agcomm",
+    "title": "Texas Commissioner of Agriculture",
+    "level": "state",
+    "office": "Runs the Texas Department of Agriculture: farm and ranch programs, school-lunch nutrition programs, pesticide regulation, and inspection of weights and measures such as gas pumps and grocery scales. 4-year term.",
+    "officeSource": "https://texasagriculture.gov/About",
+    "candidates": [
+     {
+      "name": "Clayton Tucker",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Clayton_Tucker",
+      "officialSite": null,
+      "campaignSite": "https://www.claytontuckertx.com",
+      "x": "https://x.com/ClaytonTuckerTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Clayton_Tucker_2026.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "agriculture",
+        "label": "Farms & ranches",
+        "mentions": 3,
+        "quote": "Make food and farming affordable again by busting the monopolies that have rigged the system.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Clayton_Tucker#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 2,
+        "quote": "Make food and farming affordable again by busting the monopolies that have rigged the system.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Clayton_Tucker#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 1,
+        "quote": "Fight for policies that would both make meals at public schools both free for kids, have all food served in Texas public schools be from Texas farmers (exemptions can be made for foods that cannot be grown here at scale), and remove process…",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Clayton_Tucker#Campaign_themes"
+        }
+       },
+       {
+        "id": "water",
+        "label": "Water",
+        "mentions": 1,
+        "quote": "Stop AI data centers until they can prove they will not cause water/power inflation, dry up water wells, or cause any other forms of mass inflation or disruption to their local community.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Clayton_Tucker#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Nate Sheets",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Nate_Sheets",
+      "officialSite": null,
+      "campaignSite": "http://www.NateSheets.com",
+      "x": "https://x.com/natesheetsforTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nate_Sheets.png",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "healthcare",
+        "text": "Texas already spends billions on food for schools, hospitals, and state agencies, much of it flowing to multinational corporations for ultra-processed foods.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes"
+        }
+       },
+       {
+        "issue": "jobs",
+        "text": "That predictable demand helps family operations stay on the land, creates rural jobs, & keeps food dollars in Texas.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "agriculture",
+        "label": "Farms & ranches",
+        "mentions": 16,
+        "quote": "He raisied fees on farmers and ranchers.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 6,
+        "quote": "That predictable demand helps family operations stay on the land, creates rural jobs, & keeps food dollars in Texas.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 5,
+        "quote": "My first action will be to DOGE the agency.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 3,
+        "quote": "The GO TEXAN program was meant to help small family farms reach customers, but it has turned into a taxpayer-funded PR tool.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 3,
+        "quote": "Texas already spends billions on food for schools, hospitals, and state agencies, much of it flowing to multinational corporations for ultra-processed foods.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Nate_Sheets#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Austin Kelly",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Austin_Kelly",
+      "officialSite": null,
+      "campaignSite": "https://www.KellyForTX.com",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Austin_Kelly.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "agriculture",
+        "label": "Farms & ranches",
+        "mentions": 11,
+        "quote": "Bringing Real Scientific Expertise to Texas Agriculture.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 2,
+        "quote": "As a PhD candidate in Ecology at Texas A&M and an independent ecological consultant, I have spent my career on the ground—surveying public lands, mapping rare species, and helping private landowners manage their habitats for wildlife and ag…",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes"
+        }
+       },
+       {
+        "id": "water",
+        "label": "Water",
+        "mentions": 2,
+        "quote": "whether it involves water rights, land use, or conservation efforts.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 2,
+        "quote": "The government should be limited, efficient, and focused solely on protecting individual rights.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 1,
+        "quote": "I will fight to lower the barrier to entry for small farmers and independent producers, ensuring that the free market, not the government, picks the winners and losers in our agricultural economy.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Austin_Kelly#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Agriculture_Commissioner_election,_2026"
+   },
+   {
+    "id": "tx-rrc",
+    "title": "Texas Railroad Commission",
+    "level": "state",
+    "office": "Despite the name, regulates the oil and natural-gas industry in Texas (drilling permits, pipelines, gas utilities, surface coal and uranium mining), not railroads. 3 elected commissioners, 6-year staggered terms.",
+    "officeSource": "https://www.rrc.texas.gov/about-us/",
+    "candidates": [
+     {
+      "name": "Jon Rosenthal",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Jon_Rosenthal",
+      "officialSite": "https://house.texas.gov/members/member-page/?district=135",
+      "campaignSite": "https://jonrosenthaltx.com/",
+      "x": "https://x.com/Jon_RosenthalTX",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jon_Rosenthal_26.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "healthcare",
+        "text": "Of course, Texas Energy Policy, and also my other priorities and goals, remain rooted in the same values that originally drew me to politics: affordability for the basic necessities for our working families, improving public education and access to healthcare, justice and human rights for ALL, and fighting bigotry and …",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes"
+        }
+       },
+       {
+        "issue": "jobs",
+        "text": "Texas Energy Leadership & Good Jobs",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "energy",
+        "label": "Energy",
+        "mentions": 19,
+        "quote": "Gas supply failures during the freeze helped crash our electric grid.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 5,
+        "quote": "I’ll work to implement weatherization requirements for critical gas delivery systems with clear deadlines and audits, and we will hold violators accountable to the maximum extent.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 4,
+        "quote": "Texas Energy Leadership & Good Jobs",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes"
+        }
+       },
+       {
+        "id": "cost-of-living",
+        "label": "Cost of living",
+        "mentions": 3,
+        "quote": "Fair, Affordable Gas Utility Rates: Your power bill should be boring and predictable.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 2,
+        "quote": "Of course, Texas Energy Policy, and also my other priorities and goals, remain rooted in the same values that originally drew me to politics: affordability for the basic necessities for our working families, improving public education and a…",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Jon_Rosenthal#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Bo French",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Bo_French",
+      "officialSite": null,
+      "campaignSite": "https://bofrench.com",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/BoFrench26.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "energy",
+        "label": "Energy",
+        "mentions": 22,
+        "quote": "But in Texas energy, we've seen that it's life or death.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Bo_French#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 3,
+        "quote": "I will end rampant DEI spending at the Railroad Commission.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Bo_French#Campaign_themes"
+        }
+       },
+       {
+        "id": "taxes",
+        "label": "Taxes",
+        "mentions": 2,
+        "quote": "Increased activity means increased tax dollars to benefit you.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Bo_French#Campaign_themes"
+        }
+       },
+       {
+        "id": "abortion",
+        "label": "Abortion",
+        "mentions": 2,
+        "quote": "Chairman French is unapologetically pro-life and believes that every child is made in the image of God.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Bo_French#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 1,
+        "quote": "Chairman French will put the Texas oil and gas industry first by prioritizing the operators who keep the Texas economy running.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Bo_French#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "Arthur DiBianca",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Arthur_DiBianca",
+      "officialSite": null,
+      "campaignSite": "https://www.votedibianca.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/adbianca.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "energy",
+        "label": "Energy",
+        "mentions": 3,
+        "quote": "When the rights of property owners conflict with the interests of oil and gas companies, the property owners' rights must take priority.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Arthur_DiBianca#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Railroad_Commissioner_election,_2026"
+   },
+   {
+    "id": "tx-supreme-court-place-1-chief-justice",
+    "title": "Texas Supreme Court Place 1 Chief Justice",
+    "level": "state",
+    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "candidates": [
+     {
+      "name": "Jimmy Blacklock",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Jimmy_Blacklock",
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/chief-justice-jimmy-blacklock/",
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/blacklock_mm_2.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Maggie Ellis",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Maggie_Ellis",
+      "officialSite": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-maggie-ellis/",
+      "campaignSite": "https://www.maggieforjustice.com/",
+      "x": "https://x.com/MaggieJEllis",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Maggie_Ellis_2026.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 1,
+        "quote": "I have experience working on all sides of the docket, in both civil and criminal cases, representing individuals, representing the State, and as a judge.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Maggie_Ellis#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 1,
+        "quote": "A commitment to fairness, due process, and justice, and being efficient with cases.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Maggie_Ellis#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-supreme-court-place-7",
+    "title": "Texas Supreme Court Place 7",
+    "level": "state",
+    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "candidates": [
+     {
+      "name": "Kyle Hawkins",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Kyle_Hawkins",
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-kyle-d-hawkins/",
+      "campaignSite": "https://justicekylehawkins.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Justice-Kyle-Hawkins_20261010_205905_36588_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Kristen Hawkins",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Kristen_Hawkins",
+      "officialSite": null,
+      "campaignSite": "https://judgehawkins.com/",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kristen_Hawkins.png",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-supreme-court-place-8",
+    "title": "Texas Supreme Court Place 8",
+    "level": "state",
+    "office": "Highest Texas court for civil and juvenile cases; judges run in partisan elections for 6-year terms.",
+    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
+    "candidates": [
+     {
+      "name": "Brett Busby",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Brett_Busby",
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-brett-busby/",
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Busby_2104_web_cr.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     },
+     {
+      "name": "Gisela Triana",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Gisela_Triana",
+      "officialSite": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-gisela-d-triana/",
+      "campaignSite": "https://www.justicetriana.com/",
+      "x": "https://x.com/JusticeTriana",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Gisela_D._Triana.jpeg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-court-of-criminal-appeals-place-3",
+    "title": "Texas Court of Criminal Appeals Place 3",
+    "level": "state",
+    "office": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+    "officeSource": "https://www.txcourts.gov/cca/about-the-court/",
+    "candidates": [
+     {
+      "name": "Okey Anyiam",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Okey_Anyiam",
+      "officialSite": null,
+      "campaignSite": "https://okeyanyiamforjudge.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Okey_Anyiam_2026.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Thomas Smith",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Thomas_Smith_(Texas)",
+      "officialSite": null,
+      "campaignSite": "https://smithfortexas.org/",
+      "x": "https://x.com/smithfortx",
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Thomas_Smith_2026.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     },
+     {
+      "name": "Mark Ash",
+      "party": "Libertarian",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Mark_Ash",
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Mark-Ash.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-court-of-criminal-appeals-place-4",
+    "title": "Texas Court of Criminal Appeals Place 4",
+    "level": "state",
+    "office": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+    "officeSource": "https://www.txcourts.gov/cca/about-the-court/",
+    "candidates": [
+     {
+      "name": "Kevin Patrick Yeary",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Kevin_Patrick_Yeary",
+      "officialSite": "https://www.txcourts.gov/cca/about-the-court/judges/judge-kevin-yeary/",
+      "campaignSite": null,
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/KevinYeary.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Audra Riley",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Audra_Riley",
+      "officialSite": null,
+      "campaignSite": "https://www.judgeaudrariley.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Audra_Riley.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   },
+   {
+    "id": "tx-court-of-criminal-appeals-place-9",
+    "title": "Texas Court of Criminal Appeals Place 9",
+    "level": "state",
+    "office": "Highest Texas court for criminal cases, including all death-penalty appeals; judges run in partisan elections for 6-year terms.",
+    "officeSource": "https://www.txcourts.gov/cca/about-the-court/",
+    "candidates": [
+     {
+      "name": "Holly Taylor",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/Holly_Taylor_(Texas)",
+      "officialSite": null,
+      "campaignSite": "https://www.hollytforjudge.com",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/HT-head-shot-2026_20261018_020531_68182_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [
+       {
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 9,
+        "quote": "I do not believe that criminal justice should be partisan or political.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Holly_Taylor_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 3,
+        "quote": "From 2018-2020, Holly taught an advanced legal writing class at the University of Texas School of Law.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Holly_Taylor_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "spending",
+        "label": "Government spending",
+        "mentions": 2,
+        "quote": "Courts should decide cases in an efficient and professional manner, acting with civility, and respect for everyone before the court.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Holly_Taylor_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 1,
+        "quote": "Further, judges should be fair, just, compassionate, and courteous without any bias based on race, sex, economic status, or any unconstitutional factors.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Holly_Taylor_(Texas)#Campaign_themes"
+        }
+       },
+       {
+        "id": "environment",
+        "label": "Environment & climate",
+        "mentions": 1,
+        "quote": "As a future Judge, my goal is to respect constitutional rights, create a supportive environment, and enhance court procedures for fair and efficient case resolution.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/Holly_Taylor_(Texas)#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     },
+     {
+      "name": "John Messinger",
+      "party": "Republican",
+      "incumbent": false,
+      "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
+      "ballotpedia": "https://ballotpedia.org/John_Messinger",
+      "officialSite": null,
+      "campaignSite": "https://messingerforjustice.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/jmessinger.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [
+       {
+        "issue": "jobs",
+        "text": "By virtue of the job God has blessed me with at the Office of the State Prosecuting Attorney, almost no one practicing law today has as much experience in the Court of Criminal Appeals as I do.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/John_Messinger#Campaign_themes"
+        }
+       }
+      ],
+      "causes": [
+       {
+        "id": "economy",
+        "label": "Jobs & economy",
+        "mentions": 6,
+        "quote": "By virtue of the job God has blessed me with at the Office of the State Prosecuting Attorney, almost no one practicing law today has as much experience in the Court of Criminal Appeals as I do.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/John_Messinger#Campaign_themes"
+        }
+       },
+       {
+        "id": "public-safety",
+        "label": "Public safety",
+        "mentions": 5,
+        "quote": "Justice Through Law Enforcement",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/John_Messinger#Campaign_themes"
+        }
+       },
+       {
+        "id": "democracy",
+        "label": "Elections & voting",
+        "mentions": 2,
+        "quote": "Sometimes, the results were intended but the voters change their minds about what they want the law to be.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/John_Messinger#Campaign_themes"
+        }
+       },
+       {
+        "id": "education",
+        "label": "Education",
+        "mentions": 1,
+        "quote": "I worked at our local library as a page for about two years in high school.",
+        "match": "keyword match in verbatim campaign themes",
+        "source": {
+         "label": "Ballotpedia campaign themes (verbatim)",
+         "url": "https://ballotpedia.org/John_Messinger#Campaign_themes"
+        }
+       }
+      ],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
+   }
+  ],
+  "measures": [],
+  "measuresNote": "No statewide Texas propositions found for Nov 3, 2026 in our sources (Texas constitutional amendments are usually voted in odd years). Local measures: unsure, check your county.",
+  "problems": [
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "rent",
+    "topic": "housing",
+    "label": "Renters paying 30%+ of income on rent",
+    "value": "44.5%",
+    "unit": "%",
+    "table": "B25070",
+    "source": {
+     "label": "Census ACS B25070 via Census Reporter",
+     "url": "https://censusreporter.org/data/table/?table=B25070&geo_ids=86000US77002"
+    },
+    "stateValue": 51.7,
+    "numeric": 44.5
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "uninsured",
+    "topic": "healthcare",
+    "label": "People without health insurance",
+    "value": "11.1%",
+    "unit": "%",
+    "table": "B27010",
+    "source": {
+     "label": "Census ACS B27010 via Census Reporter",
+     "url": "https://censusreporter.org/data/table/?table=B27010&geo_ids=86000US77002"
+    },
+    "stateValue": 17.1,
+    "numeric": 11.1
+   },
+   {
+    "year": "ACS 2024 5-year (2020-2024)",
+    "id": "jobs",
+    "topic": "jobs",
+    "label": "Unemployment rate, ZIP-level Census ACS 5-year estimate (not BLS)",
+    "value": "2.3%",
+    "unit": "%",
+    "table": "B23025",
+    "source": {
+     "label": "Census ACS B23025 via Census Reporter",
+     "url": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US77002"
+    },
+    "stateValue": 5.3,
+    "numeric": 2.3
+   }
+  ],
+  "context": {
+   "medianIncome": 86394,
+   "medianRent": 1885,
+   "population": 21015,
+   "profile": "https://censusreporter.org/profiles/86000US77002/"
+  },
+  "verify": {
+   "label": "VoteTexas.gov (official)",
+   "url": "https://www.votetexas.gov/"
+  },
+  "builtAt": "2026-10-29"
  }
 }
