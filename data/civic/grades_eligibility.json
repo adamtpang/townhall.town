@@ -1,15 +1,56 @@
 {
  "_meta": {
-  "asOf": "2026-10-30T00:24:43-05:00",
-  "data": "feat2 data/stances.json at 4e15da7 (batch2 baseline) + positions_gapfill_batch2.json + qa_fixes4.json scored stances, then qa_fixes5.json changes (unsure = removed, retag = new issue). Sourced = numeric nonzero value (lib/overlapCore.mjs).",
-  "rule": "gradesEligible only if: every candidate has 3+ sourced issues; 3+ issues sourced for every candidate; smallest count >= half of largest. Judicial (race.judicial set, the site flag), measures, unopposed always false.",
-  "judicialFlag": "Now uses race.judicial (the site flag). Batch2 matched the word \"judge\", which wrongly made travis-county-judge (County Judge, an executive office) judicial. That is the only race whose flag changed.",
-  "raceIdSource": "race.id / measure.id from data/ballots.json (78701, 94103) and data/ny.json (10001).",
-  "workingTreeCheck": {
-   "note": "Same computation on the current feat2 working-tree data/stances.json (uncommitted, includes qa_fixes4 already) + batch2 + qa4 + qa5.",
-   "eligibilityDiffersFor": [],
-   "candidateIssueDiffs": []
-  }
+  "asOf": "2026-10-30T02:21:35-05:00",
+  "data": "feat2 data/stances.json at df0cb76 + positions_gapfill_batch3civic.json scored stances. Sourced = numeric nonzero value (lib/overlapCore.mjs).",
+  "rule": "gradesEligible only if: every candidate has 3+ sourced issues; 3+ issues sourced for every candidate; smallest count >= half of largest. Judicial (race.judicial), measures, unopposed always false.",
+  "raceIdSource": "race.id / measure.id from data/ballots.json (78701, 94103) and data/ny.json (10001) at df0cb76.",
+  "previous": "grades_eligibility.pre_b3.json / grade_races.pre_b3.json",
+  "changesVsPrevious": [
+   {
+    "raceId": "travis-commissioner-4",
+    "zip": "78701",
+    "title": "Travis County Commissioner, Precinct 4",
+    "eligibleBefore": false,
+    "eligibleAfter": false,
+    "countsBefore": {
+     "george-morales-iii": 1
+    },
+    "countsAfter": {
+     "george-morales-iii": 5
+    },
+    "reasonAfter": "Unopposed (fewer than 2 candidates): grades never shown."
+   },
+   {
+    "raceId": "travis-cad-place-1",
+    "zip": "78701",
+    "title": "Travis Central Appraisal District Board of Directors, Place 1",
+    "eligibleBefore": false,
+    "eligibleAfter": false,
+    "countsBefore": {
+     "skyler-a-korgel": 0
+    },
+    "countsAfter": {
+     "skyler-a-korgel": 3
+    },
+    "reasonAfter": "Unopposed (fewer than 2 candidates): grades never shown."
+   },
+   {
+    "raceId": "travis-cad-place-3",
+    "zip": "78701",
+    "title": "Travis Central Appraisal District Board of Directors, Place 3",
+    "eligibleBefore": false,
+    "eligibleAfter": false,
+    "countsBefore": {
+     "yvonne-munoz": 0,
+     "phil-gorman": 0
+    },
+    "countsAfter": {
+     "yvonne-munoz": 0,
+     "phil-gorman": 1
+    },
+    "reasonAfter": "Not eligible: under 3 sourced issues: Yvonne Muñoz (0), Phil Gorman (1); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 1)."
+   }
+  ]
  },
  "races": {
   "tx-10": {
@@ -1442,12 +1483,20 @@
      "name": "George Morales III",
      "party": "Democratic",
      "sourcedIssues": [
+      "healthcare",
+      "housing",
+      "infrastructure",
+      "safety",
       "taxes"
      ],
-     "sourcedIssueCount": 1
+     "sourcedIssueCount": 5
     }
    ],
    "sharedIssues": [
+    "healthcare",
+    "housing",
+    "infrastructure",
+    "safety",
     "taxes"
    ],
    "gradesEligible": false,
@@ -1525,11 +1574,19 @@
      "id": "skyler-a-korgel",
      "name": "Skyler A. Korgel",
      "party": "Nonpartisan",
-     "sourcedIssues": [],
-     "sourcedIssueCount": 0
+     "sourcedIssues": [
+      "housing",
+      "infrastructure",
+      "taxes"
+     ],
+     "sourcedIssueCount": 3
     }
    ],
-   "sharedIssues": [],
+   "sharedIssues": [
+    "housing",
+    "infrastructure",
+    "taxes"
+   ],
    "gradesEligible": false,
    "reason": "Unopposed (fewer than 2 candidates): grades never shown."
   },
@@ -1572,13 +1629,15 @@
      "id": "phil-gorman",
      "name": "Phil Gorman",
      "party": "Nonpartisan",
-     "sourcedIssues": [],
-     "sourcedIssueCount": 0
+     "sourcedIssues": [
+      "taxes"
+     ],
+     "sourcedIssueCount": 1
     }
    ],
    "sharedIssues": [],
    "gradesEligible": false,
-   "reason": "Not eligible: under 3 sourced issues: Yvonne Muñoz (0), Phil Gorman (0); only 0 issue(s) sourced for every candidate."
+   "reason": "Not eligible: under 3 sourced issues: Yvonne Muñoz (0), Phil Gorman (1); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 1)."
   },
   "austin-council-9": {
    "zip": "78701",
