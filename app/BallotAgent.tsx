@@ -36,6 +36,7 @@ const DEMO = [
 ];
 // Advertised: Austin, SF, NYC. 78130 and 90012 stay working but are not advertised.
 // Served: Austin, SF, NYC only (lib/site.ts COVERED_ZIPS); the API returns "unsupported" for every other ZIP.
+// 77002 (Houston) stays cached in data/ballots.json but is hidden until after the Oct 30 Hack Fair (Adam; main #31).
 const SUPPORTED = new Set<string>(COVERED_ZIPS);
 const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
 const TOOL_LABEL: Record<string, string> = {
