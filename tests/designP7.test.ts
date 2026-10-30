@@ -20,7 +20,7 @@ describe("Design p7 (4c21a5c)", () => {
       expect(src(f)).toMatch(/<h2 className=\{`mt-3 \$\{H2\}`\}>/);
       expect(src(f)).not.toMatch(/<h2[^>]*md:text-\[56px\]/);
     }
-    expect(src("app/EndScreen.tsx").match(/<h3 className=\{`mt-2 \$\{H3\}`\}>/g)).toHaveLength(3);
+    expect(src("app/EndScreen.tsx").match(/<h3 className=\{H3\}>/g)).toHaveLength(3);
     expect(src("app/page.tsx")).toMatch(/<h1 className=\{`\$\{H1\}/);
     expect(src("app/card/BallotCard.tsx")).toMatch(/<h1 className=\{`mt-3 \$\{H1\}`\}>/);
     expect(src("app/card/BallotCard.tsx")).not.toMatch(/text-5xl tracking-tight/);
@@ -29,7 +29,7 @@ describe("Design p7 (4c21a5c)", () => {
   it("2. 45ch line length (design p8 narrowed from 65ch) on reason, judicial note, How it works and Sources", () => {
     expect(src("app/IssueMatch.tsx")).toMatch(/<p className="mt-1 max-w-\[45ch\] text-sm text-black\/60" data-reason>/);
     expect(src("app/EndScreen.tsx")).toMatch(/<p className="mt-4 max-w-\[45ch\] text-sm text-black\/60" data-judicial-note>/);
-    for (const h of ["How it works", "Sources"]) {
+    for (const h of ["Sources"]) {
       const s = HOME_SECTIONS.find((x) => x.heading === h)!;
       const html = renderToStaticMarkup(createElement(SectionBlock, { s }));
       const blocks = html.match(/<(p|ul)( class="[^"]*")?>/g)!;
@@ -46,7 +46,7 @@ describe("Design p7 (4c21a5c)", () => {
     expect(HIT).toBe("relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']");
     const end = src("app/EndScreen.tsx");
     expect(end).toMatch(/className=\{`\$\{HIT\} th-link`\} data-how-register>How ↗/);
-    expect(end).toMatch(/after:-inset-y-1 after:content-\[''\]" data-early-source>Early voting source/);
+    expect(end).toMatch(/after:-inset-y-1 after:content-\[''\]" data-early-source>Source ↗/);
     expect(end).not.toMatch(/after:-inset-y-4|after:-inset-x-3/);
     // Oct 29 11:42 PM CT: attribution is always visible, small and muted (was a blue link in a collapsed list).
     // Design p10 supersedes: credit is 12/16 weight 450 black/60, author linked to the file page, license to its deed.

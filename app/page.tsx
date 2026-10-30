@@ -15,7 +15,6 @@ export default function Home() {
       <main className="mx-auto max-w-site px-6 lg:px-10">
         {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
         <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
-          <p className="mb-6 text-sm font-[530] text-black/60">Nov 3, 2026 · Austin · San Francisco · New York</p>
           <h1 className={`${H1} [text-wrap:balance]`}>
             <T>Know your ballot in 2 minutes.</T>
           </h1>
@@ -23,7 +22,6 @@ export default function Home() {
             <span>Get your person in office. </span>
             <span className="max-sm:block"><T>Your vote matters.</T></span>
           </p>
-          <p className="mt-3 max-w-[36ch] text-base leading-6 font-[450] text-black/60"><T>{"Who\u2019s running, when to vote, where to go. Sourced and nonpartisan."}</T></p>
           <div id="hero-stat" />
         </section>
         <BallotAgent />

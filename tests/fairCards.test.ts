@@ -31,7 +31,7 @@ describe("fair cards (Adam 9:58 AM CT Oct 30)", () => {
     expect(c).toMatch(/SHOW_ACCOUNTABILITY \?/);
     expect(c).toMatch(/Record: \{recLine\}/);
     expect(c).toMatch(/line-clamp-2/); expect(c).toMatch(/pointsFor\(raceId, c\.name\)/);
-    expect(c).toMatch(/Issue overlap with your answers: \$\{o\.agree\} of \$\{o\.n\} issues/);
+    expect(c).toMatch(/Issue overlap: \$\{o\.agree\} of \$\{o\.n\}`/);
     expect(c).toMatch(/o\.n >= 2 \?/);
   });
   it("the -2..+2 control has a 2px brand-600 focus ring with 2px offset, brand-700 selected, no blue/red (purple spec Oct 30)", () => {

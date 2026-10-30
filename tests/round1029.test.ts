@@ -102,7 +102,7 @@ describe("Polymarket only (Kalshi dropped)", () => {
     expect(html).toContain("Leader on Polymarket:");
     expect(html).toContain('href="https://polymarket.com/event/texas-senate-election-winner"');
     expect(html).toMatch(/Fetched Oct 29, 10:58 PM CT/);
-    expect(html).toMatch(/not a forecast or a recommendation/);
+    expect(html).not.toMatch(/not a forecast or a recommendation/);
     expect(renderToStaticMarkup(h(MarketLine, { line: null }))).toBe("");
   });
   it("RaceTiers shows a leader line only for races with a live quote, and links each sourced rating", () => {
@@ -110,10 +110,10 @@ describe("Polymarket only (Kalshi dropped)", () => {
     const html = renderToStaticMarkup(h(RaceTiers, { races: b.races as never, market: (id: string) => (id === "us-senate-tx" ? Q(0.55) : null) as never }));
     expect(html.match(/data-market-line/g)?.length).toBe(1);
     expect(html).toContain('href="https://www.cookpolitical.com/ratings/senate-race-ratings"');
-    expect(html).toMatch(/Cook Political Report rating ↗/);
-    expect(html).toMatch(/Sabato&#x27;s Crystal Ball rating ↗/);
+    expect(html).toMatch(/Cook Political Report ↗/);
+    expect(html).toMatch(/Sabato&#x27;s Crystal Ball ↗/);
     expect(html).not.toMatch(/kalshi/i);
-    expect(html).toMatch(/Polymarket can move a race up, never down/);
+    expect(html).toMatch(/Polymarket: top outcome between 35% and 65% also counts as Competitive/);
   });
   it("measures get a Yes/No leader line from the market", () => {
     const m = measuresFor("94103")[0];

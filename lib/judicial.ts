@@ -3,7 +3,7 @@ export const JUDICIAL_NOTE = "Judicial candidates’ positions on these issues a
 /** The conduct rule behind JUDICIAL_NOTE, per state: [plain rule, official source URL, citation label]. */
 export const JUDICIAL_RULES = {
   ny: ["Judicial candidates can\u2019t state positions on issues", "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-100.5", "22 NYCRR 100.5(A)(4)(d)"],
-  tx: ["Texas judicial candidates can\u2019t pledge or promise how they\u2019ll rule on cases or classes of cases", "https://www.txcourts.gov/media/1462935/texas-state-code-of-judicial-conduct.pdf", "Texas Code of Judicial Conduct, Canon 5 (current text, txcourts.gov)"],
+  tx: ["Texas judicial candidates can\u2019t pledge how they\u2019ll rule", "https://www.txcourts.gov/media/1462935/texas-state-code-of-judicial-conduct.pdf", "Texas Code of Judicial Conduct, Canon 5 (current text, txcourts.gov)"],
   ca: ["California judicial candidates can\u2019t make statements that commit them on issues likely to come before the courts", "https://www.courts.ca.gov/documents/ca_code_judicial_ethics.pdf", "Code of Judicial Ethics, Canon 5"],
 } as const;
 /** Short on-screen link text (Design p9 P0: the full citation overflowed 390px when nowrap). Full citation goes in title. */

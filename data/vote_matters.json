@@ -30,7 +30,7 @@
    "castSourceLabel": "County reconciliation",
    "supplementUrl": "https://votetravis.gov/wp-content/uploads/G24-Provisional-Hand-Count-w_Cover.pdf",
    "supplementLabel": "Nov 18 provisionals",
-   "castSourceTitle": "Travis County Clerk, G24 Election Reconciliation, Official Totals: 925,858 registered, 587,090 ballots counted (63.41%)",
+   "castSourceTitle": "925,858 registered minus 587,090 ballots counted (Travis County Clerk, G24 reconciliation)",
    "supplementTitle": "About 19 provisional ballots counted Nov 18, 2024, after these totals"
   }
  }

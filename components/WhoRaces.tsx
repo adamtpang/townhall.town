@@ -18,7 +18,7 @@ export type WhoLine = { name: string; sourced: number; agree: number; n: number;
 export type WhoRace = { id: string; title: string; lines: WhoLine[]; content: ReactNode; gradesHidden?: string | null };
 
 export const NO_POSITION_LINE = "No public position found yet";
-export const overlapLine = (agree: number, n: number) => `Issue overlap with your answers: ${agree} of ${n} issues`;
+export const overlapLine = (agree: number, n: number) => `Issue overlap: ${agree} of ${n}`;
 export const OPEN_BY_DEFAULT = 3;
 export function lineText(l: WhoLine): string {
   // QA 10:50 AM CT Oct 30: one empty-state wording, and the overlap line only with 2+ shared issues (same rule and

@@ -62,7 +62,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     expect(s).not.toMatch(/data-grade-slot|gradeLabel\(/);
     // Design 10:14 AM CT Oct 30: fit line only with 2+ shared issues; Record line states its method inline.
     expect(s).toMatch(/Record: \{recLine\}/);
-    expect(s).toMatch(/Issue overlap with your answers:/);
+    expect(s).toMatch(/Issue overlap: /);
   });
   it("'Who lines up': only answered issues show, the rest sits behind 'Show all positions'; date unsure is a title", () => {
     const s = src("components/CandidateRow.tsx");
@@ -153,7 +153,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     expect(b?.url).toBe("/portraits/richard-barrera-160.webp");
     expect(b?.page).toBe("https://www.barreraforedu.com/mediaresources");
     expect(b?.credit).toBe("Photo: Richard Barrera's campaign site"); // Civic qa_fixes6 #5
-    expect(src("components/SiteChrome.tsx")).toMatch(/Candidate photos are from their public campaign or official pages\. <a href="\/contact"[^>]*>Contact us<\/a> to remove\./);
+    expect(src("components/SiteChrome.tsx")).toMatch(/Candidate photos: public campaign or official pages\. <a href="\/contact"[^>]*>Contact us<\/a> to remove\./);
     expect(src("components/Portrait.tsx")).toMatch(/referrerPolicy: "no-referrer"/);
   });
   it("77002 stays unsupported", () => {

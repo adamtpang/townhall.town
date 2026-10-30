@@ -92,7 +92,7 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
               <li key={i.id} className="border-t border-black/15 py-6" data-issue={i.id}>
                 <p className="text-sm font-[530] text-black/60">{i.label}</p>
                 <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
-                {i.reason ? <p className="mt-1 max-w-[45ch] text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {plain(i.reason)}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative th-link after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Source ↗</a></> : null}</p> : null}
+                {i.reason ? <p className="mt-1 max-w-[45ch] text-sm text-black/60" data-reason>{plain(i.reason).replace(/Census estimate, (\d{4}\u2013\d{4}), via Census Reporter/, "Census, $1")}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative th-link after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Source ↗</a></> : null}</p> : null}
                 {/* Adam 9:58 AM CT Oct 30: 5 buckets, -2 to +2. 44px+ targets; 5 across fit 390px. */}
                 {/* Design 10:14 AM CT: shadcn-style ToggleGroup (single), radiogroup + roving focus; 96x48 segments at
                     desktop (480px, left-aligned), full-width 56px-tall segments on phones; no gaps, radius 0. */}

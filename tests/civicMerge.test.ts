@@ -31,12 +31,12 @@ describe("Civic merge checks", () => {
       expect(seen.some((s) => must.test(s)), String(must)).toBe(true);
   });
 
-  it("the race list renders the note once per judicial race", () => {
+  it("the race list renders the judicial note once, on the first judicial race (copy cuts Oct 30)", () => {
     for (const z of ZIPS) {
       const rs = races(z);
       const html = renderToStaticMarkup(h(RaceTiers, { races: rs as never, market: () => null as never }));
       const n = (html.match(/data-judicial-note/g) || []).length;
-      expect(n, z).toBe(rs.filter((r) => r.judicialNote).length);
+      expect(n, z).toBe(rs.some((r) => r.judicialNote) ? 1 : 0);
       expect(html).toContain("Judicial candidates\u2019 positions on these issues aren\u2019t public.");
     }
   });

@@ -93,10 +93,10 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   const recUrl = mp?.r?.u ?? null;
   // Adam 10:34 AM CT Oct 30: overlap is labeled as overlap, never a match or a recommendation.
   // Fit: shown only when 2+ issues overlap (both sides non-zero); a 0 answer never counts.
-  const fitLine = o.n >= 2 ? `Issue overlap with your answers: ${o.agree} of ${o.n} issues` : null;
+  const fitLine = o.n >= 2 ? `Issue overlap: ${o.agree} of ${o.n}` : null;
   void answeredYesNo;
   const tr = useT();
-  const fitShown = o.n >= 2 ? `${tr("Issue overlap with your answers")}: ${o.agree} ${tr("of")} ${o.n} ${tr("issues")}` : null;
+  const fitShown = o.n >= 2 ? `${tr("Issue overlap")}: ${o.agree} ${tr("of")} ${o.n}` : null;
   // Office points are display-only and never scored; they only change which "no position" wording is shown.
   const officeOnly = o.sourced === 0 && main.some((x) => x.k === "office");
   const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
