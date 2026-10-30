@@ -52,6 +52,11 @@ const ES: Record<string, string> = {
   "Check which is yours": "Revise cuál es el suyo",
   " · No local problem data for this ZIP yet.": " · Aún no hay datos de problemas locales para este código postal.",
   // Race tiers
+  // Local news strip
+  "Local news": "Noticias locales",
+  "What local reporters are covering": "Lo que cubren los periodistas locales",
+  "Recent election headlines from": "Titulares recientes sobre la elección de",
+  "Links go to each outlet. We don't summarize or endorse.": "Los enlaces llevan a cada medio. No resumimos ni respaldamos.",
   "What matters on your ballot": "Lo que más importa en su boleta electoral",
   // Candidate money (FEC), PR #32; shown only when SHOW_FINANCE is on
   "Party: unsure": "Partido: no se sabe",
