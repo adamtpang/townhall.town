@@ -47,6 +47,8 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
   // Design p9: the carry-over notice only when th-answers-v1 already held answers BEFORE this page load (fresh browser: none).
   const [carriedIds, setCarriedIds] = useState<string[]>([]);
   useEffect(() => { const a = load(); setAnswers(a); setCarriedIds(ids.filter((id) => a[id] !== null && a[id] !== undefined)); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
+  // Towny panel (components/towny/TownyFab.tsx) writes chat answers to th-answers-v1, then fires townhall:answers.
+  useEffect(() => { const r = () => setAnswers(load()); window.addEventListener("townhall:answers", r); return () => window.removeEventListener("townhall:answers", r); }, []);
   const markZip = () => { try { localStorage.setItem(ANSWERS_ZIP_KEY, zip); } catch { /* ignore */ } };
   function choose(id: string, b: number, pole: "high" | "low" = "high") {
     const next = press5(answers, id, b, pole) as Answers;
@@ -92,8 +94,15 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
           {issues.map((i) => {
             const sel = bucketOf(answers[i.id], i.yesMeansPole);
             return (
-              <li key={i.id} className="border-t border-black/15 py-6" data-issue={i.id}>
-                <p className="text-sm font-[530] text-black/60">{i.label}</p>
+              <li key={i.id} className="border-t border-black/15" data-issue={i.id}>
+                {/* Design hard cut (Adam 3:03 PM CT Oct 30): only the issue title shows; statement and options open on tap. */}
+                <details className="group">
+                <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 py-3 text-base font-[530] text-black [&::-webkit-details-marker]:hidden">
+                  <span aria-hidden className="text-brand-700 transition-transform duration-150 group-open:rotate-90">›</span>
+                  <span className="flex-1">{i.label}</span>
+                  {sel !== null && sel !== undefined ? <span className="text-sm tabular-nums text-brand-700" aria-label={t(BUCKETS.find((c) => c.b === sel)?.label ?? "")}>{BUCKETS.find((c) => c.b === sel)?.text}</span> : null}
+                </summary>
+                <div className="pb-6">
                 <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
                 {i.reason ? <p className="mt-1 max-w-[45ch] text-sm text-black/60" data-reason>{plain(i.reason).replace(/Census estimate, (\d{4}\u2013\d{4}), via Census Reporter/, "Census, $1")}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative th-link after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Source ↗</a></> : null}</p> : null}
                 {/* Adam 9:58 AM CT Oct 30: 5 buckets, -2 to +2. 44px+ targets; 5 across fit 390px. */}
@@ -106,6 +115,8 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
                   items={BUCKETS.map((c) => ({ value: String(c.b), label: c.text, ariaLabel: t(c.label), "data-choice": c.b, "data-bucket": c.b }))} />
                 <div aria-hidden className="mt-2 flex w-full justify-between text-sm leading-5 text-black/60 md:w-[482px]" data-bucket-ends><span>{t("Strong no")}</span><span>{t("Strong yes")}</span></div>
                 {fromChat[i.id] ? <p className="mt-2 text-sm text-black/60" data-from-chat>Filled from what you wrote: “{fromChat[i.id]}”. Change it if that&apos;s wrong.</p> : null}
+                </div>
+                </details>
               </li>
             );
           })}

@@ -1,3 +1,4 @@
+import { withAcsMoe } from "./acsMoe";
 import NY_NOTES from "../data/ny-applies-notes.json";
 import ballots from "../data/ballots.json";
 import { JUDICIAL_NOTE, judicialSource } from "./judicial";
@@ -17,6 +18,8 @@ import { raceMeta } from "./raceMeta";
 import { stancesFor, sourceLabel, ISSUES } from "./issues";
 import { stanceForm } from "./stanceForm";
 import { draftWording } from "./plain";
+import { inOfficialOrder, orderStatus, splitOf, SPLIT_LINE, officialOrder } from "./ballotOrder";
+import { hostLabel } from "./sourceName";
 
 /** Jurisdiction plus app-only extras (measures, verify links, context). Extra fields only; contract fields unchanged. */
 export type Ballot = Jurisdiction & {
@@ -34,13 +37,13 @@ export const DEMO_ZIPS = COVERED_ZIPS.filter((z) => z in B);
 
 /** QA P2 (60582ae): agents get the same published, sourced stances the site shows (data/stances.json),
  *  each with its exact text and source link. Nothing pending, unsourced or null is returned; judicial candidates get none. */
-const apiSourceLabel = (u: string) => { const l = sourceLabel(u); if (l !== "source") return l; try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
+const apiSourceLabel = (u: string) => { const l = sourceLabel(u); if (l !== "source") return l; return hostLabel(u, "source"); };
 function publishedPositions(name: string) {
   return Object.entries(stancesFor(name))
     .filter(([, st]) => st && st.value !== null && st.value !== undefined && st.sourceUrl && (st.quote || (st as { voteRecord?: string }).voteRecord))
     .map(([id, st]) => {
       const vr = (st as { voteRecord?: string }).voteRecord;
-      return { issue: ISSUES.find((i) => i.id === id)?.label ?? id, text: vr ? `${vr}${st.quote ? `: ${st.quote}` : ""}` : String(st.quote), form: stanceForm(st as { voteRecord?: string; sourceUrl?: string }), ...(st.year ? { year: st.year } : {}), source: { label: apiSourceLabel(String(st.sourceUrl)), url: String(st.sourceUrl) } };
+      return { issue: ISSUES.find((i) => i.id === id)?.label ?? id, text: vr ? `${vr}${st.quote ? `: ${st.quote}` : ""}` : String(st.quote), form: stanceForm(st as { voteRecord?: string; sourceUrl?: string }), ...(st.year ? { year: st.year } : {}), source: st.chipUrl && st.chip && st.chip !== "source" ? { label: st.chip, url: st.chipUrl } : { label: apiSourceLabel(String(st.sourceUrl)), url: String(st.sourceUrl) } };
     });
 }
 
@@ -66,7 +69,7 @@ function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
   const titleN = new Map<string, number>();
   for (const r of b.races) titleN.set(r.title, (titleN.get(r.title) ?? 0) + 1);
-  return { ...b, turnout, races: b.races.map((r0) => {
+  return { ...b, turnout, problems: b.problems?.map((p) => withAcsMoe(p as never)) as typeof b.problems, races: b.races.map((r0) => {
     // Same-titled single-candidate seats (CA retention races) get the justice's name so each title is distinct.
     const dup = (titleN.get(r0.title) ?? 0) > 1 && r0.candidates.length === 1;
     const t0 = b.state === "TX" ? txTitle(r0.title) : r0.title;
@@ -91,7 +94,13 @@ function enrich(b: Ballot): Ballot {
       const live = { campaignSite: liveUrl(site), officialSite: liveUrl(c.officialSite), ballotpedia: liveUrl((c as { ballotpedia?: string | null }).ballotpedia) };
       return withMoney(withLicensedPhoto({ ...c, ...live, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
     });
-    return { ...r, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: gatePhotos(cands, undefined, r.id) /* PHOTO_GATE (lib/photos.ts): race mode by default = if any candidate in a race lacks a real photo, the whole race shows initials (Oct 29 11:34 PM) */ };
+    // Civic towny_order_check P1 (Oct 30, 3:25 PM CT): the Court of Criminal Appeals rows pointed at the Texas Supreme Court
+    // Ballotpedia page (wrong record). Their candidates are on the Travis County sample ballot Civic checked (data/ballot_order.json),
+    // so that is the race source; with no such row, the court's own page (officeSource) or no link.
+    const src = (r as { source?: string }).source;
+    const fixSrc = /court-of-criminal-appeals/.test(r.id) && /Texas_Supreme_Court_elections/.test(String(src ?? "")) ? { source: officialOrder(b.zip, r.id)?.source.url ?? (r as { officeSource?: string }).officeSource ?? "" } : {};
+    // Candidates follow the official sample-ballot order where Civic confirmed it (e.g. ny-supreme-1jd: Hagler first); else data order.
+    return { ...r, ...fixSrc, ...(jud ? { judicialNote: JUDICIAL_NOTE, judicialNoteSource: judicialSource((r as { judicial?: unknown }).judicial, b.state) } : {}), meta: jud && meta ? { ...meta, why: null } : meta, candidates: gatePhotos(inOfficialOrder(b.zip, r.id, cands), undefined, r.id) /* PHOTO_GATE (lib/photos.ts): race mode by default = if any candidate in a race lacks a real photo, the whole race shows initials (Oct 29 11:34 PM) */ };
   }) };
 }
 
@@ -133,13 +142,23 @@ export function getDistricts(zip: string) {
   return { zip, found: true, state: b.state, place: b.place, county: b.county, districts: b.districts, source: b.districtSource, splitWarning: b.splitWarning };
 }
 
+export const RACE_LIST_NOTE = "Races are listed in data order, not ballot order. Never present this list as the order of the ballot. For candidate order, use each race's orderStatus.";
+/** dependsOnAddress for a race in a district split (one of several; the voter has only one). */
+function splitFor(zip: string, raceId: string) {
+  const g = splitOf(zip, raceId);
+  return g ? { dependsOnAddress: { say: SPLIT_LINE, oneOf: g.raceIds, lookupUrl: g.lookup.url, lookupLabel: g.lookup.label } } : {};
+}
+
 export function getRaces(zip: string) {
   const b = ballotFor(zip);
   if (!b) return { zip, races: [], measures: [] };
   return {
     zip,
     electionDate: b.electionDate,
-    races: b.races.map((r) => ({ id: r.id, title: r.title, office: r.office, source: r.source })),
+    // Civic order check (Oct 30, 3:25 PM CT): this list is in data order, never ballot order. Each race carries its own
+    // orderStatus (confirmed = candidate order within that race only) and, where a ZIP spans districts, dependsOnAddress.
+    raceListOrder: RACE_LIST_NOTE,
+    races: b.races.map((r) => ({ id: r.id, title: r.title, office: r.office, source: r.source, orderStatus: orderStatus(zip, r.id, r.title), ...splitFor(zip, r.id) })),
     measures: b.measures.map((m) => ({ id: m.id, title: m.title, source: m.source })),
     measuresNote: b.measuresNote,
   };
@@ -151,7 +170,8 @@ export function getCandidates(zip: string, raceIds?: string[]) {
   const races = b.races.filter((r) => !raceIds?.length || raceIds.includes(r.id));
   return {
     zip,
-    races: races.map((r) => ({ id: r.id, title: r.title, candidates: r.candidates.map((c: Politician) => ({ name: c.name, party: c.party, incumbent: c.incumbent })) })),
+    raceListOrder: RACE_LIST_NOTE,
+    races: races.map((r) => ({ id: r.id, title: r.title, orderStatus: orderStatus(zip, r.id, r.title), ...splitFor(zip, r.id), candidates: r.candidates.map((c: Politician) => ({ name: c.name, party: c.party, incumbent: c.incumbent })) })),
   };
 }
 
@@ -204,8 +224,29 @@ export async function getMarketOdds(raceIds: string[], fetcher: (slug: string, t
   return out;
 }
 
-export function getLocalProblems(zip: string) {
+// Civic audit26 (Oct 30): lead jobs with the county BLS LAUS rate (getCountyUnemployment); the ZIP-level ACS figure
+// is stored with its MOE in data/ (data/civic/acs_b23025_censusreporter.json) and never fetched live.
+const COUNTY_NAME: Record<string, string> = { "48453": "Travis County", "06075": "San Francisco County", "36061": "New York County" };
+const countyRate = new Map<string, { at: number; v: any }>();
+async function countyJobs(zip: string, fips: string | undefined) {
+  if (!fips || !COUNTY_NAME[fips]) return null;
+  const hit = countyRate.get(fips);
+  if (hit && Date.now() - hit.at < 3600_000) return hit.v;
+  try {
+    const { getCountyUnemployment } = await import("./dataTools");
+    const r: any = await Promise.race([getCountyUnemployment({ zip, countyFips: fips }), new Promise((res) => setTimeout(() => res(null), 2500))]);
+    if (!r || typeof r.rate !== "number" || !Number.isFinite(r.rate) || !r.source) return null;
+    const v = { id: "jobs-county", topic: "jobs", label: `Unemployment rate, ${COUNTY_NAME[fips]} (BLS LAUS${r.preliminary ? ", preliminary" : ""})`, value: `${r.rate}%`, unit: "%", year: r.period, numeric: r.rate, source: { label: "BLS LAUS", url: r.source } };
+    countyRate.set(fips, { at: Date.now(), v });
+    return v;
+  } catch { return null; }
+}
+export async function getLocalProblems(zip: string) {
   const b = ballotFor(zip);
   if (!b) return { zip, problems: [] };
-  return { zip, problems: b.problems || [], context: b.context, note: b.problems?.length ? undefined : "Census metrics are cached for the demo ZIPs only." };
+  // A value that already carries its MOE (unit "") is shown as written, never compared to a state figure.
+  const own = ((b.problems || []) as any[]).map((p) => (p.unit === "" ? (({ stateValue: _s, ...rest }) => rest)(p) : p));
+  const county = own.some((p) => p.topic === "jobs") ? await countyJobs(zip, b.counties?.[0]?.replace(/^05000US/, "")) : null;
+  const problems = county ? [county, ...own] : own;
+  return { zip, problems, context: b.context, note: b.problems?.length ? undefined : "Census metrics are cached for the demo ZIPs only." };
 }

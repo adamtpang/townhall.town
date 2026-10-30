@@ -218,7 +218,8 @@
     "94103": {
       "jurisdiction": "City and County of San Francisco, CA",
       "lookupUrl": "https://sfelections.org/tools/map_poll_time/",
-      "lookupUrlNote": "SF Department of Elections 'Voting Site Wait Times Lookup Tool' (find assigned polling place); also the Voter Portal https://sfelections.org/tools/portal/ and the back cover of the Voter Information Pamphlet. Election Day polling places (501) are assigned by precinct, so they depend on the voter's address; the City Hall Voting Center is open to all SF voters. Full list: https://api.sf.gov/documents/63956/Polling_Place_List_Nov_3_2026_as_of_09_29_2026.xlsx",
+      "lookupUrlNote": "SF Department of Elections 'Voting Site Wait Times Lookup Tool' (find assigned polling place); also the Voter Portal and the back cover of the Voter Information Pamphlet. Election Day polling places (501) are assigned by precinct, so they depend on the voter's address; the City Hall Voting Center is open to all SF voters. Full list: https://api.sf.gov/documents/63956/Polling_Place_List_Nov_3_2026_as_of_09_29_2026.xlsx",
+      "portalUrl": "https://sfelections.org/tools/portal/",
       "dependsOnAddress": true,
       "earlyVoting": [
         {

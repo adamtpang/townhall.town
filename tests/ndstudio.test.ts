@@ -2,7 +2,7 @@ import { readFileSync, statSync, existsSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { bandSources, motionAllowed, onIdleOrScroll, IDLE_FALLBACK_MS } from "../components/media/MediaBand";
+import { bandSources, motionAllowed, onIdleOrScroll, afterLoadThenIdle, NEAR_VIEWPORT, IDLE_FALLBACK_MS } from "../components/media/MediaBand";
 import { vi } from "vitest";
 import CityCards, { CITIES } from "../components/media/CityCards";
 import { NumberedSection } from "../components/media/SectionHeader";
@@ -12,7 +12,7 @@ import { HOME_SECTIONS } from "../lib/content";
 const src = (f: string) => readFileSync(f, "utf8");
 
 describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
-  it("home order: hero, ZIP, band, 01 Your city, 02 How it works, 03 Sources; locked H1 and tagline unchanged", () => {
+  it("home order (Adam 2:56 PM): hero, ZIP, 01 Your city, band, 02 How it works, 03 Sources; locked H1 and tagline unchanged", () => {
     const p = src("app/page.tsx");
     const at = (s: string) => { const i = p.indexOf(s); expect(i, s).toBeGreaterThan(-1); return i; };
     // Design grid spec #3 (Oct 30, 2:58 PM CT): cities above the band, then the Who/What/Where tiles.
@@ -51,7 +51,7 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     for (const z of ["78701", "94103", "10001"]) expect(html).toContain(`href="/?zip=${z}"`);
     expect(html).toContain("Photo: Daderot, CC0");
     expect(html).toContain("Photo: Bernard Spragg. NZ, CC0");
-    expect(html).toMatch(/Photo: Jim Henderson, <a href="https:\/\/creativecommons.org\/licenses\/by\/4.0\/"[^>]*>CC BY 4.0.*<\/a>, modified \(duotone\)/);
+    expect(html).toMatch(/Photo: Jim Henderson, <a href="https:\/\/creativecommons.org\/licenses\/by\/4.0\/"[^>]*>CC BY 4.0.*<\/a>(?!, modified)/); // Adam 2:57 PM: shown in color, unmodified
     // Design grid spec #3 (Oct 30, 2:58 PM CT): 3 across at every width, 4:5 on phones, 16:9 col-span-4 from lg.
     expect(html).toContain("grid grid-cols-3 gap-2 lg:grid-cols-12 lg:gap-6");
     expect(html).toContain("aspect-[4/5] bg-brand-50 lg:aspect-video");
@@ -65,13 +65,14 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(bandSources(true).map((s) => s.src)).toEqual(["/media/band-mobile.webm", "/media/band-mobile.mp4"]);
     expect(bandSources(false).map((s) => s.src)).toEqual(["/media/band-desktop.mp4"]);
     const band = src("components/media/MediaBand.tsx");
-    expect(band).toContain('rootMargin: "200px"'); // skills audit P0 (Oct 30): sources attach only near view, not on idle
+    expect(NEAR_VIEWPORT).toEqual({ rootMargin: "100% 0px" }); // Design 2:57 PM: attach only within one viewport
+    expect(band).toMatch(/if \(attached \|\| !ready \|\| !near \|\| reduceMq\.matches\) return;/);
     expect(band).toMatch(/if \(!motionAllowed\(reduceMq\.matches, saveData\)\) return;/);
     expect(band).toContain('srcSet="/media/band-desktop-poster.jpg"');
     expect(band).toContain('src="/media/band-mobile-poster.jpg"');
     expect(band).toContain("h-11 w-11");
     expect(band).toMatch(/<video ref=\{v\} muted loop playsInline preload="none" aria-hidden="true"/);
-    expect(band).toMatch(/width=\{576\} height=\{324\} loading="lazy" decoding="async"/);
+    expect(band).toContain('alt="" aria-hidden="true" decoding="async" data-band-poster'); // v3.1 poster img
     expect(band).not.toMatch(/<video[^>]*controls/);
   });
   it("media is self-hosted, budgeted, no image over 200 KB, no Vercel image optimizer", () => {
@@ -109,5 +110,21 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     vi.advanceTimersByTime(IDLE_FALLBACK_MS - 1); expect(runC).not.toHaveBeenCalled();
     vi.advanceTimersByTime(1); expect(runC).toHaveBeenCalledTimes(1);
     vi.useRealTimers();
+    const p = mk(true); const runP = vi.fn();
+    onIdleOrScroll(p.w as never, runP); p.ls.pointerdown(); expect(runP).toHaveBeenCalledTimes(1);
+  });
+  it("Design 2:57 PM: the video waits for window load, THEN idle/scroll/pointer (never on the first idle before load)", () => {
+    const ls: Record<string, () => void> = {}; let idle: (() => void) | undefined;
+    const w = { document: { readyState: "interactive" }, addEventListener: (n: string, f: () => void) => { ls[n] = f; }, removeEventListener: (n: string) => { delete ls[n]; }, requestIdleCallback: (f: () => void) => { idle = f; return 1; }, cancelIdleCallback: () => { idle = undefined; } };
+    const run = vi.fn();
+    afterLoadThenIdle(w as never, run);
+    expect(idle).toBeUndefined(); expect(ls.scroll).toBeUndefined(); // nothing armed before load
+    ls.load(); expect(run).not.toHaveBeenCalled();
+    idle!(); expect(run).toHaveBeenCalledTimes(1);
+    const w2 = { ...w, document: { readyState: "complete" } }; const run2 = vi.fn(); idle = undefined;
+    afterLoadThenIdle(w2 as never, run2); expect(idle).toBeDefined(); ls.scroll(); expect(run2).toHaveBeenCalledTimes(1);
+  });
+  it("mobile WebM re-encoded to <= 170 KB (540p, 6s)", () => {
+    expect(statSync("public/media/band-mobile.webm").size).toBeLessThanOrEqual(170 * 1024);
   });
 });

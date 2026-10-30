@@ -21,18 +21,20 @@ function open(e: React.MouseEvent<HTMLAnchorElement>, zip: string) {
   window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
 }
 
-const credit = (c: City) => (
-  <>
-    Photo: {c.author},{" "}
-    {c.licenseUrl ? (
-      <>
-        <a href={c.licenseUrl} target="_blank" rel="noreferrer" className="th-link relative z-[1] inline-flex min-h-11 items-center">{c.license}<span className="sr-only"> (opens in a new tab)</span></a>, modified (duotone)
-      </>
-    ) : (
-      c.license
-    )}
-  </>
-);
+// From v3.1 (f2a5046): the credit names its city for screen readers and its license link; no "modified (duotone)"
+// (photos are in color, Adam 2:56 PM CT).
+function Credit({ c }: { c: City }) {
+  return (
+    <span className="[overflow-wrap:anywhere]">
+      <span className="sr-only">{c.name}: </span>Photo: {c.author},{" "}
+      {c.licenseUrl ? (
+        <a href={c.licenseUrl} target="_blank" rel="noreferrer" aria-label={`${c.name} photo license: ${c.license} (opens in a new tab)`} className="th-link relative z-[1] inline-flex min-h-11 items-center">{c.license}</a>
+      ) : (
+        c.license
+      )}
+    </span>
+  );
+}
 
 // Design grid spec #3 (Oct 30, 2:58 PM CT): 3 across at every width. Phones: gap-2, 4:5, name 16px. From lg: col-span-4
 // of 12, 16:9, name 24px. The county and the photo credits fold away (pure hide, same words).
@@ -42,7 +44,7 @@ export default function CityCards() {
     <ul className="grid grid-cols-3 gap-2 lg:grid-cols-12 lg:gap-6" data-city-cards>
       {CITIES.map((c) => (
         <li key={c.zip} className="th-card relative min-w-0 lg:col-span-4">
-          <div className="duo aspect-[4/5] bg-brand-50 lg:aspect-video">
+          <div className="media-frame aspect-[4/5] bg-brand-50 lg:aspect-video">
             <img
               src={`/media/${c.img}-600.webp`}
               srcSet={`/media/${c.img}-600.webp 600w, /media/${c.img}-960.webp 960w`}
@@ -68,7 +70,7 @@ export default function CityCards() {
     </ul>
     <details className="mt-2" data-city-credits>
       <summary className="inline-flex min-h-11 cursor-pointer items-center text-sm leading-5 text-ink/60">Photo credits ({CITIES.length})</summary>
-      <ul className="text-sm leading-5 text-ink/60">{CITIES.map((c) => <li key={c.zip} className="flex min-h-11 flex-wrap items-center">{credit(c)}</li>)}</ul>
+      <ul className="text-sm leading-5 text-ink/60">{CITIES.map((c) => <li key={c.zip} className="flex min-h-11 flex-wrap items-center"><Credit c={c} /></li>)}</ul>
     </details>
     </>
   );

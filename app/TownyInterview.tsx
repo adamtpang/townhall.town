@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { WHO_CHIP } from "../lib/townyChat";
 import { useT } from "../lib/i18n";
 
 export type Fill = { issue: string; choice: "yes" | "neutral" | "no"; words: string };
-type Msg = { from: "towny" | "you"; text: string; links?: { label: string; url: string }[] };
+type Msg = { from: "towny" | "you"; text: string; links?: { label: string; url: string }[]; chips?: string[] };
 const LABEL = { yes: "Yes", neutral: "Neutral", no: "No" } as const;
 
 /** Chat interview: Towny asks one open question, turns the reply into Yes/Neutral/No answers,
@@ -22,34 +23,58 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
   const [busy, setBusy] = useState(false);
   const [filled, setFilled] = useState<Record<string, true>>({});
 
-  async function send() {
-    const t = text.trim();
-    if (!t || busy) return;
-    const all = [...said, t];
-    setSaid(all); setText(""); setBusy(true);
+  // QA judge-path P2 (Oct 30, 1:25 PM CT): a message sent while a reply is pending is queued and answered in order.
+  const queue = useRef<string[]>([]);
+  const running = useRef(false);
+  const saidRef = useRef<string[]>([]);
+  const filledRef = useRef<Record<string, true>>({});
+  function send(raw: string = text) {
+    const t = raw.trim();
+    if (!t) return;
+    setText("");
     setMsgs((m) => [...m, { from: "you", text: t }]);
+    queue.current.push(t);
+    void drain();
+  }
+  async function drain() {
+    if (running.current) return;
+    running.current = true; setBusy(true);
+    while (queue.current.length) await turn(queue.current.shift()!);
+    running.current = false; setBusy(false);
+  }
+  async function turn(t: string) {
+    const all = [...saidRef.current, t];
+    saidRef.current = all; setSaid(all);
     let reply: string;
     let links: { label: string; url: string }[] = [];
+    let chips: string[] | undefined;
     try {
       const r = await fetch("/api/interview", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ zip, messages: all.map((x) => ({ text: x })) }) });
       const j = await r.json();
-      if (!r.ok && !j.answers?.length) throw new Error(j.error?.message || "failed");
-      const fills = (j.answers || []) as Fill[];
-      const fresh = fills.filter((f) => !filled[f.issue]);
-      const nextFilled = { ...filled }; for (const f of fills) nextFilled[f.issue] = true;
-      setFilled(nextFilled);
-      if (fills.length) onFill(fills);
-      const left = issues.filter((i) => !nextFilled[i.id]);
-      const lines = fresh.map((f) => `${issues.find((i) => i.id === f.issue)?.label}: ${LABEL[f.choice]}`);
-      // QA 0e605d9: fact replies carry their sources as data; shown as real links under the reply.
-      if (typeof j.reply === "string" && !fills.length && Array.isArray(j.links)) links = j.links.filter((l: { url?: unknown }) => typeof l?.url === "string" && /^https:\/\//.test(l.url as string));
-      reply = typeof j.reply === "string" && !fills.length ? j.reply : ((lines.length ? `I filled in ${lines.join("; ")}. Check them below and change any that are wrong.` : "I couldn't match that to a question yet.")
-        + (left.length ? ` Anything on ${left.slice(0, 3).map((i) => i.label.toLowerCase()).join(", ")}?` : " That covers every question."));
+      const fills = (Array.isArray(j.answers) ? j.answers : []) as Fill[];
+      if (fills.length) {
+        const fresh = fills.filter((f) => !filledRef.current[f.issue]);
+        const nextFilled = { ...filledRef.current }; for (const f of fills) nextFilled[f.issue] = true;
+        filledRef.current = nextFilled; setFilled(nextFilled);
+        onFill(fills);
+        const left = issues.filter((i) => !nextFilled[i.id]);
+        const lines = fresh.map((f) => `${issues.find((i) => i.id === f.issue)?.label}: ${LABEL[f.choice]}`);
+        reply = (lines.length ? `I filled in ${lines.join("; ")}. Check them below and change any that are wrong.` : "Those are already filled in. Change any of them below.")
+          + (left.length ? ` Anything on ${left.slice(0, 3).map((i) => i.label.toLowerCase()).join(", ")}?` : " That covers every question.");
+      } else {
+        // QA judge-path P1-1/P1-2: the server always answers from curated data (lib/towny/answer.ts) when nothing fills.
+        reply = typeof j.reply === "string" ? j.reply : "I can help with what's on your ballot, who is running for an office, when and where to vote, and how Towny works.";
+        if (Array.isArray(j.links)) links = j.links.filter((l: { url?: unknown }) => typeof l?.url === "string" && /^https:\/\//.test(l.url as string));
+        if (Array.isArray(j.chips) && j.chips.length) chips = j.chips.filter((c: unknown) => typeof c === "string");
+      }
     } catch {
-      reply = "I couldn't read that just now. Use the Yes, Neutral and No buttons below.";
+      reply = "I couldn't reach Towny just now. Try again in a moment.";
     }
-    setMsgs((m) => [...m, { from: "towny", text: reply, links }]);
-    setBusy(false);
+    setMsgs((m) => [...m, { from: "towny", text: reply, links, chips }]);
+  }
+  function chip(c: string) {
+    if (c === WHO_CHIP) { document.querySelector("#what-matters [data-issue-intro]")?.scrollIntoView({ block: "start" }); return; }
+    send(c);
   }
 
   // QA P2 (4c21a5c): the carry-over is also said on the page, not only inside the chat.
@@ -74,7 +99,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
       {carry}
       <ol className="space-y-3" aria-live="polite">
         {msgs.map((m, i) => (
-          <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>
+          <li key={i} className={m.from === "you" ? "ml-auto max-w-[85%] bg-black px-4 py-3 text-base leading-6 text-[#F2F2F2] w-fit" : "max-w-[85%] whitespace-pre-line bg-black/[0.04] px-4 py-3 text-base leading-6 text-black w-fit"} data-msg={m.from}>
             {m.text}
             {m.links?.length ? (
               <span className="mt-1 flex flex-wrap gap-x-4" data-towny-links>
@@ -83,16 +108,21 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
                 ))}
               </span>
             ) : null}
+            {m.chips?.length ? (
+              <span className="mt-3 flex flex-wrap gap-2" data-towny-chips>
+                {m.chips.map((c) => <button key={c} type="button" onClick={() => chip(c)} className="min-h-11 border border-black/30 bg-transparent px-4 py-2 text-left text-base text-black" data-towny-chip>{c}</button>)}
+              </span>
+            ) : null}
           </li>
         ))}
         {busy ? <li className="text-sm text-black/60">Reading what you wrote…</li> : null}
       </ol>
-      {said.length < 4 ? (
+      {said.length < 12 ? (
         <form className="mt-4 flex gap-2" onSubmit={(e) => { e.preventDefault(); send(); }}>
           <label htmlFor="towny-say" className="sr-only">Your answer</label>
           <input id="towny-say" value={text} onChange={(e) => setText(e.target.value)} maxLength={600} autoComplete="off" data-interview-input
             className="h-12 min-w-0 flex-1 border border-black/45 bg-transparent px-3 text-base text-black focus:border-brand-600 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600" placeholder="Type here" />
-          <button type="submit" disabled={busy || !text.trim()} data-interview-send className="h-12 bg-black px-5 text-base font-[530] text-[#F2F2F2] disabled:opacity-40">Send</button>
+          <button type="submit" disabled={!text.trim()} data-interview-send className="h-12 bg-black px-5 text-base font-[530] text-[#F2F2F2] disabled:opacity-40">Send</button>
         </form>
       ) : null}
       <p className="mt-3 text-sm text-black/60">What you type goes to an AI model only to fill the answers. It isn&apos;t saved. Please leave out names and addresses.</p>

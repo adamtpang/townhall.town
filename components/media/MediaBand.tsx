@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-// ndstudio-structure spec §2/§6 (design, Oct 30 2026): one full-bleed purple-duotone b-roll band under the ZIP box.
+// ndstudio-structure spec §2/§6 (design, Oct 30 2026): one full-bleed b-roll band (in color) under the ZIP box.
 // Design GO change (Oct 30): the poster is server-rendered (<picture>, mobile/desktop by media query) so it paints on
 // first paint. Video <source>s attach and load only on requestIdleCallback (setTimeout fallback where rIC is missing)
 // or the first scroll, whichever comes first, and NEVER under prefers-reduced-motion or Save-Data (poster only).
@@ -33,14 +33,43 @@ export function onIdleOrScroll(w: IdleWin, run: () => void) {
   const fire = () => { if (done) return; done = true; cleanup(); run(); };
   const cleanup = () => {
     w.removeEventListener("scroll", fire);
+    w.removeEventListener("pointerdown", fire);
     if (idleId !== undefined) w.cancelIdleCallback?.(idleId);
     if (timer !== undefined) clearTimeout(timer);
   };
   w.addEventListener("scroll", fire, { passive: true, once: true });
+  w.addEventListener("pointerdown", fire, { passive: true, once: true });
   if (typeof w.requestIdleCallback === "function") idleId = w.requestIdleCallback(fire);
   else timer = setTimeout(fire, IDLE_FALLBACK_MS);
   return () => { done = true; cleanup(); };
 }
+
+type LoadWin = IdleWin & { document: { readyState: string } };
+/** Design landing spec (3:03 PM CT): first load ~0.4 MB with no scroll, so the video waits for the visitor's first
+ *  scroll, pointer, touch or key after window 'load' (poster until then). Returns a cleanup. */
+export const INTERACTION_EVENTS = ["scroll", "pointerdown", "touchstart", "keydown"] as const;
+export function afterLoadThenInteraction(w: LoadWin, run: () => void) {
+  let done = false;
+  let loaded = w.document.readyState === "complete";
+  const cleanup = () => { for (const n of INTERACTION_EVENTS) w.removeEventListener(n, fire); w.removeEventListener("load", onLoad); };
+  const fire = () => { if (done || !loaded) return; done = true; cleanup(); run(); };
+  const onLoad = () => { loaded = true; };
+  for (const n of INTERACTION_EVENTS) w.addEventListener(n, fire, { passive: true });
+  if (!loaded) w.addEventListener("load", onLoad, { once: true });
+  return () => { done = true; cleanup(); };
+}
+/** Design 2:57 PM CT (Oct 30): the video is off the first load. `run` fires once window 'load' has fired AND then
+ *  idle (or the first scroll/pointer) has passed. Returns a cleanup. */
+export function afterLoadThenIdle(w: LoadWin, run: () => void) {
+  let stop: (() => void) | undefined;
+  let gone = false;
+  const go = () => { if (!gone) stop = onIdleOrScroll(w, run); };
+  if (w.document.readyState === "complete") go();
+  else w.addEventListener("load", go, { once: true });
+  return () => { gone = true; w.removeEventListener("load", go); stop?.(); };
+}
+/** IntersectionObserver options for "the band is within one viewport". */
+export const NEAR_VIEWPORT = { rootMargin: "100% 0px" };
 
 export default function MediaBand() {
   const v = useRef<HTMLVideoElement>(null);
@@ -59,10 +88,11 @@ export default function MediaBand() {
     const mobile = window.matchMedia(MOBILE).matches;
     setPoster(mobile ? "/media/band-mobile-poster.jpg" : "/media/band-desktop-poster.jpg");
     let attached = false;
-    // Skills audit P0 (Oct 30): nothing loads until the band is within 200px of the viewport (it sits below the fold).
-    // Then the sources attach and it plays; it pauses whenever it leaves view.
+    let visible = false;
+    let ready = false; // window load + first scroll/pointer/touch/key
+    let near = false; // band within one viewport
     const attach = () => {
-      if (attached || reduceMq.matches) return;
+      if (attached || !ready || !near || reduceMq.matches) return;
       for (const s of bandSources(mobile)) {
         const node = document.createElement("source");
         node.src = s.src;
@@ -73,16 +103,21 @@ export default function MediaBand() {
       el.load();
       attached = true;
       setPlayable(true);
+      if (visible && !userPaused.current) el.play().catch(() => {});
     };
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) { if (attached) el.pause(); return; }
-      attach();
-      if (attached && !userPaused.current) el.play().catch(() => {});
-    }, { rootMargin: "200px" });
+      visible = e.isIntersecting;
+      if (!attached) return;
+      if (!visible) el.pause();
+      else if (!userPaused.current) el.play().catch(() => {});
+    });
     io.observe(el);
+    const nearIo = new IntersectionObserver(([e]) => { if (e.isIntersecting) { near = true; nearIo.disconnect(); attach(); } }, NEAR_VIEWPORT);
+    nearIo.observe(el);
+    const stopIdle = afterLoadThenInteraction(window, () => { ready = true; attach(); });
     const onReduce = () => { if (reduceMq.matches && attached) { el.pause(); setPaused(true); userPaused.current = true; } };
     reduceMq.addEventListener?.("change", onReduce);
-    return () => { io.disconnect(); reduceMq.removeEventListener?.("change", onReduce); };
+    return () => { stopIdle(); io.disconnect(); nearIo.disconnect(); reduceMq.removeEventListener?.("change", onReduce); };
   }, []);
 
   function toggle() {
@@ -93,11 +128,11 @@ export default function MediaBand() {
   }
 
   return (
-    <figure className="ml-[calc(50%-50vw)] w-screen" data-media-band>
-      <div className="duo aspect-[4/5] md:aspect-[12/5]">
+    <figure className="w-full" data-media-band>
+      <div className="media-frame aspect-[4/5] md:aspect-[12/5]">
         <picture>
           <source media="(min-width: 768px)" srcSet="/media/band-desktop-poster.jpg" width={1280} height={720} />
-          <img src="/media/band-mobile-poster.jpg" alt="" width={576} height={324} loading="lazy" decoding="async" data-band-poster />
+          <img src="/media/band-mobile-poster.jpg" alt="" aria-hidden="true" decoding="async" data-band-poster />
         </picture>
         <video ref={v} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} poster={poster} />
       </div>
@@ -108,7 +143,7 @@ export default function MediaBand() {
         </span>
         {/* Spec §6: recommended 44×44 pause control in the caption row (the clip loops past 5s; WCAG 2.2.2). Only shown once video can play. */}
         {playable && (
-          <button type="button" onClick={toggle} aria-label={paused ? "Play background video" : "Pause background video"} className="-mt-3 flex h-11 w-11 shrink-0 items-center justify-center text-ink hover:text-brand-700" data-band-toggle>
+          <button type="button" onClick={toggle} aria-pressed={paused} aria-label={paused ? "Play background video" : "Pause background video"} className="-mt-3 flex h-11 w-11 shrink-0 items-center justify-center text-ink hover:text-brand-700" data-band-toggle>
             {paused ? (
               <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor" /></svg>
             ) : (

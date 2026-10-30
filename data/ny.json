@@ -414,36 +414,6 @@
     "officeSource": null,
     "candidates": [
      {
-      "name": "Saliann Scarpulla",
-      "party": "Democratic",
-      "incumbent": "unsure",
-      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
-      "ballotpedia": null,
-      "officialSite": null,
-      "campaignSite": null,
-      "x": null,
-      "photo": null,
-      "finance": null,
-      "positions": [],
-      "causes": [],
-      "hasThemes": false
-     },
-     {
-      "name": "Kathleen Waterman-Marshall",
-      "party": "Democratic",
-      "incumbent": "unsure",
-      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
-      "ballotpedia": null,
-      "officialSite": null,
-      "campaignSite": null,
-      "x": null,
-      "photo": null,
-      "finance": null,
-      "positions": [],
-      "causes": [],
-      "hasThemes": false
-     },
-     {
       "name": "Shlomo S. Hagler",
       "party": "Democratic",
       "incumbent": "unsure",
@@ -474,7 +444,37 @@
       "hasThemes": false
      },
      {
+      "name": "Saliann Scarpulla",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
       "name": "Hasa A. Kingo",
+      "party": "Democratic",
+      "incumbent": "unsure",
+      "incumbentSource": "unsure (official ballot list does not mark incumbents)",
+      "ballotpedia": null,
+      "officialSite": null,
+      "campaignSite": null,
+      "x": null,
+      "photo": null,
+      "finance": null,
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Kathleen Waterman-Marshall",
       "party": "Democratic",
       "incumbent": "unsure",
       "incumbentSource": "unsure (official ballot list does not mark incumbents)",
@@ -860,12 +860,12 @@
     "id": "jobs",
     "topic": "jobs",
     "label": "Unemployment rate (labor force 16+)",
-    "value": "5.7%",
-    "unit": "%",
+    "value": "5.7% +/-1.3 points",
+    "unit": "",
     "table": "B23025",
     "source": {
-     "label": "Census ACS B23025 via Census Reporter",
-     "url": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US10001"
+     "label": "Census ACS B23025",
+     "url": "https://data.census.gov/table/ACSDT5Y2024.B23025?g=860XX00US10001"
     },
     "stateValue": 6.4,
     "numeric": 5.7

@@ -9,6 +9,11 @@ import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { HOME_SECTIONS } from "../lib/content";
 import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 import { LangProvider, LangToggle, T } from "../lib/i18n";
+import PolyStrip from "../components/PolyStrip";
+import TownyFab from "../components/towny/TownyFab";
+
+// Polymarket strip prices are fetched on the server and revalidated every 5 minutes.
+export const revalidate = 300;
 
 // ndstudio-structure spec §3 item 5: "02 How it works" as 3 steps (approved Oct 30, 2026). Exact copy; no other changes.
 const HOW_STEPS: [string, string][] = [
@@ -23,9 +28,12 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
-      <main id="main" tabIndex={-1} className="mx-auto max-w-[1280px] scroll-mt-16 px-5 outline-none md:px-10">
-        {/* Reserved slot for the Polymarket strip (built on its own branch): directly under the nav, above the H1. Empty = 0px. */}
-        <div id="market-strip-slot" data-market-strip-slot />
+      {/* The Polymarket ticker (v3.1 / 03c9b97) takes the reserved strip slot: directly under the nav, above the H1. */}
+      <PolyStrip />
+      {/* pb-24 under lg: room for the Towny button (v3.1). */}
+      {/* v3.1 merge: main is full width (the band sits outside the 1280 container, no w-screen overflow). */}
+      <main id="main" tabIndex={-1} className="scroll-mt-16 outline-none pb-24 lg:pb-0">
+        <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         {/* Design P1 (Oct 30, 3:38 PM CT): hero top py-16 at 1440 (was 160px), so the city cards end above y=800. */}
         <section className="pb-10 pt-12 lg:pt-16" data-hero>
           <h1 className={`${H1} [text-wrap:balance]`}>
@@ -44,7 +52,9 @@ export default function Home() {
         <section id="your-city" aria-label="Your city" className="pb-8 pt-6" data-city-section>
           <CityCards />
         </section>
+        </div>
         <MediaBand />
+        <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <nav aria-label="Who, what and where" className="py-16 lg:py-24" data-home-tiles-nav>
           <HomeTiles />
         </nav>
@@ -65,8 +75,10 @@ export default function Home() {
           </NumberedSection>
         ))}
         <div className="h-16 lg:h-24" />
+        </div>
       </main>
       <SiteFooter />
+      <TownyFab />
     </LangProvider>
   );
 }

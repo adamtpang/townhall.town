@@ -54,8 +54,7 @@
   :focus-visible { outline: 2px solid #862F9F; outline-offset: 2px; }
   /* QA P1-1 (24593cd): brand-600 is 2.90:1 on the ink footer; footer focus uses brand-300 #C9A3DC (9.70:1 on #010101). */
   [data-site-footer] :focus-visible { outline: 2px solid #C9A3DC; outline-offset: 2px; }
-  /* Purple spec P1-2: candidate headshots are monochrome via a CSS filter only (image files untouched); applied to every
-     self-hosted portrait the same way. Lives here, not in Portrait.tsx, so the bigger-photos branch merges cleanly. */
+  /* Adam 2:57 PM CT (Oct 30): candidate photos show in full color; no CSS filter on any photo. */
 }
 
 @layer components {
@@ -83,38 +82,88 @@ body {
   overflow-x: clip;
 }
 
-/* ndstudio-structure spec §5: purple duotone in CSS (files stay neutral grayscale). Shadows brand-900, highlights brand-100.
-   No mix-blend-mode on the img itself (renders blank in Chrome); the overlays do the work. No text ever sits on media. */
-.duo { position: relative; overflow: hidden; isolation: isolate; background-color: #3A1250; }
-.duo > img, .duo > video, .duo > picture > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.duo > picture { position: absolute; inset: 0; }
-.duo > picture + video { position: absolute; inset: 0; }
-.duo::before, .duo::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-/* Adam 2:56 PM CT: "pics should be colored not grayed out": no grayscale and no duotone wash on any photo. */
-.duo::before, .duo::after { display: none; }
-.duo::before { background: #ECDDF3; mix-blend-mode: multiply; }
-.duo::after { background: #3A1250; mix-blend-mode: screen; }
-@supports not (mix-blend-mode: screen) { .duo::before, .duo::after { display: none; } }
+/* Adam 2:57 PM CT (Oct 30): photos are colored, not grayed out. The media frame only crops: no filter, no blend
+   overlay, no dimming. (Was the §5 purple duotone.) */
+.media-frame { position: relative; overflow: hidden; background-color: #ECDDF3; }
+.media-frame > img, .media-frame > video, .media-frame > picture > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.media-frame > picture { position: absolute; inset: 0; }
+.media-frame > picture + video { position: absolute; inset: 0; }
 /* City cards: one link covers the card; hover dims the photo, focus draws the 2px brand-600 ring around the whole card. */
 .th-card a[data-city-zip]:focus-visible { outline: none; }
 .th-card a[data-city-zip]:focus-visible::after { outline: 2px solid #862F9F; outline-offset: 2px; }
-@media (hover: hover) {
-  .th-card .duo > img { transition: opacity 150ms cubic-bezier(.215,.61,.355,1); }
-  .th-card:hover .duo > img { opacity: .85; }
-}
 
 /* Print: only the one-page plan sheet. */
 #print-sheet { display: none; }
 @media print {
   @page { margin: 14mm; }
   html, body { background: #fff !important; }
-  body > *:not(#print-sheet) { display: none !important; }
+  body > *:not(#print-sheet):not([data-print-root]) { display: none !important; }
   #print-sheet { display: block !important; color: #000; font-size: 11pt; line-height: 1.35; }
   #print-sheet h1 { font-family: var(--font-grotesk), sans-serif; font-weight: 530; font-size: 28pt; line-height: 1; margin: 6pt 0 12pt; }
   #print-sheet .ps-head, #print-sheet .ps-foot { font-size: 9pt; color: #444; }
   #print-sheet ol { list-style: none; padding: 0; margin: 0 0 10pt; columns: 2; column-gap: 18pt; }
   #print-sheet li { display: flex; justify-content: space-between; gap: 8pt; border-top: 0.5pt solid #bbb; padding: 3pt 0; break-inside: avoid; }
   #print-sheet li b { font-weight: 530; text-align: right; }
+}
+
+/* Printed ballot on /card (app/card/PrintBallot.tsx; Design spec 4.2 + addendum Oct 30; Design fixes 2:58 PM CT): US Letter,
+   0.5in margins. Masthead, trust line, one-line facts, then the races in 3 columns (12pt gap between columns,
+   12pt empty boxes per spec 4.2; candidate gap 3pt and measures in 4 columns since Oct 30 4:07 PM CT so 78701 fits 3 pages), then Rules and numbered notes. Grayscale-safe, no serif (round1029 guard). Every printed
+   size is at least 10pt. The wordmark and the masthead rule are the only color (brand-700 / brand-600). No race splits
+   across pages. Long URLs may break anywhere only inside the numbered notes (.pb-notes). */
+@media print {
+  @page { size: Letter; margin: 0.5in; }
+  [data-print-root] { background: #fff; }
+  vercel-live-feedback, nextjs-portal, nav, footer, button, video, [data-towny], [data-agent-trace] { display: none !important; }
+  #ballot-print { display: block !important; color: #010101; background: #fff; font-family: var(--font-public-sans), Arial, sans-serif; font-size: 10pt; line-height: 1.3; font-weight: 400; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #ballot-print * { color: #010101 !important; }
+  #ballot-print p { margin: 0; }
+  #ballot-print a { text-decoration: none; }
+  #ballot-print .pb-mast { display: flex; justify-content: space-between; align-items: flex-end; gap: 12pt; padding-bottom: 5pt; border-bottom: 1.5pt solid #862F9F; }
+  #ballot-print .pb-wm { font-family: var(--font-grotesk), Arial, sans-serif; font-weight: 530; font-size: 14pt; color: #6B2489 !important; letter-spacing: -0.01em; }
+  #ballot-print .pb-ttl { text-align: right; font-size: 10pt; }
+  #ballot-print .pb-h1 { font-family: var(--font-grotesk), Arial, sans-serif; font-weight: 530; font-size: 16pt; line-height: 1.1; letter-spacing: -0.02em; }
+  #ballot-print .pb-ne { font-size: 10pt; margin: 5pt 0 6pt; }
+  #ballot-print .pb-facts { border: 1pt solid #010101; padding: 4pt 8pt; margin-bottom: 6pt; display: grid; grid-template-columns: 1fr 1fr; column-gap: 12pt; row-gap: 2pt; }
+  #ballot-print .pb-facts b { font-weight: 600; }
+  #ballot-print .pb-facts { grid-template-columns: auto 1.25fr 1fr; }
+  #ballot-print .pb-facts-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; column-gap: 12pt; margin-top: 2pt; }
+  #ballot-print .pb-label { white-space: nowrap; }
+  #ballot-print .pb-h2 { font-family: var(--font-grotesk), Arial, sans-serif; font-weight: 530; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 2pt; break-after: avoid; }
+  #ballot-print .pb-section { font-size: 11pt; border-top: 1.5pt solid #010101; padding-top: 5pt; margin-top: 2pt; }
+  #ballot-print .pb-rule { font-size: 10pt; line-height: 1.2; }
+  #ballot-print .pb-rule-h { font-weight: 600; margin-top: 3pt; break-after: avoid; }
+  #ballot-print .pb-rules { columns: 2; column-gap: 12pt; }
+  #ballot-print .pb-rules > div, #ballot-print .pb-rules > p { break-inside: avoid; }
+  #ballot-print .pb-rules > div:first-child .pb-rule-h { margin-top: 0; }
+  #ballot-print .pb-src { font-style: italic; }
+  #ballot-print .pb-strong { font-weight: 600; }
+  #ballot-print .pb-gap { margin-top: 5pt; }
+  #ballot-print .pb-muted { font-size: 10pt; margin: 0 0 4pt; }
+  #ballot-print .pb-order { font-size: 10pt; line-height: 1.2; margin-bottom: 2pt; }
+  #ballot-print .pb-cite { font-size: 10pt; font-weight: 400; font-style: normal; white-space: nowrap; }
+  #ballot-print .pb-dagger { vertical-align: super; font-size: 10pt; line-height: 1; font-weight: 400; margin-left: 1pt; position: static; top: auto; }
+  #ballot-print ol, #ballot-print ul { list-style: none; margin: 0; padding: 0; }
+  #ballot-print .pb-races { columns: 3; column-gap: 12pt; margin-bottom: 6pt; }
+  #ballot-print .pb-race { break-inside: avoid; page-break-inside: avoid; border-top: 0.75pt solid #010101; padding: 2pt 0 3pt; }
+  #ballot-print .pb-measures { columns: 4; column-gap: 12pt; margin-bottom: 4pt; }
+  #ballot-print .pb-measures li { break-inside: avoid; font-weight: 600; font-size: 10pt; line-height: 1.2; padding: 1pt 0 3pt; }
+  #ballot-print .pb-split-group { break-inside: avoid; page-break-inside: avoid; }
+  #ballot-print .pb-split { font-size: 10pt; font-weight: 400; line-height: 1.2; color: rgba(1, 1, 1, 0.7); border-top: 0.5pt solid #010101; margin-top: 4pt; padding: 2pt 0; }
+  #ballot-print .pb-race-title { font-weight: 600; font-size: 10.5pt; line-height: 1.2; margin-bottom: 1pt; }
+  #ballot-print .pb-race ul { display: flex; flex-direction: column; gap: 3pt; }
+  #ballot-print .pb-cand { display: flex; align-items: flex-start; gap: 5pt; font-size: 10pt; line-height: 1.2; }
+  #ballot-print .pb-box-mark { flex: none; width: 12pt; height: 12pt; border: 1pt solid #010101; background: #fff; }
+  #ballot-print .pb-name { font-weight: 400; }
+  #ballot-print .pb-box-on { background: #010101 !important; }
+  #ballot-print .pb-cand-ret { flex-direction: column; gap: 3pt; }
+  #ballot-print .pb-choices { display: flex; gap: 12pt; }
+  #ballot-print .pb-choice { display: inline-flex; align-items: center; gap: 4pt; }
+  #ballot-print .pb-sourcesline { margin: 2pt 0 4pt; font-size: 10pt; }
+  #ballot-print .pb-notes { margin-top: 2pt; font-size: 10pt; line-height: 1.2; }
+  #ballot-print .pb-notes li { break-inside: avoid; margin-bottom: 1pt; }
+  #ballot-print .pb-url { font-size: 10pt; overflow-wrap: anywhere; word-break: break-all; }
+  #ballot-print .pb-foot { margin-top: 2pt; break-before: avoid; padding-top: 3pt; border-top: 0.75pt solid #010101; font-size: 10pt; }
 }
 
 /* QA 10:48 + 10:50 AM CT Oct 30, phones (<768px) */
@@ -182,3 +231,25 @@ h2, h3[data-race-title] { text-wrap: pretty; }
    are gone. They live in BallotAgent (not this branch's file), so they are removed from layout and the a11y tree here;
    the cards dispatch the same townhall:zip event the chips' run() handles. */
 [data-zip-notice] + div:has(> button[type="button"]) { display: none; }
+/* Polymarket strip only (Adam 3:04 PM Oct 30: "the polymarket banner should be blue"). The rest of the site keeps its
+   no-blue rule; text in the strip stays ink, and both sides of every market use the same neutral ink. */
+[data-poly-strip] { --market-bg: #EEF4FB; --market-border: #D3E2F4; --market-mark: #3B6FB6; }
+/* Strip ticker: plain CSS loop (~50px/s via --ticker-dur), pauses on hover and keyboard focus. */
+@keyframes poly-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+[data-strip-track] { animation: poly-ticker var(--ticker-dur, 40s) linear infinite; will-change: transform; }
+[data-strip-scroller]:hover [data-strip-track], [data-strip-scroller]:focus-within [data-strip-track] { animation-play-state: paused; }
+[data-strip-paused] [data-strip-track] { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  [data-strip-track] { animation: none !important; transform: none; }
+  [data-strip-dup] { display: none; }
+  [data-strip-scroller] { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; }
+  [data-strip-toggle] { display: none; }
+}
+/* QA 8f78579 P1 (Oct 30, 3:05 PM CT): at 300% zoom the 70dvh cap (QA 6b2ae5c P2) left the conversation about 210px tall.
+   On short viewports the panel now fills the screen and scrolls as one column: the conversation grows with its content
+   (at least 60dvh), the header scrolls away, and the composer stays pinned to the bottom so send is always reachable. */
+@media (max-height: 700px) {
+  [data-towny-panel] { top: 0 !important; bottom: 0 !important; max-height: 100dvh !important; height: 100dvh !important; overflow-y: auto; }
+  [data-towny-panel] > [data-towny-scroll] { flex: 1 0 auto; min-height: 60dvh; overflow: visible; }
+  [data-towny-panel] > form { position: sticky; bottom: 0; z-index: 1; background: hsl(var(--background)); }
+}

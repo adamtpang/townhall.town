@@ -97,7 +97,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
                 <Ext href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addr.trim())}`}>Directions in Google Maps</Ext>
               )}
             </div>
-            <p className="mt-2 text-sm text-black/60">Not saved. It only builds the map link.</p>
+            <p className="mt-2 text-sm text-ink/60">Not saved. It only builds the map link.</p>
           </dd>
         </div>
         <div className="grid grid-cols-1 gap-2 border-t border-black/15 py-8 sm:grid-cols-12">
@@ -126,7 +126,7 @@ export default function Plan({ zip, state, place, electionDate, races, measures 
                     {[...r.options, { v: UNDECIDED }].map((o) => (
                       <label key={o.v} className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm">
                         <input type="radio" name={`pick-${r.id}`} value={o.v} checked={(picks[r.id] || UNDECIDED) === o.v} onChange={() => pick(r.id, o.v)} className="h-4 w-4 accent-brand-700" />
-                        <span>{o.v}{"sub" in o && o.sub ? <span className="text-black/60"> · {o.sub}</span> : null}</span>
+                        <span>{o.v}{"sub" in o && o.sub ? <span className="text-ink/60"> · {o.sub}</span> : null}</span>
                       </label>
                     ))}
                   </div>

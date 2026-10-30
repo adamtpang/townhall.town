@@ -16,7 +16,8 @@ const P = fs.readFileSync("components/Portrait.tsx", "utf8");
 describe("p14 page weight: every portrait self-hosted at 112 and 160px", () => {
   it("nothing is hotlinked; each self-hosted portrait has both files and a manifest entry with source URL and sha256", () => {
     expect(ph.hotlinked).toEqual({});
-    expect(man.sizes).toEqual([112, 160]);
+    expect(man.sizes).toEqual([112, 160, 256]); // Adam 1:11 PM Oct 30: bigger (256 q75 where the crop is >= 256px)
+    for (const [id, x] of Object.entries<any>(ph.selfHosted)) if (x.file256) { expect(x.file256, id).toBe(`/portraits/${id}-256.webp`); expect(fs.existsSync(`public${x.file256}`), id).toBe(true); expect(man.portraits[id].crop.width, id).toBeGreaterThanOrEqual(256); }
     for (const [id, x] of Object.entries<any>(ph.selfHosted)) {
       expect(x.file, id).toBe(`/portraits/${id}-160.webp`);
       expect(x.file112, id).toBe(`/portraits/${id}-112.webp`);

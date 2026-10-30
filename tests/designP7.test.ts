@@ -22,7 +22,8 @@ describe("Design p7 (4c21a5c)", () => {
     }
     expect(src("app/EndScreen.tsx").match(/<h3 className=\{H3\}>/g)).toHaveLength(3);
     expect(src("app/page.tsx")).toMatch(/<h1 className=\{`\$\{H1\}/);
-    expect(src("app/card/BallotCard.tsx")).toMatch(/<h1 className=\{`mt-3 \$\{H1\}`\}>/);
+    // card-www-spec (Oct 30, 3:04 PM CT): /card opens on the Who/When/Where tiles; its H1 stays for screen readers only.
+    expect(src("app/card/BallotCard.tsx")).toMatch(/<h1 className="sr-only">Your ballot card<\/h1>/);
     expect(src("app/card/BallotCard.tsx")).not.toMatch(/text-5xl tracking-tight/);
     expect(src("tailwind.config.ts")).toContain("./lib/typeScale.ts"); // classes in the token file must be generated
   });
@@ -49,10 +50,10 @@ describe("Design p7 (4c21a5c)", () => {
     expect(end).toMatch(/after:-inset-y-1 after:content-\[''\]" data-early-source>Source ↗/);
     expect(end).not.toMatch(/after:-inset-y-4|after:-inset-x-3/);
     // Oct 29 11:42 PM CT: attribution is always visible, small and muted (was a blue link in a collapsed list).
-    // Design p10 supersedes: credit is 12/16 weight 450 black/60, author linked to the file page, license to its deed.
+    // Design p10 supersedes (Oct 30: 14/20 minimum): credit is 14/20 weight 450 black/60, author linked to the file page, license to its deed.
     expect(src("components/Portrait.tsx")).toMatch(/CREDIT = "max-w-\[60ch\] text-sm leading-5 font-\[450\] text-black\/60/);
     // Purple (Design 1:31 PM CT Oct 30): news headlines are plain list links, not card links, so brand-700.
-    expect(src("app/RaceTiers.tsx")).toMatch(/className=\{`\$\{HIT\} text-brand-700 underline-offset-2 hover:underline`\} data-news-link>/);
+    expect(src("app/RaceTiers.tsx")).toMatch(/className=\{`\$\{HIT\} inline-flex min-h-11 items-center text-brand-700 underline-offset-2 hover:underline`\} data-news-link>/);
   });
   it("5. ballot starts mt-6 below the city chips (no ~100px band)", () => {
     const b = src("app/BallotAgent.tsx");

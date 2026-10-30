@@ -27,7 +27,7 @@ import dynamic from "next/dynamic";
 
 // QA P2 bundle trim: everything below the ZIP box (tiers + office text, issues, Towny chat, research, plan)
 // only renders after a ballot loads, so it is fetched then, not on first paint.
-const RaceTiers = dynamic(() => import("./RaceTiers"), { ssr: false, loading: () => <p className="py-24 text-base text-black/60">Loading races…</p> });
+const RaceTiers = dynamic(() => import("./RaceTiers"), { ssr: false, loading: () => <p className="py-12 text-base text-black/60 lg:py-16">Loading races…</p> });
 const IssueMatch = dynamic(() => import("./IssueMatch"), { ssr: false });
 const LocalNews = dynamic(() => import("./LocalNews"), { ssr: false });
 
@@ -41,17 +41,19 @@ const DEMO = [
 // Served: Austin, SF, NYC only (lib/site.ts COVERED_ZIPS); the API returns "unsupported" for every other ZIP.
 // 77002 (Houston) stays cached in data/ballots.json but is hidden until after the Oct 30 Hack Fair (Adam; main #31).
 const SUPPORTED = new Set<string>(COVERED_ZIPS);
-const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
+const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems", "getCampaignFinance", "getCountyUnemployment"];
 const TOOL_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
   getRaces: "Listing every race and measure",
   getCandidates: "Looking up candidates",
   getMarketOdds: "Checking Polymarket prices",
   getLocalProblems: "Pulling local Census data",
+  getCampaignFinance: "Checking OpenFEC campaign finance",
+  getCountyUnemployment: "Checking BLS county unemployment",
 };
 const TOPIC_LABEL: Record<string, string> = { housing: "Housing costs", healthcare: "Health coverage", jobs: "Jobs" };
 
-type Step = { tool: string; status: "running" | "done"; summary?: string; ms?: number };
+type Step = { tool: string; status: "running" | "done"; summary?: string; ms?: number; checked?: string; source?: { label: string; url: string } | null };
 type Markets = Record<string, { quotes: MarketQuote[]; status: string }>;
 type Result = { mode: "live" | "fallback"; model: string | null; modelError: string | null; toolsRunByModel: string[]; narration: string; summaryBullets?: import("./AgentTrace").SummaryBullet[]; ballot: Ballot; markets: Markets; generatedAt: string };
 type Pol = Politician & { campaignSite?: string | null; incumbentNote?: string; incumbentSource?: string; hasThemes?: boolean; positions?: (NonNullable<Politician["positions"]>[number] & { match?: string })[] };
@@ -291,6 +293,7 @@ export default function BallotAgent() {
           e.preventDefault();
           run(zip);
         }}
+        noValidate
         className="flex max-w-2xl items-stretch gap-0"
       >
         <Input
@@ -299,26 +302,28 @@ export default function BallotAgent() {
           maxLength={5}
           autoComplete="postal-code"
           aria-label={t("ZIP code")}
+          aria-describedby="zip-notice"
           placeholder={t("Enter your ZIP")}
           value={zip}
           onChange={(e) => setZip(e.target.value)}
-          className="h-16 rounded-none border border-black bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+          className="h-14 rounded-none border border-ink/50 bg-transparent px-4 text-xl tabular-nums lg:h-16 lg:text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
         />
-        <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
+        <Button type="submit" size="lg" disabled={busy} className="h-14 min-w-[88px] rounded-none bg-black px-8 text-base lg:h-16 lg:min-w-[112px] font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
       </form>
       {/* QA phone pass (Oct 30): the unsupported-ZIP notice sits right under the input so it is visible above the keyboard. */}
-      <p role="status" aria-live="polite" className="mt-3 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <p role="status" aria-live="polite" id="zip-notice" className="mt-3 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
+      {/* Design landing spec P0-5 (Oct 30): the city cards replace the duplicate city chips; kept once a ballot is open, and with the unsupported-ZIP notice (audit 3:05 PM). */}
+      {(result || notice === UNSUPPORTED) && <div className="mt-4 flex flex-wrap gap-2" data-city-buttons>
         {DEMO.map((d) => (
           <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530]">
             {d.label}
           </Button>
         ))}
-      </div>
+      </div>}
       {(busy || (result && !b)) && (
         <div className="mt-10 max-w-2xl">
           <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
-          <p className="mt-2 text-sm text-black/50">{busy ? t(TOOLS.map((k) => steps[k]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((k) => steps[k]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
+          <p className="mt-2 text-sm text-black/60">{busy ? t(TOOLS.map((k) => steps[k]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((k) => steps[k]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
           {busy && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={[]} narration="" seconds={null} running />}
         </div>
       )}
@@ -326,9 +331,9 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-6">
           <p className="text-sm text-black/60">
-            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Check your exact district by address</a></>}
+            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']" data-place-link>{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']" data-place-link>Check your exact district by address</a></>}
           </p>
-          {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} narration={result.narration} bullets={result.summaryBullets} seconds={elapsed} />}
+          {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} narration={result.narration} bullets={result.summaryBullets} seconds={elapsed} fallback={result.mode === "fallback"} model={result.mode === "live" ? result.model : null} />}
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} zip={b.zip} />
           <IssueMatch zip={b.zip} state={b.state} races={b.races} market={(id) => marketFor(markets, id)} />
           {SHOW_NEWS && <LocalNews zip={b.zip} />}

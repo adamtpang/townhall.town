@@ -9,7 +9,7 @@ import { correctedIssue } from "../lib/oneIssue";
 import P from "../data/photos.json";
 const src = (f: string) => fs.readFileSync(f, "utf8");
 describe("p11 + QA fb66b9b", () => {
-  it("#1 item and tile are separate: item max 56/64px, tile max 40px centred, label centred and truncated", () => {
+  it("#1 Design p10 (Adam 1:11 PM Oct 30: bigger): the item is the tile, 72/88/112px max, label centred at tile width", () => {
     const s = src("components/PortraitRow.tsx");
     // Design grid spec #4 (Oct 30, 2:58 PM CT): bigger tiles, item = tile, max 120px phone / 160px desktop.
     expect(s).toContain('"max-w-[120px] lg:max-w-[160px]"');

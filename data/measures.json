@@ -1019,13 +1019,16 @@
     "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/"
    },
    "ifYes": {
-    "text": "Speeds up the process to use public space while keeping community input.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/"
+    "text": "Speeds up the process to use public space.",
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/",
+    "cfbQuote": "A \"yes\" vote speeds up process to use public space while maintaining community input."
    },
    "ifNo": {
     "text": "Keeps the longer process, with a mandatory public hearing to use public space and Council review of sidewalk cafes.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/"
-   }
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/",
+    "cfbQuote": "A \"no\" vote maintains longer process with mandatory public hearing to use public space and Council review of sidewalk cafes."
+   },
+   "cfbSource": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-1/"
   },
   {
    "id": "nyc-prop-2",
@@ -1048,12 +1051,15 @@
    },
    "ifYes": {
     "text": "Changes Procurement Policy Board authority, including simplifying the contractor questionnaire, and lets the Mayor delegate certain contract approvals.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/"
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/",
+    "cfbQuote": "A “yes” vote amends Procurement Policy Board authority, including simplifying contractor questionnaire. Authorizes Mayor to delegate certain contract approvals."
    },
    "ifNo": {
     "text": "Leaves the law unchanged; the Mayor and Comptroller keep the longer questionnaire.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/"
-   }
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/",
+    "cfbQuote": "A “no” vote leaves law unchanged, with Mayor and Comptroller maintaining longer questionnaire."
+   },
+   "cfbSource": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-2/"
   },
   {
    "id": "nyc-prop-3",
@@ -1076,12 +1082,15 @@
    },
    "ifYes": {
     "text": "Simplifies approval of street projects, sales or leases of City property, and City office leasing.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/"
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/",
+    "cfbQuote": "A “yes” vote simplifies street project approval, City property disposition, and office leasing."
    },
    "ifNo": {
     "text": "Keeps interagency consultation for road projects, Council approval of City property dispositions, and Council power to disapprove office leases.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/"
-   }
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/",
+    "cfbQuote": "A “no” vote maintains intra-agency consultation for road projects, Council approval for City dispositions, and Council disapproval of office leases."
+   },
+   "cfbSource": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-3/"
   },
   {
    "id": "nyc-prop-4",
@@ -1104,12 +1113,15 @@
    },
    "ifYes": {
     "text": "Creates a centralized construction permit hub, moves waterfront permitting from Small Business Services to the Department of Buildings, and lets more DOB officials approve construction.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/"
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/",
+    "cfbQuote": "A “yes” vote simplifies permitting by authorizing a centralized permitting hub, moving waterfront permitting to Department of Buildings, and allowing additional Department of Buildings officials to issue approvals."
    },
    "ifNo": {
     "text": "Leaves the law unchanged.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/"
-   }
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/",
+    "cfbQuote": "A “no” vote leaves law unchanged."
+   },
+   "cfbSource": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-4/"
   },
   {
    "id": "nyc-prop-5",
@@ -1132,12 +1144,15 @@
    },
    "ifYes": {
     "text": "Sets a reserve target of 12% of the prior year's City tax revenue and requires a deposit methodology; deposits still need approval in the City budget.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/"
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/",
+    "cfbQuote": "A “yes” vote requires the Mayor to develop methodology for calculating deposits to rainy day fund, with deposits subject to approval in the City budget."
    },
    "ifNo": {
     "text": "Leaves the law unchanged, with no reserves target.",
-    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/"
-   }
+    "sourceUrl": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/",
+    "cfbQuote": "A “no” vote leaves laws unchanged, with no reserves target."
+   },
+   "cfbSource": "https://www.nycvotes.org/whats-on-the-ballot/2026-general-election-voter-guide/ballot-proposals-2026/ballot-proposal-5/"
   }
  ]
 }

@@ -87,8 +87,11 @@ describe("charter rule: charter-school stances are not scored on education", () 
     if (fs.existsSync(b7)) {
       const a = read("data/stances.json").stances, b = read(b7).stances;
       // Two display-only "unsure" notes in b7's base were never on this branch (never scored either way).
-      const skip = new Set(["mica-arellano.safety", "autumn-brown-garibay.healthcare", "autumn-brown-garibay.safety"]);
+      const skip = new Set(["mica-arellano.safety", "autumn-brown-garibay.healthcare", "autumn-brown-garibay.safety", "bo-french.education"]);
       for (const id of Object.keys(b)) for (const k of Object.keys(b[id])) if (!skip.has(`${id}.${k}`)) expect(a[id]?.[k], `${id}.${k}`).toEqual(b[id][k]);
+      // Civic's Ballotpedia audit (Oct 30): only Bo French's education source label and citation changed; still unscored.
+      if (b["bo-french"]?.education) { const { sourceUrl: _u, sourceTitle: _t, ...rest } = a["bo-french"].education; const { sourceUrl: _u2, ...want } = b["bo-french"].education; expect(rest).toEqual(want); }
+      expect(a["bo-french"].education).toMatchObject({ value: null, status: "unsure", sourceUrl: "https://ballotpedia.org/Bo_French#Campaign_themes", sourceTitle: "Campaign website (bofrench.com, 2016 Texas House race; quoted by Ballotpedia)" });
     } else if (fs.existsSync(q)) expect(read("data/stances.json")).toEqual(read(q));
   });
   it("grade eligibility: 22 races after batch 7 (civic/b7/elig_b7.json)", async () => {
