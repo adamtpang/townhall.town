@@ -318,7 +318,7 @@ export default function BallotAgent() {
       {(busy || (result && !b)) && (
         <div className="mt-10 max-w-2xl">
           <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
-          <p className="mt-2 text-sm text-black/50">{busy ? t(TOOLS.map((k) => steps[k]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((k) => steps[k]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
+          <p className="mt-2 text-sm text-black/60">{busy ? t(TOOLS.map((k) => steps[k]).filter((s) => s?.status !== "done").length ? TOOL_LABEL[TOOLS.find((k) => steps[k]?.status !== "done") || TOOLS[0]] : "Writing your ballot") + "…" : ""}</p>
           {busy && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={[]} narration="" seconds={null} running />}
         </div>
       )}
@@ -328,7 +328,7 @@ export default function BallotAgent() {
           <p className="text-sm text-black/60">
             {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Check your exact district by address</a></>}
           </p>
-          {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} narration={result.narration} bullets={result.summaryBullets} seconds={elapsed} fallback={result.mode === "fallback"} />}
+          {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} narration={result.narration} bullets={result.summaryBullets} seconds={elapsed} fallback={result.mode === "fallback"} model={result.mode === "live" ? result.model : null} />}
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} zip={b.zip} />
           <IssueMatch zip={b.zip} state={b.state} races={b.races} market={(id) => marketFor(markets, id)} />
           {SHOW_NEWS && <LocalNews zip={b.zip} />}

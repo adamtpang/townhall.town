@@ -233,8 +233,10 @@ async function run(zip: string, emit: Emit) {
           if (stepNumber < 2 && unrun.length) return { toolChoice: "required" as const, activeTools: [...unrun] as any };
           return { toolChoice: "none" as const, activeTools: [] as any };
         },
-        // Stop after the two tool steps: the analysis step below writes the summary, so a third (writing) step is wasted time.
-        stopWhen: stepCountIs(2),
+        // One model step: the model must call tools in step 0 (toolChoice required), then we stop. A second step would send
+        // step 0's tool calls back to the provider, which is where malformed tool names were rejected (94103 fell back),
+        // and it costs a full model round trip. The planner runs any lookup the model skipped, in parallel.
+        stopWhen: stepCountIs(1),
         // Keeps the ballot response fast on long ballots (78701 has 58 races); the full list is in result.ballot.
         maxOutputTokens: NARRATION_TOKENS,
         abortSignal: AbortSignal.timeout(25000),
