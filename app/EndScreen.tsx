@@ -15,7 +15,8 @@ import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../lib/endscreen.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../lib/gcal";
-import type { Mk } from "./RaceTiers";
+import { FinanceRow, showFinanceFor, type Mk } from "./RaceTiers";
+type TierRace = Parameters<typeof FinanceRow>[0]["r"];
 
 type Cand = RowCand & { ballotpedia?: string | null };
 type RaceLite = { id: string; title?: string; level?: string; judicial?: "ny" | "tx" | "ca" | boolean; candidates: Cand[] };
@@ -95,6 +96,8 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
                       {rows.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers} answeredYesNo={yesNo > 0} grade={grade} />)}
                     </ul>
                     <RaceFooter cands={rows.map(({ c }) => c)} gradesHidden={gradesHidden} /></PhotoGroup>
+                    {/* QA P1 (3e16451): expanding a federal race here (TX-37, NY-12) showed no money. Same FEC block as the race list. */}
+                    {showFinanceFor({ ...r, title: r.title || r.id } as TierRace, zip) ? <div data-who-finance={r.id}><FinanceRow r={{ ...r, title: r.title || r.id } as TierRace} /></div> : null}
                     {/* QA P2: the live research button on every non-judicial race. */}
                     <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
                   </>
