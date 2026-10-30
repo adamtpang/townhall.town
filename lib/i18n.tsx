@@ -65,6 +65,8 @@ const ES: Record<string, string> = {
   "Cash on hand": "Efectivo disponible",
   "Campaign money from FEC filings": "Dinero de campaña según los reportes de la FEC",
   through: "hasta el",
+  "No FEC filing found": "No se encontró ningún reporte ante la FEC",
+  "FEC page": "Página de la FEC",
   race: "contienda",
   races: "contiendas",
   "race source": "fuente de la contienda",
@@ -82,7 +84,7 @@ const ES: Record<string, string> = {
   "Sourced positions": "Posturas con fuente",
   source: "fuente",
   "It compares your answers with positions candidates have stated in sourced material, only where both exist. Most candidates have few or no sourced positions, so a missing score says nothing about them. Candidates are shown in ballot order.":
-    "Compara sus respuestas con las posturas que los candidatos han expresado en material con fuente, solo donde existen ambas. La mayoría de los candidatos tiene pocas o ninguna postura con fuente, así que un puntaje faltante no dice nada de ellos. Los candidatos aparecen en el orden de la boleta.",
+    "Compara sus respuestas con las posturas que los candidatos han expresado en material con fuente, solo donde existen ambas. La mayoría de los candidatos tiene pocas o ninguna postura con fuente, así que un puntaje faltante no dice nada de ellos.",
   "Talks about": "Habla de",
   "Lines up on": "Coincide en",
   of: "de",
@@ -215,3 +217,17 @@ export function LangToggle() {
   );
 }
 export const ES_FOR_TEST = ES;
+
+// QA main-bbcc940 P2-2: dates go through the language layer. Plain string math on "YYYY-MM-DD" (no Date(), no timezone shift).
+const MON_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MON_ES = ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic."];
+/** "2026-10-14" -> "Oct 14, 2026" (en) or "14 de oct. de 2026" (es). Anything else is returned as written. */
+export function fmtDay(iso: string, lang: Lang): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso ?? "");
+  if (!m || +m[2] < 1 || +m[2] > 12) return iso;
+  return lang === "es" ? `${+m[3]} de ${MON_ES[+m[2] - 1]} de ${m[1]}` : `${MON_EN[+m[2] - 1]} ${+m[3]}, ${m[1]}`;
+}
+export function useDay() {
+  const { lang } = useContext(LangContext);
+  return (iso: string) => fmtDay(iso, lang);
+}

@@ -73,7 +73,7 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   const dense = size === "row" && cands.length > 6;
   return (
     <PhotoGroup>
-    <ul role="list" aria-label="Candidates in ballot order" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
+    <ul role="list" aria-label="Candidates" className="group/row my-3 flex flex-nowrap gap-2 md:gap-3" data-dense={dense ? "true" : "false"} data-photo-row>
       {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} />); })()}
     </ul>
     {size === "row" ? <RowCredits cands={cands} /> : null}

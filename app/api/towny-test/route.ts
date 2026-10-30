@@ -21,7 +21,7 @@ const coreTools = {
   getDistricts: tool({ description: "Districts, state and county for a covered ZIP.", inputSchema: z.object({ zip: z.string() }), execute: async ({ zip }) => getDistricts(zip) }),
   getRaces: tool({ description: "Every race and measure on the Nov 3, 2026 ballot for a covered ZIP, with what each office does and a source URL.", inputSchema: z.object({ zip: z.string() }), execute: async ({ zip }) => getRaces(zip) }),
   getCandidates: tool({
-    description: "Candidates (name, party, incumbent) for each race, in ballot order. Pass race ids from getRaces, or none for all.",
+    description: "Candidates (name, party, incumbent) for each race. Pass race ids from getRaces, or none for all.",
     inputSchema: z.object({ zip: z.string(), raceIds: z.array(z.string()).optional() }),
     execute: async ({ zip, raceIds }) => getCandidates(zip, raceIds),
   }),

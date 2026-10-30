@@ -120,8 +120,8 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
         ))}
       </dl>
       <div className="mt-3 space-y-2">
-        <Share label="From small donors (under $200)" value={m.smallDonorPct} />
-        <Share label="From in-state donors (itemized)" value={m.inStatePct} />
+        <Share label="From small donors (under $200)" value={m.smallDonorPct ?? null} />
+        <Share label="From in-state donors (itemized)" value={m.inStatePct ?? null} />
       </div>
       {donors > 0 && (
         <details className="mt-3">
@@ -287,6 +287,8 @@ export default function BallotAgent() {
       >
         <Input
           inputMode="numeric"
+          pattern="[0-9]*"
+          maxLength={5}
           autoComplete="postal-code"
           aria-label={t("ZIP code")}
           placeholder={t("Enter your ZIP")}
@@ -296,6 +298,8 @@ export default function BallotAgent() {
         />
         <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
       </form>
+      {/* QA phone pass (Oct 30): the unsupported-ZIP notice sits right under the input so it is visible above the keyboard. */}
+      <p role="status" aria-live="polite" className="mt-3 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {DEMO.map((d) => (
           <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530]">
@@ -303,7 +307,6 @@ export default function BallotAgent() {
           </Button>
         ))}
       </div>
-      <p role="status" aria-live="polite" className="mt-6 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
       {(busy || (result && !b)) && (
         <div className="mt-10 max-w-2xl">
           <Progress value={busy ? Math.max(8, (doneCount / TOOLS.length) * 100) : 100} className="h-px" />
@@ -317,8 +320,8 @@ export default function BallotAgent() {
             {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Check your exact district by address</a></>}
           </p>
           {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} narration={result.narration} bullets={result.summaryBullets} seconds={elapsed} />}
-          <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} />
-          <IssueMatch zip={b.zip} state={b.state} races={b.races} />
+          <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} zip={b.zip} />
+          <IssueMatch zip={b.zip} state={b.state} races={b.races} market={(id) => marketFor(markets, id)} />
           {SHOW_NEWS && <LocalNews zip={b.zip} />}
         </div>
       )}

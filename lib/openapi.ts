@@ -368,7 +368,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
           required: ["type", "mode", "model", "modelError", "toolsRunByModel", "narration", "ballot", "markets", "generatedAt"],
           properties: {
             type: { const: "result" },
-            mode: { type: "string", enum: ["live", "fallback"], description: "live: a model planned the tool calls. fallback: tools ran deterministically with no model." },
+            mode: { type: "string", enum: ["live", "fallback"], description: "live: a model planned the tool calls. fallback: the same tools ran with no model." },
             model: { type: ["string", "null"] },
             modelError: { type: ["string", "null"] },
             toolsRunByModel: { type: "array", items: { type: "string" } },

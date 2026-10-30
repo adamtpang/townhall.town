@@ -61,7 +61,7 @@
       "timezone": "America/Los_Angeles",
       "earlyVoting": {
         "start": "2026-10-05",
-        "end": "2026-11-03",
+        "end": "2026-11-02",
         "hours": "Weekdays 8:00 AM-5:00 PM (closed Mon Oct 12 holiday); weekends Oct 24-25 and Oct 31-Nov 1 10:00 AM-4:00 PM; Election Day 7:00 AM-8:00 PM",
         "dailyHours": [
           {"dates": "2026-10-05 to 2026-11-02 (weekdays)", "hours": "8:00 AM-5:00 PM", "appliesTo": "City Hall Voting Center; closed 2026-10-12"},
@@ -71,7 +71,7 @@
         "mainLocation": "City Hall Voting Center, ground floor of City Hall in front of Room 48, 1 Dr. Carlton B. Goodlett Place, San Francisco, CA 94102",
         "otherLocations": "Only the City Hall Voting Center is listed for in-person voting before Election Day. 37 official ballot drop boxes in SF from Oct 5 through Election Day.",
         "locationsUrl": "https://www.sf.gov/location--city-hall-voting-center",
-        "status": "Ongoing through Election Day",
+        "status": "Ongoing through Monday, Nov 2; Election Day is Tue Nov 3",
         "sourceUrl": "https://www.sf.gov/november-3-2026-consolidated-general-election",
         "sourceUrls": [
           "https://www.sf.gov/november-3-2026-consolidated-general-election",
