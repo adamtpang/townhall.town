@@ -27,7 +27,8 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
     const ev = j.earlyVoting;
     // Same "today" and the same end === today test the page uses (lib/endscreen.mjs earlySingleDay, todayCT).
     const d = today ?? todayCT();
-    const links: TownyLink[] = [{ label: "Early voting source", url: ev.sourceUrl }];
+    // QA 297e948 P2 (Oct 30, 3:54 PM CT): SF's early-voting source is labeled by its office.
+    const links: TownyLink[] = [{ label: zip === "94103" ? "SF Department of Elections" : "Early voting source", url: ev.sourceUrl }];
     if (ev.end < d) return { reply: `Early voting in ${j.name} ended on ${fmtDate(ev.end)}.`, links };
     const when = ev.end === d
       ? `Early voting in ${j.name} ends today, ${longDay(ev.end)}.`

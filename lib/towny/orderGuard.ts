@@ -5,7 +5,7 @@
 //     (ORDER_CONFIRMED with the official source, else ORDER_UNSURE); Ballotpedia is never cited for order;
 //  2. districts a ZIP spans that the reply names together get "Depending on your address, you'll have one of these" + the lookup.
 import { ballotFor } from "../tools";
-import { ORDER_CONFIRMED, ORDER_UNSURE, isRetention, officialOrder, orderSourceLinks, splitGroups, SPLIT_LINE } from "../ballotOrder";
+import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, isRetention, officialOrder, orderSourceLinks, splitGroups, SPLIT_LINE } from "../ballotOrder";
 
 export const ORDER_CLAIM =
   /\bballot order\b|\b(?:in|by) (?:the )?order (?:they|it|that|as|in which|shown|listed)\b|\border (?:they|it|that) (?:will )?appears?\b|\bas (?:they )?(?:appear|are listed) on (?:the|your) (?:\w+ )?ballot\b|\bofficial sample ballot\b|\bsample ballot order\b|\b(?:listed|appears?|shown) (?:first|last|at the top)\b|\btop of (?:the|your) ballot\b|\b(?:first|next|last) on (?:the|your) ballot\b|\border on (?:the|your) (?:\w+ )?ballot\b/i;
@@ -44,10 +44,11 @@ export function guardReply(zip: string | undefined, reply: string): Guarded {
     const named = namedIn(reply).filter((r) => !isRetention(r));
     const conf = named.filter((r) => officialOrder(zip, r.id));
     const unsure = named.filter((r) => !officialOrder(zip, r.id));
-    const add: string[] = ["The races here are not listed in the order they appear on the ballot."];
+    // QA 297e948 P1 (Oct 30, 3:54 PM CT): with confirmed races, one line (ORDER_CONFIRMED_HEAD) replaces the contradictory pair.
+    const add: string[] = conf.length ? [] : ["The races here are not listed in the order they appear on the ballot."];
     if (conf.length) {
       const src = orderSourceLinks(conf.map((r) => officialOrder(zip, r.id)!.source));
-      add.push(`${ORDER_CONFIRMED} (Candidate order within: ${conf.map((r) => r.title).join("; ")}.) Source: ${src.map((s) => `${s.label}: ${s.url}`).join("; ")}`);
+      add.push(`${ORDER_CONFIRMED_HEAD} (Candidate order within: ${conf.map((r) => r.title).join("; ")}.) Source: ${src.map((s) => `${s.label}: ${s.url}`).join("; ")}`);
     }
     if (unsure.length || (!conf.length && named.length)) add.push(unsure.length ? `${ORDER_UNSURE} (${unsure.map((r) => r.title).join("; ")}.)` : ORDER_UNSURE);
     out = `${out}\n\n${add.join("\n")}`;

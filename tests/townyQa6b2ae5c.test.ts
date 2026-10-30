@@ -3,7 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { curated, BALLOT_ORDER_LINE, asksOrder } from "../lib/towny/answer";
-import { ORDER_CONFIRMED } from "../lib/ballotOrder";
+import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD } from "../lib/ballotOrder";
 import { faqFor, OFFICES, pollingLinks } from "../lib/towny/faq";
 import { routeTurn, outOfScope, dedupeByHost, OUT_OF_SCOPE } from "../lib/townyChat";
 
@@ -25,9 +25,10 @@ describe("P1-1 ballot order", () => {
     for (const z of ZIPS) for (const q of QS) {
       const c = curated(z, q, "2026-10-30")!;
       expect(c.intent, `${z} ${q}`).toBe("ballot-order");
-      expect(c.reply).toContain("The races are not listed in the order they appear on the ballot.");
-      if (z === "78701") { expect(c.reply).toContain(ORDER_CONFIRMED); expect(c.reply).not.toContain(BALLOT_ORDER_LINE); expect(c.reply).toContain("Talarico"); expect(c.links[0].url).toMatch(/^https:\/\/votetravis\.gov\/.+Ballot.+\.pdf$/); continue; }
-      if (z === "10001") { expect(c.reply).toContain(ORDER_CONFIRMED); expect(c.reply).toContain(BALLOT_ORDER_LINE); expect(c.reply).toMatch(/Hochul/); expect(c.reply).toMatch(/Bottcher/); expect(c.links.map((l) => l.url)).toContain(OFFICES["10001"].url); continue; }
+      // QA 297e948 P1: ZIPs with confirmed races open with ORDER_CONFIRMED_HEAD; 94103 keeps the old opener.
+      expect(c.reply).toContain(z === "94103" ? "The races are not listed in the order they appear on the ballot." : ORDER_CONFIRMED_HEAD);
+      if (z === "78701") { expect(c.reply).toContain(ORDER_CONFIRMED_HEAD); expect(c.reply).not.toContain(BALLOT_ORDER_LINE); expect(c.reply).toContain("Talarico"); expect(c.links[0].url).toMatch(/^https:\/\/votetravis\.gov\/.+Ballot.+\.pdf$/); continue; }
+      if (z === "10001") { expect(c.reply).toContain(ORDER_CONFIRMED_HEAD); expect(c.reply).toContain(BALLOT_ORDER_LINE); expect(c.reply).toMatch(/Hochul/); expect(c.reply).toMatch(/Bottcher/); expect(c.links.map((l) => l.url)).toContain(OFFICES["10001"].url); continue; }
       expect(c.reply).toContain(BALLOT_ORDER_LINE);
       expect(c.reply).not.toContain(ORDER_CONFIRMED);
       expect(c.reply).toContain("Becerra");

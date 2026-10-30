@@ -4,6 +4,9 @@
 import data from "../data/ballot_order.json";
 
 export const ORDER_CONFIRMED = "Listed in the order on the official sample ballot.";
+/** QA early look at 297e948 P1 (Oct 30, 3:54 PM CT): one line for ZIPs with confirmed races, replacing "The races are not listed
+ *  in the order they appear on the ballot." + "Listed in the order ... That is the order of the candidates within each of these races:". */
+export const ORDER_CONFIRMED_HEAD = "Races are not in ballot order. Within each race, candidates are listed in the order on the official sample ballot.";
 export const ORDER_UNSURE = "Ballot order: Unsure, we haven't confirmed it against the official sample ballot yet.";
 
 type Row = { zip: string; raceId: string; title: string; officialOrder: string[]; sourceUrl: string; page: number | null; sourceKind: string };

@@ -1,7 +1,7 @@
 // v3.1 (Adam, Oct 30 2026 3:23 PM CT): Civic's towny_order_check NO-GO on the model path (civic/order28/towny_order_check.md).
 import { describe, it, expect, vi } from "vitest";
 import { curated } from "../lib/towny/answer";
-import { ORDER_CONFIRMED, ORDER_UNSURE, SPLIT_LINE, NY_PDF_LABEL, NY_FMPS } from "../lib/ballotOrder";
+import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, SPLIT_LINE, NY_PDF_LABEL, NY_FMPS } from "../lib/ballotOrder";
 import { getRaces, getCandidates, ballotFor } from "../lib/tools";
 import { guardReply } from "../lib/towny/orderGuard";
 import { TOWNY_BRIEF } from "../lib/towny/brief";
@@ -66,10 +66,12 @@ describe("P0-1 + P1 the order answer names candidates and never presents race or
   for (const z of ZIPS) it(z, () => {
     const c = curated(z, ORDER_Q, "2026-10-30")!;
     expect(c.intent).toBe("ballot-order");
-    expect(c.reply).toMatch(/^Here are the candidates in each race\. The races are not listed in the order they appear on the ballot\./);
-    if (z === "78701") { expect(c.reply).toContain(`${ORDER_CONFIRMED} That is the order of the candidates within each of these races:`); expect(c.reply).not.toContain(ORDER_UNSURE); expect(c.reply).toContain("Greg Abbott, Gina Hinojosa, Pat Dixon"); }
+    // QA 297e948 P1: confirmed ZIPs get one line instead of the contradictory pair; 94103 keeps the old opener.
+    expect(c.reply).toMatch(z === "94103" ? /^Here are the candidates in each race\. The races are not listed in the order they appear on the ballot\./ : new RegExp(`^Here are the candidates in each race\\.\n${ORDER_CONFIRMED_HEAD.replace(/\./g, "\\.")}`));
+    if (z !== "94103") { expect(c.reply).not.toContain("The races are not listed in the order"); expect(c.reply).not.toContain("That is the order of the candidates"); }
+    if (z === "78701") { expect(c.reply).toContain(ORDER_CONFIRMED_HEAD); expect(c.reply).not.toContain(ORDER_UNSURE); expect(c.reply).toContain("Greg Abbott, Gina Hinojosa, Pat Dixon"); }
     if (z === "94103") { expect(c.reply).toContain(ORDER_UNSURE); expect(c.reply).not.toContain(ORDER_CONFIRMED); expect(c.reply).toContain("Xavier Becerra, Steve Hilton"); }
-    if (z === "10001") { expect(c.reply.indexOf(ORDER_CONFIRMED)).toBeLessThan(c.reply.indexOf(ORDER_UNSURE)); expect(c.reply).toContain("Micah C. Lasher"); }
+    if (z === "10001") { expect(c.reply.indexOf(ORDER_CONFIRMED_HEAD)).toBeLessThan(c.reply.indexOf(ORDER_UNSURE)); expect(c.reply).toContain("Micah C. Lasher"); }
     expect(c.links.map((l) => l.url).join(" ")).not.toMatch(/ballotpedia/);
   });
 });
@@ -132,7 +134,8 @@ describe("model-path guard", () => {
     expect(g.reply).not.toMatch(/in the order they appear on your ballot/);
     expect(g.reply).not.toMatch(/official sample ballot \(vote\.nyc\)/);
     expect(g.reply).toContain(`${ORDER_UNSURE} (U.S. House New York District 12`);
-    expect(g.reply).toMatch(new RegExp(`${ORDER_CONFIRMED.replace(/\./g, "\\.")} \\(Candidate order within: Justice of the Supreme Court, 1st Judicial District`));
+    expect(g.reply).not.toContain("The races here are not listed in the order");
+    expect(g.reply).toMatch(new RegExp(`${ORDER_CONFIRMED_HEAD.replace(/\./g, "\\.")} \\(Candidate order within: Justice of the Supreme Court, 1st Judicial District`));
     expect(g.reply).toContain(NY_PDF);
     expect(g.reply).toContain(NY_FMPS.url);
     expect(g.reply).toContain(`${SPLIT_LINE}: State Senator, District 47 or State Senator, District 28.`);

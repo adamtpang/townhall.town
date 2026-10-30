@@ -6,7 +6,7 @@ import { townyFact, todayCT, ASKS_EARLY, ASKS_HOURS } from "../townyFacts";
 import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
 import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace, zipsIn, cityOfZip } from "../townyChat";
 import { COVERED_ZIPS } from "../site";
-import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, isRetention, officialOrder, orderSourceLinks, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
+import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, inOfficialOrder, isRetention, officialOrder, orderSourceLinks, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
 import { hostLabel } from "../sourceName";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
@@ -175,12 +175,15 @@ export function ballotOrder(zip: string, text = ""): Curated | null {
   const yes = ordered.filter((_, i) => conf[i]), no = ordered.filter((_, i) => !conf[i]);
   const segY = segments(zip, yes), segN = segments(zip, no), segR = segments(zip, ret);
   const parts: string[] = [];
-  if (!named.length) parts.push("Here are the candidates in each race. The races are not listed in the order they appear on the ballot.");
+  // QA 297e948 P1 (Oct 30, 3:54 PM CT): with confirmed races the opener and the confirmed header were one contradictory pair;
+  // ORDER_CONFIRMED_HEAD replaces both. ZIPs with no confirmed races (94103) keep the old opener.
+  const multi = !(segY.length + segN.length + segR.length === 1 || named.length === 1);
+  if (!named.length) parts.push(multi && segY.length ? "Here are the candidates in each race." : "Here are the candidates in each race. The races are not listed in the order they appear on the ballot.");
   if (segY.length + segN.length + segR.length === 1 || (named.length === 1)) {
     const g = [...segY, ...segN, ...segR][0];
     parts.push(segR.length && !ordered.length ? segText(zip, g) : `${segText(zip, g)}${g.split ? "\n" : " "}${yes.length ? ORDER_CONFIRMED : ORDER_UNSURE}`);
   } else {
-    if (segY.length) parts.push(lead(`${ORDER_CONFIRMED} That is the order of the candidates within each of these races:`, zip, segY));
+    if (segY.length) parts.push(lead(ORDER_CONFIRMED_HEAD, zip, segY));
     if (segN.length) parts.push(lead(`${ORDER_UNSURE} That applies to these races:`, zip, segN));
     if (segR.length) parts.push(lead("Retention races, a Yes or No vote on one judge each:", zip, segR));
   }
