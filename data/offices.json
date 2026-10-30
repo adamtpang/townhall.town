@@ -109,8 +109,8 @@
       "zip": [
         "78701"
       ],
-      "learn": "Highest Texas court for civil and juvenile cases; justices run in partisan elections for 6-year terms; this seat fills the remainder of an unexpired term.",
-      "sourceUrl": "https://www.txcourts.gov/supreme/about-the-court/"
+      "learn": "Texas's court of last resort for civil matters: chief justice and eight justices, elected statewide to staggered six-year terms. Vacancies are filled by governor appointment until the next general election.",
+      "sourceUrl": "https://www.txcourts.gov/supreme/"
     },
     "tx-court-of-criminal-appeals-place-3": {
       "office": "Texas Court of Criminal Appeals Place 3",
@@ -269,32 +269,32 @@
       "zip": [
         "78701"
       ],
-      "learn": "unsure",
-      "sourceUrl": null
+      "learn": "Leads Texas's statewide three-justice 15th Court of Appeals, which hears civil appeals by or against the state and its agencies, plus all Texas Business Court appeals. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/15thcoa/"
     },
     "tx-15th-coa-place-2": {
       "office": "15th Court of Appeals Place 2",
       "zip": [
         "78701"
       ],
-      "learn": "unsure",
-      "sourceUrl": null
+      "learn": "One of three justices on Texas's statewide 15th Court of Appeals, which hears civil appeals involving the state and its agencies, plus all Texas Business Court appeals. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/15thcoa/"
     },
     "tx-15th-coa-place-3": {
       "office": "15th Court of Appeals Place 3",
       "zip": [
         "78701"
       ],
-      "learn": "unsure",
-      "sourceUrl": null
+      "learn": "One of three justices on Texas's statewide 15th Court of Appeals, which hears civil appeals involving the state and its agencies, plus all Texas Business Court appeals. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/15thcoa/"
     },
     "tx-3rd-coa-chief-justice": {
       "office": "Chief Justice, 3rd Court of Appeals",
       "zip": [
         "78701"
       ],
-      "learn": "unsure",
-      "sourceUrl": null
+      "learn": "Leads the six-justice Third Court of Appeals in Austin, which hears civil and criminal appeals from trial courts in 24 Central Texas counties, including Travis. Six-year term.",
+      "sourceUrl": "https://www.txcourts.gov/3rdcoa/"
     },
     "tx-sboe-5": {
       "office": "Texas State Board of Education District 5",
@@ -333,16 +333,16 @@
       "zip": [
         "78701"
       ],
-      "learn": "unsure",
-      "sourceUrl": null
+      "learn": "Judge of Travis County Probate Court No. 1, which handles wills, estates, guardianships, mental health commitments and estate-related lawsuits. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/departments"
     },
     "travis-county-judge": {
       "office": "Travis County Judge",
       "zip": [
         "78701"
       ],
-      "learn": "unsure",
-      "sourceUrl": null
+      "learn": "Presides over and votes on the Commissioners Court, which sets county tax rates and budgets; in Travis this is an administrative job, not a courtroom judgeship. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/commissioners-court/county-judge/frequently-asked-questions"
     },
     "travis-county-clerk": {
       "office": "Travis County Clerk",
@@ -365,11 +365,11 @@
       "zip": [
         "78701"
       ],
-      "learn": "unsure",
-      "sourceUrl": null
+      "learn": "Chief custodian of Travis County's money: receives, accounts for and pays out all county funds, serves as paying agent for county bonds, and processes cash bail bonds and juror payments.",
+      "sourceUrl": "https://www.traviscountytx.gov/treasurer/about"
     },
     "travis-commissioner": {
-      "office": "Travis County Commissioner (precinct for 78701 to verify)",
+      "office": "Travis County Commissioner, Precinct 4",
       "zip": [
         "78701"
       ],
@@ -431,6 +431,150 @@
       ],
       "learn": "unsure",
       "sourceUrl": null
+    },
+    "travis-district-judge-147th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-201st": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-250th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-261st": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-299th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-331st": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-403rd": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-419th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-455th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-district-judge-459th": {
+      "learn": "Presides over a Travis County state district court, the main trial court for felonies, divorces, land-title and election disputes, and civil suits over $200. Four-year term.",
+      "sourceUrl": "https://www.txcourts.gov/media/1463469/court-structure-chart-oct-2026.pdf"
+    },
+    "travis-ccl-1": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf"
+    },
+    "travis-ccl-2": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf"
+    },
+    "travis-ccl-3": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf"
+    },
+    "travis-ccl-4": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf"
+    },
+    "travis-ccl-5": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf"
+    },
+    "travis-ccl-6": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf"
+    },
+    "travis-ccl-7": {
+      "learn": "Judge of a Travis County Court at Law. Courts 1–2 hear civil cases; Courts 3, 5, 6 and 7 hear Class A/B misdemeanors; Court 4 hears family-violence cases. Four-year term.",
+      "sourceUrl": "https://www.traviscountytx.gov/images/courts/Docs/rules_civilcriminalcounty.pdf"
+    },
+    "travis-commissioner-4": {
+      "learn": "One of four precinct commissioners who, with the County Judge, form the Commissioners Court: it sets the county tax rate and budget, maintains county roads, and approves contracts.",
+      "sourceUrl": "https://www.traviscountytx.gov/commissioners-court/county-judge/frequently-asked-questions"
+    },
+    "ca-supreme-evans": {
+      "learn": "Yes-or-no vote on keeping a justice of California's highest court, which chooses which appeals to review and must review death sentences. No opponent; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-supreme-groban": {
+      "learn": "Yes-or-no vote on keeping a justice of California's highest court, which chooses which appeals to review and must review death sentences. No opponent; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-1": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-1b": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-1c": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-2pj": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-2": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-3": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-3b": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-4pj": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-5": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-5b": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ca-coa-1-5c": {
+      "learn": "Yes-or-no vote on keeping a First District Court of Appeal justice, who reviews contested superior court decisions. Only district voters decide; majority yes keeps the justice.",
+      "sourceUrl": "https://appellate.courts.ca.gov/about-courts/appellate-retention-elections"
+    },
+    "ny-supreme-1jd": {
+      "learn": "Elects a Justice of New York State Supreme Court for Manhattan (1st Judicial District), the state's general trial court for major civil and criminal cases. 14-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=77"
+    },
+    "ny-surrogate-ny": {
+      "learn": "Elects a New York County (Manhattan) Surrogate, the judge who handles wills, probate and administration of estates of people who have died. 14-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=334"
+    },
+    "ny-civil-county-ny": {
+      "learn": "Elects a New York City Civil Court judge, who hears civil lawsuits seeking up to $50,000 and small claims up to $10,000. Ten-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=106"
+    },
+    "ny-civil-3md-ny": {
+      "learn": "Elects a New York City Civil Court judge, who hears civil lawsuits seeking up to $50,000 and small claims up to $10,000. Ten-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=106"
+    },
+    "ny-civil-9md-ny": {
+      "learn": "Elects a New York City Civil Court judge, who hears civil lawsuits seeking up to $50,000 and small claims up to $10,000. Ten-year term.",
+      "sourceUrl": "https://a856-gbol.nyc.gov/GBOLWebsite/GreenBook/Details?orgId=106"
     }
   }
 }

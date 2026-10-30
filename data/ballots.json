@@ -372,7 +372,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/James_Talarico",
-      "officialSite": "https://house.texas.gov/members/member-page?district=50",
+      "officialSite": "https://house.texas.gov/members/50",
       "campaignSite": "https://jamestalarico.com/",
       "x": "https://x.com/jamestalarico",
       "photo": {
@@ -667,7 +667,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
-      "officialSite": "https://house.texas.gov/members/member-page?district=49",
+      "officialSite": "https://house.texas.gov/members/49",
       "campaignSite": "https://ginafortexas.com/",
       "x": "https://x.com/GinaHinojosaTX",
       "photo": {
@@ -832,7 +832,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
-      "officialSite": "https://house.texas.gov/members/member-page?district=47",
+      "officialSite": "https://house.texas.gov/members/47",
       "campaignSite": "https://www.vikkigoodwin.com/",
       "x": "https://x.com/VikkiGoodwinTX",
       "photo": {
@@ -1327,7 +1327,7 @@
     "officeSource": "https://comptroller.texas.gov/about/",
     "candidates": [
      {
-      "name": "Donald Huffines",
+      "name": "Don Huffines",
       "party": "Republican",
       "incumbent": true,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -2005,7 +2005,7 @@
       "hasThemes": true
      },
      {
-      "name": "Austin Kelly",
+      "name": "Austin R. Kelly",
       "party": "Libertarian",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -2098,7 +2098,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Jon_Rosenthal",
-      "officialSite": "https://house.texas.gov/members/member-page?district=135",
+      "officialSite": "https://house.texas.gov/members/135",
       "campaignSite": "https://jonrosenthaltx.com/",
       "x": "https://x.com/Jon_RosenthalTX",
       "photo": {
@@ -2381,6 +2381,61 @@
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026"
    },
    {
+    "id": "tx-supreme-court-place-2",
+    "title": "Texas Supreme Court Place 2 (Unexpired Term)",
+    "level": "state",
+    "office": "Texas's court of last resort for civil matters: chief justice and eight justices, elected statewide to staggered six-year terms. Vacancies are filled by governor appointment until the next general election.",
+    "officeSource": "https://www.txcourts.gov/supreme/",
+    "candidates": [
+     {
+      "name": "James P. Sullivan",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "campaignSite": "https://www.judgesully.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/James_Sullivan_SCOTX.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Chari Kelly",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
+      "officialSite": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-chari-l-kelly/",
+      "campaignSite": "https://charikelly.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://www.sos.texas.gov/elections/forms/2026-ballot-cert.pdf",
+    "judicial": "tx"
+   },
+   {
     "id": "tx-supreme-court-place-7",
     "title": "Texas Supreme Court Place 7",
     "level": "state",
@@ -2463,7 +2518,7 @@
       "hasThemes": true
      },
      {
-      "name": "Gisela Triana",
+      "name": "Gisela D. Triana",
       "party": "Democratic",
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
@@ -3285,7 +3340,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/James_Talarico",
-      "officialSite": "https://house.texas.gov/members/member-page?district=50",
+      "officialSite": "https://house.texas.gov/members/50",
       "campaignSite": "https://jamestalarico.com/",
       "x": "https://x.com/jamestalarico",
       "photo": {
@@ -3580,7 +3635,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Gina_Hinojosa",
-      "officialSite": "https://house.texas.gov/members/member-page?district=49",
+      "officialSite": "https://house.texas.gov/members/49",
       "campaignSite": "https://ginafortexas.com/",
       "x": "https://x.com/GinaHinojosaTX",
       "photo": {
@@ -3745,7 +3800,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Vikki_Goodwin",
-      "officialSite": "https://house.texas.gov/members/member-page?district=47",
+      "officialSite": "https://house.texas.gov/members/47",
       "campaignSite": "https://www.vikkigoodwin.com/",
       "x": "https://x.com/VikkiGoodwinTX",
       "photo": {
@@ -4336,7 +4391,7 @@
       ],
       "hasThemes": true,
       "incumbentNote": "Sitting Comptroller: Gov. Abbott appointed Huffines after Kelly Hancock (R) resigned; Hancock had lost the Mar 3 GOP primary to Huffines (Ballotpedia; comptroller.texas.gov lists Huffines).",
-      "aka": "Donald Huffines",
+      "aka": "Don Huffines",
       "nameSource": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
      },
      {
@@ -4996,7 +5051,7 @@
        }
       ],
       "hasThemes": true,
-      "aka": "Austin Kelly",
+      "aka": "Austin R. Kelly",
       "nameSource": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
      }
     ],
@@ -5015,7 +5070,7 @@
       "incumbent": false,
       "incumbentSource": "Ballotpedia bold-name convention on race page (verify on candidate page)",
       "ballotpedia": "https://ballotpedia.org/Jon_Rosenthal",
-      "officialSite": "https://house.texas.gov/members/member-page?district=135",
+      "officialSite": "https://house.texas.gov/members/135",
       "campaignSite": "https://jonrosenthaltx.com/",
       "x": "https://x.com/Jon_RosenthalTX",
       "photo": {
@@ -5299,6 +5354,61 @@
     "judicial": "tx"
    },
    {
+    "id": "tx-supreme-court-place-2",
+    "title": "Texas Supreme Court Place 2 (Unexpired Term)",
+    "level": "state",
+    "office": "Texas's court of last resort for civil matters: chief justice and eight justices, elected statewide to staggered six-year terms. Vacancies are filled by governor appointment until the next general election.",
+    "officeSource": "https://www.txcourts.gov/supreme/",
+    "candidates": [
+     {
+      "name": "James P. Sullivan",
+      "party": "Republican",
+      "incumbent": true,
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "ballotpedia": "https://ballotpedia.org/James_Sullivan_(Texas)",
+      "officialSite": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "campaignSite": "https://www.judgesully.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/James_Sullivan_SCOTX.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": false
+     },
+     {
+      "name": "Chari Kelly",
+      "party": "Democratic",
+      "incumbent": false,
+      "incumbentSource": "https://www.txcourts.gov/supreme/about-the-court/justices/justice-james-p-sullivan/",
+      "ballotpedia": "https://ballotpedia.org/Chari_Kelly",
+      "officialSite": "https://www.txcourts.gov/3rdcoa/about-the-court/justices/justice-chari-l-kelly/",
+      "campaignSite": "https://charikelly.com/",
+      "x": null,
+      "photo": {
+       "url": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Cropped-headshot-square-CLK_20260922_033319_57528_1.jpg",
+       "credit": "Photo via Ballotpedia",
+       "license": "see Ballotpedia page"
+      },
+      "finance": {
+       "label": "Texas Ethics Commission search",
+       "url": "https://www.ethics.state.tx.us/search/cf/"
+      },
+      "positions": [],
+      "causes": [],
+      "hasThemes": true
+     }
+    ],
+    "source": "https://www.sos.texas.gov/elections/forms/2026-ballot-cert.pdf",
+    "judicial": "tx"
+   },
+   {
     "id": "tx-supreme-court-place-7",
     "title": "Texas Supreme Court Place 7",
     "level": "state",
@@ -5402,7 +5512,7 @@
       "positions": [],
       "causes": [],
       "hasThemes": true,
-      "aka": "Gisela Triana",
+      "aka": "Gisela D. Triana",
       "nameSource": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
      }
     ],
@@ -5705,45 +5815,6 @@
      }
     ],
     "source": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
-    "judicial": "tx"
-   },
-   {
-    "id": "tx-supreme-court-place-2",
-    "title": "Texas Supreme Court Place 2 (unexpired term)",
-    "level": "state",
-    "office": "Highest Texas court for civil and juvenile cases; justices run in partisan elections for 6-year terms; this seat fills the remainder of an unexpired term.",
-    "officeSource": "https://www.txcourts.gov/supreme/about-the-court/",
-    "candidates": [
-     {
-      "name": "James P. Sullivan",
-      "party": "Republican",
-      "incumbent": "unsure",
-      "incumbentSource": "not checked",
-      "ballotpedia": null,
-      "officialSite": null,
-      "campaignSite": null,
-      "x": null,
-      "photo": null,
-      "positions": [],
-      "causes": [],
-      "hasThemes": false
-     },
-     {
-      "name": "Chari Kelly",
-      "party": "Democratic",
-      "incumbent": "unsure",
-      "incumbentSource": "not checked",
-      "ballotpedia": null,
-      "officialSite": null,
-      "campaignSite": null,
-      "x": null,
-      "photo": null,
-      "positions": [],
-      "causes": [],
-      "hasThemes": false
-     }
-    ],
-    "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf#page=1",
     "judicial": "tx"
    },
    {
@@ -6606,7 +6677,7 @@
    },
    {
     "id": "travis-commissioner-4",
-    "title": "County Commissioner, Precinct 4",
+    "title": "Travis County Commissioner, Precinct 4",
     "level": "county",
     "office": "",
     "officeSource": null,

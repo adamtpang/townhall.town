@@ -1,0 +1,21 @@
+{
+  "_meta": {"checkedDate": "2026-10-29", "note": "New or changed entries only. No new race became comparable. Pending entries are not for display."},
+  "78701": {
+    "gloria-gonzales-dholakia": {
+      "name": "Gloria Gonzales-Dholakia",
+      "taxes": {
+        "value": 3,
+        "quote": "I move that property taxes be levied for the 2026 tax year by the adoption of a total tax rate of $1.1169. ... This motion, made by Dr. Gloria Gonzales-Dholakia and seconded by Sade Fashokun, passed six in favor and one absent.",
+        "sourceUrl": "https://meetings.boardbook.org/Public/DownloadAgenda/795?meeting=758688",
+        "context": "Recorded vote as Leander ISD trustee, Aug 17, 2026 minutes (approved Sept 3). Rate exceeds the voter-approval rate of $1.0869 per the Aug 17 agenda: https://meetings.boardbook.org/Public/DownloadAgenda/795?meeting=757600. +3 not +5: a single district rate vote, not a stated philosophy.",
+        "verifiedBy": "civic",
+        "verifiedDate": "2026-10-29"
+      }
+    },
+    "dana-walker": {"taxes": {"value": null, "status": "pending", "reason": "Campaign site taxpayer language too vague to map; ACC rate release lists no individual votes.", "checkedDate": "2026-10-29", "searched": ["danawalkerforacc.com", "https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election", "https://sites.austincc.edu/newsroom/2026/09/16/acc-approves-new-property-tax-rate-for-fy2026-27/"]}},
+    "nan-mcraven": {"taxes": {"value": null, "status": "pending", "reason": "Reporter paraphrase only, not her words.", "checkedDate": "2026-10-29", "searched": ["https://www.kut.org/education/2026-10-16/austin-community-college-board-candidates-2026-election", "https://sites.austincc.edu/newsroom/2026/09/16/acc-approves-new-property-tax-rate-for-fy2026-27/"]}},
+    "phil-gorman": {"taxes": {"value": null, "status": "pending", "reason": "Direct quotes criticize Prop Q as a permanent tax increase, but opposition itself is in reporter's words; Civic to decide.", "checkedDate": "2026-10-29", "searched": ["https://theaustinbulldog.org/four-candidates-running-for-tcad-board/"]}}
+  },
+  "94103": {},
+  "10001": {}
+}

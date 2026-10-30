@@ -166,6 +166,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-['']">Early voting source ↗{ext}</a></li>)}
             {ed && (<li><p className="text-sm font-[530]">Election Day, {fmt(ed.start)}</p><p className="text-base text-black/80">{ed.hours ? `Polls open ${ed.hours}` : "Poll hours not found in an official source"}</p></li>)}
             {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className="text-[#3760F2]">How ↗{ext}</a></p></li>)}
+            {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2]">Source ↗</a></p></li>)}
             {when.missing.map((m: string) => <li key={m} className="text-sm text-black/60">{m}: not found in an official source yet.</li>)}
           </ul>
           {ed && (

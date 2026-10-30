@@ -37,7 +37,7 @@ function enrich(b: Ballot): Ballot {
     // Judicial races: no issue tags and no "why it matters" issue stats (judges can't campaign on issues).
     const meta = raceMeta(b.zip, r.id);
     const jud = !!(r as { judicial?: unknown }).judicial;
-    const cands = r.candidates.map((c) => withMoney(withLicensedPhoto(jud ? { ...c, causes: undefined } : c)));
+    const cands = r.candidates.map((c) => withMoney(withLicensedPhoto({ ...c, causes: undefined }) /* no keyword-matched tags anywhere (Civic rule 1) */));
     return { ...r, meta: jud && meta ? { ...meta, why: null } : meta, candidates: allOrNone(cands) };
   }) };
 }

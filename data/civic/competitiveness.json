@@ -510,7 +510,7 @@
    "zip": "78701",
    "raceId": "tx-comptroller",
    "candidates": [
-    "Donald Huffines",
+    "Don Huffines",
     "Sarah Eckhardt",
     "Shehla Faizi",
     "V. Alonzo Echavarria-Garza"
@@ -531,7 +531,7 @@
     "caption": "Prices from Kalshi.",
     "contracts": [
      {
-      "candidate": "Donald Huffines",
+      "candidate": "Don Huffines",
       "ticker": "KXTXCOMPTROLLER-26-DHUF",
       "marketSubtitle": "Don Huffines",
       "lastPrice": "0.8200",
@@ -569,7 +569,7 @@
    "candidates": [
     "Dawn Buckingham",
     "Benjamin Flores",
-    "Neil Snider"
+    "Neill Snider"
    ],
    "rating": "unsure",
    "ratingBasis": [
@@ -629,7 +629,7 @@
    "candidates": [
     "Clayton Tucker",
     "Nate Sheets",
-    "Austin Kelly"
+    "Austin R. Kelly"
    ],
    "rating": "competitive",
    "ratingBasis": [
@@ -853,7 +853,7 @@
    "raceId": "tx-supreme-court-place-8",
    "candidates": [
     "Brett Busby",
-    "Gisela Triana"
+    "Gisela D. Triana"
    ],
    "rating": "unsure",
    "ratingBasis": [
@@ -887,7 +887,7 @@
       ]
      },
      {
-      "candidate": "Gisela Triana",
+      "candidate": "Gisela D. Triana",
       "ticker": "KXTXSUPREME8-26NOV03-GISELA",
       "marketSubtitle": "Gisela D. Triana",
       "lastPrice": "0.1500",
@@ -3166,7 +3166,7 @@
    "raceId": "tx-comptroller",
    "source": "Kalshi",
    "series": "KXTXCOMPTROLLER",
-   "candidate": "Donald Huffines",
+   "candidate": "Don Huffines",
    "ticker": "KXTXCOMPTROLLER-26-DHUF"
   },
   {
@@ -3257,7 +3257,7 @@
    "raceId": "tx-supreme-court-place-8",
    "source": "Kalshi",
    "series": "KXTXSUPREME8",
-   "candidate": "Gisela Triana",
+   "candidate": "Gisela D. Triana",
    "ticker": "KXTXSUPREME8-26NOV03-GISELA"
   },
   {

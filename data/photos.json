@@ -212,8 +212,8 @@
    "width": 500,
    "height": 679
   },
-  "donald-huffines": {
-   "name": "donald-huffines",
+  "don-huffines": {
+   "name": "don-huffines",
    "file": "/portraits/donald-huffines.avif",
    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Don_Huffines_%2851370822589%29_%28cropped%29.jpg/500px-Don_Huffines_%2851370822589%29_%28cropped%29.jpg",
    "credit": "Gage Skidmore from Surprise, AZ, United States of America, via Wikimedia Commons",
@@ -311,8 +311,8 @@
    "width": 267,
    "height": 400
   },
-  "gisela-triana": {
-   "name": "gisela-triana",
+  "gisela-d-triana": {
+   "name": "gisela-d-triana",
    "file": "/portraits/gisela-triana.avif",
    "sourceUrl": "https://www.txcourts.gov/media/1460157/gt.jpg",
    "credit": "Third Court of Appeals, Texas Judicial Branch (txcourts.gov)",
@@ -977,7 +977,7 @@
    "sourceUrl": "https://house.texas.gov/images/members/4150.jpg?v=1",
    "credit": "Texas House of Representatives",
    "license": "Texas House of Representatives official member photo (state government work); no reuse license stated on the page",
-   "page": "https://house.texas.gov/members/member-page?district=51",
+   "page": "https://house.texas.gov/members/51",
    "via": "Official .gov bio",
    "width": 125,
    "height": 175

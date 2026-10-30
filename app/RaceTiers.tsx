@@ -19,7 +19,7 @@ type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
  *           1.5 = state legislature; 1 = judicial and local.
  *   competitiveness (Civic competitiveness.json label): Competitive = 2.0, Not closely contested or no data = 1.0.
  *           Never names who is ahead.
- *   S >= 4.5, A >= 3, B >= 2, else C.
+ *   Most at stake >= 4.5, High stakes >= 3, Moderate stakes >= 2, else Lower stakes.
  */
 export function impactOf(r: RaceLite): { v: number; why: string } {
   const t = r.title.toLowerCase();
@@ -33,11 +33,12 @@ export function impactOf(r: RaceLite): { v: number; why: string } {
   if (/state senate|state house|state representative|assembly|senate district|house district/.test(t)) return { v: 1.5, why: "state legislature" };
   return { v: 1, why: r.level === "local" || r.level === "county" ? "local office" : "lower-profile office" };
 }
+export type Group = "most" | "high" | "moderate" | "lower";
 export function tierFor(r: RaceLite, _mk?: Mk) {
   const imp = impactOf(r);
   const comp = r.meta?.closeness === "Competitive" ? 2 : 1;
   const score = imp.v * comp;
-  const tier = score >= 4.5 ? "S" : score >= 3 ? "A" : score >= 2 ? "B" : "C";
+  const tier: Group = score >= 4.5 ? "most" : score >= 3 ? "high" : score >= 2 ? "moderate" : "lower";
   const why = `${imp.why[0].toUpperCase()}${imp.why.slice(1)}.`;
   return { tier, score, why };
 }
@@ -59,23 +60,24 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
 export default function RaceTiers({ races, market, measures = [] }: { races: RaceLite[]; market: (id: string) => Mk; measures?: MeasureMath[] }) {
   const [failed, setFailed] = useState<Record<string, boolean>>({});
   const rows = races.map((r, i) => ({ r, i, ...tierFor(r, market(r.id)), mk: market(r.id) })).sort((a, b) => b.score - a.score || a.i - b.i);
-  const tiers = ["S", "A", "B", "C"] as const;
-  const TIER_NAME = { S: "Most at stake", A: "High", B: "Moderate", C: "Lower" } as const;
+  const tiers = ["most", "high", "moderate", "lower"] as const;
+  const TIER_NAME = { most: "Most at stake", high: "High stakes", moderate: "Moderate stakes", lower: "Lower stakes" } as const;
   const [showAll, setShowAll] = useState(false);
   // Design P1: court races sit in one collapsed group; Moderate and Lower wait behind one "Show all" button.
   const isJudicial = (r: RaceLite) => !!r.judicial || impactOf(r).why === "judicial seat";
   const judicial = rows.filter((x) => isJudicial(x.r));
   const nonJudicial = rows.filter((x) => !isJudicial(x.r));
-  const hiddenCount = nonJudicial.filter((x) => x.tier === "B" || x.tier === "C").length;
+  const hiddenCount = nonJudicial.filter((x) => x.tier === "moderate" || x.tier === "lower").length;
   const groups = [
-    ...tiers.filter((t) => t === "S" || t === "A" || showAll).map((t) => ({ key: t as string, name: TIER_NAME[t] as string, list: nonJudicial.filter((x) => x.tier === t), eager: t === "S" || t === "A", open: true })),
+    ...tiers.filter((t) => t === "most" || t === "high" || showAll).map((t) => ({ key: t as string, name: TIER_NAME[t] as string, list: nonJudicial.filter((x) => x.tier === t), eager: t === "most" || t === "high", open: true })),
   ].filter((g) => g.list.length);
   const judicialGroup = judicial.length ? [{ key: "judicial", name: `Judicial races (${judicial.length})`, list: judicial, eager: false, open: false }] : [];
   const raceItem = ({ r, why }: { r: RaceLite; why: string }, eager: boolean) => (
                   <li key={r.id}>
                     <p className="text-lg font-medium">{r.title}</p>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
-                    <p className="text-sm text-black/60" data-why>{why}{r.meta ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
+                    <p className="text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No market data" ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
+                    {!r.meta || r.meta.closeness === "No market data" ? <p className="text-xs leading-4 text-black/60" data-no-odds>No market odds yet</p> : null}
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {r.appliesNote.replace(/^SPLIT( \(sliver\))?:\s*/, "").replace(/^unsure:\s*/, "Unsure: ")}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.tentative ? <p className="text-sm text-black/60" data-tentative>Tentative: from the NYC Board of Elections&rsquo; tentative contest list. Check your sample ballot.</p> : null}
@@ -110,7 +112,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight text-black sm:text-7xl">What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
-      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Groups, from most to least at stake: Most at stake (a top office in a competitive race), High, Moderate and Lower. &ldquo;Competitive&rdquo; comes from published race ratings and prediction markets; it never says who is ahead.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake means a top office in a close race. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings or prediction markets call it close; otherwise &ldquo;Not closely contested&rdquo;. Neither says who is ahead.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>
@@ -119,7 +121,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                 <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
                 <span aria-hidden className="inline-block text-sm text-black/60 group-open:rotate-180">↓</span>
               </summary>
-              {key === "S" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
+              {key === "most" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
               <ul className="mt-6 space-y-10">
                 {list.map((x) => raceItem(x, eager))}
               </ul>
@@ -135,7 +137,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                 <span className="ml-auto text-sm text-black/60">{list.length} race{list.length === 1 ? "" : "s"}</span>
                 <span aria-hidden className="inline-block text-sm text-black/60 group-open:rotate-180">↓</span>
               </summary>
-              {key === "S" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
+              {key === "most" && <p className="mt-2 text-sm text-black/60">Closest races with the biggest offices.</p>}
               <ul className="mt-6 space-y-10">
                 {list.map((x) => raceItem(x, eager))}
               </ul>
@@ -154,7 +156,7 @@ const said = (v?: string | null) => (!v || /^\s*unsure\b/i.test(v) ? "No officia
 function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; sourceUrl: string } }) {
   const o = (OFFICES as Record<string, { learn?: string | null; sourceUrl?: string | null }>)[id];
   const ok = o?.learn && o.sourceUrl && !/^\s*unsure/i.test(o.learn) ? { learn: o.learn, sourceUrl: o.sourceUrl } : fallback;
-  if (!ok) return null; // No source, no card (Design spec 8.5).
+  if (!ok) return <p className="text-xs leading-4 text-black/60" data-office-unverified>Office description not yet verified</p>; // No source, no description.
   return (
     <details className="group/o" data-office={id}>
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">
@@ -210,8 +212,8 @@ function MeasureRows({ measures }: { measures: MeasureMath[] }) {
                     )}
                     {(noCost || rows.length === 0) && (
                       <p className="mt-2 text-sm text-black/70" data-measure-oneline>
-                        {rows.length === 0 ? "No plain-language explainer yet; read the official text." : "No official cost estimate."}{" "}
-                        {src && <a href={src} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host(src)} ↗</a>}
+                        {rows.length === 0 ? "No plain-language explainer yet; read the official text." : "No official cost estimate published."}{" "}
+                        {(rows.length ? m.cost.sourceUrl || src : src) && <a href={(rows.length ? m.cost.sourceUrl || src : src)!} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap">{host((rows.length ? m.cost.sourceUrl || src : src)!)} ↗</a>}
                       </p>
                     )}
                   </div>

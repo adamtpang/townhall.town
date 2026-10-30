@@ -893,8 +893,8 @@
         "sourceUrl": null
       }
     },
-    "donald-huffines": {
-      "name": "Donald Huffines",
+    "don-huffines": {
+      "name": "Don Huffines",
       "taxes": {
         "value": -3,
         "quote": "I am passionate about shrinking the size of government, defending liberty, and protecting taxpayers.",
@@ -2448,8 +2448,8 @@
         "sourceUrl": "https://www.voteneillsnider.com/"
       }
     },
-    "austin-kelly": {
-      "name": "Austin Kelly",
+    "austin-r-kelly": {
+      "name": "Austin R. Kelly",
       "housing": {
         "value": null,
         "status": "No public statement found",
@@ -3282,9 +3282,11 @@
         "sourceUrl": null
       },
       "taxes": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": 3,
+        "quote": "I move that property taxes be levied for the 2026 tax year by the adoption of a total tax rate of $1.1169. ... This motion, made by Dr. Gloria Gonzales-Dholakia and seconded by Sade Fashokun, passed six in favor and one absent.",
+        "sourceUrl": "https://meetings.boardbook.org/Public/DownloadAgenda/795?meeting=758688",
+        "voteRecord": "Moved the motion to adopt a $1.1169 total tax rate as Leander ISD trustee (Aug 17, 2026; passed 6-0, one absent)",
+        "year": 2026
       },
       "safety": {
         "value": null,

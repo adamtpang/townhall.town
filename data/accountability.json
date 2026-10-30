@@ -2240,8 +2240,8 @@
     ]
    }
   },
-  "donald-huffines": {
-   "slug": "donald-huffines",
+  "don-huffines": {
+   "slug": "don-huffines",
    "race_id": "tx-comptroller",
    "office": "Texas Comptroller of Public Accounts",
    "jurisdiction": "state",
@@ -2250,7 +2250,7 @@
    "party_on_ballot": "Republican",
    "ballot_source_url": "https://ballotpedia.org/Texas_Comptroller_election,_2026",
    "otherRaces": [],
-   "name": "Donald Huffines",
+   "name": "Don Huffines",
    "race": "tx-comptroller",
    "zips": [
     "78701"
@@ -2846,8 +2846,8 @@
     ]
    }
   },
-  "neil-snider": {
-   "slug": "neil-snider",
+  "neill-snider": {
+   "slug": "neill-snider",
    "race_id": "tx-land",
    "office": "Texas Land Commissioner",
    "jurisdiction": "state",
@@ -2856,7 +2856,7 @@
    "party_on_ballot": "Libertarian",
    "ballot_source_url": "https://ballotpedia.org/Texas_Public_Lands_Commissioner_election,_2026",
    "otherRaces": [],
-   "name": "Neil Snider",
+   "name": "Neill Snider",
    "race": "tx-land",
    "zips": [
     "78701"
@@ -3092,8 +3092,8 @@
     ]
    }
   },
-  "austin-kelly": {
-   "slug": "austin-kelly",
+  "austin-r-kelly": {
+   "slug": "austin-r-kelly",
    "race_id": "tx-agcomm",
    "office": "Texas Commissioner of Agriculture",
    "jurisdiction": "state",
@@ -3102,7 +3102,7 @@
    "party_on_ballot": "Libertarian",
    "ballot_source_url": "https://ballotpedia.org/Texas_Agriculture_Commissioner_election,_2026",
    "otherRaces": [],
-   "name": "Austin Kelly",
+   "name": "Austin R. Kelly",
    "race": "tx-agcomm",
    "zips": [
     "78701"
@@ -3694,8 +3694,8 @@
     "note": "Judicial office. Court rulings are not compared with campaign statements under this method; no positions are listed for this candidate."
    }
   },
-  "gisela-triana": {
-   "slug": "gisela-triana",
+  "gisela-d-triana": {
+   "slug": "gisela-d-triana",
    "race_id": "tx-supreme-court-place-8",
    "office": "Texas Supreme Court Place 8",
    "jurisdiction": "state",
@@ -3704,7 +3704,7 @@
    "party_on_ballot": "Democratic",
    "ballot_source_url": "https://ballotpedia.org/Texas_Supreme_Court_elections,_2026",
    "otherRaces": [],
-   "name": "Gisela Triana",
+   "name": "Gisela D. Triana",
    "race": "tx-supreme-court-place-8",
    "zips": [
     "78701"

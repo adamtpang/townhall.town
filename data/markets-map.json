@@ -1,34 +1,35 @@
 {
  "us-senate-tx": {
-  "polymarket": "texas-senate-election-winner",
   "kalshi": "SENATETX-26"
  },
  "tx-gov": {
-  "polymarket": "texas-governor-winner-2026",
   "kalshi": "GOVPARTYTX-26"
  },
  "tx-ltgov": {
   "kalshi": "KXLTGOVTX-26"
  },
  "tx-ag": {
-  "polymarket": "texas-attorney-general-election-winner-2026",
   "kalshi": "KXATTYGENTX-26"
  },
  "tx-35": {
   "kalshi": "KXHOUSETX35-26"
  },
  "ca-gov": {
-  "polymarket": "california-governor-election-2026",
   "kalshi": "KXGOVCA-26"
  },
  "ca-insurance": {
   "kalshi": "KXCAINSCOMGEN-26"
  },
  "Proposition 40": {
-  "polymarket": "billionaire-one-time-wealth-tax-passes-in-california-election-2026",
   "kalshi": "KXCAWEALTHTAX-26"
  },
  "Proposition 39": {
   "kalshi": "KXCAVOTERID-26"
+ },
+ "ny-governor": {
+  "kalshi": "GOVPARTYNY-26"
+ },
+ "ny-attorney-general": {
+  "kalshi": "KXATTYGENNY-26"
  }
 }

@@ -161,7 +161,7 @@
     "candidates": [
      {
       "name": "Kathy C. Hochul / Adrienne E. Adams",
-      "party": "Democratic / Working Families Party",
+      "party": "Democratic / Working Families",
       "incumbent": true,
       "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
       "ballotpedia": "https://ballotpedia.org/Kathy_Hochul",
@@ -172,13 +172,13 @@
       "finance": null,
       "positions": [],
       "hasThemes": false,
-      "runningMate": "Adrienne Adams",
+      "runningMate": "Adrienne E. Adams",
       "aka": "Kathy Hochul",
       "nameSource": "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
      },
      {
       "name": "Bruce A. Blakeman / Todd Hood",
-      "party": "Republican / Conservative Party / Vote Affordable Party",
+      "party": "Republican / Conservative / Vote Affordable",
       "incumbent": false,
       "incumbentSource": "Ballotpedia race page (bold name = incumbent)",
       "ballotpedia": "https://ballotpedia.org/Bruce_Blakeman",

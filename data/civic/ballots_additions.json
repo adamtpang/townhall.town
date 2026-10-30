@@ -1528,7 +1528,7 @@
       {
         "raceId": "tx-land",
         "field": "candidates[].name",
-        "from": "Neil Snider",
+        "from": "Neill Snider",
         "to": "Neill Snider",
         "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf"
       },
@@ -1556,7 +1556,7 @@
       {
         "raceId": "tx-comptroller",
         "field": "candidates[].name",
-        "from": "Donald Huffines",
+        "from": "Don Huffines",
         "to": "Don Huffines",
         "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
         "note": "ballot name"
@@ -1564,7 +1564,7 @@
       {
         "raceId": "tx-agcomm",
         "field": "candidates[].name",
-        "from": "Austin Kelly",
+        "from": "Austin R. Kelly",
         "to": "Austin R. Kelly",
         "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
         "note": "ballot name"
@@ -1572,7 +1572,7 @@
       {
         "raceId": "tx-supreme-court-place-8",
         "field": "candidates[].name",
-        "from": "Gisela Triana",
+        "from": "Gisela D. Triana",
         "to": "Gisela D. Triana",
         "source": "https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Corrected-Final2.pdf",
         "note": "ballot name"
