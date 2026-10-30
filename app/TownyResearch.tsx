@@ -55,7 +55,7 @@ export default function TownyResearch({ zip, raceId, title, names, issues }: { z
                   {st.map((s) => <li key={s.url} className="text-xs leading-4 text-black/60" data-research-step={s.status}>{s.status === "running" ? "…" : s.status === "done" ? "✓" : "×"} {s.label}{s.detail ? `: ${s.detail}` : ""}</li>)}
                 </ul>
                 {cs.length > 0 && <ul className="mt-2 space-y-2">{cs.map((c, i) => (
-                  <li key={i} className="text-sm text-black/80" data-research-cite>&ldquo;{c.quote}&rdquo; <a href={c.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center whitespace-nowrap text-[#3760F2]">{host(c.url)} ↗</a></li>
+                  <li key={i} className="text-sm text-black/80" data-research-cite>&ldquo;{c.quote}&rdquo; <a href={c.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-[''] whitespace-nowrap text-[#3760F2]">{host(c.url)} ↗</a></li>
                 ))}</ul>}
                 {none[n] && <p className="mt-1 text-sm text-black/60" data-research-none>{none[n]}.</p>}
               </div>

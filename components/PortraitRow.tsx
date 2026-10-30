@@ -43,7 +43,7 @@ function Tile({ c, eager, label, mate }: { c: C; eager?: boolean; label: string;
           <img ref={ref} src={c.photo!.url} alt={split(c.name).lead} loading={eager ? "eager" : "lazy"} decoding="async" onError={() => setBroken(true)} className="absolute inset-0 h-full w-full object-cover object-top" />
         ) : null}
       </div>
-      <p className="mt-1 line-clamp-2 text-xs font-[530] leading-4 [overflow-wrap:anywhere]" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
+      <p className="mt-1 w-[calc(var(--p)+8px)] truncate text-xs font-[530] leading-4" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
       {mate ? <p className="truncate text-xs leading-4 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : null}
     </li>
   );

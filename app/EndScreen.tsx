@@ -58,7 +58,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
         <div className="mt-12 border-l-2 border-black pl-4" data-vote-matters>
           <p className="text-sm font-[530] text-black/60">Your vote matters here</p>
           <p className="mt-1 text-xl leading-7 text-black"><span className="font-[530]">{vm.lead}</span> {vm.text} {vm.compare}</p>
-          <p className="mt-1 text-xs leading-4">{vm.sources.map((s: { label: string; url: string }, i: number) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">{s.label} ↗{ext}</a></span>)}</p>
+          <p className="mt-1 text-xs leading-4">{vm.sources.map((s: { label: string; url: string }, i: number) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-[''] text-[#3760F2]">{s.label} ↗{ext}</a></span>)}</p>
         </div>
       ) : null; })()}
       <a href={cardPath(zip, answers, ids)} className="mt-6 inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2]" data-card-link>Take it with you: one-page ballot card</a>
@@ -145,18 +145,18 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <Button onClick={() => window.open(mapsUrl(site.address), "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-maps-url={mapsUrl(site.address)}>
                 Directions ↗{ext}
               </Button>
-              <p className="mt-2 text-xs leading-4 text-black/60">{site.proximity ? `${site.proximity}. ` : ""}<a href={site.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">Official site list ↗{ext}</a></p>
+              <p className="mt-2 text-xs leading-4 text-black/60">{site.proximity ? `${site.proximity}. ` : ""}<a href={site.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-[''] text-[#3760F2]">Official site list ↗{ext}</a></p>
               {where.sites.length > 1 && (
                 <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">Other sourced sites ({Math.min(where.sites.length - 1, 4)})</summary>
                   <ul className="space-y-1 pb-2">
                     {where.sites.slice(1, 5).map((s: { name: string; address: string }) => (
-                      <li key={s.name} className="text-sm"><a href={mapsUrl(s.address)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">{s.name} ↗{ext}</a><span className="block text-black/60">{s.address}</span></li>
+                      <li key={s.name} className="text-sm"><a href={mapsUrl(s.address)} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-[''] text-[#3760F2]">{s.name} ↗{ext}</a><span className="block text-black/60">{s.address}</span></li>
                     ))}
                   </ul>
                 </details>
               )}
               {where.dependsOnAddress && where.lookupUrl && (
-                <p className="text-sm"><a href={where.lookupUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#3760F2]">Find your assigned polling place ↗{ext}</a></p>
+                <p className="text-sm"><a href={where.lookupUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-[''] text-[#3760F2]">Find your assigned polling place ↗{ext}</a></p>
               )}
             </>
           ) : where.lookupUrl ? (
@@ -187,7 +187,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-1 after:content-['']">Early voting source ↗{ext}</a></li>)}
             {ed && (<li><p className="text-sm font-[530]">Election Day, {fmt(ed.start)}</p><p className="text-base text-black/80">{ed.hours ? `Polls open ${ed.hours}` : "Poll hours not found in an official source"}</p></li>)}
             {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className="text-[#3760F2]">How ↗{ext}</a></p></li>)}
-            {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative text-xs leading-4 text-[#3760F2]">Source ↗</a></p></li>)}
+            {when.mail && (<li data-mail><p className="text-sm font-[530]">By mail</p><p className="text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-[''] text-xs leading-4 text-[#3760F2]">Source ↗</a></p></li>)}
             {when.missing.map((m: string) => <li key={m} className="text-sm text-black/60">{m}: not found in an official source yet.</li>)}
           </ul>
           {ed && (
