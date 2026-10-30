@@ -5,8 +5,8 @@ import { plain, printedDate } from "../lib/plain";
 import { H2, H3, HIT } from "../lib/typeScale";
 const listOf = (xs: string[]) => (xs.length < 3 ? xs.join(" and ") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 import { useState } from "react";
-import { type Photo } from "../components/Portrait";
-import { PortraitRow } from "../components/PortraitRow";
+import { PhoneCredits, PhotoGroup, type Photo } from "../components/Portrait";
+import { PortraitRow, labels } from "../components/PortraitRow";
 import { measureSide, type MeasureMath } from "../lib/measures";
 import officesData from "../data/offices.json";
 const OFFICES = officesData.offices;
@@ -100,42 +100,54 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
 }
 
 type MoneyCand = NonNullable<RaceLite["candidates"]>[number];
-/** Design 2:10 PM Oct 30 (money below sm): no per-column alignment under the portraits on phones. The race list shows
- *  money as one full-width list under the photo row, one line per candidate in portrait (ballot) order: name left,
- *  amount raised right (tabular-nums, text-sm, divide-y hairlines). The amount is the FEC link; its accessible name and
- *  title carry raised, cash on hand, through date and report label. The through date / report shows once under the list
- *  when every line shares it, otherwise after the name of each line that differs. Notes follow as footnotes. Hidden at
- *  sm and up, where the under-portrait columns stay. Never smaller than 14px. */
+/** Footnote markers for filing dates that differ from the shared one, in order of first appearance. */
+export const MONEY_MARKS = ["*", "\u2020", "\u2021"] as const;
+/** Design 2:10 PM Oct 30 (money below sm), refined after Design's GO: one line per candidate in portrait (ballot) order,
+ *  name left, amount raised right (tabular-nums, text-sm, divide-y hairlines). No through date or report text on the
+ *  line: a row whose filing date differs from the shared one gets one superscript marker after the amount (* then
+ *  \u2020 then \u2021 per distinct differing date), explained in the single caption line under the list ("Raised, FEC
+ *  filings through <shared date>." plus "* Through <date>." footnotes and any data notes, e.g. Ortiz). Dates come from
+ *  the data only. The amount is the FEC link; its title and aria-label carry raised, cash on hand, through date, report
+ *  label and "opens in a new tab". Hidden at sm and up, where the under-portrait columns stay. Never smaller than 14px. */
 function MoneyList({ cands }: { cands: MoneyCand[] }) {
   const t = useT();
   const day = useDay();
-  const when = (c: MoneyCand) => c.money ? [c.money.coverageThrough ? `${t("through")} ${day(c.money.coverageThrough)}` : "", reportLabel(c.money.lastReport) ? t(reportLabel(c.money.lastReport)!) : ""].filter(Boolean).join(" · ") : "";
-  const ws = cands.filter((c) => c.money).map(when);
-  const counts = new Map<string, number>(); for (const w of ws) counts.set(w, (counts.get(w) ?? 0) + 1);
-  const common = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "";
+  const dated = cands.filter((c) => c.money?.coverageThrough).map((c) => c.money!.coverageThrough!);
+  const counts = new Map<string, number>(); for (const d of dated) counts.set(d, (counts.get(d) ?? 0) + 1);
+  // Shared date: the most common; ties go to the latest (ISO strings sort by date).
+  const common = [...counts.entries()].sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? 1 : -1))[0]?.[0] ?? "";
+  const differing = [...new Set(dated.filter((d) => d !== common))];
+  const mark = (d?: string | null) => { const i = d ? differing.indexOf(d) : -1; return i >= 0 ? MONEY_MARKS[i] ?? `${"*".repeat(i - MONEY_MARKS.length + 2)}` : ""; };
   const notes = cands.filter((c) => c.money?.note);
+  const full = (c: MoneyCand) => {
+    const m = c.money;
+    if (!m) return `${c.name}: ${t("No FEC filing found")}`;
+    const rep = reportLabel(m.lastReport) ? t(reportLabel(m.lastReport)!) : "";
+    return `${c.name}: ${t("Raised")} ${usd(m.raised)}, ${t("Cash on hand")} ${usdCash(m.cashOnHand)}${m.coverageThrough ? `, ${t("through")} ${day(m.coverageThrough)}` : ""}${rep ? `, ${rep}` : ""}. ${t("FEC page")} (opens in a new tab)`;
+  };
   return (
     <div className="my-2 sm:hidden" data-money-list>
       <ul className="divide-y divide-black/10 border-y border-black/10" aria-label={t("Raised")}>
         {cands.map((c) => {
           const id = fecIdOf(c);
           const m = c.money;
-          const w = when(c);
-          const extra = m && w && w !== common ? w : "";
-          const desc = m ? `${c.name}: ${t("Raised")} ${usd(m.raised)}, ${t("Cash on hand")} ${usdCash(m.cashOnHand)}${w ? `, ${w}` : ""}` : `${c.name}: ${t("No FEC filing found")}`;
+          const mk = mark(m?.coverageThrough);
+          const label = full(c);
           return (
-            <li key={c.name} className="flex min-w-0 items-center justify-between gap-3 text-sm leading-5" data-money-line={c.name}>
-              <span className="min-w-0 break-words py-2 font-[530] text-black/80">{c.name}{extra ? <span className="font-normal text-black/60" data-line-through> · {extra}</span> : null}</span>
-              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" title={`${desc}. FEC page`} className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap tabular-nums text-[#3760F2]" data-line-fec>
-                {m ? <span className="font-medium" data-line-amount>{usd(m.raised)}</span> : <span className="text-black/60" data-line-none>{t("No FEC filing found")}</span>}{"\u00a0"}↗
-                <span className="sr-only"> {desc}. FEC page (opens in a new tab)</span>
+            <li key={c.name} className="flex min-h-11 min-w-0 items-center justify-between gap-3 text-sm leading-5" data-money-line={c.name}>
+              <span className="min-w-0 truncate font-[530] text-black/80" title={c.name}>{c.name}</span>
+              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" title={label} aria-label={label} className="inline-flex min-h-11 shrink-0 items-center whitespace-nowrap tabular-nums text-[#3760F2]" data-line-fec>
+                <span>{m ? <span className="font-medium" data-line-amount>{usd(m.raised)}</span> : <span className="text-black/60" data-line-none>{t("No FEC filing found")}</span>}{mk ? <span aria-hidden className="align-super text-sm leading-none" data-line-mark={m!.coverageThrough!}>{mk}</span> : null}</span>{"\u00a0"}<span aria-hidden>↗</span>
               </a>
             </li>
           );
         })}
       </ul>
-      <p className="mt-1 text-sm leading-5 text-black/60" data-money-list-caption>{t("Raised")}{common ? ` · ${common}` : ""}</p>
-      {notes.map((c) => <p key={c.name} className="text-sm leading-5 text-black/60" data-money-note-line>{c.name}: {c.money!.note}</p>)}
+      <p className="mt-1 text-sm leading-5 text-black/60" data-money-list-caption>
+        {common ? `${t("Raised, FEC filings through")} ${day(common)}.` : `${t("Raised, FEC filings")}.`}
+        {differing.map((d) => <span key={d} data-money-footnote={d}> {mark(d)} {t("Through")} {day(d)}.</span>)}
+        {notes.map((c) => <span key={c.name} data-money-note-line> {c.name}: {c.money!.note}</span>)}
+      </p>
     </div>
   );
 }
@@ -185,7 +197,7 @@ export function FinanceRow({ r, align = false }: { r: RaceLite; align?: boolean 
         })}
       </ul>
       {allNonpartisan ? <p className="text-sm text-black/60" data-party-once>Nonpartisan</p> : null}
-      <p className="mb-2 text-sm text-black/60">{t("Campaign money from FEC filings")}.</p>
+      <p className={`mb-2 text-sm text-black/60${align ? " hidden sm:block" : ""}`} data-finance-caption>{t("Campaign money from FEC filings")}.</p>
     </div>
   );
 }
@@ -218,8 +230,9 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
   { const seen = new Set<string>(); for (const r of shown) { const ps = (r.meta?.why?.problems ?? []).filter((p) => !seen.has(statKey(p))); ps.forEach((p) => seen.add(statKey(p))); statsFor.set(r.id, ps); } }
   const raceItem = ({ r, mk }: { r: RaceLite; why: string; mk: Mk }, eager: boolean) => (
                   <li key={r.id} className="font-[450]">
+                    <PhotoGroup>
                     <h3 className={H3} data-race-title>{r.title}</h3>
-                    {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} raceId={r.id} /> : null}
+                    {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} raceId={r.id} splitCredits /> : null}
                     {showFinanceFor(r, zip) ? <FinanceRow r={r} align /> : null}
                     {r.order ? <p className="max-w-[60ch] text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {/* Civic main_points17 (Oct 30): judges (pointType "role") get only a factual role line from their official profile when one
@@ -240,13 +253,17 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{(r.sourceNote ? r.splitNote : r.appliesNote) ? <span className="text-black/60"> {plain(r.sourceNote ? r.splitNote : r.appliesNote)}</span> : null}</p> : null}
                     {r.id === firstPlace ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.sourceNote ? <div className="max-w-[60ch] text-sm leading-5 text-black/60" data-tentative>{/* QA fb66b9b P2: short lines; TENTATIVE (draft) stays visible first. */}<p className="font-[530] text-black/80">TENTATIVE: draft contest list. Check your sample ballot.</p><ul className="mt-1 space-y-1" data-note-lines>{r.sourceNote.split(/(?<=\.)\s+(?=[A-Z])/).map((l) => <li key={l}>{l}</li>)}</ul></div> : r.tentative ? <p className="text-sm text-black/60" data-tentative>TENTATIVE: from the NYC Board of Elections&rsquo; contest list{printedDate(r.appliesNote) ? `, printed ${printedDate(r.appliesNote)}` : ""}. Check your sample ballot.</p> : null}
+                    {/* Below sm the race links stack as block rows, each a 44px inline-flex row; from sm they sit inline as before. */}
                     {(r.source || r.verify || (r.meta?.closenessBasis.length ?? 0) > 0) && (
-                      <p className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm leading-5 text-black/60" data-race-links>
-                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative z-[1] inline-flex min-h-11 items-center">Source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
-                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="relative z-[1] inline-flex min-h-11 items-center">{x.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
-                        {r.verify && <><span aria-hidden>·</span><span>{r.verify.replace(/^Check that (.+) is yours by address\.$/, "Check $1 by address.")}</span></>}
+                      <p className="flex flex-col items-start text-sm leading-5 text-black/60 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-1" data-race-links>
+                        {r.source && <a href={r.source} target="_blank" rel="noreferrer" className={RLINK} data-race-link>Source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
+                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden className="hidden sm:inline">·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link data-race-link className={RLINK}>{x.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
+                        {r.verify && <><span aria-hidden className="hidden sm:inline">·</span><span className="inline-flex min-h-11 items-center sm:inline sm:min-h-0" data-race-verify>{r.verify.replace(/^Check that (.+) is yours by address\.$/, "Check $1 by address.")}</span></>}
                       </p>
                     )}
+                    {/* Below sm the photo credits collapse into one "Photo credits (N)" disclosure after the race links;
+                        from sm the credit line under the photo row is unchanged. */}
+                    {r.candidates?.length ? <PhoneCredits cands={r.candidates} label={(() => { const L = labels(r.candidates.map((c) => c.name)); const names = r.candidates.map((c) => c.name); return (n: string) => L[names.indexOf(n)].label; })()} /> : null}
                     {r.meta?.why ? (
                       <details className="group/w" data-why-matters>
                         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-black [&::-webkit-details-marker]:hidden">Why this race matters<span aria-hidden className="ml-2 inline-block group-open/w:rotate-180">↓</span></summary>
@@ -263,6 +280,7 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                     ) : null}
                     {r.meta?.news.length ? <NewsList items={r.meta.news} /> : null}
                     <OfficeCard id={r.id} fallback={r.office && r.officeSource && !/^unsure/i.test(r.office) ? { learn: r.office, sourceUrl: r.officeSource } : undefined} />
+                    </PhotoGroup>
                   </li>
   );
   return (
@@ -326,6 +344,8 @@ function OfficeCard({ id, fallback }: { id: string; fallback?: { learn: string; 
   );
 }
 
+/** Race links: a 44px block row below sm; from sm the original inline link with its small pseudo hit area. */
+const RLINK = "relative inline-flex min-h-11 items-center sm:inline sm:min-h-0 sm:after:absolute sm:after:-inset-x-1 sm:after:-inset-y-1 sm:after:content-['']";
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
 
 /** Measures: one compact expandable row per measure. Numbers are quoted from official analyses and each links its source. */
@@ -338,7 +358,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
       </summary>
       <ul className="mt-6 sm:pl-[7.5rem]">
         {measures.map((m) => (
-          <li key={m.id} className="border-t border-black/10 first:border-t-0">
+const RLINK = "relative z-[1] inline-flex min-h-11 items-center"; // 44px targets at every width (copy-cuts/purple), stacked below sm (bigimg)
             <details className="group/m" data-measure={m.id}>
               <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
                 <h3 className="text-base font-medium" data-measure-title>{m.title}</h3>

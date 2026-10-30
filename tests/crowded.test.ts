@@ -53,7 +53,7 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
     }
   });
   it("RaceTiers passes the race id and WhoRaces opens the race on the tile event", () => {
-    expect(readFileSync("app/RaceTiers.tsx", "utf8")).toContain("<PortraitRow cands={r.candidates} eager={eager} raceId={r.id} />");
+    expect(readFileSync("app/RaceTiers.tsx", "utf8")).toContain("<PortraitRow cands={r.candidates} eager={eager} raceId={r.id} splitCredits />");
     const w = readFileSync("components/WhoRaces.tsx", "utf8");
     expect(w).toContain("window.addEventListener(OPEN_CANDIDATE, on)");
     expect(w).toContain("e.preventDefault()");

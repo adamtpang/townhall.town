@@ -1,6 +1,6 @@
 "use client";
 import { AvatarPlaceholder } from "./Avatar";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { RaceCredits, PhotoGroup, TileImage, usePhotoFallback, usePhotoOff, type Photo } from "./Portrait";
 
 type C = { name: string; party?: string | null; photo?: Photo };
@@ -65,7 +65,9 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid, raceId, 
 
 /** Design portrait spec v2 (+ design p8: names one line, truncated with an ellipsis, full name in title/aria-label; every tile the same height): one flex row, never wraps, never scrolls, ballot order, identical square tiles
  *  (56px at 1024+, 48px at 768-1023, 40px below). Broken or missing photos fall back to a same-size initials tile (Adam's rule). */
-export function CandidatePortraitRow({ cands, size = "row", eager = false, raceId }: { cands: C[]; size?: "row" | "mini"; eager?: boolean; raceId?: string }) {
+/** splitCredits (race list): the caller wraps the race in <PhotoGroup> and shows the phone credits disclosure itself
+ *  (Portrait PhoneCredits), so this row skips its own group and shows the credit line from sm only. */
+export function CandidatePortraitRow({ cands, size = "row", eager = false, raceId, splitCredits = false }: { cands: C[]; size?: "row" | "mini"; eager?: boolean; raceId?: string; splitCredits?: boolean }) {
   if (!cands.length) return null;
   // Design p9 (<768): each item 56px wide (label w-14) with a centered 40px tile and gap-2, so 5 items fit 342px;
   // rows with more than 5 items fall back to 44px items. From 768 up the item is the tile (48 / 56px), gap-3.
@@ -97,14 +99,15 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false, raceI
   // ~30.5px tiles at 320). Still one row, equal tiles, every candidate visible, no sideways scroll. 360px and up unchanged.
   const narrowTight = grid && n > 6 && !crowded;
   const rowClass = `group/row my-3 grid justify-start ${crowded ? "gap-1" : narrowTight ? "gap-2 max-[359px]:gap-1" : "gap-2"} [--tile-max:72px] md:gap-3 md:[--tile-max:88px] lg:gap-4 lg:[--tile-max:112px]`;
+  const Wrap = splitCredits ? Fragment : PhotoGroup;
   return (
-    <PhotoGroup>
+    <Wrap>
     <ul role="list" aria-label="Candidates" className={grid ? rowClass : "group/row my-3 flex flex-nowrap gap-2 md:gap-3"} style={grid ? { gridTemplateColumns: `repeat(${n}, minmax(0, var(--tile-max)))` } : undefined} data-dense={dense ? "true" : "false"} data-crowded={crowded ? "true" : "false"} data-densedesk={denseDesk ? "true" : "false"} data-photo-row>
       {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} grid={grid} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} raceId={raceId} tap={crowded} onPick={onPick} picked={picked === c.name} />); })()}
     </ul>
     {crowded ? <p className={`${picked ? "-mt-1 mb-2" : ""} text-sm font-[530] leading-5 text-black`} aria-live="polite" data-tile-picked>{picked ?? ""}</p> : null}
-    {size === "row" ? <RowCredits cands={cands} /> : null}
-    </PhotoGroup>
+    {size === "row" ? (splitCredits ? <div className="hidden sm:block" data-credits-sm><RowCredits cands={cands} /></div> : <RowCredits cands={cands} />) : null}
+    </Wrap>
   );
 }
 export const PortraitRow = CandidatePortraitRow;

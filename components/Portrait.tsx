@@ -93,6 +93,27 @@ export function RaceCredits({ cands, label }: { cands: { name: string; photo?: P
         </span>
       ); })}</CreditRow>;
 }
+/** Below sm in the race list: every credit inside one "Photo credits (N)" disclosure (details/summary, 44px, 14px),
+ *  N = the photos credited (a ticket's running mate counts). Same fallback rule as RaceCredits; no photos, no disclosure. */
+export function PhoneCredits({ cands, label }: { cands: { name: string; photo?: Photo }[]; label: (name: string) => string }) {
+  const isOff = usePhotoOff();
+  const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
+  if (!keep.length) return null;
+  const n = keep.reduce((k, c) => k + (c.photo!.mate ? 2 : 1), 0);
+  const link = (p: Pic, key: string) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black" data-photo-credit>{author}<span className="sr-only"> (opens in a new tab)</span></a> : <span key={key} className="inline-flex min-h-11 items-center" data-photo-credit>{author}</span>; };
+  return (
+    <details className="group/pc sm:hidden" data-phone-credits={n}>
+      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">Photo credits ({n})<span aria-hidden className="ml-2 inline-block group-open/pc:rotate-180">↓</span></summary>
+      <ul className="pb-2 text-sm leading-5 text-black/60 [word-break:break-word]" aria-label="Photo credits">
+        {keep.map((c) => { const ph = c.photo!; return (
+          <li key={c.name} className="flex flex-wrap items-center gap-x-1" data-race-credit={c.name}>
+            <span>{label(c.name)} ·</span>{link(ph, "a")}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m")}</> : null}
+          </li>
+        ); })}
+      </ul>
+    </details>
+  );
+}
 /** Design p13 #4: phones stack one credit per line; at 768px and up the row is inline (gap-x-6, no commas) and, if it
  *  would wrap past 1 line, is capped at 1 line (44px) with a "more" disclosure. Entries past the first line are made
  *  invisible while capped, so nothing clipped can take a tap or focus. */
