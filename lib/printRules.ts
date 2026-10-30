@@ -26,10 +26,13 @@ export function orderCite(zip: string): OrderCite | null {
   if (!(zip in ORDER_LABEL)) return null;
   const row = (ORDER as OrderRow[]).find((x) => x.zip === zip && x.official_order?.length && /^https?:\/\//.test(x.source_url || ""));
   if (!row) return null;
-  return { label: ORDER_LABEL[zip] ?? row.source_kind ?? "", url: row.source_url!, also: zip === "10001" ? NY_BOE_LOOKUP : null };
+  // Civic print29 P2 (b): the label starts the note, so its first letter is capitalized ("Official sample (bedsheet) ballot, ...").
+  const label = ORDER_LABEL[zip] ?? row.source_kind ?? "";
+  return { label: label.charAt(0).toUpperCase() + label.slice(1), url: row.source_url!, also: zip === "10001" ? NY_BOE_LOOKUP : null };
 }
 
-const urlsOf = (s?: string) => (s || "").split(/\s*;\s*/).map((u) => u.trim()).filter((u) => /^https?:\/\//.test(u));
+// Civic print29 P2 (g): a sentence period stored at the end of a URL (CA §14212 "...sectionNum=14212.") is not part of it.
+const urlsOf = (s?: string) => (s || "").split(/\s*;\s*/).map((u) => u.trim().replace(/[.,]+$/, "")).filter((u) => /^https?:\/\//.test(u));
 
 /** The confirmed verbatim rule for a state and topic, or null if it's missing, empty or not confirmed (e.g. "unsure"). */
 export function voterRule(state: St, topic: string): VoterRule | null {
@@ -76,8 +79,14 @@ export function officialOrder<C extends { name: string }>(zip: string, raceId: s
 // Civic P1, Oct 30 3:35 PM CT: on the 10001 sheet and card, the 3 confirmed statewide races come first in official ballot
 // order (Governor with Lt Gov, Comptroller, Attorney General); every other race keeps its current relative order after them.
 export const NY_STATEWIDE_ORDER = ["ny-governor", "ny-comptroller", "ny-attorney-general"];
+// Civic print29 P2 (c): the AD71 copy (p.2) lists Surrogate, then Supreme Court 1st JD, then Civil Court County; those three
+// take that sequence in the slots they already hold.
+export const NY_COURT_ORDER = ["ny-surrogate-ny", "ny-supreme-1jd", "ny-civil-county-ny"];
 export function raceOrder<R extends { id: string }>(zip: string, races: R[]): R[] {
   if (zip !== "10001") return races;
   const head = NY_STATEWIDE_ORDER.map((id) => races.find((r) => r.id === id)).filter((r): r is R => !!r);
-  return [...head, ...races.filter((r) => !NY_STATEWIDE_ORDER.includes(r.id))];
+  const out = [...head, ...races.filter((r) => !NY_STATEWIDE_ORDER.includes(r.id))];
+  const courts = NY_COURT_ORDER.map((id) => out.find((r) => r.id === id)).filter((r): r is R => !!r);
+  let k = 0;
+  return out.map((r) => (NY_COURT_ORDER.includes(r.id) ? courts[k++] : r));
 }

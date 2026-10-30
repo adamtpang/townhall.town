@@ -7,13 +7,13 @@
 // Links can't be clicked on paper, so each link prints as a short label with a numbered note, and the full URL is printed
 // once in the numbered list at the end (the only place long URLs may break anywhere). No QR code: no QR library is in the
 // dependencies.
-import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_UNSURE_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, displayParty, pickedLine, splitStart, SPLIT_GROUPS } from "../../lib/printText";
+import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_CONFIRMED_SHEET_LINE, ORDER_UNSURE_LINE, RETENTION_KEY_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, ballotSlots, displayParty, pickedLine, splitStart, SPLIT_GROUPS } from "../../lib/printText";
 import type { OrderCite, PrintRules, VoterRule } from "../../lib/printRules";
 import type { St } from "../../lib/plan";
 
 export type PrintRace = { id: string; title?: string; judicial: boolean; orderConfirmed: boolean; candidates: { name: string; party?: string | null }[] };
 export type PrintMeasure = { id: string; title: string };
-export type PrintData = { state: St; verify?: { label: string; url: string } | null; whereExtra?: { label: string; url: string } | null; rules: PrintRules; orderCite?: OrderCite | null; races: PrintRace[]; measures: PrintMeasure[] };
+export type PrintData = { state: St; verify?: { label: string; url: string } | null; whereExtra?: { label: string; url: string } | null; rules: PrintRules; orderCite?: OrderCite | null; races: PrintRace[]; measures: PrintMeasure[]; splitGroups?: string[][] };
 type Ev = { start: string; end: string; hours?: string | null; sourceUrl: string; daily?: { label: string; hours: string; appliesTo: string | null }[] };
 
 const longDate = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
@@ -28,6 +28,8 @@ export function DaggerTitle({ title, unsure, id }: { title: string; unsure: bool
 }
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
 
+// Civic print29 P2 (e): the Who sheet's per-race Unsure line, printed only if the page counts hold.
+const PER_RACE_UNSURE = false;
 export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUrl, dependsOnAddress, jurisdiction, data, picks = {} }: {
   zip: string; today: string; ed?: Ev; early?: Ev; earlyLine?: string | null; picks?: Record<string, string>;
   lookupUrl?: string | null; dependsOnAddress?: boolean; jurisdiction?: string | null; data: PrintData;
@@ -45,8 +47,12 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
   const zipPage = `https://townhall.town/card?zip=${zip}`;
   // Page 1 mirrors the /card tiles: Who, When (early voting first, then Election Day), Where. Cited first, so their notes
   // come first in the list. The SF Voter Portal sits in Where too (QA P1 #3), from polling_locations.json.
-  const picked = races.filter((r) => picks[r.id] && r.candidates.some((c) => c.name === picks[r.id])).length;
-  const whoP = <p data-print-who><b>Who:</b> {pickedLine(picked, races.length)}</p>;
+  // Civic print29 P1: a split group is one slot in the Who count (you get one of its races), like the card and the Who sheet.
+  const groups = data.splitGroups ?? SPLIT_GROUPS[zip] ?? [];
+  const slots = ballotSlots(races, groups);
+  const isPicked = (r: PrintRace) => !!picks[r.id] && r.candidates.some((c) => c.name === picks[r.id]);
+  const picked = slots.filter((ids) => races.some((r) => ids.includes(r.id) && isPicked(r))).length;
+  const whoP = <p data-print-who data-print-who-slots={slots.length}><b>Who:</b> {pickedLine(picked, slots.length)}</p>;
   const earlyP = early && earlyLine ? <p data-print-early>{earlyLine}.{cite("Early voting", early.sourceUrl)}</p> : null;
   const edLine = ed ? <p data-print-ed>Election Day: {longDate(ed.start)}{cite("Election dates", ed.sourceUrl)}</p> : null;
   const extra = data.whereExtra ? <> <span className="pb-label">{data.whereExtra.label}</span>{cite(data.whereExtra.label, data.whereExtra.url)}</> : null;
@@ -60,11 +66,13 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
   const phoneP = data.state === "TX" && booth ? <p data-print-phone-line>{TX_PHONE_LINE}{cite(TX_PHONE_SOURCES[0].label, TX_PHONE_SOURCES[0].url)}{cite(TX_PHONE_SOURCES[1].label, TX_PHONE_SOURCES[1].url)}</p> : null;
   const ocAlso = (o: OrderCite) => o.also ? <> <span className="pb-src">{o.also.label}</span>{cite(o.also.label, o.also.url)}</> : null;
   const sheetCite = unconfirmed === 0 && oc ? <>{cite(oc.label, oc.url)}{ocAlso(oc)}</> : null;
+  const hasRetention = races.some((r) => retentionChoices(r.title));
   const raceIds = races.map((r) => r.id);
   const raceItem = (r: PrintRace) => (
         <li key={r.id} className="pb-race" data-print-race={r.id} data-order-confirmed={r.orderConfirmed ? "1" : "0"}>
           <p className="pb-race-title"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="pb-order-unsure" /></p>
           {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE}{cite(oc.label, oc.url)}</p> : null}
+          {!r.orderConfirmed && PER_RACE_UNSURE ? <p className="pb-order" data-print-order-unsure-race>{ORDER_UNSURE_LINE}</p> : null}
           <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); const ch = retentionChoices(r.title); const mark = picks[r.id] === c.name ? " pb-box-on" : "";
             return ch
               ? <li key={c.name} className="pb-cand pb-cand-ret" data-print-retention={ch.join("/")}><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span><span className="pb-choices">{ch.map((w) => <span key={w} className="pb-choice"><span className="pb-box-mark" aria-hidden />{w}</span>)}</span></li>
@@ -75,8 +83,8 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
   // Split districts (Design P1, 3:43 PM CT): the group intro and the races it introduces print as one unbreakable block.
   const segs: { sp: ReturnType<typeof splitStart>; rs: PrintRace[] }[] = [];
   for (let i = 0; i < races.length; i++) {
-    const sp = splitStart(zip, races[i].id, raceIds);
-    const g = sp ? (SPLIT_GROUPS[zip] || []).find((x) => x.includes(races[i].id))! : null;
+    const sp = splitStart(zip, races[i].id, raceIds, groups);
+    const g = sp ? groups.find((x) => x.includes(races[i].id))! : null;
     let j = i + 1;
     if (g) while (j < races.length && g.includes(races[j].id)) j++;
     segs.push({ sp, rs: races.slice(i, j) }); i = j - 1;
@@ -98,7 +106,8 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
 
       <h2 className="pb-h2 pb-section">Races</h2>
       {unconfirmed ? <p className="pb-muted" id="pb-order-unsure" data-print-order-unsure={unconfirmed}>† {ORDER_UNSURE_LINE}</p>
-        : oc ? <p className="pb-muted" data-print-order-confirmed="sheet">{ORDER_CONFIRMED_LINE} <span className="pb-src">{oc.label}</span>{sheetCite}</p> : null}
+        : oc ? <p className="pb-muted" data-print-order-confirmed="sheet">{ORDER_CONFIRMED_SHEET_LINE}{sheetCite}</p> : null}
+      {hasRetention ? <p className="pb-muted" data-print-retention-key>{RETENTION_KEY_LINE}</p> : null}
       <ol className="pb-races" data-print-races={races.length}>
         {segs.map((g) => g.sp ? (
           <li key={`g-${g.rs[0].id}`} className="pb-split-group" data-print-split-group={g.rs.map((r) => r.id).join(" ")}>

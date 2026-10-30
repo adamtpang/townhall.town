@@ -12,7 +12,7 @@ import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
 import { Button } from "../../components/ui/button";
 import PrintBallot, { type PrintData } from "./PrintBallot";
-import { ORDER_UNSURE_LINE, TX_PHONE_LINE, TX_PHONE_SOURCES, pickedLine, splitStart } from "../../lib/printText";
+import { ORDER_UNSURE_LINE, SPLIT_GROUPS, TX_PHONE_LINE, TX_PHONE_SOURCES, ballotSlots, pickedLine, splitStart } from "../../lib/printText";
 import PrintButton from "../../components/PrintButton";
 import { SiteHeader } from "../../components/SiteChrome";
 import { LangProvider, LangToggle, useT } from "../../lib/i18n";
@@ -73,6 +73,10 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
   for (const row of rows) { const o = order.get(row.r.id); if (o) row.list.sort((a, b) => o.indexOf(a.c.name) - o.indexOf(b.c.name)); }
   const pr = print?.races ?? [];
   const pickedRaces = pr.filter((r) => picks[r.id] && r.candidates.some((c) => c.name === picks[r.id]));
+  // Civic print29 P1: split groups (from ballots.json's dependsOnAddress flags) count as one slot in "n of m picked".
+  const groups = print?.splitGroups ?? SPLIT_GROUPS[zip] ?? [];
+  const slots = ballotSlots(pr.filter((r) => r.candidates.length), groups);
+  const pickedSlots = slots.filter((ids) => pickedRaces.some((r) => ids.includes(r.id))).length;
   const anyUnsure = pr.some((r) => !r.orderConfirmed);
   const earlyText = early ? (earlySingleDay(early, today) ?? `Early voting runs through ${fmt(early.end)}`).replace("Early voting ends today, ", "Early voting ends ") : null;
   const fold = FOLD_LINKS[zip] ?? [];
@@ -88,7 +92,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
     const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
     try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
   }
-  const splitP = (id: string, present: string[]) => { const sp = splitStart(zip, id, present); return sp ? <div className="mb-1 text-sm leading-5 text-black/80" data-card-split={id}>{sp.line ? <p data-card-split-line>{sp.line}</p> : null}<a href={sp.url} className="inline-flex min-h-11 items-center th-link underline-offset-2 hover:underline" target="_blank" rel="noreferrer">{linkHost(sp.url)} ↗{ext}</a></div> : null; };
+  const splitP = (id: string, present: string[]) => { const sp = splitStart(zip, id, present, groups); return sp ? <div className="mb-1 text-sm leading-5 text-black/80" data-card-split={id}>{sp.line ? <p data-card-split-line>{sp.line}</p> : null}<a href={sp.url} className="inline-flex min-h-11 items-center th-link underline-offset-2 hover:underline" target="_blank" rel="noreferrer">{linkHost(sp.url)} ↗{ext}</a></div> : null; };
   const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link underline-offset-2 hover:underline print:text-black";
   return (
     <>
@@ -103,7 +107,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
         <section className={tileBox} data-www-tile="who">
           <button type="button" onClick={() => sheet.current?.showModal()} className="block min-h-11 w-full p-5 text-left" aria-haspopup="dialog" data-www-who-open>
             <h2 className={tileH}>{tr("Who")}</h2>
-            <p className={`mt-1 ${small}`} data-www-picked>{pickedLine(pickedRaces.length, pr.length)}</p>
+            <p className={`mt-1 ${small}`} data-www-picked>{pickedLine(pickedSlots, slots.length)}</p>
             {pickedRaces.length ? <ul className="mt-2 space-y-2">{pickedRaces.map((r, i) => (
               <li key={r.id} className={i >= 3 ? "hidden lg:block" : undefined} hidden={i >= 6}><p className={small}>{r.title || r.id}</p><p className="text-base leading-6 font-[530]">{picks[r.id]}</p></li>
             ))}</ul> : null}
@@ -143,7 +147,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
           <button type="button" onClick={() => sheet.current?.close()} className="min-h-11 min-w-11 text-xl" aria-label="Close">×</button>
         </div>
         <div className="px-5 py-4">
-          <p className={small}>{pickedLine(pickedRaces.length, pr.length)}</p>
+          <p className={small}>{pickedLine(pickedSlots, slots.length)}</p>
           {anyUnsure ? <p className={`mt-2 ${small}`} id="www-order-unsure" data-www-unsure>† {ORDER_UNSURE_LINE}</p> : null}
           <ul className="mt-3 divide-y divide-black/10">{pr.map((r) => (
             <li key={r.id} className="py-3">{splitP(r.id, pr.map((x) => x.id))}<p className="text-sm leading-5 text-black/60"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="www-order-unsure" />{!r.orderConfirmed ? <span className="sr-only"> ({ORDER_UNSURE_LINE})</span> : null}</p>{picks[r.id] ? <p className="text-base leading-6 font-[530]">{picks[r.id]}</p> : null}</li>

@@ -97,7 +97,11 @@ describe("10001 race order and the AD 71 footnote (Civic P1/P2, 3:35 PM CT)", ()
     const ids = [...h.matchAll(/data-print-race="([^"]+)"/g)].map((m) => m[1]);
     expect(ids.slice(0, 7)).toEqual(["ny-governor", "ny-comptroller", "ny-attorney-general", "ny-12", "ny-sd-47", "ny-sd-28", "ny-ad-75"]);
     const orig = ballotFor("10001")!.races.map((r) => r.id).filter((id) => !["ny-governor", "ny-comptroller", "ny-attorney-general"].includes(id));
-    expect(ids.slice(3)).toEqual(orig);
+    // Civic print29 P2 (c): Surrogate, Supreme 1st JD, Civil County take the AD71 sequence in their slots.
+    const courts = ["ny-surrogate-ny", "ny-supreme-1jd", "ny-civil-county-ny"]; let k = 0;
+    expect(ids.slice(3)).toEqual(orig.map((id) => (courts.includes(id) ? courts[k++] : id)));
+    expect(ids.indexOf("ny-surrogate-ny")).toBeLessThan(ids.indexOf("ny-supreme-1jd"));
+    expect(ids.indexOf("ny-supreme-1jd")).toBeLessThan(ids.indexOf("ny-civil-county-ny"));
     expect(raceOrder("78701", [{ id: "a" }, { id: "b" }]).map((r) => r.id)).toEqual(["a", "b"]);
   });
   it("prints the AD 71 label once, as one footnote, and each of the 6 races gets only the short line", () => {

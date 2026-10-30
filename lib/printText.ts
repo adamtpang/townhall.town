@@ -5,6 +5,11 @@ export const BOOTH_LINE = "You may bring this sheet into the voting station";
 /** Printed once above the races when any race's candidate order isn't confirmed against an official sample ballot. Exact text (Design addendum). */
 // Civic, Oct 30 2:58 PM CT: races Civic confirmed against the official sample ballot (bp22 ballot_order_check).
 export const ORDER_CONFIRMED_LINE = "Listed in the order on the official sample ballot.";
+/** Civic print29 P2 (Oct 30, 3:50 PM CT): the sheet-wide line, used only when every race on the sheet is confirmed. The
+ *  stored bedsheet data has no race sequence (page numbers only), so it claims candidate order only. Civic's wording. */
+export const ORDER_CONFIRMED_SHEET_LINE = "Candidates are listed in the order on the official sample ballot.";
+/** Civic print29 P2 (f): Towny's wording (Civic approved) for the retention key note on the printed sheet. */
+export const RETENTION_KEY_LINE = "Retention races, a Yes or No vote on one judge each.";
 // The one sources line on the printed sheet (Design option a): the homepage "How it works" step 2 wording, "Read the sources."
 export const SOURCES_LABEL = "Read the sources:";
 // Adam, Oct 30 3:07 PM CT: "Yes, use the Texas phone line." TX (78701) only: /card directly above the print button and
@@ -46,12 +51,46 @@ export const SPLIT_GROUPS: Record<string, string[][]> = {
   "94103": [["sf-supervisor-6", "sf-supervisor-8", "sf-supervisor-10"]],
   "10001": [["ny-sd-47", "ny-sd-28"], ["ny-civil-3md-ny", "ny-civil-9md-ny"]],
 };
-/** The split line and lookup URL when raceId is the first race of a split group listed (of those present), else null. */
-export function splitStart(zip: string, raceId: string, present: string[]): { line: string | null; url: string } | null {
+// Civic NO-GO on 8420c2a (Oct 30, 3:50 PM CT): every race ballots.json flags dependsOnAddress gets the split treatment
+// (line, lookup, dagger, no confirmed-order claim), derived from the flag, not a list. SPLIT_GROUPS above stay as the
+// explicit groups (TX-10/37 has no flag). Other flagged races group with the flagged races next to them for the same office
+// in a different precinct or district (JP Pct 5 / JP Pct 4); anything else is a group of one (Commissioner Pct 4).
+export type SplitRace = { id: string; title?: string; addressDependent?: boolean };
+const officeBase = (t: string) => t.replace(/,?\s*(Precinct|District)\s+\d+\b.*$/i, "").trim();
+export function splitGroupsFor(zip: string, races: SplitRace[]): string[][] {
+  const fixed = (SPLIT_GROUPS[zip] || []).map((g) => [...g]);
+  const inFixed = new Set(fixed.flat());
+  let cur: string[] | null = null; let base = "";
+  for (const r of races) {
+    if (!r.addressDependent || inFixed.has(r.id)) { cur = null; continue; }
+    const b = officeBase(r.title || r.id);
+    if (cur && b === base) cur.push(r.id); else { cur = [r.id]; base = b; fixed.push(cur); }
+  }
+  return fixed;
+}
+/** Every race id that belongs to a split group (address-dependent): daggered, never under a confirmed-order line. */
+export const splitIds = (groups: string[][]) => new Set(groups.flat());
+/** The split line and lookup URL when raceId is the first race of a split group listed (of those present), else null.
+ *  A fixed group shows only when 2+ of its races are listed; a derived group shows whenever one is. */
+export function splitStart(zip: string, raceId: string, present: string[], groups: string[][] = SPLIT_GROUPS[zip] || []): { line: string | null; url: string } | null {
   const url = SPLIT_LOOKUP[zip];
-  for (const g of SPLIT_GROUPS[zip] || []) {
+  const fixed = SPLIT_GROUPS[zip] || [];
+  for (const g of groups) {
     const shown = present.filter((id) => g.includes(id));
-    if (shown.length > 1 && shown[0] === raceId && url) return { line: SHOW_SPLIT_LINE ? SPLIT_LINE : null, url };
+    const isFixed = fixed.some((f) => f.length === g.length && f.every((x) => g.includes(x)));
+    if (shown.length > (isFixed ? 1 : 0) && shown[0] === raceId && url) return { line: SHOW_SPLIT_LINE ? SPLIT_LINE : null, url };
   }
   return null;
+}
+/** Who count (Civic P1): one slot per split group (you get one of them, or for a group of one, maybe that race), one per
+ *  other race. 78701: 58 races, 3 groups of two (TX-10/37, HD 49/51, JP 4/5) count once each, so 55. */
+export function ballotSlots(races: { id: string }[], groups: string[][]): string[][] {
+  const out: string[][] = []; const seen = new Set<string>();
+  for (const r of races) {
+    if (seen.has(r.id)) continue;
+    const g = groups.find((x) => x.includes(r.id));
+    const ids = g ? races.map((x) => x.id).filter((id) => g.includes(id)) : [r.id];
+    ids.forEach((id) => seen.add(id)); out.push(ids);
+  }
+  return out;
 }
