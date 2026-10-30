@@ -148,6 +148,18 @@ describe("FinanceRow per candidate (QA P1s)", () => {
       expect((out.match(/data-last-report=/g) ?? []).length, r.id).toBe((r.candidates as { money?: Row }[]).filter((c) => c.money?.lastReport).length);
     }
   });
+  it("race list: money columns use the photo row's tracks and gaps so each figure sits under its portrait", () => {
+    const out = html("78701");
+    const sen = out.split(/<h3 /).find((p) => p.includes("U.S. Senate"))!;
+    const photo = sen.match(/<ul role="list" aria-label="Candidates in ballot order"[^>]*>/)![0];
+    const money = sen.match(/<ul[^>]*data-finance-align="portraits"[^>]*>/)![0];
+    expect(photo).toContain("grid-template-columns:repeat(3, minmax(0, var(--tile-max)))");
+    expect(money).toContain("grid-template-columns:repeat(3, minmax(0, var(--tile-max)))");
+    for (const k of ["[--tile-max:72px]", "md:[--tile-max:88px]", "lg:[--tile-max:112px]", "gap-x-2", "md:gap-x-3", "lg:gap-x-4", "justify-start"]) expect(money).toContain(k);
+    expect(photo).toMatch(/gap-2 .*md:gap-3 .*lg:gap-4/);
+    // Who lines up has no photo row above the money, so it keeps the two-up grid.
+    expect(renderToStaticMarkup(h(FinanceRow, { r: federal("78701")[0] as never }))).toContain('data-finance-align="grid"');
+  });
   it("NY-12: four candidates, four dates (Lasher/Shinkle Oct 14, Negron Sep 30, Ortiz Jun 30 + note)", () => {
     const r = federal("10001").find((x) => x.id === "ny-12")!;
     const out = renderToStaticMarkup(h(FinanceRow, { r: r as never }));

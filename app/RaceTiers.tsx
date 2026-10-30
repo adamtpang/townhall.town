@@ -103,14 +103,18 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
  *  Fixes from QA main-bbcc940: per-candidate "through" date and fec.gov link (P1-1/P1-2), "No FEC filing found" instead of a
  *  blank (P1-4), party from the ballot data only (never FEC codes), $1.0M / -$3,004 formatting (P2-1), dates via i18n (P2-2),
  *  "Nonpartisan" once per race (P2-3). Figures are Civic finance_fixes18 rows only (lib/money.ts VERIFIED_FEC_IDS). */
-export function FinanceRow({ r }: { r: RaceLite }) {
+export function FinanceRow({ r, align = false }: { r: RaceLite; align?: boolean }) {
   const t = useT();
   const day = useDay();
   const cands = r.candidates ?? [];
   const allNonpartisan = cands.length > 0 && cands.every((c) => c.party === "Nonpartisan");
   return (
     <div className="min-w-0 max-w-full" data-finance>
-      <ul className="my-2 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]">
+      {/* Adam 1:52 PM Oct 30: in the race list the money sits under each portrait, so the columns use the photo row's
+          tracks and gaps (components/PortraitRow: repeat(n, minmax(0, var(--tile-max))), 72/88/112px, gap 8/12/16px).
+          Rows over 4 (none of the federal races today) keep the two-up / auto-fill grid. */}
+      <ul className={align && cands.length <= 4 ? "my-2 grid justify-start gap-x-2 gap-y-2 [--tile-max:72px] md:gap-x-3 md:[--tile-max:88px] lg:gap-x-4 lg:[--tile-max:112px]" : "my-2 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]"}
+        style={align && cands.length <= 4 ? { gridTemplateColumns: `repeat(${cands.length}, minmax(0, var(--tile-max)))` } : undefined} data-finance-align={align && cands.length <= 4 ? "portraits" : "grid"}>
         {cands.map((c) => {
           const id = fecIdOf(c);
           const m = c.money;
@@ -132,7 +136,7 @@ export function FinanceRow({ r }: { r: RaceLite }) {
                 <p className="mt-1 text-sm leading-5 text-black/60" data-no-fec>{t("No FEC filing found")}</p>
               )}
               <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm th-link" data-fec-link title={`FEC: ${c.name}`}>
-                {t("FEC page")} ↗<span className="sr-only"> {c.name} (opens in a new tab)</span>
+                {t("FEC page")}{"\u00a0"}↗<span className="sr-only"> {c.name} (opens in a new tab)</span>
               </a>
             </li>
           );
@@ -174,8 +178,8 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} raceId={r.id} /> : null}
+                    {showFinanceFor(r, zip) ? <FinanceRow r={r} align /> : null}
                     {r.order ? <p className="max-w-[60ch] text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
-                    {showFinanceFor(r, zip) ? <FinanceRow r={r} /> : null}
                     {/* Civic main_points17 (Oct 30): judges (pointType "role") get only a factual role line from their official profile when one
                         exists (8 in Texas), else the plain empty text. Rendered as given; never a stance. */}
                     {isJudicial(r) && r.candidates?.length ? (
