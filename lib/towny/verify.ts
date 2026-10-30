@@ -16,7 +16,8 @@ export const NO_POSITION = "No public position found yet.";
 export const NO_VOTE = "No voting record found.";
 export const searchedLine = (names: string[]) => `Searched: ${[...new Set(names)].join(", ")}.`;
 export const differsLine = (office: string) => `Sources differ; verify with ${office}.`;
-export const fallbackLine = (what: string) => `Couldn't reach ${what}, used curated data`;
+/** Civic, Oct 30 1:37 PM CT: "Couldn't reach sfelections.org; showing saved data. Verify with the SF Department of Elections." */
+export const fallbackLine = (what: string, office?: string) => `Couldn't reach ${what}; showing saved data.${office ? ` Verify with ${office}.` : ""}`;
 
 /** Fields in Civic's "Valid source per field" table. */
 export type Field = "race" | "logistics" | "stance" | "vote" | "money" | "measure" | "bio" | "metric";
@@ -40,6 +41,13 @@ export type Claim = {
   searched?: string[];
   /** Office (and link) to name in "Sources differ; verify with <office>." */
   office?: string;
+  /** Keep this claim unsure even if a source contains the words (reason for the run log): e.g. a slogan, Ballotpedia's own
+   *  voice, or a ballot order not yet checked against the office's sample ballot. Never gets a source chip. */
+  forceUnsure?: string;
+  /** How an unsure claim reads: "suffix" (default) = "<text> (unsure)" + the unsure note; "note" = only the unsure note. */
+  unsureAs?: "suffix" | "note";
+  /** Prefix for a "No record found." line, e.g. "Cost" gives "Cost: No record found. Searched: nyc.gov." */
+  absentPrefix?: string;
 };
 
 export type Source = {
@@ -86,7 +94,7 @@ export type VerifyReport = {
   summary: string;
   /** Visible lines for claims that couldn't be verified. */
   unverified: { id: string; text: string; status: Status; note?: string }[];
-  /** Visible tool fallbacks, e.g. "Couldn't reach votetravis.gov, used curated data". */
+  /** Visible tool fallbacks, e.g. "Couldn't reach votetravis.gov; showing saved data. Verify with Travis County Elections." */
   fallbacks: string[];
 };
 
@@ -163,6 +171,12 @@ function absenceLine(c: Claim): string {
   return NO_RECORD;
 }
 
+function unsureOf(c: Claim, reason: string): VerifiedClaim {
+  return c.unsureAs === "note"
+    ? { id: c.id, field: c.field, status: "unsure", display: UNSURE_NOTE, reason }
+    : { id: c.id, field: c.field, status: "unsure", display: c.text.replace(/\s*$/, "") + UNSURE_SUFFIX, note: UNSURE_NOTE, reason };
+}
+
 /** The pure check. Same input, same output. */
 export function verifyClaims({ claims, sources, toolRuns = [] }: VerifyInput): VerifyOutput {
   const curated = sources.filter((s) => s.origin === "curated");
@@ -174,7 +188,11 @@ export function verifyClaims({ claims, sources, toolRuns = [] }: VerifyInput): V
     const empty = c.value === null || c.value === undefined || !String(c.value).trim() || UNKNOWN.test(String(c.value));
     if (empty) {
       const line = absenceLine(c);
-      out.push({ id: c.id, field: c.field, status: "no_record", display: line, note: line === NO_RECORD ? searchedLine(searched) : undefined, reason: "lookup returned no value" });
+      out.push({ id: c.id, field: c.field, status: "no_record", display: c.absentPrefix ? `${c.absentPrefix}: ${line}` : line, note: line === NO_RECORD ? searchedLine(searched) : undefined, reason: "lookup returned no value" });
+      continue;
+    }
+    if (c.forceUnsure) {
+      out.push(unsureOf(c, c.forceUnsure));
       continue;
     }
     const cur = curated.find((s) => supports(c, s));
@@ -193,7 +211,7 @@ export function verifyClaims({ claims, sources, toolRuns = [] }: VerifyInput): V
     }
     const why = live.some((s) => supports(c, s)) ? "only an invalid source for this field states it" : "no curated record or fetched source states it";
     if (c.onFail === "drop") out.push({ id: c.id, field: c.field, status: "dropped", display: "", reason: why });
-    else out.push({ id: c.id, field: c.field, status: "unsure", display: c.text.replace(/\s*$/, "") + UNSURE_SUFFIX, note: UNSURE_NOTE, reason: why });
+    else out.push(unsureOf(c, why));
   }
 
   const n = (s: Status) => out.filter((x) => x.status === s).length;
@@ -224,7 +242,7 @@ export function renderVerified(vs: VerifiedClaim[]): string {
 // ---------------------------------------------------------------------------------------------------------------------
 // Tool recovery: retry once, then fall back visibly. (Not pure: it calls the tool. verifyClaims stays pure.)
 
-export async function withRetry<T>(tool: string, what: string, fn: () => Promise<T>, fallback: () => T | Promise<T>): Promise<{ value: T; run: ToolRun }> {
+export async function withRetry<T>(tool: string, what: string, fn: () => Promise<T>, fallback: () => T | Promise<T>, office?: string): Promise<{ value: T; run: ToolRun }> {
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       return { value: await fn(), run: { tool, ok: true, attempts: attempt, fallback: null } };
@@ -232,7 +250,7 @@ export async function withRetry<T>(tool: string, what: string, fn: () => Promise
       /* retry once */
     }
   }
-  return { value: await fallback(), run: { tool, ok: false, attempts: 2, fallback: fallbackLine(what) } };
+  return { value: await fallback(), run: { tool, ok: false, attempts: 2, fallback: fallbackLine(what, office) } };
 }
 
 /*
@@ -240,8 +258,8 @@ export async function withRetry<T>(tool: string, what: string, fn: () => Promise
  *   import { verifyBallotRun } from "../towny/verifyRun";       // standalone, pure, < 5 ms
  *   const v = verifyBallotRun(zip, { raceIds, measureIds, narration, toolRuns });
  *   // narration: each model sentence as { id, text, field, value } where value is the fact it asserts; unsourced ones come back "(unsure)".
- *   // toolRuns: wrap each tool call in withRetry(tool, host, fn, curatedFallback) and pass the runs; failures show as
- *   //            "Couldn't reach <host>, used curated data" in v.report.fallbacks.
+ *   // toolRuns: wrap each tool call in withRetry(tool, host, fn, curatedFallback, office) and pass the runs; failures show as
+ *   //            "Couldn't reach <host>; showing saved data. Verify with <office>." in v.report.fallbacks.
  *   emit({ type: "verify", report: v.report, claims: v.claims });   // BallotAgent ignores unknown event types today
  *   // render as the second-to-last step: <VerifyStep report={v.report} claims={v.claims} />  (components/VerifyStep.tsx)
  */

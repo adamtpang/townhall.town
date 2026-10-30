@@ -93,25 +93,30 @@ describe("withRetry: retry once, then visible fallback", () => {
   it("falls back after two failures and says so", async () => {
     const r = await withRetry("fetchSource", "votetravis.gov", async () => { throw new Error("down"); }, () => "curated");
     expect(r.value).toBe("curated");
-    expect(r.run.fallback).toBe("Couldn't reach votetravis.gov, used curated data");
-    const v = verifyClaims({ claims: [], sources: [], toolRuns: [r.run] });
-    expect(v.report.fallbacks).toEqual(["Couldn't reach votetravis.gov, used curated data"]);
+    expect(r.run.fallback).toBe("Couldn't reach votetravis.gov; showing saved data.");
+    const o = await withRetry("fetchSource", "votetravis.gov", async () => { throw new Error("down"); }, () => "curated", "Travis County Elections");
+    expect(o.run.fallback).toBe("Couldn't reach votetravis.gov; showing saved data. Verify with Travis County Elections.");
+    const v = verifyClaims({ claims: [], sources: [], toolRuns: [o.run] });
+    expect(v.report.fallbacks).toEqual(["Couldn't reach votetravis.gov; showing saved data. Verify with Travis County Elections."]);
   });
 });
 
 describe("verifyBallotRun (standalone interface for the agent timeline)", () => {
-  it("checks every race on all 3 ballots against curated data", () => {
+  it("checks every race on all 3 ballots; ballot order stays unsure until checked against the office's sample ballot", () => {
     for (const z of ["78701", "94103", "10001"]) {
       const v = verifyBallotRun(z);
       expect(v.report.checked).toBeGreaterThan(10);
-      expect(v.report.unsure, z).toBe(0);
+      const order = v.claims.filter((c) => c.id.endsWith(".order") && c.status !== "no_record");
+      expect(order.length, z).toBeGreaterThan(0);
+      expect(order.every((c) => c.status === "unsure" && !c.source), z).toBe(true); // never cited to Ballotpedia
+      expect(v.report.unsure, z).toBe(order.length); // everything else is confirmed by curated data
       expect(v.claims.every((c) => c.status !== "confirmed" || c.source)).toBe(true);
     }
   });
   it("narration the sources don't state comes back unsure", () => {
     const v = verifyBallotRun("78701", { raceIds: ["us-senate-tx"], measureIds: [], narration: [{ id: "n1", field: "stance", text: "Ted Brown wants a flat tax.", value: "flat tax", subject: "Ted Brown" }] });
     expect(v.claims.find((c) => c.id === "n1")?.status).toBe("unsure");
-    expect(v.report.summary).toBe("Checked 2 claims, 1 marked unsure");
+    expect(v.report.summary).toBe("Checked 2 claims, 2 marked unsure"); // the order claim (unchecked) + the narration
   });
 });
 
