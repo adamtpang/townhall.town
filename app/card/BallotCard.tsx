@@ -54,7 +54,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
       <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>
       <h1 className={`mt-3 ${H1}`}>Your ballot card</h1>
       {ed ? <p className="mt-4 text-xl leading-7 font-[530]" data-card-date>Election Day: {fmt(ed.start)}{ed.hours ? `, ${ed.hours}` : ""}</p> : null}
-      {early ? <p className="mt-1 text-base font-[450] text-black/80" data-early-heading>{earlySingleDay(early, today) ?? <>Early voting {fmt(early.start).replace(/, \d{4}$/, "")} to {fmt(early.end)}</>}. <a href={early.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
+      {early ? <p className="mt-1 text-base font-[450] text-black/80" data-early-heading>{earlySingleDay(early, today) ?? <>Early voting runs through {fmt(early.end)}</>}. <a href={early.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
       {when.mail ? <p className="mt-1 text-base font-[450] text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
 
       <section className="mt-10 border-t border-black/15 pt-6">
