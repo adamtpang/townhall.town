@@ -34,6 +34,7 @@ export function impactOf(r: RaceLite): { v: number; why: string } {
   return { v: 1, why: r.level === "local" || r.level === "county" ? "local office" : "lower-profile office" };
 }
 export type Group = "most" | "high" | "moderate" | "lower";
+export const TIER_LABELS = ["Most at stake", "High stakes", "Moderate stakes", "Lower stakes"] as const;
 export function tierFor(r: RaceLite, _mk?: Mk) {
   const imp = impactOf(r);
   const comp = r.meta?.closeness === "Competitive" ? 2 : 1;

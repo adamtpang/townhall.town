@@ -17,6 +17,8 @@ const NAV = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/privacy", label: "Privacy" },
+  { href: "/developers", label: "API" },
+  { href: "/openapi.json", label: "OpenAPI" },
   { href: SITE.github, label: "GitHub" },
 ];
 

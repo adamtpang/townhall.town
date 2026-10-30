@@ -17,7 +17,7 @@ import IssueMatch from "./IssueMatch";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
-import { UNSUPPORTED } from "../lib/narration.mjs";
+import { COVERED_ZIPS, UNSUPPORTED_MESSAGE as UNSUPPORTED } from "../lib/site";
 import { measuresFor } from "../lib/measures";
 
 const NYC_READY = true;
@@ -27,7 +27,8 @@ const DEMO = [
   { zip: "10001", label: NYC_READY ? "New York" : "New York, coming soon", ready: NYC_READY },
 ];
 // Advertised: Austin, SF, NYC. 78130 and 90012 stay working but are not advertised.
-const SUPPORTED = new Set(["78701", "94103", ...(NYC_READY ? ["10001"] : [])]);
+// Served: Austin, SF, NYC only (lib/site.ts COVERED_ZIPS); the API returns "unsupported" for every other ZIP.
+const SUPPORTED = new Set<string>(COVERED_ZIPS);
 const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
 const TOOL_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
@@ -246,6 +247,8 @@ export default function BallotAgent() {
     t0.current = Date.now();
     try {
       const res = await fetch("/api/agent", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ zip: z }) });
+      // API errors (400, 429, 500) are one JSON object, not a stream.
+      if (!res.ok) throw new Error(res.status === 429 ? "rate_limited" : `HTTP ${res.status}`);
       const reader = res.body!.getReader();
       const dec = new TextDecoder();
       let buf = "";
@@ -271,7 +274,7 @@ export default function BallotAgent() {
       }
     } catch (err) {
       console.error("[agent]", err);
-      setNotice("Something went wrong talking to the agent. Please try again.");
+      setNotice((err as Error)?.message === "rate_limited" ? "Too many lookups in the last minute. Please wait a moment and try again." : "Something went wrong talking to the agent. Please try again.");
     }
     setBusy(false);
     setTimeout(() => document.getElementById("ballot")?.scrollIntoView({ behavior: "smooth" }), 100);
@@ -283,10 +286,10 @@ export default function BallotAgent() {
     navigator.geolocation.getCurrentPosition(
       async (p) => {
         try {
-          const r = await fetch(`/api/locate?lat=${p.coords.latitude}&lon=${p.coords.longitude}`);
+          const r = await fetch("/api/locate", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ lat: p.coords.latitude, lon: p.coords.longitude }) });
           const d = await r.json();
           if (d.zip) run(d.zip);
-          else setNotice(d.error || "Couldn't find a ZIP for your location.");
+          else setNotice((typeof d.error === "string" ? d.error : d.error?.message) || "Couldn't find a ZIP for your location.");
         } finally {
           setLocating(false);
         }
@@ -378,68 +381,6 @@ function MarketBlock({ mk }: { mk: { quotes: MarketQuote[]; status: string; avg:
   );
 }
 
-function GamePlan({ state }: { state: "TX" | "CA" }) {
-  if (state === "TX")
-    return (
-      <div className="grid gap-4 sm:grid-cols-3">
-        <Card>
-          <CardHeader><span className="eyebrow">When</span><CardTitle>Early voting through Fri, Oct 30</CardTitle></CardHeader>
-          <CardContent className="space-y-2 text-sm text-slate-700">
-            <p>Early voting runs Oct 19–30. Election Day is <strong>Tuesday, Nov 3, 2026</strong>.</p>
-            <p>The registration deadline (Oct 5) has passed. <a href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do">Check if you're registered</a>.</p>
-            <p className="text-xs text-slate-500">Source: <a href="https://www.sos.state.tx.us/">Texas Secretary of State</a>, <a href="https://www.votetexas.gov/">VoteTexas.gov</a></p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><span className="eyebrow">Where</span><CardTitle>Find your polling place</CardTitle></CardHeader>
-          <CardContent className="space-y-2 text-sm text-slate-700">
-            <p>Locations and hours are set by your county. Use the official lookup:</p>
-            <p><Src href="https://www.votetexas.gov/voting/where.html">VoteTexas.gov: where to vote</Src></p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><span className="eyebrow">What to bring</span><CardTitle>One approved photo ID</CardTitle></CardHeader>
-          <CardContent className="text-sm text-slate-700">
-            <ul className="list-disc space-y-1 pl-5">
-              <li>Texas Driver License (DPS)</li>
-              <li>Texas Election Identification Certificate (DPS)</li>
-              <li>Texas Personal ID Card (DPS)</li>
-              <li>Texas Handgun License (DPS)</li>
-              <li>U.S. Military ID with photo</li>
-              <li>U.S. Citizenship Certificate with photo</li>
-              <li>U.S. Passport (book or card)</li>
-            </ul>
-            <p className="mt-2 text-xs text-slate-500">Can be expired up to 4 years (any length if you're 70+). No ID and can't reasonably get one? Sign a Reasonable Impediment Declaration and bring a supporting document. <a href="https://www.votetexas.gov/voting/need-id.html">Source: VoteTexas.gov</a></p>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  return (
-    <div className="grid gap-4 sm:grid-cols-3">
-      <Card>
-        <CardHeader><span className="eyebrow">When</span><CardTitle>Election Day: Tue, Nov 3, 2026</CardTitle></CardHeader>
-        <CardContent className="space-y-2 text-sm text-slate-700">
-          <p>Mail ballots must be postmarked by Election Day or dropped off at a drop box or vote center. Early in-person voting is available in every county.</p>
-          <p className="text-xs text-slate-500">Source: <a href="https://www.sos.ca.gov/elections">sos.ca.gov</a></p>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader><span className="eyebrow">Where</span><CardTitle>Vote centers and drop boxes</CardTitle></CardHeader>
-        <CardContent className="space-y-2 text-sm text-slate-700">
-          <p><Src href="https://caearlyvoting.sos.ca.gov/">caearlyvoting.sos.ca.gov</Src></p>
-          <p><Src href="https://www.sos.ca.gov/elections">Polling place lookup (sos.ca.gov)</Src></p>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader><span className="eyebrow">What to bring</span><CardTitle>Usually no ID needed</CardTitle></CardHeader>
-        <CardContent className="space-y-2 text-sm text-slate-700">
-          <p>Most California voters don't need ID. Some first-time voters may be asked for one. Check your status first.</p>
-          <p><Src href="https://voterstatus.sos.ca.gov/">Check your voter status</Src></p>
-        </CardContent>
-      </Card>
-    </div>
-  );
-}
 
 function TurnoutSection({ t }: { t: TurnoutDetail }) {
   const fmt = (v?: number | null) => (v == null ? "No record found" : v.toLocaleString("en-US"));

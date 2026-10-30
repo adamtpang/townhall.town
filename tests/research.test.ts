@@ -11,6 +11,6 @@ describe("research", () => {
   it("rate limits at 10/min with 429 JSON", async () => {
     const req = new Request("http://x/api", { headers: { "x-forwarded-for": "203.0.113.9" } });
     for (let i = 0; i < 10; i++) expect(limited(req)).toBeNull();
-    const r = limited(req)!; expect(r.status).toBe(429); expect((await r.json()).error).toBe("rate_limited");
+    const r = limited(req)!; expect(r.status).toBe(429); expect((await r.json()).error.code).toBe("rate_limited"); expect(r.headers.get("retry-after")).toBeTruthy();
   });
 });

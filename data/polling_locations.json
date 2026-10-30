@@ -1,0 +1,268 @@
+{
+  "builtAt": "2026-10-29",
+  "note": "Official sources only. Arrays list sites the official source lists for or opens to the ZIP; where the site depends on the voter's exact address the array is left empty and lookupUrl should be used. 'proximity' for Travis non-78701 sites is by ZIP label only, not a measured distance.",
+  "zips": {
+    "78701": {
+      "jurisdiction": "Travis County, TX",
+      "lookupUrl": "https://votetravis.gov/current-election-information/current-election/",
+      "lookupUrlNote": "Travis County Clerk election page with the early voting and Election Day site PDFs and wait-time map. Countywide vote centers: 'You may vote at any Polling Site in Travis County' for both early voting and Election Day, so the site does NOT depend on the voter's address.",
+      "dependsOnAddress": false,
+      "earlyVoting": [
+        {
+          "name": "Austin City Hall",
+          "room": "Media Room 1034",
+          "address": "301 W 2nd St, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "301",
+          "proximity": "located in 78701",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily (not an extended-hours site)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        },
+        {
+          "name": "Austin Recreation Center",
+          "room": "Dance Studio",
+          "address": "1301 Shoal Creek Blvd, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "308",
+          "proximity": "located in 78701",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily (not an extended-hours site)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        },
+        {
+          "name": "Travis County Civil and Family Courts Facility",
+          "room": "Conference Room",
+          "address": "1700 Guadalupe St, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "308",
+          "proximity": "located in 78701",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily (not an extended-hours site)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        },
+        {
+          "name": "UT Texas Union",
+          "room": "Room 2.214",
+          "address": "2308 Whitis Ave, Austin, TX 78712",
+          "zip": "78712",
+          "precinctLabel": "312",
+          "proximity": "located in ZIP 78712 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily; 7:00 AM-10:00 PM on Thu Oct 29 and Fri Oct 30 (extended-hours site, marked * on county list)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        },
+        {
+          "name": "LBJ School Of Public Affairs",
+          "room": "Lobby",
+          "address": "2315 Red River St, Austin, TX 78712",
+          "zip": "78712",
+          "precinctLabel": "204",
+          "proximity": "located in ZIP 78712 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily (not an extended-hours site)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        },
+        {
+          "name": "Millennium Youth Entertainment Complex",
+          "room": "East Media and Confrence Room",
+          "address": "1156 Hargrave St, Austin, TX 78702",
+          "zip": "78702",
+          "precinctLabel": "101",
+          "proximity": "located in ZIP 78702 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily; 7:00 AM-10:00 PM on Thu Oct 29 and Fri Oct 30 (extended-hours site, marked * on county list)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        },
+        {
+          "name": "Carver Branch Library",
+          "room": "Meeting Room 2",
+          "address": "1161 Angelina St, Austin, TX 78702",
+          "zip": "78702",
+          "precinctLabel": "100",
+          "proximity": "located in ZIP 78702 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily (not an extended-hours site)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        },
+        {
+          "name": "Cepeda Branch Library",
+          "room": "Meeting Room 1",
+          "address": "651 N Pleasant Valley Rd, Austin, TX 78702",
+          "zip": "78702",
+          "precinctLabel": "403",
+          "proximity": "located in ZIP 78702 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-10-19 to 2026-10-30",
+          "hours": "7:00 AM-7:00 PM daily (not an extended-hours site)",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf"
+        }
+      ],
+      "electionDay": [
+        {
+          "name": "Austin City Hall",
+          "room": "Media Room 1034",
+          "address": "301 W 2nd St, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "301",
+          "proximity": "located in 78701",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "Austin Recreation Center",
+          "room": "Dance Studio",
+          "address": "1301 Shoal Creek Blvd, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "308",
+          "proximity": "located in 78701",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "Emma S Barrientos Mexican American Cultural Center",
+          "room": "Raul Salinas Room",
+          "address": "600 River St, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "400",
+          "proximity": "located in 78701",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "Sam Houston Building",
+          "room": "Break Room And Library",
+          "address": "201 E 14th St, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "300",
+          "proximity": "located in 78701",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "Travis County Civil and Family Courts Facility",
+          "room": "Conference Room",
+          "address": "1700 Guadalupe St, Austin, TX 78701",
+          "zip": "78701",
+          "precinctLabel": "308",
+          "proximity": "located in 78701",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "LBJ School Of Public Affairs",
+          "room": "Lobby",
+          "address": "2315 Red River St, Austin, TX 78712",
+          "zip": "78712",
+          "precinctLabel": "204",
+          "proximity": "located in ZIP 78712 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "UT Texas Union",
+          "room": "Room 2.214",
+          "address": "2308 Whitis Ave, Austin, TX 78712",
+          "zip": "78712",
+          "precinctLabel": "312",
+          "proximity": "located in ZIP 78712 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "Terrazas Branch Library",
+          "room": "Meeting Rooms 1 and 2",
+          "address": "1105 E Cesar Chavez St, Austin, TX 78702",
+          "zip": "78702",
+          "precinctLabel": "401",
+          "proximity": "located in ZIP 78702 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "Cantu Pan Am Recreation Center",
+          "room": "Gym",
+          "address": "2100 E 3rd St, Austin, TX 78702",
+          "zip": "78702",
+          "precinctLabel": "402",
+          "proximity": "located in ZIP 78702 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        },
+        {
+          "name": "Carver Branch Library",
+          "room": "Meeting Room 2",
+          "address": "1161 Angelina St, Austin, TX 78702",
+          "zip": "78702",
+          "precinctLabel": "100",
+          "proximity": "located in ZIP 78702 (not in 78701; included as a nearby site, distance not computed)",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-7:00 PM",
+          "sourceUrl": "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+        }
+      ],
+      "sourceUrls": [
+        "https://votetravis.gov/current-election-information/current-election/",
+        "https://votetravis.gov/wp-content/uploads/G26-Early-Voting-Flyer-9.21.pdf",
+        "https://votetravis.gov/wp-content/uploads/G26-Election-Day-Flyer-FINAL-Website-wNotice.pdf"
+      ]
+    },
+    "94103": {
+      "jurisdiction": "City and County of San Francisco, CA",
+      "lookupUrl": "https://sfelections.org/tools/map_poll_time/",
+      "lookupUrlNote": "SF Department of Elections 'Voting Site Wait Times Lookup Tool' (find assigned polling place); also the Voter Portal https://sfelections.org/tools/portal/ and the back cover of the Voter Information Pamphlet. Election Day polling places (501) are assigned by precinct, so they depend on the voter's address; the City Hall Voting Center is open to all SF voters. Full list: https://api.sf.gov/documents/63956/Polling_Place_List_Nov_3_2026_as_of_09_29_2026.xlsx",
+      "dependsOnAddress": true,
+      "earlyVoting": [
+        {
+          "name": "City Hall Voting Center",
+          "room": "Ground floor, in front of Room 48",
+          "address": "1 Dr. Carlton B. Goodlett Place, San Francisco, CA 94102",
+          "zip": "94102",
+          "proximity": "Located in 94102 (not 94103); open to every registered San Francisco voter regardless of address, including same-day/conditional registration",
+          "dates": "2026-10-05 to 2026-11-02",
+          "hours": "Mon-Fri 8:00 AM-5:00 PM (closed Mon Oct 12 holiday); Sat-Sun Oct 24-25 and Oct 31-Nov 1 10:00 AM-4:00 PM",
+          "sourceUrl": "https://www.sf.gov/november-3-2026-consolidated-general-election"
+        }
+      ],
+      "electionDay": [
+        {
+          "name": "City Hall Voting Center",
+          "room": "Ground floor, in front of Room 48",
+          "address": "1 Dr. Carlton B. Goodlett Place, San Francisco, CA 94102",
+          "zip": "94102",
+          "proximity": "Located in 94102 (not 94103); open to every registered San Francisco voter regardless of address, including same-day/conditional registration",
+          "dates": "2026-11-03",
+          "hours": "7:00 AM-8:00 PM",
+          "sourceUrl": "https://www.sf.gov/november-3-2026-consolidated-general-election"
+        }
+      ],
+      "electionDayNote": "Assigned neighborhood polling places for 94103 depend on the voter's precinct/address and are intentionally not listed; use lookupUrl. Same-day registrants may register and vote at any SF polling place on Election Day.",
+      "sourceUrls": [
+        "https://www.sf.gov/november-3-2026-consolidated-general-election",
+        "https://www.sf.gov/vote-in-person"
+      ]
+    },
+    "10001": {
+      "jurisdiction": "New York County (Manhattan), NYC",
+      "lookupUrl": "https://findmypollsite.vote.nyc/",
+      "lookupUrlNote": "NYC Board of Elections Find My Poll Site (enter home address). NYC assigns both the early voting site and the Election Day poll site by address; they may differ.",
+      "dependsOnAddress": true,
+      "earlyVoting": [],
+      "electionDay": [],
+      "earlyVotingNote": "Assigned by address; not listed. Early voting Oct 24-Nov 1, 2026; daily hours are in election_dates.json.",
+      "electionDayNote": "Assigned by address; not listed. Election Day Nov 3, 2026, 6:00 AM-9:00 PM.",
+      "sourceUrls": [
+        "https://findmypollsite.vote.nyc/",
+        "https://vote.nyc/election/general-election-early-voting-day-7"
+      ]
+    }
+  }
+}

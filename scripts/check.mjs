@@ -4,7 +4,7 @@ import path from "node:path";
 let fail = 0;
 const bad = (m) => { console.error("FAIL", m); fail++; };
 const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
-for (const f of [...walk("app"), ...walk("lib"), ...walk("components")].filter((f) => /\.(tsx?|css)$/.test(f))) {
+for (const f of [...walk("app"), ...walk("lib"), ...walk("components")].filter((f) => /\.(tsx?|css)$/.test(f) && !/townyControls\.ts$/.test(f) /* the banned-phrase list itself */)) {
   const s = fs.readFileSync(f, "utf8");
   for (const re of [/\bvote for\b/i, /\bbest\b/i]) {
     // ignore code comments

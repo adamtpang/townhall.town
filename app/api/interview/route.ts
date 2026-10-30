@@ -1,7 +1,7 @@
 import { generateObject } from "ai";
 import { z } from "zod";
 import { validZip } from "../../../lib/zip.mjs";
-import { limited } from "../../../lib/rateLimit";
+import { limited, INTERVIEW_POLICY } from "../../../lib/rateLimit";
 import { issuesFor } from "../../../lib/issueOrder";
 import { ballotFor } from "../../../lib/tools";
 
@@ -21,7 +21,7 @@ const Out = z.object({
 });
 
 export async function POST(req: Request) {
-  const lim = limited(req); if (lim) return lim;
+  const lim = limited(req, INTERVIEW_POLICY); if (lim) return lim;
   const body = await req.json().catch(() => ({}));
   const zip = validZip(body.zip);
   const b = zip ? ballotFor(zip) : null;

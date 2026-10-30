@@ -22,7 +22,7 @@ export function Inline({ text }: { text: string }) {
 
 export function SectionBlock({ s }: { s: Section }) {
   return (
-    <section className="grid gap-3 border-t border-black/15 py-10 md:grid-cols-12 md:gap-5">
+    <section id={s.id} className="grid gap-3 border-t border-black/15 py-10 md:grid-cols-12 md:gap-5">
       <h2 className="text-base font-medium tracking-tight text-black md:col-span-4">{s.heading}</h2>
       <div className="max-w-2xl space-y-4 text-base leading-relaxed text-black/70 md:col-span-8">
         {s.paragraphs?.map((p, i) => (
@@ -39,6 +39,11 @@ export function SectionBlock({ s }: { s: Section }) {
             ))}
           </ul>
         ) : null}
+        {s.code?.map((c, i) => (
+          <pre key={i} className="overflow-x-auto bg-black/[0.04] p-4 text-sm leading-relaxed text-black">
+            <code>{c}</code>
+          </pre>
+        ))}
       </div>
     </section>
   );
