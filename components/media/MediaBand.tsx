@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-// ndstudio-structure spec §2/§6 (design, Oct 30 2026): one full-bleed purple-duotone b-roll band under the ZIP box.
+// ndstudio-structure spec §2/§6 (design, Oct 30 2026): one full-bleed b-roll band (in color) under the ZIP box.
 // Design GO change (Oct 30): the poster is server-rendered (<picture>, mobile/desktop by media query) so it paints on
 // first paint. Video <source>s attach and load only on requestIdleCallback (setTimeout fallback where rIC is missing)
 // or the first scroll, whichever comes first, and NEVER under prefers-reduced-motion or Save-Data (poster only).
@@ -76,6 +76,8 @@ export default function MediaBand() {
   const [playable, setPlayable] = useState(false);
   const [paused, setPaused] = useState(false);
   const userPaused = useRef(false);
+  // The <video> poster matches the <picture> (phone or desktop, same cached file), set on mount so SSR never picks one.
+  const [poster, setPoster] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const el = v.current;
@@ -84,6 +86,7 @@ export default function MediaBand() {
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     if (!motionAllowed(reduceMq.matches, saveData)) return; // poster only: never attach or load the video
     const mobile = window.matchMedia(MOBILE).matches;
+    setPoster(mobile ? "/media/band-mobile-poster.jpg" : "/media/band-desktop-poster.jpg");
     let attached = false;
     let visible = false;
     let ready = false; // window load + first scroll/pointer/touch/key
@@ -125,33 +128,29 @@ export default function MediaBand() {
   }
 
   return (
-    // Design landing P0-1 (3:03 PM): full-bleed as a sibling of the 1280 container (w-full, not w-screen, so no 15px
-    // scrollbar-gutter overflow). P0-2: caption on a dark glass plate, white text (>= 5:1 over the lightest frame).
-    <figure className="relative mt-4 w-full" data-media-band>
+    <figure className="w-full" data-media-band>
       <div className="media-frame aspect-[4/5] md:aspect-[12/5]">
         <picture>
-          <source media="(min-width: 768px)" srcSet="/media/band-desktop-poster.jpg" />
+          <source media="(min-width: 768px)" srcSet="/media/band-desktop-poster.jpg" width={1280} height={720} />
           <img src="/media/band-mobile-poster.jpg" alt="" aria-hidden="true" decoding="async" data-band-poster />
         </picture>
-        <video ref={v} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />
+        <video ref={v} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} poster={poster} />
       </div>
-      <figcaption className="absolute inset-x-0 bottom-0 bg-ink/55 text-sm leading-5 text-white backdrop-blur-xl" data-band-caption>
-        <span className="mx-auto flex min-h-14 max-w-[1280px] items-center gap-3 px-5 py-2 md:px-10">
-          <span className="flex flex-1 flex-col md:flex-row md:justify-between md:gap-5">
-            <span><b className="font-[530] text-white">Early voting.</b> Berkeley County, S.C., Oct 2016</span>
-            <span>Voice of America · Public domain</span>
-          </span>
-          {/* Spec §6: 44×44 pause control (the clip loops past 5s; WCAG 2.2.2). Only shown once video can play. */}
-          {playable && (
-            <button type="button" onClick={toggle} aria-pressed={paused} aria-label={paused ? "Play background video" : "Pause background video"} className="-mr-3 flex h-11 w-11 shrink-0 items-center justify-center text-white focus-visible:outline-white focus-visible:-outline-offset-4" data-band-toggle>
-              {paused ? (
-                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor" /></svg>
-              ) : (
-                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor" /></svg>
-              )}
-            </button>
-          )}
+      <figcaption className="mx-auto mt-3 flex max-w-[1280px] items-start gap-3 px-5 text-sm leading-5 text-ink/60 md:px-10">
+        <span className="flex flex-1 flex-col md:flex-row md:justify-between md:gap-5">
+          <span><b className="font-[530] text-ink">Early voting.</b> Berkeley County, S.C., Oct 2016</span>
+          <span>Voice of America · Public domain</span>
         </span>
+        {/* Spec §6: recommended 44×44 pause control in the caption row (the clip loops past 5s; WCAG 2.2.2). Only shown once video can play. */}
+        {playable && (
+          <button type="button" onClick={toggle} aria-pressed={paused} aria-label={paused ? "Play background video" : "Pause background video"} className="-mt-3 flex h-11 w-11 shrink-0 items-center justify-center text-ink hover:text-brand-700" data-band-toggle>
+            {paused ? (
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor" /></svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor" /></svg>
+            )}
+          </button>
+        )}
       </figcaption>
     </figure>
   );

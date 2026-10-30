@@ -48,7 +48,8 @@ describe("ballot order: data and every renderer follow the official sample ballo
         expect(names(ar), c.race_id).toEqual(want);
         expect(ar.order).toMatchObject({ text: ORDER_CONFIRMED_LINE, confirmed: true, url: z === "78701" ? TRAVIS : NYC });
         const t = tiers(c.race_id);
-        if (t.includes("data-tile-label")) expect(tileNames(t), c.race_id).toEqual(want);
+        // motion-v2 splits a ticket ("A / B") into two tiles in the same order, so compare the split names.
+        if (t.includes("data-tile-label")) expect(tileNames(t), c.race_id).toEqual(want.flatMap((n) => n.split(" / ")));
         if (t.includes("data-order-line")) expect(t).toContain('data-order-line="confirmed"');
       }
       const card = renderToStaticMarkup(h(BallotCard, { zip: z, place: z, ids, races: api.races as never }));

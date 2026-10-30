@@ -231,7 +231,7 @@ describe("QA 9dfe90d P2 + design p8", () => {
     expect(src("app/EndScreen.tsx")).toContain('flex flex-col items-start gap-0 text-sm" data-cal-links');
     expect(src("app/EndScreen.tsx").match(/inline-flex min-h-11 items-center[^"]*" data-(ics|gcal-early|dates-source)/g)?.length).toBe(3);
     // ndstudio-structure (Oct 30): home sections are numbered (01/02/03) with a 14px label h2 instead of the h3 block.
-    expect(src("app/page.tsx")).toMatch(/<NumberedSection[^>]*n="03"/);
+    expect(src("app/page.tsx")).toMatch(/<NumberedSection[^>]*n="02"/);
     expect(src("components/Prose.tsx")).toMatch(/text-base font-\[530\]/);
   });
   it("NYC banner says draft, matching the source notes", () => {

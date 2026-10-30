@@ -180,6 +180,57 @@ body {
   }
 }
 
+/* Glass (Design, Oct 30 2026, part 1 A): ONLY on surfaces content scrolls under (sticky header, the phone bottom
+   CTA bar, popovers). Content cards stay flat. Ink text on bg-white/75 or denser: >= 4.5:1 at any backdrop. */
+@layer components {
+  .glass {
+    @apply border border-white/60 bg-white/75 ring-1 ring-inset ring-black/5 backdrop-blur-xl backdrop-saturate-150;
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 8px 24px -8px rgba(58,18,80,.18), 0 2px 6px -2px rgba(1,1,1,.08);
+  }
+  .glass-dark { @apply border border-white/15 bg-ink/55 text-white ring-1 ring-inset ring-black/5 backdrop-blur-xl backdrop-saturate-150; }
+  /* Full-bleed bars: radius 0, hairline on the content side only, lighter shadow. */
+  /* Adam 3:00 PM CT: Apple-style nav: translucent purple-tinted white (brand-50 at 80%), blur, hairline. Ink on it >= 15:1. */
+  .glass-bar-top { background-color: rgba(250, 245, 252, 0.8); @apply border-x-0 border-t-0 border-b-black/10; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 2px 6px -2px rgba(1,1,1,.08); }
+  .glass-bar-bottom { @apply border-x-0 border-b-0 border-t-black/10; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 -2px 6px -2px rgba(1,1,1,.08); }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: #f2f2f2; }
+  .glass-dark { background: #010101; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass { background: #f2f2f2; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .glass-bar-top { background: #faf5fc; }
+  [data-cta-bar] { background: #ffffff; }
+}
+
+/* Folds (race and measure disclosures): native details, chevron turns on open, body fades in. No motion when reduced. */
+/* Folders (components/Fold.tsx): the body height animates with motion; the chevron is CSS (spec §2.2, dur.fast).
+   data-expanded leads the open attribute so the chevron turns on click; plain details[open] covers no-JS. */
+details[open]:not([data-expanded="false"]) > summary [data-chev] { transform: rotate(180deg); }
+@media (prefers-reduced-motion: no-preference) {
+  [data-chev] { transition: transform .15s cubic-bezier(.215,.61,.355,1); }
+}
+/* Sections reached from the results nav land below the sticky header. */
+/* Design fixes 2:59 PM CT: scroll-mt-16 on #who, #what, #where, #what-matters (under the 56px glass header). */
+[data-nav-target], #what-matters { scroll-margin-top: 4rem; }
+/* text-pretty on H2s and race titles (never the H1). */
+h2, h3[data-race-title] { text-wrap: pretty; }
+@media (max-width: 767px) {
+  /* The bottom bar never covers the end of the page. */
+  body:has([data-cta-bar]) { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+}
+
+/* Audit 3:05 PM CT (Oct 30): every link, button and summary is at least 44x44 on screen. Zero specificity (:where), so
+   any explicit display/size utility still wins; bare inline links become inline-flex boxes so the 44px is real. */
+@media screen {
+  :where(main, header, footer, nav) :where(a[href], button, summary) { min-height: 44px; min-width: 44px; }
+  :where(main, header, footer, nav) :where(a[href]) { display: inline-flex; align-items: center; vertical-align: middle; }
+}
+
+/* Design P1 (Oct 30, 3:38 PM CT): the city cards are the city choice, so the three outline city chips under the ZIP box
+   are gone. They live in BallotAgent (not this branch's file), so they are removed from layout and the a11y tree here;
+   the cards dispatch the same townhall:zip event the chips' run() handles. */
+[data-zip-notice] + div:has(> button[type="button"]) { display: none; }
 /* Polymarket strip only (Adam 3:04 PM Oct 30: "the polymarket banner should be blue"). The rest of the site keeps its
    no-blue rule; text in the strip stays ink, and both sides of every market use the same neutral ink. */
 [data-poly-strip] { --market-bg: #EEF4FB; --market-border: #D3E2F4; --market-mark: #3B6FB6; }

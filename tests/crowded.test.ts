@@ -15,10 +15,10 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
   it("over 8: gap-1 under md, same md/lg gaps, one equal column per candidate, no scroll container", () => {
     for (const n of [9, 10, 11]) {
       const u = ul(row(n));
-      expect(u).toContain("grid justify-start gap-1 [--tile-max:120px] md:gap-3");
-      expect(u).toContain(`grid-template-columns:repeat(${n}, minmax(0, var(--tile-max)))`);
+      // v3.1 merge: motion-v2's flex row (equal flex: 1 1 0 tiles, max 120/160px) keeps v3.1's gaps.
+      expect(u).toContain("flex flex-nowrap gap-1 md:gap-3 overflow-x-clip");
       expect(u).toContain('data-crowded="true"');
-      expect(u).not.toMatch(/overflow-x|overflow-auto|overflow-scroll|snap-|flex-wrap(?!-)/);
+      expect(u).not.toMatch(/overflow-x-(auto|scroll)|overflow-auto|overflow-scroll|snap-|flex-wrap(?!-)/);
     }
   });
   it("over 8: every tile has a button whose aria-label is the full name; labels stay sr-only", () => {
@@ -36,9 +36,8 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
   it("below 360px: every row over 6 uses gap-1 (8 at 320 is ~30.5px tiles); 360px and up keep gap-2; still one equal row", () => {
     for (const n of [7, 8]) {
       const u = ul(row(n));
-      expect(u).toContain("grid justify-start gap-2 max-[359px]:gap-1 [--tile-max:120px] md:gap-3");
-      expect(u).toContain(`grid-template-columns:repeat(${n}, minmax(0, var(--tile-max)))`);
-      expect(u).not.toMatch(/overflow-x|overflow-auto|overflow-scroll|snap-|flex-wrap(?!-)/);
+      expect(u).toContain("flex flex-nowrap gap-2 max-[359px]:gap-1 md:gap-3");
+      expect(u).not.toMatch(/overflow-x-(auto|scroll)|overflow-auto|overflow-scroll|snap-|flex-wrap(?!-)/);
     }
     for (const n of [2, 6]) expect(ul(row(n))).not.toContain("max-[359px]");
     // 320 viewport, 272px content: 8 x 30.5 + 7 x 4 = 272.
@@ -47,13 +46,13 @@ describe("crowded photo rows (Design 1:54 PM Oct 30)", () => {
   it("8 or fewer: keep gap-2 (from 360px) and no tile control", () => {
     for (const n of [2, 6, 8]) {
       const h = row(n);
-      expect(ul(h)).toMatch(/grid justify-start gap-2 (max-\[359px\]:gap-1 )?\[--tile-max:120px\]/);
+      expect(ul(h)).toMatch(/flex flex-nowrap gap-2 (max-\[359px\]:gap-1 )?md:gap-3/);
       expect(ul(h)).toContain('data-crowded="false"');
       expect(h).not.toContain("data-tile-open");
     }
   });
   it("RaceTiers passes the race id and WhoRaces opens the race on the tile event", () => {
-    expect(readFileSync("app/RaceTiers.tsx", "utf8")).toContain("<PortraitRow cands={r.candidates} eager={eager} raceId={r.id} splitCredits />");
+    expect(readFileSync("app/RaceTiers.tsx", "utf8")).toContain("<PortraitRow cands={r.candidates} eager={eager} credits={false} raceId={r.id} splitCredits />");
     const w = readFileSync("components/WhoRaces.tsx", "utf8");
     expect(w).toContain("window.addEventListener(OPEN_CANDIDATE, on)");
     expect(w).toContain("e.preventDefault()");

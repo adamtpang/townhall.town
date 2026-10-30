@@ -257,10 +257,8 @@ describe("design p9 / QA 4e15da7 items", () => {
   });
   it("P1 tiles (superseded by design p10 P0, then Design p10 (Adam 1:11 PM Oct 30: bigger)): grid of n equal columns, min-w-0, max 72/88/112px, one row", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toContain("repeat(${n}, minmax(0, var(--tile-max)))"); expect(s).toMatch(/min-w-0/);
-    // Design 1:54 PM Oct 30: rows over 8 use gap-1 under 768 (tests/crowded.test.ts); 8 or fewer keep gap-2.
-    expect(s).toContain('grid justify-start ${crowded ? "gap-1" : narrowTight ? "gap-2 max-[359px]:gap-1" : "gap-2"} [--tile-max:120px] md:gap-3 md:[--tile-max:140px] lg:gap-4 lg:[--tile-max:160px]');
-    expect(s).toMatch(/flex flex-nowrap gap-2 md:gap-3/); // mini rows keep the flex row
+    expect(s).toMatch(/flex: "1 1 0"/); expect(s).toMatch(/min-w-0/); expect(s).toMatch(/max-w-\[120px\] lg:max-w-\[160px\]/); // grid spec #4 (Oct 30)
+    expect(s).toMatch(/flex flex-nowrap \$\{gap\}/); expect(s).toContain('"gap-2 md:gap-3"'); // v3.1 merge: gaps by row size
     expect(s).toMatch(/line-clamp-3 text-sm font-\[530\] leading-5`\} title=\{c\.name\}/); // QA 94cf301: wrap, up to 3 lines; round 0222: two-line labels at 384
   });
 });

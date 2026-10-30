@@ -54,8 +54,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     // 72px below 768 and 112px at lg, so they shrink to fit and never wrap; mini rows keep flex 1 1 0.
     const s = src("components/PortraitRow.tsx");
     expect(s).toMatch(/flex: ?"1 1 0"/);
-    expect(s).toMatch(/\[--tile-max:120px\][^"]*lg:\[--tile-max:160px\]/);
-    expect(s).toContain("minmax(0, var(--tile-max))");
+    expect(s).toMatch(/max-w-\[120px\] lg:max-w-\[160px\]/); // grid spec #4 (Oct 30): bigger tiles
     expect(s).toMatch(/flex flex-nowrap/);
     expect(s).toMatch(/group-data-\[densedesk=true\]\/row:md:sr-only/);
     expect(s).toMatch(/group-data-\[dense=true\]\/row:max-md:sr-only/);

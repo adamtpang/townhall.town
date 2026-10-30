@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-site px-6 lg:px-10">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-site scroll-mt-16 px-6 lg:px-10">
         <section className="pb-16 pt-24 sm:pt-32">
           <p className="text-sm text-ink/60">404</p>
           <h1 className="mt-3 max-w-5xl font-sans text-[clamp(3rem,8vw,7rem)] leading-[0.9] tracking-[-0.02em] text-black">Page not found.</h1>

@@ -11,8 +11,8 @@ const src = (f: string) => fs.readFileSync(f, "utf8");
 describe("p11 + QA fb66b9b", () => {
   it("#1 Design p10 (Adam 1:11 PM Oct 30: bigger): the item is the tile, 72/88/112px max, label centred at tile width", () => {
     const s = src("components/PortraitRow.tsx");
-    expect(s).toContain("[--tile-max:120px] md:gap-3 md:[--tile-max:140px] lg:gap-4 lg:[--tile-max:160px]");
-    expect(s).not.toContain('"max-w-[40px] md:max-w-[48px] lg:max-w-[56px]"');
+    // Design grid spec #4 (Oct 30, 2:58 PM CT): bigger tiles, item = tile, max 120px phone / 160px desktop.
+    expect(s).toContain('"max-w-[120px] lg:max-w-[160px]"');
     expect(s).toMatch(/relative mx-auto aspect-square w-full/);
     expect(s).not.toMatch(/md:text-left/);
   });

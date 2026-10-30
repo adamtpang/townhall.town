@@ -4,8 +4,11 @@ import { SITE } from "../lib/site";
 // Merge of batch1 03c9b97: batch1's 56/64px header for every page; `compact` (card) is kept as a no-op prop.
 export function SiteHeader({ extra }: { extra?: React.ReactNode; compact?: boolean } = {}) {
   return (
-    <header className="mx-auto flex h-14 items-center justify-between lg:h-16 max-w-[1280px] px-5 md:px-10" data-site-header>
-      <Link href="/" className="inline-flex min-h-11 items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
+    // Design premium §1 (Oct 30 2026): sticky full-bleed glass bar (radius 0), the content scrolls under it. Text on it is
+    // ink or black/60, never lighter (>= 4.5:1 at bg-white/75 over any underlay).
+    <div className="glass glass-bar-top sticky top-0 z-40" data-site-header>
+    <header className="mx-auto flex min-h-14 max-w-[1280px] items-center justify-between px-5 py-1.5 md:px-10">
+      <Link href="/" className="flex min-h-11 items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
         <span aria-hidden className="inline-block h-3 w-3 bg-brand-600" />
         townhall.town
       </Link>
@@ -14,6 +17,7 @@ export function SiteHeader({ extra }: { extra?: React.ReactNode; compact?: boole
         <span className="text-sm font-[450] text-ink/60">{SITE.electionLabel}</span>
       </span>
     </header>
+    </div>
   );
 }
 

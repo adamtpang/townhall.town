@@ -15,7 +15,15 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
   it("home order (Adam 2:56 PM): hero, ZIP, 01 Your city, band, 02 How it works, 03 Sources; locked H1 and tagline unchanged", () => {
     const p = src("app/page.tsx");
     const at = (s: string) => { const i = p.indexOf(s); expect(i, s).toBeGreaterThan(-1); return i; };
-    const order = [at("Know your ballot in 2 minutes."), at("<BallotAgent />"), at("<span>Your city</span>"), at("<MediaBand />"), at('n="02" label="How it works"'), at('n="03"')];
+    // Design grid spec #3 (Oct 30, 2:58 PM CT): cities above the band, then the Who/What/Where tiles.
+    const order = [at("Know your ballot in 2 minutes."), at("<BallotAgent />"), at('aria-label="Your city"'), at("<MediaBand />"), at("<HomeTiles />"), at('n="01" label="How it works"'), at('n="02" label={s.heading}')];
+    // Design P1 (Oct 30, 3:38 PM CT): no "01 Your city" eyebrow, no arrow on the cards, chips hidden; hero lg:pt-16.
+    expect(p).not.toContain('n="01" label="Your city"');
+    expect(src("components/media/CityCards.tsx")).not.toContain("↗");
+    expect(src("app/globals.css")).toContain('[data-zip-notice] + div:has(> button[type="button"]) { display: none; }');
+    expect(src("components/media/HomeTiles.tsx")).not.toMatch(/<img|CITIES/);
+    expect(src("app/layout.tsx")).toContain("Saltar al contenido");
+    expect(src("app/RaceTiers.tsx")).toContain('<section className="border-t border-black pb-24 pt-8" id="tiers">');
     expect([...order].sort((a, b) => a - b)).toEqual(order);
     expect(p).toContain("<span>Get your person in office. </span>");
     expect(p).toContain("<T>Your vote matters.</T>");
@@ -28,7 +36,7 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
   });
   it("numbered section: hairline rule, 96/64 rhythm, brand-700 tabular number, 14/20 label at 530", () => {
     const html = renderToStaticMarkup(createElement(NumberedSection, { n: "01", label: "Your city", id: "x", children: "c" }));
-    for (const c of ["border-t border-ink/15", "pt-16", "lg:pt-24", "mt-16", "lg:mt-24", "md:col-span-4", "md:col-span-8", "text-brand-700", "tabular-nums", "text-sm leading-5 font-[530]"]) expect(html).toContain(c);
+    for (const c of ["border-t border-ink/15", "py-16", "lg:py-24", "md:col-span-4", "md:col-span-8", "text-brand-700", "tabular-nums", "text-sm leading-5 font-[530]"]) expect(html).toContain(c);
   });
   it("03 Sources keeps its content and links purple", () => {
     const s = HOME_SECTIONS.find((x) => x.heading === "Sources")!;
@@ -44,8 +52,9 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(html).toContain("Photo: Daderot, CC0");
     expect(html).toContain("Photo: Bernard Spragg. NZ, CC0");
     expect(html).toMatch(/Photo: Jim Henderson, <a href="https:\/\/creativecommons.org\/licenses\/by\/4.0\/"[^>]*>CC BY 4.0.*<\/a>(?!, modified)/); // Adam 2:57 PM: shown in color, unmodified
-    expect(html).toContain('class="grid grid-cols-3 gap-4 lg:grid-cols-12 lg:gap-6" data-city-cards="true"'); // Adam 2:56 PM: 3 across, top
-    expect(html).not.toMatch(/overflow-x-auto|snap-x|mask-image/);
+    // Design grid spec #3 (Oct 30, 2:58 PM CT): 3 across at every width, 4:5 on phones, 16:9 col-span-4 from lg.
+    expect(html).toContain("grid grid-cols-3 gap-2 lg:grid-cols-12 lg:gap-6");
+    expect(html).toContain("aspect-[4/5] bg-brand-50 lg:aspect-video");
     expect(html).not.toMatch(/src="https?:/); // self-hosted only
     expect(src("app/BallotAgent.tsx")).toContain('"townhall:zip"');
   });
@@ -63,6 +72,7 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(band).toContain('src="/media/band-mobile-poster.jpg"');
     expect(band).toContain("h-11 w-11");
     expect(band).toMatch(/<video ref=\{v\} muted loop playsInline preload="none" aria-hidden="true"/);
+    expect(band).toContain('alt="" aria-hidden="true" decoding="async" data-band-poster'); // v3.1 poster img
     expect(band).not.toMatch(/<video[^>]*controls/);
   });
   it("media is self-hosted, budgeted, no image over 200 KB, no Vercel image optimizer", () => {

@@ -8,7 +8,7 @@ import { PhotoGroup } from "../../components/Portrait";
 import RaceFooter from "../../components/RaceFooter";
 import CandidateRow, { type RowCand } from "../../components/CandidateRow";
 import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../../lib/endscreen.mjs";
-import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
+import { decodeAnswers, cardPath } from "../../lib/card.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
 import { Button } from "../../components/ui/button";
 import PrintBallot, { type PrintData } from "./PrintBallot";
@@ -90,7 +90,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   }
   async function share() {
-    const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
+    const url = `${location.origin}${cardPath(zip, answers || {}, ids)}`;
     try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
   }
   const splitP = (id: string, present: string[]) => { const sp = splitStart(zip, id, present, groups); return sp ? <div className="mb-1 text-sm leading-5 text-black/80" data-card-split={id}>{sp.line ? <p data-card-split-line>{sp.line}</p> : null}<a href={sp.url} className="inline-flex min-h-11 items-center th-link underline-offset-2 hover:underline" target="_blank" rel="noreferrer">{linkHost(sp.url)} ↗{ext}</a></div> : null; };
@@ -98,7 +98,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
   return (
     <>
     <div className="sticky top-0 z-30 border-b border-black/10 bg-white/70 backdrop-blur-md print:hidden" data-card-header><SiteHeader compact extra={<LangToggle />} /></div>
-    <main className="mx-auto max-w-[720px] px-5 pb-12 pt-3 text-black lg:max-w-[1280px] lg:px-10 print:max-w-none print:px-0 print:py-0" data-ballot-card>
+    <main id="main" tabIndex={-1} className="scroll-mt-16 mx-auto max-w-[720px] px-5 pb-12 pt-3 text-black lg:max-w-[1280px] lg:px-10 print:max-w-none print:px-0 print:py-0" data-ballot-card>
       {print ? <PrintBallot zip={zip} today={today} ed={ed} early={early} earlyLine={earlyText} lookupUrl={edWhere.lookupUrl} dependsOnAddress={edWhere.dependsOnAddress} jurisdiction={edWhere.jurisdiction ?? where.jurisdiction ?? null} data={print} picks={picks} /> : null}
       <div className={print ? "print:hidden" : undefined}>
       <h1 className="sr-only">Your ballot card</h1>
@@ -169,7 +169,7 @@ function Card({ zip, place, county, ids, races, print }: { zip: string; place: s
               {rows.map(({ r, list, gradesHidden }) => (
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
                   {splitP(r.id, rows.map((x) => x.r.id))}
-                  <p className="text-base font-[530]">{r.title || r.id}</p>
+                  <h3 className="text-base font-[530]" data-race-title>{r.title || r.id}</h3>
                   {r.order ? <p className="max-w-[60ch] mt-1 text-sm leading-5 text-black/60" data-order-line={r.order.confirmed ? "confirmed" : "unsure"}>{r.order.text}{r.order.url ? <> <a href={r.order.url} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-order-source>{r.order.label ?? "Source"} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
                     {list.map(({ c, o, grade }) => <CandidateRow key={c.name} raceId={r.id} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} cut avatar="lg" />)}

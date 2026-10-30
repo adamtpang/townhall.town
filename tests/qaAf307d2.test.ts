@@ -52,10 +52,11 @@ describe("QA af307d2 P2: band credit source", () => {
 describe("QA af307d2 P1: city cards at 320px", () => {
   it("Adam 2:56 PM + Design landing 3:03 PM: 3 cards across (gap-4 phones, col-span-4 at lg), 4:5 on phones, 16:9 at lg, 16px/24px names, min-h-11, no arrow", () => {
     const html = renderToStaticMarkup(h(CityCards));
-    expect(html).toContain('<ul class="grid grid-cols-3 gap-4 lg:grid-cols-12 lg:gap-6" data-city-cards="true">');
+    // v3.1 merge: motion-v2's gap-2 on phones (Design P1 GO, fe2ac42; card bottoms ~604 at 390).
+    expect(html).toContain('<ul class="grid grid-cols-3 gap-2 lg:grid-cols-12 lg:gap-6" data-city-cards="true">');
     expect(html.match(/<li class="th-card relative min-w-0 lg:col-span-4">/g)).toHaveLength(3);
     expect(html.match(/media-frame aspect-\[4\/5\] bg-brand-50 lg:aspect-video/g)).toHaveLength(3);
-    expect(html.match(/min-h-11 items-center text-base leading-5[^"]*lg:text-2xl/g)).toHaveLength(3);
+    expect(html.match(/min-h-11 items-center gap-1 text-base leading-5[^"]*lg:text-2xl/g)).toHaveLength(3);
     expect(html).not.toContain("↗");
     expect(html).not.toMatch(/overflow-x-auto|mask-image/);
   });
@@ -67,9 +68,10 @@ describe("QA af307d2 P1: city cards at 320px", () => {
   });
   it("credits wrap, never clip (Jim Henderson shown in full)", () => {
     const html = renderToStaticMarkup(h(CityCards));
-    // Design landing 3:03 PM: one trust line under the row (credits don't fit under a 106px card); each credit wraps.
-    const line = html.match(/<p class="([^"]+)" data-city-credit="true"/)![1];
-    expect(line).toContain("flex-wrap"); expect(line).not.toMatch(/truncate|overflow-hidden|text-ellipsis|whitespace-nowrap/);
+    // v3.1 merge: motion-v2's "Photo credits (3)" fold under the row (Design P1 GO); each credit row wraps.
+    const lis = [...html.matchAll(/<li class="([^"]+)"><span class="\[overflow-wrap:anywhere\]"/g)].map((m) => m[1]);
+    expect(lis).toHaveLength(3);
+    for (const l of lis) { expect(l).toContain("flex-wrap"); expect(l).not.toMatch(/truncate|overflow-hidden|text-ellipsis|whitespace-nowrap/); }
     const credits = [...html.matchAll(/<span class="(\[overflow-wrap:anywhere\])"/g)].map((m) => m[1]);
     expect(credits).toHaveLength(3);
     for (const c of credits) { expect(c).toContain("[overflow-wrap:anywhere]"); expect(c).not.toMatch(/truncate|overflow-hidden|text-ellipsis|whitespace-nowrap/); }

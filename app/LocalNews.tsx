@@ -23,7 +23,7 @@ export default function LocalNews({ zip }: { zip: string }) {
       <ul className="mt-10 flex snap-x gap-4 overflow-x-auto pb-3">
         {items.map((i) => (
           <li key={i.url} className="w-72 shrink-0 snap-start border-t border-black/15 pt-4">
-            <p className="text-xs uppercase tracking-wide text-black/60">{i.outlet} · {day(i.date)}</p>
+            <p className="text-sm uppercase tracking-wide text-black/60">{i.outlet} · {day(i.date)}</p>
             <a href={i.url} target="_blank" rel="noreferrer" className="mt-2 block text-lg leading-snug text-black">{i.title}</a>
           </li>
         ))}

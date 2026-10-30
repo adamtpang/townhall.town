@@ -148,37 +148,20 @@ describe("FinanceRow per candidate (QA P1s)", () => {
       expect((out.match(/data-last-report=/g) ?? []).length, r.id).toBe((r.candidates as { money?: Row }[]).filter((c) => c.money?.lastReport).length);
     }
   });
-  it("race list: money columns use the photo row's tracks and gaps so each figure sits under its portrait", () => {
-    const out = html("78701");
-    const sen = out.split(/<h3 /).find((p) => p.includes("U.S. Senate"))!;
-    const photo = sen.match(/<ul role="list" aria-label="Candidates"[^>]*>/)![0];
-    const money = sen.match(/<ul[^>]*data-finance-align="portraits"[^>]*>/)![0];
-    expect(photo).toContain("grid-template-columns:repeat(3, minmax(0, var(--tile-max)))");
-    expect(money).toContain("grid-template-columns:repeat(3, minmax(0, var(--tile-max)))");
-    for (const k of ["[--tile-max:72px]", "md:[--tile-max:88px]", "lg:[--tile-max:112px]", "gap-x-2", "md:gap-x-3", "lg:gap-x-4", "justify-start"]) expect(money).toContain(k);
-    expect(photo).toMatch(/gap-2 .*md:gap-3 .*lg:gap-4/);
-    // Who lines up has no photo row above the money, so it keeps the two-up grid.
-    expect(renderToStaticMarkup(h(FinanceRow, { r: federal("78701")[0] as never }))).toContain('data-finance-align="grid"');
-  });
-  it("below sm: race-list money is a full-width divide-y list, one line per candidate in portrait order; columns from sm", () => {
+  // v3.1 merge (Oct 30, 4:34 PM CT): motion-v2 keeps money inside each race's "Money" fold (Design GO fe2ac42), so the
+  // race list uses the plain FinanceRow grid there; the align/MoneyList variant stays tested directly below.
+  it("race list: money sits in the race's Money fold as the plain per-candidate grid", () => {
     for (const zip of ZIPS) {
       const out = html(zip);
       for (const part of out.split(/<h3 /).slice(1)) {
         if (!part.includes("data-finance")) continue;
-        const before = part.split("data-money-list")[0];
-        const tiles = [...before.matchAll(/aria-label="([^"]+)" data-tile-label/g)].map((x) => x[1]);
-        const list = part.match(/<div class="my-2 sm:hidden" data-money-list="true">[\s\S]*?<\/ul>/)![0];
-        expect(list).toContain("divide-y");
-        const lines = [...list.matchAll(/data-money-line="([^"]+)"/g)].map((x) => x[1]);
-        expect(lines.length).toBeGreaterThan(0);
-        expect(lines).toEqual(tiles);
-        expect(list).not.toMatch(/text-xs|text-\[1[0-3]px\]/);
-        expect((list.match(/data-line-fec/g) ?? []).length).toBe(lines.length);
-        expect(list).toMatch(/tabular-nums/);
-        const cols = part.match(/<ul[^>]*data-finance-align="[^"]+"[^>]*>/)![0];
-        expect(cols).toContain("hidden sm:grid");
+        expect(part).toContain('data-fold="money"');
+        expect(part.indexOf('data-fold="money"')).toBeLessThan(part.indexOf("data-finance"));
+        expect(part.match(/<ul[^>]*data-finance-align="[^"]+"[^>]*>/)![0]).toContain('data-finance-align="grid"');
+        expect(part).not.toMatch(/text-xs|text-\[1[0-3]px\]/);
       }
     }
+    expect(renderToStaticMarkup(h(FinanceRow, { r: federal("78701")[0] as never }))).toContain('data-finance-align="grid"');
   });
   it("money list: one line per row; amount is the FEC link; differing dates get a marker explained in one caption", () => {
     const r = federal("10001").find((x) => x.id === "ny-12")!;
@@ -231,19 +214,14 @@ describe("FinanceRow per candidate (QA P1s)", () => {
     expect(as.map((a) => a[2])).toEqual(expect.arrayContaining(["Source ↗", "Cook Political Report ↗"]));
     for (const a of as) expect(a[1]).toMatch(/^relative z-\[1\] inline-flex min-h-11 items-center$/);
     expect(links[2]).not.toMatch(/<span aria-hidden="true">·/); // dots are sm-up only
-    // Credits: sm-up line unchanged under the photo row; phones get "Photo credits (N)" right after the links.
-    expect(sen).toMatch(/<div class="hidden sm:block" data-credits-sm="true"><div class="-mt-1 mb-2"><div class="md:flex/);
+    // Credits (v3.1 merge, motion-v2 layout): one "Photo credits (N)" fold after the race links at every width.
     const after = sen.slice(sen.indexOf("data-race-links"));
-    const d = after.match(/<details class="group\/pc sm:hidden" data-phone-credits="(\d+)"><summary class="([^"]+)">Photo credits \((\d+)\)/)!;
-    expect(after.indexOf("data-phone-credits")).toBeLessThan(after.indexOf("data-office"));
-    expect(d[2]).toContain("inline-flex min-h-11");
-    expect(d[2]).toContain("text-sm");
     const r = ballotFor("78701")!.races.find((x) => x.id === "us-senate-tx")!;
-    const real = (r.candidates as { photo?: { url?: string; mate?: unknown } }[]).reduce((k, c) => k + (c.photo?.url ? (c.photo.mate ? 2 : 1) : 0), 0);
-    expect(+d[1]).toBe(real);
-    expect(+d[3]).toBe(real);
-    const body = after.slice(after.indexOf("data-phone-credits"), after.indexOf("</details>"));
-    expect((body.match(/data-race-credit=/g) ?? []).length).toBe((r.candidates as { photo?: { url?: string } }[]).filter((c) => c.photo?.url).length);
+    const withPhoto = (r.candidates as { photo?: { url?: string } }[]).filter((c) => c.photo?.url).length;
+    expect(after).toContain(`Photo credits (${withPhoto})`);
+    expect(after).toContain('data-fold="credits"');
+    const body = after.slice(after.indexOf('data-fold="credits"'));
+    expect((body.match(/data-race-credit=/g) ?? []).length).toBe(withPhoto);
     expect(body).not.toMatch(/text-\[1[0-3]px\]|text-xs/);
   });
   it("NY-12: four candidates, four dates (Lasher/Shinkle Oct 14, Negron Sep 30, Ortiz Jun 30 + note)", () => {

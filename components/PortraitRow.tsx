@@ -48,7 +48,7 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid, raceId, 
         {/* The placeholder always sits underneath, so a slow, lazy or failed image never leaves a blank tile. */}
         {show ? null : <AvatarPlaceholder />}
         {show ? (
-          <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} sizes={grid ? ROW_SIZES : undefined} onFail={() => setBroken(true)} />
+          <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} sizes={grid || tileMax ? ROW_SIZES : undefined} onFail={() => setBroken(true)} />
         ) : null}
         {/* Crowded rows (over 8): names are hidden, so the tile itself is the control: its aria-label is the name and a tap
             opens that candidate in "Who lines up" (components/WhoRaces.tsx listens for OPEN_CANDIDATE). */}
@@ -66,8 +66,9 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax, grid, raceId, 
 /** Design portrait spec v2 (+ design p8: names one line, truncated with an ellipsis, full name in title/aria-label; every tile the same height): one flex row, never wraps, never scrolls, ballot order, identical square tiles
  *  (56px at 1024+, 48px at 768-1023, 40px below). Broken or missing photos fall back to a same-size initials tile (Adam's rule). */
 /** splitCredits (race list): the caller wraps the race in <PhotoGroup> and shows the phone credits disclosure itself
- *  (Portrait PhoneCredits), so this row skips its own group and shows the credit line from sm only. */
-export function CandidatePortraitRow({ cands, size = "row", eager = false, raceId, splitCredits = false }: { cands: C[]; size?: "row" | "mini"; eager?: boolean; raceId?: string; splitCredits?: boolean }) {
+ *  (Portrait PhoneCredits), so this row skips its own group and shows the credit line from sm only.
+ *  credits={false}: the race folder shows them in its own "Photo credits (N)" item (motion v2). */
+export function CandidatePortraitRow({ cands, size = "row", eager = false, credits = true, raceId, splitCredits = false }: { cands: C[]; size?: "row" | "mini"; eager?: boolean; credits?: boolean; raceId?: string; splitCredits?: boolean }) {
   if (!cands.length) return null;
   // Design p9 (<768): each item 56px wide (label w-14) with a centered 40px tile and gap-2, so 5 items fit 342px;
   // rows with more than 5 items fall back to 44px items. From 768 up the item is the tile (48 / 56px), gap-3.
@@ -76,37 +77,36 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false, raceI
   // visible label goes sr-only (the name stays in aria-label/title and on the card).
   // Design p11 #1: the item (label width) is separate from the tile. Item max 56px (64px at 1024+); tile max 40px
   // (48px at 768+, 56px at 1024+), centred; label full item width, centred, truncated.
-  // Design big photos (Adam 1:11 PM Oct 30: bigger): row size is a CSS grid, one column per candidate,
-  // repeat(n, minmax(0, var(--tile-max))) with justify-content start, so every candidate shares one line in equal
-  // square tiles that shrink to fit (never wrap, never scroll). --tile-max 72px / gap 8px below 768, 88px / 12px at
-  // md, 112px / 16px at lg. The item is the tile; the 14px label (never 12px) is the tile's width, centred. Placeholders
-  // fill the same square. Over 6 candidates under 768px, or over 8 from 768 up, the label goes sr-only.
-  const grid = size === "row";
-  const max = grid ? "" : "max-w-[24px] md:max-w-[32px]";
-  const tileMax = "";
-  const dense = grid && cands.length > 6;
-  const denseDesk = grid && cands.length > 8;
-  const n = cands.length;
-  // Design 1:54 PM Oct 30 (crowded rows): over 8 candidates, phones use gap-1 (4px) and the tiles flex down to fit, so
-  // an 11-candidate row is ~27px tiles at 390 (11 x 27 + 10 x 4 = 337 <= 342). Every candidate stays visible at equal
-  // size on one row: no wrap, no sideways scroll. Rows of 8 or fewer keep gap-2. md/lg gaps are unchanged.
-  const crowded = grid && n > 8;
-  // A race that "Who lines up" doesn't list (court races) has nowhere to open, so the tap shows that candidate's full name
-  // under the row instead (the hidden label, made visible); a second tap on the same tile hides it.
+  // Adam 2:58 PM CT "images should be bigger" + Design grid spec #4 (motion v2, Design GO fe2ac42): the tile is the item,
+  // flex 1 1 0, square, max 120px on phones and 160px from 1024 up; one row, never wraps, never scrolls.
+  const max = size === "mini" ? "max-w-[24px] md:max-w-[32px]" : "max-w-[120px] lg:max-w-[160px]";
+  const tileMax = size === "mini" ? "" : "max-w-[120px] lg:max-w-[160px]";
+  // Design 3:07 PM CT (Oct 30) P1: a ticket (governor + running mate) is two full tiles, never two half photos in one.
+  const tiles: C[] = size === "mini" ? cands : cands.flatMap((c) => {
+    const mate = c.photo?.mate;
+    if (!mate || !c.photo) return [c];
+    const { mate: _m, ...lead } = c.photo;
+    return [{ name: split(c.name).lead, party: c.party, photo: lead }, { name: mate.name, party: c.party, photo: mate }];
+  });
+  const row = size === "row";
+  const n = tiles.length;
+  const dense = row && n > 6;
+  const denseDesk = row && n > 8;
+  // Design 1:54 PM Oct 30 (crowded rows, from v3.1): over 8 candidates phones use gap-1 and the names go sr-only, so the
+  // tile is the control (a tap opens the candidate in "Who lines up", or shows the name under the row).
+  const crowded = row && n > 8;
   const [picked, setPicked] = useState<string | null>(null);
   const onPick = (name: string, handled: boolean) => setPicked((cur) => (handled || cur === name ? null : name));
-  // Design 2:10 PM Oct 30 (narrow phones): below 360px every row over 6 candidates also uses gap-1 (an 8-candidate row is
-  // ~30.5px tiles at 320). Still one row, equal tiles, every candidate visible, no sideways scroll. 360px and up unchanged.
-  const narrowTight = grid && n > 6 && !crowded;
-  const rowClass = `group/row my-3 grid justify-start ${crowded ? "gap-1" : narrowTight ? "gap-2 max-[359px]:gap-1" : "gap-2"} [--tile-max:120px] md:gap-3 md:[--tile-max:140px] lg:gap-4 lg:[--tile-max:160px]`;
+  const narrowTight = row && n > 6 && !crowded;
+  const gap = crowded ? "gap-1 md:gap-3" : narrowTight ? "gap-2 max-[359px]:gap-1 md:gap-3" : "gap-2 md:gap-3";
   const Wrap = splitCredits ? Fragment : PhotoGroup;
   return (
     <Wrap>
-    <ul role="list" aria-label="Candidates" className={grid ? rowClass : "group/row my-3 flex flex-nowrap gap-2 md:gap-3"} style={grid ? { gridTemplateColumns: `repeat(${n}, minmax(0, var(--tile-max)))` } : undefined} data-dense={dense ? "true" : "false"} data-crowded={crowded ? "true" : "false"} data-densedesk={denseDesk ? "true" : "false"} data-photo-row>
-      {(() => { const L = labels(cands.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} grid={grid} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} raceId={raceId} tap={crowded} onPick={onPick} picked={picked === c.name} />); })()}
+    <ul role="list" aria-label="Candidates" className={`group/row my-3 flex flex-nowrap ${gap} overflow-x-clip`} data-dense={dense ? "true" : "false"} data-crowded={crowded ? "true" : "false"} data-densedesk={denseDesk ? "true" : "false"} data-photo-row>
+      {(() => { const L = labels(tiles.map((c) => c.name)); const anyMate = L.some((x) => x.mate); return tiles.map((c, i) => <Tile key={c.name} c={c} eager={eager} max={max} tileMax={tileMax} label={L[i].label} mate={L[i].mate} reserveMate={anyMate} raceId={raceId} tap={crowded} onPick={onPick} picked={picked === c.name} />); })()}
     </ul>
     {crowded ? <p className={`${picked ? "-mt-1 mb-2" : ""} text-sm font-[530] leading-5 text-black`} aria-live="polite" data-tile-picked>{picked ?? ""}</p> : null}
-    {size === "row" ? (splitCredits ? <div className="hidden sm:block" data-credits-sm><RowCredits cands={cands} /></div> : <RowCredits cands={cands} />) : null}
+    {row && credits ? (splitCredits ? <div className="hidden sm:block" data-credits-sm><RowCredits cands={cands} /></div> : <RowCredits cands={cands} />) : null}
     </Wrap>
   );
 }
@@ -118,7 +118,7 @@ export const ROW_SIZES = "(max-width: 767px) 120px, (max-width: 1023px) 140px, 1
 
 /** Design p12 #1: one credit line per race under the row (shared with Who and the ballot card). Credits follow the
  *  fallback: a race (or, in candidate mode, a candidate) that reverted to initials drops its credit. */
-function RowCredits({ cands }: { cands: C[] }) {
+export function RowCredits({ cands }: { cands: C[] }) {
   const L = labels(cands.map((c) => c.name));
   return <div className="-mt-1 mb-2"><RaceCredits cands={cands} label={(n) => L[cands.findIndex((c) => c.name === n)].label} /></div>;
 }

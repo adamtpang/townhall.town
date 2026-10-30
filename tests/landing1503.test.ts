@@ -6,19 +6,20 @@ describe("Design landing spec P0 (Oct 30, 3:03 PM) + audit 3:05 PM", () => {
   it("band is full-bleed without w-screen (no scrollbar-gutter overflow) and sits outside the 1280 container", () => {
     const b = src("components/media/MediaBand.tsx");
     expect(b).not.toMatch(/className="[^"]*(w-screen|50vw)/);
-    expect(b).toContain('<figure className="relative mt-4 w-full" data-media-band>');
+    // v3.1 merge: motion-v2's band (Design GO, fe2ac42): no top margin, caption row below the band.
+    expect(b).toContain('<figure className="w-full" data-media-band>');
     const p = src("app/page.tsx");
     expect(p).toMatch(/<\/div>\s*<MediaBand \/>\s*<div className="mx-auto max-w-\[1280px\] px-5 md:px-10">/);
   });
-  it("band caption on a dark glass plate with white text and a 44px pause button using the existing strings", () => {
+  it("band caption (motion-v2, Design GO fe2ac42: a caption row under the band, no text on media) with a 44px pause button using the existing strings", () => {
     const b = src("components/media/MediaBand.tsx");
-    expect(b).toMatch(/<figcaption className="absolute inset-x-0 bottom-0 bg-ink\/55[^"]*text-white/);
+    expect(b).toMatch(/<figcaption className="mx-auto mt-3 flex max-w-\[1280px\][^"]*text-ink\/60/);
     expect(b).toContain('aria-label={paused ? "Play background video" : "Pause background video"}');
-    expect(b).toMatch(/h-11 w-11[^"]*text-white/);
+    expect(b).toMatch(/h-11 w-11[^"]*text-ink/);
     expect(b).toContain('alt="" aria-hidden="true"');
   });
-  it("header is 56px on phones, 64px on desktop; Español toggle stays", () => {
-    expect(src("components/SiteChrome.tsx")).toMatch(/<header className="[^"]*h-14[^"]*lg:h-16[^"]*"/);
+  it("header is 56px (motion-v2 glass bar, Design premium §1); Español toggle stays", () => {
+    expect(src("components/SiteChrome.tsx")).toMatch(/<header className="[^"]*min-h-14[^"]*"/);
     expect(src("components/SiteChrome.tsx")).not.toMatch(/<header className="[^"]*py-8/);
     expect(src("app/page.tsx")).toContain("<SiteHeader extra={<LangToggle />} />");
   });

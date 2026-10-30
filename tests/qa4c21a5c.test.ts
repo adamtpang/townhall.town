@@ -114,9 +114,9 @@ describe("QA 4c21a5c P2: chat carry-over and 300% zoom", () => {
   });
   it("hero top padding only grows on tall viewports (no ~300px band at 300% zoom)", () => {
     const s = src("app/page.tsx");
-    // Adam 2:58 PM: the city row must end above y=700 (390) and y=800 (1440), so the hero top padding is tightened.
-    expect(s).toContain('pb-6 pt-6 lg:pb-8 lg:pt-16" data-hero');
-    // QA P2-9: the only pt-40 allowed is the tall-viewport one; no other pt-40/sm:pt- anywhere on the page.
-    expect(s.replace("[@media(min-width:1024px)_and_(min-height:800px)]:pt-40", "")).not.toMatch(/pt-40|sm:pt-/);
+    // Design p8: pt-12 lg:pt-20; purple spec P1-3 adds 160px only when the viewport is also >= 800px tall.
+    // Design P1 (Oct 30, 3:38 PM CT) supersedes purple P1-3: py-16 at 1440, no tall-viewport pt-40 at all.
+    expect(s).toContain('pb-10 pt-12 lg:pt-16" data-hero');
+    expect(s).not.toMatch(/pt-40|sm:pt-/);
   });
 });

@@ -1,9 +1,10 @@
 "use client";
 import PrintButton from "../components/PrintButton";
 import { H2, H3, HIT } from "../lib/typeScale";
+import { Chev, Fold } from "../components/Fold";
 import { JUDICIAL_RULES, judicialShort } from "../lib/judicial";
 import { useMemo } from "react";
-import { Button } from "../components/ui/button";
+import { Button, buttonClass } from "../components/ui/button";
 import { stancesFor, type Answers } from "../lib/issues";
 import { SHOW_ACCOUNTABILITY } from "../lib/flags";
 import { overlapStatus, METHOD, RECORD_METHOD } from "../lib/overlapCore.mjs";
@@ -74,7 +75,8 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
       <div className="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-5">
         {/* WHO */}
         <div className="lg:col-span-6" data-end="who">
-          <h3 className={H3}>Who lines up with you</h3>
+          {/* Design 2:59 PM CT (Oct 30): closed by default under its own heading (pure hide). */}
+          <Fold data-who-fold summaryClassName="flex min-h-11 items-center gap-2" summary={<><h3 className={H3}>Who lines up with you</h3><Chev /></>}>
           <p className="mt-3 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation.</p>
           <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">{SHOW_ACCOUNTABILITY ? "How overlap and record work" : "How overlap works"}</summary><p className="pb-2 text-sm text-black/80">{METHOD}</p>{SHOW_ACCOUNTABILITY ? <p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p> : null}</details>
           {judicial.length > 0 && (
@@ -110,10 +112,11 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
               }))} />
             </div>
           )}
+          </Fold>
         </div>
 
         {/* WHERE */}
-        <div className="lg:col-span-3" data-end="where">
+        <div id="where" data-nav-target className="lg:col-span-3" data-end="where">
           <h3 className={H3}>Where to go</h3>
           {site ? (
             <>
@@ -157,14 +160,15 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
         <div className="lg:col-span-3" data-end="when">
           <h3 className={H3}>When to go</h3>
           <ul className="mt-4 space-y-3">
-            {early && (<li data-early><p className="text-sm font-[530]" data-early-heading>{earlySingleDay(early, today) ?? <>Early voting, {fmt(early.start)} to {fmt(early.end)}</>}</p>
-              {early.daily?.length ? (
+            {early && (<li data-early>{/* Hard cut R5 (Design, Oct 30 ~3:09 PM CT): daily hours fold behind the existing Early voting line. */}
+              {early.daily?.length ? (<Fold data-early-fold summaryClassName="flex min-h-11 items-center gap-2" summary={<><p className="text-sm font-[530]" data-early-heading>{earlySingleDay(early, today) ?? <>Early voting, {fmt(early.start)} to {fmt(early.end)}</>}</p><Chev /></>}>
                 <ul className="mt-1 space-y-1" data-daily-hours>
                   {early.daily.map((d: { label: string; hours: string; appliesTo: string | null }, i: number) => (
                     <li key={i} className="text-base text-black/80">{d.label}: {d.hours}{d.appliesTo && early.daily.length > 1 && new Set(early.daily.map((x: { appliesTo: string | null }) => x.appliesTo)).size > 1 ? <span className="block text-sm leading-5 text-black/60">{d.appliesTo}</span> : null}</li>
                   ))}
-                </ul>
-              ) : early.hours ? <p className="text-base text-black/80">{early.hours}</p> : <p className="text-base text-black/80">Hours vary by day</p>}
+                </ul></Fold>
+              ) : <p className="text-sm font-[530]" data-early-heading>{earlySingleDay(early, today) ?? <>Early voting, {fmt(early.start)} to {fmt(early.end)}</>}</p>}
+              {early.daily?.length ? null : early.hours ? <p className="text-base text-black/80">{early.hours}</p> : <p className="text-base text-black/80">Hours vary by day</p>}
               <a href={early.sourceUrl} target="_blank" rel="noreferrer" className="relative text-sm leading-5 th-link after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']" data-early-source>Source ↗{ext}</a></li>)}
             {ed && (<li><p className="text-sm font-[530]">Election Day, {fmt(ed.start)}</p><p className="text-base text-black/80">{ed.hours ? `Polls open ${ed.hours}` : "Poll hours not found in an official source"}</p></li>)}
             {when.registration && when.registration.openOnOct30 === true && when.registration.sourceUrl && (<li><p className="text-sm font-[530]">Registration</p><p className="text-base text-black/80">You can still register and vote. <a href={when.registration.sourceUrl} target="_blank" rel="noreferrer" className={`${HIT} th-link`} data-how-register>How ↗{ext}</a></p></li>)}
@@ -173,9 +177,9 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
           </ul>
           {ed && (
             <>
-              <Button onClick={() => window.open(gcalEd!, "_blank", "noopener")} className="mt-4 h-12 w-full rounded-none bg-black px-6 text-base text-[#F2F2F2] hover:bg-black/80 lg:w-auto" data-gcal-url={gcalEd}>
+              <a href={gcalEd!} target="_blank" rel="noopener noreferrer" className={buttonClass("mt-4 h-12 w-full rounded-none px-6 text-base no-underline hover:text-white lg:w-auto")} data-gcal-url={gcalEd}>
                 Add to Google Calendar ↗{ext}
-              </Button>
+              </a>
               <div className="mt-2 flex flex-col items-start gap-0 text-sm" data-cal-links>
                 {early && <a href={gcalEarly!} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center th-link hover:underline" data-gcal-early>Early voting to Google ↗{ext}</a>}
                 <button type="button" onClick={downloadIcs} className="inline-flex min-h-11 items-center text-black/60 underline decoration-black/20 underline-offset-2 hover:text-black" data-ics>or download .ics</button>
