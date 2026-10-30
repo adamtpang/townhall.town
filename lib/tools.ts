@@ -11,6 +11,8 @@ import { getTurnout } from "./turnout";
 import { withLicensedPhoto } from "./photos";
 import { withMoney } from "./money";
 import { raceMeta } from "./raceMeta";
+import { stancesFor, sourceLabel, ISSUES } from "./issues";
+import { stanceForm } from "./stanceForm";
 
 /** Jurisdiction plus app-only extras (measures, verify links, context). Extra fields only; contract fields unchanged. */
 export type Ballot = Jurisdiction & {
@@ -26,6 +28,35 @@ const TX = tx as unknown as { statewide: Race[]; house: Record<string, Race>; zi
 // Served ZIPs only (lib/site.ts). Other cached ballots (78130, 90012) and the statewide Texas ZIP path stay in data but are never served.
 export const DEMO_ZIPS = COVERED_ZIPS.filter((z) => z in B);
 
+/** QA P2 (60582ae): agents get the same published, sourced stances the site shows (data/stances.json),
+ *  each with its exact text and source link. Nothing pending, unsourced or null is returned; judicial candidates get none. */
+const apiSourceLabel = (u: string) => { const l = sourceLabel(u); if (l !== "source") return l; try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
+function publishedPositions(name: string) {
+  return Object.entries(stancesFor(name))
+    .filter(([, st]) => st && st.value !== null && st.value !== undefined && st.sourceUrl && (st.quote || (st as { voteRecord?: string }).voteRecord))
+    .map(([id, st]) => {
+      const vr = (st as { voteRecord?: string }).voteRecord;
+      return { issue: ISSUES.find((i) => i.id === id)?.label ?? id, text: vr ? `${vr}${st.quote ? `: ${st.quote}` : ""}` : String(st.quote), form: stanceForm(st as { voteRecord?: string; sourceUrl?: string }), ...(st.year ? { year: st.year } : {}), source: { label: apiSourceLabel(String(st.sourceUrl)), url: String(st.sourceUrl) } };
+    });
+}
+
+/** QA P2: one naming style for Texas seats ("Office, District N"), matching the county's own ballot style.
+ *  Display only: ids, sources and market matching are unchanged. */
+export function txTitle(t: string): string {
+  return t
+    .replace(/^Texas House District (\d+)$/, "State Representative, District $1")
+    .replace(/^U\.S\. House Texas District (\d+)$/, "U.S. Representative, District $1")
+    .replace(/^U\.S\. Senate Texas$/, "U.S. Senator")
+    .replace(/^State Board of Education District (\d+)$/, "State Board of Education, District $1")
+    .replace(/^Texas Supreme Court Chief Justice$/, "Chief Justice, Texas Supreme Court")
+    .replace(/^Texas Supreme Court Place (\d+)( \(Unexpired Term\))?$/, "Justice, Texas Supreme Court, Place $1$2")
+    .replace(/^Texas Court of Criminal Appeals Place (\d+)$/, "Judge, Court of Criminal Appeals, Place $1")
+    .replace(/^(\d+(?:st|nd|rd|th)) Court of Appeals Chief Justice$/, "Chief Justice, $1 Court of Appeals")
+    .replace(/^(\d+(?:st|nd|rd|th)) Court of Appeals Place (\d+)$/, "Justice, $1 Court of Appeals, Place $2")
+    .replace(/^Travis County Commissioner, Precinct (\d+)$/, "County Commissioner, Precinct $1")
+    .replace(/^County Constable, Precinct (\d+) - Unexpired Term$/, "Constable, Precinct $1 (Unexpired Term)");
+}
+
 /** Attach the money and turnout plug-ins (optional contract fields). */
 function enrich(b: Ballot): Ballot {
   const turnout = getTurnout(b.zip) ?? undefined;
@@ -34,7 +65,8 @@ function enrich(b: Ballot): Ballot {
   return { ...b, turnout, races: b.races.map((r0) => {
     // Same-titled single-candidate seats (CA retention races) get the justice's name so each title is distinct.
     const dup = (titleN.get(r0.title) ?? 0) > 1 && r0.candidates.length === 1;
-    const r = { ...r0, title: dup ? r0.title.replace(/( \(retention[^)]*\))?$/, (m) => `: ${r0.candidates[0].name}${m}`) : r0.title } as Race;
+    const t0 = b.state === "TX" ? txTitle(r0.title) : r0.title;
+    const r = { ...r0, title: dup ? t0.replace(/( \(retention[^)]*\))?$/, (m) => `: ${r0.candidates[0].name}${m}`) : t0 } as Race;
     if (/^\s*unsure/i.test(String((r as { office?: string }).office ?? ""))) (r as { office?: string }).office = undefined; // never show "unsure" as an office description
     // Judicial races: no issue tags and no "why it matters" issue stats (judges can't campaign on issues).
     const meta = raceMeta(b.zip, r.id);
@@ -43,7 +75,8 @@ function enrich(b: Ballot): Ballot {
     // entries that are not keyword matches, and judicial candidates keep none.
     const sourced = (ps: unknown) => (Array.isArray(ps) ? ps.filter((p: { match?: string }) => !/keyword/i.test(String(p?.match ?? ""))) : []);
     const cands = r.candidates.map((c) => {
-      const ps = jud ? [] : sourced((c as { positions?: unknown }).positions);
+      const kept = jud ? [] : sourced((c as { positions?: unknown }).positions);
+      const ps = jud ? [] : kept.length ? kept : publishedPositions(c.name);
       return withMoney(withLicensedPhoto({ ...c, causes: undefined, positions: ps.length ? ps : undefined } as typeof c));
     });
     return { ...r, meta: jud && meta ? { ...meta, why: null } : meta, candidates: cands /* Design 8:05: initials only where a photo is truly missing */ };

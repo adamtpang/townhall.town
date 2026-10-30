@@ -1,4 +1,5 @@
 "use client";
+import { stanceForm } from "../lib/stanceForm";
 import { useMemo } from "react";
 import type { Photo } from "../components/Portrait";
 import { Button } from "../components/ui/button";
@@ -48,6 +49,8 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
     return { race, rows, any: rows.some((x) => x.o.sourced >= MIN_ISSUES) };
   });
   const zipNone = !rowsByRace.some((r) => r.any);
+  // QA P2: Neutral is a real answer but is never compared, so say that instead of asking for answers again.
+  const yesNo = ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length;
 
   return (
     <section id="end" className="border-t border-black py-24" data-end-screen>
@@ -78,6 +81,8 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
             <p className="mt-6 text-base text-black" data-zip-none>Not enough sourced positions for any candidate on this ballot yet, so there is no overlap to show. Each candidate&rsquo;s sources are linked in the races above.</p>
           ) : answered === 0 ? (
             <p className="mt-4 text-base text-black/60">Answer Yes, Neutral or No above to see overlap.</p>
+          ) : yesNo === 0 ? (
+            <p className="mt-4 text-base text-black/60" data-neutral-only>You answered Neutral on {answered === 1 ? "your issue" : `all ${answered} issues`}. Neutral answers aren&rsquo;t compared, so there&rsquo;s no overlap to show. Answer Yes or No on an issue to compare.</p>
           ) : (
             <div className="mt-6 space-y-8">
               {rowsByRace.filter((r) => r.any).map(({ race: r, rows }) => (
@@ -89,7 +94,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                         {o.status === "ok" ? (
                           <p className="text-base text-black">{overlapLabel(c.name, o)}</p>
                         ) : (
-                          <p className="text-base text-black"><span className="font-[530]">{c.name}</span><span className="text-black/60">: {o.status === "few" ? "Not enough sourced positions" : "Answer Yes or No on more of their issues to compare"}</span></p>
+                          <p className="text-base text-black"><span className="font-[530]">{c.name}</span><span className="text-black/60">: {o.status === "few" ? "Not enough sourced positions" : "Answer Yes or No on more of their issues to compare (Neutral isn\u2019t compared)"}</span></p>
                         )}
                         {nullNotes(c.name, ids).length > 0 && (
                           <p className="text-sm text-black/60" data-null-status>{nullNotes(c.name, ids).map(([id, t]) => `${ISSUES.find((i) => i.id === id)?.label}: ${t}`).join(" · ")}</p>
@@ -98,7 +103,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                           <details><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60" data-sourced-n={o.sourcedIds.length}>Sourced positions ({o.sourcedIds.length})</summary>
                             <ul className="space-y-2 pb-2">
                               {o.sourcedIds.map((id: string) => { const st = stancesFor(c.name)[id]; return (
-                                <li key={id} className="text-sm text-black/80"><span className="font-[530]">{ISSUES.find((i) => i.id === id)?.label}:</span> {voteLine(st) ? <>{voteLine(st)}</> : <>&ldquo;{st.quote}&rdquo;</>} <span className="text-black/60" data-quote-year>{st.year ? `(${st.year})` : "(date unsure)"}</span> {st.sourceUrl ? <a href={st.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center text-[#3760F2]">{sourceLabel(st.sourceUrl)} ↗{ext}</a> : null}</li>
+                                <li key={id} className="text-sm text-black/80"><span className="font-[530]">{ISSUES.find((i) => i.id === id)?.label}:</span> {voteLine(st) ? <>{voteLine(st)}</> : stanceForm(st) === "summary" ? <><span className="text-black/60" data-bp-summary>Ballotpedia summary:</span> {st.quote}</> : <>&ldquo;{st.quote}&rdquo;</>} <span className="text-black/60" data-quote-year>{st.year ? `(${st.year})` : "(date unsure)"}</span> {st.sourceUrl ? <a href={st.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center text-[#3760F2]">{sourceLabel(st.sourceUrl)} ↗{ext}</a> : null}</li>
                               ); })}
                             </ul>
                           </details>
@@ -106,6 +111,8 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                       </li>
                     ))}
                   </ul>
+                  {/* QA P2: the live research button on every non-judicial race, including ones with overlap (e.g. Governor on 94103). */}
+                  <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
                 </div>
               ))}
               {rowsByRace.some((r) => !r.any) && (

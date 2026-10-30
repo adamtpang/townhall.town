@@ -47,3 +47,10 @@ describe("QA P1 #1: own-site words vs third-party pages", () => {
     expect(sameSite("https://ballotpedia.org/Xavier_Becerra", "https://xavierbecerra2026.com/")).toBe(false);
   });
 });
+
+describe("textOf decodes numeric entities so own-words quotes stay exact", () => {
+  it("keeps a curly apostrophe rather than a gap", () => {
+    expect(textOf("<p>a child&#8217;s future &#x2014; now</p>")).toContain("a child\u2019s future \u2014 now");
+  });
+});
+

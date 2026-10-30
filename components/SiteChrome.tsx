@@ -4,11 +4,11 @@ import { SITE } from "../lib/site";
 export function SiteHeader() {
   return (
     <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8">
-      <Link href="/" className="flex items-center gap-3 text-base font-medium tracking-tight text-[#010101] no-underline">
+      <Link href="/" className="flex items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
         <span aria-hidden className="inline-block h-3 w-3 bg-[#3760f2]" />
         townhall.town
       </Link>
-      <span className="text-sm text-black/50">{SITE.electionLabel}</span>
+      <span className="text-sm font-[450] text-black/50">{SITE.electionLabel}</span>
     </header>
   );
 }

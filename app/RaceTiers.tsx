@@ -1,4 +1,6 @@
 "use client";
+import { plain } from "../lib/plain";
+const listOf = (xs: string[]) => (xs.length < 3 ? xs.join(" and ") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 import { useState } from "react";
 import { type Photo } from "../components/Portrait";
 import { PortraitRow } from "../components/PortraitRow";
@@ -46,6 +48,13 @@ export function tierFor(r: RaceLite, _mk?: Mk) {
   return { tier, score, why };
 }
 
+const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+/** "2026-10-01" -> "Oct 1, 2026" (no Date(), so no timezone shift). Anything else is shown as written. */
+export function newsDate(d: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d ?? "");
+  return m && +m[2] >= 1 && +m[2] <= 12 ? `${MON[+m[2] - 1]} ${+m[3]}, ${m[1]}` : d;
+}
+
 /** Civic news.json only: headline exactly as written, outlet, date, link. No summaries. */
 function NewsList({ items }: { items: RaceMeta["news"] }) {
   return (
@@ -53,7 +62,7 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">News coverage ({items.length})<span aria-hidden className="ml-2 inline-block group-open/n:rotate-180">↓</span></summary>
       <ul className="max-w-2xl space-y-1 pb-2">
         {items.map((n) => (
-          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className="text-black underline-offset-2 hover:underline">{n.title}</a> <span className="text-black/60">· {n.outlet} · {n.date}</span></li>
+          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className="text-black underline-offset-2 hover:underline">{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
         ))}
       </ul>
     </details>
@@ -81,7 +90,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
                     <p className="text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No market data" ? <> <span data-closeness>{r.meta.closeness}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
                     {!r.meta || r.meta.closeness === "No market data" ? <p className="text-xs leading-4 text-black/60" data-no-odds>No market odds yet</p> : null}
-                    {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {r.appliesNote.replace(/^SPLIT( \(sliver\))?:\s*/, "").replace(/^unsure:\s*/, "Unsure: ")}</span> : null}</p> : null}
+                    {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {plain(r.appliesNote)}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.tentative ? <p className="text-sm text-black/60" data-tentative>Tentative: from the NYC Board of Elections&rsquo; tentative contest list. Check your sample ballot.</p> : null}
                     {(r.source || r.verify) && (
@@ -96,11 +105,11 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">Why this race matters<span aria-hidden className="ml-2 inline-block group-open/w:rotate-180">↓</span></summary>
                         <div className="max-w-2xl pb-2 text-sm">
                           <p className="text-base">{r.meta.why.summary}</p>
-                          {r.meta.why.problems.length > 0 && <ul className="mt-2 space-y-1">{r.meta.why.problems.map((p) => <li key={p.label + p.geography}>{p.label}: {p.value}{p.unit === "%" ? "%" : ` ${p.unit}`} ({p.geography}, {p.year}) <a href={p.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center whitespace-nowrap">{host(p.sourceUrl)} ↗</a></li>)}</ul>}
+                          {r.meta.why.problems.length > 0 && <ul className="mt-2 space-y-1">{r.meta.why.problems.map((p) => <li key={p.label + p.geography}>{plain(p.label)}: {p.value}{p.unit === "%" ? "%" : ` ${p.unit}`} ({plain(p.geography)}, {plain(String(p.year))}) <a href={p.sourceUrl} title={`${p.label} (${p.geography}, ${p.year})`} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center whitespace-nowrap">{host(p.sourceUrl)} ↗</a></li>)}</ul>}
                           {r.meta.why.authority.length > 0 && (
                             <div className="mt-2" data-authority>
                               <p className="text-black/60">What this office does on each issue</p>
-                              <ul className="space-y-1">{r.meta.why.authority.map((a) => <li key={a.issue}>{ISSUE_LABEL[a.issue] ?? a.issue}: {a.role} <a href={a.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center">{a.cite} ↗</a></li>)}</ul>
+                              <ul className="space-y-1">{r.meta.why.authority.map((a) => <li key={a.issue + a.role}>{listOf(a.issues.map((i) => ISSUE_LABEL[i] ?? i))}: {a.role} <a href={a.sourceUrl} target="_blank" rel="noreferrer" data-own-line className="flex min-h-11 w-fit items-center">{a.cite} ↗</a></li>)}</ul>
                             </div>
                           )}
                         </div>
@@ -189,7 +198,7 @@ function MeasureRows({ measures }: { measures: MeasureMath[] }) {
             <details className="group/m" data-measure={m.id}>
               <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
                 <span className="text-base font-medium">{m.title}</span>
-                <span aria-hidden className="text-sm text-black/50 group-open/m:rotate-180">↓</span>
+                <span aria-hidden className="text-sm font-[450] text-black/50 group-open/m:rotate-180">↓</span>
               </summary>
               {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-xs uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
 {(() => {

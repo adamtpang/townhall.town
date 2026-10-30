@@ -1,4 +1,5 @@
 "use client";
+import { plain } from "../lib/plain";
 import { useEffect, useState } from "react";
 import TownyInterview, { type Fill } from "./TownyInterview";
 import { type Photo } from "../components/Portrait";
@@ -77,7 +78,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
               <li key={i.id} className="border-t border-black/15 py-6" data-issue={i.id}>
                 <p className="text-sm font-[530] text-black/60">{i.label}</p>
                 <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
-                {i.reason ? <p className="mt-1 text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {i.reason}{i.reasonUrl ? <> <a href={i.reasonUrl} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Source ↗</a></> : null}</p> : null}
+                {i.reason ? <p className="mt-1 text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {plain(i.reason)}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Source ↗</a></> : null}</p> : null}
                 <div role="radiogroup" aria-labelledby={`q-${i.id}`} className="mt-4 grid grid-cols-3 gap-2 md:flex md:gap-3">
                   {CHOICES.map((c) => {
                     const on = sel === c.k;

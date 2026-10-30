@@ -42,8 +42,8 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
       <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>
       <h1 className="mt-3 font-serif text-5xl leading-none tracking-tight">Your ballot card</h1>
       {ed ? <p className="mt-4 text-xl leading-7 font-[530]" data-card-date>Election Day: {fmt(ed.start)}{ed.hours ? `, ${ed.hours}` : ""}</p> : null}
-      {early ? <p className="mt-1 text-base text-black/80">Early voting {fmt(early.start).replace(/, \d{4}$/, "")} to {fmt(early.end)}. <a href={early.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
-      {when.mail ? <p className="mt-1 text-base text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
+      {early ? <p className="mt-1 text-base font-[450] text-black/80">Early voting {fmt(early.start).replace(/, \d{4}$/, "")} to {fmt(early.end)}. <a href={early.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
+      {when.mail ? <p className="mt-1 text-base font-[450] text-black/80">{when.mail.text} <a href={when.mail.sourceUrl} className={link} target="_blank" rel="noreferrer">Source ↗</a></p> : null}
 
       <section className="mt-10 border-t border-black/15 pt-6">
         <h2 className="text-sm font-[530] text-black/60">Where</h2>
@@ -60,7 +60,9 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
         <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
         <p className="mt-1 text-xs leading-4 text-black/60" data-overlap-caption>Overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
         {answers === null ? <p className="mt-3 text-base text-black/60">Loading…</p> : rows.length === 0 ? (
-          <p className="mt-3 text-base text-black/80">No overlap to show yet. <a href="/" className={link}>Answer a few questions</a>.</p>
+          Object.values(answers).some((v) => typeof v === "number") ? (
+            <p className="mt-3 text-base text-black/80" data-card-no-overlap>{Object.values(answers).some((v) => typeof v === "number" && v !== 0) ? "No overlap to show: no candidate has enough sourced positions on the issues you answered Yes or No." : "No overlap to show. Neutral answers aren\u2019t compared; answer Yes or No on an issue to compare."} <a href="/" className={link}>Change your answers</a>.</p>
+          ) : <p className="mt-3 text-base text-black/80">No overlap to show yet. <a href="/" className={link}>Answer a few questions</a>.</p>
         ) : (
           <ul className="mt-3 space-y-4">
             {rows.map(({ r, list }) => (

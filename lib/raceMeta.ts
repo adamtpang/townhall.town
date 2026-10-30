@@ -18,7 +18,7 @@ export type RaceMeta = {
   rankedChoice?: boolean;
   news: { title: string; outlet: string; date: string; url: string }[];
   /** Civic race_problem_ties.json: what the office can do, and local numbers tied to it. */
-  why: { summary: string; problems: { label: string; value: number; unit: string; geography: string; year: string; sourceUrl: string }[]; authority: { issue: string; role: string; cite: string; sourceUrl: string }[] } | null;
+  why: { summary: string; problems: { label: string; value: number; unit: string; geography: string; year: string; sourceUrl: string }[]; authority: { issue: string; issues: string[]; role: string; cite: string; sourceUrl: string }[] } | null;
 };
 type Tie = { authorityIssues?: { issue: string; role: string; sourceUrl: string; sourceCite: string }[]; authoritySummary?: string; problems?: { id: string; label: string; value: number; unit: string; geography: string; year: string; sourceUrl: string }[] };
 const T = (ties as unknown as { races: Record<string, Tie> }).races;
@@ -30,8 +30,15 @@ function whyFor(raceId: string): RaceMeta["why"] {
   const seen = new Set<string>();
   const problems = (t.problems ?? []).filter((p) => p.sourceUrl && !seen.has(p.id) && seen.add(p.id)).slice(0, 3)
     .map(({ label, value, unit, geography, year, sourceUrl }) => ({ label, value, unit, geography, year, sourceUrl }));
-  const authority = (t.authorityIssues ?? []).filter((a) => a.sourceUrl && ROLE[a.role])
-    .map((a) => ({ issue: a.issue, role: ROLE[a.role], cite: a.sourceCite, sourceUrl: a.sourceUrl }));
+  // QA P2: one line per power and source, listing every issue it covers (not "signs or vetoes state bills" six times).
+  const groups = new Map<string, { issue: string; issues: string[]; role: string; cite: string; sourceUrl: string }>();
+  for (const a of (t.authorityIssues ?? []).filter((a) => a.sourceUrl && ROLE[a.role])) {
+    const k = `${a.role}|${a.sourceUrl}|${a.sourceCite}`;
+    const g = groups.get(k);
+    if (g) { if (!g.issues.includes(a.issue)) g.issues.push(a.issue); }
+    else groups.set(k, { issue: a.issue, issues: [a.issue], role: ROLE[a.role], cite: a.sourceCite, sourceUrl: a.sourceUrl });
+  }
+  const authority = [...groups.values()];
   return { summary: t.authoritySummary, problems, authority };
 }
 

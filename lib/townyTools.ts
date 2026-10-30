@@ -9,6 +9,7 @@ import { getElectionDates, getPollingLocations } from "./logistics";
 import { ballotFor, DEMO_ZIPS } from "./tools";
 import { deleteMyData, getPrivacySummary } from "./townyControls";
 import type { Politician } from "./types";
+import { stanceForm } from "./stanceForm";
 
 const NOT_COVERED = { status: "not covered", message: "Towny covers only ZIPs 78701, 94103 and 10001 for the Nov 3, 2026 election.", officialSite: "https://vote.gov" };
 const HIDDEN = new Set(["pending", "under review", "rejected", "unsure", "unverified"]);
@@ -55,8 +56,8 @@ export function getCandidatePositions(name: string, issue?: string) {
     .filter(([, v]) => !HIDDEN.has(String((v as { status?: string }).status ?? "").toLowerCase()))
     .filter(([k]) => !issueIds || issueIds.includes(k))
     .map(([k, v]) => {
-      const s = v as { quote: string; sourceUrl: string };
-      return { issue: ISSUES.find((i) => i.id === k)?.label ?? k, quote: s.quote, sourceUrl: s.sourceUrl };
+      const s = v as { quote: string; sourceUrl: string; voteRecord?: string };
+      return { issue: ISSUES.find((i) => i.id === k)?.label ?? k, quote: s.quote, sourceUrl: s.sourceUrl, form: stanceForm(s) };
     });
   const base = { name: c?.name ?? name, onCoveredBallot: !!c, officialSite: c?.officialSite ?? null, ballotpedia: c?.ballotpedia ?? null };
   if (!positions.length) return { ...base, status: "no public statement found", issue: issue ?? null };

@@ -430,7 +430,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
             incumbent: { oneOf: [{ type: "boolean" }, { const: "unsure" }] },
             ballotpedia: { type: ["string", "null"] },
             officialSite: { type: ["string", "null"] },
-            positions: { type: "array", items: { type: "object", properties: { issue: { type: "string" }, text: { type: "string" }, source } } },
+            positions: { type: "array", description: "Published, sourced stances only (exact text plus source). form: vote (roll-call record), quote (the candidate's own words), or summary (Ballotpedia text, not a quote). Judicial candidates have none.", items: { type: "object", properties: { issue: { type: "string" }, text: { type: "string" }, form: { enum: ["vote", "quote", "summary"] }, year: { type: ["string", "integer"] }, source } } },
             causes: { type: "array", description: "Issues the candidate raises in their own campaign themes.", items: { type: "object" } },
             money: { type: "object", description: "Campaign money from FEC filings (federal races)." },
           },

@@ -1,5 +1,5 @@
 {
- "method": "One sourced sentence per ZIP. Where the state's last general had a close statewide contest, its margin next to adult citizens (Census ACS 2024 1-year B29001) who did not vote that year; otherwise official county turnout. A ZIP with no sourced numbers shows nothing.",
+ "method": "One sourced sentence per ZIP. Where the state's last general had a close statewide contest, its margin next to adult citizens (Census ACS 2024 1-year B29001) who did not vote that year; otherwise registered voters who did not vote, from the official county reconciliation (registered minus ballots counted). A ZIP with no sourced numbers shows nothing.",
  "zips": {
   "94103": {
    "contest": "Proposition 32 (minimum wage), California, Nov 5, 2024",
@@ -25,13 +25,13 @@
    "registered": 925858,
    "cast": 587090,
    "turnoutPct": 63.41,
-   "eligible": 946382,
-   "who": "adult citizens in Travis County (Census estimate)",
+   "who": "registered voters",
    "castSourceUrl": "https://votetravis.gov/wp-content/uploads/G24-Final-Reconciliation_Updated.pdf",
-   "castSourceLabel": "Travis County Clerk – G24 Election Reconciliation, Official Totals",
+   "castSourceLabel": "County reconciliation",
    "supplementUrl": "https://votetravis.gov/wp-content/uploads/G24-Provisional-Hand-Count-w_Cover.pdf",
-   "supplementLabel": "About 19 provisional ballots counted Nov 18, 2024",
-   "eligibleSourceUrl": "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B29001&geo_ids=05000US48453"
+   "supplementLabel": "Nov 18 provisionals",
+   "castSourceTitle": "Travis County Clerk, G24 Election Reconciliation, Official Totals: 925,858 registered, 587,090 ballots counted (63.41%)",
+   "supplementTitle": "About 19 provisional ballots counted Nov 18, 2024, after these totals"
   }
  }
 }

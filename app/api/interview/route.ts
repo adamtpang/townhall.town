@@ -30,14 +30,14 @@ async function interview(req: Request): Promise<Response> {
   const msgs = (Array.isArray(body.messages) ? body.messages : []).filter((m: any) => typeof m?.text === "string").slice(-6).map((m: any) => String(m.text).slice(0, 600));
   if (!msgs.length) return Response.json({ answers: [] });
   const issues = issuesFor(zip, b.state);
-  const list = issues.map((i) => `- ${i.id}: "${i.question}"`).join("\n");
+  const list = issues.map((i) => `- ${i.id} (${(i as { label?: string }).label ?? i.id}): "${i.question}"`).join("\n");
   const said = msgs.join("\n");
   for (const model of MODELS) {
     try {
       const { object } = await generateObject({
         model, schema: Out, maxRetries: 0, abortSignal: AbortSignal.timeout(9000),
         system: `You turn what a voter wrote into answers to fixed Yes/Neutral/No questions. You are strictly nonpartisan.
-Only answer a question when the voter's words clearly say how they feel about that exact question. "yes" means they agree with the question as asked, "no" means they disagree, "neutral" means they said they are unsure or see both sides. If they did not address a question, leave it out. Never guess from party, place or identity. Never mention candidates or parties.
+Only answer a question when the voter's words clearly say how they feel about that exact question. "yes" means they agree with the question as asked, "no" means they disagree, "neutral" means they said they are unsure or see both sides. One sentence can answer several questions: answer every question the voter's words address, each as its own entry (the same words may support more than one entry). If they call themselves neutral, unsure, undecided or say "no opinion" or "either way" on a topic, answer that question "neutral" instead of leaving it out; a bare "neutral" or "I'm neutral" applies to every topic named in the same message. If they did not address a question, leave it out. Never guess from party, place or identity. Never mention candidates or parties.
 Questions:
 ${list}`,
         prompt: `The voter wrote:\n"""${said}"""`,

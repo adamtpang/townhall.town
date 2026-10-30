@@ -224,12 +224,12 @@ function CandidateCard({ c, odds }: { c: Pol; odds: { prob: number } | null }) {
 }
 
 /** Design 2: one sourced sentence under the hero subline, only once a ZIP is known. */
-function HeroStat({ vm }: { vm: { text: string; sources: { label: string; url: string }[] } }) {
+function HeroStat({ vm }: { vm: { text: string; sources: { label: string; title?: string; url: string }[] } }) {
   return (
     <div className="mt-12 max-w-2xl border-l-2 border-black pl-4" data-vote-matters>
       <p className="text-sm font-[530] text-black/60">Your vote matters most here</p>
       <p className="mt-1 text-xl leading-7 font-[450] text-black">{vm.text}</p>
-      <p className="mt-1 text-xs leading-4">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
+      <p className="mt-1 text-xs leading-4 font-[450]">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} title={s.title} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
     </div>
   );
 }
@@ -246,6 +246,13 @@ export default function BallotAgent() {
   const t0 = useRef(0);
   const [elapsed, setElapsed] = useState<number | null>(null);
 
+  // Open the ballot named in ?zip= on first load (same checks as typing it).
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("zip");
+    if (q && /^\d{5}$/.test(q)) void run(q);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function run(z: string) {
     const raw = z;
     z = raw;
@@ -255,6 +262,8 @@ export default function BallotAgent() {
     if (!/^\d{5}$/.test(raw) || z === "00000") { setZip(raw); return setNotice("Enter a valid 5-digit ZIP"); }
     if (!SUPPORTED.has(z)) { setZip(z); return setNotice(UNSUPPORTED); }
     setZip(z);
+    // QA P2: the address bar follows the ZIP being shown, so a reload or a shared link opens the same ballot.
+    try { const u = new URL(window.location.href); if (u.searchParams.get("zip") !== z) { u.searchParams.set("zip", z); window.history.replaceState(null, "", u.toString()); } } catch {}
     setBusy(true);
     setSteps({});
     setStatus([]);
@@ -355,7 +364,7 @@ export default function BallotAgent() {
       </form>
       <div className="mt-4 flex flex-wrap gap-2">
         {DEMO.map((d) => (
-          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black">
+          <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530]">
             {d.label}
           </Button>
         ))}
