@@ -130,7 +130,7 @@ export function FinanceRow({ r }: { r: RaceLite }) {
               ) : (
                 <p className="mt-1 text-sm leading-5 text-black/60" data-no-fec>{t("No FEC filing found")}</p>
               )}
-              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm text-[#3760F2]" data-fec-link title={`FEC: ${c.name}`}>
+              <a href={id ? fecCandidateUrl(id) : fecSearchUrl(c.name)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-sm th-link" data-fec-link title={`FEC: ${c.name}`}>
                 {t("FEC page")} ↗<span className="sr-only"> {c.name} (opens in a new tab)</span>
               </a>
             </li>
