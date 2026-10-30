@@ -36,7 +36,7 @@ function voteLine(st: { voteRecord?: string; quote?: string; bill?: string }) {
   if (!st?.voteRecord) return null;
   const vote = st.voteRecord.split(" (")[0];
   const bill = st.bill ?? /^([A-Z]{1,4} \d+)\b/.exec(st.quote || "")?.[1];
-  return bill ? `${vote} on ${bill}` : vote;
+  return bill && !vote.includes(bill) ? `${vote} on ${bill}` : vote; // batch 7 records already name the bill
 }
 
 /** League of Women Voters guide links read as one plain label (design p10). */

@@ -94,8 +94,9 @@
       },
       "taxes": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Mixed: backs property-tax cuts and homestead exemptions but also using the surplus for new programs; no clear direction.",
+        "sourceUrl": "https://www.vikkigoodwin.com/issues"
       }
     },
     "caitlin-rourk": {
@@ -504,8 +505,9 @@
       "name": "Dan Patrick",
       "taxes": {
         "value": -4,
-        "quote": "raises the school homestead exemption",
-        "sourceUrl": "https://www.ltgov.texas.gov/?p=7910"
+        "quote": "I have made increasing the Homestead Exemption my mission because it is the best way to deliver meaningful property tax reductions for homeowners.",
+        "sourceUrl": "https://www.ltgov.texas.gov/2025/02/13/lt-gov-dan-patrick-statement-on-the-unanimous-passage-of-senate-bill-4-and-senate-joint-resolution-2-increasing-the-homestead-exemption-to-140000-and-150000-for-seniors/",
+        "year": 2025
       },
       "energy": {
         "value": -3,
@@ -513,14 +515,18 @@
         "sourceUrl": "https://www.danpatrick.org/"
       },
       "immigration": {
-        "value": 4,
-        "quote": "secure our border",
-        "sourceUrl": "https://www.danpatrick.org/"
+        "value": null,
+        "status": "unsure",
+        "summary": "\"Secure our border\" is a three-word clause in a homepage list sentence; too thin to carry a direction on its own.",
+        "sourceUrl": "https://www.danpatrick.org/",
+        "quote": "secure our border"
       },
       "safety": {
-        "value": 3,
-        "quote": "support law enforcement",
-        "sourceUrl": "https://www.danpatrick.org/"
+        "value": null,
+        "status": "unsure",
+        "summary": "\"Support law enforcement\" is a three-word clause in a homepage list sentence; too thin to carry a direction on its own.",
+        "sourceUrl": "https://www.danpatrick.org/",
+        "quote": "support law enforcement"
       },
       "education": {
         "value": 5,
@@ -533,9 +539,10 @@
         "sourceUrl": "https://www.ltgov.texas.gov/2025/04/02/lt-gov-dan-patrick-statement-on-the-unanimous-passage-of-senate-bill-7-increasing-investments-in-texas-water-supply/"
       },
       "housing": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": 2,
+        "quote": "I named affordable housing a priority because Texas must meet the rising demand for homes and apartments in our state.",
+        "sourceUrl": "https://www.ltgov.texas.gov/2025/03/19/lt-gov-dan-patrick-statement-on-the-bipartisan-passage-of-senate-bill-15-removing-barriers-to-affordable-housing/",
+        "year": 2025
       },
       "healthcare": {
         "value": null,
@@ -574,9 +581,12 @@
       },
       "immigration": {
         "value": -3,
-        "quote": "SB 8: Agreements between sheriffs and the United States Immigration and Customs Enforcement to enforce federal immigration law",
+        "quote": "",
         "sourceUrl": "https://capitollens.org/texas/votes/89r-senate-0531-sb8/",
-        "voteRecord": "Voted Nay (Senate conference committee report, May 31, 2025; passed 20-11)"
+        "summary": "Voted against Texas SB 8 (2025), which has sheriffs make agreements with ICE to enforce federal immigration law.",
+        "year": 2025,
+        "voteRecord": "Voted Nay on SB 8, Texas Senate, conference committee report, May 31, 2025 (passed 20-11)",
+        "bill": "SB 8"
       },
       "housing": {
         "value": null,
@@ -1995,18 +2005,23 @@
       },
       "housing": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Mentions \"affordable shelter\" without a policy.",
+        "sourceUrl": "https://kmm2026.org"
       },
       "wages": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Calls for \"meaningful and well-paying jobs\" without a wage policy.",
+        "sourceUrl": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-lieutenant-governor-of-texas/",
+        "quote": "We must develop a sustainable economy that is not based on Wall Street bubbles and provides meaningful and well-paying jobs."
       },
       "taxes": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Mixed: wants to reduce and stabilize property taxes but also raises a state income tax for debate.",
+        "sourceUrl": "https://kmm2026.org/issues2026/property-tax-reform-proposal",
+        "quote": "My proposal for property tax reform will reduce and stabilize property taxes."
       },
       "immigration": {
         "value": null,
@@ -2087,9 +2102,11 @@
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
       },
       "healthcare": {
-        "value": 3,
-        "quote": "I support using the budget surplus for programs that serve Texans, like public schools, healthcare, and affordable housing.",
-        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+        "value": null,
+        "status": "unsure",
+        "summary": "Her healthcare line is the same sentence as her affordable-housing line; that sentence counts once, under housing.",
+        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+        "quote": "I support using the budget surplus for programs that serve Texans, like public schools, healthcare, and affordable housing."
       },
       "wages": {
         "value": null,
@@ -2146,8 +2163,10 @@
       },
       "wages": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Speaks of job growth only; no wage policy.",
+        "sourceUrl": "https://www.anthonycristo.com/",
+        "quote": "Most immigrants come to Texas to work and build a better life—and when government gets out of the way, the number of jobs grows right along with the number of people willing to work."
       },
       "energy": {
         "value": null,
@@ -2333,9 +2352,12 @@
       },
       "immigration": {
         "value": -3,
-        "quote": "SB 8: Agreements between sheriffs and the United States Immigration and Customs Enforcement to enforce federal immigration law",
+        "quote": "",
         "sourceUrl": "https://capitollens.org/texas/votes/89r-house-4130-sb8/",
-        "voteRecord": "Voted Nay (conference committee report, June 1, 2025; passed 89-52)"
+        "summary": "Voted against Texas SB 8 (2025), which has sheriffs make agreements with ICE to enforce federal immigration law.",
+        "year": 2025,
+        "voteRecord": "Voted Nay on SB 8, Texas House, conference committee report, June 1, 2025 (passed 89-52)",
+        "bill": "SB 8"
       },
       "education": {
         "value": -2,
@@ -2696,9 +2718,10 @@
         "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
       },
       "immigration": {
-        "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "value": -2,
+        "quote": "End spending on wasteful partisan priorities such as fake clinics and border walls and prioritize Texans basic needs",
+        "sourceUrl": "https://www.voteluluflores.com/issues/",
+        "year": 2026
       },
       "infrastructure": {
         "value": 2,
@@ -2736,13 +2759,15 @@
       "education": {
         "value": null,
         "status": "unsure",
-        "summary": "Campaign site focuses on academic excellence, workforce programs and parents' rights; no position on public money for private schools.",
-        "sourceUrl": "https://jessicaforhd51.com/"
+        "summary": "\"improving our schools\" and opposing school budget cuts, with no voucher position.",
+        "sourceUrl": "https://www.jessicaforhd51.com/",
+        "quote": "I will focus on lowering the cost of living, restoring public safety, improving our schools, and holding the government accountable"
       },
       "energy": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Holding polluters accountable for water quality; no energy position.",
+        "sourceUrl": "https://www.jessicaforhd51.com/"
       },
       "immigration": {
         "value": null,
@@ -3330,10 +3355,11 @@
       },
       "taxes": {
         "value": 3,
-        "quote": "I move that property taxes be levied for the 2026 tax year by the adoption of a total tax rate of $1.1169. ... This motion, made by Dr. Gloria Gonzales-Dholakia and seconded by Sade Fashokun, passed six in favor and one absent.",
+        "quote": "",
         "sourceUrl": "https://meetings.boardbook.org/Public/DownloadAgenda/795?meeting=758688",
-        "voteRecord": "Moved the motion to adopt a $1.1169 total tax rate as Leander ISD trustee (Aug 17, 2026; passed 6-0, one absent)",
-        "year": 2026
+        "summary": "As Leander ISD trustee, moved to adopt a $1.1169 total property tax rate for 2026; it passed.",
+        "year": 2026,
+        "voteRecord": "Moved the motion to adopt a $1.1169 total tax rate for the 2026 tax year, Leander ISD Board of Trustees, Aug 17, 2026 (passed 6-0, one absent)"
       },
       "safety": {
         "value": null,
@@ -3733,8 +3759,10 @@
       },
       "education": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Wants to make higher education more affordable; that is not the K-12 voucher axis.",
+        "sourceUrl": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+        "quote": "As Lieutenant Governor, I will make higher education more affordable, expand paid internships, and strengthen career pathways."
       },
       "energy": {
         "value": 2,
@@ -3750,6 +3778,12 @@
         "value": null,
         "status": "No public statement found",
         "sourceUrl": null
+      },
+      "wealthtax": {
+        "value": -2,
+        "quote": "Most of these people don’t have liquid money sitting around",
+        "sourceUrl": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+        "year": 2026
       }
     },
     "gloria-romero": {
@@ -3776,8 +3810,10 @@
       },
       "safety": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Says public safety \"has been weakened\" without saying what she would do.",
+        "sourceUrl": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+        "quote": "Public safety has been weakened."
       },
       "education": {
         "value": 4,
@@ -3798,6 +3834,12 @@
         "value": null,
         "status": "No public statement found",
         "sourceUrl": null
+      },
+      "wealthtax": {
+        "value": -4,
+        "quote": "It is basically a death march that will throw California over the edge",
+        "sourceUrl": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+        "year": 2026
       }
     },
     "rob-bonta": {
@@ -3814,24 +3856,28 @@
       },
       "wages": {
         "value": 4,
-        "quote": "SB 3 Leno Senate Third Reading By HERNÁNDEZ Mar 31, 2016 For (48) ... Rob Bonta",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
-        "voteRecord": "Voted Yes (Mar 31, 2016)",
-        "bill": "SB 3",
-        "year": 2016
+        "summary": "Voted for SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+        "year": 2016,
+        "voteRecord": "Voted Yes on SB 3 (Leno), Assembly floor, Senate Third Reading, Mar 31, 2016 (passed, 48 For)",
+        "bill": "SB 3"
       },
       "taxes": {
         "value": 3,
-        "quote": "SB 1 Beall Third Reading Urgency By FRAZIER Apr 6, 2017 For (54) ... Rob Bonta",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
-        "voteRecord": "Voted Yes (Apr 6, 2017)",
-        "bill": "SB 1",
-        "year": 2017
+        "summary": "Voted for SB 1 (2017), the Road Repair and Accountability Act, which raised fuel taxes and vehicle fees to pay for road repair.",
+        "year": 2017,
+        "voteRecord": "Voted Yes on SB 1 (Beall), Assembly floor, Third Reading Urgency, Apr 6, 2017 (passed, 54 For)",
+        "bill": "SB 1"
       },
       "safety": {
         "value": null,
-        "status": "Mixed statements; no clear position from a valid source",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Calls crime and public safety \"Job No. 1, 2 and 3\" but names no enforcement policy.",
+        "sourceUrl": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+        "quote": "Job No. 1, 2 and 3"
       },
       "education": {
         "value": null,
@@ -3849,12 +3895,10 @@
         "sourceUrl": "https://oag.ca.gov/news/press-releases/preparation-new-threats-california%E2%80%99s-immigrant-communities-attorney-general"
       },
       "infrastructure": {
-        "value": 4,
-        "quote": "SB 1 Beall Third Reading Urgency By FRAZIER Apr 6, 2017 For (54) ... Rob Bonta",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
-        "voteRecord": "Voted Yes (Apr 6, 2017)",
-        "bill": "SB 1",
-        "year": 2017
+        "value": null,
+        "status": "unsure",
+        "summary": "His only infrastructure source is the SB 1 vote, which now counts under taxes (one vote, one issue).",
+        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1"
       }
     },
     "michael-e-gates": {
@@ -3909,11 +3953,12 @@
       "name": "Shirley Weber",
       "housing": {
         "value": 3,
-        "quote": "AB 1482 Chiu Concurrence in Senate Amendments ... For",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201920200ab1482",
-        "voteRecord": "Voted Yes (Sep 11, 2019)",
-        "bill": "AB 1482",
-        "year": 2019
+        "summary": "Voted for AB 1482 (2019), the Tenant Protection Act, which caps annual rent increases.",
+        "year": 2019,
+        "voteRecord": "Voted Yes on AB 1482 (Chiu), Assembly floor, Concurrence in Senate Amendments, Sep 11, 2019 (passed, 47 For)",
+        "bill": "AB 1482"
       },
       "healthcare": {
         "value": null,
@@ -3922,19 +3967,21 @@
       },
       "wages": {
         "value": 4,
-        "quote": "SB 3 Leno Senate Third Reading By HERNÁNDEZ ... For",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
-        "voteRecord": "Voted Yes (Mar 31, 2016)",
-        "bill": "SB 3",
-        "year": 2016
+        "summary": "Voted for SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+        "year": 2016,
+        "voteRecord": "Voted Yes on SB 3 (Leno), Assembly floor, Senate Third Reading, Mar 31, 2016 (passed, 48 For)",
+        "bill": "SB 3"
       },
       "taxes": {
         "value": 3,
-        "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
-        "voteRecord": "Voted Yes (Apr 6, 2017)",
-        "bill": "SB 1",
-        "year": 2017
+        "summary": "Voted for SB 1 (2017), the Road Repair and Accountability Act, which raised fuel taxes and vehicle fees to pay for road repair.",
+        "year": 2017,
+        "voteRecord": "Voted Yes on SB 1 (Beall), Assembly floor, Third Reading Urgency, Apr 6, 2017 (passed, 54 For)",
+        "bill": "SB 1"
       },
       "safety": {
         "value": null,
@@ -3953,11 +4000,12 @@
       },
       "immigration": {
         "value": -4,
-        "quote": "SB 54 De León Senate Third Reading By GONZALEZ FLETCHER ... Sep 15, 2017 ... For (51) ... Shirley Weber",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb54",
-        "voteRecord": "Voted Yes (Sep 15, 2017)",
-        "bill": "SB 54",
-        "year": 2017
+        "summary": "Voted for SB 54 (2017), the California Values Act, which limits state and local help with federal immigration enforcement.",
+        "year": 2017,
+        "voteRecord": "Voted Yes on SB 54 (De León), Assembly floor, Senate Third Reading, Sep 15, 2017 (passed, 51 For)",
+        "bill": "SB 54"
       },
       "infrastructure": {
         "value": null,
@@ -3978,11 +4026,12 @@
       },
       "wages": {
         "value": -4,
-        "quote": "SB 3 Leno Senate Third Reading By HERNÁNDEZ Mar 31, 2016 ... Against (26) ... Donald Wagner",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
-        "voteRecord": "Voted No (Mar 31, 2016)",
-        "bill": "SB 3",
-        "year": 2016
+        "summary": "Voted against SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+        "year": 2016,
+        "voteRecord": "Voted No on SB 3 (Leno), Assembly floor, Senate Third Reading, Mar 31, 2016 (passed, 48 For, 26 Against)",
+        "bill": "SB 3"
       },
       "taxes": {
         "value": -4,
@@ -4054,9 +4103,15 @@
         "year": 2026
       },
       "healthcare": {
-        "value": 2,
-        "quote": "Preserve California’s commitments to public education, healthcare access, climate resilience, and infrastructure investments",
-        "sourceUrl": "https://growsf.org/voter-guide/questionnaires/june-2026/malia-cohen/",
+        "value": 4,
+        "quote": "Despite Republican-led attacks on health care, Malia will continue to fight to expand access and lower costs for all Californians.",
+        "sourceUrl": "https://www.maliacohenforca.com/issues/expanding-affordable-health-care",
+        "year": 2026
+      },
+      "wages": {
+        "value": 3,
+        "quote": "She also championed the highest minimum wage in the country, guaranteeing San Francisco residents $15 an hour and paving the way for a minimum wage increase across the state.",
+        "sourceUrl": "https://www.maliacohenforca.com/issues/an-economy-that-works-for-all-californians",
         "year": 2026
       }
     },
@@ -4089,8 +4144,9 @@
       },
       "education": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Agrees with eliminating the U.S. Department of Education; that is not the voucher axis.",
+        "sourceUrl": "https://ivoterguide.com/candidate/91093/race/30575/election/1454"
       },
       "energy": {
         "value": -4,
@@ -4165,27 +4221,30 @@
       },
       "healthcare": {
         "value": 4,
-        "quote": "Senate 3rd Reading SB562 Lara et al. ... For",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb562",
-        "voteRecord": "Voted Yes (Jun 1, 2017)",
-        "bill": "SB 562",
-        "year": 2017
+        "summary": "Voted for SB 562 (2017), the Healthy California Act, to set up a single-payer health care program.",
+        "year": 2017,
+        "voteRecord": "Voted Yes on SB 562 (Lara), Senate floor, Third Reading, Jun 1, 2017 (passed, 23 For)",
+        "bill": "SB 562"
       },
       "wages": {
         "value": 4,
-        "quote": "SB3 Leno, et al. Concurrence Mar 31, 2016 For (26) ... Benjamin Allen",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
-        "voteRecord": "Voted Yes (Mar 31, 2016)",
-        "bill": "SB 3",
-        "year": 2016
+        "summary": "Voted for SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+        "year": 2016,
+        "voteRecord": "Voted Yes on SB 3 (Leno), Senate floor, Concurrence, Mar 31, 2016 (passed, 26 For)",
+        "bill": "SB 3"
       },
       "taxes": {
         "value": 3,
-        "quote": "Senate 3rd Reading SB1 Beall et al. Urgency Clause Apr 6, 2017 For (27) ... Benjamin Allen",
+        "quote": "",
         "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
-        "voteRecord": "Voted Yes (Apr 6, 2017)",
-        "bill": "SB 1",
-        "year": 2017
+        "summary": "Voted for SB 1 (2017), the Road Repair and Accountability Act, which raised fuel taxes and vehicle fees to pay for road repair.",
+        "year": 2017,
+        "voteRecord": "Voted Yes on SB 1 (Beall), Senate floor, Third Reading Urgency Clause, Apr 6, 2017 (passed, 27 For)",
+        "bill": "SB 1"
       },
       "safety": {
         "value": null,
@@ -4222,8 +4281,10 @@
       },
       "healthcare": {
         "value": null,
-        "status": "No public statement found",
-        "sourceUrl": null
+        "status": "unsure",
+        "summary": "Criticizes school mask and vaccine mandates; that is not about health care access.",
+        "sourceUrl": "https://shawforca.com/",
+        "quote": "Mask and vaccine mandates ignored families' well-being, silencing parents' voices."
       },
       "wages": {
         "value": null,
@@ -5232,9 +5293,11 @@
     "jessica-pessecow": {
       "name": "Jessica Pessecow",
       "housing": {
-        "value": 3,
-        "quote": "I advocate for economic opportunities, helping business owners, cheaper housing, improving transportation, bettering health care",
-        "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+        "value": null,
+        "status": "unsure",
+        "summary": "\"Cheaper housing\" sits in the same sentence as her health care line; that sentence counts once, under health care.",
+        "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+        "quote": "I advocate for economic opportunities, helping business owners, cheaper housing, improving transportation, bettering health care"
       },
       "healthcare": {
         "value": 2,
@@ -6184,10 +6247,40 @@
         "year": 2026
       },
       "immigration": {
+        "value": 4,
+        "quote": "Lauren will work with ICE and federal law enforcement to end Travis County's de facto sanctuary status.",
+        "sourceUrl": "https://lauren4congress.com/why-vote-for-me",
+        "year": 2026
+      },
+      "energy": {
+        "value": -4,
+        "quote": "Lauren B. Peña will vote to open federal lands to responsible energy development, approve pipeline infrastructure that has been blocked for years, and repeal the Biden-era regulations that have added billions in compliance costs to Texas energy producers — costs that are passed directly to consumers.",
+        "sourceUrl": "https://lauren4congress.com/issues/energy-costs",
+        "year": 2026
+      },
+      "safety": {
+        "value": 3,
+        "quote": "Lauren will vote to fully fund the COPS program, the Byrne JAG grant program, and other federal resources that help cities like Austin recruit officers, purchase equipment, and train personnel.",
+        "sourceUrl": "https://lauren4congress.com/issues/fund-the-police",
+        "year": 2026
+      },
+      "wages": {
+        "value": -3,
+        "quote": "Austin's small businesses are being strangled by federal mandates, minimum wage hikes, and compliance costs that large corporations can absorb but small operators cannot.",
+        "sourceUrl": "https://lauren4congress.com/issues/austin-affordability",
+        "year": 2026
+      },
+      "education": {
+        "value": 4,
+        "quote": "Expand school choice and education savings accounts",
+        "sourceUrl": "https://lauren4congress.com/issues",
+        "year": 2026
+      },
+      "infrastructure": {
         "value": null,
         "status": "unsure",
-        "summary": "Supports lawful pathways, faster case processing and keeping families together while \"protecting American sovereignty\"; mixed direction.",
-        "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf"
+        "summary": "No water, transit or infrastructure spending position found.",
+        "sourceUrl": "https://lauren4congress.com/issues"
       }
     },
     "velva-l-price": {

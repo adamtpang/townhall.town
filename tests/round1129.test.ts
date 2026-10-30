@@ -140,7 +140,7 @@ describe("grades: Civic gate, fail closed", () => {
     expect(raceGradesEligible({ id: "m", level: "measure", candidates: [{}, {}] }, null, s)).toBe(false);
     expect(raceGradesEligible({ id: "u", candidates: [{}] }, null, s)).toBe(false);
   });
-  it("the shipped gate matches Civic's grades_eligibility.json and grade_races.json (19 races; D9 not eligible)", () => {
+  it("the shipped gate matches Civic's grades_eligibility.json and grade_races.json (22 races after batch 7; D9 not eligible)", () => {
     expect(ELIG.present).toBe(true);
     const full = JSON.parse(src("data/civic/grades_eligibility.json"));
     const list = JSON.parse(src("data/civic/grade_races.json")).races as string[];

@@ -54,10 +54,12 @@ describe("p11 + QA fb66b9b", () => {
       expect(t.quote ?? "").toBe(""); expect(t.voteRecord).toBe(vr); expect(t.value).toBe(2);
     }
     const w = stancesFor("Shirley N. Weber");
-    expect([w.housing, w.wages, w.taxes, w.immigration].map((x) => x.voteRecord)).toEqual(["Voted Yes (Sep 11, 2019)", "Voted Yes (Mar 31, 2016)", "Voted Yes (Apr 6, 2017)", "Voted Yes (Sep 15, 2017)"]);
+    // Batch 7 (Civic, Oct 30): vote records now carry bill + chamber detail; still votes, still no quote.
+    expect([w.housing, w.wages, w.taxes, w.immigration].map((x) => x.voteRecord)).toEqual(["Voted Yes on AB 1482 (Chiu), Assembly floor, Concurrence in Senate Amendments, Sep 11, 2019 (passed, 47 For)", "Voted Yes on SB 3 (Leno), Assembly floor, Senate Third Reading, Mar 31, 2016 (passed, 48 For)", "Voted Yes on SB 1 (Beall), Assembly floor, Third Reading Urgency, Apr 6, 2017 (passed, 54 For)", "Voted Yes on SB 54 (De León), Assembly floor, Senate Third Reading, Sep 15, 2017 (passed, 51 For)"]);
+    for (const x of [w.housing, w.wages, w.taxes, w.immigration]) expect(x.quote ?? "").toBe("");
     // infrastructure cited the same SB 1 roll call as taxes; Civic qa_fixes7 #2 removed it from the data (one vote, one issue).
     expect(w.infrastructure.status).toBe("No public statement found");
-    expect(stancesFor("Ben Allen").healthcare.voteRecord).toBe("Voted Yes (Jun 1, 2017)");
+    expect(stancesFor("Ben Allen").healthcare.voteRecord).toMatch(/^Voted Yes on SB 562 \(Lara\)/);
     expect(src("lib/issues.ts")).not.toMatch(/County Judge \[/);
   });
   it("Civic qa_fixes6 #5/#6: office-named credits name the candidate; Meyer self-hosted from Civic's local file, banner cut off", () => {

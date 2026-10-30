@@ -50,7 +50,8 @@
     },
     "reasonAfter": "Not eligible: under 3 sourced issues: Yvonne Muñoz (0), Phil Gorman (1); only 0 issue(s) sourced for every candidate; uneven records (min 0 < half of max 1)."
    }
-  ]
+  ],
+  "b7": "gradesEligible flags set from civic/b7/elig_b7.json (22 races, batch 7 stances landed; ca-ltgov QA-verified Oct 30)"
  },
  "races": {
   "tx-10": {
@@ -142,7 +143,7 @@
     "housing",
     "taxes"
    ],
-   "gradesEligible": false,
+   "gradesEligible": true,
    "reason": "Not eligible: uneven records (min 3 < half of max 9)."
   },
   "us-senate-tx": {
@@ -2076,7 +2077,7 @@
     "energy",
     "healthcare"
    ],
-   "gradesEligible": false,
+   "gradesEligible": true,
    "reason": "Not eligible: only 2 issue(s) sourced for every candidate; uneven records (min 3 < half of max 7)."
   },
   "ca-insurance": {
@@ -2339,7 +2340,7 @@
     "energy",
     "housing"
    ],
-   "gradesEligible": false,
+   "gradesEligible": true,
    "reason": "Not eligible: only 2 issue(s) sourced for every candidate."
   },
   "ca-ad-17": {

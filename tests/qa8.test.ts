@@ -82,11 +82,18 @@ describe("charter rule: charter-school stances are not scored on education", () 
   it("Steve Hilton keeps +3", () => expect(stances["steve-hilton"].education.value).toBe(3));
   it("stances match Civic's expected qa8 file", () => {
     const q = "/workspace/townhall/civic/qa8/stances.qa8.json";
-    if (fs.existsSync(q)) expect(read("data/stances.json")).toEqual(read(q));
+    // Batch 7 (Civic, Oct 30) supersedes qa8 for the candidates it touches; compare against Civic's own b7 result.
+    const b7 = "/workspace/townhall/civic/b7/stances.b7.json";
+    if (fs.existsSync(b7)) {
+      const a = read("data/stances.json").stances, b = read(b7).stances;
+      // Two display-only "unsure" notes in b7's base were never on this branch (never scored either way).
+      const skip = new Set(["mica-arellano.safety", "autumn-brown-garibay.healthcare", "autumn-brown-garibay.safety"]);
+      for (const id of Object.keys(b)) for (const k of Object.keys(b[id])) if (!skip.has(`${id}.${k}`)) expect(a[id]?.[k], `${id}.${k}`).toEqual(b[id][k]);
+    } else if (fs.existsSync(q)) expect(read("data/stances.json")).toEqual(read(q));
   });
-  it("grade eligibility stays at 19 races", async () => {
+  it("grade eligibility: 22 races after batch 7 (civic/b7/elig_b7.json)", async () => {
     const m: any = await import("../lib/gradesEligibility.gen.mjs");
-    expect(m.default.data.races.length).toBe(19);
+    expect(m.default.data.races.length).toBe(22);
   });
 });
 

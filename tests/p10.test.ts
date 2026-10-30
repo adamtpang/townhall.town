@@ -213,9 +213,9 @@ describe("Civic qa_fixes5 (via scripts/civic_changes_to_gapfill.py + merge_gapfi
     const q = "$3 gas, your first $150,000 tax-free, capping vehicle registration at $73 for your car or your truck, eliminating mass homelessness by the end of my first year";
     expect(correctedIssue("Steve Hilton", "housing", q)).toBe("taxes");
   });
-  it("grades_eligibility.json is Civic's recompute: still 19 eligible races", () => {
+  it("grades_eligibility.json is Civic's recompute: 22 eligible races after batch 7 (civic/b7/elig_b7.json)", () => {
     const r = (GE as { races: Record<string, { gradesEligible?: boolean }> }).races;
-    expect(Object.values(r).filter((x) => x.gradesEligible).length).toBe(19);
+    expect(Object.values(r).filter((x) => x.gradesEligible).length).toBe(22);
     expect(r["travis-county-judge"]?.gradesEligible ?? false).toBe(false);
   });
 });

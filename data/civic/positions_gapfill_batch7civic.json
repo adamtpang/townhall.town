@@ -1,0 +1,1216 @@
+{
+ "_meta": {
+  "asOf": "2026-10-30",
+  "batch": "positions_gapfill_batch7civic (Civic, Oct 30 2026 pass 7)",
+  "baseline": "civic/b6/stances.b6.json",
+  "scope": "Every candidate in 7 near-eligible races: tx-ltgov, ca-ltgov, tx-37, tx-house-51, ca-ag, ca-controller, ca-spi.",
+  "scale": "-5..+5 on the feat2/lib/issues.ts axes; score null + status \"unsure\" means ambiguous and not scored.",
+  "fairness": "Each race was searched with the same source types for every candidate (own site, official statement, LWV/SOS guide, same news guide) and on every axis, not only the trailing candidate's gap. Races were not stopped once eligible. Races that could only become eligible on thin or one-sided sourcing were left ineligible.",
+  "rulesApplied": [
+   "public-employee pay not scored on wages",
+   "homelessness-only quotes not tagged housing",
+   "recorded votes go in voteRecord, never quotes",
+   "charter-only or vague \"educational choices\" statements not scored on education",
+   "campus or school-safety statements not scored on safety (Phil Kim batch3, Arellano and Garibay batch6)",
+   "one sentence counts toward one issue only",
+   "candidate own words with a year and URL; endorsements and reporter paraphrase do not count"
+  ],
+  "linkFixes": [
+   {
+    "candidate": "mica-arellano",
+    "file": "positions_gapfill_batch6civic.json",
+    "field": "sourcesChecked[ATPE].url",
+    "was": null,
+    "now": "https://teachthevote.atpe.org/Candidates/Mica-Arellano",
+    "title": "ATPE Teach the Vote: Mica Arellano",
+    "evidence": "civic/b6/atpe_mica.html (fetched in batch6); also build6.py line 79.",
+    "note": "Patched in batch6 via b6/build_b6civic.py (re-run) and the batch6 .md line; pre-patch copies saved as b7/positions_gapfill_batch6civic.pre_b7.json/.md."
+   }
+  ],
+  "flags": [
+   "dan-patrick (follow-up): homepage sentence split across energy/immigration/safety. Energy clause kept; immigration and safety -> unsure (too thin); taxes source replaced (old quote not on cited page). 7 -> 5.",
+   "rob-bonta (follow-up): SB 1 vote moved to voteRecord (quote empty); one vote -> one issue (taxes), infrastructure -> unsure. 7 -> 6. His SB 3 wages vote still has vote text in quote (not asked; left as is).",
+   "Follow-up 2: every remaining vote-in-quote moved to voteRecord with quote empty (rob-bonta wages; shirley-n-weber housing/wages/taxes/immigration; ben-allen healthcare/wages/taxes; donald-p-don-wagner wages; sarah-eckhardt, jon-rosenthal immigration; gloria-gonzales-dholakia taxes). No vote backed two issues, so nothing moved to unsure.",
+   "Same-sentence scan (b7/samesent.py -> b7/samesent.json): 503 quotes, 396 found in cached sources, 26 pairs. Fixed: jessica-pessecow (housing), shehla-faizi (healthcare). Borderline (two clauses of one sentence, each issue-specific with a direction; kept, conflicts with a strict one-sentence reading): sally-j-lieber wages/energy, lauren-b-pena taxes/housing, matt-haney housing/healthcare, arshia-papari energy/infrastructure. Not same sentence (separate bullet/list items or separate sentences): gary-mccoy, darshini-patel, connie-chan, kathy-c-hochul, saritha-komatireddy, caroline-shinkle, wilneida-negron, john-pimentel, mike-trouble-lin, cynthia-soliz. 107 quotes were not found in cache and were not tested."
+  ],
+  "editorNoteRule": "editorNote is internal only; merge_gapfill.py does not copy it.",
+  "result": "25 new or replaced scored stances; 18 unsure items."
+ },
+ "dan-patrick": {
+  "zip": "78701",
+  "name": "Dan Patrick",
+  "race": "Lieutenant Governor of Texas",
+  "raceId": "tx-ltgov",
+  "party": "Republican",
+  "stances": [
+   {
+    "issue": "housing",
+    "score": 2,
+    "summary": "Made affordable housing a priority and backed SB 15, which eases rules so more homes can be built.",
+    "sourceUrl": "https://www.ltgov.texas.gov/2025/03/19/lt-gov-dan-patrick-statement-on-the-bipartisan-passage-of-senate-bill-15-removing-barriers-to-affordable-housing/",
+    "sourceTitle": "Office of the Lt. Governor, Mar 19 2025: statement on passage of SB 15 (removing barriers to affordable housing)",
+    "date": "2025-03-19",
+    "quote": "I named affordable housing a priority because Texas must meet the rising demand for homes and apartments in our state.",
+    "sourceType": "official statement",
+    "editorNote": "SB 15 reduces minimum lot sizes (supply deregulation). Scored +2 to match the housing convention for supply-side deregulation (Pena, Romero +2). Own words, first person, official site."
+   },
+   {
+    "issue": "taxes",
+    "score": -4,
+    "summary": "Says raising the homestead exemption is his mission because it is the best way to cut property taxes for homeowners.",
+    "sourceUrl": "https://www.ltgov.texas.gov/2025/02/13/lt-gov-dan-patrick-statement-on-the-unanimous-passage-of-senate-bill-4-and-senate-joint-resolution-2-increasing-the-homestead-exemption-to-140000-and-150000-for-seniors/",
+    "sourceTitle": "Office of the Lt. Governor, Feb 13 2025: statement on Senate passage of SB 4 and SJR 2 (homestead exemption to $140,000 / $150,000 for seniors)",
+    "date": "2025-02-13",
+    "quote": "I have made increasing the Homestead Exemption my mission because it is the best way to deliver meaningful property tax reductions for homeowners.",
+    "sourceType": "official statement",
+    "editorNote": "Replaces \"raises the school homestead exemption\", which is not on the cited page (ltgov.texas.gov/?p=7910, the 2025 Top 40 list). Same direction and score. Full first-person sentence, not a fragment."
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "immigration",
+    "score": null,
+    "status": "unsure",
+    "summary": "\"Secure our border\" is a three-word clause in a homepage list sentence; too thin to carry a direction on its own.",
+    "sourceUrl": "https://www.danpatrick.org/",
+    "editorNote": "Same-sentence check: one danpatrick.org homepage sentence was split across energy, immigration and safety (and lists taxes and education). Energy keeps its specific clause; this clause is too thin. Was +4.",
+    "override": true,
+    "quote": "secure our border"
+   },
+   {
+    "issue": "safety",
+    "score": null,
+    "status": "unsure",
+    "summary": "\"Support law enforcement\" is a three-word clause in a homepage list sentence; too thin to carry a direction on its own.",
+    "sourceUrl": "https://www.danpatrick.org/",
+    "editorNote": "Same-sentence check as immigration. Was +3.",
+    "override": true,
+    "quote": "support law enforcement"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "\"No response received.\""
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-lieutenant-governor-of-texas/",
+    "title": "Community Impact Q&A: Texas lieutenant governor candidates (2026)",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read cached copy. No new scorable answer from Patrick."
+   },
+   {
+    "url": "https://www.ltgov.texas.gov/2025/03/19/lt-gov-dan-patrick-statement-on-the-bipartisan-passage-of-senate-bill-15-removing-barriers-to-affordable-housing/",
+    "title": "Lt. Gov. SB 15 statement",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched (200). Housing quote used."
+   },
+   {
+    "url": "https://www.danpatrick.org/",
+    "title": "Dan Patrick campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. No healthcare or wages position; existing taxes/energy/immigration/safety already scored."
+   },
+   {
+    "url": "https://www.danpatrick.org/",
+    "title": "Dan Patrick campaign site homepage",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read (cached b7/patrick.c.txt l.66). One sentence: \"Lt. Governor Patrick is a leader in the fight to protect liberty, lower property and business taxes, create jobs and grow our economy, strengthen our grid by adding additional reliable thermal power, provide a high-quality education for all, secure our border, support law enforcement...\". Energy clause kept (specific: thermal power for the grid); immigration and safety clauses too thin -> unsure. No year on the page."
+   },
+   {
+    "url": "https://www.ltgov.texas.gov/2025/02/13/lt-gov-dan-patrick-statement-on-the-unanimous-passage-of-senate-bill-4-and-senate-joint-resolution-2-increasing-the-homestead-exemption-to-140000-and-150000-for-seniors/",
+    "title": "Lt. Gov. SB 4 / SJR 2 statement",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched (cached b7/pat_sb4.c.txt l.27). Taxes quote used."
+   },
+   {
+    "url": "https://www.ltgov.texas.gov/?p=7910",
+    "title": "Lt. Gov. 2025 Top 40 priority bills",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched (cached b7/pat7910.c.txt). The old taxes quote is not on this page."
+   }
+  ],
+  "note": "Healthcare and wages: no record found on his campaign or official site. Housing added (6 -> 7). Follow-up: taxes source replaced; immigration and safety -> unsure. 7 -> 5.",
+  "sourcedIssuesBefore": 6,
+  "sourcedIssuesAfter": 5
+ },
+ "vikki-goodwin": {
+  "zip": "78701",
+  "name": "Vikki Goodwin",
+  "race": "Lieutenant Governor of Texas",
+  "raceId": "tx-ltgov",
+  "party": "Democratic",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "taxes",
+    "score": null,
+    "status": "unsure",
+    "summary": "Mixed: backs property-tax cuts and homestead exemptions but also using the surplus for new programs; no clear direction.",
+    "sourceUrl": "https://www.vikkigoodwin.com/issues",
+    "editorNote": "Batch7 re-read; stays unsure."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read all answers. Already 8 issues."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-lieutenant-governor-of-texas/",
+    "title": "Community Impact Q&A: Texas lieutenant governor candidates",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Nothing new."
+   },
+   {
+    "url": "https://www.vikkigoodwin.com/issues",
+    "title": "Goodwin campaign issues page",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read batch6 cache. Property-tax and surplus lines are mixed (taxes unsure)."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 8.",
+  "sourcedIssuesBefore": 8,
+  "sourcedIssuesAfter": 8
+ },
+ "kevin-mccormick": {
+  "zip": "78701",
+  "name": "Kevin McCormick",
+  "race": "Lieutenant Governor of Texas",
+  "raceId": "tx-ltgov",
+  "party": "Green",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "taxes",
+    "score": null,
+    "status": "unsure",
+    "summary": "Mixed: wants to reduce and stabilize property taxes but also raises a state income tax for debate.",
+    "sourceUrl": "https://kmm2026.org/issues2026/property-tax-reform-proposal",
+    "editorNote": "Same page asks \"Would a State Income Tax Be More Fair?\"; two directions.",
+    "quote": "My proposal for property tax reform will reduce and stabilize property taxes."
+   },
+   {
+    "issue": "housing",
+    "score": null,
+    "status": "unsure",
+    "summary": "Mentions \"affordable shelter\" without a policy.",
+    "sourceUrl": "https://kmm2026.org",
+    "editorNote": "Too vague to score."
+   },
+   {
+    "issue": "wages",
+    "score": null,
+    "status": "unsure",
+    "summary": "Calls for \"meaningful and well-paying jobs\" without a wage policy.",
+    "sourceUrl": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-lieutenant-governor-of-texas/",
+    "editorNote": "No government wage mechanism named.",
+    "quote": "We must develop a sustainable economy that is not based on Wall Street bubbles and provides meaningful and well-paying jobs."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read all answers."
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-lieutenant-governor-of-texas/",
+    "title": "Community Impact Q&A",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Climate answer already scored on energy."
+   },
+   {
+    "url": "https://kmm2026.org",
+    "title": "McCormick campaign site (home, issues2026, property-tax and rural pages)",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Nothing new scorable; no immigration position."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 5. No immigration record, which blocks a 3rd shared issue.",
+  "sourcedIssuesBefore": 5,
+  "sourcedIssuesAfter": 5
+ },
+ "anthony-cristo": {
+  "zip": "78701",
+  "name": "Anthony Cristo",
+  "race": "Lieutenant Governor of Texas",
+  "raceId": "tx-ltgov",
+  "party": "Libertarian",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "wages",
+    "score": null,
+    "status": "unsure",
+    "summary": "Speaks of job growth only; no wage policy.",
+    "sourceUrl": "https://www.anthonycristo.com/",
+    "editorNote": "Too thin to score on wages.",
+    "quote": "Most immigrants come to Texas to work and build a better life—and when government gets out of the way, the number of jobs grows right along with the number of people willing to work."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "\"No response received.\""
+   },
+   {
+    "url": "https://communityimpact.com/central-austin/election/q-a-meet-the-4-candidates-running-for-lieutenant-governor-of-texas/",
+    "title": "Community Impact Q&A",
+    "dateChecked": "2026-10-30",
+    "result": "Cristo did not respond."
+   },
+   {
+    "url": "https://www.anthonycristo.com/",
+    "title": "Anthony Cristo campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Taxes, immigration, safety (drug policy), education already scored; no energy, infrastructure, housing or healthcare position."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 4. No energy, infrastructure, healthcare or housing record.",
+  "sourcedIssuesBefore": 4,
+  "sourcedIssuesAfter": 4
+ },
+ "fiona-ma": {
+  "zip": "94103",
+  "name": "Fiona Ma",
+  "race": "Lieutenant Governor of California",
+  "raceId": "ca-ltgov",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "wealthtax",
+    "score": -2,
+    "summary": "Opposes Prop 40, the one-time billionaire tax, saying it is poorly written because it taxes net worth.",
+    "sourceUrl": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+    "sourceTitle": "Los Angeles Times, Oct 1 2026: Lieutenant governor voter guide, Ma vs. Romero",
+    "date": "2026-10-01",
+    "quote": "Most of these people don’t have liquid money sitting around",
+    "sourceType": "news interview (direct quote)",
+    "editorNote": "LA Times reports \"Both candidates oppose it, with nuance in their reasoning.\" Her other quoted line (\"We need our billionaires, our millionaires and all our companies and people who are paying taxes...\") is softer, so -2 not lower. Direct quote, not paraphrase."
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "summary": "Wants to make higher education more affordable; that is not the K-12 voucher axis.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+    "editorNote": "Higher-ed affordability does not map to the education (vouchers) axis.",
+    "quote": "As Lieutenant Governor, I will make higher education more affordable, expand paid internships, and strengthen career pathways."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched (200; the \"lieutenant-governor-...\" URL is 403, \"lt-governor-...\" works). Housing already scored from this statement; healthcare line (\"saved distressed hospitals\") is a record claim, not a stance."
+   },
+   {
+    "url": "https://fionama.com/",
+    "title": "Fiona Ma campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Bio, endorser quotes (not her words) and news posts; no issues page."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+    "title": "Los Angeles Times, Oct 1 2026: Lieutenant governor voter guide, Ma vs. Romero",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Prop 40 and Prop 39 sections read for both candidates; Prop 40 used."
+   },
+   {
+    "url": "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+    "title": "CalMatters 2026 voter guide: lieutenant governor",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Bio and money only for both candidates."
+   },
+   {
+    "url": "https://laist.com/news/politics/voter-guides/2026-election-california-general-lieutenant-governor",
+    "title": "LAist voter guide: lieutenant governor",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Same bio text as CalMatters."
+   }
+  ],
+  "note": "Wealth tax added (3 -> 4). Same sources searched for Romero.",
+  "sourcedIssuesBefore": 3,
+  "sourcedIssuesAfter": 4
+ },
+ "gloria-romero": {
+  "zip": "94103",
+  "name": "Gloria J. Romero",
+  "race": "Lieutenant Governor of California",
+  "raceId": "ca-ltgov",
+  "party": "Republican",
+  "stances": [
+   {
+    "issue": "wealthtax",
+    "score": -4,
+    "summary": "Strongly opposes Prop 40, the billionaire tax, calling it asset seizure and a first step to taxing more people.",
+    "sourceUrl": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+    "sourceTitle": "Los Angeles Times, Oct 1 2026: Lieutenant governor voter guide, Ma vs. Romero",
+    "date": "2026-10-01",
+    "quote": "It is basically a death march that will throw California over the edge",
+    "sourceType": "news interview (direct quote)",
+    "editorNote": "\"asset seizure\" is a two-word fragment; the scored quote is her full sentence. Stronger opposition than Ma, so -4."
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "safety",
+    "score": null,
+    "status": "unsure",
+    "summary": "Says public safety \"has been weakened\" without saying what she would do.",
+    "sourceUrl": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+    "editorNote": "Complaint, no direction or policy.",
+    "quote": "Public safety has been weakened."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/lt-governor-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Education and taxes already scored from this statement; safety line too vague."
+   },
+   {
+    "url": "https://gloriajromero.com",
+    "title": "Gloria Romero campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read cached copy. Energy already scored; campus-safety lines not scored on safety (batch3/batch6 precedent)."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-lieutenant-governor-ma-romero-voter-guide",
+    "title": "Los Angeles Times, Oct 1 2026: Lieutenant governor voter guide, Ma vs. Romero",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Prop 40 used."
+   },
+   {
+    "url": "https://calmatters.org/california-voter-guide-2026/lieutenant-governor/",
+    "title": "CalMatters 2026 voter guide: lieutenant governor",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Bio only."
+   },
+   {
+    "url": "https://laist.com/news/politics/voter-guides/2026-election-california-general-lieutenant-governor",
+    "title": "LAist voter guide",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Bio only."
+   }
+  ],
+  "note": "Wealth tax added (4 -> 5). Same sources searched for Ma.",
+  "sourcedIssuesBefore": 4,
+  "sourcedIssuesAfter": 5
+ },
+ "lauren-b-pena": {
+  "zip": "78701",
+  "name": "Lauren B. Peña",
+  "race": "U.S. House Texas District 37",
+  "raceId": "tx-37",
+  "party": "Republican",
+  "stances": [
+   {
+    "issue": "immigration",
+    "score": 4,
+    "summary": "Will work with ICE to end Travis County’s de facto sanctuary status.",
+    "sourceUrl": "https://lauren4congress.com/why-vote-for-me",
+    "sourceTitle": "Lauren B. Peña for Congress: Why vote for me",
+    "date": "2026",
+    "quote": "Lauren will work with ICE and federal law enforcement to end Travis County's de facto sanctuary status.",
+    "sourceType": "campaign site",
+    "editorNote": "Third-person copy on her 2026 campaign site (same footing as robbonta.com and other campaign-site quotes). Site renders by JavaScript; text read from the page bundle and matched to its route. The /issues/border-security route shows corruption text (site bug), so the quote is cited from /why-vote-for-me."
+   },
+   {
+    "issue": "energy",
+    "score": -4,
+    "summary": "Will vote to open federal lands to drilling, approve blocked pipelines and repeal Biden-era energy rules.",
+    "sourceUrl": "https://lauren4congress.com/issues/energy-costs",
+    "sourceTitle": "Lauren B. Peña for Congress: Energy costs",
+    "date": "2026",
+    "quote": "Lauren B. Peña will vote to open federal lands to responsible energy development, approve pipeline infrastructure that has been blocked for years, and repeal the Biden-era regulations that have added billions in compliance costs to Texas energy producers — costs that are passed directly to consumers.",
+    "sourceType": "campaign site",
+    "editorNote": "Third-person copy on her 2026 campaign site (same footing as robbonta.com and other campaign-site quotes). Site renders by JavaScript; text read from the page bundle and matched to its route."
+   },
+   {
+    "issue": "safety",
+    "score": 3,
+    "summary": "Will vote to fully fund federal police grants (COPS, Byrne JAG) that help Austin hire and train officers.",
+    "sourceUrl": "https://lauren4congress.com/issues/fund-the-police",
+    "sourceTitle": "Lauren B. Peña for Congress: Fund the police",
+    "date": "2026",
+    "quote": "Lauren will vote to fully fund the COPS program, the Byrne JAG grant program, and other federal resources that help cities like Austin recruit officers, purchase equipment, and train personnel.",
+    "sourceType": "campaign site",
+    "editorNote": "Third-person copy on her 2026 campaign site (same footing as robbonta.com and other campaign-site quotes). Site renders by JavaScript; text read from the page bundle and matched to its route."
+   },
+   {
+    "issue": "wages",
+    "score": -3,
+    "summary": "Says minimum wage hikes and federal mandates are hurting Austin small businesses.",
+    "sourceUrl": "https://lauren4congress.com/issues/austin-affordability",
+    "sourceTitle": "Lauren B. Peña for Congress: Austin affordability",
+    "date": "2026",
+    "quote": "Austin's small businesses are being strangled by federal mandates, minimum wage hikes, and compliance costs that large corporations can absorb but small operators cannot.",
+    "sourceType": "campaign site",
+    "editorNote": "Third-person copy on her 2026 campaign site (same footing as robbonta.com and other campaign-site quotes). Site renders by JavaScript; text read from the page bundle and matched to its route."
+   },
+   {
+    "issue": "education",
+    "score": 4,
+    "summary": "Wants to expand school choice and education savings accounts.",
+    "sourceUrl": "https://lauren4congress.com/issues",
+    "sourceTitle": "Lauren B. Peña for Congress: Issues",
+    "date": "2026",
+    "quote": "Expand school choice and education savings accounts",
+    "sourceType": "campaign site (platform bullet)",
+    "editorNote": "Third-person copy on her 2026 campaign site (same footing as robbonta.com and other campaign-site quotes). Site renders by JavaScript; text read from the page bundle and matched to its route. Education savings accounts are public money for private schooling, so this is the voucher axis (not a bare \"school choice\" mention)."
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "infrastructure",
+    "score": null,
+    "status": "unsure",
+    "summary": "No water, transit or infrastructure spending position found.",
+    "sourceUrl": "https://lauren4congress.com/issues",
+    "editorNote": "No record found."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Taxes/housing/healthcare already scored from it."
+   },
+   {
+    "url": "https://lauren4congress.com",
+    "title": "lauren4congress.com (JS bundle /assets/index-9iaDEqjW.js)",
+    "dateChecked": "2026-10-30",
+    "result": "Read every page component: Home, Issues, Why vote for me, issue subpages. Five new axes sourced."
+   }
+  ],
+  "note": "Gained immigration, energy, safety, wages, education (3 -> 8). Casar already has all 9 TX axes, so there is nothing to fill on his side.",
+  "sourcedIssuesBefore": 3,
+  "sourcedIssuesAfter": 8
+ },
+ "greg-casar": {
+  "zip": "78701",
+  "name": "Greg Casar",
+  "race": "U.S. House Texas District 37",
+  "raceId": "tx-37",
+  "party": "Democratic",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://casarforcongress.com/issues",
+    "title": "Casar campaign issues page",
+    "dateChecked": "2026-10-30",
+    "result": "Not re-fetched: he already has a sourced stance on all 9 TX axes (wealthtax is CA only)."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Nothing to add."
+   }
+  ],
+  "note": "Already complete at 9. No change.",
+  "sourcedIssuesBefore": 9,
+  "sourcedIssuesAfter": 9
+ },
+ "maria-luisa-lulu-flores": {
+  "zip": "78701",
+  "name": "Maria Luisa “Lulu” Flores",
+  "race": "State Representative, District 51",
+  "raceId": "tx-house-51",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "immigration",
+    "score": -2,
+    "summary": "Wants to stop spending on border walls and use the money for Texans’ basic needs.",
+    "sourceUrl": "https://www.voteluluflores.com/issues/",
+    "sourceTitle": "Lulu Flores campaign site: Issues",
+    "date": "2026",
+    "quote": "End spending on wasteful partisan priorities such as fake clinics and border walls and prioritize Texans basic needs",
+    "sourceType": "campaign site",
+    "editorNote": "Same sentence also names \"fake clinics\" (reproductive health, not a tracked axis), so it counts for immigration only."
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://www.voteluluflores.com/issues/",
+    "title": "Flores campaign issues page",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Immigration added."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Nothing new."
+   }
+  ],
+  "note": "Immigration added (7 -> 8).",
+  "sourcedIssuesBefore": 7,
+  "sourcedIssuesAfter": 8
+ },
+ "jessica-martinez": {
+  "zip": "78701",
+  "name": "Jessica Martinez",
+  "race": "State Representative, District 51",
+  "raceId": "tx-house-51",
+  "party": "Republican",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "summary": "\"improving our schools\" and opposing school budget cuts, with no voucher position.",
+    "sourceUrl": "https://www.jessicaforhd51.com/",
+    "editorNote": "Vague; no voucher stance.",
+    "quote": "I will focus on lowering the cost of living, restoring public safety, improving our schools, and holding the government accountable"
+   },
+   {
+    "issue": "energy",
+    "score": null,
+    "status": "unsure",
+    "summary": "Holding polluters accountable for water quality; no energy position.",
+    "sourceUrl": "https://www.jessicaforhd51.com/",
+    "editorNote": "Water line already scored on infrastructure."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.jessicaforhd51.com/",
+    "title": "Martinez campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read every section. Taxes, safety and infrastructure already scored."
+   },
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "She did not respond."
+   },
+   {
+    "url": "https://ballotpedia.org/Jessica_Martinez",
+    "title": "Ballotpedia",
+    "dateChecked": "2026-10-30",
+    "result": "403 from this box; batch6 search found no survey."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 3.",
+  "sourcedIssuesBefore": 3,
+  "sourcedIssuesAfter": 3
+ },
+ "rob-bonta": {
+  "zip": "94103",
+  "name": "Rob Bonta",
+  "race": "Attorney General of California",
+  "raceId": "ca-ag",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": 3,
+    "summary": "Voted for SB 1 (2017), the Road Repair and Accountability Act, which raised fuel taxes and vehicle fees to pay for road repair.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 1 (2017-18), Road Repair and Accountability Act of 2017",
+    "date": "2017-04-06",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Andy Brown / Morales format). One vote, one issue: kept on taxes to match Weber and Ben Allen, whose SB 1 votes count for taxes only.",
+    "voteRecord": "Voted Yes on SB 1 (Beall), Assembly floor, Third Reading Urgency, Apr 6, 2017 (passed, 54 For)",
+    "bill": "SB 1"
+   },
+   {
+    "issue": "wages",
+    "score": 4,
+    "summary": "Voted for SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 3 (2015-16), minimum wage",
+    "date": "2016-03-31",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on SB 3 (Leno), Assembly floor, Senate Third Reading, Mar 31, 2016 (passed, 48 For)",
+    "bill": "SB 3"
+   }
+  ],
+  "unsure": [
+   {
+    "issue": "safety",
+    "score": null,
+    "status": "unsure",
+    "summary": "Calls crime and public safety \"Job No. 1, 2 and 3\" but names no enforcement policy.",
+    "sourceUrl": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+    "editorNote": "Fragment about priority, not direction.",
+    "quote": "Job No. 1, 2 and 3"
+   },
+   {
+    "issue": "infrastructure",
+    "score": null,
+    "status": "unsure",
+    "summary": "His only infrastructure source is the SB 1 vote, which now counts under taxes (one vote, one issue).",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "editorNote": "Was +4 on the same SB 1 vote as taxes. Existing convention (Weber, Ben Allen) books SB 1 under taxes only.",
+    "override": true
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Bonta submitted no statement."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+    "title": "LA Times, Oct 1 2026: attorney general voter guide",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Immigration and housing already scored; safety line is a fragment."
+   },
+   {
+    "url": "https://robbonta.com/issues/",
+    "title": "Bonta campaign issues page",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Nothing new."
+   },
+   {
+    "url": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "title": "Digital Democracy: SB 1 (2017)",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read cache (src94103/cache/49c860d7...html): Assembly Floor, \"SB 1 Beall Third Reading Urgency By FRAZIER\", Apr 6 2017, Bonta Aye."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 7. Follow-up: SB 1 vote reformatted; infrastructure -> unsure. 7 -> 6. Follow-up 2: wages vote reformatted.",
+  "sourcedIssuesBefore": 7,
+  "sourcedIssuesAfter": 6
+ },
+ "michael-e-gates": {
+  "zip": "94103",
+  "name": "Michael Gates",
+  "race": "Attorney General of California",
+  "raceId": "ca-ag",
+  "party": "Republican",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/attorney-general-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Prop 36 enforcement repeats the existing safety score."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-attorney-general-bonta-gates-voter-guide",
+    "title": "LA Times, Oct 1 2026: attorney general voter guide",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Immigration (\"exclusive purview\") is reporter paraphrase plus a fragment; already scored +4."
+   },
+   {
+    "url": "https://www.gates4ag.com/issues",
+    "title": "Gates campaign issues page",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. Housing, safety, immigration already scored; nothing on other axes."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 3.",
+  "sourcedIssuesBefore": 3,
+  "sourcedIssuesAfter": 3
+ },
+ "malia-m-cohen": {
+  "zip": "94103",
+  "name": "Malia Cohen",
+  "race": "California Controller",
+  "raceId": "ca-controller",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "wages",
+    "score": 3,
+    "summary": "Led San Francisco’s $15 minimum wage, then the highest in the U.S., and backed prevailing wages on public projects.",
+    "sourceUrl": "https://www.maliacohenforca.com/issues/an-economy-that-works-for-all-californians",
+    "sourceTitle": "Malia Cohen for Controller: An economy that works for all Californians",
+    "date": "2026",
+    "quote": "She also championed the highest minimum wage in the country, guaranteeing San Francisco residents $15 an hour and paving the way for a minimum wage increase across the state.",
+    "sourceType": "campaign site",
+    "editorNote": "Third-person campaign copy on her 2026 re-election site. A record she runs on, not a new pledge, so +3. Not about public-employee pay."
+   },
+   {
+    "issue": "healthcare",
+    "score": 4,
+    "summary": "Will fight to expand health care access and lower costs, and push for accountability on drug prices.",
+    "sourceUrl": "https://www.maliacohenforca.com/issues/expanding-affordable-health-care",
+    "sourceTitle": "Malia Cohen for Controller: Expanding affordable health care",
+    "date": "2026",
+    "quote": "Despite Republican-led attacks on health care, Malia will continue to fight to expand access and lower costs for all Californians.",
+    "sourceType": "campaign site",
+    "editorNote": "Replaces the GrowSF fragment (+2), which listed four topics in one line. Same direction; clearer source."
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Generic; nothing directional."
+   },
+   {
+    "url": "https://www.maliacohenforca.com/issues",
+    "title": "Cohen campaign issues index",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched; read economy, health care, housing (issue-1) and retirement pages. Retirement page is about public pensions (not scored on wages)."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-controller-cohen-morgan-voter-guide",
+    "title": "LA Times, Oct 1 2026: controller voter guide",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Record and audit disputes; nothing on the axes."
+   }
+  ],
+  "note": "Wages added (3 -> 4); healthcare source upgraded.",
+  "sourcedIssuesBefore": 3,
+  "sourcedIssuesAfter": 4
+ },
+ "herb-w-morgan": {
+  "zip": "94103",
+  "name": "Herb Morgan",
+  "race": "California Controller",
+  "raceId": "ca-controller",
+  "party": "Republican",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "education",
+    "score": null,
+    "status": "unsure",
+    "summary": "Agrees with eliminating the U.S. Department of Education; that is not the voucher axis.",
+    "sourceUrl": "https://ivoterguide.com/candidate/91093/race/30575/election/1454",
+    "editorNote": "iVoterGuide survey statement he marked Strongly Agree, not his own words; also not the voucher axis."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/controller-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Generic; nothing new."
+   },
+   {
+    "url": "https://www.herbmorgan.com/herb-morgan-on-the-issues",
+    "title": "Morgan campaign issues page",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Transparency and audits; \"ever-higher taxes\" repeats the existing taxes score."
+   },
+   {
+    "url": "https://ivoterguide.com/candidate/91093/race/30575/election/1454",
+    "title": "iVoterGuide Morgan survey",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read. No housing answer."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-controller-cohen-morgan-voter-guide",
+    "title": "LA Times, Oct 1 2026: controller voter guide",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Nothing on the axes."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 7.",
+  "sourcedIssuesBefore": 7,
+  "sourcedIssuesAfter": 7
+ },
+ "richard-barrera": {
+  "zip": "94103",
+  "name": "Richard Barrera",
+  "race": "California Superintendent of Public Instruction",
+  "raceId": "ca-spi",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [],
+  "sourcesChecked": [
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. ICE-out-of-schools repeats the existing immigration score; school-safety lines not scored on safety."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-state-superintendent-public-instruction-shaw-barrera-voter-guide",
+    "title": "LA Times, Oct 1 2026: superintendent voter guide",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Gender-policy and Newsom questions only."
+   },
+   {
+    "url": "https://www.laschoolreport.com/california-superintendent-candidates-clash-over-everything-but-school-funding/",
+    "title": "LA School Report / The 74: candidates on the funding formula",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Both back enrollment-based funding (not a tracked axis)."
+   },
+   {
+    "url": "https://edsource.org/2026/california-superintendent-candidates-education-issues/759405",
+    "title": "EdSource 2026 superintendent questionnaire",
+    "dateChecked": "2026-10-30",
+    "result": "Interactive; answers not in the page text (403 via curl, empty via fetch)."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 6.",
+  "sourcedIssuesBefore": 6,
+  "sourcedIssuesAfter": 6
+ },
+ "sonja-shaw": {
+  "zip": "94103",
+  "name": "Sonja Shaw",
+  "race": "California Superintendent of Public Instruction",
+  "raceId": "ca-spi",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "healthcare",
+    "score": null,
+    "status": "unsure",
+    "summary": "Criticizes school mask and vaccine mandates; that is not about health care access.",
+    "sourceUrl": "https://shawforca.com/",
+    "editorNote": "Not the access axis.",
+    "quote": "Mask and vaccine mandates ignored families' well-being, silencing parents' voices."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://shawforca.com/",
+    "title": "Sonja Shaw campaign site",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched (200). Issues: girls' sports, back-to-basics, parental rights. Nothing on the tracked axes beyond education (already scored). /issues is 404."
+   },
+   {
+    "url": "https://voterguide.sos.ca.gov/candidates/superintendent-candidate-statements.htm",
+    "title": "California Secretary of State, Official Voter Information Guide, Nov 3 2026 general, candidate statements",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Matches the existing taxes source."
+   },
+   {
+    "url": "https://www.latimes.com/california/story/2026-10-01/2026-california-election-state-superintendent-public-instruction-shaw-barrera-voter-guide",
+    "title": "LA Times, Oct 1 2026: superintendent voter guide",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. \"Not a funding problem\" quote is about Thurmond's record; not a tax position."
+   },
+   {
+    "url": "https://www.laschoolreport.com/california-superintendent-candidates-clash-over-everything-but-school-funding/",
+    "title": "LA School Report / The 74",
+    "dateChecked": "2026-10-30",
+    "result": "Fetched. Funding-formula and absenteeism answers; no axis."
+   },
+   {
+    "url": "https://edsource.org/2026/california-superintendent-candidates-education-issues/759405",
+    "title": "EdSource 2026 superintendent questionnaire",
+    "dateChecked": "2026-10-30",
+    "result": "Interactive; answers not readable."
+   }
+  ],
+  "note": "No new scorable statement. Stays at 2.",
+  "sourcedIssuesBefore": 2,
+  "sourcedIssuesAfter": 2
+ },
+ "jessica-pessecow": {
+  "zip": "94103",
+  "name": "Jessica Pessecow",
+  "race": "Board of Supervisors, District 10",
+  "raceId": "sf-supervisor-10",
+  "party": "Nonpartisan",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "housing",
+    "score": null,
+    "status": "unsure",
+    "summary": "\"Cheaper housing\" sits in the same sentence as her health care line; that sentence counts once, under health care.",
+    "sourceUrl": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "editorNote": "Same-sentence check: identical sentence was tagged housing +3 and healthcare +2. Kept on the issue oneIssue.ts picks (healthcare: 2 keyword hits vs 1); housing held out. Was +3.",
+    "override": true,
+    "quote": "I advocate for economic opportunities, helping business owners, cheaper housing, improving transportation, bettering health care"
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf",
+    "title": "SF Dept. of Elections, Nov 2026 Voter Information Pamphlet",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read via existing quote; same sentence on two issues."
+   }
+  ],
+  "note": "Follow-up same-sentence fix: 3 -> 2.",
+  "sourcedIssuesBefore": 3,
+  "sourcedIssuesAfter": 2
+ },
+ "shehla-faizi": {
+  "zip": "78701",
+  "name": "Shehla Faizi",
+  "race": "Texas Comptroller of Public Accounts",
+  "raceId": "tx-comptroller",
+  "party": "Green",
+  "stances": [],
+  "unsure": [
+   {
+    "issue": "healthcare",
+    "score": null,
+    "status": "unsure",
+    "summary": "Her healthcare line is the same sentence as her affordable-housing line; that sentence counts once, under housing.",
+    "sourceUrl": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "editorNote": "Same-sentence check: identical sentence was tagged housing +3 and healthcare +3. Kept on the issue oneIssue.ts picks (housing); healthcare held out. Was +3.",
+    "override": true,
+    "quote": "I support using the budget surplus for programs that serve Texans, like public schools, healthcare, and affordable housing."
+   }
+  ],
+  "sourcesChecked": [
+   {
+    "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+    "title": "League of Women Voters of the Austin Area, 2026 General Election Voters Guide",
+    "dateChecked": "2026-10-30",
+    "result": "Re-read via existing quote; same sentence on two issues."
+   }
+  ],
+  "note": "Follow-up same-sentence fix: 4 -> 3.",
+  "sourcedIssuesBefore": 4,
+  "sourcedIssuesAfter": 3
+ },
+ "shirley-n-weber": {
+  "zip": "94103",
+  "name": "Shirley Weber",
+  "race": "California Secretary of State",
+  "raceId": "ca-sos",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "wages",
+    "score": 4,
+    "summary": "Voted for SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 3 (2015-16), minimum wage",
+    "date": "2016-03-31",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on SB 3 (Leno), Assembly floor, Senate Third Reading, Mar 31, 2016 (passed, 48 For)",
+    "bill": "SB 3"
+   },
+   {
+    "issue": "taxes",
+    "score": 3,
+    "summary": "Voted for SB 1 (2017), the Road Repair and Accountability Act, which raised fuel taxes and vehicle fees to pay for road repair.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 1 (2017-18), Road Repair and Accountability Act of 2017",
+    "date": "2017-04-06",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on SB 1 (Beall), Assembly floor, Third Reading Urgency, Apr 6, 2017 (passed, 54 For)",
+    "bill": "SB 1"
+   },
+   {
+    "issue": "housing",
+    "score": 3,
+    "summary": "Voted for AB 1482 (2019), the Tenant Protection Act, which caps annual rent increases.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201920200ab1482",
+    "sourceTitle": "Digital Democracy (CalMatters): AB 1482 (2019-20), Tenant Protection Act of 2019: rent caps",
+    "date": "2019-09-11",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on AB 1482 (Chiu), Assembly floor, Concurrence in Senate Amendments, Sep 11, 2019 (passed, 47 For)",
+    "bill": "AB 1482"
+   },
+   {
+    "issue": "immigration",
+    "score": -4,
+    "summary": "Voted for SB 54 (2017), the California Values Act, which limits state and local help with federal immigration enforcement.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb54",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 54 (2017-18), California Values Act",
+    "date": "2017-09-15",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on SB 54 (De León), Assembly floor, Senate Third Reading, Sep 15, 2017 (passed, 51 For)",
+    "bill": "SB 54"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [],
+  "note": "Follow-up 2: wages vote reformatted. Follow-up 2: taxes vote reformatted. Follow-up 2: housing vote reformatted. Follow-up 2: immigration vote reformatted.",
+  "sourcedIssuesBefore": 4,
+  "sourcedIssuesAfter": 4
+ },
+ "donald-p-don-wagner": {
+  "zip": "94103",
+  "name": "Donald P. Wagner",
+  "race": "California Secretary of State",
+  "raceId": "ca-sos",
+  "party": "Republican",
+  "stances": [
+   {
+    "issue": "wages",
+    "score": -4,
+    "summary": "Voted against SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 3 (2015-16), minimum wage",
+    "date": "2016-03-31",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted No on SB 3 (Leno), Assembly floor, Senate Third Reading, Mar 31, 2016 (passed, 48 For, 26 Against)",
+    "bill": "SB 3"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [],
+  "note": "Follow-up 2: wages vote reformatted.",
+  "sourcedIssuesBefore": 4,
+  "sourcedIssuesAfter": 4
+ },
+ "ben-allen": {
+  "zip": "94103",
+  "name": "Ben Allen",
+  "race": "California Commissioner of Insurance",
+  "raceId": "ca-insurance",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "wages",
+    "score": 4,
+    "summary": "Voted for SB 3 (2016), which raised California’s minimum wage to $15 an hour.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 3 (2015-16), minimum wage",
+    "date": "2016-03-31",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on SB 3 (Leno), Senate floor, Concurrence, Mar 31, 2016 (passed, 26 For)",
+    "bill": "SB 3"
+   },
+   {
+    "issue": "taxes",
+    "score": 3,
+    "summary": "Voted for SB 1 (2017), the Road Repair and Accountability Act, which raised fuel taxes and vehicle fees to pay for road repair.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 1 (2017-18), Road Repair and Accountability Act of 2017",
+    "date": "2017-04-06",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on SB 1 (Beall), Senate floor, Third Reading Urgency Clause, Apr 6, 2017 (passed, 27 For)",
+    "bill": "SB 1"
+   },
+   {
+    "issue": "healthcare",
+    "score": 4,
+    "summary": "Voted for SB 562 (2017), the Healthy California Act, to set up a single-payer health care program.",
+    "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb562",
+    "sourceTitle": "Digital Democracy (CalMatters): SB 562 (2017-18), Healthy California Act",
+    "date": "2017-06-01",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Yes on SB 562 (Lara), Senate floor, Third Reading, Jun 1, 2017 (passed, 23 For)",
+    "bill": "SB 562"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [],
+  "note": "Follow-up 2: wages vote reformatted. Follow-up 2: taxes vote reformatted. Follow-up 2: healthcare vote reformatted.",
+  "sourcedIssuesBefore": 5,
+  "sourcedIssuesAfter": 5
+ },
+ "sarah-eckhardt": {
+  "zip": "78701",
+  "name": "Sarah Eckhardt",
+  "race": "Texas Comptroller of Public Accounts",
+  "raceId": "tx-comptroller",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "immigration",
+    "score": -3,
+    "summary": "Voted against Texas SB 8 (2025), which has sheriffs make agreements with ICE to enforce federal immigration law.",
+    "sourceUrl": "https://capitollens.org/texas/votes/89r-senate-0531-sb8/",
+    "sourceTitle": "Capitol Lens: Texas Senate vote on SB 8 conference committee report (89th Legislature)",
+    "date": "2025-05-31",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Nay on SB 8, Texas Senate, conference committee report, May 31, 2025 (passed 20-11)",
+    "bill": "SB 8"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [],
+  "note": "Follow-up 2: immigration vote reformatted.",
+  "sourcedIssuesBefore": 6,
+  "sourcedIssuesAfter": 6
+ },
+ "jon-rosenthal": {
+  "zip": "78701",
+  "name": "Jon Rosenthal",
+  "race": "Texas Railroad Commission",
+  "raceId": "tx-rrc",
+  "party": "Democratic",
+  "stances": [
+   {
+    "issue": "immigration",
+    "score": -3,
+    "summary": "Voted against Texas SB 8 (2025), which has sheriffs make agreements with ICE to enforce federal immigration law.",
+    "sourceUrl": "https://capitollens.org/texas/votes/89r-house-4130-sb8/",
+    "sourceTitle": "Capitol Lens: Texas House vote on SB 8 conference committee report (89th Legislature)",
+    "date": "2025-06-01",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote).",
+    "voteRecord": "Voted Nay on SB 8, Texas House, conference committee report, June 1, 2025 (passed 89-52)",
+    "bill": "SB 8"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [],
+  "note": "Follow-up 2: immigration vote reformatted.",
+  "sourcedIssuesBefore": 6,
+  "sourcedIssuesAfter": 6
+ },
+ "gloria-gonzales-dholakia": {
+  "zip": "78701",
+  "name": "Gloria Gonzales-Dholakia",
+  "race": "Austin Community College Board of Trustees, Place 1",
+  "raceId": "acc-trustee-place-1",
+  "party": "Nonpartisan",
+  "stances": [
+   {
+    "issue": "taxes",
+    "score": 3,
+    "summary": "As Leander ISD trustee, moved to adopt a $1.1169 total property tax rate for 2026; it passed.",
+    "sourceUrl": "https://meetings.boardbook.org/Public/DownloadAgenda/795?meeting=758688",
+    "sourceTitle": "Leander ISD Board of Trustees, Aug 17 2026 meeting minutes",
+    "date": "2026-08-17",
+    "quote": "",
+    "sourceType": "recorded vote",
+    "editorNote": "Vote moved out of quote into voteRecord (Bonta SB 1 format); tally and chamber re-read from the cached vote page. One vote, one issue (no other issue uses this vote). Motion text and minutes line moved out of quote; it is a recorded motion and vote, not a policy statement.",
+    "voteRecord": "Moved the motion to adopt a $1.1169 total tax rate for the 2026 tax year, Leander ISD Board of Trustees, Aug 17, 2026 (passed 6-0, one absent)"
+   }
+  ],
+  "unsure": [],
+  "sourcesChecked": [],
+  "note": "Follow-up 2: taxes vote reformatted.",
+  "sourcedIssuesBefore": 1,
+  "sourcedIssuesAfter": 1
+ }
+}
