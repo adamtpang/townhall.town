@@ -53,6 +53,13 @@ const ES: Record<string, string> = {
   " · No local problem data for this ZIP yet.": " · Aún no hay datos de problemas locales para este código postal.",
   // Race tiers
   "What matters on your ballot": "Lo que más importa en su boleta electoral",
+  // Candidate money (FEC), PR #32; shown only when SHOW_FINANCE is on
+  "Party: unsure": "Partido: no se sabe",
+  Incumbent: "En el cargo",
+  Raised: "Recaudado",
+  "Cash on hand": "Efectivo disponible",
+  "Campaign money from FEC filings": "Dinero de campaña según los reportes de la FEC",
+  through: "hasta el",
   race: "contienda",
   races: "contiendas",
   "race source": "fuente de la contienda",

@@ -11,12 +11,16 @@ import type { MeasureMath } from "../lib/measures";
 import officesData from "../data/offices.json";
 const OFFICES = officesData.offices;
 import { useT } from "../lib/i18n";
+import type { Politician } from "../lib/types";
+import { SHOW_FINANCE } from "../lib/flags";
+const usd = (n: number) =>
+  n >= 1e6 ? `$${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `$${Math.round(n / 1e3)}K` : `$${Math.round(n)}`;
 import { leaderLine, type PolyQuote, type LeaderLine } from "../lib/marketLine";
 import { polymarketCloseness } from "../lib/marketsCore.mjs";
 import type { RaceMeta } from "../lib/raceMeta";
 import { ISSUES } from "../lib/issues";
 const ISSUE_LABEL: Record<string, string> = Object.fromEntries(ISSUES.map((i) => [i.id, i.label]));
-type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; splitNote?: string; sourceNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; office?: string; officeSource?: string; verify?: string; appliesNote?: string; splitNote?: string; sourceNote?: string; judicialNote?: string; judicialNoteSource?: { url: string; label: string }; dependsOnAddress?: boolean; tentative?: boolean; judicial?: "ny" | "tx" | "ca" | boolean; meta?: RaceMeta | null; candidates?: { name: string; party?: string | null; photo?: Photo; incumbent?: Politician["incumbent"]; money?: Politician["money"] }[] };
 /** The one live Polymarket quote for a contest, or null. Never cached, never estimated. */
 export type Mk = PolyQuote | null;
 
@@ -96,6 +100,38 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
   );
 }
 
+/** PR #32 (Sai): party, incumbent and FEC money under each candidate, with one source line per race.
+ *  Behind SHOW_FINANCE (default OFF): Civic is holding the finance data until their FEC sweep, and QA found P1s in it. */
+function FinanceRow({ r }: { r: RaceLite }) {
+  const t = useT();
+  const cands = r.candidates ?? [];
+  const d = cands.find((c) => c.money)?.money?.coverageThrough;
+  return (
+    <div data-finance>
+      <ul className="my-2 flex gap-3 overflow-x-auto pb-1">
+        {cands.map((c) => (
+          <li key={c.name} className="w-28 shrink-0 md:w-40">
+            <p className="text-sm font-[530] leading-5 text-black/80">{c.name}</p>
+            <p className="text-sm leading-5 text-black/60">{c.party || t("Party: unsure")}{c.incumbent === true ? ` · ${t("Incumbent")}` : ""}</p>
+            {c.money && (
+              <p className="mt-1 text-sm leading-5 text-black/80">
+                {t("Raised")} <span className="font-medium tabular-nums">{usd(c.money.raised)}</span>
+                <span className="block text-black/60">{t("Cash on hand")} <span className="tabular-nums">{usd(c.money.cashOnHand)}</span></span>
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+      {cands.some((c) => c.money) && (
+        <p className="mb-2 text-sm text-black/60">
+          {t("Campaign money from FEC filings")}
+          {d ? `, ${t("through")} ${new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : ""}.
+        </p>
+      )}
+    </div>
+  );
+}
+
 export default function RaceTiers({ races, market, measures = [] }: { races: RaceLite[]; market: (id: string) => Mk; measures?: MeasureMath[] }) {
   const [failed, setFailed] = useState<Record<string, boolean>>({});
   const t = useT();
@@ -116,6 +152,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
+                    {SHOW_FINANCE && r.candidates?.length ? <FinanceRow r={r} /> : null}
                     {/* Civic main_points17 (Oct 30): judges (pointType "role") get only a factual role line from their official profile when one
                         exists (8 in Texas), else the plain empty text. Rendered as given; never a stance. */}
                     {isJudicial(r) && r.candidates?.length ? (

@@ -4,3 +4,7 @@
 const DEFAULT_SHOW_ACCOUNTABILITY = true;
 const raw = process.env.NEXT_PUBLIC_SHOW_ACCOUNTABILITY;
 export const SHOW_ACCOUNTABILITY = raw === "0" || raw === "false" ? false : raw === "1" || raw === "true" ? true : DEFAULT_SHOW_ACCOUNTABILITY;
+
+// PR #32 (party + FEC money under each candidate) is OFF unless NEXT_PUBLIC_SHOW_FINANCE is "1" at build time.
+// Civic is holding the finance data until their FEC sweep (~2:15 PM CT Oct 30) and QA found P1s in it.
+export const SHOW_FINANCE = process.env.NEXT_PUBLIC_SHOW_FINANCE === "1";
