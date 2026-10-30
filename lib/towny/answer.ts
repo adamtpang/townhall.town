@@ -7,6 +7,7 @@ import { faqFor, WHO_LINE, OFFICES, SF_DOE, withPolling } from "./faq";
 import { ASKS_WHO, WHO_CHIP, OUT_OF_SCOPE, OUT_OF_SCOPE_LINKS, outOfScope, dedupeByHost, sameCity, SAME_CITY, stripPlace, zipsIn, cityOfZip } from "../townyChat";
 import { COVERED_ZIPS } from "../site";
 import { ORDER_CONFIRMED, ORDER_UNSURE, inOfficialOrder, isRetention, officialOrder, orderSourceLinks, splitOf, SPLIT_LINE, type OrderSource, type SplitGroup } from "../ballotOrder";
+import { hostLabel } from "../sourceName";
 
 export type Curated = { reply: string; links: { label: string; url: string }[]; chips?: string[]; intent: string };
 
@@ -106,7 +107,7 @@ export function runningFor(zip: string, text: string, only?: (r: Race) => boolea
     return { text: `${segText(zip, g, ownBallot)}${tail}`, split: !!g.split };
   });
   const sample = orderSourceLinks(sourcesOf(conf));
-  const lists = [...new Map(pick.map((r) => r.source).filter(Boolean).map((u) => [u as string, { label: host(u as string), url: u as string }])).values()];
+  const lists = [...new Map(pick.map((r) => r.source).filter(Boolean).map((u) => [u as string, { label: hostLabel(u as string), url: u as string }])).values()];
   const body = joinLines(lines);
   const reply = !ordered.length ? body : all ? `${body} ${ORDER_CONFIRMED}` : none ? `${body} ${UNSURE_ORDER}` : body;
   return { intent: "running", reply, links: uniq([...sample, ...splitLinks(segs), office, ...lists.filter((l) => host(l.url) !== host(office.url))]) };

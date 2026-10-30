@@ -13,6 +13,7 @@ import { getCandidates, getDistricts, getMarketOdds, getRaces } from "../../../l
 import { asksOrder, ballotOrder, curated } from "../../../lib/towny/answer";
 import { guardReply } from "../../../lib/towny/orderGuard";
 import { ASKS_EARLY, ASKS_HOURS } from "../../../lib/townyFacts";
+import { nameBareCertHost } from "../../../lib/sourceName";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -63,6 +64,8 @@ export async function POST(req: Request) {
   const turn = await runTowny({ system: `${townyPrompt(longDateIn(tz))}\n\n${TOWNY_BRIEF}`, prompt, tools: { ...coreTools, ...townyTools } });
   if (turn.ok) {
     const g = guardReply(zip, turn.reply);
+    // Civic P2 (Oct 30, 3:47 PM CT): the CA certified list is named, never shown as its bare hostname.
+    { const named = nameBareCertHost(g.reply); if (named !== g.reply) { g.reply = named; g.changed.push("named the CA certified list"); } }
     return Response.json(
       { handledBy: "model", model: turn.model, redacted: clean.redacted, modelSaw: prompt, toolCalls: turn.toolCalls, reply: g.reply, guard: g.changed, flags: outputFlags(g.reply), failedAttempts: turn.attempts },
       { headers: { "Cache-Control": "no-store" } }

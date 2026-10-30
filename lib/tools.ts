@@ -18,6 +18,7 @@ import { stancesFor, sourceLabel, ISSUES } from "./issues";
 import { stanceForm } from "./stanceForm";
 import { draftWording } from "./plain";
 import { inOfficialOrder, orderStatus, splitOf, SPLIT_LINE, officialOrder } from "./ballotOrder";
+import { hostLabel } from "./sourceName";
 
 /** Jurisdiction plus app-only extras (measures, verify links, context). Extra fields only; contract fields unchanged. */
 export type Ballot = Jurisdiction & {
@@ -35,7 +36,7 @@ export const DEMO_ZIPS = COVERED_ZIPS.filter((z) => z in B);
 
 /** QA P2 (60582ae): agents get the same published, sourced stances the site shows (data/stances.json),
  *  each with its exact text and source link. Nothing pending, unsourced or null is returned; judicial candidates get none. */
-const apiSourceLabel = (u: string) => { const l = sourceLabel(u); if (l !== "source") return l; try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
+const apiSourceLabel = (u: string) => { const l = sourceLabel(u); if (l !== "source") return l; return hostLabel(u, "source"); };
 function publishedPositions(name: string) {
   return Object.entries(stancesFor(name))
     .filter(([, st]) => st && st.value !== null && st.value !== undefined && st.sourceUrl && (st.quote || (st as { voteRecord?: string }).voteRecord))
