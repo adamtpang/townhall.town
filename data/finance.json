@@ -72,7 +72,8 @@
    "donorsSource": {
     "label": "FEC itemized receipts",
     "url": "https://www.fec.gov/data/receipts/?committee_id=C00919084&two_year_transaction_period=2026"
-   }
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
   },
   "S6TX00388": {
    "name": "Ken Paxton",
@@ -82,7 +83,7 @@
    "individual": 20997954.85,
    "smallDonorPct": 0.2894216862267422,
    "coverageThrough": "2026-10-14",
-   "lastReport": "TERMINATION REPORT",
+   "lastReport": "PRE-GENERAL",
    "committee": {
     "id": "C00901918",
     "name": "KEN PAXTON FOR SENATE"
@@ -120,11 +121,8 @@
    "donorsSource": {
     "label": "FEC itemized receipts",
     "url": "https://www.fec.gov/data/receipts/?committee_id=C00901918&two_year_transaction_period=2026"
-   }
-  },
-  "S6TX00594": {
-   "name": "Ted Brown",
-   "status": "no filings"
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
   },
   "H2TX01112": {
    "name": "Nathaniel Moran",
@@ -1232,7 +1230,8 @@
    "donorsSource": {
     "label": "FEC itemized receipts",
     "url": "https://www.fec.gov/data/receipts/?committee_id=C00910695&two_year_transaction_period=2026"
-   }
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
   },
   "H6TX10221": {
    "name": "Chris Gober",
@@ -1300,7 +1299,8 @@
    "donorsSource": {
     "label": "FEC itemized receipts",
     "url": "https://www.fec.gov/data/receipts/?committee_id=C00922062&two_year_transaction_period=2026"
-   }
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
   },
   "H0TX11230": {
    "name": "August Pfluger",
@@ -4375,7 +4375,8 @@
    "donorsSource": {
     "label": "FEC itemized receipts",
     "url": "https://www.fec.gov/data/receipts/?committee_id=C00791897&two_year_transaction_period=2026"
-   }
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
   },
   "H4TX38011": {
    "name": "Melissa McDonough",
@@ -4741,7 +4742,8 @@
    "donorsSource": {
     "label": "FEC itemized receipts",
     "url": "https://www.fec.gov/data/receipts/?committee_id=C00927558&two_year_transaction_period=2026"
-   }
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
   },
   "H8CA11116": {
    "name": "Scott Wiener",
@@ -4813,7 +4815,81 @@
    "donorsSource": {
     "label": "FEC itemized receipts",
     "url": "https://www.fec.gov/data/receipts/?committee_id=C00909283&two_year_transaction_period=2026"
-   }
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
+  },
+  "H6TX35038": {
+   "name": "Lauren Peña",
+   "raised": 132161.88,
+   "cashOnHand": 4453.73,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6TX35038/?cycle=2026"
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
+  },
+  "S4TX00888": {
+   "name": "Ted Brown",
+   "raised": 14257.28,
+   "cashOnHand": 1288.35,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/S4TX00888/?cycle=2026"
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
+  },
+  "H6NY12172": {
+   "name": "Micah Lasher",
+   "raised": 3493973.6,
+   "cashOnHand": 309209.29,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6NY12172/?cycle=2026"
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
+  },
+  "H6NY12404": {
+   "name": "Caroline Shinkle",
+   "raised": 272962.88,
+   "cashOnHand": 126423.53,
+   "coverageThrough": "2026-10-14",
+   "lastReport": "PRE-GENERAL",
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6NY12404/?cycle=2026"
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
+  },
+  "H6NY12313": {
+   "name": "Wilneida Negron",
+   "raised": 57807.2,
+   "cashOnHand": 6086.87,
+   "coverageThrough": "2026-09-30",
+   "lastReport": "OCTOBER QUARTERLY",
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6NY12313/?cycle=2026"
+   },
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
+  },
+  "H6NY12297": {
+   "name": "Karen Ortiz",
+   "raised": 46267.96,
+   "cashOnHand": 23468.52,
+   "coverageThrough": "2026-06-30",
+   "lastReport": "JULY QUARTERLY",
+   "source": {
+    "label": "FEC candidate totals",
+    "url": "https://www.fec.gov/data/candidate/H6NY12297/?cycle=2026"
+   },
+   "note": "A newer filing (Oct 30) is not yet processed by FEC.",
+   "verified": "Civic finance_fixes18, Oct 30, 2026"
   }
  }
 }
