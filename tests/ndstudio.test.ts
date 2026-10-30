@@ -2,7 +2,8 @@ import { readFileSync, statSync, existsSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { bandSources, motionAllowed } from "../components/media/MediaBand";
+import { bandSources, motionAllowed, onIdleOrScroll, IDLE_FALLBACK_MS } from "../components/media/MediaBand";
+import { vi } from "vitest";
 import CityCards, { CITIES } from "../components/media/CityCards";
 import { NumberedSection } from "../components/media/SectionHeader";
 import { SectionBody } from "../components/Prose";
@@ -55,7 +56,11 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(bandSources(true).map((s) => s.src)).toEqual(["/media/band-mobile.webm", "/media/band-mobile.mp4"]);
     expect(bandSources(false).map((s) => s.src)).toEqual(["/media/band-desktop.mp4"]);
     const band = src("components/media/MediaBand.tsx");
-    expect(band).toContain('rootMargin: "200px"');
+    expect(band).not.toContain("rootMargin");
+    expect(band).toMatch(/if \(!motionAllowed\(reduceMq\.matches, saveData\)\) return;/);
+    expect(band).toContain('srcSet="/media/band-desktop-poster.jpg"');
+    expect(band).toContain('src="/media/band-mobile-poster.jpg"');
+    expect(band).toContain("h-11 w-11");
     expect(band).toMatch(/<video ref=\{v\} muted loop playsInline preload="none" aria-hidden="true"/);
     expect(band).not.toMatch(/<video[^>]*controls/);
   });
@@ -68,5 +73,31 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(statSync(f("band-mobile.mp4")).size).toBeLessThanOrEqual(400 * 1024);
     expect(statSync(f("band-desktop.mp4")).size).toBeLessThanOrEqual(1.5 * 1024 * 1024);
     for (const c of ["components/media/CityCards.tsx", "components/media/MediaBand.tsx"]) expect(src(c)).not.toContain("next/image");
+  });
+  it("band video attaches once on idle or first scroll, whichever comes first; setTimeout fallback without rIC", () => {
+    const mk = (ric: boolean) => {
+      const ls: Record<string, () => void> = {};
+      let idle: (() => void) | undefined;
+      const w = {
+        addEventListener: (n: string, f: () => void) => { ls[n] = f; },
+        removeEventListener: (n: string) => { delete ls[n]; },
+        ...(ric ? { requestIdleCallback: (f: () => void) => { idle = f; return 1; }, cancelIdleCallback: () => { idle = undefined; } } : {}),
+      };
+      return { w, ls, idle: () => idle?.() };
+    };
+    const a = mk(true); const runA = vi.fn();
+    onIdleOrScroll(a.w as never, runA);
+    expect(runA).not.toHaveBeenCalled();
+    a.ls.scroll(); a.idle();
+    expect(runA).toHaveBeenCalledTimes(1);
+    const b = mk(true); const runB = vi.fn();
+    onIdleOrScroll(b.w as never, runB);
+    b.idle(); expect(runB).toHaveBeenCalledTimes(1); expect(b.ls.scroll).toBeUndefined();
+    vi.useFakeTimers();
+    const c = mk(false); const runC = vi.fn();
+    onIdleOrScroll(c.w as never, runC);
+    vi.advanceTimersByTime(IDLE_FALLBACK_MS - 1); expect(runC).not.toHaveBeenCalled();
+    vi.advanceTimersByTime(1); expect(runC).toHaveBeenCalledTimes(1);
+    vi.useRealTimers();
   });
 });
