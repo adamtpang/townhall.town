@@ -35,11 +35,16 @@ const STANCES = (stancesData as unknown as StanceFile).stances;
 
 export const candidateId = (name: string) => name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
+// Ballot name -> stances.json key where the slug alone is not enough (Civic final, Oct 30): name mapping only, no stances added.
+// The older "malia-cohen" key is never mapped or merged.
+export const STANCE_KEY: Record<string, string> = { "Malia M. Cohen": "malia-m-cohen" };
+export const stanceKey = (name: string) => STANCE_KEY[name] ?? candidateId(name);
+
 export function stancesFor(name: string): Record<string, Stance> {
-  const rec = STANCES[candidateId(name)];
+  const rec = STANCES[stanceKey(name)];
   if (!rec) return {};
   const out: Record<string, Stance> = {};
-  for (const [k, v] of Object.entries(rec)) if (k !== "name" && typeof v === "object") { const y = (v as Stance).year ?? YEARS[`${candidateId(name)}.${k}`]?.year; out[k] = y ? { ...(v as Stance), year: y } : (v as Stance); }
+  for (const [k, v] of Object.entries(rec)) if (k !== "name" && typeof v === "object") { const y = (v as Stance).year ?? YEARS[`${stanceKey(name)}.${k}`]?.year; out[k] = y ? { ...(v as Stance), year: y } : (v as Stance); }
   // One sentence, one issue (Oct 30 12:10 AM CT): a sentence tagged to several issues keeps only its best-fitting one.
   // Dropped duplicates (and quotes held for a Civic retag) become value null, so they are neither shown nor counted.
   for (const [id] of duplicateSentenceIds(out, ISSUES.map((i) => i.id))) out[id] = { value: null, status: "same sentence as another issue" };
