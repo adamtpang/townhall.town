@@ -2,8 +2,11 @@
 import { useState } from "react";
 import { Portrait, type Photo } from "../components/Portrait";
 import { useT } from "../lib/i18n";
+import type { Politician } from "../lib/types";
 type Avg = { name: string; prob: number }[];
-type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string; candidates?: { name: string; party?: string | null; photo?: Photo }[] };
+type RaceLite = { id: string; title: string; level: string; source?: string; officeSource?: string; candidates?: (Omit<Politician, "photo"> & { photo?: Photo })[] };
+const usd = (n: number) =>
+  n >= 1e6 ? `$${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M` : n >= 1e3 ? `$${Math.round(n / 1e3)}K` : `$${Math.round(n)}`;
 type Mk = { avg: Avg; quotes: { url?: string; platform?: string }[] } | null;
 
 /**
@@ -59,7 +62,7 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
               </summary>
               <ul className="mt-6 space-y-10 sm:pl-[7.5rem]">
                 {list.map(({ r, why, mk }) => (
-                  <li key={r.id}>
+                  <li key={r.id} className="min-w-0">
                     <p className="text-lg font-medium">{r.title}</p>
                     {r.candidates?.length ? (
                       <div className="my-3 flex gap-3 overflow-x-auto pb-1">
@@ -68,10 +71,23 @@ export default function RaceTiers({ races, market }: { races: RaceLite[]; market
                           <div key={c.name} className="w-28 shrink-0 md:w-40">
                             <Portrait name={c.name} photo={c.photo} credit={false} boxClassName="h-[140px] md:h-52" forceInitials={failed[r.id] || r.candidates!.some((x) => !x.photo?.url)} onFail={() => setFailed((f) => ({ ...f, [r.id]: true }))} />
                             <p className="mt-1 text-sm font-medium leading-tight text-black/80">{c.name}</p>
+                            <p className="text-xs leading-tight text-black/60">{c.party || t("Party: unsure")}{c.incumbent === true ? ` · ${t("Incumbent")}` : ""}</p>
+                            {c.money && (
+                              <p className="mt-1 text-xs leading-tight text-black/80">
+                                {t("Raised")} <span className="font-medium tabular-nums">{usd(c.money.raised)}</span>
+                                <span className="block text-black/60">{t("Cash on hand")} <span className="tabular-nums">{usd(c.money.cashOnHand)}</span></span>
+                              </p>
+                            )}
                           </div>
                         ))}
                       </div>
                     ) : null}
+                    {r.candidates?.some((c) => c.money) && (
+                      <p className="mb-2 text-xs text-black/50">
+                        {t("Campaign money from FEC filings")}
+                        {(() => { const d = r.candidates!.find((c) => c.money)?.money?.coverageThrough; return d ? `, ${t("through")} ${new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : ""; })()}.
+                      </p>
+                    )}
                     <p className="text-sm text-black/60">
                       {why}{" "}
                       {r.source && <a href={r.source} target="_blank" rel="noreferrer">{t("race source")}</a>}
