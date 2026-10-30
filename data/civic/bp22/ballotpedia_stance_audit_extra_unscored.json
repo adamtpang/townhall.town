@@ -1,0 +1,24 @@
+[
+ {
+  "candidate": "Bo French",
+  "race_id": "tx-rrc",
+  "issue": "education",
+  "scored": false,
+  "value": null,
+  "status_in_stances": "unsure",
+  "quote": "I support local control of schools including charter schools and any other system that protects parents’ rights to ensure their child gets a great education. We are punishing low-income children by forcing them to stay in underperforming schools.",
+  "current_source_url": "https://ballotpedia.org/Bo_French",
+  "data_label": "data/civic/positions_gapfill_batch5civic.json sourceTitle 'Ballotpedia: Bo French (candidate survey)'",
+  "cls": "CAMPAIGN",
+  "evidence_url": "https://ballotpedia.org/Bo_French#Campaign_themes",
+  "evidence_section_heading": "Campaign themes > 2016 — \"French's campaign website highlighted the following issues:\" (table)",
+  "campaign_url": "http://bofrench.com/issues/",
+  "campaign_url_source": "Ballotpedia footnote: Bo French for Texas House, \"Issues,\" accessed February 23, 2016",
+  "recommended_chip_label": "Campaign website (bofrench.com, 2016 Texas House race; quoted by Ballotpedia)",
+  "recommended_citation_url": "https://ballotpedia.org/Bo_French#Campaign_themes",
+  "keep": true,
+  "notes": [
+   "NOT a survey answer: the 'candidate survey' label in the data is wrong. Text is from his 2016 Texas House campaign site (stale). Not on the live 2026 campaign site check list; outside the scored set, so not counted in the totals."
+  ]
+ }
+]

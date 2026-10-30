@@ -5,6 +5,7 @@ export type Issue = { id: string; label: string; low: string; high: string; lowS
 
 /** Each issue is a policy direction from -5 (left end) to +5 (right end), integer steps. Neither end is a party. */
 import { duplicateSentenceIds, isExcluded } from "./oneIssue";
+import { stanceEligibility } from "./stanceEligibility";
 export const ISSUES: Issue[] = [
   { id: "housing", question: "Should government act to lower housing costs?", label: "Housing costs", low: "Government should stay out of housing costs", high: "Government should act to lower housing costs", lowShort: "Hands off", highShort: "Act on costs" },
   { id: "healthcare", question: "Should government expand healthcare access?", label: "Healthcare access", low: "Smaller government role in healthcare", high: "Government should expand healthcare access", lowShort: "Smaller role", highShort: "Expand access" },
@@ -19,7 +20,7 @@ export const ISSUES: Issue[] = [
 ];
 
 /** value null = no usable position (status says why, shown verbatim); never counted. */
-export type Stance = { value: number | null; quote?: string; summary?: string; sourceUrl?: string | null; status?: string; voteRecord?: string; bill?: string; year?: number };
+export type Stance = { value: number | null; quote?: string; summary?: string; sourceUrl?: string | null; status?: string; voteRecord?: string; bill?: string; year?: number; /** Why the shared eligibility rule made this unsure (lib/stanceEligibility.ts). */ unsureReason?: string; /** Chip label and citation from the shared rule (Civic's audit for Ballotpedia records). */ chip?: string; chipUrl?: string; /** Our own label for the source, when the URL alone would mislabel it. */ sourceTitle?: string };
 // Year of each quote, from the source's own date (scripts/quote_years.py). Missing = 'date unsure'.
 const YEARS = (quoteYears as unknown as { years: Record<string, { year: number }> }).years;
 /** Questionnaires are labeled as such, never as endorsements. */
@@ -34,15 +35,28 @@ const STANCES = (stancesData as unknown as StanceFile).stances;
 
 export const candidateId = (name: string) => name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
+// Ballot name -> stances.json key where the slug alone is not enough (Civic final, Oct 30): name mapping only, no stances added.
+// The older "malia-cohen" key is never mapped or merged.
+export const STANCE_KEY: Record<string, string> = { "Malia M. Cohen": "malia-m-cohen" };
+export const stanceKey = (name: string) => STANCE_KEY[name] ?? candidateId(name);
+
 export function stancesFor(name: string): Record<string, Stance> {
-  const rec = STANCES[candidateId(name)];
+  const rec = STANCES[stanceKey(name)];
   if (!rec) return {};
   const out: Record<string, Stance> = {};
-  for (const [k, v] of Object.entries(rec)) if (k !== "name" && typeof v === "object") { const y = (v as Stance).year ?? YEARS[`${candidateId(name)}.${k}`]?.year; out[k] = y ? { ...(v as Stance), year: y } : (v as Stance); }
+  for (const [k, v] of Object.entries(rec)) if (k !== "name" && typeof v === "object") { const y = (v as Stance).year ?? YEARS[`${stanceKey(name)}.${k}`]?.year; out[k] = y ? { ...(v as Stance), year: y } : (v as Stance); }
   // One sentence, one issue (Oct 30 12:10 AM CT): a sentence tagged to several issues keeps only its best-fitting one.
   // Dropped duplicates (and quotes held for a Civic retag) become value null, so they are neither shown nor counted.
   for (const [id] of duplicateSentenceIds(out, ISSUES.map((i) => i.id))) out[id] = { value: null, status: "same sentence as another issue" };
   for (const id of Object.keys(out)) if (out[id].value !== null && isExcluded(name, id, out[id].quote ?? out[id].summary)) out[id] = { value: null, status: "held for a Civic retag" }; // retagged quotes already sit under their new issue in stances.json
+  // One eligibility rule for the site and Towny (lib/stanceEligibility.ts, Civic Oct 30 1:54 PM CT): slogans and
+  // Ballotpedia records the audit drops (stale) or doesn't list become unsure (display only, value null, never counted). The quote stays for display.
+  const label = (id: string) => ISSUES.find((i) => i.id === id)?.label;
+  for (const [id, s] of Object.entries(out)) {
+    if (s.value === null || !s.sourceUrl) continue;
+    const g = stanceEligibility(s, null, { candidate: name, issueId: id, issueLabel: label(id) });
+    out[id] = g.ok ? { ...s, chip: g.label, chipUrl: g.url } : { ...s, value: null, status: "unsure", unsureReason: g.reason };
+  }
   return out;
 }
 

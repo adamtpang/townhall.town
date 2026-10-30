@@ -22,7 +22,7 @@ export function withPhoto<T extends Politician>(p: T): T {
 /** Civic cropNote focus: [x, y, scale]. x/y = the face point as fractions of the image (CSS object-position and
  *  transform-origin), scale = zoom. Display only; the image is not edited. */
 export type Focus = [number, number, number];
-type Hosted = { name: string; file: string; file112?: string; sourceUrl: string | null; credit: string; license: string | null; page: string | null; via: string | null; width?: number; focus?: Focus };
+type Hosted = { name: string; file: string; file112?: string; file256?: string; sourceUrl: string | null; credit: string; license: string | null; page: string | null; via: string | null; width?: number; focus?: Focus };
 const hosted = ((data as unknown as { selfHosted?: Record<string, Hosted> }).selfHosted ?? {}) as Record<string, Hosted>;
 export const slug = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 /** Tiles are 56px; at 2x screens a source under 112px wide looks soft (e.g. a 100x125 court photo), so it counts as missing. */
@@ -35,7 +35,7 @@ type Mate = (Hosted | Hot) & { kind: "self" | "hot"; mateName: string };
 const mates = ((data as unknown as { runningMates?: Record<string, Mate> }).runningMates ?? {}) as Record<string, Mate>;
 /** Races Civic marks incomplete (photo ages not comparable): initials in race mode even when every candidate has a photo. */
 export const INCOMPLETE_RACES = new Set<string>(((data as unknown as { incompleteRaces?: string[] }).incompleteRaces ?? []));
-export type CandPhoto = { url: string; url112?: string; credit: string; author: string; license?: string; attribution?: string; page?: string; hotlinked?: boolean; focus?: Focus; mate?: CandPhoto & { name: string } };
+export type CandPhoto = { url: string; url112?: string; url256?: string; credit: string; author: string; license?: string; attribution?: string; page?: string; hotlinked?: boolean; focus?: Focus; mate?: CandPhoto & { name: string } };
 const toPhoto = (h: Hosted | Hot): CandPhoto | null => {
   if ((h.width ?? 999) < MIN_PHOTO_WIDTH) return null;
   const attribution = cleanCredit(h.credit, h.via);
@@ -45,7 +45,7 @@ const toPhoto = (h: Hosted | Hot): CandPhoto | null => {
   const author = /,\s*(?:CC[\s0-9-]|public domain)|\(public domain\)/i.test(attribution) ? creditParts(attribution, lic, h.page).author : attribution;
   // Design p14: every portrait is a self-hosted square (112px and 160px) with the focus already cut in, so no CSS focus.
   // A hotlinked record (none ship since p14) would still render from its URL with its CSS focus.
-  if ("file" in h) return { url: h.file, ...(h.file112 ? { url112: h.file112 } : {}), credit: `Photo: ${attribution}`, author, ...(lic ? { license: lic } : {}), attribution, page: h.page ?? undefined };
+  if ("file" in h) return { url: h.file, ...(h.file112 ? { url112: h.file112 } : {}), ...(h.file256 ? { url256: h.file256 } : {}), credit: `Photo: ${attribution}`, author, ...(lic ? { license: lic } : {}), attribution, page: h.page ?? undefined };
   return { url: h.url, credit: `Photo: ${attribution}`, author, ...(lic ? { license: lic } : {}), attribution, page: h.page ?? undefined, hotlinked: true, ...(h.focus ? { focus: h.focus } : {}) };
 };
 /** data/photo_takedowns.json: candidate ids (slugs, e.g. "rob-bonta") whose photo must never show. They get initials. */

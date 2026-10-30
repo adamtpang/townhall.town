@@ -85,7 +85,8 @@ describe("P1: SF where to vote names the SF Department of Elections and links th
   });
   it("the card and the results page render the lookup label and the portal link", () => {
     const card = src("app/card/BallotCard.tsx");
-    expect(card).toMatch(/where\.lookupLabel \?\? "Find your assigned polling place"/);
+    // Merge with feat/print-ballot: the card's Where tile keeps its own fallback label; SF still gets where.lookupLabel.
+    expect(card).toMatch(/where\.lookupLabel \?\? (tr\("Find your polling place"\)|"Find your assigned polling place")/);
     expect(card).toMatch(/href=\{where\.portalUrl\}[^>]*data-card-portal>Voter Portal/);
     expect(card).not.toMatch(/>Find your assigned polling place ↗</);
     expect(src("app/EndScreen.tsx")).toMatch(/href=\{where\.portalUrl\}[^>]*data-end-portal>Voter Portal/);

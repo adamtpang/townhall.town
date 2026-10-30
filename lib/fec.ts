@@ -29,3 +29,17 @@ export function usd(n: number): string {
   if (n >= 1e3) return `$${Math.round(n / 1e3)}K`;
   return `$${Math.round(n)}`;
 }
+/** Cash on hand (Adam 1:52 PM Oct 30): under $10K to the dollar ($4,454, not $4K); $10K and up as usd(). */
+export function usdCash(n: number): string {
+  return n >= 0 && n < 10_000 ? `$${Math.round(n).toLocaleString("en-US")}` : usd(n);
+}
+
+/** FEC report label (Adam 1:52 PM Oct 30): show the filing (lastReport) when the data has it, e.g. "PRE-GENERAL" -> "Pre-general report". */
+const REPORT_LABEL: Record<string, string> = { "PRE-GENERAL": "Pre-general report", "OCTOBER QUARTERLY": "October quarterly report", "JULY QUARTERLY": "July quarterly report" };
+export function reportLabel(r?: string | null): string | null {
+  if (!r || !r.trim()) return null;
+  const k = r.trim().toUpperCase();
+  if (REPORT_LABEL[k]) return REPORT_LABEL[k];
+  const w = k.toLowerCase().replace(/[_]+/g, " ");
+  return `${w[0].toUpperCase()}${w.slice(1)} report`;
+}

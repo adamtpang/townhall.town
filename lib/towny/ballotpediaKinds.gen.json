@@ -1,0 +1,60 @@
+{
+ "built": "scripts/build-ballotpedia-kinds.mjs from data/civic/positions_*.json",
+ "byQuote": {
+  "we need to get back to the basic principle that we should enforce the law whether it s on homelessness open air drug markets shoplifting illegal immigration or violent crime": {
+   "kind": "campaign",
+   "file": "positions_94103_batch1.json",
+   "mark": "Campaign website text quoted verbatim by Ballotpedia (Apr 8, 2026)"
+  },
+  "i am also focused on protecting california s coast and environment from pollution and long term damage so future generations inherit a healthy state": {
+   "kind": "survey",
+   "file": "positions_94103_batch1.json",
+   "mark": "Ballotpedia Candidate Connection survey, 2026"
+  },
+  "i will work with our governor to review the necessity of many of our laws and regulations which have created hardships in homebuilding driving up the cost of living and decreasing homeownership rates": {
+   "kind": "survey",
+   "file": "positions_94103_batch1.json",
+   "mark": "Ballotpedia Candidate Connection survey, 2026"
+  },
+  "i led the campaign that won a higher minimum wage and paid sick days for 200 000 workers": {
+   "kind": "survey",
+   "file": "positions_94103_batch1.json",
+   "mark": "Ballotpedia Candidate Connection survey, 2026 (record as labor council leader)"
+  },
+  "personally i am passionate about equitable taxation policy that fairly distributes tax burdens such that everyone is paying their fair share to support our schools governments public lands and public services": {
+   "kind": "survey",
+   "file": "positions_gapfill_batch3civic.json",
+   "mark": "Ballotpedia: Skyler Korgel, 2026 Candidate Connection survey | questionnaire"
+  },
+  "when tesla oracle samsung etc pay the property taxes instead of getting huge discounts via underappraisal then housing affordability improves for both owners and renters": {
+   "kind": "survey",
+   "file": "positions_gapfill_batch3civic.json",
+   "mark": "Ballotpedia: Skyler Korgel, 2026 Candidate Connection survey | questionnaire"
+  },
+  "expanding public transportation options and reducing car dependency": {
+   "kind": "survey",
+   "file": "positions_gapfill_batch3civic.json",
+   "mark": "Ballotpedia: Skyler Korgel, 2026 Candidate Connection survey | questionnaire"
+  },
+  "i believe public policy should create meaningful opportunities while ensuring taxpayer resources are used responsibly": {
+   "kind": "survey",
+   "file": "positions_gapfill_batch3civic.json",
+   "mark": "Ballotpedia: Yvonne Muñoz, 2026 Candidate Connection survey"
+  },
+  "on the board i d build on tcad s existing performance reporting to help make information about its operations spending and results more accessible and understandable to the public": {
+   "kind": "survey",
+   "file": "positions_gapfill_batch8civic.json",
+   "mark": "Ballotpedia Candidate Connection survey, 2026 | candidate questionnaire"
+  },
+  "re establish trust in the college by ensuring the courses students need are offered with over 1000 students on the waitlist for essential courses we leave revenue and enrollment growth on the table when students have to fight each other for spots in entry classes": {
+   "kind": "survey",
+   "file": "positions_gapfill_batch8civic.json",
+   "mark": "Ballotpedia Candidate Connection survey, 2026: Leah LaCroix | candidate questionnaire"
+  },
+  "protect and strengthen the cantonese program at city college classes are consistently overenrolled": {
+   "kind": "survey",
+   "file": "positions_gapfill_batch8civic.json",
+   "mark": "Ballotpedia Candidate Connection survey, 2026: Jeremy Lee | candidate questionnaire"
+  }
+ }
+}

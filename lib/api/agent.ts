@@ -4,8 +4,9 @@ import { cleanNarration } from "../narration.mjs";
 import { generateText, tool, stepCountIs } from "ai";
 import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../tools";
+import { withOrderLines } from "../towny/ballotOrder";
 import { civicTools } from "../civicTools";
-import { dataTools } from "../dataTools";
+import { dataTools, getCampaignFinance, getCountyUnemployment } from "../dataTools";
 import { API_VERSION_HEADERS, apiError, isZip, methodNotAllowed, withHeaders } from "../apiError";
 import { AGENT_POLICY, take, tooManyRequests } from "../rateLimit";
 import { GATEWAY_FALLBACKS, modelLadder } from "../models";
@@ -23,10 +24,26 @@ const STEP_LABEL: Record<string, string> = {
   getCandidates: "Looking up candidates",
   getMarketOdds: "Fetching Polymarket prices",
   getLocalProblems: "Pulling local problems",
+  getCampaignFinance: "Checking OpenFEC campaign finance",
+  getCountyUnemployment: "Checking BLS county unemployment",
 };
 
 type Emit = (e: Record<string, unknown>) => void;
-const CORE_TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"] as const;
+const CORE_TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems", "getCampaignFinance", "getCountyUnemployment"] as const;
+
+// Live public-API results are kept for 10 minutes per server instance, so a busy demo table does not exhaust the
+// OpenFEC key. A reused result says so in its summary, with its age; nothing else is cached or faked.
+const LIVE_TTL_MS = 10 * 60 * 1000;
+const liveCache = new Map<string, { at: number; value: any }>();
+async function live<T>(key: string, fn: () => Promise<T>): Promise<{ value: T; ageMin: number | null }> {
+  const hit = liveCache.get(key);
+  if (hit && Date.now() - hit.at < LIVE_TTL_MS) return { value: hit.value, ageMin: Math.round((Date.now() - hit.at) / 60000) };
+  const value = await fn();
+  if ((value as any)?.status !== "unavailable") liveCache.set(key, { at: Date.now(), value });
+  return { value, ageMin: null };
+}
+/** The first U.S. House race on this ZIP's ballot (the voter's main district) and up to two of its candidates. */
+const houseRace = (zip: string) => ballotFor(zip)?.races.find((r) => /^U\.S\. (House|Representative)/.test(r.title));
 
 function summarize(name: string, r: any): string {
   switch (name) {
@@ -42,17 +59,60 @@ function summarize(name: string, r: any): string {
     }
     case "getLocalProblems":
       return r.problems.map((p: any) => `${p.label}: ${String(p.value).endsWith(p.unit) ? p.value : `${p.value}${p.unit}`}`).join(" · ");
+    case "getCampaignFinance": {
+      const ok = (r.candidates ?? []).filter((c: any) => c.receipts != null);
+      const age = r.ageMin != null ? ` (reused from a live call ${r.ageMin} min ago)` : "";
+      if (!ok.length) return `${r.race ?? "House race"}: no FEC totals returned${r.reason ? ` (${/429/.test(r.reason) ? "OpenFEC rate limit reached; try again later" : r.reason})` : ""}${age}`;
+      const usd = (n: number) => `$${n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : `${Math.round(n / 1e3)}K`}`;
+      return `${r.race}: ${ok.map((c: any) => `${c.name} raised ${usd(c.receipts)}`).join(", ")} (2026 cycle, through ${ok[0].coverageEnd?.slice(0, 10) ?? "latest filing"})${age}`;
+    }
+    case "getCountyUnemployment": {
+      const age = r.ageMin != null ? ` (reused from a live call ${r.ageMin} min ago)` : "";
+      return r.rate != null ? `County unemployment ${r.rate}% in ${r.period}${r.preliminary ? " (preliminary)" : ""}${age}` : `No BLS figure returned${r.reason ? ` (${r.reason})` : ""}${age}`;
+    }
   }
   return "done";
 }
 
+/** What each step checked, and the record it found, so every step in the trace links to its own source. */
+function checked(name: string, zip: string): string {
+  switch (name) {
+    case "getDistricts": return `ZIP ${zip} against the state's district maps`;
+    case "getRaces": return `The Nov 3, 2026 ballot for ZIP ${zip}`;
+    case "getCandidates": return "General-election candidates for each race";
+    case "getMarketOdds": return "Polymarket's live API for every race and measure";
+    case "getLocalProblems": return `Census ACS tables for ZIP ${zip}`;
+    case "getCampaignFinance": return `api.open.fec.gov for the ${houseRace(zip)?.title ?? "U.S. House"} candidates`;
+    case "getCountyUnemployment": return "api.bls.gov LAUS series for your county";
+  }
+  return "";
+}
+function sourceOf(name: string, r: any, zip: string): { label: string; url: string } | null {
+  const b = ballotFor(zip);
+  const host = (u: unknown) => { try { return new URL(String(u)).hostname.replace(/^www\./, ""); } catch { return "source"; } };
+  const link = (label: string, url: unknown) => (typeof url === "string" && /^https?:/.test(url) ? { label, url } : null);
+  switch (name) {
+    case "getDistricts": return link(host(r?.source?.url), r?.source?.url);
+    case "getRaces": return b?.verify ? link(host(b.verify.url), b.verify.url) : null;
+    case "getCandidates": return link("Ballotpedia", b?.races?.[0]?.source);
+    case "getMarketOdds": {
+      const q = (Object.values(r ?? {}) as any[]).find((v) => v?.status === "live" && v.quotes?.[0]?.url)?.quotes[0];
+      return q ? link("Polymarket market", q.url) : null;
+    }
+    case "getCampaignFinance": { const c = (r?.candidates ?? []).find((x: any) => x?.source); return c ? link(`FEC: ${c.name}`, c.source) : null; }
+    case "getCountyUnemployment": return link("BLS LAUS series", r?.source);
+    case "getLocalProblems": { const p = r?.problems?.find((x: any) => x?.source?.url); return p ? { label: p.source.label, url: p.source.url } : null; }
+  }
+  return null;
+}
+
 function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
   const wrap = async <T,>(name: string, input: unknown, fn: () => Promise<T> | T) => {
-    emit({ type: "step", tool: name, label: STEP_LABEL[name], status: "running", input });
+    emit({ type: "step", tool: name, label: STEP_LABEL[name], status: "running", input, checked: checked(name, zip) });
     const t0 = Date.now();
     const r = await fn();
     results[name] = r;
-    emit({ type: "step", tool: name, label: STEP_LABEL[name], status: "done", ms: Date.now() - t0, summary: summarize(name, r) });
+    emit({ type: "step", tool: name, label: STEP_LABEL[name], status: "done", ms: Date.now() - t0, summary: summarize(name, r), checked: checked(name, zip), source: sourceOf(name, r, zip) });
     return r;
   };
   const allRaceIds = () => {
@@ -82,6 +142,32 @@ function makeTools(zip: string, emit: Emit, results: Record<string, unknown>) {
       description: "Fetch live Polymarket prices for race ids / measure ids. Returns 'no market found' when Polymarket has no market on that contest, and 'unavailable' (no numbers) when the live fetch fails.",
       inputSchema: z.object({ raceIds: z.array(z.string()).optional() }),
       execute: async () => wrap("getMarketOdds", { raceIds: "all" }, () => getMarketOdds(allRaceIds())),
+    }),
+    getCampaignFinance: tool({
+      description: "Live OpenFEC call: 2026 campaign finance totals (receipts, spending, cash on hand) for the candidates in this ZIP's U.S. House race. Facts only.",
+      inputSchema: z.object({ zip: z.string() }),
+      execute: async () =>
+        wrap("getCampaignFinance", { zip }, async () => {
+          const race = houseRace(zip);
+          if (!race) return { race: null, candidates: [], reason: "no U.S. House race for this ZIP", ageMin: null };
+          const st = ballotFor(zip)!.state;
+          const { value, ageMin } = await live(`fec:${race.id}`, async () => {
+            const rows = await Promise.all(race.candidates.slice(0, 2).map((c) => getCampaignFinance({ name: c.name, state: st }).then((x: any) => ({ ...x, fecName: x.name ?? null, name: c.name }))));
+            const bad = rows.find((x: any) => x.status === "unavailable");
+            return bad && rows.every((x: any) => x.receipts == null) ? { status: "unavailable", reason: bad.reason, rows } : { rows };
+          });
+          return { race: race.title, candidates: (value as any).rows ?? [], reason: (value as any).reason ?? null, ageMin };
+        }),
+      toModelOutput: (r: any) => ({ type: "json", value: { race: r.race, candidates: (r.candidates ?? []).map((c: any) => ({ name: c.name, receipts: c.receipts ?? null, cashOnHand: c.cashOnHand ?? null, source: c.source ?? null })) } }),
+    }),
+    getCountyUnemployment: tool({
+      description: "Live BLS LAUS call: the latest monthly unemployment rate for this ZIP's county, with its source series.",
+      inputSchema: z.object({ zip: z.string() }),
+      execute: async () =>
+        wrap("getCountyUnemployment", { zip }, async () => {
+          const { value, ageMin } = await live(`bls:${zip}`, () => getCountyUnemployment({ zip }));
+          return { ...(value as any), ageMin };
+        }),
     }),
     getLocalProblems: tool({
       description: "Get 3 sourced local problems for the ZIP from Census ACS (rent burden, uninsured rate, unemployment).",
@@ -233,8 +319,10 @@ async function run(zip: string, emit: Emit) {
           if (stepNumber < 2 && unrun.length) return { toolChoice: "required" as const, activeTools: [...unrun] as any };
           return { toolChoice: "none" as const, activeTools: [] as any };
         },
-        // Stop after the two tool steps: the analysis step below writes the summary, so a third (writing) step is wasted time.
-        stopWhen: stepCountIs(2),
+        // One model step: the model must call tools in step 0 (toolChoice required), then we stop. A second step would send
+        // step 0's tool calls back to the provider, which is where malformed tool names were rejected (94103 fell back),
+        // and it costs a full model round trip. The planner runs any lookup the model skipped, in parallel.
+        stopWhen: stepCountIs(1),
         // Keeps the ballot response fast on long ballots (78701 has 58 races); the full list is in result.ballot.
         maxOutputTokens: NARRATION_TOKENS,
         abortSignal: AbortSignal.timeout(25000),
@@ -258,7 +346,7 @@ async function run(zip: string, emit: Emit) {
   }
 
   // Deterministic completion: run any tools the model did not call (or all, in fallback mode).
-  const order = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"] as const;
+  const order = CORE_TOOLS;
   const missing = order.filter((n) => !(n in results));
   if (missing.length) {
     if (mode === "live") emit({ type: "status", message: "Planner: running remaining lookups" });
@@ -278,7 +366,7 @@ async function run(zip: string, emit: Emit) {
     toolsRunByModel: mode === "live" ? order.filter((n) => !missing.includes(n)) : [],
     narration: SHOW_AGENT_SUMMARY ? (() => { const b = ballotFor(zip) as any; return cleanNarration(narration, zip, b?.races?.length ?? 0, b?.measures?.length ?? 0); })() : "",
     summaryBullets: insight?.bullets ?? [],
-    ballot: ballotFor(zip),
+    ballot: withOrderLines(zip, ballotFor(zip)),
     markets: results.getMarketOdds ?? {},
     generatedAt: new Date().toISOString(),
   });

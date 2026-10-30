@@ -87,7 +87,7 @@ async function research(req: Request): Promise<Response> {
     async start(ctl) {
       const emit = (e: Record<string, unknown>) => { log.push(e); ctl.enqueue(enc.encode(JSON.stringify(e) + "\n")); };
       if (race.judicial) { emit({ type: "done", judicial: true }); runs.set(runKey, { at: Date.now(), events: log }); ctl.close(); return; }
-      // Same steps for every candidate, in ballot order.
+      // Same steps for every candidate, in ballot-data order.
       for (const c of race.candidates as any[]) {
         const urls: string[] = []; const keys = new Set<string>();
         const add = (u: unknown) => { if (typeof u !== "string" || !/^https:\/\//.test(u) || urls.length >= MAX_URLS) return; const k = urlKey(u); if (keys.has(k)) return; keys.add(k); urls.push(u); };
