@@ -1,4 +1,5 @@
 "use client";
+import PrintButton from "../components/PrintButton";
 import { H2, H3, HIT } from "../lib/typeScale";
 import { JUDICIAL_RULES, judicialShort } from "../lib/judicial";
 import { useMemo } from "react";
@@ -68,7 +69,7 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
       <h2 className={`mt-3 ${H2}`}>Your plan</h2>
       {/* Design addendum Oct 30 (label approved by Adam): replaces the old one-page card link. The printable sheet
           lives on /card; print=1 makes /card call window.print() once it has rendered (Save as PDF from the dialog). */}
-      <button type="button" onClick={() => { window.location.href = printPath; }} className="mt-6 inline-flex min-h-12 w-full items-center justify-center bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80 sm:w-auto" data-end-print data-print-href={printPath}>{PRINT_CTA}</button>
+      <PrintButton href={printPath} className="mt-6 sm:w-auto" data-end-print data-print-href={printPath} />
       <div className="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-5">
         {/* WHO */}
         <div className="lg:col-span-6" data-end="who">
@@ -143,7 +144,6 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
           ) : (
             <p className="mt-4 text-base text-black/60">No sourced polling place for this ZIP yet.</p>
           )}
-          <button type="button" onClick={() => { window.location.href = printPath; }} className="mt-4 inline-flex min-h-12 w-full items-center justify-center border border-black px-6 text-base font-[530] text-black hover:bg-black hover:text-[#F2F2F2] lg:w-auto" data-end-print-where>{PRINT_CTA}</button>
         </div>
 
         {/* WHEN */}

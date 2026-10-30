@@ -1,4 +1,5 @@
 "use client";
+import PrintButton from "../components/PrintButton";
 import { judicialShort } from "../lib/judicial";
 import { pointsFor } from "../lib/mainPoints";
 import { plain, printedDate } from "../lib/plain";
@@ -222,6 +223,8 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races ranked by office and how close the race is. Never candidates.</p>
+      {/* Adam 3:05 PM CT: the same print button near the top of the results; it opens the printable sheet on /card. */}
+      {zip ? <PrintButton href={`/card?zip=${zip}&print=1`} className="mt-6 sm:w-auto" data-results-print /> : null}
       <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Competitive: Cook Political Report, Sabato&rsquo;s Crystal Ball or Inside Elections call it a toss-up or tilt. Polymarket: top outcome between 35% and 65% also counts as Competitive. Market prices are not forecasts or recommendations.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (

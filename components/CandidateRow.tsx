@@ -77,7 +77,11 @@ const issueLabel = (id: string) => ISSUES.find((i) => i.id === id)?.label ?? id;
 /** Design p10 P1: visible = name, grade, the issues the voter answered Yes/No (each linked to its source) and the
  *  photo credit. Everything else (all quotes, unclear items, "No record found", sources checked) sits behind one
  *  disclosure per candidate. Nothing is removed, only folded. */
-export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, answers = {} }: { c: RowCand; o: O; grade?: string | null; ids: string[]; raceId?: string; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined> }) {
+/** cut (Design hard cut C1-C4, /card only, Oct 30 ~3:10 PM CT): the first main point stays visible; later points, the
+ *  record line and the site link move (each with its own source link) into the existing "Show all positions" fold;
+ *  "Record: No voting record found" and the repeated "No public position found yet on other issues." are dropped.
+ *  Screen only: the printed sheet never shows positions. */
+export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, answers = {}, cut = false }: { c: RowCand; o: O; grade?: string | null; ids: string[]; raceId?: string; answeredYesNo?: boolean; answers?: Record<string, number | null | undefined>; cut?: boolean }) {
   const st = stancesFor(c.name);
   const site = liveUrl(c.campaignSite) || liveUrl(c.officialSite) || null;
   const checked = o.sourced < 2 ? cleanChecked(sourcesChecked(c.name)) : [];
@@ -99,7 +103,28 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
   const fitShown = o.n >= 2 ? `${tr("Issue overlap")}: ${o.agree} ${tr("of")} ${o.n}` : null;
   // Office points are display-only and never scored; they only change which "no position" wording is shown.
   const officeOnly = o.sourced === 0 && main.some((x) => x.k === "office");
-  const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0;
+  const shownMain = cut ? main.slice(0, 1) : main;
+  const foldMain = cut ? main.slice(1) : [];
+  const recInFold = cut;
+  const recShown = SHOW_ACCOUNTABILITY ? !(cut && recLine === NO_RECORD_LINE) : false;
+  const onlyStatement = o.sourced === 0 && !officeOnly;
+  const noPosShown = o.sourced < 2 && !(cut && !onlyStatement);
+  const siteInFold = cut && !!site && !(o.sourced === 0 && checked.length === 0);
+  const hasMore = o.sourcedIds.length > 0 || unsure.length > 0 || checked.length > 0 || foldMain.length > 0 || (recInFold && recShown) || siteInFold;
+  const pointLi = (x: (typeof main)[number], k: number) => (
+    <li key={k} className="min-w-0 text-base leading-6 text-black [overflow-wrap:anywhere]" data-main-point={x.i} data-point-type={x.k}>
+      {x.k === "office" ? <><span className="text-base leading-6 font-[450] text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
+      <span data-main-text>{x.t}</span>{" "}
+      <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
+    </li>
+  );
+  const recordDiv = recShown ? (
+    <div className="mt-1 flex min-w-0 items-baseline gap-2 text-xs leading-4 text-black/60" data-record={rec.x} data-record-n={rec.n} data-record-id={mp?.id}>
+      <p className="line-clamp-2 min-w-0" title={`Record: ${recLine}`} data-record-line>Record: {recLine}</p>
+      {recUrl ? <a href={recUrl} target="_blank" rel="noreferrer" className="relative shrink-0 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-record-source>{sourceLabel(recUrl)}{ext}</a> : null}
+    </div>
+  ) : null;
+  const siteP = site ? <p className="mt-1 text-sm"><a href={site} target="_blank" rel="noreferrer" className={`${HIT} th-link`} data-site-link>{liveUrl(c.campaignSite) ? "Campaign site" : "Official site"} ↗{ext}</a></p> : null;
   return (
     <li className="flex gap-3 py-3" data-overlap={c.name} data-status={o.status} data-photo-state={c.photo?.url ? "img" : "placeholder"}>
       <Portrait name={c.name} photo={c.photo} credit={false} className="w-12 shrink-0" boxClassName="[&>span]:text-base" />
@@ -108,26 +133,14 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
         {/* Adam 9:58 AM CT Oct 30 + design 10:14 AM CT card order: name, fit line (only with 2+ shared issues), up to 3
             sourced main points (never padded), the accountability line (flagged), then the race's one credit line. */}
         {fitLine ? <p className="text-base leading-6 text-black/60" data-fit={fitLine}>{fitShown}</p> : null}
-        {main.length > 0 ? (
+        {shownMain.length > 0 ? (
           <ul className="mt-1" aria-label="Main points" data-main-points={main.length} data-mp-id={mp?.id}>
-            {main.map((x, k) => (
-              <li key={k} className="min-w-0 text-base leading-6 text-black [overflow-wrap:anywhere]" data-main-point={x.i} data-point-type={x.k}>
-                {/* QA 10:48 AM CT Oct 30 (P1): main points wrap to their full text (<= 120 chars), never an ellipsis; the source follows the point. */}
-                {/* main_points17: an unscored office priority gets a small muted text prefix; issue points look as before. */}
-                {x.k === "office" ? <><span className="text-base leading-6 font-[450] text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
-                <span data-main-text>{x.t}</span>{" "}
-                <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-xs leading-4 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
-              </li>
-            ))}
+            {/* QA 10:48 AM CT Oct 30 (P1): main points wrap to their full text (<= 120 chars), never an ellipsis; the source follows the point. */}
+            {shownMain.map(pointLi)}
           </ul>
         ) : mp?.none && o.sourced !== 0 ? <p className="mt-1 text-base leading-6 text-black/60" data-no-main-points>{mp.none}</p> : null}
-        {SHOW_ACCOUNTABILITY ? (
-          <div className="mt-1 flex min-w-0 items-baseline gap-2 text-xs leading-4 text-black/60" data-record={rec.x} data-record-n={rec.n} data-record-id={mp?.id}>
-            <p className="line-clamp-2 min-w-0" title={`Record: ${recLine}`} data-record-line>Record: {recLine}</p>
-            {recUrl ? <a href={recUrl} target="_blank" rel="noreferrer" className="relative shrink-0 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-record-source>{sourceLabel(recUrl)}{ext}</a> : null}
-          </div>
-        ) : null}
-        {o.sourced < 2 ? (
+        {recInFold ? null : recordDiv}
+        {noPosShown ? (
           // QA 7391b20 P2: never an empty source list. With nothing recorded as checked, point to their own site and
           // the League of Women Voters guide instead (we don't claim either was checked).
           <p className="mt-1 text-sm leading-5 text-black/80" data-no-position>{o.sourced === 0 && !officeOnly ? (checked.length ? NO_POSITION : NO_POSITION_UNCHECKED) : NO_POSITION_OTHER}</p>
@@ -138,10 +151,13 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
             <li><a href={LWV_GUIDE} target="_blank" rel="noreferrer" className="flex min-h-11 items-center th-link" data-lwv-link>League of Women Voters guide ↗{ext}</a></li>
           </ul>
         ) : null}
-        {site && !(o.sourced === 0 && checked.length === 0) ? <p className="mt-1 text-sm"><a href={site} target="_blank" rel="noreferrer" className={`${HIT} th-link`} data-site-link>{liveUrl(c.campaignSite) ? "Campaign site" : "Official site"} ↗{ext}</a></p> : null}
+        {site && !siteInFold && !(o.sourced === 0 && checked.length === 0) ? siteP : null}
         {hasMore ? (
           <details className="mt-1" data-all-positions>
-            <summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black underline decoration-black/30 underline-offset-[3px]">{o.sourcedIds.length > 0 ? "Show all positions" : `Show ${checked.length} source${checked.length === 1 ? "" : "s"}`}</summary>
+            <summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black underline decoration-black/30 underline-offset-[3px]">{o.sourcedIds.length > 0 || checked.length === 0 ? "Show all positions" : `Show ${checked.length} source${checked.length === 1 ? "" : "s"}`}</summary>
+            {foldMain.length > 0 ? <ul className="mt-1" data-fold-main-points={foldMain.length}>{foldMain.map(pointLi)}</ul> : null}
+            {recInFold ? recordDiv : null}
+            {siteInFold ? siteP : null}
             {o.sourcedIds.length > 0 ? (
               <ul className="space-y-1" data-sourced-n={o.sourcedIds.length}>
                 {o.sourcedIds.map((id) => { const s = st[id]; return (

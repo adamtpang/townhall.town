@@ -5,7 +5,9 @@ import { ballotFor } from "../../lib/tools";
 import { issuesFor } from "../../lib/issueOrder";
 import BallotCard from "./BallotCard";
 import type { PrintData } from "./PrintBallot";
-import { printRules, officialOrder } from "../../lib/printRules";
+import { printRules, officialOrder, orderCite } from "../../lib/printRules";
+
+const SF_PORTAL = { label: "SF Department of Elections Voter Portal", url: "https://sfelections.org/tools/portal/" };
 
 export const metadata: Metadata = { title: "Your ballot card", robots: { index: false, follow: false } };
 
@@ -22,13 +24,17 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ z
   const st = b.state as PrintData["state"];
   const print: PrintData = {
     state: st,
-    verify: (b as { verify?: { label: string; url: string } }).verify ?? null,
+    // QA P1 #3: SF voters' sample ballot comes from the SF Department of Elections Voter Portal (polling_locations.json
+    // lookupUrlNote), not the CA SOS; it also goes in the printed Where block.
+    verify: zip === "94103" ? SF_PORTAL : (b as { verify?: { label: string; url: string } }).verify ?? null,
+    whereExtra: zip === "94103" ? SF_PORTAL : null,
     rules: printRules(st),
+    orderCite: orderCite(zip),
     races: b.races.map((r) => {
       const o = officialOrder(zip, r.id, r.candidates.map((c) => ({ name: c.name, party: c.party ?? null })));
-      return { id: r.id, title: r.title, judicial: !!(r as { judicial?: unknown }).judicial, source: r.source ?? null, orderConfirmed: o.confirmed, candidates: o.candidates };
+      return { id: r.id, title: r.title, judicial: !!(r as { judicial?: unknown }).judicial, orderConfirmed: o.confirmed, candidates: o.candidates };
     }),
-    measures: ((b as { measures?: { id: string; title: string; source?: string | null }[] }).measures ?? []).map((m) => ({ id: m.id, title: m.title, source: m.source ?? null })),
+    measures: ((b as { measures?: { id: string; title: string; source?: string | null }[] }).measures ?? []).map((m) => ({ id: m.id, title: m.title })),
   };
-  return <div data-print-root><BallotCard zip={zip} place={b.place} ids={ids} races={races} print={print} /></div>;
+  return <div data-print-root><BallotCard zip={zip} place={b.place} county={(b as { county?: string }).county ? `${(b as { county?: string }).county}, ${b.state}` : null} ids={ids} races={races} print={print} /></div>;
 }

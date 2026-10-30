@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { SITE } from "../lib/site";
 
-export function SiteHeader({ extra }: { extra?: React.ReactNode } = {}) {
+export function SiteHeader({ extra, compact = false }: { extra?: React.ReactNode; compact?: boolean } = {}) {
   return (
-    <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8 lg:px-10">
+    <header className={`mx-auto flex max-w-site items-center justify-between px-6 lg:px-10 ${compact ? "h-14" : "py-8"}`}>
       <Link href="/" className="flex items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
         <span aria-hidden className="inline-block h-3 w-3 bg-brand-600" />
         townhall.town

@@ -1,34 +1,64 @@
-// The printed "take it to the polls" ballot (Adam, Oct 30 2:28 PM CT; Design addendum 2:38 PM CT). Shown only in print
-// (window.print() / Save as PDF); hidden on screen. Every voter rule (booth, devices, ID, Election Day hours) is printed
-// verbatim from Civic's data/civic/voter_rules.json and only when its status is confirmed; where to vote is the official
-// lookup link per ZIP (never a guessed address). Names and parties only: no overlap answers, grades, odds or recommendation
-// wording. Links can't be clicked on paper, so each source is printed as a URL and cited by number. No QR code: no QR
-// library is in the dependencies.
-import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_UNSURE_LINE, displayParty } from "../../lib/printText";
-import type { PrintRules, VoterRule } from "../../lib/printRules";
+// The printed "take it to the polls" ballot (Adam, Oct 30 2:28 PM CT; Design addendum 2:38 PM CT; Design + Civic fixes
+// 2:58 PM CT). Shown only in print (window.print() / Save as PDF); hidden on screen. Order: masthead, trust line, one-line
+// facts (where, Election Day, early voting, the booth line), then the races straight away. The verbatim voter rules (ID,
+// hours, booth, devices) sit at the end under "Rules", each with its source. Every voter rule is printed verbatim from
+// Civic's data/civic/voter_rules.json and only when its status is confirmed; where to vote is the official lookup link per
+// ZIP (never a guessed address). Names and parties only: no overlap answers, grades, odds or recommendation wording.
+// Links can't be clicked on paper, so each link prints as a short label with a numbered note, and the full URL is printed
+// once in the numbered list at the end (the only place long URLs may break anywhere). No QR code: no QR library is in the
+// dependencies.
+import { BOOTH_LINE, NON_ENDORSEMENT, ORDER_CONFIRMED_LINE, ORDER_UNSURE_LINE, SOURCES_LABEL, TX_PHONE_LINE, TX_PHONE_SOURCES, displayParty, pickedLine } from "../../lib/printText";
+import type { OrderCite, PrintRules, VoterRule } from "../../lib/printRules";
 import type { St } from "../../lib/plan";
 
-export type PrintRace = { id: string; title?: string; judicial: boolean; source?: string | null; orderConfirmed: boolean; candidates: { name: string; party?: string | null }[] };
-export type PrintMeasure = { id: string; title: string; source?: string | null };
-export type PrintData = { state: St; verify?: { label: string; url: string } | null; rules: PrintRules; races: PrintRace[]; measures: PrintMeasure[] };
+export type PrintRace = { id: string; title?: string; judicial: boolean; orderConfirmed: boolean; candidates: { name: string; party?: string | null }[] };
+export type PrintMeasure = { id: string; title: string };
+export type PrintData = { state: St; verify?: { label: string; url: string } | null; whereExtra?: { label: string; url: string } | null; rules: PrintRules; orderCite?: OrderCite | null; races: PrintRace[]; measures: PrintMeasure[] };
 type Ev = { start: string; end: string; hours?: string | null; sourceUrl: string; daily?: { label: string; hours: string; appliesTo: string | null }[] };
 
 const longDate = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" });
 const shortDate = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", month: "short", day: "numeric", year: "numeric" });
+/** Choice words for a retention race, read from its title as the data writes them ("(retention: Yes/No)"). None: no boxes. */
+export const retentionChoices = (title?: string) => { const m = /\(retention:\s*([^)/]+)\/([^)]+)\)/i.exec(title || ""); return m ? [m[1].trim(), m[2].trim()] : null; };
+/** Title with its last word and the dagger in one nowrap span (Design 3:06 PM CT), so the † never sits alone on a line. */
+export function DaggerTitle({ title, unsure, id }: { title: string; unsure: boolean; id?: string }) {
+  if (!unsure) return <>{title}</>;
+  const i = title.lastIndexOf(" ");
+  return <>{i > 0 ? title.slice(0, i + 1) : ""}<span className="whitespace-nowrap">{i > 0 ? title.slice(i + 1) : title}<sup className="pb-dagger" data-print-dagger aria-describedby={id}>†</sup></span></>;
+}
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
 
-export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUrl, dependsOnAddress, jurisdiction, data }: {
-  zip: string; today: string; ed?: Ev; early?: Ev; earlyLine?: string | null;
+export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUrl, dependsOnAddress, jurisdiction, data, picks = {} }: {
+  zip: string; today: string; ed?: Ev; early?: Ev; earlyLine?: string | null; picks?: Record<string, string>;
   lookupUrl?: string | null; dependsOnAddress?: boolean; jurisdiction?: string | null; data: PrintData;
 }) {
-  // Numbered source list, first-cited first, one entry per URL.
-  const urls: string[] = [];
-  const cite1 = (u?: string | null) => { if (!u) return null; let i = urls.indexOf(u); if (i < 0) { urls.push(u); i = urls.length - 1; } return i + 1; };
-  const cite = (...us: (string | null | undefined)[]) => { const n = us.map(cite1).filter((x): x is number => x != null); return n.length ? <sup className="pb-cite">[{n.join(", ")}]</sup> : null; };
-  const rule = (r: VoterRule, attr: string) => <p className="pb-rule" {...{ [attr]: r.topic }}>&ldquo;{r.text}&rdquo; <span className="pb-src">{r.sourceName}</span>{cite(...r.sourceUrls)}</p>;
+  // Numbered notes, first-cited first, one entry per URL (label kept from the first cite).
+  const notes: { url: string; label: string }[] = [];
+  const note1 = (u: string | null | undefined, label: string) => { if (!u) return null; let i = notes.findIndex((n) => n.url === u); if (i < 0) { notes.push({ url: u, label }); i = notes.length - 1; } else if (!notes[i].label.split("; ").includes(label)) notes[i].label += `; ${label}`; return i + 1; };
+  const cite = (label: string, ...us: (string | null | undefined)[]) => { const n = us.map((u) => note1(u, label)).filter((x): x is number => x != null); return n.length ? <span className="pb-cite">{"\u00a0"}[{n.join(",\u00a0")}]</span> : null; };
+  const rule = (r: VoterRule) => <p className="pb-rule" data-rule={r.topic}>&ldquo;{r.text}&rdquo; <span className="pb-src">{r.sourceName}</span>{cite(r.sourceName, ...r.sourceUrls)}</p>;
   const { booth, devices, id, hours } = data.rules;
   const races = data.races.filter((r) => r.candidates.length);
   const unconfirmed = races.filter((r) => !r.orderConfirmed).length;
+  const oc = data.orderCite ?? null;
   const county = (jurisdiction || "").replace(/,\s*[A-Z]{2,3}$/, "");
+  const zipPage = `https://townhall.town/card?zip=${zip}`;
+  // Page 1 mirrors the /card tiles: Who, When (early voting first, then Election Day), Where. Cited first, so their notes
+  // come first in the list. The SF Voter Portal sits in Where too (QA P1 #3), from polling_locations.json.
+  const picked = races.filter((r) => picks[r.id] && r.candidates.some((c) => c.name === picks[r.id])).length;
+  const whoP = <p data-print-who><b>Who:</b> {pickedLine(picked, races.length)}</p>;
+  const earlyP = early && earlyLine ? <p data-print-early>{earlyLine}.{cite("Early voting", early.sourceUrl)}</p> : null;
+  const edLine = ed ? <p data-print-ed>Election Day: {longDate(ed.start)}{cite("Election dates", ed.sourceUrl)}</p> : null;
+  const extra = data.whereExtra ? <> <span className="pb-label">{data.whereExtra.label}</span>{cite(data.whereExtra.label, data.whereExtra.url)}</> : null;
+  const whereLine = lookupUrl && dependsOnAddress === false
+    ? <p data-print-where-line><b>Where:</b> Any {county} vote center. <span className="pb-label">{host(lookupUrl)}</span>{cite("Where to vote", lookupUrl)}{extra}</p>
+    : lookupUrl
+      ? <p data-print-where-line><b>Where:</b> Your polling place is assigned by home address. Look it up at <span className="pb-label">{host(lookupUrl)}</span>{cite("Where to vote", lookupUrl)}.{extra}</p>
+      : <p data-print-where-line><b>Where:</b> No sourced polling place for this ZIP yet.</p>;
+  const boothP = booth ? <p className="pb-strong" data-print-booth-line>{BOOTH_LINE}.</p> : null;
+  // Adam 3:07 PM CT: the TX phone line, next to the booth line on the TX sheet only. Text only, cited.
+  const phoneP = data.state === "TX" && booth ? <p data-print-phone-line>{TX_PHONE_LINE}{cite(TX_PHONE_SOURCES[0].label, TX_PHONE_SOURCES[0].url)}{cite(TX_PHONE_SOURCES[1].label, TX_PHONE_SOURCES[1].url)}</p> : null;
+  const sheetCite = unconfirmed === 0 && oc ? cite(oc.label, oc.url) : null;
   return (
     <div id="ballot-print" className="hidden print:block" aria-hidden data-print-ballot>
       <header className="pb-mast">
@@ -37,50 +67,46 @@ export default function PrintBallot({ zip, today, ed, early, earlyLine, lookupUr
       </header>
       <p className="pb-ne" data-print-non-endorsement>{NON_ENDORSEMENT} Nonpartisan. Not a government site.</p>
 
-      <div className="pb-grid">
-        <section className="pb-box" data-print-where>
-          <h2 className="pb-h2">Where</h2>
-          {lookupUrl && dependsOnAddress === false ? (
-            <p data-print-where-line>Any {county} vote center: <span className="pb-url">{lookupUrl}</span>{cite(lookupUrl)}</p>
-          ) : lookupUrl ? (
-            <p data-print-where-line>Your polling place is assigned by home address. Look it up: <span className="pb-url">{lookupUrl}</span>{cite(lookupUrl)}</p>
-          ) : <p>No sourced polling place for this ZIP yet.</p>}
-          <h2 className="pb-h2 pb-gap">When</h2>
-          {ed ? <p className="pb-strong" data-print-ed>Election Day: {longDate(ed.start)}{cite(ed.sourceUrl)}</p> : null}
-          {hours ? <div data-print-hours>{rule(hours, "data-rule")}</div> : null}
-          {early && earlyLine ? <p className="pb-gap" data-print-early>{earlyLine}.{cite(early.sourceUrl)}</p> : null}
-        </section>
-        <section className="pb-box" data-print-bring>
-          {id ? (<><h2 className="pb-h2">ID</h2><div data-print-id>{rule(id, "data-rule")}</div></>) : null}
-          {booth || devices ? <h2 className="pb-h2 pb-gap">This sheet</h2> : null}
-          {booth ? (<div data-print-booth><p className="pb-strong" data-print-booth-line>{BOOTH_LINE}.</p>{rule(booth, "data-rule")}</div>) : null}
-          {devices ? <div className="pb-gap" data-print-devices>{rule(devices, "data-rule")}</div> : null}
-        </section>
-      </div>
+      <section className="pb-facts" data-print-facts>
+        <div data-print-cell="who">{whoP}</div>
+        <div data-print-cell="when"><p><b>When:</b></p>{earlyP}{edLine}</div>
+        <div data-print-cell="where">{whereLine}</div>
+        {boothP || phoneP ? <div className="pb-facts-row">{boothP}{phoneP}</div> : null}
+      </section>
 
       <h2 className="pb-h2 pb-section">Races</h2>
-      {unconfirmed ? <p className="pb-muted" data-print-order-unsure={unconfirmed}>{ORDER_UNSURE_LINE}</p> : null}
+      {unconfirmed ? <p className="pb-muted" id="pb-order-unsure" data-print-order-unsure={unconfirmed}>† {ORDER_UNSURE_LINE}</p>
+        : oc ? <p className="pb-muted" data-print-order-confirmed="sheet">{ORDER_CONFIRMED_LINE} <span className="pb-src">{oc.label}</span>{sheetCite}</p> : null}
       <ol className="pb-races" data-print-races={races.length}>
         {races.map((r) => (
           <li key={r.id} className="pb-race" data-print-race={r.id} data-order-confirmed={r.orderConfirmed ? "1" : "0"}>
-            <p className="pb-race-title">{r.title || r.id}{r.orderConfirmed ? null : <sup className="pb-dagger" data-print-dagger>†</sup>}{cite(r.source)}</p>
-            <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); return <li key={c.name} className="pb-cand"><span className="pb-box-mark" aria-hidden /><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span></li>; })}</ul>
+            <p className="pb-race-title"><DaggerTitle title={r.title || r.id} unsure={!r.orderConfirmed} id="pb-order-unsure" /></p>
+            {unconfirmed && r.orderConfirmed && oc ? <p className="pb-order" data-print-order-confirmed="race">{ORDER_CONFIRMED_LINE} <span className="pb-src">{oc.label}</span>{cite(oc.label, oc.url)}</p> : null}
+            <ul>{r.candidates.map((c) => { const p = displayParty(c.name, c.party); const ch = retentionChoices(r.title); const mark = picks[r.id] === c.name ? " pb-box-on" : "";
+              return ch
+                ? <li key={c.name} className="pb-cand pb-cand-ret" data-print-retention={ch.join("/")}><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span><span className="pb-choices">{ch.map((w) => <span key={w} className="pb-choice"><span className="pb-box-mark" aria-hidden />{w}</span>)}</span></li>
+                : <li key={c.name} className="pb-cand"><span className={`pb-box-mark${mark}`} aria-hidden data-print-picked={mark ? "1" : undefined} /><span><span className="pb-name">{c.name}</span>{p ? <span className="pb-party">, {p}</span> : null}</span></li>; })}</ul>
           </li>
         ))}
       </ol>
 
       {data.measures.length ? (<>
         <h2 className="pb-h2 pb-section">Measures</h2>
-        <ol className="pb-races" data-print-measures={data.measures.length}>
-          {data.measures.map((m) => <li key={m.id} className="pb-race" data-print-measure={m.id}><p className="pb-race-title">{m.title}{cite(m.source)}</p></li>)}
+        <ol className="pb-measures" data-print-measures={data.measures.length}>
+          {data.measures.map((m) => <li key={m.id} data-print-measure={m.id}>{m.title}</li>)}
         </ol>
       </>) : null}
 
-      {data.verify ? <p className="pb-small pb-gap">Check your official sample ballot: {data.verify.label}, <span className="pb-url">{data.verify.url}</span>{cite(data.verify.url)}</p> : null}
+      <p className="pb-sourcesline" data-print-sources-line={zipPage}>{SOURCES_LABEL} <a href={zipPage} className="pb-label">{zipPage}</a></p>
 
-      <section className="pb-sources" data-print-sources={urls.length}>
-        <h2 className="pb-h2">Sources</h2>
-        <ol>{urls.map((u, i) => <li key={u}><span className="pb-num">[{i + 1}]</span> <span className="pb-url">{u.replace(/^https?:\/\/(www\.)?/, "")}</span></li>)}</ol>
+      <h2 className="pb-h2 pb-section">Rules</h2>
+      <section className="pb-rules" data-print-rules>
+        {id ? <div data-print-id><p className="pb-rule-h">ID</p>{rule(id)}</div> : null}
+        {hours ? <div data-print-hours><p className="pb-rule-h">Election Day hours</p>{rule(hours)}</div> : null}
+        {booth ? <div data-print-booth><p className="pb-rule-h">This sheet</p>{rule(booth)}</div> : null}
+        {devices ? <div data-print-devices><p className="pb-rule-h">Phones and devices</p>{rule(devices)}</div> : null}
+        {data.verify ? <p className="pb-gap">Check your official sample ballot: {data.verify.label}{cite(data.verify.label, data.verify.url)}</p> : null}
+        <ol className="pb-notes" data-print-sources={notes.length}>{notes.map((n, i) => <li key={n.url}><span className="pb-num">[{i + 1}]</span> {n.label}: <span className="pb-url">{n.url.replace(/^https?:\/\/(www\.)?/, "")}</span></li>)}</ol>
       </section>
       <p className="pb-foot" data-print-footer>townhall.town · ZIP {zip} · Printed {longDate(today)}. Check your county for changes.</p>
     </div>
