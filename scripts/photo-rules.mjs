@@ -13,8 +13,15 @@ export const isMediaCredit = (p) => {
 // same picture by a 64-bit difference hash; see sameImage below.
 const base = (u) => String(u ?? "").split("?")[0].split("/").pop().toLowerCase();
 export const sameFileAsCourtPortrait = (p) => !!p.txcourtsPortrait?.image && !!p.photoUrl && base(p.photoUrl) === base(p.txcourtsPortrait.image);
+// Civic qa10: agency, press-office and government-TV photos are never shown (MTA, Marine Corps, NASA, GovPics, LBJ Library,
+// SFGovTV, a governor's press office). Checked on the credit, image URL and page URL.
+export const isAgencyPhoto = (p) =>
+  /Metropolitan Transportation Authority|\bMTA\b|_MTA_|Marine Corps|\bUSMC\b|\bNASA\b|GovPics|LBJ Library|lbjlibrary|SFGovTV|Governor'?s Press Office/i
+    .test(`${p.attribution ?? ""} ${p.photoUrl ?? ""} ${p.pageUrl ?? ""} ${p.sourceType ?? ""}`);
+// The Alida Fisher SFGovTV video still stays excluded (a .webm poster frame); her own campaign-site photo (Civic qa10) is allowed.
+export const isFisherVideo = (id, p) => id === "alida-fisher" && /\.webm|sfgovtv|wikimedia/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""} ${p.attribution ?? ""}`);
 export const EXCLUDE = (id, p) =>
-  /txcourts\.gov/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""}`) /* image or its page, not notes that mention a search */ || id === "alida-fisher" ||
+  /txcourts\.gov/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""}`) /* image or its page, not notes that mention a search */ || isFisherVideo(id, p) || isAgencyPhoto(p) ||
   /news|press agency|getty|associated press|\bAP\b|reuters/i.test(String(p.sourceType ?? "")) || // never news photos (Adam 12:16 AM)
   isMediaCredit(p) || sameFileAsCourtPortrait(p);
 /** 9x8 grayscale difference hash; two images whose hashes differ in at most 6 of 64 bits are the same picture. */

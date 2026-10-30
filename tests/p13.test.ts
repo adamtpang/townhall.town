@@ -15,7 +15,7 @@ describe("p13 #1: unreliable photo host self-hosted", () => {
   it("Chari Kelly and Kristen Hawkins are self-hosted webp under /portraits/, credited to the campaign site", () => {
     for (const id of ["chari-kelly", "kristen-hawkins"]) {
       const p = photos.selfHosted[id];
-      expect(p?.file, id).toBe(`/portraits/${id}.webp`);
+      expect(p?.file, id).toBe(`/portraits/${id}-160.webp`);
       expect(fs.existsSync(`public${p.file}`), id).toBe(true);
       expect(p.page).toBe("https://hkt.texasjudges.com/");
       expect(photos.hotlinked[id], id).toBeUndefined();
@@ -72,7 +72,7 @@ describe("p13 #4: credits row", () => {
   });
   it("capped at one 44px line from 768 with a 'more' disclosure; overflowed entries invisible while capped", () => {
     expect(P).toMatch(/md:max-h-11 md:overflow-hidden/);
-    expect(P).toMatch(/aria-expanded=\{open\}[\s\S]{0,200}min-h-11[\s\S]{0,120}md:flex/);
+    expect(P).toMatch(/aria-expanded=\{open\} aria-controls=\{id\}[\s\S]{0,200}min-h-11 min-w-11[\s\S]{0,200}after:-inset-x-3[\s\S]{0,60}md:flex/);
     expect(P).toMatch(/\{open \? "less" : "more"\}/);
     expect(P).toMatch(/md:data-\[overflow=true\]:invisible/);
   });

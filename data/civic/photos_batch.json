@@ -120,20 +120,31 @@
  "greg-abbott": {
   "name": "Greg Abbott",
   "raceId": "tx-gov",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Greg_Abbott_at_NASA_2024_%28cropped%29.jpg/500px-Greg_Abbott_at_NASA_2024_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg",
-  "license": "Public domain",
-  "attribution": "Photo: NASA/Robert Markowitz",
-  "licenseDetail": "Public domain. Author/credit on file page: NASA Johnson Space Center / NASA-JSC/ROBERT MARKOWITZ. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
+  "photoUrl": "https://gov.texas.gov/uploads/images/general/2024-GovernorAbbott-Portrait.jpg",
+  "pageUrl": "https://gov.texas.gov/governor-abbott",
+  "sourceType": "official page",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Office of the Texas Governor official page",
   "photoYear": 2024,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1801,
-  "photoWidth": 500,
-  "fileTitle": "File:Greg Abbott at NASA 2024 (cropped).jpg",
-  "cropNote": "Front-facing head and shoulders (NASA 2024, already cropped); a person is partly visible behind him at top right: crop to the central ~80% width to remove them.",
-  "parity": "tx-gov: head and shoulders; comparable"
+  "photoYearBasis": "file name \"2024-GovernorAbbott-Portrait\" (Last-Modified 2023-12-19)",
+  "identityEvidence": "img alt \"Texas Governor Gregg Abbott\" [sic] on the About Gov. Abbott page of gov.texas.gov",
+  "verified": "200 image/jpeg 1000x1499 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "formal official portrait, seated; crop to head and shoulders",
+  "parity": "tx-gov: formal official portrait, head and shoulders after crop; comparable",
+  "alsoChecked": [
+   "campaign site gregabbott.com: event photos only, no headshot",
+   "his X avatar: rally shot, not used"
+  ],
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Greg_Abbott_at_NASA_2024_%28cropped%29.jpg/500px-Greg_Abbott_at_NASA_2024_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Greg_Abbott_at_NASA_2024_(cropped).jpg",
+   "attribution": "Photo: NASA/Robert Markowitz",
+   "sourceType": "Wikimedia Commons",
+   "license": "Public domain",
+   "photoYear": 2024,
+   "why": "NASA agency press photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "gina-hinojosa": {
   "name": "Gina Hinojosa",
@@ -162,18 +173,30 @@
  "dan-patrick": {
   "name": "Dan Patrick",
   "raceId": "tx-ltgov",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg/500px-Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg",
-  "license": "CC BY 2.0",
-  "attribution": "Photo: Maryland GovPics",
-  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Maryland GovPics. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
+  "photoUrl": "https://pbs.twimg.com/profile_images/1453074339260141575/KrhRQy-r_400x400.jpg",
+  "pageUrl": "https://x.com/DanPatrick",
+  "sourceType": "own social profile",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Dan Patrick own social profile",
+  "photoYear": null,
+  "photoYearBasis": "not stated (avatar set 2021-10-26, per its id)",
+  "identityEvidence": "avatar of X @DanPatrick, \"Dan Patrick\", bio \"Lieutenant Governor of Texas\"",
+  "verified": "200 image/jpeg 400x400 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "head and shoulders at a microphone; square, no crop needed",
+  "alsoChecked": [
+   "danpatrick.org returned 202 (bot challenge, no content)",
+   "ltgov.texas.gov/about/: no portrait image"
+  ],
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg/500px-Lt._Governor_Dan_Patrick_%2854281823824%29_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Lt._Governor_Dan_Patrick_(54281823824)_(cropped).jpg",
+   "attribution": "Photo: Maryland GovPics",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY 2.0",
+   "photoYear": 2025,
+   "why": "Maryland governor's office Flickr (agency press)"
+  },
   "checkedDate": "2026-10-30",
-  "photoYear": 2025,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1479,
-  "photoWidth": 500,
-  "fileTitle": "File:Lt. Governor Dan Patrick (54281823824) (cropped).jpg",
   "raceNote": "photo ages not comparable (2019–2026); race shows initials"
  },
  "vikki-goodwin": {
@@ -231,19 +254,29 @@
  "nathan-johnson": {
   "name": "Nathan Johnson",
   "raceId": "tx-ag",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg/500px-Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg",
-  "pageUrl": "https://en.wikipedia.org/wiki/File:Nathan_M._Johnson_(Texas_Senate)_speaks_at_Massachusetts_State_House_on_Aug._5,_2025,_amid_Texas_walkout_over_redistricting_(3x4).jpg",
-  "license": "Public domain",
-  "attribution": "Photo: Henry Shifrin/Massachusetts Governor's Press Office",
-  "licenseDetail": "Public domain. Author/credit on file page: Henry Shifrin/Massachusetts Governor's Press Office. Via English Wikipedia: https://en.wikipedia.org/wiki/File:Nathan_M._Johnson_(Texas_Senate)_speaks_at_Massachusetts_State_House_on_Aug._5,_2025,_amid_Texas_walkout_over_redistricting_(3x4).jpg. Tag: PD-MAGov (work of the Massachusetts Governor's Press Office).",
-  "sourceType": "English Wikipedia (local file, public domain)",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2025,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 747,
-  "photoWidth": 500,
-  "fileTitle": "File:Nathan M. Johnson (Texas Senate) speaks at Massachusetts State House on Aug. 5, 2025, amid Texas walkout over redistricting (3x4).jpg",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "photoUrl": "https://pbs.twimg.com/profile_images/1945122952241975296/HSjCA6gC_400x400.jpg",
+  "pageUrl": "https://x.com/NathanForTexas",
+  "sourceType": "own social profile",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Nathan Johnson own social profile",
+  "photoYear": null,
+  "photoYearBasis": "not stated (avatar set 2025-07-15, per its id)",
+  "identityEvidence": "avatar of his campaign X account @NathanForTexas, bio \"Candidate for TX Attorney General. Texas Senator District 16\"",
+  "verified": "200 image/jpeg 400x400 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "outdoor head-and-shoulders headshot in a blazer; square, no crop needed",
+  "alsoChecked": [
+   "nathanfortexas.com: only a Senate-floor photo from behind and logos, no headshot"
+  ],
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg/500px-Nathan_M._Johnson_%28Texas_Senate%29_speaks_at_Massachusetts_State_House_on_Aug._5%2C_2025%2C_amid_Texas_walkout_over_redistricting_%283x4%29.jpg",
+   "pageUrl": "https://en.wikipedia.org/wiki/File:Nathan_M._Johnson_(Texas_Senate)_speaks_at_Massachusetts_State_House_on_Aug._5,_2025,_amid_Texas_walkout_over_redistricting_(3x4).jpg",
+   "attribution": "Photo: Henry Shifrin/Massachusetts Governor's Press Office",
+   "sourceType": "English Wikipedia (local file, public domain)",
+   "license": "Public domain",
+   "photoYear": 2025,
+   "why": "governor's press office photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "mayes-middleton": {
   "name": "Mayes Middleton",
@@ -259,8 +292,7 @@
   "photoYearBasis": "date taken/created on file page",
   "originalWidth": 1370,
   "photoWidth": 500,
-  "fileTitle": "File:Mayes Middleton by Gage Skidmore.jpg",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "fileTitle": "File:Mayes Middleton by Gage Skidmore.jpg"
  },
  "tom-oxford": {
   "name": "Tom Oxford",
@@ -276,8 +308,7 @@
    "X @Tomoxford is a different person (Yakima, WA)",
    "no campaign site found"
   ],
-  "checkedDate": "2026-10-30",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "checkedDate": "2026-10-30"
  },
  "don-huffines": {
   "name": "Don Huffines",
@@ -341,18 +372,26 @@
  "dawn-buckingham": {
   "name": "Dawn Buckingham",
   "raceId": "tx-land",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg/500px-Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Sen._Dawn_Buckingham,_M.D_(cropped).jpg",
-  "license": "Public domain",
-  "attribution": "Photo: Jay Godwin",
-  "licenseDetail": "Public domain. Author/credit on file page: Jay Godwin. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Sen._Dawn_Buckingham,_M.D_(cropped).jpg.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2017,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 892,
-  "photoWidth": 500,
-  "fileTitle": "File:Sen. Dawn Buckingham, M.D (cropped).jpg"
+  "photoUrl": "https://dawnbuckingham.com/wp-content/uploads/2025/12/hero_image-1440x792.webp",
+  "pageUrl": "https://dawnbuckingham.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Dawn Buckingham campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated (uploaded 2025/12)",
+  "identityEvidence": "hero image of her campaign site dawnbuckingham.com (\"Dr. Dawn Buckingham\"); viewed: same person as her other photos",
+  "verified": "200 image/webp 1440x792 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "wide outdoor shot (suit, cowboy hat, bison behind): crop tightly to head and shoulders",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg/500px-Sen._Dawn_Buckingham%2C_M.D_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Sen._Dawn_Buckingham,_M.D_(cropped).jpg",
+   "attribution": "Photo: Jay Godwin",
+   "sourceType": "Wikimedia Commons",
+   "license": "Public domain",
+   "photoYear": 2017,
+   "why": "taken by Jay Godwin for the LBJ Library (Flickr lbjlibrarynow, Future Forum event 2017-02-16), an agency event photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "benjamin-flores": {
   "name": "Benjamin Flores",
@@ -915,18 +954,26 @@
  "montserrat-garibay": {
   "name": "Montserrat Garibay",
   "raceId": "tx-hd-49",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg/500px-LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:LBJ_Library_Future_Forum_-_Sanctuary_Cities_(Montserrat_Garibay).jpg",
-  "license": "Public domain",
-  "attribution": "Photo: LBJ Library",
-  "licenseDetail": "Public domain. Author/credit on file page: LBJ Library. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:LBJ_Library_Future_Forum_-_Sanctuary_Cities_(Montserrat_Garibay).jpg.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2018,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1379,
-  "photoWidth": 500,
-  "fileTitle": "File:LBJ Library Future Forum - Sanctuary Cities (Montserrat Garibay).jpg"
+  "photoUrl": "https://images.squarespace-cdn.com/content/v1/68ed224f5e7bd548437f5a86/3c03fca3-f099-41a4-a3d1-2007b6e7640c/Montse.jpg",
+  "pageUrl": "https://www.montserratfortexas.com/about",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Montserrat Garibay campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "img alt \"Montserrat Garibay, candidate for Texas House District 49, Austin Texas\" on her campaign site About page",
+  "verified": "200 image/webp 1163x1520 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "studio portrait on a dark backdrop; crop to head and shoulders",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg/500px-LBJ_Library_Future_Forum_-_Sanctuary_Cities_%28Montserrat_Garibay%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:LBJ_Library_Future_Forum_-_Sanctuary_Cities_(Montserrat_Garibay).jpg",
+   "attribution": "Photo: LBJ Library",
+   "sourceType": "Wikimedia Commons",
+   "license": "Public domain",
+   "photoYear": 2018,
+   "why": "LBJ Presidential Library (federal agency) Flickr event photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "arshia-papari": {
   "name": "Arshia Papari",
@@ -2322,8 +2369,7 @@
   "attribution": "Photo: Autumn for School Board campaign site",
   "verified": "200 image/webp 750x1294; main portrait on her campaign home page",
   "note": "Full-length seated portrait; crop needed for a headshot.",
-  "checkedDate": "2026-10-30",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "checkedDate": "2026-10-30"
  },
  "virginia-cheung": {
   "name": "Virginia Cheung",
@@ -2337,26 +2383,31 @@
   "verified": "200 image/jpeg 2048x1365; file named \"240612DixonLi - Virginia Cheung EDITS-40\" on her campaign home page",
   "note": "Campaign portrait shoot dated 2024-06-12 in the file name. Wide frame; crop needed. (The site also has an AI-generated graphic, which was avoided.)",
   "checkedDate": "2026-10-30",
-  "cropNote": "wide portrait frame: crop to the candidate",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "cropNote": "wide portrait frame: crop to the candidate"
  },
  "alida-fisher": {
   "name": "Alida Fisher",
   "raceId": "sf-board-of-education",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Alida_Fisher_-_Candidate_for_Board_of_Education.webm/500px--Alida_Fisher_-_Candidate_for_Board_of_Education.webm.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Alida_Fisher_-_Candidate_for_Board_of_Education.webm",
-  "license": "CC BY 3.0",
-  "attribution": "Photo: SFGovTV",
-  "licenseDetail": "CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Author/credit on file page: SFGovTV. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Alida_Fisher_-_Candidate_for_Board_of_Education.webm. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2018,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1920,
-  "photoWidth": 500,
-  "fileTitle": "File:Alida Fisher - Candidate for Board of Education.webm",
-  "note": "Still frame (Commons-generated poster image) of a CC BY 3.0 SFGovTV candidate-statement video; not a portrait photo. Race is incomplete anyway.",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "photoUrl": "https://static.wixstatic.com/media/000ee3_08990cc4eef34a6b8ed783e34602d3d9%7Emv2.jpg",
+  "pageUrl": "https://www.alidafisher.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Alida Fisher campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "og:image of her campaign site alidafisher.com (\"Reelect Alida Fisher to SF School Board\"); viewed: same woman as her campaign X avatar",
+  "verified": "200 image/jpeg 300x200 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "small (300x200) outdoor photo beside her lawn sign: crop to head and shoulders on the left half. Higher-resolution alternative: her campaign X @alidafisher avatar https://pbs.twimg.com/profile_images/1344029301176299520/UMfjr1F7_400x400.jpg (own social profile, 400x400 headshot)",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Alida_Fisher_-_Candidate_for_Board_of_Education.webm/500px--Alida_Fisher_-_Candidate_for_Board_of_Education.webm.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Alida_Fisher_-_Candidate_for_Board_of_Education.webm",
+   "attribution": "Photo: SFGovTV",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY 3.0",
+   "photoYear": 2018,
+   "why": "a still frame from an SFGovTV (city government TV) candidate-statement video, not her own channel and not a photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "ryan-hazelton": {
   "name": "Ryan Hazelton",
@@ -2369,8 +2420,7 @@
   "photoYear": 2022,
   "verified": "200 image/webp 750x1000; alt \"Ryan taking a selfie...\" on his campaign In the Community page",
   "note": "Front-facing selfie holding children's books; the year comes from the file name. The site has no formal headshot.",
-  "checkedDate": "2026-10-30",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "checkedDate": "2026-10-30"
  },
  "phil-kim": {
   "name": "Phil Kim",
@@ -2383,8 +2433,7 @@
   "photoYear": 2025,
   "verified": "200 image/webp 750x719; file named PhilKim_Headshot_2025 on his campaign home page",
   "note": "Black-and-white headshot.",
-  "checkedDate": "2026-10-30",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "checkedDate": "2026-10-30"
  },
  "laurance-lee": {
   "name": "Laurance Lee",
@@ -2397,8 +2446,7 @@
   "verified": "200 image/webp 1200x1648; alt \"Laurance Lee, SFUSD graduate and 2026 San Francisco school board candidate\"",
   "note": "Full-length photo on school steps; crop needed for a headshot.",
   "checkedDate": "2026-10-30",
-  "cropNote": "full-length photo on school steps: crop to the candidate",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "cropNote": "full-length photo on school steps: crop to the candidate"
  },
  "reina-tello": {
   "name": "Reina Tello",
@@ -2410,8 +2458,7 @@
   "attribution": "Photo: Reina Tello for School Board campaign site",
   "verified": "200 image/jpeg 1280x1920; alt \"Reina Tello\" on her campaign About page",
   "note": "Front-facing waist-up portrait.",
-  "checkedDate": "2026-10-30",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "checkedDate": "2026-10-30"
  },
  "tim-tung": {
   "name": "Tim Tung",
@@ -2425,8 +2472,7 @@
   "note": "Front-facing headshot. Signed imgix URL, so keep it exact. The box cannot reach timtung.com directly (TLS error); the image was read via fetch.",
   "checkedDate": "2026-10-30",
   "localFile": "/workspace/townhall/civic/photos_local/tim-tung.jpg",
-  "urlNote": "signed imgix URL (signature query string); a local copy is saved at localFile for Engineering to host.",
-  "raceNote": "photo ages not comparable (2018–2025); race shows initials"
+  "urlNote": "signed imgix URL (signature query string); a local copy is saved at localFile for Engineering to host."
  },
  "elijah-ball": {
   "name": "Elijah Ball",
@@ -2557,18 +2603,26 @@
  "micah-c-lasher": {
   "name": "Micah C. Lasher",
   "raceId": "ny-12",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg/500px-FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:FWNY25;_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_(cropped).jpg",
-  "license": "Public domain",
-  "attribution": "Photo: Lance Cpl. Steven Wells/U.S. Marine Corps",
-  "licenseDetail": "Public domain. Author/credit on file page: Lance Cpl. Steven Wells. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:FWNY25;_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_(cropped).jpg.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
+  "photoUrl": "https://micahlasher.com/wp-content/uploads/2026/01/Lasher_251104_1428_crop-1024x1024.webp",
+  "pageUrl": "https://micahlasher.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Micah Lasher campaign site",
   "photoYear": 2025,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1384,
-  "photoWidth": 500,
-  "fileTitle": "File:FWNY25; U.S. Marines and Sailors hold wreath laying ceremony Micah Lasher (cropped).jpg"
+  "photoYearBasis": "file name carries the shoot date code 251104 (2025-11-04); uploaded 2026/01",
+  "identityEvidence": "main photo on his campaign site micahlasher.com (\"Micah Lasher for Congress\"); file name Lasher_…",
+  "verified": "200 image/webp 1024x1024 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "outdoor portrait, hands clasped: crop to head and shoulders",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg/500px-FWNY25%3B_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:FWNY25;_U.S._Marines_and_Sailors_hold_wreath_laying_ceremony_Micah_Lasher_(cropped).jpg",
+   "attribution": "Photo: Lance Cpl. Steven Wells/U.S. Marine Corps",
+   "sourceType": "Wikimedia Commons",
+   "license": "Public domain",
+   "photoYear": 2025,
+   "why": "U.S. Marine Corps (military agency) press photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "caroline-shinkle": {
   "name": "Caroline Shinkle",
@@ -2728,18 +2782,27 @@
  "erik-d-bottcher": {
   "name": "Erik D. Bottcher",
   "raceId": "ny-sd-47",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Erik_Bottcher_MTA_2024_%28cropped%29.jpg/500px-Erik_Bottcher_MTA_2024_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Erik_Bottcher_MTA_2024_(cropped).jpg",
-  "license": "CC BY 2.0",
-  "attribution": "Photo: Metropolitan Transportation Authority",
-  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Erik_Bottcher_MTA_2024_(cropped).jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2024,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 828,
-  "photoWidth": 500,
-  "fileTitle": "File:Erik Bottcher MTA 2024 (cropped).jpg"
+  "photoUrl": "https://run.imgix.net/b5819a9c-e1d0-4b20-bdf9-c7cb2ad13f53/f9f3bcec-713e-43bc-b814-43e42e3f92b7/f9f3bcec-713e-43bc-b814-43e42e3f92b7.jpeg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C0%2C5054%2C4008&auto=compress%2Cformat&fit=fillmax&w=2048&q=75&s=154e19d2e8df78a1a1b2504eafa73ae6",
+  "pageUrl": "https://www.erikbottcher.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Erik Bottcher campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "hero image of his campaign site erikbottcher.com (logo \"Erik Bottcher, Democrat for State Senate, for New York City\"); viewed: same person as his earlier photos",
+  "verified": "200 image/jpeg 2048x1624 (GET, 2026-10-30 ~04:30 CT)",
+  "urlNote": "imgix URL; the s= parameter is a parameter signature, not an expiry",
+  "cropNote": "outdoor portrait, white shirt and blue tie: crop to head and shoulders",
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Erik_Bottcher_MTA_2024_%28cropped%29.jpg/500px-Erik_Bottcher_MTA_2024_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Erik_Bottcher_MTA_2024_(cropped).jpg",
+   "attribution": "Photo: Metropolitan Transportation Authority",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY 2.0",
+   "photoYear": 2024,
+   "why": "MTA agency press photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "charlotte-friedman": {
   "name": "Charlotte Friedman",
@@ -2787,18 +2850,29 @@
  "tony-simone": {
   "name": "Tony Simone",
   "raceId": "ny-ad-75",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tony_Simone_MTA_Pride_Month_2024.jpg/500px-Tony_Simone_MTA_Pride_Month_2024.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Tony_Simone_MTA_Pride_Month_2024.jpg",
-  "license": "CC BY 2.0",
-  "attribution": "Photo: Metropolitan Transportation Authority",
-  "licenseDetail": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tony_Simone_MTA_Pride_Month_2024.jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2024,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 666,
-  "photoWidth": 500,
-  "fileTitle": "File:Tony Simone MTA Pride Month 2024.jpg"
+  "photoUrl": "https://nyassembly.gov/write/upload/member_files/075/headshot/075.jpg?hst=1672577505",
+  "pageUrl": "https://nyassembly.gov/mem/Tony-Simone",
+  "sourceType": "official page",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: New York State Assembly official page",
+  "photoYear": 2023,
+  "photoYearBasis": "upload date: Last-Modified 2023-01-01 (hst=1672577505), when his term began; taken date not stated",
+  "identityEvidence": "img alt \"Assemblymember Tony Simone\" on his official Assembly member page",
+  "verified": "200 image/jpeg 1279x1790 (GET, 2026-10-30 ~04:30 CT)",
+  "cropNote": "formal official portrait with flag; crop to head and shoulders",
+  "alsoChecked": [
+   "campaign site tonyfornewyork.com (with and without www): connection failed (curl 000) from the box"
+  ],
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tony_Simone_MTA_Pride_Month_2024.jpg/500px-Tony_Simone_MTA_Pride_Month_2024.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Tony_Simone_MTA_Pride_Month_2024.jpg",
+   "attribution": "Photo: Metropolitan Transportation Authority",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY 2.0",
+   "photoYear": 2024,
+   "why": "MTA agency press photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "cristina-fontanelli": {
   "name": "Cristina Fontanelli",
@@ -3067,18 +3141,30 @@
  "carl-wilson": {
   "name": "Carl Wilson",
   "raceId": "nyc-council-3",
-  "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg/500px-Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg",
-  "pageUrl": "https://commons.wikimedia.org/wiki/File:Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_(cropped).jpg",
-  "license": "CC BY 4.0",
-  "attribution": "Photo: Metropolitan Transportation Authority",
-  "licenseDetail": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Author/credit on file page: Metropolitan Transportation Authority. Via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_(cropped).jpg. Attribution required; keep the license link.",
-  "sourceType": "Wikimedia Commons",
-  "checkedDate": "2026-10-30",
-  "photoYear": 2026,
-  "photoYearBasis": "date taken/created on file page",
-  "originalWidth": 1115,
-  "photoWidth": 500,
-  "fileTitle": "File:Carl Wilson Speaks at Tracks Bar Reopening (cropped).jpg"
+  "photoUrl": "https://run.imgix.net/0d482bb4-0d6a-4b71-9791-3a8efb8c3512/f26ca693-106d-43c7-88db-2509f68db9b6/f26ca693-106d-43c7-88db-2509f68db9b6.png?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=25&rect=381%2C0%2C874%2C1024&auto=compress%2Cformat&fit=fillmax&w=1080&q=75&s=1385df3262eb86921c0f264033dadf88",
+  "pageUrl": "https://www.carlwilsonnyc.com/",
+  "sourceType": "campaign site",
+  "license": "Not licensed; candidate's own public photo, credited and linked",
+  "attribution": "Photo: Carl Wilson campaign site",
+  "photoYear": null,
+  "photoYearBasis": "not stated",
+  "identityEvidence": "hero image of his campaign site carlwilsonnyc.com (\"Re-elect Carl Wilson for City Council\"); viewed: same person as the earlier MTA photo",
+  "verified": "200 image/jpeg 874x1024 (GET, 2026-10-30 ~04:30 CT)",
+  "urlNote": "imgix URL; the s= parameter is a parameter signature, not an expiry",
+  "cropNote": "street portrait in a navy blazer: crop to head and shoulders",
+  "alsoChecked": [
+   "council.nyc.gov/district-3/ (200, no headshot image in the page HTML)"
+  ],
+  "replaced": {
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg/500px-Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_%28cropped%29.jpg",
+   "pageUrl": "https://commons.wikimedia.org/wiki/File:Carl_Wilson_Speaks_at_Tracks_Bar_Reopening_(cropped).jpg",
+   "attribution": "Photo: Metropolitan Transportation Authority",
+   "sourceType": "Wikimedia Commons",
+   "license": "CC BY 4.0",
+   "photoYear": 2026,
+   "why": "MTA agency press photo"
+  },
+  "checkedDate": "2026-10-30"
  },
  "haris-bhatti": {
   "name": "Haris Bhatti",

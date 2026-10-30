@@ -1,6 +1,6 @@
 "use client";
 import { initials as initialsOf } from "./PortraitRow";
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { PHOTO_GATE } from "../lib/photoGate";
 import { cn } from "../lib/utils";
 
@@ -27,7 +27,7 @@ export function usePhotoOff() {
 }
 
 type Focus = [number, number, number];
-type Pic = { url: string; credit: string; author?: string; attribution?: string; license?: string; licenseUrl?: string | null; page?: string; hotlinked?: boolean; focus?: Focus };
+type Pic = { url: string; url112?: string; credit: string; author?: string; attribution?: string; license?: string; licenseUrl?: string | null; page?: string; hotlinked?: boolean; focus?: Focus };
 /** mate: the running mate's photo on a ticket (Civic role "running mate"), shown in the right half of the tile. */
 export type Photo = (Pic & { mate?: Pic & { name: string } }) | null | undefined;
 
@@ -41,16 +41,19 @@ export function TileImage({ photo, alt, eager, onFail, imgRef }: { photo: NonNul
   const [mateOff, setMateOff] = useState(false);
   const m = photo.mate && !mateOff ? photo.mate : null;
   const cls = "h-full w-full object-cover object-[center_20%]";
+  // Design p14: self-hosted 112/160px squares (tiles are 40-56px, so 112 covers 2x screens and 160 covers 3x), with
+  // width/height set; lazy and async below the fold (eager only for the first tiers).
+  const img = (p: Pic) => ({ src: p.url, ...(p.url112 ? { srcSet: `${p.url112} 112w, ${p.url} 160w`, sizes: "56px" } : {}), width: 160, height: 160, loading: (eager ? "eager" : "lazy") as "eager" | "lazy", decoding: "async" as const, referrerPolicy: "no-referrer" as const });
   return (
     <span className="absolute inset-0 flex overflow-hidden" data-photo-img>
       <span className={cn("relative h-full overflow-hidden", m ? "w-1/2" : "w-full")}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img ref={imgRef} src={photo.url} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" referrerPolicy="no-referrer" onError={onFail} className={cls} style={focusStyle(photo.focus)} data-focus={photo.focus ? "1" : undefined} />
+        <img ref={imgRef} {...img(photo)} alt={alt} onError={onFail} className={cls} style={focusStyle(photo.focus)} data-focus={photo.focus ? "1" : undefined} />
       </span>
       {m ? (
         <span className="relative h-full w-1/2 overflow-hidden border-l border-white" data-mate-photo>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={m.url} alt={m.name} loading={eager ? "eager" : "lazy"} decoding="async" referrerPolicy="no-referrer" onError={() => setMateOff(true)} className={cls} style={focusStyle(m.focus)} />
+          <img {...img(m)} alt={m.name} onError={() => setMateOff(true)} className={cls} style={focusStyle(m.focus)} />
         </span>
       ) : null}
     </span>
@@ -93,6 +96,7 @@ function CreditRow({ count, children }: { count: number; children: ReactNode }) 
   const ref = useRef<HTMLParagraphElement>(null);
   const [wraps, setWraps] = useState(false);
   const [open, setOpen] = useState(false);
+  const id = useId();
   useEffect(() => {
     const el = ref.current; if (!el) return;
     const mq = window.matchMedia("(min-width: 768px)");
@@ -110,12 +114,14 @@ function CreditRow({ count, children }: { count: number; children: ReactNode }) 
   const capped = wraps && !open;
   return (
     <div className="md:flex md:items-start md:gap-x-6" data-credit-row data-capped={capped ? "true" : "false"}>
-      <p ref={ref} className={`flex min-w-0 flex-col md:min-h-11 md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-x-6 ${capped ? "md:max-h-11 md:overflow-hidden" : ""} ${CREDIT}`} aria-label="Photo credits" data-photo-credits>
+      <p ref={ref} className={`flex min-w-0 flex-col md:min-h-11 md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-x-6 ${capped ? "md:max-h-11 md:overflow-hidden" : ""} ${CREDIT}`} aria-label="Photo credits" data-photo-credits id={id}>
         <span className="pt-2 md:-mr-4 md:flex md:min-h-11 md:items-center md:pt-0">{count === 1 ? "Photo:" : "Photos:"}</span>
         {children}
       </p>
       {wraps ? (
-        <button type="button" aria-expanded={open} onClick={() => setOpen((v) => !v)} className={`hidden min-h-11 shrink-0 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:flex ${CREDIT}`} data-credits-more>
+        // Design p14 #3: a 44x44 hit area (min-h-11 min-w-11, px-2, and after:-inset-x-3 reaching 12px into the 24px gap,
+        // which the last credit's 8px tap area never meets); 12/16 black/60, underlined.
+        <button type="button" aria-expanded={open} aria-controls={id} onClick={() => setOpen((v) => !v)} className={`relative hidden min-h-11 min-w-11 shrink-0 items-center justify-center px-2 underline decoration-black/20 underline-offset-2 hover:text-black after:absolute after:inset-y-0 after:-inset-x-3 after:content-[''] md:flex ${CREDIT}`} data-credits-more>
           {open ? "less" : "more"}
         </button>
       ) : null}

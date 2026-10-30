@@ -39,7 +39,7 @@ describe("grade explainer line (Adam's wording, verbatim)", () => {
     expect(gradesForRace({ ...race, judicial: "tx" }, [o(3), o(3)], 3, null, new Set()).hidden).toBeNull();
   });
   it("renders exactly the agreed sentence, and never the old phrasing", () => {
-    expect(GRADES_ABSENT_LINE).toBe("Letter grades appear only when every candidate has comparable sourced records.");
+    expect(GRADES_ABSENT_LINE).toBe("Letters need sourced records for every candidate.");
     const html = renderToStaticMarkup(h(RaceFooter, { cands: [{ name: "A" }, { name: "B" }], gradesHidden: "eligibility" }));
     expect(html).toContain(GRADES_ABSENT_LINE);
     expect(renderToStaticMarkup(h(RaceFooter, { cands: [{ name: "A" }], gradesHidden: null }))).not.toContain(GRADES_ABSENT_LINE);

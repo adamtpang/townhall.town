@@ -1,0 +1,6265 @@
+{
+ "builtBy": "scripts/ingest-photos.mjs",
+ "sizes": [
+  112,
+  160
+ ],
+ "portraits": {
+  "adrienne-e-adams": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2031800195806035968/gNOMSlSL_400x400.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/adrienne-e-adams.jpg",
+   "page": "https://x.com/AdrienneEAdams",
+   "sourceSha256": "17601636efb0134b5e3b32216e8ab6ccd4cc61c20f4574f5a1ed04043b34cd92",
+   "sourceBytes": 40247,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 400,
+    "height": 400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/adrienne-e-adams-112.webp",
+     "bytes": 1402,
+     "sha256": "3316748425012fd91c2fe04c0164c55715a4e6fa2ca25329b42bb30851b3db3c"
+    },
+    "160": {
+     "file": "/portraits/adrienne-e-adams-160.webp",
+     "bytes": 2308,
+     "sha256": "b8cd86b8b7ce1278900d88752ff9b6e0bbc913e6363f6d98c2b9dc5ac92bc571"
+    }
+   }
+  },
+  "alex-behrend": {
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/47fa1d63-5c11-4857-95ab-39b68f651f15/headshot2_3_45rounded.png",
+   "localFile": null,
+   "page": "https://alexforalld6.com/",
+   "sourceSha256": "da112ad54e16d2d15de36fa1352f1640651731dfb686f10646151d5719a08d41",
+   "sourceBytes": 2458389,
+   "sourceSize": [
+    1800,
+    1500
+   ],
+   "crop": {
+    "left": 150,
+    "top": 0,
+    "width": 1500,
+    "height": 1500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/alex-behrend-112.webp",
+     "bytes": 1914,
+     "sha256": "6cf8c7ca4fb71ab07fb25b381da3cbc4ec214c3e15d764304242079522f124a6"
+    },
+    "160": {
+     "file": "/portraits/alex-behrend-160.webp",
+     "bytes": 3224,
+     "sha256": "5f65ff6a5608daae5b22a3fc689b18b3915101b78f44a3e346c051b542219583"
+    }
+   }
+  },
+  "alida-fisher": {
+   "sourceUrl": "https://static.wixstatic.com/media/000ee3_08990cc4eef34a6b8ed783e34602d3d9%7Emv2.jpg",
+   "localFile": null,
+   "page": "https://www.alidafisher.com/",
+   "sourceSha256": "3cd29f9e29e139c308e114dd6e6aaac8a014e6d6581016d7f8d61fbe2276946e",
+   "sourceBytes": 86213,
+   "sourceSize": [
+    300,
+    200
+   ],
+   "crop": {
+    "left": 35,
+    "top": 2,
+    "width": 120,
+    "height": 120
+   },
+   "focus": [
+    0.195,
+    0.02,
+    1.67
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/alida-fisher-112.webp",
+     "bytes": 2302,
+     "sha256": "6045785a5a57e270b89f63ca0f870aae2a63a77901af13dd087ff55f5357cfe0"
+    },
+    "160": {
+     "file": "/portraits/alida-fisher-160.webp",
+     "bytes": 3290,
+     "sha256": "2dcd0aaab0bc2d3c4bb3471cf7fd14c68f0099c24485a52e02c0ef249e2abfdc"
+    }
+   }
+  },
+  "alina-bonsell": {
+   "sourceUrl": "https://static.wixstatic.com/media/09be39_88cdf523efee45fe9d94ae9a4d44b8a0~mv2.png/v1/fill/w_800,h_1120,al_c,q_85/09be39_88cdf523efee45fe9d94ae9a4d44b8a0~mv2.png",
+   "localFile": null,
+   "page": "https://www.alinabonsell.com/meetalina",
+   "sourceSha256": "1adcb0eb10d93b13898a72fbc238e7c3a23f0e4751b3b80bda08583c39d1bdeb",
+   "sourceBytes": 943535,
+   "sourceSize": [
+    800,
+    1120
+   ],
+   "crop": {
+    "left": 0,
+    "top": 64,
+    "width": 800,
+    "height": 800
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/alina-bonsell-112.webp",
+     "bytes": 1120,
+     "sha256": "454ecd7270e87f2d16ef8f4d97ee6b6e58a50e94f8350a8d6a56465b93d7526e"
+    },
+    "160": {
+     "file": "/portraits/alina-bonsell-160.webp",
+     "bytes": 1782,
+     "sha256": "e07b92786e6f2840a5bb17d0ed0d09f10a0faccba2a6c3937e8bc35e66ed877c"
+    }
+   }
+  },
+  "allison-bush": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6855b5e8df6e7f51f6ee6cfd/fedcb696-eea5-49c5-a94c-770ea4c9980f/IMG_8859.jpeg",
+   "localFile": null,
+   "page": "https://www.allisonfortx.com/",
+   "sourceSha256": "0e1c87454e0fc63150a90de58dca35a7dc876f532cf2388863fcaaa1cdc40ba9",
+   "sourceBytes": 151348,
+   "sourceSize": [
+    1150,
+    1289
+   ],
+   "crop": {
+    "left": 0,
+    "top": 28,
+    "width": 1150,
+    "height": 1150
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/allison-bush-112.webp",
+     "bytes": 1744,
+     "sha256": "8925c06f8c99ffb3482ca8db3c4bdf66a5000b26b29a8fce0e21287c829810c0"
+    },
+    "160": {
+     "file": "/portraits/allison-bush-160.webp",
+     "bytes": 2924,
+     "sha256": "6ca017780b315dbda4b0cc03bd6c74015089431a87a712a6e20251a1d217c4a3"
+    }
+   }
+  },
+  "amy-clark-meachum": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/042624_IMG_5941_1.jpeg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/civil/district/201",
+   "sourceSha256": "aa9a25dbbf953cb2c5ce9a115e023e1b0546c4d15e71aaf10b28353bbadb81e7",
+   "sourceBytes": 102408,
+   "sourceSize": [
+    621,
+    550
+   ],
+   "crop": {
+    "left": 36,
+    "top": 0,
+    "width": 550,
+    "height": 550
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/amy-clark-meachum-112.webp",
+     "bytes": 2740,
+     "sha256": "a832236cce211cd8a1e52aca234c8c82935ea4c5fc85e786ceb6aad21b058b98"
+    },
+    "160": {
+     "file": "/portraits/amy-clark-meachum-160.webp",
+     "bytes": 4380,
+     "sha256": "e489837770d3bda16629d042fe7dc7b448adc4121d39ab79aab8dd3f1bb69f7f"
+    }
+   }
+  },
+  "andy-brown": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/JudgeBrown-headshot.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/commissioners-court/county-judge",
+   "sourceSha256": "a588084f4f4c40085f7d9efcdcded0487eb080f022ab346a0aae64be29da72ae",
+   "sourceBytes": 10154,
+   "sourceSize": [
+    200,
+    266
+   ],
+   "crop": {
+    "left": 0,
+    "top": 13,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/andy-brown-112.webp",
+     "bytes": 1732,
+     "sha256": "4f1d64a661188286855c61d61cc8c1f29df3c726cc7bbd08b0b315ce3184f2de"
+    },
+    "160": {
+     "file": "/portraits/andy-brown-160.webp",
+     "bytes": 2828,
+     "sha256": "754be01bcc9efd13830a303e87a7cfcf44b6fba4f84b13415539b96c011c2ef8"
+    }
+   }
+  },
+  "anthony-cristo": {
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sfOdP7iijFykjIOyMVED3VNVEmMafShVF7Gs-gqv5vD3tp99PaX4qNHdHVgDBahaGfEbiRM-uxqXlt9w9O4y0nhyS7ByDQYHihE-rX_Uo-Q3XjY2EU9qGfutnsBDWrCU6o0UzQniBCoKwODor2WJDe9k_qS2S91DJ4KdCIoA_otPK97R6uK-84aWkr86Q9eDT76wiiyXYN7jvI-qjOo_5KV4CWvMQe71kAM0yj=w1280",
+   "localFile": "/workspace/townhall/civic/photos_local/anthony-cristo.jpg",
+   "page": "https://www.anthonycristo.com/",
+   "sourceSha256": "beb2bb96359c07913acdad7852579810796f2bafb6d9fecc53655fdf68266073",
+   "sourceBytes": 152612,
+   "sourceSize": [
+    1280,
+    1894
+   ],
+   "crop": {
+    "left": 0,
+    "top": 123,
+    "width": 1280,
+    "height": 1280
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/anthony-cristo-112.webp",
+     "bytes": 1236,
+     "sha256": "ef06c9ee57f0fdedb4a0c52c70869d3fafdaeadf1af8415b021d5daf08c4875a"
+    },
+    "160": {
+     "file": "/portraits/anthony-cristo-160.webp",
+     "bytes": 1978,
+     "sha256": "9edbd9697dce973a195c4ba3e93e3bb84d9e21d365be414dc52a1e36ba1b7248"
+    }
+   }
+  },
+  "april-farris": {
+   "sourceUrl": "https://justiceaprilfarris.com/wp-content/uploads/2025/06/farris-3.jpg",
+   "localFile": null,
+   "page": "https://justiceaprilfarris.com/",
+   "sourceSha256": "c46e5f9304278fba7d6e0e6c2e8669a8369384a83f528e6967148c33bfbc3546",
+   "sourceBytes": 446088,
+   "sourceSize": [
+    1377,
+    1377
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1377,
+    "height": 1377
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/april-farris-112.webp",
+     "bytes": 1072,
+     "sha256": "779beb2cbb8534f0089cdb777c53c5ce5c0c4e2c7f3d973d2798e897a1309f1c"
+    },
+    "160": {
+     "file": "/portraits/april-farris-160.webp",
+     "bytes": 1844,
+     "sha256": "5050addc34efbc32f1af02b03179352e2829ce15ae692a5ad2fc78f20410e62b"
+    }
+   }
+  },
+  "arshia-papari": {
+   "sourceUrl": "https://images.solidarity.tech/fit-in/1200x0/filters:no_upscale()/us1ovmqljy8uwv9vac0dnv8wfp0y",
+   "localFile": null,
+   "page": "https://www.arshiafortexas.org/",
+   "sourceSha256": "efb52599f5f2ad9640b746bd07b42edfde8e546f66ec8873bc8bfdcd57fc25e7",
+   "sourceBytes": 150426,
+   "sourceSize": [
+    1200,
+    800
+   ],
+   "crop": {
+    "left": 200,
+    "top": 0,
+    "width": 800,
+    "height": 800
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/arshia-papari-112.webp",
+     "bytes": 2810,
+     "sha256": "dcb1eadf9fa561e573bef6bcd501dcd9d4fd10add3b29753d6d4e7cd62897430"
+    },
+    "160": {
+     "file": "/portraits/arshia-papari-160.webp",
+     "bytes": 4792,
+     "sha256": "e8ec61f8f4c0a3c1e1c5f7b2c01a67d35098f1dea1ae52fafe2951439929d26c"
+    }
+   }
+  },
+  "arthur-dibianca": {
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uCiEAYtd3xuHHpAkz0Vcw_-JQB-sd1CdlxRFLtoHezYyxDkwOZ2OnJ7g3GoKtSKObVjFFm39ASnUHzt5HJSMgKB6iE7qJ4pl3mdrTfIHoU_HqsmJUEWrNY3UO6dkWlhl_6ID9s1Ys2__54AIQ2zqSqqcpSFOaNXgbQnYmsEIGULGHGQ8c9mB0_oBCWlxvWuQriWdJAjrdlfsI1KsXx7kV9-pHvHlxJnD4-UWeulWk=w1280",
+   "localFile": "/workspace/townhall/civic/photos_local/arthur-dibianca.png",
+   "page": "https://www.votedibianca.com/",
+   "sourceSha256": "4986c6331fb225b632ffd2a518ebbc5a079fea46d1b44e03e39924c92b7893cb",
+   "sourceBytes": 2111380,
+   "sourceSize": [
+    1280,
+    1894
+   ],
+   "crop": {
+    "left": 0,
+    "top": 123,
+    "width": 1280,
+    "height": 1280
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/arthur-dibianca-112.webp",
+     "bytes": 1144,
+     "sha256": "e3e0079b052027e6ec881522d5cfaceae5e7ee706ae3f6b0ace394017df187e2"
+    },
+    "160": {
+     "file": "/portraits/arthur-dibianca-160.webp",
+     "bytes": 1808,
+     "sha256": "39b8be287940668be9b040c57eb67e6689886430112316edf5d8d02cc8cc5bd9"
+    }
+   }
+  },
+  "audra-riley": {
+   "sourceUrl": "https://www.judgeaudrariley.com/images/JudgeAudraf.jpg",
+   "localFile": null,
+   "page": "https://www.judgeaudrariley.com/",
+   "sourceSha256": "b05215c33fd46e26340d3266892a423adaec7618d4b4adb566288affabb370e8",
+   "sourceBytes": 1953436,
+   "sourceSize": [
+    1311,
+    1696
+   ],
+   "crop": {
+    "left": 0,
+    "top": 77,
+    "width": 1311,
+    "height": 1311
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/audra-riley-112.webp",
+     "bytes": 1822,
+     "sha256": "257236da2aa56294a43a6d912a798534dcf87e0ba180c45bb9da51f0b05c61c8"
+    },
+    "160": {
+     "file": "/portraits/audra-riley-160.webp",
+     "bytes": 3164,
+     "sha256": "ffe89754b60fe42848dba1ac841ab394739d6380cb8ef77eacc2a71db04a0ae2"
+    }
+   }
+  },
+  "austin-r-kelly": {
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72udP0DdzIaSDJ-Le2ptwCi36uT_Wro1nNUvdLEYEm_PfQZBGsaNWq2k5i9a9ED3OIzmxMGoV5iFfcv6HBX2VaUt_9xRWHSkIR8dgDxAf4WsH0V6eE2ZX03yKMLx7u3uiF9kmS-L1k83VLvNVYQ6r036Q1eE5q9q910ZmO585hc31SLJP6g65FvBOTld0ro_Y9L3x1wNkfP5Ov9xhuTiXQSgM1eR7SFIkkZ7sHp2=w1280",
+   "localFile": "/workspace/townhall/civic/photos_local/austin-r-kelly-headshoulders.jpg",
+   "page": "https://www.kellyfortx.com/",
+   "sourceSha256": "c868250c84d3942709e71990c666b83e885ed303ea79177e9d02568117e03aca",
+   "sourceBytes": 59792,
+   "sourceSize": [
+    490,
+    612
+   ],
+   "crop": {
+    "left": 0,
+    "top": 24,
+    "width": 490,
+    "height": 490
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/austin-r-kelly-112.webp",
+     "bytes": 2126,
+     "sha256": "2d7463a5aa4f406818c406f57f5df1952f2ca4cf682c5f5cc9c804600b652ab2"
+    },
+    "160": {
+     "file": "/portraits/austin-r-kelly-160.webp",
+     "bytes": 3572,
+     "sha256": "cdc621a5932860b86be3e73c67c72bfce0d2652344243f3b1bf84e96681266bb"
+    }
+   }
+  },
+  "autumn-brown-garibay": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a01117755a1000b9f8277a7/beeafa0e-a508-44b2-8d8d-5d93f1c6a05b/Untitled+design+%2834%29.png?format=750w",
+   "localFile": null,
+   "page": "https://www.autumnforschoolboard.com/",
+   "sourceSha256": "a613627aeaed07f8d96fc9da19070c1b96cb9acdce0e90d15e2d1e0e19ff994f",
+   "sourceBytes": 986722,
+   "sourceSize": [
+    750,
+    1294
+   ],
+   "crop": {
+    "left": 0,
+    "top": 109,
+    "width": 750,
+    "height": 750
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/autumn-brown-garibay-112.webp",
+     "bytes": 2688,
+     "sha256": "b37a1a1f6e4c7eafce925a11916e94a26cbdfa614e06a895cf1ab5714054f4a7"
+    },
+    "160": {
+     "file": "/portraits/autumn-brown-garibay-160.webp",
+     "bytes": 4616,
+     "sha256": "0552e69078e0f336b687da6781797fec32a8a3873951f66c98843a7c76bd5c60"
+    }
+   }
+  },
+  "ben-allen": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ben_Allen%2C_2021.jpg/500px-Ben_Allen%2C_2021.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Ben_Allen,_2021.jpg",
+   "sourceSha256": "48e1842440cf4e91b7206e2f2f167e0a4c93223030828080f1f008f6c20c8837",
+   "sourceBytes": 70811,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/ben-allen-112.webp",
+     "bytes": 1384,
+     "sha256": "699714a2f2bf6afd31deee2ec1c3f86ee11c172bba0d70143e78a6c7feac8da5"
+    },
+    "160": {
+     "file": "/portraits/ben-allen-160.webp",
+     "bytes": 2210,
+     "sha256": "bff0d4f85990ab5d5ba6f8e0446c28f0327c8341c008898ec2af3b22430b4970"
+    }
+   }
+  },
+  "benjamin-flores": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2084755857103851520/rr5yDKRU_400x400.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/benjamin-flores.jpg",
+   "page": "https://x.com/Flores4LandCom",
+   "sourceSha256": "24cff48720908c95d67cfb4aa7284c4e4393ecd4c5a71ce6764e71164eb3f6f0",
+   "sourceBytes": 13367,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 136,
+    "top": 115,
+    "width": 133,
+    "height": 133
+   },
+   "focus": [
+    0.51,
+    0.43,
+    3
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/benjamin-flores-112.webp",
+     "bytes": 1344,
+     "sha256": "d572f1df35fb9c1d9218207371b2a3680e63e0ca49286da89a43f053793963ff"
+    },
+    "160": {
+     "file": "/portraits/benjamin-flores-160.webp",
+     "bytes": 1964,
+     "sha256": "60bb8202a398aedcb37c449c7850fcc9205d143d91ef785d0458c39acb10e0c0"
+    }
+   }
+  },
+  "bianca-garcia": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/Picture-Bianca_Garcia_CC3_to_webteam.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc3",
+   "sourceSha256": "066b0615d3108a9fbf5628dfdaf864afa4d73886592fa5db02da218b05138be2",
+   "sourceBytes": 150066,
+   "sourceSize": [
+    618,
+    892
+   ],
+   "crop": {
+    "left": 0,
+    "top": 55,
+    "width": 618,
+    "height": 618
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/bianca-garcia-112.webp",
+     "bytes": 2140,
+     "sha256": "8953e921dce34078353974c4a7a8a839a4c12190592112d3f9a197d20cdf6fab"
+    },
+    "160": {
+     "file": "/portraits/bianca-garcia-160.webp",
+     "bytes": 3574,
+     "sha256": "f636976b6d3da36d1407cd93a0d3912715424b1936ed2d79542727afcb82c035"
+    }
+   }
+  },
+  "bo-french": {
+   "sourceUrl": "https://bofrench.com/wp-content/uploads/2025/11/BoFrench03-updated.jpg",
+   "localFile": null,
+   "page": "https://bofrench.com/",
+   "sourceSha256": "28fea90154d4330bd7d376bf391d84b208ce09599e946ede464a5633f72029cc",
+   "sourceBytes": 75157,
+   "sourceSize": [
+    2500,
+    1363
+   ],
+   "crop": {
+    "left": 546,
+    "top": 123,
+    "width": 682,
+    "height": 682
+   },
+   "focus": [
+    0.3,
+    0.18,
+    2
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/bo-french-112.webp",
+     "bytes": 1722,
+     "sha256": "1236fa686abd32ff7205b3e61ab1249c21bc3c2098adc5645178172b27beb24c"
+    },
+    "160": {
+     "file": "/portraits/bo-french-160.webp",
+     "bytes": 2718,
+     "sha256": "82f7e3b5128c929f6c53589288ef9dc870b72a10f08274cc0470341f5958dc86"
+    }
+   }
+  },
+  "brandy-mueller": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/Brandy_Mueller_403rd.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/403",
+   "sourceSha256": "e15302e9f849f6c80cf37c4f0de3d3b63dbe4938dc1977faa676808cb659996c",
+   "sourceBytes": 36950,
+   "sourceSize": [
+    270,
+    395
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/brandy-mueller-112.webp",
+     "bytes": 1666,
+     "sha256": "6079483fa4f7c2491534ff49f5c83e596cd57515d806f1fa4207519534144bd4"
+    },
+    "160": {
+     "file": "/portraits/brandy-mueller-160.webp",
+     "bytes": 2652,
+     "sha256": "993e203595b8e727e30fa08297f13c421e3f0c07aa0835b97fdec029c9e35aae"
+    }
+   }
+  },
+  "brett-busby": {
+   "sourceUrl": "https://brettbusby.com/wp-content/uploads/2025/08/Brett-Busby-Headshot-2-1-768x899.jpg",
+   "localFile": null,
+   "page": "https://brettbusby.com/",
+   "sourceSha256": "07d8491d414e097dd14def0d8e54793bf34dba117831bfb0d7a5bd19d7d3fa36",
+   "sourceBytes": 56566,
+   "sourceSize": [
+    768,
+    899
+   ],
+   "crop": {
+    "left": 0,
+    "top": 26,
+    "width": 768,
+    "height": 768
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/brett-busby-112.webp",
+     "bytes": 1260,
+     "sha256": "125103f5dc099fd7d7cd2538680c355d9be7928a05e220a3f455fbe391a6ac37"
+    },
+    "160": {
+     "file": "/portraits/brett-busby-160.webp",
+     "bytes": 2064,
+     "sha256": "6571a028c54ae9eeae2b4bc75aff3c1ddd8b7b751aca89a1c3b4abaaa444d621"
+    }
+   }
+  },
+  "brian-pena": {
+   "sourceUrl": "https://static.wixstatic.com/media/f2367f_1fad9e6bd5c249868f1baa3976b22e14~mv2.png",
+   "localFile": null,
+   "page": "https://demsfortcad.com/",
+   "sourceSha256": "70c606dbf4233c47fad6609af3660522485aa6efe83d5f7cce8921e8f5876b05",
+   "sourceBytes": 1195544,
+   "sourceSize": [
+    1056,
+    992
+   ],
+   "crop": {
+    "left": 32,
+    "top": 0,
+    "width": 992,
+    "height": 992
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/brian-pena-112.webp",
+     "bytes": 1208,
+     "sha256": "b64003bb581d734e39938eba0dd9474f615ed62e2c6385dec964f28de3652372"
+    },
+    "160": {
+     "file": "/portraits/brian-pena-160.webp",
+     "bytes": 1942,
+     "sha256": "31582b7692da184d5e83a69f527d320bc40394811d3701e3fc193e40459fa751"
+    }
+   }
+  },
+  "bruce-a-blakeman-todd-hood": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Blakeman_Profile_Picture.jpg/500px-Blakeman_Profile_Picture.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Blakeman_Profile_Picture.jpg",
+   "sourceSha256": "b59c2f627258efbe71f99f5f1a941a016113f693d24b4650fc26a19b7c6227eb",
+   "sourceBytes": 52520,
+   "sourceSize": [
+    500,
+    578
+   ],
+   "crop": {
+    "left": 0,
+    "top": 16,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/bruce-a-blakeman-todd-hood-112.webp",
+     "bytes": 1540,
+     "sha256": "82eb82262d37dc33143ff04d1f8716d383880c4e38966fae1ae8a28b9a964f46"
+    },
+    "160": {
+     "file": "/portraits/bruce-a-blakeman-todd-hood-160.webp",
+     "bytes": 2454,
+     "sha256": "fc40e87ca34fa9f784d2cb91dfa20f66b5a5011ebe63f7ae3b6b14ec02542ca7"
+    }
+   }
+  },
+  "bunny-mcfadden": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a851174471db85a387960bd/14782535-0691-4552-9c5a-476ce79029f2/headshot2025a.JPG?format=750w",
+   "localFile": null,
+   "page": "https://www.bunny4thepeople.com/",
+   "sourceSha256": "1ea5b614ab88e4c920000748011f306df570b4ce80ee09369e2f8a92b9e2ad27",
+   "sourceBytes": 24612,
+   "sourceSize": [
+    750,
+    1125
+   ],
+   "crop": {
+    "left": 0,
+    "top": 75,
+    "width": 750,
+    "height": 750
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/bunny-mcfadden-112.webp",
+     "bytes": 1042,
+     "sha256": "60664b18f0f91aa6f9d492f092ffa1b43147b6438456035486ae1e2af021edc7"
+    },
+    "160": {
+     "file": "/portraits/bunny-mcfadden-160.webp",
+     "bytes": 1536,
+     "sha256": "9bf2f175e95b6149f2ced705e86cc7777040eb0cb9d3795f4758f7cacbf0914b"
+    }
+   }
+  },
+  "caitlin-rourk": {
+   "sourceUrl": "https://run.imgix.net/d2032033-f888-404d-91e5-f846bf22a031/5fa90f7c-807c-4275-a4f9-5b51efce70d4/5fa90f7c-807c-4275-a4f9-5b51efce70d4.jpg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C1083%2C5246%2C6095&auto=compress%2Cformat&fit=fillmax&w=2048&q=75&s=9f6127d34d5686e4ecf901f92095eaeb",
+   "localFile": "/workspace/townhall/civic/photos_local/caitlin-rourk.jpg",
+   "page": "https://www.caitlinrourk.com/",
+   "sourceSha256": "97974a389d9b1dab6ea6f8a5f67221c5bbe56e52d9f54b9d5d4df0e313478790",
+   "sourceBytes": 754457,
+   "sourceSize": [
+    2048,
+    2379
+   ],
+   "crop": {
+    "left": 0,
+    "top": 66,
+    "width": 2048,
+    "height": 2048
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/caitlin-rourk-112.webp",
+     "bytes": 3622,
+     "sha256": "d67801bf26c7e76b8ff9651108bf2caccf71f3e5d33f8f6c898b30299713f6ca"
+    },
+    "160": {
+     "file": "/portraits/caitlin-rourk-160.webp",
+     "bytes": 6570,
+     "sha256": "20c51d0eda653bf9cd67c07e8fe1cf143bfe3a68b11d24c6f4f9578a0f5be0d9"
+    }
+   }
+  },
+  "carl-wilson": {
+   "sourceUrl": "https://run.imgix.net/0d482bb4-0d6a-4b71-9791-3a8efb8c3512/f26ca693-106d-43c7-88db-2509f68db9b6/f26ca693-106d-43c7-88db-2509f68db9b6.png?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=25&rect=381%2C0%2C874%2C1024&auto=compress%2Cformat&fit=fillmax&w=1080&q=75&s=1385df3262eb86921c0f264033dadf88",
+   "localFile": null,
+   "page": "https://www.carlwilsonnyc.com/",
+   "sourceSha256": "2bd29a0771fe544e45cffb0f15f9eb1ddf9904b410d382322af65f3f4cd09b7c",
+   "sourceBytes": 148995,
+   "sourceSize": [
+    874,
+    1024
+   ],
+   "crop": {
+    "left": 0,
+    "top": 30,
+    "width": 874,
+    "height": 874
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/carl-wilson-112.webp",
+     "bytes": 2454,
+     "sha256": "07b2ef84eb44fd307b7ca38315127c23fae3bc6fe4d64c803b62e82b16506ef4"
+    },
+    "160": {
+     "file": "/portraits/carl-wilson-160.webp",
+     "bytes": 3932,
+     "sha256": "93424f7b5998c9baa3179583a05fab33ad355275dc0179a35f36503779b0742f"
+    }
+   }
+  },
+  "caroline-shinkle": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Caroline_Shinkle_Selfie_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Caroline_Shinkle_Selfie_(cropped).jpg",
+   "sourceSha256": "008b81d36895247983b9d3faa27a7b9882069eee6641432e5fe85d8e79956668",
+   "sourceBytes": 39582,
+   "sourceSize": [
+    347,
+    463
+   ],
+   "crop": {
+    "left": 0,
+    "top": 23,
+    "width": 347,
+    "height": 347
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/caroline-shinkle-112.webp",
+     "bytes": 2034,
+     "sha256": "23ef911a1525171f1c3e61f5f448233a2364607c83d93bd839ec1f219d80d31b"
+    },
+    "160": {
+     "file": "/portraits/caroline-shinkle-160.webp",
+     "bytes": 3312,
+     "sha256": "2252dd1559cd409dc5b41722a694723ecd5f083b03f59f769bf9b06f997e4de2"
+    }
+   }
+  },
+  "catherine-a-mauzy": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/mauzy.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/civil/district/419",
+   "sourceSha256": "32e9b1370e31158c374e783c9ac9a345c079d19ea05ebf659e3fb6498ac1e303",
+   "sourceBytes": 26676,
+   "sourceSize": [
+    270,
+    395
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/catherine-a-mauzy-112.webp",
+     "bytes": 1780,
+     "sha256": "d1d95eee27383364022bc7e81be5b48cea090416480e68dab850b994949dc6e7"
+    },
+    "160": {
+     "file": "/portraits/catherine-a-mauzy-160.webp",
+     "bytes": 3042,
+     "sha256": "54234fb6fb01251a4f2bc671161936b83623dc81e066cc1f9fe2987ab7d75f64"
+    }
+   }
+  },
+  "chantal-melissa-eldridge": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/331.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/331",
+   "sourceSha256": "1ee5341ec5a4313d381d31c4bbf0a2585458a5aafac43286f78c1700e854ed63",
+   "sourceBytes": 26420,
+   "sourceSize": [
+    270,
+    395
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/chantal-melissa-eldridge-112.webp",
+     "bytes": 1812,
+     "sha256": "5502612dd855f1ebe04f697b2441d7855b51fc2930f924787b74679038fcf1b7"
+    },
+    "160": {
+     "file": "/portraits/chantal-melissa-eldridge-160.webp",
+     "bytes": 3024,
+     "sha256": "0d407c9fdbfafb0e4c12bea3deb945cfd0e2ce96bee368b9202d1419ce327066"
+    }
+   }
+  },
+  "chari-kelly": {
+   "sourceUrl": "https://hkt.texasjudges.com/img/portrait-2-864.jpg?v=9eddc0a62e",
+   "localFile": "data/photo-local/chari-kelly.jpg",
+   "page": "https://hkt.texasjudges.com/",
+   "sourceSha256": "9eddc0a62ef7809ca20eb8417016ba863ed53be6e5d338d3f2e49970bc19660e",
+   "sourceBytes": 65361,
+   "sourceSize": [
+    864,
+    1062
+   ],
+   "crop": {
+    "left": 0,
+    "top": 40,
+    "width": 864,
+    "height": 864
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/chari-kelly-112.webp",
+     "bytes": 1366,
+     "sha256": "2b780a5267dd9c1e19b5f2ecab5bd10b297870c8cfff26f7a4f6bb53cbcea216"
+    },
+    "160": {
+     "file": "/portraits/chari-kelly-160.webp",
+     "bytes": 2210,
+     "sha256": "ef125e4e7c42177e49ed2532fe964a5e41985cc46fdacfb1675e78896a3651e5"
+    }
+   }
+  },
+  "charles-a-smiley": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/portrait/utf-8gw_250310_0020-smiley_8x10_0.jpg",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/charles-smiley",
+   "sourceSha256": "662af6e938c71283899fd0c9271009edc23d7678f7e894ce6d825281c4e85806",
+   "sourceBytes": 730091,
+   "sourceSize": [
+    2400,
+    2630
+   ],
+   "crop": {
+    "left": 0,
+    "top": 46,
+    "width": 2400,
+    "height": 2400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/charles-a-smiley-112.webp",
+     "bytes": 1326,
+     "sha256": "4a0f9ece817e5aae030027d7a7c42b7290deb3cb00eb793dcbf6091fc6b1cd9b"
+    },
+    "160": {
+     "file": "/portraits/charles-a-smiley-160.webp",
+     "bytes": 2108,
+     "sha256": "1263ae9f9c2b5ff1d87277e846522cb6676f2b5daf050c54fc3225a76a6e3918"
+    }
+   }
+  },
+  "charlotte-friedman": {
+   "sourceUrl": "https://charlotte4nysenate.com/wp-content/uploads/2026/03/IMG_1332-3-scaled.jpg",
+   "localFile": null,
+   "page": "https://charlotte4nysenate.com/",
+   "sourceSha256": "98d6aeede2d4e76f4d621455f7ebe1a692cc3fd1b56601dd685fb5bcc1c838bf",
+   "sourceBytes": 594761,
+   "sourceSize": [
+    1956,
+    2560
+   ],
+   "crop": {
+    "left": 0,
+    "top": 121,
+    "width": 1956,
+    "height": 1956
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/charlotte-friedman-112.webp",
+     "bytes": 2176,
+     "sha256": "9410aca29a66be46f185e44bba93d78ee209d0a4570d4214f345063db83e40db"
+    },
+    "160": {
+     "file": "/portraits/charlotte-friedman-160.webp",
+     "bytes": 3598,
+     "sha256": "3a30be368c72b90d0adaebf580e4cda705080a887c49f65b61821b53bdcf0594"
+    }
+   }
+  },
+  "chris-gober": {
+   "sourceUrl": "https://framerusercontent.com/images/Ri2sym5Y4jMyhAfaW4foOqNA.jpg",
+   "localFile": null,
+   "page": "https://chrisgober.com/",
+   "sourceSha256": "9111a12681d2d51f3be1230934cdb8ab1cabc5a0789c2afcc369790a4af1703d",
+   "sourceBytes": 4158139,
+   "sourceSize": [
+    5198,
+    3465
+   ],
+   "crop": {
+    "left": 1971,
+    "top": 704,
+    "width": 1333,
+    "height": 1333
+   },
+   "focus": [
+    0.51,
+    0.33,
+    2.6
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/chris-gober-112.webp",
+     "bytes": 1432,
+     "sha256": "3449a82eaa835148441047f089a808851b6568904b808cc4431d5b5f81420a3e"
+    },
+    "160": {
+     "file": "/portraits/chris-gober-160.webp",
+     "bytes": 2064,
+     "sha256": "5de2c314e734f6a70fc9a27f295eeb1bc06df92e82e83afa93a465a21d60a0d6"
+    }
+   }
+  },
+  "clayton-tucker": {
+   "sourceUrl": "https://assets.nationbuilder.com/cht/pages/2030/meta_images/original/default-image-3.jpg?1777483964",
+   "localFile": "/workspace/townhall/civic/photos_local/clayton-tucker.jpg",
+   "page": "https://www.claytontuckertx.com/about",
+   "sourceSha256": "f09c445960f84dd76efa61e2f61c82626ea3be42f3c2a25f933b60b5a235280b",
+   "sourceBytes": 58986,
+   "sourceSize": [
+    520,
+    650
+   ],
+   "crop": {
+    "left": 0,
+    "top": 26,
+    "width": 520,
+    "height": 520
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/clayton-tucker-112.webp",
+     "bytes": 2162,
+     "sha256": "6ab1ae72f36a63dfd568b940f0aaedcb58a4681ecf33c35a63ab3dd310e42485"
+    },
+    "160": {
+     "file": "/portraits/clayton-tucker-160.webp",
+     "bytes": 3244,
+     "sha256": "64e9ac78dfa7af7f8b681ae00a1e684e4b2f8b3547ec55070200b1d117dfb378"
+    }
+   }
+  },
+  "cliff-brown": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/brown.png",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/147",
+   "sourceSha256": "e3ef55390a1713f0e10dc97ef66efc3f898f15fbeaf29c65fbbf3d50465070b6",
+   "sourceBytes": 29610,
+   "sourceSize": [
+    270,
+    395
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/cliff-brown-112.webp",
+     "bytes": 948,
+     "sha256": "641c40a3ffbaf044d50843decac512e3478c1401a433b22ee3d0f7c4c1ca774b"
+    },
+    "160": {
+     "file": "/portraits/cliff-brown-160.webp",
+     "bytes": 1414,
+     "sha256": "bbb41e5001f75b2cd4029391a98846f9963debd87626293ad7ada92245d751d4"
+    }
+   }
+  },
+  "connie-chan": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Connie_Chan%2C_2025.jpg/500px-Connie_Chan%2C_2025.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Connie_Chan,_2025.jpg",
+   "sourceSha256": "06a1cbd5ee487779c72f009843b92a7c8340c6ef844c735e4446e63df4a4f6ac",
+   "sourceBytes": 68169,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/connie-chan-112.webp",
+     "bytes": 1522,
+     "sha256": "f01e3e9aa6c8511a22a073a45e50fe61c01fb775f39d7c93e28af5ba7df441e8"
+    },
+    "160": {
+     "file": "/portraits/connie-chan-160.webp",
+     "bytes": 2434,
+     "sha256": "cbe52ac7fe2adad0813a9bdaf7462fcf38d6418512baf12193e086694c1b3481"
+    }
+   }
+  },
+  "cory-liu": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/civil/20250617-Judge_Liu_headshot_cropped.jpeg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/civil/district/250",
+   "sourceSha256": "271f68feb151d7ab39aba152c1665511ccaf41eb8b9ebe77d2550c00965a95d1",
+   "sourceBytes": 228478,
+   "sourceSize": [
+    1274,
+    1586
+   ],
+   "crop": {
+    "left": 0,
+    "top": 62,
+    "width": 1274,
+    "height": 1274
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/cory-liu-112.webp",
+     "bytes": 1644,
+     "sha256": "8e6f80d83d2da78d8d3e83d034c75099c2c9d3c21d2aa00b67abf89e96b453de"
+    },
+    "160": {
+     "file": "/portraits/cory-liu-160.webp",
+     "bytes": 2586,
+     "sha256": "10779148b50b303dc914c44205a1a68a4e747ff17dc75601398b117fc2784412"
+    }
+   }
+  },
+  "cristina-fontanelli": {
+   "sourceUrl": "https://static.wixstatic.com/media/44c1f0_502160e14d534c48b04fd77025dd4c22~mv2.jpeg/v1/fill/w_800,h_1100,al_c,q_85/44c1f0_502160e14d534c48b04fd77025dd4c22~mv2.jpeg",
+   "localFile": null,
+   "page": "https://www.cristinafontanelli4ny.com/",
+   "sourceSha256": "9b9f4b08b088aa9323f805e46eb20f71878dcc2d1a6abc78b77a16d958b084bc",
+   "sourceBytes": 106217,
+   "sourceSize": [
+    800,
+    1100
+   ],
+   "crop": {
+    "left": 0,
+    "top": 60,
+    "width": 800,
+    "height": 800
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/cristina-fontanelli-112.webp",
+     "bytes": 1600,
+     "sha256": "e8025eb66593fe69ad9e7d95ab35dc89c8efc4be15c96dd86d0e8d5306ab5c4f"
+    },
+    "160": {
+     "file": "/portraits/cristina-fontanelli-160.webp",
+     "bytes": 2472,
+     "sha256": "4f93554e36ab9a5764bc33a01db0dd48651c12568f88544d03f718d257f1d3e3"
+    }
+   }
+  },
+  "cynthia-soliz": {
+   "sourceUrl": "https://static.wixstatic.com/media/0c6aef_ad836d147145410483bfe1045df1527b~mv2.jpeg",
+   "localFile": null,
+   "page": "https://www.cynthiasolizforaisd.com/",
+   "sourceSha256": "7b8f7e1456e80b82c3d00d06024af324cf0253f9bf265dc4cfbb673a94d02594",
+   "sourceBytes": 17630448,
+   "sourceSize": [
+    5152,
+    7728
+   ],
+   "crop": {
+    "left": 0,
+    "top": 515,
+    "width": 5152,
+    "height": 5152
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/cynthia-soliz-112.webp",
+     "bytes": 2510,
+     "sha256": "285f13eddc9cd76f1701cce7d8360d45cc1c179e86a1fd820d9dd6a09d9746d5"
+    },
+    "160": {
+     "file": "/portraits/cynthia-soliz-160.webp",
+     "bytes": 4166,
+     "sha256": "cc088ac12e972041659ee3e688bdcb1e7507b17a7239082f5c176f7273a9eb0f"
+    }
+   }
+  },
+  "dan-patrick": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/1453074339260141575/KrhRQy-r_400x400.jpg",
+   "localFile": null,
+   "page": "https://x.com/DanPatrick",
+   "sourceSha256": "885693a29469bef6cea45fed31f563df8ece65ce7e783dd7c1bb9895748d7138",
+   "sourceBytes": 30072,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 400,
+    "height": 400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dan-patrick-112.webp",
+     "bytes": 1588,
+     "sha256": "df0775c8f0cca4193e6e799185cb6e167a03c65a234d8f5c0e0564c16a29ce1a"
+    },
+    "160": {
+     "file": "/portraits/dan-patrick-160.webp",
+     "bytes": 2566,
+     "sha256": "ec2ee46ab07c221cbee0f700388ee81d0472eb55e947d38cc3c91bfa5236362b"
+    }
+   }
+  },
+  "dana-walker": {
+   "sourceUrl": "https://offices.austincc.edu/board-of-trustees/wp-content/uploads/sites/30/2023/11/dana_walker_2020.jpg",
+   "localFile": null,
+   "page": "https://offices.austincc.edu/board-of-trustees/board-members/dana-walker/",
+   "sourceSha256": "251633f322dfc441e2ca3fe179ee67644959dca2a1f71e731fbecee0b7819cff",
+   "sourceBytes": 25228,
+   "sourceSize": [
+    325,
+    487
+   ],
+   "crop": {
+    "left": 0,
+    "top": 32,
+    "width": 325,
+    "height": 325
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dana-walker-112.webp",
+     "bytes": 1276,
+     "sha256": "2fbd0dd2a411aeeb58fb47053e5505095c50d221380e1c7b73cdfb95dbfbe52e"
+    },
+    "160": {
+     "file": "/portraits/dana-walker-160.webp",
+     "bytes": 2048,
+     "sha256": "44560cf43cda74eab430fbf3247a096974251e6792440d1df7702127438ec577"
+    }
+   }
+  },
+  "daniella-deseta-lyttle": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/daniella_deseta_lyttle.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/civil/district/261",
+   "sourceSha256": "c839663b4b218ae83a8277fff9c82501500ca0d415d6720b80a1c001d5641e74",
+   "sourceBytes": 10627590,
+   "sourceSize": [
+    5304,
+    6132
+   ],
+   "crop": {
+    "left": 0,
+    "top": 166,
+    "width": 5304,
+    "height": 5304
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/daniella-deseta-lyttle-112.webp",
+     "bytes": 2584,
+     "sha256": "fafdc24a883594ea0a722f5f8bbcf9edfec3fc0eb08a710f8f3a60ea2ba6270e"
+    },
+    "160": {
+     "file": "/portraits/daniella-deseta-lyttle-160.webp",
+     "bytes": 4230,
+     "sha256": "57a641da81d46f35a8846d1eff5c2b83420d25232328aec3bc7e540a24df9a17"
+    }
+   }
+  },
+  "danny-y-chou": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/dannychou.jpg",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/danny-y-chou",
+   "sourceSha256": "2149360e4520ed8c7ecf9b6870a4710504e80fac67d58195f32c8bbe34dc60d1",
+   "sourceBytes": 212123,
+   "sourceSize": [
+    1248,
+    1550
+   ],
+   "crop": {
+    "left": 0,
+    "top": 60,
+    "width": 1248,
+    "height": 1248
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/danny-y-chou-112.webp",
+     "bytes": 1254,
+     "sha256": "f352c7fe94eebaa70f278c12969de7a67ff8bb98bcfd6cba1593dc04fd56622d"
+    },
+    "160": {
+     "file": "/portraits/danny-y-chou-160.webp",
+     "bytes": 2108,
+     "sha256": "3ec899fddbe96ad5b4de8a1e782a2cb95fbbe156c85a732cd292e3229e4c09a1"
+    }
+   }
+  },
+  "darlene-byrne": {
+   "sourceUrl": "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-1/484991867_1140442701426562_7557409292458888416_n.jpg?stp=dst-jpg_tt6&cstp=mx2044x2044&ctp=s720x720&_nc_cat=101&ccb=1-7&_nc_sid=3ab345&_nc_ohc=-KTrnxytTLIQ7kNvwERyble&_nc_oc=Adqob1WV4Stq8Zg6mEkdhjzrQn8yYz88dfFvrP7F6w09LKb-MVO5_MMEMy8FK4FmhW3YOm0hv5ZzCyQYl9AY8rzo&_nc_zt=24&_nc_ht=scontent-hou1-1.xx&_nc_gid=ZIruTeDVoS2MDkofgtgNmQ&_nc_ss=7b20f&oh=00_AQSoSTAHpqWXZw4Loh3P1jAjg9U3dEknR2tKLWsP0jUc1A&oe=6AEA2A8B",
+   "localFile": "/workspace/townhall/civic/photos_local/darlene-byrne.jpg",
+   "page": "https://www.facebook.com/justicedarlenebyrne",
+   "sourceSha256": "75fd5771d2a022401180f01cdd743187d5d9bbc3ca7fb9ae1a9707a396b8312a",
+   "sourceBytes": 41691,
+   "sourceSize": [
+    720,
+    720
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 720,
+    "height": 720
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/darlene-byrne-112.webp",
+     "bytes": 1290,
+     "sha256": "fed926635e4ab70f32d8ce400c06c71d30fa0c89b5d62a4531318e4ddeecdc7c"
+    },
+    "160": {
+     "file": "/portraits/darlene-byrne-160.webp",
+     "bytes": 2174,
+     "sha256": "912f3168f19fb1af252fb6d85fb1536364742be41fb4ac76239b3835a889bcf0"
+    }
+   }
+  },
+  "darshini-patel": {
+   "sourceUrl": "https://votedarshini.com/images/my-story/DarshiniPatel-56.jpg",
+   "localFile": null,
+   "page": "https://votedarshini.com/about/",
+   "sourceSha256": "3e464cfae1d304b88cdcc49d6dab18e455887c804139b82e576259eaa5cccb5e",
+   "sourceBytes": 813454,
+   "sourceSize": [
+    3600,
+    2401
+   ],
+   "crop": {
+    "left": 600,
+    "top": 0,
+    "width": 2401,
+    "height": 2401
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/darshini-patel-112.webp",
+     "bytes": 2830,
+     "sha256": "e6e8b0119afe9ab9e5c4542ff14dfbfe113b0541358d45a272e754b1a527d80c"
+    },
+    "160": {
+     "file": "/portraits/darshini-patel-160.webp",
+     "bytes": 4442,
+     "sha256": "574a5d58a7678ea151e577e5e476cd2ecc941007518121a2082caa3a7b18783f"
+    }
+   }
+  },
+  "dave-thadani": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2073953358453354496/pIk_SnRb_400x400.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/dave-thadani.jpg",
+   "page": "https://x.com/DaveforAustin",
+   "sourceSha256": "09e24c5a8553d82ccc488d43d2be99933132b2c44fe2c008c6eba11dafe83e65",
+   "sourceBytes": 36316,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 400,
+    "height": 400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dave-thadani-112.webp",
+     "bytes": 2566,
+     "sha256": "edbdf00a0b525743580347b70a93c9871a0f06cf4383c42125f3a5e54fde02e6"
+    },
+    "160": {
+     "file": "/portraits/dave-thadani-160.webp",
+     "bytes": 4150,
+     "sha256": "7fa073093410800acaa3220b81a7f03c81b820b2190a55c1822e3e353c44c1d0"
+    }
+   }
+  },
+  "dawn-buckingham": {
+   "sourceUrl": "https://dawnbuckingham.com/wp-content/uploads/2025/12/hero_image-1440x792.webp",
+   "localFile": null,
+   "page": "https://dawnbuckingham.com/",
+   "sourceSha256": "745a088c271df788404312bbbfbb02c477380d19d75834c2e43247507c288ef3",
+   "sourceBytes": 167508,
+   "sourceSize": [
+    1440,
+    792
+   ],
+   "crop": {
+    "left": 569,
+    "top": 102,
+    "width": 330,
+    "height": 330
+   },
+   "focus": [
+    0.513,
+    0.22,
+    2.4
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dawn-buckingham-112.webp",
+     "bytes": 1948,
+     "sha256": "c755f6e40e52628da8352cd686f963328c9e39600b73ef51462255840edaa7d3"
+    },
+    "160": {
+     "file": "/portraits/dawn-buckingham-160.webp",
+     "bytes": 3082,
+     "sha256": "0b71378c44e4dc6d0220fe16a2e9e81fba68f6649a08b7d21cb71c6ac15c03dc"
+    }
+   }
+  },
+  "denise-hernandez": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/JudgeD1.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc6",
+   "sourceSha256": "9f7b06ca4ed3185269e9ce9e83f5c8ef6cffe4866d4350c73aec170735f4e16a",
+   "sourceBytes": 3737429,
+   "sourceSize": [
+    2160,
+    3238
+   ],
+   "crop": {
+    "left": 0,
+    "top": 216,
+    "width": 2160,
+    "height": 2160
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/denise-hernandez-112.webp",
+     "bytes": 1820,
+     "sha256": "f12fac3d03a9bcb084c10e7a2b627f5de724bc349017f672963a3f0f654a9837"
+    },
+    "160": {
+     "file": "/portraits/denise-hernandez-160.webp",
+     "bytes": 2636,
+     "sha256": "6a174691bbf8fe64af52e86a4141de72033f4aa80f6cd4f7332e3cfbf3a3370b"
+    }
+   }
+  },
+  "dimple-malhotra": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/malhotra.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc4",
+   "sourceSha256": "a8f91f0f622febdf30604fc18e922687020abe7bbd037ef513bf2e335238eaea",
+   "sourceBytes": 33484,
+   "sourceSize": [
+    270,
+    395
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dimple-malhotra-112.webp",
+     "bytes": 2176,
+     "sha256": "688c4b0663265c753eebc920cb20fceb4e62b0ee08a340137a8f6896c5996401"
+    },
+    "160": {
+     "file": "/portraits/dimple-malhotra-160.webp",
+     "bytes": 3656,
+     "sha256": "c052c05e2afeaaf441d5703808f50e9b3482f56110527386aa4a9ad1467fb5e6"
+    }
+   }
+  },
+  "dionjay-dj-brookter": {
+   "sourceUrl": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/840901129_3041620276192554_7208380494305078560_n.jpg?stp=dst-jpg_tt6&cstp=mx1063x1063&ctp=s720x720&_nc_cat=105&ccb=1-7&_nc_sid=3ab345&_nc_ohc=B3Yarv6IUAcQ7kNvwG5U4bf&_nc_oc=AdoybI7c8QavuO8k7BZanHSSK9-kBKv0JMnYmyWFE6PBNIu8Zf1Gu8iHRtQYT3RmMGP1hMfeMXM-bZrSPt1Pr6Lh&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=1niG-Jam1kJ33nnhcfs1lA&_nc_ss=7b20f&oh=00_AQRwAyIN3hqRKIEbG-7Ib9SJZ3XIT4NafSSeZ_ZW0pVKmw&oe=6AEA469E",
+   "localFile": "/workspace/townhall/civic/photos_local/dionjay-dj-brookter.jpg",
+   "page": "https://www.facebook.com/dionjay.brookter/",
+   "sourceSha256": "528ec6094c200311433ba29df95fe2d702b3e01161e657273fe778c007d2e275",
+   "sourceBytes": 40166,
+   "sourceSize": [
+    720,
+    720
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 720,
+    "height": 720
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dionjay-dj-brookter-112.webp",
+     "bytes": 1994,
+     "sha256": "f25ca4bf314d492921feb7f6cdd7255a8e252848b3018ab85995e26cd53d2ccd"
+    },
+    "160": {
+     "file": "/portraits/dionjay-dj-brookter-160.webp",
+     "bytes": 3102,
+     "sha256": "4f545a3fe92e32ec72c7814686ed5a80cbbb470d6d263917cee4d99ffcf06730"
+    }
+   }
+  },
+  "dolores-ortega-carter": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/county_treasurer/ortega-carter.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/treasurer",
+   "sourceSha256": "94741291b5c1be01572633f9f194d22720cd4079b98124930640cb5fb515cc30",
+   "sourceBytes": 28044,
+   "sourceSize": [
+    160,
+    186
+   ],
+   "crop": {
+    "left": 0,
+    "top": 5,
+    "width": 160,
+    "height": 160
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dolores-ortega-carter-112.webp",
+     "bytes": 1844,
+     "sha256": "7021a55c6a0074433c33d7dfff7a09532f98ae41d8228cb2a732023ba2da6972"
+    },
+    "160": {
+     "file": "/portraits/dolores-ortega-carter-160.webp",
+     "bytes": 3044,
+     "sha256": "4a21aba8e3973e17e1c62fc11311ad37bba3f90d27810928047c6eb07fcd17ac"
+    }
+   }
+  },
+  "don-huffines": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Don_Huffines_%2851370822589%29_%28cropped%29.jpg/500px-Don_Huffines_%2851370822589%29_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Don_Huffines_(51370822589)_(cropped).jpg",
+   "sourceSha256": "b6d57418264d16f9c3310812ee851615a267a0e227e9da4f9184cae5cdc454bf",
+   "sourceBytes": 65914,
+   "sourceSize": [
+    500,
+    670
+   ],
+   "crop": {
+    "left": 0,
+    "top": 34,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/don-huffines-112.webp",
+     "bytes": 1936,
+     "sha256": "921159ed24b634f87bbbb1209323b98039187e0bdcca81c0ed15b1180fdc0b98"
+    },
+    "160": {
+     "file": "/portraits/don-huffines-160.webp",
+     "bytes": 3190,
+     "sha256": "8189d103f94f5a321e0a29ec11c2a2c2da6d0cbf2524134892ea0573937bcd57"
+    }
+   }
+  },
+  "donald-p-don-wagner": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Donald_P._Wagner%2C_2022.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Donald_P._Wagner,_2022.jpg",
+   "sourceSha256": "33502370731aad9085dbe2e185a57218e2ea912e87084813d63078bc9e8d8691",
+   "sourceBytes": 108589,
+   "sourceSize": [
+    460,
+    710
+   ],
+   "crop": {
+    "left": 0,
+    "top": 50,
+    "width": 460,
+    "height": 460
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/donald-p-don-wagner-112.webp",
+     "bytes": 1358,
+     "sha256": "00ac40f6e8ace69d90b131e1ea49316bdd82f4a73b771dd04ad409f53896b54f"
+    },
+    "160": {
+     "file": "/portraits/donald-p-don-wagner-160.webp",
+     "bytes": 2300,
+     "sha256": "82e0713a375ac78e20c712c22c9616c162b178c339adaf461809db0b642f84de"
+    }
+   }
+  },
+  "dyana-limon-mercado": {
+   "sourceUrl": "https://countyclerk.traviscountytx.gov/wp-content/uploads/2023/01/dlmercado.jpg",
+   "localFile": null,
+   "page": "https://countyclerk.traviscountytx.gov/",
+   "sourceSha256": "9a88064b6211d76b4f92dad22d05754fe7d6d815797baadd320fe9800407f215",
+   "sourceBytes": 10037,
+   "sourceSize": [
+    200,
+    300
+   ],
+   "crop": {
+    "left": 0,
+    "top": 20,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/dyana-limon-mercado-112.webp",
+     "bytes": 1706,
+     "sha256": "c04a506d4f745fc38d2cca4226115e57a26ca7f535b7ca375a843dd83b5c5c2d"
+    },
+    "160": {
+     "file": "/portraits/dyana-limon-mercado-160.webp",
+     "bytes": 2648,
+     "sha256": "b2bec7a046362ab1531a740d4b3836076a969bf94dc4487aca41051d6d9a9545"
+    }
+   }
+  },
+  "eleni-kounalakis": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/LG_Kounalakis_Signing_%28cropped%29.jpg/500px-LG_Kounalakis_Signing_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:LG_Kounalakis_Signing_(cropped).jpg",
+   "sourceSha256": "930c7380a25b6309701283f19a656530c5b747e955185c1fdcd5c88a81e55c32",
+   "sourceBytes": 66616,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/eleni-kounalakis-112.webp",
+     "bytes": 2176,
+     "sha256": "8851afaf08164b0847e484982907d1afb1f31e0195482505199a3bb832fff645"
+    },
+    "160": {
+     "file": "/portraits/eleni-kounalakis-160.webp",
+     "bytes": 3520,
+     "sha256": "a6eae607343bd8aacd65ef3cd81ba90e3cfcf400a9e41e092a18f6f5d2cea40f"
+    }
+   }
+  },
+  "elijah-ball": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/698b74879e5d983b46f09f15/ce005045-fd37-4b84-a217-592624d3068e/0D4A7993.jpg?format=750w",
+   "localFile": null,
+   "page": "https://www.elijahforcitycollege.com/",
+   "sourceSha256": "da4aedf74783364d5fa6a5ceef139001b4cdcff00fa6e486709834d6d2e42900",
+   "sourceBytes": 27762,
+   "sourceSize": [
+    750,
+    503
+   ],
+   "crop": {
+    "left": 244,
+    "top": 53,
+    "width": 252,
+    "height": 252
+   },
+   "focus": [
+    0.49,
+    0.21,
+    2
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/elijah-ball-112.webp",
+     "bytes": 1330,
+     "sha256": "6427c8d7025aca1b922c4a58f47830bd3a402e89e70bf33f1ce39d1e25f1ce1c"
+    },
+    "160": {
+     "file": "/portraits/elijah-ball-160.webp",
+     "bytes": 2040,
+     "sha256": "6d87b603500d337569f7e47cd51ca7d6ac5f45769afed729ef8ccde1cdd4669f"
+    }
+   }
+  },
+  "elisabeth-earle": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/5x7Elisabeth_IMG_013.jpg/500px-5x7Elisabeth_IMG_013.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:5x7Elisabeth_IMG_013.jpg",
+   "sourceSha256": "6edd5a8d90c378e39a8f83be12b3e76f12a273870222c4b85b57c1993bfe794b",
+   "sourceBytes": 70367,
+   "sourceSize": [
+    500,
+    700
+   ],
+   "crop": {
+    "left": 0,
+    "top": 40,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/elisabeth-earle-112.webp",
+     "bytes": 1988,
+     "sha256": "1448007c4626962cd005ffb0a427ac41e40572778cf6142bcade0c58f8a96a81"
+    },
+    "160": {
+     "file": "/portraits/elisabeth-earle-160.webp",
+     "bytes": 3306,
+     "sha256": "375ad9100a25bc08511000fa68c2b7b6e2fdc2e8810800e6cf02ebb9cd5ef57e"
+    }
+   }
+  },
+  "emanuel-manny-yekutiel": {
+   "sourceUrl": "https://run.imgix.net/223e28d5-8ff7-4041-b8f4-9c904757e61d/eb5a0f67-d3aa-42d2-b660-49ada6d9a7fa/eb5a0f67-d3aa-42d2-b660-49ada6d9a7fa.jpeg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=1292%2C396%2C2552%2C1668&auto=compress%2Cformat&fit=fillmax&w=750&q=75&s=dfc4e296c478f2cf6a11d06b024a7a2f",
+   "localFile": "/workspace/townhall/civic/photos_local/emanuel-manny-yekutiel.jpg",
+   "page": "https://www.mannyforsf.com/",
+   "sourceSha256": "a99065838c379482d5fbc41072b7b890582cd8a490acd01c9b053d282a64f3a2",
+   "sourceBytes": 67183,
+   "sourceSize": [
+    750,
+    490
+   ],
+   "crop": {
+    "left": 130,
+    "top": 0,
+    "width": 490,
+    "height": 490
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/emanuel-manny-yekutiel-112.webp",
+     "bytes": 2968,
+     "sha256": "34f4086d267de88188d9a3c0f5f020ebdfd59eb884cdc8377d3a7359b67a1ed4"
+    },
+    "160": {
+     "file": "/portraits/emanuel-manny-yekutiel-160.webp",
+     "bytes": 4364,
+     "sha256": "6e855cdd26b8c86f177be73a935b339f094cf4a1707c0971e6a5b0c88750e8fd"
+    }
+   }
+  },
+  "erik-d-bottcher": {
+   "sourceUrl": "https://run.imgix.net/b5819a9c-e1d0-4b20-bdf9-c7cb2ad13f53/f9f3bcec-713e-43bc-b814-43e42e3f92b7/f9f3bcec-713e-43bc-b814-43e42e3f92b7.jpeg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C0%2C5054%2C4008&auto=compress%2Cformat&fit=fillmax&w=2048&q=75&s=154e19d2e8df78a1a1b2504eafa73ae6",
+   "localFile": null,
+   "page": "https://www.erikbottcher.com/",
+   "sourceSha256": "151afc7cfc536cfdfc7073fc81abb21b8ca701b8fd89a8cb784b5276fc5d4ba4",
+   "sourceBytes": 252148,
+   "sourceSize": [
+    2048,
+    1624
+   ],
+   "crop": {
+    "left": 212,
+    "top": 0,
+    "width": 1624,
+    "height": 1624
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/erik-d-bottcher-112.webp",
+     "bytes": 1692,
+     "sha256": "f8df1f5a128207f927cc833ab138969a4c8958bb35640bf3624456d7bd5e6af2"
+    },
+    "160": {
+     "file": "/portraits/erik-d-bottcher-160.webp",
+     "bytes": 2612,
+     "sha256": "6ead264cb1c74387405307f496a33cbdbbfe12479b09a44f4a25f33a766395b4"
+    }
+   }
+  },
+  "erwin-tam": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a9f86cac9472e077d0688c2/daf3b147-e627-41e3-ba30-18f928742832/0D4A8049.jpg?format=750w",
+   "localFile": null,
+   "page": "https://www.erwintam.com/",
+   "sourceSha256": "32a81159806a40cf9b3107d94381b8c76ef0b35ab7715eb5c6f2f45ba4d75c54",
+   "sourceBytes": 24524,
+   "sourceSize": [
+    750,
+    500
+   ],
+   "crop": {
+    "left": 295,
+    "top": 68,
+    "width": 250,
+    "height": 250
+   },
+   "focus": [
+    0.59,
+    0.27,
+    2
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/erwin-tam-112.webp",
+     "bytes": 1300,
+     "sha256": "ff1293a3227d63f73b56cf081efc2add07e1688ff38dad52a731373d38a5787e"
+    },
+    "160": {
+     "file": "/portraits/erwin-tam-160.webp",
+     "bytes": 1970,
+     "sha256": "9bbd28dc89105249d4c7048e408ca8cf4374e9904d92b5f6bf1059fce46c39cd"
+    }
+   }
+  },
+  "fiona-ma": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Fiona_Ma_2026_Treasurer_portrait_%28cropped%29.png",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Fiona_Ma_2026_Treasurer_portrait_(cropped).png",
+   "sourceSha256": "e43771ed9a3c042e3357ea947bd44596c33025d4a14d49fd1f4e9b2e720c43b2",
+   "sourceBytes": 210561,
+   "sourceSize": [
+    279,
+    333
+   ],
+   "crop": {
+    "left": 0,
+    "top": 11,
+    "width": 279,
+    "height": 279
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/fiona-ma-112.webp",
+     "bytes": 2366,
+     "sha256": "ebe2f97dd493d6f8533c6195780b6425360e8eee63334edcfc02711bf4f75318"
+    },
+    "160": {
+     "file": "/portraits/fiona-ma-160.webp",
+     "bytes": 4014,
+     "sha256": "767bb4c79a1ee3c6e163f6ebbe3e82329c773b1fffcfc412928a910d27dfd82f"
+    }
+   }
+  },
+  "gabriel-padilla": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/constables/pct4/chief_gabe-padilla.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/constables/4",
+   "sourceSha256": "626160b67eb049724a2d28cf57e4ef3ce3ca7bd7c60ed054d17913aa5031f459",
+   "sourceBytes": 122656,
+   "sourceSize": [
+    629,
+    943
+   ],
+   "crop": {
+    "left": 0,
+    "top": 63,
+    "width": 629,
+    "height": 629
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gabriel-padilla-112.webp",
+     "bytes": 1580,
+     "sha256": "bc003eb9225e767bd79d98bc2c41c0b05a9c5b7d26a6446f3f89f7ee2e7ff396"
+    },
+    "160": {
+     "file": "/portraits/gabriel-padilla-160.webp",
+     "bytes": 2552,
+     "sha256": "078c12ac7fbd53d2065ad4c8974e6ec5a291425a81ef9391a785a807d2f83133"
+    }
+   }
+  },
+  "gary-mccoy": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68a4cdaf1a114e04a466803a/60c68d10-69e2-429e-ad07-682668ad3313/Untitled+design+%283%29.png?format=750w",
+   "localFile": null,
+   "page": "https://www.garymccoysf.com/",
+   "sourceSha256": "61f3893cbafbbcdbf98dabccfafdede937658fcb7852e776963080a0a8d86266",
+   "sourceBytes": 513264,
+   "sourceSize": [
+    750,
+    1000
+   ],
+   "crop": {
+    "left": 0,
+    "top": 50,
+    "width": 750,
+    "height": 750
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gary-mccoy-112.webp",
+     "bytes": 1302,
+     "sha256": "5ad11481c8deb0bd46e56dd89719e9f8bb6f43c282a82b830da55772f4dd8b37"
+    },
+    "160": {
+     "file": "/portraits/gary-mccoy-160.webp",
+     "bytes": 1994,
+     "sha256": "bb672ee9f9ec2deab194a777159263c67553d793dc24d2c3c80e7bc81bb37c25"
+    }
+   }
+  },
+  "george-morales-iii": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/Gmoralesheadshot.jpeg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/commissioners-court/precinct-four",
+   "sourceSha256": "ad806b721da3792154c2aec7aa4511f908591cad7944d4e3832c1f7497c3feff",
+   "sourceBytes": 108520,
+   "sourceSize": [
+    880,
+    1099
+   ],
+   "crop": {
+    "left": 0,
+    "top": 44,
+    "width": 880,
+    "height": 880
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/george-morales-iii-112.webp",
+     "bytes": 1556,
+     "sha256": "9102117dfdd7aca68cdad602afb5b7c6c84b140de240b2269154c295739a0827"
+    },
+    "160": {
+     "file": "/portraits/george-morales-iii-160.webp",
+     "bytes": 2420,
+     "sha256": "4afaa1238d08f6a601c3eb2870e745dc5ab2de755e2051127e0df31a21ac5f72"
+    }
+   }
+  },
+  "gigi-edwards-bryant": {
+   "sourceUrl": "https://offices.austincc.edu/board-of-trustees/wp-content/uploads/sites/30/2025/06/gigiheadshop007.jpg",
+   "localFile": null,
+   "page": "https://offices.austincc.edu/board-of-trustees/board-members/gigi-edwards-bryant/",
+   "sourceSha256": "8b760743b342a1176e9a5e92afca43f4166cdac30bcb4d38b7089ed3ab9b156b",
+   "sourceBytes": 78239,
+   "sourceSize": [
+    1024,
+    1024
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1024,
+    "height": 1024
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gigi-edwards-bryant-112.webp",
+     "bytes": 1052,
+     "sha256": "71fa978a2026d7c5254cf1847a786c06a8693e0cdfb35db89745ec885e0c509f"
+    },
+    "160": {
+     "file": "/portraits/gigi-edwards-bryant-160.webp",
+     "bytes": 1660,
+     "sha256": "95447709254808c6e8a5990541fa077b61270a5daeb814ae5ea699d0571eb8c3"
+    }
+   }
+  },
+  "gina-hinojosa": {
+   "sourceUrl": "https://ginafortexas.com/wp-content/uploads/2026/05/GH-Launch-AB-Meta-1200x630-3.png",
+   "localFile": "/workspace/townhall/civic/photos_local/gina-hinojosa.jpg",
+   "page": "https://ginafortexas.com/",
+   "sourceSha256": "04974436206f1d95ce5903347fa980c9988a560a57bb9d19765c88adedac2904",
+   "sourceBytes": 64094,
+   "sourceSize": [
+    495,
+    610
+   ],
+   "crop": {
+    "left": 0,
+    "top": 23,
+    "width": 495,
+    "height": 495
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gina-hinojosa-112.webp",
+     "bytes": 1616,
+     "sha256": "c284050b969c888d39d7cb8334d45a1ccdf3b80db827c73dc9bf06bb617911f2"
+    },
+    "160": {
+     "file": "/portraits/gina-hinojosa-160.webp",
+     "bytes": 2460,
+     "sha256": "11dc106c4f9e6a58b0fa14426766df7511dace199ad894974845f4a8a2c5db7b"
+    }
+   }
+  },
+  "gisela-d-triana": {
+   "sourceUrl": "https://www.justicetriana.com/wp-content/uploads/2025/10/Triana-2025.jpg",
+   "localFile": null,
+   "page": "https://www.justicetriana.com/",
+   "sourceSha256": "7c13fcfc41003bc42f272ac1898b52d9f0957ef8f037d6e63eb9966856cca17c",
+   "sourceBytes": 236049,
+   "sourceSize": [
+    636,
+    785
+   ],
+   "crop": {
+    "left": 0,
+    "top": 30,
+    "width": 636,
+    "height": 636
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gisela-d-triana-112.webp",
+     "bytes": 2066,
+     "sha256": "25331ad94d9be6316471329ccb6991f754b61ba33c9acbc90b1b81836696f1a4"
+    },
+    "160": {
+     "file": "/portraits/gisela-d-triana-160.webp",
+     "bytes": 3440,
+     "sha256": "5d0323a1f9baaf7a9fd7da02f0294f6377f1e0b30a6069d45ed72f6919a934eb"
+    }
+   }
+  },
+  "gloria-gonzales-dholakia": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a70ded10dc13c22a7d4cab1/dd33c219-51eb-4b66-ac91-75744186ed45/Dholakia%2C+Gloria_DSC2418-1.jpg",
+   "localFile": null,
+   "page": "https://www.gloriaforacc.com/",
+   "sourceSha256": "9461645662feb72bd1229e616d1f7c70e88e2835a812b6f4530274ac88edb3c1",
+   "sourceBytes": 161106,
+   "sourceSize": [
+    2500,
+    1786
+   ],
+   "crop": {
+    "left": 357,
+    "top": 0,
+    "width": 1786,
+    "height": 1786
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gloria-gonzales-dholakia-112.webp",
+     "bytes": 1184,
+     "sha256": "4700975bbf7697d4be26d21db77b0f047e4768548271cc7f353df5ab19633e68"
+    },
+    "160": {
+     "file": "/portraits/gloria-gonzales-dholakia-160.webp",
+     "bytes": 1836,
+     "sha256": "569dbf0683be89527dce483847a20d3b26143af07c6eb2c81a5c59c37c0a0a49"
+    }
+   }
+  },
+  "gloria-romero": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Gloria_Romero%2C_c._2007.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Gloria_Romero,_c._2007.jpg",
+   "sourceSha256": "2bf684e7c12cd395ec7ca8220d4829f090fe285a50460335272be261a6907a5d",
+   "sourceBytes": 11118,
+   "sourceSize": [
+    179,
+    244
+   ],
+   "crop": {
+    "left": 0,
+    "top": 13,
+    "width": 179,
+    "height": 179
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gloria-romero-112.webp",
+     "bytes": 1602,
+     "sha256": "df9ef419dbe606a12b1c4dd0c4b1ca9f7ea1f786d0e4cfb8bda236fba7d0f70d"
+    },
+    "160": {
+     "file": "/portraits/gloria-romero-160.webp",
+     "bytes": 2596,
+     "sha256": "fda37614ba80ce0ad88ef22c8a127756246db9721c3c2e70020adb076623947f"
+    }
+   }
+  },
+  "gordon-burns": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/1dca-burns-bio-photo-150x180jpg.jpg?h=5ee6e345&itok=gnG0992v",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/gordon-b-burns",
+   "sourceSha256": "cd70346e94debed5d9f78bd893c382e04d4d37d3abac74172da34fdf5c751c23",
+   "sourceBytes": 6017,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/gordon-burns-112.webp",
+     "bytes": 1564,
+     "sha256": "108768b17b4e99e32935bfe588dd094338b657944fea0a1fd699caaf2b5198f1"
+    },
+    "160": {
+     "file": "/portraits/gordon-burns-160.webp",
+     "bytes": 2296,
+     "sha256": "4e111ed30bacc08faad67fabec295b3b2951a3a7537b7bf8fe5382ae84a372f4"
+    }
+   }
+  },
+  "greg-abbott": {
+   "sourceUrl": "https://gov.texas.gov/uploads/images/general/2024-GovernorAbbott-Portrait.jpg",
+   "localFile": null,
+   "page": "https://gov.texas.gov/governor-abbott",
+   "sourceSha256": "918802a0eb37d16b31ad543d4c34dbd9318653f4d560d08c790506fe0a21bf0f",
+   "sourceBytes": 180944,
+   "sourceSize": [
+    1000,
+    1499
+   ],
+   "crop": {
+    "left": 65,
+    "top": 189,
+    "width": 870,
+    "height": 870
+   },
+   "focus": [
+    0.5,
+    0.3,
+    1.15
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/greg-abbott-112.webp",
+     "bytes": 1706,
+     "sha256": "dd8c77c8fbdee9b35df58e9c73973490f8033a7818f1b88e0c646ab0f0a75939"
+    },
+    "160": {
+     "file": "/portraits/greg-abbott-160.webp",
+     "bytes": 2642,
+     "sha256": "bc2ba5acb94249787f2a5820c2aa7f5975d74e42e39d8f8789916381155e4590"
+    }
+   }
+  },
+  "greg-casar": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg/500px-Rep._Greg_Casar_-_118th_Congress_%283x4_cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Rep._Greg_Casar_-_118th_Congress_(3x4_cropped).jpg",
+   "sourceSha256": "fc00dde28708c4ecdf764f361990c2c4b0b2eb7e29da2fa2a3357abf3eedee44",
+   "sourceBytes": 74126,
+   "sourceSize": [
+    500,
+    668
+   ],
+   "crop": {
+    "left": 0,
+    "top": 34,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/greg-casar-112.webp",
+     "bytes": 2408,
+     "sha256": "67a5e70b1de9ae30527343b5afc172e0732bcf3eb3a5db7c18cd6f89418dc4d2"
+    },
+    "160": {
+     "file": "/portraits/greg-casar-160.webp",
+     "bytes": 3882,
+     "sha256": "1f7072ca081b02c3163c7bce6082cd444df163343e59c54ae94652f1ab06721f"
+    }
+   }
+  },
+  "guy-herman": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/probate/Judges_Pics/Herman_HON_Guy_Resized.JPG",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/probate",
+   "sourceSha256": "33891fb33cbe84025a7417e18a9852708370d3ae2c149da59258a242477b2cc0",
+   "sourceBytes": 37889,
+   "sourceSize": [
+    225,
+    281
+   ],
+   "crop": {
+    "left": 0,
+    "top": 11,
+    "width": 225,
+    "height": 225
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/guy-herman-112.webp",
+     "bytes": 1040,
+     "sha256": "ad3f150f4970de51424fba4600f0d8d18f5f9e2ded2e1ce8bac6afebe75d695e"
+    },
+    "160": {
+     "file": "/portraits/guy-herman-160.webp",
+     "bytes": 1632,
+     "sha256": "c42e138eaff5b0575316924439e1eb7a6f9137630ce2e7814bb92c25cd65a8f5"
+    }
+   }
+  },
+  "herb-w-morgan": {
+   "sourceUrl": "https://static.wixstatic.com/media/b29e09_9b7ced4a2c004a53b4f05357b426c53c~mv2.jpg/v1/fill/w_800,h_1200,al_c,q_85/Herb%20W_%20Morgan%20III%20%20Headshot_outside.jpg",
+   "localFile": null,
+   "page": "https://www.herbmorgan.com/",
+   "sourceSha256": "76ecdf7f0edbd46bfe8c8b6526cdc1bccecbffc1065e7d39711677a82784656c",
+   "sourceBytes": 172720,
+   "sourceSize": [
+    800,
+    1200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 80,
+    "width": 800,
+    "height": 800
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/herb-w-morgan-112.webp",
+     "bytes": 1792,
+     "sha256": "fde2e2d83a651a3a48573984204aea1409bb3d03beb8bfce58c09ea18e2ec407"
+    },
+    "160": {
+     "file": "/portraits/herb-w-morgan-160.webp",
+     "bytes": 2860,
+     "sha256": "ec12a0370db2314ae082ecd91071df79f0e80ac7e1ef262ab5a7f774b6be5dd9"
+    }
+   }
+  },
+  "holly-taylor": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/656b914f3b6db119ed7e75b7/fe8d2470-7c1c-4746-abb8-6a20e9ce6c56/holly-taylor-2026-1527x2100.jpg",
+   "localFile": null,
+   "page": "https://www.hollytforjudge.com",
+   "sourceSha256": "625cac38cf6bae9044789513e30fe326e0f6cc2bff1819d0ff92905b534b37ea",
+   "sourceBytes": 738016,
+   "sourceSize": [
+    1527,
+    2100
+   ],
+   "crop": {
+    "left": 0,
+    "top": 115,
+    "width": 1527,
+    "height": 1527
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/holly-taylor-112.webp",
+     "bytes": 1968,
+     "sha256": "4b5dc33a9ed356edf66f1e18371be254800cb7c81466d82fbb0e883c32e5c1fb"
+    },
+    "160": {
+     "file": "/portraits/holly-taylor-160.webp",
+     "bytes": 3346,
+     "sha256": "7d4689ceda945184fdbbb699da280558228f89d63c3e8a48bcbbe53ee9b8336c"
+    }
+   }
+  },
+  "ioana-petrou": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/1dca-petrou-bio-photo-150x180jpg.jpg?h=e8c4feba&itok=l7n3Bth3",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/ioana-petrou",
+   "sourceSha256": "cd89fc9d3646900d83518879663a25be849aea91ce412e7a7ef8a7f737ae16e7",
+   "sourceBytes": 6984,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/ioana-petrou-112.webp",
+     "bytes": 1916,
+     "sha256": "f65c336a31e646530bf8e6433825bd97f74c22636de6aa59ec96daab3f5d0a5a"
+    },
+    "160": {
+     "file": "/portraits/ioana-petrou-160.webp",
+     "bytes": 2876,
+     "sha256": "2262923f8de315ec14dc9d65a9c52567eb78341c7ae22353449142eb88ef2100"
+    }
+   }
+  },
+  "j-r-eppler": {
+   "sourceUrl": "https://static.wixstatic.com/media/a628aa_9f26e20496e94a2e9289b2952e7442c3~mv2.png/v1/crop/x_0,y_124,w_1512,h_1507/fill/w_800,h_800,al_c,q_85/02-JR-Headshot.png",
+   "localFile": null,
+   "page": "https://www.jreppler.com/",
+   "sourceSha256": "b22c0e5663ae5e73809177ad9d1b721cf6e4d1d6bb519e7fb54a74dd1b8519a2",
+   "sourceBytes": 1617749,
+   "sourceSize": [
+    800,
+    800
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 800,
+    "height": 800
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/j-r-eppler-112.webp",
+     "bytes": 1658,
+     "sha256": "09b5964088a11b3815768fb79a7d965c57c856903d1c28799ac0c898c679d595"
+    },
+    "160": {
+     "file": "/portraits/j-r-eppler-160.webp",
+     "bytes": 2698,
+     "sha256": "c77524a12227a44e6f0601e47f478b816d627ae065f000958f3279a9c4832605"
+    }
+   }
+  },
+  "james-p-sullivan": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2074559207412580352/1cZBDz7B_400x400.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/james-p-sullivan.jpg",
+   "page": "https://x.com/JudgeSullyTX",
+   "sourceSha256": "6eb6e94c1ca716d8bec5e096716bf4be87103da633856ae44a2861bd258233e0",
+   "sourceBytes": 26387,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 400,
+    "height": 400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/james-p-sullivan-112.webp",
+     "bytes": 1936,
+     "sha256": "bef359d708ad9023e00c969c120f7c2cd8736a2ae61a5c0382c72cdd7eb51b20"
+    },
+    "160": {
+     "file": "/portraits/james-p-sullivan-160.webp",
+     "bytes": 3106,
+     "sha256": "eafbe99de195855e404883e98540d648ec22d1a4066b3592cb3f1f88cc4309cd"
+    }
+   }
+  },
+  "james-talarico": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg/500px-James_Talarico_Press_Conference_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:James_Talarico_Press_Conference_(cropped).jpg",
+   "sourceSha256": "380afaa2baf749df6a38082bd7bab06284b134a06f4ec942a35f1d16c21f792b",
+   "sourceBytes": 71850,
+   "sourceSize": [
+    500,
+    636
+   ],
+   "crop": {
+    "left": 0,
+    "top": 27,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/james-talarico-112.webp",
+     "bytes": 2082,
+     "sha256": "a36825bb76911f1121ed0a4ba4c144432c56189947b0cb6b9a0ebe26035e997d"
+    },
+    "160": {
+     "file": "/portraits/james-talarico-160.webp",
+     "bytes": 3298,
+     "sha256": "34ceb7095e7d798c0177e45492d4e8bf81a3ee9d5c500264994691177417e3ba"
+    }
+   }
+  },
+  "jane-kim": {
+   "sourceUrl": "https://run.imgix.net/86daf947-8fea-4921-83be-74f03c8a9ad0/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e/d1d3e93b-3b90-464f-9b0b-4aeae3a2a64e.jpg?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=0%2C0%2C3000%2C2001&w=1500&s=ce67458ce7dd216d01060919696bd02a",
+   "localFile": "/workspace/townhall/civic/photos_local/jane-kim.jpg",
+   "page": "https://www.janekim.org/MeetJane",
+   "sourceSha256": "cfd2797a1114f55fb5085a7867bd8060d1b8bf2f0b710d315420fef4d75f2ebc",
+   "sourceBytes": 139656,
+   "sourceSize": [
+    800,
+    1001
+   ],
+   "crop": {
+    "left": 0,
+    "top": 40,
+    "width": 800,
+    "height": 800
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/jane-kim-112.webp",
+     "bytes": 1524,
+     "sha256": "6893975f3c1b6d321f268419c3e3018af6a04bd8e04e7798cb9d44ed271bcfb6"
+    },
+    "160": {
+     "file": "/portraits/jane-kim-160.webp",
+     "bytes": 2330,
+     "sha256": "ca3196e0e18f1c30200e11bf5dab2fe312059b448e2d06f7f52f01646ffee562"
+    }
+   }
+  },
+  "jennifer-hawks": {
+   "sourceUrl": "https://hawksforus.com/assets/jennifer-hawks-portrait-CopXTkhs.jpg",
+   "localFile": null,
+   "page": "https://hawksforus.com/",
+   "sourceSha256": "35a5b2d11cdbf264352c1423cd3530602cb97c1e7a38fdea8d9f2b55ff2ea9fe",
+   "sourceBytes": 272348,
+   "sourceSize": [
+    1272,
+    1908
+   ],
+   "crop": {
+    "left": 0,
+    "top": 127,
+    "width": 1272,
+    "height": 1272
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/jennifer-hawks-112.webp",
+     "bytes": 1514,
+     "sha256": "d216e8cbcf22a7e793c3bd146eecfd7bd1babc00d9f5f8db7839f7f1f6165386"
+    },
+    "160": {
+     "file": "/portraits/jennifer-hawks-160.webp",
+     "bytes": 2648,
+     "sha256": "49655716ab655c2c155f88d8811a5899918a59a66685bd3d0bfed88e07b91d39"
+    }
+   }
+  },
+  "jeremy-lee": {
+   "sourceUrl": "https://jeremyleesf.com/wp-content/uploads/2026/10/DSC09237-1024x683.jpg",
+   "localFile": null,
+   "page": "https://jeremyleesf.com/",
+   "sourceSha256": "a5260371d7e3f065847e163aaf3ac55606a610fba2867b83e089518b68a86b7b",
+   "sourceBytes": 101328,
+   "sourceSize": [
+    1024,
+    683
+   ],
+   "crop": {
+    "left": 171,
+    "top": 0,
+    "width": 683,
+    "height": 683
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/jeremy-lee-112.webp",
+     "bytes": 2722,
+     "sha256": "da0337885cd399fbc402e340b91de7fb91fbf71176c8282dd089ce7c24959125"
+    },
+    "160": {
+     "file": "/portraits/jeremy-lee-160.webp",
+     "bytes": 4602,
+     "sha256": "9371c6f19908ef829308e3c6b80be5ed93dfa2b7bc92dd1685c99c13a941983d"
+    }
+   }
+  },
+  "jerry-zimmerer": {
+   "sourceUrl": "https://jerryzimmerer.com/img/portrait-robe.jpg",
+   "localFile": null,
+   "page": "https://jerryzimmerer.com/",
+   "sourceSha256": "6ea8c6573019da175d6f2141a29604add55247a7cc228e3b6eb4a5de71221ba8",
+   "sourceBytes": 53714,
+   "sourceSize": [
+    660,
+    1040
+   ],
+   "crop": {
+    "left": 0,
+    "top": 76,
+    "width": 660,
+    "height": 660
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/jerry-zimmerer-112.webp",
+     "bytes": 968,
+     "sha256": "63b1ae6dab54ce028b93e18afb83c5ad15c6e1a9f14eb62cbdd2f1b837c5dc27"
+    },
+    "160": {
+     "file": "/portraits/jerry-zimmerer-160.webp",
+     "bytes": 1488,
+     "sha256": "920a3660c7a1a42d0f0383741ec6931d2352b051bba3bc10443eea7715aa5e14"
+    }
+   }
+  },
+  "jessica-martinez": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2042776680083718144/68d-0Sq1_400x400.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/jessica-martinez.jpg",
+   "page": "https://x.com/JessicaforHD51",
+   "sourceSha256": "5dd4645c2a36cdb9cbaa7139449afcdad47a373d006c6e91019407cdf4eccab8",
+   "sourceBytes": 53172,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 150,
+    "top": 135,
+    "width": 100,
+    "height": 100
+   },
+   "focus": [
+    0.5,
+    0.45,
+    4
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/jessica-martinez-112.webp",
+     "bytes": 2038,
+     "sha256": "932ace0aa23a5cd7a73c1b2f6270d15bbfa856410dc105fb28baf78695c03bf7"
+    },
+    "160": {
+     "file": "/portraits/jessica-martinez-160.webp",
+     "bytes": 3012,
+     "sha256": "7df3b9b80957da9a2189f9dcc62c9fc24167fb21543856dfbb098ecd342ff374"
+    }
+   }
+  },
+  "jimmy-blacklock": {
+   "sourceUrl": "https://www.jimmyblacklock.com/wp-content/uploads/sites/240/2024/05/1_hero_fg.png",
+   "localFile": null,
+   "page": "https://www.jimmyblacklock.com/",
+   "sourceSha256": "17ad8c2429078a76850d536c71242afe2319dca1262c75c2de1fbc54c855e74a",
+   "sourceBytes": 724774,
+   "sourceSize": [
+    969,
+    895
+   ],
+   "crop": {
+    "left": 37,
+    "top": 0,
+    "width": 895,
+    "height": 895
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/jimmy-blacklock-112.webp",
+     "bytes": 1080,
+     "sha256": "62b30f78f6fe0095ba3d423e70926fc9501b3463261a1f11ab71287025a08160"
+    },
+    "160": {
+     "file": "/portraits/jimmy-blacklock-160.webp",
+     "bytes": 1682,
+     "sha256": "885c6ed1df10ada72a96fc9af1ac25b5ef9a9827551fa87d0f607ba80268379e"
+    }
+   }
+  },
+  "joaquin-torres": {
+   "sourceUrl": "https://media.api.sf.gov/original_images/Joaquin_Torres_-_spotlight_image.jpeg",
+   "localFile": null,
+   "page": "https://www.sf.gov/profile--joaquin-torres",
+   "sourceSha256": "303940c6c5be61bfb7931e6e6554248351823389a3844ec11cc28c15072ce1e3",
+   "sourceBytes": 323669,
+   "sourceSize": [
+    2060,
+    1596
+   ],
+   "crop": {
+    "left": 232,
+    "top": 0,
+    "width": 1596,
+    "height": 1596
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/joaquin-torres-112.webp",
+     "bytes": 1994,
+     "sha256": "8d3b1a1b3e679745ca1df984e20b1db3e79d2a5095aedefebf805e3978055c8b"
+    },
+    "160": {
+     "file": "/portraits/joaquin-torres-160.webp",
+     "bytes": 2992,
+     "sha256": "d828ea2015dfaf9f77b48bfe4e603fb652fb53606fdd1a25b58ac9967a606f38"
+    }
+   }
+  },
+  "john-messinger": {
+   "sourceUrl": "https://messingerforjustice.com/wp-content/uploads/2024/04/home.jpg",
+   "localFile": null,
+   "page": "https://messingerforjustice.com/about-john/",
+   "sourceSha256": "9b789ec256c99a8ad310f677921568a169430d0f5efa7c132aa67d281d44327e",
+   "sourceBytes": 1469212,
+   "sourceSize": [
+    2048,
+    1363
+   ],
+   "crop": {
+    "left": 514,
+    "top": 275,
+    "width": 620,
+    "height": 620
+   },
+   "focus": [
+    0.36,
+    0.37,
+    2.2
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/john-messinger-112.webp",
+     "bytes": 1568,
+     "sha256": "d6fa22be89678555916a9af214c9467def66c8e7ecfcb31b329bb148dfdcd3b7"
+    },
+    "160": {
+     "file": "/portraits/john-messinger-160.webp",
+     "bytes": 2546,
+     "sha256": "a8177b715c1ecfcb67cada37323cdca9947beb400394502c39b2bf6a0342ae94"
+    }
+   }
+  },
+  "john-pimentel": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/695a3cb6044be4572a8258ce/cf8343b4-ec92-4d3b-96ce-156a358baefe/ThePimentels-11_COB-small.png?format=750w",
+   "localFile": null,
+   "page": "https://johnpimentel.com/",
+   "sourceSha256": "ac6fe832104411a68da5260808c73c6f7e9877e30da83d6b2d00544175573132",
+   "sourceBytes": 552512,
+   "sourceSize": [
+    750,
+    1015
+   ],
+   "crop": {
+    "left": 0,
+    "top": 53,
+    "width": 750,
+    "height": 750
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/john-pimentel-112.webp",
+     "bytes": 1218,
+     "sha256": "2a8742f2c4fc8d19ac9a2b9aa34d0e2fb2b48315a46e3576e5a863e98f71f9be"
+    },
+    "160": {
+     "file": "/portraits/john-pimentel-160.webp",
+     "bytes": 1826,
+     "sha256": "edaee91d3764ee20068d25ddef3fa993483c70103362cc2223cb56a022655260"
+    }
+   }
+  },
+  "jon-rosenthal": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Photo_of_Jon_Rosenthal.jpg/500px-Photo_of_Jon_Rosenthal.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Photo_of_Jon_Rosenthal.jpg",
+   "sourceSha256": "6ad91d7d43ce655579b4cf493f26bf00ae309b10841ba4b5529b514f58a24f71",
+   "sourceBytes": 62395,
+   "sourceSize": [
+    500,
+    750
+   ],
+   "crop": {
+    "left": 0,
+    "top": 50,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/jon-rosenthal-112.webp",
+     "bytes": 1892,
+     "sha256": "4737953bd627f68cbf11a6f58473ca3ddf00e46e85fe350811cc18d772f7ab19"
+    },
+    "160": {
+     "file": "/portraits/jon-rosenthal-160.webp",
+     "bytes": 2872,
+     "sha256": "d935d543439f8c86945715d38c6b2da6d8468a3cde1a9e3b1da486406b431cf0"
+    }
+   }
+  },
+  "joseph-hernandez": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Joseph_Hernandez.png/500px-Joseph_Hernandez.png",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Joseph_Hernandez.png",
+   "sourceSha256": "6c1ee1d1182e79e433c88e4e17213a05be08546c0151b3eeb5b1bc5978c698af",
+   "sourceBytes": 397020,
+   "sourceSize": [
+    500,
+    500
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/joseph-hernandez-112.webp",
+     "bytes": 2366,
+     "sha256": "ff09dd3ea1b56888044a268854e8d6ecbac52a221bea368324363628db737993"
+    },
+    "160": {
+     "file": "/portraits/joseph-hernandez-160.webp",
+     "bytes": 3698,
+     "sha256": "a8e3f970afc9775916e49da874a50765e025471448695ee6eee11dfd5389d4f7"
+    }
+   }
+  },
+  "joshua-groban": {
+   "sourceUrl": "https://supreme.courts.ca.gov/sites/default/files/supremecourt/default/2026-02/Groban_updated.jpg",
+   "localFile": null,
+   "page": "https://supreme.courts.ca.gov/about-court/justices-court/associate-justice-joshua-p-groban",
+   "sourceSha256": "4f3e5721ce889fa66a10ad7753ad68374d665da348d54b466203fecb8debdd5a",
+   "sourceBytes": 77612,
+   "sourceSize": [
+    1024,
+    683
+   ],
+   "crop": {
+    "left": 171,
+    "top": 0,
+    "width": 683,
+    "height": 683
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/joshua-groban-112.webp",
+     "bytes": 1262,
+     "sha256": "4789c0f79662d871d618f33c44f8832cdaa547961493080e572333d2dce58d37"
+    },
+    "160": {
+     "file": "/portraits/joshua-groban-160.webp",
+     "bytes": 2050,
+     "sha256": "28675a86e161eb904dcb5501dff8b217195b7e1f9bc06fde08edb2201d453acb"
+    }
+   }
+  },
+  "kai-huang": {
+   "sourceUrl": "https://kai4atx.com/kai-hero.jpg",
+   "localFile": null,
+   "page": "https://kai4atx.com/",
+   "sourceSha256": "b61f29d2420cbeaa52f96215d90f2eccfb229c90042f553b80b08b1d94b48c35",
+   "sourceBytes": 103306,
+   "sourceSize": [
+    880,
+    1100
+   ],
+   "crop": {
+    "left": 95,
+    "top": 148,
+    "width": 677,
+    "height": 677
+   },
+   "focus": [
+    0.47,
+    0.35,
+    1.3
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kai-huang-112.webp",
+     "bytes": 2036,
+     "sha256": "6e41e8fa4357476095fa87e532c25bcc8ed5dd15548e5c22e6a58de62a50ddf6"
+    },
+    "160": {
+     "file": "/portraits/kai-huang-160.webp",
+     "bytes": 3216,
+     "sha256": "e1513c28c34b2d2b4b53848657e2823fc2bb614caf5fd54324c08834d860d668"
+    }
+   }
+  },
+  "karen-ortiz": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5e56d672b4c0de1f3af4505f/bbf16e1f-b781-4681-b9ab-9dd8ee694937/karen-cropped.jpg",
+   "localFile": null,
+   "page": "https://ko4congress.com/",
+   "sourceSha256": "010944125b32d21178fa138a4373535634f9d636a649a803fc342b0bdebf478f",
+   "sourceBytes": 94730,
+   "sourceSize": [
+    1644,
+    2182
+   ],
+   "crop": {
+    "left": 0,
+    "top": 108,
+    "width": 1644,
+    "height": 1644
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/karen-ortiz-112.webp",
+     "bytes": 1176,
+     "sha256": "11371baf81bf399bedcdc6297bb923986f275d79bcb92757484088044bf58fae"
+    },
+    "160": {
+     "file": "/portraits/karen-ortiz-160.webp",
+     "bytes": 1756,
+     "sha256": "adff6a91d095d60502f7349e056aebbba4b3d461fe5735d066c9270f90b86c79"
+    }
+   }
+  },
+  "karen-r-sage": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/sage.png",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/district/299",
+   "sourceSha256": "fec7fe461a7b45e9e4a0a70657b6f8d1af58c72a05412585a379bc674eaf58d0",
+   "sourceBytes": 34762,
+   "sourceSize": [
+    270,
+    395
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/karen-r-sage-112.webp",
+     "bytes": 1502,
+     "sha256": "1bea6e8f8d016a26612f90130f9e9cc68726ba0ba0ebd151031e0e570d065db8"
+    },
+    "160": {
+     "file": "/portraits/karen-r-sage-160.webp",
+     "bytes": 2340,
+     "sha256": "dc64244df0e278b68a52de7d6e8e1eb1ff3edd5616af8596436f55ccf7ce6ab1"
+    }
+   }
+  },
+  "kathleen-m-banke": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/kathleen-banke-div1jpg.jpg?itok=RSKAqGP0",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/kathleen-m-banke",
+   "sourceSha256": "ca112433571caa066e040afbae2970aba8863a1630cb6108ebb2ec1e26b56d90",
+   "sourceBytes": 5543,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kathleen-m-banke-112.webp",
+     "bytes": 1210,
+     "sha256": "131eccd2a24f707e73cd19d57dbc066c541df8a44f1730a792980d4d5caa153b"
+    },
+    "160": {
+     "file": "/portraits/kathleen-m-banke-160.webp",
+     "bytes": 1858,
+     "sha256": "96e23191e9d1bbcc3551f611e47f6c7141be4ba51c04aaf56f3fc1805e08a706"
+    }
+   }
+  },
+  "kathy-c-hochul-adrienne-e-adams": {
+   "sourceUrl": "https://kathyhochul.com/wp-content/uploads/2026/05/kha.jpg",
+   "localFile": null,
+   "page": "https://kathyhochul.com/",
+   "sourceSha256": "80f46421fc17ff6aa21d6946c879a1f4973d8af53c50ff966de1cbbea89f2178",
+   "sourceBytes": 85086,
+   "sourceSize": [
+    800,
+    800
+   ],
+   "crop": {
+    "left": 271,
+    "top": 140,
+    "width": 364,
+    "height": 364
+   },
+   "focus": [
+    0.62,
+    0.32,
+    2.2
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kathy-c-hochul-adrienne-e-adams-112.webp",
+     "bytes": 2588,
+     "sha256": "0f954161bed33e6be5135ff3ee10cf3a41c0d8e2c47d4afc35e4fb3f02e864b4"
+    },
+    "160": {
+     "file": "/portraits/kathy-c-hochul-adrienne-e-adams-160.webp",
+     "bytes": 4506,
+     "sha256": "e367527c1095b8f352f0ab98f36f68b16b61bdbf722b100f7d6de8ab96ad8b9b"
+    }
+   }
+  },
+  "katie-kam": {
+   "sourceUrl": "https://static.wixstatic.com/media/fac548_c9b1b83eeeb94e67a3c752b3ac657fe6~mv2.jpg",
+   "localFile": null,
+   "page": "https://www.katiekamforaustin.com/",
+   "sourceSha256": "619d645d12cc26b9c74be4b16eaba0a752f916c1a654e6422f24915e9c1af293",
+   "sourceBytes": 983104,
+   "sourceSize": [
+    2414,
+    2282
+   ],
+   "crop": {
+    "left": 66,
+    "top": 0,
+    "width": 2282,
+    "height": 2282
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/katie-kam-112.webp",
+     "bytes": 2696,
+     "sha256": "47ece53935b34afa085d0feab81f48f73ca2f29f97903c7224fe05f81cee952d"
+    },
+    "160": {
+     "file": "/portraits/katie-kam-160.webp",
+     "bytes": 4406,
+     "sha256": "b1fba8bf2862ba869a12f6365e0b3847390c03da107e6fbaf99b907bf90a2020"
+    }
+   }
+  },
+  "kelli-m-evans": {
+   "sourceUrl": "https://supreme.courts.ca.gov/sites/default/files/supremecourt/default/styles/large/public/2023-01/Justice%20Kelli%20Evans.png?itok=FjJ_04VJ",
+   "localFile": null,
+   "page": "https://supreme.courts.ca.gov/about-court/justices-court/justice-kelli-m-evans",
+   "sourceSha256": "44bbad4d2d67c669efd3c5f280ec5512aadb4e4b7b204a9c192302955e66caef",
+   "sourceBytes": 23535,
+   "sourceSize": [
+    322,
+    480
+   ],
+   "crop": {
+    "left": 0,
+    "top": 32,
+    "width": 322,
+    "height": 322
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kelli-m-evans-112.webp",
+     "bytes": 2348,
+     "sha256": "508464eefd82f5978e2f7e4962d3939d590204f7937e085423ac2c7043a98153"
+    },
+    "160": {
+     "file": "/portraits/kelli-m-evans-160.webp",
+     "bytes": 3596,
+     "sha256": "e18612cc81097d38073996c05b3591ed6d890d57ee96872ea17dc7833581d635"
+    }
+   }
+  },
+  "ken-paxton": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Ken_Paxton_-_55022425595_%28cropped%29.jpg/500px-Ken_Paxton_-_55022425595_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Ken_Paxton_-_55022425595_(cropped).jpg",
+   "sourceSha256": "c43f81efcdb9a23624d915eff90a10bd25159c43bd80fd02e7d64e48cbb77552",
+   "sourceBytes": 89451,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/ken-paxton-112.webp",
+     "bytes": 1726,
+     "sha256": "c120ae99a9fcf09d6580acdb2b2eac9f545888c3c0c8a07e23232d068f15ef00"
+    },
+    "160": {
+     "file": "/portraits/ken-paxton-160.webp",
+     "bytes": 2814,
+     "sha256": "3b2f2de937a6375ad075337981ab8bf2040207de90465528ed2844934539682d"
+    }
+   }
+  },
+  "kennon-lily-wooten": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/677f0fe5cf6f684b577cdff3/e0b3722b-5130-4949-8e56-3a56f3c26f65/DSC02958.jpg",
+   "localFile": null,
+   "page": "https://www.kennonlilywooten.com/",
+   "sourceSha256": "f9ec6d7376a13bf273c912cfe41d784d311360213fe8dfeb7a83ae8424d74458",
+   "sourceBytes": 24798,
+   "sourceSize": [
+    864,
+    691
+   ],
+   "crop": {
+    "left": 87,
+    "top": 0,
+    "width": 691,
+    "height": 691
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kennon-lily-wooten-112.webp",
+     "bytes": 954,
+     "sha256": "4d7b29f6df6e4761c7aa63ba081da9b553a94d2ddf4fe4810adc1e48683c40b8"
+    },
+    "160": {
+     "file": "/portraits/kennon-lily-wooten-160.webp",
+     "bytes": 1484,
+     "sha256": "421793782a541403aacac997d272fb311398a9842d853e0fe7a63b4ec093df63"
+    }
+   }
+  },
+  "kevin-mccormick": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Kevin_McCormick_%28Texas_politician%29.jpg/500px-Kevin_McCormick_%28Texas_politician%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Kevin_McCormick_(Texas_politician).jpg",
+   "sourceSha256": "5afd6828ad5f5c537a5758ef3448dc9f09dd4a80b9e82b633b424cf169e9e2e3",
+   "sourceBytes": 79390,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kevin-mccormick-112.webp",
+     "bytes": 1426,
+     "sha256": "c02bd525abef797fed1421981e1e9556ce53dc5c967dc3752fcee3ad6d06a1c9"
+    },
+    "160": {
+     "file": "/portraits/kevin-mccormick-160.webp",
+     "bytes": 2432,
+     "sha256": "14fa1ffdf3a4d9e8c467fb41f6993711bdfd944854b0e9c820d76ffa35c0dcb7"
+    }
+   }
+  },
+  "kevin-patrick-yeary": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/1595050870357606400/8AYJQPAO_400x400.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/kevin-patrick-yeary.jpg",
+   "page": "https://x.com/JudgeYeary",
+   "sourceSha256": "e6205056ae4c7a3f101195545f39d8feeae9c6a76d1b33f4d9a06444777bf04c",
+   "sourceBytes": 32856,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 400,
+    "height": 400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kevin-patrick-yeary-112.webp",
+     "bytes": 2198,
+     "sha256": "9290fa08f72c0a0ed663dbe4a0218dd1dddbd7d7ffc2a83ed1c96c5edef499d2"
+    },
+    "160": {
+     "file": "/portraits/kevin-patrick-yeary-160.webp",
+     "bytes": 3818,
+     "sha256": "79691e05777e99f479e5f848703a309a6c2722850972311a045686cfd889ba82"
+    }
+   }
+  },
+  "kristen-hawkins": {
+   "sourceUrl": "https://hkt.texasjudges.com/img/portrait-1-864.jpg?v=bd31d4b46b",
+   "localFile": "data/photo-local/kristen-hawkins.jpg",
+   "page": "https://hkt.texasjudges.com/",
+   "sourceSha256": "bd31d4b46bc73176929b8420de6b9391d0ac59335431da2a49d28f61f8c03a17",
+   "sourceBytes": 43197,
+   "sourceSize": [
+    864,
+    1062
+   ],
+   "crop": {
+    "left": 0,
+    "top": 40,
+    "width": 864,
+    "height": 864
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kristen-hawkins-112.webp",
+     "bytes": 1054,
+     "sha256": "0fbbe7055ba22ef54ceddda6663d0f821f44294d55e30fde01aecf526ca85b31"
+    },
+    "160": {
+     "file": "/portraits/kristen-hawkins-160.webp",
+     "bytes": 1588,
+     "sha256": "80f4bf532d130b5f2395f69b8c744799b8e5b494347cdcd530e44503bedb945a"
+    }
+   }
+  },
+  "kyle-hawkins": {
+   "sourceUrl": "https://justicekylehawkins.com/wp-content/uploads/2025/10/kyle_hawkins.jpg",
+   "localFile": null,
+   "page": "https://justicekylehawkins.com/",
+   "sourceSha256": "d030fae9e376a5b1728a97ea6bf9740716fbaffff938fa61f02825679c4e6080",
+   "sourceBytes": 205405,
+   "sourceSize": [
+    800,
+    745
+   ],
+   "crop": {
+    "left": 28,
+    "top": 0,
+    "width": 745,
+    "height": 745
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/kyle-hawkins-112.webp",
+     "bytes": 2228,
+     "sha256": "378b6614678497bd53cbf4368e48eeeb258390215ce9d29e6ad090f980ad130f"
+    },
+    "160": {
+     "file": "/portraits/kyle-hawkins-160.webp",
+     "bytes": 3578,
+     "sha256": "f23cd01862e82e14f60ae59b47cff813339e520a1e227d1ffa40f1ebe4022270"
+    }
+   }
+  },
+  "laurance-lee": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/6551d8a73106c7658dc32d23/920aacf6-d33f-4d96-9911-b6084ebeddcd/laurance-lee-hero-D-lincoln-steps-v2-final.jpg",
+   "localFile": null,
+   "page": "https://www.lauranceleesf.com/",
+   "sourceSha256": "4b09fbb72887517505d15e6175f4528cbfc4abf67b6e7075b749715d5689a4b5",
+   "sourceBytes": 450614,
+   "sourceSize": [
+    1200,
+    1648
+   ],
+   "crop": {
+    "left": 251,
+    "top": 392,
+    "width": 462,
+    "height": 462
+   },
+   "focus": [
+    0.34,
+    0.33,
+    2.6
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/laurance-lee-112.webp",
+     "bytes": 1982,
+     "sha256": "9e03852c156ac85ac6ee693374a72071d345f7a4457885bb64a258e42e7cfa99"
+    },
+    "160": {
+     "file": "/portraits/laurance-lee-160.webp",
+     "bytes": 3220,
+     "sha256": "290da3766a89faec383ba90df980d78393345366447dbe728bba0f753b13980b"
+    }
+   }
+  },
+  "lauren-b-pena": {
+   "sourceUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663450394445/BJQRmbhGNXZEirYx.jpg",
+   "localFile": null,
+   "page": "https://lauren4congress.com/",
+   "sourceSha256": "db31a5d01b4cb4878702b071f5df3ffa015761dd1bd48ace7bbd3264db9eb2e9",
+   "sourceBytes": 85409,
+   "sourceSize": [
+    1319,
+    1312
+   ],
+   "crop": {
+    "left": 4,
+    "top": 0,
+    "width": 1312,
+    "height": 1312
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/lauren-b-pena-112.webp",
+     "bytes": 1968,
+     "sha256": "146b6a546276e3ccde0173fef9a6a98ffa076f8e5f3b68920c178ed9d96a96b7"
+    },
+    "160": {
+     "file": "/portraits/lauren-b-pena-160.webp",
+     "bytes": 3024,
+     "sha256": "bc93388652f139d278f73d125fc52cfffb5069f848056ebe6df3d7404f6b552b"
+    }
+   }
+  },
+  "laurie-eiserloh": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/20250924-laurieeiserloh2.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/civil/district/455th-civil-district-court",
+   "sourceSha256": "fdffbe6d4938fc1f84643cc83786ec72cd235fa620d20fe4918b8026c11af55d",
+   "sourceBytes": 1010455,
+   "sourceSize": [
+    1100,
+    1649
+   ],
+   "crop": {
+    "left": 0,
+    "top": 110,
+    "width": 1100,
+    "height": 1100
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/laurie-eiserloh-112.webp",
+     "bytes": 1476,
+     "sha256": "05b898acf8b137cb937e7f1175917f8adc2669a1b85420c9c3cae92ad675badf"
+    },
+    "160": {
+     "file": "/portraits/laurie-eiserloh-160.webp",
+     "bytes": 2294,
+     "sha256": "001e615ae4668d08c764a3b2d988a81dbd1dd241862c8f791eb7d3e5c43f3086"
+    }
+   }
+  },
+  "leah-lacroix": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a962a969b639a4190930b78/fb49249c-19a8-45c3-92d5-57e4d43eb4cd/DSC09602.jpg?format=750w",
+   "localFile": null,
+   "page": "https://www.ourcitycollege.com/leah-lacroix",
+   "sourceSha256": "da1dbf1ecd3cd40cff38f478a92deeac094d1cce14d73ddcf4fdfeb7fa490217",
+   "sourceBytes": 173260,
+   "sourceSize": [
+    750,
+    1125
+   ],
+   "crop": {
+    "left": 0,
+    "top": 75,
+    "width": 750,
+    "height": 750
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/leah-lacroix-112.webp",
+     "bytes": 1704,
+     "sha256": "94a4bee01cb51438b23609651714c9e8f4c704a2c56bf0e4ed404590233f7912"
+    },
+    "160": {
+     "file": "/portraits/leah-lacroix-160.webp",
+     "bytes": 2874,
+     "sha256": "04ffd764bc7fcdff6cae252c6928bc1169a8a544f23cf89139cd0e5c1636ed41"
+    }
+   }
+  },
+  "leslie-dippel": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68794d85cb1e4219a9f398b5/866e652a-053b-4dff-85e7-04a46a14d81e/image4.jpeg",
+   "localFile": null,
+   "page": "https://www.lesliedippel.com/",
+   "sourceSha256": "f633d21fdb2d7d5a93900f7d76b992d472ea976b2fef7798fdac19ac21e9fe23",
+   "sourceBytes": 165392,
+   "sourceSize": [
+    2048,
+    1536
+   ],
+   "crop": {
+    "left": 256,
+    "top": 0,
+    "width": 1536,
+    "height": 1536
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/leslie-dippel-112.webp",
+     "bytes": 1952,
+     "sha256": "171bdedc189de8157fb852314759727a71099db11480a330e748f0e3936a67ba"
+    },
+    "160": {
+     "file": "/portraits/leslie-dippel-160.webp",
+     "bytes": 3042,
+     "sha256": "747cf793efb9146c2967522872c8924d923d88c8b877970cbfc1b70605e4a5de"
+    }
+   }
+  },
+  "letitia-a-james": {
+   "sourceUrl": "https://jamesforny.com/wp-content/uploads/2026/03/tish.png",
+   "localFile": null,
+   "page": "https://jamesforny.com/",
+   "sourceSha256": "671dd689a21b0b020ca2aa206c5ed2fbc8425a359e3f1ea6dabb435de9e07927",
+   "sourceBytes": 496911,
+   "sourceSize": [
+    631,
+    455
+   ],
+   "crop": {
+    "left": 141,
+    "top": 16,
+    "width": 350,
+    "height": 350
+   },
+   "focus": [
+    0.5,
+    0.15,
+    1.3
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/letitia-a-james-112.webp",
+     "bytes": 2154,
+     "sha256": "fa6c1ed41337f65b13d88665a199a8d22540d6d7e6821cf3d698fe4d2e9a3974"
+    },
+    "160": {
+     "file": "/portraits/letitia-a-james-160.webp",
+     "bytes": 3762,
+     "sha256": "0b52ca6edda1a41fac53bf4d95c4edc393bf060cecff4e9691c7818eb3e188f1"
+    }
+   }
+  },
+  "liz-krueger": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%2803-04-19%29_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol%2C_Albany_NY_%28cropped%29.jpg/500px-%2803-04-19%29_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol%2C_Albany_NY_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:(03-04-19)_NY_State_Senator_Liz_Krueger_during_Senate_Session_at_the_NY_State_Capitol,_Albany_NY_(cropped).jpg",
+   "sourceSha256": "fe81ee16cdcebe316ac733a75c222803ebfd5205f08baa6f4685a8c55a8ceb2f",
+   "sourceBytes": 80800,
+   "sourceSize": [
+    500,
+    571
+   ],
+   "crop": {
+    "left": 0,
+    "top": 14,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/liz-krueger-112.webp",
+     "bytes": 1918,
+     "sha256": "23c72578f522822f793f23528cd4739c8bcc6aec8f1ee37c96d159fbf64f0106"
+    },
+    "160": {
+     "file": "/portraits/liz-krueger-160.webp",
+     "bytes": 3214,
+     "sha256": "fba9614506a73fb76a30f8326a24300fb07f22ad1f30a3d1cd8d4c1be9ef0182"
+    }
+   }
+  },
+  "maggie-ellis": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5ffe1e10830ce5345e720df1/fc9a7df2-b728-43b4-87fb-668b570bf316/ellis1.jpg",
+   "localFile": null,
+   "page": "https://www.maggieforjustice.com/",
+   "sourceSha256": "76c728fddd9463eb90350fc1def4fbc8f3ecab07050a8b2573bcf26dd45a6235",
+   "sourceBytes": 620876,
+   "sourceSize": [
+    2500,
+    2500
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 2500,
+    "height": 2500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/maggie-ellis-112.webp",
+     "bytes": 1824,
+     "sha256": "b3aab73a5988977d8fe7633e306cecbb1a8a30af83a7c179dc67ffe3a4f10ff4"
+    },
+    "160": {
+     "file": "/portraits/maggie-ellis-160.webp",
+     "bytes": 3064,
+     "sha256": "bc004b4fa07a2b0d362a2a405da60e4954b4424649f3a4da5ac8ba6fdf5916ad"
+    }
+   }
+  },
+  "malia-m-cohen": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Malia_Cohen_State_Controller_portrait.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Malia_Cohen_State_Controller_portrait.jpg",
+   "sourceSha256": "39faaed0263c1667a112e5cb47450bdc2bab37e17762add908e7ef3ad2f712e7",
+   "sourceBytes": 74645,
+   "sourceSize": [
+    280,
+    280
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 280,
+    "height": 280
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/malia-m-cohen-112.webp",
+     "bytes": 2200,
+     "sha256": "5beb4860749ff8505c30e75b5c2f5d326350d0f56a5865ecd7076614a2242f12"
+    },
+    "160": {
+     "file": "/portraits/malia-m-cohen-160.webp",
+     "bytes": 3384,
+     "sha256": "ea85c0a5a4a1b1fb55d1bafbe224129d0fcc364b4002533df593d785a15ae6d3"
+    }
+   }
+  },
+  "manohar-raju": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Manohar-Raju-SF-Public-Defender-headshot.jpg/500px-Manohar-Raju-SF-Public-Defender-headshot.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Manohar-Raju-SF-Public-Defender-headshot.jpg",
+   "sourceSha256": "b9e9106ea619109dc006186346e767c417111ce0435858e6d3c3884051a743b2",
+   "sourceBytes": 94774,
+   "sourceSize": [
+    500,
+    500
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/manohar-raju-112.webp",
+     "bytes": 2702,
+     "sha256": "25e3fd53b528f7412a0948db2549d676a329aea1a7fedf801be4f99c5d42dbed"
+    },
+    "160": {
+     "file": "/portraits/manohar-raju-160.webp",
+     "bytes": 4986,
+     "sha256": "6adabd94851b5df9f4483c3c6b587f8288d03abe060c3871d17ac2591a8ecac0"
+    }
+   }
+  },
+  "manuel-j-mendez": {
+   "sourceUrl": "https://web.archive.org/web/20260110175659im_/https://www.nycourts.gov/courts/AD1/images/mendezphoto.jpg",
+   "localFile": null,
+   "page": "https://www.nycourts.gov/courts/AD1/JusticesOfTheCourt/Justice_Mendez.shtml",
+   "sourceSha256": "4a06d1d5dec4eeea3f89aa78004916494b17d45096b7b77838168f5c64db6919",
+   "sourceBytes": 65031,
+   "sourceSize": [
+    480,
+    640
+   ],
+   "crop": {
+    "left": 0,
+    "top": 32,
+    "width": 480,
+    "height": 480
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/manuel-j-mendez-112.webp",
+     "bytes": 2288,
+     "sha256": "6f065106f0a0beb280e671a4726f1db35dc486f0e3151c58754dc85b4e649b37"
+    },
+    "160": {
+     "file": "/portraits/manuel-j-mendez-160.webp",
+     "bytes": 3498,
+     "sha256": "ff3737dc91212785b0250442ee380f22d9ef7fb4c6e04e3d659ccfbaf4d8d688"
+    }
+   }
+  },
+  "manuel-noris-barrera": {
+   "sourceUrl": null,
+   "localFile": "/workspace/townhall/civic/photos_local/manuel-noris-barrera.jpg",
+   "page": "https://www.facebook.com/p/Manuel-Noris-Barrera-Assembly-District-17-61552978635595/",
+   "sourceSha256": "11d941d843984fcede1f44b41b18fbd65d06c5a27aa5f57a7ece92608c4f53f0",
+   "sourceBytes": 47366,
+   "sourceSize": [
+    720,
+    720
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 720,
+    "height": 720
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/manuel-noris-barrera-112.webp",
+     "bytes": 2382,
+     "sha256": "4a9ae925fcbce9864dc8c51aa29ff4d7032b3c9ea42ee10199095f4ddbfcbf9d"
+    },
+    "160": {
+     "file": "/portraits/manuel-noris-barrera-160.webp",
+     "bytes": 3658,
+     "sha256": "3aaef3f619cb9ab1e097f959400f78f222cbedf89dc81f3ea710b46b73e58610"
+    }
+   }
+  },
+  "marc-m-meyer": {
+   "sourceUrl": null,
+   "localFile": "/workspace/townhall/civic/photos_local/marc-m-meyer.jpg",
+   "page": "https://flip15courtofappeals.com/",
+   "sourceSha256": "82a8397fef5b0a9036ed72073f2600631b6143d8ffa887149a8346d6ec726a9c",
+   "sourceBytes": 43391,
+   "sourceSize": [
+    512,
+    600
+   ],
+   "crop": {
+    "left": 21,
+    "top": 40,
+    "width": 465,
+    "height": 465
+   },
+   "focus": [
+    0.45,
+    0.3,
+    1.1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/marc-m-meyer-112.webp",
+     "bytes": 1128,
+     "sha256": "d862843fb2fcf105710f29e78defbebb3093483000e3f2078bcd9a63efb71fb9"
+    },
+    "160": {
+     "file": "/portraits/marc-m-meyer-160.webp",
+     "bytes": 1672,
+     "sha256": "a0af11a82253a301937d73f7a5ec932fbfc888bd2ca3fbad9dcfcaa2d7b655cb"
+    }
+   }
+  },
+  "maria-luisa-lulu-flores": {
+   "sourceUrl": "https://house.texas.gov/images/members/4150.jpg",
+   "localFile": null,
+   "page": "https://house.texas.gov/members/51",
+   "sourceSha256": "44878a0d578999bba593e8259e37cf5d7371c295868f1fa919453108f39b8a93",
+   "sourceBytes": 31780,
+   "sourceSize": [
+    125,
+    175
+   ],
+   "crop": {
+    "left": 0,
+    "top": 10,
+    "width": 125,
+    "height": 125
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/maria-luisa-lulu-flores-112.webp",
+     "bytes": 1340,
+     "sha256": "3aadc978c977021bc8df46be384cfc0fb6ac1d6f1ef363afff27a3d6fef4efca"
+    },
+    "160": {
+     "file": "/portraits/maria-luisa-lulu-flores-160.webp",
+     "bytes": 1934,
+     "sha256": "b19f963837a8b2f3ec5daa2a635b8d84b146f73155963dec0a37ffb8b0ce0ec4"
+    }
+   }
+  },
+  "mark-ash": {
+   "sourceUrl": "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-1/272330064_349335627193811_4591728942131523261_n.jpg?stp=dst-jpg_tt6&cstp=mx450x600&ctp=s450x600&_nc_cat=106&ccb=1-7&_nc_sid=3ab345&_nc_ohc=dqVPpElF-ZgQ7kNvwHqM1kL&_nc_oc=AdpaX8jCN28btC4PpqQzudENKhIYZ7FbD5i7RlqgaAL8t6RMUuFhr-bwcmaYXZVeLci5goHYhLc0iDDr8oqv_O-W&_nc_zt=24&_nc_ht=scontent-hou1-1.xx&_nc_gid=9IA9mT5CPUCxmNGrI_ea3A&_nc_ss=7b20f&oh=00_AQRoP9QFDQejRxl7P_BH5jh1HPSCr6D78d_gKofTXvhgLA&oe=6AEA3849",
+   "localFile": "/workspace/townhall/civic/photos_local/mark-ash.jpg",
+   "page": "https://www.facebook.com/markashlibertarian",
+   "sourceSha256": "c0782fae3999438201ef0bd98a13bb0d43af18588cfed56a39472239a2f13ed6",
+   "sourceBytes": 29191,
+   "sourceSize": [
+    450,
+    600
+   ],
+   "crop": {
+    "left": 0,
+    "top": 30,
+    "width": 450,
+    "height": 450
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/mark-ash-112.webp",
+     "bytes": 1138,
+     "sha256": "a8acc069a4383fde3a4c9483b6ce5619512e9c1d27ee16b0b39997a9c98bca55"
+    },
+    "160": {
+     "file": "/portraits/mark-ash-160.webp",
+     "bytes": 1858,
+     "sha256": "ae6e3811b6288c4f0e8df14cc589c92cc9981ad526c40570d3bdc1cd6f5674b8"
+    }
+   }
+  },
+  "mark-simons": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/mark-simons-div5jpg.jpg?h=ab8bb801&itok=HdmDm-a3",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/mark-b-simons",
+   "sourceSha256": "dde57e2e63907008f1e8ee30ff29a8b11be083567e3dcc6363d8184d3afe9c97",
+   "sourceBytes": 4506,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/mark-simons-112.webp",
+     "bytes": 1032,
+     "sha256": "d610bb569ea77a69a98b5569fdf7a8ec97436ecb113c980da1e832759bcc5c09"
+    },
+    "160": {
+     "file": "/portraits/mark-simons-160.webp",
+     "bytes": 1460,
+     "sha256": "5519383566593445d032180c6d76ec65d7ec390e7ac0a2eb64c029815e87e9e4"
+    }
+   }
+  },
+  "mary-ann-espiritu": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/Mary_Ann_Espiritu_CC5.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/criminal/county/cc5",
+   "sourceSha256": "c71a15d93b4726d84635891accfddd00f8db918e797b7fa9a3b0b3252e373445",
+   "sourceBytes": 34226,
+   "sourceSize": [
+    270,
+    395
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/mary-ann-espiritu-112.webp",
+     "bytes": 1532,
+     "sha256": "b881f5648e01ef122974c40a083eb0bab8991eba8eec50e4ea3416f33bac6e2e"
+    },
+    "160": {
+     "file": "/portraits/mary-ann-espiritu-160.webp",
+     "bytes": 2484,
+     "sha256": "a518476026cfbaf0c8ad6c219eb6a8f7dc10e5a341b49b0bb34bb171d464a827"
+    }
+   }
+  },
+  "matt-dorsey": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Matt_Dorsey%2C_2022.jpg/500px-Matt_Dorsey%2C_2022.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Matt_Dorsey,_2022.jpg",
+   "sourceSha256": "7301efb6e744e41c04ff20fc0e531b10e89078ef72d3cda4482ab65015c1c8bb",
+   "sourceBytes": 75585,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/matt-dorsey-112.webp",
+     "bytes": 1436,
+     "sha256": "2888ae6c725b7888dc1c4afe78b156401a81b23d74b899daac1c44c5cf9fef0e"
+    },
+    "160": {
+     "file": "/portraits/matt-dorsey-160.webp",
+     "bytes": 2418,
+     "sha256": "d85980ff70ea5cedb2cbb8a688c2eec4e8cb8eef3729eff993c157592956b745"
+    }
+   }
+  },
+  "matt-haney": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Matt_Haney%2C_2022.jpg/500px-Matt_Haney%2C_2022.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Matt_Haney,_2022.jpg",
+   "sourceSha256": "0e1f8e81e9584ac050b94d07cd53b52c1c23bb26c3fff8953b38b9acc2efd87f",
+   "sourceBytes": 69814,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/matt-haney-112.webp",
+     "bytes": 2042,
+     "sha256": "3ce356259e56225f189bafe5e456084215e3e650a9f7fc77238a8a26a1f312c4"
+    },
+    "160": {
+     "file": "/portraits/matt-haney-160.webp",
+     "bytes": 3310,
+     "sha256": "6cdb3d6b72f776d24a24fdf33210a11a647ee9fc46509099578a15439157cd34"
+    }
+   }
+  },
+  "maya-guerra-gamble": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/2025_Gamble.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/civil/district/459",
+   "sourceSha256": "a580f7088f651260cabf0935ebab4f9e53b73386205adee7843963a324e81f06",
+   "sourceBytes": 88269,
+   "sourceSize": [
+    640,
+    960
+   ],
+   "crop": {
+    "left": 0,
+    "top": 64,
+    "width": 640,
+    "height": 640
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/maya-guerra-gamble-112.webp",
+     "bytes": 1356,
+     "sha256": "69a404f933e1440137b83f7f497da4533240c85d9a9bf93574350bd46305b569"
+    },
+    "160": {
+     "file": "/portraits/maya-guerra-gamble-160.webp",
+     "bytes": 2118,
+     "sha256": "f8a6c88ad2ed56d69617e7d1ca169286850f7baad44ca89787396def196d17c3"
+    }
+   }
+  },
+  "mayes-middleton": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mayes_Middleton_by_Gage_Skidmore.jpg/500px-Mayes_Middleton_by_Gage_Skidmore.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Mayes_Middleton_by_Gage_Skidmore.jpg",
+   "sourceSha256": "5cf72bc64910b7ff7cfa77f108026ee417f7b0e075146cc217d738337f5d6c4b",
+   "sourceBytes": 51413,
+   "sourceSize": [
+    500,
+    679
+   ],
+   "crop": {
+    "left": 0,
+    "top": 36,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/mayes-middleton-112.webp",
+     "bytes": 1554,
+     "sha256": "48814b82769fccb02128f2d1017ca3b8d49832fad92e599491a9ad7f9221996f"
+    },
+    "160": {
+     "file": "/portraits/mayes-middleton-160.webp",
+     "bytes": 2430,
+     "sha256": "ce904791773d03c0063d4bbe1c5bbc830a81f920e340843ef930dfc4f1558211"
+    }
+   }
+  },
+  "mica-arellano": {
+   "sourceUrl": "https://assets.cdn.filesafe.space/ggxeWPIAhnIsXRqvLmwz/media/69f62e6652d70cb766a32c0a.jpg",
+   "localFile": null,
+   "page": "https://micatx.com/",
+   "sourceSha256": "57f6732c5acdc480a65a7e074dfd2d176b4d91a748ffb31bac78a12013b2821d",
+   "sourceBytes": 749784,
+   "sourceSize": [
+    1399,
+    1650
+   ],
+   "crop": {
+    "left": 0,
+    "top": 50,
+    "width": 1399,
+    "height": 1399
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/mica-arellano-112.webp",
+     "bytes": 1746,
+     "sha256": "f069c6a1583153a989fc2c601abd87fee83f6aa0beaa5ec4868ca0515f2980fc"
+    },
+    "160": {
+     "file": "/portraits/mica-arellano-160.webp",
+     "bytes": 2892,
+     "sha256": "3178e439a3b7f6faf4b2e2363d492b2f785cb64efa75aa17f95966706db8fd25"
+    }
+   }
+  },
+  "micah-c-lasher": {
+   "sourceUrl": "https://micahlasher.com/wp-content/uploads/2026/01/Lasher_251104_1428_crop-1024x1024.webp",
+   "localFile": null,
+   "page": "https://micahlasher.com/",
+   "sourceSha256": "0f2a8d5d4ce2942b5c8964712ede4522a0390cd8bab0032045682323f393b4df",
+   "sourceBytes": 94378,
+   "sourceSize": [
+    1024,
+    1024
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1024,
+    "height": 1024
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/micah-c-lasher-112.webp",
+     "bytes": 2642,
+     "sha256": "86259934c526bda7a527c4a6d3719c2208e921d2e889b68fe3b007831fd90ba9"
+    },
+    "160": {
+     "file": "/portraits/micah-c-lasher-160.webp",
+     "bytes": 4232,
+     "sha256": "25a47ecc23a8fd6180ccb6e0687fb6dd321f91e14d42aac06ea487f5ba9bde40"
+    }
+   }
+  },
+  "michael-e-gates": {
+   "sourceUrl": "https://irp.cdn-website.com/81d43f61/dms3rep/multi/opt/bannerv2-1920w.png",
+   "localFile": "/workspace/townhall/civic/photos_local/michael-e-gates.jpg",
+   "page": "https://www.gates4ag.com/",
+   "sourceSha256": "b34550f0970dd28ff49ea76b636619436df7623d6024631a4b71a09f1972391b",
+   "sourceBytes": 52994,
+   "sourceSize": [
+    480,
+    600
+   ],
+   "crop": {
+    "left": 0,
+    "top": 24,
+    "width": 480,
+    "height": 480
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/michael-e-gates-112.webp",
+     "bytes": 1322,
+     "sha256": "689f7e16980612c0e68d971d20d04e7ee81041610e9612efd5179d4666c5b3ae"
+    },
+    "160": {
+     "file": "/portraits/michael-e-gates-160.webp",
+     "bytes": 2142,
+     "sha256": "75e6a4e48fc665ede331f54abc5f984bf63dad7de8bd39205dc200b6d6cedc6f"
+    }
+   }
+  },
+  "michael-t-nguyen": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6733df7075eb3a0a612a33ee/2704dd54-f7cd-4488-accb-fa0c728611b2/2023_MichaelJuicyNguyen_006.jpg?format=750w",
+   "localFile": null,
+   "page": "https://www.michaelnguyen4sf.com/",
+   "sourceSha256": "05030994247023c6cd7bdc067012879f5b056c061089000eea8796c33aebf356",
+   "sourceBytes": 51504,
+   "sourceSize": [
+    750,
+    500
+   ],
+   "crop": {
+    "left": 125,
+    "top": 0,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/michael-t-nguyen-112.webp",
+     "bytes": 2338,
+     "sha256": "d282539e8d18d54a6fc681822378da65c7af0781c55efb56bd836d2d66d29a21"
+    },
+    "160": {
+     "file": "/portraits/michael-t-nguyen-160.webp",
+     "bytes": 3830,
+     "sha256": "5c2e8ccaf23c5e2f32f9aff9a200216150d79d5d50a231e6659af00b36b325e0"
+    }
+   }
+  },
+  "mike-trouble-lin": {
+   "sourceUrl": null,
+   "localFile": "/workspace/townhall/civic/photos_local/mike-trouble-lin.jpg",
+   "page": "https://linktr.ee/votemikelin",
+   "sourceSha256": "29d5086240d8b886e8f554dc8532ff16e65d9bc6cec7921d7b842a84a9d984f7",
+   "sourceBytes": 33059,
+   "sourceSize": [
+    320,
+    320
+   ],
+   "crop": {
+    "left": 56,
+    "top": 35,
+    "width": 229,
+    "height": 229
+   },
+   "focus": [
+    0.61,
+    0.38,
+    1.4
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/mike-trouble-lin-112.webp",
+     "bytes": 3300,
+     "sha256": "411d834acc1d5e8b6bb87d830681f22621376cb0ed8ff46143456504b8f39fab"
+    },
+    "160": {
+     "file": "/portraits/mike-trouble-lin-160.webp",
+     "bytes": 5562,
+     "sha256": "6ce18c2bce8aca989f08c39aad3ed5d0b4dabdf4ca25987e9f070ad0baca5a4e"
+    }
+   }
+  },
+  "monique-langhorne-wilson": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/justice-langhorne-wilson.jpg",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/monique-langhorne-wilson",
+   "sourceSha256": "5725e8289a9258a94da7cd8765557994ed57b8134a6a5729ff3b1730d6ff245a",
+   "sourceBytes": 127256,
+   "sourceSize": [
+    853,
+    1024
+   ],
+   "crop": {
+    "left": 0,
+    "top": 34,
+    "width": 853,
+    "height": 853
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/monique-langhorne-wilson-112.webp",
+     "bytes": 1208,
+     "sha256": "92cc2d7223cf71b44e89874c5cd65ac9cd5a94cdb1465529ce659136ade4f2fc"
+    },
+    "160": {
+     "file": "/portraits/monique-langhorne-wilson-160.webp",
+     "bytes": 1886,
+     "sha256": "cb0e9f70539a686a231e93fc16c6180a053673a53eb1615fbfec977072208cee"
+    }
+   }
+  },
+  "monroe-lace": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a9f8077f112c37940445dd6/d499fb54-e8ea-4f73-be54-5c82fc11da8e/0D4A8714.jpg?format=750w",
+   "localFile": null,
+   "page": "https://www.monroelace.org/",
+   "sourceSha256": "fe46333b0fa7bcafd663399b4ff629c2d8a887756b3b7c08fe6bb72bab9bf416",
+   "sourceBytes": 46976,
+   "sourceSize": [
+    750,
+    525
+   ],
+   "crop": {
+    "left": 113,
+    "top": 0,
+    "width": 525,
+    "height": 525
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/monroe-lace-112.webp",
+     "bytes": 2708,
+     "sha256": "9901144495989f6aa57ba7463c6c6d238fc5f2cace257c9a5a63d6616d1b14b7"
+    },
+    "160": {
+     "file": "/portraits/monroe-lace-160.webp",
+     "bytes": 4198,
+     "sha256": "1fcbc1840f7921a78ccc1ea27135050bc1b5a9cb9e6db28ee693b75bbab4f987"
+    }
+   }
+  },
+  "montserrat-garibay": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68ed224f5e7bd548437f5a86/3c03fca3-f099-41a4-a3d1-2007b6e7640c/Montse.jpg",
+   "localFile": null,
+   "page": "https://www.montserratfortexas.com/about",
+   "sourceSha256": "62c301caf6df92b3574d8581c3fb6b4035233bbfa3ce7410372a6227124a59c6",
+   "sourceBytes": 46788,
+   "sourceSize": [
+    1163,
+    1520
+   ],
+   "crop": {
+    "left": 0,
+    "top": 71,
+    "width": 1163,
+    "height": 1163
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/montserrat-garibay-112.webp",
+     "bytes": 1132,
+     "sha256": "64ec7769f77abf7350b79020938d898ef71cf510e219de4f02e12a8277133f40"
+    },
+    "160": {
+     "file": "/portraits/montserrat-garibay-160.webp",
+     "bytes": 1694,
+     "sha256": "06d5c19b5204c1bb37eba2e52a968ad20c8fc85ff63965e78fbffc7c335792b9"
+    }
+   }
+  },
+  "nan-mcraven": {
+   "sourceUrl": "https://offices.austincc.edu/board-of-trustees/wp-content/uploads/sites/30/2023/11/mcraven.jpg",
+   "localFile": null,
+   "page": "https://offices.austincc.edu/board-of-trustees/board-members/dr-nan-mcraven/",
+   "sourceSha256": "1ed440dd90fb56d3423e2d1fb89738f007f7105d003ebd9309693af09a02bb1f",
+   "sourceBytes": 52412,
+   "sourceSize": [
+    325,
+    488
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 325,
+    "height": 325
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/nan-mcraven-112.webp",
+     "bytes": 1854,
+     "sha256": "cac8a150c08e788f69c6ce81853ac5781eabddcebda2e0c96608a34d2e63d068"
+    },
+    "160": {
+     "file": "/portraits/nan-mcraven-160.webp",
+     "bytes": 3054,
+     "sha256": "f5f792c594c59149fc9a1080073e796f7ced77c132f8c91d002aeabcd3756ab6"
+    }
+   }
+  },
+  "nate-sheets": {
+   "sourceUrl": "https://natesheets.com/wp-content/uploads/2025/07/Nate-Sheets-2.webp",
+   "localFile": "/workspace/townhall/civic/photos_local/nate-sheets.jpg",
+   "page": "https://natesheets.com/about-nate-sheets/",
+   "sourceSha256": "cc57c58963c4a72909ea20e9ab1f81b0e48c223ac85e8b6781f9e9022e14eb08",
+   "sourceBytes": 17399,
+   "sourceSize": [
+    194,
+    228
+   ],
+   "crop": {
+    "left": 0,
+    "top": 7,
+    "width": 194,
+    "height": 194
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/nate-sheets-112.webp",
+     "bytes": 2410,
+     "sha256": "38d9d60b430955172f630d19e5c61830a6e2f5803bf14047d7033f0707691ea7"
+    },
+    "160": {
+     "file": "/portraits/nate-sheets-160.webp",
+     "bytes": 3902,
+     "sha256": "9fb21f9b3ee133b9049ac1f80075e714d81e19d708962ba7d1711d54acbe88a3"
+    }
+   }
+  },
+  "nathan-johnson": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/1945122952241975296/HSjCA6gC_400x400.jpg",
+   "localFile": null,
+   "page": "https://x.com/NathanForTexas",
+   "sourceSha256": "efb3811c732f8038593148dd2e0dfdf114ec37f13578cfa922c58c63e9c52e24",
+   "sourceBytes": 31171,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 400,
+    "height": 400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/nathan-johnson-112.webp",
+     "bytes": 2296,
+     "sha256": "47336c5160b42fe542aefdcf8bd8373ffecdb234be7aa3da423cb8c64ad6100d"
+    },
+    "160": {
+     "file": "/portraits/nathan-johnson-160.webp",
+     "bytes": 3576,
+     "sha256": "981b4dcb354e2fbeafa515a1d7aa29b45a6d8b89f7ff5a728b6170825a236a35"
+    }
+   }
+  },
+  "neill-snider": {
+   "sourceUrl": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tTCr7XDlA0k0TAClNdfABeFsMJ0dJhtj0VydOY6mS2IBh1dFzMrhin3qNDf-5NUhUDOv8vanT9RmurYYX46TMx5HoWinAbF0ENhm8W1w1x33miWNnS2zbhv6236b0wiRqY2FYxQZ6zNLxhWxUm4D0VpmRTuT80yO5oAiso2c8GsUMpMGUQIoXnj4dw46-LQJBCfq2B70yMnxyQmnYQnu3vCr2R_r2XQ1KcbXKe=w1280",
+   "localFile": "/workspace/townhall/civic/photos_local/neill-snider.jpg",
+   "page": "https://www.voteneillsnider.com/",
+   "sourceSha256": "d619b572155b2f97668ec1c4766db145b706064718230a13d85b23078ec3631c",
+   "sourceBytes": 56653,
+   "sourceSize": [
+    433,
+    640
+   ],
+   "crop": {
+    "left": 0,
+    "top": 41,
+    "width": 433,
+    "height": 433
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/neill-snider-112.webp",
+     "bytes": 2342,
+     "sha256": "700a723d61a74b020815a8ab6be81022a4824437ea61adcd77ae3d495ea4b806"
+    },
+    "160": {
+     "file": "/portraits/neill-snider-160.webp",
+     "bytes": 3944,
+     "sha256": "3b6f1aefdb3e9ffe1ff102e1f68aec63585a02cf2eac723d9c5cc9cc153d2082"
+    }
+   }
+  },
+  "okey-anyiam": {
+   "sourceUrl": "https://img1.wsimg.com/isteam/ip/5805d07b-a2a7-4a4b-bb71-1058033e30d6/88d2b5f5-9128-4499-bca5-aca9693120a3.JPG",
+   "localFile": null,
+   "page": "https://okeyanyiamforjudge.com/",
+   "sourceSha256": "913e2e8fe1a3ffa02ed082af376c0ef337d288fbcc01085c2aacfd90f5f14852",
+   "sourceBytes": 507818,
+   "sourceSize": [
+    2048,
+    2560
+   ],
+   "crop": {
+    "left": 0,
+    "top": 102,
+    "width": 2048,
+    "height": 2048
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/okey-anyiam-112.webp",
+     "bytes": 1348,
+     "sha256": "f79eafa9e23fc835341a573b13c81855cc95c33605bbbfc6865f7ebf3210760f"
+    },
+    "160": {
+     "file": "/portraits/okey-anyiam-160.webp",
+     "bytes": 2130,
+     "sha256": "b8e9309920f6a619e8ea8771fd74fd32df8e9a75c788cd1498b8c8a92e33c82c"
+    }
+   }
+  },
+  "pamela-mathai": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a7cc1df5db956439d04dcd5/2200014e-6097-4adc-b5df-dcb6ec0ff61b/MathaiPortraits-8.jpg",
+   "localFile": null,
+   "page": "https://www.pamelaforaisd.com/",
+   "sourceSha256": "a4fa2b36f96389832f2dd0d3b364cba78aaacfa1567b76d806a0082cb2ba3676",
+   "sourceBytes": 602984,
+   "sourceSize": [
+    2500,
+    3750
+   ],
+   "crop": {
+    "left": 0,
+    "top": 250,
+    "width": 2500,
+    "height": 2500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/pamela-mathai-112.webp",
+     "bytes": 1622,
+     "sha256": "c98f9e74338b8788c86f249e978150fa50e0953c89086731ae4e371b240e5be9"
+    },
+    "160": {
+     "file": "/portraits/pamela-mathai-160.webp",
+     "bytes": 2550,
+     "sha256": "6fb7809f5869821fef6f47b35be38bbc880b8e965a11958bc2cd38f866f6a978"
+    }
+   }
+  },
+  "pat-dixon": {
+   "sourceUrl": "https://patdixon.org/wp-content/uploads/2026/07/pjd_headshot_260618.jpg",
+   "localFile": null,
+   "page": "https://patdixon.org/about-pat-dixon/",
+   "sourceSha256": "7bcc470fa84f3ee2476915884c66f7a1960f08faab91c991ba3bb3c118e714eb",
+   "sourceBytes": 463607,
+   "sourceSize": [
+    512,
+    768
+   ],
+   "crop": {
+    "left": 0,
+    "top": 51,
+    "width": 512,
+    "height": 512
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/pat-dixon-112.webp",
+     "bytes": 1928,
+     "sha256": "09cc1d70466934379ae15fb73ff1032e103c1e558f695da1558481451b8113c0"
+    },
+    "160": {
+     "file": "/portraits/pat-dixon-160.webp",
+     "bytes": 3276,
+     "sha256": "a6052cf7be6a688f567e4cf6b50990bfb4664124afe7ec0eda3772af2d78bc0c"
+    }
+   }
+  },
+  "pearci-pj-bastiany-iii": {
+   "sourceUrl": "https://bastiany-campaign-site.replit.app/assets/pj-portrait-Ddne3iA1.webp",
+   "localFile": null,
+   "page": "https://bastiany-campaign-site.replit.app/",
+   "sourceSha256": "d762b8cb58756d769d83ae441960d01648c0575bbd6fbbfa50d92dd2a3320b36",
+   "sourceBytes": 95788,
+   "sourceSize": [
+    960,
+    1200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 48,
+    "width": 960,
+    "height": 960
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/pearci-pj-bastiany-iii-112.webp",
+     "bytes": 2912,
+     "sha256": "9b0cb6ac64065bfcd496991f7b70351cb5f80406fb3bb595df76bd83249680cc"
+    },
+    "160": {
+     "file": "/portraits/pearci-pj-bastiany-iii-160.webp",
+     "bytes": 5098,
+     "sha256": "e606f6c84f26512ae716c23d7a60fb041351d032c04d7d9f8661f45bf4bc63ad"
+    }
+   }
+  },
+  "phil-kim": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/697ac61d667289543b1ecfc6/e7d6f85b-c6cb-4f04-8377-6197d6cabe42/PhilKim_Headshot_2025_BW.png?format=750w",
+   "localFile": null,
+   "page": "https://www.philkim.org/",
+   "sourceSha256": "0385f41a81db89d21a4012a58a90396c489341290a5540cacbac13208ef5a0ba",
+   "sourceBytes": 101650,
+   "sourceSize": [
+    750,
+    719
+   ],
+   "crop": {
+    "left": 16,
+    "top": 0,
+    "width": 719,
+    "height": 719
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/phil-kim-112.webp",
+     "bytes": 974,
+     "sha256": "407ad9bbf362da2c2cad99fbbfa78e520f3151027e54e608b7a0e2a49ede51f2"
+    },
+    "160": {
+     "file": "/portraits/phil-kim-160.webp",
+     "bytes": 1508,
+     "sha256": "eaad4431710776a49bb078d50932d8ff68d8d76155ae912675f3c6cc3a60352c"
+    }
+   }
+  },
+  "raul-arturo-gonzalez": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/justices_of_peace/Ra%C3%BAl_Arturo_Gonz%C3%A1lez.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/justices-of-peace/jp4",
+   "sourceSha256": "be81a6616569176bdda97c32461f2aa09d3455671665bdf71d9b5619c813e11a",
+   "sourceBytes": 87171,
+   "sourceSize": [
+    250,
+    375
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 250,
+    "height": 250
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/raul-arturo-gonzalez-112.webp",
+     "bytes": 1242,
+     "sha256": "97130a03cf2485d1bde408d964d4e4bb4e0ee7e19438b8282021e023d4e86113"
+    },
+    "160": {
+     "file": "/portraits/raul-arturo-gonzalez-160.webp",
+     "bytes": 2132,
+     "sha256": "8b35c57b7036c35c5c54f8251360c9631c3b869a35830cdd6ce7ae2705c64333"
+    }
+   }
+  },
+  "reina-tello": {
+   "sourceUrl": "https://www.reinaforschoolboard.org/photos/DSC_0528-2.jpg",
+   "localFile": null,
+   "page": "https://www.reinaforschoolboard.org/about",
+   "sourceSha256": "79d00d8320aeff8ab9c70c705446034ba05def122827d87626aafd3702bd1be7",
+   "sourceBytes": 521577,
+   "sourceSize": [
+    1280,
+    1920
+   ],
+   "crop": {
+    "left": 0,
+    "top": 128,
+    "width": 1280,
+    "height": 1280
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/reina-tello-112.webp",
+     "bytes": 2166,
+     "sha256": "1c513fca3c172e00d3de41cdecd72d7be0855ebb2e688074953e41b0c9e78d64"
+    },
+    "160": {
+     "file": "/portraits/reina-tello-160.webp",
+     "bytes": 3564,
+     "sha256": "f97696787e8f5d57fbecbec515141aec43499cb0474ef04144c1189dbabf176a"
+    }
+   }
+  },
+  "rich-heyman": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68b0bab4c94ae4036d0fffa5/5fb246aa-06cd-40a1-a324-d310a5598599/IMG_5761+copy.jpg",
+   "localFile": null,
+   "page": "https://www.richforaustin.org/",
+   "sourceSha256": "9c85a4fd9c03c399fe7035c3ddba12f095becc60a03ef173dab2548acf2ba9a7",
+   "sourceBytes": 630034,
+   "sourceSize": [
+    2500,
+    2500
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 2500,
+    "height": 2500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/rich-heyman-112.webp",
+     "bytes": 2582,
+     "sha256": "5cda155fa6807b2dcb3c971d63eac456f05205d5b913fd8f820d36dab5f1d2fb"
+    },
+    "160": {
+     "file": "/portraits/rich-heyman-160.webp",
+     "bytes": 4168,
+     "sha256": "6c6352a00eec185722b36adb79fc7b462ad65476a0d05a81b71fbae4d4901933"
+    }
+   }
+  },
+  "richard-barrera": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/67b0f232273eb817e2f7a289/edc7eb84-98dd-425f-9367-3795de9dc8a1/Portrait-24-Edit_pp+%281%29.jpeg?format=500w",
+   "localFile": null,
+   "page": "https://www.barreraforedu.com/mediaresources",
+   "sourceSha256": "7a069c54fde55e8fbd9a844e32a21e13839e8fde7a43a293d841a562fd06f17a",
+   "sourceBytes": 93468,
+   "sourceSize": [
+    500,
+    749
+   ],
+   "crop": {
+    "left": 0,
+    "top": 50,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/richard-barrera-112.webp",
+     "bytes": 2448,
+     "sha256": "b2c8361abd27d68f0b789b3b4f608171e7a934e4bd824d9813094126d0f49236"
+    },
+    "160": {
+     "file": "/portraits/richard-barrera-160.webp",
+     "bytes": 3886,
+     "sha256": "70c4f5725b428d981b4e54cc4962dbf1cafdbb39a4c6b93991eddb33e2ca88e4"
+    }
+   }
+  },
+  "rob-bonta": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rob_Bonta_official_portrait_%28cropped%29.jpg/500px-Rob_Bonta_official_portrait_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Rob_Bonta_official_portrait_(cropped).jpg",
+   "sourceSha256": "e91a0983f9eee5dda03a5ffdb0bd409f914ac2b6ee8452791a7b8ac43e32722e",
+   "sourceBytes": 54275,
+   "sourceSize": [
+    500,
+    634
+   ],
+   "crop": {
+    "left": 0,
+    "top": 27,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/rob-bonta-112.webp",
+     "bytes": 1702,
+     "sha256": "e46810aa16c6d3875d65677fce7080a2144998cad622c7371f7ea3713b21b821"
+    },
+    "160": {
+     "file": "/portraits/rob-bonta-160.webp",
+     "bytes": 2562,
+     "sha256": "a0a82417838f5c1a30288a86133f90b2bace6efb802d15574e987dfd09f7a702"
+    }
+   }
+  },
+  "ruth-ferguson": {
+   "sourceUrl": "https://ruthferguson.com/wp-content/uploads/2024/05/DSC_7732-683x1024.jpg",
+   "localFile": null,
+   "page": "https://ruthferguson.com/",
+   "sourceSha256": "0c6ae75e795f7968ece5f1399d5fc37a8d184788d92ca84f9a812e6039326874",
+   "sourceBytes": 119555,
+   "sourceSize": [
+    683,
+    1024
+   ],
+   "crop": {
+    "left": 0,
+    "top": 68,
+    "width": 683,
+    "height": 683
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/ruth-ferguson-112.webp",
+     "bytes": 2446,
+     "sha256": "d56a3452a74261f594c736379f03e1330f492ca3d1a7378515e3becf10d245fd"
+    },
+    "160": {
+     "file": "/portraits/ruth-ferguson-160.webp",
+     "bytes": 4088,
+     "sha256": "558c54e8f4cd7e5b2ecfe752e88f979b2f82da8f581262c4d4dd3e6d839db18f"
+    }
+   }
+  },
+  "ryan-hazelton": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6a033e5003b9014ef0979f0b/c2224484-8e76-4b02-83be-8a92d1cea87a/20221216_152406.jpg?format=750w",
+   "localFile": null,
+   "page": "https://www.ryanforsfschools.com/communitywork",
+   "sourceSha256": "74fa153d4c67a3597b5b8b66133a0cf8c2c3899fb463e6cd122a63622104d159",
+   "sourceBytes": 137700,
+   "sourceSize": [
+    750,
+    1000
+   ],
+   "crop": {
+    "left": 0,
+    "top": 50,
+    "width": 750,
+    "height": 750
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/ryan-hazelton-112.webp",
+     "bytes": 3214,
+     "sha256": "8d40bd43b664796c1335208ef6831d209d482dadb89513aab6f91b343251cdb3"
+    },
+    "160": {
+     "file": "/portraits/ryan-hazelton-160.webp",
+     "bytes": 5464,
+     "sha256": "448e0ff3ed817d37aeb5c89cd4361d28ec22429476ca2443dc34b3cfad3129fd"
+    }
+   }
+  },
+  "saliann-scarpulla": {
+   "sourceUrl": "https://web.archive.org/web/20260110230036im_/https://www.nycourts.gov/courts/AD1/images/judgeScarpulla.jpg",
+   "localFile": null,
+   "page": "https://www.nycourts.gov/courts/AD1/JusticesOfTheCourt/Justice_Scarpulla.shtml",
+   "sourceSha256": "24acd4b6b83b7912f9ff16e1219ad23267ee77113dd7a1050dbf838d6e64a4a1",
+   "sourceBytes": 5752,
+   "sourceSize": [
+    299,
+    169
+   ],
+   "crop": {
+    "left": 65,
+    "top": 0,
+    "width": 169,
+    "height": 169
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/saliann-scarpulla-112.webp",
+     "bytes": 1534,
+     "sha256": "e729b470208a4bb9327c9eea6efb2b830f25c72cf71a40de1c03cf30ad1a5360"
+    },
+    "160": {
+     "file": "/portraits/saliann-scarpulla-160.webp",
+     "bytes": 2180,
+     "sha256": "24a25494d2a6ddde1c0b9d57daea849342bf13581387ea2854905e60465549f8"
+    }
+   }
+  },
+  "sally-j-lieber": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sally_Lieber_Square.jpg/500px-Sally_Lieber_Square.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Sally_Lieber_Square.jpg",
+   "sourceSha256": "7dd75030bd9a95bd77912d2a145d3f6a2316dbf9a7b5f20cf94e40dfcfa8134b",
+   "sourceBytes": 70370,
+   "sourceSize": [
+    500,
+    520
+   ],
+   "crop": {
+    "left": 0,
+    "top": 4,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/sally-j-lieber-112.webp",
+     "bytes": 1794,
+     "sha256": "b7763423700e9abbb4adfe37a269e8762f0a410b9b269b947061ab2e51117f17"
+    },
+    "160": {
+     "file": "/portraits/sally-j-lieber-160.webp",
+     "bytes": 3012,
+     "sha256": "7f800b281afb50b63ba47ce43400dbd7e1f01796f50039ddd4b34826603dfe27"
+    }
+   }
+  },
+  "sarah-eckhardt": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sarah_Eckhardt_%28cropped%29.jpg/500px-Sarah_Eckhardt_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Sarah_Eckhardt_(cropped).jpg",
+   "sourceSha256": "bf054740f7ebe420f12d97cb32288e160ccad522ca2b54cc22bde570fe4db296",
+   "sourceBytes": 56903,
+   "sourceSize": [
+    500,
+    502
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/sarah-eckhardt-112.webp",
+     "bytes": 2328,
+     "sha256": "73b6c7240ba953f25ad76359bc8f85bc3e2b7e38131298af7bcabb11abd94e34"
+    },
+    "160": {
+     "file": "/portraits/sarah-eckhardt-160.webp",
+     "bytes": 3732,
+     "sha256": "74ef332c973e6f97d8d416a3b84d5e792e4c7d2313b96aae0cf23d8b555cd0bd"
+    }
+   }
+  },
+  "saritha-komatireddy": {
+   "sourceUrl": "https://sarithafornewyork.com/wp-content/uploads/2026/01/IMG_0086.jpeg",
+   "localFile": null,
+   "page": "https://sarithafornewyork.com/",
+   "sourceSha256": "a99ee672f0b3028fe9d1047aeaf15530af46a779f3e55149e79cd0179fcc64b9",
+   "sourceBytes": 111868,
+   "sourceSize": [
+    671,
+    895
+   ],
+   "crop": {
+    "left": 0,
+    "top": 45,
+    "width": 671,
+    "height": 671
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/saritha-komatireddy-112.webp",
+     "bytes": 1426,
+     "sha256": "da9c9cf6bf5330aa0ad53529ca004bb52c201eec083ccea3193fa4e791ade0a0"
+    },
+    "160": {
+     "file": "/portraits/saritha-komatireddy-160.webp",
+     "bytes": 2178,
+     "sha256": "78f53b07172c8e1b605891d46d79c1ce107f1e133a6f8854140e46606ef6a79a"
+    }
+   }
+  },
+  "scott-brister": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Brister_Scott_hiresRGB_12_2012.jpg/500px-Brister_Scott_hiresRGB_12_2012.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Brister_Scott_hiresRGB_12_2012.jpg",
+   "sourceSha256": "3b0a2cd47f69670715375ce2e9530337bacf0c0c932f96dd59aa0702a38a39be",
+   "sourceBytes": 69882,
+   "sourceSize": [
+    500,
+    625
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/scott-brister-112.webp",
+     "bytes": 1358,
+     "sha256": "33fdb3fa178d46001abf6f759de4cdeb292e306cb4dc46d06c5cbb1f26c2149d"
+    },
+    "160": {
+     "file": "/portraits/scott-brister-160.webp",
+     "bytes": 2198,
+     "sha256": "7337806c1c6128a2ef6029ac49eac5422845f5cf0bbba5d85294e37cc472d0b7"
+    }
+   }
+  },
+  "scott-k-field": {
+   "sourceUrl": "https://justicescottfield.com/wp-content/uploads/2025/06/IMG_0398-768x862.jpeg",
+   "localFile": null,
+   "page": "https://justicescottfield.com/",
+   "sourceSha256": "e53dbc739e23d88fa98f59ee1ef0901a698f2a39349282fac09c26e83594ac9a",
+   "sourceBytes": 137143,
+   "sourceSize": [
+    768,
+    862
+   ],
+   "crop": {
+    "left": 358,
+    "top": 52,
+    "width": 226,
+    "height": 226
+   },
+   "focus": [
+    0.66,
+    0.081,
+    3.4
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/scott-k-field-112.webp",
+     "bytes": 2244,
+     "sha256": "799e43250fb20360dc7376e8438f8f0885905234baf9e1915eee819f1bf609ce"
+    },
+    "160": {
+     "file": "/portraits/scott-k-field-160.webp",
+     "bytes": 3778,
+     "sha256": "06a5adc92ced04f7ca40f7c27cb8795bdd9e71a0439b7c9944315b5dac884510"
+    }
+   }
+  },
+  "scott-wiener": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Scott_Wiener_Official_Biography_Portrait.jpg/500px-Scott_Wiener_Official_Biography_Portrait.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Scott_Wiener_Official_Biography_Portrait.jpg",
+   "sourceSha256": "842253259deb1c6018b45846fea75c3bc1c84b3a523a4a5ce2516dc169845ee9",
+   "sourceBytes": 52372,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/scott-wiener-112.webp",
+     "bytes": 1776,
+     "sha256": "4280cbbda69571e68106fac65b0f67e84e963911234563826157ff096b19a398"
+    },
+    "160": {
+     "file": "/portraits/scott-wiener-160.webp",
+     "bytes": 2746,
+     "sha256": "5c782ccfd66e4f0d93813a099a6e41da99c7dfb7d8d304e131177a46ffaf1d47"
+    }
+   }
+  },
+  "shawn-m-richard": {
+   "sourceUrl": "https://assets.cdn.filesafe.space/qDmtes1xluelbOHtD4yv/media/6a9643a2d931dc07514f2df8.jpg",
+   "localFile": null,
+   "page": "https://www.shawnmrichard4d10.com/",
+   "sourceSha256": "f6d94cafb194cb257aaa14a60a5f59ba34f4403e656c2fe083da16e4a2c4e6e0",
+   "sourceBytes": 229821,
+   "sourceSize": [
+    1284,
+    1027
+   ],
+   "crop": {
+    "left": 129,
+    "top": 0,
+    "width": 1027,
+    "height": 1027
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/shawn-m-richard-112.webp",
+     "bytes": 2302,
+     "sha256": "2bcf836c8ca007933da9d24fe472f019fd694f24c3074273ce82c725ac57730c"
+    },
+    "160": {
+     "file": "/portraits/shawn-m-richard-160.webp",
+     "bytes": 4178,
+     "sha256": "c6f0982820890caf29706fd3d239fcf9184d4769ea2ef0e18b6eca978215e8f8"
+    }
+   }
+  },
+  "shehla-faizi": {
+   "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6940b3b801659d28f153ab75/1b3c9a4f-f2dd-4797-99a0-acfdb5249425/MomentsbyManar.Headshot-Shehla-2026-03.jpg",
+   "localFile": null,
+   "page": "https://www.faizifortexas.com/",
+   "sourceSha256": "bd579341bed8ad54377ea73f2d536e64977f5fa73d60da89dd1ce0bcd4143e97",
+   "sourceBytes": 515446,
+   "sourceSize": [
+    1536,
+    2048
+   ],
+   "crop": {
+    "left": 0,
+    "top": 102,
+    "width": 1536,
+    "height": 1536
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/shehla-faizi-112.webp",
+     "bytes": 3790,
+     "sha256": "8911b7bf44b3161f8987d18e3c9c549c625abe019988d080e5c8ba51b126e0dd"
+    },
+    "160": {
+     "file": "/portraits/shehla-faizi-160.webp",
+     "bytes": 6664,
+     "sha256": "17a2d943178bb54c5da6ff68e6791e50ecccf77b170a61a53f72a113f70acb6d"
+    }
+   }
+  },
+  "shirley-n-weber": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirley_Weber.jpg/500px-Shirley_Weber.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Shirley_Weber.jpg",
+   "sourceSha256": "0922c1d3d27d29bcc22bffbc473b2269097b75a9a989f26b806892fc05d0cc56",
+   "sourceBytes": 65177,
+   "sourceSize": [
+    500,
+    625
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/shirley-n-weber-112.webp",
+     "bytes": 1766,
+     "sha256": "c540c07178e76c71fc99384bd8c04a7b89b518c6da5a0f9a94d359c7b984dd66"
+    },
+    "160": {
+     "file": "/portraits/shirley-n-weber-160.webp",
+     "bytes": 2900,
+     "sha256": "0c5f884184cd4dd77d5770b76b88c28c52c05e10afeca65c20e3af9196eba670"
+    }
+   }
+  },
+  "skyler-a-korgel": {
+   "sourceUrl": "https://static.wixstatic.com/media/f2367f_769856b65d754522b7ad7acf9e19337f~mv2.png",
+   "localFile": null,
+   "page": "https://demsfortcad.com/",
+   "sourceSha256": "0a999a99a6ed73989d317df373902d504ac2d8271e8517c75101dd3e592e75a6",
+   "sourceBytes": 10591942,
+   "sourceSize": [
+    3000,
+    3000
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 3000,
+    "height": 3000
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/skyler-a-korgel-112.webp",
+     "bytes": 1270,
+     "sha256": "b8daf7c31436b15771b9e7c4a6a680e5080a9281a0bd703ce15423af55b774db"
+    },
+    "160": {
+     "file": "/portraits/skyler-a-korgel-160.webp",
+     "bytes": 1950,
+     "sha256": "db96d92a070d42286b3b5942c4a8720662025cdd16ffc1880226f0d141c181a2"
+    }
+   }
+  },
+  "sonja-shaw": {
+   "sourceUrl": "https://www.shawforca.com/sonja.jpg",
+   "localFile": null,
+   "page": "https://www.shawforca.com/",
+   "sourceSha256": "9ac60463f1b7f7b7e244951f69809e4e680e4f0c05b7d094d747cbbe60c52d54",
+   "sourceBytes": 66071,
+   "sourceSize": [
+    800,
+    1200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 80,
+    "width": 800,
+    "height": 800
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/sonja-shaw-112.webp",
+     "bytes": 2280,
+     "sha256": "2dea56057cf82b5953491663ca288e32752822fda6e0fbfe833923f9484cd70a"
+    },
+    "160": {
+     "file": "/portraits/sonja-shaw-160.webp",
+     "bytes": 3618,
+     "sha256": "c560bf986ce2334a64ed8be6ed7780ac889c91806b2c6d5307ecec25d3cfd533"
+    }
+   }
+  },
+  "steve-hilton": {
+   "sourceUrl": "https://stevehiltonforgovernor.com/photos/portrait-street.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/steve-hilton.jpg",
+   "page": "https://stevehiltonforgovernor.com/meet-steve",
+   "sourceSha256": "8a45c457b7cc416d2a8bd82fe5aa8117c72b880e0547c1aeff0a2b6ee4bc0cfc",
+   "sourceBytes": 160946,
+   "sourceSize": [
+    900,
+    1125
+   ],
+   "crop": {
+    "left": 0,
+    "top": 45,
+    "width": 900,
+    "height": 900
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/steve-hilton-112.webp",
+     "bytes": 1584,
+     "sha256": "8864dd042f61dd0b63822dac7b93945013f2e6d47bd0efa27d3fa9725b51b424"
+    },
+    "160": {
+     "file": "/portraits/steve-hilton-160.webp",
+     "bytes": 2394,
+     "sha256": "575f435252e245636ad8ab258396918ebedd6b26eb20a2829a0f307fe72f2b3a"
+    }
+   }
+  },
+  "tanisa-jeffers": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/justices_of_peace/Doc/JP5/tanisa-jeffers-jp5.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/justices-of-peace/jp5",
+   "sourceSha256": "34bd9d99f65faf06ef9a89038ffa4df90777053ab55678cc37e4447f72a6e8ba",
+   "sourceBytes": 1915243,
+   "sourceSize": [
+    4392,
+    2891
+   ],
+   "crop": {
+    "left": 751,
+    "top": 0,
+    "width": 2891,
+    "height": 2891
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/tanisa-jeffers-112.webp",
+     "bytes": 1676,
+     "sha256": "cd46065a9154f1643eaf31d7b15e3f67abbb5767fe53252e02449bea2ac59655"
+    },
+    "160": {
+     "file": "/portraits/tanisa-jeffers-160.webp",
+     "bytes": 2688,
+     "sha256": "f7a9a91a14671a2d3303a8b852c4336ae6d9537e314ebe9728fb31875dfe1513"
+    }
+   }
+  },
+  "tara-m-desautels": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/gw_240814_0070-desautels_pr_bw.png",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/tara-m-desautels",
+   "sourceSha256": "fb2c5ed27e6b444c0b74c79cbfd5ca045a2e5673edd11caf2e6fe2bfe860a706",
+   "sourceBytes": 2277908,
+   "sourceSize": [
+    1494,
+    1821
+   ],
+   "crop": {
+    "left": 0,
+    "top": 65,
+    "width": 1494,
+    "height": 1494
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/tara-m-desautels-112.webp",
+     "bytes": 1608,
+     "sha256": "b496f46b79670007ee98f8ac7d4f335bae150a9d3d4e583c42ccc8b81826901b"
+    },
+    "160": {
+     "file": "/portraits/tara-m-desautels-160.webp",
+     "bytes": 2730,
+     "sha256": "5f216953814e822df879c14d04e4fa3f9fd7c811838ded34065277c31578b43e"
+    }
+   }
+  },
+  "ted-brown": {
+   "sourceUrl": "https://tedbrown.org/website/images/ted-headshot-2026.jpg",
+   "localFile": null,
+   "page": "https://tedbrown.org/website/",
+   "sourceSha256": "a76fdca2a10342b56c9bda5e023be860cd88f6b46e53280a918cbd180406031f",
+   "sourceBytes": 10815,
+   "sourceSize": [
+    410,
+    410
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 410,
+    "height": 410
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/ted-brown-112.webp",
+     "bytes": 1028,
+     "sha256": "5d3380b91744a20616bb1386e70df25caa0cb509560c27106d4ef0f3e60e87a9"
+    },
+    "160": {
+     "file": "/portraits/ted-brown-160.webp",
+     "bytes": 1596,
+     "sha256": "c40eabd52f2c740c0fbea2d2c1aeee3cd3de43d7cd207aa4cae2d7071b507216"
+    }
+   }
+  },
+  "theo-ellington": {
+   "sourceUrl": "https://assets.nationbuilder.com/theo/pages/10/features/original/Ellington.jpg?1788203604",
+   "localFile": null,
+   "page": "https://www.theoellington.com/",
+   "sourceSha256": "bdfe4dfc4cb0f7759670d39c95fc662eff99b4fb797980aab7c49d7c9d95845a",
+   "sourceBytes": 696082,
+   "sourceSize": [
+    2000,
+    1064
+   ],
+   "crop": {
+    "left": 468,
+    "top": 0,
+    "width": 1064,
+    "height": 1064
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/theo-ellington-112.webp",
+     "bytes": 2200,
+     "sha256": "916295d33ab494d00cb61fd36c3fecd91ead14558f0dc8361b48658409e0d324"
+    },
+    "160": {
+     "file": "/portraits/theo-ellington-160.webp",
+     "bytes": 3874,
+     "sha256": "28deca3be183f9de88b3bb387c5f375c0f64d17d4c01fdc268a58388c8f491ed"
+    }
+   }
+  },
+  "therese-m-stewart": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/justice_therese_stewartjpg.jpg?h=607bcefb&itok=gYZN9xkt",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/therese-m-stewart",
+   "sourceSha256": "d3787ef768ccbb183234f1ae3ec8fabd023ad8d4a9e12eed70d380608fc03299",
+   "sourceBytes": 5120,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/therese-m-stewart-112.webp",
+     "bytes": 1182,
+     "sha256": "6eca234a06f8734f90839752592daef373682aed22065e3095034527aa5f8935"
+    },
+    "160": {
+     "file": "/portraits/therese-m-stewart-160.webp",
+     "bytes": 1712,
+     "sha256": "fa8bf4f2ee756df882c6047bcb33dde7049563ca6ea62e13551b2af4152db468"
+    }
+   }
+  },
+  "thomas-p-dinapoli": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/TPD%27s_Headshot_%28cropped%29.jpg/500px-TPD%27s_Headshot_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:TPD%27s_Headshot_(cropped).jpg",
+   "sourceSha256": "659352497ab6a266c42ac43d837c08a396bd1fb84fcb521a020e2e3c78cc9a05",
+   "sourceBytes": 70028,
+   "sourceSize": [
+    500,
+    603
+   ],
+   "crop": {
+    "left": 0,
+    "top": 21,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/thomas-p-dinapoli-112.webp",
+     "bytes": 2532,
+     "sha256": "531e076b7d970c23412aaf34ab91abeba16fe9ef13abbe4466679877f604e900"
+    },
+    "160": {
+     "file": "/portraits/thomas-p-dinapoli-160.webp",
+     "bytes": 4082,
+     "sha256": "aacdd770396515a2076dfef83706656a01bb4fdd2ee70a8a45aefe2cede02956"
+    }
+   }
+  },
+  "thomas-smith": {
+   "sourceUrl": "https://pbs.twimg.com/profile_images/2001320051584950272/TD3Ozsov_400x400.jpg",
+   "localFile": "/workspace/townhall/civic/photos_local/thomas-smith.jpg",
+   "page": "https://x.com/smithfortx",
+   "sourceSha256": "5e9a8e92573d1b455997e9f7c14b1621a567f46619a7dc3da46b3877cbcd12c8",
+   "sourceBytes": 17490,
+   "sourceSize": [
+    400,
+    400
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 400,
+    "height": 400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/thomas-smith-112.webp",
+     "bytes": 1152,
+     "sha256": "6f6891e4bf207d2cc16c3ca70bb0d2918d6d694d886cda1838ac64a3a1c3e13e"
+    },
+    "160": {
+     "file": "/portraits/thomas-smith-160.webp",
+     "bytes": 1800,
+     "sha256": "25c519e75e48af8628e217d209376de8d92a0cd083af1bfc7179fbb1b9b12f86"
+    }
+   }
+  },
+  "tim-tung": {
+   "sourceUrl": "https://run.imgix.net/bfe43de5-5100-4ad3-a9f8-f06ebc457635/c18cbf0c-e392-4acc-bcd4-3f702b3ad0c5/82c35450-859e-4360-921d-3cc2b728e9a7.webp?ixlib=js-3.8.0&bri=5&con=6&sat=0&high=0&shad=20&usm=0&rect=217%2C2%2C2455%2C1652&s=7075d05894048ec956db8b942e99c07e",
+   "localFile": "/workspace/townhall/civic/photos_local/tim-tung.jpg",
+   "page": "https://www.timtung.com/about",
+   "sourceSha256": "da7130a0cfe176a721afc68c9dd16cca2ac815e5d067f8ffbf6cf4194268761d",
+   "sourceBytes": 292357,
+   "sourceSize": [
+    2455,
+    1652
+   ],
+   "crop": {
+    "left": 402,
+    "top": 0,
+    "width": 1652,
+    "height": 1652
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/tim-tung-112.webp",
+     "bytes": 1822,
+     "sha256": "431ccf19024ca347e58a6d4f9807d5b07c24f64781dffb842e8e435c3717e29e"
+    },
+    "160": {
+     "file": "/portraits/tim-tung-160.webp",
+     "bytes": 2846,
+     "sha256": "de67c648b0546d9c21e2261fbfa6ffdebb64ec8c3ea2aa7cbca3dd8962d35d31"
+    }
+   }
+  },
+  "todd-hood": {
+   "sourceUrl": "https://www.madisoncounty.ny.gov/ImageRepository/Document?documentID=6023",
+   "localFile": null,
+   "page": "https://www.madisoncounty.ny.gov/1707/About-the-Sheriffs-Office",
+   "sourceSha256": "79059c1a0962d5c92da04534be337538ca21aacdb447247b289dc7210a5d25e5",
+   "sourceBytes": 282969,
+   "sourceSize": [
+    1733,
+    2600
+   ],
+   "crop": {
+    "left": 0,
+    "top": 173,
+    "width": 1733,
+    "height": 1733
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/todd-hood-112.webp",
+     "bytes": 1576,
+     "sha256": "c6bdbdd2d2c0d247c39535a6aa135aa35636f35f3e249d2b20ac17f1b49c3e69"
+    },
+    "160": {
+     "file": "/portraits/todd-hood-160.webp",
+     "bytes": 2536,
+     "sha256": "f93b226c5a8a443d752c49cbf9cf1b38ece568753dd8efd8d441e6b836568abe"
+    }
+   }
+  },
+  "todd-wong": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/courts/judge-wong.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/courts/civil/county/cc1",
+   "sourceSha256": "2c5dc58b791ac7435d2eb1ae087a4354034feee4a493cd820a8f1e2f6b5f07b4",
+   "sourceBytes": 39963,
+   "sourceSize": [
+    270,
+    405
+   ],
+   "crop": {
+    "left": 0,
+    "top": 27,
+    "width": 270,
+    "height": 270
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/todd-wong-112.webp",
+     "bytes": 1374,
+     "sha256": "16f5ba88a1f334fde5f44b680e21469b0214c64783f5444509ec01ffc3ad06f4"
+    },
+    "160": {
+     "file": "/portraits/todd-wong-160.webp",
+     "bytes": 2064,
+     "sha256": "1cbdb98beab4a5e430cb18990293c3875e23c731bc90f00aa20753185a0a51f8"
+    }
+   }
+  },
+  "tom-baker": {
+   "sourceUrl": "https://justicetombaker.com/wp-content/uploads/2026/07/Tom-Baker-resized.png",
+   "localFile": "data/photo-local/tom-baker.png",
+   "page": "https://justicetombaker.com/about-thomas-baker/",
+   "sourceSha256": "c5efcee965511c9ad8c0c4cb223e76c493bcc7b0f59b901dc492d5825557fc4f",
+   "sourceBytes": 553432,
+   "sourceSize": [
+    600,
+    838
+   ],
+   "crop": {
+    "left": 133,
+    "top": 161,
+    "width": 333,
+    "height": 333
+   },
+   "focus": [
+    0.5,
+    0.32,
+    1.8
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/tom-baker-112.webp",
+     "bytes": 1442,
+     "sha256": "96046392e408887463d6747442f8b2fdbdfe21adb27b84fbc819c6a372fe50c5"
+    },
+    "160": {
+     "file": "/portraits/tom-baker-160.webp",
+     "bytes": 2112,
+     "sha256": "ced8ac5ae0aff48a1f691cddfc4b7d32a409362cf899971dbfb562e7d40a671d"
+    }
+   }
+  },
+  "tony-simone": {
+   "sourceUrl": "https://nyassembly.gov/write/upload/member_files/075/headshot/075.jpg?hst=1672577505",
+   "localFile": null,
+   "page": "https://nyassembly.gov/mem/Tony-Simone",
+   "sourceSha256": "3ac2b78d90701c1d1ad52dadc3b77d794c837d0a622516002bb1a2f652864ec2",
+   "sourceBytes": 1606988,
+   "sourceSize": [
+    1279,
+    1790
+   ],
+   "crop": {
+    "left": 0,
+    "top": 102,
+    "width": 1279,
+    "height": 1279
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/tony-simone-112.webp",
+     "bytes": 2202,
+     "sha256": "8ab9e0985ab6203d25689591d177aeee8b843b97cf0f15e45cad3c5be1271d38"
+    },
+    "160": {
+     "file": "/portraits/tony-simone-160.webp",
+     "bytes": 3564,
+     "sha256": "2a5e76c4cbd1f35b541d63064b824f3b9efecaa0955d4f13ded714e268ee25ea"
+    }
+   }
+  },
+  "tracie-l-brown": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/styles/profile_cards_portrait/public/images/person/1dca-brown-bio-photo-150x180jpg.jpg?h=4eadab8c&itok=jvZn6OYW",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/tracie-l-brown",
+   "sourceSha256": "343c869a9fd001244c637e199c3761b88eb0b838b6b76edcea984dff66456582",
+   "sourceBytes": 6475,
+   "sourceSize": [
+    200,
+    200
+   ],
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/tracie-l-brown-112.webp",
+     "bytes": 1582,
+     "sha256": "a2b3336c7a5f0c65949518d8e348781901a8c497830c6e4009b6a5efe0b7e83d"
+    },
+    "160": {
+     "file": "/portraits/tracie-l-brown-160.webp",
+     "bytes": 2430,
+     "sha256": "b66b1c60084a2c6576aefafcd113749f7824f4d1bb156d47f57dda1d11e0a05c"
+    }
+   }
+  },
+  "trevor-hale": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Trevor_Hale_%28head_shot%29.jpg/500px-Trevor_Hale_%28head_shot%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:Trevor_Hale_(head_shot).jpg",
+   "sourceSha256": "21028dfbbb61d0a824e17ac550ce670fee07513a655424d259a0b5aae10302cc",
+   "sourceBytes": 58165,
+   "sourceSize": [
+    500,
+    625
+   ],
+   "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/trevor-hale-112.webp",
+     "bytes": 1304,
+     "sha256": "aed77182aa0c1796b636f0bd775c0288f96b812f2c242015114bdfd280dda000"
+    },
+    "160": {
+     "file": "/portraits/trevor-hale-160.webp",
+     "bytes": 2116,
+     "sha256": "0534d7900ff31dfac42f4e54a986762a6a2ee64dcdfdfc2a2a93f1438fe72421"
+    }
+   }
+  },
+  "velva-l-price": {
+   "sourceUrl": "https://www.traviscountytx.gov/images/VelvaPrince-sm.jpg",
+   "localFile": null,
+   "page": "https://www.traviscountytx.gov/district-clerk",
+   "sourceSha256": "a9c619bc6fd1f0793564b82c350c9e8f1b5d40c2bb030a526d9ae61280d9e542",
+   "sourceBytes": 10313,
+   "sourceSize": [
+    200,
+    300
+   ],
+   "crop": {
+    "left": 0,
+    "top": 20,
+    "width": 200,
+    "height": 200
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/velva-l-price-112.webp",
+     "bytes": 1404,
+     "sha256": "c8b145b43161905e4f3f768c62fd64ad8a8f74699a6cf634b6f6d1bc353a209a"
+    },
+    "160": {
+     "file": "/portraits/velva-l-price-160.webp",
+     "bytes": 2210,
+     "sha256": "e230d8ba76f6daee1442060e218f1a1a327d5b9c03d603b16c5ebd9db182f0ec"
+    }
+   }
+  },
+  "victor-a-rodriguez": {
+   "sourceUrl": "https://appellate.courts.ca.gov/sites/default/files/appellate/default/images/person/gw_211206_0013-rodriguez_8x10-bwjpg.jpg",
+   "localFile": null,
+   "page": "https://appellate.courts.ca.gov/district-courts/1dca/bio/victor-rodriguez",
+   "sourceSha256": "10981b493930851e007fca2693b615b3f26b977fda256daff76430c807430e08",
+   "sourceBytes": 764606,
+   "sourceSize": [
+    2400,
+    3000
+   ],
+   "crop": {
+    "left": 0,
+    "top": 120,
+    "width": 2400,
+    "height": 2400
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/victor-a-rodriguez-112.webp",
+     "bytes": 1274,
+     "sha256": "1c0be6278c4ee0d726efee65a51d627b0f31494ae29ad2dd36b558f56f8078fe"
+    },
+    "160": {
+     "file": "/portraits/victor-a-rodriguez-160.webp",
+     "bytes": 1986,
+     "sha256": "0b6f3d151f39148f52bdf563067ec25b56aa822a3c38dc8eb4b38ce1a762057e"
+    }
+   }
+  },
+  "vikki-goodwin": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg/500px-HiRes-Vikki_Goodwin-6381-red_%28cropped%29.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:HiRes-Vikki_Goodwin-6381-red_(cropped).jpg",
+   "sourceSha256": "cc6df0e7e57bbd850673e5269d4b8f6ae6a847178a1cf4134079c478a257fbe0",
+   "sourceBytes": 46635,
+   "sourceSize": [
+    500,
+    667
+   ],
+   "crop": {
+    "left": 0,
+    "top": 33,
+    "width": 500,
+    "height": 500
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/vikki-goodwin-112.webp",
+     "bytes": 1448,
+     "sha256": "f50f2a963e9aa271d8509130cb505b2929bfb09fe77e438b4fb22eda47ab8cad"
+    },
+    "160": {
+     "file": "/portraits/vikki-goodwin-160.webp",
+     "bytes": 2230,
+     "sha256": "687b3150e8502b47c443eb92be1270f6e14dd3c79e3bf6d0f7321f600d869a40"
+    }
+   }
+  },
+  "virginia-cheung": {
+   "sourceUrl": "https://static.wixstatic.com/media/8d4dcf_7a60227a7585425cadc040729ac23497~mv2.jpg",
+   "localFile": null,
+   "page": "https://www.virginiacheung.com/",
+   "sourceSha256": "2724210ff52ea36990897604b981ca0bb1ccae58589943ff15c9b7f363ee93e5",
+   "sourceBytes": 1254213,
+   "sourceSize": [
+    2048,
+    1365
+   ],
+   "crop": {
+    "left": 311,
+    "top": 154,
+    "width": 853,
+    "height": 853
+   },
+   "focus": [
+    0.26,
+    0.3,
+    1.6
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/virginia-cheung-112.webp",
+     "bytes": 1736,
+     "sha256": "b88d5dd43518de4d750c974448b9ff5d07ded7ed8ebe5e1e3e19fa7d95ccea30"
+    },
+    "160": {
+     "file": "/portraits/virginia-cheung-160.webp",
+     "bytes": 2720,
+     "sha256": "84678fd42fc3c3537367ec2022555a592f61335704ca80c1071aa9974b47174b"
+    }
+   }
+  },
+  "vlad-frants": {
+   "sourceUrl": "https://www.vladfrantsforcivilcourt.com/images/headshot.jpg",
+   "localFile": null,
+   "page": "https://www.vladfrantsforcivilcourt.com/",
+   "sourceSha256": "678fb1addff351842da701dfee57dd163d97d803df928a598b4854df751ff79c",
+   "sourceBytes": 1935509,
+   "sourceSize": [
+    2384,
+    3040
+   ],
+   "crop": {
+    "left": 0,
+    "top": 131,
+    "width": 2384,
+    "height": 2384
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/vlad-frants-112.webp",
+     "bytes": 2146,
+     "sha256": "d8096fcb354c86ddad350482c9042e83d282839b43ff57eddd09069bf7e89a0d"
+    },
+    "160": {
+     "file": "/portraits/vlad-frants-160.webp",
+     "bytes": 3246,
+     "sha256": "e54ddccb7c1e5e48f10d547880f07c09b5745343b1e9c536fcf1ed63145c817f"
+    }
+   }
+  },
+  "wilneida-negron": {
+   "sourceUrl": "https://cdn.prod.website-files.com/6a2a35e7bd62ef27be8b230d/6a2aa0c9fa95920a799c0f7a_Frame%202147226689.avif",
+   "localFile": null,
+   "page": "https://www.wilneidany12.com/about-wilneida",
+   "sourceSha256": "038588ca2b62b7e9e48edef2498336da0dd1cd739f4cac3c57580e54afa18dc8",
+   "sourceBytes": 11247,
+   "sourceSize": [
+    434,
+    430
+   ],
+   "crop": {
+    "left": 2,
+    "top": 0,
+    "width": 430,
+    "height": 430
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/wilneida-negron-112.webp",
+     "bytes": 1880,
+     "sha256": "db3793a594e40ff80226475ab2ccf2fb548550ee39747c0d9909fb3130151b97"
+    },
+    "160": {
+     "file": "/portraits/wilneida-negron-160.webp",
+     "bytes": 2916,
+     "sha256": "dfaf583585f91d45ae5f61cc1c254e2851f3c20e7206333b4001e8d4b5fdf9a5"
+    }
+   }
+  },
+  "xavier-becerra": {
+   "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/HHS_Xavier_Becerra.jpg/500px-HHS_Xavier_Becerra.jpg",
+   "localFile": null,
+   "page": "https://commons.wikimedia.org/wiki/File:HHS_Xavier_Becerra.jpg",
+   "sourceSha256": "9aee177f949e820ae7a073511bfb63b4494e994029bd09ac47be0b661abfe464",
+   "sourceBytes": 54172,
+   "sourceSize": [
+    500,
+    625
+   ],
+   "crop": {
+    "left": 58,
+    "top": 72,
+    "width": 385,
+    "height": 385
+   },
+   "focus": [
+    0.5,
+    0.3,
+    1.3
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/xavier-becerra-112.webp",
+     "bytes": 2140,
+     "sha256": "c222ec350fcb2af6db76c2e4b8c032b75bb5635f49753b1d7cf0a2e7c9d02615"
+    },
+    "160": {
+     "file": "/portraits/xavier-becerra-160.webp",
+     "bytes": 3524,
+     "sha256": "3d14f4850bc3c3c38d2cbfbd4eada3524ef15a8190c8162dff5aa3a6bc151585"
+    }
+   }
+  },
+  "yvonne-munoz": {
+   "sourceUrl": "https://static.wixstatic.com/media/f2367f_163e62d1ce164e2487093a6fde55d813~mv2.png",
+   "localFile": null,
+   "page": "https://demsfortcad.com/",
+   "sourceSha256": "c12367b1cbd1b15e3aa436abcf1aa63fae855d4d777c0e3fffe72beb1953a6a8",
+   "sourceBytes": 3906889,
+   "sourceSize": [
+    3000,
+    2001
+   ],
+   "crop": {
+    "left": 500,
+    "top": 0,
+    "width": 2001,
+    "height": 2001
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/yvonne-munoz-112.webp",
+     "bytes": 1292,
+     "sha256": "30d742224bd0a982c9173188552951b2b77aaac3677150c09b0d52eff76af631"
+    },
+    "160": {
+     "file": "/portraits/yvonne-munoz-160.webp",
+     "bytes": 1926,
+     "sha256": "ba09065c2646cca42f3cdbed9bf81d2b1c73a2b970489c872f53d3514409e26f"
+    }
+   }
+  },
+  "zohaib-zo-qadri": {
+   "sourceUrl": "https://austin.widen.net/content/yajrku9cxq/web/Austin%20District%209%20-%20Web_zo-profile-opt.jpg?crop=yes&w=1312&h=1168&itok=xHm0taqR",
+   "localFile": null,
+   "page": "https://www.austintexas.gov/department/district-9",
+   "sourceSha256": "00935253fb7e6261eae4ce29a3222e4db05efc557f3e2c3f9d6a18deb201e2ac",
+   "sourceBytes": 225555,
+   "sourceSize": [
+    1312,
+    1168
+   ],
+   "crop": {
+    "left": 72,
+    "top": 0,
+    "width": 1168,
+    "height": 1168
+   },
+   "focus": [
+    0.5,
+    0.2,
+    1
+   ],
+   "files": {
+    "112": {
+     "file": "/portraits/zohaib-zo-qadri-112.webp",
+     "bytes": 2004,
+     "sha256": "694660be1035c46f27cb359e14b5af3dea4aa295ce967821047451ba9abf2ef1"
+    },
+    "160": {
+     "file": "/portraits/zohaib-zo-qadri-160.webp",
+     "bytes": 3194,
+     "sha256": "78c8598a370f1c3b3a2bef224a5eacbb52587d891801641e0d6ed82d94866287"
+    }
+   }
+  }
+ }
+}

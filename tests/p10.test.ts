@@ -147,12 +147,13 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
   });
   it("hotlinked campaign headshot is credited to its source page; footer carries the removal notice", () => {
     const b = (withLicensedPhoto({ name: "Richard Barrera" } as never) as { photo?: { url: string; credit: string; page: string; hotlinked?: boolean } }).photo;
-    expect(b?.hotlinked).toBe(true);
-    expect(b?.url).toMatch(/^https:\/\//);
+    // Design p14: downloaded at build time and self-hosted; the credit still links to the source page.
+    expect(b?.hotlinked).toBeUndefined();
+    expect(b?.url).toBe("/portraits/richard-barrera-160.webp");
     expect(b?.page).toBe("https://www.barreraforedu.com/mediaresources");
     expect(b?.credit).toBe("Photo: Richard Barrera campaign site"); // Civic qa_fixes6 #5
     expect(src("components/SiteChrome.tsx")).toMatch(/Candidate photos are from their public campaign or official pages\. <a href="\/contact"[^>]*>Contact us<\/a> to remove\./);
-    expect(src("components/Portrait.tsx")).toMatch(/referrerPolicy="no-referrer"/);
+    expect(src("components/Portrait.tsx")).toMatch(/referrerPolicy: "no-referrer"/);
   });
   it("77002 stays unsupported", () => {
     expect(src("lib/site.ts")).not.toMatch(/zip: "77002"/);

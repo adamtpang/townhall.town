@@ -22,8 +22,8 @@ describe("p11 + QA fb66b9b", () => {
   });
   it("#4 Hinojosa and Hilton are head and shoulders (superseded by Civic qa_fixes7: their own campaign headshots, self-hosted, no zoom)", () => {
     const h = (P as unknown as { selfHosted: Record<string, { focus?: number[]; file?: string }> }).selfHosted;
-    expect(h["gina-hinojosa"].focus).toBeUndefined(); expect(h["gina-hinojosa"].file).toBe("/portraits/gina-hinojosa.webp");
-    expect(h["steve-hilton"].focus).toBeUndefined(); expect(h["steve-hilton"].file).toBe("/portraits/steve-hilton.webp");
+    expect(h["gina-hinojosa"].focus).toBeUndefined(); expect(h["gina-hinojosa"].file).toBe("/portraits/gina-hinojosa-160.webp");
+    expect(h["steve-hilton"].focus).toBeUndefined(); expect(h["steve-hilton"].file).toBe("/portraits/steve-hilton-160.webp");
   });
   it("#5 checked sources: one League of Women Voters guide, Mission Local and SF Standard split, SF Assessor-Recorder", () => {
     const lab = (xs: { title?: string | null; url: string }[]) => xs.map((x) => x.title ?? x.url);
@@ -65,8 +65,8 @@ describe("p11 + QA fb66b9b", () => {
     const all = { ...ph.selfHosted, ...ph.hotlinked };
     for (const v of Object.values(all)) expect(v.credit).not.toMatch(/^(Travis County|Supreme Court|First District|Fifteenth|Madison County)[^]* official page$/);
     expect(all["andy-brown"].credit).toBe("Andy Brown official page");
-    expect(ph.selfHosted["marc-m-meyer"].file).toBe("/portraits/marc-m-meyer.webp");
-    expect(fs.existsSync("public/portraits/marc-m-meyer.webp")).toBe(true);
+    expect(ph.selfHosted["marc-m-meyer"].file).toBe("/portraits/marc-m-meyer-160.webp");
+    expect(fs.existsSync("public/portraits/marc-m-meyer-160.webp")).toBe(true);
     expect(src("scripts/ingest-photos.mjs")).toContain('"marc-m-meyer": [0.1, 0, 0.8, 0.75]');
     for (const id of ["manuel-noris-barrera", "mike-trouble-lin"]) expect(ph.selfHosted[id]?.file).toMatch(/^\/portraits\//);
   });
