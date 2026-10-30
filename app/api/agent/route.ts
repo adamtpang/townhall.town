@@ -5,6 +5,7 @@ import { createXai } from "@ai-sdk/xai";
 import { z } from "zod";
 import { getDistricts, getRaces, getCandidates, getMarketOdds, getLocalProblems, ballotFor } from "../../../lib/tools";
 import { civicTools } from "../../../lib/civicTools";
+import { limited } from "../../../lib/rateLimit";
 import { dataTools } from "../../../lib/dataTools";
 // Towny privacy P0: never send a voter address to Google Civic voterinfo. Real fix lands with the feat/agentic merge.
 const { getVoterInfo: _noVoterInfo, ...hackFairDataTools } = dataTools;
@@ -178,9 +179,11 @@ async function handle(raw: string) {
 }
 
 export async function GET(req: Request) {
+  const lim = limited(req); if (lim) return lim;
   return handle(new URL(req.url).searchParams.get("zip") || "");
 }
 export async function POST(req: Request) {
+  const lim = limited(req); if (lim) return lim;
   const body = await req.json().catch(() => ({}));
   return handle(String(body.zip || ""));
 }

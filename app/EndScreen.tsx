@@ -4,6 +4,7 @@ import type { Photo } from "../components/Portrait";
 import { Button } from "../components/ui/button";
 import { stancesFor, sourceLabel, ISSUES, type Answers } from "../lib/issues";
 import { overlapStatus, overlapLabel, METHOD, MIN_ISSUES } from "../lib/overlapCore.mjs";
+import TownyResearch from "./TownyResearch";
 import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl } from "../lib/endscreen.mjs";
 
 type Cand = { name: string; party?: string | null; photo?: Photo; campaignSite?: string | null; ballotpedia?: string | null };
@@ -106,7 +107,17 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
                 </div>
               ))}
               {rowsByRace.some((r) => !r.any) && (
-                <p className="text-sm text-black/60" data-race-none>Not enough sourced positions for any candidate yet: {rowsByRace.filter((r) => !r.any).map((r) => r.race.title || r.race.id).join(", ")}.</p>
+                <div data-race-none-list>
+                  <p className="text-sm text-black/60" data-race-none>Not enough sourced positions to compare yet in {rowsByRace.filter((r) => !r.any).length} race{rowsByRace.filter((r) => !r.any).length === 1 ? "" : "s"}.</p>
+                  <ul className="mt-2 divide-y divide-black/15 border-t border-black/15">
+                    {rowsByRace.filter((r) => !r.any).map(({ race: r }) => (
+                      <li key={r.id} className="py-2" data-race-none-item={r.id}>
+                        <p className="text-base font-[530]">{r.title || r.id}</p>
+                        <TownyResearch zip={zip} raceId={r.id} title={r.title || r.id} names={r.candidates.map((c) => c.name)} issues={ids} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </div>
           )}
