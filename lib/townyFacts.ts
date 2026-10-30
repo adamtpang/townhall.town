@@ -3,7 +3,7 @@
 // page lists). "When does early voting end?" -> data/election_dates.json (Civic, official source), with its link.
 import { ballotFor } from "./tools";
 import { getElectionDates, fmtDate, fmtRange } from "./logistics";
-import { whereFor, whenFor } from "./endscreen.mjs";
+import { whereFor, dailyRows } from "./endscreen.mjs";
 
 export const ASKS_BALLOT = /\b(what'?s|what is|what are|who'?s|who is|who are|show)\b[^?]*\b(my|the|our)\s+ballot\b|\bon my ballot\b/i;
 export const ASKS_EARLY = /\bearly[\s-]*vot/i;
@@ -41,10 +41,17 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
         if (site.sourceUrl !== ev.sourceUrl) links.push({ label: `${site.name} hours source`, url: site.sourceUrl });
       }
     } else {
-      const e = (whenFor(zip, d) as { events: { kind: string; daily?: { label: string; hours: string; appliesTo: string | null }[] }[] }).events.find((x) => x.kind === "early");
-      const rows = e?.daily ?? [];
+      // Rebase onto 7c281a6: its data keeps the Election Day row in earlyVoting.dailyHours; Towny's early-voting reply lists
+      // only rows on or before the early-voting end date (the page's own rows, same formatting).
+      const early = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => (String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []).every((x) => x <= ev.end));
+      const rows = dailyRows(early, d, ev.sourceUrl, j.timezone) as { label: string; hours: string; appliesTo: string | null }[];
       const many = new Set(rows.map((x) => x.appliesTo)).size > 1;
       if (rows.length) hours = ` Hours: ${rows.map((x) => `${x.label}: ${x.hours}${many && x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`;
+      // QA 8f78579 P2 (Oct 30, 3:05 PM CT): the Election Day row in the same data (SF: 2026-11-03, 7:00 AM-8:00 PM, City Hall
+      // Voting Center and all 501 polling places) follows as its own sentence, formatted the same way, never as early voting.
+      const after = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => { const iso = String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []; return iso.length > 0 && iso.every((x) => x > ev.end); });
+      const ed = dailyRows(after, d, ev.sourceUrl, j.timezone) as { label: string; hours: string; appliesTo: string | null }[];
+      if (rows.length && ed.length) hours += ` Election Day, ${ed.map((x) => `${x.label}: ${x.hours}${x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`;
     }
     return { reply: `${when}${hours}`, links };
   }

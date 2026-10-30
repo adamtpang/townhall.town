@@ -1,5 +1,6 @@
 // PREVIEW-ONLY test harness for Civic's Towny prompt tests (towny_prompt.md). Not a shipped feature:
 // returns the standard 404 JSON on production. One voter message in, one Towny reply out. Nothing is stored or logged.
+import { TOWNY_BRIEF } from "../../../lib/towny/brief";
 import { tool } from "ai";
 import { z } from "zod";
 import { apiError, isZip, methodNotAllowed } from "../../../lib/apiError";
@@ -47,7 +48,7 @@ export async function POST(req: Request) {
   const clean = redact(message);
   const tz = (zip && getElectionDates(zip)?.timezone) || "America/Chicago";
   const prompt = (zip ? `Voter's ZIP: ${zip}\n\n` : "") + clean.text;
-  const turn = await runTowny({ system: townyPrompt(longDateIn(tz)), prompt, tools: { ...coreTools, ...townyTools } });
+  const turn = await runTowny({ system: `${townyPrompt(longDateIn(tz))}\n\n${TOWNY_BRIEF}`, prompt, tools: { ...coreTools, ...townyTools } });
   if (turn.ok)
     return Response.json(
       { handledBy: "model", model: turn.model, redacted: clean.redacted, modelSaw: prompt, toolCalls: turn.toolCalls, reply: turn.reply, flags: outputFlags(turn.reply), failedAttempts: turn.attempts },

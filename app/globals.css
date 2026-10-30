@@ -129,3 +129,12 @@ body {
     content: ""; position: absolute; left: -4px; right: -4px; top: 50%; bottom: auto; height: 44px; min-height: 100%; transform: translateY(-50%);
   }
 }
+
+/* QA 8f78579 P1 (Oct 30, 3:05 PM CT): at 300% zoom the 70dvh cap (QA 6b2ae5c P2) left the conversation about 210px tall.
+   On short viewports the panel now fills the screen and scrolls as one column: the conversation grows with its content
+   (at least 60dvh), the header scrolls away, and the composer stays pinned to the bottom so send is always reachable. */
+@media (max-height: 700px) {
+  [data-towny-panel] { top: 0 !important; bottom: 0 !important; max-height: 100dvh !important; height: 100dvh !important; overflow-y: auto; }
+  [data-towny-panel] > [data-towny-scroll] { flex: 1 0 auto; min-height: 60dvh; overflow: visible; }
+  [data-towny-panel] > form { position: sticky; bottom: 0; z-index: 1; background: hsl(var(--background)); }
+}

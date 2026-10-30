@@ -8,6 +8,7 @@ import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import { HOME_SECTIONS } from "../lib/content";
 import { homeJsonLd, jsonLdString } from "../lib/jsonld";
 import { LangProvider, LangToggle, T } from "../lib/i18n";
+import TownyFab from "../components/towny/TownyFab";
 
 // ndstudio-structure spec §3 item 5: "02 How it works" as 3 steps (approved Oct 30, 2026). Exact copy; no other changes.
 const HOW_STEPS: [string, string][] = [
@@ -22,7 +23,7 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
-      <main className="mx-auto max-w-site px-6 lg:px-10">
+      <main className="mx-auto max-w-site px-6 lg:px-10 pb-24 lg:pb-0">
         {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
         <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
           <h1 className={`${H1} [text-wrap:balance]`}>
@@ -59,6 +60,7 @@ export default function Home() {
         <div className="h-16 lg:h-24" />
       </main>
       <SiteFooter />
+      <TownyFab />
     </LangProvider>
   );
 }

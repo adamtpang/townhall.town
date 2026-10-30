@@ -62,14 +62,15 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
         {site ? (<>
           <p className="mt-2 text-base font-[530]">{site.name}</p><p className="text-base text-black/80">{site.address}</p>
           <p className="mt-1 text-sm"><a href={mapsUrl(site.address)} className={link} target="_blank" rel="noreferrer" data-card-map>Map and directions ↗</a> · <a href={site.sourceUrl} className={link} target="_blank" rel="noreferrer">Official site list ↗</a></p>
-          {where.dependsOnAddress && where.lookupUrl ? <p className="mt-1 text-sm"><a href={where.lookupUrl} className={link} target="_blank" rel="noreferrer">Find your assigned polling place ↗</a></p> : null}
+          {where.dependsOnAddress && where.lookupUrl ? <p className="mt-1 text-sm"><a href={where.lookupUrl} className={link} target="_blank" rel="noreferrer" data-card-lookup>{where.lookupLabel ?? "Find your assigned polling place"} ↗</a></p> : null}
         </>) : where.lookupUrl ? (
-          <p className="mt-2 text-base">Your polling place is assigned by home address. <a href={where.lookupUrl} className={link} target="_blank" rel="noreferrer" data-card-map>Find it ↗</a></p>
+          <p className="mt-2 text-base">Your polling place is assigned by home address. <a href={where.lookupUrl} className={link} target="_blank" rel="noreferrer" data-card-map data-card-lookup>{where.lookupLabel ?? "Find it"} ↗</a></p>
         ) : <p className="mt-2 text-base text-black/60">No sourced polling place for this ZIP yet.</p>}
+        {where.portalUrl ? <p className="mt-1 text-sm"><a href={where.portalUrl} className={link} target="_blank" rel="noreferrer" data-card-portal>Voter Portal ↗</a></p> : null}
       </section>
 
-      <section className="mt-10 border-t border-black/15 pt-6">
-        <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
+      <section className="mt-10 border-t border-black/15 pt-6" id="card-overlap" data-card-overlap>
+        <h2 className="text-sm font-[530] text-black/60" tabIndex={-1}>Who lines up with you</h2>
         <p className="mt-1 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation. Court races are not compared.</p>
         
         <>

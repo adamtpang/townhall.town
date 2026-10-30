@@ -13,7 +13,7 @@ export type Jurisdiction = {
   electionDay: { date: string; hours: string; anySite?: boolean; anySiteNote?: string; sourceUrl: string; locationsUrl?: string };
 };
 export type Site = { name: string; room?: string; address: string; dates?: string; hours?: string; sourceUrl?: string };
-export type Polling = { jurisdiction: string; lookupUrl: string; lookupUrlNote?: string; dependsOnAddress: boolean; earlyVoting: Site[]; electionDay: Site[]; earlyVotingNote?: string; electionDayNote?: string };
+export type Polling = { jurisdiction: string; lookupUrl: string; lookupUrlNote?: string; portalUrl?: string; dependsOnAddress: boolean; earlyVoting: Site[]; electionDay: Site[]; earlyVotingNote?: string; electionDayNote?: string };
 
 const DATES = (datesFile as unknown as { jurisdictions: Record<string, Jurisdiction> }).jurisdictions;
 const POLLING = (pollingFile as unknown as { zips: Record<string, Polling> }).zips;
