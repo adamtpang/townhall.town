@@ -11,6 +11,7 @@ import { whenFor, whereFor, buildIcs, mapsUrl, earlySingleDay } from "../../lib/
 import { decodeAnswers, encodeAnswers } from "../../lib/card.mjs";
 import { electionFirst, planEventUrl, topRaceTitles } from "../../lib/gcal";
 import { Button } from "../../components/ui/button";
+import PrintBallot, { type PrintData } from "./PrintBallot";
 
 const ANSWERS_KEY = "th-answers-v1";
 const todayCT = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
@@ -18,7 +19,7 @@ const fmt = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en
 type RaceLite = { id: string; title?: string; level?: string; judicial: boolean; meta?: unknown; candidates: RowCand[] };
 
 /** One printable page: overlap lines (not a recommendation), where, when, calendar. State is the URL hash or this device only. */
-export default function BallotCard({ zip, place, ids, races }: { zip: string; place: string; ids: string[]; races: RaceLite[] }) {
+export default function BallotCard({ zip, place, ids, races, print }: { zip: string; place: string; ids: string[]; races: RaceLite[]; print?: PrintData }) {
   const [answers, setAnswers] = useState<Answers | null>(null);
   const [copied, setCopied] = useState(false);
   useEffect(() => {
@@ -26,6 +27,12 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
     if (h) { setAnswers(decodeAnswers(h, ids) as Answers); return; }
     try { setAnswers(JSON.parse(localStorage.getItem(ANSWERS_KEY) || "{}")); } catch { setAnswers({}); }
   }, [ids]);
+  // The end screen's "Download PDF ballot" opens /card?zip=…&print=1: open the print dialog once the card has rendered.
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("print") !== "1") return;
+    const t = setTimeout(() => window.print(), 600);
+    return () => clearTimeout(t);
+  }, []);
   const today = todayCT();
   const when = useMemo(() => whenFor(zip, today), [zip, today]);
   const where = useMemo(() => whereFor(zip, today), [zip, today]);
@@ -50,7 +57,9 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
   }
   const link = "relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] th-link underline-offset-2 hover:underline print:text-black";
   return (
-    <main className="mx-auto max-w-[720px] px-5 py-12 text-black print:px-0 print:py-0" data-ballot-card>
+    <main className="mx-auto max-w-[720px] px-5 py-12 text-black print:max-w-none print:px-0 print:py-0" data-ballot-card>
+      {print ? <PrintBallot zip={zip} place={place} today={today} ed={ed} early={early} earlyLine={early ? earlySingleDay(early, today) ?? `Early voting runs through ${fmt(early.end)}` : null} mail={when.mail} site={site} lookupUrl={where.lookupUrl} dependsOnAddress={where.dependsOnAddress} data={print} /> : null}
+      <div className={print ? "print:hidden" : undefined}>
       <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>
       <h1 className={`mt-3 ${H1}`}>Your ballot card</h1>
       {ed ? <p className="mt-4 text-xl leading-7 font-[530]" data-card-date>Election Day: {fmt(ed.start)}{ed.hours ? `, ${ed.hours}` : ""}</p> : null}
@@ -89,13 +98,14 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
       </section>
 
       <div className="mt-10 flex flex-wrap gap-3 print:hidden">
-        <button type="button" onClick={() => window.print()} className="h-12 bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80" data-card-print>Print</button>
+        <button type="button" onClick={() => window.print()} className="min-h-12 bg-black px-6 text-base font-[530] text-[#F2F2F2] hover:bg-black/80" data-card-print>Download PDF ballot</button>
         <button type="button" onClick={share} className="h-12 border border-black px-6 text-base font-[530]" data-card-share>{copied ? "Link copied" : "Share link"}</button>
         {gcalEd ? <Button onClick={() => window.open(gcalEd, "_blank", "noopener")} className="h-12 rounded-none border border-black bg-transparent px-6 text-base font-[530] text-black hover:border-black hover:text-black [@media(hover:hover)]:hover:bg-brand-50" data-card-gcal={gcalEd}>Add to Google Calendar ↗<span className="sr-only"> (opens in a new tab)</span></Button> : null}
         {ed ? <button type="button" onClick={ics} className="inline-flex min-h-12 items-center px-2 text-sm text-black/60 underline decoration-black/20 underline-offset-2 hover:text-black" data-card-ics>or download .ics</button> : null}
         <a href="/" className="inline-flex h-12 items-center px-2 text-base th-link">Back to the full ballot</a>
       </div>
       <p className="mt-6 text-sm leading-5 text-black/60">Your answers stay on this device and in this link. <a href={ed?.sourceUrl} className={link} target="_blank" rel="noreferrer">Dates source ↗</a></p>
+      </div>
     </main>
   );
 }

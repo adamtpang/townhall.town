@@ -4,6 +4,7 @@ import { validZip } from "../../lib/zip.mjs";
 import { ballotFor } from "../../lib/tools";
 import { issuesFor } from "../../lib/issueOrder";
 import BallotCard from "./BallotCard";
+import type { PrintData } from "./PrintBallot";
 
 export const metadata: Metadata = { title: "Your ballot card", robots: { index: false, follow: false } };
 
@@ -15,5 +16,12 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ z
   const ids = issuesFor(zip, b.state).map((i) => i.id);
   // Photo (already all-or-none per race), site link: the same row as the Who section (Adam, Oct 29 11:28 PM CT).
   const races = b.races.map((r) => ({ id: r.id, title: r.title, level: r.level, judicial: (r as { judicial?: unknown }).judicial ? true : false, meta: (r as { meta?: unknown }).meta ?? null, candidates: r.candidates.map((c) => ({ name: c.name, party: c.party, photo: c.photo ?? null, campaignSite: (c as { campaignSite?: string | null }).campaignSite ?? null, officialSite: c.officialSite ?? null })) }));
-  return <BallotCard zip={zip} place={b.place} ids={ids} races={races} />;
+  // Printed ballot: every race (court races too) and measure in the order the data gives, names and parties only.
+  const print: PrintData = {
+    state: b.state as PrintData["state"],
+    verify: (b as { verify?: { label: string; url: string } }).verify ?? null,
+    races: b.races.map((r) => ({ id: r.id, title: r.title, judicial: !!(r as { judicial?: unknown }).judicial, source: r.source ?? null, candidates: r.candidates.map((c) => ({ name: c.name, party: c.party ?? null })) })),
+    measures: ((b as { measures?: { id: string; title: string; source?: string | null }[] }).measures ?? []).map((m) => ({ id: m.id, title: m.title, source: m.source ?? null })),
+  };
+  return <div data-print-root><BallotCard zip={zip} place={b.place} ids={ids} races={races} print={print} /></div>;
 }

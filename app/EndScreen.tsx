@@ -65,6 +65,8 @@ export default function EndScreen({ zip, races, answers, ids, answered, market }
       <p className="nds-caption-upper text-black/60">03</p>
       <h2 className={`mt-3 ${H2}`}>Your plan</h2>
       <a href={cardPath(zip, answers, ids)} className="mt-6 inline-flex h-12 items-center border border-black px-5 text-base font-[530] text-black [@media(hover:hover)]:hover:bg-brand-50" data-card-link>One-page ballot card</a>
+      {/* Adam 2:28 PM CT Oct 30: the printable ballot lives on /card; print=1 opens the print dialog there (Save as PDF). */}
+      <a href={cardPath(zip, answers, ids).replace("#", "&print=1#")} className="mt-6 inline-flex min-h-12 items-center bg-black px-5 text-base font-[530] text-[#F2F2F2] hover:bg-black/80 sm:ml-3" data-end-pdf>Download PDF ballot</a>
       <div className="mt-12 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-5">
         {/* WHO */}
         <div className="lg:col-span-6" data-end="who">
