@@ -121,7 +121,34 @@ export async function getVoterInfo(input: { address: string; electionId?: string
   }
 }
 
+/** Census ACS 5-year: median household income and median gross rent for a ZIP (ZCTA). Needs CENSUS_API_KEY. */
+export async function getZipIncomeRent(input: { zip: string; year?: number }) {
+  const key = process.env.CENSUS_API_KEY;
+  const year = input.year ?? 2024;
+  const zip = input.zip.replace(/\D/g, "").slice(0, 5);
+  const source = `https://data.census.gov/table/ACSDT5Y${year}.B19013?g=860XX00US${zip}`;
+  if (!key) return unavailable("CENSUS_API_KEY is not set.", "https://api.census.gov/data/key_signup.html");
+  if (zip.length !== 5) return { status: "no record found", reason: "Pass a 5-digit ZIP." };
+  const q = new URLSearchParams({ get: "NAME,B19013_001E,B25064_001E", for: `zip code tabulation area:${zip}`, key });
+  try {
+    const rows = await getJson(`https://api.census.gov/data/${year}/acs/acs5?${q}`);
+    const row = rows?.[1];
+    if (!row) return { zip, status: "no record found", source };
+    // The Census API uses large negative sentinels (e.g. -666666666) for suppressed values.
+    const num = (v: string) => (Number(v) >= 0 ? Number(v) : null);
+    return { zip, year: `ACS ${year} 5-year`, medianHouseholdIncome: num(row[1]), medianGrossRent: num(row[2]), unit: "USD", source };
+  } catch (e: any) {
+    // Never echo the request URL: it carries the key.
+    return unavailable(`Census API: ${e?.message || e}`, "https://www.census.gov/data/developers.html");
+  }
+}
+
 export const dataTools = {
+  getZipIncomeRent: tool({
+    description: "Median household income and median gross rent for a ZIP from the Census ACS 5-year estimates, with a source URL. Returns unavailable if no key is configured.",
+    inputSchema: z.object({ zip: z.string(), year: z.number().int().optional() }),
+    execute: async (i) => getZipIncomeRent(i),
+  }),
   getCampaignFinance: tool({
     description: "Federal campaign finance totals from OpenFEC (receipts, spending, cash on hand) for one candidate, by FEC candidate id or by name and state. Facts only, with a source URL.",
     inputSchema: z.object({ candidateId: z.string().optional(), name: z.string().optional(), state: z.string().length(2).optional(), cycle: z.number().optional() }),

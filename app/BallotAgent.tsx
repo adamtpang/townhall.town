@@ -17,6 +17,9 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import RaceTiers from "./RaceTiers";
 import { useT } from "../lib/i18n";
+import MeasureMath from "./MeasureMath";
+import measureData from "../data/measures.json";
+const MEASURE_ZIPS = new Set((measureData as { measures: { zips: string[] }[] }).measures.flatMap((m) => m.zips));
 
 const NYC_READY = true;
 const DEMO = [
@@ -25,7 +28,7 @@ const DEMO = [
   { zip: "10001", label: NYC_READY ? "New York" : "New York, coming soon", ready: NYC_READY },
 ];
 // Advertised: Austin, SF, NYC. 78130 and 90012 stay working but are not advertised.
-const SUPPORTED = new Set(["78701", "94103", "78130", "90012", ...(NYC_READY ? ["10001"] : [])]);
+const SUPPORTED = new Set(["78701", "94103", "78130", "90012", "77002", ...(NYC_READY ? ["10001"] : [])]);
 const TOOLS = ["getDistricts", "getRaces", "getCandidates", "getMarketOdds", "getLocalProblems"];
 const TOOL_LABEL: Record<string, string> = {
   getDistricts: "Finding your districts",
@@ -363,8 +366,9 @@ export default function BallotAgent() {
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} />
           <IssueMatch state={b.state} races={b.races} />
+          <MeasureMath zip={b.zip} n="03" />
           <section id="plan" className="border-t border-black py-24">
-            <p className="text-sm text-black/50">03</p>
+            <p className="text-sm text-black/50">{MEASURE_ZIPS.has(b.zip) ? "04" : "03"}</p>
             <h2 className="mt-3 font-serif text-6xl leading-none tracking-tight sm:text-7xl">{t("Your plan")}</h2>
             <Plan state={b.state} />
           </section>

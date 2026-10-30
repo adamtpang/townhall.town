@@ -106,6 +106,14 @@ const ES: Record<string, string> = {
   "A new tax on very large fortunes": "Un impuesto nuevo a las grandes fortunas",
   "Less public spending on water and infrastructure": "Menos gasto público en agua e infraestructura",
   "More public spending on water and infrastructure": "Más gasto público en agua e infraestructura",
+  // Measure math
+  "The measures, by the numbers": "Las medidas, en números",
+  "Cost, who pays and what changes, from official analyses. “unsure” means the official text gives no figure.":
+    "Costo, quién paga y qué cambia, según análisis oficiales. “unsure” significa que el texto oficial no da una cifra.",
+  Cost: "Costo",
+  "Who pays": "Quién paga",
+  "What changes": "Qué cambia",
+  "official source": "fuente oficial",
   // Plan
   "Your plan": "Tu plan",
   Where: "Dónde",
