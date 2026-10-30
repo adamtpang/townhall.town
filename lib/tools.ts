@@ -7,7 +7,7 @@ import type { Jurisdiction, Race, Politician } from "./types";
 // @ts-ignore plain ESM helper shared with scripts/
 import { fetchPolymarket, fetchKalshi } from "./marketsCore.mjs";
 import { getTurnout } from "./turnout";
-import { allOrNone, withLicensedPhoto } from "./photos";
+import { withLicensedPhoto } from "./photos";
 import { withMoney } from "./money";
 import { raceMeta } from "./raceMeta";
 
@@ -38,7 +38,7 @@ function enrich(b: Ballot): Ballot {
     const meta = raceMeta(b.zip, r.id);
     const jud = !!(r as { judicial?: unknown }).judicial;
     const cands = r.candidates.map((c) => withMoney(withLicensedPhoto({ ...c, causes: undefined }) /* no keyword-matched tags anywhere (Civic rule 1) */));
-    return { ...r, meta: jud && meta ? { ...meta, why: null } : meta, candidates: allOrNone(cands) };
+    return { ...r, meta: jud && meta ? { ...meta, why: null } : meta, candidates: cands /* Design 8:05: initials only where a photo is truly missing */ };
   }) };
 }
 
