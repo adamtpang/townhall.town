@@ -4,6 +4,7 @@ import { Chev, Fold } from "../components/Fold";
 import { plain } from "../lib/plain";
 import { H2 } from "../lib/typeScale";
 import { useEffect, useState } from "react";
+import MotionShell from "../components/MotionShell";
 import TownyInterview, { type Fill } from "./TownyInterview";
 import { type Photo } from "../components/Portrait";
 import { Button } from "../components/ui/button";
@@ -77,7 +78,7 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
   const carried = carriedIds.filter((id) => answers[id] !== null && answers[id] !== undefined).length;
 
   return (
-    <>
+    <MotionShell>{/* IssueMatch is mounted by BallotAgent, outside RaceTiers' shell: its Folds need the features too */}
       <section className="border-t border-black py-24" id="what-matters">
         <p className="nds-caption-upper text-black/60">02</p>
         {/* Design 2:59 PM CT (Oct 30): the quiz is closed by default under its own heading (pure hide; every line stays in the page). */}
@@ -126,6 +127,6 @@ export default function IssueMatch({ zip, state, races, market }: { zip: string;
         </Fold>
       </section>
       <EndScreen zip={zip} races={races} answers={answers} ids={ids} answered={answered} market={market} />
-    </>
+    </MotionShell>
   );
 }
