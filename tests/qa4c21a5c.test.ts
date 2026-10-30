@@ -11,8 +11,10 @@ const races = (z: string) => (ballotFor(z)!.races as any[]);
 
 describe("QA 4c21a5c P1-1: race ranking keys on id/level, not display title", () => {
   it("pins tier counts per ZIP (most/high/moderate/lower over races)", () => {
-    // Oct 29: closeness now comes only from a live Polymarket quote (raters dropped), so with no market every race ranks on office alone.
-    const want: Record<string, number[]> = { "78701": [0, 2, 7, 49], "94103": [0, 1, 8, 23], "10001": [0, 1, 3, 9] };
+    // Oct 29 (round 2): sourced race ratings (Cook/Sabato/Inside Elections) are back; Kalshi-only ratings are dropped.
+    // vs 9dfe90d (78701 2/1/7/48, 94103 0/2/8/22): tx-agcomm, tx-rrc, ca-insurance and sf-supervisor-8 were "competitive"
+    // only from a Kalshi price, so each drops one tier. No live market here; Polymarket can only raise a race.
+    const want: Record<string, number[]> = { "78701": [2, 0, 7, 49], "94103": [0, 1, 8, 23], "10001": [0, 1, 3, 9] };
     for (const [z, w] of Object.entries(want)) {
       const c = { most: 0, high: 0, moderate: 0, lower: 0 };
       for (const r of races(z)) c[tierFor(r).tier]++;

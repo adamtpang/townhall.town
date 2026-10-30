@@ -1,5 +1,7 @@
 // Per-race extras from Civic files, attached server-side (lib/tools.ts enrich):
-// - competitiveness.json: contest status only. Closeness now comes only from live Polymarket (lib/marketLine.ts).
+// - competitiveness.json: contest status, plus a closeness label from the sourced race ratings (Cook Political Report,
+//   Sabato's Crystal Ball, Inside Elections) with their links. Kalshi is never used: a rating whose only basis was a
+//   Kalshi market is dropped (KALSHI_ONLY_DROPPED). Live Polymarket can raise a race's tier on top (app/RaceTiers.tsx).
 // - contestStatus in plain words; sf-supervisor-8 is ranked-choice.
 // - news.json: headlines exactly as written, outlet, date, link. No summaries or commentary.
 import comp from "../data/civic/competitiveness.json";
@@ -12,6 +14,8 @@ const C = (comp as unknown as { races: CompRace[] }).races;
 const N = (news as unknown as { races: NewsRace[] }).races;
 
 export type RaceMeta = {
+  closeness: "Competitive" | "Leans" | "Not closely contested" | "No rating";
+  closenessBasis: { label: string; url: string }[];
   contest: string | null; // "Uncontested", "Retention", "Multi-seat (choose up to 3)"
   rankedChoice?: boolean;
   news: { title: string; outlet: string; date: string; url: string }[];
@@ -55,12 +59,34 @@ function plainContest(s?: string): string | null {
 const DUP: Record<string, string> = { "tx-supreme-court-place-2-unexpired": "tx-supreme-court-place-2", "tx-house-49": "tx-hd-49", "tx-15coa-chief": "tx-15th-coa-chief-justice", "tx-15coa-place-2": "tx-15th-coa-place-2", "tx-15coa-place-3": "tx-15th-coa-place-3", "tx-3coa-chief": "tx-3rd-coa-chief-justice" };
 const same = (civicId: string, raceId: string) => civicId === raceId || DUP[civicId] === raceId;
 
+/** Never a Kalshi rater or a Kalshi market (Adam, Oct 29 2026). */
+const isKalshi = (s?: string) => /kalshi/i.test(s ?? "");
+/**
+ * Civic's ratingRule applied to the published raters only (no market): any Toss-up or Tilt -> Competitive; otherwise
+ * any Lean -> Leans; otherwise every rater Likely/Solid/Safe -> Not closely contested; otherwise no rating.
+ */
+export function raterCloseness(raters?: { rater: string; rating: string; sourceUrl: string }[] | null): Pick<RaceMeta, "closeness" | "closenessBasis"> {
+  const rs = (raters ?? []).filter((r) => r.rater && r.sourceUrl && !isKalshi(r.rater) && !isKalshi(r.sourceUrl));
+  if (!rs.length) return { closeness: "No rating", closenessBasis: [] };
+  const closeness: RaceMeta["closeness"] = rs.some((r) => /toss|tilt/i.test(r.rating)) ? "Competitive"
+    : rs.some((r) => /\blean/i.test(r.rating)) ? "Leans"
+    : rs.every((r) => /likely|solid|safe/i.test(r.rating)) ? "Not closely contested" : "No rating";
+  return { closeness, closenessBasis: closeness === "No rating" ? [] : rs.map((r) => ({ label: r.rater, url: r.sourceUrl })) };
+}
+/** Civic ratings whose only basis was a Kalshi market price (no Cook/Sabato/Inside Elections rating): dropped. */
+export const KALSHI_ONLY_DROPPED: { zip: string; raceId: string; rating: string }[] = C
+  .filter((c) => c.rating !== "unsure" && raterCloseness(c.raters).closeness === "No rating" && isKalshi(c.market?.source))
+  .map((c) => ({ zip: c.zip, raceId: c.raceId, rating: c.rating }));
+
 export function raceMeta(zip: string, raceId: string): RaceMeta | null {
   const c = C.find((r) => r.zip === zip && same(r.raceId, raceId));
   const n = N.find((r) => r.zip === zip && same(r.raceId, raceId));
   const why = whyFor(raceId);
   if (!c && !n && !why) return null;
+  const { closeness, closenessBasis } = raterCloseness(c?.raters);
   return {
+    closeness,
+    closenessBasis,
     contest: plainContest(c?.contestStatus || n?.contestStatus),
     rankedChoice: RANKED_CHOICE.has(raceId) ? true : undefined,
     why,

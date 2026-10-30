@@ -1,5 +1,5 @@
 {
- "_meta": "Polymarket event slugs (https://polymarket.com/event/<slug>) per race or measure id. Only markets on the same contest are listed; each was checked against the live Gamma API on Oct 29, 2026. Measures are matched by the Proposition number Polymarket names in the market description. No entry means no matching Polymarket market, so no odds are shown.",
+ "_meta": "Polymarket event slugs (https://polymarket.com/event/<slug>) per race or measure id. Only markets on the same contest are listed; each was checked against the live Gamma API on Oct 29, 2026. Measures are matched by the Proposition number Polymarket names in the market description. No entry means no matching Polymarket market, so no odds are shown. ca-ltgov is not listed: Polymarket's Lieutenant Governor market lists other candidates (e.g. Kellman, Fryday) and leaves out Gloria Romero, so it is not the Nov 3 contest. Any market that leaves out a ballot candidate is also hidden at runtime (marketCoversBallot in lib/marketsCore.mjs).",
  "us-senate-tx": { "polymarket": "texas-senate-election-winner" },
  "tx-10": { "polymarket": "tx-10-house-election-winner" },
  "tx-37": { "polymarket": "tx-37-house-election-winner" },
@@ -8,7 +8,6 @@
  "tx-ag": { "polymarket": "texas-attorney-general-election-winner-2026" },
  "tx-rrc": { "polymarket": "texas-railroad-commissioner-election-winner-2026" },
  "ca-gov": { "polymarket": "california-governor-election-2026" },
- "ca-ltgov": { "polymarket": "california-lieutenant-governor-election-winner" },
  "ny-12": { "polymarket": "ny-12-house-election-winner" },
  "ny-governor": { "polymarket": "new-york-governor-winner-2026" },
  "ny-attorney-general": { "polymarket": "new-york-attorney-general-election-winner-2026" },

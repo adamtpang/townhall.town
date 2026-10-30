@@ -6,7 +6,7 @@ import marketMap from "../data/markets-map.json";
 import type { Jurisdiction, Race, Politician } from "./types";
 import { COVERED_ZIPS, isCoveredZip, UNSUPPORTED_MESSAGE } from "./site";
 // @ts-ignore plain ESM helper shared with scripts/
-import { fetchPolymarket } from "./marketsCore.mjs";
+import { fetchPolymarket, marketCoversBallot } from "./marketsCore.mjs";
 import { getTurnout } from "./turnout";
 import { withLicensedPhoto } from "./photos";
 import { withMoney } from "./money";
@@ -143,26 +143,40 @@ export function getCandidates(zip: string, raceIds?: string[]) {
   };
 }
 
-export type MarketQuote = { source: "Polymarket"; title: string; url: string; api: string; outcomes: { name: string; prob: number }[]; fetchedAt: string };
+export type MarketQuote = { source: "Polymarket"; title: string; url: string; api: string; outcomes: { name: string; prob: number }[]; listed?: string[]; fetchedAt: string };
 
 /** Polymarket slug per race or measure id (data/markets-map.json). No entry: no matching Polymarket market. */
 export const MARKET_SLUGS: Record<string, string> = Object.fromEntries(
   Object.entries(marketMap as Record<string, unknown>).flatMap(([id, v]) => (v && typeof v === "object" && typeof (v as { polymarket?: unknown }).polymarket === "string" ? [[id, (v as { polymarket: string }).polymarket]] : []))
 );
 
+/** Ballot candidate names per race id, across the covered ZIPs (the market coverage rule checks these). */
+function ballotNamesFor(id: string): string[] {
+  for (const z of COVERED_ZIPS) {
+    const r = ballotFor(z)?.races.find((x) => x.id === id) as { candidates?: { name: string }[] } | undefined;
+    if (r) return (r.candidates ?? []).map((c) => c.name);
+  }
+  return [];
+}
+
 /**
  * Live Polymarket prices only. No cache, no other market, no estimate: a failed fetch is "unavailable"
- * with no quote, and a race with no matching market is "no market found".
+ * with no quote, and a race with no matching market is "no market found". A candidate-race market that leaves out
+ * anyone on the ballot is hidden ("market does not list every ballot candidate"), e.g. a primary-field market.
  */
-export async function getMarketOdds(raceIds: string[], fetcher: (slug: string, timeoutMs?: number) => Promise<MarketQuote> = fetchPolymarket as never) {
-  const out: Record<string, { quotes: MarketQuote[]; status: "live" | "unavailable" | "no market found" }> = {};
+export type MarketStatus = "live" | "unavailable" | "no market found" | "market does not list every ballot candidate";
+export async function getMarketOdds(raceIds: string[], fetcher: (slug: string, timeoutMs?: number) => Promise<MarketQuote> = fetchPolymarket as never, namesFor: (id: string) => string[] = ballotNamesFor) {
+  const out: Record<string, { quotes: MarketQuote[]; status: MarketStatus }> = {};
   await Promise.all(
     raceIds.map(async (id) => {
       const slug = MARKET_SLUGS[id];
       if (!slug) return void (out[id] = { quotes: [], status: "no market found" });
       try {
         const q = await fetcher(slug, 3000);
-        out[id] = q && q.outcomes?.length ? { quotes: [q], status: "live" } : { quotes: [], status: "unavailable" };
+        if (!q || !q.outcomes?.length) return void (out[id] = { quotes: [], status: "unavailable" });
+        const listed = q.listed?.length ? q.listed : q.outcomes.map((o) => o.name);
+        if (!marketCoversBallot(listed, namesFor(id))) return void (out[id] = { quotes: [], status: "market does not list every ballot candidate" });
+        out[id] = { quotes: [q], status: "live" };
       } catch {
         out[id] = { quotes: [], status: "unavailable" };
       }

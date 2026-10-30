@@ -23,8 +23,9 @@ export type Mk = PolyQuote | null;
  *   score = impact x competitiveness
  *   impact: 3 = President, U.S. Senate, Governor; 2 = U.S. House, other statewide executive, ballot measures;
  *           1.5 = state legislature; 1 = judicial and local.
- *   competitiveness (live Polymarket only, Adam Oct 29 2026): top contract between 35% and 65% = Competitive = 2.0;
- *           otherwise, or no live market, 1.0. No market means no market line; nothing is estimated.
+ *   competitiveness = 2.0 when the sourced race ratings (Cook, Sabato, Inside Elections only) say Competitive,
+ *           OR the live Polymarket top contract is between 35% and 65%; otherwise 1.0. Polymarket can only raise a
+ *           race, never lower a sourced rating. No market means no market line; nothing is estimated.
  *   Most at stake >= 4.5, High stakes >= 3, Moderate stakes >= 2, else Lower stakes.
  */
 export function impactOf(r: RaceLite): { v: number; why: string } {
@@ -51,7 +52,7 @@ export type Group = "most" | "high" | "moderate" | "lower";
 export const TIER_LABELS = ["Most at stake", "High stakes", "Moderate stakes", "Lower stakes"] as const;
 export function tierFor(r: RaceLite, mk?: Mk, tr?: (s: string) => string) {
   const imp = impactOf(r);
-  const comp = polymarketCloseness(mk ?? null) === "Competitive" ? 2 : 1;
+  const comp = r.meta?.closeness === "Competitive" || polymarketCloseness(mk ?? null) === "Competitive" ? 2 : 1;
   const score = imp.v * comp;
   const tier: Group = score >= 4.5 ? "most" : score >= 3 ? "high" : score >= 2 ? "moderate" : "lower";
   const w = tr ? tr(imp.why) : imp.why;
@@ -112,15 +113,16 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
                   <li key={r.id} className="font-[450]">
                     <h3 className={H3} data-race-title>{r.title}</h3>
                     {r.candidates?.length ? <PortraitRow cands={r.candidates} eager={eager} /> : null}
-                    <p className="max-w-[45ch] text-sm text-black/60" data-why>{why}{mk ? <> <span data-closeness>{polymarketCloseness(mk)}.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
+                    <p className="max-w-[45ch] text-sm text-black/60" data-why>{why}{r.meta && r.meta.closeness !== "No rating" ? <> <span data-closeness>{r.meta.closeness} (race ratings).</span></> : null}{mk ? <> <span data-closeness-market>{polymarketCloseness(mk)} on Polymarket.</span></> : null}{r.meta?.contest ? <> {r.meta.contest}.</> : null}{r.meta?.rankedChoice ? <> Ranked-choice: you can rank candidates in order.</> : null}</p>
                     <MarketLine line={leaderLine(mk)} />
                     {r.judicialNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap text-[#3760F2]`} data-judicial-source>{r.judicialNoteSource.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{r.appliesNote ? <span className="text-black/60"> {plain(r.appliesNote)}</span> : null}</p> : null}
                     {/\bPlace \d+/.test(r.title) ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.tentative ? <p className="text-sm text-black/60" data-tentative>Draft: from the NYC Board of Elections&rsquo; draft contest list. Check your sample ballot.</p> : null}
-                    {(r.source || r.verify) && (
+                    {(r.source || r.verify || (r.meta?.closenessBasis.length ?? 0) > 0) && (
                       <p className="flex flex-wrap items-center gap-x-1 text-sm leading-5 text-black/60" data-race-links>
                         {r.source && <a href={r.source} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Race source ↗<span className="sr-only"> (opens in a new tab)</span></a>}
+                        {r.meta?.closenessBasis.map((x, k) => <span key={x.url + k} className="contents">{r.source || k > 0 ? <span aria-hidden>·</span> : null}<a href={x.url} target="_blank" rel="noreferrer" data-rating-link className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{x.label} rating ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}
                         {r.verify && <><span aria-hidden>·</span><span>{r.verify}</span></>}
                       </p>
                     )}
@@ -148,7 +150,7 @@ export default function RaceTiers({ races, market, measures = [] }: { races: Rac
       <p className="nds-caption-upper text-black/60">01</p>
       <h2 className={`mt-3 ${H2}`}>What matters on your ballot</h2>
       <p className="mt-4 max-w-2xl text-black/60">Races, ranked by how much the office does and how close the race is. Never candidates.</p>
-      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when its live Polymarket market has the top outcome between 35% and 65%; otherwise &ldquo;Not closely contested&rdquo;. Races with no Polymarket market get no market line and are ranked on the office alone. Market prices are not forecasts or recommendations.</p>
+      <p className="mt-2 max-w-2xl text-sm text-black/60" data-tier-legend>Most at stake: the biggest offices in the closest races. Then High, Moderate and Lower stakes. A race is &ldquo;Competitive&rdquo; when published race ratings (Cook Political Report, Sabato&rsquo;s Crystal Ball, Inside Elections; linked on each race) call it a toss-up or tilt, or when its live Polymarket market has the top outcome between 35% and 65%. Polymarket can move a race up, never down. Races with no rating and no Polymarket market are ranked on the office alone and get no market line. Market prices are not forecasts or recommendations.</p>
       <div className="mt-10">
         {groups.map(({ key, name, list, eager, open }) => (
             <details key={key} open={open} className="group border-t border-black/15 py-6" data-tier={key}>

@@ -4,8 +4,9 @@ import fs from "node:fs";
 import { createElement as h } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { getMarketOdds, MARKET_SLUGS, ballotFor } from "../lib/tools";
+import { raceMeta, KALSHI_ONLY_DROPPED } from "../lib/raceMeta";
 import { leaderLine, pctOf, fetchedCT } from "../lib/marketLine";
-import { polymarketCloseness } from "../lib/marketsCore.mjs";
+import { polymarketCloseness, marketCoversBallot } from "../lib/marketsCore.mjs";
 import { CANDIDATE_GRADES, gradeFor, letterFor, GRADE_NOTE } from "../lib/grades.mjs";
 import { overlapStatus } from "../lib/overlapCore.mjs";
 import { stancesFor, ISSUES } from "../lib/issues";
@@ -26,7 +27,7 @@ const Q = (prob: number, extra: Partial<{ url: string; fetchedAt: string }> = {}
 
 describe("Polymarket only (Kalshi dropped)", () => {
   it("live quote, failed fetch and no market are three distinct statuses; no numbers without a live market", async () => {
-    const ok = await getMarketOdds(["us-senate-tx", "tx-comptroller"], async () => Q(0.6));
+    const ok = await getMarketOdds(["us-senate-tx", "tx-comptroller"], async () => ({ ...Q(0.6), listed: ["James Talarico", "Ken Paxton", "Ted Brown", "Other"] }));
     expect(ok["us-senate-tx"].status).toBe("live");
     expect(ok["us-senate-tx"].quotes).toHaveLength(1);
     expect(ok["tx-comptroller"]).toEqual({ quotes: [], status: "no market found" });
@@ -42,17 +43,51 @@ describe("Polymarket only (Kalshi dropped)", () => {
     expect(JSON.stringify(openApiSpec())).not.toMatch(/kalshi/i);
     expect(fs.existsSync("data/markets-cache.json")).toBe(false);
   });
+  it("a candidate-race market is shown only if every ballot candidate appears in it", async () => {
+    // Real Polymarket lists (Oct 29 2026). ca-ltgov: has Kellman and Fryday, leaves out Romero -> hidden.
+    const ltgov = ["Rakesh Christian", "Josh Fryday", "Janelle Kellman", "Fiona Ma", "Michael Tubbs", "Option B", "Other"];
+    expect(marketCoversBallot(ltgov, ["Fiona Ma", "Gloria Romero"])).toBe(false);
+    expect(marketCoversBallot(["Lauren Peña", "Greg Casar", "Other"], ["Greg Casar", "Lauren B. Peña"])).toBe(true);
+    expect(marketCoversBallot(["Kathy Hochul", "Bruce Blakeman"], ["Kathy C. Hochul / Adrienne E. Adams", "Bruce A. Blakeman / Todd Hood"])).toBe(true);
+    expect(marketCoversBallot(["Manny Yekutiel", "Gary McCoy"], ['Emanuel "Manny" Yekutiel', "Gary McCoy"])).toBe(true);
+    expect(marketCoversBallot(["James Talarico", "Ken Paxton", "Person A", "Other"], ["James Talarico", "Ken Paxton", "Ted Brown"])).toBe(false);
+    expect(marketCoversBallot(["Yes (passes)", "No (fails)"], [])).toBe(true); // measures: no candidates to check
+    // Through getMarketOdds: a market missing a ballot candidate returns no quote and no numbers.
+    const q = { ...Q(0.6), listed: ["James Talarico", "Ken Paxton", "Other"] };
+    const r = await getMarketOdds(["us-senate-tx"], async () => q);
+    expect(r["us-senate-tx"]).toEqual({ quotes: [], status: "market does not list every ballot candidate" });
+    const full = await getMarketOdds(["us-senate-tx"], async () => ({ ...q, listed: ["James Talarico", "Ken Paxton", "Ted Brown"] }));
+    expect(full["us-senate-tx"].status).toBe("live");
+    // ca-ltgov's market is not mapped at all, so it can never show a line.
+    expect(MARKET_SLUGS["ca-ltgov"]).toBeUndefined();
+    expect((await getMarketOdds(["ca-ltgov"], async () => { throw new Error("should not fetch"); }))["ca-ltgov"].status).toBe("no market found");
+  });
+  it("sourced race ratings are back (Cook, Sabato, Inside Elections), never Kalshi; Kalshi-only ratings are dropped", () => {
+    const sen = raceMeta("78701", "us-senate-tx")!;
+    expect(sen.closeness).toBe("Competitive");
+    expect(sen.closenessBasis.map((b) => b.label)).toEqual(["Cook Political Report", "Sabato's Crystal Ball", "Inside Elections"]);
+    expect(raceMeta("78701", "tx-gov")!.closeness).toBe("Competitive");
+    expect(raceMeta("94103", "ca-gov")!.closeness).toBe("Not closely contested");
+    for (const z of ["78701", "94103", "10001"]) for (const r of ballotFor(z)!.races as unknown as { id: string; meta?: { closenessBasis: { label: string; url: string }[] } }[]) {
+      for (const b of r.meta?.closenessBasis ?? []) { expect(JSON.stringify(b), r.id).not.toMatch(/kalshi/i); expect(b.url).toMatch(/^https:\/\/(www\.cookpolitical\.com|centerforpolitics\.org|insideelections\.com)\//); }
+    }
+    expect(KALSHI_ONLY_DROPPED.map((d) => d.raceId).sort()).toEqual(["ca-ag", "ca-insurance", "ca-ltgov", "ca-sos", "ny-attorney-general", "sf-supervisor-8", "tx-agcomm", "tx-rrc"]);
+    for (const d of KALSHI_ONLY_DROPPED) expect(raceMeta(d.zip, d.raceId)?.closeness ?? "No rating", d.raceId).toBe("No rating");
+  });
   it("closeness: Competitive only when the top contract is 35%-65%", () => {
     expect(polymarketCloseness(Q(0.65))).toBe("Competitive");
     expect(polymarketCloseness(Q(0.35 + 0.3))).toBe("Competitive");
     expect(polymarketCloseness(Q(0.8))).toBe("Not closely contested");
     expect(polymarketCloseness(null)).toBe("No market data");
   });
-  it("tier uses the live market: a close Senate race is Most at stake, no market leaves it on office alone", () => {
-    const r = { id: "us-senate-tx", title: "U.S. Senator", level: "federal" };
-    expect(tierFor(r as never, Q(0.55) as never).tier).toBe("most");
-    expect(tierFor(r as never, Q(0.9) as never).tier).toBe("high");
-    expect(tierFor(r as never, null).tier).toBe("high");
+  it("tier: sourced rating ranks the race; Polymarket can raise it but never lower it", () => {
+    const bare = { id: "us-senate-tx", title: "U.S. Senator", level: "federal" };
+    expect(tierFor(bare as never, Q(0.55) as never).tier).toBe("most"); // Polymarket adds
+    expect(tierFor(bare as never, Q(0.9) as never).tier).toBe("high");
+    expect(tierFor(bare as never, null).tier).toBe("high");
+    const rated = { ...bare, meta: raceMeta("78701", "us-senate-tx") };
+    expect(tierFor(rated as never, null).tier).toBe("most");
+    expect(tierFor(rated as never, Q(0.9) as never).tier).toBe("most"); // a lopsided market does not replace the rating
   });
   it("leader line: name, percent, market link and fetch time in CT; null without a live quote", () => {
     const l = leaderLine(Q(0.62))!;
@@ -70,12 +105,15 @@ describe("Polymarket only (Kalshi dropped)", () => {
     expect(html).toMatch(/not a forecast or a recommendation/);
     expect(renderToStaticMarkup(h(MarketLine, { line: null }))).toBe("");
   });
-  it("RaceTiers shows a leader line only for races with a live quote, and drops the rater links", () => {
+  it("RaceTiers shows a leader line only for races with a live quote, and links each sourced rating", () => {
     const b = ballotFor("78701")!;
     const html = renderToStaticMarkup(h(RaceTiers, { races: b.races as never, market: (id: string) => (id === "us-senate-tx" ? Q(0.55) : null) as never }));
     expect(html.match(/data-market-line/g)?.length).toBe(1);
-    expect(html).not.toMatch(/ rating ↗/);
-    expect(html).toMatch(/live Polymarket market/);
+    expect(html).toContain('href="https://www.cookpolitical.com/ratings/senate-race-ratings"');
+    expect(html).toMatch(/Cook Political Report rating ↗/);
+    expect(html).toMatch(/Sabato&#x27;s Crystal Ball rating ↗/);
+    expect(html).not.toMatch(/kalshi/i);
+    expect(html).toMatch(/Polymarket can move a race up, never down/);
   });
   it("measures get a Yes/No leader line from the market", () => {
     const m = measuresFor("94103")[0];

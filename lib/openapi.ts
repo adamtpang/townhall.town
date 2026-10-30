@@ -381,7 +381,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
                 type: "object",
                 required: ["status", "quotes"],
                 properties: {
-                  status: { type: "string", enum: ["live", "unavailable", "no market found"] },
+                  status: { type: "string", enum: ["live", "unavailable", "no market found", "market does not list every ballot candidate"] },
                   quotes: {
                     type: "array",
                     maxItems: 1,
