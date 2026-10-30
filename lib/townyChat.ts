@@ -129,6 +129,11 @@ export function routeTurn(text: string, zip: string | null): Route {
 
 export const STATE_OF: Record<string, "TX" | "CA" | "NY"> = { "78701": "TX", "94103": "CA", "10001": "NY" };
 export const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+/** QA 8f78579 P1 (Oct 30, 3:05 PM CT): a source link shows its hostname, unless another link in the same reply has that
+ *  host (SF's polling place lookup and Voter Portal share one host). Then each shows its own label from the data. */
+export function linkText(l: { url: string; label: string }, all: { url: string }[]): string {
+  return all.filter((x) => host(x.url) === host(l.url)).length > 1 ? l.label : host(l.url);
+}
 
 /** QA pre-pass 6b2ae5c P2: one link per hostname (the first one wins, so the official office link stays first).
  *  QA P1 (Oct 30): a ZIP's polling lookup and Voter Portal (pollingLinks) are two pages on one host; each is kept once. */

@@ -103,8 +103,9 @@ describe("P1-3 /card and P2 short viewports", () => {
     const fab = src("components/towny/TownyFab.tsx");
     expect(fab).toMatch(/data-towny-fab[\s\S]*print:hidden/);
   });
-  it("panel is capped at 70dvh on short viewports; header and composer don't shrink; only the log scrolls", () => {
-    expect(src("app/globals.css")).toMatch(/@media \(max-height: 700px\) \{\s*\[data-towny-panel\] \{ max-height: 70dvh !important;/);
+  // QA 8f78579 P1 replaced the 70dvh cap: short viewports get a full-height panel (see townyQa8f78579.test.ts).
+  it("short viewports: full-height panel; header and composer don't shrink; the log scrolls", () => {
+    expect(src("app/globals.css")).toMatch(/@media \(max-height: 700px\) \{\s*\[data-towny-panel\] \{[^}]*height: 100dvh !important;/);
     const fab = src("components/towny/TownyFab.tsx");
     expect(fab).toMatch(/<header className="flex h-16 shrink-0/);
     expect(fab).toMatch(/<form className="flex shrink-0/);

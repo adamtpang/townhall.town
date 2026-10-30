@@ -9,7 +9,7 @@ import { TownyMark } from "./TownyMark";
 import { Button } from "../ui/button";
 import {
   TOWNY_LABEL, TOWNY_OPENER, TOWNY_CAPTION, TOWNY_SUGGESTIONS, WHO_TO_VOTE_REPLY, WHO_CHIP, OUT_OF_SCOPE, ASK_ZIP, THINKING,
-  PLACEHOLDER, NO_MATCH, FAILED, routeTurn, sameCity, STATE_OF, host, dedupeByHost,
+  PLACEHOLDER, NO_MATCH, FAILED, routeTurn, sameCity, STATE_OF, linkText, dedupeByHost,
 } from "../../lib/townyChat";
 import { FAQS, faqFor } from "../../lib/towny/faq";
 import { issuesFor } from "../../lib/issueOrder";
@@ -213,14 +213,14 @@ export default function TownyFab({ zip: pageOwnZip }: { zip?: string } = {}) {
               </div>
               <button type="button" onClick={close} aria-label="Close Towny" className="flex h-11 w-11 shrink-0 items-center justify-center" data-towny-close><X size={20} aria-hidden /></button>
             </header>
-            <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
+            <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4" data-towny-scroll>
               <ol className="space-y-4" role="log" aria-live="polite" aria-relevant="additions" aria-label="Towny conversation" data-towny-log data-towny-live>
                 {msgs.map((m, i) => (
                   <li key={i} data-msg={m.from} className={m.from === "you" ? "ml-auto w-fit max-w-[85%] bg-muted px-4 py-3 text-base leading-6" : "text-base leading-6"}>
                     {m.text}
                     {m.links?.length ? (
                       <span className="mt-1 flex flex-wrap gap-x-4" data-towny-links>
-                        {m.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" title={l.label} className="inline-flex min-h-11 items-center whitespace-nowrap text-sm text-primary underline underline-offset-4" data-towny-source>{host(l.url)} ↗<span className="sr-only"> (opens in a new tab)</span></a>)}
+                        {m.links.map((l, _, all) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" title={l.label} className="inline-flex min-h-11 items-center text-sm text-primary underline underline-offset-4" data-towny-source>{linkText(l, all)} ↗<span className="sr-only"> (opens in a new tab)</span></a>)}
                       </span>
                     ) : null}
                     {m.chips?.filter(showChip).length ? (

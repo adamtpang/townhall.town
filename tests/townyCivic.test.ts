@@ -39,7 +39,8 @@ describe("Civic 1: dates only from cited sources", () => {
       // dailyHours; Towny's early-voting reply still never says Nov 3 (checked below).
     }
     const f = townyFact("94103", "When does early voting end?", "2026-10-30")!;
-    expect(f.reply).not.toMatch(/Nov 3/);
+    // QA 8f78579 P2: Nov 3 appears only in its own "Election Day, …" sentence, never as an early-voting row.
+    expect(f.reply.replace(/ Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT \([^)]*\)\.$/, "")).not.toMatch(/Nov 3/);
     expect(townyFact("94103", "When is early voting?", "2026-11-03")!.reply).toMatch(/ended on Nov 2/);
   });
   it("78701 (ends Fri Oct 30) and 10001 (through Sun Nov 1) are verified: dates, no unsure line", () => {
