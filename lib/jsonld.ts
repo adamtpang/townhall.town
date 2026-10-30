@@ -43,7 +43,7 @@ export function homeJsonLd() {
         "@type": "WebAPI",
         "@id": `${SITE.url}/#api`,
         name: "townhall.town API",
-        description: "Free, keyless JSON API for the sourced ballot data shown on townhall.town: GET or POST /api/agent with a 5-digit ZIP, and GET /api/locate with lat and lon.",
+        description: "Free, keyless JSON API for the sourced ballot data shown on townhall.town: GET or POST /api/v1/agent with a 5-digit ZIP, and POST /api/v1/locate with lat and lon. Versioned in the URL path; rate limited per client with RateLimit headers.",
         url: `${SITE.url}/developers`,
         documentation: `${SITE.url}/openapi.json`,
         termsOfService: `${SITE.url}/developers`,

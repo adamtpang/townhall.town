@@ -1,9 +1,11 @@
 // Page copy shared by the HTML pages and their Markdown twins (Accept: text/markdown).
 // Inline links use Markdown syntax [text](url); components/Prose.tsx renders them as <a>.
 // Copy rules: nonpartisan, no endorsements, no em dashes.
+import { AGENT_POLICY, LOCATE_POLICY } from "./rateLimit";
 import { COVERAGE, SITE, type PagePath } from "./site";
 
-export type Section = { heading: string; paragraphs?: string[]; items?: string[]; code?: string[] };
+/** `id` becomes the section element id, for links like /developers#versioning. */
+export type Section = { heading: string; id?: string; paragraphs?: string[]; items?: string[]; code?: string[] };
 export type PageContent = { path: PagePath; title: string; description: string; lead: string; sections: Section[] };
 
 const coverageLine = COVERAGE.map((c) => `${c.zip} (${c.place})`).join(", ");
@@ -32,7 +34,7 @@ export const HOME_SECTIONS: Section[] = [
 
 export const HOME: PageContent = {
   path: "/",
-  title: "townhall.town: nonpartisan ballot guide",
+  title: SITE.title,
   description: SITE.description,
   lead: `townhall.town explains your ${SITE.electionLabel} ballot in plain language. Nonpartisan, with a source for every fact. Not a government site; confirm details with your state or county election office.`,
   sections: HOME_SECTIONS,
@@ -181,16 +183,17 @@ export const CONTACT: PageContent = {
 
 export const DEVELOPERS: PageContent = {
   path: "/developers",
-  title: "Developers",
-  description: "The townhall.town API: ballot data and ZIP lookup, free, no key. OpenAPI 3.1 spec and curl examples.",
-  lead: `townhall.town has a small public API. It is free, needs no key or account, and returns the same sourced ballot data the site shows. The full description is the [OpenAPI 3.1 spec](${SITE.url}/openapi.json).`,
+  title: "townhall.town API and developer docs",
+  description: "The townhall.town API: sourced ballot data and ZIP lookup, free, no key. Versioned /api/v1 endpoints, OpenAPI 3.1 spec, rate limits and curl examples.",
+  lead: `townhall.town has a small public API. It is free, needs no key or account, and returns the same sourced ballot data the site shows. The full description is the [OpenAPI 3.1 spec](${SITE.url}/openapi.json). The current version is v1.`,
   sections: [
     {
       heading: "Endpoints",
       items: [
-        "GET /api/agent?zip=78701 or POST /api/agent with JSON {\"zip\":\"78701\"}: the ballot for a ZIP, streamed as newline-delimited JSON (application/x-ndjson).",
-        "POST /api/locate with JSON {\"lat\":30.2672,\"lon\":-97.7431}: the ZIP for a point, from the U.S. Census Geocoder. Coordinates go in the body, not the URL.",
-        `[openapi.json](${SITE.url}/openapi.json): OpenAPI 3.1 description of both endpoints, with every parameter and response.`,
+        "GET /api/v1/agent?zip=78701 or POST /api/v1/agent with JSON {\"zip\":\"78701\"}: the ballot for a ZIP, streamed as newline-delimited JSON (application/x-ndjson). Send Accept: application/json to get only the final result as one JSON object.",
+        "POST /api/v1/locate with JSON {\"lat\":30.2672,\"lon\":-97.7431}: the ZIP for a point, from the U.S. Census Geocoder. Coordinates go in the body, not the URL.",
+        "/api/agent and /api/locate are unversioned aliases of the v1 endpoints, with identical behavior. They keep working; new code should use /api/v1.",
+        `[openapi.json](${SITE.url}/openapi.json): OpenAPI 3.1 description of every endpoint, with every parameter, response, header and error.`,
       ],
     },
     {
@@ -199,15 +202,15 @@ export const DEVELOPERS: PageContent = {
         `Covered ZIPs: ${coverageLine}. Each line of the response is one JSON event. Step and status lines arrive while the data tools run. The last line has "type":"result" with the full ballot: districts, races, candidates, measures, market prices and local Census data, each with its source. A 5-digit ZIP that is not covered ends with one "type":"unsupported" line instead.`,
       ],
       code: [
-        `curl -N "${SITE.url}/api/agent?zip=78701"`,
-        `curl -N -X POST "${SITE.url}/api/agent" -H "content-type: application/json" -d '{"zip":"94103"}'`,
-        `curl -s "${SITE.url}/api/agent?zip=10001" | tail -n 1 | jq '.ballot.races[].title'`,
+        `curl -N "${SITE.url}/api/v1/agent?zip=78701"`,
+        `curl -N -X POST "${SITE.url}/api/v1/agent" -H "content-type: application/json" -d '{"zip":"94103"}'`,
+        `curl -s "${SITE.url}/api/v1/agent?zip=10001" -H "accept: application/json" | jq '.ballot.races[].title'`,
       ],
     },
     {
       heading: "Find a ZIP",
       paragraphs: ['Returns {"zip":"78701","source":"U.S. Census Geocoder (ZCTA)"}. Coordinates are not stored.'],
-      code: [`curl -X POST "${SITE.url}/api/locate" -H "content-type: application/json" -d '{"lat":30.2672,"lon":-97.7431}'`],
+      code: [`curl -X POST "${SITE.url}/api/v1/locate" -H "content-type: application/json" -d '{"lat":30.2672,"lon":-97.7431}'`],
     },
     {
       heading: "Errors",
@@ -218,9 +221,39 @@ export const DEVELOPERS: PageContent = {
         "400 invalid: a zip that is not exactly 5 digits, a body that is not JSON, or a missing or out of range lat or lon.",
         "404 not_found: an unknown /api/ path, or a point with no ZIP.",
         "405 method_not_allowed: a method the route does not support. The Allow header lists the supported ones.",
+        "429 rate_limited: too many requests. Wait the number of seconds in Retry-After.",
+        "500 internal: an unexpected server error.",
         "502 upstream_unavailable: the Census Geocoder did not answer.",
       ],
-      code: [`curl -i "${SITE.url}/api/agent?zip=7870"`, '{"error":{"code":"invalid","message":"zip must be exactly 5 digits, for example 78701."}}'],
+      code: [`curl -i "${SITE.url}/api/v1/agent?zip=7870"`, '{"error":{"code":"invalid","message":"zip must be exactly 5 digits, for example 78701."}}'],
+    },
+    {
+      heading: "Rate limits",
+      id: "rate-limits",
+      paragraphs: [
+        `Limits are per client IP in a fixed 60-second window: ${AGENT_POLICY.limit} requests per minute on /api/v1/agent and ${LOCATE_POLICY.limit} on /api/v1/locate (each alias shares its v1 counter). One ballot lookup on the site is one request. Counters live in memory on each server instance, so the limit is approximate, not a guarantee.`,
+        "Every GET and POST response carries the IETF RateLimit-Policy and RateLimit headers (draft-ietf-httpapi-ratelimit-headers) and the common RateLimit-Limit, RateLimit-Remaining and RateLimit-Reset headers. Over the limit, the API answers 429 with Retry-After in seconds and the usual JSON error body.",
+      ],
+      code: [
+        `RateLimit-Policy: "agent";q=${AGENT_POLICY.limit};w=${AGENT_POLICY.windowSec}\nRateLimit: "agent";r=9;t=60\nRateLimit-Limit: ${AGENT_POLICY.limit}\nRateLimit-Remaining: 9\nRateLimit-Reset: 60`,
+        '429 Too Many Requests\nRetry-After: 42\n{"error":{"code":"rate_limited","message":"Too many requests: the limit is 10 per 60 seconds per client. Retry after 42 seconds."}}',
+      ],
+    },
+    {
+      heading: "Versioning and deprecation",
+      id: "versioning",
+      paragraphs: [
+        "The API is versioned in the URL path. The current version is v1 (/api/v1/...), and every response carries an API-Version: 1 header. Adding endpoints or optional fields is not a breaking change and ships in place.",
+        "Breaking changes ship under a new path (/api/v2/...). The old version keeps working for at least 90 days after the new one launches. During that time its responses carry a Deprecation header (RFC 9745), a Sunset header (RFC 8594) with the shutdown date, and a Link to this policy. The unversioned /api/agent and /api/locate aliases follow the same policy.",
+      ],
+    },
+    {
+      heading: "Example client",
+      id: "example-client",
+      paragraphs: [
+        `A tiny Node 18+ script with no dependencies, scripts/townhall-ballot.mjs in the [source code](${SITE.github}). It is an example to copy, not an official or published package.`,
+      ],
+      code: ["node scripts/townhall-ballot.mjs 78701            # final result as JSON\nnode scripts/townhall-ballot.mjs 94103 --stream   # every event as it arrives"],
     },
     {
       heading: "Use and limits",
@@ -252,6 +285,7 @@ const NAV_MD = [
   `- [Privacy](${SITE.url}/privacy)`,
   `- [Developers](${SITE.url}/developers)`,
   `- [OpenAPI spec](${SITE.url}/openapi.json)`,
+  `- [API versioning policy](${SITE.url}/developers#versioning)`,
   `- [llms.txt](${SITE.url}/llms.txt)`,
   `- [Sitemap](${SITE.url}/sitemap.xml)`,
   `- [Source code](${SITE.github})`,
@@ -266,7 +300,7 @@ export function pageMarkdown(path: PagePath): string {
       "## Use it",
       "",
       `- Open ${SITE.url}, enter a covered ZIP, and press Go. Results render in the browser.`,
-      `- Programmatic: \`GET ${SITE.url}/api/agent?zip=78701\` (or \`POST\` with JSON \`{"zip":"78701"}\`) returns newline-delimited JSON. The last line has \`"type":"result"\` with the full ballot.`,
+      `- Programmatic: \`GET ${SITE.url}/api/v1/agent?zip=78701\` (or \`POST\` with JSON \`{"zip":"78701"}\`) returns newline-delimited JSON. The last line has \`"type":"result"\` with the full ballot.`,
       `- API docs: ${SITE.url}/developers (OpenAPI 3.1: ${SITE.url}/openapi.json)`,
       `- Agent guide: ${SITE.url}/llms.txt`,
       ""
