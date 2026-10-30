@@ -15,11 +15,11 @@ export const HOME_SECTIONS: Section[] = [
     heading: "Sources",
     paragraphs: ["When a fact cannot be confirmed, it is marked unsure or not shown."],
     items: [
-      "Candidates and positions: election offices, [Ballotpedia](https://ballotpedia.org), campaign sites, news reports",
-      "Campaign finance: [FEC](https://www.fec.gov), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov)",
+      "Candidates and positions: election offices, [Ballotpedia](https://ballotpedia.org/Ballotpedia%27s_Candidate_Connection) (Candidate Connection survey answers and verbatim campaign text only), campaign sites, news reports",
+      "Campaign finance: [FEC](https://www.fec.gov/data/candidates/), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov)",
       "Dates, ID rules and polling places: [Travis County Clerk](https://votetravis.gov), [SF Department of Elections](https://www.sf.gov/november-3-2026-consolidated-general-election), [VoteTexas.gov](https://www.votetexas.gov), [California Secretary of State](https://www.sos.ca.gov/elections), [NYC Board of Elections](https://vote.nyc)",
-      "Local data: [U.S. Census Bureau](https://www.census.gov) American Community Survey 2024 5-year",
-      "Market prices: [Polymarket](https://polymarket.com). Not forecasts.",
+      "Local data: [U.S. Census Bureau](https://www.census.gov/programs-surveys/acs) American Community Survey 2024 5-year",
+      "Market prices: [Polymarket](https://polymarket.com/elections). Not forecasts.",
     ],
   },
 ];

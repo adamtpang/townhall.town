@@ -112,29 +112,33 @@ export default function MediaBand() {
   }
 
   return (
-    <figure className="ml-[calc(50%-50vw)] mt-16 w-screen lg:mt-24" data-media-band>
+    // Design landing P0-1 (3:03 PM): full-bleed as a sibling of the 1280 container (w-full, not w-screen, so no 15px
+    // scrollbar-gutter overflow). P0-2: caption on a dark glass plate, white text (>= 5:1 over the lightest frame).
+    <figure className="relative mt-4 w-full" data-media-band>
       <div className="media-frame aspect-[4/5] md:aspect-[12/5]">
         <picture>
           <source media="(min-width: 768px)" srcSet="/media/band-desktop-poster.jpg" />
-          <img src="/media/band-mobile-poster.jpg" alt="" decoding="async" data-band-poster />
+          <img src="/media/band-mobile-poster.jpg" alt="" aria-hidden="true" decoding="async" data-band-poster />
         </picture>
         <video ref={v} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />
       </div>
-      <figcaption className="mx-auto mt-3 flex max-w-site items-start gap-3 px-6 text-sm leading-5 text-ink/60 lg:px-10">
-        <span className="flex flex-1 flex-col md:flex-row md:justify-between md:gap-5">
-          <span><b className="font-[530] text-ink">Early voting.</b> Berkeley County, S.C., Oct 2016</span>
-          <span>Voice of America · Public domain</span>
+      <figcaption className="absolute inset-x-0 bottom-0 bg-ink/55 text-sm leading-5 text-white backdrop-blur-xl" data-band-caption>
+        <span className="mx-auto flex min-h-14 max-w-[1280px] items-center gap-3 px-5 py-2 md:px-10">
+          <span className="flex flex-1 flex-col md:flex-row md:justify-between md:gap-5">
+            <span><b className="font-[530] text-white">Early voting.</b> Berkeley County, S.C., Oct 2016</span>
+            <span>Voice of America · Public domain</span>
+          </span>
+          {/* Spec §6: 44×44 pause control (the clip loops past 5s; WCAG 2.2.2). Only shown once video can play. */}
+          {playable && (
+            <button type="button" onClick={toggle} aria-pressed={paused} aria-label={paused ? "Play background video" : "Pause background video"} className="-mr-3 flex h-11 w-11 shrink-0 items-center justify-center text-white focus-visible:outline-white focus-visible:-outline-offset-4" data-band-toggle>
+              {paused ? (
+                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor" /></svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor" /></svg>
+              )}
+            </button>
+          )}
         </span>
-        {/* Spec §6: recommended 44×44 pause control in the caption row (the clip loops past 5s; WCAG 2.2.2). Only shown once video can play. */}
-        {playable && (
-          <button type="button" onClick={toggle} aria-label={paused ? "Play background video" : "Pause background video"} className="-mt-3 flex h-11 w-11 shrink-0 items-center justify-center text-ink hover:text-brand-700" data-band-toggle>
-            {paused ? (
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor" /></svg>
-            ) : (
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor" /></svg>
-            )}
-          </button>
-        )}
       </figcaption>
     </figure>
   );

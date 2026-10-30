@@ -7241,14 +7241,14 @@
     "id": "jobs",
     "topic": "jobs",
     "label": "Unemployment rate, ZIP-level Census ACS 5-year estimate (not BLS)",
-    "value": "1.4%",
-    "unit": "%",
+    "value": "1.4% (+/-0.8 points; small sample, unsure)",
+    "unit": "",
     "table": "B23025",
     "source": {
-     "label": "Census ACS B23025 via Census Reporter",
-     "url": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US78701"
+     "label": "Census ACS B23025",
+     "url": "https://data.census.gov/table/ACSDT5Y2024.B23025?g=860XX00US78701"
     },
-    "stateValue": 5.3,
+    "unsure": true,
     "numeric": 1.4
    }
   ],
@@ -10036,12 +10036,12 @@
     "id": "jobs",
     "topic": "jobs",
     "label": "Unemployment rate, ZIP-level Census ACS 5-year estimate (not BLS)",
-    "value": "7.2%",
-    "unit": "%",
+    "value": "7.2% +/-1.5 points",
+    "unit": "",
     "table": "B23025",
     "source": {
-     "label": "Census ACS B23025 via Census Reporter",
-     "url": "https://censusreporter.org/data/table/?table=B23025&geo_ids=86000US94103"
+     "label": "Census ACS B23025",
+     "url": "https://data.census.gov/table/ACSDT5Y2024.B23025?g=860XX00US94103"
     },
     "stateValue": 6.6,
     "numeric": 7.2

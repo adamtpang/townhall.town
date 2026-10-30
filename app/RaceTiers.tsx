@@ -370,7 +370,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
                 <span aria-hidden className="text-sm font-[450] text-black/50 group-open/m:rotate-180">↓</span>
               </summary>
               <div className="pb-3"><MarketLine line={leaderLine(market(m.id))} /></div>
-              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-black/50">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
+              {m.officialTitle && <p className="pb-4 text-sm" data-official-title><span className="text-sm uppercase tracking-wide text-ink/60">Official ballot title</span><br />{m.officialTitle}{m.officialTitleSource && <> <a href={m.officialTitleSource} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(m.officialTitleSource)} ↗</a></>}</p>}
 {(() => {
                 const all = [["Cost", m.cost.value, m.cost.sourceUrl], ["Who pays", m.whoPays.text, m.whoPays.sourceUrl], ["If yes", measureSide(m, "ifYes")?.text, measureSide(m, "ifYes")?.sourceUrl ?? null], ["If no", measureSide(m, "ifNo")?.text, measureSide(m, "ifNo")?.sourceUrl ?? null]] as const; // NYC: the CFB voter guide's own pair, quoted, or our summary (lib/measures.ts measureSide)
                 const none = (v?: string | null) => said(v) === "No official estimate";
@@ -383,7 +383,7 @@ function MeasureRows({ measures, market }: { measures: MeasureMath[]; market: (i
                       <dl className="grid gap-4 sm:grid-cols-2">
                         {rows.map(([k, v, u]) => (
                           <div key={k}>
-                            <dt className="text-sm uppercase tracking-wide text-black/50">{k}</dt>
+                            <dt className="text-sm uppercase tracking-wide text-ink/60">{k}</dt>
                             <dd className="mt-1 text-sm">
                               {said(v)}{" "}
                               {u && <a href={u} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-[''] whitespace-nowrap">{host(u)} ↗</a>}

@@ -3,14 +3,14 @@ import { SITE } from "../lib/site";
 
 export function SiteHeader({ extra }: { extra?: React.ReactNode } = {}) {
   return (
-    <header className="mx-auto flex max-w-site items-center justify-between px-6 py-8 lg:px-10">
+    <header className="mx-auto flex h-14 items-center justify-between lg:h-16 max-w-[1280px] px-5 md:px-10" data-site-header>
       <Link href="/" className="inline-flex min-h-11 items-center gap-3 text-base font-[530] tracking-tight text-[#010101] no-underline">
         <span aria-hidden className="inline-block h-3 w-3 bg-brand-600" />
         townhall.town
       </Link>
       <span className="flex items-center gap-6">
         {extra}
-        <span className="text-sm font-[450] text-black/50">{SITE.electionLabel}</span>
+        <span className="text-sm font-[450] text-ink/60">{SITE.electionLabel}</span>
       </span>
     </header>
   );
@@ -30,7 +30,7 @@ const NAV = [
 export function SiteFooter() {
   return (
     <footer className="mt-40 bg-ink text-sm text-white/60" data-site-footer>
-      <div className="mx-auto max-w-site px-6 pb-10 pt-16 lg:px-10">
+      <div className="mx-auto max-w-[1280px] px-5 md:px-10 pb-10 pt-16">
         <span aria-hidden className="mb-6 block h-3 w-3 bg-brand-500" />
         <p>Nonpartisan. Not a government site. No endorsements. Every fact links its source; confirm with your state.</p>
         <p className="mt-2" data-photo-notice>Candidate photos: public campaign or official pages. <a href="/contact" className="inline-flex min-h-11 items-center text-white/80 underline decoration-white/40 underline-offset-2 hover:text-brand-300 hover:decoration-current">Contact us</a> to remove.</p>

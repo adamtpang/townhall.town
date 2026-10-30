@@ -22,13 +22,13 @@ export default function Home() {
     <LangProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(homeJsonLd()) }} />
       <SiteHeader extra={<LangToggle />} />
-      <main className="mx-auto max-w-site px-6 lg:px-10">
-        {/* P1-3 (purple spec): 160px hero top at >=1024 wide, only on viewports >=800px tall (keeps QA 4c21a5c: no band at 300% zoom). */}
-        <section className="pb-10 pt-12 lg:pt-20 [@media(min-width:1024px)_and_(min-height:800px)]:pt-40" data-hero>
+      <main>
+        <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+        <section className="pb-6 pt-6 lg:pb-8 lg:pt-16" data-hero>
           <h1 className={`${H1} [text-wrap:balance]`}>
             <T>Know your ballot in 2 minutes.</T>
           </h1>
-          <p className="mt-6 max-w-[32ch] text-xl leading-7 font-[530] text-black md:text-2xl md:leading-8" data-tagline>
+          <p className="mt-4 max-w-[32ch] text-xl leading-7 font-[530] text-black md:text-2xl md:leading-8" data-tagline>
             <span>Get your person in office. </span>
             <span className="max-sm:block"><T>Your vote matters.</T></span>
           </p>
@@ -37,14 +37,16 @@ export default function Home() {
         <BallotAgent />
         {/* Adam 2:56 PM CT (Oct 30): hero → ZIP → city cards → band → How it works → Sources. The city row sits right
             under the ZIP box (ends above y=700 at 390 and y=800 at 1440). */}
-        <section id="your-city" aria-labelledby="your-city-label" className="mt-8" data-city-row>
-          <h2 id="your-city-label" className="mb-3 flex gap-3 text-sm leading-5 font-[530] tracking-normal text-ink">
+        <section id="your-city" aria-labelledby="your-city-label" className="mt-6" data-city-row>
+          <h2 id="your-city-label" className="sr-only flex gap-3 text-sm leading-5 font-[530] tracking-normal text-ink">
             <span className="tabular-nums text-brand-700">01</span>
             <span>Your city</span>
           </h2>
           <CityCards />
         </section>
+        </div>
         <MediaBand />
+        <div className="mx-auto max-w-[1280px] px-5 md:px-10">
         <NumberedSection n="02" label="How it works" id="how-it-works">
           <ol className="grid gap-8 md:grid-cols-3 md:gap-5" data-how-steps>
             {HOW_STEPS.map(([title, line], i) => (
@@ -62,6 +64,7 @@ export default function Home() {
           </NumberedSection>
         ))}
         <div className="h-16 lg:h-24" />
+      </div>
       </main>
       <SiteFooter />
     </LangProvider>
