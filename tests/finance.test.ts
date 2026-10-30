@@ -184,3 +184,19 @@ describe("formatting (QA P2-1, P2-2)", () => {
     expect(ES_FOR_TEST["FEC page"]).toBeTruthy();
   });
 });
+
+// Parent steering 1:33 PM Oct 30: /api/agent money objects carry only Civic's 13-row fields.
+describe("money objects carry only Civic finance_fixes18 fields", () => {
+  const ALLOWED = new Set(["raised", "cashOnHand", "coverageThrough", "lastReport", "fecId", "source", "note"]);
+  it("no spent / individual / smallDonorPct / committee / donor lists on any ballot (this is what /api/agent returns as result.ballot)", () => {
+    let n = 0;
+    for (const zip of ["78701", "94103", "10001"]) for (const r of ballotFor(zip)!.races) for (const c of r.candidates as { money?: Record<string, unknown> }[]) {
+      if (!c.money) continue;
+      n++;
+      for (const k of Object.keys(c.money)) expect(ALLOWED.has(k), k).toBe(true);
+      expect(String((c.money.source as { url: string }).url)).toContain(String(c.money.fecId));
+    }
+    expect(n).toBeGreaterThan(0);
+    expect(JSON.stringify(ballotFor("78701"))).not.toMatch(/"(spent|individual|smallDonorPct|inStatePct|committee|topEmployers|topCommittees|donorsSource)"/);
+  });
+});

@@ -78,8 +78,9 @@ export type Money = {
   note?: string;                  // short sourced caveat, e.g. Civic's Ortiz note; shown in small muted text
   verified?: string;              // set on rows Civic checked (finance_fixes18)
   source: Source;
+  fecId?: string;                 // FEC candidate id (also in source.url)
   donorsSource?: Source;
-  fetchedAt: string;
+  fetchedAt?: string;
 };
 
 /** "Listed in the order on the official sample ballot." or the unsure line, with the source it points at. */
