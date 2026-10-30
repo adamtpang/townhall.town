@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import TownyInterview, { type Fill } from "./TownyInterview";
 import { type Photo } from "../components/Portrait";
 import { Button } from "../components/ui/button";
 import { type Answers } from "../lib/issues";
@@ -26,6 +27,8 @@ function load(): Answers {
 
 const CHOICES = [{ k: "yes", label: "Yes" }, { k: "neutral", label: "Neutral" }, { k: "no", label: "No" }] as const;
 
+const CITY: Record<string, string> = { "78701": "Austin", "94103": "San Francisco", "10001": "New York" };
+
 export default function IssueMatch({ zip, state, races }: { zip: string; state: "TX" | "CA" | "NY"; races: RaceLite[] }) {
   const issues = issuesFor(zip, state);
   const ids = issues.map((i) => i.id);
@@ -35,11 +38,24 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
   function choose(id: string, k: "yes" | "neutral" | "no", pole: "high" | "low" = "high") {
     const next = press(answers, id, k, pole) as Answers;
     setAnswers(next);
+    setFromChat((w) => { const n = { ...w }; delete n[id]; return n; });
+    try { localStorage.setItem(ANSWERS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+  }
+  const [fromChat, setFromChat] = useState<Record<string, string>>({});
+  function fill(fs: Fill[]) {
+    const next = { ...answers } as Answers;
+    const words = { ...fromChat };
+    for (const f of fs) {
+      const i = issues.find((x) => x.id === f.issue); if (!i) continue;
+      const v = press({}, f.issue, f.choice, i.yesMeansPole) as Answers;
+      next[f.issue] = v[f.issue]; words[f.issue] = f.words;
+    }
+    setAnswers(next); setFromChat(words);
     try { localStorage.setItem(ANSWERS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
   }
   function reset() {
     try { for (const k of Object.keys(localStorage)) if (k.startsWith("townhall.") || k.startsWith("th-")) localStorage.removeItem(k); } catch { /* ignore */ }
-    setAnswers({}); setConfirm(false);
+    setAnswers({}); setFromChat({}); setConfirm(false);
     window.dispatchEvent(new Event("townhall:reset"));
   }
   const answered = ids.filter((id) => answers[id] !== null && answers[id] !== undefined).length;
@@ -51,6 +67,8 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
         <h2 className="mt-3 font-serif text-5xl leading-none tracking-tight text-black lg:text-[72px]">Who lines up with you</h2>
         <p className="mt-4 text-base leading-6 text-black" data-issue-intro>{ISSUE_INTRO}</p>
         <p className="mt-2 text-sm text-black/60" aria-live="polite" data-progress>{answered} of {ids.length} answered</p>
+
+        <TownyInterview zip={zip} city={CITY[zip] || "your area"} issues={issues.map((i) => ({ id: i.id, label: i.label }))} onFill={fill} />
 
         <ol className="mt-6">
           {issues.map((i) => {
@@ -72,6 +90,7 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
                     );
                   })}
                 </div>
+                {fromChat[i.id] ? <p className="mt-2 text-sm text-black/60" data-from-chat>Filled from what you wrote: “{fromChat[i.id]}”. Change it if that&apos;s wrong.</p> : null}
               </li>
             );
           })}
