@@ -28,11 +28,11 @@ import { marketLine, acsYearLabel } from "../lib/api/agent";
 import { readFileSync } from "node:fs";
 
 describe("agent trace QA P2 (adb3628)", () => {
-  it("market line names the leader and says market price, not forecast-style 'has a leader'", () => {
-    const l = marketLine([{ contest: "U.S. Representative, District 37", leader: "Greg Casar", polymarketPricePct: 98, competitive: false }]);
-    expect(l).toContain("Greg Casar leads at a Polymarket price of 98%");
-    expect(l).toContain("a market price, not a forecast");
-    expect(l).not.toMatch(/has a leader/);
+  it("market line lists every outcome as a market price (Civic summary23 replaces QA P2(a) wording)", () => {
+    const l = marketLine([{ contest: "U.S. Representative, District 37", leader: "Greg Casar", polymarketPricePct: 98, competitive: false, outcomes: [{ name: "Greg Casar", pct: 98 }, { name: "Lauren Pe\u00f1a", pct: 2 }], url: "https://polymarket.com/event/tx-37-house-election-winner" }]);
+    expect(l).toContain("Greg Casar 98%, Lauren Pe\u00f1a 2%");
+    expect(l).toContain("market price, not a poll or forecast");
+    expect(l).not.toMatch(/has a leader|lopsided/);
     expect(marketLine([])).toBe("");
   });
   it("ACS year label has no nested parentheses", () => {

@@ -13,3 +13,10 @@ export const SHOW_FINANCE = process.env.NEXT_PUBLIC_SHOW_FINANCE !== "0";
 // Local news strip (app/LocalNews.tsx) is OFF unless NEXT_PUBLIC_SHOW_NEWS is "1" at build time.
 // Even when ON it renders nothing for a ZIP with no cached headlines (data/news.json, scripts/cache-news.mjs).
 export const SHOW_NEWS = process.env.NEXT_PUBLIC_SHOW_NEWS === "1";
+
+// Agent summary (the 3 code-written bullets under "Agent summary" in the trace panel) is OFF unless
+// NEXT_PUBLIC_SHOW_AGENT_SUMMARY is "1" or "true" at build time. Off: /api/agent returns no narration and no
+// summaryBullets and runs no analyze step, so the page shows no summary block and no heading. Gated server-side
+// in lib/api/agent.ts. The bullets are factBullets() only (Civic summary23 P0 #2), each with its own sourceUrl.
+const rawSummary = process.env.NEXT_PUBLIC_SHOW_AGENT_SUMMARY;
+export const SHOW_AGENT_SUMMARY = rawSummary === "1" || rawSummary === "true";
