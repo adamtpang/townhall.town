@@ -1,6 +1,6 @@
 // Polymarket strip: server component, no client JS (panels use the native popover attribute). See lib/polyStrip.ts.
 import { fetchPolymarketEventSides } from "../lib/marketsCore.mjs";
-import { buildStrip, stripIdsFor, STRIP_EVENTS, STRIP_LABEL, type LiveEvent, type Strip, type StripChip } from "../lib/polyStrip";
+import { buildStrip, stripIdsFor, stripLabelFull, STRIP_EVENTS, STRIP_LABEL, type LiveEvent, type Strip, type StripChip } from "../lib/polyStrip";
 
 type BallotArg = Parameters<typeof stripIdsFor>[0];
 export const STRIP_REVALIDATE = 300;
@@ -56,14 +56,15 @@ function Chip({ c, asOfLabel }: { c: StripChip; asOfLabel: string }) {
 export function PolyStripView({ strip }: { strip: Strip | null }) {
   if (!strip) return null;
   return (
-    <section aria-label={STRIP_LABEL || "Polymarket prices"} data-poly-strip data-asof={strip.asOf} className="border-b border-[var(--market-border)] bg-[var(--market-bg)] text-ink">
-      <div className="mx-auto flex h-11 max-w-site items-center gap-3 px-6 text-sm font-[450] tabular-nums lg:h-12 lg:px-10">
-        <span aria-hidden className="inline-block h-2 w-2 shrink-0 bg-[var(--market-mark)]" />
-        {STRIP_LABEL ? <a href="https://polymarket.com" target="_blank" rel="noopener" className={`inline-flex min-h-11 shrink-0 items-center ${LINK}`} data-strip-label>{STRIP_LABEL}{NEW_TAB}</a> : null}
-        <ul className="relative flex min-w-0 flex-1 snap-x snap-mandatory items-center gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-lg:[mask-image:linear-gradient(to_right,#000_calc(100%-28px),transparent)] after:w-6 after:shrink-0 after:content-['']" data-strip-scroller>
+    <section aria-label={stripLabelFull(strip.asOfLabel)} data-poly-strip data-asof={strip.asOf} className="border-b border-[var(--market-border)] bg-[var(--market-bg)] text-ink">
+      <div className="mx-auto flex max-w-site flex-col px-6 py-1 text-sm font-[450] tabular-nums lg:h-12 lg:flex-row lg:items-center lg:gap-5 lg:px-10 lg:py-0">
+        <p className="relative flex min-h-11 shrink-0 items-center gap-3" data-strip-label>
+          <span aria-hidden className="inline-block h-2 w-2 shrink-0 bg-[var(--market-mark)]" />
+          <span><a href="https://polymarket.com" target="_blank" rel="noopener" className={LINK}>{STRIP_LABEL}{NEW_TAB}</a><span className="text-ink/60" data-strip-asof>{` · as of ${strip.asOfLabel}`}</span></span>
+        </p>
+        <ul className="relative flex min-w-0 flex-1 snap-x snap-mandatory items-center gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,#000_calc(100%-28px),transparent)] after:w-6 after:shrink-0 after:content-['']" data-strip-scroller>
           {strip.chips.map((c) => <li key={c.id} className="shrink-0 snap-start"><Chip c={c} asOfLabel={strip.asOfLabel} /></li>)}
         </ul>
-        <span className="shrink-0 text-ink/60" data-strip-asof>as of {strip.asOfLabel}</span>
       </div>
       <script dangerouslySetInnerHTML={{ __html: STALE_GUARD }} />
     </section>

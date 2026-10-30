@@ -57,6 +57,11 @@ describe("Polymarket strip", () => {
     expect(s?.asOfLabel).toBe("3:05 PM CT");
     const out = html(s);
     expect(out).toContain("as of 3:05 PM CT");
+    // Adam 3:02 label, visible and as the accessible name; the time appears once in the strip row.
+    const text = out.replace(/<span class="sr-only">[^<]*<\/span>/g, "").replace(/<[^>]+>/g, "");
+    expect(text).toContain("Polymarket prices (market price, not a poll or forecast) · as of 3:05 PM CT");
+    expect(out).toContain('aria-label="Polymarket prices (market price, not a poll or forecast) · as of 3:05 PM CT"');
+    expect(out).toContain('href="https://polymarket.com"');
     expect(out).toContain('href="https://polymarket.com/event/which-party-will-win-the-senate-in-2026"');
     expect(out).toMatch(/target="_blank" rel="noopener"/);
     expect(out).toContain("Which party will win the Senate in 2026?");
@@ -84,7 +89,9 @@ describe("Polymarket strip", () => {
   it("design rules: 44/48px, 14px, min-h-11 targets, scoped blue token, no party colors, Romero line on", () => {
     const s = buildStrip(["national-senate"], { "national-senate": ev("national-senate", [[0.3, 0.7], [0.7, 0.3]]) }, null, NOW);
     const out = html(s);
-    expect(out).toMatch(/h-11[^"]*lg:h-12/);
+    // 48px row at lg; on phones the 3:02 label may wrap to 2 lines (Adam OK 3:26), so the strip grows from 44px rows.
+    expect(out).toMatch(/lg:h-12/);
+    expect(out).toMatch(/data-strip-label/);
     expect(out).toContain("text-sm");
     expect(out).toContain("min-h-11");
     expect(out).toContain("overflow-x-auto");
@@ -95,7 +102,7 @@ describe("Polymarket strip", () => {
     for (const a of out.match(/<a [^>]*>/g) || []) expect(a).toContain("text-ink hover:text-ink");
     expect(out).not.toMatch(/(text|bg)-(red|blue|green|rose|sky)-/);
     expect(ROMERO_LINE).toBe(true);
-    expect(STRIP_LABEL).toBe("");
+    expect(STRIP_LABEL).toBe("Polymarket prices (market price, not a poll or forecast)");
     expect(readFileSync("app/globals.css", "utf8")).toMatch(/\[data-poly-strip\] \{ --market-bg: #EEF4FB; --market-border: #D3E2F4; --market-mark: #3B6FB6; \}/);
     expect(asOfCT("2026-10-30T20:05:00Z")).toBe("3:05 PM CT");
   });

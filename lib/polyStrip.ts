@@ -6,7 +6,9 @@ import STRIP from "../data/poly-strip.json";
 import { pctOf } from "./marketLine";
 
 /** Left label: copy pending Adam's OK. Empty means omitted. */
-export const STRIP_LABEL = "";
+/** Adam 3:02 PM CT, his words: "Polymarket prices (market price, not a poll or forecast) · as of [time] CT". */
+export const STRIP_LABEL = "Polymarket prices (market price, not a poll or forecast)";
+export const stripLabelFull = (asOfLabel: string) => `${STRIP_LABEL} · as of ${asOfLabel}`;
 /** Under Fiona Ma's odds only (Adam 3:07 PM Oct 30: "Yes, show the no-market line for Romero"). ca-ltgov stays out of the strip. */
 export const ROMERO_LINE = true;
 export const ROMERO_TEXT = "No Polymarket market found for Gloria Romero.";
