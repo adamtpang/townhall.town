@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 const src = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 
@@ -37,5 +37,19 @@ describe("Design landing spec P0 (Oct 30, 3:03 PM) + audit 3:05 PM", () => {
     const a = src("app/BallotAgent.tsx");
     expect(a).toContain("{(result || notice === UNSUPPORTED) && <div className=\"mt-4 flex flex-wrap gap-2\" data-city-buttons>");
     expect(a).toContain("if (!SUPPORTED.has(z)) { setZip(z); return setNotice(UNSUPPORTED); }");
+  });
+});
+
+import { afterLoadThenInteraction } from "../components/media/MediaBand";
+describe("video waits for the first interaction (first load ~0.4 MB)", () => {
+  it("never fires on load or idle alone; fires once on the first scroll/pointer/key after load", () => {
+    const ls: Record<string, () => void> = {};
+    const w = { document: { readyState: "interactive" }, addEventListener: (n: string, f: () => void) => { ls[n] = f; }, removeEventListener: (n: string) => { delete ls[n]; }, requestIdleCallback: () => 1 };
+    const run = vi.fn();
+    afterLoadThenInteraction(w as never, run);
+    ls.scroll?.(); expect(run).not.toHaveBeenCalled(); // before load
+    ls.load(); expect(run).not.toHaveBeenCalled();
+    ls.keydown(); expect(run).toHaveBeenCalledTimes(1);
+    expect(ls.scroll).toBeUndefined();
   });
 });

@@ -45,6 +45,19 @@ export function onIdleOrScroll(w: IdleWin, run: () => void) {
 }
 
 type LoadWin = IdleWin & { document: { readyState: string } };
+/** Design landing spec (3:03 PM CT): first load ~0.4 MB with no scroll, so the video waits for the visitor's first
+ *  scroll, pointer, touch or key after window 'load' (poster until then). Returns a cleanup. */
+export const INTERACTION_EVENTS = ["scroll", "pointerdown", "touchstart", "keydown"] as const;
+export function afterLoadThenInteraction(w: LoadWin, run: () => void) {
+  let done = false;
+  let loaded = w.document.readyState === "complete";
+  const cleanup = () => { for (const n of INTERACTION_EVENTS) w.removeEventListener(n, fire); w.removeEventListener("load", onLoad); };
+  const fire = () => { if (done || !loaded) return; done = true; cleanup(); run(); };
+  const onLoad = () => { loaded = true; };
+  for (const n of INTERACTION_EVENTS) w.addEventListener(n, fire, { passive: true });
+  if (!loaded) w.addEventListener("load", onLoad, { once: true });
+  return () => { done = true; cleanup(); };
+}
 /** Design 2:57 PM CT (Oct 30): the video is off the first load. `run` fires once window 'load' has fired AND then
  *  idle (or the first scroll/pointer) has passed. Returns a cleanup. */
 export function afterLoadThenIdle(w: LoadWin, run: () => void) {
@@ -73,7 +86,7 @@ export default function MediaBand() {
     const mobile = window.matchMedia(MOBILE).matches;
     let attached = false;
     let visible = false;
-    let ready = false; // window load + idle (or first scroll/pointer)
+    let ready = false; // window load + first scroll/pointer/touch/key
     let near = false; // band within one viewport
     const attach = () => {
       if (attached || !ready || !near || reduceMq.matches) return;
@@ -98,7 +111,7 @@ export default function MediaBand() {
     io.observe(el);
     const nearIo = new IntersectionObserver(([e]) => { if (e.isIntersecting) { near = true; nearIo.disconnect(); attach(); } }, NEAR_VIEWPORT);
     nearIo.observe(el);
-    const stopIdle = afterLoadThenIdle(window, () => { ready = true; attach(); });
+    const stopIdle = afterLoadThenInteraction(window, () => { ready = true; attach(); });
     const onReduce = () => { if (reduceMq.matches && attached) { el.pause(); setPaused(true); userPaused.current = true; } };
     reduceMq.addEventListener?.("change", onReduce);
     return () => { stopIdle(); io.disconnect(); nearIo.disconnect(); reduceMq.removeEventListener?.("change", onReduce); };
