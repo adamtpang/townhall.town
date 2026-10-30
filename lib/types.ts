@@ -63,16 +63,18 @@ export type Jurisdiction = {
 // Campaign money from FEC filings. Donors are shown by employer or committee, never by individual name.
 export type Money = {
   raised: number;
-  spent: number;
+  spent?: number;                 // optional: Civic finance_fixes18 rows carry only receipts, cash on hand and coverage
   cashOnHand: number;
-  individual: number;
-  smallDonorPct: number | null;   // unitemized (under $200) share of individual contributions
-  inStatePct: number | null;      // share of itemized individual dollars from the candidate's state
+  individual?: number;
+  smallDonorPct?: number | null;  // unitemized (under $200) share of individual contributions
+  inStatePct?: number | null;     // share of itemized individual dollars from the candidate's state
   topEmployers?: { name: string; total: number }[];
   topCommittees?: { name: string; kind: string; total: number }[];
   coverageThrough: string | null;
   lastReport: string | null;
-  committee: { id: string; name: string } | null;
+  committee?: { id: string; name: string } | null;
+  note?: string;                  // short sourced caveat, e.g. Civic's Ortiz note; shown in small muted text
+  verified?: string;              // set on rows Civic checked (finance_fixes18)
   source: Source;
   donorsSource?: Source;
   fetchedAt: string;

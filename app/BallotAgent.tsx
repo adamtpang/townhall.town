@@ -120,8 +120,8 @@ function MoneyBlock({ m }: { m: NonNullable<Politician["money"]> }) {
         ))}
       </dl>
       <div className="mt-3 space-y-2">
-        <Share label="From small donors (under $200)" value={m.smallDonorPct} />
-        <Share label="From in-state donors (itemized)" value={m.inStatePct} />
+        <Share label="From small donors (under $200)" value={m.smallDonorPct ?? null} />
+        <Share label="From in-state donors (itemized)" value={m.inStatePct ?? null} />
       </div>
       {donors > 0 && (
         <details className="mt-3">
@@ -320,7 +320,7 @@ export default function BallotAgent() {
             {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Check your exact district by address</a></>}
           </p>
           {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} model={result.model} mode={result.mode} narration={result.narration} seconds={elapsed} />}
-          <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} />
+          <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} zip={b.zip} />
           <IssueMatch zip={b.zip} state={b.state} races={b.races} market={(id) => marketFor(markets, id)} />
           {SHOW_NEWS && <LocalNews zip={b.zip} />}
         </div>

@@ -5,9 +5,10 @@ const DEFAULT_SHOW_ACCOUNTABILITY = true;
 const raw = process.env.NEXT_PUBLIC_SHOW_ACCOUNTABILITY;
 export const SHOW_ACCOUNTABILITY = raw === "0" || raw === "false" ? false : raw === "1" || raw === "true" ? true : DEFAULT_SHOW_ACCOUNTABILITY;
 
-// PR #32 (party + FEC money under each candidate) is OFF unless NEXT_PUBLIC_SHOW_FINANCE is "1" at build time.
-// Civic is holding the finance data until their FEC sweep (~2:15 PM CT Oct 30) and QA found P1s in it.
-export const SHOW_FINANCE = process.env.NEXT_PUBLIC_SHOW_FINANCE === "1";
+// PR #32 (party + FEC money under each candidate) is ON by default as of feat/finance (Oct 30): Civic's FEC sweep
+// (finance_fixes18) is applied and QA's P1s are fixed, so promoting this exact commit shows it.
+// Off switch: NEXT_PUBLIC_SHOW_FINANCE=0 at build time.
+export const SHOW_FINANCE = process.env.NEXT_PUBLIC_SHOW_FINANCE !== "0";
 
 // Local news strip (app/LocalNews.tsx) is OFF unless NEXT_PUBLIC_SHOW_NEWS is "1" at build time.
 // Even when ON it renders nothing for a ZIP with no cached headlines (data/news.json, scripts/cache-news.mjs).
