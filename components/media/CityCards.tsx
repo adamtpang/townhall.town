@@ -3,6 +3,8 @@
 // ndstudio-structure spec §3.4 / §6 <CityCard>: 4:5 duotone photo cards. The whole card is one link that does what the
 // city chip does (loads that ZIP); without JS it is a real /?zip= link. Credits per spec §8 (CC BY gets a license link
 // and "modified (duotone)"). Self-hosted under public/media, plain <img> (no Vercel Image Optimization).
+import { useCallback, useEffect, useRef, useState } from "react";
+
 export type City = { zip: string; name: string; county: string; img: string; alt: string; author: string; license: string; licenseUrl?: string };
 
 export const CITIES: City[] = [
@@ -21,11 +23,24 @@ function open(e: React.MouseEvent<HTMLAnchorElement>, zip: string) {
   window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
 }
 
+/** Design 2:56 PM CT (Oct 30): right-edge fade only while the strip can still scroll right; gone at the end. */
+export const canScrollRight = (el: { scrollLeft: number; clientWidth: number; scrollWidth: number }) => el.scrollLeft + el.clientWidth < el.scrollWidth - 1;
+
 export default function CityCards() {
+  const ref = useRef<HTMLUListElement>(null);
+  const [more, setMore] = useState(true);
+  const check = useCallback(() => { const el = ref.current; if (el) setMore(canScrollRight(el)); }, []);
+  useEffect(() => { check(); window.addEventListener("resize", check); return () => window.removeEventListener("resize", check); }, [check]);
   return (
-    <ul className="-mr-6 flex snap-x snap-mandatory gap-3 overflow-x-auto pr-6 md:mr-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pr-0" data-city-cards>
+    <ul
+      ref={ref}
+      onScroll={check}
+      data-more={more ? "true" : "false"}
+      className="-mr-6 flex snap-x snap-mandatory scroll-pl-5 gap-3 overflow-x-auto pr-6 data-[more=true]:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:mr-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:pr-0 md:data-[more=true]:[mask-image:none]"
+      data-city-cards
+    >
       {CITIES.map((c) => (
-        <li key={c.zip} className="th-card relative flex-[0_0_72%] snap-start md:flex-auto">
+        <li key={c.zip} className="th-card relative w-[72%] shrink-0 snap-start md:w-auto md:shrink">
           <div className="duo aspect-[4/5] bg-brand-50">
             <img
               src={`/media/${c.img}-600.webp`}
@@ -48,7 +63,7 @@ export default function CityCards() {
             <span className="text-brand-700" aria-hidden="true">↗</span>
           </a>
           <p className="text-sm leading-5 text-ink/60">{c.zip} · {c.county}</p>
-          <p className="text-sm leading-5 text-ink/60">
+          <p className="text-sm leading-5 text-ink/60 [overflow-wrap:anywhere]" data-city-credit>
             Photo: {c.author},{" "}
             {c.licenseUrl ? (
               <>

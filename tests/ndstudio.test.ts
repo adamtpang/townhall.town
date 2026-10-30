@@ -44,8 +44,8 @@ describe("ndstudio-structure P0 (design, Oct 30 2026)", () => {
     expect(html).toContain("Photo: Daderot, CC0");
     expect(html).toContain("Photo: Bernard Spragg. NZ, CC0");
     expect(html).toMatch(/Photo: Jim Henderson, <a href="https:\/\/creativecommons.org\/licenses\/by\/4.0\/"[^>]*>CC BY 4.0.*<\/a>, modified \(duotone\)/);
-    expect(html).toContain("flex-[0_0_72%] snap-start");
-    expect(html).toContain("snap-x snap-mandatory");
+    expect(html).toContain("w-[72%] shrink-0 snap-start"); // Design 2:56 PM: 72% cards, peek stays
+    expect(html).toContain("snap-x snap-mandatory scroll-pl-5");
     expect(html).not.toMatch(/src="https?:/); // self-hosted only
     expect(src("app/BallotAgent.tsx")).toContain('"townhall:zip"');
   });

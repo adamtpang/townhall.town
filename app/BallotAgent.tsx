@@ -291,6 +291,7 @@ export default function BallotAgent() {
           e.preventDefault();
           run(zip);
         }}
+        noValidate
         className="flex max-w-2xl items-stretch gap-0"
       >
         <Input
@@ -299,6 +300,7 @@ export default function BallotAgent() {
           maxLength={5}
           autoComplete="postal-code"
           aria-label={t("ZIP code")}
+          aria-describedby="zip-notice"
           placeholder={t("Enter your ZIP")}
           value={zip}
           onChange={(e) => setZip(e.target.value)}
@@ -307,7 +309,7 @@ export default function BallotAgent() {
         <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
       </form>
       {/* QA phone pass (Oct 30): the unsupported-ZIP notice sits right under the input so it is visible above the keyboard. */}
-      <p role="status" aria-live="polite" className="mt-3 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
+      <p role="status" aria-live="polite" id="zip-notice" className="mt-3 text-base text-black empty:hidden" data-zip-notice>{notice ? t(notice) : ""}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {DEMO.map((d) => (
           <Button key={d.zip} type="button" variant="outline" size="sm" disabled={!d.ready || busy} onClick={() => run(d.zip)} className="min-h-11 rounded-none border-black font-[530]">

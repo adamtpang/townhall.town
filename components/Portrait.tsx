@@ -69,11 +69,13 @@ export const CREDIT = "max-w-[60ch] text-sm leading-5 font-[450] text-black/60 [
 const CLINK = "relative flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black md:inline-flex md:after:absolute md:after:inset-y-0 md:after:-inset-x-2 md:after:content-['']";
 /** Copy cuts (Oct 30): the candidate's name already labels the credit, so "Name's campaign site" reads "campaign site". */
 const shortCredit = (a: string) => a.replace(/^[^·]+?['\u2019]s (?:own )?(?=campaign site|official |X profile|Facebook profile|Linktree page|LinkedIn profile)/, "");
+/** QA P2 (Oct 30): every photo-credit link names its candidate for screen readers, e.g. "Jane Doe campaign site". */
+export const creditLabel = (name: string, author: string) => { const s = shortCredit(author); return /^(campaign site|official |X profile|Facebook profile|Linktree page|LinkedIn profile)/.test(s) ? `${name} ${s}` : `${name} photo: ${s}`; };
 /** "{author} · {license}" with the author linked to the file page and the license to its deed (no raw URLs). */
-export function CreditBody({ photo }: { photo: NonNullable<Photo> }) {
+export function CreditBody({ photo, name }: { photo: NonNullable<Photo>; name?: string }) {
   // Adam 12:16 AM CT: "Photo: {attribution}", linked to the source page (campaign, official or Commons file page).
-  const one = (p: Pic) => { const author = shortCredit(p.attribution ?? p.credit.replace(/^Photo:\s*/i, "")); return p.page ? <a href={p.page} target="_blank" rel="noreferrer" className={CLINK} data-photo-credit>{author}</a> : <span data-photo-credit>{author}</span>; };
-  return photo.mate ? <>{one(photo)} · {one(photo.mate)}</> : one(photo);
+  const one = (p: Pic, who?: string) => { const raw = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); const author = shortCredit(raw); return p.page ? <a href={p.page} target="_blank" rel="noreferrer" className={CLINK} aria-label={who ? creditLabel(who, raw) : undefined} data-photo-credit>{author}</a> : <span data-photo-credit>{author}</span>; };
+  return photo.mate ? <>{one(photo, name)} · {one(photo.mate, photo.mate.name)}</> : one(photo, name);
 }
 /** Design p12 #1: one credit line per race, "Photos: Name · credit   Name · credit".
  *  Design 3:34 AM CT (Oct 30): every credit link is at least 44px tall through spacing, not an invisible tap area.
@@ -86,10 +88,10 @@ export function RaceCredits({ cands, label }: { cands: { name: string; photo?: P
   const isOff = usePhotoOff();
   const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
   if (!keep.length) return null;
-  const link = (p: Pic, key: string) => { const author = shortCredit(p.attribution ?? p.credit.replace(/^Photo:\s*/i, "")); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} data-photo-credit>{author}</a> : <span key={key} className="flex min-h-11 items-center" data-photo-credit>{author}</span>; };
+  const link = (p: Pic, key: string, who: string) => { const raw = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); const author = shortCredit(raw); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className={TAP} aria-label={creditLabel(who, raw)} data-photo-credit>{author}</a> : <span key={key} className="flex min-h-11 items-center" data-photo-credit>{author}</span>; };
   return <CreditRow count={keep.length}>{keep.map((c) => { const ph = c.photo!; return (
         <span key={c.name} className="flex flex-wrap items-center gap-x-1 md:gap-x-2 md:data-[overflow=true]:invisible" data-race-credit={c.name}>
-          <span>{label(c.name)} ·</span>{link(ph, "a")}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m")}</> : null}
+          <span>{label(c.name)} ·</span>{link(ph, "a", c.name)}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m", ph.mate.name)}</> : null}
         </span>
       ); })}</CreditRow>;
 }
@@ -100,14 +102,14 @@ export function PhoneCredits({ cands, label }: { cands: { name: string; photo?: 
   const keep = cands.filter((c) => c.photo?.url && !isOff(c.name));
   if (!keep.length) return null;
   const n = keep.reduce((k, c) => k + (c.photo!.mate ? 2 : 1), 0);
-  const link = (p: Pic, key: string) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black" data-photo-credit>{author}<span className="sr-only"> (opens in a new tab)</span></a> : <span key={key} className="inline-flex min-h-11 items-center" data-photo-credit>{author}</span>; };
+  const link = (p: Pic, key: string, who: string) => { const author = p.attribution ?? p.credit.replace(/^Photo:\s*/i, ""); return p.page ? <a key={key} href={p.page} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center underline decoration-black/20 underline-offset-2 hover:text-black" aria-label={`${creditLabel(who, author)} (opens in a new tab)`} data-photo-credit>{author}<span className="sr-only"> (opens in a new tab)</span></a> : <span key={key} className="inline-flex min-h-11 items-center" data-photo-credit>{author}</span>; };
   return (
     <details className="group/pc sm:hidden" data-phone-credits={n}>
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-[#3760f2] [&::-webkit-details-marker]:hidden">Photo credits ({n})<span aria-hidden className="ml-2 inline-block group-open/pc:rotate-180">↓</span></summary>
       <ul className="pb-2 text-sm leading-5 text-black/60 [word-break:break-word]" aria-label="Photo credits">
         {keep.map((c) => { const ph = c.photo!; return (
           <li key={c.name} className="flex flex-wrap items-center gap-x-1" data-race-credit={c.name}>
-            <span>{label(c.name)} ·</span>{link(ph, "a")}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m")}</> : null}
+            <span>{label(c.name)} ·</span>{link(ph, "a", c.name)}{ph.mate ? <><span aria-hidden>·</span>{link(ph.mate, "m", ph.mate.name)}</> : null}
           </li>
         ); })}
       </ul>
@@ -156,7 +158,7 @@ function CreditRow({ count, children }: { count: number; children: ReactNode }) 
 export function PhotoCredit({ photo, name }: { photo: NonNullable<Photo>; name: string }) {
   const [off] = usePhotoFallback(name);
   if (off) return null;
-  return <p className={`mt-1 ${CREDIT}`} data-credit-line>Photo: <CreditBody photo={photo} /></p>;
+  return <p className={`mt-1 ${CREDIT}`} data-credit-line>Photo: <CreditBody photo={photo} name={name} /></p>;
 }
 
 /** Licensed or Ballotpedia portrait with its credit. Falls back to initials; never a generated image. */
@@ -174,7 +176,7 @@ export function Portrait({ name, photo, className, boxClassName, credit = true, 
         )}
       </div>
       {credit && show ? (
-        <figcaption className={`mt-1 ${CREDIT}`}>Photo: <CreditBody photo={photo!} /></figcaption>
+        <figcaption className={`mt-1 ${CREDIT}`}>Photo: <CreditBody photo={photo!} name={name} /></figcaption>
       ) : null}
     </figure>
   );

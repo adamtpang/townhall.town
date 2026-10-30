@@ -13,6 +13,7 @@ const coverageLine = COVERAGE.map((c) => `${c.zip} (${c.place})`).join(", ");
 export const HOME_SECTIONS: Section[] = [
   {
     heading: "Sources",
+    paragraphs: ["When a fact cannot be confirmed, it is marked unsure or not shown."],
     items: [
       "Candidates and positions: election offices, [Ballotpedia](https://ballotpedia.org), campaign sites, news reports",
       "Campaign finance: [FEC](https://www.fec.gov), [Texas Ethics Commission](https://www.ethics.state.tx.us), [Cal-Access](https://cal-access.sos.ca.gov)",
