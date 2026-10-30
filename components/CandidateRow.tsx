@@ -117,7 +117,7 @@ export default function CandidateRow({ c, o, ids, raceId, answeredYesNo = true, 
                 {/* main_points17: an unscored office priority gets a small muted text prefix; issue points look as before. */}
                 {x.k === "office" ? <><span className="text-base leading-6 font-[450] text-black/60" data-office-label>{tr("Office priority")}:</span>{" "}</> : null}
                 <span data-main-text>{x.t}</span>{" "}
-                <a href={x.u} target="_blank" rel="noreferrer" className="relative whitespace-nowrap text-sm leading-5 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
+                <a href={x.u} target="_blank" rel="noreferrer" className="relative [overflow-wrap:anywhere] text-sm leading-5 text-black underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-main-source>{sourceLabel(x.u)}{ext}</a>
               </li>
             ))}
           </ul>
