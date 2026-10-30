@@ -43,7 +43,7 @@ function Tile({ c, eager, label, mate }: { c: C; eager?: boolean; label: string;
           <img ref={ref} src={c.photo!.url} alt={split(c.name).lead} loading={eager ? "eager" : "lazy"} decoding="async" onError={() => setBroken(true)} className="absolute inset-0 h-full w-full object-cover object-top" />
         ) : null}
       </div>
-      <p className="mt-1 w-[calc(var(--p)+8px)] truncate text-xs font-[530] leading-4" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
+      <p className="mt-1 w-[calc(var(--p)+4px)] truncate text-xs font-[530] leading-4" title={c.name} aria-label={c.name} data-tile-label>{label}</p>
       {mate ? <p className="truncate text-xs leading-4 text-black/60" title={`Running mate: ${split(c.name).mate}`} aria-hidden data-tile-mate>w/ {mate}</p> : null}
     </li>
   );
@@ -56,7 +56,7 @@ export function CandidatePortraitRow({ cands, size = "row", eager = false }: { c
   const vars = size === "mini" ? "[--p:24px] md:[--p:32px]" : "[--p:40px] md:[--p:48px] lg:[--p:56px]";
   return (
     <>
-    <ul role="list" aria-label="Candidates in ballot order" className={`my-3 flex flex-nowrap gap-2 overflow-hidden md:gap-3 ${vars}`} data-photo-row>
+    <ul role="list" aria-label="Candidates in ballot order" className={`my-3 flex flex-nowrap gap-3 overflow-hidden ${vars}`} data-photo-row>
       {(() => { const L = labels(cands.map((c) => c.name)); return cands.map((c, i) => <Tile key={c.name} c={c} eager={eager} label={L[i].label} mate={L[i].mate} />); })()}
     </ul>
     {size === "row" && cands.some((c) => c.photo?.url) ? (

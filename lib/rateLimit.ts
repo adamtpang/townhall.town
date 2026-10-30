@@ -73,3 +73,14 @@ export function limited(req: Request, p: Policy = RESEARCH_POLICY): Response | n
   const d = take(req, p);
   return d.allowed ? null : tooManyRequests(p, d);
 }
+
+/** Same RateLimit headers as /api/v1 on every response from `fn`; a 429 when over the limit (QA P1 #2). */
+export function rateLimited(p: Policy, fn: (req: Request) => Response | Promise<Response>) {
+  return async (req: Request) => {
+    const d = take(req, p);
+    if (!d.allowed) return tooManyRequests(p, d);
+    const res = await fn(req);
+    for (const [k, v] of Object.entries(d.headers)) res.headers.set(k, v);
+    return res;
+  };
+}

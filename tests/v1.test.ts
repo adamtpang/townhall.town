@@ -158,7 +158,7 @@ describe("OpenAPI versioning and response coverage", () => {
   const spec = openApiSpec() as any;
   const ops = Object.entries(spec.paths).flatMap(([p, item]: [string, any]) => Object.entries(item).map(([m, op]) => ({ p, m, op: op as any })));
   it("lists the /v1 paths first and sets info.version", () => {
-    expect(Object.keys(spec.paths)).toEqual(["/api/v1/agent", "/api/v1/locate", "/api/agent", "/api/locate"]);
+    expect(Object.keys(spec.paths)).toEqual(["/api/v1/agent", "/api/v1/locate", "/api/agent", "/api/locate", "/api/research", "/api/interview"]);
     expect(spec.info.version).toBe("1.0.0");
     expect(spec.info.description).toContain("RFC 9745");
     expect(spec.info.description).toContain("RFC 8594");
@@ -172,6 +172,7 @@ describe("OpenAPI versioning and response coverage", () => {
     for (const { p, op } of ops) {
       for (const s of ["200", "400", "405", "429", "500"]) expect(op.responses, `${p} ${s}`).toHaveProperty(s);
       for (const [status, r] of Object.entries(op.responses) as [string, any][]) {
+        if (p === "/api/research" && status === "200") { expect(r.content["application/x-ndjson"].schema.$ref).toBe("#/components/schemas/ResearchEvent"); continue; }
         const json = r.content?.["application/json"];
         expect(json?.schema?.$ref, `${p} ${status} application/json`).toMatch(/^#\/components\/schemas\//);
         if (status !== "200") expect(json.schema.$ref).toBe("#/components/schemas/Error");

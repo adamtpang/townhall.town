@@ -65,7 +65,7 @@ describe("unknown /api routes", () => {
 // Route files under app/api, as OpenAPI paths. The catch-all is excluded: it only serves 404s.
 // Preview-only test harness, 404 on production and deliberately not in the public spec (see tests/towny.test.ts).
 // Not part of the public API: towny-test is preview-only; research and interview are the homepage's own UI calls.
-const PREVIEW_ONLY = new Set(["/api/towny-test", "/api/research", "/api/interview"]);
+const PREVIEW_ONLY = new Set(["/api/towny-test"]);
 function apiRoutes(dir = "app/api", prefix = "/api"): string[] {
   return allRoutes(dir, prefix).filter((r) => !PREVIEW_ONLY.has(r));
 }
@@ -78,7 +78,7 @@ function allRoutes(dir: string, prefix: string): string[] {
   });
 }
 const methodsOf = (path: string) =>
-  ["GET", "POST"].filter((m) => new RegExp(`export async function ${m}\\b`).test(readFileSync(`app${path}/route.ts`, "utf8"))).map((m) => m.toLowerCase());
+  ["GET", "POST"].filter((m) => { const src = readFileSync(`app${path}/route.ts`, "utf8"); return new RegExp(`export async function ${m}\\b`).test(src) || new RegExp(`export const ${m} = (?!.*methodNotAllowed)`).test(src); }).map((m) => m.toLowerCase());
 
 describe("OpenAPI spec", () => {
   const spec = openApiSpec();
@@ -217,5 +217,17 @@ describe("Civic qa_fixes3: every race on 78701/94103/10001 has sourced office te
     }
     expect(bad).toEqual([]);
     expect(ballotFor("78701")!.races.some((r) => r.id === "travis-commissioner-2")).toBe(false);
+  });
+});
+
+describe("QA P1 #2: research and interview carry the v1 RateLimit headers", () => {
+  it("research 404 and interview 400 carry RateLimit and API-Version", async () => {
+    const { GET } = await import("../app/api/research/route");
+    const r = await GET(new Request("https://x/api/research?zip=78701&race=nope", { headers: { "x-forwarded-for": "203.0.113.77" } }));
+    expect(r.status).toBe(404); expect(r.headers.get("ratelimit-policy")).toBe('"research";q=10;w=60'); expect(r.headers.get("api-version")).toBe("1");
+    expect((await r.json()).error.code).toBe("not_found");
+    const { POST } = await import("../app/api/interview/route");
+    const i = await POST(new Request("https://x/api/interview", { method: "POST", body: '{"zip":"90210","messages":[]}', headers: { "x-forwarded-for": "203.0.113.78", "content-type": "application/json" } }));
+    expect(i.status).toBe(400); expect(i.headers.get("ratelimit-policy")).toBe('"interview";q=10;w=60'); expect(i.headers.get("ratelimit-remaining")).toBe("9");
   });
 });

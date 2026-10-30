@@ -1,7 +1,7 @@
 // OpenAPI 3.1 description of the public API. Documents only the routes that exist: /api/v1/agent (GET, POST) and
 // /api/v1/locate (POST), plus their unversioned aliases /api/agent and /api/locate. Served at /openapi.json.
 import { COVERAGE, SITE } from "./site";
-import { AGENT_POLICY, LOCATE_POLICY } from "./rateLimit";
+import { AGENT_POLICY, LOCATE_POLICY, RESEARCH_POLICY, INTERVIEW_POLICY } from "./rateLimit";
 
 const zips = COVERAGE.map((c) => c.zip);
 
@@ -115,6 +115,62 @@ function agentPath(alias: boolean) {
     },
   };
 }
+// /api/research and /api/interview: the site's own helpers. Same API-Version and RateLimit headers as /api/v1.
+const rlOnly = rlHeaders;
+const errRl = (d: string, e: { code: string; message: string }) => err(d, e, rlOnly);
+const tooManyRl = (p: { limit: number; windowSec: number }) => ({ ...tooMany(p), headers: { ...rlOnly, "Retry-After": H("Retry-After") } });
+function researchPath() {
+  return {
+    get: {
+      operationId: "researchRace",
+      tags: ["research"],
+      summary: "Read each candidate's pages for their own words on chosen issues",
+      description:
+        "For one race on a covered ZIP's ballot, reads each candidate's listed pages (campaign site, official site, Ballotpedia), issue pages linked from their own site, and web search results, the same way for every candidate. Returns only the candidate's own words, copied exactly from the page with its URL: sentences on their own campaign or official site, or words in quotation marks that a third-party page attributes to them by name. Nothing is scored. Judicial races return only a done event. Rate limited per client: see RateLimit headers.",
+      parameters: [
+        { name: "zip", in: "query", required: true, description: "A covered ZIP, exactly 5 digits.", schema: { type: "string", pattern: "^\\d{5}$", examples: zips } },
+        { name: "race", in: "query", required: true, description: "A race id from the ballot result, e.g. ca-gov.", schema: { type: "string", examples: ["ca-gov", "tx-sboe-5"] } },
+        { name: "issues", in: "query", required: false, description: "Comma-separated issue ids (housing, healthcare, wages, taxes, safety, education, energy, immigration, wealthtax, infrastructure). Default: all.", schema: { type: "string", examples: ["housing,taxes"] } },
+      ],
+      responses: {
+        "200": {
+          description: "A stream of newline-delimited JSON, one ResearchEvent per line, ending with a done event. Repeat runs may be replayed from cache (x-research-cache: hit).",
+          headers: rlOnly,
+          content: { "application/x-ndjson": { schema: { $ref: "#/components/schemas/ResearchEvent" }, "x-ndjson-item-schema": { $ref: "#/components/schemas/ResearchEvent" },
+            example: { type: "citation", name: "Xavier Becerra", issue: "housing", quote: "As governor, I will treat housing like the essential infrastructure it is.", url: "https://www.xavierbecerra2026.com/priorities/", ownSite: true } } },
+        },
+        "400": errRl("The zip is not exactly 5 digits.", { code: "invalid", message: "zip must be exactly 5 digits, for example 78701." }),
+        "404": errRl("The race id is not on this ZIP's ballot.", { code: "not_found", message: "Unknown race for this ZIP." }),
+        "405": notAllowed("GET"),
+        "429": tooManyRl(RESEARCH_POLICY),
+        "500": internal,
+      },
+    },
+  };
+}
+function interviewPath() {
+  return {
+    post: {
+      operationId: "interviewAnswers",
+      tags: ["research"],
+      summary: "Turn what a voter wrote into Yes/Neutral/No issue answers",
+      description:
+        "Maps the voter's own words to the fixed issue questions for a covered ZIP. Only questions the text clearly addresses are answered, each with the exact words that support it. Nothing the voter types is stored or logged. Rate limited per client: see RateLimit headers.",
+      requestBody: {
+        required: true,
+        content: { "application/json": { schema: { $ref: "#/components/schemas/InterviewRequest" }, example: { zip: "78701", messages: [{ text: "Rent is too high and I'm unsure about taxes." }] } } },
+      },
+      responses: {
+        "200": { description: "The answers found (possibly none).", headers: rlOnly, content: { "application/json": { schema: { $ref: "#/components/schemas/InterviewResult" }, example: { answers: [{ issue: "housing", choice: "yes", words: "Rent is too high" }] } } } },
+        "400": errRl("The body is not JSON, or the zip is not a covered 5-digit ZIP.", { code: "invalid", message: "zip must be one of the covered 5-digit ZIPs: 78701, 94103 or 10001." }),
+        "405": notAllowed("POST"),
+        "429": tooManyRl(INTERVIEW_POLICY),
+        "500": internal,
+        "502": errRl("The answer model did not respond.", { code: "upstream_unavailable", message: "The answer model did not respond. Try again." }),
+      },
+    },
+  };
+}
 function locatePath(alias: boolean) {
   return {
     post: {
@@ -161,7 +217,7 @@ export function openApiSpec() {
 
 Versioning and deprecation: ${VERSIONING.summary} Policy: ${SITE.url}/developers#versioning
 
-Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} requests per minute on the ballot agent, ${LOCATE_POLICY.limit} on locate. Counters are kept in memory per server instance, so the limit is approximate, not a guarantee. Every response carries RateLimit-Policy and RateLimit (draft-ietf-httpapi-ratelimit-headers) and RateLimit-Limit, RateLimit-Remaining and RateLimit-Reset. Over the limit you get 429 with Retry-After and the usual JSON error body (code rate_limited).`,
+Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} requests per minute on the ballot agent, ${LOCATE_POLICY.limit} on locate, ${RESEARCH_POLICY.limit} on /api/research and ${INTERVIEW_POLICY.limit} on /api/interview. Counters are kept in memory per server instance, so the limit is approximate, not a guarantee. Every response carries RateLimit-Policy and RateLimit (draft-ietf-httpapi-ratelimit-headers) and RateLimit-Limit, RateLimit-Remaining and RateLimit-Reset. Over the limit you get 429 with Retry-After and the usual JSON error body (code rate_limited).`,
       license: { name: "MIT", identifier: "MIT" },
       contact: { name: "GitHub issues", url: SITE.issues },
     },
@@ -174,7 +230,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
     "x-rate-limits": {
       headers: ["RateLimit-Policy", "RateLimit", "RateLimit-Limit", "RateLimit-Remaining", "RateLimit-Reset", "Retry-After"],
       scope: "per client IP, per server instance (approximate, not guaranteed)",
-      policies: [AGENT_POLICY, LOCATE_POLICY].map((p) => ({ name: p.name, limit: p.limit, windowSeconds: p.windowSec })),
+      policies: [AGENT_POLICY, LOCATE_POLICY, RESEARCH_POLICY, INTERVIEW_POLICY].map((p) => ({ name: p.name, limit: p.limit, windowSeconds: p.windowSec })),
     },
     externalDocs: { description: "townhall.town API and developer docs, with curl examples", url: `${SITE.url}/developers` },
     servers: [{ url: SITE.url }],
@@ -183,6 +239,7 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
     tags: [
       { name: "ballot", description: "Races, candidates, measures and sources for a covered ZIP." },
       { name: "location", description: "Coordinates to ZIP via the U.S. Census Geocoder." },
+      { name: "research", description: "The site's live helpers: candidates' own words on chosen issues, and turning a voter's words into issue answers." },
     ],
     // Canonical /v1 paths first, then the unversioned aliases.
     paths: {
@@ -190,6 +247,8 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
       "/api/v1/locate": locatePath(false),
       "/api/agent": agentPath(true),
       "/api/locate": locatePath(true),
+      "/api/research": researchPath(),
+      "/api/interview": interviewPath(),
     },
     components: {
       headers: {
@@ -227,6 +286,32 @@ Rate limits: per client IP, fixed 60-second window: ${AGENT_POLICY.limit} reques
           type: "object",
           required: ["label", "url"],
           properties: { label: { type: "string" }, url: { type: "string", format: "uri" }, retrieved: { type: "string" } },
+        },
+        ResearchEvent: {
+          description: "One line of the /api/research stream.",
+          oneOf: [
+            { type: "object", title: "candidate", required: ["type", "name", "sources"], properties: { type: { const: "candidate" }, name: { type: "string" }, sources: { type: "integer", minimum: 0 } } },
+            { type: "object", title: "step", required: ["type", "name", "url", "label", "status"], properties: { type: { const: "step" }, name: { type: "string" }, url: { type: "string" }, label: { type: "string" }, status: { enum: ["running", "done", "failed"] }, detail: { type: "string" } } },
+            { type: "object", title: "citation", required: ["type", "name", "issue", "quote", "url"], properties: { type: { const: "citation" }, name: { type: "string" }, issue: { type: "string" }, quote: { type: "string", description: "Exact substring of the page text." }, url: { type: "string", format: "uri" }, ownSite: { type: "boolean", description: "True when the page is on the candidate's own campaign or official site." } } },
+            { type: "object", title: "none", required: ["type", "name", "message"], properties: { type: { const: "none" }, name: { type: "string" }, message: { type: "string", examples: ["No public statement found as of Oct 29, 2026"] } } },
+            { type: "object", title: "done", required: ["type"], properties: { type: { const: "done" }, judicial: { type: "boolean" } } },
+          ],
+          discriminator: { propertyName: "type" },
+        },
+        InterviewRequest: {
+          type: "object",
+          required: ["zip", "messages"],
+          properties: {
+            zip: { type: "string", pattern: "^\\d{5}$", examples: zips },
+            messages: { type: "array", maxItems: 6, description: "The voter's messages, newest last. Only the last 6 are read, each up to 600 characters.", items: { type: "object", required: ["text"], properties: { text: { type: "string", maxLength: 600 } } } },
+          },
+        },
+        InterviewResult: {
+          type: "object",
+          required: ["answers"],
+          properties: {
+            answers: { type: "array", items: { type: "object", required: ["issue", "choice", "words"], properties: { issue: { type: "string" }, choice: { enum: ["yes", "neutral", "no"] }, words: { type: "string", description: "The voter's own words that support this answer." } } } },
+          },
         },
         LocateResult: {
           type: "object",

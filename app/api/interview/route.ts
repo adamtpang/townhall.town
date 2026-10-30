@@ -1,7 +1,8 @@
 import { generateObject } from "ai";
 import { z } from "zod";
 import { validZip } from "../../../lib/zip.mjs";
-import { limited, INTERVIEW_POLICY } from "../../../lib/rateLimit";
+import { rateLimited, INTERVIEW_POLICY } from "../../../lib/rateLimit";
+import { apiError, methodNotAllowed, withHeaders, API_VERSION_HEADERS } from "../../../lib/apiError";
 import { issuesFor } from "../../../lib/issueOrder";
 import { ballotFor } from "../../../lib/tools";
 
@@ -20,12 +21,12 @@ const Out = z.object({
   })),
 });
 
-export async function POST(req: Request) {
-  const lim = limited(req, INTERVIEW_POLICY); if (lim) return lim;
-  const body = await req.json().catch(() => ({}));
+async function interview(req: Request): Promise<Response> {
+  const body = await req.json().catch(() => null);
+  if (!body || typeof body !== "object") return apiError(400, "invalid", 'Body must be JSON like {"zip":"78701","messages":[{"text":"..."}]}.');
   const zip = validZip(body.zip);
   const b = zip ? ballotFor(zip) : null;
-  if (!zip || !b) return Response.json({ error: "unsupported" }, { status: 400 });
+  if (!zip || !b) return apiError(400, "invalid", "zip must be one of the covered 5-digit ZIPs: 78701, 94103 or 10001.");
   const msgs = (Array.isArray(body.messages) ? body.messages : []).filter((m: any) => typeof m?.text === "string").slice(-6).map((m: any) => String(m.text).slice(0, 600));
   if (!msgs.length) return Response.json({ answers: [] });
   const issues = issuesFor(zip, b.state);
@@ -47,5 +48,8 @@ ${list}`,
       return Response.json({ answers }, { headers: { "cache-control": "no-store" } });
     } catch { /* next model */ }
   }
-  return Response.json({ error: "unavailable", answers: [] }, { status: 503 });
+  return apiError(502, "upstream_unavailable", "The answer model did not respond. Try again.");
 }
+
+export const POST = withHeaders(rateLimited(INTERVIEW_POLICY, interview), API_VERSION_HEADERS);
+export const GET = withHeaders(methodNotAllowed(["POST"]), API_VERSION_HEADERS);

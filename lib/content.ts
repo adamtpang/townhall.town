@@ -1,7 +1,7 @@
 // Page copy shared by the HTML pages and their Markdown twins (Accept: text/markdown).
 // Inline links use Markdown syntax [text](url); components/Prose.tsx renders them as <a>.
 // Copy rules: nonpartisan, no endorsements, no em dashes.
-import { AGENT_POLICY, LOCATE_POLICY } from "./rateLimit";
+import { AGENT_POLICY, LOCATE_POLICY, RESEARCH_POLICY, INTERVIEW_POLICY } from "./rateLimit";
 import { COVERAGE, SITE, type PagePath } from "./site";
 
 /** `id` becomes the section element id, for links like /developers#versioning. */
@@ -227,6 +227,16 @@ export const DEVELOPERS: PageContent = {
         "502 upstream_unavailable: the Census Geocoder did not answer.",
       ],
       code: [`curl -i "${SITE.url}/api/v1/agent?zip=7870"`, '{"error":{"code":"invalid","message":"zip must be exactly 5 digits, for example 78701."}}'],
+    },
+    {
+      heading: "Research and interview",
+      id: "research",
+      paragraphs: [
+        `GET /api/research?zip=<ZIP>&race=<race id>&issues=<ids> streams newline-delimited JSON: candidate, step, citation, none and done events. A citation is the candidate's own words copied exactly from the page, with its URL: a sentence on their own campaign or official site (ownSite true), or words in quotation marks that another page attributes to them by name. ${RESEARCH_POLICY.limit} requests per minute per client.`,
+        `POST /api/interview with JSON {"zip":"78701","messages":[{"text":"..."}]} returns {"answers":[{"issue","choice","words"}]}: Yes, Neutral or No only for questions the text clearly addresses, with the words that support each. Nothing typed is stored. ${INTERVIEW_POLICY.limit} requests per minute per client.`,
+        "Both carry the same RateLimit headers as /api/v1 and use the same JSON error model. Typed schemas: ResearchEvent, InterviewRequest and InterviewResult in [/openapi.json](/openapi.json).",
+      ],
+      code: [`curl -N "${SITE.url}/api/research?zip=94103&race=ca-gov&issues=housing"`, `curl -s -X POST ${SITE.url}/api/interview -H 'content-type: application/json' -d '{"zip":"78701","messages":[{"text":"Rent is too high"}]}'`],
     },
     {
       heading: "Rate limits",

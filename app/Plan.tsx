@@ -27,7 +27,7 @@ function download(name: string, body: string) {
 }
 
 const Ext = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a href={href} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-[''] text-sm">{children} ↗</a>
+  <a href={href} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-sm">{children} ↗</a>
 );
 
 export default function Plan({ zip, state, place, electionDate, races, measures }: { zip: string; state: "TX" | "CA" | "NY"; place: string; electionDate: string; races: RaceLite[]; measures: MeasureLite[] }) {

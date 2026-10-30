@@ -30,7 +30,7 @@ export default function TownyInterview({ zip, city, issues, onFill, answered = 0
     try {
       const r = await fetch("/api/interview", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ zip, messages: all.map((x) => ({ text: x })) }) });
       const j = await r.json();
-      if (!r.ok && !j.answers?.length) throw new Error(j.error || "failed");
+      if (!r.ok && !j.answers?.length) throw new Error(j.error?.message || "failed");
       const fills = (j.answers || []) as Fill[];
       const fresh = fills.filter((f) => !filled[f.issue]);
       const nextFilled = { ...filled }; for (const f of fills) nextFilled[f.issue] = true;

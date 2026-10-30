@@ -36,7 +36,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
     const url = `${location.origin}/card?zip=${zip}#a=${encodeAnswers(answers || {}, ids)}`;
     try { if (navigator.share) { await navigator.share({ title: "My ballot card", url }); return; } await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2500); } catch { /* cancelled */ }
   }
-  const link = "relative after:absolute after:-inset-3 after:content-[''] text-[#3760F2] underline-offset-2 hover:underline print:text-black";
+  const link = "relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-[''] text-[#3760F2] underline-offset-2 hover:underline print:text-black";
   return (
     <main className="mx-auto max-w-[720px] px-5 py-12 text-black print:px-0 print:py-0" data-ballot-card>
       <p className="nds-caption-upper text-black/60">townhall.town · {place}</p>

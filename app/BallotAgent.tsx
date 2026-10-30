@@ -229,7 +229,7 @@ function HeroStat({ vm }: { vm: { text: string; sources: { label: string; url: s
     <div className="mt-12 max-w-2xl border-l-2 border-black pl-4" data-vote-matters>
       <p className="text-sm font-[530] text-black/60">Your vote matters most here</p>
       <p className="mt-1 text-xl leading-7 font-[450] text-black">{vm.text}</p>
-      <p className="mt-1 text-xs leading-4">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-3 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
+      <p className="mt-1 text-xs leading-4">{vm.sources.map((s, i) => <span key={s.url}>{i ? " · " : ""}<a href={s.url} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{s.label} ↗<span className="sr-only"> (opens in a new tab)</span></a></span>)}</p>
     </div>
   );
 }
@@ -371,7 +371,7 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-32">
           <p className="text-sm text-black/60">
-            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-3 after:content-['']">Check your exact district by address</a></>}
+            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · Your ZIP may cross district lines. <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-3 after:-inset-y-4 after:content-['']">Check your exact district by address</a></>}
           </p>
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} />
           <IssueMatch zip={b.zip} state={b.state} races={b.races} />

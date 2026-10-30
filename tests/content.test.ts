@@ -83,7 +83,7 @@ describe("llms.txt", () => {
   it("names the covered ZIPs and only real API routes", () => {
     for (const z of ["78701", "94103", "10001"]) expect(t).toContain(z);
     const apis = [...t.matchAll(/\/api\/(?:v1\/)?([a-z]+)\b/g)].map((m) => m[1]);
-    expect(new Set(apis)).toEqual(new Set(["agent", "locate"]));
+    expect(new Set(apis)).toEqual(new Set(["agent", "locate", "research", "interview"]));
   });
   it("llms-full.txt includes every page", () => {
     const f = llmsFullTxt();

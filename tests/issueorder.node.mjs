@@ -14,7 +14,7 @@ test("issue_order has intro, one statement per issue, numeric poles, and ranked 
   for (const zip of ["78701", "94103", "10001"]) {
     const rows = order.zips[zip].issues;
     assert.ok(rows.length > 0, zip);
-    for (const r of rows) { assert.ok(order.statements[r.issue], `${zip} ${r.issue}`); assert.match(r.sourceUrl, /^https:\/\//); }
+    for (const r of rows) { assert.ok(order.statements[r.issue], `${zip} ${r.issue}`); if (r.reason || r.sourceUrl) assert.match(r.sourceUrl, /^https:\/\//); }
   }
 });
 
@@ -43,4 +43,12 @@ test("-1 issue (healthcare): buttonValue = stance.value * -1, Yes overlaps a -5 
   assert.equal(overlapFor(a, { healthcare: { value: 5 } }, ["healthcare"]).agree, 0);
   // Same thing on the button scale: both Yes (+5).
   assert.equal(Math.sign(buttonValue(-5, pole)), Math.sign(5));
+});
+
+test("QA P1 #3: a 'why on ballot' cite only names measures that match the question", () => {
+  const infra = order.zips["78701"].issues.find((r) => r.issue === "infrastructure");
+  assert.ok(infra, "78701 still asks the infrastructure question");
+  assert.equal(infra.reason, undefined, "Props A (parks) and B (libraries) are not water or infrastructure");
+  assert.equal(infra.sourceUrl, undefined);
+  for (const [zip, z] of Object.entries(order.zips)) for (const r of z.issues) if (r.issue === "infrastructure" && r.reason) assert.doesNotMatch(r.reason, /parks|librar/i, zip);
 });
