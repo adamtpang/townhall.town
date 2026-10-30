@@ -302,7 +302,7 @@ export default function BallotAgent() {
           placeholder={t("Enter your ZIP")}
           value={zip}
           onChange={(e) => setZip(e.target.value)}
-          className="h-16 rounded-none border border-black bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+          className="h-16 rounded-none border border-ink/50 bg-transparent px-4 text-2xl focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
         />
         <Button type="submit" size="lg" disabled={busy} className="h-16 rounded-none bg-black px-8 text-base font-[530] text-[#f2f2f2] hover:bg-black/80">{busy ? t("Reading…") : t("Go")}</Button>
       </form>
@@ -326,7 +326,7 @@ export default function BallotAgent() {
       {b && (
         <div id="ballot" className="mt-6">
           <p className="text-sm text-black/60">
-            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Check your exact district by address</a></>}
+            {b.place}{b.state === "NY" && b.verify && <> · <a href={b.verify.url} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']" data-place-link>{b.verify.label}</a></>}{b.splitWarning && b.districts.length > 1 && <> · <a href={b.state === "TX" ? "https://wrm.capitol.texas.gov/" : b.state === "NY" ? (b.verify?.url ?? "https://findmypollsite.vote.nyc/") : "https://www.sos.ca.gov/elections"} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']" data-place-link>Check your exact district by address</a></>}
           </p>
           {result && <AgentTrace tools={[...TOOLS, "analyze"]} steps={steps} byModel={result.toolsRunByModel || []} narration={result.narration} bullets={result.summaryBullets} seconds={elapsed} />}
           <RaceTiers races={races} market={(id) => marketFor(markets, id)} measures={measureMath} zip={b.zip} />

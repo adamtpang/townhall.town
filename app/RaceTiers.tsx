@@ -79,7 +79,7 @@ export function MarketLine({ line }: { line: LeaderLine | null }) {
     <p className="max-w-[45ch] text-sm text-black/60" data-market-line>
       Leader on Polymarket: <span className="text-black">{line.name}</span> at {line.pct}.{" "}
       {line.others?.length ? <span data-market-others>Same market: {line.others.map((o) => `${o.name} at ${o.pct}`).join(", ")}.{" "}</span> : null}
-      <a href={line.url} target="_blank" rel="noreferrer" className={`${HIT} whitespace-nowrap th-link`} data-market-link>Polymarket market ↗<span className="sr-only"> (opens in a new tab)</span></a>{" "}
+      <a href={line.url} target="_blank" rel="noreferrer" className={`${HIT} inline-flex min-h-11 items-center whitespace-nowrap th-link`} data-market-link>Polymarket market ↗<span className="sr-only"> (opens in a new tab)</span></a>{" "}
       <span data-market-fetched>Fetched {line.fetched}.</span>
     </p>
   );
@@ -92,7 +92,7 @@ function NewsList({ items }: { items: RaceMeta["news"] }) {
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-black/60 hover:text-black [&::-webkit-details-marker]:hidden">News ({items.length})<span aria-hidden className="ml-2 inline-block group-open/n:rotate-180">↓</span></summary>
       <ul className="max-w-2xl space-y-1 pb-2">
         {items.map((n) => (
-          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className={`${HIT} text-brand-700 underline-offset-2 hover:underline`} data-news-link>{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
+          <li key={n.url} className="text-sm"><a href={n.url} target="_blank" rel="noreferrer" className={`${HIT} inline-flex min-h-11 items-center text-brand-700 underline-offset-2 hover:underline`} data-news-link>{n.title}</a> <span className="text-black/60">· {n.outlet} · <time dateTime={n.date}>{newsDate(n.date)}</time></span></li>
         ))}
       </ul>
     </details>
@@ -247,14 +247,14 @@ export default function RaceTiers({ races, market, measures = [], zip }: { races
                         {r.candidates.map((c) => { const e = pointsFor(r.id, c.name); const x = e?.p[0]; return (
                           <li key={c.name} className="min-w-0" data-judge={c.name}>
                             <span className="font-[530]">{c.name}:</span>{" "}
-                            {x ? <>{x.t} <a href={x.u} target="_blank" rel="noreferrer" className="relative underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-judge-source>{new URL(x.u).hostname.replace(/^www\./, "")}<span className="sr-only"> (opens in a new tab)</span></a></> : <span className="text-black/60">{e?.none ?? "No public position found yet"}</span>}
+                            {x ? <>{x.t} <a href={x.u} target="_blank" rel="noreferrer" className="relative inline-flex min-h-11 items-center underline underline-offset-2 after:absolute after:-inset-y-3 after:-inset-x-1 after:content-['']" data-judge-source>{new URL(x.u).hostname.replace(/^www\./, "")}<span className="sr-only"> (opens in a new tab)</span></a></> : <span className="text-black/60">{e?.none ?? "No public position found yet"}</span>}
                           </li>
                         ); })}
                       </ul>
                     ) : null}
                     {r.meta?.contest || r.meta?.rankedChoice ? <p className="max-w-[45ch] text-sm text-black/60" data-why>{r.meta?.contest ? <>{r.meta.contest.replace(/\.+$/, "")}.</> : null}{r.meta?.rankedChoice ? <>{r.meta?.contest ? " " : ""}Ranked-choice: you can rank candidates in order.</> : null}</p> : null}
                     <MarketLine line={leaderLine(mk)} />
-                    {r.judicialNote && r.id === firstNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" title={r.judicialNoteSource.label} className={`${HIT} break-words th-link`} data-judicial-source>{judicialShort(r.judicialNoteSource.label)} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
+                    {r.judicialNote && r.id === firstNote ? <p className="max-w-[45ch] text-sm text-black/60" data-judicial-note>{r.judicialNote}{r.judicialNoteSource ? <> <a href={r.judicialNoteSource.url} target="_blank" rel="noreferrer" title={r.judicialNoteSource.label} className={`${HIT} inline-flex min-h-11 items-center break-words th-link`} data-judicial-source>{judicialShort(r.judicialNoteSource.label)} ↗<span className="sr-only"> (opens in a new tab)</span></a></> : null}</p> : null}
                     {r.dependsOnAddress ? <p className="text-sm text-black" data-depends>Depends on your address.{(r.sourceNote ? r.splitNote : r.appliesNote) ? <span className="text-black/60"> {plain(r.sourceNote ? r.splitNote : r.appliesNote)}</span> : null}</p> : null}
                     {r.id === firstPlace ? <p className="text-sm text-black/60" data-place-hint>&ldquo;Place&rdquo; is the numbered seat being filled; each place is its own separate contest.</p> : null}
                     {r.sourceNote ? <div className="max-w-[60ch] text-sm leading-5 text-black/60" data-tentative>{/* QA fb66b9b P2: short lines; TENTATIVE (draft) stays visible first. */}<p className="font-[530] text-black/80">TENTATIVE: draft contest list. Check your sample ballot.</p><ul className="mt-1 space-y-1" data-note-lines>{r.sourceNote.split(/(?<=\.)\s+(?=[A-Z])/).map((l) => <li key={l}>{l}</li>)}</ul></div> : r.tentative ? <p className="text-sm text-black/60" data-tentative>TENTATIVE: from the NYC Board of Elections&rsquo; contest list{printedDate(r.appliesNote) ? `, printed ${printedDate(r.appliesNote)}` : ""}. Check your sample ballot.</p> : null}

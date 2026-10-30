@@ -52,7 +52,7 @@ describe("Design p7 (4c21a5c)", () => {
     // Design p10 supersedes (Oct 30: 14/20 minimum): credit is 14/20 weight 450 black/60, author linked to the file page, license to its deed.
     expect(src("components/Portrait.tsx")).toMatch(/CREDIT = "max-w-\[60ch\] text-sm leading-5 font-\[450\] text-black\/60/);
     // Purple (Design 1:31 PM CT Oct 30): news headlines are plain list links, not card links, so brand-700.
-    expect(src("app/RaceTiers.tsx")).toMatch(/className=\{`\$\{HIT\} text-brand-700 underline-offset-2 hover:underline`\} data-news-link>/);
+    expect(src("app/RaceTiers.tsx")).toMatch(/className=\{`\$\{HIT\} inline-flex min-h-11 items-center text-brand-700 underline-offset-2 hover:underline`\} data-news-link>/);
   });
   it("5. ballot starts mt-6 below the city chips (no ~100px band)", () => {
     const b = src("app/BallotAgent.tsx");
