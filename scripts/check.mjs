@@ -11,7 +11,9 @@ for (const f of [...walk("app"), ...walk("lib"), ...walk("components")].filter((
     const lines = s.split("\n").filter((l) => !/^\s*(\/\/|\*|\/\*)/.test(l) && !/\bnever\b/i.test(l)); // instructions that forbid the phrase are fine
     // Only user-visible text: string literals and JSX text, not identifiers.
     const visible = (l) => [...l.matchAll(/(["'`])((?:\\.|(?!\1).)*)\1/g)].map((m) => m[2]).concat([...l.matchAll(/>([^<>{}]+)</g)].map((m) => m[1])).join(" ");
-    lines.forEach((l) => { if (re.test(visible(l))) bad(`${f}: banned phrase ${re} -> ${l.trim().slice(0, 120)}`); });
+    // One allowed use: the user-voice FAQ question Adam asked for (Oct 30, 1:18 PM CT). Its answer is the refusal line.
+    const allowed = (l) => f.endsWith(path.join("lib", "towny", "faq.ts")) && /^\s*id: "who", q: "Who should I vote for\?",$/.test(l);
+    lines.forEach((l) => { if (!allowed(l) && re.test(visible(l))) bad(`${f}: banned phrase ${re} -> ${l.trim().slice(0, 120)}`); });
   }
 }
 const ms = JSON.parse(fs.readFileSync("data/measures.json", "utf8")).measures;
