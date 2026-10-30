@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { H1 } from "../../lib/typeScale";
 import { stancesFor, type Answers } from "../../lib/issues";
 import { overlapStatus } from "../../lib/overlapCore.mjs";
-import { gradesForRace, GRADE_RULE } from "../../lib/grades.mjs";
+import { gradesForRace } from "../../lib/grades.mjs";
 import { PhotoGroup } from "../../components/Portrait";
 import RaceFooter from "../../components/RaceFooter";
 import CandidateRow, { type RowCand } from "../../components/CandidateRow";
@@ -66,7 +66,7 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
       <section className="mt-10 border-t border-black/15 pt-6">
         <h2 className="text-sm font-[530] text-black/60">Who lines up with you</h2>
         <p className="mt-1 text-base leading-6 text-black" data-overlap-caption>Issue overlap with your answers, not a recommendation. Candidates are in ballot order. Court races are not compared.</p>
-        <details className="print:hidden"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How grades work</summary><p className="pb-2 text-sm text-black/80" data-grade-rule>{GRADE_RULE}</p></details>
+        
         <>
             {answers === null ? null : answered === 0 ? <p className="mt-3 text-base text-black/80">No answers yet. <a href="/" className={link}>Answer a few questions</a> to compare.</p> : yesNo === 0 ? <p className="mt-3 text-base text-black/80" data-card-no-overlap>Neutral answers aren&rsquo;t compared; answer Yes or No on an issue to compare. <a href="/" className={link}>Change your answers</a>.</p> : null}
             <ul className="mt-3 space-y-6">
@@ -74,9 +74,9 @@ export default function BallotCard({ zip, place, ids, races }: { zip: string; pl
                 <li key={r.id} data-card-race={r.id} className="break-inside-avoid">
                   <p className="text-base font-[530]">{r.title || r.id}</p>
                   <PhotoGroup><ul className="mt-1 divide-y divide-black/15 border-t border-black/15">
-                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={grade} />)}
+                    {list.map(({ c, o, grade }) => <CandidateRow key={c.name} c={c} o={o} ids={ids} answers={answers ?? {}} answeredYesNo={yesNo > 0} grade={null} />)}
                   </ul>
-                  <RaceFooter cands={list.map(({ c }) => c)} gradesHidden={gradesHidden} /></PhotoGroup>
+                  <RaceFooter cands={list.map(({ c }) => c)} gradesHidden={null} /></PhotoGroup>
                 </li>
               ))}
             </ul>

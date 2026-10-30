@@ -49,8 +49,11 @@ describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by d
   });
   it("race mode (Civic headshot pass, Oct 30 12:40 AM): incomplete races and the 4 'photo ages not comparable' races show initials", () => {
     const race = (z: string, id: string) => (ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { photo?: unknown }[] }).candidates;
-    for (const [z, id] of [["78701", "tx-ag"], ["94103", "ca-ltgov"], ["94103", "sf-supervisor-10"], ["10001", "ny-supreme-1jd"]])
-      expect(race(z, id).every((c) => !c.photo), id).toBe(true);
+    // Adam 9:58 AM CT Oct 30: candidate mode is now the default, so race mode is checked through gatePhotos directly.
+    for (const [z, id] of [["78701", "tx-ag"], ["94103", "ca-ltgov"], ["94103", "sf-supervisor-10"], ["10001", "ny-supreme-1jd"]]) {
+      const raw = (ballotFor(z)!.races.find((r) => r.id === id) as unknown as { candidates: { name: string }[] }).candidates.map((c) => withLicensedPhoto({ ...c, photo: undefined } as never) as { photo?: unknown });
+      expect(gatePhotos(raw, "race", id).every((c) => !c.photo), id).toBe(true);
+    }
     // Civic qa13: tx-ltgov's "photo ages not comparable" note is gone (only McCormick's 2026 is known), so the race is complete.
     expect(race("78701", "tx-ltgov").every((c) => c.photo), "tx-ltgov").toBe(true);
     const raw = (ballotFor("78701")!.races.find((r) => r.id === "tx-ltgov") as unknown as { candidates: { name: string }[] }).candidates.map((c) => withLicensedPhoto({ ...c, photo: undefined } as never) as { photo?: unknown });
@@ -163,7 +166,8 @@ describe("grades: Civic gate, fail closed", () => {
         expect(row, `${z} ${c.name}`).not.toMatch(/data-grade="/);
       }
     }
-    expect(end("94103")).toMatch(/data-grade="[SABC]"/);
+    // Adam 9:58 AM CT Oct 30: no letter grades on cards at all.
+    for (const z of ZIPS) expect(end(z)).not.toMatch(/data-grade="[SABC]"/);
   });
 });
 
@@ -235,8 +239,10 @@ describe("design p9 / QA 4e15da7 items", () => {
     expect(src("app/TownyInterview.tsx")).toMatch(/const carry = carried > 0/);
     expect(src("app/IssueMatch.tsx")).toMatch(/carried/);
   });
-  it("Who: under 3 answers, the prompt instead of rows", () => {
-    expect(end("78701", { housing: 5 })).toMatch(/Answer 3 issues to see who lines up with you\./);
+  it("Who: under 3 answers, the prompt plus the cards (Adam 9:58 AM CT Oct 30: every candidate shows a card)", () => {
+    const h0 = end("78701", { housing: 5 });
+    expect(h0).toMatch(/Answer the questions to see overlap\./);
+    expect(h0).toMatch(/data-card-scores/);
   });
   it("market line lists the other prices from the same market and never placeholders", () => {
     const q = { source: "Polymarket" as const, title: "T", url: "https://polymarket.com/event/x", fetchedAt: "2026-10-30T03:58:00Z", outcomes: [{ name: "Ann Lee", prob: 0.6 }, { name: "Bo Diaz", prob: 0.3 }, { name: "Person C", prob: 0.1 }] };

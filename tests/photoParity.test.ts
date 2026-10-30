@@ -5,8 +5,8 @@ import { parity } from "../lib/photoParity";
 import { PHOTO_GATE } from "../lib/photos";
 const ZIPS = ["78701", "94103", "10001"];
 describe("photo parity", () => {
-  it("race mode (default): no race partly pictured, no D-vs-R race with one party pictured", () => {
-    expect(PHOTO_GATE).toBe("race");
+  it("race mode (flag; candidate is the default since Oct 30 9:58 AM): no race partly pictured, no D-vs-R race with one party pictured", () => {
+    expect(PHOTO_GATE).toBe("candidate");
     const a = parity(ZIPS, "race");
     expect(a.partly).toEqual([]);
     expect(a.oneParty).toEqual([]);

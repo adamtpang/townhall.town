@@ -7,7 +7,7 @@ import { type Photo } from "../components/Portrait";
 import { Button } from "../components/ui/button";
 import { type Answers } from "../lib/issues";
 import { issuesFor, ISSUE_INTRO } from "../lib/issueOrder";
-import { migrateAnswers, press, choiceOf } from "../lib/overlapCore.mjs";
+import { migrateAnswers, press, press5, bucketOf, BUCKETS, normalizeAnswers } from "../lib/overlapCore.mjs";
 import EndScreen from "./EndScreen";
 import { useT } from "../lib/i18n";
 
@@ -21,7 +21,7 @@ const OLD_KEYS = ["townhall.issueAnswers.v2", "townhall.issueAnswers.v1"];
 function load(): Answers {
   try {
     const raw = localStorage.getItem(ANSWERS_KEY);
-    if (raw) return JSON.parse(raw) || {};
+    if (raw) { const a = normalizeAnswers(JSON.parse(raw) || {}) as Answers; localStorage.setItem(ANSWERS_KEY, JSON.stringify(a)); return a; }
     for (const k of OLD_KEYS) {
       const old = localStorage.getItem(k);
       if (old) { const m = migrateAnswers(JSON.parse(old)) as Answers; localStorage.setItem(ANSWERS_KEY, JSON.stringify(m)); return m; }
@@ -30,7 +30,6 @@ function load(): Answers {
   return {};
 }
 
-const CHOICES = [{ k: "yes", label: "Yes" }, { k: "neutral", label: "Neutral" }, { k: "no", label: "No" }] as const;
 
 const CITY: Record<string, string> = { "78701": "Austin", "94103": "San Francisco", "10001": "New York" };
 
@@ -45,8 +44,8 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
   const [carriedIds, setCarriedIds] = useState<string[]>([]);
   useEffect(() => { const a = load(); setAnswers(a); setCarriedIds(ids.filter((id) => a[id] !== null && a[id] !== undefined)); try { setSavedZip(localStorage.getItem(ANSWERS_ZIP_KEY)); } catch { /* ignore */ } }, []);
   const markZip = () => { try { localStorage.setItem(ANSWERS_ZIP_KEY, zip); } catch { /* ignore */ } };
-  function choose(id: string, k: "yes" | "neutral" | "no", pole: "high" | "low" = "high") {
-    const next = press(answers, id, k, pole) as Answers;
+  function choose(id: string, b: number, pole: "high" | "low" = "high") {
+    const next = press5(answers, id, b, pole) as Answers;
     setAnswers(next);
     setFromChat((w) => { const n = { ...w }; delete n[id]; return n; });
     try { localStorage.setItem(ANSWERS_KEY, JSON.stringify(next)); } catch { /* ignore */ }
@@ -86,24 +85,27 @@ export default function IssueMatch({ zip, state, races }: { zip: string; state: 
 
         <ol className="mt-6">
           {issues.map((i) => {
-            const sel = choiceOf(answers[i.id], i.yesMeansPole);
+            const sel = bucketOf(answers[i.id], i.yesMeansPole);
             return (
               <li key={i.id} className="border-t border-black/15 py-6" data-issue={i.id}>
                 <p className="text-sm font-[530] text-black/60">{i.label}</p>
                 <p id={`q-${i.id}`} className="mt-1 text-xl leading-7 text-black">{i.question || i.high}</p>
                 {i.reason ? <p className="mt-1 max-w-[45ch] text-sm text-black/60" data-reason>Why it&apos;s on your ballot: {plain(i.reason)}{i.reasonUrl ? <> <a href={i.reasonUrl} title={i.reason} target="_blank" rel="noreferrer" className="relative text-[#3760F2] after:absolute after:-inset-x-1 after:-inset-y-1 after:content-['']">Source ↗</a></> : null}</p> : null}
-                <div role="radiogroup" aria-labelledby={`q-${i.id}`} className="mt-4 grid grid-cols-3 gap-2 md:flex md:gap-3">
-                  {CHOICES.map((c) => {
-                    const on = sel === c.k;
+                {/* Adam 9:58 AM CT Oct 30: 5 buckets, -2 to +2. 44px+ targets; 5 across fit 390px. */}
+                <div role="radiogroup" aria-labelledby={`q-${i.id}`} className="mt-4 grid grid-cols-5 gap-1.5 md:flex md:gap-2">
+                  {BUCKETS.map((c) => {
+                    const on = sel === c.b;
+                    const txt = c.b > 0 ? `+${c.b}` : String(c.b);
                     return (
-                      <button key={c.k} type="button" role="radio" aria-checked={on} data-choice={c.k}
-                        onClick={() => choose(i.id, c.k, i.yesMeansPole)}
-                        className={`h-14 border text-base font-[530] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3760F2] md:h-12 md:w-[120px] ${on ? "border-black bg-black text-[#F2F2F2]" : "border-black/30 bg-transparent text-black hover:border-black"}`}>
-                        {t(c.label)}
+                      <button key={c.b} type="button" role="radio" aria-checked={on} aria-label={t(c.label)} title={t(c.label)} data-choice={c.b} data-bucket={c.b}
+                        onClick={() => choose(i.id, c.b, i.yesMeansPole)}
+                        className={`flex h-14 min-w-11 flex-col items-center justify-center border text-base font-[530] tabular-nums focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3760F2] md:h-12 md:w-[88px] ${on ? "border-black bg-black text-[#F2F2F2]" : "border-black/30 bg-transparent text-black hover:border-black"}`}>
+                        {txt}
                       </button>
                     );
                   })}
                 </div>
+                <div aria-hidden className="mt-1 flex justify-between text-sm leading-5 text-black/60 md:w-[472px]" data-bucket-ends><span>{t("Strongly disagree")}</span><span>{t("Strongly agree")}</span></div>
                 {fromChat[i.id] ? <p className="mt-2 text-sm text-black/60" data-from-chat>Filled from what you wrote: “{fromChat[i.id]}”. Change it if that&apos;s wrong.</p> : null}
               </li>
             );

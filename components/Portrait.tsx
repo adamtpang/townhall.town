@@ -1,8 +1,8 @@
 "use client";
-import { initials as initialsOf } from "./PortraitRow";
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { PHOTO_GATE } from "../lib/photoGate";
 import { cn } from "../lib/utils";
+import { AvatarPlaceholder } from "./Avatar";
 
 /** QA 7391b20 P2: a photo that fails to load (onError) reverts the whole race to initials in race mode, and only that
  *  candidate in candidate mode. Wrap each race's rows in <PhotoGroup>; tiles, portraits and credits all read it. */
@@ -139,7 +139,6 @@ export function PhotoCredit({ photo, name }: { photo: NonNullable<Photo>; name: 
 export function Portrait({ name, photo, className, boxClassName, credit = true, forceInitials = false, onFail }: { name: string; photo: Photo; className?: string; boxClassName?: string; credit?: boolean; forceInitials?: boolean; onFail?: () => void }) {
   const [broken, fail] = usePhotoFallback(name);
   const setBroken = (_: boolean) => fail();
-  const initials = initialsOf(name);
   const show = photo?.url && !broken && !forceInitials;
   return (
     <figure className={cn("m-0", className)}>
@@ -147,7 +146,7 @@ export function Portrait({ name, photo, className, boxClassName, credit = true, 
         {show ? (
           <TileImage photo={photo!} alt={name} onFail={() => { setBroken(true); onFail?.(); }} />
         ) : (
-          <span aria-hidden className="absolute inset-0 flex items-center justify-center font-sans text-5xl text-black/40">{initials}</span>
+          <AvatarPlaceholder />
         )}
       </div>
       {credit && show ? (

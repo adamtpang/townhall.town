@@ -4,12 +4,12 @@ import { JUDICIAL_RULES, judicialShort } from "../lib/judicial";
 import { useMemo } from "react";
 import { Button } from "../components/ui/button";
 import { stancesFor, type Answers } from "../lib/issues";
-import { overlapStatus, METHOD } from "../lib/overlapCore.mjs";
+import { overlapStatus, METHOD, RECORD_METHOD } from "../lib/overlapCore.mjs";
 import TownyResearch from "./TownyResearch";
 import WhoRaces from "../components/WhoRaces";
 import RaceFooter from "../components/RaceFooter";
 import { cardPath } from "../lib/card.mjs";
-import { gradesForRace, GRADE_RULE } from "../lib/grades.mjs";
+import { gradesForRace } from "../lib/grades.mjs";
 import { PhotoGroup } from "../components/Portrait";
 import CandidateRow, { type RowCand } from "../components/CandidateRow";
 import { whenFor, whereFor, gcalUrl, buildIcs, mapsUrl, earlySingleDay } from "../lib/endscreen.mjs";
@@ -42,8 +42,10 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
     // Race-level guards (design p11 item 6 as corrected): all letters or none in a race.
     const g = gradesForRace(race, rows0.map((x) => x.o), answered, zip);
     if (g.hidden === "scored" && typeof console !== "undefined") console.info(`[grades] hidden in ${race.id}: a candidate has fewer than 3 scored issues`);
-    const rows = rows0.map((x, i) => ({ ...x, grade: g.grades[i] }));
-    return { race, rows, gradesHidden: g.hidden };
+    // Adam 9:58 AM CT Oct 30: no letter grades on cards.
+    void g;
+    const rows = rows0.map((x) => ({ ...x, grade: null as string | null }));
+    return { race, rows, gradesHidden: null as string | null };
   });
   // QA P2: Neutral is a real answer but is never compared, so say that instead of asking for answers again.
   const yesNo = ids.filter((id) => typeof answers[id] === "number" && answers[id] !== 0).length;
@@ -59,7 +61,7 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
           <p className="text-sm font-[530] text-black/60">Who</p>
           <h3 className={`mt-2 ${H3}`}>Who lines up with you</h3>
           <p className="mt-3 text-base leading-6 text-black" data-overlap-caption>Issue overlap, not a recommendation. Candidates are in ballot order.</p>
-          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap and grades work</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p><p className="pb-2 text-sm text-black/80" data-grade-rule>{GRADE_RULE}</p></details>
+          <details className="mt-1"><summary className="inline-flex min-h-11 cursor-pointer items-center text-sm text-black/60">How overlap and record work</summary><p className="pb-2 text-sm text-black/80">{METHOD} Candidates are listed in ballot order.</p><p className="pb-2 text-sm text-black/80" data-record-rule>{RECORD_METHOD}</p></details>
           {judicial.length > 0 && (
             <p className="mt-4 max-w-[45ch] text-sm text-black/60" data-judicial-note>
               {(() => {
@@ -69,11 +71,10 @@ export default function EndScreen({ zip, races, answers, ids, answered }: { zip:
               })()}
             </p>
           )}
-          {answered < 3 ? (
-            <p className="mt-4 text-base text-black/80" data-who-gate>Answer 3 issues to see who lines up with you.</p>
-          ) : (
+          {answered < 3 ? <p className="mt-4 text-base text-black/80" data-who-gate>Answer the questions to see overlap.</p> : null}
+          {(
             <div className="mt-6 space-y-8">
-              {yesNo === 0 ? <p className="text-base text-black/60" data-neutral-only>You answered Neutral on all {answered} issues. Neutral answers aren&rsquo;t compared, so there&rsquo;s no overlap to show. Answer Yes or No on an issue to compare.</p> : null}
+              {answered > 0 && yesNo === 0 ? <p className="text-base text-black/60" data-neutral-only>You answered Neutral on all {answered} issues. Neutral answers aren&rsquo;t compared, so there&rsquo;s no overlap to show. Pick a side (-2, -1, +1 or +2) on an issue to compare.</p> : null}
               <WhoRaces races={rowsByRace.map(({ race: r, rows, gradesHidden }) => ({
                 id: r.id,
                 title: r.title || r.id,

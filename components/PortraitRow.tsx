@@ -1,4 +1,5 @@
 "use client";
+import { AvatarPlaceholder } from "./Avatar";
 import { useEffect, useRef, useState } from "react";
 import { RaceCredits, PhotoGroup, TileImage, usePhotoFallback, usePhotoOff, type Photo } from "./Portrait";
 
@@ -42,11 +43,10 @@ function Tile({ c, eager, label, mate, reserveMate, max, tileMax }: { c: C; eage
   }, [c.photo?.url]);
   const show = !!c.photo?.url && !broken;
   return (
-    <li className={`flex min-w-0 flex-col ${max}`} style={{ flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "initials"}>
+    <li className={`flex min-w-0 flex-col ${max}`} style={{ flex: "1 1 0" }} data-photo-tile data-photo-state={show ? "img" : "placeholder"}>
       <div className={`relative mx-auto aspect-square w-full overflow-hidden bg-black/5 ${tileMax}`}>
-        {/* Initials always sit underneath, so a slow, lazy or failed image never leaves a blank tile. */}
-        <span role={show ? undefined : "img"} aria-hidden={show ? true : undefined} aria-label={show ? undefined : c.name}
-          className="absolute inset-0 flex items-center justify-center font-sans text-sm font-[530] leading-none text-black/60 lg:text-base">{initials(c.name)}</span>
+        {/* The placeholder always sits underneath, so a slow, lazy or failed image never leaves a blank tile. */}
+        {show ? null : <AvatarPlaceholder />}
         {show ? (
           <TileImage imgRef={ref} photo={c.photo!} alt={split(c.name).lead} eager={eager} onFail={() => setBroken(true)} />
         ) : null}
