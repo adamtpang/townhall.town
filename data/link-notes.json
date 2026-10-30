@@ -26,6 +26,19 @@
      "title": "NY Assembly member page"
     }
    ]
+  },
+  "https://www.votedyana.com/": {
+   "note": "site down as of Oct 30, 2026",
+   "alternatives": [
+    {
+     "url": "https://www.austinvotersguide.org/LWVAA-VG-EN.pdf",
+     "title": "League of Women Voters guide"
+    },
+    {
+     "url": "https://countyclerk.traviscountytx.gov/",
+     "title": "Travis County Clerk (official office site)"
+    }
+   ]
   }
  }
 }

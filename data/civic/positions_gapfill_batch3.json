@@ -37,13 +37,14 @@
    {
     "issue": "taxes",
     "score": 2,
-    "summary": "Voted FOR a 2026 county tax rate of $0.386210, above the no-new-revenue rate of $0.378179.",
+    "summary": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
     "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
     "sourceTitle": "Travis County Notice of Public Hearing on Tax Increase, 2026",
     "date": "2026",
-    "quote": "County Judge Andy Brown FOR",
+    "quote": "",
     "sourceType": "official record (vote)",
-    "note": "Same basis and score as George Morales III taxes +2."
+    "note": "Same basis and score as George Morales III taxes +2.",
+    "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)"
    },
    {
     "issue": "safety",
@@ -51,7 +52,7 @@
     "summary": "Frames public safety around connecting people to services outside of jail.",
     "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
     "sourceTitle": "Travis County Judge Andy Brown, State of the County Address (as prepared for delivery), Travis County",
-    "date": "2024-04-25",
+    "date": "2024-04-24",
     "quote": "We can make our community safer and more stable by focusing on connecting people to the services they need outside of a jail.",
     "sourceType": "official speech"
    },
@@ -61,7 +62,7 @@
     "summary": "Prioritizes tackling the affordability crisis and expanding affordable and supportive housing.",
     "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
     "sourceTitle": "Travis County Judge Andy Brown, State of the County Address (as prepared for delivery), Travis County",
-    "date": "2024-04-25",
+    "date": "2024-04-24",
     "quote": "That meant tackling the affordability crisis and making sure more families have access to affordable and supportive quality housing.",
     "sourceType": "official speech"
    },
@@ -71,7 +72,7 @@
     "summary": "Backs passenger rail as crucial infrastructure.",
     "sourceUrl": "https://www.traviscountytx.gov/images/commissioners_court/judge/Remarks_of_Travis_County_Judge_Andy_Brown_-_State_of_the_County_Address_As_Prepared_for_Delivery.pdf",
     "sourceTitle": "Travis County Judge Andy Brown, State of the County Address (as prepared for delivery), Travis County",
-    "date": "2024-04-25",
+    "date": "2024-04-24",
     "quote": "We know a passenger rail system not only expands our transportation choices, it enhances the infrastructure crucial for improving people’s quality of life.",
     "sourceType": "official speech"
    }
@@ -530,7 +531,8 @@
     "url": "https://www.votedyana.com/",
     "title": "Campaign site (votedyana.com)",
     "dateChecked": "2026-10-30",
-    "result": "Found via search; direct fetch failed through the box proxy, not reviewed."
+    "result": "Found via search; direct fetch failed through the box proxy, not reviewed.",
+    "down": "site down as of Oct 30, 2026"
    },
    {
     "url": "https://ballotpedia.org/Dyana_Limon-Mercado",
@@ -1302,16 +1304,16 @@
     "result": "Qualified candidate list and contact info."
    },
    {
-    "url": "(none)",
+    "url": "https://joaquintorressf.com/",
     "title": "Campaign site",
     "dateChecked": "2026-10-30",
-    "result": "None found in search (unopposed incumbent)."
+    "result": "Live (200, title 'Joaquin Torres for Assessor', 2026-10-30). Not yet reviewed for stances."
    },
    {
-    "url": "https://ballotpedia.org/Joaquin_Torres",
+    "url": "https://ballotpedia.org/Joaqu%C3%ADn_Torres",
     "title": "Ballotpedia",
     "dateChecked": "2026-10-30",
-    "result": "Blocked (HTTP 403 to direct fetch), not reviewed. No page confirmed via search."
+    "result": "Page confirmed by QA (Oct 30, 2026). Not reviewed for stances."
    },
    {
     "url": "https://www.sfchronicle.com/sf/article/assessor-recorder-property-online-portal-22077579.php",

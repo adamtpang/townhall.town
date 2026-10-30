@@ -35,17 +35,39 @@ describe("p11 + QA fb66b9b", () => {
     expect(src("components/RaceFold.tsx")).toMatch(/<h3[^]*ChevronDown[^]*h-4 w-4/);
     expect(src("components/RaceFold.tsx")).not.toContain(`"Hide" : "Details"`);
   });
-  it("QA P2 dead links hidden", () => {
-    expect(liveUrl("https://ballotpedia.org/Joaquin_Torres")).toBeNull();
+  it("Civic qa_fixes6 #1: votedyana.com is down (plain text + note); Torres Ballotpedia uses the confirmed accented slug, plus joaquintorressf.com", () => {
     expect(liveUrl("https://www.votedyana.com/")).toBeNull();
-    expect(sourcesChecked("Joaquin Torres").map((x) => x.url)).not.toContain("https://ballotpedia.org/Joaquin_Torres");
-    expect(sourcesChecked("Dyana Limon-Mercado").map((x) => x.url)).not.toContain("https://www.votedyana.com/");
+    const dy = cleanChecked(sourcesChecked("Dyana Limon-Mercado"));
+    expect(dy.find((x) => x.url === "https://www.votedyana.com/")?.down).toBe("site down as of Oct 30, 2026");
+    expect(dy.map((x) => x.url)).toContain("https://countyclerk.traviscountytx.gov/");
+    const jt = sourcesChecked("Joaquin Torres").map((x) => x.url);
+    expect(jt).toContain("https://ballotpedia.org/Joaqu%C3%ADn_Torres");
+    expect(jt).toContain("https://joaquintorressf.com/");
+    expect(jt).not.toContain("https://ballotpedia.org/Joaquin_Torres");
+    expect(liveUrl("https://ballotpedia.org/Joaqu%C3%ADn_Torres")).toBe("https://ballotpedia.org/Joaqu%C3%ADn_Torres");
   });
-  it("QA P2 Andy Brown's tax line reads as a recorded vote, not a quote", () => {
-    const t = stancesFor("Andy Brown").taxes;
-    expect(t.quote).toBeUndefined();
-    expect(t.voteRecord).toBe("Voted for the proposed tax rate increase");
-    expect(t.value).toBe(2);
+  it("Civic qa_fixes6 #3: Brown and Morales taxes, Weber (5) and Allen healthcare are recorded votes, not quotes", () => {
+    const vr = "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)";
+    for (const n of ["Andy Brown", "George Morales III"]) {
+      const t = stancesFor(n).taxes;
+      expect(t.quote ?? "").toBe(""); expect(t.voteRecord).toBe(vr); expect(t.value).toBe(2);
+    }
+    const w = stancesFor("Shirley N. Weber");
+    expect([w.housing, w.wages, w.taxes, w.immigration].map((x) => x.voteRecord)).toEqual(["Voted Yes (Sep 11, 2019)", "Voted Yes (Mar 31, 2016)", "Voted Yes (Apr 6, 2017)", "Voted Yes (Sep 15, 2017)"]);
+    // infrastructure cites the same SB 1 roll call as taxes, so the existing one-source-one-issue rule still holds it out.
+    expect(w.infrastructure.status).toBe("same sentence as another issue");
+    expect(stancesFor("Ben Allen").healthcare.voteRecord).toBe("Voted Yes (Jun 1, 2017)");
+    expect(src("lib/issues.ts")).not.toMatch(/County Judge \[/);
+  });
+  it("Civic qa_fixes6 #5/#6: office-named credits name the candidate; Meyer self-hosted from Civic's local file, banner cut off", () => {
+    const ph = P as unknown as { selfHosted: Record<string, { credit: string; file: string; height: number }>; hotlinked: Record<string, { credit: string }> };
+    const all = { ...ph.selfHosted, ...ph.hotlinked };
+    for (const v of Object.values(all)) expect(v.credit).not.toMatch(/^(Travis County|Supreme Court|First District|Fifteenth|Madison County)[^]* official page$/);
+    expect(all["andy-brown"].credit).toBe("Andy Brown official page");
+    expect(ph.selfHosted["marc-m-meyer"].file).toBe("/portraits/marc-m-meyer.webp");
+    expect(fs.existsSync("public/portraits/marc-m-meyer.webp")).toBe(true);
+    expect(src("scripts/ingest-photos.mjs")).toContain('"marc-m-meyer": [0.1, 0, 0.8, 0.75]');
+    for (const id of ["manuel-noris-barrera", "mike-trouble-lin"]) expect(ph.selfHosted[id]?.file).toMatch(/^\/portraits\//);
   });
   it("QA P2 Hilton's yahoo homelessness quote is held out (not housing)", () => {
     expect(correctedIssue("Steve Hilton", "housing", "Into housing, back into their life. Now, some of the people on our streets actually should be reunited with their families in other states")).toBeNull();

@@ -3892,7 +3892,10 @@
       "housing": {
         "value": 3,
         "quote": "AB 1482 Chiu Concurrence in Senate Amendments ... For",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201920200ab1482"
+        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201920200ab1482",
+        "voteRecord": "Voted Yes (Sep 11, 2019)",
+        "bill": "AB 1482",
+        "year": 2019
       },
       "healthcare": {
         "value": null,
@@ -3902,12 +3905,18 @@
       "wages": {
         "value": 4,
         "quote": "SB 3 Leno Senate Third Reading By HERNÁNDEZ ... For",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3"
+        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201520160sb3",
+        "voteRecord": "Voted Yes (Mar 31, 2016)",
+        "bill": "SB 3",
+        "year": 2016
       },
       "taxes": {
         "value": 3,
         "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1"
+        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+        "voteRecord": "Voted Yes (Apr 6, 2017)",
+        "bill": "SB 1",
+        "year": 2017
       },
       "safety": {
         "value": null,
@@ -3927,12 +3936,18 @@
       "immigration": {
         "value": -4,
         "quote": "SB 54 De León Senate Third Reading By GONZALEZ FLETCHER ... Sep 15, 2017 ... For (51) ... Shirley Weber",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb54"
+        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb54",
+        "voteRecord": "Voted Yes (Sep 15, 2017)",
+        "bill": "SB 54",
+        "year": 2017
       },
       "infrastructure": {
         "value": 4,
         "quote": "SB 1 Beall Third Reading Urgency By FRAZIER ... For",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1"
+        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb1",
+        "voteRecord": "Voted Yes (Apr 6, 2017)",
+        "bill": "SB 1",
+        "year": 2017
       }
     },
     "donald-p-don-wagner": {
@@ -4137,7 +4152,10 @@
       "healthcare": {
         "value": 4,
         "quote": "Senate 3rd Reading SB562 Lara et al. ... For",
-        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb562"
+        "sourceUrl": "https://digitaldemocracy.calmatters.org/bills/ca_201720180sb562",
+        "voteRecord": "Voted Yes (Jun 1, 2017)",
+        "bill": "SB 562",
+        "year": 2017
       },
       "wages": {
         "value": 4,
@@ -6167,7 +6185,8 @@
         "quote": "",
         "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
         "summary": "Official vote: recorded FOR the FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote.",
-        "year": 2026
+        "year": 2026,
+        "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)"
       }
     },
     "gigi-edwards-bryant": {
@@ -6177,9 +6196,11 @@
       "name": "Andy Brown",
       "taxes": {
         "value": 2,
-        "quote": "County Judge Andy Brown FOR",
+        "quote": "",
         "sourceUrl": "https://www.traviscountytx.gov/images/planning_budget/Docs/2026/Notice_of_Public_Hearing_on_Tax_Increase_09-04-26.pdf",
-        "year": 2026
+        "year": 2026,
+        "voteRecord": "Voted for the proposed 2026 county tax rate of $0.386210 per $100, above the no-new-revenue rate of $0.378179 (Travis County Commissioners Court; Notice of Public Hearing on Tax Increase, Sept 4, 2026)",
+        "summary": "Official vote: recorded FOR the proposed FY2027 county tax rate of $0.386210, above the no-new-revenue rate and equal to the voter-approval rate (a property tax increase). Mild: one rate vote."
       },
       "safety": {
         "value": -3,

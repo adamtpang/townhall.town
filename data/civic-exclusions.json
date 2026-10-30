@@ -21,7 +21,7 @@
       "name": "Steve Hilton",
       "issue": "housing",
       "match": "reunited with their families|back into their life",
-      "reason": "QA fb66b9b P2 (Oct 30, 2026): live research quote (yahoo.com) about homelessness, starting mid-sentence, tagged housing. Same kind of mistag as qa_fixes5's CBS quote; held out of scoring and display until Civic retags it. Flagged for Civic."
+      "reason": "Civic qa_fixes6 #2 (Oct 30, 2026): homelessness placement answer (ABC7, Oct 28 2026; Yahoo syndicated copy); names no housing-cost or supply position. Unsure: held out, not scored. Rule: a homelessness-only quote is never tagged housing."
     }
   ]
 }

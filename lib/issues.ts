@@ -43,9 +43,6 @@ export function stancesFor(name: string): Record<string, Stance> {
   // Dropped duplicates (and quotes held for a Civic retag) become value null, so they are neither shown nor counted.
   for (const [id] of duplicateSentenceIds(out, ISSUES.map((i) => i.id))) out[id] = { value: null, status: "same sentence as another issue" };
   for (const id of Object.keys(out)) if (out[id].value !== null && isExcluded(name, id, out[id].quote ?? out[id].summary)) out[id] = { value: null, status: "held for a Civic retag" }; // retagged quotes already sit under their new issue in stances.json
-  // QA fb66b9b P2 (Oct 30): a vote tally line from a hearing notice is a recorded vote, not the candidate's words.
-  // "County Judge Andy Brown FOR" on the Notice of Public Hearing on Tax Increase reads as a vote, without quote marks.
-  for (const id of Object.keys(out)) { const q = out[id].quote; if (q && /^County Judge [\w .'-]+ FOR$/.test(q) && /Tax_Increase/i.test(String(out[id].sourceUrl))) { const { quote: _q, ...rest } = out[id]; void _q; out[id] = { ...rest, voteRecord: "Voted for the proposed tax rate increase" }; } }
   return out;
 }
 

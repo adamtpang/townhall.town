@@ -14,11 +14,15 @@ import sharp from "sharp";
 const batch = JSON.parse(fs.readFileSync("data/civic/photos_batch.json", "utf8"));
 // Never shown, even with a URL: txcourts.gov judge portraits (no reuse terms), the Alida Fisher video still (not a portrait).
 export const EXCLUDE = (id, p) =>
-  /txcourts\.gov/i.test(JSON.stringify(p)) || id === "alida-fisher" ||
+  /txcourts\.gov/i.test(`${p.photoUrl ?? ""} ${p.pageUrl ?? ""}`) /* image or its page, not notes that mention a search */ || id === "alida-fisher" ||
   /news|press agency|getty|associated press|\bAP\b|reuters/i.test(String(p.sourceType ?? "")); // never news photos (Adam 12:16 AM)
 export const isLicensed = (p) => /public domain|\bCC0\b|\bCC BY\b|creative commons/i.test(String(p.license ?? "")) && !/campaign|press photo|official site|not licensed/i.test(String(p.license ?? ""));
 export const isOwnSource = (p) => /campaign|official|own social profile/i.test(String(p.sourceType ?? ""));
-const credit = (p) => String(p.attribution ?? "").replace(/^photo:\s*/i, "").trim();
+// Office-named official-page credits read "<candidate name> official page" (Adam, qa_fixes6 #5, 1:02 AM CT).
+const credit = (p) => {
+  const c = String(p.attribution ?? "").replace(/^photo:\s*/i, "").trim();
+  return / official page$/i.test(c) && p.name ? `${p.name} official page` : c;
+};
 // Civic cropNote -> focus [x, y, scale]: the face point (fractions of the image) for object-position and transform-origin,
 // and how far to zoom in. Read off each source image by eye (Oct 30, 12:45 AM CT); no pixel is edited.
 export const FOCUS = {
@@ -27,9 +31,16 @@ export const FOCUS = {
   "john-messinger": [0.36, 0.37, 2.2], "benjamin-flores": [0.51, 0.43, 3], "jessica-martinez": [0.5, 0.45, 4], "mike-trouble-lin": [0.61, 0.38, 1.4],
   // Design p11 #4: head-and-shoulders crops (viewed).
   "gina-hinojosa": [0.5, 0.18, 1.5], "steve-hilton": [0.52, 0.15, 1.2],
+  // qa_fixes6: Meyer file is already cut above the banner (CROP); keep the top of the head in the square tile.
+  "marc-m-meyer": [0.45, 0.3, 1.1],
 };
 // Older face crops on licensed event photos: [left, top, width, height] as fractions of the source (pixels cut, not edited).
-const CROP = { "michael-e-gates": [0.27, 0.03, 0.3, 0.56] };
+const CROP = {
+  "michael-e-gates": [0.27, 0.03, 0.3, 0.56],
+  // Civic cropNote (qa_fixes6): campaign graphic; keep head and shoulders above the "MARC MEYER (D)" banner (starts ~80% down),
+  // so no party label ships in the file. Viewed by eye.
+  "marc-m-meyer": [0.1, 0, 0.8, 0.75],
+};
 const UA = { "User-Agent": "townhall/1.0 (https://townhall.town; civic data)" };
 const out = {}; const hot = {}; const mates = {}; const failed = []; const excluded = [];
 const incomplete = new Set();
@@ -43,7 +54,8 @@ for (const [id, p] of Object.entries(batch)) {
   try {
     if (p.localFile && fs.existsSync(p.localFile)) {
       const file = `/portraits/${id}.webp`;
-      const img = sharp(fs.readFileSync(p.localFile)); const meta = await img.metadata();
+      let img = sharp(fs.readFileSync(p.localFile)); const meta = await img.metadata();
+      if (CROP[id]) { const [l, t, w, h] = CROP[id]; img = img.extract({ left: Math.round(l * meta.width), top: Math.round(t * meta.height), width: Math.round(w * meta.width), height: Math.round(h * meta.height) }); }
       await img.resize({ width: 400, withoutEnlargement: true }).webp({ quality: 72 }).toFile(`public${file}`);
       rec = { kind: "self", v: { name: id, file, sourceUrl: p.photoUrl ?? null, credit: credit(p), license: p.license ?? null, page: p.pageUrl ?? null, via: p.sourceType ?? null, width: meta.width, height: meta.height, ...focusOf(id) } };
     } else if (isLicensed(p)) {

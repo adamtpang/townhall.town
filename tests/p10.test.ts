@@ -150,7 +150,7 @@ describe("design p10 + QA 7391b20 + Oct 30 steering", () => {
     expect(b?.hotlinked).toBe(true);
     expect(b?.url).toMatch(/^https:\/\//);
     expect(b?.page).toBe("https://www.barreraforedu.com/mediaresources");
-    expect(b?.credit).toBe("Photo: Barrera for Superintendent campaign, press photo");
+    expect(b?.credit).toBe("Photo: Richard Barrera campaign site"); // Civic qa_fixes6 #5
     expect(src("components/SiteChrome.tsx")).toMatch(/Candidate photos are from their public campaign or official pages\. <a href="\/contact"[^>]*>Contact us<\/a> to remove\./);
     expect(src("components/Portrait.tsx")).toMatch(/referrerPolicy="no-referrer"/);
   });

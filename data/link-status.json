@@ -7,7 +7,8 @@
   "https://ballotpedia.org/Maria_Luisa_Flores": "404",
   "https://kirk4aisd.com/": "error: ECONNRESET",
   "https://www.marknair.com/meet-mark": "404",
-  "https://www.tonysimone.com/": "error: ECONNRESET"
+  "https://www.tonysimone.com/": "error: ECONNRESET",
+  "https://www.votedyana.com/": "https: TLS certificate mismatch (Squarespace domain detached); http 500 (Civic qa_fixes6, Oct 30, 2026)"
  },
  "replace": {
   "http://www.votejohnnygarcia.com/": "https://www.votejohnnygarcia.com/",

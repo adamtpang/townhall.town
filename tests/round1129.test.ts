@@ -91,7 +91,7 @@ describe("photos: licensed or the candidate's own headshot; PHOTO_GATE race by d
   });
   it("attribution is visible (not collapsed) wherever a photo appears (design p10: 12/16 weight 450 black/60)", () => {
     const html = renderToStaticMarkup(h(CandidateRow, { c: { name: "Rob Bonta", photo: (withLicensedPhoto({ name: "Rob Bonta" } as never) as { photo: unknown }).photo as never }, o: overlapStatus({}, stancesFor("Rob Bonta"), ids), grade: null, ids }));
-    expect(html).toMatch(/data-credit-line[^>]*>Photo: <a href="https:\/\/commons\.wikimedia\.org\/[^"]+"[^>]*data-photo-credit[^>]*>[^<]*Public domain<\/a>/i);
+    expect(html).toMatch(/data-credit-line[^>]*>Photo: <a href="https:\/\/commons\.wikimedia\.org\/[^"]+"[^>]*data-photo-credit[^>]*>[^<]+<\/a>/i);
     expect(src("components/PortraitRow.tsx")).not.toMatch(/<details[^>]*data-photo-credits/);
     expect(src("components/PortraitRow.tsx")).toMatch(/\$\{CREDIT\}`\} aria-label="Photo credits" data-photo-credits/);
   });

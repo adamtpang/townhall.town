@@ -3,11 +3,11 @@
 import STATUS from "../data/link-status.json";
 const S = STATUS as { dead: Record<string, string>; replace: Record<string, string> };
 // Manual replacement checked by QA (7391b20 report): the candidate's live Ballotpedia page.
+// Civic qa_fixes6: votedyana.com is in link-status dead + link-notes down; Joaquin Torres's Ballotpedia row now uses the
+// accented slug QA confirmed (data/civic/positions_gapfill_batch3.json).
 const MANUAL: Record<string, string> = { "https://ballotpedia.org/Maria_Luisa_Flores": "https://ballotpedia.org/Lulu_Flores" };
-// QA fb66b9b P2 (Oct 30): re-checked dead (404 / TLS failure). Hidden; no substitute invented.
-const MANUAL_DEAD = new Set(["https://ballotpedia.org/Joaquin_Torres", "https://www.votedyana.com/"]);
 export function liveUrl(u: string | null | undefined): string | null {
-  if (!u || MANUAL_DEAD.has(u)) return null;
+  if (!u) return null;
   const r = MANUAL[u] ?? S.replace[u] ?? u;
   if (S.dead[r] || !/^https:\/\//.test(r)) return null;
   return r;
