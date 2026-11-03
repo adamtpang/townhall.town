@@ -37,6 +37,8 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
       const after = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => { const iso = String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []; return iso.length > 0 && iso.every((x) => x > ev.end); });
       const rows = (after.length ? dailyRows(after, d, ev.sourceUrl, j.timezone) : j.electionDay.hours ? dailyRows([{ dates: j.electionDay.date, hours: j.electionDay.hours, appliesTo: null }], d, j.electionDay.sourceUrl, j.timezone) : []) as { label: string; hours: string; appliesTo?: string | null }[];
       if (!rows.length) return { reply, links };
+      // The same official page backs both lines, so on Election Day it is not labeled as an early-voting source.
+      if (links[0].label === "Early voting source") links[0] = { ...links[0], label: "Official election source" };
       if (!after.length && j.electionDay.sourceUrl && !links.some((l) => l.url === j.electionDay.sourceUrl)) links.push({ label: "Election Day hours source", url: j.electionDay.sourceUrl });
       return { reply: `${reply} Election Day, ${rows.map((x) => `${x.label}: ${x.hours}${x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`, links };
     }
