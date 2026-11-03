@@ -7,6 +7,7 @@ import { ORDER_CONFIRMED, orderConfirmedScoped, ORDER_UNSURE, SPLIT_LINE, NY_FMP
 import { ballotFor, getRaces } from "../lib/tools";
 import { guardReply } from "../lib/towny/orderGuard";
 import { TOWNY_BRIEF } from "../lib/towny/brief";
+import { todayCT } from "../lib/townyFacts";
 
 const ORDER_Q = "What order are candidates on my ballot?";
 const SF_HOURS = ["What are the hours?", "What time do polls open and close?", "Where can I vote early and what are the hours?", "Where do I vote and what are the hours?", "What are the early voting hours?"];
@@ -67,7 +68,9 @@ describe("P2-3 where and hours: no 'For hours and polling places' sentence", () 
       for (const j of [await interview("94103", q), await townyTest("94103", q)]) {
         expect(j.reply, q).not.toMatch(/For hours and polling places/);
         expect(j.reply, q).toContain("For your polling place, check the SF Department of Elections.");
-        expect(j.reply, q).toContain("Hours at City Hall Voting Center: ");
+        // Through Nov 2 the early-voting rows; on Election Day itself, the Election Day row from the same data.
+        if (todayCT() <= "2026-11-02") expect(j.reply, q).toContain("Hours at City Hall Voting Center: ");
+        else if (todayCT() === "2026-11-03") expect(j.reply, q).toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
       }
     }
   });

@@ -104,7 +104,10 @@ describe("UI: Google Calendar is the primary action, .ics a muted secondary link
     expect(g).toMatch(/^https:\/\/calendar\.google\.com\/calendar\/render\?action=TEMPLATE&text=Vote%3A%20Election%20Day%2C%20Austin&/);
     expect(html).toMatch(/<a[^>]*class="[^"]*h-12[^"]*"[^>]*data-gcal-url=/); // QA a11y P2 (Oct 30): the calendar control is a real link
     expect(html).toMatch(/class="inline-flex min-h-11 items-center text-black\/60 [^"]*" data-ics="true">or download \.ics<\/button>/);
-    expect(html).toMatch(/rel="noopener noreferrer"[^>]*data-gcal-early/);
+    // The early-voting calendar link shows only while early voting is ahead (whenFor drops the event after it ends).
+    const earlyAhead = whenFor("78701", new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date())).events.some((e: { kind: string }) => e.kind === "early");
+    if (earlyAhead) expect(html).toMatch(/rel="noopener noreferrer"[^>]*data-gcal-early/);
+    else expect(html).not.toMatch(/data-gcal-early/);
     expect(html.indexOf("data-gcal-url")).toBeLessThan(html.indexOf("data-ics"));
   });
   it("ballot card: Add to Google Calendar button, .ics kept as a muted link", async () => {

@@ -29,7 +29,17 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
     const d = today ?? todayCT();
     // QA 297e948 P2 (Oct 30, 3:54 PM CT): SF's early-voting source is labeled by its office.
     const links: TownyLink[] = [{ label: zip === "94103" ? "SF Department of Elections" : "Early voting source", url: ev.sourceUrl }];
-    if (ev.end < d) return { reply: `Early voting in ${j.name} ended on ${fmtDate(ev.end)}.`, links };
+    if (ev.end < d) {
+      // Election Day itself (Nov 3, 2026): early voting is over, so an hours or voting question gets the Election Day row from
+      // the same data (SF keeps it in earlyVoting.dailyHours; 78701 and 10001 in electionDay.hours), word for word.
+      const reply = `Early voting in ${j.name} ended on ${fmtDate(ev.end)}.`;
+      if (!j.electionDay?.date || j.electionDay.date < d) return { reply, links };
+      const after = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => { const iso = String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []; return iso.length > 0 && iso.every((x) => x > ev.end); });
+      const rows = (after.length ? dailyRows(after, d, ev.sourceUrl, j.timezone) : j.electionDay.hours ? dailyRows([{ dates: j.electionDay.date, hours: j.electionDay.hours, appliesTo: null }], d, j.electionDay.sourceUrl, j.timezone) : []) as { label: string; hours: string; appliesTo?: string | null }[];
+      if (!rows.length) return { reply, links };
+      if (!after.length && j.electionDay.sourceUrl && !links.some((l) => l.url === j.electionDay.sourceUrl)) links.push({ label: "Election Day hours source", url: j.electionDay.sourceUrl });
+      return { reply: `${reply} Election Day, ${rows.map((x) => `${x.label}: ${x.hours}${x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`, links };
+    }
     const when = ev.end === d
       ? `Early voting in ${j.name} ends today, ${longDay(ev.end)}.`
       : `Early voting in ${j.name} runs ${fmtRange(ev.start, ev.end)}. The last day is ${fmtDate(ev.end)}.`;
