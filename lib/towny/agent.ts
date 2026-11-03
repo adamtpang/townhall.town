@@ -11,7 +11,8 @@ import { getElectionDates, getPollingLocations, longDateIn } from "../logistics"
 import { COVERED_ZIPS } from "../site";
 import { townyPrompt } from "../townyPrompt";
 import { TOWNY_BRIEF } from "./brief";
-import { FAQS } from "./faq";
+import { FAQS, OFFICES } from "./faq";
+import { getLiveResults } from "../exa";
 import { liveUrl } from "../links";
 import { redact, outputFlags } from "../townyControls";
 import { GATEWAY_FALLBACKS } from "../models";
@@ -98,6 +99,7 @@ const STEP_LABEL: Record<string, string> = {
   getCampaignFinance: "Checked OpenFEC campaign finance",
   getSponsoredBills: "Checked Congress.gov sponsored bills",
   getCountyUnemployment: "Checked BLS county unemployment",
+  getLiveResults: "Checked live results (Exa)",
   getMarketOdds: "Checked live Polymarket prices",
   getElectionDates: "Read official election dates",
   getPollingLocations: "Read official voting places",
@@ -114,6 +116,11 @@ function summarize(name: string, r: any): { summary: string; source: { label: st
     case "getCandidatePositions": return { summary: r.status === "published" ? `${r.positions.length} sourced positions for ${r.name}` : `${r.name}: ${r.status}`, source: src(r.positions?.[0]?.sourceUrl) };
     case "getCampaignFinance": return { summary: unavailable ?? (r.receipts != null ? `${r.name}: $${Math.round(r.receipts).toLocaleString("en-US")} raised, 2026 cycle` : `${r.status ?? "no record found"}`), source: src(r.source, "FEC record") };
     case "getSponsoredBills": return { summary: unavailable ?? (r.member ? `${r.member}: ${r.bills?.length ?? 0} recent bills` : "no record found"), source: src(r.source, "Congress.gov") };
+    case "getLiveResults": {
+      const c = r.contests?.[0];
+      const counts = c?.candidates?.some((x: any) => x.votes != null) ? c.candidates.map((x: any) => `${x.name} ${x.votes?.toLocaleString("en-US") ?? "0"}`).join(", ") : null;
+      return { summary: unavailable ?? (c ? `${c.title}: ${counts ?? c.status ?? "no counts yet"}` : "No live results page found"), source: src(c?.url, "Exa live results") };
+    }
     case "getCountyUnemployment": return { summary: unavailable ?? (r.rate != null ? `${r.rate}% in ${r.period}` : "no record found"), source: src(r.source, "BLS series") };
     case "getMarketOdds": { const v = Object.values(r ?? {}) as any[]; const q = v.find((x) => x?.status === "live")?.quotes?.[0]; return { summary: `${v.filter((x) => x?.status === "live").length} of ${v.length} contests have a live price`, source: src(q?.url, "Polymarket market") }; }
     case "getElectionDates": return { summary: "Official dates and rules", source: null };
@@ -145,6 +152,17 @@ function makeTools(zip: string, emit: Emit, steps: Step[], cites: Map<string, st
     getCandidatePositions: tool({ description: "One candidate's published positions: exact quote plus source URL, optionally for one issue. Returns 'no public statement found' when there is none.", inputSchema: z.object({ name: z.string(), issue: z.string().optional() }), execute: ({ name, issue }) => wrap("getCandidatePositions", () => getCandidatePositions(name, issue)) }),
     getCampaignFinance: tool({ description: "Live OpenFEC: 2026 receipts, spending and cash on hand for one federal candidate (U.S. House or Senate), with the fec.gov record link. Pass the name and 2-letter state.", inputSchema: z.object({ name: z.string(), state: z.string().length(2) }), execute: ({ name, state }) => wrap("getCampaignFinance", () => getCampaignFinance({ name, state })) }),
     getSponsoredBills: tool({ description: "Live Congress.gov: the current U.S. House member for a state and district number, and their most recent sponsored bills.", inputSchema: z.object({ state: z.string().length(2), district: z.number().int() }), execute: ({ state, district }) => wrap("getSponsoredBills", () => getSponsoredBills({ state, district })) }),
+    getLiveResults: tool({
+      description: "Live election results for one race on this ballot, from Exa's election pages, fetched fresh: candidates, vote counts, shares and the status line (polls closed, share of votes counted, last updated). Unofficial until certified. Pass the race title from getBallot.",
+      inputSchema: z.object({ race: z.string() }),
+      execute: ({ race }) =>
+        wrap("getLiveResults", async () => {
+          const r = await getLiveResults(race, STATE_NAME[ballotFor(zip)?.state ?? ""] ?? "");
+          const office = OFFICES[zip];
+          if (office) cites.set(office.url, office.label);
+          return r;
+        }),
+    }),
     getCountyUnemployment: tool({ description: "Live BLS LAUS: the latest monthly unemployment rate for the voter's county.", inputSchema: z0, execute: () => wrap("getCountyUnemployment", () => getCountyUnemployment({ zip })) }),
     getMarketOdds: tool({ description: "Live Polymarket prices for race or measure ids from getBallot. A market price, not a prediction or a poll. Only when asked about markets or odds.", inputSchema: z.object({ raceIds: z.array(z.string()).max(10) }), execute: ({ raceIds }) => wrap("getMarketOdds", () => getMarketOdds(raceIds)) }),
     getElectionDates: tool({ description: townyTools.getElectionDates.description!, inputSchema: z0, execute: () => wrap("getElectionDates", () => getElectionDates(zip)) }),
@@ -153,12 +171,15 @@ function makeTools(zip: string, emit: Emit, steps: Step[], cites: Map<string, st
   };
 }
 
+const STATE_NAME: Record<string, string> = { TX: "Texas", CA: "California", NY: "New York" };
+
 const RULES = `TOWNY CHAT RULES (this turn)
 - Answer the voter's question in 1 to 4 short sentences, in plain words, using ONLY facts from tool results in this turn. Call tools first; never answer a factual question from memory.
 - If the tools don't have it, say exactly "Unsure: I couldn't find that in a cited source." and name what you checked.
 - Never recommend, rank, grade or endorse a candidate or a position. Never say "vote for", "best", "likely to win" or "match".
 - Polymarket numbers are market prices, never predictions or polls. Census figures are estimates; say so.
 - Do not state ballot order, dates or hours unless a tool returned them.
+- Live results: give the counts and the status line exactly as getLiveResults returned them, say they are unofficial until certified, and never say who won, is winning or is leading. With no counts yet, say counting has not started or the polls have not closed, as the status line says.
 - Never write URLs, website names or "more at" phrases; the sources are shown as links under your reply.`;
 
 /** Plain sentences only: markdown, URLs, bare domains and dangling "more at ...:" tails are removed (sources show as links). */
@@ -243,7 +264,11 @@ export async function townyAgent(zip: string, messages: string[], emit: Emit = (
       const listLines = raw.split("\n").filter((l) => /^\s*(?:[-*\u2022]|\d+[.)])\s+/.test(l)).length;
       const reply0 = listLines >= 3 ? ballotPointer(zip) : plainText(raw);
       if (!reply0) continue;
-      const reply = outputFlags(reply0).length ? "Unsure: I can share sourced facts about the races and candidates, but I don't rank or recommend them. Ask me about a race, a person or a measure." : reply0;
+      let reply = outputFlags(reply0).length ? "Unsure: I can share sourced facts about the races and candidates, but I don't rank or recommend them. Ask me about a race, a person or a measure." : reply0;
+      // Live results never call a race: a reply that says anyone won, leads or is ahead is replaced by the counts as published.
+      const live = steps.find((x) => x.tool === "getLiveResults");
+      if (live && /\b(won|wins|win|winning|winner|leading|leads|lead|ahead|trailing|declared|projected|called)\b/i.test(reply))
+        reply = `${live.summary}. Unofficial counts as published by Exa; results are not final until certified.`;
       const links = [...cites].map(([url, label]) => ({ label, url })).slice(0, 5);
       return { reply, links, model: m, steps };
     } catch (e: any) {
