@@ -7,7 +7,7 @@ import { ORDER_CONFIRMED, orderConfirmedScoped, ORDER_UNSURE, SPLIT_LINE, NY_FMP
 import { ballotFor, getRaces } from "../lib/tools";
 import { guardReply } from "../lib/towny/orderGuard";
 import { TOWNY_BRIEF } from "../lib/towny/brief";
-import { todayCT } from "../lib/townyFacts";
+import { todayCT, townyFact } from "../lib/townyFacts";
 
 const ORDER_Q = "What order are candidates on my ballot?";
 const SF_HOURS = ["What are the hours?", "What time do polls open and close?", "Where can I vote early and what are the hours?", "Where do I vote and what are the hours?", "What are the early voting hours?"];
@@ -34,7 +34,13 @@ describe("P1-1 no 'weekend entry via Grove Street' anywhere", () => {
       const a = await interview("94103", q), b = await townyTest("94103", q);
       for (const r of [a.reply, b.reply]) {
         expect(r, q).not.toMatch(/Grove/);
-        expect(r, q).toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
+        // The Election Day row is in the live reply through Nov 3. From Nov 4 it is the short
+        // "early voting ended" line. The row itself stays covered by the fixed-date test below.
+        if (todayCT() <= "2026-11-03") expect(r, q).toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
+        else {
+          expect(r, q).toContain("Early voting in City and County of San Francisco, CA ended on Nov 2.");
+          expect(r, q).not.toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
+        }
       }
     }
   });
@@ -71,8 +77,33 @@ describe("P2-3 where and hours: no 'For hours and polling places' sentence", () 
         // Through Nov 2 the early-voting rows; on Election Day itself, the Election Day row from the same data.
         if (todayCT() <= "2026-11-02") expect(j.reply, q).toContain("Hours at City Hall Voting Center: ");
         else if (todayCT() === "2026-11-03") expect(j.reply, q).toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
+        else expect(j.reply, q).toContain("Early voting in City and County of San Francisco, CA ended on Nov 2.");
       }
     }
+  });
+});
+
+describe("Election Day hours once early voting has ended", () => {
+  const SF = "https://www.sf.gov/november-3-2026-consolidated-general-election";
+  const TRAVIS = "https://votetravis.gov/current-election-information/current-election/";
+  const NYC = "https://vote.nyc/election/general-election-early-voting-day-7";
+  it("Nov 3: each ZIP keeps its Election Day sentence; the shared link keeps main's label", () => {
+    const sf = townyFact("94103", "What are the hours?", "2026-11-03")!;
+    expect(sf.reply).toBe("Early voting in City and County of San Francisco, CA ended on Nov 2. Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT (City Hall Voting Center and all 501 polling places).");
+    expect(sf.links).toEqual([{ label: "SF Department of Elections", url: SF }]);
+    const tx = townyFact("78701", "What are the hours?", "2026-11-03")!;
+    expect(tx.reply).toBe("Early voting in Travis County, TX ended on Oct 30. Election Day, Tue, Nov 3: 7:00 AM-7:00 PM CT.");
+    // FACT CONFLICT: PR #60 (d9853c1) renamed this link "Official election source" because the same page
+    // backs both lines. Main keeps "Early voting source". Kept main's label.
+    expect(tx.links).toEqual([{ label: "Early voting source", url: TRAVIS }]);
+    const ny = townyFact("10001", "What are the hours?", "2026-11-03")!;
+    expect(ny.reply).toBe("Early voting in New York County (Manhattan), New York City, NY ended on Nov 1. Election Day, Tue, Nov 3: 6:00 AM-9:00 PM ET.");
+    expect(ny.links).toEqual([{ label: "Early voting source", url: NYC }]);
+  });
+  it("from Nov 4 the reply is only the early-voting-ended line", () => {
+    expect(townyFact("94103", "What are the hours?", "2026-11-04")!.reply).toBe("Early voting in City and County of San Francisco, CA ended on Nov 2.");
+    expect(townyFact("78701", "What are the hours?", "2026-11-04")!.reply).toBe("Early voting in Travis County, TX ended on Oct 30.");
+    expect(townyFact("10001", "What are the hours?", "2026-11-04")!.reply).toBe("Early voting in New York County (Manhattan), New York City, NY ended on Nov 1.");
   });
 });
 

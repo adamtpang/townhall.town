@@ -37,6 +37,11 @@ export function townyFact(zip: string, text: string, today?: string): { reply: s
       const after = (ev.dailyHours ?? []).filter((r: { dates?: string; date?: string }) => { const iso = String(r.dates ?? r.date ?? "").match(/\d{4}-\d{2}-\d{2}/g) ?? []; return iso.length > 0 && iso.every((x) => x > ev.end); });
       const rows = (after.length ? dailyRows(after, d, ev.sourceUrl, j.timezone) : j.electionDay.hours ? dailyRows([{ dates: j.electionDay.date, hours: j.electionDay.hours, appliesTo: null }], d, j.electionDay.sourceUrl, j.timezone) : []) as { label: string; hours: string; appliesTo?: string | null }[];
       if (!rows.length) return { reply, links };
+      // FACT CONFLICT (PR #60 d9853c1 vs main): both sides append the same Election Day hours
+      // sentence. The PR also renamed this shared link from "Early voting source" to "Official
+      // election source" on Election Day, because that page backs both lines (78701 and 10001;
+      // 94103 stays "SF Department of Elections"). Main keeps "Early voting source". Kept main's
+      // label. The hours text is unchanged.
       if (!after.length && j.electionDay.sourceUrl && !links.some((l) => l.url === j.electionDay.sourceUrl)) links.push({ label: "Election Day hours source", url: j.electionDay.sourceUrl });
       return { reply: `${reply} Election Day, ${rows.map((x) => `${x.label}: ${x.hours}${x.appliesTo ? ` (${x.appliesTo})` : ""}`).join("; ")}.`, links };
     }

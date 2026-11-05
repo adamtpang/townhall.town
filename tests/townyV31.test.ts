@@ -1,6 +1,7 @@
 // v3.1 (Adam, Oct 30 2026 3:23 PM CT): Civic's towny_order_check NO-GO on the model path (civic/order28/towny_order_check.md).
 import { describe, it, expect, vi } from "vitest";
 import { curated } from "../lib/towny/answer";
+import { todayCT } from "../lib/townyFacts";
 import { ORDER_CONFIRMED, ORDER_CONFIRMED_HEAD, ORDER_UNSURE, orderConfirmedScoped, SPLIT_LINE, NY_PDF_LABEL, NY_FMPS } from "../lib/ballotOrder";
 import { getRaces, getCandidates, ballotFor } from "../lib/tools";
 import { guardReply } from "../lib/towny/orderGuard";
@@ -161,7 +162,12 @@ describe("/api/towny-test routes order and hours questions to the deterministic 
       expect(j.reply).toMatch(/\n\nSources: /);
     }
     const h = await (await POST(new Request("https://x/api/towny-test", { method: "POST", body: JSON.stringify({ message: "What are the hours?", zip: "94103" }) }))).json();
-    expect(h.reply).toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
+    // Through Nov 3 the live reply includes the Election Day row. From Nov 4 it is the short ended line.
+    if (todayCT() <= "2026-11-03") expect(h.reply).toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
+    else {
+      expect(h.reply).toContain("Early voting in City and County of San Francisco, CA ended on Nov 2.");
+      expect(h.reply).not.toContain("Election Day, Tue, Nov 3: 7:00 AM-8:00 PM PT");
+    }
     expect(run).not.toHaveBeenCalled();
     vi.doUnmock("../lib/townyRun");
   });
