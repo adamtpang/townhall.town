@@ -1,6 +1,6 @@
 // Civic (Oct 30, 1:37 + 1:38 PM CT), Design (1:38 PM CT) and QA pre-pass on 1ee5f9c (1:39 PM CT), folded into one commit.
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { curated, runningFor, UNSURE_ORDER } from "../lib/towny/answer";
 import { ORDER_CONFIRMED, inOfficialOrder } from "../lib/ballotOrder";
 import { faqFor, whenWhere, UNSURE_DATE, OFFICES } from "../lib/towny/faq";
@@ -160,7 +160,10 @@ describe("Civic FAQ (1:38 PM CT) and brief", () => {
     expect(TOWNY_BRIEF).toContain(OUT_OF_SCOPE);
     expect(TOWNY_BRIEF).toMatch(/94103 runs through Monday, November 2, 2026/);
     expect(TOWNY_BRIEF).toContain("It shows where each candidate's sourced positions overlap with your answers, which you give on a -2 to +2 scale.");
-    const md = readFileSync(new URL("../../notes/towny-faq.md", import.meta.url), "utf8");
+    // notes/towny-faq.md is a shared note outside the repo, so CI (a clean checkout) has no copy; check it only when present.
+    const notes = new URL("../../notes/towny-faq.md", import.meta.url);
+    if (!existsSync(notes)) return;
+    const md = readFileSync(notes, "utf8");
     expect(md).toContain("It shows where each candidate's sourced positions overlap with your answers, which you give on a -2 to +2 scale.");
     expect(md).toContain("For other places, check vote.gov.");
     // notes/towny-faq.md lives outside the repo (shared notes) and still carries the pre-v3.1 unsure line; not edited here.
