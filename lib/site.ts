@@ -3,8 +3,9 @@ export const SITE = {
   name: "townhall.town",
   url: "https://townhall.town",
   title: "townhall.town: nonpartisan ballot guide for Austin, San Francisco and New York",
-  description:
-    "A nonpartisan, sourced ballot guide for the Nov 3, 2026 election in Austin, San Francisco and New York City. Enter a ZIP to see every race and measure on your ballot, with a source for each fact.",
+  // Evergreen (Nov 23, 2026): the Nov 3 election is past, so share copy and the meta description name no date.
+  description: "A nonpartisan ballot guide. Enter a ZIP to see every race and measure on your ballot, with a source for each fact. Austin, San Francisco and New York City.",
+  shareTitle: "townhall.town: a nonpartisan ballot guide, every fact sourced",
   github: "https://github.com/adamtpang/townhall.town",
   issues: "https://github.com/adamtpang/townhall.town/issues",
   author: "Adam Pang",
