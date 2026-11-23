@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   applicationName: SITE.name,
   authors: [{ name: SITE.author, url: SITE.github }],
   alternates: { canonical: "/" },
-  openGraph: { type: "website", siteName: SITE.name, locale: "en_US", url: "/", title: SITE.title, description: SITE.description },
-  twitter: { card: "summary_large_image", title: SITE.title, description: SITE.description },
+  openGraph: { type: "website", siteName: SITE.name, locale: "en_US", url: "/", title: SITE.shareTitle, description: SITE.description },
+  twitter: { card: "summary_large_image", title: SITE.shareTitle, description: SITE.description },
 };
 
 // Purple palette (Design Oct 30): browser chrome matches the #F2F2F2 surface.
